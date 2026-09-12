@@ -3,6 +3,77 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+GAME_NAMES_ES = {
+    # Gen 1
+    'red': 'Pokémon Rojo',
+    'blue': 'Pokémon Azul',
+    'yellow': 'Pokémon Amarillo',
+    # Gen 2
+    'gold': 'Pokémon Oro',
+    'silver': 'Pokémon Plata',
+    'crystal': 'Pokémon Cristal',
+    # Gen 3
+    'ruby': 'Pokémon Rubí',
+    'sapphire': 'Pokémon Zafiro',
+    'emerald': 'Pokémon Esmeralda',
+    'firered': 'Pokémon Rojo Fuego',
+    'leafgreen': 'Pokémon Verde Hoja',
+    # Gen 4
+    'diamond': 'Pokémon Diamante',
+    'pearl': 'Pokémon Perla',
+    'platinum': 'Pokémon Platino',
+    'heartgold': 'Pokémon Oro HeartGold',
+    'soulsilver': 'Pokémon Plata SoulSilver',
+    # Gen 5
+    'black': 'Pokémon Negro',
+    'white': 'Pokémon Blanco',
+    'black-2': 'Pokémon Negro 2',
+    'white-2': 'Pokémon Blanco 2',
+    # Gen 6
+    'x': 'Pokémon X',
+    'y': 'Pokémon Y',
+    'omega-ruby': 'Pokémon Rubí Omega',
+    'alpha-sapphire': 'Pokémon Zafiro Alfa',
+    # Gen 7
+    'sun': 'Pokémon Sol',
+    'moon': 'Pokémon Luna',
+    'ultra-sun': 'Pokémon Ultra Sol',
+    'ultra-moon': 'Pokémon Ultra Luna',
+    'lets-go-pikachu': "Pokémon: Let's Go, Pikachu!",
+    'lets-go-eevee': "Pokémon: Let's Go, Eevee!",
+    # Gen 8
+    'sword': 'Pokémon Espada',
+    'shield': 'Pokémon Escudo',
+    'brilliant-diamond': 'Pokémon Diamante Brillante',
+    'shining-pearl': 'Pokémon Perla Reluciente',
+    'legends-arceus': 'Leyendas Pokémon: Arceus',
+    # Gen 9
+    'scarlet': 'Pokémon Escarlata',
+    'violet': 'Pokémon Púrpura',
+}
+
+TYPE_NAMES_ES = {
+    'normal': 'Normal',
+    'fire': 'Fuego',
+    'water': 'Agua',
+    'grass': 'Planta',
+    'electric': 'Eléctrico',
+    'ice': 'Hielo',
+    'fighting': 'Lucha',
+    'poison': 'Veneno',
+    'ground': 'Tierra',
+    'flying': 'Volador',
+    'psychic': 'Psíquico',
+    'bug': 'Bicho',
+    'rock': 'Roca',
+    'ghost': 'Fantasma',
+    'dragon': 'Dragón',
+    'steel': 'Acero',
+    'fairy': 'Hada',
+    'dark': 'Siniestro',
+}
+
+
 class Game(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
@@ -15,8 +86,15 @@ class Game(models.Model):
         verbose_name_plural = "Juegos"
         ordering = ['generation', 'name']
 
+    @property
+    def display_name(self):
+        """Devuelve el nombre oficial en español del juego."""
+        if self.slug in GAME_NAMES_ES:
+            return GAME_NAMES_ES[self.slug]
+        return self.name
+
     def __str__(self):
-        return f"{self.name} (Gen {self.generation})"
+        return f"{self.display_name} (Gen {self.generation})"
 
     @property
     def has_retro_sprites(self):
@@ -61,6 +139,16 @@ class Pokemon(models.Model):
 
     def __str__(self):
         return f"#{self.national_number:03d} {self.display_name}"
+
+    @property
+    def primary_type_es(self):
+        return TYPE_NAMES_ES.get(self.primary_type.lower(), self.primary_type.capitalize())
+
+    @property
+    def secondary_type_es(self):
+        if self.secondary_type:
+            return TYPE_NAMES_ES.get(self.secondary_type.lower(), self.secondary_type.capitalize())
+        return None
 
 
 class PokedexEntry(models.Model):

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ pokedex.name }} - {{ game.name }} | Pokédex Global</title>
+    <title>{{ pokedex.name }} - {{ game.display_name }} | Pokédex Global</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -78,7 +78,7 @@
                 <select id="game-select" onchange="window.location.href='/' + this.value + '/'" class="bg-slate-800 border border-slate-700 text-sm font-medium rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-red-500 text-white">
                     {% for g in all_games %}
                         <option value="{{ g.slug }}" {% if g.slug == game.slug %}selected{% endif %}>
-                            {{ g.name }} (Gen {{ g.generation }})
+                            {{ g.display_name }} (Gen {{ g.generation }})
                         </option>
                     {% endfor %}
                 </select>
@@ -96,7 +96,7 @@
                         <span>Generación {{ game.generation }}</span> • <span>Región Kanto</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white">{{ pokedex.name }}</h2>
-                    <p class="text-sm text-slate-400 mt-1">Registra de forma individual cada Pokémon capturado en tu partida de {{ game.name }}.</p>
+                    <p class="text-sm text-slate-400 mt-1">Registra de forma individual cada Pokémon capturado en tu partida de {{ game.display_name }}.</p>
                 </div>
 
                 <!-- Progress Metric -->
@@ -166,6 +166,8 @@
                     data-display="{{ entry.pokemon.display_name|lower }}"
                     data-type1="{{ entry.pokemon.primary_type }}"
                     data-type2="{{ entry.pokemon.secondary_type|default:'' }}"
+                    data-type1-es="{{ entry.pokemon.primary_type_es|lower }}"
+                    data-type2-es="{{ entry.pokemon.secondary_type_es|default:''|lower }}"
                     data-caught="{% if entry.is_caught %}true{% else %}false{% endif %}"
                     data-sprite-retro="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}"
                     data-sprite-modern="{{ entry.pokemon.sprite_url }}"
@@ -199,11 +201,11 @@
                         </h3>
                         <div class="flex items-center justify-center gap-1 mt-1.5">
                             <span class="type-{{ entry.pokemon.primary_type }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
-                                {{ entry.pokemon.primary_type }}
+                                {{ entry.pokemon.primary_type_es }}
                             </span>
                             {% if entry.pokemon.secondary_type %}
                             <span class="type-{{ entry.pokemon.secondary_type }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
-                                {{ entry.pokemon.secondary_type }}
+                                {{ entry.pokemon.secondary_type_es }}
                             </span>
                             {% endif %}
                         </div>
@@ -300,13 +302,24 @@
             const cards = document.querySelectorAll('.pokemon-card');
 
             cards.forEach(card => {
-                const name = card.dataset.name;
-                const display = card.dataset.display;
-                const number = card.dataset.number;
+                const name = card.dataset.name || '';
+                const display = card.dataset.display || '';
+                const number = card.dataset.number || '';
+                const type1 = card.dataset.type1 || '';
+                const type2 = card.dataset.type2 || '';
+                const type1Es = card.dataset.type1Es || '';
+                const type2Es = card.dataset.type2Es || '';
                 const isCaught = card.dataset.caught === 'true';
 
-                // Filtro de texto
-                const matchesText = !query || name.includes(query) || display.includes(query) || number.includes(query);
+                // Filtro de texto (nombre, número de Pokédex o tipo en español/inglés)
+                const matchesText = !query || 
+                    name.includes(query) || 
+                    display.includes(query) || 
+                    number.includes(query) ||
+                    type1.includes(query) ||
+                    type2.includes(query) ||
+                    type1Es.includes(query) ||
+                    type2Es.includes(query);
 
                 // Filtro de estado
                 let matchesStatus = true;

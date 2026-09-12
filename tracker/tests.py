@@ -28,7 +28,12 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Bulbasaur")
         self.assertContains(response, "#001")
+        self.assertContains(response, "Pokémon Rojo")
+        self.assertContains(response, "Planta")
         self.assertEqual(response.context["total_pokemon"], 1)
+        self.assertEqual(self.game.display_name, "Pokémon Rojo")
+        self.assertEqual(self.pokemon.primary_type_es, "Planta")
+        self.assertEqual(self.pokemon.secondary_type_es, "Veneno")
 
     def test_toggle_catch_anonymous_user(self):
         url = reverse("tracker:toggle_catch")

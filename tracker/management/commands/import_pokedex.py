@@ -6,7 +6,7 @@ import requests
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from tracker.models import Game, Pokedex, PokedexEntry, Pokemon
+from tracker.models import Game, Pokedex, PokedexEntry, Pokemon, GAME_NAMES_ES
 
 
 class Command(BaseCommand):
@@ -17,13 +17,13 @@ class Command(BaseCommand):
             '--game',
             type=str,
             default='red',
-            help='Slug del juego (ej: red, blue, firered)'
+            help='Slug del juego (ej: red, blue, firered, white, ultra-sun)'
         )
         parser.add_argument(
             '--game-name',
             type=str,
-            default='Pokémon Red',
-            help='Nombre descriptivo del juego'
+            default='',
+            help='Nombre descriptivo del juego (opcional; se asigna automáticamente en español)'
         )
         parser.add_argument(
             '--generation',
@@ -42,6 +42,11 @@ class Command(BaseCommand):
             type=str,
             default='Pokédex Regional de Kanto',
             help='Nombre descriptivo de la Pokédex'
+        )
+        parser.add_argument(
+            '--force-refresh',
+            action='store_true',
+            help='Fuerza la descarga de PokeAPI aunque el Pokémon ya exista en la base de datos'
         )
 
     def save_media_file(self, url, relative_path):
@@ -105,7 +110,7 @@ class Command(BaseCommand):
 
         return None
 
-    def fetch_pokemon_details(self, entry, game_slug, generation):
+    def fetch_pokemon_details(self, entry, game_slug, generation, existing_pokemon=None, force_refresh=False):
         entry_number = entry['entry_number']
         species_name = entry['pokemon_species']['name']
         species_url = entry['pokemon_species']['url']
@@ -113,11 +118,27 @@ class Command(BaseCommand):
         # Extraer ID nacional de la URL de species: https://pokeapi.co/api/v2/pokemon-species/{id}/
         national_number = int(species_url.rstrip('/').split('/')[-1])
         
-        try:
-            # Obtener datos de tipos y sprites desde el endpoint de pokemon
-            resp = requests.get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', timeout=10)
-            if resp.status_code == 200:
-                data = resp.json()
+        # 1. Estrategia Local-First: Si ya existe en BD local con raw_data, reutilizar sin peticiones a la API
+        if not force_refresh and existing_pokemon and existing_pokemon.raw_data:
+            data = existing_pokemon.raw_data
+            is_from_cache = True
+        else:
+            data = None
+            is_from_cache = False
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+            for attempt in range(3):
+                try:
+                    resp = requests.get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', headers=headers, timeout=12)
+                    if resp.status_code == 200:
+                        data = resp.json()
+                        break
+                    elif resp.status_code == 429:
+                        time.sleep(1.5 * (attempt + 1))
+                except Exception as e:
+                    time.sleep(0.4)
+
+        if data:
+            try:
                 types = [t['type']['name'] for t in data.get('types', [])]
                 primary_type = types[0] if types else 'normal'
                 secondary_type = types[1] if len(types) > 1 else None
@@ -133,10 +154,10 @@ class Command(BaseCommand):
                 remote_artwork_url = artwork_url or sprite_fallback
                 shiny_url = data.get('sprites', {}).get('front_shiny')
                 
-                # Sprite retro específico del juego
+                # Sprite retro específico del juego extraído de raw_data
                 remote_game_sprite_url = self.get_game_sprite(data, game_slug, generation)
 
-                # Descargar y almacenar localmente en media/
+                # Descargar y almacenar localmente en media/ (si ya existe en disco retorna de inmediato)
                 local_artwork_url = self.save_media_file(remote_artwork_url, f"pokemon/artwork/{national_number}.png")
                 local_game_sprite_url = self.save_media_file(
                     remote_game_sprite_url, f"pokemon/sprites/{game_slug}/{national_number}.png"
@@ -154,24 +175,28 @@ class Command(BaseCommand):
                     'game_sprite_url': local_game_sprite_url or remote_game_sprite_url,
                     'height': data.get('height'),
                     'weight': data.get('weight'),
+                    'raw_data': data,
+                    'from_cache': is_from_cache,
                 }
-        except Exception as e:
-            self.stderr.write(f"Error procesando {species_name}: {e}")
+            except Exception as e:
+                self.stderr.write(f"Error procesando {species_name}: {e}")
 
-        # Fallback si falla el detalle específico
+        # Fallback si falla la obtención de datos
         fallback_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{national_number}.png"
         return {
             'entry_number': entry_number,
             'national_number': national_number,
             'name': species_name,
             'display_name': species_name.replace('-', ' ').title(),
-            'primary_type': 'normal',
-            'secondary_type': None,
-            'sprite_url': fallback_url,
-            'sprite_shiny_url': None,
+            'primary_type': getattr(existing_pokemon, 'primary_type', 'normal'),
+            'secondary_type': getattr(existing_pokemon, 'secondary_type', None),
+            'sprite_url': getattr(existing_pokemon, 'sprite_url', fallback_url),
+            'sprite_shiny_url': getattr(existing_pokemon, 'sprite_shiny_url', None),
             'game_sprite_url': None,
-            'height': None,
-            'weight': None,
+            'height': getattr(existing_pokemon, 'height', None),
+            'weight': getattr(existing_pokemon, 'weight', None),
+            'raw_data': getattr(existing_pokemon, 'raw_data', {}),
+            'from_cache': is_from_cache,
         }
 
 
@@ -181,6 +206,22 @@ class Command(BaseCommand):
         generation = options['generation']
         pokedex_slug = options['pokedex']
         pokedex_name = options['pokedex_name']
+        force_refresh = options.get('force_refresh', False)
+
+        if not game_name:
+            if game_slug in GAME_NAMES_ES:
+                game_name = GAME_NAMES_ES[game_slug]
+            else:
+                try:
+                    v_resp = requests.get(f'https://pokeapi.co/api/v2/version/{game_slug}', timeout=5)
+                    if v_resp.status_code == 200:
+                        es_names = [n['name'] for n in v_resp.json().get('names', []) if n.get('language', {}).get('name') == 'es']
+                        if es_names:
+                            game_name = f"Pokémon {es_names[0]}"
+                except Exception:
+                    pass
+                if not game_name:
+                    game_name = f"Pokémon {game_slug.replace('-', ' ').title()}"
 
         self.stdout.write(f"Iniciando importación para: {game_name} (Pokédex: {pokedex_name})...")
 
@@ -192,7 +233,12 @@ class Command(BaseCommand):
         if created_game:
             self.stdout.write(self.style.SUCCESS(f"Juego '{game.name}' creado."))
         else:
-            self.stdout.write(f"Juego existente: '{game.name}'.")
+            if game.name != game_name:
+                game.name = game_name
+                game.save(update_fields=['name'])
+                self.stdout.write(f"Juego actualizado con nombre en español: '{game.name}'.")
+            else:
+                self.stdout.write(f"Juego existente: '{game.name}'.")
 
         # 2. Crear o recuperar la Pokédex
         pokedex, created_dex = Pokedex.objects.get_or_create(
@@ -225,14 +271,42 @@ class Command(BaseCommand):
         total_entries = len(entries)
         self.stdout.write(f"Se encontraron {total_entries} entradas en la Pokédex.")
 
-        # 4. Descargar detalles en paralelo
-        self.stdout.write("Descargando detalles (tipos, imágenes) concurrentemente...")
+        # 4. Comprobación Local-First: Consultar en lote los Pokémon existentes en la base de datos local
+        national_ids = []
+        for entry in entries:
+            species_url = entry.get('pokemon_species', {}).get('url', '')
+            if species_url:
+                try:
+                    national_ids.append(int(species_url.rstrip('/').split('/')[-1]))
+                except ValueError:
+                    pass
+
+        existing_pokemon_map = {
+            p.national_number: p
+            for p in Pokemon.objects.filter(national_number__in=national_ids)
+        }
+        cached_count = sum(1 for p in existing_pokemon_map.values() if p.raw_data)
+        if not force_refresh and cached_count > 0:
+            self.stdout.write(
+                self.style.SUCCESS(
+                    f"Aceleración Local-First: {cached_count}/{total_entries} Pokémon se reutilizarán de la base de datos local (0 peticiones a la API)."
+                )
+            )
+
+        # 5. Descargar/reutilizar detalles en paralelo (con 5 workers controlados)
+        self.stdout.write("Procesando Pokémon (extrayendo sprites locales o descargando nuevos)...")
         detailed_pokemon = []
-        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-            future_to_entry = {
-                executor.submit(self.fetch_pokemon_details, entry, game_slug, generation): entry
-                for entry in entries
-            }
+        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+            future_to_entry = {}
+            for entry in entries:
+                species_url = entry.get('pokemon_species', {}).get('url', '')
+                nid = int(species_url.rstrip('/').split('/')[-1]) if species_url else 0
+                existing_p = existing_pokemon_map.get(nid)
+                future = executor.submit(
+                    self.fetch_pokemon_details, entry, game_slug, generation, existing_p, force_refresh
+                )
+                future_to_entry[future] = entry
+
             completed = 0
             for future in concurrent.futures.as_completed(future_to_entry):
                 res = future.result()
@@ -240,28 +314,36 @@ class Command(BaseCommand):
                     detailed_pokemon.append(res)
                 completed += 1
                 if completed % 25 == 0 or completed == total_entries:
-                    self.stdout.write(f"Descargados {completed}/{total_entries}...")
+                    self.stdout.write(f"Procesados {completed}/{total_entries}...")
+
+        from_cache_total = sum(1 for p in detailed_pokemon if p.get('from_cache'))
+        from_api_total = len(detailed_pokemon) - from_cache_total
+        self.stdout.write(f"Resumen de obtención: {from_cache_total} locales de BD, {from_api_total} descargados de PokeAPI.")
 
         # Ordenar por entry_number
         detailed_pokemon.sort(key=lambda x: x['entry_number'])
 
-        # 5. Guardar en Base de Datos de forma transaccional
+        # 6. Guardar en Base de Datos de forma transaccional
         self.stdout.write("Guardando en la base de datos PostgreSQL...")
         with transaction.atomic():
             saved_count = 0
             for item in detailed_pokemon:
+                pokemon_defaults = {
+                    'name': item['name'],
+                    'display_name': item['display_name'],
+                    'sprite_url': item['sprite_url'],
+                    'sprite_shiny_url': item['sprite_shiny_url'],
+                    'primary_type': item['primary_type'],
+                    'secondary_type': item['secondary_type'],
+                    'height': item['height'],
+                    'weight': item['weight'],
+                }
+                if item.get('raw_data'):
+                    pokemon_defaults['raw_data'] = item['raw_data']
+
                 pokemon, _ = Pokemon.objects.update_or_create(
                     national_number=item['national_number'],
-                    defaults={
-                        'name': item['name'],
-                        'display_name': item['display_name'],
-                        'sprite_url': item['sprite_url'],
-                        'sprite_shiny_url': item['sprite_shiny_url'],
-                        'primary_type': item['primary_type'],
-                        'secondary_type': item['secondary_type'],
-                        'height': item['height'],
-                        'weight': item['weight'],
-                    }
+                    defaults=pokemon_defaults
                 )
 
                 PokedexEntry.objects.update_or_create(
