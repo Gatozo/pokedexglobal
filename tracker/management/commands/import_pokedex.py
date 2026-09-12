@@ -7,7 +7,8 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from tracker.models import Game, Pokedex, PokedexEntry, Pokemon, GAME_NAMES_ES
-from tracker.utils import resolve_game_display_name, get_localized_text, safe_api_get
+from tracker.utils import resolve_game_display_name, get_localized_text, safe_api_get, resolve_types_for_generation
+
 
 
 class Command(BaseCommand):
@@ -155,6 +156,14 @@ class Command(BaseCommand):
                 # Sprite retro específico del juego extraído de raw_data
                 remote_game_sprite_url = self.get_game_sprite(data, game_slug, generation)
 
+                # Tipos correspondientes a la generación del juego específico
+                game_primary_type, game_secondary_type = resolve_types_for_generation(
+                    data,
+                    primary_type,
+                    secondary_type,
+                    generation
+                )
+
                 # Descargar y almacenar localmente en media/ (si ya existe en disco retorna de inmediato)
                 local_artwork_url = self.save_media_file(remote_artwork_url, f"pokemon/artwork/{national_number}.png")
                 local_game_sprite_url = self.save_media_file(
@@ -168,6 +177,8 @@ class Command(BaseCommand):
                     'display_name': species_name.replace('-', ' ').title(),
                     'primary_type': primary_type,
                     'secondary_type': secondary_type,
+                    'game_primary_type': game_primary_type,
+                    'game_secondary_type': game_secondary_type,
                     'sprite_url': local_artwork_url or remote_artwork_url,
                     'sprite_shiny_url': shiny_url,
                     'game_sprite_url': local_game_sprite_url or remote_game_sprite_url,
@@ -181,21 +192,33 @@ class Command(BaseCommand):
 
         # Fallback si falla la obtención de datos
         fallback_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{national_number}.png"
+        fb_primary = getattr(existing_pokemon, 'primary_type', 'normal')
+        fb_secondary = getattr(existing_pokemon, 'secondary_type', None)
+        fb_raw = getattr(existing_pokemon, 'raw_data', {})
+        fb_game_primary, fb_game_secondary = resolve_types_for_generation(
+            fb_raw,
+            fb_primary,
+            fb_secondary,
+            generation
+        )
         return {
             'entry_number': entry_number,
             'national_number': national_number,
             'name': species_name,
             'display_name': species_name.replace('-', ' ').title(),
-            'primary_type': getattr(existing_pokemon, 'primary_type', 'normal'),
-            'secondary_type': getattr(existing_pokemon, 'secondary_type', None),
+            'primary_type': fb_primary,
+            'secondary_type': fb_secondary,
+            'game_primary_type': fb_game_primary,
+            'game_secondary_type': fb_game_secondary,
             'sprite_url': getattr(existing_pokemon, 'sprite_url', fallback_url),
             'sprite_shiny_url': getattr(existing_pokemon, 'sprite_shiny_url', None),
             'game_sprite_url': None,
             'height': getattr(existing_pokemon, 'height', None),
             'weight': getattr(existing_pokemon, 'weight', None),
-            'raw_data': getattr(existing_pokemon, 'raw_data', {}),
+            'raw_data': fb_raw,
             'from_cache': is_from_cache,
         }
+
 
 
     def handle(self, *args, **options):
@@ -349,8 +372,11 @@ class Command(BaseCommand):
                     defaults={
                         'pokemon': pokemon,
                         'game_sprite_url': item['game_sprite_url'],
+                        'primary_type': item.get('game_primary_type') or item['primary_type'],
+                        'secondary_type': item.get('game_secondary_type'),
                     }
                 )
+
                 saved_count += 1
 
 

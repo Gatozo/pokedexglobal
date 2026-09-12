@@ -139,3 +139,95 @@ class PokedexTrackerTests(TestCase):
                 self.assertIsNotNone(resp)
                 self.assertEqual(resp.status_code, 200)
                 self.assertEqual(mock_retry.call_count, 2)
+
+    def test_resolve_types_for_generation(self):
+        from .utils import resolve_types_for_generation
+
+        # Clefairy raw_data: fairy moderna, pero normal hasta Gen 5
+        clefairy_raw = {
+            "past_types": [
+                {
+                    "generation": {"name": "generation-v"},
+                    "types": [{"slot": 1, "type": {"name": "normal"}}]
+                }
+            ]
+        }
+        # En Gen 1: debe ser normal
+        p1, s1 = resolve_types_for_generation(clefairy_raw, "fairy", None, generation=1)
+        self.assertEqual(p1, "normal")
+        self.assertIsNone(s1)
+
+        # En Gen 5: debe ser normal
+        p5, s5 = resolve_types_for_generation(clefairy_raw, "fairy", None, generation=5)
+        self.assertEqual(p5, "normal")
+        self.assertIsNone(s5)
+
+        # En Gen 6+: debe ser fairy
+        p6, s6 = resolve_types_for_generation(clefairy_raw, "fairy", None, generation=6)
+        self.assertEqual(p6, "fairy")
+        self.assertIsNone(s6)
+
+        # Magnemite raw_data: electric/steel moderno, pero electric en Gen 1
+        magnemite_raw = {
+            "past_types": [
+                {
+                    "generation": {"name": "generation-i"},
+                    "types": [{"slot": 1, "type": {"name": "electric"}}]
+                }
+            ]
+        }
+        pm1, sm1 = resolve_types_for_generation(magnemite_raw, "electric", "steel", generation=1)
+        self.assertEqual(pm1, "electric")
+        self.assertIsNone(sm1)
+
+        pm2, sm2 = resolve_types_for_generation(magnemite_raw, "electric", "steel", generation=2)
+        self.assertEqual(pm2, "electric")
+        self.assertEqual(sm2, "steel")
+
+    def test_pokedex_entry_historical_type_properties(self):
+        # Entry con tipos históricos definidos
+        clefairy = Pokemon.objects.create(
+            national_number=35,
+            name="clefairy",
+            display_name="Clefairy",
+            sprite_url="https://example.com/clefairy.png",
+            primary_type="fairy",
+            secondary_type=None
+        )
+        entry_gen1 = PokedexEntry.objects.create(
+            pokedex=self.pokedex,
+            pokemon=clefairy,
+            entry_number=35,
+            primary_type="normal",
+            secondary_type=None
+        )
+        self.assertEqual(entry_gen1.primary_type_display, "normal")
+        self.assertEqual(entry_gen1.primary_type_es, "Normal")
+        self.assertIsNone(entry_gen1.secondary_type_display)
+        self.assertIsNone(entry_gen1.secondary_type_es)
+
+    def test_pokedex_view_renders_historical_types(self):
+        clefairy = Pokemon.objects.create(
+            national_number=35,
+            name="clefairy",
+            display_name="Clefairy",
+            sprite_url="https://example.com/clefairy.png",
+            primary_type="fairy",
+            secondary_type=None
+        )
+        PokedexEntry.objects.create(
+            pokedex=self.pokedex,
+            pokemon=clefairy,
+            entry_number=35,
+            primary_type="normal",
+            secondary_type=None
+        )
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        # Debe renderizar data-type1="normal" y el badge con "Normal"
+        self.assertContains(response, 'data-type1="normal"')
+        self.assertContains(response, 'data-type1-es="normal"')
+        self.assertContains(response, 'type-normal')
+
+

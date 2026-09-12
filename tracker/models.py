@@ -161,6 +161,8 @@ class PokedexEntry(models.Model):
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="pokedex_appearances")
     entry_number = models.PositiveIntegerField()
     game_sprite_url = models.URLField(max_length=500, blank=True, null=True, help_text="Sprite específico de la generación/juego")
+    primary_type = models.CharField(max_length=30, blank=True, null=True, help_text="Tipo primario en la generación de este juego")
+    secondary_type = models.CharField(max_length=30, blank=True, null=True, help_text="Tipo secundario en la generación de este juego")
 
     class Meta:
         verbose_name = "Entrada de Pokédex"
@@ -173,6 +175,27 @@ class PokedexEntry(models.Model):
 
     def __str__(self):
         return f"{self.pokedex.name} #{self.entry_number:03d}: {self.pokemon.display_name}"
+
+    @property
+    def primary_type_display(self):
+        return self.primary_type or self.pokemon.primary_type
+
+    @property
+    def secondary_type_display(self):
+        if self.primary_type:
+            return self.secondary_type
+        return self.pokemon.secondary_type
+
+    @property
+    def primary_type_es(self):
+        t = self.primary_type_display
+        return TYPE_NAMES_ES.get(t.lower(), t.capitalize()) if t else ""
+
+    @property
+    def secondary_type_es(self):
+        t = self.secondary_type_display
+        return TYPE_NAMES_ES.get(t.lower(), t.capitalize()) if t else None
+
 
 
 class UserPokemonCatch(models.Model):

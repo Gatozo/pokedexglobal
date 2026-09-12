@@ -130,3 +130,68 @@ def resolve_game_display_name(
 
     clean_slug = game_slug.replace("-", " ").title()
     return f"Pokémon {clean_slug}"
+
+
+GENERATION_ROMAN_TO_INT = {
+    'generation-i': 1,
+    'generation-ii': 2,
+    'generation-iii': 3,
+    'generation-iv': 4,
+    'generation-v': 5,
+    'generation-vi': 6,
+    'generation-vii': 7,
+    'generation-viii': 8,
+    'generation-ix': 9,
+}
+
+
+def resolve_types_for_generation(
+    raw_data: Optional[Dict[str, Any]],
+    fallback_primary: str,
+    fallback_secondary: Optional[str],
+    generation: int
+) -> tuple[str, Optional[str]]:
+    """
+    Determina los tipos primario y secundario correspondientes a una generación de juego específica.
+    Utiliza el campo 'past_types' de PokeAPI. Si la generación del juego es anterior o igual
+    a la generación indicada en 'past_types', retorna la tipología histórica de esa época.
+    De lo contrario, retorna la tipología moderna (fallback).
+    """
+    if not raw_data:
+        return fallback_primary, fallback_secondary
+
+    past_types = raw_data.get('past_types', [])
+    if not past_types:
+        return fallback_primary, fallback_secondary
+
+    # Parsear cada entrada histórica con su número entero de generación
+    parsed_past = []
+    for entry in past_types:
+        gen_info = entry.get('generation', {})
+        gen_str = gen_info.get('name', '') if isinstance(gen_info, dict) else str(gen_info)
+        gen_num = GENERATION_ROMAN_TO_INT.get(gen_str)
+        if gen_num is not None:
+            types_list = entry.get('types', [])
+            # PokeAPI organiza types con slot o lista de objetos
+            type_names = [
+                t['type']['name'] for t in types_list
+                if isinstance(t, dict) and 'type' in t and 'name' in t['type']
+            ]
+            if type_names:
+                parsed_past.append((gen_num, type_names))
+
+    if not parsed_past:
+        return fallback_primary, fallback_secondary
+
+    # Ordenar por generación ascendente
+    parsed_past.sort(key=lambda x: x[0])
+
+    # En PokeAPI, un past_type indica la tipología vigente HASTA esa generación (inclusive)
+    for past_gen, type_names in parsed_past:
+        if generation <= past_gen:
+            p_type = type_names[0]
+            s_type = type_names[1] if len(type_names) > 1 else None
+            return p_type, s_type
+
+    return fallback_primary, fallback_secondary
+

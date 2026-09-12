@@ -164,10 +164,10 @@
                     data-number="{{ entry.entry_number }}"
                     data-name="{{ entry.pokemon.name }}"
                     data-display="{{ entry.pokemon.display_name|lower }}"
-                    data-type1="{{ entry.pokemon.primary_type }}"
-                    data-type2="{{ entry.pokemon.secondary_type|default:'' }}"
-                    data-type1-es="{{ entry.pokemon.primary_type_es|lower }}"
-                    data-type2-es="{{ entry.pokemon.secondary_type_es|default:''|lower }}"
+                    data-type1="{{ entry.primary_type_display }}"
+                    data-type2="{{ entry.secondary_type_display|default:'' }}"
+                    data-type1-es="{{ entry.primary_type_es|lower }}"
+                    data-type2-es="{{ entry.secondary_type_es|default:''|lower }}"
                     data-caught="{% if entry.is_caught %}true{% else %}false{% endif %}"
                     data-sprite-retro="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}"
                     data-sprite-modern="{{ entry.pokemon.sprite_url }}"
@@ -200,16 +200,17 @@
                             {{ entry.pokemon.display_name }}
                         </h3>
                         <div class="flex items-center justify-center gap-1 mt-1.5">
-                            <span class="type-{{ entry.pokemon.primary_type }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
-                                {{ entry.pokemon.primary_type_es }}
+                            <span class="type-{{ entry.primary_type_display }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
+                                {{ entry.primary_type_es }}
                             </span>
-                            {% if entry.pokemon.secondary_type %}
-                            <span class="type-{{ entry.pokemon.secondary_type }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
-                                {{ entry.pokemon.secondary_type_es }}
+                            {% if entry.secondary_type_display %}
+                            <span class="type-{{ entry.secondary_type_display }} px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase shadow-sm">
+                                {{ entry.secondary_type_es }}
                             </span>
                             {% endif %}
                         </div>
                     </div>
+
 
                     <!-- Toggle Catch Action Button -->
                     <button 

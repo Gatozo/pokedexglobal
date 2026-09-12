@@ -27,10 +27,11 @@ class PokemonAdmin(admin.ModelAdmin):
 
 @admin.register(PokedexEntry)
 class PokedexEntryAdmin(admin.ModelAdmin):
-    list_display = ('pokedex', 'entry_number', 'pokemon')
-    list_filter = ('pokedex__game', 'pokedex')
+    list_display = ('pokedex', 'entry_number', 'pokemon', 'primary_type', 'secondary_type')
+    list_filter = ('pokedex__game', 'pokedex', 'primary_type')
     search_fields = ('pokemon__display_name', 'entry_number')
     ordering = ('pokedex', 'entry_number')
+
 
 
 @admin.register(UserPokemonCatch)
