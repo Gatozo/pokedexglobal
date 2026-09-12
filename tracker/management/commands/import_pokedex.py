@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from tracker.models import Game, Pokedex, PokedexEntry, Pokemon, GAME_NAMES_ES
+from tracker.utils import resolve_game_display_name, get_localized_text, safe_api_get
 
 
 class Command(BaseCommand):
@@ -48,6 +49,18 @@ class Command(BaseCommand):
             action='store_true',
             help='Fuerza la descarga de PokeAPI aunque el Pokémon ya exista en la base de datos'
         )
+        parser.add_argument(
+            '--workers',
+            type=int,
+            default=4,
+            help='Número de hilos concurrentes para peticiones (por defecto: 4)'
+        )
+        parser.add_argument(
+            '--delay',
+            type=float,
+            default=0.05,
+            help='Pausa de cortesía voluntaria en segundos entre peticiones (por defecto: 0.05)'
+        )
 
     def save_media_file(self, url, relative_path):
         """Descarga y guarda localmente un archivo en MEDIA_ROOT si no existe."""
@@ -61,17 +74,12 @@ class Command(BaseCommand):
             media_url = settings.MEDIA_URL.rstrip('/') + '/' + relative_path.replace('\\', '/')
             return media_url
 
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-        for attempt in range(3):
-            try:
-                resp = requests.get(url, headers=headers, timeout=12)
-                if resp.status_code == 200 and len(resp.content) > 0:
-                    with open(full_path, 'wb') as f:
-                        f.write(resp.content)
-                    media_url = settings.MEDIA_URL.rstrip('/') + '/' + relative_path.replace('\\', '/')
-                    return media_url
-            except Exception:
-                time.sleep(0.3)
+        resp = safe_api_get(url, timeout=12, pacing_delay=0.0)
+        if resp and resp.status_code == 200 and len(resp.content) > 0:
+            with open(full_path, 'wb') as f:
+                f.write(resp.content)
+            media_url = settings.MEDIA_URL.rstrip('/') + '/' + relative_path.replace('\\', '/')
+            return media_url
 
         return url
 
@@ -110,7 +118,7 @@ class Command(BaseCommand):
 
         return None
 
-    def fetch_pokemon_details(self, entry, game_slug, generation, existing_pokemon=None, force_refresh=False):
+    def fetch_pokemon_details(self, entry, game_slug, generation, existing_pokemon=None, force_refresh=False, pacing_delay=0.05):
         entry_number = entry['entry_number']
         species_name = entry['pokemon_species']['name']
         species_url = entry['pokemon_species']['url']
@@ -123,19 +131,9 @@ class Command(BaseCommand):
             data = existing_pokemon.raw_data
             is_from_cache = True
         else:
-            data = None
             is_from_cache = False
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-            for attempt in range(3):
-                try:
-                    resp = requests.get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', headers=headers, timeout=12)
-                    if resp.status_code == 200:
-                        data = resp.json()
-                        break
-                    elif resp.status_code == 429:
-                        time.sleep(1.5 * (attempt + 1))
-                except Exception as e:
-                    time.sleep(0.4)
+            resp = safe_api_get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', pacing_delay=pacing_delay)
+            data = resp.json() if resp and resp.status_code == 200 else None
 
         if data:
             try:
@@ -207,21 +205,22 @@ class Command(BaseCommand):
         pokedex_slug = options['pokedex']
         pokedex_name = options['pokedex_name']
         force_refresh = options.get('force_refresh', False)
+        workers = options.get('workers', 4)
+        pacing_delay = options.get('delay', 0.05)
 
         if not game_name:
-            if game_slug in GAME_NAMES_ES:
-                game_name = GAME_NAMES_ES[game_slug]
-            else:
-                try:
-                    v_resp = requests.get(f'https://pokeapi.co/api/v2/version/{game_slug}', timeout=5)
-                    if v_resp.status_code == 200:
-                        es_names = [n['name'] for n in v_resp.json().get('names', []) if n.get('language', {}).get('name') == 'es']
-                        if es_names:
-                            game_name = f"Pokémon {es_names[0]}"
-                except Exception:
-                    pass
-                if not game_name:
-                    game_name = f"Pokémon {game_slug.replace('-', ' ').title()}"
+            version_names_data = None
+            if game_slug not in GAME_NAMES_ES:
+                v_resp = safe_api_get(f'https://pokeapi.co/api/v2/version/{game_slug}', timeout=5, pacing_delay=0.0)
+                if v_resp and v_resp.status_code == 200:
+                    version_names_data = v_resp.json().get('names', [])
+
+            game_name = resolve_game_display_name(
+                game_slug=game_slug,
+                custom_name='',
+                version_names_data=version_names_data,
+                game_translations_map=GAME_NAMES_ES
+            )
 
         self.stdout.write(f"Iniciando importación para: {game_name} (Pokédex: {pokedex_name})...")
 
@@ -259,13 +258,11 @@ class Command(BaseCommand):
         pokedex_url = f"https://pokeapi.co/api/v2/pokedex/{pokedex_slug}/"
         self.stdout.write(f"Consultando PokeAPI en {pokedex_url}...")
 
-        try:
-            resp = requests.get(pokedex_url, timeout=15)
-            resp.raise_for_status()
-            pokeapi_data = resp.json()
-        except requests.RequestException as e:
-            self.stderr.write(self.style.ERROR(f"Error al conectar con PokeAPI: {e}"))
+        resp = safe_api_get(pokedex_url, timeout=15, pacing_delay=0.0)
+        if not resp or resp.status_code != 200:
+            self.stderr.write(self.style.ERROR(f"Error al conectar con PokeAPI en {pokedex_url}"))
             return
+        pokeapi_data = resp.json()
 
         entries = pokeapi_data.get('pokemon_entries', [])
         total_entries = len(entries)
@@ -293,17 +290,17 @@ class Command(BaseCommand):
                 )
             )
 
-        # 5. Descargar/reutilizar detalles en paralelo (con 5 workers controlados)
-        self.stdout.write("Procesando Pokémon (extrayendo sprites locales o descargando nuevos)...")
+        # 5. Descargar/reutilizar detalles en paralelo (con workers configurados y pacing delay)
+        self.stdout.write(f"Procesando Pokémon (workers: {workers}, delay: {pacing_delay}s)...")
         detailed_pokemon = []
-        with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
             future_to_entry = {}
             for entry in entries:
                 species_url = entry.get('pokemon_species', {}).get('url', '')
                 nid = int(species_url.rstrip('/').split('/')[-1]) if species_url else 0
                 existing_p = existing_pokemon_map.get(nid)
                 future = executor.submit(
-                    self.fetch_pokemon_details, entry, game_slug, generation, existing_p, force_refresh
+                    self.fetch_pokemon_details, entry, game_slug, generation, existing_p, force_refresh, pacing_delay
                 )
                 future_to_entry[future] = entry
 

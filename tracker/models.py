@@ -74,6 +74,9 @@ TYPE_NAMES_ES = {
 }
 
 
+from .utils import resolve_game_display_name
+
+
 class Game(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
@@ -88,10 +91,12 @@ class Game(models.Model):
 
     @property
     def display_name(self):
-        """Devuelve el nombre oficial en español del juego."""
-        if self.slug in GAME_NAMES_ES:
-            return GAME_NAMES_ES[self.slug]
-        return self.name
+        """Devuelve el nombre oficial del juego con fallback idiomático (es -> custom/en -> slug)."""
+        return resolve_game_display_name(
+            game_slug=self.slug,
+            custom_name=self.name,
+            game_translations_map=GAME_NAMES_ES
+        )
 
     def __str__(self):
         return f"{self.display_name} (Gen {self.generation})"

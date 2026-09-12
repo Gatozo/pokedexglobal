@@ -1,9 +1,8 @@
-import time
 import concurrent.futures
-import requests
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from tracker.models import Pokemon
+from tracker.utils import safe_api_get
 
 
 class Command(BaseCommand):
@@ -21,23 +20,23 @@ class Command(BaseCommand):
             default=4,
             help='Número de hilos concurrentes para peticiones a PokeAPI (por defecto: 4)'
         )
+        parser.add_argument(
+            '--delay',
+            type=float,
+            default=0.05,
+            help='Pausa de cortesía voluntaria en segundos entre peticiones (por defecto: 0.05)'
+        )
 
-    def fetch_raw_data(self, pokemon_id, national_number):
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-        for attempt in range(3):
-            try:
-                resp = requests.get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', headers=headers, timeout=12)
-                if resp.status_code == 200:
-                    return pokemon_id, resp.json()
-                elif resp.status_code == 429:
-                    time.sleep(1.5 * (attempt + 1))
-            except Exception:
-                time.sleep(0.4)
+    def fetch_raw_data(self, pokemon_id, national_number, pacing_delay=0.05):
+        resp = safe_api_get(f'https://pokeapi.co/api/v2/pokemon/{national_number}', pacing_delay=pacing_delay)
+        if resp and resp.status_code == 200:
+            return pokemon_id, resp.json()
         return pokemon_id, None
 
     def handle(self, *args, **options):
         update_all = options['all']
         workers = options['workers']
+        pacing_delay = options.get('delay', 0.05)
 
         if update_all:
             queryset = Pokemon.objects.all().order_by('national_number')
@@ -50,14 +49,14 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS("Todos los Pokémon ya cuentan con su raw_data sincronizado."))
             return
 
-        self.stdout.write(f"Iniciando sincronización de raw_data para {total} Pokémon (workers: {workers})...")
+        self.stdout.write(f"Iniciando sincronización de raw_data para {total} Pokémon (workers: {workers}, delay: {pacing_delay}s)...")
 
         targets = list(queryset.values_list('id', 'national_number'))
         results = []
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
             future_to_poke = {
-                executor.submit(self.fetch_raw_data, p_id, num): (p_id, num)
+                executor.submit(self.fetch_raw_data, p_id, num, pacing_delay): (p_id, num)
                 for p_id, num in targets
             }
 
