@@ -18,6 +18,11 @@ class Game(models.Model):
     def __str__(self):
         return f"{self.name} (Gen {self.generation})"
 
+    @property
+    def has_retro_sprites(self):
+        """Hasta la Gen 5 (Blanco/Negro 2) los juegos usaban sprites 2D."""
+        return self.generation <= 5
+
 
 class Pokedex(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="pokedexes")
@@ -62,6 +67,7 @@ class PokedexEntry(models.Model):
     pokedex = models.ForeignKey(Pokedex, on_delete=models.CASCADE, related_name="entries")
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="pokedex_appearances")
     entry_number = models.PositiveIntegerField()
+    game_sprite_url = models.URLField(max_length=500, blank=True, null=True, help_text="Sprite específico de la generación/juego")
 
     class Meta:
         verbose_name = "Entrada de Pokédex"
