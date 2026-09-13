@@ -395,4 +395,37 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, 'Una rara semilla fue plantada')
         self.assertContains(response, 'Pueblo Paleta')
 
+    def test_custom_override_protection_in_sync(self):
+        from unittest.mock import patch
+        from django.core.management import call_command
+
+        # Marcar entrada como personalizada
+        self.entry.flavor_text = "Descripción manual protegida"
+        self.entry.obtaining_info = {"type": "custom", "summary": "Obtención personalizada"}
+        self.entry.is_custom_override = True
+        self.entry.save()
+
+        # Mock de descarga de PokeAPI para evitar peticiones de red
+        mock_api_data = {
+            "pokemon_id": self.pokemon.id,
+            "national_number": 1,
+            "name": "bulbasaur",
+            "species_data": {"flavor_text_entries": [], "genera": []},
+            "encounters_data": [],
+            "evo_chain_url": None,
+        }
+
+        with patch("tracker.management.commands.sync_pokemon_details.Command.fetch_pokemon_api_data", return_value=mock_api_data):
+            # Ejecutar sync normal: debe respetar la entrada personalizada
+            call_command("sync_pokemon_details", game="red", workers=1, delay=0)
+            self.entry.refresh_from_db()
+            self.assertEqual(self.entry.flavor_text, "Descripción manual protegida")
+            self.assertEqual(self.entry.obtaining_info["summary"], "Obtención personalizada")
+
+            # Ejecutar sync con --force-all: debe sobreescribir la entrada
+            call_command("sync_pokemon_details", game="red", workers=1, delay=0, force_all=True)
+            self.entry.refresh_from_db()
+            self.assertNotEqual(self.entry.flavor_text, "Descripción manual protegida")
+
+
 

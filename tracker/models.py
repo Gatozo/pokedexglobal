@@ -138,6 +138,8 @@ class Pokemon(models.Model):
     category = models.CharField(max_length=100, blank=True, help_text="Categoría o especie en español (ej: Pokémon Semilla)")
     species_data = models.JSONField(default=dict, blank=True, help_text="Datos crudos de pokemon-species de PokeAPI")
     raw_data = models.JSONField(default=dict, blank=True)
+    encounters_data = models.JSONField(default=list, blank=True, help_text="Datos crudos de encuentros de PokeAPI")
+    evolution_chain_data = models.JSONField(default=dict, blank=True, help_text="Datos crudos de la cadena evolutiva de PokeAPI")
 
     class Meta:
         verbose_name = "Pokémon"
@@ -167,6 +169,8 @@ class PokedexEntry(models.Model):
     secondary_type = models.CharField(max_length=30, blank=True, null=True, help_text="Tipo secundario en la generación de este juego")
     flavor_text = models.TextField(blank=True, help_text="Descripción de la Pokédex específica de este juego")
     obtaining_info = models.JSONField(default=dict, blank=True, help_text="Información detallada de cómo obtenerlo en este juego")
+    game_data = models.JSONField(default=dict, blank=True, help_text="Datos completos y enriquecidos de este juego (stats Gen 1, movimientos, ratio de captura, etc.)")
+    is_custom_override = models.BooleanField(default=False, help_text="Si está activo, las sincronizaciones automáticas no sobreescribirán esta entrada")
 
     class Meta:
         verbose_name = "Entrada de Pokédex"
@@ -249,4 +253,30 @@ class UserPokemonCatch(models.Model):
         self.is_caught = caught
         self.caught_at = timezone.now() if caught else None
         self.save(update_fields=['is_caught', 'caught_at'])
+
+
+class Move(models.Model):
+    name = models.CharField(max_length=100, unique=True, db_index=True)
+    display_name = models.CharField(max_length=100, help_text="Nombre oficial en español")
+    generation = models.PositiveSmallIntegerField(default=1)
+    type = models.CharField(max_length=30)
+    power = models.PositiveIntegerField(null=True, blank=True)
+    accuracy = models.PositiveIntegerField(null=True, blank=True)
+    pp = models.PositiveIntegerField(null=True, blank=True)
+    damage_class = models.CharField(max_length=30, blank=True)
+    effect_description = models.TextField(blank=True, help_text="Descripción del efecto en español")
+    raw_data = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        verbose_name = "Movimiento"
+        verbose_name_plural = "Movimientos"
+        ordering = ['id']
+
+    def __str__(self):
+        return f"{self.display_name} ({self.type_es})"
+
+    @property
+    def type_es(self):
+        return TYPE_NAMES_ES.get(self.type.lower(), self.type.capitalize())
+
 

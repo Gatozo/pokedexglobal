@@ -742,7 +742,7 @@ def resolve_obtaining_info(
                 "badge_label": badge_label,
                 "badge_color": "emerald",
                 "summary": summary_text,
-                "locations": game_locations[:10],
+                "locations": game_locations,
                 "evolution_info": evolution_info
             }
 
@@ -766,4 +766,122 @@ def resolve_obtaining_info(
         "evolution_info": None,
         "locations": []
     }
+
+
+GAME_TO_VERSION_GROUP: Dict[str, str] = {
+    'red': 'red-blue',
+    'blue': 'red-blue',
+    'yellow': 'yellow',
+    'gold': 'gold-silver',
+    'silver': 'gold-silver',
+    'crystal': 'crystal',
+    'ruby': 'ruby-sapphire',
+    'sapphire': 'ruby-sapphire',
+    'emerald': 'emerald',
+    'firered': 'firered-leafgreen',
+    'leafgreen': 'firered-leafgreen',
+}
+
+
+def extract_game_specific_data(
+    raw_pokemon_data: Dict[str, Any],
+    species_data: Dict[str, Any],
+    game_slug: str,
+    generation: int = 1,
+    moves_map: Optional[Dict[str, Dict[str, Any]]] = None
+) -> Dict[str, Any]:
+    """
+    Extrae y estructura todos los datos específicos del juego:
+    - Movimientos por nivel y MT en la versión del juego.
+    - Estadísticas base históricas de la generación.
+    - Métricas biológicas y de captura (catch rate, gender rate, base happiness, etc.).
+    """
+    version_group = GAME_TO_VERSION_GROUP.get(game_slug, game_slug)
+    
+    # 1. Movimientos en este version_group
+    raw_moves = raw_pokemon_data.get("moves", [])
+    level_up_moves = []
+    machine_moves = []
+    
+    for m in raw_moves:
+        move_name = m.get("move", {}).get("name", "")
+        m_info = (moves_map.get(move_name) if moves_map else {}) or {}
+        
+        for vgd in m.get("version_group_details", []):
+            if vgd.get("version_group", {}).get("name") == version_group:
+                method = vgd.get("move_learn_method", {}).get("name")
+                level = vgd.get("level_learned_at", 0)
+                
+                move_payload = {
+                    "name": move_name,
+                    "display_name": m_info.get("display_name", move_name.replace("-", " ").title()),
+                    "type": m_info.get("type", "normal"),
+                    "power": m_info.get("power"),
+                    "accuracy": m_info.get("accuracy"),
+                    "pp": m_info.get("pp"),
+                    "damage_class": m_info.get("damage_class", ""),
+                    "effect": m_info.get("effect_description", "")
+                }
+                
+                if method == "level-up":
+                    move_payload["level"] = level
+                    level_up_moves.append(move_payload)
+                elif method == "machine":
+                    machine_moves.append(move_payload)
+
+    level_up_moves.sort(key=lambda x: (x.get("level", 0), x.get("display_name", "")))
+    machine_moves.sort(key=lambda x: x.get("display_name", ""))
+    
+    # 2. Estadísticas de la generación
+    stats_dict = {s.get("stat", {}).get("name"): s.get("base_stat") for s in raw_pokemon_data.get("stats", [])}
+    if generation == 1:
+        special = None
+        for ps in raw_pokemon_data.get("past_stats", []):
+            if ps.get("generation", {}).get("name") == "generation-i":
+                for s in ps.get("stats", []):
+                    if s.get("stat", {}).get("name") == "special":
+                        special = s.get("base_stat")
+        if special is None:
+            special = stats_dict.get("special-attack", 0)
+            
+        gen_stats = {
+            "hp": stats_dict.get("hp", 0),
+            "attack": stats_dict.get("attack", 0),
+            "defense": stats_dict.get("defense", 0),
+            "special": special,
+            "speed": stats_dict.get("speed", 0),
+            "total": stats_dict.get("hp", 0) + stats_dict.get("attack", 0) + stats_dict.get("defense", 0) + special + stats_dict.get("speed", 0)
+        }
+    else:
+        gen_stats = {
+            "hp": stats_dict.get("hp", 0),
+            "attack": stats_dict.get("attack", 0),
+            "defense": stats_dict.get("defense", 0),
+            "special_attack": stats_dict.get("special-attack", 0),
+            "special_defense": stats_dict.get("special-defense", 0),
+            "speed": stats_dict.get("speed", 0),
+            "total": sum(stats_dict.values())
+        }
+
+    # 3. Métricas biológicas y de especie
+    species_metrics = {
+        "capture_rate": species_data.get("capture_rate"),
+        "base_happiness": species_data.get("base_happiness"),
+        "gender_rate": species_data.get("gender_rate"),
+        "growth_rate": species_data.get("growth_rate", {}).get("name") if isinstance(species_data.get("growth_rate"), dict) else species_data.get("growth_rate"),
+        "egg_groups": [eg.get("name") for eg in species_data.get("egg_groups", []) if isinstance(eg, dict)],
+        "habitat": species_data.get("habitat", {}).get("name") if isinstance(species_data.get("habitat"), dict) else species_data.get("habitat"),
+    }
+
+    return {
+        "version_group": version_group,
+        "generation": generation,
+        "stats": gen_stats,
+        "species_metrics": species_metrics,
+        "moves": {
+            "level_up": level_up_moves,
+            "machine": machine_moves
+        }
+    }
+
 
