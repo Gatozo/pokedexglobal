@@ -135,6 +135,8 @@ class Pokemon(models.Model):
     secondary_type = models.CharField(max_length=30, blank=True, null=True)
     height = models.PositiveIntegerField(null=True, blank=True, help_text="Altura en decímetros")
     weight = models.PositiveIntegerField(null=True, blank=True, help_text="Peso en hectogramos")
+    category = models.CharField(max_length=100, blank=True, help_text="Categoría o especie en español (ej: Pokémon Semilla)")
+    species_data = models.JSONField(default=dict, blank=True, help_text="Datos crudos de pokemon-species de PokeAPI")
     raw_data = models.JSONField(default=dict, blank=True)
 
     class Meta:
@@ -163,6 +165,8 @@ class PokedexEntry(models.Model):
     game_sprite_url = models.URLField(max_length=500, blank=True, null=True, help_text="Sprite específico de la generación/juego")
     primary_type = models.CharField(max_length=30, blank=True, null=True, help_text="Tipo primario en la generación de este juego")
     secondary_type = models.CharField(max_length=30, blank=True, null=True, help_text="Tipo secundario en la generación de este juego")
+    flavor_text = models.TextField(blank=True, help_text="Descripción de la Pokédex específica de este juego")
+    obtaining_info = models.JSONField(default=dict, blank=True, help_text="Información detallada de cómo obtenerlo en este juego")
 
     class Meta:
         verbose_name = "Entrada de Pokédex"
@@ -195,6 +199,28 @@ class PokedexEntry(models.Model):
     def secondary_type_es(self):
         t = self.secondary_type_display
         return TYPE_NAMES_ES.get(t.lower(), t.capitalize()) if t else None
+
+    @property
+    def modal_data_json(self):
+        """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
+        import json
+        return json.dumps({
+            "id": self.id,
+            "number": f"{self.entry_number:03d}",
+            "name": self.pokemon.display_name,
+            "category": self.pokemon.category or "Pokémon",
+            "primary_type": self.primary_type_display,
+            "primary_type_es": self.primary_type_es,
+            "secondary_type": self.secondary_type_display or "",
+            "secondary_type_es": self.secondary_type_es or "",
+            "sprite_retro": self.game_sprite_url or self.pokemon.sprite_url,
+            "sprite_modern": self.pokemon.sprite_url,
+            "height": self.pokemon.height or 0,
+            "weight": self.pokemon.weight or 0,
+            "flavor_text": self.flavor_text or "",
+            "obtaining": self.obtaining_info or {},
+            "is_caught": getattr(self, "is_caught", False)
+        }, ensure_ascii=False)
 
 
 

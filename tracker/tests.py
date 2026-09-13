@@ -230,4 +230,93 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, 'data-type1-es="normal"')
         self.assertContains(response, 'type-normal')
 
+    def test_resolve_flavor_text_canonical_and_fallback(self):
+        from .utils import resolve_flavor_text
+
+        # 1. Resolver desde archivo curado red_es.json
+        flavor = resolve_flavor_text(1, "red")
+        self.assertIn("Una rara semilla", flavor)
+
+        # 2. Resolver con fallback a PokeAPI species_data
+        mock_species = {
+            "flavor_text_entries": [
+                {"flavor_text": "Texto en español de prueba", "language": {"name": "es"}, "version": {"name": "gold"}},
+                {"flavor_text": "English test text", "language": {"name": "en"}, "version": {"name": "silver"}}
+            ]
+        }
+        res_es = resolve_flavor_text(999, "gold", species_data=mock_species)
+        self.assertEqual(res_es, "Texto en español de prueba")
+
+        res_en = resolve_flavor_text(999, "silver", species_data=mock_species)
+        self.assertEqual(res_en, "English test text")
+
+    def test_resolve_obtaining_info(self):
+        from .utils import resolve_obtaining_info
+
+        # 1. Regalo en Pueblo Paleta (Bulbasaur)
+        mock_encounters_gift = [
+            {
+                "location_area": {"name": "pallet-town-area"},
+                "version_details": [
+                    {"version": {"name": "red"}, "encounter_details": [{"method": {"name": "gift"}}]}
+                ]
+            }
+        ]
+        res_gift = resolve_obtaining_info(1, "bulbasaur", "red", encounters_data=mock_encounters_gift)
+        self.assertEqual(res_gift["type"], "gift")
+        self.assertEqual(res_gift["badge_label"], "Regalo / Inicial")
+        self.assertIn("Pueblo Paleta", res_gift["summary"])
+
+        # 2. Evolución (Ivysaur)
+        mock_chain = {
+            "chain": {
+                "species": {"name": "bulbasaur"},
+                "evolves_to": [
+                    {
+                        "species": {"name": "ivysaur"},
+                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 16}],
+                        "evolves_to": []
+                    }
+                ]
+            }
+        }
+        res_evo = resolve_obtaining_info(2, "ivysaur", "red", encounters_data=[], evolution_chain_data=mock_chain)
+        self.assertEqual(res_evo["type"], "evolution")
+        self.assertEqual(res_evo["badge_label"], "Evolución")
+        self.assertIn("Nivel 16", res_evo["summary"])
+
+        # 3. Exclusivo de versión (Sandshrew #27 en Rojo)
+        res_exclusive = resolve_obtaining_info(27, "sandshrew", "red")
+        self.assertEqual(res_exclusive["type"], "trade")
+        self.assertEqual(res_exclusive["badge_label"], "Intercambio")
+
+    def test_comic_modal_rendering_in_template(self):
+        self.pokemon.category = "Pokémon Semilla"
+        self.pokemon.save()
+        self.entry.flavor_text = "Una rara semilla fue plantada en su espalda al nacer."
+        self.entry.obtaining_info = {
+            "type": "gift",
+            "badge_label": "Regalo / Inicial",
+            "badge_color": "emerald",
+            "summary": "Entregado como regalo en Pueblo Paleta",
+            "locations": [{"area": "Pueblo Paleta", "method": "Regalo / Inicial"}]
+        }
+        self.entry.save()
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+        # Verificar presencia del contenedor del modal estilo cómic
+        self.assertContains(response, 'id="comic-modal"')
+        self.assertContains(response, 'comic-panel')
+        self.assertContains(response, 'comic-bubble')
+        self.assertContains(response, 'openPokemonModal(')
+
+        # Verificar datos embebidos en el script JSON
+        self.assertContains(response, f'id="entry-data-{self.entry.id}"')
+        self.assertContains(response, 'Pokémon Semilla')
+        self.assertContains(response, 'Una rara semilla fue plantada')
+        self.assertContains(response, 'Pueblo Paleta')
+
 
