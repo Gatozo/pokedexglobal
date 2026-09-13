@@ -234,9 +234,23 @@
                         <span class="text-xs font-mono font-bold text-slate-400 group-hover:text-slate-200">
                             #{{ entry.entry_number|stringformat:"03d" }}
                         </span>
-                        <span class="caught-badge px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                            ✓ Atrapado
-                        </span>
+                        <div class="flex items-center gap-1">
+                            {% if entry.cry_url %}
+                            <button 
+                                type="button" 
+                                title="Escuchar sonido retro de Game Boy"
+                                onclick="event.stopPropagation(); playPokemonCry('{{ entry.cry_url }}', this)"
+                                class="p-1 rounded text-slate-500 hover:text-amber-400 hover:bg-slate-800 transition-all active:scale-90 flex items-center justify-center"
+                            >
+                                <svg class="w-3.5 h-3.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                                </svg>
+                            </button>
+                            {% endif %}
+                            <span class="caught-badge px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                ✓ Atrapado
+                            </span>
+                        </div>
                     </div>
 
                     <!-- Pokemon Sprite / Artwork -->
@@ -306,6 +320,17 @@
                     <h3 id="modal-pokemon-title" class="text-white font-black text-lg sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a] flex items-center gap-1.5">
                         <span id="modal-pokemon-number" class="text-amber-300 font-mono">#001</span>
                         <span id="modal-pokemon-name">BULBASAUR</span>
+                        <button 
+                            type="button" 
+                            id="modal-cry-btn"
+                            title="Escuchar sonido retro de Game Boy" 
+                            onclick="playModalCry(this)"
+                            class="ml-1 p-1 rounded-md text-amber-300 hover:text-white hover:bg-slate-950/40 transition-all active:scale-90 flex items-center justify-center"
+                        >
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                            </svg>
+                        </button>
                     </h3>
                 </div>
 
@@ -613,6 +638,39 @@
             }
         }
 
+        /* ===== Audio Cry Player ===== */
+        let currentCryAudio = null;
+
+        function playPokemonCry(cryUrl, btnElem) {
+            if (!cryUrl) return;
+            try {
+                if (currentCryAudio) {
+                    currentCryAudio.pause();
+                    currentCryAudio.currentTime = 0;
+                }
+                currentCryAudio = new Audio(cryUrl);
+                currentCryAudio.volume = 0.6;
+                currentCryAudio.play().catch(err => console.log("Audio play error:", err));
+
+                if (btnElem) {
+                    btnElem.classList.add('text-amber-400', 'scale-125');
+                    setTimeout(() => {
+                        btnElem.classList.remove('text-amber-400', 'scale-125');
+                    }, 400);
+                }
+            } catch (err) {
+                console.error("Error al reproducir audio:", err);
+            }
+        }
+
+        let activeModalCryUrl = '';
+
+        function playModalCry(btnElem) {
+            if (activeModalCryUrl) {
+                playPokemonCry(activeModalCryUrl, btnElem);
+            }
+        }
+
         /* ===== Comic Book Modal Controller ===== */
         function openPokemonModal(entryId) {
             const dataScript = document.getElementById(`entry-data-${entryId}`);
@@ -627,6 +685,15 @@
             }
 
             activeModalEntryId = entryId;
+            activeModalCryUrl = data.cry_url || '';
+            const modalCryBtn = document.getElementById('modal-cry-btn');
+            if (modalCryBtn) {
+                if (activeModalCryUrl) {
+                    modalCryBtn.classList.remove('hidden');
+                } else {
+                    modalCryBtn.classList.add('hidden');
+                }
+            }
 
             // 1. Textos principales
             document.getElementById('modal-pokemon-number').textContent = `#${data.number}`;

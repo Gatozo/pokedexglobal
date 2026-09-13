@@ -159,6 +159,11 @@ class Pokemon(models.Model):
             return TYPE_NAMES_ES.get(self.secondary_type.lower(), self.secondary_type.capitalize())
         return None
 
+    @property
+    def cry_legacy_url(self):
+        cries = self.raw_data.get('cries', {})
+        return cries.get('legacy') or cries.get('latest') or ""
+
 
 class PokedexEntry(models.Model):
     pokedex = models.ForeignKey(Pokedex, on_delete=models.CASCADE, related_name="entries")
@@ -205,6 +210,14 @@ class PokedexEntry(models.Model):
         return TYPE_NAMES_ES.get(t.lower(), t.capitalize()) if t else None
 
     @property
+    def cry_url(self):
+        """Retorna el grito del Pokémon. Para juegos retro (Gen <= 5), usa el sonido clásico en 8-bits."""
+        cries = self.pokemon.raw_data.get('cries', {})
+        if self.pokedex.game.generation <= 5:
+            return cries.get('legacy') or cries.get('latest') or ""
+        return cries.get('latest') or cries.get('legacy') or ""
+
+    @property
     def modal_data_json(self):
         """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
         import json
@@ -223,7 +236,8 @@ class PokedexEntry(models.Model):
             "weight": self.pokemon.weight or 0,
             "flavor_text": self.flavor_text or "",
             "obtaining": self.obtaining_info or {},
-            "is_caught": getattr(self, "is_caught", False)
+            "is_caught": getattr(self, "is_caught", False),
+            "cry_url": self.cry_url,
         }, ensure_ascii=False)
 
 
