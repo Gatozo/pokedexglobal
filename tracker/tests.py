@@ -253,53 +253,100 @@ class PokedexTrackerTests(TestCase):
     def test_resolve_obtaining_info(self):
         from .utils import resolve_obtaining_info
 
-        # 1. Regalo en Pueblo Paleta (Bulbasaur)
+        # 1. Pokémon Inicial oficial (Bulbasaur en Rojo)
+        res_starter = resolve_obtaining_info(1, "bulbasaur", "red")
+        self.assertEqual(res_starter["type"], "starter")
+        self.assertEqual(res_starter["badge_label"], "Inicial")
+        self.assertIn("Laboratorio del Profesor Oak", res_starter["summary"])
+        self.assertEqual(res_starter["locations"][0]["method"], "Elección inicial")
+
+        # 2. Regalo genérico (no inicial)
         mock_encounters_gift = [
             {
-                "location_area": {"name": "pallet-town-area"},
+                "location_area": {"name": "saffron-city-area"},
                 "version_details": [
-                    {"version": {"name": "red"}, "encounter_details": [{"method": {"name": "gift"}}]}
+                    {"version": {"name": "custom_ver"}, "encounter_details": [{"method": {"name": "gift"}}]}
                 ]
             }
         ]
-        res_gift = resolve_obtaining_info(1, "bulbasaur", "red", encounters_data=mock_encounters_gift)
+        res_gift = resolve_obtaining_info(999, "gift_mon", "custom_ver", encounters_data=mock_encounters_gift)
         self.assertEqual(res_gift["type"], "gift")
-        self.assertEqual(res_gift["badge_label"], "Regalo / Inicial")
-        self.assertIn("Pueblo Paleta", res_gift["summary"])
+        self.assertEqual(res_gift["badge_label"], "Regalo")
 
-        # 2. Evolución (Ivysaur)
+        # 3. Evolución (Ivysaur)
         mock_chain = {
             "chain": {
-                "species": {"name": "bulbasaur"},
+                "species": {"name": "bulbasaur", "url": "https://pokeapi.co/api/v2/pokemon-species/1/"},
                 "evolves_to": [
                     {
-                        "species": {"name": "ivysaur"},
+                        "species": {"name": "ivysaur", "url": "https://pokeapi.co/api/v2/pokemon-species/2/"},
                         "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 16}],
                         "evolves_to": []
                     }
                 ]
             }
         }
-        res_evo = resolve_obtaining_info(2, "ivysaur", "red", encounters_data=[], evolution_chain_data=mock_chain)
+        res_evo = resolve_obtaining_info(2, "ivysaur", "red", encounters_data=[], evolution_chain_data=mock_chain, generation=1)
         self.assertEqual(res_evo["type"], "evolution")
         self.assertEqual(res_evo["badge_label"], "Evolución")
         self.assertIn("Nivel 16", res_evo["summary"])
 
-        # 3. Exclusivo de versión (Sandshrew #27 en Rojo)
+        # 4. Filtro histórico generacional: Hitmonlee en Gen 1 no debe evolucionar de Tyrogue (#236)
+        mock_tyrogue_chain = {
+            "chain": {
+                "species": {"name": "tyrogue", "url": "https://pokeapi.co/api/v2/pokemon-species/236/"},
+                "evolves_to": [
+                    {
+                        "species": {"name": "hitmonlee", "url": "https://pokeapi.co/api/v2/pokemon-species/106/"},
+                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 20}],
+                        "evolves_to": []
+                    }
+                ]
+            }
+        }
+        res_gen1_hitmonlee = resolve_obtaining_info(106, "hitmonlee", "red", evolution_chain_data=mock_tyrogue_chain, generation=1)
+        self.assertEqual(res_gen1_hitmonlee["badge_label"], "Premio Dojo")
+        self.assertIsNone(res_gen1_hitmonlee.get("evolution_info"))
+
+        # En Gen 2, Tyrogue (#236 <= 251) sí es válido
+        res_gen2_hitmonlee = resolve_obtaining_info(106, "hitmonlee", "gold", evolution_chain_data=mock_tyrogue_chain, generation=2)
+        self.assertIsNotNone(res_gen2_hitmonlee.get("evolution_info"))
+        self.assertEqual(res_gen2_hitmonlee["evolution_info"]["from"], "Tyrogue")
+
+        # 5. Exclusivo de versión (Sandshrew #27 en Rojo)
         res_exclusive = resolve_obtaining_info(27, "sandshrew", "red")
         self.assertEqual(res_exclusive["type"], "trade")
         self.assertEqual(res_exclusive["badge_label"], "Intercambio")
+
+    def test_location_cleaning_and_biome_encounter_methods(self):
+        from .utils import clean_location_name, resolve_encounter_method_label
+
+        # 1. Normalización de rutas marítimas a nombres canónicos (Ruta 19, 20, 21)
+        self.assertEqual(clean_location_name("kanto-sea-route-19-area"), "Ruta 19")
+        self.assertEqual(clean_location_name("kanto-sea-route-20-area"), "Ruta 20")
+        self.assertEqual(clean_location_name("kanto-sea-route-21-area"), "Ruta 21")
+        self.assertEqual(clean_location_name("kanto-route-1-area"), "Ruta 1")
+
+        # 2. Contextualización del método 'walk' por bioma (Opción A: Hierba alta, Cueva, Interior)
+        self.assertEqual(resolve_encounter_method_label("walk", "kanto-route-1-area"), "Hierba alta")
+        self.assertEqual(resolve_encounter_method_label("walk", "viridian-forest-area"), "Hierba alta")
+        self.assertEqual(resolve_encounter_method_label("walk", "seafoam-islands-b1f"), "Cueva")
+        self.assertEqual(resolve_encounter_method_label("walk", "mt-moon-1f"), "Cueva")
+        self.assertEqual(resolve_encounter_method_label("walk", "cerulean-cave-1f"), "Cueva")
+        self.assertEqual(resolve_encounter_method_label("walk", "pokemon-tower-3f"), "Interior")
+        self.assertEqual(resolve_encounter_method_label("walk", "pokemon-mansion-1f"), "Interior")
+        self.assertEqual(resolve_encounter_method_label("walk", "power-plant-area"), "Interior")
 
     def test_comic_modal_rendering_in_template(self):
         self.pokemon.category = "Pokémon Semilla"
         self.pokemon.save()
         self.entry.flavor_text = "Una rara semilla fue plantada en su espalda al nacer."
         self.entry.obtaining_info = {
-            "type": "gift",
-            "badge_label": "Regalo / Inicial",
+            "type": "starter",
+            "badge_label": "Inicial",
             "badge_color": "emerald",
-            "summary": "Entregado como regalo en Pueblo Paleta",
-            "locations": [{"area": "Pueblo Paleta", "method": "Regalo / Inicial"}]
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
         }
         self.entry.save()
 

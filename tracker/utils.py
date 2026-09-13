@@ -289,7 +289,7 @@ ENCOUNTER_METHODS_ES = {
     'old-rod': 'Caña Vieja',
     'good-rod': 'Caña Buena',
     'super-rod': 'Supercaña',
-    'gift': 'Regalo / Inicial',
+    'gift': 'Regalo',
     'only-one': 'Encuentro Especial Único',
     'headbutt': 'Golpe Cabeza',
 }
@@ -303,44 +303,123 @@ EVOLUTION_ITEMS_ES = {
     'sun-stone': 'Piedra Solar',
 }
 
-RED_SPECIAL_CASES = {
+# Límite superior de número nacional de Pokédex introducido en cada generación
+MAX_NATIONAL_NUMBER_BY_GEN = {
+    1: 151,
+    2: 251,
+    3: 386,
+    4: 493,
+    5: 649,
+    6: 721,
+    7: 809,
+    8: 905,
+    9: 1025,
+}
+
+# Catálogo canónico de Pokémon Iniciales aislados por juego
+STARTERS_BY_GAME: Dict[str, Dict[int, Dict[str, Any]]] = {
+    'red': {
+        1: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+        4: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+        7: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+    },
+    'blue': {
+        1: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+        4: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+        7: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+    },
+    'yellow': {
+        25: {
+            "type": "starter",
+            "badge_label": "Inicial",
+            "badge_color": "emerald",
+            "summary": "Pokémon inicial entregado por el Profesor Oak en Pueblo Paleta.",
+            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
+        },
+    },
+}
+
+RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     # Exclusivos de Pokémon Azul (no aparecen salvajes en Rojo)
-    27: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
-    28: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Sandshrew (Exclusivo de Pokémon Azul)"},
-    37: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
-    38: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Vulpix (Exclusivo de Pokémon Azul)"},
-    52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
-    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul)"},
-    69: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
-    70: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Bellsprout (Exclusivo de Pokémon Azul)"},
-    71: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Weepinbell (Exclusivo de Pokémon Azul)"},
-    126: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
-    127: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)"},
+    27: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    28: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Sandshrew (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    37: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    38: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Vulpix (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    69: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    70: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Bellsprout (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    71: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Weepinbell (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    126: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    127: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     # Intercambios dentro del juego (In-game trades)
-    83: {"type": "trade", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín (dar un Spearow a cambio de Dux)"},
-    122: {"type": "trade", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Abra a cambio de Marcel)"},
-    124: {"type": "trade", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste (dar un Poliwhirl a cambio de Lola)"},
-    108: {"type": "trade", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 18 (dar un Slowbro a cambio de Marc)"},
+    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín (dar un Spearow a cambio de Dux)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Abra a cambio de Marcel)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
+    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste (dar un Poliwhirl a cambio de Lola)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
+    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 18 (dar un Slowbro a cambio de Marc)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
     # Casino Ciudad Azulona
-    137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Premio en el Casino Rocket de Ciudad Azulona (9.999 fichas)"},
+    137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Canjeable en el Casino Rocket de Ciudad Azulona por 9.999 fichas", "locations": [{"area": "Ciudad Azulona (Casino)", "method": "Canje de fichas (9.999)"}]},
     # Fósiles
-    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela"},
+    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
     139: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Omanyte al nivel 40"},
-    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela"},
+    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Domo"}]},
     141: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Kabuto al nivel 40"},
-    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela"},
-    # Regalos especiales
-    106: {"type": "gift", "badge_label": "Regalo / Elección", "badge_color": "emerald", "summary": "Elegir como premio al vencer al Maestro del Dojo Kárate de Ciudad Azafrán"},
-    107: {"type": "gift", "badge_label": "Regalo / Elección", "badge_color": "emerald", "summary": "Elegir como premio al vencer al Maestro del Dojo Kárate de Ciudad Azafrán"},
-    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)"},
-    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Encuentro en la azotea de la Mansión Azulona (Ciudad Azulona)"},
+    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Ámbar Viejo"}]},
+    # Premios por victoria / Elección
+    106: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    107: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    # Regalos de NPCs
+    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)", "locations": [{"area": "Ciudad Azafrán (Silph S.A.)", "method": "Regalo de empleado"}]},
+    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)", "locations": [{"area": "Ciudad Azulona (Mansión Azulona)", "method": "Pokéball en el ático"}]},
     # Estáticos / Legendarios
-    143: {"type": "special", "badge_label": "Encuentro Único", "badge_color": "rose", "summary": "Ruta 12 o Ruta 16 (despertar usando la Poké Flauta)"},
-    144: {"type": "special", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de las Islas Espuma (Sótano B4F)"},
-    145: {"type": "special", "badge_label": "Legendario", "badge_color": "rose", "summary": "Al final de la Central de Energía"},
-    146: {"type": "special", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)"},
-    150: {"type": "special", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)"},
-    151: {"type": "special", "badge_label": "Mítico / Evento", "badge_color": "rose", "summary": "Distribución oficial de Nintendo mediante evento especial"},
+    143: {"type": "special", "badge_label": "Encuentro Único", "badge_color": "rose", "summary": "Encuentro en Ruta 12 o Ruta 16 (despertar usando la Poké Flauta)", "locations": [{"area": "Ruta 12 / Ruta 16", "method": "Despertar con Poké Flauta"}]},
+    144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
+    145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
+    146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
+}
+
+# Registro modular de casos especiales indexado por versión de juego
+GAME_SPECIAL_CASES: Dict[str, Dict[int, Dict[str, Any]]] = {
+    'red': RED_SPECIAL_CASES,
+    'blue': RED_SPECIAL_CASES,
 }
 
 def clean_location_name(area_slug: str) -> str:
@@ -348,11 +427,7 @@ def clean_location_name(area_slug: str) -> str:
     if area_slug in KANTO_LOCATION_NAMES_ES:
         return KANTO_LOCATION_NAMES_ES[area_slug]
 
-    m_sea = re.match(r"(?:kanto-)?sea-route-(\d+)", area_slug)
-    if m_sea:
-        return f"Ruta marítima {m_sea.group(1)}"
-
-    m_route = re.match(r"(?:kanto-)?route-(\d+)", area_slug)
+    m_route = re.match(r"(?:kanto-)?(?:sea-)?route-(\d+)", area_slug)
     if m_route:
         return f"Ruta {m_route.group(1)}"
 
@@ -377,18 +452,61 @@ def clean_location_name(area_slug: str) -> str:
     return clean.title()
 
 
-def find_evolution_details(chain_node: Dict[str, Any], target_species_name: str, parent_name: Optional[str] = None) -> Optional[Dict[str, Any]]:
+# Identificadores de biomas y entornos de Kanto
+KANTO_CAVE_SLUGS = {
+    'mt-moon', 'rock-tunnel', 'seafoam-islands',
+    'cerulean-cave', 'digletts-cave', 'victory-road'
+}
+
+KANTO_INTERIOR_SLUGS = {
+    'pokemon-tower', 'pokemon-mansion', 'power-plant'
+}
+
+
+def resolve_encounter_method_label(method_slug: str, area_slug: str, game_slug: str = 'red') -> str:
+    """
+    Traduce el método de encuentro al español contextualizado según el bioma del área y la versión del juego.
+    """
+    if method_slug == 'walk':
+        # Cuevas de Kanto (suelo de roca/gruta sin hierba)
+        if any(c in area_slug for c in KANTO_CAVE_SLUGS):
+            return "Cueva"
+        # Interiores de edificios / estructuras de Kanto
+        if any(b in area_slug for b in KANTO_INTERIOR_SLUGS):
+            return "Interior"
+        # Rutas y exteriores naturales
+        return "Hierba alta"
+
+    return ENCOUNTER_METHODS_ES.get(method_slug, method_slug.title())
+
+
+
+def find_evolution_details(
+    chain_node: Dict[str, Any],
+    target_species_name: str,
+    parent_name: Optional[str] = None,
+    parent_id: Optional[int] = None
+) -> Optional[Dict[str, Any]]:
     """Recorre recursivamente un árbol de evolución de PokeAPI buscando al Pokémon objetivo."""
     current_species = chain_node.get("species", {}).get("name", "")
+    current_url = chain_node.get("species", {}).get("url", "")
+    current_id = None
+    if current_url:
+        try:
+            current_id = int(current_url.rstrip("/").split("/")[-1])
+        except (ValueError, IndexError):
+            pass
+
     if current_species == target_species_name:
         evo_details_list = chain_node.get("evolution_details", [])
         return {
             "parent_name": parent_name,
+            "parent_id": parent_id,
             "details": evo_details_list[0] if evo_details_list else {}
         }
 
     for child in chain_node.get("evolves_to", []):
-        res = find_evolution_details(child, target_species_name, parent_name=current_species)
+        res = find_evolution_details(child, target_species_name, parent_name=current_species, parent_id=current_id)
         if res:
             return res
 
@@ -400,11 +518,13 @@ def resolve_obtaining_info(
     pokemon_name: str,
     game_slug: str,
     encounters_data: Optional[List[Dict[str, Any]]] = None,
-    evolution_chain_data: Optional[Dict[str, Any]] = None
+    evolution_chain_data: Optional[Dict[str, Any]] = None,
+    generation: int = 1
 ) -> Dict[str, Any]:
     """
     Determina de forma estructurada cómo se obtiene el Pokémon en la versión especificada.
-    Deduplica áreas y preserva la información de evolución incluso si también aparece salvaje.
+    Deduplica áreas, verifica iniciales aislados por juego, casos especiales curados,
+    y filtra pre-evoluciones anacrónicas según la generación del juego.
     """
     # 1. Comprobar si el Pokémon proviene de una evolución previa en el árbol evolutivo
     evolution_info = None
@@ -413,54 +533,68 @@ def resolve_obtaining_info(
         evo_res = find_evolution_details(chain_root, pokemon_name.lower())
 
         if evo_res and evo_res.get("parent_name"):
-            parent = evo_res["parent_name"].replace("-", " ").title()
-            details = evo_res.get("details", {})
-            trigger = details.get("trigger", {}).get("name", "")
+            parent_id = evo_res.get("parent_id")
+            max_gen_id = MAX_NATIONAL_NUMBER_BY_GEN.get(generation, 9999)
 
-            condition = ""
-            if trigger == "level-up":
-                min_lvl = details.get("min_level")
-                min_happ = details.get("min_happiness")
-                if min_lvl:
-                    condition = f"Nivel {min_lvl}"
-                elif min_happ:
-                    condition = "Felicidad alta"
+            # Si la pre-evolución pertenece a una generación posterior al juego actual (ej. Tyrogue en Gen 1),
+            # no se considera una evolución válida para esta edición histórica.
+            if not (parent_id and parent_id > max_gen_id):
+                parent = evo_res["parent_name"].replace("-", " ").title()
+                details = evo_res.get("details", {})
+                trigger = details.get("trigger", {}).get("name", "")
+
+                condition = ""
+                if trigger == "level-up":
+                    min_lvl = details.get("min_level")
+                    min_happ = details.get("min_happiness")
+                    if min_lvl:
+                        condition = f"Nivel {min_lvl}"
+                    elif min_happ:
+                        condition = "Felicidad alta"
+                    else:
+                        condition = "Subir de nivel"
+                elif trigger == "use-item":
+                    item_slug = details.get("item", {}).get("name", "")
+                    condition = f"usando {EVOLUTION_ITEMS_ES.get(item_slug, item_slug.title())}"
+                elif trigger == "trade":
+                    held_item = details.get("held_item")
+                    if held_item:
+                        condition = f"Intercambio con {held_item.get('name', '').title()}"
+                    else:
+                        condition = "Intercambio con otro entrenador"
                 else:
-                    condition = "Subir de nivel"
-            elif trigger == "use-item":
-                item_slug = details.get("item", {}).get("name", "")
-                condition = f"usando {EVOLUTION_ITEMS_ES.get(item_slug, item_slug.title())}"
-            elif trigger == "trade":
-                held_item = details.get("held_item")
-                if held_item:
-                    condition = f"Intercambio con {held_item.get('name', '').title()}"
-                else:
-                    condition = "Intercambio con otro entrenador"
-            else:
-                condition = "Evolución especial"
+                    condition = "Evolución especial"
 
-            evo_summary = f"Evoluciona de {parent}"
-            if condition:
-                if condition.startswith("Nivel") or condition.startswith("usando") or condition.startswith("Intercambio"):
-                    evo_summary += f" ({condition})" if not condition.startswith("usando") else f" {condition}"
-                else:
-                    evo_summary += f" ({condition})"
+                evo_summary = f"Evoluciona de {parent}"
+                if condition:
+                    if condition.startswith("Nivel") or condition.startswith("usando") or condition.startswith("Intercambio"):
+                        evo_summary += f" ({condition})" if not condition.startswith("usando") else f" {condition}"
+                    else:
+                        evo_summary += f" ({condition})"
 
-            evolution_info = {
-                "from": parent,
-                "trigger": trigger,
-                "condition": condition,
-                "text": evo_summary
-            }
+                evolution_info = {
+                    "from": parent,
+                    "trigger": trigger,
+                    "condition": condition,
+                    "text": evo_summary
+                }
 
-    # 2. Casos especiales curados por juego (ej. Pokémon Rojo)
-    if game_slug == 'red' and national_number in RED_SPECIAL_CASES:
-        special_data = dict(RED_SPECIAL_CASES[national_number])
+    # 2. Comprobar si es un Pokémon inicial oficial para este juego específico
+    starters_game = STARTERS_BY_GAME.get(game_slug, {})
+    if national_number in starters_game:
+        starter_data = dict(starters_game[national_number])
+        starter_data["evolution_info"] = evolution_info
+        return starter_data
+
+    # 3. Casos especiales curados por juego (ej. Pokémon Rojo)
+    special_cases_game = GAME_SPECIAL_CASES.get(game_slug, {})
+    if national_number in special_cases_game:
+        special_data = dict(special_cases_game[national_number])
         if evolution_info:
             special_data["evolution_info"] = evolution_info
         return special_data
 
-    # 3. Encuentros salvajes / directos registrados en PokeAPI para este juego (agrupados por área limpia)
+    # 4. Encuentros salvajes / directos registrados en PokeAPI para este juego (agrupados por área limpia)
     locations_by_area: Dict[str, set] = {}
     has_gift_encounter = False
 
@@ -480,7 +614,7 @@ def resolve_obtaining_info(
                             has_gift_encounter = True
 
                     clean_area = clean_location_name(area_slug)
-                    method_labels = {ENCOUNTER_METHODS_ES.get(m, m.title()) for m in methods}
+                    method_labels = {resolve_encounter_method_label(m, area_slug, game_slug) for m in methods}
                     if clean_area not in locations_by_area:
                         locations_by_area[clean_area] = set()
                     locations_by_area[clean_area].update(method_labels)
@@ -499,9 +633,9 @@ def resolve_obtaining_info(
             loc = game_locations[0]
             return {
                 "type": "gift",
-                "badge_label": "Regalo / Inicial",
+                "badge_label": "Regalo",
                 "badge_color": "emerald",
-                "summary": f"Entregado como regalo o Pokémon inicial en {loc['area']}",
+                "summary": f"Entregado como regalo en {loc['area']}",
                 "locations": game_locations,
                 "evolution_info": evolution_info
             }
@@ -523,7 +657,7 @@ def resolve_obtaining_info(
                 "evolution_info": evolution_info
             }
 
-    # 4. Si no tiene encuentros salvajes pero sí evoluciona
+    # 5. Si no tiene encuentros salvajes pero sí evoluciona
     if evolution_info:
         return {
             "type": "evolution",
@@ -534,7 +668,7 @@ def resolve_obtaining_info(
             "locations": []
         }
 
-    # 5. Desconocido o evento
+    # 6. Desconocido o evento
     return {
         "type": "unknown",
         "badge_label": "Especial",

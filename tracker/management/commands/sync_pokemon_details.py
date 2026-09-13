@@ -163,7 +163,8 @@ class Command(BaseCommand):
                     pokemon_name=pokemon.name,
                     game_slug=game_slug,
                     encounters_data=encounters,
-                    evolution_chain_data=chain_data
+                    evolution_chain_data=chain_data,
+                    generation=game.generation
                 )
 
                 entry.flavor_text = flavor
