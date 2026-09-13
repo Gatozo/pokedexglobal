@@ -385,9 +385,14 @@
                         <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
                             📍 Cómo conseguirlo en {{ game.display_name }}
                         </span>
-                        <span id="modal-obtaining-badge" class="border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-emerald-400 text-slate-950">
-                            Regalo / Inicial
-                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <span id="modal-unique-badge" class="hidden border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-rose-500 text-white">
+                                Único
+                            </span>
+                            <span id="modal-obtaining-badge" class="border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-emerald-400 text-slate-950">
+                                Regalo / Inicial
+                            </span>
+                        </div>
                     </div>
 
                     <!-- Summary Explanation -->
@@ -664,6 +669,15 @@
 
             // 5. Método de Obtención y Localización
             const obt = data.obtaining || {};
+            const uniqueBadgeElem = document.getElementById('modal-unique-badge');
+            if (uniqueBadgeElem) {
+                if (obt.is_unique) {
+                    uniqueBadgeElem.classList.remove('hidden');
+                } else {
+                    uniqueBadgeElem.classList.add('hidden');
+                }
+            }
+
             const badgeElem = document.getElementById('modal-obtaining-badge');
             badgeElem.textContent = obt.badge_label || 'Desconocido';
 

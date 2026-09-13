@@ -271,9 +271,11 @@ KANTO_LOCATION_NAMES_ES = {
     'vermilion-city-area': 'Ciudad Carmín',
     'lavender-town-area': 'Pueblo Lavanda',
     'celadon-city-area': 'Ciudad Azulona',
+    'celadon-city-prize-corner': 'Ciudad Azulona (Casino)',
     'fuchsia-city-area': 'Ciudad Fucsia',
     'saffron-city-area': 'Ciudad Azafrán',
     'cinnabar-island-area': 'Isla Canela',
+    'cinnabar-island-cinnabar-lab': 'Isla Canela (Laboratorio)',
     'viridian-forest-area': 'Bosque Verde',
     'digletts-cave-area': 'Cueva Diglett',
     'kanto-power-plant-area': 'Central de Energía',
@@ -281,10 +283,12 @@ KANTO_LOCATION_NAMES_ES = {
     'vermilion-city-ss-anne-dock': 'Muelle del S.S. Anne (Ciudad Carmín)',
     'kanto-route-3-pokemon-center': 'Centro Pokémon de Ruta 4',
     'kanto-route-4-pokemon-center': 'Centro Pokémon de Ruta 4',
+    'underground-path': 'Vía Subterránea',
+    'kanto-underground-path': 'Vía Subterránea',
 }
 
 ENCOUNTER_METHODS_ES = {
-    'walk': 'Hierba alta / Cuevas',
+    'walk': 'Hierba alta',
     'surf': 'Surfeando (Agua)',
     'old-rod': 'Caña Vieja',
     'good-rod': 'Caña Buena',
@@ -292,6 +296,8 @@ ENCOUNTER_METHODS_ES = {
     'gift': 'Regalo',
     'only-one': 'Encuentro Especial Único',
     'headbutt': 'Golpe Cabeza',
+    'npc-trade': 'Intercambio NPC',
+    'static': 'Estático',
 }
 
 EVOLUTION_ITEMS_ES = {
@@ -396,24 +402,24 @@ RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     # Casino Ciudad Azulona
     137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Canjeable en el Casino Rocket de Ciudad Azulona por 9.999 fichas", "locations": [{"area": "Ciudad Azulona (Casino)", "method": "Canje de fichas (9.999)"}]},
     # Fósiles
-    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
+    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
     139: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Omanyte al nivel 40"},
-    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Domo"}]},
+    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Domo"}]},
     141: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Kabuto al nivel 40"},
-    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Ámbar Viejo"}]},
+    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Ámbar Viejo"}]},
     # Premios por victoria / Elección
-    106: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
-    107: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    106: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    107: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
     # Regalos de NPCs
-    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)", "locations": [{"area": "Ciudad Azafrán (Silph S.A.)", "method": "Regalo de empleado"}]},
-    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)", "locations": [{"area": "Ciudad Azulona (Mansión Azulona)", "method": "Pokéball en el ático"}]},
+    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)", "locations": [{"area": "Ciudad Azafrán (Silph S.A.)", "method": "Regalo de empleado"}]},
+    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)", "locations": [{"area": "Ciudad Azulona (Mansión Azulona)", "method": "Pokéball en el ático"}]},
     # Estáticos / Legendarios
-    143: {"type": "special", "badge_label": "Encuentro Único", "badge_color": "rose", "summary": "Encuentro en Ruta 12 o Ruta 16 (despertar usando la Poké Flauta)", "locations": [{"area": "Ruta 12 / Ruta 16", "method": "Despertar con Poké Flauta"}]},
-    144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
-    145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
-    146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
-    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
-    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
+    143: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "is_unique": True, "summary": "Pokémon único que se encuentra durmiendo y bloqueando el camino entre las rutas 12 y 16. Se debe despertar usando la Poké Flauta para poder capturarlo.", "locations": [{"area": "Bloqueando el camino entre las rutas 12 y 16", "method": "Despertar con Poké Flauta"}]},
+    144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
+    145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
+    146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "is_unique": True, "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
 # Registro modular de casos especiales indexado por versión de juego
@@ -447,6 +453,12 @@ def clean_location_name(area_slug: str) -> str:
         return "Torre Pokémon"
     if "pokemon-mansion" in area_slug:
         return "Mansión Pokémon"
+    if "prize-corner" in area_slug or "game-corner" in area_slug:
+        return "Ciudad Azulona (Casino)"
+    if "cinnabar-lab" in area_slug:
+        return "Isla Canela (Laboratorio)"
+    if "underground-path" in area_slug:
+        return "Vía Subterránea"
 
     clean = area_slug.replace("kanto-", "").replace("-area", "").replace("-", " ")
     return clean.title()
@@ -463,11 +475,54 @@ KANTO_INTERIOR_SLUGS = {
 }
 
 
-def resolve_encounter_method_label(method_slug: str, area_slug: str, game_slug: str = 'red') -> str:
+# Catálogo oficial de precios de fichas del Casino por juego
+GAME_CASINO_PRIZES: Dict[str, Dict[int, int]] = {
+    'red': {
+        63: 180,     # Abra
+        35: 500,     # Clefairy
+        30: 1200,    # Nidorina
+        147: 2800,   # Dratini
+        123: 5500,   # Scyther
+        137: 9999,   # Porygon
+    },
+    'blue': {
+        63: 120,     # Abra
+        35: 750,     # Clefairy
+        32: 1200,    # Nidorino
+        127: 2500,   # Pinsir
+        147: 4600,   # Dratini
+        137: 6500,   # Porygon
+    },
+    'yellow': {
+        63: 230,     # Abra
+        37: 1000,    # Vulpix
+        40: 2680,    # Wigglytuff
+        123: 6500,   # Scyther
+        127: 6500,   # Pinsir
+        137: 9999,   # Porygon
+    },
+}
+
+
+def resolve_encounter_method_label(
+    method_slug: str,
+    area_slug: str,
+    game_slug: str = 'red',
+    national_number: Optional[int] = None
+) -> str:
     """
     Traduce el método de encuentro al español contextualizado según el bioma del área y la versión del juego.
     """
-    if method_slug == 'walk':
+    m_clean = method_slug.lower()
+    if 'prize-corner' in area_slug or 'game-corner' in area_slug:
+        if national_number:
+            coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
+            if coins:
+                formatted = f"{coins:,}".replace(",", ".")
+                return f"Canje de fichas ({formatted})"
+        return "Premio del Casino"
+
+    if m_clean == 'walk':
         # Cuevas de Kanto (suelo de roca/gruta sin hierba)
         if any(c in area_slug for c in KANTO_CAVE_SLUGS):
             return "Cueva"
@@ -477,7 +532,12 @@ def resolve_encounter_method_label(method_slug: str, area_slug: str, game_slug: 
         # Rutas y exteriores naturales
         return "Hierba alta"
 
-    return ENCOUNTER_METHODS_ES.get(method_slug, method_slug.title())
+    if m_clean == 'npc-trade':
+        return "Intercambio NPC"
+    if m_clean == 'static':
+        return "Estático"
+
+    return ENCOUNTER_METHODS_ES.get(m_clean, method_slug.title())
 
 
 
@@ -614,7 +674,7 @@ def resolve_obtaining_info(
                             has_gift_encounter = True
 
                     clean_area = clean_location_name(area_slug)
-                    method_labels = {resolve_encounter_method_label(m, area_slug, game_slug) for m in methods}
+                    method_labels = {resolve_encounter_method_label(m, area_slug, game_slug, national_number) for m in methods}
                     if clean_area not in locations_by_area:
                         locations_by_area[clean_area] = set()
                     locations_by_area[clean_area].update(method_labels)
@@ -631,6 +691,17 @@ def resolve_obtaining_info(
     if game_locations:
         if has_gift_encounter and len(game_locations) == 1:
             loc = game_locations[0]
+            if "Casino" in loc['area']:
+                coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
+                coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
+                return {
+                    "type": "casino",
+                    "badge_label": "Premio Casino",
+                    "badge_color": "amber",
+                    "summary": f"Canjeable{coins_str} en el Casino Rocket de Ciudad Azulona",
+                    "locations": game_locations,
+                    "evolution_info": evolution_info
+                }
             return {
                 "type": "gift",
                 "badge_label": "Regalo",
@@ -640,11 +711,29 @@ def resolve_obtaining_info(
                 "evolution_info": evolution_info
             }
         else:
-            unique_areas = [l["area"] for l in game_locations]
-            if len(unique_areas) <= 3:
-                summary_text = f"Salvaje en: {', '.join(unique_areas)}"
+            wild_areas = [l["area"] for l in game_locations if "Casino" not in l["area"] and "Intercambio" not in l["method"]]
+            has_casino = any("Casino" in l["area"] for l in game_locations)
+            has_trade = any("Intercambio" in l["method"] for l in game_locations)
+
+            if wild_areas:
+                if len(wild_areas) <= 3:
+                    summary_text = f"Salvaje en: {', '.join(wild_areas)}"
+                else:
+                    summary_text = f"Salvaje en {len(wild_areas)} zonas (ej: {', '.join(wild_areas[:3])}...)"
+
+                if has_casino:
+                    coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
+                    coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
+                    summary_text += f" y canjeable{coins_str} en el Casino de Ciudad Azulona"
+                if has_trade:
+                    summary_text += " (también por intercambio NPC)"
+            elif has_casino:
+                coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
+                coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
+                summary_text = f"Canjeable{coins_str} en el Casino Rocket de Ciudad Azulona"
             else:
-                summary_text = f"Salvaje en {len(unique_areas)} zonas (ej: {', '.join(unique_areas[:3])}...)"
+                unique_areas = [l["area"] for l in game_locations]
+                summary_text = f"Disponible en: {', '.join(unique_areas[:3])}"
 
             badge_label = "Salvaje / Evolución" if evolution_info else "Salvaje"
 

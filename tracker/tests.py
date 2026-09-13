@@ -318,8 +318,14 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(res_exclusive["type"], "trade")
         self.assertEqual(res_exclusive["badge_label"], "Intercambio")
 
+        # 6. Snorlax como encuentro estático único bloqueando el camino
+        res_snorlax = resolve_obtaining_info(143, "snorlax", "red")
+        self.assertTrue(res_snorlax.get("is_unique"))
+        self.assertEqual(res_snorlax["locations"][0]["area"], "Bloqueando el camino entre las rutas 12 y 16")
+        self.assertEqual(res_snorlax["locations"][0]["method"], "Despertar con Poké Flauta")
+
     def test_location_cleaning_and_biome_encounter_methods(self):
-        from .utils import clean_location_name, resolve_encounter_method_label
+        from .utils import clean_location_name, resolve_encounter_method_label, resolve_obtaining_info
 
         # 1. Normalización de rutas marítimas a nombres canónicos (Ruta 19, 20, 21)
         self.assertEqual(clean_location_name("kanto-sea-route-19-area"), "Ruta 19")
@@ -335,7 +341,30 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(resolve_encounter_method_label("walk", "cerulean-cave-1f"), "Cueva")
         self.assertEqual(resolve_encounter_method_label("walk", "pokemon-tower-3f"), "Interior")
         self.assertEqual(resolve_encounter_method_label("walk", "pokemon-mansion-1f"), "Interior")
-        self.assertEqual(resolve_encounter_method_label("walk", "power-plant-area"), "Interior")
+        # 3. Normalización de áreas de Casino, Laboratorio y Vía Subterránea
+        self.assertEqual(clean_location_name("celadon-city-prize-corner"), "Ciudad Azulona (Casino)")
+        self.assertEqual(clean_location_name("cinnabar-island-cinnabar-lab"), "Isla Canela (Laboratorio)")
+        self.assertEqual(clean_location_name("kanto-underground-path"), "Vía Subterránea")
+
+        # 4. Contextualización de métodos de Casino, Intercambio y Estático
+        self.assertEqual(resolve_encounter_method_label("gift", "celadon-city-prize-corner"), "Premio del Casino")
+        self.assertEqual(resolve_encounter_method_label("gift", "celadon-city-prize-corner", "red", 147), "Canje de fichas (2.800)")
+        self.assertEqual(resolve_encounter_method_label("gift", "celadon-city-prize-corner", "red", 63), "Canje de fichas (180)")
+        self.assertEqual(resolve_encounter_method_label("npc-trade", "kanto-route-11-area"), "Intercambio NPC")
+        self.assertEqual(resolve_encounter_method_label("static", "kanto-power-plant-area"), "Estático")
+
+        # 5. Obtención de Dratini (Zona Safari + Casino con 2.800 fichas)
+        mock_dratini_encounters = [
+            {"location_area": {"name": "kanto-safari-zone-area"}, "version_details": [{"version": {"name": "red"}, "encounter_details": [{"method": {"name": "super-rod"}}]}]},
+            {"location_area": {"name": "celadon-city-prize-corner"}, "version_details": [{"version": {"name": "red"}, "encounter_details": [{"method": {"name": "gift"}}]}]},
+        ]
+        res_dratini = resolve_obtaining_info(147, "dratini", "red", encounters_data=mock_dratini_encounters)
+        self.assertIn("Zona Safari", res_dratini["summary"])
+        self.assertIn("canjeable por 2.800 fichas en el Casino de Ciudad Azulona", res_dratini["summary"])
+        areas = [l["area"] for l in res_dratini["locations"]]
+        methods = [l["method"] for l in res_dratini["locations"]]
+        self.assertIn("Ciudad Azulona (Casino)", areas)
+        self.assertIn("Canje de fichas (2.800)", methods)
 
     def test_comic_modal_rendering_in_template(self):
         self.pokemon.category = "Pokémon Semilla"
