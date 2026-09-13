@@ -682,11 +682,28 @@
 
             document.getElementById('modal-obtaining-summary').textContent = obt.summary || 'Sin información de obtención registrada.';
 
-            // Lista detallada de ubicaciones o condiciones
+            // Lista detallada de ubicaciones y/o evolución
             const detailsContainer = document.getElementById('modal-obtaining-details');
             detailsContainer.innerHTML = '';
 
+            // 1. Mostrar información de evolución si el Pokémon proviene de una evolución
+            if (obt.evolution_info) {
+                const evoBox = document.createElement('div');
+                evoBox.className = 'text-xs bg-indigo-50 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 font-bold flex items-center gap-2 mb-2 shadow-sm';
+                const evoText = obt.evolution_info.text || `Evoluciona de ${obt.evolution_info.from} (${obt.evolution_info.condition || ''})`;
+                evoBox.innerHTML = `<span>⚡</span> <span><strong>Evolución:</strong> ${evoText}</span>`;
+                detailsContainer.appendChild(evoBox);
+            }
+
+            // 2. Mostrar ubicaciones salvajes si las tiene
             if (obt.locations && obt.locations.length > 0) {
+                if (obt.evolution_info) {
+                    const wildTitle = document.createElement('div');
+                    wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1 flex items-center gap-1';
+                    wildTitle.innerHTML = '<span>🌿</span> <span>Encuentros salvajes:</span>';
+                    detailsContainer.appendChild(wildTitle);
+                }
+
                 const locList = document.createElement('div');
                 locList.className = 'grid grid-cols-1 sm:grid-cols-2 gap-1.5';
                 obt.locations.forEach(loc => {
@@ -696,11 +713,6 @@
                     locList.appendChild(item);
                 });
                 detailsContainer.appendChild(locList);
-            } else if (obt.evolution_info) {
-                const evoBox = document.createElement('div');
-                evoBox.className = 'text-xs bg-indigo-50 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 font-bold flex items-center gap-2';
-                evoBox.innerHTML = `<span>⚡</span> <span>Evoluciona de <strong>${obt.evolution_info.from}</strong> ${obt.evolution_info.condition ? '— Condición: ' + obt.evolution_info.condition : ''}</span>`;
-                detailsContainer.appendChild(evoBox);
             }
 
             // 6. Estado de captura actual

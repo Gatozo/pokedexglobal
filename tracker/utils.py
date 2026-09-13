@@ -404,73 +404,10 @@ def resolve_obtaining_info(
 ) -> Dict[str, Any]:
     """
     Determina de forma estructurada cómo se obtiene el Pokémon en la versión especificada.
-    Retorna un diccionario estructurado listo para ser consumido por el frontend y la base de datos:
-    {
-        "type": "wild" | "gift" | "evolution" | "trade" | "casino" | "fossil" | "special" | "unknown",
-        "badge_label": "Salvaje" | "Regalo" | "Evolución" | ... ,
-        "badge_color": "emerald" | "amber" | "indigo" | "sky" | "rose" | "slate",
-        "summary": "Texto resumen explicativo",
-        "locations": [{"area": "Ruta 1", "method": "Hierba alta / Cuevas"}],
-        "evolution_info": {"from": "Bulbasaur", "trigger": "level-up", "condition": "Nivel 16"}
-    }
+    Deduplica áreas y preserva la información de evolución incluso si también aparece salvaje.
     """
-    # 1. Casos especiales curados por juego (ej. Pokémon Rojo)
-    if game_slug == 'red' and national_number in RED_SPECIAL_CASES:
-        return RED_SPECIAL_CASES[national_number]
-
-    # 2. Encuentros salvajes / directos registrados en PokeAPI para este juego
-    game_locations = []
-    has_gift_encounter = False
-
-    if encounters_data:
-        for area_item in encounters_data:
-            area_slug = area_item.get("location_area", {}).get("name", "")
-            version_details = area_item.get("version_details", [])
-
-            for vd in version_details:
-                if vd.get("version", {}).get("name") == game_slug:
-                    enc_details = vd.get("encounter_details", [])
-                    methods = set()
-                    for ed in enc_details:
-                        m_name = ed.get("method", {}).get("name", "")
-                        methods.add(m_name)
-                        if m_name == "gift":
-                            has_gift_encounter = True
-
-                    clean_area = clean_location_name(area_slug)
-                    method_labels = [ENCOUNTER_METHODS_ES.get(m, m.title()) for m in sorted(list(methods))]
-                    game_locations.append({
-                        "area": clean_area,
-                        "method": ", ".join(method_labels) if method_labels else "Encuentro salvaje"
-                    })
-
-    if game_locations:
-        if has_gift_encounter and len(game_locations) == 1:
-            loc = game_locations[0]
-            return {
-                "type": "gift",
-                "badge_label": "Regalo / Inicial",
-                "badge_color": "emerald",
-                "summary": f"Entregado como regalo o Pokémon inicial en {loc['area']}",
-                "locations": game_locations
-            }
-        else:
-            # Agrupar áreas únicas
-            unique_areas = list(dict.fromkeys([l["area"] for l in game_locations]))
-            if len(unique_areas) <= 3:
-                summary_text = f"Salvaje en: {', '.join(unique_areas)}"
-            else:
-                summary_text = f"Salvaje en {len(unique_areas)} zonas (ej: {', '.join(unique_areas[:3])}...)"
-
-            return {
-                "type": "wild",
-                "badge_label": "Salvaje",
-                "badge_color": "emerald",
-                "summary": summary_text,
-                "locations": game_locations[:10]
-            }
-
-    # 3. Si no tiene encuentros salvajes, comprobar si es por evolución
+    # 1. Comprobar si el Pokémon proviene de una evolución previa en el árbol evolutivo
+    evolution_info = None
     if evolution_chain_data:
         chain_root = evolution_chain_data.get("chain", {})
         evo_res = find_evolution_details(chain_root, pokemon_name.lower())
@@ -502,30 +439,108 @@ def resolve_obtaining_info(
             else:
                 condition = "Evolución especial"
 
-            summary = f"Evoluciona de {parent}"
+            evo_summary = f"Evoluciona de {parent}"
             if condition:
                 if condition.startswith("Nivel") or condition.startswith("usando") or condition.startswith("Intercambio"):
-                    summary += f" ({condition})" if not condition.startswith("usando") else f" {condition}"
+                    evo_summary += f" ({condition})" if not condition.startswith("usando") else f" {condition}"
                 else:
-                    summary += f" ({condition})"
+                    evo_summary += f" ({condition})"
 
-            return {
-                "type": "evolution",
-                "badge_label": "Evolución",
-                "badge_color": "indigo",
-                "summary": summary,
-                "evolution_info": {
-                    "from": parent,
-                    "trigger": trigger,
-                    "condition": condition
-                }
+            evolution_info = {
+                "from": parent,
+                "trigger": trigger,
+                "condition": condition,
+                "text": evo_summary
             }
 
-    # 4. Desconocido o evento
+    # 2. Casos especiales curados por juego (ej. Pokémon Rojo)
+    if game_slug == 'red' and national_number in RED_SPECIAL_CASES:
+        special_data = dict(RED_SPECIAL_CASES[national_number])
+        if evolution_info:
+            special_data["evolution_info"] = evolution_info
+        return special_data
+
+    # 3. Encuentros salvajes / directos registrados en PokeAPI para este juego (agrupados por área limpia)
+    locations_by_area: Dict[str, set] = {}
+    has_gift_encounter = False
+
+    if encounters_data:
+        for area_item in encounters_data:
+            area_slug = area_item.get("location_area", {}).get("name", "")
+            version_details = area_item.get("version_details", [])
+
+            for vd in version_details:
+                if vd.get("version", {}).get("name") == game_slug:
+                    enc_details = vd.get("encounter_details", [])
+                    methods = set()
+                    for ed in enc_details:
+                        m_name = ed.get("method", {}).get("name", "")
+                        methods.add(m_name)
+                        if m_name == "gift":
+                            has_gift_encounter = True
+
+                    clean_area = clean_location_name(area_slug)
+                    method_labels = {ENCOUNTER_METHODS_ES.get(m, m.title()) for m in methods}
+                    if clean_area not in locations_by_area:
+                        locations_by_area[clean_area] = set()
+                    locations_by_area[clean_area].update(method_labels)
+
+    # Convertir a lista deduplicada
+    game_locations = []
+    for area, methods_set in locations_by_area.items():
+        sorted_methods = sorted(list(methods_set))
+        game_locations.append({
+            "area": area,
+            "method": ", ".join(sorted_methods) if sorted_methods else "Encuentro salvaje"
+        })
+
+    if game_locations:
+        if has_gift_encounter and len(game_locations) == 1:
+            loc = game_locations[0]
+            return {
+                "type": "gift",
+                "badge_label": "Regalo / Inicial",
+                "badge_color": "emerald",
+                "summary": f"Entregado como regalo o Pokémon inicial en {loc['area']}",
+                "locations": game_locations,
+                "evolution_info": evolution_info
+            }
+        else:
+            unique_areas = [l["area"] for l in game_locations]
+            if len(unique_areas) <= 3:
+                summary_text = f"Salvaje en: {', '.join(unique_areas)}"
+            else:
+                summary_text = f"Salvaje en {len(unique_areas)} zonas (ej: {', '.join(unique_areas[:3])}...)"
+
+            badge_label = "Salvaje / Evolución" if evolution_info else "Salvaje"
+
+            return {
+                "type": "wild",
+                "badge_label": badge_label,
+                "badge_color": "emerald",
+                "summary": summary_text,
+                "locations": game_locations[:10],
+                "evolution_info": evolution_info
+            }
+
+    # 4. Si no tiene encuentros salvajes pero sí evoluciona
+    if evolution_info:
+        return {
+            "type": "evolution",
+            "badge_label": "Evolución",
+            "badge_color": "indigo",
+            "summary": evolution_info["text"],
+            "evolution_info": evolution_info,
+            "locations": []
+        }
+
+    # 5. Desconocido o evento
     return {
         "type": "unknown",
         "badge_label": "Especial",
         "badge_color": "slate",
-        "summary": "Método no disponible en estado salvaje en este juego"
+        "summary": "Método no disponible en estado salvaje en este juego",
+        "evolution_info": None,
+        "locations": []
     }
 
