@@ -384,14 +384,14 @@ STARTERS_BY_GAME: Dict[str, Dict[int, Dict[str, Any]]] = {
 RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     # Exclusivos de Pokémon Azul (no aparecen salvajes en Rojo)
     27: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
-    28: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Sandshrew (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    28: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Sandshrew (Exclusivo de Pokémon Azul, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     37: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
-    38: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Vulpix (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    38: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Vulpix (Exclusivo de Pokémon Azul, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
-    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     69: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
-    70: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Bellsprout (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
-    71: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Weepinbell (Exclusivo de Pokémon Azul)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    70: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Bellsprout (Exclusivo de Pokémon Azul, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    71: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Weepinbell (Exclusivo de Pokémon Azul, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     126: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     127: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     # Intercambios dentro del juego (In-game trades)
@@ -422,10 +422,51 @@ RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
+BLUE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
+    # Exclusivos de Pokémon Rojo (no aparecen salvajes en Azul)
+    23: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    24: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Ekans (Exclusivo de Pokémon Rojo, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    43: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    44: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Oddish (Exclusivo de Pokémon Rojo, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    45: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Gloom (Exclusivo de Pokémon Rojo, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    56: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    57: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Mankey (Exclusivo de Pokémon Rojo, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    58: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    59: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Growlithe (Exclusivo de Pokémon Rojo, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    123: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    125: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    # Intercambios dentro del juego (In-game trades)
+    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín (dar un Spearow a cambio de Dux)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Abra a cambio de Marcel)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
+    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste (dar un Poliwhirl a cambio de Lola)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
+    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 18 (dar un Slowbro a cambio de Marc)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
+    # Casino Ciudad Azulona (Premios específicos de Azul)
+    137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Canjeable en el Casino Rocket de Ciudad Azulona por 6.500 fichas", "locations": [{"area": "Ciudad Azulona (Casino)", "method": "Canje de fichas (6.500)"}]},
+    # Fósiles
+    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
+    139: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Omanyte al nivel 40"},
+    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Domo"}]},
+    141: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Kabuto al nivel 40"},
+    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Ámbar Viejo"}]},
+    # Premios por victoria / Elección
+    106: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    107: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    # Regalos de NPCs
+    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)", "locations": [{"area": "Ciudad Azafrán (Silph S.A.)", "method": "Regalo de empleado"}]},
+    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)", "locations": [{"area": "Ciudad Azulona (Mansión Azulona)", "method": "Pokéball en el ático"}]},
+    # Estáticos / Legendarios
+    143: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "is_unique": True, "summary": "Pokémon único que se encuentra durmiendo y bloqueando el camino entre las rutas 12 y 16. Se debe despertar usando la Poké Flauta para poder capturarlo.", "locations": [{"area": "Bloqueando el camino entre las rutas 12 y 16", "method": "Despertar con Poké Flauta"}]},
+    144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
+    145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
+    146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "is_unique": True, "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
+}
+
 # Registro modular de casos especiales indexado por versión de juego
 GAME_SPECIAL_CASES: Dict[str, Dict[int, Dict[str, Any]]] = {
     'red': RED_SPECIAL_CASES,
-    'blue': RED_SPECIAL_CASES,
+    'blue': BLUE_SPECIAL_CASES,
 }
 
 def clean_location_name(area_slug: str) -> str:
@@ -488,7 +529,8 @@ GAME_CASINO_PRIZES: Dict[str, Dict[int, int]] = {
     'blue': {
         63: 120,     # Abra
         35: 750,     # Clefairy
-        32: 1200,    # Nidorino
+        32: 1200,    # Nidoran ♂
+        33: 1200,    # Nidorino
         127: 2500,   # Pinsir
         147: 4600,   # Dratini
         137: 6500,   # Porygon

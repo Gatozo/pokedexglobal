@@ -427,5 +427,82 @@ class PokedexTrackerTests(TestCase):
             self.entry.refresh_from_db()
             self.assertNotEqual(self.entry.flavor_text, "Descripción manual protegida")
 
+    def test_pokemon_blue_exclusives_and_obtaining(self):
+        from .utils import resolve_obtaining_info
+
+        # 1. Ekans en Azul: debe figurar como exclusivo de Pokémon Rojo por intercambio
+        res_ekans_blue = resolve_obtaining_info(23, "ekans", "blue")
+        self.assertEqual(res_ekans_blue["type"], "trade")
+        self.assertEqual(res_ekans_blue["badge_label"], "Intercambio")
+        self.assertIn("Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", res_ekans_blue["summary"])
+
+        # 2. Sandshrew en Azul: con datos de encuentros debe ser salvaje
+        mock_sandshrew_encounters = [
+            {
+                "location_area": {"name": "kanto-route-4-area"},
+                "version_details": [{"version": {"name": "blue"}, "encounter_details": [{"method": {"name": "walk"}}]}]
+            }
+        ]
+        res_sandshrew_blue = resolve_obtaining_info(27, "sandshrew", "blue", encounters_data=mock_sandshrew_encounters)
+        self.assertEqual(res_sandshrew_blue["type"], "wild")
+        self.assertEqual(res_sandshrew_blue["badge_label"], "Salvaje")
+        self.assertIn("Ruta 4", res_sandshrew_blue["summary"])
+
+        # 3. Porygon en Azul: coste de 6.500 fichas
+        res_porygon_blue = resolve_obtaining_info(137, "porygon", "blue")
+        self.assertEqual(res_porygon_blue["type"], "casino")
+        self.assertIn("6.500 fichas", res_porygon_blue["summary"])
+
+        # 4. Nidorino en Azul: salvaje en Zona Safari y canjeable por 1.200 fichas en Casino
+        mock_nidorino_encounters = [
+            {
+                "location_area": {"name": "kanto-safari-zone-area"},
+                "version_details": [{"version": {"name": "blue"}, "encounter_details": [{"method": {"name": "walk"}}]}]
+            },
+            {
+                "location_area": {"name": "celadon-city-prize-corner"},
+                "version_details": [{"version": {"name": "blue"}, "encounter_details": [{"method": {"name": "gift"}}]}]
+            }
+        ]
+        res_nidorino_blue = resolve_obtaining_info(33, "nidorino", "blue", encounters_data=mock_nidorino_encounters)
+        self.assertIn("1.200 fichas", res_nidorino_blue["summary"])
+        casino_methods = [l["method"] for l in res_nidorino_blue["locations"] if "Casino" in l["area"]]
+        self.assertIn("Canje de fichas (1.200)", casino_methods)
+
+    def test_pokedex_view_pokemon_blue_theming(self):
+        game_blue = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
+        pokedex_blue = Pokedex.objects.create(game=game_blue, name="Pokédex de Kanto", slug="kanto")
+        PokedexEntry.objects.create(pokedex=pokedex_blue, pokemon=self.pokemon, entry_number=1)
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "blue"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Pokémon Azul")
+        self.assertContains(response, "text-blue-500")
+        self.assertContains(response, "bg-blue-600")
+
+    def test_independent_catch_tracking_between_red_and_blue(self):
+        game_blue = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
+        pokedex_blue = Pokedex.objects.create(game=game_blue, name="Pokédex de Kanto", slug="kanto")
+        entry_blue = PokedexEntry.objects.create(pokedex=pokedex_blue, pokemon=self.pokemon, entry_number=1)
+
+        url_toggle = reverse("tracker:toggle_catch")
+
+        # Capturar en Pokémon Azul
+        resp = self.client.post(url_toggle, data={"entry_id": entry_blue.id}, content_type="application/json")
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.json()["is_caught"])
+
+        # Verificar que en Pokémon Rojo sigue como NO capturado
+        url_red = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        resp_red = self.client.get(url_red)
+        self.assertEqual(resp_red.context["caught_count"], 0)
+
+        # Y en Pokémon Azul figura como capturado
+        url_blue = reverse("tracker:pokedex_default", kwargs={"game_slug": "blue"})
+        resp_blue = self.client.get(url_blue)
+        self.assertEqual(resp_blue.context["caught_count"], 1)
+
+
 
 
