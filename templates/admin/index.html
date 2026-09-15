@@ -9,52 +9,12 @@
 
 {% block nav-breadcrumbs %}{% endblock %}
 
-{% block nav-sidebar %}{% endblock %}
+{% block nav-sidebar %}
+  {% include "admin/nav_sidebar.html" %}
+{% endblock %}
 
 {% block content %}
 <div id="content-main" class="app-list">
-  {% if request.user.is_superuser %}
-  <div style="background: #1e293b; color: #f8fafc; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); border: 1px solid #334155;">
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-      <div style="max-width: 650px;">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
-          <span style="font-size: 24px;">📦</span>
-          <h2 style="margin: 0; font-size: 18px; font-weight: 700; color: #ffffff; letter-spacing: -0.3px;">Respaldo de Datos (Fixtures para Git)</h2>
-        </div>
-        <p style="margin: 0 0 10px 0; font-size: 13px; color: #94a3b8; line-height: 1.5;">
-          Genera una instantánea de los juegos, pokédexes y entradas personalizadas en un archivo JSON para que tus cambios se puedan sincronizar con GitHub.
-        </p>
-        {% if fixture_info.exists %}
-          <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 12px; color: #cbd5e1;">
-            <span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 3px 10px; border-radius: 12px; font-weight: 600; border: 1px solid rgba(52, 211, 153, 0.3);">
-              ● Respaldo listo
-            </span>
-            <span><strong>Archivo:</strong> <code style="background: #0f172a; padding: 2px 6px; border-radius: 4px; color: #38bdf8;">{{ fixture_info.relative_path }}</code></span>
-            <span><strong>Registros:</strong> <span style="color: #f1f5f9; font-weight: 600;">{{ fixture_info.records_count }}</span></span>
-            <span><strong>Tamaño:</strong> <span style="color: #f1f5f9; font-weight: 600;">{{ fixture_info.size_human }}</span></span>
-            {% if fixture_info.last_modified %}
-              <span><strong>Última actualización:</strong> {{ fixture_info.last_modified|date:"d/m/Y H:i:s" }}</span>
-            {% endif %}
-          </div>
-        {% else %}
-          <div style="font-size: 12px; color: #fbbf24; display: flex; align-items: center; gap: 6px;">
-            <span>⚠️</span> <span>Aún no se ha generado ningún archivo de fixture inicial.</span>
-          </div>
-        {% endif %}
-      </div>
-      <div>
-        <form action="{% url 'admin:export_fixtures' %}" method="post" style="margin: 0;" onsubmit="var btn=this.querySelector('button'); btn.disabled=true; btn.innerHTML='⏳ Generando respaldo...';">
-          {% csrf_token %}
-          <button type="submit" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; border: none; padding: 12px 22px; font-size: 14px; font-weight: 600; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); transition: all 0.2s ease;">
-            <span style="font-size: 16px;">💾</span>
-            <span>Respaldar / Actualizar Fixture</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-
   {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
 </div>
 {% endblock %}

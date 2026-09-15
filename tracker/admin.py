@@ -70,10 +70,10 @@ def export_fixtures_admin_view(request):
             info = export_tracker_fixtures()
             messages.success(
                 request,
-                f"✅ Respaldo actualizado con éxito: {info['records_count']} registros exportados en '{info['relative_path']}' ({info['size_human']}). Listo para hacer git commit."
+                f"Respaldo actualizado con éxito: {info['records_count']} registros exportados en '{info['relative_path']}' ({info['size_human']}). Listo para hacer git commit."
             )
         except Exception as e:
-            messages.error(request, f"❌ Error al exportar el respaldo: {str(e)}")
+            messages.error(request, f"Error al exportar el respaldo: {str(e)}")
 
     return redirect('admin:index')
 

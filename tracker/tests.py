@@ -578,8 +578,8 @@ class FixtureExportTests(TestCase):
         resp = self.client.get(reverse("admin:index"))
         self.assertEqual(resp.status_code, 200)
         self.assertIn("fixture_info", resp.context)
-        self.assertContains(resp, "Respaldo de Datos (Fixtures para Git)")
-        self.assertContains(resp, "Respaldar / Actualizar Fixture")
+        self.assertContains(resp, "Respaldo de Datos")
+        self.assertContains(resp, "Actualizar Fixture")
 
 
 

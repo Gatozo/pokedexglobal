@@ -1,0 +1,75 @@
+﻿{% load i18n %}
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="{% translate 'Toggle navigation' %}"></button>
+<nav class="sticky" id="nav-sidebar" aria-label="{% translate 'Sidebar' %}">
+  <input type="search" id="nav-filter"
+         placeholder="{% translate 'Start typing to filter…' %}"
+         aria-label="{% translate 'Filter navigation items' %}">
+
+  {% if request.user.is_superuser %}
+  <style>
+    .fixture-accordion summary::-webkit-details-marker { display: none; }
+    .fixture-accordion summary { list-style: none; }
+    .fixture-accordion[open] summary .chevron { transform: rotate(180deg); }
+    .fixture-accordion summary:hover { filter: brightness(1.08); }
+    .app-fixtures.module table th,
+    .app-fixtures.module table td {
+      border-bottom: 1px solid var(--hairline-color);
+    }
+  </style>
+  <div class="app-fixtures module" style="margin-bottom: 0;">
+    <details class="fixture-accordion" style="width: 100%;">
+      <summary style="cursor: pointer; background: var(--header-bg); color: var(--header-link-color); padding: 8px 16px; font-size: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 700; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+        <span>Respaldo de Datos</span>
+        <span class="chevron" style="font-size: 8px; transition: transform 0.2s ease; opacity: 0.8;">&#9660;</span>
+      </summary>
+      
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+          <tr>
+            <th scope="row" style="font-size: 11.5px; color: var(--body-quiet-color, #666); font-weight: 600; width: 35%; padding: 6px 16px;">Estado</th>
+            <td style="font-size: 11.5px; padding: 6px 16px 6px 0;">
+              {% if fixture_info.exists %}
+                <span style="color: var(--message-success-color, #28a745); font-weight: 600;">Respaldo listo</span>
+              {% else %}
+                <span style="color: var(--message-warning-color, #ffc107); font-weight: 600;">Sin archivo previo</span>
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="font-size: 11.5px; color: var(--body-quiet-color, #666); font-weight: 600; padding: 6px 16px;">Archivo</th>
+            <td style="font-size: 11px; padding: 6px 16px 6px 0; word-break: break-all;">
+              <code>{{ fixture_info.file_name }}</code>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" style="font-size: 11.5px; color: var(--body-quiet-color, #666); font-weight: 600; padding: 6px 16px;">Registros</th>
+            <td style="font-size: 11.5px; padding: 6px 16px 6px 0; font-weight: 600;">{{ fixture_info.records_count }}</td>
+          </tr>
+          <tr>
+            <th scope="row" style="font-size: 11.5px; color: var(--body-quiet-color, #666); font-weight: 600; padding: 6px 16px;">Tamaño</th>
+            <td style="font-size: 11.5px; padding: 6px 16px 6px 0;">{{ fixture_info.size_human }}</td>
+          </tr>
+          {% if fixture_info.last_modified %}
+          <tr>
+            <th scope="row" style="font-size: 11.5px; color: var(--body-quiet-color, #666); font-weight: 600; padding: 6px 16px;">Actualizado</th>
+            <td style="font-size: 11px; padding: 6px 16px 6px 0;">{{ fixture_info.last_modified|date:"d/m/Y H:i:s" }}</td>
+          </tr>
+          {% endif %}
+          <tr>
+            <td colspan="2" style="padding: 10px 16px 12px 16px; border-bottom: none;">
+              <form action="{% url 'admin:export_fixtures' %}" method="post" style="margin: 0;" onsubmit="var btn=this.querySelector('button'); btn.disabled=true; btn.innerText='Actualizando...';">
+                {% csrf_token %}
+                <button type="submit" class="button default" style="width: 100%; box-sizing: border-box; text-align: center; cursor: pointer; padding: 6px 10px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">
+                  Actualizar Fixture
+                </button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </details>
+  </div>
+  {% endif %}
+
+  {% include 'admin/app_list.html' with app_list=available_apps show_changelinks=False %}
+</nav>
