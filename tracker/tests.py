@@ -504,5 +504,83 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(resp_blue.context["caught_count"], 1)
 
 
+class FixtureExportTests(TestCase):
+    def setUp(self):
+        from django.contrib.auth.models import User
+        self.client = Client()
+        self.superuser = User.objects.create_superuser(
+            username="admin_test",
+            email="admin@test.com",
+            password="password123"
+        )
+        self.staff_user = User.objects.create_user(
+            username="staff_test",
+            email="staff@test.com",
+            password="password123",
+            is_staff=True,
+            is_superuser=False
+        )
+        self.game = Game.objects.create(name="Pokémon Red", slug="red", generation=1)
+        self.pokedex = Pokedex.objects.create(game=self.game, name="Pokédex de Kanto", slug="kanto")
+        self.pokemon = Pokemon.objects.create(
+            national_number=1,
+            name="bulbasaur",
+            display_name="Bulbasaur",
+            sprite_url="https://example.com/bulbasaur.png",
+            primary_type="grass"
+        )
+        self.entry = PokedexEntry.objects.create(
+            pokedex=self.pokedex,
+            pokemon=self.pokemon,
+            entry_number=1
+        )
+
+    def test_export_fixtures_util(self):
+        import tempfile
+        from pathlib import Path
+        from tracker.fixtures_util import export_tracker_fixtures, get_fixture_info
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            temp_path = Path(tmp_dir) / "test_fixtures.json"
+            info = export_tracker_fixtures(temp_path)
+            self.assertTrue(info["exists"])
+            self.assertEqual(info["records_count"], 3)  # Game, Pokedex, PokedexEntry
+            self.assertTrue(temp_path.exists())
+
+            # Verificar get_fixture_info
+            info_check = get_fixture_info(temp_path)
+            self.assertEqual(info_check["records_count"], 3)
+
+    def test_export_fixtures_admin_view_permissions(self):
+        url = reverse("admin:export_fixtures")
+
+        # 1. Anónimo -> redirige a login
+        resp_anon = self.client.post(url)
+        self.assertEqual(resp_anon.status_code, 302)
+        self.assertIn("/admin/login/", resp_anon.url)
+
+        # 2. Staff no superusuario -> redirige a admin:index con mensaje de error
+        self.client.force_login(self.staff_user)
+        resp_staff = self.client.post(url, follow=True)
+        self.assertEqual(resp_staff.status_code, 200)
+        messages = list(resp_staff.context["messages"])
+        self.assertTrue(any("Solo los superadministradores" in m.message for m in messages))
+
+        # 3. Superusuario -> realiza exportación con éxito
+        self.client.force_login(self.superuser)
+        resp_admin = self.client.post(url, follow=True)
+        self.assertEqual(resp_admin.status_code, 200)
+        admin_messages = list(resp_admin.context["messages"])
+        self.assertTrue(any("Respaldo actualizado con éxito" in m.message for m in admin_messages))
+
+    def test_admin_index_context_contains_fixture_info(self):
+        self.client.force_login(self.superuser)
+        resp = self.client.get(reverse("admin:index"))
+        self.assertEqual(resp.status_code, 200)
+        self.assertIn("fixture_info", resp.context)
+        self.assertContains(resp, "Respaldo de Datos (Fixtures para Git)")
+        self.assertContains(resp, "Respaldar / Actualizar Fixture")
+
+
 
 
