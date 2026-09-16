@@ -635,3 +635,65 @@ class FixtureExportTests(TestCase):
         self.assertContains(response, "id=\"exclusives-modal\"")
         self.assertContains(response, "id=\"tab-btn-counterpart\"")
         self.assertContains(response, "id=\"tab-btn-own\"")
+
+    def test_yellow_version_exclusives_and_missing_pokemon(self):
+        from tracker.exclusives import get_version_exclusives_context, YELLOW_MISSING_POKEMON, YELLOW_ORIGIN_MAP
+        from tracker.utils import STARTERS_BY_GAME, YELLOW_SPECIAL_CASES, GAME_CASINO_PRIZES
+
+        yellow_game = Game.objects.create(name="Pokémon Yellow", slug="yellow", generation=1)
+        yellow_dex = Pokedex.objects.create(game=yellow_game, name="Pokédex de Kanto", slug="kanto")
+
+        for num in YELLOW_MISSING_POKEMON:
+            p, _ = Pokemon.objects.get_or_create(
+                national_number=num,
+                defaults={"name": f"poke-{num}", "display_name": f"Poke {num}", "primary_type": "normal"}
+            )
+            PokedexEntry.objects.get_or_create(pokedex=yellow_dex, pokemon=p, defaults={"entry_number": num})
+
+        ctx_yellow = get_version_exclusives_context(yellow_game, yellow_dex, set())
+        self.assertIsNotNone(ctx_yellow)
+        self.assertTrue(ctx_yellow["is_yellow"])
+        self.assertEqual(ctx_yellow["button_label"], "Pokémon a Transferir (13)")
+        self.assertEqual(ctx_yellow["counterpart_name"], "Pokémon Rojo y Pokémon Azul")
+        self.assertEqual(ctx_yellow["counterpart_short_name"], "Rojo y Azul")
+        self.assertEqual(ctx_yellow["counterpart_theme"], "amber")
+        self.assertEqual(ctx_yellow["own_theme"], "amber")
+        self.assertEqual(len(ctx_yellow["counterpart_list"]), 13)
+        self.assertEqual(len(ctx_yellow["own_list"]), 0)
+
+        # Verificar badges de origen para los Pokémon creados
+        list_map = {item["national_number"]: item for item in ctx_yellow["counterpart_list"]}
+        self.assertEqual(list_map[13]["origin_badge"], "Rojo / Azul")
+        self.assertEqual(list_map[23]["origin_badge"], "Rojo")
+        self.assertEqual(list_map[52]["origin_badge"], "Azul")
+
+        # Verificar configuración de Amarillo en utils
+        self.assertIn(25, STARTERS_BY_GAME['yellow'])
+        self.assertEqual(STARTERS_BY_GAME['yellow'][25]["locations"][0]["area"], "Pueblo Paleta (Laboratorio de Oak)")
+        self.assertIn(1, YELLOW_SPECIAL_CASES)  # Bulbasaur de regalo
+        self.assertIn(4, YELLOW_SPECIAL_CASES)  # Charmander de regalo
+        self.assertIn(7, YELLOW_SPECIAL_CASES)  # Squirtle de regalo
+        self.assertIn(68, YELLOW_SPECIAL_CASES) # Machamp intercambio NPC
+        self.assertIn('yellow', GAME_CASINO_PRIZES)
+
+    def test_yellow_pokedex_view_rendering(self):
+        Game.objects.get_or_create(name="Pokémon Red", slug="red", generation=1)
+        Game.objects.get_or_create(name="Pokémon Blue", slug="blue", generation=1)
+        yellow_game, _ = Game.objects.get_or_create(name="Pokémon Yellow", slug="yellow", generation=1)
+        yellow_dex, _ = Pokedex.objects.get_or_create(game=yellow_game, name="Pokédex de Kanto", slug="kanto")
+
+        pikachu = Pokemon.objects.create(
+            national_number=25,
+            name="pikachu",
+            display_name="Pikachu",
+            primary_type="electric"
+        )
+        PokedexEntry.objects.create(pokedex=yellow_dex, pokemon=pikachu, entry_number=25)
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "yellow"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Pokémon a Transferir (13)")
+        self.assertContains(response, "Pokémon Amarillo")
+        self.assertContains(response, "id=\"btn-exclusives\"")
+        self.assertContains(response, "id=\"exclusives-modal\"")

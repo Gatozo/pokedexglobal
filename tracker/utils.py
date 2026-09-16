@@ -463,10 +463,60 @@ BLUE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
+YELLOW_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
+    # 1. Los 13 Pokémon faltantes en Pokémon Amarillo (no aparecen salvajes ni pueden evolucionar)
+    13: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    14: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Evoluciona de Weedle (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    15: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Evoluciona de Kakuna (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    23: {"type": "trade", "badge_label": "Intercambio", "badge_color": "rose", "summary": "Exclusivo de Pokémon Rojo (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    24: {"type": "trade", "badge_label": "Intercambio", "badge_color": "rose", "summary": "Evoluciona de Ekans (Exclusivo de Pokémon Rojo. Conseguir mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    26: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Tu Pikachu inicial rehúsa evolucionar con Piedra Trueno. Debes transferir un Raichu o un Pikachu de Rojo/Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul. Conseguir mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+    109: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    110: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Evoluciona de Koffing (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    124: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    125: {"type": "trade", "badge_label": "Intercambio", "badge_color": "rose", "summary": "Exclusivo de Pokémon Rojo (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
+    126: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
+
+    # 2. Iniciales clásicos entregados como regalo en Amarillo
+    1: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Regalado por una chica en una casa de Ciudad Celeste si Pikachu tiene un alto nivel de amistad", "locations": [{"area": "Ciudad Celeste", "method": "Regalo si Pikachu es feliz"}]},
+    4: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Entregado por un entrenador en la Ruta 24 (al norte del Puente Pepita)", "locations": [{"area": "Ruta 24", "method": "Regalo de entrenador"}]},
+    7: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Entregado por la Agente Mara en Ciudad Carmín tras derrotar al Líder Lt. Surge", "locations": [{"area": "Ciudad Carmín", "method": "Regalo de la Agente Mara"}]},
+
+    # 3. Intercambios dentro del juego en Amarillo (In-game NPC trades)
+    68: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la Vía Subterránea de Ruta 5 (dar un Cubone a cambio de Machoke, que evoluciona inmediatamente a Machamp)", "locations": [{"area": "Ruta 5 (Vía Subterránea)", "method": "Intercambio por Cubone"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Clefairy a cambio de Miles)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Clefairy"}]},
+
+    # 4. Fósiles
+    138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
+    139: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Omanyte al nivel 40"},
+    140: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Domo"}]},
+    141: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Kabuto al nivel 40"},
+    142: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Ámbar Viejo"}]},
+
+    # 5. Premios Dojo Kárate
+    106: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+    107: {"type": "prize", "badge_label": "Premio Dojo", "badge_color": "emerald", "is_unique": True, "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán", "locations": [{"area": "Ciudad Azafrán (Dojo Kárate)", "method": "Premio por victoria"}]},
+
+    # 6. Regalos de NPCs
+    131: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)", "locations": [{"area": "Ciudad Azafrán (Silph S.A.)", "method": "Regalo de empleado"}]},
+    133: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)", "locations": [{"area": "Ciudad Azulona (Mansión Azulona)", "method": "Pokéball en el ático"}]},
+
+    # 7. Estáticos / Legendarios
+    143: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "is_unique": True, "summary": "Pokémon único que se encuentra durmiendo y bloqueando el camino entre las rutas 12 y 16. Se debe despertar usando la Poké Flauta para poder capturarlo.", "locations": [{"area": "Bloqueando el camino entre las rutas 12 y 16", "method": "Despertar con Poké Flauta"}]},
+    144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
+    145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
+    146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En la Calle Victoria (cerca del Alto Mando)", "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
+}
+
 # Registro modular de casos especiales indexado por versión de juego
 GAME_SPECIAL_CASES: Dict[str, Dict[int, Dict[str, Any]]] = {
     'red': RED_SPECIAL_CASES,
     'blue': BLUE_SPECIAL_CASES,
+    'yellow': YELLOW_SPECIAL_CASES,
 }
 
 def clean_location_name(area_slug: str) -> str:

@@ -114,6 +114,24 @@
             border-color: rgba(59, 130, 246, 0.7) !important;
             box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.4) !important;
         }
+        {% elif game.slug == 'yellow' %}
+        .comic-header-pattern {
+            background: repeating-linear-gradient(
+                -45deg,
+                #f59e0b,
+                #f59e0b 12px,
+                #d97706 12px,
+                #d97706 24px
+            );
+        }
+        .uncaught-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(45, 34, 10, 0.6) 100%) !important;
+            border-color: rgba(217, 119, 6, 0.35) !important;
+        }
+        .uncaught-card:hover {
+            border-color: rgba(245, 158, 11, 0.7) !important;
+            box-shadow: 0 10px 25px -5px rgba(180, 83, 9, 0.35) !important;
+        }
         {% else %}
         .comic-header-pattern {
             background: repeating-linear-gradient(
@@ -135,19 +153,19 @@
         {% endif %}
     </style>
 </head>
-<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% else %}bg-red-500{% endif %} selection:text-white">
+<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}
 
     <!-- Top Navigation -->
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-full {% if game.slug == 'blue' %}bg-blue-600 shadow-blue-900/50{% else %}bg-red-600 shadow-red-900/50{% endif %} border-2 border-white flex items-center justify-center shadow-lg">
+                <div class="w-9 h-9 rounded-full {% if game.slug == 'blue' %}bg-blue-600 shadow-blue-900/50{% elif game.slug == 'yellow' %}bg-amber-500 shadow-amber-900/50{% else %}bg-red-600 shadow-red-900/50{% endif %} border-2 border-white flex items-center justify-center shadow-lg">
                     <div class="w-3 h-3 rounded-full bg-white border-2 border-slate-900"></div>
                 </div>
                 <div>
                     <h1 class="text-xl font-black tracking-tight text-white flex items-center gap-2">
-                        Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% else %}text-red-500{% endif %}">Global</span>
+                        Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% else %}text-red-500{% endif %}">Global</span>
                     </h1>
                     <p class="text-xs text-slate-400">Gestor de Capturas por Juego</p>
                 </div>
@@ -156,7 +174,7 @@
             <!-- Game Selector -->
             <div class="flex items-center space-x-3">
                 <label for="game-select" class="text-xs font-semibold text-slate-400 uppercase tracking-wider hidden sm:inline-block">Juego:</label>
-                <select id="game-select" onchange="window.location.href='/' + this.value + '/'" class="bg-slate-800 border border-slate-700 text-sm font-medium rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 {% if game.slug == 'blue' %}focus:ring-blue-500{% else %}focus:ring-red-500{% endif %} text-white">
+                <select id="game-select" onchange="window.location.href='/' + this.value + '/'" class="bg-slate-800 border border-slate-700 text-sm font-medium rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 {% if game.slug == 'blue' %}focus:ring-blue-500{% elif game.slug == 'yellow' %}focus:ring-amber-500{% else %}focus:ring-red-500{% endif %} text-white">
                     {% for g in all_games %}
                         <option value="{{ g.slug }}" {% if g.slug == game.slug %}selected{% endif %}>
                             {{ g.display_name }} (Gen {{ g.generation }})
@@ -170,10 +188,10 @@
     <!-- Main Container -->
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <!-- Hero & Progress Banner -->
-        <div class="bg-gradient-to-r {% if game.slug == 'blue' %}from-blue-950/70 border-blue-900/40{% else %}from-red-950/60 border-red-900/30{% endif %} via-slate-900 to-slate-900 border rounded-2xl p-5 sm:p-6 mb-8 shadow-xl">
+        <div class="bg-gradient-to-r {% if game.slug == 'blue' %}from-blue-950/70 border-blue-900/40{% elif game.slug == 'yellow' %}from-amber-950/60 border-amber-900/30{% else %}from-red-950/60 border-red-900/30{% endif %} via-slate-900 to-slate-900 border rounded-2xl p-5 sm:p-6 mb-8 shadow-xl">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold {% if game.slug == 'blue' %}bg-blue-500/20 text-blue-400 border-blue-500/30{% else %}bg-red-500/20 text-red-400 border-red-500/30{% endif %} border mb-2">
+                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-xs font-semibold {% if game.slug == 'blue' %}bg-blue-500/20 text-blue-400 border-blue-500/30{% elif game.slug == 'yellow' %}bg-amber-500/20 text-amber-400 border-amber-500/30{% else %}bg-red-500/20 text-red-400 border-red-500/30{% endif %} border mb-2">
                         <span>Generación {{ game.generation }}</span> • <span>Región Kanto</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-white">{{ pokedex.name }}</h2>
@@ -203,7 +221,7 @@
                         type="text" 
                         id="search-input" 
                         placeholder="Buscar por nombre o # (ej: 25, pikachu)..." 
-                        class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-9 pr-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 {% if game.slug == 'blue' %}focus:ring-blue-500{% else %}focus:ring-red-500{% endif %} focus:border-transparent transition"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-9 pr-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 {% if game.slug == 'blue' %}focus:ring-blue-500{% elif game.slug == 'yellow' %}focus:ring-amber-500{% else %}focus:ring-red-500{% endif %} focus:border-transparent transition"
                         oninput="filterCards()"
                     >
                     <svg class="w-4 h-4 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -218,11 +236,11 @@
                         type="button"
                         onclick="openExclusivesModal()" 
                         id="btn-exclusives" 
-                        class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-xs font-semibold text-white shadow transition-all hover:border-{% if exclusives_info.counterpart_theme == 'blue' %}blue{% else %}red{% endif %}-500 active:scale-95 group"
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-xs font-semibold text-white shadow transition-all hover:border-{% if exclusives_info.counterpart_theme == 'blue' %}blue{% elif exclusives_info.counterpart_theme == 'amber' %}amber{% else %}red{% endif %}-500 active:scale-95 group"
                         title="Ver Pokémon exclusivos de versión"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]{% else %}bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]{% endif %} animate-pulse"></span>
-                        <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-400 group-hover:text-blue-300{% else %}text-red-400 group-hover:text-red-300{% endif %}">
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]{% else %}bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]{% endif %} animate-pulse"></span>
+                        <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-400 group-hover:text-blue-300{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-400 group-hover:text-amber-300{% else %}text-red-400 group-hover:text-red-300{% endif %}">
                             {{ exclusives_info.button_label }}
                         </span>
                         <span class="text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
@@ -235,7 +253,7 @@
                     {% if game.has_retro_sprites %}
                     <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
                         <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 hidden lg:inline-block">Estilo:</span>
-                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} text-white shadow flex items-center gap-1">
+                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600 text-white shadow{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950 font-black shadow{% else %}bg-red-600 text-white shadow{% endif %} flex items-center gap-1">
                             <span>👾</span> Retro (Game Boy)
                         </button>
                         <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1">
@@ -246,7 +264,7 @@
 
                     <!-- Status Tabs -->
                     <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
-                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-3 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} text-white shadow">Todos</button>
+                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-3 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600 text-white shadow{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950 font-black shadow{% else %}bg-red-600 text-white shadow{% endif %}">Todos</button>
                         <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">Capturados</button>
                         <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition">Pendientes</button>
                     </div>
@@ -278,7 +296,7 @@
 
                     <!-- Header with Number & Status badge -->
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono font-bold {% if game.slug == 'blue' %}text-blue-400/80 group-hover:text-blue-300{% else %}text-slate-400 group-hover:text-slate-200{% endif %}">
+                        <span class="text-xs font-mono font-bold {% if game.slug == 'blue' %}text-blue-400/80 group-hover:text-blue-300{% elif game.slug == 'yellow' %}text-amber-400/80 group-hover:text-amber-300{% else %}text-slate-400 group-hover:text-slate-200{% endif %}">
                             #{{ entry.entry_number|stringformat:"03d" }}
                         </span>
                         <div class="flex items-center gap-1">
@@ -332,12 +350,12 @@
                     <button 
                         type="button"
                         onclick="event.stopPropagation(); toggleCatch({{ entry.id }})"
-                        class="mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 {% if entry.is_caught %}focus:ring-red-500 bg-emerald-950/60 hover:bg-red-950/60 text-emerald-300 hover:text-red-300 border-emerald-700/60 hover:border-red-700/60{% elif game.slug == 'blue' %}focus:ring-blue-500 bg-slate-800/80 hover:bg-blue-600 text-blue-300 hover:text-white border-blue-900/40 hover:border-blue-500{% else %}focus:ring-red-500 bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white border-slate-700 hover:border-red-500{% endif %}"
+                        class="mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 {% if entry.is_caught %}focus:ring-red-500 bg-emerald-950/60 hover:bg-red-950/60 text-emerald-300 hover:text-red-300 border-emerald-700/60 hover:border-red-700/60{% elif game.slug == 'blue' %}focus:ring-blue-500 bg-slate-800/80 hover:bg-blue-600 text-blue-300 hover:text-white border-blue-900/40 hover:border-blue-500{% elif game.slug == 'yellow' %}focus:ring-amber-500 bg-slate-800 hover:bg-amber-500 text-amber-300 hover:text-slate-950 border-slate-700 hover:border-amber-500{% else %}focus:ring-red-500 bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white border-slate-700 hover:border-red-500{% endif %}"
                         id="btn-{{ entry.id }}"
                     >
                         <!-- Icon Pokéball -->
                         <svg class="w-3.5 h-3.5 transition-colors" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2z"/>
+                            <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
                         </svg>
                         <span id="btn-text-{{ entry.id }}">
                             {% if entry.is_caught %}Liberar{% else %}Capturar{% endif %}
@@ -359,7 +377,7 @@
         <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
             
             <!-- Comic Header Stripe / Title Bar -->
-            <div class="{% if game.slug == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         {{ game.display_name|upper }}
@@ -509,13 +527,13 @@
         <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
             
             <!-- Cabecera estilo cómic -->
-            <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         Intercambio Link • Gen {{ game.generation }}
                     </span>
-                    <h3 class="text-white font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
-                        Pokémon Exclusivos de Versión
+                    <h3 class="{% if exclusives_info.counterpart_theme == 'amber' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
+                        {% if exclusives_info.is_yellow %}Pokémon a Transferir de Versión{% else %}Pokémon Exclusivos de Versión{% endif %}
                     </h3>
                 </div>
 
@@ -535,9 +553,15 @@
                 <!-- Progreso de Captura de Exclusivos de la Contraparte -->
                 <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div class="flex items-center gap-2.5">
-                        <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% else %}bg-red-500{% endif %} animate-pulse"></span>
+                        <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-500{% endif %} animate-pulse"></span>
                         <div>
-                            <span class="text-xs font-black uppercase text-slate-700 block">Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:</span>
+                            <span class="text-xs font-black uppercase text-slate-700 block">
+                                {% if exclusives_info.is_yellow %}
+                                    Pokémon faltantes de Rojo y Azul obtenidos:
+                                {% else %}
+                                    Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:
+                                {% endif %}
+                            </span>
                             <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
                         </div>
                     </div>
@@ -560,8 +584,8 @@
                         onclick="switchExclusivesTab('counterpart')"
                         class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %}"></span>
-                        <span>Exclusivos de {{ exclusives_info.counterpart_short_name }} ({{ exclusives_info.counterpart_total }})</span>
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
+                        <span>{% if exclusives_info.is_yellow %}Faltantes de {{ exclusives_info.counterpart_short_name }}{% else %}Exclusivos de {{ exclusives_info.counterpart_short_name }}{% endif %} ({{ exclusives_info.counterpart_total }})</span>
                     </button>
                     <button 
                         type="button"
@@ -569,7 +593,7 @@
                         onclick="switchExclusivesTab('own')"
                         class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %}"></span>
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
                         <span>Exclusivos de tu Edición ({{ exclusives_info.own_total }})</span>
                     </button>
                 </div>
@@ -582,7 +606,11 @@
                     <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
                         <span class="text-base shrink-0">ℹ️</span>
                         <div>
-                            Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
+                            {% if exclusives_info.is_yellow %}
+                                Estos 13 Pokémon <span class="underline">no aparecen salvajes ni pueden evolucionar</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante transferencia o intercambio con un jugador de <strong>Pokémon Rojo</strong> o <strong>Pokémon Azul</strong>.
+                            {% else %}
+                                Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
+                            {% endif %}
                         </div>
                     </div>
 
@@ -597,7 +625,14 @@
                         >
                             <!-- Cabecera de la ficha -->
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-mono font-bold text-slate-500">#{{ item.number }}</span>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-xs font-mono font-bold text-slate-500">#{{ item.number }}</span>
+                                    {% if item.origin_badge %}
+                                    <span class="px-1.5 py-0.2 rounded text-[9px] font-black uppercase border border-slate-950 {% if 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">
+                                        {{ item.origin_badge }}
+                                    </span>
+                                    {% endif %}
+                                </div>
                                 <span 
                                     id="excl-status-badge-{{ item.national_number }}"
                                     class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
@@ -656,6 +691,20 @@
 
                 <!-- Panel 2: Exclusivos de la Propia Edición (Mini-fichas compactas con Iconos de PC de 32x32) -->
                 <div id="exclusives-panel-own" class="hidden space-y-3">
+                    {% if exclusives_info.is_yellow %}
+                    <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-4 text-xs font-bold flex items-start gap-3 shadow-sm">
+                        <span class="text-xl shrink-0">⭐</span>
+                        <div class="space-y-1">
+                            <h4 class="font-black text-sm uppercase">Sin Pokémon exclusivos bloqueados</h4>
+                            <p class="font-medium text-slate-700">
+                                <strong>Pokémon Amarillo</strong> es una edición especial extendida donde puedes obtener a los tres Pokémon iniciales de Kanto (<strong>Bulbasaur</strong> en Ciudad Celeste, <strong>Charmander</strong> en Ruta 24 y <strong>Squirtle</strong> en Ciudad Carmín) mediante eventos y regalos dentro de la partida.
+                            </p>
+                            <p class="font-medium text-slate-700">
+                                Ninguna especie nativa de Amarillo es exclusiva de forma que impida a los jugadores de Rojo o Azul completar su Pokédex. Tu objetivo principal de intercambio en esta edición es recibir los <strong>13 Pokémon faltantes</strong> desde Rojo y Azul.
+                            </p>
+                        </div>
+                    </div>
+                    {% else %}
                     <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
                         <span class="text-base shrink-0">📦</span>
                         <div>
@@ -694,6 +743,7 @@
                         </div>
                         {% endfor %}
                     </div>
+                    {% endif %}
                 </div>
             </div>
 
@@ -717,10 +767,14 @@
 
     <!-- Interactive Scripts -->
     <script>
-        const THEME_ACTIVE_BTN = "{{ game.slug }}" === 'blue' ? 'bg-blue-600 text-white shadow' : 'bg-red-600 text-white shadow';
-        const THEME_UNCAUGHT_BTN = "{{ game.slug }}" === 'blue' 
-            ? 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800/80 hover:bg-blue-600 text-blue-300 hover:text-white border-blue-900/40 hover:border-blue-500'
-            : 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-red-500 bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white border-slate-700 hover:border-red-500';
+        const THEME_ACTIVE_BTN = "{{ game.slug }}" === 'yellow'
+            ? 'bg-amber-400 text-slate-950 font-black shadow'
+            : ("{{ game.slug }}" === 'blue' ? 'bg-blue-600 text-white shadow' : 'bg-red-600 text-white shadow');
+        const THEME_UNCAUGHT_BTN = "{{ game.slug }}" === 'yellow'
+            ? 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-amber-500 bg-slate-800 hover:bg-amber-400 text-slate-300 hover:text-slate-950 border-slate-700 hover:border-amber-400'
+            : ("{{ game.slug }}" === 'blue' 
+                ? 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800/80 hover:bg-blue-600 text-blue-300 hover:text-white border-blue-900/40 hover:border-blue-500'
+                : 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-red-500 bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white border-slate-700 hover:border-red-500');
 
         let currentStatusFilter = 'all';
         let currentSpriteStyle = 'retro';
@@ -1276,7 +1330,7 @@
                     if (isCaught) {
                         btn.className = 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-red-500 bg-emerald-950/60 hover:bg-red-950/60 text-emerald-300 hover:text-red-300 border-emerald-700/60 hover:border-red-700/60';
                     } else {
-                        btn.className = 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-800 hover:bg-emerald-600 text-slate-300 hover:text-white border-slate-700 hover:border-emerald-500';
+                        btn.className = THEME_UNCAUGHT_BTN;
                     }
                 }
             });

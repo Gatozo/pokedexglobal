@@ -11,7 +11,7 @@ GAME_COUNTERPARTS: Dict[str, List[str]] = {
     # Gen 1
     'red': ['blue'],
     'blue': ['red'],
-    'yellow': [],
+    'yellow': ['red', 'blue'],
     # Gen 2
     'gold': ['silver'],
     'silver': ['gold'],
@@ -74,6 +74,7 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         126,         # Magmar
         127,         # Pinsir
     ],
+    'yellow': [],    # Amarillo no tiene exclusivos propios bloqueados hacia Rojo/Azul
     # Gen 2
     'gold': [167, 168, 207, 216, 217, 226, 231, 232, 58, 59, 56, 57],
     'silver': [165, 166, 225, 227, 228, 229, 37, 38, 52, 53],
@@ -82,6 +83,35 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     'sapphire': [270, 271, 272, 302, 336, 337, 382],
     'firered': [23, 24, 43, 44, 45, 54, 55, 58, 59, 123, 125, 198, 211, 215, 227, 246, 247, 248],
     'leafgreen': [27, 28, 69, 70, 71, 79, 80, 126, 127, 199, 200, 216, 217, 225, 228, 229, 241],
+}
+
+# Pokémon faltantes en Pokémon Amarillo que no se pueden capturar ni evolucionar de forma nativa
+# y deben transferirse obligatoriamente desde Pokémon Rojo y/o Pokémon Azul para completar la Pokédex
+YELLOW_MISSING_POKEMON: List[int] = [
+    13, 14, 15,  # Weedle, Kakuna, Beedrill (Rojo / Azul)
+    23, 24,      # Ekans, Arbok (Rojo)
+    26,          # Raichu (El Pikachu inicial rehúsa evolucionar; requiere intercambio)
+    52, 53,      # Meowth, Persian (Azul)
+    109, 110,    # Koffing, Weezing (Rojo / Azul)
+    124,         # Jynx (Rojo / Azul mediante intercambio NPC en Celeste)
+    125,         # Electabuzz (Rojo)
+    126,         # Magmar (Azul)
+]
+
+YELLOW_ORIGIN_MAP: Dict[int, str] = {
+    13: "Rojo / Azul",
+    14: "Rojo / Azul",
+    15: "Rojo / Azul",
+    23: "Rojo",
+    24: "Rojo",
+    26: "Rojo / Azul",
+    52: "Azul",
+    53: "Azul",
+    109: "Rojo / Azul",
+    110: "Rojo / Azul",
+    124: "Rojo / Azul",
+    125: "Rojo",
+    126: "Azul",
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -130,9 +160,10 @@ def _build_exclusive_item(
     current_pokedex: Pokedex,
     current_generation: int,
     caught_entry_ids: set,
-    is_counterpart: bool
+    is_counterpart: bool,
+    origin_badge: Optional[str] = None
 ) -> Optional[Dict[str, Any]]:
-    """Construye los datos estructurados de un Pokémon exclusivo para la plantilla."""
+    """Construye los datos estructurados de un Pokémon exclusivo o faltante para la plantilla."""
     # Buscar si existe en la Pokédex actual
     entry = current_pokedex.entries.select_related('pokemon').filter(pokemon__national_number=national_num).first()
     
@@ -181,6 +212,7 @@ def _build_exclusive_item(
         'is_caught': is_caught,
         'summary': obtaining_summary,
         'is_counterpart': is_counterpart,
+        'origin_badge': origin_badge,
     }
 
 
@@ -190,30 +222,52 @@ def get_version_exclusives_context(
     caught_entry_ids: set
 ) -> Optional[Dict[str, Any]]:
     """
-    Retorna el contexto completo para el botón y el modal de exclusivos de versión.
-    Si el juego no tiene contraparte o no tiene exclusivos registrados, devuelve None.
+    Retorna el contexto completo para el botón y el modal de exclusivos de versión / Pokémon a transferir.
+    Si el juego no tiene contrapartes o no tiene exclusivos/faltantes registrados, devuelve None.
     """
     counterparts = GAME_COUNTERPARTS.get(current_game.slug, [])
     if not counterparts:
         return None
 
-    counterpart_slug = counterparts[0]
-    counterpart_short_name = GAME_SHORT_NAMES.get(counterpart_slug, counterpart_slug.title())
+    current_gen = current_game.generation
     current_short_name = GAME_SHORT_NAMES.get(current_game.slug, current_game.slug.title())
 
-    counterpart_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(counterpart_slug, [])
-    own_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(current_game.slug, [])
+    # Caso especial: Pokémon Amarillo
+    # (Sus contrapartes son Rojo y Azul; no tiene exclusivos propios bloqueados hacia ellos,
+    # pero carece de 13 especies salvajes que deben transferirse desde Rojo y/o Azul).
+    if current_game.slug == 'yellow':
+        is_yellow = True
+        counterpart_slug = 'red-blue'
+        counterpart_short_name = "Rojo y Azul"
+        counterpart_name = "Pokémon Rojo y Pokémon Azul"
+        counterpart_theme = 'amber'
+        own_theme = 'amber'
+        counterpart_exclusive_nums = YELLOW_MISSING_POKEMON
+        own_exclusive_nums = []
+        button_label = f"Pokémon a Transferir ({len(counterpart_exclusive_nums)})"
+    else:
+        is_yellow = False
+        counterpart_slug = counterparts[0]
+        counterpart_short_name = GAME_SHORT_NAMES.get(counterpart_slug, counterpart_slug.title())
+        counterpart_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(counterpart_slug, [])
+        own_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(current_game.slug, [])
 
-    if not counterpart_exclusive_nums and not own_exclusive_nums:
-        return None
+        if not counterpart_exclusive_nums and not own_exclusive_nums:
+            return None
 
-    current_gen = current_game.generation
+        counterpart_theme = 'blue' if counterpart_slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
+        own_theme = 'blue' if current_game.slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
 
-    # 1. Construir lista de exclusivos de la contraparte
+        counterpart_game = Game.objects.filter(slug=counterpart_slug).first()
+        counterpart_name = counterpart_game.display_name if counterpart_game else f"Pokémon {counterpart_short_name}"
+        button_label = f"Exclusivos de {counterpart_short_name}"
+
+    # 1. Construir lista de exclusivos / faltantes de la contraparte
     counterpart_list = []
     for num in counterpart_exclusive_nums:
+        origin = YELLOW_ORIGIN_MAP.get(num) if is_yellow else None
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True
+            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, origin_badge=origin
         )
         if item:
             counterpart_list.append(item)
@@ -227,7 +281,7 @@ def get_version_exclusives_context(
         if item:
             own_list.append(item)
 
-    # Estadísticas de exclusivos de contraparte
+    # Estadísticas de exclusivos/faltantes
     counterpart_total = len(counterpart_list)
     counterpart_caught = sum(1 for p in counterpart_list if p['is_caught'])
     counterpart_percent = round((counterpart_caught / counterpart_total * 100), 1) if counterpart_total else 0
@@ -235,22 +289,16 @@ def get_version_exclusives_context(
     own_total = len(own_list)
     own_caught = sum(1 for p in own_list if p['is_caught'])
 
-    # Tema de color para la contraparte y la propia versión
-    counterpart_theme = 'blue' if counterpart_slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
-    own_theme = 'blue' if current_game.slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
-
-    counterpart_game = Game.objects.filter(slug=counterpart_slug).first()
-    counterpart_name = counterpart_game.display_name if counterpart_game else f"Pokémon {counterpart_short_name}"
-
     return {
         'has_exclusives': True,
-        'button_label': f"Exclusivos de {counterpart_short_name}",
+        'button_label': button_label,
         'counterpart_slug': counterpart_slug,
         'counterpart_short_name': counterpart_short_name,
         'current_short_name': current_short_name,
         'counterpart_name': counterpart_name,
         'counterpart_theme': counterpart_theme,
         'own_theme': own_theme,
+        'is_yellow': is_yellow,
         'counterpart_list': counterpart_list,
         'own_list': own_list,
         'counterpart_total': counterpart_total,

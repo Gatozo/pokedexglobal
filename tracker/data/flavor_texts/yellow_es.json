@@ -1,0 +1,606 @@
+{
+  "1": {
+    "name": "bulbasaur",
+    "flavor_text_es": "Puede sobrevivir largo tiempo sin probar bocado gracias a los nutrientes que guarda en el bulbo del lomo."
+  },
+  "2": {
+    "name": "ivysaur",
+    "flavor_text_es": "Su bulbo crece a medida que absorbe nutrientes. Desprende un cierto aroma cuando está a punto de florecer."
+  },
+  "3": {
+    "name": "venusaur",
+    "flavor_text_es": "La flor que tiene en el lomo puede recoger los rayos solares para transformarlos en energía."
+  },
+  "4": {
+    "name": "charmander",
+    "flavor_text_es": "En lugares silenciosos se puede oír el débil chisporroteo de la llama que le arde en la punta de la cola."
+  },
+  "5": {
+    "name": "charmeleon",
+    "flavor_text_es": "Librar combates intensos lo entusiasma tanto que en ocasiones lanza llamas de tono blanco azulado."
+  },
+  "6": {
+    "name": "charizard",
+    "flavor_text_es": "Cuando exhala fuego abrasador, la llama de la punta de la cola se aviva y adquiere un intenso color rojo."
+  },
+  "7": {
+    "name": "squirtle",
+    "flavor_text_es": "Escupe chorros de agua mientras flota para capturar a sus presas. Se esconde en su caparazón cuando se siente en peligro."
+  },
+  "8": {
+    "name": "wartortle",
+    "flavor_text_es": "Si alguien le golpea la cabeza, se protege escondiéndose en su caparazón, aunque parte de la cola queda al descubierto."
+  },
+  "9": {
+    "name": "blastoise",
+    "flavor_text_es": "Tras fijar el blanco, ataca disparando un chorro de agua a una presión mayor que la manguera de un bombero."
+  },
+  "10": {
+    "name": "caterpie",
+    "flavor_text_es": "Cuando le tocan la antena roja que tiene en la frente, se defiende desprendiendo un hedor nauseabundo."
+  },
+  "11": {
+    "name": "metapod",
+    "flavor_text_es": "Pese a su constante empeño por endurecer su coraza para protegerse, puede romperse si recibe un fuerte impacto y quedar expuesto."
+  },
+  "12": {
+    "name": "butterfree",
+    "flavor_text_es": "Sus alas están recubiertas de escamas venenosas impermeables que le permiten volar bajo la lluvia."
+  },
+  "13": {
+    "name": "weedle",
+    "flavor_text_es": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas."
+  },
+  "14": {
+    "name": "kakuna",
+    "flavor_text_es": "Aunque es casi incapaz de moverse, en caso de sentirse amenazado puede envenenar a los enemigos con su aguijón."
+  },
+  "15": {
+    "name": "beedrill",
+    "flavor_text_es": "Tiene tres aguijones venenosos, dos en las patas anteriores y uno en la parte baja del abdomen, con los que ataca a sus enemigos una y otra vez."
+  },
+  "16": {
+    "name": "pidgey",
+    "flavor_text_es": "Su docilidad es tal que suelen defenderse levantando arena en lugar de contraatacar."
+  },
+  "17": {
+    "name": "pidgeotto",
+    "flavor_text_es": "Su extraordinaria vitalidad y resistencia le permiten cubrir grandes distancias del territorio que habita en busca de presas."
+  },
+  "18": {
+    "name": "pidgeot",
+    "flavor_text_es": "Este Pokémon vuela a una velocidad de 2 mach en busca de presas. Sus grandes garras son armas muy peligrosas."
+  },
+  "19": {
+    "name": "rattata",
+    "flavor_text_es": "Es propenso a hincar los incisivos en cualquier cosa que se le ponga por delante. Si se ve alguno, seguramente haya cuarenta cerca."
+  },
+  "20": {
+    "name": "raticate",
+    "flavor_text_es": "Gracias a las pequeñas membranas de las patas traseras, puede nadar por los ríos para capturar presas."
+  },
+  "21": {
+    "name": "spearow",
+    "flavor_text_es": "A la hora de proteger su territorio, compensa su incapacidad para volar a gran altura con una increíble velocidad."
+  },
+  "22": {
+    "name": "fearow",
+    "flavor_text_es": "Este Pokémon ha existido desde tiempos remotos. Al menor atisbo de peligro, alza el vuelo y huye."
+  },
+  "23": {
+    "name": "ekans",
+    "flavor_text_es": "La longitud de este Pokémon aumenta con el tiempo. Por la noche, se enrosca en las ramas de los árboles para descansar."
+  },
+  "24": {
+    "name": "arbok",
+    "flavor_text_es": "Se han llegado a identificar hasta seis variaciones distintas de los espeluznantes dibujos de su piel."
+  },
+  "25": {
+    "name": "pikachu",
+    "flavor_text_es": "Los bosques son su hábitat natural. En las bolsas de las mejillas acumula electricidad, por lo que quien las toque puede recibir una descarga."
+  },
+  "26": {
+    "name": "raichu",
+    "flavor_text_es": "Al acumular cierta cantidad de electricidad en el cuerpo, se vuelve agresivo. También brilla en la oscuridad."
+  },
+  "27": {
+    "name": "sandshrew",
+    "flavor_text_es": "Tiene la piel muy seca, aunque, si hace frío por la noche, aparece cubierta de un fino rocío."
+  },
+  "28": {
+    "name": "sandslash",
+    "flavor_text_es": "Utiliza hábilmente las garras en combate, por lo que suelen rompérsele. Aun así, solo tardan un día en volverle a crecer."
+  },
+  "29": {
+    "name": "nidoran-f",
+    "flavor_text_es": "A este dócil Pokémon no le gusta luchar, pero conviene tener cuidado con su pequeño cuerno, ya que segrega veneno."
+  },
+  "30": {
+    "name": "nidorina",
+    "flavor_text_es": "Mientras se cobija en su madriguera, retrae las púas, señal inequívoca de que se siente a salvo."
+  },
+  "31": {
+    "name": "nidoqueen",
+    "flavor_text_es": "Su robusto cuerpo está recubierto de escamas durísimas que se renuevan constantemente."
+  },
+  "32": {
+    "name": "nidoran-m",
+    "flavor_text_es": "Mantiene sus grandes orejas levantadas, siempre alerta. Si advierte peligro, ataca con las púas venenosas."
+  },
+  "33": {
+    "name": "nidorino",
+    "flavor_text_es": "El cuerno de su frente contiene toxinas que se liberan al punzar al rival."
+  },
+  "34": {
+    "name": "nidoking",
+    "flavor_text_es": "Su piel dura como el acero refuerza el impacto al cargar contra sus enemigos. Su cuerno puede atravesar hasta diamantes."
+  },
+  "35": {
+    "name": "clefairy",
+    "flavor_text_es": "Su aspecto jovial y sus ademanes lo hacen adorable y muy popular, aunque no suelen verse a menudo, tal vez porque su número sea escaso."
+  },
+  "36": {
+    "name": "clefable",
+    "flavor_text_es": "Un Pokémon de aspecto feérico que protege con celo su entorno y muy rara vez se deja ver por los humanos."
+  },
+  "37": {
+    "name": "vulpix",
+    "flavor_text_es": "Sus colas y pelaje son preciosos. A medida que crece, las colas se dividen y forman otras nuevas."
+  },
+  "38": {
+    "name": "ninetales",
+    "flavor_text_es": "De acuerdo con una antigua leyenda, este Pokémon es la reencarnación de nueve deidades que se unieron en un solo ser."
+  },
+  "39": {
+    "name": "jigglypuff",
+    "flavor_text_es": "Tras fijar su tierna mirada en el objetivo, entona una dulce y misteriosa melodía para adormecerlo."
+  },
+  "40": {
+    "name": "wigglytuff",
+    "flavor_text_es": "Su cuerpo es muy elástico. Cuando inhala aire profundamente, puede inflarse sin límite."
+  },
+  "41": {
+    "name": "zubat",
+    "flavor_text_es": "Emite ultrasonidos que utiliza como sonar para evitar obstáculos cuando vuela."
+  },
+  "42": {
+    "name": "golbat",
+    "flavor_text_es": "Tras aproximarse sigilosamente a su objetivo, utiliza sus afilados colmillos para chuparle la sangre."
+  },
+  "43": {
+    "name": "oddish",
+    "flavor_text_es": "En ocasiones lo confunden con una mala hierba y, al tratar de arrancarlo, profiere unos gritos escalofriantes."
+  },
+  "44": {
+    "name": "gloom",
+    "flavor_text_es": "Huele bastante mal, pero una de cada mil personas aprecia su fétido olor."
+  },
+  "45": {
+    "name": "vileplume",
+    "flavor_text_es": "Sacude sus enormes pétalos para propagar polen venenoso, lo cual provoca un verdadero estruendo."
+  },
+  "46": {
+    "name": "paras",
+    "flavor_text_es": "Escarba en el suelo para extraer nutrientes de las raíces de los árboles, que las setas del lomo absorben después casi por completo."
+  },
+  "47": {
+    "name": "parasect",
+    "flavor_text_es": "Tras largo tiempo absorbiendo la energía del huésped, la seta parásita del lomo es la que parece controlar la voluntad de este Pokémon."
+  },
+  "48": {
+    "name": "venonat",
+    "flavor_text_es": "Sus grandes ojos actúan como radares. A plena luz se percibe que son, en realidad, grupos de ojos diminutos."
+  },
+  "49": {
+    "name": "venomoth",
+    "flavor_text_es": "Las alas desprenden un polvillo de escamas impregnado de toxinas que se adhiere al contacto y resulta difícil de quitar."
+  },
+  "50": {
+    "name": "diglett",
+    "flavor_text_es": "Prefiere los lugares oscuros. Pasa la mayor parte del tiempo bajo tierra, pero también se avista con frecuencia en cuevas."
+  },
+  "51": {
+    "name": "dugtrio",
+    "flavor_text_es": "Estos trillizos combinan su fuerza para excavar hasta una profundidad de 100 km, razón por la que se les atribuyen algunos terremotos."
+  },
+  "52": {
+    "name": "meowth",
+    "flavor_text_es": "Al parecer, es más activo por la noche. Adora de tal manera los objetos redondos y brillantes que no puede evitar recogerlos si se los encuentra."
+  },
+  "53": {
+    "name": "persian",
+    "flavor_text_es": "La gema que tiene en la frente brilla por sí misma. Camina con elegancia regia."
+  },
+  "54": {
+    "name": "psyduck",
+    "flavor_text_es": "Siempre tiene dolores de cabeza. Posee poderes psíquicos, pero se desconoce si los controla a voluntad."
+  },
+  "55": {
+    "name": "golduck",
+    "flavor_text_es": "Sus delgadas y largas extremidades terminan en dedos palmeados muy desarrollados que le permiten nadar en los lagos con gracilidad."
+  },
+  "56": {
+    "name": "mankey",
+    "flavor_text_es": "Este ágil Pokémon vive en los árboles. Se enfada con facilidad y, cuando lo hace, se abalanza contra todo lo que se encuentre a su alrededor."
+  },
+  "57": {
+    "name": "primeape",
+    "flavor_text_es": "Solo se calma cuando no hay nadie cerca, por lo que llegar a ver ese momento resulta verdaderamente difícil."
+  },
+  "58": {
+    "name": "growlithe",
+    "flavor_text_es": "Este Pokémon es muy amistoso. Aun así, ladra con fiereza a cualquiera que invada su territorio."
+  },
+  "59": {
+    "name": "arcanine",
+    "flavor_text_es": "Este Pokémon es toda una leyenda en oriente. Muchos han quedado cautivados por la belleza y gracilidad que exhibe al correr."
+  },
+  "60": {
+    "name": "poliwag",
+    "flavor_text_es": "La dirección de la espiral en su vientre varía en función de la región donde nace. Se mueve con más facilidad en el agua que en tierra firme."
+  },
+  "61": {
+    "name": "poliwhirl",
+    "flavor_text_es": "Cuando se siente intimidado, usa la espiral del vientre para adormecer al rival y aprovechar para escaparse."
+  },
+  "62": {
+    "name": "poliwrath",
+    "flavor_text_es": "La fuerza que le confiere toda la musculatura del cuerpo le permite nadar con tal impulso que puede rebasar hasta a nadadores profesionales."
+  },
+  "63": {
+    "name": "abra",
+    "flavor_text_es": "Duerme 18 horas al día. Si siente peligro, se teletransporta a un lugar seguro, aun estando dormido."
+  },
+  "64": {
+    "name": "kadabra",
+    "flavor_text_es": "Hace que sucedan cosas extrañas cuando está cerca, como que los relojes vayan al revés."
+  },
+  "65": {
+    "name": "alakazam",
+    "flavor_text_es": "Este Pokémon lo recuerda todo y nunca olvida lo que aprende, de ahí que sea tan inteligente."
+  },
+  "66": {
+    "name": "machop",
+    "flavor_text_es": "Es muy fuerte, a pesar de su pequeño tamaño. Su dominio de varias artes marciales lo convierte en un rival duro de pelar."
+  },
+  "67": {
+    "name": "machoke",
+    "flavor_text_es": "El cinto antifuerza que lleva puesto limita sus movimientos. Sin él, resultaría imparable."
+  },
+  "68": {
+    "name": "machamp",
+    "flavor_text_es": "Un brazo le basta para mover montañas y, si usa los cuatro, asesta puñetazos de una potencia descomunal."
+  },
+  "69": {
+    "name": "bellsprout",
+    "flavor_text_es": "Prefiere lugares cálidos y húmedos. Atrapa pequeños Pokémon insectos con sus lianas para devorarlos."
+  },
+  "70": {
+    "name": "weepinbell",
+    "flavor_text_es": "Cuando tiene hambre, engulle a todo lo que se mueve. La pobre presa acaba disuelta en sus ácidos."
+  },
+  "71": {
+    "name": "victreebel",
+    "flavor_text_es": "Atrae a su presa con un dulce aroma a miel. Una vez atrapada en la boca, la disuelve en tan solo un día, huesos incluidos."
+  },
+  "72": {
+    "name": "tentacool",
+    "flavor_text_es": "A veces pueden encontrarse deshidratados en las playas, pero reviven al sumergirlos de nuevo en el agua."
+  },
+  "73": {
+    "name": "tentacruel",
+    "flavor_text_es": "Puede estirar y contraer con total libertad sus 80 tentáculos, con los que atrapa a su presa y le inyecta un veneno debilitante."
+  },
+  "74": {
+    "name": "geodude",
+    "flavor_text_es": "Se suele encontrar en senderos de montaña y sitios parecidos. Conviene andar con cuidado para no pisarlo sin querer y provocar su enfado."
+  },
+  "75": {
+    "name": "graveler",
+    "flavor_text_es": "Se le suele ver rodando montaña abajo. No evita los obstáculos, sino que los arrolla."
+  },
+  "76": {
+    "name": "golem",
+    "flavor_text_es": "Nada más mudar la piel, su cuerpo se vuelve blando y blanquecino, pero se endurece al poco tiempo de entrar en contacto con el aire."
+  },
+  "77": {
+    "name": "ponyta",
+    "flavor_text_es": "Es capaz de saltar muy alto. Absorbe el impacto del aterrizaje con sus robustas patas y pezuñas."
+  },
+  "78": {
+    "name": "rapidash",
+    "flavor_text_es": "Le encanta galopar. Si ve algo más rápido, intentará alcanzarlo a toda velocidad."
+  },
+  "79": {
+    "name": "slowpoke",
+    "flavor_text_es": "Es increíblemente lento y perezoso. Se toma las cosas con calma, sin preocuparse por el paso del tiempo."
+  },
+  "80": {
+    "name": "slowbro",
+    "flavor_text_es": "Lleva una vida tranquila cerca del mar. Si el Shellder de la cola se desprende, se convierte de nuevo en un Slowpoke."
+  },
+  "81": {
+    "name": "magnemite",
+    "flavor_text_es": "Puede desafiar la gravedad desde su nacimiento. Flota en el aire gracias a las ondas electromagnéticas que emite."
+  },
+  "82": {
+    "name": "magneton",
+    "flavor_text_es": "Es capaz de elevar 2 °C la temperatura en un radio de 1 km emitiendo extrañas ondas electromagnéticas."
+  },
+  "83": {
+    "name": "farfetchd",
+    "flavor_text_es": "Vive cerca de cultivos de puerros. Como estos son cada vez más escasos, se cree que el número de Farfetch’d también ha disminuido."
+  },
+  "84": {
+    "name": "doduo",
+    "flavor_text_es": "Las diminutas alas apenas le permiten volar, pero puede correr a gran velocidad gracias a sus patas hiperdesarrolladas."
+  },
+  "85": {
+    "name": "dodrio",
+    "flavor_text_es": "Este Pokémon surge al dividirse una de las cabezas de Doduo. Es capaz de correr por las praderas a 60 km/h."
+  },
+  "86": {
+    "name": "seel",
+    "flavor_text_es": "Le encantan los lugares gélidos y disfruta nadando en aguas a temperaturas en torno a los -10 °C."
+  },
+  "87": {
+    "name": "dewgong",
+    "flavor_text_es": "Su cuerpo es blanco como la nieve. Puede nadar plácidamente en mares gélidos gracias a su resistencia al frío."
+  },
+  "88": {
+    "name": "grimer",
+    "flavor_text_es": "Está hecho de lodo endurecido. Pocos se atreven a tocarlo debido a su pestilencia y composición nociva. Allá por donde pasa no crece la hierba."
+  },
+  "89": {
+    "name": "muk",
+    "flavor_text_es": "Huele tan mal que puede provocar desmayos. Su nariz se ha atrofiado de tal manera que ha perdido por completo el sentido del olfato."
+  },
+  "90": {
+    "name": "shellder",
+    "flavor_text_es": "La dura concha que lo recubre resiste cualquier ataque, por lo que su frágil cuerpo solo queda expuesto cuando esta se abre."
+  },
+  "91": {
+    "name": "cloyster",
+    "flavor_text_es": "Se protege con su concha, que es más dura que un diamante. Su capacidad de lanzar pinchos lo convierte en un rival temible."
+  },
+  "92": {
+    "name": "gastly",
+    "flavor_text_es": "Según dicen, aparece en edificios antiguos y deshabitados. Su cuerpo, de aspecto gaseoso, carece de una forma definida."
+  },
+  "93": {
+    "name": "haunter",
+    "flavor_text_es": "Sus lengüetazos le arrebatan la energía vital a su víctima y le causan unos temblores que no cesan hasta que fallece."
+  },
+  "94": {
+    "name": "gengar",
+    "flavor_text_es": "Sentir un escalofrío repentino es señal de que hay un Gengar cerca. Quien lo perciba puede convertirse en víctima de su maldición."
+  },
+  "95": {
+    "name": "onix",
+    "flavor_text_es": "Cava a gran velocidad en busca de comida. Los Diglett convierten en su hogar los túneles que deja a su paso."
+  },
+  "96": {
+    "name": "drowzee",
+    "flavor_text_es": "Si se duerme siempre en compañía de un Pokémon de esta especie, puede mostrar sueños que haya ingerido con anterioridad."
+  },
+  "97": {
+    "name": "hypno",
+    "flavor_text_es": "Conviene evitar el contacto visual en caso de encontrarse con este Pokémon, ya que puede hipnotizar con su péndulo."
+  },
+  "98": {
+    "name": "krabby",
+    "flavor_text_es": "Sus pinzas son armas muy potentes y, aunque en ocasiones se le rompen al atacar, le crecen de nuevo con rapidez."
+  },
+  "99": {
+    "name": "kingler",
+    "flavor_text_es": "Una de sus pinzas, enorme y dura como el acero, tiene 10 000 CV. No obstante, resulta demasiado pesada."
+  },
+  "100": {
+    "name": "voltorb",
+    "flavor_text_es": "Se dice que se camufla como una Poké Ball. Al más mínimo estímulo se autodestruirá."
+  },
+  "101": {
+    "name": "electrode",
+    "flavor_text_es": "Almacena tal cantidad de energía eléctrica en su cuerpo que el más leve impacto puede provocar una gran explosión."
+  },
+  "102": {
+    "name": "exeggcute",
+    "flavor_text_es": "Las cabezas se atraen unas a otras y giran entre sí. Debe tener seis para equilibrarse."
+  },
+  "103": {
+    "name": "exeggutor",
+    "flavor_text_es": "El estrépito que causa se debe a que cada una de las tres cabezas habla y actúa de forma independiente, sin tener en cuenta a las demás."
+  },
+  "104": {
+    "name": "cubone",
+    "flavor_text_es": "Siempre lleva puesto el cráneo de su difunta madre. Su llanto resuena dentro como una triste melodía."
+  },
+  "105": {
+    "name": "marowak",
+    "flavor_text_es": "Este Pokémon ha dejado atrás su debilidad y se ha vuelto más feroz con el paso del tiempo. Blande su hueso con destreza."
+  },
+  "106": {
+    "name": "hitmonlee",
+    "flavor_text_es": "La planta de los pies se le vuelve tan dura como el diamante al dar patadas a su oponente, hasta el punto de aniquilarlo."
+  },
+  "107": {
+    "name": "hitmonchan",
+    "flavor_text_es": "Sus puñetazos, semejantes a una taladradora, pueden perforar un muro de hormigón como si nada."
+  },
+  "108": {
+    "name": "lickitung",
+    "flavor_text_es": "Su lengua puede llegar a medir dos metros y la mueve con más soltura que las patas delanteras. Sus lametazos pueden causar parálisis."
+  },
+  "109": {
+    "name": "koffing",
+    "flavor_text_es": "A veces puede explotar sin avisar, ya que en lugares calurosos su gas interno se expande."
+  },
+  "110": {
+    "name": "weezing",
+    "flavor_text_es": "Este Pokémon se alimenta de los gases venenosos, los gérmenes y el polvo que encuentra en la basura."
+  },
+  "111": {
+    "name": "rhyhorn",
+    "flavor_text_es": "Es algo simple y testarudo, y solo tiene una cosa en la cabeza. Si carga contra algo, no se detiene hasta caer rendido."
+  },
+  "112": {
+    "name": "rhydon",
+    "flavor_text_es": "Pasar a ser bípedo le ha permitido desarrollar su inteligencia. La piel, rígida como una armadura, resiste incluso el magma."
+  },
+  "113": {
+    "name": "chansey",
+    "flavor_text_es": "Este amable Pokémon comparte sus nutritivos huevos con quien encuentre herido."
+  },
+  "114": {
+    "name": "tangela",
+    "flavor_text_es": "Se camufla tras una gran masa de lianas azules. Se dice que nunca dejan de crecer."
+  },
+  "115": {
+    "name": "kangaskhan",
+    "flavor_text_es": "Cuida de la cría que lleva en la bolsa de su panza y se enfrenta a todo aquel que supone una amenaza para protegerla."
+  },
+  "116": {
+    "name": "horsea",
+    "flavor_text_es": "Si se siente en peligro, arrojará un potente chorro de agua o de una tinta especial por la boca."
+  },
+  "117": {
+    "name": "seadra",
+    "flavor_text_es": "Tocar sus aletas dorsales causa entumecimiento. Mientras duerme se agarra al coral con la cola para que no se lo lleve la corriente."
+  },
+  "118": {
+    "name": "goldeen",
+    "flavor_text_es": "Durante la época de desove, se les suele ver nadando a contracorriente en ríos o remontando cascadas en grandes grupos."
+  },
+  "119": {
+    "name": "seaking",
+    "flavor_text_es": "Los machos usan el cuerno de la cabeza para horadar rocas en el lecho del río y construir allí su nido."
+  },
+  "120": {
+    "name": "staryu",
+    "flavor_text_es": "Aunque haya perdido partes de su cuerpo, le crecerán de nuevo siempre y cuando su parte central se mantenga intacta."
+  },
+  "121": {
+    "name": "starmie",
+    "flavor_text_es": "Su parte central se conoce como núcleo. Se cree que, cuando este brilla con siete colores, es señal de que se está comunicando."
+  },
+  "122": {
+    "name": "mr-mime",
+    "flavor_text_es": "Practica constantemente la pantomima. Tal es su maestría que puede convencer a quien lo observe de la existencia de algo que no es real."
+  },
+  "123": {
+    "name": "scyther",
+    "flavor_text_es": "Se agazapa en la hierba alta y salta de repente sobre el enemigo para hacerlo trizas con sus afiladas guadañas. Se mueve como un ninja."
+  },
+  "124": {
+    "name": "jynx",
+    "flavor_text_es": "Parece moverse como si estuviera bailando un ritmo de su propia invención. Mueve mucho las caderas al andar."
+  },
+  "125": {
+    "name": "electabuzz",
+    "flavor_text_es": "Cuando hay un apagón, es señal inequívoca de que este Pokémon se ha comido la energía de una central eléctrica."
+  },
+  "126": {
+    "name": "magmar",
+    "flavor_text_es": "Nace en cráteres de volcanes. Su cuerpo envuelto en llamas parece una bola de fuego."
+  },
+  "127": {
+    "name": "pinsir",
+    "flavor_text_es": "Atrapa a su presa con las pinzas y aprieta fuerte. Habita en lugares cálidos, ya que el frío puede llegar a inmovilizarlo."
+  },
+  "128": {
+    "name": "tauros",
+    "flavor_text_es": "Un Pokémon violento que rebosa energía. Cuando echa a correr, no se detiene hasta que choca con algo."
+  },
+  "129": {
+    "name": "magikarp",
+    "flavor_text_es": "Famoso por su ineptitud. Nada en todo tipo de aguas, ya sean mares, lagos, ríos o charcas."
+  },
+  "130": {
+    "name": "gyarados",
+    "flavor_text_es": "Este Pokémon tan salvaje como destructivo es conocido por haber reducido a escombros ciudades enteras en el pasado."
+  },
+  "131": {
+    "name": "lapras",
+    "flavor_text_es": "Este amable Pokémon es capaz de comprender el lenguaje humano y deja que las personas monten en él para navegar por el mar."
+  },
+  "132": {
+    "name": "ditto",
+    "flavor_text_es": "Cuando se fija en un enemigo, su cuerpo se transforma en una copia casi perfecta del mismo."
+  },
+  "133": {
+    "name": "eevee",
+    "flavor_text_es": "Puede evolucionar a varias especies distintas. Su código genético es la clave para descifrar el misterio de dicha evolución."
+  },
+  "134": {
+    "name": "vaporeon",
+    "flavor_text_es": "Su estructura celular se parece a las moléculas de agua, por eso es invisible cuando está en este elemento."
+  },
+  "135": {
+    "name": "jolteon",
+    "flavor_text_es": "Un Pokémon muy sensible que se entristece o enfada con mucha facilidad. Se carga de electricidad cada vez que cambia de humor."
+  },
+  "136": {
+    "name": "flareon",
+    "flavor_text_es": "La bolsa en el interior de su cuerpo le permite convertir el aire que aspira en llamas a 1700 °C que luego exhala por la boca."
+  },
+  "137": {
+    "name": "porygon",
+    "flavor_text_es": "Se creía que sería el único Pokémon capaz de volar por el espacio, pero aún no se ha visto a ninguno que lo haya conseguido."
+  },
+  "138": {
+    "name": "omanyte",
+    "flavor_text_es": "Este antiguo Pokémon fue regenerado a partir de un fósil. Solía nadar en antiguos mares moviendo con destreza sus 10 tentáculos."
+  },
+  "139": {
+    "name": "omastar",
+    "flavor_text_es": "Poseía unos colmillos afilados, pero el excesivo tamaño de su concha le impedía moverse con libertad, lo que acabó provocando su extinción."
+  },
+  "140": {
+    "name": "kabuto",
+    "flavor_text_es": "Este Pokémon se regeneró a partir de un fósil. Usaba los ojos de la espalda para explorar su entorno al ocultarse en el lecho marino."
+  },
+  "141": {
+    "name": "kabutops",
+    "flavor_text_es": "Este Pokémon es un rápido nadador gracias a su cuerpo esbelto. Con las garras despedaza las presas que atrapa para sorber sus fluidos."
+  },
+  "142": {
+    "name": "aerodactyl",
+    "flavor_text_es": "Este Pokémon feroz, extinto hace siglos, fue regenerado a partir de ADN extraído de un ámbar."
+  },
+  "143": {
+    "name": "snorlax",
+    "flavor_text_es": "Engulle cualquier cosa, incluso comida mohosa, sin que esto le cause dolor de estómago."
+  },
+  "144": {
+    "name": "articuno",
+    "flavor_text_es": "Un Pokémon pájaro legendario. En invierno, crea nieve congelando la humedad del aire."
+  },
+  "145": {
+    "name": "zapdos",
+    "flavor_text_es": "Este Pokémon pájaro legendario solo aparece cuando el cielo se torna oscuro y caen rayos sin cesar."
+  },
+  "146": {
+    "name": "moltres",
+    "flavor_text_es": "Un Pokémon pájaro legendario. Cuando aletea sus flamígeras alas, la oscura noche se torna roja."
+  },
+  "147": {
+    "name": "dratini",
+    "flavor_text_es": "La existencia de este mítico Pokémon fue confirmada no hace mucho por un pescador que capturó uno."
+  },
+  "148": {
+    "name": "dragonair",
+    "flavor_text_es": "Según un testigo, está rodeado por una extraña aura, que le da un aspecto misterioso y místico."
+  },
+  "149": {
+    "name": "dragonite",
+    "flavor_text_es": "Se dice que este Pokémon vive en algún lugar del mar y que también vuela. De todos modos, solo es un rumor."
+  },
+  "150": {
+    "name": "mewtwo",
+    "flavor_text_es": "Su ADN es casi el mismo que el de Mew. Sin embargo, su tamaño y carácter son muy diferentes."
+  },
+  "151": {
+    "name": "mew",
+    "flavor_text_es": "Si se observa a través de un microscopio, puede distinguirse cuán corto, fino y delicado es el pelaje de este Pokémon."
+  }
+}
