@@ -164,6 +164,41 @@ class Pokemon(models.Model):
         cries = self.raw_data.get('cries', {})
         return cries.get('legacy') or cries.get('latest') or ""
 
+    def get_pc_icon_url(self, generation: int = 1) -> str:
+        """
+        Retorna la ruta al icono de PC de la generación indicada.
+        Busca localmente en media/pokemon/icons/ con fallback en cascada.
+        """
+        from django.conf import settings
+        from pathlib import Path
+        icons_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "icons"
+        gen_candidates = [f"gen{generation}"] if generation else []
+        gen_candidates += ["gen3", "gen4", "gen5", "gen6", "gen7", "gen8"]
+
+        for g in gen_candidates:
+            target = icons_dir / g / f"{self.national_number}.png"
+            if target.exists():
+                return f"{settings.MEDIA_URL}pokemon/icons/{g}/{self.national_number}.png"
+
+        # Fallback a la CDN oficial de PokeAPI si no estuviese en disco
+        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/{self.national_number}.png"
+
+    def get_classic_icon_url(self, generation: int = 1) -> str:
+        """
+        Retorna la ruta al icono clásico original de Game Boy (Gen 1) o Game Boy Color (Gen 2).
+        """
+        from django.conf import settings
+        from pathlib import Path
+        folder = "classic_gen1" if generation == 1 else "classic_gen2"
+        target = Path(settings.MEDIA_ROOT) / "pokemon" / "icons" / folder / "by_pokemon" / f"{self.national_number}.png"
+        if target.exists():
+            return f"{settings.MEDIA_URL}pokemon/icons/{folder}/by_pokemon/{self.national_number}.png"
+        return self.get_pc_icon_url(generation=generation)
+
+    @property
+    def pc_icon_url(self):
+        return self.get_pc_icon_url(generation=1)
+
 
 class PokedexEntry(models.Model):
     pokedex = models.ForeignKey(Pokedex, on_delete=models.CASCADE, related_name="entries")
@@ -218,6 +253,10 @@ class PokedexEntry(models.Model):
         return cries.get('latest') or cries.get('legacy') or ""
 
     @property
+    def pc_icon_url(self):
+        return self.pokemon.get_pc_icon_url(generation=self.pokedex.game.generation)
+
+    @property
     def modal_data_json(self):
         """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
         import json
@@ -232,6 +271,7 @@ class PokedexEntry(models.Model):
             "secondary_type_es": self.secondary_type_es or "",
             "sprite_retro": self.game_sprite_url or self.pokemon.sprite_url,
             "sprite_modern": self.pokemon.sprite_url,
+            "pc_icon_url": self.pc_icon_url,
             "height": self.pokemon.height or 0,
             "weight": self.pokemon.weight or 0,
             "flavor_text": self.flavor_text or "",

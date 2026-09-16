@@ -212,6 +212,25 @@
                 </div>
 
                 <div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
+                    <!-- Botón de Exclusivos de Versión (a la izquierda del Estilo) -->
+                    {% if exclusives_info and exclusives_info.has_exclusives %}
+                    <button 
+                        type="button"
+                        onclick="openExclusivesModal()" 
+                        id="btn-exclusives" 
+                        class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:bg-slate-800 text-xs font-semibold text-white shadow transition-all hover:border-{% if exclusives_info.counterpart_theme == 'blue' %}blue{% else %}red{% endif %}-500 active:scale-95 group"
+                        title="Ver Pokémon exclusivos de versión"
+                    >
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]{% else %}bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]{% endif %} animate-pulse"></span>
+                        <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-400 group-hover:text-blue-300{% else %}text-red-400 group-hover:text-red-300{% endif %}">
+                            {{ exclusives_info.button_label }}
+                        </span>
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-full font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
+                            <span id="exclusives-counterpart-caught-badge">{{ exclusives_info.counterpart_caught }}</span>/{{ exclusives_info.counterpart_total }}
+                        </span>
+                    </button>
+                    {% endif %}
+
                     <!-- Retro/Modern Visual Mode (Sólo para Gen 1 a 5) -->
                     {% if game.has_retro_sprites %}
                     <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
@@ -483,6 +502,227 @@
         </div>
     </div>
 
+    <!-- Modal de Pokémon Exclusivos de Versión -->
+    {% if exclusives_info and exclusives_info.has_exclusives %}
+    <div id="exclusives-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleExclusivesBackdropClick(event)">
+        <!-- Panel de la Tarjeta -->
+        <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+            
+            <!-- Cabecera estilo cómic -->
+            <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+                <div class="flex items-center gap-2.5 z-10">
+                    <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                        Intercambio Link • Gen {{ game.generation }}
+                    </span>
+                    <h3 class="text-white font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
+                        Pokémon Exclusivos de Versión
+                    </h3>
+                </div>
+
+                <!-- Botón de Cerrar Cómic -->
+                <button 
+                    type="button" 
+                    onclick="closeExclusivesModal()" 
+                    class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                    title="Cerrar tarjeta"
+                >
+                    ✕
+                </button>
+            </div>
+
+            <!-- Subcabecera con Progreso y Pestañas -->
+            <div class="bg-slate-100 border-b-2 border-slate-950 p-3 sm:p-4 space-y-3">
+                <!-- Progreso de Captura de Exclusivos de la Contraparte -->
+                <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% else %}bg-red-500{% endif %} animate-pulse"></span>
+                        <div>
+                            <span class="text-xs font-black uppercase text-slate-700 block">Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:</span>
+                            <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                        <div class="font-mono font-black text-sm text-slate-900">
+                            <span id="excl-progress-caught" class="text-emerald-600">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                            <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{{ exclusives_info.counterpart_percent }}</span>%)</span>
+                        </div>
+                        <div class="w-28 sm:w-36 bg-slate-200 border border-slate-400 rounded-full h-2.5 overflow-hidden">
+                            <div id="excl-progress-bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selector de Pestañas -->
+                <div class="flex items-center gap-2">
+                    <button 
+                        type="button"
+                        id="tab-btn-counterpart"
+                        onclick="switchExclusivesTab('counterpart')"
+                        class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2"
+                    >
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %}"></span>
+                        <span>Exclusivos de {{ exclusives_info.counterpart_short_name }} ({{ exclusives_info.counterpart_total }})</span>
+                    </button>
+                    <button 
+                        type="button"
+                        id="tab-btn-own"
+                        onclick="switchExclusivesTab('own')"
+                        class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2"
+                    >
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %}"></span>
+                        <span>Exclusivos de tu Edición ({{ exclusives_info.own_total }})</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenido de las Pestañas -->
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1">
+                <!-- Panel 1: Exclusivos de la Contraparte (Tarjetas completas con acción de captura) -->
+                <div id="exclusives-panel-counterpart" class="space-y-3">
+                    <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
+                        <span class="text-base shrink-0">ℹ️</span>
+                        <div>
+                            Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {% for item in exclusives_info.counterpart_list %}
+                        <div 
+                            id="excl-card-{{ item.national_number }}"
+                            data-entry-id="{{ item.entry_id }}"
+                            data-caught="{% if item.is_caught %}true{% else %}false{% endif %}"
+                            class="bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] transition-all relative overflow-hidden group cursor-pointer"
+                            onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                        >
+                            <!-- Cabecera de la ficha -->
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono font-bold text-slate-500">#{{ item.number }}</span>
+                                <span 
+                                    id="excl-status-badge-{{ item.national_number }}"
+                                    class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
+                                >
+                                    {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
+                                </span>
+                            </div>
+
+                            <!-- Sprite -->
+                            <div class="my-2 relative flex items-center justify-center h-20">
+                                <img 
+                                    id="excl-img-{{ item.national_number }}"
+                                    src="{{ item.sprite_retro }}" 
+                                    data-sprite-retro="{{ item.sprite_retro }}"
+                                    data-sprite-modern="{{ item.sprite_modern }}"
+                                    alt="{{ item.name }}"
+                                    class="h-16 w-16 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
+                                >
+                            </div>
+
+                            <!-- Nombre y Tipos -->
+                            <div class="text-center">
+                                <h4 class="font-black text-sm text-slate-900 truncate uppercase">{{ item.name }}</h4>
+                                <div class="flex items-center justify-center gap-1 mt-1">
+                                    <span class="type-{{ item.primary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                        {{ item.primary_type_es }}
+                                    </span>
+                                    {% if item.secondary_type %}
+                                    <span class="type-{{ item.secondary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                        {{ item.secondary_type_es }}
+                                    </span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <!-- Botón de Captura Rápida -->
+                            {% if item.entry_id %}
+                            <button 
+                                type="button" 
+                                onclick="event.stopPropagation(); toggleExclusiveCatch({{ item.entry_id }}, {{ item.national_number }})" 
+                                id="excl-btn-{{ item.national_number }}"
+                                class="mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 {% if item.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}"
+                            >
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+                                </svg>
+                                <span id="excl-btn-text-{{ item.national_number }}">
+                                    {% if item.is_caught %}Liberar{% else %}Capturar{% endif %}
+                                </span>
+                            </button>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Panel 2: Exclusivos de la Propia Edición (Mini-fichas compactas con Iconos de PC de 32x32) -->
+                <div id="exclusives-panel-own" class="hidden space-y-3">
+                    <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
+                        <span class="text-base shrink-0">📦</span>
+                        <div>
+                            Estos Pokémon son exclusivos de tu cartucho de <strong>{{ game.display_name }}</strong>. Los jugadores de <strong>{{ exclusives_info.counterpart_name }}</strong> no pueden atraparlos en estado salvaje y necesitarán que se los pases por intercambio.
+                        </div>
+                    </div>
+
+                    <!-- Cuadrícula compacta con los iconos de PC -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                        {% for item in exclusives_info.own_list %}
+                        <div 
+                            class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
+                            onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                            title="Ver detalles de {{ item.name }}"
+                        >
+                            <div class="flex items-center gap-2.5 min-w-0">
+                                <!-- Icono de PC oficial (32x32) -->
+                                <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                                    <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
+                                </div>
+                                <div class="min-w-0">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
+                                        <span class="font-black text-xs text-slate-900 truncate uppercase">{{ item.name }}</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 mt-0.5">
+                                        <span class="type-{{ item.primary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                            {{ item.primary_type_es }}
+                                        </span>
+                                        {% if item.secondary_type %}
+                                        <span class="type-{{ item.secondary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                            {{ item.secondary_type_es }}
+                                        </span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="shrink-0 ml-2">
+                                <span class="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider border border-slate-950 {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}">
+                                    {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
+                                </span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-600">
+                <div class="flex items-center gap-1.5">
+                    <span>💡</span>
+                    <span>Registra cada exclusivo al recibirlo por intercambio con un amigo.</span>
+                </div>
+                <button 
+                    type="button" 
+                    onclick="closeExclusivesModal()" 
+                    class="py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all active:translate-x-0.5 active:translate-y-0.5"
+                >
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
     <!-- Interactive Scripts -->
     <script>
         const THEME_ACTIVE_BTN = "{{ game.slug }}" === 'blue' ? 'bg-blue-600 text-white shadow' : 'bg-red-600 text-white shadow';
@@ -524,6 +764,16 @@
                         img.src = card.dataset.spriteModern;
                         img.classList.remove('pixel-art');
                     }
+                }
+            });
+
+            document.querySelectorAll("img[id^='excl-img-']").forEach(img => {
+                if (style === 'retro') {
+                    img.src = img.dataset.spriteRetro;
+                    img.classList.add('pixel-art');
+                } else {
+                    img.src = img.dataset.spriteModern;
+                    img.classList.remove('pixel-art');
                 }
             });
 
@@ -649,6 +899,9 @@
                     if (activeModalEntryId === entryId) {
                         updateModalCatchStatus(data.is_caught);
                     }
+
+                    // Sincronizar con la tarjeta de exclusivos si este Pokémon está en ella
+                    updateExclusivesCardStatus(entryId, data.is_caught);
 
                     // Actualizar métricas globales
                     document.getElementById('stat-caught').textContent = data.caught_count;
@@ -889,9 +1142,120 @@
             }
         }
 
+        /* ===== Modal de Pokémon Exclusivos de Versión ===== */
+        function openExclusivesModal() {
+            const modal = document.getElementById('exclusives-modal');
+            const modalCard = document.getElementById('exclusives-modal-card');
+            if (modal && modalCard) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeExclusivesModal() {
+            const modal = document.getElementById('exclusives-modal');
+            const modalCard = document.getElementById('exclusives-modal-card');
+            if (modal && modalCard) {
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalCard.classList.remove('scale-100');
+                modalCard.classList.add('scale-95');
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        function handleExclusivesBackdropClick(e) {
+            if (e.target.id === 'exclusives-modal') {
+                closeExclusivesModal();
+            }
+        }
+
+        function switchExclusivesTab(tab) {
+            const panelCounterpart = document.getElementById('exclusives-panel-counterpart');
+            const panelOwn = document.getElementById('exclusives-panel-own');
+            const btnCounterpart = document.getElementById('tab-btn-counterpart');
+            const btnOwn = document.getElementById('tab-btn-own');
+
+            if (!panelCounterpart || !panelOwn) return;
+
+            if (tab === 'counterpart') {
+                panelCounterpart.classList.remove('hidden');
+                panelOwn.classList.add('hidden');
+                btnCounterpart.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2';
+                btnOwn.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2';
+            } else {
+                panelOwn.classList.remove('hidden');
+                panelCounterpart.classList.add('hidden');
+                btnOwn.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2';
+                btnCounterpart.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2';
+            }
+        }
+
+        async function toggleExclusiveCatch(entryId, nationalNumber) {
+            await toggleCatch(entryId);
+        }
+
+        function updateExclusivesCardStatus(entryId, isCaught) {
+            const card = document.querySelector(`[id^='excl-card-'][data-entry-id='${entryId}']`);
+            if (card) {
+                card.dataset.caught = isCaught ? 'true' : 'false';
+                const nationalNum = card.id.replace('excl-card-', '');
+                const badge = document.getElementById(`excl-status-badge-${nationalNum}`);
+                const btn = document.getElementById(`excl-btn-${nationalNum}`);
+                const btnText = document.getElementById(`excl-btn-text-${nationalNum}`);
+
+                if (badge) {
+                    if (isCaught) {
+                        badge.className = 'px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 text-slate-950';
+                        badge.textContent = '✓ Atrapado';
+                    } else {
+                        badge.className = 'px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 bg-slate-200 text-slate-600';
+                        badge.textContent = 'Pendiente';
+                    }
+                }
+
+                if (btn) {
+                    if (isCaught) {
+                        btn.className = 'mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 bg-rose-500 hover:bg-rose-600 text-white';
+                        if (btnText) btnText.textContent = 'Liberar';
+                    } else {
+                        btn.className = 'mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white';
+                        if (btnText) btnText.textContent = 'Capturar';
+                    }
+                }
+            }
+
+            // Recalcular métricas de exclusivos de la contraparte
+            const counterpartCards = document.querySelectorAll("#exclusives-panel-counterpart [id^='excl-card-']");
+            if (counterpartCards.length > 0) {
+                let caughtCount = 0;
+                counterpartCards.forEach(c => {
+                    if (c.dataset.caught === 'true') caughtCount++;
+                });
+                const totalCount = counterpartCards.length;
+                const percent = Math.round((caughtCount / totalCount) * 100);
+
+                const badgeElem = document.getElementById('exclusives-counterpart-caught-badge');
+                if (badgeElem) badgeElem.textContent = caughtCount;
+
+                const caughtElem = document.getElementById('excl-progress-caught');
+                if (caughtElem) caughtElem.textContent = caughtCount;
+
+                const percentElem = document.getElementById('excl-progress-percent');
+                if (percentElem) percentElem.textContent = percent;
+
+                const barElem = document.getElementById('excl-progress-bar');
+                if (barElem) barElem.style.width = `${percent}%`;
+            }
+        }
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closePokemonModal();
+                closeExclusivesModal();
             }
         });
 

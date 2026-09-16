@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from .models import Game, Pokedex, PokedexEntry, UserPokemonCatch
+from .exclusives import get_version_exclusives_context
 
 
 def _get_user_or_session(request):
@@ -45,6 +46,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
     caught_count = len(caught_entry_ids)
     caught_percent = round((caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 
+    exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids)
+
     context = {
         "game": game,
         "pokedex": pokedex,
@@ -54,6 +57,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
         "caught_count": caught_count,
         "caught_percent": caught_percent,
         "all_games": Game.objects.all(),
+        "exclusives_info": exclusives_info,
     }
     return render(request, "tracker/pokedex_detail.html", context)
 

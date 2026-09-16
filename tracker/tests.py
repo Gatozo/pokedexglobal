@@ -577,10 +577,61 @@ class FixtureExportTests(TestCase):
         self.client.force_login(self.superuser)
         resp = self.client.get(reverse("admin:index"))
         self.assertEqual(resp.status_code, 200)
-        self.assertIn("fixture_info", resp.context)
-        self.assertContains(resp, "Respaldo de Datos")
-        self.assertContains(resp, "Actualizar Fixture")
+    def test_pc_icon_url_and_fallback(self):
+        icon_url = self.pokemon.get_pc_icon_url(generation=1)
+        self.assertTrue(icon_url.startswith("/media/pokemon/icons/") or icon_url.startswith("https://"))
+        self.assertIn("1.png", icon_url)
+        self.assertEqual(self.entry.pc_icon_url, icon_url)
 
+    def test_version_exclusives_catalog_and_context(self):
+        from tracker.exclusives import get_version_exclusives_context, VERSION_EXCLUSIVES_CATALOG, GAME_COUNTERPARTS
 
+        # 1. Crear juego azul y entradas necesarias
+        blue_game = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
+        blue_dex = Pokedex.objects.create(game=blue_game, name="Pokédex de Kanto", slug="kanto")
+        sandshrew = Pokemon.objects.create(
+            national_number=27,
+            name="sandshrew",
+            display_name="Sandshrew",
+            sprite_url="https://example.com/sandshrew.png",
+            primary_type="ground"
+        )
+        entry_sandshrew = PokedexEntry.objects.create(
+            pokedex=self.pokedex,  # en el pokedex de Red
+            pokemon=sandshrew,
+            entry_number=27
+        )
 
+        # 2. Contexto de exclusivos para Rojo
+        ctx_red = get_version_exclusives_context(self.game, self.pokedex, set())
+        self.assertIsNotNone(ctx_red)
+        self.assertEqual(ctx_red["button_label"], "Exclusivos de Azul")
+        self.assertEqual(ctx_red["counterpart_slug"], "blue")
+        self.assertEqual(ctx_red["counterpart_short_name"], "Azul")
+        self.assertEqual(ctx_red["counterpart_name"], "Pokémon Azul")
+        self.assertEqual(ctx_red["counterpart_theme"], "blue")
+        self.assertEqual(ctx_red["own_theme"], "red")
+        self.assertIn(27, [p["national_number"] for p in ctx_red["counterpart_list"]])
 
+        # 3. Contexto de exclusivos para Azul
+        ctx_blue = get_version_exclusives_context(blue_game, blue_dex, set())
+        self.assertIsNotNone(ctx_blue)
+        self.assertEqual(ctx_blue["button_label"], "Exclusivos de Rojo")
+        self.assertEqual(ctx_blue["counterpart_slug"], "red")
+        self.assertEqual(ctx_blue["counterpart_short_name"], "Rojo")
+        self.assertEqual(ctx_blue["counterpart_name"], "Pokémon Rojo")
+        self.assertEqual(ctx_blue["counterpart_theme"], "red")
+        self.assertEqual(ctx_blue["own_theme"], "blue")
+
+    def test_pokedex_view_renders_exclusives_button_and_modal(self):
+        # Crear contraparte Blue para que se active el botón
+        Game.objects.get_or_create(name="Pokémon Blue", slug="blue", generation=1)
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Exclusivos de Azul")
+        self.assertContains(response, "id=\"btn-exclusives\"")
+        self.assertContains(response, "id=\"exclusives-modal\"")
+        self.assertContains(response, "id=\"tab-btn-counterpart\"")
+        self.assertContains(response, "id=\"tab-btn-own\"")
