@@ -354,7 +354,7 @@
     </footer>
 
     <!-- Comic Book Style Modal -->
-    <div id="comic-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleModalBackdropClick(event)">
+    <div id="comic-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" style="z-index: 70;" onclick="handleModalBackdropClick(event)">
         <!-- Modal Panel Window -->
         <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
             
@@ -607,14 +607,14 @@
                             </div>
 
                             <!-- Sprite -->
-                            <div class="my-2 relative flex items-center justify-center h-20">
+                            <div class="my-1 relative flex items-center justify-center h-24">
                                 <img 
                                     id="excl-img-{{ item.national_number }}"
                                     src="{{ item.sprite_retro }}" 
                                     data-sprite-retro="{{ item.sprite_retro }}"
                                     data-sprite-modern="{{ item.sprite_modern }}"
                                     alt="{{ item.name }}"
-                                    class="h-16 w-16 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
+                                    class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
                                 >
                             </div>
 
@@ -667,37 +667,29 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
                         {% for item in exclusives_info.own_list %}
                         <div 
-                            class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
+                            class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
                             onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
                             title="Ver detalles de {{ item.name }}"
                         >
-                            <div class="flex items-center gap-2.5 min-w-0">
-                                <!-- Icono de PC oficial (32x32) -->
-                                <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
-                                    <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
-                                </div>
-                                <div class="min-w-0">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
-                                        <span class="font-black text-xs text-slate-900 truncate uppercase">{{ item.name }}</span>
-                                    </div>
-                                    <div class="flex items-center gap-1 mt-0.5">
-                                        <span class="type-{{ item.primary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
-                                            {{ item.primary_type_es }}
-                                        </span>
-                                        {% if item.secondary_type %}
-                                        <span class="type-{{ item.secondary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
-                                            {{ item.secondary_type_es }}
-                                        </span>
-                                        {% endif %}
-                                    </div>
-                                </div>
+                            <!-- Icono de PC oficial (32x32) -->
+                            <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                                <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
                             </div>
-
-                            <div class="shrink-0 ml-2">
-                                <span class="px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider border border-slate-950 {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}">
-                                    {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
-                                </span>
+                            <div class="min-w-0 flex-1">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
+                                    <span class="font-black text-xs text-slate-900 uppercase leading-none">{{ item.name }}</span>
+                                </div>
+                                <div class="flex items-center gap-1 mt-1">
+                                    <span class="type-{{ item.primary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                        {{ item.primary_type_es }}
+                                    </span>
+                                    {% if item.secondary_type %}
+                                    <span class="type-{{ item.secondary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                        {{ item.secondary_type_es }}
+                                    </span>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                         {% endfor %}
@@ -1108,7 +1100,11 @@
                 modalCard.classList.remove('scale-100');
                 modalCard.classList.add('scale-95');
             }
-            document.body.classList.remove('overflow-hidden');
+            // Solo remover el bloqueo de scroll si el modal de exclusivos no está abierto
+            const exclModal = document.getElementById('exclusives-modal');
+            if (!exclModal || exclModal.classList.contains('opacity-0')) {
+                document.body.classList.remove('overflow-hidden');
+            }
             activeModalEntryId = null;
         }
 
@@ -1254,8 +1250,12 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closePokemonModal();
-                closeExclusivesModal();
+                const comicModal = document.getElementById('comic-modal');
+                if (comicModal && !comicModal.classList.contains('opacity-0')) {
+                    closePokemonModal();
+                } else {
+                    closeExclusivesModal();
+                }
             }
         });
 
