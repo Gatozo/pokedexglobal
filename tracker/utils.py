@@ -281,8 +281,8 @@ KANTO_LOCATION_NAMES_ES = {
     'kanto-power-plant-area': 'Central de Energía',
     'power-plant-area': 'Central de Energía',
     'vermilion-city-ss-anne-dock': 'Muelle del S.S. Anne (Ciudad Carmín)',
-    'kanto-route-3-pokemon-center': 'Centro Pokémon de Ruta 4',
-    'kanto-route-4-pokemon-center': 'Centro Pokémon de Ruta 4',
+    'kanto-route-3-pokemon-center': 'Centro Pokémon de la Ruta 4',
+    'kanto-route-4-pokemon-center': 'Centro Pokémon de la Ruta 4',
     'underground-path': 'Vía Subterránea',
     'kanto-underground-path': 'Vía Subterránea',
 }
@@ -395,10 +395,10 @@ RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     126: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     127: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     # Intercambios dentro del juego (In-game trades)
-    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín (dar un Spearow a cambio de Dux)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
-    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Abra a cambio de Marcel)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
-    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste (dar un Poliwhirl a cambio de Lola)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
-    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 18 (dar un Slowbro a cambio de Marc)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
+    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín: entrega un Spearow a cambio de Farfetch'd (con el mote «Dux»)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 2: entrega un Abra a cambio de Mr. Mime (con el mote «Marcel»)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
+    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste: entrega un Poliwhirl a cambio de Jynx (con el mote «Lola»)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
+    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 18: entrega un Slowbro a cambio de Lickitung (con el mote «Marc»)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
     # Casino Ciudad Azulona
     137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Canjeable en el Casino Rocket de Ciudad Azulona por 9.999 fichas", "locations": [{"area": "Ciudad Azulona (Casino)", "method": "Canje de fichas (9.999)"}]},
     # Fósiles
@@ -418,7 +418,7 @@ RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
     145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
     146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "is_unique": True, "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
-    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer en la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
@@ -436,10 +436,10 @@ BLUE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     123: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
     125: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Rojo (obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
     # Intercambios dentro del juego (In-game trades)
-    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín (dar un Spearow a cambio de Dux)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
-    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Abra a cambio de Marcel)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
-    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste (dar un Poliwhirl a cambio de Lola)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
-    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 18 (dar un Slowbro a cambio de Marc)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
+    83: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Carmín: entrega un Spearow a cambio de Farfetch'd (con el mote «Dux»)", "locations": [{"area": "Ciudad Carmín", "method": "Intercambio por Spearow"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 2: entrega un Abra a cambio de Mr. Mime (con el mote «Marcel»)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Abra"}]},
+    124: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Celeste: entrega un Poliwhirl a cambio de Jynx (con el mote «Lola»)", "locations": [{"area": "Ciudad Celeste", "method": "Intercambio por Poliwhirl"}]},
+    108: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 18: entrega un Slowbro a cambio de Lickitung (con el mote «Marc»)", "locations": [{"area": "Ruta 18 (Caseta)", "method": "Intercambio por Slowbro"}]},
     # Casino Ciudad Azulona (Premios específicos de Azul)
     137: {"type": "casino", "badge_label": "Premio Casino", "badge_color": "amber", "summary": "Canjeable en el Casino Rocket de Ciudad Azulona por 6.500 fichas", "locations": [{"area": "Ciudad Azulona (Casino)", "method": "Canje de fichas (6.500)"}]},
     # Fósiles
@@ -459,7 +459,7 @@ BLUE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
     145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
     146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "summary": "En la Calle Victoria (cerca del Alto Mando)", "is_unique": True, "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
-    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer en la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
@@ -470,7 +470,7 @@ YELLOW_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     15: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Evoluciona de Kakuna (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
     23: {"type": "trade", "badge_label": "Intercambio", "badge_color": "rose", "summary": "Exclusivo de Pokémon Rojo (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
     24: {"type": "trade", "badge_label": "Intercambio", "badge_color": "rose", "summary": "Evoluciona de Ekans (Exclusivo de Pokémon Rojo. Conseguir mediante intercambio)", "locations": [{"area": "Edición Pokémon Rojo", "method": "Intercambio con cable link"}]},
-    26: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Tu Pikachu inicial rehúsa evolucionar con Piedra Trueno. Debes transferir un Raichu o un Pikachu de Rojo/Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
+    26: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "Tu Pikachu inicial se niega a evolucionar con la Piedra Trueno. Debes transferir un Raichu o un Pikachu desde Pokémon Rojo o Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
     52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Azul (no disponible en Amarillo). Conseguir mediante intercambio", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul. Conseguir mediante intercambio)", "locations": [{"area": "Edición Pokémon Azul", "method": "Intercambio con cable link"}]},
     109: {"type": "trade", "badge_label": "Intercambio", "badge_color": "amber", "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul", "locations": [{"area": "Edición Rojo / Azul", "method": "Intercambio con cable link"}]},
@@ -485,8 +485,8 @@ YELLOW_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     7: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "is_unique": True, "summary": "Entregado por la Agente Mara en Ciudad Carmín tras derrotar al Líder Lt. Surge", "locations": [{"area": "Ciudad Carmín", "method": "Regalo de la Agente Mara"}]},
 
     # 3. Intercambios dentro del juego en Amarillo (In-game NPC trades)
-    68: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la Vía Subterránea de Ruta 5 (dar un Cubone a cambio de Machoke, que evoluciona inmediatamente a Machamp)", "locations": [{"area": "Ruta 5 (Vía Subterránea)", "method": "Intercambio por Cubone"}]},
-    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de Ruta 2 (dar un Clefairy a cambio de Miles)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Clefairy"}]},
+    68: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la Vía Subterránea de la Ruta 5: entrega un Cubone a cambio de Machoke (con el mote «Ricky»), que evoluciona inmediatamente a Machamp tras el intercambio", "locations": [{"area": "Ruta 5 (Vía Subterránea)", "method": "Intercambio por Cubone"}]},
+    122: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 2: entrega un Clefairy a cambio de Mr. Mime (con el mote «Miles»)", "locations": [{"area": "Ruta 2 (Caseta)", "method": "Intercambio por Clefairy"}]},
 
     # 4. Fósiles
     138: {"type": "fossil", "badge_label": "Fósil", "badge_color": "amber", "is_unique": True, "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela", "locations": [{"area": "Isla Canela (Laboratorio)", "method": "Revivir Fósil Hélix"}]},
@@ -508,7 +508,7 @@ YELLOW_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     144: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Espuma (Sótano B4F)", "locations": [{"area": "Islas Espuma (Sótano B4F)", "method": "Encuentro Legendario"}]},
     145: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "Al final de la Central de Energía", "locations": [{"area": "Central de Energía", "method": "Encuentro Legendario"}]},
     146: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En la Calle Victoria (cerca del Alto Mando)", "locations": [{"area": "Calle Victoria", "method": "Encuentro Legendario"}]},
-    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
+    150: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de la Cueva Celeste (tras vencer en la Liga Pokémon)", "locations": [{"area": "Cueva Celeste", "method": "Encuentro Legendario"}]},
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 

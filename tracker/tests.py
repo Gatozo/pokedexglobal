@@ -324,6 +324,33 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(res_snorlax["locations"][0]["area"], "Bloqueando el camino entre las rutas 12 y 16")
         self.assertEqual(res_snorlax["locations"][0]["method"], "Despertar con Poké Flauta")
 
+        # 7. Intercambios NPC con motes y artículos cuidados
+        res_mr_mime_red = resolve_obtaining_info(122, "mr-mime", "red")
+        self.assertEqual(res_mr_mime_red["type"], "trade_npc")
+        self.assertEqual(
+            res_mr_mime_red["summary"],
+            "Intercambio en la caseta de la Ruta 2: entrega un Abra a cambio de Mr. Mime (con el mote «Marcel»)"
+        )
+
+        res_mr_mime_yellow = resolve_obtaining_info(122, "mr-mime", "yellow")
+        self.assertEqual(res_mr_mime_yellow["type"], "trade_npc")
+        self.assertEqual(
+            res_mr_mime_yellow["summary"],
+            "Intercambio en la caseta de la Ruta 2: entrega un Clefairy a cambio de Mr. Mime (con el mote «Miles»)"
+        )
+
+        res_farfetchd_red = resolve_obtaining_info(83, "farfetchd", "red")
+        self.assertEqual(
+            res_farfetchd_red["summary"],
+            "Intercambio en Ciudad Carmín: entrega un Spearow a cambio de Farfetch'd (con el mote «Dux»)"
+        )
+
+        res_machamp_yellow = resolve_obtaining_info(68, "machamp", "yellow")
+        self.assertEqual(
+            res_machamp_yellow["summary"],
+            "Intercambio en la Vía Subterránea de la Ruta 5: entrega un Cubone a cambio de Machoke (con el mote «Ricky»), que evoluciona inmediatamente a Machamp tras el intercambio"
+        )
+
     def test_location_cleaning_and_biome_encounter_methods(self):
         from .utils import clean_location_name, resolve_encounter_method_label, resolve_obtaining_info
 
