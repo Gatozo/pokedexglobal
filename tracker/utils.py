@@ -4,7 +4,7 @@ import json
 import time
 import random
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Union
 import requests
 
 DEFAULT_HEADERS = {
@@ -198,6 +198,37 @@ def resolve_types_for_generation(
             return p_type, s_type
 
     return fallback_primary, fallback_secondary
+
+
+ITEMS_DATA_PATH = Path(__file__).resolve().parent / "data" / "items.json"
+_ITEMS_CACHE: Optional[Dict[str, Any]] = None
+
+
+def get_items_catalog() -> Dict[str, Any]:
+    """Carga y cachea en memoria el catálogo canónico de objetos (items.json) si existe."""
+    global _ITEMS_CACHE
+    if _ITEMS_CACHE is None:
+        if ITEMS_DATA_PATH.exists():
+            try:
+                with open(ITEMS_DATA_PATH, "r", encoding="utf-8") as f:
+                    _ITEMS_CACHE = json.load(f)
+            except Exception:
+                _ITEMS_CACHE = {"meta": {}, "items": {}, "by_id": {}}
+        else:
+            _ITEMS_CACHE = {"meta": {}, "items": {}, "by_id": {}}
+    return _ITEMS_CACHE
+
+
+def get_item(slug_or_id: Union[str, int]) -> Optional[Dict[str, Any]]:
+    """Obtiene la información estructurada de un objeto por slug o por ID numérico."""
+    catalog = get_items_catalog()
+    items = catalog.get("items", {})
+
+    if isinstance(slug_or_id, int) or (isinstance(slug_or_id, str) and slug_or_id.isdigit()):
+        slug = catalog.get("by_id", {}).get(str(slug_or_id))
+        return items.get(slug) if slug else None
+
+    return items.get(str(slug_or_id).lower())
 
 
 FLAVOR_TEXTS_DIR = Path(__file__).resolve().parent / "data" / "flavor_texts"

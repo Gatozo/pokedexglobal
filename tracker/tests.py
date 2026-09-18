@@ -724,3 +724,31 @@ class FixtureExportTests(TestCase):
         self.assertContains(response, "Pokémon Amarillo")
         self.assertContains(response, "id=\"btn-exclusives\"")
         self.assertContains(response, "id=\"exclusives-modal\"")
+
+    def test_items_catalog_and_utils(self):
+        from .utils import get_items_catalog, get_item
+
+        catalog = get_items_catalog()
+        self.assertIn("items", catalog)
+        self.assertIn("by_id", catalog)
+        self.assertGreater(catalog["meta"].get("total_items", 0), 2000)
+
+        # Comprobar Poké Ball
+        poke_ball = get_item("poke-ball")
+        self.assertIsNotNone(poke_ball)
+        self.assertEqual(poke_ball["name_es"], "Poké Ball")
+        self.assertEqual(poke_ball["pocket"], "pokeballs")
+        self.assertTrue(poke_ball["has_sprite"])
+        self.assertTrue(poke_ball["sprite_url"].endswith("poke-ball.png"))
+
+        # Comprobar consulta por ID
+        item_master = get_item(1)
+        self.assertIsNotNone(item_master)
+        self.assertEqual(item_master["slug"], "master-ball")
+
+        # Comprobar Fósil Hélix
+        helix = get_item("helix-fossil")
+        self.assertIsNotNone(helix)
+        self.assertEqual(helix["name_es"], "Fósil Hélix")
+        self.assertTrue(helix["has_sprite"])
+

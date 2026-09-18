@@ -253,11 +253,11 @@
                     {% if game.has_retro_sprites %}
                     <div class="flex items-center space-x-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
                         <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider px-2 hidden lg:inline-block">Estilo:</span>
-                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600 text-white shadow{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950 font-black shadow{% else %}bg-red-600 text-white shadow{% endif %} flex items-center gap-1">
-                            <span>👾</span> Retro (Game Boy)
+                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition {% if game.slug == 'blue' %}bg-blue-600 text-white shadow{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950 font-black shadow{% else %}bg-red-600 text-white shadow{% endif %} flex items-center gap-1.5">
+                            <img src="/media/pokemon/icons/classic_gen1/archetypes/mon.png" alt="Retro" class="w-4 h-4 object-contain inline-block [image-rendering:pixelated]"> Retro (Game Boy)
                         </button>
-                        <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1">
-                            <span>🎨</span> Ilustración
+                        <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white transition flex items-center gap-1.5">
+                            Ilustración
                         </button>
                     </div>
                     {% endif %}
@@ -441,8 +441,9 @@
                         <!-- Pokédex Entry Speech Bubble -->
                         <div class="flex-1 flex flex-col">
                             <div class="inline-flex items-center gap-1 mb-1.5">
-                                <span class="bg-sky-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
-                                    💬 Archivo Pokédex
+                                <span class="bg-sky-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
+                                    <img src="/media/items/journal.png" alt="" class="w-3.5 h-3.5 object-contain inline-block">
+                                    Archivo Pokédex
                                 </span>
                             </div>
                             
@@ -472,8 +473,9 @@
                 <!-- Bottom Section: Obtaining Method & Location (Comic Panel) -->
                 <div class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
-                            📍 Cómo conseguirlo en {{ game.display_name }}
+                        <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
+                            <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain inline-block">
+                            Cómo conseguirlo en {{ game.display_name }}
                         </span>
                         <div class="flex items-center gap-1.5">
                             <span id="modal-unique-badge" class="hidden border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-rose-500 text-white">
@@ -693,7 +695,7 @@
                 <div id="exclusives-panel-own" class="hidden space-y-3">
                     {% if exclusives_info.is_yellow %}
                     <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-4 text-xs font-bold flex items-start gap-3 shadow-sm">
-                        <span class="text-xl shrink-0">⭐</span>
+                        <img src="/media/items/star-piece.png" alt="Especial" class="w-6 h-6 shrink-0 object-contain">
                         <div class="space-y-1">
                             <h4 class="font-black text-sm uppercase">Sin Pokémon exclusivos bloqueados</h4>
                             <p class="font-medium text-slate-700">
@@ -706,7 +708,7 @@
                     </div>
                     {% else %}
                     <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
-                        <span class="text-base shrink-0">📦</span>
+                        <img src="/media/items/oaks-parcel.png" alt="Paquete" class="w-5 h-5 shrink-0 object-contain">
                         <div>
                             Estos Pokémon son exclusivos de tu cartucho de <strong>{{ game.display_name }}</strong>. Los jugadores de <strong>{{ exclusives_info.counterpart_name }}</strong> no pueden atraparlos en estado salvaje y necesitarán que se los pases por intercambio.
                         </div>
@@ -750,7 +752,6 @@
             <!-- Barra inferior -->
             <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-600">
                 <div class="flex items-center gap-1.5">
-                    <span>💡</span>
                     <span>Registra cada exclusivo al recibirlo por intercambio con un amigo.</span>
                 </div>
                 <button 
@@ -1104,7 +1105,7 @@
                 const evoBox = document.createElement('div');
                 evoBox.className = 'text-xs bg-indigo-50 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 font-bold flex items-center gap-2 mb-2 shadow-sm';
                 const evoText = obt.evolution_info.text || `Evoluciona de ${obt.evolution_info.from} (${obt.evolution_info.condition || ''})`;
-                evoBox.innerHTML = `<span>⚡</span> <span><strong>Evolución:</strong> ${evoText}</span>`;
+                evoBox.innerHTML = `<img src="/media/items/rare-candy.png" alt="Evolución" class="w-4 h-4 object-contain inline-block shrink-0"> <span><strong>Evolución:</strong> ${evoText}</span>`;
                 detailsContainer.appendChild(evoBox);
             }
 
@@ -1112,8 +1113,8 @@
             if (obt.locations && obt.locations.length > 0) {
                 if (obt.evolution_info) {
                     const wildTitle = document.createElement('div');
-                    wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1 flex items-center gap-1';
-                    wildTitle.innerHTML = '<span>🌿</span> <span>Encuentros salvajes:</span>';
+                    wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
+                    wildTitle.textContent = 'Encuentros salvajes:';
                     detailsContainer.appendChild(wildTitle);
                 }
 
@@ -1122,7 +1123,7 @@
                 obt.locations.forEach(loc => {
                     const item = document.createElement('div');
                     item.className = 'flex items-center justify-between text-[11px] bg-slate-50 border border-slate-300 rounded px-2.5 py-1 font-semibold text-slate-800';
-                    item.innerHTML = `<span class="truncate mr-1">📍 ${loc.area}</span><span class="text-[10px] text-slate-500 font-medium shrink-0">(${loc.method})</span>`;
+                    item.innerHTML = `<span class="truncate mr-1 flex items-center gap-1"><img src="/media/items/town-map.png" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0"> ${loc.area}</span><span class="text-[10px] text-slate-500 font-medium shrink-0">(${loc.method})</span>`;
                     locList.appendChild(item);
                 });
                 detailsContainer.appendChild(locList);
