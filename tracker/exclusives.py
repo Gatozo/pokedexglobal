@@ -161,12 +161,22 @@ def _build_exclusive_item(
     current_generation: int,
     caught_entry_ids: set,
     is_counterpart: bool,
-    origin_badge: Optional[str] = None
+    origin_badge: Optional[str] = None,
+    entries_by_num: Optional[Dict[int, PokedexEntry]] = None
 ) -> Optional[Dict[str, Any]]:
     """Construye los datos estructurados de un Pokémon exclusivo o faltante para la plantilla."""
-    # Buscar si existe en la Pokédex actual
-    entry = current_pokedex.entries.select_related('pokemon').filter(pokemon__national_number=national_num).first()
-    
+    # Buscar si existe en la Pokédex actual (en memoria si está disponible, o query diferida)
+    if entries_by_num and national_num in entries_by_num:
+        entry = entries_by_num[national_num]
+    else:
+        entry = current_pokedex.entries.select_related('pokemon').defer(
+            'pokemon__raw_data',
+            'pokemon__species_data',
+            'pokemon__encounters_data',
+            'pokemon__evolution_chain_data',
+            'game_data'
+        ).filter(pokemon__national_number=national_num).first()
+
     if entry:
         pokemon = entry.pokemon
         entry_id = entry.id
@@ -181,8 +191,10 @@ def _build_exclusive_item(
         obtaining_summary = entry.obtaining_info.get('summary', '') if entry.obtaining_info else ''
         evolution_stone = entry.evolution_stone
     else:
-        # Fallback a modelo Pokemon global
-        pokemon = Pokemon.objects.filter(national_number=national_num).first()
+        # Fallback a modelo Pokemon global diferido
+        pokemon = Pokemon.objects.defer(
+            'raw_data', 'species_data', 'encounters_data', 'evolution_chain_data'
+        ).filter(national_number=national_num).first()
         if not pokemon:
             return None
         entry_id = None
@@ -222,7 +234,8 @@ def _build_exclusive_item(
 def get_version_exclusives_context(
     current_game: Game,
     current_pokedex: Pokedex,
-    caught_entry_ids: set
+    caught_entry_ids: set,
+    entries_by_num: Optional[Dict[int, PokedexEntry]] = None
 ) -> Optional[Dict[str, Any]]:
     """
     Retorna el contexto completo para el botón y el modal de exclusivos de versión / Pokémon a transferir.
@@ -270,7 +283,7 @@ def get_version_exclusives_context(
     for num in counterpart_exclusive_nums:
         origin = YELLOW_ORIGIN_MAP.get(num) if is_yellow else None
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, origin_badge=origin
+            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, origin_badge=origin, entries_by_num=entries_by_num
         )
         if item:
             counterpart_list.append(item)
@@ -279,7 +292,7 @@ def get_version_exclusives_context(
     own_list = []
     for num in own_exclusive_nums:
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=False
+            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=False, entries_by_num=entries_by_num
         )
         if item:
             own_list.append(item)

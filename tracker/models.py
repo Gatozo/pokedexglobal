@@ -125,21 +125,50 @@ class Pokedex(models.Model):
         return f"{self.name} - {self.game.name}"
 
 
+_EXISTING_ICONS_SET = None
+_EXISTING_CRIES_SET = None
+
+
+def _get_existing_icons():
+    global _EXISTING_ICONS_SET
+    if _EXISTING_ICONS_SET is None:
+        from django.conf import settings
+        from pathlib import Path
+        icons_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "icons"
+        _EXISTING_ICONS_SET = set()
+        if icons_dir.exists():
+            for p in icons_dir.glob("*/*.png"):
+                _EXISTING_ICONS_SET.add((p.parent.name, p.name))
+    return _EXISTING_ICONS_SET
+
+
+def _get_existing_cries():
+    global _EXISTING_CRIES_SET
+    if _EXISTING_CRIES_SET is None:
+        from django.conf import settings
+        from pathlib import Path
+        cries_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "cries"
+        _EXISTING_CRIES_SET = set()
+        if cries_dir.exists():
+            for p in cries_dir.glob("*/*.*"):
+                _EXISTING_CRIES_SET.add((p.parent.name, p.name))
+    return _EXISTING_CRIES_SET
+
+
 class Pokemon(models.Model):
     national_number = models.PositiveIntegerField(unique=True, db_index=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, db_index=True)
     display_name = models.CharField(max_length=100)
+    category = models.CharField(max_length=100, blank=True, null=True)
     sprite_url = models.URLField(max_length=500)
-    sprite_shiny_url = models.URLField(max_length=500, blank=True, null=True)
     primary_type = models.CharField(max_length=30)
     secondary_type = models.CharField(max_length=30, blank=True, null=True)
-    height = models.PositiveIntegerField(null=True, blank=True, help_text="Altura en decímetros")
-    weight = models.PositiveIntegerField(null=True, blank=True, help_text="Peso en hectogramos")
-    category = models.CharField(max_length=100, blank=True, help_text="Categoría o especie en español (ej: Pokémon Semilla)")
-    species_data = models.JSONField(default=dict, blank=True, help_text="Datos crudos de pokemon-species de PokeAPI")
+    height = models.PositiveIntegerField(help_text="Altura en decímetros", null=True, blank=True)
+    weight = models.PositiveIntegerField(help_text="Peso en hectogramos", null=True, blank=True)
+    species_data = models.JSONField(default=dict, blank=True)
+    encounters_data = models.JSONField(default=list, blank=True)
+    evolution_chain_data = models.JSONField(default=dict, blank=True)
     raw_data = models.JSONField(default=dict, blank=True)
-    encounters_data = models.JSONField(default=list, blank=True, help_text="Datos crudos de encuentros de PokeAPI")
-    evolution_chain_data = models.JSONField(default=dict, blank=True, help_text="Datos crudos de la cadena evolutiva de PokeAPI")
 
     class Meta:
         verbose_name = "Pokémon"
@@ -161,24 +190,48 @@ class Pokemon(models.Model):
 
     @property
     def cry_legacy_url(self):
-        cries = self.raw_data.get('cries', {})
-        return cries.get('legacy') or cries.get('latest') or ""
+        from django.conf import settings
+        existing = _get_existing_cries()
+        filename = f"{self.national_number}.ogg"
+        if ("legacy", filename) in existing:
+            return f"{settings.MEDIA_URL}pokemon/cries/legacy/{filename}"
+        if '_raw_data' in self.__dict__ and self.raw_data:
+            cries = self.raw_data.get('cries', {})
+            url = cries.get('legacy') or cries.get('latest')
+            if url:
+                return url
+        return f"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/{self.national_number}.ogg"
+
+    def get_cry_url(self, kind: str = 'legacy', variation_id: int = None) -> str:
+        """
+        Retorna la URL local (o fallback oficial) del grito del Pokémon según el estilo
+        ('legacy' para retro 8-bits, 'latest' para moderno, o ID de variación específica).
+        """
+        from django.conf import settings
+        existing = _get_existing_cries()
+        target_id = variation_id or self.national_number
+        target_file = f"{target_id}.ogg"
+
+        folder = 'latest' if kind == 'latest' else 'legacy'
+        if (folder, target_file) in existing:
+            return f"{settings.MEDIA_URL}pokemon/cries/{folder}/{target_file}"
+
+        return f"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/{folder}/{target_id}.ogg"
 
     def get_pc_icon_url(self, generation: int = 1) -> str:
         """
         Retorna la ruta al icono de PC de la generación indicada.
-        Busca localmente en media/pokemon/icons/ con fallback en cascada.
+        Busca localmente en media/pokemon/icons/ con fallback en cascada eficiente en memoria.
         """
         from django.conf import settings
-        from pathlib import Path
-        icons_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "icons"
         gen_candidates = [f"gen{generation}"] if generation else []
         gen_candidates += ["gen3", "gen4", "gen5", "gen6", "gen7", "gen8"]
 
+        filename = f"{self.national_number}.png"
+        existing = _get_existing_icons()
         for g in gen_candidates:
-            target = icons_dir / g / f"{self.national_number}.png"
-            if target.exists():
-                return f"{settings.MEDIA_URL}pokemon/icons/{g}/{self.national_number}.png"
+            if (g, filename) in existing:
+                return f"{settings.MEDIA_URL}pokemon/icons/{g}/{filename}"
 
         # Fallback a la CDN oficial de PokeAPI si no estuviese en disco
         return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-viii/icons/{self.national_number}.png"
@@ -247,10 +300,30 @@ class PokedexEntry(models.Model):
     @property
     def cry_url(self):
         """Retorna el grito del Pokémon. Para juegos retro (Gen <= 5), usa el sonido clásico en 8-bits."""
-        cries = self.pokemon.raw_data.get('cries', {})
-        if self.pokedex.game.generation <= 5:
-            return cries.get('legacy') or cries.get('latest') or ""
-        return cries.get('latest') or cries.get('legacy') or ""
+        from django.conf import settings
+        existing = _get_existing_cries()
+        game_slug = self.pokedex.game.slug if (self.pokedex and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+
+        # Caso especial: Pokémon Amarillo tiene el grito con la voz anime original de Pikachu
+        if game_slug == 'yellow' and num == 25:
+            if ("yellow", "25.wav") in existing:
+                return f"{settings.MEDIA_URL}pokemon/cries/yellow/25.wav"
+
+        is_retro = self.pokedex.game.generation <= 5 if (self.pokedex and self.pokedex.game) else True
+        kind = 'legacy' if is_retro else 'latest'
+        filename = f"{num}.ogg"
+
+        if (kind, filename) in existing:
+            return f"{settings.MEDIA_URL}pokemon/cries/{kind}/{filename}"
+
+        if '_raw_data' in self.pokemon.__dict__ and self.pokemon.raw_data:
+            cries = self.pokemon.raw_data.get('cries', {})
+            if is_retro:
+                return cries.get('legacy') or cries.get('latest') or ""
+            return cries.get('latest') or cries.get('legacy') or ""
+
+        return f"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/{kind}/{num}.ogg"
 
     @property
     def pc_icon_url(self):

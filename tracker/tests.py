@@ -832,4 +832,45 @@ class FixtureExportTests(TestCase):
         self.assertIn("evolution_stone", modal_json)
         self.assertEqual(modal_json["evolution_stone"]["slug"], "moon-stone")
 
+    def test_pokemon_cries_local_resolution_and_fallback(self):
+        """Verifica que los gritos devuelven rutas locales /media/... o fallback externo según existencia."""
+        # Bulbasaur en juego retro (Gen 1)
+        cry_url = self.entry.cry_url
+        self.assertTrue(cry_url.startswith("/media/pokemon/cries/") or cry_url.startswith("https://"))
+        self.assertTrue(self.pokemon.cry_legacy_url.startswith("/media/pokemon/cries/") or self.pokemon.cry_legacy_url.startswith("https://"))
+
+        # Método flexible con selector de grito moderno y variaciones
+        modern_url = self.pokemon.get_cry_url(kind="latest")
+        self.assertTrue(modern_url.startswith("/media/pokemon/cries/latest/") or modern_url.startswith("https://"))
+
+        # Crear Pikachu en Pokémon Amarillo
+        game_yellow = Game.objects.create(name="Pokémon Yellow", slug="yellow", generation=1)
+        pokedex_yellow = Pokedex.objects.create(game=game_yellow, name="Pokédex de Kanto", slug="kanto")
+        pikachu = Pokemon.objects.create(
+            national_number=25,
+            name="pikachu",
+            display_name="Pikachu",
+            sprite_url="https://example.com/pikachu.png",
+            primary_type="electric"
+        )
+        entry_yellow_pika = PokedexEntry.objects.create(
+            pokedex=pokedex_yellow,
+            pokemon=pikachu,
+            entry_number=25
+        )
+
+        # En amarillo debe resolver al sonido especial si existe en disco
+        yellow_cry = entry_yellow_pika.cry_url
+        if yellow_cry.endswith(".wav"):
+            self.assertEqual(yellow_cry, "/media/pokemon/cries/yellow/25.wav")
+        else:
+            self.assertTrue("25" in yellow_cry)
+
+        # Variaciones de Pikachu (Cosplay y Starter Let's Go) y Eevee
+        cosplay_cry = pikachu.get_cry_url(kind="latest", variation_id=10080)
+        self.assertIn("10080", cosplay_cry)
+        eevee_starter_cry = self.pokemon.get_cry_url(kind="latest", variation_id=10159)
+        self.assertIn("10159", eevee_starter_cry)
+
+
 

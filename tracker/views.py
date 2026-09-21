@@ -21,8 +21,14 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
     game = get_object_or_404(Game, slug=game_slug)
     pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
 
-    # Entradas de la Pokédex optimizadas con su respectivo Pokémon
-    entries = pokedex.entries.select_related("pokemon").order_by("entry_number")
+    # Entradas de la Pokédex optimizadas (aplazando JSONs de combate/raw_data de 44 MB)
+    entries = pokedex.entries.select_related("pokemon").defer(
+        "pokemon__raw_data",
+        "pokemon__species_data",
+        "pokemon__encounters_data",
+        "pokemon__evolution_chain_data",
+        "game_data"
+    ).order_by("entry_number")
 
     user, session_key = _get_user_or_session(request)
 
@@ -37,16 +43,18 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
         UserPokemonCatch.objects.filter(**catch_filter).values_list("pokedex_entry_id", flat=True)
     )
 
-    # Anotar cada entrada con su estado para la plantilla
+    # Anotar cada entrada con su estado e indexar en memoria para exclusivos
     entries_list = list(entries)
+    entries_by_num = {}
     for entry in entries_list:
         entry.is_caught = entry.id in caught_entry_ids
+        entries_by_num[entry.pokemon.national_number] = entry
 
     total_pokemon = len(entries_list)
     caught_count = len(caught_entry_ids)
     caught_percent = round((caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 
-    exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids)
+    exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
 
     from .utils import get_evolution_stones_catalog
     evolution_stones_json = json.dumps(get_evolution_stones_catalog())
