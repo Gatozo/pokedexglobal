@@ -119,7 +119,10 @@
         .pokemon-card.caught-card {
             background-color: #f0f7ff !important;
             border-color: #1e3a8a !important;
-            box-shadow: 3.5px 3.5px 0px 0px #1e3a8a !important;
+            box-shadow: 3.5px 3.5px 0px 0px #1e3a8a;
+        }
+        .pokemon-card.caught-card:hover {
+            box-shadow: 5px 5px 0px 0px #1e3a8a;
         }
         .status-caught-active {
             background-color: #2563eb !important;
@@ -139,7 +142,10 @@
         .pokemon-card.caught-card {
             background-color: #fffdf0 !important;
             border-color: #78350f !important;
-            box-shadow: 3.5px 3.5px 0px 0px #78350f !important;
+            box-shadow: 3.5px 3.5px 0px 0px #78350f;
+        }
+        .pokemon-card.caught-card:hover {
+            box-shadow: 5px 5px 0px 0px #78350f;
         }
         .status-caught-active {
             background-color: #f59e0b !important;
@@ -159,7 +165,10 @@
         .pokemon-card.caught-card {
             background-color: #fff5f5 !important;
             border-color: #881337 !important;
-            box-shadow: 3.5px 3.5px 0px 0px #881337 !important;
+            box-shadow: 3.5px 3.5px 0px 0px #881337;
+        }
+        .pokemon-card.caught-card:hover {
+            box-shadow: 5px 5px 0px 0px #881337;
         }
         .status-caught-active {
             background-color: #e11d48 !important;
@@ -225,19 +234,22 @@
                     </p>
                 </div>
 
-                <!-- Progress Metric (Estilo Marcador LCD de Pokédex) -->
-                <div class="z-10 bg-slate-950 text-white border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 min-w-[250px] shadow-[3px_3px_0px_0px_rgba(0,0,0,0.5)] text-center md:text-right">
-                    <div class="text-[10px] font-black uppercase tracking-widest text-slate-400">Progreso de Captura</div>
+                <!-- Progress Metric (Estilo Tarjeta Coleccionable Cómic) -->
+                <div class="z-10 bg-white border-2 border-slate-950 rounded-2xl p-3.5 sm:p-4 min-w-[250px] shadow-[3.5px_3.5px_0px_#0f172a] text-center md:text-right">
+                    <div class="text-[11px] font-black uppercase tracking-wider text-slate-600 flex items-center justify-center md:justify-end gap-1.5">
+                        <span class="w-2 h-2 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
+                        Progreso de Captura
+                    </div>
                     <div class="text-2xl sm:text-3xl font-black mt-0.5 flex items-baseline justify-center md:justify-end gap-1.5 font-mono">
-                        <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'blue' %}text-blue-400{% else %}text-emerald-400{% endif %} text-3xl sm:text-4xl">
+                        <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
                             {{ caught_count }}
                         </span>
-                        <span class="text-slate-500 text-xl">/</span>
-                        <span id="stat-total" class="text-xl text-slate-200">{{ total_pokemon }}</span>
-                        <span class="text-xs font-black text-slate-400 ml-1">(<span id="stat-percent">{{ caught_percent }}</span>%)</span>
+                        <span class="text-slate-400 text-xl font-bold">/</span>
+                        <span id="stat-total" class="text-xl font-black text-slate-800">{{ total_pokemon }}</span>
+                        <span class="text-xs font-black text-slate-500 ml-1">(<span id="stat-percent">{{ caught_percent }}</span>%)</span>
                     </div>
-                    <div class="w-full bg-slate-900 border-2 border-slate-800 rounded-full h-3.5 mt-2 overflow-hidden p-0.5">
-                        <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-500{% else %}bg-emerald-500{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
+                    <div class="w-full bg-slate-100 border-2 border-slate-950 rounded-full h-3.5 mt-2 overflow-hidden p-0.5 shadow-inner">
+                        <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
                     </div>
                 </div>
             </div>
@@ -306,7 +318,7 @@
             {% for entry in entries %}
                 <div 
                     id="card-{{ entry.id }}"
-                    class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-150 group cursor-pointer select-none {% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}"
+                    class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between h-full group cursor-pointer select-none {% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}"
                     data-entry-id="{{ entry.id }}"
                     data-number="{{ entry.entry_number }}"
                     data-name="{{ entry.pokemon.name }}"
@@ -324,7 +336,7 @@
                     <script type="application/json" id="entry-data-{{ entry.id }}">{{ entry.modal_data_json|safe }}</script>
 
                     <!-- Header with Number, Stone, Sound & Status Badge -->
-                    <div class="flex items-center justify-between gap-1">
+                    <div class="flex items-center justify-between gap-1 h-7 shrink-0">
                         <div class="flex items-center gap-1.5">
                             <span class="text-xs font-mono font-black text-slate-900 group-hover:text-black">
                                 #{{ entry.entry_number|stringformat:"03d" }}
@@ -354,8 +366,8 @@
                         </div>
 
                         <!-- Casilla / Badge de Captura con Acento Temático del Juego -->
-                        <div id="status-badge-{{ entry.id }}" class="card-status-indicator flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider {% if entry.is_caught %}border-2 shadow-[1px_1px_0px_#0f172a] status-caught-active{% else %}border border-slate-300 bg-slate-100 text-slate-500{% endif %}">
-                            <span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none">
+                        <div id="status-badge-{{ entry.id }}" class="card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 {% if entry.is_caught %}status-caught-active{% else %}bg-slate-100 text-slate-500{% endif %}">
+                            <span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">
                                 {% if entry.is_caught %}✓{% endif %}
                             </span>
                             <span class="status-text font-black">
@@ -365,7 +377,7 @@
                     </div>
 
                     <!-- Pokemon Sprite / Artwork con círculo de realce cómic -->
-                    <div class="my-2 relative flex items-center justify-center h-28">
+                    <div class="my-2 relative flex items-center justify-center h-28 shrink-0">
                         <div class="absolute inset-2 rounded-full bg-slate-100/80 border border-slate-200/70 pointer-events-none group-hover:scale-105 transition-transform"></div>
                         <img 
                             id="img-{{ entry.id }}"
@@ -377,11 +389,11 @@
                     </div>
 
                     <!-- Pokemon Info & Types -->
-                    <div class="text-center">
+                    <div class="text-center h-[52px] flex flex-col justify-center shrink-0">
                         <h3 class="font-black text-sm text-slate-900 truncate uppercase tracking-wide">
                             {{ entry.pokemon.display_name }}
                         </h3>
-                        <div class="flex items-center justify-center gap-1 mt-1.5">
+                        <div class="flex items-center justify-center gap-1 mt-1">
                             <span class="type-{{ entry.primary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
                                 {{ entry.primary_type_es }}
                             </span>
@@ -398,10 +410,10 @@
                         type="button"
                         onclick="event.stopPropagation(); toggleCatch({{ entry.id }})"
                         id="btn-{{ entry.id }}"
-                        class="card-action-btn mt-3 w-full py-1.5 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer {% if entry.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}"
+                        class="card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 {% if entry.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}"
                     >
                         <!-- Icon Pokéball -->
-                        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
                         </svg>
                         <span id="btn-text-{{ entry.id }}">
@@ -691,11 +703,11 @@
                     </div>
                     <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
                         <div class="font-mono font-black text-sm text-slate-900">
-                            <span id="excl-progress-caught" class="text-emerald-600">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                            <span id="excl-progress-caught" class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% else %}text-red-600{% endif %} font-black">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
                             <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{{ exclusives_info.counterpart_percent }}</span>%)</span>
                         </div>
-                        <div class="w-28 sm:w-36 bg-slate-200 border border-slate-400 rounded-full h-2.5 overflow-hidden">
-                            <div id="excl-progress-bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
+                        <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
+                            <div id="excl-progress-bar" class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
                         </div>
                     </div>
                 </div>
@@ -894,8 +906,8 @@
             ? 'bg-amber-400 text-slate-950 font-black'
             : ("{{ game.slug }}" === 'blue' ? 'bg-blue-600 text-white font-black' : 'bg-red-600 text-white font-black');
         const THEME_STATUS_CAUGHT_CLASS = 'status-caught-active';
-        const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full py-1.5 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer bg-emerald-500 hover:bg-emerald-400 text-white';
-        const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full py-1.5 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer bg-rose-500 hover:bg-rose-600 text-white';
+        const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';
+        const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-rose-500 hover:bg-rose-600 text-white';
 
         const currentGameSlug = "{{ game.slug }}";
         const currentGameDisplayName = "{{ game.display_name|escapejs }}";
@@ -1066,8 +1078,8 @@
                         if (btnText) btnText.textContent = 'Liberar';
                         if (btn) btn.className = THEME_CAUGHT_BTN;
                         if (statusBadge) {
-                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none">✓</span><span class="status-text font-black">Atrapado</span>';
-                            statusBadge.className = 'card-status-indicator flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 shadow-[1px_1px_0px_#0f172a] ' + THEME_STATUS_CAUGHT_CLASS;
+                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">✓</span><span class="status-text font-black">Atrapado</span>';
+                            statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 ' + THEME_STATUS_CAUGHT_CLASS;
                         }
                     } else {
                         card.classList.remove('caught-card');
@@ -1075,8 +1087,8 @@
                         if (btnText) btnText.textContent = 'Capturar';
                         if (btn) btn.className = THEME_UNCAUGHT_BTN;
                         if (statusBadge) {
-                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none"></span><span class="status-text font-black">Falta</span>';
-                            statusBadge.className = 'card-status-indicator flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border border-slate-300 bg-slate-100 text-slate-500';
+                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0"></span><span class="status-text font-black">Falta</span>';
+                            statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 bg-slate-100 text-slate-500';
                         }
                     }
 
@@ -1598,11 +1610,7 @@
                 const isCaught = card.dataset.caught === 'true';
                 const btn = document.getElementById(`btn-${entryId}`);
                 if (btn) {
-                    if (isCaught) {
-                        btn.className = 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-red-500 bg-emerald-950/60 hover:bg-red-950/60 text-emerald-300 hover:text-red-300 border-emerald-700/60 hover:border-red-700/60';
-                    } else {
-                        btn.className = THEME_UNCAUGHT_BTN;
-                    }
+                    btn.className = isCaught ? THEME_CAUGHT_BTN : THEME_UNCAUGHT_BTN;
                 }
             });
         });
