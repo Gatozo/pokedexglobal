@@ -1,3 +1,4 @@
+from unittest.mock import patch
 from django.test import TestCase, Client
 from django.urls import reverse
 from .models import Game, Pokedex, Pokemon, PokedexEntry, UserPokemonCatch
@@ -593,12 +594,21 @@ class FixtureExportTests(TestCase):
         messages = list(resp_staff.context["messages"])
         self.assertTrue(any("Solo los superadministradores" in m.message for m in messages))
 
-        # 3. Superusuario -> realiza exportación con éxito
+        # 3. Superusuario -> realiza exportación con éxito (mockeado para evitar sobrescribir fixtures en disco)
         self.client.force_login(self.superuser)
-        resp_admin = self.client.post(url, follow=True)
-        self.assertEqual(resp_admin.status_code, 200)
-        admin_messages = list(resp_admin.context["messages"])
-        self.assertTrue(any("Respaldo actualizado con éxito" in m.message for m in admin_messages))
+        with patch("tracker.admin.export_tracker_fixtures") as mock_export:
+            mock_export.return_value = {
+                "exists": True,
+                "file_name": "pokedex_entries.json",
+                "relative_path": "tracker/fixtures/pokedex_entries.json",
+                "size_human": "15.0 KB",
+                "records_count": 3,
+            }
+            resp_admin = self.client.post(url, follow=True)
+            self.assertEqual(resp_admin.status_code, 200)
+            mock_export.assert_called_once()
+            admin_messages = list(resp_admin.context["messages"])
+            self.assertTrue(any("Respaldo actualizado con éxito" in m.message for m in admin_messages))
 
     def test_admin_index_context_contains_fixture_info(self):
         self.client.force_login(self.superuser)
