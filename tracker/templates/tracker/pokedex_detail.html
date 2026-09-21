@@ -37,22 +37,33 @@
         .type-steel { background-color: #B8B8D0; color: #1e293b; }
         .type-fairy { background-color: #EE99AC; color: #1e293b; }
 
+        /* Dynamic Themed Comic Canvas Background */
+        {% if game.slug == 'blue' %}
         body {
-            background-color: #090d16;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
-            background-size: 20px 20px;
+            background-color: #edf4fc;
+            background-image: radial-gradient(rgba(37, 99, 235, 0.15) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
         }
+        {% elif game.slug == 'yellow' %}
+        body {
+            background-color: #faf5e6;
+            background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+        {% else %}
+        body {
+            background-color: #faebed;
+            background-image: radial-gradient(rgba(225, 29, 72, 0.15) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+        {% endif %}
 
         /* Collectible Card Styling */
         .pokemon-card {
             background-color: #ffffff;
             border: 2.5px solid #0f172a;
             box-shadow: 3.5px 3.5px 0px 0px #0f172a;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
-        }
-        .pokemon-card:hover {
-            transform: translate(-1.5px, -1.5px);
-            box-shadow: 5px 5px 0px 0px #0f172a;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
         }
 
         .pixel-art {
@@ -117,12 +128,9 @@
             );
         }
         .pokemon-card.caught-card {
-            background-color: #f0f7ff !important;
+            background-color: #dbeafe !important;
             border-color: #1e3a8a !important;
             box-shadow: 3.5px 3.5px 0px 0px #1e3a8a;
-        }
-        .pokemon-card.caught-card:hover {
-            box-shadow: 5px 5px 0px 0px #1e3a8a;
         }
         .status-caught-active {
             background-color: #2563eb !important;
@@ -140,12 +148,9 @@
             );
         }
         .pokemon-card.caught-card {
-            background-color: #fffdf0 !important;
+            background-color: #fef3c7 !important;
             border-color: #78350f !important;
             box-shadow: 3.5px 3.5px 0px 0px #78350f;
-        }
-        .pokemon-card.caught-card:hover {
-            box-shadow: 5px 5px 0px 0px #78350f;
         }
         .status-caught-active {
             background-color: #f59e0b !important;
@@ -163,12 +168,9 @@
             );
         }
         .pokemon-card.caught-card {
-            background-color: #fff5f5 !important;
+            background-color: #ffe4e6 !important;
             border-color: #881337 !important;
             box-shadow: 3.5px 3.5px 0px 0px #881337;
-        }
-        .pokemon-card.caught-card:hover {
-            box-shadow: 5px 5px 0px 0px #881337;
         }
         .status-caught-active {
             background-color: #e11d48 !important;
@@ -337,30 +339,30 @@
 
                     <!-- Header with Number, Stone, Sound & Status Badge -->
                     <div class="flex items-center justify-between gap-1 h-7 shrink-0">
-                        <div class="flex items-center gap-1.5">
+                        <div class="flex items-center gap-1.5 shrink-0">
                             <span class="text-xs font-mono font-black text-slate-900 group-hover:text-black">
                                 #{{ entry.entry_number|stringformat:"03d" }}
                             </span>
-                            {% if entry.evolution_stone %}
-                            <button 
-                                type="button" 
-                                onclick="event.stopPropagation(); openStoneModal('{{ entry.evolution_stone.slug }}', '{{ entry.evolution_stone.name|escapejs }}')"
-                                title="Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones)"
-                                class="p-0.5 rounded-md bg-white hover:bg-amber-100 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] transition-all hover:scale-110 flex items-center justify-center cursor-pointer active:translate-x-0.5 active:translate-y-0.5"
-                            >
-                                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" class="w-3.5 h-3.5 object-contain">
-                            </button>
-                            {% endif %}
                             {% if entry.cry_url %}
                             <button 
                                 type="button" 
                                 title="Escuchar grito Pokémon" 
                                 onclick="event.stopPropagation(); playPokemonCry('{{ entry.cry_url }}', this)"
-                                class="p-1 rounded-md text-slate-500 hover:text-slate-950 hover:bg-slate-200/80 transition-all active:scale-90 flex items-center justify-center"
+                                class="p-1 rounded-md text-slate-400 hover:text-slate-950 hover:bg-slate-100 transition-colors active:scale-90 flex items-center justify-center shrink-0"
                             >
                                 <svg class="w-3.5 h-3.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
                                 </svg>
+                            </button>
+                            {% endif %}
+                            {% if entry.evolution_stone %}
+                            <button 
+                                type="button" 
+                                onclick="event.stopPropagation(); openStoneModal('{{ entry.evolution_stone.slug }}', '{{ entry.evolution_stone.name|escapejs }}')"
+                                title="Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones)"
+                                class="inline-flex items-center justify-center p-0 cursor-pointer transition-transform hover:scale-125 active:scale-95 focus:outline-none shrink-0"
+                            >
+                                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" class="w-[22px] h-[22px] object-contain drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)] pixel-art">
                             </button>
                             {% endif %}
                         </div>
@@ -426,7 +428,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+    <footer class="border-t-2 border-slate-950/15 py-6 text-center text-xs font-bold text-slate-600">
         Pokédex Global • Diseñado para coleccionistas y entrenadores Pokémon. Datos provistos por PokeAPI.
     </footer>
 
