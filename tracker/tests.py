@@ -882,5 +882,44 @@ class FixtureExportTests(TestCase):
         eevee_starter_cry = self.pokemon.get_cry_url(kind="latest", variation_id=10159)
         self.assertIn("10159", eevee_starter_cry)
 
+    def test_gold_pokedex_view_and_exclusives(self):
+        """Verifica la Pokédex de Johto, Pokédex Nacional y exclusividades de Pokémon Oro."""
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        Game.objects.get_or_create(name="Pokémon Silver", slug="silver", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        nat_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex Nacional", slug="national", is_national=True)
+
+        chikorita, _ = Pokemon.objects.get_or_create(
+            national_number=152,
+            defaults={"name": "chikorita", "display_name": "Chikorita", "primary_type": "grass"}
+        )
+        PokedexEntry.objects.get_or_create(pokedex=johto_dex, entry_number=1, defaults={"pokemon": chikorita})
+        PokedexEntry.objects.get_or_create(pokedex=nat_dex, entry_number=152, defaults={"pokemon": chikorita})
+
+        # Probar vista por defecto (/gold/ -> Pokédex de Johto)
+        url_default = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+        resp_default = self.client.get(url_default)
+        self.assertEqual(resp_default.status_code, 200)
+        self.assertContains(resp_default, "Pokémon Oro")
+        self.assertContains(resp_default, "Pokédex de Johto")
+        self.assertContains(resp_default, "Región Johto")
+        self.assertContains(resp_default, "Exclusivos de Plata")
+
+        # Probar vista específica (/gold/national/ -> Pokédex Nacional)
+        url_nat = reverse("tracker:pokedex_detail", kwargs={"game_slug": "gold", "pokedex_slug": "national"})
+        resp_nat = self.client.get(url_nat)
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, "Pokédex Nacional")
+
+        # Probar contexto de exclusividades
+        from .exclusives import get_version_exclusives_context
+        ctx_gold = get_version_exclusives_context(gold_game, johto_dex, set())
+        self.assertIsNotNone(ctx_gold)
+        self.assertEqual(ctx_gold["counterpart_short_name"], "Plata")
+        self.assertEqual(ctx_gold["counterpart_theme"], "silver")
+        self.assertEqual(ctx_gold["own_theme"], "gold")
+        self.assertEqual(ctx_gold["button_label"], "Exclusivos de Plata")
+
+
 
 

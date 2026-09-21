@@ -271,8 +271,19 @@ def get_version_exclusives_context(
         if not counterpart_exclusive_nums and not own_exclusive_nums:
             return None
 
-        counterpart_theme = 'blue' if counterpart_slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
-        own_theme = 'blue' if current_game.slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet'] else 'red'
+        def _resolve_theme(slug: str) -> str:
+            if slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet']:
+                return 'blue'
+            elif slug in ['gold', 'heartgold']:
+                return 'gold'
+            elif slug in ['silver', 'soulsilver']:
+                return 'silver'
+            elif slug in ['yellow']:
+                return 'amber'
+            return 'red'
+
+        counterpart_theme = _resolve_theme(counterpart_slug)
+        own_theme = _resolve_theme(current_game.slug)
 
         counterpart_game = Game.objects.filter(slug=counterpart_slug).first()
         counterpart_name = counterpart_game.display_name if counterpart_game else f"Pokémon {counterpart_short_name}"

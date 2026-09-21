@@ -62,10 +62,15 @@ def _get_cached_evolution_stones_json():
     return _STONES_JSON_CACHE
 
 
-def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
+def pokedex_view(request, game_slug="red", pokedex_slug=None):
     """Vista principal que lista los Pokémon de la Pokédex de un juego."""
     game = get_object_or_404(Game, slug=game_slug)
-    pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
+    if pokedex_slug:
+        pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
+    else:
+        pokedex = game.pokedexes.first()
+        if not pokedex:
+            pokedex = get_object_or_404(Pokedex, game=game)
 
     # Entradas de la Pokédex obtenidas de la caché en memoria (0 ms DB)
     cached_entries = get_cached_pokedex_entries(pokedex.id)
@@ -99,6 +104,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
     context = {
         "game": game,
         "pokedex": pokedex,
+        "game_pokedexes": list(game.pokedexes.all().order_by("id")),
         "entries": entries_list,
         "caught_entry_ids": caught_entry_ids,
         "total_pokemon": total_pokemon,

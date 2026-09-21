@@ -50,6 +50,12 @@
             background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1.5px, transparent 1.5px);
             background-size: 16px 16px;
         }
+        {% elif game.slug == 'gold' %}
+        body {
+            background-color: #faf7ee;
+            background-image: radial-gradient(rgba(197, 155, 39, 0.18) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
         {% else %}
         body {
             background-color: #faebed;
@@ -198,6 +204,26 @@
             color: #0f172a !important;
             border-color: #0f172a !important;
         }
+        {% elif game.slug == 'gold' %}
+        .comic-header-pattern {
+            background: repeating-linear-gradient(
+                -45deg,
+                #c59b27,
+                #c59b27 12px,
+                #9e7514 12px,
+                #9e7514 24px
+            );
+        }
+        .pokemon-card.caught-card {
+            background-color: #fcf6e3 !important;
+            border-color: #694f0e !important;
+            box-shadow: 3.5px 3.5px 0px 0px #694f0e;
+        }
+        .status-caught-active {
+            background-color: #c59b27 !important;
+            color: #0f172a !important;
+            border-color: #0f172a !important;
+        }
         {% else %}
         .comic-header-pattern {
             background: repeating-linear-gradient(
@@ -221,34 +247,34 @@
         {% endif %}
     </style>
 </head>
-<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
+<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}
 
     <!-- Top Navigation -->
     <header class="border-b-4 border-slate-950 bg-slate-900/95 backdrop-blur sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center">
+                <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center">
                     <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-950"></div>
                 </div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 drop-shadow-[2px_2px_0px_#0f172a]">
-                        Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% else %}text-red-500{% endif %}">Global</span>
+                        Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% else %}text-red-500{% endif %}">Global</span>
                     </h1>
-                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen 1</p>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen {{ game.generation }}</p>
                 </div>
             </div>
 
-            <!-- Game Selector (Estilo Cartucho Game Boy) -->
-            <div class="flex items-center space-x-2.5">
-                <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% else %}text-red-400{% endif %}">
+            <!-- Game Selector & Mode Switcher (Estilo Cartucho Game Boy) -->
+            <div class="flex items-center space-x-2 sm:space-x-2.5">
+                <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% else %}text-red-400{% endif %}">
                     Cartucho:
                 </label>
                 <div class="relative">
                     <select 
                         id="game-select" 
                         onchange="window.location.href='/' + this.value + '/'" 
-                        class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
+                        class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% elif game.slug == 'gold' %}bg-[#c59b27] hover:bg-[#b38819] text-slate-950 font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
                     >
                         {% for g in all_games %}
                             <option value="{{ g.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if g.slug == game.slug %}selected{% endif %}>
@@ -257,6 +283,27 @@
                         {% endfor %}
                     </select>
                 </div>
+
+                {% if game_pokedexes|length > 1 %}
+                <div class="flex items-center space-x-1.5 ml-1 sm:ml-2">
+                    <label for="pokedex-select" class="text-xs font-black uppercase tracking-wider hidden md:inline-block text-slate-300">
+                        Pokédex:
+                    </label>
+                    <div class="relative">
+                        <select 
+                            id="pokedex-select" 
+                            onchange="window.location.href='/' + '{{ game.slug }}' + '/' + this.value + '/'" 
+                            class="bg-white hover:bg-slate-50 text-slate-950 border-2 border-slate-950 text-xs sm:text-sm font-black rounded-xl px-2.5 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
+                        >
+                            {% for p in game_pokedexes %}
+                                <option value="{{ p.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if p.slug == pokedex.slug %}selected{% endif %}>
+                                    {{ p.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -266,15 +313,15 @@
         <!-- Hero & Progress Banner (Estilo Panel de Cómic / Pokédex Física) -->
         <div class="bg-[#fffef5] border-4 border-slate-950 rounded-2xl mb-8 shadow-[6px_6px_0px_0px_#0f172a] overflow-hidden">
             <!-- Header Stripe with Game Theme Pattern -->
-            <div class="{% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-5 py-4 sm:px-6 sm:py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 comic-header-pattern relative">
+            <div class="{% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-5 py-4 sm:px-6 sm:py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 comic-header-pattern relative">
                 <div class="z-10">
                     <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md text-[10px] sm:text-xs font-black uppercase tracking-wider bg-amber-300 text-slate-950 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-1 mb-2">
-                        <span>Generación {{ game.generation }}</span> • <span>Región Kanto</span>
+                        <span>Generación {{ game.generation }}</span> • <span>Región {% if game.generation == 2 %}Johto{% else %}Kanto{% endif %}</span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wide drop-shadow-[2px_2px_0px_#0f172a] {% if game.slug == 'yellow' %}text-slate-950 drop-shadow-none font-black{% else %}text-white{% endif %}">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wide drop-shadow-[2px_2px_0px_#0f172a] {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950 drop-shadow-none font-black{% else %}text-white{% endif %}">
                         {{ pokedex.name }}
                     </h2>
-                    <p class="text-xs sm:text-sm font-bold mt-1 {% if game.slug == 'yellow' %}text-slate-900{% else %}text-white/90{% endif %}">
+                    <p class="text-xs sm:text-sm font-bold mt-1 {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-900{% else %}text-white/90{% endif %}">
                         Registra cada Pokémon capturado en tu partida de {{ game.display_name }}.
                     </p>
                 </div>
@@ -282,11 +329,11 @@
                 <!-- Progress Metric (Estilo Tarjeta Coleccionable Cómic) -->
                 <div class="z-10 bg-white border-2 border-slate-950 rounded-2xl p-3.5 sm:p-4 min-w-[250px] shadow-[3.5px_3.5px_0px_#0f172a] text-center md:text-right">
                     <div class="text-[11px] font-black uppercase tracking-wider text-slate-600 flex items-center justify-center md:justify-end gap-1.5">
-                        <span class="w-2 h-2 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
+                        <span class="w-2 h-2 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
                         Progreso de Captura
                     </div>
                     <div class="text-2xl sm:text-3xl font-black mt-0.5 flex items-baseline justify-center md:justify-end gap-1.5 font-mono">
-                        <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
+                        <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% elif game.slug == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
                             {{ caught_count }}
                         </span>
                         <span class="text-slate-400 text-xl font-bold">/</span>
@@ -294,7 +341,7 @@
                         <span class="text-xs font-black text-slate-500 ml-1">(<span id="stat-percent">{{ caught_percent }}</span>%)</span>
                     </div>
                     <div class="w-full bg-slate-100 border-2 border-slate-950 rounded-full h-3.5 mt-2 overflow-hidden p-0.5 shadow-inner">
-                        <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
+                        <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
                     </div>
                 </div>
             </div>
@@ -325,8 +372,8 @@
                         class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
                         title="Ver Pokémon exclusivos de versión"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %} border border-slate-950 shrink-0"></span>
-                        <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600 group-hover:text-blue-800{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600 group-hover:text-amber-800{% else %}text-red-600 group-hover:text-red-800{% endif %}">
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} border border-slate-950 shrink-0"></span>
+                        <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600 group-hover:text-blue-800{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600 group-hover:text-amber-800{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600 group-hover:text-slate-800{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514] group-hover:text-[#78590c]{% else %}text-red-600 group-hover:text-red-800{% endif %}">
                             {{ exclusives_info.button_label }}
                         </span>
                         <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0">
@@ -339,8 +386,8 @@
                     {% if game.has_retro_sprites %}
                     <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
                         <span class="text-[10px] font-black text-slate-600 uppercase tracking-wider px-1.5 hidden xl:inline-block">Estilo:</span>
-                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% else %}bg-red-600 text-white{% endif %}">
-                            <img src="/media/pokemon/icons/classic_gen1/archetypes/mon.png" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]"> Retro
+                        <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">
+                            <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]"> Retro
                         </button>
                         <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition flex items-center gap-1 border border-transparent">
                             Ilustración
@@ -350,7 +397,7 @@
 
                     <!-- Status Tabs -->
                     <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-2.5 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% else %}bg-red-600 text-white{% endif %}">Todos</button>
+                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-2.5 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
                         <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Capturados</button>
                         <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Pendientes</button>
                     </div>
@@ -481,7 +528,7 @@
         <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
             
             <!-- Comic Header Stripe / Title Bar -->
-            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         {{ game.display_name|upper }}
@@ -632,12 +679,12 @@
         <div id="stone-modal-card" class="relative w-full max-w-lg bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[90vh]">
             
             <!-- Cabecera estilo cómic -->
-            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         Objeto Evolutivo • {{ game.display_name|upper }}
                     </span>
-                    <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-lg tracking-wide uppercase drop-shadow-[1.5px_1.5px_0px_#0f172a] flex items-center gap-2">
+                    <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-lg tracking-wide uppercase drop-shadow-[1.5px_1.5px_0px_#0f172a] flex items-center gap-2">
                         <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain inline-block">
                         <span id="stone-modal-name">PIEDRA LUNAR</span>
                     </h3>
@@ -708,12 +755,12 @@
         <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
             
             <!-- Cabecera estilo cómic -->
-            <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500 text-white{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27] text-slate-950{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         Intercambio Link • Gen {{ game.generation }}
                     </span>
-                    <h3 class="{% if exclusives_info.counterpart_theme == 'amber' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
+                    <h3 class="{% if exclusives_info.counterpart_theme == 'amber' or exclusives_info.counterpart_theme == 'gold' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
                         {% if exclusives_info.is_yellow %}Pokémon a Transferir de Versión{% else %}Pokémon Exclusivos de Versión{% endif %}
                     </h3>
                 </div>
@@ -734,7 +781,7 @@
                 <!-- Progreso de Captura de Exclusivos de la Contraparte -->
                 <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div class="flex items-center gap-2.5">
-                        <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-500{% endif %} animate-pulse"></span>
+                        <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-500{% endif %} animate-pulse"></span>
                         <div>
                             <span class="text-xs font-black uppercase text-slate-700 block">
                                 {% if exclusives_info.is_yellow %}
@@ -748,11 +795,11 @@
                     </div>
                     <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
                         <div class="font-mono font-black text-sm text-slate-900">
-                            <span id="excl-progress-caught" class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% else %}text-red-600{% endif %} font-black">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                            <span id="excl-progress-caught" class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} font-black">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
                             <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{{ exclusives_info.counterpart_percent }}</span>%)</span>
                         </div>
                         <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
-                            <div id="excl-progress-bar" class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
+                            <div id="excl-progress-bar" class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
                         </div>
                     </div>
                 </div>
@@ -760,21 +807,21 @@
                 <!-- Selector de Pestañas -->
                 <div class="flex items-center gap-2">
                     <button 
-                        type="button"
+                        type="button" 
                         id="tab-btn-counterpart"
                         onclick="switchExclusivesTab('counterpart')"
                         class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
                         <span>{% if exclusives_info.is_yellow %}Faltantes de {{ exclusives_info.counterpart_short_name }}{% else %}Exclusivos de {{ exclusives_info.counterpart_short_name }}{% endif %} ({{ exclusives_info.counterpart_total }})</span>
                     </button>
                     <button 
-                        type="button"
+                        type="button" 
                         id="tab-btn-own"
                         onclick="switchExclusivesTab('own')"
                         class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2"
                     >
-                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% else %}bg-red-600{% endif %}"></span>
+                        <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% elif exclusives_info.own_theme == 'silver' %}bg-slate-400{% elif exclusives_info.own_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
                         <span>Exclusivos de tu Edición ({{ exclusives_info.own_total }})</span>
                     </button>
                 </div>
@@ -949,7 +996,11 @@
     <script>
         const THEME_ACTIVE_BTN = "{{ game.slug }}" === 'yellow'
             ? 'bg-amber-400 text-slate-950 font-black'
-            : ("{{ game.slug }}" === 'blue' ? 'bg-blue-600 text-white font-black' : 'bg-red-600 text-white font-black');
+            : ("{{ game.slug }}" === 'blue' 
+                ? 'bg-blue-600 text-white font-black' 
+                : ("{{ game.slug }}" === 'gold' 
+                    ? 'bg-[#c59b27] text-slate-950 font-black' 
+                    : 'bg-red-600 text-white font-black'));
         const THEME_STATUS_CAUGHT_CLASS = 'status-caught-active';
         const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';
         const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-rose-500 hover:bg-rose-600 text-white';

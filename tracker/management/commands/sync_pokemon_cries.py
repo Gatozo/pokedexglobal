@@ -63,6 +63,12 @@ class Command(BaseCommand):
             help='Descarga todos los gritos disponibles en PokeAPI (Gen 1 a Gen 9 y todos los legacy)',
         )
         parser.add_argument(
+            '--limit',
+            type=int,
+            default=0,
+            help='Número máximo de Pokémon para descargar sus gritos (ej: 251)',
+        )
+        parser.add_argument(
             '--force',
             action='store_true',
             help='Fuerza la sobreescritura de archivos existentes',
@@ -76,6 +82,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         download_all = options['all']
+        limit_val = options.get('limit', 0)
         overwrite = options['force']
         max_workers = options['workers']
 
@@ -93,12 +100,16 @@ class Command(BaseCommand):
         session = requests.Session()
 
         # Determinar rango de Pokémon a descargar
-        max_num = 1025 if download_all else 151
-        max_legacy = 649 if download_all else 151
+        if limit_val > 0:
+            max_num = limit_val
+            max_legacy = limit_val
+        else:
+            max_num = 1025 if download_all else 151
+            max_legacy = 649 if download_all else 151
 
         self.stdout.write(
             self.style.NOTICE(
-                f"Preparando descarga de audios (Modo: {'Completo 1-1025' if download_all else 'Gen 1 (1-151)'})..."
+                f"Preparando descarga de audios (Modo: Rango 1-{max_num})..."
             )
         )
 

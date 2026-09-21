@@ -40,10 +40,27 @@ class Command(BaseCommand):
             help='Nombre o slug de la Pokédex en PokeAPI (ej: kanto)'
         )
         parser.add_argument(
+            '--pokedex-slug',
+            type=str,
+            default='',
+            help='Slug local para la Pokédex (si no se indica, se usa --pokedex)'
+        )
+        parser.add_argument(
             '--pokedex-name',
             type=str,
             default='Pokédex Regional de Kanto',
             help='Nombre descriptivo de la Pokédex'
+        )
+        parser.add_argument(
+            '--is-national',
+            action='store_true',
+            help='Indica si esta Pokédex es de alcance Nacional'
+        )
+        parser.add_argument(
+            '--limit',
+            type=int,
+            default=0,
+            help='Límite máximo de entradas a importar (0 para todas)'
         )
         parser.add_argument(
             '--force-refresh',
@@ -98,7 +115,12 @@ class Command(BaseCommand):
 
         elif generation == 2:
             gen2 = versions.get('generation-ii', {})
-            game_data = gen2.get('crystal') or gen2.get('gold') or gen2.get('silver') or {}
+            if game_slug == 'gold':
+                game_data = gen2.get('gold') or gen2.get('crystal') or gen2.get('silver') or {}
+            elif game_slug == 'silver':
+                game_data = gen2.get('silver') or gen2.get('crystal') or gen2.get('gold') or {}
+            else:
+                game_data = gen2.get('crystal') or gen2.get('gold') or gen2.get('silver') or {}
             return game_data.get('front_transparent') or game_data.get('front_default')
 
         elif generation == 3:
@@ -225,8 +247,11 @@ class Command(BaseCommand):
         game_slug = options['game']
         game_name = options['game_name']
         generation = options['generation']
-        pokedex_slug = options['pokedex']
+        pokedex_api_slug = options['pokedex']
+        pokedex_slug = options['pokedex_slug'] or pokedex_api_slug
         pokedex_name = options['pokedex_name']
+        is_national = options.get('is_national', False)
+        limit = options.get('limit', 0)
         force_refresh = options.get('force_refresh', False)
         workers = options.get('workers', 4)
         pacing_delay = options.get('delay', 0.05)
@@ -255,10 +280,11 @@ class Command(BaseCommand):
         if created_game:
             self.stdout.write(self.style.SUCCESS(f"Juego '{game.name}' creado."))
         else:
-            if game.name != game_name:
+            if game.name != game_name or game.generation != generation:
                 game.name = game_name
-                game.save(update_fields=['name'])
-                self.stdout.write(f"Juego actualizado con nombre en español: '{game.name}'.")
+                game.generation = generation
+                game.save(update_fields=['name', 'generation'])
+                self.stdout.write(f"Juego actualizado: '{game.name}' (Gen {game.generation}).")
             else:
                 self.stdout.write(f"Juego existente: '{game.name}'.")
 
@@ -268,17 +294,24 @@ class Command(BaseCommand):
             slug=pokedex_slug,
             defaults={
                 'name': pokedex_name,
-                'is_national': False,
-                'pokeapi_name': pokedex_slug
+                'is_national': is_national,
+                'pokeapi_name': pokedex_api_slug
             }
         )
         if created_dex:
             self.stdout.write(self.style.SUCCESS(f"Pokédex '{pokedex.name}' creada."))
         else:
-            self.stdout.write(f"Pokédex existente: '{pokedex.name}'.")
+            if pokedex.name != pokedex_name or pokedex.is_national != is_national or pokedex.pokeapi_name != pokedex_api_slug:
+                pokedex.name = pokedex_name
+                pokedex.is_national = is_national
+                pokedex.pokeapi_name = pokedex_api_slug
+                pokedex.save(update_fields=['name', 'is_national', 'pokeapi_name'])
+                self.stdout.write(f"Pokédex actualizada: '{pokedex.name}'.")
+            else:
+                self.stdout.write(f"Pokédex existente: '{pokedex.name}'.")
 
         # 3. Consultar PokeAPI para la Pokédex
-        pokedex_url = f"https://pokeapi.co/api/v2/pokedex/{pokedex_slug}/"
+        pokedex_url = f"https://pokeapi.co/api/v2/pokedex/{pokedex_api_slug}/"
         self.stdout.write(f"Consultando PokeAPI en {pokedex_url}...")
 
         resp = safe_api_get(pokedex_url, timeout=15, pacing_delay=0.0)
@@ -288,6 +321,8 @@ class Command(BaseCommand):
         pokeapi_data = resp.json()
 
         entries = pokeapi_data.get('pokemon_entries', [])
+        if limit > 0:
+            entries = entries[:limit]
         total_entries = len(entries)
         self.stdout.write(f"Se encontraron {total_entries} entradas en la Pokédex.")
 
@@ -352,7 +387,6 @@ class Command(BaseCommand):
                     'name': item['name'],
                     'display_name': item['display_name'],
                     'sprite_url': item['sprite_url'],
-                    'sprite_shiny_url': item['sprite_shiny_url'],
                     'primary_type': item['primary_type'],
                     'secondary_type': item['secondary_type'],
                     'height': item['height'],
