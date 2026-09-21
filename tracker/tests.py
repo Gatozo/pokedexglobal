@@ -752,3 +752,84 @@ class FixtureExportTests(TestCase):
         self.assertEqual(helix["name_es"], "Fósil Hélix")
         self.assertTrue(helix["has_sprite"])
 
+    def test_evolution_stones_catalog_and_locations(self):
+        import os
+        from django.conf import settings
+        from .utils import get_evolution_stones_catalog, resolve_evolution_stone
+
+        catalog = get_evolution_stones_catalog()
+        self.assertIn("moon-stone", catalog)
+        self.assertIn("fire-stone", catalog)
+        self.assertIn("water-stone", catalog)
+        self.assertIn("thunder-stone", catalog)
+        self.assertIn("leaf-stone", catalog)
+
+        # 1. Verificar que cada imagen de piedra existe físicamente en media/items/
+        for slug, stone in catalog.items():
+            icon_rel = stone["icon_url"].lstrip("/")
+            full_path = os.path.join(settings.BASE_DIR, icon_rel)
+            self.assertTrue(os.path.exists(full_path), f"La imagen {full_path} para la piedra {slug} no existe.")
+
+        # 2. Verificar datos de Piedra Lunar en Rojo
+        moon_stone = resolve_evolution_stone(item_slug="moon-stone", game_slug="red")
+        self.assertIsNotNone(moon_stone)
+        self.assertEqual(moon_stone["name"], "Piedra Lunar")
+        self.assertFalse(moon_stone["is_purchasable"])
+        self.assertGreaterEqual(len(moon_stone["locations"]), 4)
+        areas = [l["area"] for l in moon_stone["locations"]]
+        self.assertTrue(any("Monte Moon" in a for a in areas))
+        self.assertTrue(any("Guarida Rocket" in a for a in areas))
+
+        # 3. Verificar datos de Piedra Fuego en Azul
+        fire_stone = resolve_evolution_stone(text_hint="usando Piedra Fuego", game_slug="blue")
+        self.assertIsNotNone(fire_stone)
+        self.assertEqual(fire_stone["slug"], "fire-stone")
+        self.assertTrue(fire_stone["is_purchasable"])
+        self.assertEqual(fire_stone["price"], 2100)
+
+    def test_evolution_stone_pokedex_entry_property(self):
+        import json
+        # Crear Pokémon Clefable con obtención por evolución con Piedra Lunar
+        pokemon_clefable = Pokemon.objects.create(
+            national_number=36,
+            name="clefable",
+            display_name="Clefable",
+            sprite_url="https://example.com/clefable.png",
+            primary_type="fairy"
+        )
+        entry_clefable = PokedexEntry.objects.create(
+            pokedex=self.pokedex,
+            pokemon=pokemon_clefable,
+            entry_number=36,
+            obtaining_info={
+                "type": "evolution",
+                "summary": "Evoluciona de Clefairy usando Piedra Lunar",
+                "evolution_info": {
+                    "from": "Clefairy",
+                    "trigger": "use-item",
+                    "condition": "usando Piedra Lunar",
+                    "text": "Evoluciona de Clefairy usando Piedra Lunar",
+                    "item_slug": "moon-stone",
+                    "item_name": "Piedra Lunar",
+                    "item_icon": "/media/items/moon-stone.png"
+                }
+            }
+        )
+
+        # La propiedad evolution_stone debe estar presente en Clefable
+        stone = entry_clefable.evolution_stone
+        self.assertIsNotNone(stone)
+        self.assertEqual(stone["slug"], "moon-stone")
+        self.assertEqual(stone["name"], "Piedra Lunar")
+        self.assertEqual(stone["icon_url"], "/media/items/moon-stone.png")
+        self.assertFalse(stone["is_purchasable"])
+
+        # En Bulbasaur (entry normal de setUp) debe ser None
+        self.assertIsNone(self.entry.evolution_stone)
+
+        # Verificar serialización en modal_data_json
+        modal_json = json.loads(entry_clefable.modal_data_json)
+        self.assertIn("evolution_stone", modal_json)
+        self.assertEqual(modal_json["evolution_stone"]["slug"], "moon-stone")
+
+

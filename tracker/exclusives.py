@@ -179,6 +179,7 @@ def _build_exclusive_item(
         sprite_retro = entry.game_sprite_url or pokemon.sprite_url
         sprite_modern = pokemon.sprite_url
         obtaining_summary = entry.obtaining_info.get('summary', '') if entry.obtaining_info else ''
+        evolution_stone = entry.evolution_stone
     else:
         # Fallback a modelo Pokemon global
         pokemon = Pokemon.objects.filter(national_number=national_num).first()
@@ -194,6 +195,7 @@ def _build_exclusive_item(
         sprite_retro = pokemon.sprite_url
         sprite_modern = pokemon.sprite_url
         obtaining_summary = ''
+        evolution_stone = None
 
     pc_icon_url = pokemon.get_pc_icon_url(generation=current_generation)
 
@@ -213,6 +215,7 @@ def _build_exclusive_item(
         'summary': obtaining_summary,
         'is_counterpart': is_counterpart,
         'origin_badge': origin_badge,
+        'evolution_stone': evolution_stone,
     }
 
 

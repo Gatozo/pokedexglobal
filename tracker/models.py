@@ -257,6 +257,18 @@ class PokedexEntry(models.Model):
         return self.pokemon.get_pc_icon_url(generation=self.pokedex.game.generation)
 
     @property
+    def evolution_stone(self):
+        """Retorna información de la piedra evolutiva si este Pokémon se obtiene evolucionando con piedra."""
+        obt = self.obtaining_info or {}
+        evo = obt.get('evolution_info') or {}
+        item_slug = evo.get('item_slug')
+        text_hint = evo.get('condition') or evo.get('text') or obt.get('summary') or ''
+        game_slug = self.pokedex.game.slug if (self.pokedex and self.pokedex.game) else None
+
+        from .utils import resolve_evolution_stone
+        return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=game_slug)
+
+    @property
     def modal_data_json(self):
         """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
         import json
@@ -276,6 +288,7 @@ class PokedexEntry(models.Model):
             "weight": self.pokemon.weight or 0,
             "flavor_text": self.flavor_text or "",
             "obtaining": self.obtaining_info or {},
+            "evolution_stone": self.evolution_stone,
             "is_caught": getattr(self, "is_caught", False),
             "cry_url": self.cry_url,
         }, ensure_ascii=False)

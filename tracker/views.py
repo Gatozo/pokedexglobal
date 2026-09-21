@@ -48,6 +48,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
 
     exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids)
 
+    from .utils import get_evolution_stones_catalog
+    evolution_stones_json = json.dumps(get_evolution_stones_catalog())
+
     context = {
         "game": game,
         "pokedex": pokedex,
@@ -58,6 +61,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
         "caught_percent": caught_percent,
         "all_games": Game.objects.all(),
         "exclusives_info": exclusives_info,
+        "evolution_stones_json": evolution_stones_json,
     }
     return render(request, "tracker/pokedex_detail.html", context)
 

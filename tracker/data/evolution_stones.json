@@ -1,0 +1,199 @@
+{
+  "moon-stone": {
+    "slug": "moon-stone",
+    "name_es": "Piedra Lunar",
+    "icon_url": "/media/items/moon-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+    "games": {
+      "red": [
+        {
+          "area": "Monte Moon (Planta 1)",
+          "detail": "En el suelo como Poké Ball (esquina noroeste de la planta principal)."
+        },
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+        },
+        {
+          "area": "Guarida Rocket (Sótano B2)",
+          "detail": "En el laberinto con paneles de baldosas giratorias bajo el Casino de Azulona."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En una de las salas con estatuas y conmutadores en Isla Canela."
+        },
+        {
+          "area": "Ruta 2 (Zona este)",
+          "detail": "Objeto oculto en la hierba al sur de Ciudad Plateada (requiere MO Corte o Cueva Diglett)."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Monte Moon (Planta 1)",
+          "detail": "En el suelo como Poké Ball (esquina noroeste de la planta principal)."
+        },
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+        },
+        {
+          "area": "Guarida Rocket (Sótano B2)",
+          "detail": "En el laberinto con paneles de baldosas giratorias bajo el Casino de Azulona."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En una de las salas con estatuas y conmutadores en Isla Canela."
+        },
+        {
+          "area": "Ruta 2 (Zona este)",
+          "detail": "Objeto oculto en la hierba al sur de Ciudad Plateada (requiere MO Corte o Cueva Diglett)."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Monte Moon (Planta 1)",
+          "detail": "En el suelo como Poké Ball (esquina noroeste de la planta principal)."
+        },
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "En el suelo en el pasillo previo a la zona de los fósiles."
+        },
+        {
+          "area": "Monte Moon (Sótano B2 - Oculta)",
+          "detail": "Objeto oculto en una roca al final de un callejón sin salida."
+        },
+        {
+          "area": "Guarida Rocket (Sótano B2)",
+          "detail": "En el laberinto con paneles de baldosas giratorias bajo el Casino de Azulona."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En una de las salas con estatuas y conmutadores en Isla Canela."
+        }
+      ]
+    }
+  },
+  "fire-stone": {
+    "slug": "fire-stone",
+    "name_es": "Piedra Fuego",
+    "icon_url": "/media/items/fire-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+    "is_purchasable": true,
+    "price": 2100,
+    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "games": {
+      "red": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ]
+    }
+  },
+  "water-stone": {
+    "slug": "water-stone",
+    "name_es": "Piedra Agua",
+    "icon_url": "/media/items/water-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+    "is_purchasable": true,
+    "price": 2100,
+    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "games": {
+      "red": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ]
+    }
+  },
+  "thunder-stone": {
+    "slug": "thunder-stone",
+    "name_es": "Piedra Trueno",
+    "icon_url": "/media/items/thunder-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
+    "is_purchasable": true,
+    "price": 2100,
+    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "games": {
+      "red": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ]
+    }
+  },
+  "leaf-stone": {
+    "slug": "leaf-stone",
+    "name_es": "Piedra Hoja",
+    "icon_url": "/media/items/leaf-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+    "is_purchasable": true,
+    "price": 2100,
+    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "games": {
+      "red": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
+          "detail": "A la venta en el mostrador por 2.100 ₽."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en una de las habitaciones de Isla Canela."
+        }
+      ]
+    }
+  }
+}

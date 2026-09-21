@@ -296,9 +296,21 @@
 
                     <!-- Header with Number & Status badge -->
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono font-bold {% if game.slug == 'blue' %}text-blue-400/80 group-hover:text-blue-300{% elif game.slug == 'yellow' %}text-amber-400/80 group-hover:text-amber-300{% else %}text-slate-400 group-hover:text-slate-200{% endif %}">
-                            #{{ entry.entry_number|stringformat:"03d" }}
-                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xs font-mono font-bold {% if game.slug == 'blue' %}text-blue-400/80 group-hover:text-blue-300{% elif game.slug == 'yellow' %}text-amber-400/80 group-hover:text-amber-300{% else %}text-slate-400 group-hover:text-slate-200{% endif %}">
+                                #{{ entry.entry_number|stringformat:"03d" }}
+                            </span>
+                            {% if entry.evolution_stone %}
+                            <button 
+                                type="button" 
+                                onclick="event.stopPropagation(); openStoneModal('{{ entry.evolution_stone.slug }}', '{{ entry.evolution_stone.name|escapejs }}')"
+                                title="Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones)"
+                                class="p-0.5 rounded bg-slate-800/90 hover:bg-slate-700 border border-slate-700/80 hover:border-amber-400 transition-all hover:scale-110 flex items-center justify-center shadow-sm cursor-pointer"
+                            >
+                                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" class="w-4 h-4 object-contain">
+                            </button>
+                            {% endif %}
+                        </div>
                         <div class="flex items-center gap-1">
                             {% if entry.cry_url %}
                             <button 
@@ -517,6 +529,81 @@
                         <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
                     </svg>
                     <span id="modal-toggle-text">Capturar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Localización de Objeto / Piedra Evolutiva -->
+    <div id="stone-location-modal" class="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleStoneModalBackdropClick(event)">
+        <!-- Panel de la Tarjeta del Objeto -->
+        <div id="stone-modal-card" class="relative w-full max-w-lg bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[90vh]">
+            
+            <!-- Cabecera estilo cómic -->
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+                <div class="flex items-center gap-2.5 z-10">
+                    <span class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                        Objeto Evolutivo • {{ game.display_name|upper }}
+                    </span>
+                    <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-lg tracking-wide uppercase drop-shadow-[1.5px_1.5px_0px_#0f172a] flex items-center gap-2">
+                        <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain inline-block">
+                        <span id="stone-modal-name">PIEDRA LUNAR</span>
+                    </h3>
+                </div>
+
+                <!-- Botón de Cerrar Cómic -->
+                <button 
+                    type="button" 
+                    onclick="closeStoneModal()" 
+                    class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                    title="Cerrar ventana"
+                >
+                    ✕
+                </button>
+            </div>
+
+            <!-- Contenido scrollable -->
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-4">
+                <!-- Ficha del Objeto -->
+                <div class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner flex items-center gap-3.5 shadow-sm">
+                    <div class="w-14 h-14 bg-slate-100 rounded-lg border-2 border-slate-950 flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#0f172a]">
+                        <img id="stone-modal-img" src="" alt="" class="w-10 h-10 object-contain drop-shadow">
+                    </div>
+                    <div class="space-y-1 flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span id="stone-modal-badge-name" class="font-black text-sm uppercase text-slate-950"></span>
+                            <span id="stone-modal-price-badge" class="border border-slate-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm"></span>
+                        </div>
+                        <p id="stone-modal-description" class="text-xs text-slate-600 font-medium italic"></p>
+                    </div>
+                </div>
+
+                <!-- Lista de Localizaciones en este juego -->
+                <div>
+                    <div class="inline-flex items-center gap-1.5 mb-2">
+                        <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
+                            <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain inline-block">
+                            Dónde conseguirla en {{ game.display_name }}
+                        </span>
+                    </div>
+
+                    <div id="stone-modal-locations-list" class="space-y-2">
+                        <!-- Generado dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer del modal de piedra -->
+            <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-2.5 flex items-center justify-between">
+                <span class="text-[11px] font-semibold text-slate-500">
+                    Guía de obtención de objetos de 1.ª Gen
+                </span>
+                <button 
+                    type="button" 
+                    onclick="closeStoneModal()" 
+                    class="py-1 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all active:translate-x-0.5 active:translate-y-0.5"
+                >
+                    Entendido
                 </button>
             </div>
         </div>
@@ -776,6 +863,15 @@
             : ("{{ game.slug }}" === 'blue' 
                 ? 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800/80 hover:bg-blue-600 text-blue-300 hover:text-white border-blue-900/40 hover:border-blue-500'
                 : 'mt-3 w-full py-1.5 px-3 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors duration-150 border focus:outline-none focus:ring-2 focus:ring-red-500 bg-slate-800 hover:bg-red-600 text-slate-300 hover:text-white border-slate-700 hover:border-red-500');
+
+        const currentGameSlug = "{{ game.slug }}";
+        const currentGameDisplayName = "{{ game.display_name|escapejs }}";
+        let evolutionStonesCatalog = {};
+        try {
+            evolutionStonesCatalog = JSON.parse('{{ evolution_stones_json|escapejs }}');
+        } catch (e) {
+            console.error("Error al cargar catálogo de piedras:", e);
+        }
 
         let currentStatusFilter = 'all';
         let currentSpriteStyle = 'retro';
@@ -1103,9 +1199,31 @@
             // 1. Mostrar información de evolución si el Pokémon proviene de una evolución
             if (obt.evolution_info) {
                 const evoBox = document.createElement('div');
-                evoBox.className = 'text-xs bg-indigo-50 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 font-bold flex items-center gap-2 mb-2 shadow-sm';
+                const stone = data.evolution_stone;
                 const evoText = obt.evolution_info.text || `Evoluciona de ${obt.evolution_info.from} (${obt.evolution_info.condition || ''})`;
-                evoBox.innerHTML = `<img src="/media/items/rare-candy.png" alt="Evolución" class="w-4 h-4 object-contain inline-block shrink-0"> <span><strong>Evolución:</strong> ${evoText}</span>`;
+
+                if (stone) {
+                    evoBox.className = 'text-xs bg-indigo-50/90 border-2 border-indigo-300 text-indigo-950 rounded-lg p-2.5 font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-2 shadow-sm';
+                    evoBox.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <img src="${stone.icon_url}" alt="${stone.name}" class="w-5 h-5 object-contain inline-block shrink-0 drop-shadow-sm">
+                            <span><strong>Evolución:</strong> ${evoText}</span>
+                        </div>
+                        <button 
+                            type="button" 
+                            onclick="event.stopPropagation(); openStoneModal('${stone.slug}', '${stone.name}')"
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white hover:bg-amber-50 border-2 border-slate-950 text-slate-900 text-[10px] font-black uppercase shadow-[1.5px_1.5px_0px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5 shrink-0 self-start sm:self-auto cursor-pointer"
+                            title="Ver dónde conseguir ${stone.name}"
+                        >
+                            <img src="${stone.icon_url}" alt="" class="w-3.5 h-3.5 object-contain">
+                            <span>Dónde conseguirla</span>
+                        </button>
+                    `;
+                } else {
+                    evoBox.className = 'text-xs bg-indigo-50 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 font-bold flex items-center gap-2 mb-2 shadow-sm';
+                    const evoIcon = (obt.evolution_info.trigger === 'trade') ? '/media/items/town-map.png' : '/media/items/rare-candy.png';
+                    evoBox.innerHTML = `<img src="${evoIcon}" alt="Evolución" class="w-4 h-4 object-contain inline-block shrink-0"> <span><strong>Evolución:</strong> ${evoText}</span>`;
+                }
                 detailsContainer.appendChild(evoBox);
             }
 
@@ -1155,9 +1273,12 @@
                 modalCard.classList.remove('scale-100');
                 modalCard.classList.add('scale-95');
             }
-            // Solo remover el bloqueo de scroll si el modal de exclusivos no está abierto
+            // Solo remover el bloqueo de scroll si ningún otro modal está abierto
             const exclModal = document.getElementById('exclusives-modal');
-            if (!exclModal || exclModal.classList.contains('opacity-0')) {
+            const stoneModal = document.getElementById('stone-location-modal');
+            const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
+            const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
+            if (!isExclOpen && !isStoneOpen) {
                 document.body.classList.remove('overflow-hidden');
             }
             activeModalEntryId = null;
@@ -1166,6 +1287,108 @@
         function handleModalBackdropClick(e) {
             if (e.target.id === 'comic-modal') {
                 closePokemonModal();
+            }
+        }
+
+        /* ===== Stone Location Modal Controller ===== */
+        function openStoneModal(stoneSlug, stoneName) {
+            if (!stoneSlug) return;
+            const stone = evolutionStonesCatalog[stoneSlug] || {};
+            const name = stone.name_es || stoneName || stoneSlug.replace(/-/g, ' ').toUpperCase();
+            const iconUrl = stone.icon_url || `/media/items/${stoneSlug}.png`;
+            const desc = stone.description_es || 'Objeto evolutivo especial.';
+            const isPurchasable = stone.is_purchasable;
+            const price = stone.price;
+            const note = stone.availability_note || '';
+
+            // 1. Textos y cabecera
+            document.getElementById('stone-modal-name').textContent = name.toUpperCase();
+            const headerIcon = document.getElementById('stone-modal-icon-header');
+            if (headerIcon) headerIcon.src = iconUrl;
+
+            // 2. Ficha del objeto
+            document.getElementById('stone-modal-img').src = iconUrl;
+            document.getElementById('stone-modal-badge-name').textContent = name;
+            document.getElementById('stone-modal-description').textContent = `"${desc}"`;
+
+            const priceBadge = document.getElementById('stone-modal-price-badge');
+            if (isPurchasable) {
+                priceBadge.className = 'border border-emerald-950 bg-emerald-200 text-emerald-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = price ? `En tienda: ${price.toLocaleString('es-ES')} ₽` : 'Compra en tienda';
+            } else {
+                priceBadge.className = 'border border-amber-950 bg-amber-200 text-amber-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = 'Objeto Limitado';
+            }
+
+            // 3. Localizaciones para la versión actual
+            const locContainer = document.getElementById('stone-modal-locations-list');
+            locContainer.innerHTML = '';
+
+            const gamesMap = stone.games || {};
+            const locations = gamesMap[currentGameSlug] || Object.values(gamesMap)[0] || [];
+
+            if (locations.length === 0) {
+                const emptyMsg = document.createElement('div');
+                emptyMsg.className = 'p-3 text-xs text-slate-500 font-semibold italic bg-slate-50 rounded-lg border border-slate-200';
+                emptyMsg.textContent = 'Sin ubicaciones específicas registradas para esta edición.';
+                locContainer.appendChild(emptyMsg);
+            } else {
+                locations.forEach((loc, index) => {
+                    const locItem = document.createElement('div');
+                    locItem.className = 'bg-white border-2 border-slate-950 rounded-xl p-2.5 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-start gap-2.5';
+                    locItem.innerHTML = `
+                        <span class="w-6 h-6 rounded-full bg-amber-300 border border-slate-950 font-black text-xs text-slate-950 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                            ${index + 1}
+                        </span>
+                        <div class="space-y-0.5 min-w-0 flex-1">
+                            <h5 class="text-xs font-black text-slate-900 uppercase flex items-center gap-1.5">
+                                <img src="/media/items/town-map.png" alt="" class="w-3.5 h-3.5 object-contain inline-block">
+                                ${loc.area}
+                            </h5>
+                            <p class="text-[11px] text-slate-600 font-medium">
+                                ${loc.detail}
+                            </p>
+                        </div>
+                    `;
+                    locContainer.appendChild(locItem);
+                });
+            }
+
+            // 4. Mostrar modal
+            const modal = document.getElementById('stone-location-modal');
+            const modalCard = document.getElementById('stone-modal-card');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            modalCard.classList.remove('scale-95');
+            modalCard.classList.add('scale-100');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeStoneModal() {
+            const modal = document.getElementById('stone-location-modal');
+            const modalCard = document.getElementById('stone-modal-card');
+            if (modal) {
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+            if (modalCard) {
+                modalCard.classList.remove('scale-100');
+                modalCard.classList.add('scale-95');
+            }
+
+            // Solo liberar scroll si ningún otro modal está abierto
+            const comicModal = document.getElementById('comic-modal');
+            const exclModal = document.getElementById('exclusives-modal');
+            const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
+            const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
+            if (!isComicOpen && !isExclOpen) {
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
+        function handleStoneModalBackdropClick(e) {
+            if (e.target.id === 'stone-location-modal') {
+                closeStoneModal();
             }
         }
 
@@ -1305,6 +1528,11 @@
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
+                const stoneModal = document.getElementById('stone-location-modal');
+                if (stoneModal && !stoneModal.classList.contains('opacity-0')) {
+                    closeStoneModal();
+                    return;
+                }
                 const comicModal = document.getElementById('comic-modal');
                 if (comicModal && !comicModal.classList.contains('opacity-0')) {
                     closePokemonModal();

@@ -203,6 +203,24 @@ def resolve_types_for_generation(
 ITEMS_DATA_PATH = Path(__file__).resolve().parent / "data" / "items.json"
 _ITEMS_CACHE: Optional[Dict[str, Any]] = None
 
+EVOLUTION_STONES_PATH = Path(__file__).resolve().parent / "data" / "evolution_stones.json"
+_STONES_CACHE: Optional[Dict[str, Any]] = None
+
+
+def get_evolution_stones_catalog() -> Dict[str, Any]:
+    """Carga y cachea en memoria el catálogo canónico de piedras evolutivas si existe."""
+    global _STONES_CACHE
+    if _STONES_CACHE is None:
+        if EVOLUTION_STONES_PATH.exists():
+            try:
+                with open(EVOLUTION_STONES_PATH, "r", encoding="utf-8") as f:
+                    _STONES_CACHE = json.load(f)
+            except Exception:
+                _STONES_CACHE = {}
+        else:
+            _STONES_CACHE = {}
+    return _STONES_CACHE
+
 
 def get_items_catalog() -> Dict[str, Any]:
     """Carga y cachea en memoria el catálogo canónico de objetos (items.json) si existe."""
@@ -338,7 +356,72 @@ EVOLUTION_ITEMS_ES = {
     'leaf-stone': 'Piedra Hoja',
     'moon-stone': 'Piedra Lunar',
     'sun-stone': 'Piedra Solar',
+    'shiny-stone': 'Piedra Día',
+    'dusk-stone': 'Piedra Noche',
+    'dawn-stone': 'Piedra Alba',
+    'ice-stone': 'Piedra Hielo',
+    'oval-stone': 'Piedra Oval',
 }
+
+STONE_NAME_TO_SLUG = {
+    'piedra agua': 'water-stone',
+    'piedra trueno': 'thunder-stone',
+    'piedra fuego': 'fire-stone',
+    'piedra hoja': 'leaf-stone',
+    'piedra lunar': 'moon-stone',
+    'piedra solar': 'sun-stone',
+    'piedra día': 'shiny-stone',
+    'piedra dia': 'shiny-stone',
+    'piedra noche': 'dusk-stone',
+    'piedra alba': 'dawn-stone',
+    'piedra hielo': 'ice-stone',
+    'piedra oval': 'oval-stone',
+}
+
+
+def resolve_evolution_stone(
+    item_slug: Optional[str] = None,
+    text_hint: Optional[str] = None,
+    game_slug: Optional[str] = None
+) -> Optional[Dict[str, Any]]:
+    """
+    Identifica si un Pokémon evoluciona mediante piedra evolutiva y retorna
+    su información estructurada (slug, nombre, icono y ubicaciones por juego).
+    """
+    catalog = get_evolution_stones_catalog()
+    slug = item_slug.lower() if item_slug else None
+
+    if not slug and text_hint:
+        hint_lower = text_hint.lower()
+        for name_key, s in STONE_NAME_TO_SLUG.items():
+            if name_key in hint_lower:
+                slug = s
+                break
+
+    if not slug or (slug not in catalog and slug not in EVOLUTION_ITEMS_ES):
+        return None
+
+    stone_data = catalog.get(slug, {})
+    name_es = stone_data.get("name_es") or EVOLUTION_ITEMS_ES.get(slug, slug.replace("-", " ").title())
+    icon_url = stone_data.get("icon_url") or f"/media/items/{slug}.png"
+
+    locations = []
+    if game_slug and "games" in stone_data:
+        locations = stone_data["games"].get(game_slug, [])
+    elif "games" in stone_data:
+        locations = next(iter(stone_data["games"].values()), [])
+
+    return {
+        "slug": slug,
+        "name": name_es,
+        "icon_url": icon_url,
+        "description": stone_data.get("description_es", ""),
+        "is_purchasable": stone_data.get("is_purchasable", False),
+        "price": stone_data.get("price"),
+        "availability_note": stone_data.get("availability_note", ""),
+        "locations": locations
+    }
+
 
 # Límite superior de número nacional de Pokédex introducido en cada generación
 MAX_NATIONAL_NUMBER_BY_GEN = {
@@ -727,6 +810,10 @@ def resolve_obtaining_info(
                 trigger = details.get("trigger", {}).get("name", "")
 
                 condition = ""
+                item_slug = None
+                item_name = None
+                item_icon = None
+
                 if trigger == "level-up":
                     min_lvl = details.get("min_level")
                     min_happ = details.get("min_happiness")
@@ -738,7 +825,9 @@ def resolve_obtaining_info(
                         condition = "Subir de nivel"
                 elif trigger == "use-item":
                     item_slug = details.get("item", {}).get("name", "")
-                    condition = f"usando {EVOLUTION_ITEMS_ES.get(item_slug, item_slug.title())}"
+                    item_name = EVOLUTION_ITEMS_ES.get(item_slug, item_slug.title())
+                    condition = f"usando {item_name}"
+                    item_icon = f"/media/items/{item_slug}.png" if item_slug else None
                 elif trigger == "trade":
                     held_item = details.get("held_item")
                     if held_item:
@@ -759,7 +848,10 @@ def resolve_obtaining_info(
                     "from": parent,
                     "trigger": trigger,
                     "condition": condition,
-                    "text": evo_summary
+                    "text": evo_summary,
+                    "item_slug": item_slug,
+                    "item_name": item_name,
+                    "item_icon": item_icon,
                 }
 
     # 2. Comprobar si es un Pokémon inicial oficial para este juego específico
