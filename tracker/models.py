@@ -420,3 +420,18 @@ class Move(models.Model):
         return TYPE_NAMES_ES.get(self.type.lower(), self.type.capitalize())
 
 
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+from django.core.cache import cache
+
+
+@receiver([post_save, post_delete], sender=PokedexEntry)
+def _invalidate_pokedex_entries_cache(sender, instance, **kwargs):
+    cache.delete(f"pokedex_entries_base_{instance.pokedex_id}")
+
+
+@receiver([post_save, post_delete], sender=Game)
+def _invalidate_games_cache(sender, **kwargs):
+    cache.delete("all_games_catalog")
+
+

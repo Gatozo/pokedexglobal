@@ -1,8 +1,10 @@
+import copy
 import json
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
+from django.core.cache import cache
 from .models import Game, Pokedex, PokedexEntry, UserPokemonCatch
 from .exclusives import get_version_exclusives_context
 
@@ -16,19 +18,57 @@ def _get_user_or_session(request):
     return None, request.session.session_key
 
 
+def _get_cached_all_games():
+    """Retorna el catálogo de juegos desde la caché en memoria."""
+    games = cache.get("all_games_catalog")
+    if games is None:
+        games = list(Game.objects.all())
+        cache.set("all_games_catalog", games, timeout=86400)
+    return games
+
+
+def get_cached_pokedex_entries(pokedex_id):
+    """
+    Retorna la lista base de entradas de la Pokédex desde la caché en memoria.
+    Evita consultas SQL y deserialización en cada cambio de juego.
+    """
+    cache_key = f"pokedex_entries_base_{pokedex_id}"
+    entries = cache.get(cache_key)
+    if entries is None:
+        entries = list(
+            PokedexEntry.objects.filter(pokedex_id=pokedex_id)
+            .select_related("pokemon", "pokedex__game")
+            .defer(
+                "pokemon__raw_data",
+                "pokemon__species_data",
+                "pokemon__encounters_data",
+                "pokemon__evolution_chain_data",
+                "game_data",
+            )
+            .order_by("entry_number")
+        )
+        cache.set(cache_key, entries, timeout=86400)
+    return entries
+
+
+_STONES_JSON_CACHE = None
+
+
+def _get_cached_evolution_stones_json():
+    global _STONES_JSON_CACHE
+    if _STONES_JSON_CACHE is None:
+        from .utils import get_evolution_stones_catalog
+        _STONES_JSON_CACHE = json.dumps(get_evolution_stones_catalog())
+    return _STONES_JSON_CACHE
+
+
 def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
     """Vista principal que lista los Pokémon de la Pokédex de un juego."""
     game = get_object_or_404(Game, slug=game_slug)
     pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
 
-    # Entradas de la Pokédex optimizadas (aplazando JSONs de combate/raw_data de 44 MB)
-    entries = pokedex.entries.select_related("pokemon").defer(
-        "pokemon__raw_data",
-        "pokemon__species_data",
-        "pokemon__encounters_data",
-        "pokemon__evolution_chain_data",
-        "game_data"
-    ).order_by("entry_number")
+    # Entradas de la Pokédex obtenidas de la caché en memoria (0 ms DB)
+    cached_entries = get_cached_pokedex_entries(pokedex.id)
 
     user, session_key = _get_user_or_session(request)
 
@@ -43,8 +83,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
         UserPokemonCatch.objects.filter(**catch_filter).values_list("pokedex_entry_id", flat=True)
     )
 
-    # Anotar cada entrada con su estado e indexar en memoria para exclusivos
-    entries_list = list(entries)
+    # Copias superficiales ultra-rápidas (~1 ms) para anotar estado de captura específico del usuario de forma thread-safe
+    entries_list = [copy.copy(e) for e in cached_entries]
     entries_by_num = {}
     for entry in entries_list:
         entry.is_caught = entry.id in caught_entry_ids
@@ -56,9 +96,6 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
 
     exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
 
-    from .utils import get_evolution_stones_catalog
-    evolution_stones_json = json.dumps(get_evolution_stones_catalog())
-
     context = {
         "game": game,
         "pokedex": pokedex,
@@ -67,9 +104,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug="kanto"):
         "total_pokemon": total_pokemon,
         "caught_count": caught_count,
         "caught_percent": caught_percent,
-        "all_games": Game.objects.all(),
+        "all_games": _get_cached_all_games(),
         "exclusives_info": exclusives_info,
-        "evolution_stones_json": evolution_stones_json,
+        "evolution_stones_json": _get_cached_evolution_stones_json(),
     }
     return render(request, "tracker/pokedex_detail.html", context)
 
