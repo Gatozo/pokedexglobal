@@ -1,0 +1,105 @@
+<div 
+    id="card-{{ entry.id }}"
+    class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between h-full group cursor-pointer select-none {% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}"
+    data-entry-id="{{ entry.id }}"
+    data-number="{{ entry.entry_number }}"
+    data-name="{{ entry.pokemon.name }}"
+    data-display="{{ entry.pokemon.display_name|lower }}"
+    data-type1="{{ entry.primary_type_display }}"
+    data-type2="{{ entry.secondary_type_display|default:'' }}"
+    data-type1-es="{{ entry.primary_type_es|lower }}"
+    data-type2-es="{{ entry.secondary_type_es|default:''|lower }}"
+    data-caught="{% if entry.is_caught %}true{% else %}false{% endif %}"
+    data-sprite-retro="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}"
+    data-sprite-modern="{{ entry.pokemon.sprite_url }}"
+    onclick="openPokemonModal({{ entry.id }})"
+>
+    <!-- Embedded JSON data for Comic Modal -->
+    <script type="application/json" id="entry-data-{{ entry.id }}">{{ entry.modal_data_json|safe }}</script>
+
+    <!-- Header with Number, Stone, Sound & Status Badge -->
+    <div class="flex items-center justify-between gap-1 h-7 shrink-0">
+        <div class="flex items-center gap-1.5 shrink-0">
+            <span class="text-xs font-mono font-black text-slate-900 group-hover:text-black">
+                #{{ entry.entry_number|stringformat:"03d" }}
+            </span>
+            {% if entry.cry_url %}
+            <button 
+                type="button" 
+                title="Escuchar grito Pokémon" 
+                onclick="event.stopPropagation(); playPokemonCry('{{ entry.cry_url }}', this)"
+                class="p-1 rounded-md text-slate-400 hover:text-slate-950 hover:bg-slate-100 transition-colors active:scale-90 flex items-center justify-center shrink-0"
+            >
+                <svg class="w-3.5 h-3.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+            </button>
+            {% endif %}
+            {% if entry.evolution_stone %}
+            <button 
+                type="button" 
+                onclick="event.stopPropagation(); openStoneModal('{{ entry.evolution_stone.slug }}', '{{ entry.evolution_stone.name|escapejs }}')"
+                title="Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones)"
+                class="inline-flex items-center justify-center p-0 cursor-pointer transition-transform hover:scale-125 active:scale-95 focus:outline-none shrink-0"
+            >
+                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" class="w-[22px] h-[22px] object-contain drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)] pixel-art">
+            </button>
+            {% endif %}
+        </div>
+
+        <!-- Casilla / Badge de Captura con Acento Temático del Juego -->
+        <div id="status-badge-{{ entry.id }}" class="card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 {% if entry.is_caught %}status-caught-active{% else %}bg-slate-100 text-slate-500{% endif %}">
+            <span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">
+                {% if entry.is_caught %}✓{% endif %}
+            </span>
+            <span class="status-text font-black">
+                {% if entry.is_caught %}Atrapado{% else %}Falta{% endif %}
+            </span>
+        </div>
+    </div>
+
+    <!-- Pokemon Sprite / Artwork con círculo de realce cómic -->
+    <div class="my-2 relative flex items-center justify-center h-28 shrink-0">
+        <div class="absolute inset-2 rounded-full bg-slate-100/80 border border-slate-200/70 pointer-events-none group-hover:scale-105 transition-transform"></div>
+        <img 
+            id="img-{{ entry.id }}"
+            src="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}" 
+            alt="{{ entry.pokemon.display_name }}"
+            loading="lazy"
+            class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 drop-shadow-md pixel-art relative z-10"
+        >
+    </div>
+
+    <!-- Pokemon Info & Types -->
+    <div class="text-center h-[52px] flex flex-col justify-center shrink-0">
+        <h3 class="font-black text-sm text-slate-900 truncate uppercase tracking-wide">
+            {{ entry.pokemon.display_name }}
+        </h3>
+        <div class="flex items-center justify-center gap-1 mt-1">
+            <span class="type-{{ entry.primary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
+                {{ entry.primary_type_es }}
+            </span>
+            {% if entry.secondary_type_display %}
+            <span class="type-{{ entry.secondary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
+                {{ entry.secondary_type_es }}
+            </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Toggle Catch Action Button (Estilo Arcade) -->
+    <button 
+        type="button"
+        onclick="event.stopPropagation(); toggleCatch({{ entry.id }})"
+        id="btn-{{ entry.id }}"
+        class="card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 {% if entry.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}"
+    >
+        <!-- Icon Pokéball -->
+        <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+        </svg>
+        <span id="btn-text-{{ entry.id }}">
+            {% if entry.is_caught %}Liberar{% else %}Capturar{% endif %}
+        </span>
+    </button>
+</div>

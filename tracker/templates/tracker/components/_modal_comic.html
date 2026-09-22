@@ -1,0 +1,150 @@
+<!-- Comic Book Style Modal -->
+<div id="comic-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" style="z-index: 70;" onclick="handleModalBackdropClick(event)">
+    <!-- Modal Panel Window -->
+    <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+        
+        <!-- Comic Header Stripe / Title Bar -->
+        <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="flex items-center gap-2.5 z-10">
+                <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                    {{ game.display_name|upper }}
+                </span>
+                <h3 id="modal-pokemon-title" class="text-white font-black text-lg sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a] flex items-center gap-1.5">
+                    <span id="modal-pokemon-number" class="text-amber-300 font-mono">#001</span>
+                    <span id="modal-pokemon-name">BULBASAUR</span>
+                    <button 
+                        type="button" 
+                        id="modal-cry-btn"
+                        title="Escuchar sonido retro de Game Boy" 
+                        onclick="playModalCry(this)"
+                        class="ml-1 p-1 rounded-md text-amber-300 hover:text-white hover:bg-slate-950/40 transition-all active:scale-90 flex items-center justify-center"
+                    >
+                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                        </svg>
+                    </button>
+                </h3>
+            </div>
+
+            <!-- Comic Style Close Button -->
+            <button 
+                type="button" 
+                onclick="closePokemonModal()" 
+                class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                title="Cerrar viñeta"
+            >
+                ✕
+            </button>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="p-4 sm:p-5 overflow-y-auto space-y-4">
+            <!-- Top Section: Left Sprite Box + Right Info & Speech Bubble -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
+                
+                <!-- Sprite Box (Left / Top in Mobile) -->
+                <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col items-center justify-center comic-card-inner relative overflow-hidden comic-dots min-h-[190px]">
+                    <!-- Category Banner -->
+                    <div class="absolute top-2 left-2 z-10">
+                        <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
+                            Pokémon Semilla
+                        </span>
+                    </div>
+
+                    <!-- Pokemon Image -->
+                    <div class="my-3 flex items-center justify-center h-32 w-32 relative">
+                        <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
+                    </div>
+
+                    <!-- Types Badges -->
+                    <div id="modal-types-container" class="flex items-center gap-1.5 z-10 mt-auto">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right Column: Pokédex Bubble + Biometrics -->
+                <div class="sm:col-span-7 flex flex-col justify-between space-y-3">
+                    
+                    <!-- Pokédex Entry Speech Bubble -->
+                    <div class="flex-1 flex flex-col">
+                        <div class="inline-flex items-center gap-1 mb-1.5">
+                            <span class="bg-sky-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
+                                <img src="/media/items/journal.png" alt="" class="w-3.5 h-3.5 object-contain inline-block">
+                                Archivo Pokédex
+                            </span>
+                        </div>
+                        
+                        <!-- Speech bubble with quote -->
+                        <div class="comic-bubble p-3 sm:p-4 flex-1 flex items-center">
+                            <p id="modal-flavor-text" class="text-xs sm:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                                "Una rara semilla fue plantada en su espalda al nacer. La planta brota y crece con este Pokémon."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Biometrics Strip (Height / Weight) -->
+                    <div class="grid grid-cols-2 gap-2 pt-1">
+                        <div class="bg-white border-2 border-slate-950 rounded-lg p-2 text-center shadow-[2px_2px_0px_0px_#0f172a]">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase block">Altura</span>
+                            <span id="modal-pokemon-height" class="text-xs sm:text-sm font-black text-slate-900">0.7 m</span>
+                        </div>
+                        <div class="bg-white border-2 border-slate-950 rounded-lg p-2 text-center shadow-[2px_2px_0px_0px_#0f172a]">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase block">Peso</span>
+                            <span id="modal-pokemon-weight" class="text-xs sm:text-sm font-black text-slate-900">6.9 kg</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Section: Obtaining Method & Location (Comic Panel) -->
+            <div class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
+                        <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain inline-block">
+                        Cómo conseguirlo en {{ game.display_name }}
+                    </span>
+                    <div class="flex items-center gap-1.5">
+                        <span id="modal-unique-badge" class="hidden border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-rose-500 text-white">
+                            Único
+                        </span>
+                        <span id="modal-obtaining-badge" class="border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-emerald-400 text-slate-950">
+                            Regalo / Inicial
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Summary Explanation -->
+                <p id="modal-obtaining-summary" class="text-xs sm:text-sm font-bold text-slate-900 mb-2.5">
+                    Entregado como regalo o Pokémon inicial en Pueblo Paleta.
+                </p>
+
+                <!-- Detailed Locations or Evolution Condition List -->
+                <div id="modal-obtaining-details" class="space-y-1.5 max-h-36 overflow-y-auto pr-1">
+                    <!-- Dynamic chips -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bar with Quick Catch Toggle -->
+        <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span id="modal-status-badge" class="px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950">
+                    ✓ Atrapado en tu partida
+                </span>
+            </div>
+            <button 
+                id="modal-toggle-catch-btn"
+                type="button" 
+                onclick="modalToggleCatch()" 
+                class="py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
+            >
+                <!-- Pokeball svg -->
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+                </svg>
+                <span id="modal-toggle-text">Capturar</span>
+            </button>
+        </div>
+    </div>
+</div>

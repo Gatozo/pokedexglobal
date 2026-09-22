@@ -1,0 +1,33 @@
+<!-- Header Stripe with Game Theme Pattern -->
+<div class="{% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-5 py-4 sm:px-6 sm:py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4 comic-header-pattern relative">
+    <div class="z-10">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md text-[10px] sm:text-xs font-black uppercase tracking-wider bg-amber-300 text-slate-950 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-1 mb-2">
+            <span>Generación {{ game.generation }}</span> • <span>Región {% if game.generation == 2 %}Johto{% else %}Kanto{% endif %}</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wide drop-shadow-[2px_2px_0px_#0f172a] {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950 drop-shadow-none font-black{% else %}text-white{% endif %}">
+            {{ pokedex.name }}
+        </h2>
+        <p class="text-xs sm:text-sm font-bold mt-1 {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-900{% else %}text-white/90{% endif %}">
+            Registra cada Pokémon capturado en tu partida de {{ game.display_name }}.
+        </p>
+    </div>
+
+    <!-- Progress Metric (Estilo Tarjeta Coleccionable Cómic) -->
+    <div class="z-10 bg-white border-2 border-slate-950 rounded-2xl p-3.5 sm:p-4 min-w-[250px] shadow-[3.5px_3.5px_0px_#0f172a] text-center md:text-right">
+        <div class="text-[11px] font-black uppercase tracking-wider text-slate-600 flex items-center justify-center md:justify-end gap-1.5">
+            <span class="w-2 h-2 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
+            Progreso de Captura
+        </div>
+        <div class="text-2xl sm:text-3xl font-black mt-0.5 flex items-baseline justify-center md:justify-end gap-1.5 font-mono">
+            <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% elif game.slug == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
+                {{ caught_count }}
+            </span>
+            <span class="text-slate-400 text-xl font-bold">/</span>
+            <span id="stat-total" class="text-xl font-black text-slate-800">{{ total_pokemon }}</span>
+            <span class="text-xs font-black text-slate-500 ml-1">(<span id="stat-percent">{{ caught_percent }}</span>%)</span>
+        </div>
+        <div class="w-full bg-slate-100 border-2 border-slate-950 rounded-full h-3.5 mt-2 overflow-hidden p-0.5 shadow-inner">
+            <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
+        </div>
+    </div>
+</div>

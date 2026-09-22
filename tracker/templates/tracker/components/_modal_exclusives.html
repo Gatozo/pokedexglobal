@@ -1,0 +1,233 @@
+<!-- Modal de Pokémon Exclusivos de Versión -->
+{% if exclusives_info and exclusives_info.has_exclusives %}
+<div id="exclusives-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleExclusivesBackdropClick(event)">
+    <!-- Panel de la Tarjeta -->
+    <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+        
+        <!-- Cabecera estilo cómic -->
+        <div class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500 text-white{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27] text-slate-950{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="flex items-center gap-2.5 z-10">
+                <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                    Intercambio Link • Gen {{ game.generation }}
+                </span>
+                <h3 class="{% if exclusives_info.counterpart_theme == 'amber' or exclusives_info.counterpart_theme == 'gold' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
+                    Pokémon Exclusivos de Versión
+                </h3>
+            </div>
+
+            <!-- Botón de Cerrar Cómic -->
+            <button 
+                type="button" 
+                onclick="closeExclusivesModal()" 
+                class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                title="Cerrar tarjeta"
+            >
+                ✕
+            </button>
+        </div>
+
+        <!-- Subcabecera con Progreso y Pestañas -->
+        <div class="bg-slate-100 border-b-2 border-slate-950 p-3 sm:p-4 space-y-3">
+            <!-- Progreso de Captura de Exclusivos de la Contraparte -->
+            <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-500{% endif %} animate-pulse"></span>
+                    <div>
+                        <span class="text-xs font-black uppercase text-slate-700 block">
+                            Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:
+                        </span>
+                        <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                    <div class="font-mono font-black text-sm text-slate-900">
+                        <span id="excl-progress-caught" class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} font-black">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                        <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{{ exclusives_info.counterpart_percent }}</span>%)</span>
+                    </div>
+                    <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
+                        <div id="excl-progress-bar" class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selector de Pestañas -->
+            <div class="flex items-center gap-2">
+                <button 
+                    type="button" 
+                    id="tab-btn-counterpart"
+                    onclick="switchExclusivesTab('counterpart')"
+                    class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2"
+                >
+                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
+                    <span>Exclusivos de {{ exclusives_info.counterpart_short_name }} ({{ exclusives_info.counterpart_total }})</span>
+                </button>
+                <button 
+                    type="button" 
+                    id="tab-btn-own"
+                    onclick="switchExclusivesTab('own')"
+                    class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2"
+                >
+                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% elif exclusives_info.own_theme == 'silver' %}bg-slate-400{% elif exclusives_info.own_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
+                    <span>Exclusivos de tu Edición ({{ exclusives_info.own_total }})</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenido de las Pestañas -->
+        <div class="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1">
+            <!-- Panel 1: Exclusivos de la Contraparte (Tarjetas completas con acción de captura) -->
+            <div id="exclusives-panel-counterpart" class="space-y-3">
+                <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
+                    <span class="text-base shrink-0">ℹ️</span>
+                    <div>
+                        Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {% for item in exclusives_info.counterpart_list %}
+                    <div 
+                        id="excl-card-{{ item.national_number }}"
+                        data-entry-id="{{ item.entry_id }}"
+                        data-caught="{% if item.is_caught %}true{% else %}false{% endif %}"
+                        class="bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] transition-all relative overflow-hidden group cursor-pointer"
+                        onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                    >
+                        <!-- Cabecera de la ficha -->
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-1.5 min-w-0">
+                                <span class="text-xs font-mono font-bold text-slate-500 shrink-0">#{{ item.number }}</span>
+                                {% if item.origin_badge %}
+                                <span class="px-1.5 py-0.5 rounded text-[8px] sm:text-[8.5px] font-black uppercase border border-slate-950 text-center leading-tight tracking-tight inline-block shrink min-w-0 {% if 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">{{ item.origin_badge }}</span>
+                                {% endif %}
+                            </div>
+                            <span 
+                                id="excl-status-badge-{{ item.national_number }}"
+                                class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
+                            >
+                                {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
+                            </span>
+                        </div>
+
+                        <!-- Sprite -->
+                        <div class="my-1 relative flex items-center justify-center h-24">
+                            <img 
+                                id="excl-img-{{ item.national_number }}"
+                                src="{{ item.sprite_retro }}" 
+                                data-sprite-retro="{{ item.sprite_retro }}"
+                                data-sprite-modern="{{ item.sprite_modern }}"
+                                alt="{{ item.name }}"
+                                class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
+                            >
+                        </div>
+
+                        <!-- Nombre y Tipos -->
+                        <div class="text-center">
+                            <h4 class="font-black text-sm text-slate-900 truncate uppercase">{{ item.name }}</h4>
+                            <div class="flex items-center justify-center gap-1 mt-1">
+                                <span class="type-{{ item.primary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                    {{ item.primary_type_es }}
+                                </span>
+                                {% if item.secondary_type %}
+                                <span class="type-{{ item.secondary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                    {{ item.secondary_type_es }}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Botón de Captura Rápida -->
+                        {% if item.entry_id %}
+                        <button 
+                            type="button" 
+                            onclick="event.stopPropagation(); toggleExclusiveCatch({{ item.entry_id }}, {{ item.national_number }})" 
+                            id="excl-btn-{{ item.national_number }}"
+                            class="mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 {% if item.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}"
+                        >
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+                            </svg>
+                            <span id="excl-btn-text-{{ item.national_number }}">
+                                {% if item.is_caught %}Liberar{% else %}Capturar{% endif %}
+                            </span>
+                        </button>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Panel 2: Exclusivos de la Propia Edición (Mini-fichas compactas con Iconos de PC de 32x32) -->
+            <div id="exclusives-panel-own" class="hidden space-y-3">
+                {% if exclusives_info.is_yellow %}
+                <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-4 text-xs font-bold flex items-start gap-3 shadow-sm">
+                    <img src="/media/items/star-piece.png" alt="Especial" class="w-6 h-6 shrink-0 object-contain">
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm uppercase">Sin Pokémon exclusivos bloqueados</h4>
+                        <p class="font-medium text-slate-700">
+                            <strong>Pokémon Amarillo</strong> es una edición especial extendida donde puedes obtener a los tres Pokémon iniciales de Kanto (<strong>Bulbasaur</strong> en Ciudad Celeste, <strong>Charmander</strong> en Ruta 24 y <strong>Squirtle</strong> en Ciudad Carmín) mediante eventos y regalos dentro de la partida.
+                        </p>
+                        <p class="font-medium text-slate-700">
+                            Ninguna especie nativa de Amarillo es exclusiva de forma que impida a los jugadores de Rojo o Azul completar su Pokédex. Tu objetivo principal de intercambio en esta edición es recibir los <strong>13 Pokémon faltantes</strong> desde Rojo y Azul.
+                        </p>
+                    </div>
+                </div>
+                {% else %}
+                <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
+                    <img src="/media/items/oaks-parcel.png" alt="Paquete" class="w-5 h-5 shrink-0 object-contain">
+                    <div>
+                        Estos Pokémon son exclusivos de tu cartucho de <strong>{{ game.display_name }}</strong>. Los jugadores de <strong>{{ exclusives_info.counterpart_name }}</strong> no pueden atraparlos en estado salvaje y necesitarán que se los pases por intercambio.
+                    </div>
+                </div>
+
+                <!-- Cuadrícula compacta con los iconos de PC -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                    {% for item in exclusives_info.own_list %}
+                    <div 
+                        class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
+                        onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                        title="Ver detalles de {{ item.name }}"
+                    >
+                        <!-- Icono de PC oficial (32x32) -->
+                        <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                            <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
+                                <span class="font-black text-xs text-slate-900 uppercase leading-none">{{ item.name }}</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="type-{{ item.primary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                    {{ item.primary_type_es }}
+                                </span>
+                                {% if item.secondary_type %}
+                                <span class="type-{{ item.secondary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                    {{ item.secondary_type_es }}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Barra inferior -->
+        <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-600">
+            <div class="flex items-center gap-1.5">
+                <span>Registra cada exclusivo al recibirlo por intercambio con un amigo.</span>
+            </div>
+            <button 
+                type="button" 
+                onclick="closeExclusivesModal()" 
+                class="py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all active:translate-x-0.5 active:translate-y-0.5"
+            >
+                Cerrar
+            </button>
+        </div>
+    </div>
+</div>
+{% endif %}

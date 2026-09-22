@@ -1,0 +1,148 @@
+/* Pokédex Global - Estilos Estáticos Base y Componentes Cómic */
+
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Tipos Elementales */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-grass { background-color: #78C850; }
+.type-electric { background-color: #F8D030; color: #1e293b; }
+.type-ice { background-color: #98D8D8; color: #1e293b; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; color: #1e293b; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-steel { background-color: #B8B8D0; color: #1e293b; }
+.type-fairy { background-color: #EE99AC; color: #1e293b; }
+.type-dark { background-color: #705848; color: #ffffff; }
+.type-stellar { background-color: #7CC7B2; color: #ffffff; }
+
+/* Marquee Ping-Pong para texto largo en pastillas de ubicación */
+@keyframes marqueePingPong {
+    0%, 25% {
+        transform: translateX(0);
+    }
+    50%, 75% {
+        transform: translateX(var(--marquee-dist, -40px));
+    }
+    95%, 100% {
+        transform: translateX(0);
+    }
+}
+
+.marquee-pingpong {
+    display: inline-block;
+    will-change: transform;
+    animation: marqueePingPong var(--marquee-dur, 5s) ease-in-out infinite;
+}
+
+.location-marquee-wrapper:hover .marquee-pingpong {
+    animation-play-state: paused;
+}
+
+/* Pokemon Cards Grid Container - Responsive with Centered Incomplete Last Row */
+#pokemon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.875rem; /* 14px */
+}
+@media (min-width: 640px) {
+    #pokemon-grid {
+        gap: 1rem; /* 16px */
+    }
+}
+#pokemon-grid > .pokemon-card {
+    flex: 0 0 calc((100% - 1 * 0.875rem) / 2 - 0.1px);
+    max-width: calc((100% - 1 * 0.875rem) / 2 - 0.1px);
+}
+@media (min-width: 640px) {
+    #pokemon-grid > .pokemon-card {
+        flex: 0 0 calc((100% - 2 * 1rem) / 3 - 0.1px);
+        max-width: calc((100% - 2 * 1rem) / 3 - 0.1px);
+    }
+}
+@media (min-width: 768px) {
+    #pokemon-grid > .pokemon-card {
+        flex: 0 0 calc((100% - 3 * 1rem) / 4 - 0.1px);
+        max-width: calc((100% - 3 * 1rem) / 4 - 0.1px);
+    }
+}
+@media (min-width: 1024px) {
+    #pokemon-grid > .pokemon-card {
+        flex: 0 0 calc((100% - 4 * 1rem) / 5 - 0.1px);
+        max-width: calc((100% - 4 * 1rem) / 5 - 0.1px);
+    }
+}
+@media (min-width: 1280px) {
+    #pokemon-grid > .pokemon-card {
+        flex: 0 0 calc((100% - 5 * 1rem) / 6 - 0.1px);
+        max-width: calc((100% - 5 * 1rem) / 6 - 0.1px);
+    }
+}
+
+/* Collectible Card Styling */
+.pokemon-card {
+    background-color: #ffffff;
+    border: 2.5px solid #0f172a;
+    box-shadow: 3.5px 3.5px 0px 0px #0f172a;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Comic Book Modal Styling */
+.comic-panel {
+    border: 3.5px solid #0f172a;
+    box-shadow: 7px 7px 0px 0px #0f172a;
+}
+.comic-card-inner {
+    border: 2.5px solid #0f172a;
+    box-shadow: 3px 3px 0px 0px #0f172a;
+}
+.comic-bubble {
+    position: relative;
+    background: #ffffff;
+    border: 2.5px solid #0f172a;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0px 0px #0f172a;
+}
+.comic-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 24px;
+    border-width: 11px 9px 0;
+    border-style: solid;
+    border-color: #0f172a transparent;
+    display: block;
+    width: 0;
+}
+.comic-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 26px;
+    border-width: 8px 7px 0;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+.comic-dots {
+    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+    background-size: 8px 8px;
+}
