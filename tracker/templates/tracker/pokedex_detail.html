@@ -36,6 +36,8 @@
         .type-dragon { background-color: #7038F8; }
         .type-steel { background-color: #B8B8D0; color: #1e293b; }
         .type-fairy { background-color: #EE99AC; color: #1e293b; }
+        .type-dark { background-color: #705848; color: #ffffff; }
+        .type-stellar { background-color: #7CC7B2; color: #ffffff; }
 
         /* Dynamic Themed Comic Canvas Background */
         {% if game.slug == 'blue' %}
@@ -347,30 +349,30 @@
             </div>
 
             <!-- Filter & Visual Controls (Estilo Mecánico / Arcade) -->
-            <div class="p-3 sm:p-3.5 bg-[#fffef9] flex flex-col md:flex-row gap-2.5 sm:gap-3 items-stretch md:items-center justify-between">
+            <div class="p-2.5 sm:p-3 bg-[#fffef9] flex flex-col md:flex-row gap-2 sm:gap-2.5 items-stretch md:items-center justify-between">
                 <!-- Search input -->
-                <div class="relative w-full md:w-48 lg:w-56 xl:w-72 shrink-0">
+                <div class="relative w-full md:w-36 lg:w-44 xl:w-56 shrink-0">
                     <input 
                         type="text" 
                         id="search-input" 
                         placeholder="Buscar Pokémon..." 
-                        class="w-full bg-white border-2 border-slate-950 rounded-xl pl-9 pr-3 py-1.5 text-xs sm:text-sm font-bold text-slate-900 placeholder-slate-400 shadow-[2px_2px_0px_#0f172a] focus:outline-none focus:bg-amber-50/40 transition"
+                        class="w-full bg-white border-2 border-slate-950 rounded-xl pl-8 pr-2.5 py-1.5 text-xs sm:text-sm font-bold text-slate-900 placeholder-slate-400 shadow-[2px_2px_0px_#0f172a] focus:outline-none focus:bg-amber-50/40 transition"
                         oninput="filterCards()"
                     >
-                    <svg class="w-4 h-4 text-slate-600 absolute left-3 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-3.5 h-3.5 text-slate-600 absolute left-2.5 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
 
-                <div class="flex items-center gap-1.5 sm:gap-2 justify-start md:justify-end shrink-0 flex-nowrap overflow-x-auto max-w-full pb-0.5 md:pb-0">
+                <div class="flex items-center gap-1 sm:gap-1.5 justify-start md:justify-end shrink-0 flex-nowrap overflow-x-auto max-w-full pb-0.5 md:pb-0">
                     <!-- Botón de Exclusivos de Versión -->
                     {% if exclusives_info and exclusives_info.has_exclusives %}
                     <button 
                         type="button"
                         onclick="openExclusivesModal()" 
                         id="btn-exclusives" 
-                        class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
-                        title="Ver Pokémon exclusivos de versión"
+                        class="flex items-center gap-1.5 px-2 py-1 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
+                        title="Ver Pokémon {{ exclusives_info.full_button_label|lower }}"
                     >
                         <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} border border-slate-950 shrink-0"></span>
                         <span class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600 group-hover:text-blue-800{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600 group-hover:text-amber-800{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600 group-hover:text-slate-800{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514] group-hover:text-[#78590c]{% else %}text-red-600 group-hover:text-red-800{% endif %}">
@@ -382,10 +384,28 @@
                     </button>
                     {% endif %}
 
+                    <!-- Botón de Pokémon a Transferir -->
+                    {% if transfers_info and transfers_info.has_transfers %}
+                    <button 
+                        type="button"
+                        onclick="openTransfersModal()" 
+                        id="btn-transfers" 
+                        class="flex items-center gap-1.5 px-2 py-1 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
+                        title="Ver Pokémon a transferir ({{ transfers_info.mechanic_title }})"
+                    >
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 border border-slate-950 shrink-0"></span>
+                        <span class="text-indigo-600 group-hover:text-indigo-800">
+                            {{ transfers_info.button_label }}
+                        </span>
+                        <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0">
+                            <span id="transfers-caught-badge">{{ transfers_info.caught }}</span>/{{ transfers_info.total }}
+                        </span>
+                    </button>
+                    {% endif %}
+
                     <!-- Retro/Modern Visual Mode -->
                     {% if game.has_retro_sprites %}
                     <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-                        <span class="text-[10px] font-black text-slate-600 uppercase tracking-wider px-1.5 hidden xl:inline-block">Estilo:</span>
                         <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">
                             <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]"> Retro
                         </button>
@@ -397,9 +417,9 @@
 
                     <!-- Status Tabs -->
                     <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-2.5 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
-                        <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Capturados</button>
-                        <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Pendientes</button>
+                        <button onclick="setStatusFilter('all')" id="filter-all" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
+                        <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Capturados</button>
+                        <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Pendientes</button>
                     </div>
                 </div>
             </div>
@@ -722,7 +742,7 @@
                     <div class="inline-flex items-center gap-1.5 mb-2">
                         <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
                             <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain inline-block">
-                            Dónde conseguirla en {{ game.display_name }}
+                            Dónde conseguirlo en {{ game.display_name }}
                         </span>
                     </div>
 
@@ -735,7 +755,7 @@
             <!-- Footer del modal de piedra -->
             <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-2.5 flex items-center justify-between">
                 <span class="text-[11px] font-semibold text-slate-500">
-                    Guía de obtención de objetos de 1.ª Gen
+                    Guía de obtención de objetos evolutivos • Gen {{ game.generation }}
                 </span>
                 <button 
                     type="button" 
@@ -761,7 +781,7 @@
                         Intercambio Link • Gen {{ game.generation }}
                     </span>
                     <h3 class="{% if exclusives_info.counterpart_theme == 'amber' or exclusives_info.counterpart_theme == 'gold' %}text-slate-950{% else %}text-white{% endif %} font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
-                        {% if exclusives_info.is_yellow %}Pokémon a Transferir de Versión{% else %}Pokémon Exclusivos de Versión{% endif %}
+                        Pokémon Exclusivos de Versión
                     </h3>
                 </div>
 
@@ -784,11 +804,7 @@
                         <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-500{% endif %} animate-pulse"></span>
                         <div>
                             <span class="text-xs font-black uppercase text-slate-700 block">
-                                {% if exclusives_info.is_yellow %}
-                                    Pokémon faltantes de Rojo y Azul obtenidos:
-                                {% else %}
-                                    Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:
-                                {% endif %}
+                                Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:
                             </span>
                             <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
                         </div>
@@ -813,7 +829,7 @@
                         class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2"
                     >
                         <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
-                        <span>{% if exclusives_info.is_yellow %}Faltantes de {{ exclusives_info.counterpart_short_name }}{% else %}Exclusivos de {{ exclusives_info.counterpart_short_name }}{% endif %} ({{ exclusives_info.counterpart_total }})</span>
+                        <span>Exclusivos de {{ exclusives_info.counterpart_short_name }} ({{ exclusives_info.counterpart_total }})</span>
                     </button>
                     <button 
                         type="button" 
@@ -834,11 +850,7 @@
                     <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
                         <span class="text-base shrink-0">ℹ️</span>
                         <div>
-                            {% if exclusives_info.is_yellow %}
-                                Estos 13 Pokémon <span class="underline">no aparecen salvajes ni pueden evolucionar</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante transferencia o intercambio con un jugador de <strong>Pokémon Rojo</strong> o <strong>Pokémon Azul</strong>.
-                            {% else %}
-                                Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
-                            {% endif %}
+                            Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>{{ game.display_name }}</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>{{ exclusives_info.counterpart_name }}</strong>.
                         </div>
                     </div>
 
@@ -852,18 +864,16 @@
                             onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
                         >
                             <!-- Cabecera de la ficha -->
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="text-xs font-mono font-bold text-slate-500">#{{ item.number }}</span>
+                            <div class="flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-xs font-mono font-bold text-slate-500 shrink-0">#{{ item.number }}</span>
                                     {% if item.origin_badge %}
-                                    <span class="px-1.5 py-0.2 rounded text-[9px] font-black uppercase border border-slate-950 {% if 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">
-                                        {{ item.origin_badge }}
-                                    </span>
+                                    <span class="px-1.5 py-0.5 rounded text-[8px] sm:text-[8.5px] font-black uppercase border border-slate-950 text-center leading-tight tracking-tight inline-block shrink min-w-0 {% if 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">{{ item.origin_badge }}</span>
                                     {% endif %}
                                 </div>
                                 <span 
                                     id="excl-status-badge-{{ item.national_number }}"
-                                    class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
+                                    class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
                                 >
                                     {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
                                 </span>
@@ -992,6 +1002,159 @@
     </div>
     {% endif %}
 
+    <!-- Modal de Pokémon a Transferir -->
+    {% if transfers_info and transfers_info.has_transfers %}
+    <div id="transfers-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleTransfersBackdropClick(event)">
+        <!-- Panel de la Tarjeta -->
+        <div id="transfers-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+            
+            <!-- Cabecera estilo cómic -->
+            <div class="bg-indigo-600 border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+                <div class="flex items-center gap-2.5 z-10">
+                    <span class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                        {{ transfers_info.mechanic_badge }}
+                    </span>
+                    <h3 class="text-white font-black text-base sm:text-xl tracking-wide uppercase drop-shadow-[2px_2px_0px_#0f172a]">
+                        Pokémon a Transferir
+                    </h3>
+                </div>
+
+                <!-- Botón de Cerrar Cómic -->
+                <button 
+                    type="button" 
+                    onclick="closeTransfersModal()" 
+                    class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                    title="Cerrar tarjeta"
+                >
+                    ✕
+                </button>
+            </div>
+
+            <!-- Subcabecera con Progreso -->
+            <div class="bg-slate-100 border-b-2 border-slate-950 p-3 sm:p-4 space-y-3">
+                <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-3 h-3 rounded-full bg-indigo-500 animate-pulse"></span>
+                        <div>
+                            <span class="text-xs font-black uppercase text-slate-700 block">
+                                Pokémon transferidos a tu partida:
+                            </span>
+                            <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                        <div class="font-mono font-black text-sm text-slate-900">
+                            <span id="transfers-progress-caught" class="text-indigo-600 font-black">{{ transfers_info.caught }}</span> / <span id="transfers-progress-total">{{ transfers_info.total }}</span>
+                            <span class="text-xs text-slate-500 font-semibold">(<span id="transfers-progress-percent">{{ transfers_info.percent }}</span>%)</span>
+                        </div>
+                        <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
+                            <div id="transfers-progress-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: {{ transfers_info.percent }}%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido scrollable -->
+            <div class="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1">
+                <!-- Banner explicativo de la mecánica -->
+                <div class="bg-indigo-50 border-2 border-indigo-300 text-indigo-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
+                    <span class="text-base shrink-0">ℹ️</span>
+                    <div>
+                        {{ transfers_info.description }}
+                    </div>
+                </div>
+
+                <!-- Lista de tarjetas de Pokémon a transferir -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {% for item in transfers_info.transfer_list %}
+                    <div 
+                        id="transfer-card-{{ item.national_number }}"
+                        data-entry-id="{{ item.entry_id }}"
+                        data-caught="{% if item.is_caught %}true{% else %}false{% endif %}"
+                        class="bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] transition-all relative overflow-hidden group cursor-pointer"
+                        onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                    >
+                        <!-- Cabecera de la ficha -->
+                        <div class="flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-1.5 min-w-0">
+                                <span class="text-xs font-mono font-bold text-slate-500 shrink-0">#{{ item.number }}</span>
+                                {% if item.origin_badge %}
+                                <span class="px-1.5 py-0.5 rounded text-[8px] sm:text-[8.5px] font-black uppercase border border-indigo-950 bg-indigo-100 text-indigo-900 text-center leading-tight tracking-tight inline-block shrink min-w-0">{{ item.origin_badge }}</span>
+                                {% endif %}
+                            </div>
+                            <span 
+                                id="transfer-status-badge-{{ item.national_number }}"
+                                class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
+                            >
+                                {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
+                            </span>
+                        </div>
+
+                        <!-- Sprite -->
+                        <div class="my-1 relative flex items-center justify-center h-24">
+                            <img 
+                                id="transfer-img-{{ item.national_number }}"
+                                src="{{ item.sprite_retro }}" 
+                                data-sprite-retro="{{ item.sprite_retro }}"
+                                data-sprite-modern="{{ item.sprite_modern }}"
+                                alt="{{ item.name }}"
+                                class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
+                            >
+                        </div>
+
+                        <!-- Nombre y Tipos -->
+                        <div class="text-center">
+                            <h4 class="font-black text-sm text-slate-900 truncate uppercase">{{ item.name }}</h4>
+                            <div class="flex items-center justify-center gap-1 mt-1">
+                                <span class="type-{{ item.primary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                    {{ item.primary_type_es }}
+                                </span>
+                                {% if item.secondary_type %}
+                                <span class="type-{{ item.secondary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                    {{ item.secondary_type_es }}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Botón de Captura Rápida -->
+                        {% if item.entry_id %}
+                        <button 
+                            type="button" 
+                            onclick="event.stopPropagation(); toggleTransferCatch({{ item.entry_id }}, {{ item.national_number }})" 
+                            id="transfer-btn-{{ item.national_number }}"
+                            class="mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 {% if item.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}"
+                        >
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+                            </svg>
+                            <span id="transfer-btn-text-{{ item.national_number }}">
+                                {% if item.is_caught %}Liberar{% else %}Capturar{% endif %}
+                            </span>
+                        </button>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex items-center justify-between text-xs font-bold text-slate-600">
+                <div class="flex items-center gap-1.5">
+                    <span>Transfiere cada especie para completar tu Pokédex.</span>
+                </div>
+                <button 
+                    type="button" 
+                    onclick="closeTransfersModal()" 
+                    class="py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-amber-400 hover:bg-amber-300 text-slate-950 transition-all active:translate-x-0.5 active:translate-y-0.5"
+                >
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
     <!-- Interactive Scripts -->
     <script>
         const THEME_ACTIVE_BTN = "{{ game.slug }}" === 'yellow'
@@ -1052,6 +1215,16 @@
             });
 
             document.querySelectorAll("img[id^='excl-img-']").forEach(img => {
+                if (style === 'retro') {
+                    img.src = img.dataset.spriteRetro;
+                    img.classList.add('pixel-art');
+                } else {
+                    img.src = img.dataset.spriteModern;
+                    img.classList.remove('pixel-art');
+                }
+            });
+
+            document.querySelectorAll("img[id^='transfer-img-']").forEach(img => {
                 if (style === 'retro') {
                     img.src = img.dataset.spriteRetro;
                     img.classList.add('pixel-art');
@@ -1195,6 +1368,9 @@
 
                     // Sincronizar con la tarjeta de exclusivos si este Pokémon está en ella
                     updateExclusivesCardStatus(entryId, data.is_caught);
+
+                    // Sincronizar con la tarjeta de transferencias si este Pokémon está en ella
+                    updateTransfersCardStatus(entryId, data.is_caught);
 
                     // Actualizar métricas globales
                     document.getElementById('stat-caught').textContent = data.caught_count;
@@ -1367,7 +1543,7 @@
                             title="Ver dónde conseguir ${stone.name}"
                         >
                             <img src="${stone.icon_url}" alt="" class="w-3.5 h-3.5 object-contain">
-                            <span>Dónde conseguirla</span>
+                            <span>Dónde conseguirlo</span>
                         </button>
                     `;
                 } else {
@@ -1416,6 +1592,20 @@
             document.body.classList.add('overflow-hidden');
         }
 
+        function releaseScrollIfNoModalOpen() {
+            const comicModal = document.getElementById('comic-modal');
+            const exclModal = document.getElementById('exclusives-modal');
+            const stoneModal = document.getElementById('stone-location-modal');
+            const transModal = document.getElementById('transfers-modal');
+            const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
+            const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
+            const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
+            const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
+            if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen) {
+                document.body.classList.remove('overflow-hidden');
+            }
+        }
+
         function closePokemonModal() {
             const modal = document.getElementById('comic-modal');
             const modalCard = document.getElementById('comic-modal-card');
@@ -1427,14 +1617,7 @@
                 modalCard.classList.remove('scale-100');
                 modalCard.classList.add('scale-95');
             }
-            // Solo remover el bloqueo de scroll si ningún otro modal está abierto
-            const exclModal = document.getElementById('exclusives-modal');
-            const stoneModal = document.getElementById('stone-location-modal');
-            const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
-            const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
-            if (!isExclOpen && !isStoneOpen) {
-                document.body.classList.remove('overflow-hidden');
-            }
+            releaseScrollIfNoModalOpen();
             activeModalEntryId = null;
         }
 
@@ -1479,7 +1662,7 @@
             locContainer.innerHTML = '';
 
             const gamesMap = stone.games || {};
-            const locations = gamesMap[currentGameSlug] || Object.values(gamesMap)[0] || [];
+            const locations = gamesMap[currentGameSlug] || [];
 
             if (locations.length === 0) {
                 const emptyMsg = document.createElement('div');
@@ -1529,15 +1712,7 @@
                 modalCard.classList.remove('scale-100');
                 modalCard.classList.add('scale-95');
             }
-
-            // Solo liberar scroll si ningún otro modal está abierto
-            const comicModal = document.getElementById('comic-modal');
-            const exclModal = document.getElementById('exclusives-modal');
-            const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
-            const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
-            if (!isComicOpen && !isExclOpen) {
-                document.body.classList.remove('overflow-hidden');
-            }
+            releaseScrollIfNoModalOpen();
         }
 
         function handleStoneModalBackdropClick(e) {
@@ -1591,8 +1766,8 @@
                 modal.classList.add('opacity-0', 'pointer-events-none');
                 modalCard.classList.remove('scale-100');
                 modalCard.classList.add('scale-95');
-                document.body.classList.remove('overflow-hidden');
             }
+            releaseScrollIfNoModalOpen();
         }
 
         function handleExclusivesBackdropClick(e) {
@@ -1637,10 +1812,10 @@
 
                 if (badge) {
                     if (isCaught) {
-                        badge.className = 'px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 text-slate-950';
+                        badge.className = 'px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center bg-emerald-400 text-slate-950';
                         badge.textContent = '✓ Atrapado';
                     } else {
-                        badge.className = 'px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 bg-slate-200 text-slate-600';
+                        badge.className = 'px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center bg-slate-200 text-slate-600';
                         badge.textContent = 'Pendiente';
                     }
                 }
@@ -1680,6 +1855,95 @@
             }
         }
 
+        /* ===== Modal de Pokémon a Transferir ===== */
+        function openTransfersModal() {
+            const modal = document.getElementById('transfers-modal');
+            const modalCard = document.getElementById('transfers-modal-card');
+            if (modal && modalCard) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.classList.add('opacity-100', 'pointer-events-auto');
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        function closeTransfersModal() {
+            const modal = document.getElementById('transfers-modal');
+            const modalCard = document.getElementById('transfers-modal-card');
+            if (modal && modalCard) {
+                modal.classList.remove('opacity-100', 'pointer-events-auto');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalCard.classList.remove('scale-100');
+                modalCard.classList.add('scale-95');
+            }
+            releaseScrollIfNoModalOpen();
+        }
+
+        function handleTransfersBackdropClick(e) {
+            if (e.target.id === 'transfers-modal') {
+                closeTransfersModal();
+            }
+        }
+
+        async function toggleTransferCatch(entryId, nationalNumber) {
+            await toggleCatch(entryId);
+        }
+
+        function updateTransfersCardStatus(entryId, isCaught) {
+            const card = document.querySelector(`[id^='transfer-card-'][data-entry-id='${entryId}']`);
+            if (card) {
+                card.dataset.caught = isCaught ? 'true' : 'false';
+                const nationalNum = card.id.replace('transfer-card-', '');
+                const badge = document.getElementById(`transfer-status-badge-${nationalNum}`);
+                const btn = document.getElementById(`transfer-btn-${nationalNum}`);
+                const btnText = document.getElementById(`transfer-btn-text-${nationalNum}`);
+
+                if (badge) {
+                    if (isCaught) {
+                        badge.className = 'px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center bg-emerald-400 text-slate-950';
+                        badge.textContent = '✓ Atrapado';
+                    } else {
+                        badge.className = 'px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center bg-slate-200 text-slate-600';
+                        badge.textContent = 'Pendiente';
+                    }
+                }
+
+                if (btn) {
+                    if (isCaught) {
+                        btn.className = 'mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 bg-rose-500 hover:bg-rose-600 text-white';
+                        if (btnText) btnText.textContent = 'Liberar';
+                    } else {
+                        btn.className = 'mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 bg-emerald-500 hover:bg-emerald-600 text-white';
+                        if (btnText) btnText.textContent = 'Capturar';
+                    }
+                }
+            }
+
+            // Recalcular métricas de transferencias
+            const transferCards = document.querySelectorAll("[id^='transfer-card-']");
+            if (transferCards.length > 0) {
+                let caughtCount = 0;
+                transferCards.forEach(c => {
+                    if (c.dataset.caught === 'true') caughtCount++;
+                });
+                const totalCount = transferCards.length;
+                const percent = Math.round((caughtCount / totalCount) * 100);
+
+                const badgeElem = document.getElementById('transfers-caught-badge');
+                if (badgeElem) badgeElem.textContent = caughtCount;
+
+                const caughtElem = document.getElementById('transfers-progress-caught');
+                if (caughtElem) caughtElem.textContent = caughtCount;
+
+                const percentElem = document.getElementById('transfers-progress-percent');
+                if (percentElem) percentElem.textContent = percent;
+
+                const barElem = document.getElementById('transfers-progress-bar');
+                if (barElem) barElem.style.width = `${percent}%`;
+            }
+        }
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 const stoneModal = document.getElementById('stone-location-modal');
@@ -1690,9 +1954,14 @@
                 const comicModal = document.getElementById('comic-modal');
                 if (comicModal && !comicModal.classList.contains('opacity-0')) {
                     closePokemonModal();
-                } else {
-                    closeExclusivesModal();
+                    return;
                 }
+                const transModal = document.getElementById('transfers-modal');
+                if (transModal && !transModal.classList.contains('opacity-0')) {
+                    closeTransfersModal();
+                    return;
+                }
+                closeExclusivesModal();
             }
         });
 

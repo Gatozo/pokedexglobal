@@ -73,6 +73,72 @@
           "area": "Mansión Pokémon (Planta baja)",
           "detail": "En una de las salas con estatuas y conmutadores en Isla Canela."
         }
+      ],
+      "gold": [
+        {
+          "area": "Cueva Unión (Sótano B2)",
+          "detail": "En el suelo en la esquina noroeste del lago subterráneo donde aparece Lapras (requiere Surf)."
+        },
+        {
+          "area": "Plaza de Monte Moon",
+          "detail": "Objeto oculto en la roca central tras el baile de los Clefairy los lunes por la noche (20:00 a 04:00, usar Golpe Roca)."
+        },
+        {
+          "area": "Cataratas Tohjo",
+          "detail": "En el suelo en una saliente rocosa de la cueva que conecta Johto y Kanto (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy)",
+          "detail": "8% de probabilidad de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Cueva Unión (Sótano B2)",
+          "detail": "En el suelo en la esquina noroeste del lago subterráneo donde aparece Lapras (requiere Surf)."
+        },
+        {
+          "area": "Plaza de Monte Moon",
+          "detail": "Objeto oculto en la roca central tras el baile de los Clefairy los lunes por la noche (20:00 a 04:00, usar Golpe Roca)."
+        },
+        {
+          "area": "Cataratas Tohjo",
+          "detail": "En el suelo en una saliente rocosa de la cueva que conecta Johto y Kanto (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy)",
+          "detail": "8% de probabilidad de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Cueva Unión (Sótano B2)",
+          "detail": "En el suelo en la esquina noroeste del lago subterráneo donde aparece Lapras (requiere Surf)."
+        },
+        {
+          "area": "Plaza de Monte Moon",
+          "detail": "Objeto oculto en la roca central tras el baile de los Clefairy los lunes por la noche (20:00 a 04:00, usar Golpe Roca)."
+        },
+        {
+          "area": "Cataratas Tohjo",
+          "detail": "En el suelo en una saliente rocosa de la cueva que conecta Johto y Kanto (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy)",
+          "detail": "8% de probabilidad de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada."
+        }
       ]
     }
   },
@@ -83,7 +149,7 @@
     "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
     "is_purchasable": true,
     "price": 2100,
-    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
     "games": {
       "red": [
         {
@@ -101,6 +167,40 @@
         {
           "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
           "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "gold": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (nativo salvaje en Pokémon Oro)."
+        },
+        {
+          "area": "Ruta 36 (PokéGear)",
+          "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Vulpix (nativo salvaje en Pokémon Plata)."
+        },
+        {
+          "area": "Ruta 36 (PokéGear)",
+          "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe o Vulpix."
+        },
+        {
+          "area": "Ruta 36 (PokéGear)",
+          "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con los ahorros en Pokémon Cristal."
         }
       ]
     }
@@ -112,7 +212,7 @@
     "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
     "is_purchasable": true,
     "price": 2100,
-    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
     "games": {
       "red": [
         {
@@ -130,6 +230,36 @@
         {
           "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
           "detail": "A la venta en el mostrador por 2.100 ₽."
+        }
+      ],
+      "gold": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
+        },
+        {
+          "area": "Ruta 42 (PokéGear)",
+          "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
+        },
+        {
+          "area": "Ruta 42 (PokéGear)",
+          "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
+        },
+        {
+          "area": "Ruta 42 (PokéGear)",
+          "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
         }
       ]
     }
@@ -141,7 +271,7 @@
     "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
     "is_purchasable": true,
     "price": 2100,
-    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
     "games": {
       "red": [
         {
@@ -160,6 +290,36 @@
           "area": "Centro Comercial de Ciudad Azulona (Piso 4 - Bazar Sabio)",
           "detail": "A la venta en el mostrador por 2.100 ₽."
         }
+      ],
+      "gold": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        },
+        {
+          "area": "Ruta 38 (PokéGear)",
+          "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        },
+        {
+          "area": "Ruta 38 (PokéGear)",
+          "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        },
+        {
+          "area": "Ruta 38 (PokéGear)",
+          "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+        }
       ]
     }
   },
@@ -170,7 +330,7 @@
     "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
     "is_purchasable": true,
     "price": 2100,
-    "availability_note": "A la venta por 2.100 ₽ (unidades ilimitadas).",
+    "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
     "games": {
       "red": [
         {
@@ -192,6 +352,237 @@
         {
           "area": "Mansión Pokémon (Planta baja)",
           "detail": "En el suelo como Poké Ball en una de las habitaciones de Isla Canela."
+        }
+      ],
+      "gold": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+        },
+        {
+          "area": "Ruta 34 (PokéGear)",
+          "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+        },
+        {
+          "area": "Ruta 34 (PokéGear)",
+          "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+        },
+        {
+          "area": "Ruta 34 (PokéGear)",
+          "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+        }
+      ]
+    }
+  },
+  "sun-stone": {
+    "slug": "sun-stone",
+    "name_es": "Piedra Solar",
+    "icon_url": "/media/items/sun-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
+    "games": {
+      "gold": [
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "1.er premio garantizado al ganar el Concurso de Captura de Bichos (Martes, Jueves y Sábado)."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "1.er premio garantizado al ganar el Concurso de Captura de Bichos (Martes, Jueves y Sábado)."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "1.er premio garantizado al ganar el Concurso de Captura de Bichos (Martes, Jueves y Sábado)."
+        }
+      ]
+    }
+  },
+  "kings-rock": {
+    "slug": "kings-rock",
+    "name_es": "Roca del Rey",
+    "icon_url": "/media/items/kings-rock.png",
+    "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial de evolución por intercambio.",
+    "games": {
+      "gold": [
+        {
+          "area": "Pozo Slowpoke (Sótano B2)",
+          "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
+          "detail": "8% de probabilidad de que Slowpoke o Poliwhirl salvajes la lleven equipada."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Pozo Slowpoke (Sótano B2)",
+          "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
+          "detail": "8% de probabilidad de que Slowpoke o Poliwhirl salvajes la lleven equipada."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Pozo Slowpoke (Sótano B2)",
+          "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
+        },
+        {
+          "area": "Ahorros de Mamá",
+          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+        },
+        {
+          "area": "Torre Batalla",
+          "detail": "Posible premio al completar una ronda victoriosa de 7 combates."
+        }
+      ]
+    }
+  },
+  "metal-coat": {
+    "slug": "metal-coat",
+    "name_es": "Revestimiento Metálico",
+    "icon_url": "/media/items/metal-coat.png",
+    "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial de evolución por intercambio.",
+    "games": {
+      "gold": [
+        {
+          "area": "Barco S.S. Aqua",
+          "detail": "Regalo del abuelo tras encontrar a su nieta en el camarote del capitán del barco."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite)",
+          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Barco S.S. Aqua",
+          "detail": "Regalo del abuelo tras encontrar a su nieta en el camarote del capitán del barco."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite)",
+          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Barco S.S. Aqua",
+          "detail": "Regalo del abuelo tras encontrar a su nieta en el camarote del capitán del barco."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite)",
+          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+        }
+      ]
+    }
+  },
+  "dragon-scale": {
+    "slug": "dragon-scale",
+    "name_es": "Escama Dragón",
+    "icon_url": "/media/items/dragon-scale.png",
+    "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial de evolución por intercambio.",
+    "games": {
+      "gold": [
+        {
+          "area": "Monte Mortero (Cámara interior superior)",
+          "detail": "Objeto en el suelo en lo profundo de las cavernas superiores (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Seadra)",
+          "detail": "8% de probabilidad de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Guarida Dragón (B1F)",
+          "detail": "En el suelo tras cruzar el lago subterráneo detrás del Gimnasio de Endrino (requiere Surf y Torbellino)."
+        },
+        {
+          "area": "Monte Mortero (Cámara interior superior)",
+          "detail": "Objeto en el suelo en lo profundo de las cavernas superiores (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Seadra)",
+          "detail": "8% de probabilidad de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Guarida Dragón (B1F)",
+          "detail": "En el suelo tras cruzar el lago subterráneo detrás del Gimnasio de Endrino (requiere Surf y Torbellino)."
+        },
+        {
+          "area": "Monte Mortero (Cámara interior superior)",
+          "detail": "Objeto en el suelo en lo profundo de las cavernas superiores (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Dratini)",
+          "detail": "8% de probabilidad de que Horsea o Dratini salvajes la lleven equipada."
+        }
+      ]
+    }
+  },
+  "up-grade": {
+    "slug": "up-grade",
+    "name_es": "Mejora",
+    "icon_url": "/media/items/up-grade.png",
+    "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial de evolución por intercambio.",
+    "games": {
+      "gold": [
+        {
+          "area": "Edificio Silph S.A. (Ciudad Azafrán)",
+          "detail": "Entregada por el guardia de seguridad en el vestíbulo de la planta baja."
+        }
+      ],
+      "silver": [
+        {
+          "area": "Edificio Silph S.A. (Ciudad Azafrán)",
+          "detail": "Entregada por el guardia de seguridad en el vestíbulo de la planta baja."
+        }
+      ],
+      "crystal": [
+        {
+          "area": "Edificio Silph S.A. (Ciudad Azafrán)",
+          "detail": "Entregada por el guardia de seguridad en el vestíbulo de la planta baja."
         }
       ]
     }

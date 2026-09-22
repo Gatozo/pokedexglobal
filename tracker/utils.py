@@ -453,6 +453,10 @@ EVOLUTION_ITEMS_ES = {
     'dawn-stone': 'Piedra Alba',
     'ice-stone': 'Piedra Hielo',
     'oval-stone': 'Piedra Oval',
+    'kings-rock': 'Roca del Rey',
+    'metal-coat': 'Revestimiento Metálico',
+    'dragon-scale': 'Escama Dragón',
+    'up-grade': 'Mejora',
 }
 
 STONE_NAME_TO_SLUG = {
@@ -468,6 +472,14 @@ STONE_NAME_TO_SLUG = {
     'piedra alba': 'dawn-stone',
     'piedra hielo': 'ice-stone',
     'piedra oval': 'oval-stone',
+    'roca del rey': 'kings-rock',
+    'revestimiento metálico': 'metal-coat',
+    'revestimiento metalico': 'metal-coat',
+    'revest. metálico': 'metal-coat',
+    'revest. metalico': 'metal-coat',
+    'escama dragón': 'dragon-scale',
+    'escama dragon': 'dragon-scale',
+    'mejora': 'up-grade',
 }
 
 
@@ -477,8 +489,8 @@ def resolve_evolution_stone(
     game_slug: Optional[str] = None
 ) -> Optional[Dict[str, Any]]:
     """
-    Identifica si un Pokémon evoluciona mediante piedra evolutiva y retorna
-    su información estructurada (slug, nombre, icono y ubicaciones por juego).
+    Identifica si un Pokémon evoluciona mediante piedra u objeto evolutivo y retorna
+    su información estructurada (slug, nombre, icono y ubicaciones exclusivas por juego).
     """
     catalog = get_evolution_stones_catalog()
     slug = item_slug.lower() if item_slug else None
@@ -497,20 +509,32 @@ def resolve_evolution_stone(
     name_es = stone_data.get("name_es") or EVOLUTION_ITEMS_ES.get(slug, slug.replace("-", " ").title())
     icon_url = stone_data.get("icon_url") or f"/media/items/{slug}.png"
 
+    # Resolución estricta por versión de juego sin mezclar regiones
     locations = []
     if game_slug and "games" in stone_data:
         locations = stone_data["games"].get(game_slug, [])
-    elif "games" in stone_data:
+    elif not game_slug and "games" in stone_data:
         locations = next(iter(stone_data["games"].values()), [])
+
+    is_purchasable = stone_data.get("is_purchasable", False)
+    price = stone_data.get("price")
+    availability_note = stone_data.get("availability_note", "")
+
+    # En 2ª Generación (Oro, Plata, Cristal), las piedras y objetos evolutivos NO se compran en centros comerciales
+    if game_slug in ['gold', 'silver', 'crystal']:
+        is_purchasable = False
+        price = None
+        if not availability_note or "2.100" in availability_note:
+            availability_note = "Objeto limitado. No se encuentra a la venta en tiendas."
 
     return {
         "slug": slug,
         "name": name_es,
         "icon_url": icon_url,
         "description": stone_data.get("description_es", ""),
-        "is_purchasable": stone_data.get("is_purchasable", False),
-        "price": stone_data.get("price"),
-        "availability_note": stone_data.get("availability_note", ""),
+        "is_purchasable": is_purchasable,
+        "price": price,
+        "availability_note": availability_note,
         "locations": locations
     }
 
@@ -1316,7 +1340,10 @@ def resolve_obtaining_info(
                 elif trigger == "trade":
                     held_item = details.get("held_item")
                     if held_item:
-                        condition = f"Intercambio con {held_item.get('name', '').title()}"
+                        item_slug = held_item.get("name", "")
+                        item_name = EVOLUTION_ITEMS_ES.get(item_slug, item_slug.title())
+                        item_icon = f"/media/items/{item_slug}.png" if item_slug else None
+                        condition = f"Intercambio equipado con {item_name}"
                     else:
                         condition = "Intercambio con otro entrenador"
                 else:

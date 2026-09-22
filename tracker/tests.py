@@ -231,6 +231,27 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, 'data-type1-es="normal"')
         self.assertContains(response, 'type-normal')
 
+    def test_dark_type_badge_rendering(self):
+        """Verifica que el tipo siniestro (dark) tenga su clase CSS y se renderice correctamente en español."""
+        umbreon = Pokemon.objects.create(
+            national_number=197,
+            name="umbreon",
+            display_name="Umbreon",
+            primary_type="dark"
+        )
+        PokedexEntry.objects.create(
+            pokedex=self.pokedex,
+            pokemon=umbreon,
+            entry_number=185,
+            primary_type="dark"
+        )
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '.type-dark { background-color: #705848;')
+        self.assertContains(response, 'type-dark')
+        self.assertContains(response, 'Siniestro')
+
     def test_resolve_flavor_text_canonical_and_fallback(self):
         from .utils import resolve_flavor_text
 
@@ -642,7 +663,8 @@ class FixtureExportTests(TestCase):
         # 2. Contexto de exclusivos para Rojo
         ctx_red = get_version_exclusives_context(self.game, self.pokedex, set())
         self.assertIsNotNone(ctx_red)
-        self.assertEqual(ctx_red["button_label"], "Exclusivos de Azul")
+        self.assertEqual(ctx_red["button_label"], "Exclusivos")
+        self.assertEqual(ctx_red["full_button_label"], "Exclusivos de Azul")
         self.assertEqual(ctx_red["counterpart_slug"], "blue")
         self.assertEqual(ctx_red["counterpart_short_name"], "Azul")
         self.assertEqual(ctx_red["counterpart_name"], "Pokémon Azul")
@@ -653,7 +675,8 @@ class FixtureExportTests(TestCase):
         # 3. Contexto de exclusivos para Azul
         ctx_blue = get_version_exclusives_context(blue_game, blue_dex, set())
         self.assertIsNotNone(ctx_blue)
-        self.assertEqual(ctx_blue["button_label"], "Exclusivos de Rojo")
+        self.assertEqual(ctx_blue["button_label"], "Exclusivos")
+        self.assertEqual(ctx_blue["full_button_label"], "Exclusivos de Rojo")
         self.assertEqual(ctx_blue["counterpart_slug"], "red")
         self.assertEqual(ctx_blue["counterpart_short_name"], "Rojo")
         self.assertEqual(ctx_blue["counterpart_name"], "Pokémon Rojo")
@@ -673,33 +696,35 @@ class FixtureExportTests(TestCase):
         self.assertContains(response, "id=\"tab-btn-counterpart\"")
         self.assertContains(response, "id=\"tab-btn-own\"")
 
-    def test_yellow_version_exclusives_and_missing_pokemon(self):
-        from tracker.exclusives import get_version_exclusives_context, YELLOW_MISSING_POKEMON, YELLOW_ORIGIN_MAP
+    def test_yellow_version_transfers_and_missing_pokemon(self):
+        from tracker.exclusives import get_version_transfers_context, get_version_exclusives_context, VERSION_TRANSFERS_CATALOG
         from tracker.utils import STARTERS_BY_GAME, YELLOW_SPECIAL_CASES, GAME_CASINO_PRIZES
 
         yellow_game = Game.objects.create(name="Pokémon Yellow", slug="yellow", generation=1)
         yellow_dex = Pokedex.objects.create(game=yellow_game, name="Pokédex de Kanto", slug="kanto")
 
-        for num in YELLOW_MISSING_POKEMON:
+        yellow_missing = VERSION_TRANSFERS_CATALOG['yellow']
+        for num in yellow_missing:
             p, _ = Pokemon.objects.get_or_create(
                 national_number=num,
                 defaults={"name": f"poke-{num}", "display_name": f"Poke {num}", "primary_type": "normal"}
             )
             PokedexEntry.objects.get_or_create(pokedex=yellow_dex, pokemon=p, defaults={"entry_number": num})
 
-        ctx_yellow = get_version_exclusives_context(yellow_game, yellow_dex, set())
+        # En Amarillo no hay versión gemela, por lo que exclusives es None
+        ctx_excl = get_version_exclusives_context(yellow_game, yellow_dex, set())
+        self.assertIsNone(ctx_excl)
+
+        # Pero transfers contiene los 13 Pokémon
+        ctx_yellow = get_version_transfers_context(yellow_game, yellow_dex, set())
         self.assertIsNotNone(ctx_yellow)
-        self.assertTrue(ctx_yellow["is_yellow"])
-        self.assertEqual(ctx_yellow["button_label"], "Pokémon a Transferir (13)")
-        self.assertEqual(ctx_yellow["counterpart_name"], "Pokémon Rojo y Pokémon Azul")
-        self.assertEqual(ctx_yellow["counterpart_short_name"], "Rojo y Azul")
-        self.assertEqual(ctx_yellow["counterpart_theme"], "amber")
-        self.assertEqual(ctx_yellow["own_theme"], "amber")
-        self.assertEqual(len(ctx_yellow["counterpart_list"]), 13)
-        self.assertEqual(len(ctx_yellow["own_list"]), 0)
+        self.assertEqual(ctx_yellow["button_label"], "Transferir")
+        self.assertEqual(ctx_yellow["full_button_label"], "Pokémon a Transferir")
+        self.assertEqual(ctx_yellow["mechanic_badge"], "Transferencia Link")
+        self.assertEqual(len(ctx_yellow["transfer_list"]), 13)
 
         # Verificar badges de origen para los Pokémon creados
-        list_map = {item["national_number"]: item for item in ctx_yellow["counterpart_list"]}
+        list_map = {item["national_number"]: item for item in ctx_yellow["transfer_list"]}
         self.assertEqual(list_map[13]["origin_badge"], "Rojo / Azul")
         self.assertEqual(list_map[23]["origin_badge"], "Rojo")
         self.assertEqual(list_map[52]["origin_badge"], "Azul")
@@ -730,10 +755,11 @@ class FixtureExportTests(TestCase):
         url = reverse("tracker:pokedex_default", kwargs={"game_slug": "yellow"})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Pokémon a Transferir (13)")
+        self.assertContains(response, "Pokémon a Transferir")
         self.assertContains(response, "Pokémon Amarillo")
-        self.assertContains(response, "id=\"btn-exclusives\"")
-        self.assertContains(response, "id=\"exclusives-modal\"")
+        self.assertContains(response, "id=\"btn-transfers\"")
+        self.assertContains(response, "id=\"transfers-modal\"")
+        self.assertNotContains(response, "id=\"btn-exclusives\"")
 
     def test_items_catalog_and_utils(self):
         from .utils import get_items_catalog, get_item
@@ -918,7 +944,8 @@ class FixtureExportTests(TestCase):
         self.assertEqual(ctx_gold["counterpart_short_name"], "Plata")
         self.assertEqual(ctx_gold["counterpart_theme"], "silver")
         self.assertEqual(ctx_gold["own_theme"], "gold")
-        self.assertEqual(ctx_gold["button_label"], "Exclusivos de Plata")
+        self.assertEqual(ctx_gold["button_label"], "Exclusivos")
+        self.assertEqual(ctx_gold["full_button_label"], "Exclusivos de Plata")
 
     def test_gold_starters_and_skeletons(self):
         """Verifica la configuración de iniciales de Pokémon Oro con el Profesor Elm y los esqueletos de juegos futuros."""
@@ -1160,6 +1187,159 @@ class FixtureExportTests(TestCase):
         res_lugia = resolve_obtaining_info(249, "lugia", "gold", generation=2)
         self.assertEqual(res_lugia["type"], "legendary")
         self.assertNotIn("Crianza", res_lugia["badge_label"])
+
+    def test_gen2_evolution_stones_locations_and_not_purchasable(self):
+        """Verifica que en Oro las piedras no se puedan comprar y tengan ubicaciones propias de Johto/Kanto Gen 2."""
+        from .utils import resolve_evolution_stone
+
+        # Piedra Solar (introducida en Gen 2)
+        sun_stone = resolve_evolution_stone(item_slug="sun-stone", game_slug="gold")
+        self.assertIsNotNone(sun_stone)
+        self.assertEqual(sun_stone["name"], "Piedra Solar")
+        self.assertFalse(sun_stone["is_purchasable"])
+        self.assertIsNone(sun_stone["price"])
+        self.assertGreaterEqual(len(sun_stone["locations"]), 1)
+        self.assertTrue(any("Parque Nacional" in loc["area"] for loc in sun_stone["locations"]))
+
+        # Piedra Fuego en Oro (NO se compra en Ciudad Azulona, se obtiene con el abuelo de Bill o PokéGear)
+        fire_stone = resolve_evolution_stone(item_slug="fire-stone", game_slug="gold")
+        self.assertIsNotNone(fire_stone)
+        self.assertFalse(fire_stone["is_purchasable"])
+        self.assertIsNone(fire_stone["price"])
+        areas = [loc["area"] for loc in fire_stone["locations"]]
+        self.assertTrue(any("Ruta 25" in a for a in areas))
+        self.assertFalse(any("Centro Comercial de Ciudad Azulona" in a for a in areas))
+
+    def test_gen2_trade_evolution_items(self):
+        """Verifica que los objetos de intercambio con objeto equipado existan con datos y ubicaciones de Oro."""
+        from .utils import resolve_evolution_stone
+
+        # Revestimiento Metálico
+        metal_coat = resolve_evolution_stone(item_slug="metal-coat", game_slug="gold")
+        self.assertIsNotNone(metal_coat)
+        self.assertEqual(metal_coat["name"], "Revestimiento Metálico")
+        self.assertFalse(metal_coat["is_purchasable"])
+        areas_mc = [loc["area"] for loc in metal_coat["locations"]]
+        self.assertTrue(any("S.S. Aqua" in a for a in areas_mc))
+
+        # Roca del Rey
+        kings_rock = resolve_evolution_stone(item_slug="kings-rock", game_slug="gold")
+        self.assertIsNotNone(kings_rock)
+        self.assertEqual(kings_rock["name"], "Roca del Rey")
+        areas_kr = [loc["area"] for loc in kings_rock["locations"]]
+        self.assertTrue(any("Pozo Slowpoke" in a for a in areas_kr))
+
+        # Escama Dragón
+        dragon_scale = resolve_evolution_stone(item_slug="dragon-scale", game_slug="gold")
+        self.assertIsNotNone(dragon_scale)
+        self.assertEqual(dragon_scale["name"], "Escama Dragón")
+        areas_ds = [loc["area"] for loc in dragon_scale["locations"]]
+        self.assertTrue(any("Monte Mortero" in a for a in areas_ds))
+
+        # Mejora
+        up_grade = resolve_evolution_stone(item_slug="up-grade", game_slug="gold")
+        self.assertIsNotNone(up_grade)
+        self.assertEqual(up_grade["name"], "Mejora")
+        areas_ug = [loc["area"] for loc in up_grade["locations"]]
+        self.assertTrue(any("Silph S.A." in a for a in areas_ug))
+
+    def test_trade_evolution_obtaining_info_and_property(self):
+        """Verifica que un Pokémon de evolución por intercambio equipado registre el objeto y su propiedad."""
+        from .utils import resolve_obtaining_info
+
+        mock_steelix_chain = {
+            "chain": {
+                "species": {"name": "onix", "url": "https://pokeapi.co/api/v2/pokemon-species/95/"},
+                "evolves_to": [{
+                    "species": {"name": "steelix", "url": "https://pokeapi.co/api/v2/pokemon-species/208/"},
+                    "evolution_details": [{
+                        "trigger": {"name": "trade"},
+                        "held_item": {"name": "metal-coat"}
+                    }],
+                    "evolves_to": []
+                }]
+            }
+        }
+        res_steelix = resolve_obtaining_info(208, "steelix", "gold", encounters_data=[], evolution_chain_data=mock_steelix_chain, generation=2)
+        evo = res_steelix.get("evolution_info", {})
+        self.assertEqual(evo.get("item_slug"), "metal-coat")
+        self.assertEqual(evo.get("item_name"), "Revestimiento Metálico")
+        self.assertIn("Intercambio equipado con Revestimiento Metálico", evo.get("condition", ""))
+
+        # Crear entrada en Pokédex de Oro y validar la propiedad evolution_stone
+        game_gold = Game.objects.create(name="Pokémon Gold", slug="gold", generation=2)
+        pokedex_gold = Pokedex.objects.create(game=game_gold, name="Pokédex de Johto", slug="johto")
+        pokemon_steelix = Pokemon.objects.create(
+            national_number=208,
+            name="steelix",
+            display_name="Steelix",
+            sprite_url="https://example.com/steelix.png",
+            primary_type="steel",
+            secondary_type="ground"
+        )
+        entry_steelix = PokedexEntry.objects.create(
+            pokedex=pokedex_gold,
+            pokemon=pokemon_steelix,
+            entry_number=63,
+            obtaining_info=res_steelix
+        )
+        stone = entry_steelix.evolution_stone
+        self.assertIsNotNone(stone)
+        self.assertEqual(stone["slug"], "metal-coat")
+        self.assertEqual(stone["name"], "Revestimiento Metálico")
+        self.assertFalse(stone["is_purchasable"])
+        self.assertTrue(any("S.S. Aqua" in loc["area"] for loc in stone["locations"]))
+
+    def test_strict_version_isolation_for_evolution_items(self):
+        """Verifica que no haya filtración de ubicaciones de objetos evolutivos entre versiones."""
+        from .utils import resolve_evolution_stone
+
+        # En Rojo, el Revestimiento Metálico no existe -> locations debe ser vacío
+        metal_coat_red = resolve_evolution_stone(item_slug="metal-coat", game_slug="red")
+        self.assertIsNotNone(metal_coat_red)
+        self.assertEqual(len(metal_coat_red["locations"]), 0)
+
+        # En Oro, la Piedra Trueno tiene ubicaciones de Johto/Kanto Gen 2 y ninguna de la tienda de Azulona
+        thunder_stone_gold = resolve_evolution_stone(item_slug="thunder-stone", game_slug="gold")
+        self.assertIsNotNone(thunder_stone_gold)
+        areas = [l["area"] for l in thunder_stone_gold["locations"]]
+        self.assertFalse(any("Centro Comercial de Ciudad Azulona" in a for a in areas))
+        self.assertTrue(any("Ruta 25" in a for a in areas) or any("Ruta 38" in a for a in areas))
+
+    def test_gold_version_transfers_and_time_capsule(self):
+        """Verifica que en Oro y Plata se genere el contexto de 18 Pokémon a transferir vía Cápsula del Tiempo."""
+        from tracker.exclusives import get_version_transfers_context, VERSION_TRANSFERS_CATALOG
+
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+
+        transfers_nums = VERSION_TRANSFERS_CATALOG['gold']
+        self.assertEqual(len(transfers_nums), 18)
+        self.assertNotIn(251, transfers_nums)  # Celebi no es de transferir Gen 1
+
+        for num in transfers_nums:
+            p, _ = Pokemon.objects.get_or_create(
+                national_number=num,
+                defaults={"name": f"poke-{num}", "display_name": f"Poke {num}", "primary_type": "normal"}
+            )
+            PokedexEntry.objects.get_or_create(pokedex=johto_dex, pokemon=p, defaults={"entry_number": num})
+
+        ctx_trans = get_version_transfers_context(gold_game, johto_dex, set())
+        self.assertIsNotNone(ctx_trans)
+        self.assertEqual(ctx_trans["button_label"], "Transferir")
+        self.assertEqual(ctx_trans["full_button_label"], "Pokémon a Transferir")
+        self.assertEqual(ctx_trans["mechanic_badge"], "Cápsula del Tiempo")
+        self.assertIn("Cápsula del Tiempo", ctx_trans["description"])
+        self.assertEqual(ctx_trans["total"], 18)
+
+        # Probar vista renderizada de Oro: debe contener ambos botones
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "id=\"btn-exclusives\"")
+        self.assertContains(response, "id=\"btn-transfers\"")
+        self.assertContains(response, "id=\"transfers-modal\"")
+
 
 
 

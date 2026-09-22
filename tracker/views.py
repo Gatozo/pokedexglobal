@@ -6,7 +6,7 @@ from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.core.cache import cache
 from .models import Game, Pokedex, PokedexEntry, UserPokemonCatch
-from .exclusives import get_version_exclusives_context
+from .exclusives import get_version_exclusives_context, get_version_transfers_context
 
 
 def _get_user_or_session(request):
@@ -100,6 +100,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     caught_percent = round((caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 
     exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
+    transfers_info = get_version_transfers_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
 
     context = {
         "game": game,
@@ -112,6 +113,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "caught_percent": caught_percent,
         "all_games": _get_cached_all_games(),
         "exclusives_info": exclusives_info,
+        "transfers_info": transfers_info,
         "evolution_stones_json": _get_cached_evolution_stones_json(),
     }
     return render(request, "tracker/pokedex_detail.html", context)
