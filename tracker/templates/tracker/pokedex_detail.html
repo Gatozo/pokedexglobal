@@ -1335,6 +1335,7 @@
                 'sky': 'bg-sky-400 text-slate-950',
                 'rose': 'bg-rose-500 text-white',
                 'violet': 'bg-purple-400 text-white',
+                'pink': 'bg-pink-400 text-slate-950',
                 'slate': 'bg-slate-300 text-slate-900',
             };
             const badgeColorClass = badgeColorMap[obt.badge_color] || 'bg-amber-300 text-slate-950';
@@ -1377,12 +1378,12 @@
                 detailsContainer.appendChild(evoBox);
             }
 
-            // 2. Mostrar ubicaciones salvajes si las tiene
+            // 2. Mostrar ubicaciones salvajes o de crianza si las tiene
             if (obt.locations && obt.locations.length > 0) {
                 if (obt.evolution_info) {
                     const wildTitle = document.createElement('div');
                     wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
-                    wildTitle.textContent = 'Encuentros salvajes:';
+                    wildTitle.textContent = 'Lugares de obtención:';
                     detailsContainer.appendChild(wildTitle);
                 }
 
@@ -1390,8 +1391,11 @@
                 locList.className = 'grid grid-cols-1 sm:grid-cols-2 gap-1.5';
                 obt.locations.forEach(loc => {
                     const item = document.createElement('div');
-                    item.className = 'flex items-center justify-between text-[11px] bg-slate-50 border border-slate-300 rounded px-2.5 py-1 font-semibold text-slate-800';
-                    item.innerHTML = `<span class="truncate mr-1 flex items-center gap-1"><img src="/media/items/town-map.png" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0"> ${loc.area}</span><span class="text-[10px] text-slate-500 font-medium shrink-0">(${loc.method})</span>`;
+                    const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
+                    const locIcon = isBreedingOrEgg ? '/media/items/mystery-egg.png' : '/media/items/town-map.png';
+                    const cardBg = isBreedingOrEgg ? 'bg-pink-50/70 border-pink-200 text-pink-950' : 'bg-slate-50 border-slate-300 text-slate-800';
+                    item.className = `flex items-center justify-between text-[11px] border rounded px-2.5 py-1 font-semibold ${cardBg}`;
+                    item.innerHTML = `<span class="truncate mr-1 flex items-center gap-1.5"><img src="${locIcon}" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0 drop-shadow-sm"> ${loc.area}</span><span class="text-[10px] text-slate-500 font-medium shrink-0">(${loc.method})</span>`;
                     locList.appendChild(item);
                 });
                 detailsContainer.appendChild(locList);

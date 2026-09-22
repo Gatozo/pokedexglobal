@@ -76,8 +76,8 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     ],
     'yellow': [],    # Amarillo no tiene exclusivos propios bloqueados hacia Rojo/Azul
     # Gen 2
-    'gold': [167, 168, 207, 216, 217, 226, 231, 232, 58, 59, 56, 57],
-    'silver': [165, 166, 225, 227, 228, 229, 37, 38, 52, 53],
+    'gold': [56, 57, 58, 59, 167, 168, 207, 216, 217, 226],
+    'silver': [37, 38, 52, 53, 165, 166, 225, 227, 228, 229, 231, 232],
     # Gen 3
     'ruby': [273, 274, 275, 303, 335, 338, 383],
     'sapphire': [270, 271, 272, 302, 336, 337, 382],

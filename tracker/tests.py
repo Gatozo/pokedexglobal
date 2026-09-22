@@ -920,6 +920,248 @@ class FixtureExportTests(TestCase):
         self.assertEqual(ctx_gold["own_theme"], "gold")
         self.assertEqual(ctx_gold["button_label"], "Exclusivos de Plata")
 
+    def test_gold_starters_and_skeletons(self):
+        """Verifica la configuración de iniciales de Pokémon Oro con el Profesor Elm y los esqueletos de juegos futuros."""
+        from .utils import STARTERS_BY_GAME, resolve_obtaining_info
+
+        # Iniciales de Johto
+        self.assertIn('gold', STARTERS_BY_GAME)
+        self.assertIn('silver', STARTERS_BY_GAME)
+        for starter_id in [152, 155, 158]:
+            self.assertIn(starter_id, STARTERS_BY_GAME['gold'])
+            info = STARTERS_BY_GAME['gold'][starter_id]
+            self.assertEqual(info["type"], "starter")
+            self.assertEqual(info["badge_label"], "Inicial")
+            self.assertIn("Profesor Elm", info["summary"])
+            self.assertIn("Pueblo Primavera", info["summary"])
+            self.assertEqual(info["locations"][0]["area"], "Pueblo Primavera (Laboratorio de Elm)")
+            self.assertEqual(info["locations"][0]["method"], "Elección inicial")
+
+        # Verificar resolve_obtaining_info para Chikorita en Oro
+        res_chikorita = resolve_obtaining_info(152, "chikorita", "gold")
+        self.assertEqual(res_chikorita["type"], "starter")
+        self.assertEqual(res_chikorita["badge_label"], "Inicial")
+        self.assertIn("Profesor Elm", res_chikorita["summary"])
+
+        # Verificar esqueletos de juegos futuros
+        for g in ['ruby', 'sapphire', 'emerald', 'firered', 'leafgreen', 'diamond', 'pearl', 'platinum']:
+            self.assertIn(g, STARTERS_BY_GAME)
+
+    def test_gold_location_translations_and_biomes(self):
+        """Verifica la traducción al español de áreas, cuevas, torres y métodos de encuentro en Johto."""
+        from .utils import clean_location_name, resolve_encounter_method_label
+
+        # Pueblos y ciudades
+        self.assertEqual(clean_location_name("new-bark-town-area"), "Pueblo Primavera")
+        self.assertEqual(clean_location_name("cherrygrove-city-area"), "Ciudad Cerezo")
+        self.assertEqual(clean_location_name("violet-city-area"), "Ciudad Malva")
+        self.assertEqual(clean_location_name("goldenrod-city-area"), "Ciudad Trigal")
+        self.assertEqual(clean_location_name("goldenrod-city-game-corner"), "Ciudad Trigal (Casino)")
+        self.assertEqual(clean_location_name("cianwood-city-area"), "Ciudad Orquídea")
+        self.assertEqual(clean_location_name("blackthorn-city-area"), "Ciudad Endrino")
+
+        # Mazmorras, cuevas y torres
+        self.assertEqual(clean_location_name("sprout-tower-2f"), "Torre Bellsprout (2P)")
+        self.assertEqual(clean_location_name("burned-tower-1f"), "Torre Quemada (1P)")
+        self.assertEqual(clean_location_name("bell-tower-roof"), "Torre Hojalata (Tejado)")
+        self.assertEqual(clean_location_name("slowpoke-well-1f"), "Pozo Slowpoke (1P)")
+        self.assertEqual(clean_location_name("union-cave-b2f"), "Cueva Unión (Sótano 2)")
+        self.assertEqual(clean_location_name("ice-path-1f"), "Ruta Helada (1P)")
+        self.assertEqual(clean_location_name("dragons-den-area"), "Guarida Dragón")
+        self.assertEqual(clean_location_name("lake-of-rage-area"), "Lago de la Furia")
+        self.assertEqual(clean_location_name("mt-mortar-b1f"), "Monte Mortero (Sótano)")
+        self.assertEqual(clean_location_name("mt-silver-top"), "Monte Plateado (Cima)")
+
+        # Rutas con prefijo Johto
+        self.assertEqual(clean_location_name("johto-route-29-area"), "Ruta 29")
+        self.assertEqual(clean_location_name("johto-sea-route-40-area"), "Ruta 40")
+        self.assertEqual(clean_location_name("kanto-victory-road-1-1f"), "Calle Victoria (1P)")
+
+        # Biomas: 'walk' en cuevas debe ser 'Cueva', y en interiores 'Interior'
+        self.assertEqual(resolve_encounter_method_label("walk", "dark-cave-violet-city-entrance"), "Cueva")
+        self.assertEqual(resolve_encounter_method_label("walk", "sprout-tower-2f"), "Interior")
+        self.assertEqual(resolve_encounter_method_label("walk", "johto-route-29-area"), "Hierba alta")
+
+        # Métodos de Gen 2
+        self.assertEqual(resolve_encounter_method_label("headbutt-normal", "johto-route-29-area"), "Golpe Cabeza")
+        self.assertEqual(resolve_encounter_method_label("rock-smash", "ruins-of-alph-outside"), "Golpe Roca")
+        self.assertEqual(resolve_encounter_method_label("squirt-bottle", "johto-route-36-area"), "Regadera")
+        self.assertEqual(resolve_encounter_method_label("roaming-grass", "roaming-johto-area"), "Pokémon errante")
+
+    def test_gold_casinos_and_obtaining(self):
+        """Verifica precios de casinos de Ciudad Trigal y Ciudad Azulona en Pokémon Oro."""
+        from .utils import GAME_CASINO_PRIZES, resolve_obtaining_info
+
+        self.assertIn('gold', GAME_CASINO_PRIZES)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][63], 200)    # Abra (Trigal)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][23], 700)    # Ekans (Trigal)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][147], 2100)  # Dratini (Trigal)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][122], 3333)  # Mr. Mime (Azulona)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][133], 6666)  # Eevee (Azulona)
+        self.assertEqual(GAME_CASINO_PRIZES['gold'][137], 9999)  # Porygon (Azulona)
+
+        # Ekans: solo en Casino de Ciudad Trigal
+        mock_ekans = [{
+            "location_area": {"name": "goldenrod-city-game-corner"},
+            "version_details": [{"version": {"name": "gold"}, "encounter_details": [{"method": {"name": "gift"}}]}]
+        }]
+        res_ekans = resolve_obtaining_info(23, "ekans", "gold", encounters_data=mock_ekans)
+        self.assertEqual(res_ekans["type"], "casino")
+        self.assertEqual(res_ekans["badge_label"], "Premio Casino")
+        self.assertIn("700 fichas", res_ekans["summary"])
+        self.assertIn("Casino de Ciudad Trigal", res_ekans["summary"])
+        self.assertEqual(res_ekans["locations"][0]["method"], "Canje de fichas (700)")
+
+        # Porygon: en Casino de Ciudad Azulona
+        mock_porygon = [{
+            "location_area": {"name": "celadon-city-prize-corner"},
+            "version_details": [{"version": {"name": "gold"}, "encounter_details": [{"method": {"name": "gift"}}]}]
+        }]
+        res_porygon = resolve_obtaining_info(137, "porygon", "gold", encounters_data=mock_porygon)
+        self.assertEqual(res_porygon["type"], "casino")
+        self.assertIn("9.999 fichas", res_porygon["summary"])
+        self.assertIn("Casino de Ciudad Azulona", res_porygon["summary"])
+
+    def test_gold_special_cases(self):
+        """Verifica casos especiales de Pokémon Oro: exclusivos, Cápsula del Tiempo, regalos y estáticos."""
+        from .utils import resolve_obtaining_info, GAME_SPECIAL_CASES
+
+        self.assertIn('gold', GAME_SPECIAL_CASES)
+
+        # Exclusivos de Plata por intercambio (ej. Phanpy #231)
+        res_phanpy = resolve_obtaining_info(231, "phanpy", "gold")
+        self.assertEqual(res_phanpy["type"], "trade")
+        self.assertEqual(res_phanpy["badge_label"], "Intercambio")
+        self.assertIn("Exclusivo de Pokémon Plata", res_phanpy["summary"])
+
+        # Iniciales de Kanto transferibles vía Cápsula del Tiempo
+        res_bulba = resolve_obtaining_info(1, "bulbasaur", "gold")
+        self.assertEqual(res_bulba["type"], "trade")
+        self.assertIn("Cápsula del Tiempo", res_bulba["summary"])
+
+        # Intercambio NPC: Onix en Ciudad Malva
+        res_onix = resolve_obtaining_info(95, "onix", "gold")
+        self.assertEqual(res_onix["type"], "trade_npc")
+        self.assertIn("Rocky", res_onix["summary"])
+
+        # Regalo especial: Togepi (Huevo Misterioso)
+        res_togepi = resolve_obtaining_info(175, "togepi", "gold")
+        self.assertEqual(res_togepi["type"], "gift")
+        self.assertEqual(res_togepi["badge_label"], "Huevo Regalo")
+        self.assertIn("Huevo Misterioso", res_togepi["summary"])
+
+        # Estático: Sudowoodo con Regadera
+        res_sudo = resolve_obtaining_info(185, "sudowoodo", "gold")
+        self.assertEqual(res_sudo["type"], "special")
+        self.assertIn("Regadera", res_sudo["summary"])
+
+        # Legendario: Ho-Oh y Lugia
+        res_hooh = resolve_obtaining_info(250, "ho-oh", "gold")
+        self.assertEqual(res_hooh["type"], "legendary")
+        self.assertIn("Ala Arcoíris", res_hooh["summary"])
+
+        res_lugia = resolve_obtaining_info(249, "lugia", "gold")
+        self.assertEqual(res_lugia["type"], "legendary")
+        self.assertIn("Ala Plateada", res_lugia["summary"])
+
+    def test_breeding_baby_pokemon_gold(self):
+        """Verifica que los Pokémon bebé sin encuentros salvajes en Oro se obtengan por Crianza y Huevo Extraño."""
+        from .utils import resolve_obtaining_info
+
+        # Pichu (#172)
+        res_pichu = resolve_obtaining_info(172, "pichu", "gold", encounters_data=[], generation=2)
+        self.assertEqual(res_pichu["type"], "breeding")
+        self.assertEqual(res_pichu["badge_label"], "Crianza")
+        self.assertEqual(res_pichu["badge_color"], "pink")
+        self.assertIn("Ruta 34 (Guardería Pokémon)", res_pichu["summary"])
+        self.assertIn("Huevo Extraño", res_pichu["summary"])
+        self.assertEqual(len(res_pichu["locations"]), 2)
+        self.assertEqual(res_pichu["locations"][0]["method"], "Crianza de huevo")
+        self.assertIn("Huevo Extraño", res_pichu["locations"][1]["method"])
+
+        # Cleffa (#173) y Smoochum (#238)
+        for num, name in [(173, "cleffa"), (238, "smoochum")]:
+            res = resolve_obtaining_info(num, name, "gold", encounters_data=[], generation=2)
+            self.assertEqual(res["type"], "breeding")
+            self.assertEqual(res["badge_label"], "Crianza")
+            self.assertEqual(res["badge_color"], "pink")
+
+    def test_wild_base_pokemon_breeding_gold(self):
+        """Verifica que los Pokémon fase base salvajes en Gen 2 incluyan Crianza en Guardería y badge compuesto."""
+        from .utils import resolve_obtaining_info
+
+        mock_encounters = [{
+            "location_area": {"name": "johto-route-32-area"},
+            "version_details": [{"version": {"name": "gold"}, "encounter_details": [{"method": {"name": "walk"}}]}]
+        }]
+        res_mareep = resolve_obtaining_info(179, "mareep", "gold", encounters_data=mock_encounters, generation=2)
+        self.assertEqual(res_mareep["type"], "wild")
+        self.assertEqual(res_mareep["badge_label"], "Salvaje / Crianza")
+        self.assertIn("Guardería Pokémon", res_mareep["summary"])
+        areas = [loc["area"] for loc in res_mareep["locations"]]
+        self.assertIn("Ruta 32", areas)
+        self.assertIn("Ruta 34 (Guardería Pokémon)", areas)
+
+    def test_evolved_pokemon_no_breeding_gold(self):
+        """Verifica que formas evolucionadas no reciban método de Crianza (los huevos eclosionan en fase base)."""
+        from .utils import resolve_obtaining_info
+
+        mock_evo_chain = {
+            "chain": {
+                "species": {"name": "pichu", "url": "https://pokeapi.co/api/v2/pokemon-species/172/"},
+                "evolves_to": [{
+                    "species": {"name": "pikachu", "url": "https://pokeapi.co/api/v2/pokemon-species/25/"},
+                    "evolution_details": [{"trigger": {"name": "level-up"}, "min_happiness": 220}],
+                    "evolves_to": [{
+                        "species": {"name": "raichu", "url": "https://pokeapi.co/api/v2/pokemon-species/26/"},
+                        "evolution_details": [{"trigger": {"name": "use-item"}, "item": {"name": "thunder-stone"}}],
+                        "evolves_to": []
+                    }]
+                }]
+            }
+        }
+        res_raichu = resolve_obtaining_info(26, "raichu", "gold", encounters_data=[], evolution_chain_data=mock_evo_chain, generation=2)
+        self.assertEqual(res_raichu["type"], "evolution")
+        self.assertEqual(res_raichu["badge_label"], "Evolución")
+        self.assertNotEqual(res_raichu["badge_label"], "Crianza")
+        self.assertEqual(len(res_raichu["locations"]), 0)
+
+    def test_gen1_isolation_no_breeding(self):
+        """Verifica que en 1ª Generación (Rojo/Azul/Amarillo) no exista el método de Crianza."""
+        from .utils import resolve_obtaining_info
+
+        mock_encounters = [{
+            "location_area": {"name": "viridian-forest-area"},
+            "version_details": [{"version": {"name": "red"}, "encounter_details": [{"method": {"name": "walk"}}]}]
+        }]
+        res_pikachu = resolve_obtaining_info(25, "pikachu", "red", encounters_data=mock_encounters, generation=1)
+        self.assertEqual(res_pikachu["type"], "wild")
+        self.assertEqual(res_pikachu["badge_label"], "Salvaje")
+        self.assertNotIn("Crianza", res_pikachu["badge_label"])
+        areas = [loc["area"] for loc in res_pikachu["locations"]]
+        self.assertNotIn("Guardería", "".join(areas))
+
+    def test_non_breedable_species_gold(self):
+        """Verifica que especies no reproductoras (legendarios, Ditto, Unown) no tengan Crianza."""
+        from .utils import resolve_obtaining_info
+
+        # Ditto (#132)
+        mock_ditto = [{
+            "location_area": {"name": "johto-route-34-area"},
+            "version_details": [{"version": {"name": "gold"}, "encounter_details": [{"method": {"name": "walk"}}]}]
+        }]
+        res_ditto = resolve_obtaining_info(132, "ditto", "gold", encounters_data=mock_ditto, generation=2)
+        self.assertEqual(res_ditto["badge_label"], "Salvaje")
+        self.assertNotIn("Crianza", res_ditto["badge_label"])
+        methods = [loc["method"] for loc in res_ditto["locations"]]
+        self.assertNotIn("Crianza de huevo", methods)
+
+        # Lugia (#249)
+        res_lugia = resolve_obtaining_info(249, "lugia", "gold", generation=2)
+        self.assertEqual(res_lugia["type"], "legendary")
+        self.assertNotIn("Crianza", res_lugia["badge_label"])
+
+
 
 
 

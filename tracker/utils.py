@@ -334,6 +334,90 @@ KANTO_LOCATION_NAMES_ES = {
     'kanto-route-4-pokemon-center': 'Centro Pokémon de la Ruta 4',
     'underground-path': 'Vía Subterránea',
     'kanto-underground-path': 'Vía Subterránea',
+    'kanto-victory-road-1-1f': 'Calle Victoria (1P)',
+    'kanto-victory-road-1-2f': 'Calle Victoria (2P)',
+    'kanto-victory-road-1-3f': 'Calle Victoria (3P)',
+    'kanto-route-2-south-towards-viridian-city': 'Ruta 2 (Sur)',
+    'mt-moon-1f': 'Monte Moon (1P)',
+    'rock-tunnel-1f': 'Túnel Roca (1P)',
+    'rock-tunnel-b1f': 'Túnel Roca (Sótano)',
+}
+
+JOHTO_LOCATION_NAMES_ES = {
+    # Ciudades y pueblos de Johto
+    'new-bark-town-area': 'Pueblo Primavera',
+    'cherrygrove-city-area': 'Ciudad Cerezo',
+    'violet-city-area': 'Ciudad Malva',
+    'violet-city-southwest-house': 'Ciudad Malva (Casa Suroeste)',
+    'azalea-town-area': 'Pueblo Azalea',
+    'goldenrod-city-area': 'Ciudad Trigal',
+    'goldenrod-city-bills-house': 'Ciudad Trigal (Casa de Bill)',
+    'goldenrod-city-department-store-5f': 'Ciudad Trigal (Centro Comercial 5P)',
+    'goldenrod-city-game-corner': 'Ciudad Trigal (Casino)',
+    'goldenrod-city-north-gate': 'Ciudad Trigal (Caseta Norte)',
+    'ecruteak-city-area': 'Ciudad Iris',
+    'olivine-city-area': 'Ciudad Olivo',
+    'cianwood-city-area': 'Ciudad Orquídea',
+    'cianwood-city-manias-house': 'Ciudad Orquídea (Casa de Manía)',
+    'mahogany-town-area': 'Pueblo Caoba',
+    'blackthorn-city-area': 'Ciudad Endrino',
+
+    # Mazmorras, cuevas, torres e interiores de Johto
+    'sprout-tower-2f': 'Torre Bellsprout (2P)',
+    'sprout-tower-3f': 'Torre Bellsprout (3P)',
+    'ruins-of-alph-outside': 'Ruinas Alfa (Exterior)',
+    'ruins-of-alph-interior-a': 'Ruinas Alfa (Cámara A)',
+    'ruins-of-alph-interior-b': 'Ruinas Alfa (Cámara B)',
+    'ruins-of-alph-interior-c': 'Ruinas Alfa (Cámara C)',
+    'ruins-of-alph-interior-d': 'Ruinas Alfa (Cámara D)',
+    'union-cave-1f': 'Cueva Unión (1P)',
+    'union-cave-b1f': 'Cueva Unión (Sótano 1)',
+    'union-cave-b2f': 'Cueva Unión (Sótano 2)',
+    'slowpoke-well-1f': 'Pozo Slowpoke (1P)',
+    'slowpoke-well-b1f': 'Pozo Slowpoke (Sótano)',
+    'ilex-forest-area': 'Encinar',
+    'national-park-area': 'Parque Nacional',
+    'burned-tower-1f': 'Torre Quemada (1P)',
+    'burned-tower-b1f': 'Torre Quemada (Sótano)',
+    'bell-tower-2f': 'Torre Hojalata (2P)',
+    'bell-tower-3f': 'Torre Hojalata (3P)',
+    'bell-tower-4f': 'Torre Hojalata (4P)',
+    'bell-tower-5f': 'Torre Hojalata (5P)',
+    'bell-tower-6f': 'Torre Hojalata (6P)',
+    'bell-tower-7f': 'Torre Hojalata (7P)',
+    'bell-tower-8f': 'Torre Hojalata (8P)',
+    'bell-tower-9f': 'Torre Hojalata (9P)',
+    'bell-tower-roof': 'Torre Hojalata (Tejado)',
+    'tin-tower-roof': 'Torre Hojalata (Tejado)',
+    'whirl-islands-1f': 'Islas Remolino (1P)',
+    'whirl-islands-b1f': 'Islas Remolino (Sótano 1)',
+    'whirl-islands-b2f': 'Islas Remolino (Sótano 2)',
+    'whirl-islands-b3f': 'Islas Remolino (Sótano 3)',
+    'mt-mortar-1f': 'Monte Mortero (1P)',
+    'mt-mortar-b1f': 'Monte Mortero (Sótano)',
+    'mt-mortar-lower-cave': 'Monte Mortero (Cueva Baja)',
+    'mt-mortar-upper-cave': 'Monte Mortero (Cueva Alta)',
+    'lake-of-rage-area': 'Lago de la Furia',
+    'team-rocket-hq-area': 'Guarida del Team Rocket',
+    'ice-path-1f': 'Ruta Helada (1P)',
+    'ice-path-b1f': 'Ruta Helada (Sótano 1)',
+    'ice-path-b2f': 'Ruta Helada (Sótano 2)',
+    'ice-path-b3f': 'Ruta Helada (Sótano 3)',
+    'dragons-den-area': 'Guarida Dragón',
+    'dark-cave-violet-city-entrance': 'Cueva Oscura (Entrada Ciudad Malva)',
+    'dark-cave-blackthorn-city-entrance': 'Cueva Oscura (Entrada Ciudad Endrino)',
+    'tohjo-falls-area': 'Cataratas Tohjo',
+    'mt-silver-outside': 'Monte Plateado (Exterior)',
+    'mt-silver-1f': 'Monte Plateado (1P)',
+    'mt-silver-2f': 'Monte Plateado (2P)',
+    'mt-silver-top': 'Monte Plateado (Cima)',
+    'roaming-johto-area': 'En movimiento por Johto',
+}
+
+# Diccionario maestro de ubicaciones canónicas en español
+ALL_LOCATION_NAMES_ES = {
+    **KANTO_LOCATION_NAMES_ES,
+    **JOHTO_LOCATION_NAMES_ES,
 }
 
 ENCOUNTER_METHODS_ES = {
@@ -343,8 +427,16 @@ ENCOUNTER_METHODS_ES = {
     'good-rod': 'Caña Buena',
     'super-rod': 'Supercaña',
     'gift': 'Regalo',
+    'gift-egg': 'Huevo regalo',
     'only-one': 'Encuentro Especial Único',
     'headbutt': 'Golpe Cabeza',
+    'headbutt-high': 'Golpe Cabeza',
+    'headbutt-low': 'Golpe Cabeza',
+    'headbutt-normal': 'Golpe Cabeza',
+    'rock-smash': 'Golpe Roca',
+    'squirt-bottle': 'Regadera',
+    'roaming-grass': 'Pokémon errante',
+    'pokeflute': 'Despertar con Poké Flauta',
     'npc-trade': 'Intercambio NPC',
     'static': 'Estático',
 }
@@ -436,63 +528,170 @@ MAX_NATIONAL_NUMBER_BY_GEN = {
     9: 1025,
 }
 
-# Catálogo canónico de Pokémon Iniciales aislados por juego
+# Ubicación principal de la Guardería / Cuidados Pokémon por edición
+DAYCARE_LOCATIONS_BY_GAME: Dict[str, str] = {
+    # Gen 2
+    'gold': 'Ruta 34 (Guardería Pokémon)',
+    'silver': 'Ruta 34 (Guardería Pokémon)',
+    'crystal': 'Ruta 34 (Guardería Pokémon)',
+    # Gen 3
+    'ruby': 'Ruta 117 (Guardería Pokémon)',
+    'sapphire': 'Ruta 117 (Guardería Pokémon)',
+    'emerald': 'Ruta 117 (Guardería Pokémon)',
+    'firered': 'Isla Cuatro (Guardería Pokémon)',
+    'leafgreen': 'Isla Cuatro (Guardería Pokémon)',
+    # Gen 4
+    'diamond': 'Pueblo Sosiego (Guardería Pokémon)',
+    'pearl': 'Pueblo Sosiego (Guardería Pokémon)',
+    'platinum': 'Pueblo Sosiego (Guardería Pokémon)',
+    'heartgold': 'Ruta 34 (Guardería Pokémon)',
+    'soulsilver': 'Ruta 34 (Guardería Pokémon)',
+    # Gen 5
+    'black': 'Ruta 3 (Guardería Pokémon)',
+    'white': 'Ruta 3 (Guardería Pokémon)',
+    'black-2': 'Ruta 3 (Guardería Pokémon)',
+    'white-2': 'Ruta 3 (Guardería Pokémon)',
+    # Gen 6
+    'x': 'Ruta 7 (Guardería Pokémon)',
+    'y': 'Ruta 7 (Guardería Pokémon)',
+    'omega-ruby': 'Ruta 117 (Guardería Pokémon)',
+    'alpha-sapphire': 'Ruta 117 (Guardería Pokémon)',
+    # Gen 7
+    'sun': 'Rancho Ohana (Cuidados Pokémon)',
+    'moon': 'Rancho Ohana (Cuidados Pokémon)',
+    'ultra-sun': 'Rancho Ohana (Cuidados Pokémon)',
+    'ultra-moon': 'Rancho Ohana (Cuidados Pokémon)',
+    # Gen 8
+    'sword': 'Ruta 5 (Cuidados Pokémon)',
+    'shield': 'Ruta 5 (Cuidados Pokémon)',
+    'brilliant-diamond': 'Pueblo Sosiego (Guardería Pokémon)',
+    'shining-pearl': 'Pueblo Sosiego (Guardería Pokémon)',
+    # Gen 9
+    'scarlet': 'Pícnic Pokémon',
+    'violet': 'Pícnic Pokémon',
+}
+
+# Especies que no pueden nacer de un huevo bajo ninguna circunstancia (grupo no-eggs o Ditto)
+NON_HATCHABLE_SPECIES = {
+    # Nidorina y Nidoqueen
+    30, 31,
+    # Ditto (no existen huevos de Ditto)
+    132,
+    # Unown
+    201,
+    # Legendarios y Míticos Gen 1
+    144, 145, 146, 150, 151,
+    # Legendarios y Míticos Gen 2
+    243, 244, 245, 249, 250, 251,
+    # Legendarios y Míticos Gen 3
+    377, 378, 379, 380, 381, 382, 383, 384, 385, 386,
+    # Legendarios y Míticos Gen 4
+    480, 481, 482, 483, 484, 485, 486, 487, 488, 490, 491, 492, 493,
+}
+
+# Pokémon bebé reconocidos en la franquicia
+BABY_SPECIES = {
+    # Gen 2
+    172, 173, 174, 175, 236, 238, 239, 240,
+    # Gen 3
+    298, 360,
+    # Gen 4
+    406, 433, 438, 439, 440, 446, 447, 458,
+    # Gen 8
+    848,
+}
+
+# Pokémon bebé que pueden eclosionar del Huevo Extraño regalado en la Guardería de Johto (con mayor probabilidad de variocolor)
+GEN2_ODD_EGG_SPECIES = {172, 173, 174, 236, 238, 239, 240}
+
+def _make_starter_entry(
+    summary: str,
+    area: str,
+    method: str = "Elección inicial",
+    extra_locations: Optional[List[Dict[str, str]]] = None
+) -> Dict[str, Any]:
+    locs = [{"area": area, "method": method}]
+    if extra_locations:
+        locs.extend(extra_locations)
+    return {
+        "type": "starter",
+        "badge_label": "Inicial",
+        "badge_color": "emerald",
+        "summary": summary,
+        "locations": locs
+    }
+
+GEN1_KANTO_STARTERS: Dict[int, Dict[str, Any]] = {
+    1: _make_starter_entry("Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.", "Pueblo Paleta (Laboratorio de Oak)"),
+    4: _make_starter_entry("Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.", "Pueblo Paleta (Laboratorio de Oak)"),
+    7: _make_starter_entry("Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.", "Pueblo Paleta (Laboratorio de Oak)"),
+}
+
+GEN2_JOHTO_STARTERS: Dict[int, Dict[str, Any]] = {
+    152: _make_starter_entry(
+        "Pokémon inicial a elegir en el Laboratorio del Profesor Elm en Pueblo Primavera (también obtenible mediante crianza).",
+        "Pueblo Primavera (Laboratorio de Elm)",
+        extra_locations=[{"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]
+    ),
+    155: _make_starter_entry(
+        "Pokémon inicial a elegir en el Laboratorio del Profesor Elm en Pueblo Primavera (también obtenible mediante crianza).",
+        "Pueblo Primavera (Laboratorio de Elm)",
+        extra_locations=[{"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]
+    ),
+    158: _make_starter_entry(
+        "Pokémon inicial a elegir en el Laboratorio del Profesor Elm en Pueblo Primavera (también obtenible mediante crianza).",
+        "Pueblo Primavera (Laboratorio de Elm)",
+        extra_locations=[{"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]
+    ),
+}
+
+GEN3_HOENN_STARTERS: Dict[int, Dict[str, Any]] = {
+    252: _make_starter_entry("Pokémon inicial a elegir en la Ruta 101 (maletín del Profesor Abedul).", "Ruta 101 (Maletín de Abedul)"),
+    255: _make_starter_entry("Pokémon inicial a elegir en la Ruta 101 (maletín del Profesor Abedul).", "Ruta 101 (Maletín de Abedul)"),
+    258: _make_starter_entry("Pokémon inicial a elegir en la Ruta 101 (maletín del Profesor Abedul).", "Ruta 101 (Maletín de Abedul)"),
+}
+
+GEN4_SINNOH_STARTERS: Dict[int, Dict[str, Any]] = {
+    387: _make_starter_entry("Pokémon inicial a elegir en el Lago Veraz (maletín del Profesor Serbal).", "Lago Veraz (Maletín de Serbal)"),
+    390: _make_starter_entry("Pokémon inicial a elegir en el Lago Veraz (maletín del Profesor Serbal).", "Lago Veraz (Maletín de Serbal)"),
+    393: _make_starter_entry("Pokémon inicial a elegir en el Lago Veraz (maletín del Profesor Serbal).", "Lago Veraz (Maletín de Serbal)"),
+}
+
+GEN5_UNOVA_STARTERS: Dict[int, Dict[str, Any]] = {
+    495: _make_starter_entry("Pokémon inicial a elegir en Pueblo Arcilla (regalo de la Profesora Encina).", "Pueblo Arcilla"),
+    498: _make_starter_entry("Pokémon inicial a elegir en Pueblo Arcilla (regalo de la Profesora Encina).", "Pueblo Arcilla"),
+    501: _make_starter_entry("Pokémon inicial a elegir en Pueblo Arcilla (regalo de la Profesora Encina).", "Pueblo Arcilla"),
+}
+
+# Catálogo canónico de Pokémon Iniciales modular por juego
 STARTERS_BY_GAME: Dict[str, Dict[int, Dict[str, Any]]] = {
-    'red': {
-        1: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-        4: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-        7: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-    },
-    'blue': {
-        1: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-        4: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-        7: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial a elegir en el Laboratorio del Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
-    },
+    # Gen 1
+    'red': GEN1_KANTO_STARTERS,
+    'blue': GEN1_KANTO_STARTERS,
     'yellow': {
-        25: {
-            "type": "starter",
-            "badge_label": "Inicial",
-            "badge_color": "emerald",
-            "summary": "Pokémon inicial entregado por el Profesor Oak en Pueblo Paleta.",
-            "locations": [{"area": "Pueblo Paleta (Laboratorio de Oak)", "method": "Elección inicial"}]
-        },
+        25: _make_starter_entry("Pokémon inicial entregado por el Profesor Oak en Pueblo Paleta.", "Pueblo Paleta (Laboratorio de Oak)"),
     },
+    # Gen 2
+    'gold': GEN2_JOHTO_STARTERS,
+    'silver': GEN2_JOHTO_STARTERS,
+    'crystal': GEN2_JOHTO_STARTERS,
+    # Gen 3
+    'ruby': GEN3_HOENN_STARTERS,
+    'sapphire': GEN3_HOENN_STARTERS,
+    'emerald': GEN3_HOENN_STARTERS,
+    'firered': GEN1_KANTO_STARTERS,
+    'leafgreen': GEN1_KANTO_STARTERS,
+    # Gen 4
+    'diamond': GEN4_SINNOH_STARTERS,
+    'pearl': GEN4_SINNOH_STARTERS,
+    'platinum': GEN4_SINNOH_STARTERS,
+    'heartgold': GEN2_JOHTO_STARTERS,
+    'soulsilver': GEN2_JOHTO_STARTERS,
+    # Gen 5
+    'black': GEN5_UNOVA_STARTERS,
+    'white': GEN5_UNOVA_STARTERS,
+    'black-2': GEN5_UNOVA_STARTERS,
+    'white-2': GEN5_UNOVA_STARTERS,
 }
 
 RED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
@@ -626,22 +825,193 @@ YELLOW_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 }
 
+GOLD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
+    # 1. Iniciales de Kanto (no disponibles de forma salvaje en Johto; Cápsula del Tiempo)
+    1: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "No disponible en estado salvaje en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo, también obtenible mediante crianza)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    2: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Bulbasaur al nivel 16 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    3: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Ivysaur al nivel 32 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    4: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "No disponible en estado salvaje en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo, también obtenible mediante crianza)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    5: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Charmander al nivel 16 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    6: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Charmeleon al nivel 36 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    7: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "No disponible en estado salvaje en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo, también obtenible mediante crianza)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    8: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Squirtle al nivel 16 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    9: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Wartortle al nivel 36 (Transferir mediante Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+
+    # 2. Concurso de Captura de Bichos (Parque Nacional)
+    13: {"type": "contest", "badge_label": "Parque Nacional", "badge_color": "emerald", "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza", "locations": [{"area": "Parque Nacional", "method": "Concurso de Captura de Bichos"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    123: {"type": "contest", "badge_label": "Parque Nacional", "badge_color": "emerald", "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza", "locations": [{"area": "Parque Nacional", "method": "Concurso de Captura de Bichos"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    127: {"type": "contest", "badge_label": "Parque Nacional", "badge_color": "emerald", "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza", "locations": [{"area": "Parque Nacional", "method": "Concurso de Captura de Bichos"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+
+    # 3. Exclusivos de Pokémon Plata (no disponibles en Oro; requieren intercambio)
+    37: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    38: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Vulpix (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
+    52: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    53: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
+    165: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    166: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Ledyba (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
+    225: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    227: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    228: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    229: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Houndour (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
+    231: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    232: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Phanpy (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
+
+    # 4. Intercambios dentro del juego (In-game trades)
+    95: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Malva: entrega un Bellsprout a cambio de Onix (con el mote «Rocky»). También obtenible mediante crianza", "locations": [{"area": "Ciudad Malva (Casa Suroeste)", "method": "Intercambio por Bellsprout"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    66: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en el Centro Comercial de Ciudad Trigal (5P): entrega un Drowzee a cambio de Machop (con el mote «Musculín»). También obtenible mediante crianza", "locations": [{"area": "Ciudad Trigal (Centro Comercial 5P)", "method": "Intercambio por Drowzee"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    100: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Olivo: entrega un Krabby a cambio de Voltorb (con el mote «Volty»). También obtenible mediante crianza", "locations": [{"area": "Ciudad Olivo", "method": "Intercambio por Krabby"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    112: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en Ciudad Endrino: entrega un Dragonair hembra a cambio de Rhydon (con el mote «Don»)", "locations": [{"area": "Ciudad Endrino", "method": "Intercambio por Dragonair hembra"}]},
+    142: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en la caseta de la Ruta 14: entrega una Chansey a cambio de Aerodactyl (con el mote «Aeris»). También obtenible mediante crianza", "locations": [{"area": "Ruta 14", "method": "Intercambio por Chansey"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    78: {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "violet", "summary": "Intercambio en el Centro Pokémon de Ciudad Plateada: entrega un Gloom a cambio de Rapidash (con el mote «Galope»)", "locations": [{"area": "Ciudad Plateada", "method": "Intercambio por Gloom"}]},
+
+    # 5. Regalos especiales de NPCs y eventos clave
+    175: {"type": "gift", "badge_label": "Huevo Regalo", "badge_color": "emerald", "summary": "Eclosiona del Huevo Misterioso entregado por el ayudante del Profesor Elm en el Centro Pokémon de Ciudad Malva (también obtenible mediante crianza)", "locations": [{"area": "Ciudad Malva", "method": "Huevo del ayudante de Elm"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    21: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Entregado por el guardia de la Caseta Norte de Ciudad Trigal con una carta para la Ruta 31 (con el mote «Kenya»). También obtenible salvaje o mediante crianza", "locations": [{"area": "Ciudad Trigal (Caseta Norte)", "method": "Regalo de guardia"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    213: {"type": "gift", "badge_label": "Regalo", "badge_color": "emerald", "summary": "Entregado como regalo temporal por Manía en Ciudad Orquídea (con el mote «Shuckie»). También obtenible mediante crianza", "locations": [{"area": "Ciudad Orquídea (Casa de Manía)", "method": "Regalo de Manía"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    236: {"type": "gift", "badge_label": "Premio Kárate", "badge_color": "emerald", "summary": "Entregado por el Rey Kárate (Kiyo) en lo profundo del Monte Mortero (B1F) tras vencerle en combate. También obtenible mediante crianza o del Huevo Extraño en la Guardería Pokémon", "locations": [{"area": "Monte Mortero (Sótano)", "method": "Premio tras vencer al Rey Kárate"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Huevo Extraño (Regalo con alta probabilidad de variocolor)"}]},
+
+    # 6. Fósiles de Kanto no disponibles en Gen 2 (Cápsula del Tiempo)
+    138: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "No disponible en estado salvaje ni fósil en Johto. Conseguir mediante intercambio desde Gen 1 (también obtenible mediante crianza)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    139: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Omanyte al nivel 40"},
+    140: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "No disponible en estado salvaje ni fósil en Johto. Conseguir mediante intercambio desde Gen 1 (también obtenible mediante crianza)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    141: {"type": "evolution", "badge_label": "Evolución", "badge_color": "indigo", "summary": "Evoluciona de Kabuto al nivel 40"},
+
+    # 7. Legendarios de Kanto (Cápsula del Tiempo)
+    144: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "is_unique": True, "summary": "No disponible en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    145: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "is_unique": True, "summary": "No disponible en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    146: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "is_unique": True, "summary": "No disponible en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    150: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "is_unique": True, "summary": "No disponible en Johto. Conseguir mediante intercambio desde Pokémon Rojo, Azul o Amarillo (Cápsula del Tiempo)", "locations": [{"area": "Cápsula del Tiempo (Rojo/Azul/Amarillo)", "method": "Intercambio con cable link"}]},
+    151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial (o transferir desde Gen 1)", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
+
+    # 8. Encuentros estáticos únicos y legendarios de Johto
+    130: {"type": "special", "badge_label": "Variocolor Único", "badge_color": "rose", "is_unique": True, "summary": "Encuentro estático en el centro del Lago de la Furia (Gyarados Rojo variocolor a nivel 30)", "locations": [{"area": "Lago de la Furia", "method": "Encuentro Especial (Gyarados Rojo)"}]},
+    131: {"type": "special", "badge_label": "Estático", "badge_color": "emerald", "summary": "Aparece cada viernes en el nivel inferior de la Cueva Unión (Sótano 2). También obtenible mediante crianza", "locations": [{"area": "Cueva Unión (Sótano 2)", "method": "Aparición fija los viernes"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    143: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "summary": "Durmiendo en Ciudad Carmín bloqueando la Cueva Diglett. Sintonizar la Poké Flauta en el PokéGear para despertarlo (también obtenible mediante crianza)", "locations": [{"area": "Ciudad Carmín (Cueva Diglett)", "method": "Sintonizar Poké Flauta en PokéGear"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    185: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "summary": "Pokémon que bloquea la intersección de la Ruta 36 con forma de árbol. Usar la Regadera para combatir (también obtenible mediante crianza)", "locations": [{"area": "Ruta 36", "method": "Usar Regadera"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    243: {"type": "legendary", "badge_label": "Legendario Errante", "badge_color": "rose", "is_unique": True, "summary": "Bestia legendaria que recorre las rutas de Johto de forma aleatoria tras ser liberada en la Torre Quemada", "locations": [{"area": "En movimiento por Johto", "method": "Legendario errante en hierba"}]},
+    244: {"type": "legendary", "badge_label": "Legendario Errante", "badge_color": "rose", "is_unique": True, "summary": "Bestia legendaria que recorre las rutas de Johto de forma aleatoria tras ser liberada en la Torre Quemada", "locations": [{"area": "En movimiento por Johto", "method": "Legendario errante en hierba"}]},
+    245: {"type": "legendary", "badge_label": "Legendario Errante", "badge_color": "rose", "is_unique": True, "summary": "Bestia legendaria que recorre las rutas de Johto de forma aleatoria tras ser liberada en la Torre Quemada", "locations": [{"area": "En movimiento por Johto", "method": "Legendario errante en hierba"}]},
+    249: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Remolino (Sótano 2) a nivel 70 tras obtener el Ala Plateada", "locations": [{"area": "Islas Remolino (Sótano 2)", "method": "Encuentro Legendario (Ala Plateada)"}]},
+    250: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En el tejado de la Torre Hojalata a nivel 40 tras obtener el Ala Arcoíris", "locations": [{"area": "Torre Hojalata (Tejado)", "method": "Encuentro Legendario (Ala Arcoíris)"}]},
+    251: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Guardián del bosque obtenible mediante evento especial oficial (GS Ball en el altar del Encinar)", "locations": [{"area": "Encinar (Altar del Bosque)", "method": "Evento GS Ball"}]},
+}
+
+SILVER_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
+    **{k: v for k, v in GOLD_SPECIAL_CASES.items() if k not in [37, 38, 52, 53, 165, 166, 225, 227, 228, 229, 231, 232, 249, 250]},
+    # Exclusivos de Pokémon Oro (obtenibles mediante intercambio o crianza en Plata)
+    56: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    57: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Mankey (Exclusivo de Pokémon Oro, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}]},
+    58: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    59: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Growlithe (Exclusivo de Pokémon Oro, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}]},
+    167: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    168: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Spinarak (Exclusivo de Pokémon Oro, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}]},
+    207: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    216: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    217: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Teddiursa (Exclusivo de Pokémon Oro, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}]},
+    226: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
+    # Inversión de niveles para legendarios en Plata
+    249: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En lo profundo de las Islas Remolino (Sótano 2) a nivel 40 tras obtener el Ala Plateada", "locations": [{"area": "Islas Remolino (Sótano 2)", "method": "Encuentro Legendario (Ala Plateada)"}]},
+    250: {"type": "legendary", "badge_label": "Legendario", "badge_color": "rose", "is_unique": True, "summary": "En el tejado de la Torre Hojalata a nivel 70 tras obtener el Ala Arcoíris", "locations": [{"area": "Torre Hojalata (Tejado)", "method": "Encuentro Legendario (Ala Arcoíris)"}]},
+}
+
+# Esqueletos preparados para siguientes juegos de la franquicia
+CRYSTAL_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+RUBY_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SAPPHIRE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+EMERALD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+FIRERED_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+LEAFGREEN_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+DIAMOND_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+PEARL_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+PLATINUM_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+HEARTGOLD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SOULSILVER_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+BLACK_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+WHITE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+BLACK_2_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+WHITE_2_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+X_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+Y_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+OMEGA_RUBY_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+ALPHA_SAPPHIRE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SUN_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+MOON_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+ULTRA_SUN_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+ULTRA_MOON_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+LETS_GO_PIKACHU_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+LETS_GO_EEVEE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SWORD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SHIELD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+BRILLIANT_DIAMOND_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SHINING_PEARL_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+LEGENDS_ARCEUS_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+SCARLET_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+VIOLET_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+
 # Registro modular de casos especiales indexado por versión de juego
 GAME_SPECIAL_CASES: Dict[str, Dict[int, Dict[str, Any]]] = {
+    # Gen 1
     'red': RED_SPECIAL_CASES,
     'blue': BLUE_SPECIAL_CASES,
     'yellow': YELLOW_SPECIAL_CASES,
+    # Gen 2
+    'gold': GOLD_SPECIAL_CASES,
+    'silver': SILVER_SPECIAL_CASES,
+    'crystal': CRYSTAL_SPECIAL_CASES,
+    # Gen 3
+    'ruby': RUBY_SPECIAL_CASES,
+    'sapphire': SAPPHIRE_SPECIAL_CASES,
+    'emerald': EMERALD_SPECIAL_CASES,
+    'firered': FIRERED_SPECIAL_CASES,
+    'leafgreen': LEAFGREEN_SPECIAL_CASES,
+    # Gen 4
+    'diamond': DIAMOND_SPECIAL_CASES,
+    'pearl': PEARL_SPECIAL_CASES,
+    'platinum': PLATINUM_SPECIAL_CASES,
+    'heartgold': HEARTGOLD_SPECIAL_CASES,
+    'soulsilver': SOULSILVER_SPECIAL_CASES,
+    # Gen 5
+    'black': BLACK_SPECIAL_CASES,
+    'white': WHITE_SPECIAL_CASES,
+    'black-2': BLACK_2_SPECIAL_CASES,
+    'white-2': WHITE_2_SPECIAL_CASES,
+    # Gen 6
+    'x': X_SPECIAL_CASES,
+    'y': Y_SPECIAL_CASES,
+    'omega-ruby': OMEGA_RUBY_SPECIAL_CASES,
+    'alpha-sapphire': ALPHA_SAPPHIRE_SPECIAL_CASES,
+    # Gen 7
+    'sun': SUN_SPECIAL_CASES,
+    'moon': MOON_SPECIAL_CASES,
+    'ultra-sun': ULTRA_SUN_SPECIAL_CASES,
+    'ultra-moon': ULTRA_MOON_SPECIAL_CASES,
+    'lets-go-pikachu': LETS_GO_PIKACHU_SPECIAL_CASES,
+    'lets-go-eevee': LETS_GO_EEVEE_SPECIAL_CASES,
+    # Gen 8
+    'sword': SWORD_SPECIAL_CASES,
+    'shield': SHIELD_SPECIAL_CASES,
+    'brilliant-diamond': BRILLIANT_DIAMOND_SPECIAL_CASES,
+    'shining-pearl': SHINING_PEARL_SPECIAL_CASES,
+    'legends-arceus': LEGENDS_ARCEUS_SPECIAL_CASES,
+    # Gen 9
+    'scarlet': SCARLET_SPECIAL_CASES,
+    'violet': VIOLET_SPECIAL_CASES,
 }
 
 def clean_location_name(area_slug: str) -> str:
     """Convierte el slug de un área a un nombre amigable en español."""
+    if area_slug in ALL_LOCATION_NAMES_ES:
+        return ALL_LOCATION_NAMES_ES[area_slug]
     if area_slug in KANTO_LOCATION_NAMES_ES:
         return KANTO_LOCATION_NAMES_ES[area_slug]
+    if area_slug in JOHTO_LOCATION_NAMES_ES:
+        return JOHTO_LOCATION_NAMES_ES[area_slug]
 
-    m_route = re.match(r"(?:kanto-)?(?:sea-)?route-(\d+)", area_slug)
+    m_route = re.match(r"(?:johto-|kanto-|hoenn-|sinnoh-|unova-|kalos-|alola-|galar-|paldea-)?(?:sea-)?route-(\d+)", area_slug)
     if m_route:
         return f"Ruta {m_route.group(1)}"
 
+    # Monumentos y cuevas de Kanto y Johto
     if "mt-moon" in area_slug:
         return "Monte Moon"
     if "rock-tunnel" in area_slug:
@@ -658,26 +1028,91 @@ def clean_location_name(area_slug: str) -> str:
         return "Torre Pokémon"
     if "pokemon-mansion" in area_slug:
         return "Mansión Pokémon"
+    if "sprout-tower" in area_slug:
+        return "Torre Bellsprout"
+    if "burned-tower" in area_slug:
+        return "Torre Quemada"
+    if "bell-tower" in area_slug or "tin-tower" in area_slug:
+        return "Torre Hojalata"
+    if "whirl-islands" in area_slug:
+        return "Islas Remolino"
+    if "mt-mortar" in area_slug:
+        return "Monte Mortero"
+    if "mt-silver" in area_slug:
+        return "Monte Plateado"
+    if "slowpoke-well" in area_slug:
+        return "Pozo Slowpoke"
+    if "union-cave" in area_slug:
+        return "Cueva Unión"
+    if "dark-cave" in area_slug:
+        return "Cueva Oscura"
+    if "ice-path" in area_slug:
+        return "Ruta Helada"
+    if "dragons-den" in area_slug:
+        return "Guarida Dragón"
+    if "ruins-of-alph" in area_slug:
+        return "Ruinas Alfa"
+    if "national-park" in area_slug:
+        return "Parque Nacional"
+    if "ilex-forest" in area_slug:
+        return "Encinar"
+    if "lake-of-rage" in area_slug:
+        return "Lago de la Furia"
+    if "tohjo-falls" in area_slug:
+        return "Cataratas Tohjo"
+    if "team-rocket-hq" in area_slug:
+        return "Guarida del Team Rocket"
     if "prize-corner" in area_slug or "game-corner" in area_slug:
+        if "goldenrod" in area_slug or "trigal" in area_slug:
+            return "Ciudad Trigal (Casino)"
+        if "mauville" in area_slug or "malvalona" in area_slug:
+            return "Ciudad Malvalona (Casino)"
         return "Ciudad Azulona (Casino)"
     if "cinnabar-lab" in area_slug:
         return "Isla Canela (Laboratorio)"
     if "underground-path" in area_slug:
         return "Vía Subterránea"
 
-    clean = area_slug.replace("kanto-", "").replace("-area", "").replace("-", " ")
+    clean = area_slug.replace("kanto-", "").replace("johto-", "").replace("-area", "").replace("-", " ")
     return clean.title()
 
 
-# Identificadores de biomas y entornos de Kanto
-KANTO_CAVE_SLUGS = {
-    'mt-moon', 'rock-tunnel', 'seafoam-islands',
-    'cerulean-cave', 'digletts-cave', 'victory-road'
+# Identificadores de biomas y entornos de cuevas e interiores (Kanto, Johto y regiones futuras)
+CAVE_SLUGS = {
+    # Kanto
+    'mt-moon', 'rock-tunnel', 'seafoam-islands', 'cerulean-cave', 'digletts-cave', 'victory-road',
+    # Johto
+    'dark-cave', 'union-cave', 'slowpoke-well', 'ice-path', 'dragons-den',
+    'mt-mortar', 'mt-silver', 'whirl-islands', 'tohjo-falls', 'ruins-of-alph',
+    # Genéricas
+    'cave', 'tunnel', 'falls', 'grotto'
 }
 
-KANTO_INTERIOR_SLUGS = {
-    'pokemon-tower', 'pokemon-mansion', 'power-plant'
+INTERIOR_SLUGS = {
+    # Kanto
+    'pokemon-tower', 'pokemon-mansion', 'power-plant',
+    # Johto
+    'sprout-tower', 'bell-tower', 'tin-tower', 'burned-tower', 'team-rocket-hq', 'radio-tower', 'department-store'
 }
+
+KANTO_CAVE_SLUGS = CAVE_SLUGS
+KANTO_INTERIOR_SLUGS = INTERIOR_SLUGS
+
+
+def get_casino_name(area_str: str, game_slug: str = "", is_wild_combined: bool = False) -> str:
+    """Retorna el nombre oficial del Casino contextualizado según localidad y versión."""
+    area_lower = area_str.lower()
+    if "trigal" in area_lower or "goldenrod" in area_lower:
+        return "Casino de Ciudad Trigal"
+    if "azulona" in area_lower or "celadon" in area_lower:
+        if game_slug in ['red', 'blue', 'yellow'] and not is_wild_combined:
+            return "Casino Rocket de Ciudad Azulona"
+        return "Casino de Ciudad Azulona"
+    if "malvalona" in area_lower or "mauville" in area_lower:
+        return "Casino de Ciudad Malvalona"
+    if "rocavelo" in area_lower or "veilstone" in area_lower:
+        return "Casino de Ciudad Rocavelo"
+    return "Casino"
 
 
 # Catálogo oficial de precios de fichas del Casino por juego
@@ -707,6 +1142,56 @@ GAME_CASINO_PRIZES: Dict[str, Dict[int, int]] = {
         127: 6500,   # Pinsir
         137: 9999,   # Porygon
     },
+    'gold': {
+        63: 200,     # Abra (Casino Ciudad Trigal)
+        23: 700,     # Ekans (Casino Ciudad Trigal)
+        147: 2100,   # Dratini (Casino Ciudad Trigal)
+        122: 3333,   # Mr. Mime (Casino Ciudad Azulona)
+        133: 6666,   # Eevee (Casino Ciudad Azulona)
+        137: 9999,   # Porygon (Casino Ciudad Azulona)
+    },
+    'silver': {
+        63: 200,     # Abra (Casino Ciudad Trigal)
+        27: 700,     # Sandshrew (Casino Ciudad Trigal)
+        147: 2100,   # Dratini (Casino Ciudad Trigal)
+        122: 3333,   # Mr. Mime (Casino Ciudad Azulona)
+        133: 6666,   # Eevee (Casino Ciudad Azulona)
+        137: 9999,   # Porygon (Casino Ciudad Azulona)
+    },
+    'crystal': {
+        63: 100,     # Abra
+        220: 700,    # Swinub
+        147: 2100,   # Dratini
+        25: 2222,    # Pikachu
+        137: 5555,   # Porygon
+        246: 8888,   # Larvitar
+    },
+    'ruby': {},
+    'sapphire': {},
+    'emerald': {},
+    'firered': {
+        63: 180,
+        35: 500,
+        147: 2800,
+        123: 5500,
+        137: 9999,
+    },
+    'leafgreen': {
+        63: 120,
+        35: 750,
+        127: 2500,
+        147: 4600,
+        137: 6500,
+    },
+    'diamond': {},
+    'pearl': {},
+    'platinum': {},
+    'heartgold': {
+        63: 200, 23: 700, 147: 2100, 122: 3333, 133: 6666, 137: 9999,
+    },
+    'soulsilver': {
+        63: 200, 27: 700, 147: 2100, 122: 3333, 133: 6666, 137: 9999,
+    },
 }
 
 
@@ -729,11 +1214,11 @@ def resolve_encounter_method_label(
         return "Premio del Casino"
 
     if m_clean == 'walk':
-        # Cuevas de Kanto (suelo de roca/gruta sin hierba)
-        if any(c in area_slug for c in KANTO_CAVE_SLUGS):
+        # Cuevas de Kanto/Johto (suelo de roca/gruta sin hierba)
+        if any(c in area_slug for c in CAVE_SLUGS):
             return "Cueva"
-        # Interiores de edificios / estructuras de Kanto
-        if any(b in area_slug for b in KANTO_INTERIOR_SLUGS):
+        # Interiores de edificios / estructuras
+        if any(b in area_slug for b in INTERIOR_SLUGS):
             return "Interior"
         # Rutas y exteriores naturales
         return "Hierba alta"
@@ -906,29 +1391,59 @@ def resolve_obtaining_info(
     if game_locations:
         if has_gift_encounter and len(game_locations) == 1:
             loc = game_locations[0]
+            can_breed = (
+                generation >= 2
+                and evolution_info is None
+                and national_number not in NON_HATCHABLE_SPECIES
+            )
+            daycare_area = DAYCARE_LOCATIONS_BY_GAME.get(game_slug)
+            locs = [loc]
+            summary_breed = ""
+            if can_breed and daycare_area:
+                locs.append({
+                    "area": daycare_area,
+                    "method": "Crianza de huevo"
+                })
+                summary_breed = " (también obtenible mediante crianza)"
+
             if "Casino" in loc['area']:
                 coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
                 coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
+                casino_name = get_casino_name(loc['area'], game_slug)
                 return {
                     "type": "casino",
                     "badge_label": "Premio Casino",
                     "badge_color": "amber",
-                    "summary": f"Canjeable{coins_str} en el Casino Rocket de Ciudad Azulona",
-                    "locations": game_locations,
+                    "summary": f"Canjeable{coins_str} en el {casino_name}{summary_breed}",
+                    "locations": locs,
                     "evolution_info": evolution_info
                 }
             return {
                 "type": "gift",
                 "badge_label": "Regalo",
                 "badge_color": "emerald",
-                "summary": f"Entregado como regalo en {loc['area']}",
-                "locations": game_locations,
+                "summary": f"Entregado como regalo en {loc['area']}{summary_breed}",
+                "locations": locs,
                 "evolution_info": evolution_info
             }
         else:
-            wild_areas = [l["area"] for l in game_locations if "Casino" not in l["area"] and "Intercambio" not in l["method"]]
+            can_breed = (
+                generation >= 2
+                and evolution_info is None
+                and national_number not in NON_HATCHABLE_SPECIES
+            )
+            daycare_area = DAYCARE_LOCATIONS_BY_GAME.get(game_slug)
+            if can_breed and daycare_area:
+                if not any(daycare_area in loc["area"] for loc in game_locations):
+                    game_locations.append({
+                        "area": daycare_area,
+                        "method": "Crianza de huevo"
+                    })
+
+            wild_areas = [l["area"] for l in game_locations if "Casino" not in l["area"] and "Intercambio" not in l["method"] and "Guardería" not in l["area"] and "Cuidados" not in l["area"] and "Pícnic" not in l["area"]]
             has_casino = any("Casino" in l["area"] for l in game_locations)
             has_trade = any("Intercambio" in l["method"] for l in game_locations)
+            has_daycare = any(daycare_area in l["area"] for l in game_locations) if daycare_area else False
 
             if wild_areas:
                 if len(wild_areas) <= 3:
@@ -939,18 +1454,29 @@ def resolve_obtaining_info(
                 if has_casino:
                     coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
                     coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
-                    summary_text += f" y canjeable{coins_str} en el Casino de Ciudad Azulona"
+                    casino_loc = next((l["area"] for l in game_locations if "Casino" in l["area"]), "Casino")
+                    casino_name = get_casino_name(casino_loc, game_slug, is_wild_combined=True)
+                    summary_text += f" y canjeable{coins_str} en el {casino_name}"
                 if has_trade:
                     summary_text += " (también por intercambio NPC)"
+                if has_daycare and can_breed:
+                    summary_text += " (también obtenible como cría en la Guardería Pokémon)"
             elif has_casino:
                 coins = GAME_CASINO_PRIZES.get(game_slug, {}).get(national_number)
                 coins_str = f" por {coins:,} fichas".replace(",", ".") if coins else ""
-                summary_text = f"Canjeable{coins_str} en el Casino Rocket de Ciudad Azulona"
+                casino_loc = next((l["area"] for l in game_locations if "Casino" in l["area"]), "Casino")
+                casino_name = get_casino_name(casino_loc, game_slug)
+                summary_text = f"Canjeable{coins_str} en el {casino_name}"
             else:
                 unique_areas = [l["area"] for l in game_locations]
                 summary_text = f"Disponible en: {', '.join(unique_areas[:3])}"
 
-            badge_label = "Salvaje / Evolución" if evolution_info else "Salvaje"
+            if can_breed and has_daycare and wild_areas:
+                badge_label = "Salvaje / Crianza"
+            elif evolution_info:
+                badge_label = "Salvaje / Evolución"
+            else:
+                badge_label = "Salvaje"
 
             return {
                 "type": "wild",
@@ -972,7 +1498,32 @@ def resolve_obtaining_info(
             "locations": []
         }
 
-    # 6. Desconocido o evento
+    # 6. Crianza / Pokémon bebé (a partir de Gen 2)
+    is_baby = False
+    if evolution_chain_data:
+        chain_root = evolution_chain_data.get("chain", {})
+        if chain_root.get("is_baby") and chain_root.get("species", {}).get("name") == pokemon_name.lower():
+            is_baby = True
+
+    if generation >= 2 and (is_baby or national_number in BABY_SPECIES) and national_number not in NON_HATCHABLE_SPECIES:
+        daycare_area = DAYCARE_LOCATIONS_BY_GAME.get(game_slug, "Guardería Pokémon")
+        locs = [{"area": daycare_area, "method": "Crianza de huevo"}]
+        if national_number in GEN2_ODD_EGG_SPECIES:
+            locs.append({"area": daycare_area, "method": "Huevo Extraño (Regalo con alta probabilidad de variocolor)"})
+            summary_text = f"Obtenible mediante eclosión de huevo por crianza en la {daycare_area} o aleatoriamente mediante el Huevo Extraño regalado en la Guardería."
+        else:
+            summary_text = f"Obtenible mediante eclosión de huevo por crianza en la {daycare_area}."
+
+        return {
+            "type": "breeding",
+            "badge_label": "Crianza",
+            "badge_color": "pink",
+            "summary": summary_text,
+            "locations": locs,
+            "evolution_info": None
+        }
+
+    # 7. Desconocido o evento
     return {
         "type": "unknown",
         "badge_label": "Especial",
