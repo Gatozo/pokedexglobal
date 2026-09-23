@@ -114,6 +114,30 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     if game.generation >= 2:
         is_shinydex_active = request.COOKIES.get(f"pokedex_shinydex_{game.slug}") == "1"
 
+    # Catálogo de Unown para Gen >= 2
+    unown_entry = None
+    unown_catalog = []
+    unown_chambers = {}
+    unown_normal_caught = set()
+    unown_shiny_caught = set()
+    if game.generation >= 2:
+        from .unown_data import get_unown_catalog, UNOWN_CHAMBERS
+        unown_chambers = UNOWN_CHAMBERS
+        unown_entry = entries_by_num.get(201)
+        if unown_entry:
+            unown_catch = UserPokemonCatch.objects.filter(**user_filter, pokedex_entry=unown_entry).first()
+            if unown_catch and unown_catch.unown_forms_caught:
+                unown_normal_caught = set(unown_catch.unown_forms_caught.get("normal", []))
+                unown_shiny_caught = set(unown_catch.unown_forms_caught.get("shiny", []))
+
+            raw_cat = get_unown_catalog()
+            for item in raw_cat:
+                l = item["letter"]
+                item_copy = dict(item)
+                item_copy["is_caught"] = l in unown_normal_caught
+                item_copy["is_shiny_caught"] = l in unown_shiny_caught
+                unown_catalog.append(item_copy)
+
     context = {
         "game": game,
         "pokedex": pokedex,
@@ -131,6 +155,13 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "exclusives_info": exclusives_info,
         "transfers_info": transfers_info,
         "evolution_stones_json": _get_cached_evolution_stones_json(),
+        "unown_entry": unown_entry,
+        "unown_catalog": unown_catalog,
+        "unown_chambers": unown_chambers,
+        "unown_normal_count": len(unown_normal_caught),
+        "unown_normal_percent": round((len(unown_normal_caught) / 26 * 100), 1) if unown_catalog else 0,
+        "unown_shiny_count": len(unown_shiny_caught),
+        "unown_shiny_percent": round((len(unown_shiny_caught) / 26 * 100), 1) if unown_catalog else 0,
     }
     return render(request, "tracker/pokedex_detail.html", context)
 
@@ -189,4 +220,89 @@ def toggle_catch(request):
         "caught_count": caught_count,
         "total_count": total_count,
         "percent": percent,
+    })
+
+
+@require_POST
+def toggle_unown_catch(request):
+    """Endpoint AJAX para marcar/desmarcar una forma específica de Unown (normal o shiny)."""
+    try:
+        data = json.loads(request.body)
+        entry_id = data.get("entry_id")
+        letter = str(data.get("letter", "")).lower().strip()
+        is_shiny = bool(data.get("is_shiny", False))
+    except (ValueError, KeyError, AttributeError):
+        return JsonResponse({"error": "JSON inválido"}, status=400)
+
+    if not entry_id or not letter or len(letter) != 1 or not ('a' <= letter <= 'z'):
+        return JsonResponse({"error": "Parámetros incompletos o letra inválida"}, status=400)
+
+    entry = get_object_or_404(PokedexEntry, id=entry_id)
+    user, session_key = _get_user_or_session(request)
+
+    filter_kwargs = {"pokedex_entry": entry}
+    if user:
+        filter_kwargs["user"] = user
+    else:
+        filter_kwargs["session_key"] = session_key
+
+    catch_record, _ = UserPokemonCatch.objects.get_or_create(
+        defaults={"is_caught": False, "is_shiny": False, "unown_forms_caught": {}},
+        **filter_kwargs
+    )
+
+    forms_data = dict(catch_record.unown_forms_caught or {})
+    key = "shiny" if is_shiny else "normal"
+    form_set = set(forms_data.get(key, []))
+
+    if letter in form_set:
+        form_set.remove(letter)
+        is_now_caught = False
+    else:
+        form_set.add(letter)
+        is_now_caught = True
+
+    forms_data[key] = sorted(list(form_set))
+    catch_record.unown_forms_caught = forms_data
+
+    # Sincronizar captura general del Pokémon:
+    catch_record.is_caught = len(forms_data.get("normal", [])) > 0
+    catch_record.is_shiny = len(forms_data.get("shiny", [])) > 0
+    if not is_shiny and is_now_caught and not catch_record.caught_at:
+        catch_record.caught_at = timezone.now()
+    catch_record.save()
+
+    # Recalcular métricas generales de la Pokédex
+    user_filter = {"pokedex_entry__pokedex": entry.pokedex}
+    if user:
+        user_filter["user"] = user
+    else:
+        user_filter["session_key"] = session_key
+
+    total_pokemon = entry.pokedex.entries.count()
+    global_caught_count = UserPokemonCatch.objects.filter(**user_filter, is_caught=True).count()
+    global_caught_percent = round((global_caught_count / total_pokemon * 100), 1) if total_pokemon else 0
+
+    global_shiny_count = UserPokemonCatch.objects.filter(**user_filter, is_shiny=True).count()
+    global_shiny_percent = round((global_shiny_count / total_pokemon * 100), 1) if total_pokemon else 0
+
+    normal_unown_count = len(forms_data.get("normal", []))
+    shiny_unown_count = len(forms_data.get("shiny", []))
+
+    return JsonResponse({
+        "success": True,
+        "entry_id": entry.id,
+        "letter": letter,
+        "is_shiny": is_shiny,
+        "is_caught": is_now_caught,
+        "unown_normal_count": normal_unown_count,
+        "unown_normal_percent": round(normal_unown_count / 26 * 100, 1),
+        "unown_shiny_count": shiny_unown_count,
+        "unown_shiny_percent": round(shiny_unown_count / 26 * 100, 1),
+        "entry_is_caught": catch_record.is_caught,
+        "entry_is_shiny": catch_record.is_shiny,
+        "global_normal_caught": global_caught_count,
+        "global_normal_percent": global_caught_percent,
+        "global_shiny_caught": global_shiny_count,
+        "global_shiny_percent": global_shiny_percent,
     })

@@ -1446,6 +1446,147 @@ class FixtureExportTests(TestCase):
         self.assertIn("sprite_modern_shiny", data)
         self.assertIn("is_shiny_caught", data)
 
+    def test_unown_properties_and_f_form(self):
+        """Verifica que el Pokémon 201 (Unown) apunte a la forma F y sus URLs shiny."""
+        unown = Pokemon.objects.create(
+            national_number=201,
+            name="unown",
+            display_name="Unown",
+            sprite_url="https://example.com/unown.png",
+            primary_type="psychic"
+        )
+        self.assertIn("201-f.png", unown.sprite_shiny_url)
+        self.assertIn("201-f.png", unown.artwork_shiny_url)
+
+    def test_unown_chambers_and_shiny_legitimacy(self):
+        """Verifica la distribución histórica de cámaras de Ruinas Alfa y la restricción shiny de Gen 2 (I y V)."""
+        from .unown_data import UNOWN_LETTERS_DATA, UNOWN_CHAMBERS
+
+        self.assertEqual(len(UNOWN_LETTERS_DATA), 26)
+        
+        # Solo 'i' y 'v' pueden ser shinies legítimos en Gen 2 por los IVs/DVs
+        legit_shinies = [k for k, v in UNOWN_LETTERS_DATA.items() if v["is_legit_shiny_gen2"]]
+        self.assertEqual(sorted(legit_shinies), ["i", "v"])
+
+        # Verificación de cámaras
+        chamber_counts = {}
+        for l_info in UNOWN_LETTERS_DATA.values():
+            c = l_info["chamber"]
+            chamber_counts[c] = chamber_counts.get(c, 0) + 1
+
+        self.assertEqual(chamber_counts["kabuto"], 11)
+        self.assertEqual(chamber_counts["omanyte"], 7)
+        self.assertEqual(chamber_counts["aerodactyl"], 5)
+        self.assertEqual(chamber_counts["ho_oh"], 3)
+        self.assertEqual(sum(chamber_counts.values()), 26)
+
+        # 4 cámaras definidas con sus pistas
+        self.assertEqual(len(UNOWN_CHAMBERS), 4)
+        for ch_key in ["kabuto", "omanyte", "aerodactyl", "ho_oh"]:
+            self.assertIn(ch_key, UNOWN_CHAMBERS)
+            self.assertTrue(len(UNOWN_CHAMBERS[ch_key]["secret_requirement"]) > 0)
+
+    def test_toggle_unown_catch_ajax(self):
+        """Verifica el endpoint AJAX para conmutar letras Unown tanto normales como shinies."""
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        unown = Pokemon.objects.create(
+            national_number=201,
+            name="unown",
+            display_name="Unown",
+            sprite_url="https://example.com/unown.png",
+            primary_type="psychic"
+        )
+        unown_entry = PokedexEntry.objects.create(pokedex=johto_dex, pokemon=unown, entry_number=61)
+
+        url = reverse("tracker:toggle_unown_catch")
+
+        # 1. Capturar letra 'a' en normal
+        res1 = self.client.post(url, data={
+            "entry_id": unown_entry.id,
+            "letter": "a",
+            "is_shiny": False
+        }, content_type="application/json")
+        self.assertEqual(res1.status_code, 200)
+        d1 = res1.json()
+        self.assertTrue(d1["success"])
+        self.assertTrue(d1["is_caught"])
+        self.assertTrue(d1["entry_is_caught"])
+        self.assertFalse(d1["entry_is_shiny"])
+        self.assertEqual(d1["unown_normal_count"], 1)
+        self.assertEqual(d1["unown_shiny_count"], 0)
+
+        # 2. Capturar letra 'f' en shiny
+        res2 = self.client.post(url, data={
+            "entry_id": unown_entry.id,
+            "letter": "f",
+            "is_shiny": True
+        }, content_type="application/json")
+        self.assertEqual(res2.status_code, 200)
+        d2 = res2.json()
+        self.assertTrue(d2["is_caught"])
+        self.assertTrue(d2["entry_is_caught"])
+        self.assertTrue(d2["entry_is_shiny"])
+        self.assertEqual(d2["unown_normal_count"], 1)
+        self.assertEqual(d2["unown_shiny_count"], 1)
+
+        # 3. Liberar letra 'a' en normal (queda 0 normales, por lo que entry_is_caught debe pasar a False)
+        res3 = self.client.post(url, data={
+            "entry_id": unown_entry.id,
+            "letter": "a",
+            "is_shiny": False
+        }, content_type="application/json")
+        self.assertEqual(res3.status_code, 200)
+        d3 = res3.json()
+        self.assertFalse(d3["is_caught"])
+        self.assertFalse(d3["entry_is_caught"])
+        # Shiny f sigue capturado
+        self.assertTrue(d3["entry_is_shiny"])
+        self.assertEqual(d3["unown_normal_count"], 0)
+        self.assertEqual(d3["unown_shiny_count"], 1)
+
+    def test_unown_modal_rendered_in_view(self):
+        """Verifica que el modal de Unown y las notas históricas se rendericen en la vista de Pokédex."""
+        from django.core.cache import cache
+        cache.clear()
+
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        unown = Pokemon.objects.create(
+            national_number=201,
+            name="unown",
+            display_name="Unown",
+            sprite_url="https://example.com/unown.png",
+            primary_type="psychic"
+        )
+        PokedexEntry.objects.create(pokedex=johto_dex, pokemon=unown, entry_number=61)
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+
+        # 1. Modo Normal: el modal se renderiza pero la nota y los badges están ocultos con clase hidden
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'id="unown-modal"')
+        self.assertContains(response, "Bloc Unown • Unowndex")
+        self.assertContains(response, 'id="unown-historical-note" class="hidden ')
+        self.assertNotContains(response, '★ Shiny Gen 2')
+        self.assertNotContains(response, 'unown-legit-shiny-badge')
+        self.assertContains(response, 'id="modal-unowndex-btn"')
+        self.assertContains(response, 'id="modal-unowndex-header-btn"')
+        self.assertContains(response, 'switchToUnownModal()')
+        self.assertNotContains(response, "¡Aquí puedes coleccionar libremente las 26 formas shiny!")
+        self.assertIn("unown_catalog", response.context)
+        self.assertEqual(len(response.context["unown_catalog"]), 26)
+
+        # 2. Modo Shinydex: la nota se renderiza visible sin clase hidden, y las cartas se muestran limpias sin badge
+        self.client.cookies["pokedex_shinydex_gold"] = "1"
+        res_shiny = self.client.get(url)
+        self.assertEqual(res_shiny.status_code, 200)
+        self.assertContains(res_shiny, 'id="unown-historical-note" class="bg-amber-100/80')
+        self.assertNotContains(res_shiny, '★ Shiny Gen 2')
+        self.assertNotContains(res_shiny, 'unown-legit-shiny-badge')
+
+
 
 
 

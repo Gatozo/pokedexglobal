@@ -56,6 +56,9 @@
     {% include 'tracker/components/_modal_stones.html' %}
     {% include 'tracker/components/_modal_exclusives.html' %}
     {% include 'tracker/components/_modal_transfers.html' %}
+    {% if unown_catalog %}
+    {% include 'tracker/components/_unown_modal.html' %}
+    {% endif %}
 
     <!-- Interacciones y Controladores Modularizados -->
     {% include 'tracker/components/_scripts.html' %}

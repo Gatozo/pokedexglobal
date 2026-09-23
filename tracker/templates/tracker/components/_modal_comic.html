@@ -26,15 +26,29 @@
                 </h3>
             </div>
 
-            <!-- Comic Style Close Button -->
-            <button 
-                type="button" 
-                onclick="closePokemonModal()" 
-                class="z-10 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
-                title="Cerrar viñeta"
-            >
-                ✕
-            </button>
+            <div class="flex items-center gap-2 z-10">
+                <!-- Botón de retorno al Bloc Unown (solo activo en la ficha de Unown) -->
+                <button 
+                    id="modal-unowndex-header-btn"
+                    type="button" 
+                    onclick="switchToUnownModal()"
+                    class="hidden py-1 px-2.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 bg-amber-400 hover:bg-amber-300 text-slate-950 items-center gap-1.5 transition-all cursor-pointer"
+                    title="Volver al Bloc de Notas Unown (Unowndex)"
+                >
+                    <img src="/media/pokemon/icons/gen2/201-f.png" alt="Unown" class="w-4 h-4 object-contain pixel-art">
+                    <span class="hidden sm:inline">Bloc Unown</span>
+                </button>
+
+                <!-- Comic Style Close Button -->
+                <button 
+                    type="button" 
+                    onclick="closePokemonModal()" 
+                    class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                    title="Cerrar viñeta"
+                >
+                    ✕
+                </button>
+            </div>
         </div>
 
         <!-- Scrollable Content -->
@@ -132,6 +146,16 @@
                 <span id="modal-status-badge" class="px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950">
                     ✓ Atrapado en tu partida
                 </span>
+                <button 
+                    id="modal-unowndex-btn"
+                    type="button" 
+                    onclick="switchToUnownModal()"
+                    class="hidden py-1.5 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 bg-amber-400 hover:bg-amber-300 text-slate-950 items-center gap-1.5 transition-all cursor-pointer"
+                    title="Volver al Bloc de Notas Unown (Unowndex)"
+                >
+                    <img src="/media/pokemon/icons/gen2/201-f.png" alt="Unown" class="w-4 h-4 object-contain pixel-art">
+                    <span>Bloc Unown</span>
+                </button>
             </div>
             <button 
                 id="modal-toggle-catch-btn"

@@ -1,0 +1,223 @@
+<!-- Modal Especial: Bloc Unown / Unowndex (Ruinas Alfa) -->
+<div 
+    id="unown-modal" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="unown-modal-title"
+>
+    <!-- Modal Card Container -->
+    <div 
+        id="unown-modal-card" 
+        class="bg-white border-4 border-slate-950 rounded-3xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-[8px_8px_0px_#0f172a] transform scale-95 transition-transform duration-200 overflow-hidden"
+    >
+        <!-- Modal Header -->
+        <div class="px-5 py-3.5 sm:px-6 sm:py-4 bg-[#c59b27] text-slate-950 border-b-4 border-slate-950 flex items-center justify-between gap-3 shrink-0 comic-header-pattern relative">
+            <div class="flex items-center gap-3 z-10">
+                <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
+                    <img 
+                        id="unown-modal-header-icon"
+                        src="/media/pokemon/icons/gen2/201-f.png" 
+                        alt="Unown" 
+                        class="w-7 h-7 object-contain pixel-art"
+                    >
+                </div>
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-950 text-amber-300 mb-0.5">
+                        <span>Ruinas Alfa</span> • <span>26 Formas</span>
+                    </div>
+                    <h2 id="unown-modal-title" class="text-xl sm:text-2xl font-black uppercase tracking-wide">
+                        Bloc Unown • Unowndex
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Close Button -->
+            <button 
+                type="button" 
+                onclick="closeUnownModal()"
+                title="Cerrar Unowndex (Esc)"
+                class="z-10 w-9 h-9 rounded-xl bg-white hover:bg-rose-100 text-slate-950 border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center font-black text-lg active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer shrink-0"
+            >
+                ✕
+            </button>
+        </div>
+
+        <!-- Progress & Historical Note Section -->
+        <div class="px-5 py-3 bg-amber-50/60 border-b-2 border-slate-950 shrink-0 flex flex-col gap-2.5">
+            <!-- Progress Bar Info -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                    <span id="unown-modal-progress-title" class="text-xs font-black uppercase tracking-wider text-slate-800">
+                        {% if is_shinydex_active %}Progreso Unowndex Shiny{% else %}Progreso Unowndex{% endif %}:
+                    </span>
+                    <span class="text-sm font-black font-mono text-slate-950">
+                        <span id="unown-stat-caught">{% if is_shinydex_active %}{{ unown_shiny_count }}{% else %}{{ unown_normal_count }}{% endif %}</span> / 26
+                        (<span id="unown-stat-percent">{% if is_shinydex_active %}{{ unown_shiny_percent }}{% else %}{{ unown_normal_percent }}{% endif %}</span>%)
+                    </span>
+                </div>
+                <div class="text-[11px] font-bold text-slate-600 flex items-center gap-2">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 border border-slate-950"></span>
+                    <span>Capturar 1 forma marca a Unown en tu Pokédex general</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar Track -->
+            <div class="w-full bg-white border-2 border-slate-950 rounded-full h-3.5 overflow-hidden p-0.5 shadow-inner">
+                <div 
+                    id="unown-progress-bar" 
+                    class="{% if is_shinydex_active %}bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]{% else %}bg-[#c59b27]{% endif %} h-full rounded-full transition-all duration-300"
+                    style="width: {% if is_shinydex_active %}{{ unown_shiny_percent }}{% else %}{{ unown_normal_percent }}{% endif %}%"
+                ></div>
+            </div>
+
+            <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny) -->
+            <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}bg-amber-100/80 border border-amber-900/30 rounded-xl p-2.5 text-xs text-amber-950 flex items-start gap-2">
+                <span class="text-base leading-none">💡</span>
+                <p class="leading-relaxed">
+                    <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
+                </p>
+            </div>
+        </div>
+
+        <!-- Chamber Filter Tabs -->
+        <div class="px-4 py-2 bg-slate-100 border-b-2 border-slate-950 flex items-center gap-1.5 overflow-x-auto shrink-0">
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('all')"
+                id="unown-tab-all"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] bg-amber-400 text-slate-950 cursor-pointer shrink-0"
+            >
+                Todas (26)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('kabuto')"
+                id="unown-tab-kabuto"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Kabuto (A-K)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('omanyte')"
+                id="unown-tab-omanyte"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Omanyte (L-R)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('aerodactyl')"
+                id="unown-tab-aerodactyl"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Aerodactyl (S-W)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('ho_oh')"
+                id="unown-tab-ho_oh"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Ho-Oh (X-Z)
+            </button>
+        </div>
+
+        <!-- Chamber Secret Hint Box (dinámico según pestaña, altura fija y estable) -->
+        <div id="unown-chamber-hint" class="px-5 py-2 bg-amber-50/40 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
+            <p class="truncate m-0">
+                <span class="font-black text-slate-900" id="unown-chamber-hint-title">Ruinas Alfa</span>: 
+                <span id="unown-chamber-hint-text">Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.</span>
+            </p>
+        </div>
+
+        <!-- Cards Grid Container -->
+        <div class="p-4 sm:p-5 overflow-y-auto flex-1 bg-[#fffef9] [scrollbar-gutter:stable]" style="scrollbar-gutter: stable;">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5" id="unown-cards-grid">
+                {% for form in unown_catalog %}
+                <div 
+                    class="unown-card relative rounded-2xl p-3 flex flex-col justify-between border-2 border-slate-950 shadow-[3px_3px_0px_#0f172a] transition-colors duration-150 select-none {% if is_shinydex_active %}{% if form.is_shiny_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% else %}{% if form.is_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% endif %}"
+                    data-letter="{{ form.letter }}"
+                    data-chamber="{{ form.chamber_key }}"
+                    data-caught="{% if form.is_caught %}true{% else %}false{% endif %}"
+                    data-shiny-caught="{% if form.is_shiny_caught %}true{% else %}false{% endif %}"
+                    id="unown-card-{{ form.letter }}"
+                >
+                    <!-- Header with Letter & Chamber Badge -->
+                    <div class="flex items-center justify-between gap-1">
+                        <span class="text-sm font-black font-mono text-slate-950">
+                            [{{ form.letter|upper }}]
+                        </span>
+                        <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 {{ form.chamber_badge_class }} truncate max-w-[95px]" title="{{ form.chamber_name }}">
+                            {{ form.chamber_key|capfirst }}
+                        </span>
+                    </div>
+
+                    <!-- Sprite Frame -->
+                    <div class="my-2 relative flex items-center justify-center h-20 shrink-0">
+                        <div class="absolute inset-1 rounded-full bg-slate-100/80 border border-slate-200 pointer-events-none"></div>
+                        <img 
+                            id="unown-img-{{ form.letter }}"
+                            src="{% if is_shinydex_active %}{{ form.sprite_shiny }}{% else %}{{ form.sprite_normal }}{% endif %}" 
+                            data-sprite-normal="{{ form.sprite_normal }}"
+                            data-sprite-shiny="{{ form.sprite_shiny }}"
+                            alt="{{ form.display }}"
+                            loading="lazy"
+                            class="w-14 h-14 object-contain pixel-art drop-shadow relative z-10 transition-transform duration-150 hover:scale-110"
+                        >
+                    </div>
+
+                    <!-- Status Badge -->
+                    <div id="unown-status-badge-{{ form.letter }}" class="card-status-indicator h-5 flex items-center justify-center gap-1 px-1 rounded-md text-[9px] font-black uppercase tracking-wider border border-slate-950 shrink-0 mb-2 {% if is_shinydex_active %}{% if form.is_shiny_caught %}bg-emerald-500 text-white{% else %}bg-slate-100 text-slate-500{% endif %}{% else %}{% if form.is_caught %}bg-emerald-500 text-white{% else %}bg-slate-100 text-slate-500{% endif %}{% endif %}">
+                        <span class="unown-status-check text-[8px]">
+                            {% if is_shinydex_active %}{% if form.is_shiny_caught %}✓{% endif %}{% else %}{% if form.is_caught %}✓{% endif %}{% endif %}
+                        </span>
+                        <span class="unown-status-text">
+                            {% if is_shinydex_active %}{% if form.is_shiny_caught %}Atrapado{% else %}Falta{% endif %}{% else %}{% if form.is_caught %}Atrapado{% else %}Falta{% endif %}{% endif %}
+                        </span>
+                    </div>
+
+                    <!-- Toggle Catch Action Button -->
+                    <button 
+                        type="button" 
+                        onclick="toggleUnownFormCatch('{{ form.letter }}')"
+                        id="unown-btn-{{ form.letter }}"
+                        class="w-full h-8 px-2 rounded-xl text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 {% if is_shinydex_active %}{% if form.is_shiny_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}{% else %}{% if form.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}{% endif %}"
+                    >
+                        <span id="unown-btn-text-{{ form.letter }}">
+                            {% if is_shinydex_active %}{% if form.is_shiny_caught %}Liberar{% else %}Capturar{% endif %}{% else %}{% if form.is_caught %}Liberar{% else %}Capturar{% endif %}{% endif %}
+                        </span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Modal Footer with General Unown Entry Button -->
+        <div class="px-5 py-3 bg-slate-100 border-t-2 border-slate-950 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+            <span class="text-xs text-slate-600 font-bold">
+                Unown #061 en Johto (#201 Nacional) • Tipo Psíquico
+            </span>
+            <div class="flex items-center gap-2">
+                {% if unown_entry %}
+                <button 
+                    type="button" 
+                    onclick="openClassicUnownModal()"
+                    class="px-3 py-1.5 rounded-xl border-2 border-slate-950 bg-white hover:bg-amber-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer flex items-center gap-1.5"
+                    title="Ver ficha técnica clásica con estadísticas y movimientos de Unown"
+                >
+                    <span>📜 Ficha Técnica Clásica</span>
+                </button>
+                {% endif %}
+                <button 
+                    type="button" 
+                    onclick="closeUnownModal()"
+                    class="px-4 py-1.5 rounded-xl border-2 border-slate-950 bg-slate-900 hover:bg-slate-800 text-xs font-black uppercase text-white shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
+                >
+                    Volver a la Pokédex
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

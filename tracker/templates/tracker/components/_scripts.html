@@ -33,6 +33,36 @@
         percent: parseFloat(document.getElementById('initial-shiny-percent')?.value || 0.0)
     };
 
+    let unownStats = {
+        normal: {
+            caught: parseInt("{{ unown_normal_count|default:0 }}", 10),
+            percent: parseFloat("{{ unown_normal_percent|default:0.0 }}")
+        },
+        shiny: {
+            caught: parseInt("{{ unown_shiny_count|default:0 }}", 10),
+            percent: parseFloat("{{ unown_shiny_percent|default:0.0 }}")
+        }
+    };
+
+    const UNOWN_CHAMBER_HINTS = {
+        kabuto: {
+            title: "Cámara de Kabuto (Entrada Principal)",
+            text: "Desbloquea las letras A - K. Sala secreta: Usar Cuerda Huida (Escape Rope) frente a la inscripción trasera."
+        },
+        omanyte: {
+            title: "Cámara de Omanyte (Noreste - Surf)",
+            text: "Desbloquea las letras L - R. Sala secreta: Usar Piedra Agua (Water Stone) frente a la inscripción trasera."
+        },
+        aerodactyl: {
+            title: "Cámara de Aerodactyl (Suroeste - Cueva Unión)",
+            text: "Desbloquea las letras S - W. Sala secreta: Usar Destello (Flash) frente a la inscripción trasera."
+        },
+        ho_oh: {
+            title: "Cámara de Ho-Oh (Noroeste - Cueva Unión)",
+            text: "Desbloquea las letras X - Z. Sala secreta: Llevar a Ho-Oh de 1.º en el equipo frente a la inscripción trasera."
+        }
+    };
+
     function getCsrfToken() {
         const input = document.querySelector('[name=csrfmiddlewaretoken]');
         return input ? input.value : '';
@@ -175,6 +205,10 @@
 
         // Reevaluar filtro activo de estado
         filterCards();
+
+        if (typeof updateUnownModalUI === 'function') {
+            updateUnownModalUI();
+        }
     }
 
     function setSpriteStyle(style) {
@@ -445,6 +479,31 @@
 
     /* ===== Comic Book Modal Controller ===== */
     function openPokemonModal(entryId) {
+        const card = document.getElementById(`card-${entryId}`);
+        if (card && card.dataset.name === 'unown') {
+            const unownModal = document.getElementById('unown-modal');
+            if (unownModal) {
+                openUnownModal();
+                return;
+            }
+        }
+        openPokemonModalDirect(entryId);
+    }
+
+    function openClassicUnownModal() {
+        closeUnownModal();
+        const unownCard = document.querySelector(".pokemon-card[data-name='unown']");
+        if (unownCard) {
+            openPokemonModalDirect(parseInt(unownCard.dataset.entryId, 10));
+        }
+    }
+
+    function switchToUnownModal() {
+        closePokemonModal();
+        openUnownModal();
+    }
+
+    function openPokemonModalDirect(entryId) {
         const dataScript = document.getElementById(`entry-data-${entryId}`);
         if (!dataScript) return;
 
@@ -638,7 +697,32 @@
         ) : false;
         updateModalCatchStatus(isCaught);
 
-        // 7. Mostrar modal
+        // 7. Botones de retorno al Bloc Unown (solo presentes al ver a Unown)
+        const isUnown = (data.name && data.name.toLowerCase() === 'unown') || (card && card.dataset.name === 'unown');
+        const unownBtn = document.getElementById('modal-unowndex-btn');
+        const unownHeaderBtn = document.getElementById('modal-unowndex-header-btn');
+        const hasUnownModal = !!document.getElementById('unown-modal');
+
+        if (unownBtn) {
+            if (isUnown && hasUnownModal) {
+                unownBtn.classList.remove('hidden');
+                unownBtn.classList.add('flex');
+            } else {
+                unownBtn.classList.add('hidden');
+                unownBtn.classList.remove('flex');
+            }
+        }
+        if (unownHeaderBtn) {
+            if (isUnown && hasUnownModal) {
+                unownHeaderBtn.classList.remove('hidden');
+                unownHeaderBtn.classList.add('flex');
+            } else {
+                unownHeaderBtn.classList.add('hidden');
+                unownHeaderBtn.classList.remove('flex');
+            }
+        }
+
+        // 8. Mostrar modal
         const modal = document.getElementById('comic-modal');
         const modalCard = document.getElementById('comic-modal-card');
         if (modal && modalCard) {
@@ -649,7 +733,7 @@
             document.body.classList.add('overflow-hidden');
         }
 
-        // 8. Activar marquesina suave en ubicaciones cuyo texto desborde
+        // 9. Activar marquesina suave en ubicaciones cuyo texto desborde
         requestAnimationFrame(() => {
             document.querySelectorAll('#modal-obtaining-details .location-marquee-wrapper').forEach(wrapper => {
                 const textSpan = wrapper.querySelector('.location-marquee-text');
@@ -671,11 +755,13 @@
         const exclModal = document.getElementById('exclusives-modal');
         const stoneModal = document.getElementById('stone-location-modal');
         const transModal = document.getElementById('transfers-modal');
+        const unownModal = document.getElementById('unown-modal');
         const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
         const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
         const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
         const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
-        if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen) {
+        const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
+        if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen) {
             document.body.classList.remove('overflow-hidden');
         }
     }
@@ -690,6 +776,16 @@
         if (modalCard) {
             modalCard.classList.remove('scale-100');
             modalCard.classList.add('scale-95');
+        }
+        const unownBtn = document.getElementById('modal-unowndex-btn');
+        const unownHeaderBtn = document.getElementById('modal-unowndex-header-btn');
+        if (unownBtn) {
+            unownBtn.classList.add('hidden');
+            unownBtn.classList.remove('flex');
+        }
+        if (unownHeaderBtn) {
+            unownHeaderBtn.classList.add('hidden');
+            unownHeaderBtn.classList.remove('flex');
         }
         releaseScrollIfNoModalOpen();
         activeModalEntryId = null;
@@ -1030,9 +1126,186 @@
         }
     }
 
+    /* ===== Bloc Unown / Unowndex Controller ===== */
+    function openUnownModal() {
+        const modal = document.getElementById('unown-modal');
+        const card = document.getElementById('unown-modal-card');
+        if (!modal || !card) return;
+
+        updateUnownModalUI();
+
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        card.classList.remove('scale-95');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeUnownModal() {
+        const modal = document.getElementById('unown-modal');
+        const card = document.getElementById('unown-modal-card');
+        if (!modal || !card) return;
+
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        card.classList.add('scale-95');
+        releaseScrollIfNoModalOpen();
+    }
+
+    function filterUnownChamber(chamberKey) {
+        document.querySelectorAll('.unown-tab').forEach(tab => {
+            tab.className = 'unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0';
+        });
+        const activeTab = document.getElementById(`unown-tab-${chamberKey}`);
+        if (activeTab) {
+            activeTab.className = 'unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] bg-amber-400 text-slate-950 cursor-pointer shrink-0';
+        }
+
+        const hintTitle = document.getElementById('unown-chamber-hint-title');
+        const hintText = document.getElementById('unown-chamber-hint-text');
+
+        if (chamberKey === 'all') {
+            if (hintTitle) hintTitle.textContent = 'Ruinas Alfa';
+            if (hintText) hintText.textContent = 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.';
+        } else {
+            const hint = UNOWN_CHAMBER_HINTS[chamberKey];
+            if (hint && hintTitle && hintText) {
+                hintTitle.textContent = hint.title;
+                hintText.textContent = hint.text;
+            }
+        }
+
+        document.querySelectorAll('.unown-card').forEach(card => {
+            if (chamberKey === 'all' || card.dataset.chamber === chamberKey) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function updateUnownModalUI() {
+        const title = document.getElementById('unown-modal-progress-title');
+        const statCaught = document.getElementById('unown-stat-caught');
+        const statPercent = document.getElementById('unown-stat-percent');
+        const progressBar = document.getElementById('unown-progress-bar');
+
+        const curStats = isShinydexMode ? unownStats.shiny : unownStats.normal;
+        if (title) title.textContent = isShinydexMode ? 'Progreso Unowndex Shiny:' : 'Progreso Unowndex:';
+        if (statCaught) statCaught.textContent = curStats.caught;
+        if (statPercent) statPercent.textContent = curStats.percent;
+        if (progressBar) {
+            progressBar.style.width = `${curStats.percent}%`;
+            progressBar.className = isShinydexMode
+                ? 'bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)] h-full rounded-full transition-all duration-300'
+                : 'bg-[#c59b27] h-full rounded-full transition-all duration-300';
+        }
+
+        const noteEl = document.getElementById('unown-historical-note');
+        if (noteEl) {
+            if (isShinydexMode) {
+                noteEl.classList.remove('hidden');
+            } else {
+                noteEl.classList.add('hidden');
+            }
+        }
+
+        document.querySelectorAll('.unown-card').forEach(card => {
+            const letter = card.dataset.letter;
+            const img = document.getElementById(`unown-img-${letter}`);
+            const isCaught = isShinydexMode 
+                ? (card.dataset.shinyCaught === 'true')
+                : (card.dataset.caught === 'true');
+
+            if (img) {
+                img.src = isShinydexMode ? img.dataset.spriteShiny : img.dataset.spriteNormal;
+            }
+
+            const badge = document.getElementById(`unown-status-badge-${letter}`);
+            const check = badge ? badge.querySelector('.unown-status-check') : null;
+            const text = badge ? badge.querySelector('.unown-status-text') : null;
+            const btn = document.getElementById(`unown-btn-${letter}`);
+            const btnText = document.getElementById(`unown-btn-text-${letter}`);
+
+            if (isCaught) {
+                card.className = 'unown-card relative rounded-2xl p-3 flex flex-col justify-between border-2 border-emerald-950 bg-emerald-50/70 shadow-[3px_3px_0px_#0f172a] transition-all duration-200 select-none';
+                if (badge) badge.className = 'card-status-indicator h-5 flex items-center justify-center gap-1 px-1 rounded-md text-[9px] font-black uppercase tracking-wider border border-slate-950 shrink-0 mb-2 bg-emerald-500 text-white';
+                if (check) check.textContent = '✓';
+                if (text) text.textContent = 'Atrapado';
+                if (btn) btn.className = 'w-full h-8 px-2 rounded-xl text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-rose-500 hover:bg-rose-600 text-white';
+                if (btnText) btnText.textContent = 'Liberar';
+            } else {
+                card.className = 'unown-card relative rounded-2xl p-3 flex flex-col justify-between border-2 border-slate-950 bg-white shadow-[3px_3px_0px_#0f172a] transition-all duration-200 select-none';
+                if (badge) badge.className = 'card-status-indicator h-5 flex items-center justify-center gap-1 px-1 rounded-md text-[9px] font-black uppercase tracking-wider border border-slate-950 shrink-0 mb-2 bg-slate-100 text-slate-500';
+                if (check) check.textContent = '';
+                if (text) text.textContent = 'Falta';
+                if (btn) btn.className = 'w-full h-8 px-2 rounded-xl text-[10px] font-black uppercase tracking-wider flex items-center justify-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';
+                if (btnText) btnText.textContent = 'Capturar';
+            }
+        });
+    }
+
+    async function toggleUnownFormCatch(letter) {
+        const unownCardMain = document.querySelector(".pokemon-card[data-name='unown']");
+        if (!unownCardMain) return;
+        const entryId = unownCardMain.dataset.entryId;
+
+        try {
+            const resp = await fetch('/api/unown-catch/toggle/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCsrfToken()
+                },
+                body: JSON.stringify({
+                    entry_id: parseInt(entryId, 10),
+                    letter: letter,
+                    is_shiny: isShinydexMode
+                })
+            });
+
+            if (!resp.ok) return;
+            const res = await resp.json();
+
+            // 1. Actualizar datos de la tarjeta de la letra en la Unowndex
+            const card = document.getElementById(`unown-card-${letter}`);
+            if (card) {
+                if (isShinydexMode) {
+                    card.dataset.shinyCaught = res.is_caught ? 'true' : 'false';
+                } else {
+                    card.dataset.caught = res.is_caught ? 'true' : 'false';
+                }
+            }
+
+            // 2. Actualizar estadísticas de Unown
+            unownStats.normal.caught = res.unown_normal_count;
+            unownStats.normal.percent = res.unown_normal_percent;
+            unownStats.shiny.caught = res.unown_shiny_count;
+            unownStats.shiny.percent = res.unown_shiny_percent;
+            updateUnownModalUI();
+
+            // 3. Sincronizar tarjeta principal de Unown en la Pokédex general
+            unownCardMain.dataset.caught = res.entry_is_caught ? 'true' : 'false';
+            unownCardMain.dataset.shinyCaught = res.entry_is_shiny ? 'true' : 'false';
+            updateCardUI(unownCardMain, isShinydexMode ? res.entry_is_shiny : res.entry_is_caught);
+
+            // 4. Sincronizar progreso general de la Pokédex
+            normalStats.caught = res.global_normal_caught;
+            normalStats.percent = res.global_normal_percent;
+            shinyStats.caught = res.global_shiny_caught;
+            shinyStats.percent = res.global_shiny_percent;
+            updateProgressBarUI();
+
+        } catch (e) {
+            console.error("Error al conmutar captura de Unown:", e);
+        }
+    }
+
     // Atajos de teclado (Escape para cerrar modales en orden de superposición)
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
+            const unownModal = document.getElementById('unown-modal');
+            if (unownModal && !unownModal.classList.contains('opacity-0')) {
+                closeUnownModal();
+                return;
+            }
             const stoneModal = document.getElementById('stone-location-modal');
             if (stoneModal && !stoneModal.classList.contains('opacity-0')) {
                 closeStoneModal();

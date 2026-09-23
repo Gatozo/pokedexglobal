@@ -255,11 +255,15 @@ class Pokemon(models.Model):
     @property
     def sprite_shiny_url(self):
         """Retorna la URL oficial del sprite front-shiny estándar de PokeAPI."""
+        if self.national_number == 201:
+            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/201-f.png"
         return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{self.national_number}.png"
 
     @property
     def artwork_shiny_url(self):
         """Retorna la URL oficial del artwork shiny si existe, con fallback a sprite_shiny_url."""
+        if self.national_number == 201:
+            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201-f.png"
         return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/{self.national_number}.png"
 
 
@@ -420,6 +424,7 @@ class UserPokemonCatch(models.Model):
     pokedex_entry = models.ForeignKey(PokedexEntry, on_delete=models.CASCADE, related_name="user_catches")
     is_caught = models.BooleanField(default=False)
     is_shiny = models.BooleanField(default=False)
+    unown_forms_caught = models.JSONField(default=dict, blank=True, help_text="Formas capturadas de Unown: {'normal': [...], 'shiny': [...]}")
     caught_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
