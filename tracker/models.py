@@ -252,6 +252,16 @@ class Pokemon(models.Model):
     def pc_icon_url(self):
         return self.get_pc_icon_url(generation=1)
 
+    @property
+    def sprite_shiny_url(self):
+        """Retorna la URL oficial del sprite front-shiny estándar de PokeAPI."""
+        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{self.national_number}.png"
+
+    @property
+    def artwork_shiny_url(self):
+        """Retorna la URL oficial del artwork shiny si existe, con fallback a sprite_shiny_url."""
+        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/{self.national_number}.png"
+
 
 class PokedexEntry(models.Model):
     pokedex = models.ForeignKey(Pokedex, on_delete=models.CASCADE, related_name="entries")
@@ -342,6 +352,39 @@ class PokedexEntry(models.Model):
         return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=game_slug)
 
     @property
+    def game_sprite_shiny_url(self):
+        """
+        Retorna el sprite retro shiny específico del juego/generación si aplica (Gen 2-5).
+        Para Gen 2 (Oro/Plata/Cristal), busca la variante específica de la edición.
+        Para Gen 1 (o fallback), retorna el sprite shiny estándar.
+        """
+        from django.conf import settings
+        from pathlib import Path
+
+        gen = self.pokedex.game.generation if (self.pokedex and self.pokedex.game) else 1
+        slug = self.pokedex.game.slug if (self.pokedex and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+
+        # 1. Comprobar existencia local en media/pokemon/sprites/{slug}_shiny/{num}.png (100% offline)
+        local_rel = f"pokemon/sprites/{slug}_shiny/{num}.png"
+        if (Path(settings.MEDIA_ROOT) / local_rel).exists():
+            return f"{settings.MEDIA_URL}{local_rel}"
+
+        if gen == 2:
+            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/shiny/{num}.png"
+        elif gen == 3:
+            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/shiny/{num}.png"
+        elif gen == 4:
+            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/shiny/{num}.png"
+        elif gen == 5:
+            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/{num}.png"
+        return self.pokemon.sprite_shiny_url
+
+    @property
+    def modern_sprite_shiny_url(self):
+        return self.pokemon.artwork_shiny_url
+
+    @property
     def modal_data_json(self):
         """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
         import json
@@ -356,6 +399,8 @@ class PokedexEntry(models.Model):
             "secondary_type_es": self.secondary_type_es or "",
             "sprite_retro": self.game_sprite_url or self.pokemon.sprite_url,
             "sprite_modern": self.pokemon.sprite_url,
+            "sprite_retro_shiny": self.game_sprite_shiny_url,
+            "sprite_modern_shiny": self.modern_sprite_shiny_url,
             "pc_icon_url": self.pc_icon_url,
             "height": self.pokemon.height or 0,
             "weight": self.pokemon.weight or 0,
@@ -363,6 +408,7 @@ class PokedexEntry(models.Model):
             "obtaining": self.obtaining_info or {},
             "evolution_stone": self.evolution_stone,
             "is_caught": getattr(self, "is_caught", False),
+            "is_shiny_caught": getattr(self, "is_shiny_caught", False),
             "cry_url": self.cry_url,
         }, ensure_ascii=False)
 

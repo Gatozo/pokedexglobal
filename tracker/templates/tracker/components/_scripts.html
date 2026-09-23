@@ -22,10 +22,159 @@
     let currentStatusFilter = 'all';
     let currentSpriteStyle = 'retro';
     let activeModalEntryId = null;
+    let isShinydexMode = {% if is_shinydex_active %}true{% else %}false{% endif %};
+
+    let normalStats = {
+        caught: parseInt(document.getElementById('initial-normal-caught')?.value || 0, 10),
+        percent: parseFloat(document.getElementById('initial-normal-percent')?.value || 0.0)
+    };
+    let shinyStats = {
+        caught: parseInt(document.getElementById('initial-shiny-caught')?.value || 0, 10),
+        percent: parseFloat(document.getElementById('initial-shiny-percent')?.value || 0.0)
+    };
 
     function getCsrfToken() {
         const input = document.querySelector('[name=csrfmiddlewaretoken]');
         return input ? input.value : '';
+    }
+
+    function toggleShinydexMode() {
+        isShinydexMode = !isShinydexMode;
+        try {
+            localStorage.setItem('pokedex_shinydex_' + currentGameSlug, isShinydexMode ? '1' : '0');
+            document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=' + (isShinydexMode ? '1' : '0') + '; path=/; max-age=31536000; SameSite=Lax';
+        } catch (e) {}
+        applyShinydexMode(isShinydexMode);
+    }
+
+    function updateProgressBarUI() {
+        const statCaught = document.getElementById('stat-caught');
+        const statPercent = document.getElementById('stat-percent');
+        const progressBar = document.getElementById('progress-bar');
+
+        const currentStats = isShinydexMode ? shinyStats : normalStats;
+        if (statCaught) statCaught.textContent = currentStats.caught;
+        if (statPercent) statPercent.textContent = currentStats.percent;
+        if (progressBar) {
+            progressBar.style.width = `${currentStats.percent}%`;
+            if (isShinydexMode) {
+                progressBar.className = 'bg-gradient-to-r from-amber-400 to-yellow-300 h-full rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]';
+            } else {
+                progressBar.className = (
+                    currentGameSlug === 'yellow' ? 'bg-amber-400' :
+                    (currentGameSlug === 'blue' ? 'bg-blue-600' :
+                    (currentGameSlug === 'gold' ? 'bg-[#c59b27]' : 'bg-red-600'))
+                ) + ' h-full rounded-full transition-all duration-300';
+            }
+        }
+    }
+
+    function updateCardUI(card, isCaught) {
+        const entryId = card.dataset.entryId;
+        const btn = document.getElementById(`btn-${entryId}`);
+        const btnText = document.getElementById(`btn-text-${entryId}`);
+        const statusBadge = document.getElementById(`status-badge-${entryId}`);
+
+        if (isCaught) {
+            card.classList.remove('uncaught-card');
+            card.classList.add('caught-card');
+            if (btnText) btnText.textContent = 'Liberar';
+            if (btn) btn.className = THEME_CAUGHT_BTN;
+            if (statusBadge) {
+                statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">✓</span><span class="status-text font-black">' + (isShinydexMode ? 'Variocolor' : 'Atrapado') + '</span>';
+                statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 ' + (isShinydexMode ? 'bg-amber-400 text-slate-950' : THEME_STATUS_CAUGHT_CLASS);
+            }
+        } else {
+            card.classList.remove('caught-card');
+            card.classList.add('uncaught-card');
+            if (btnText) btnText.textContent = 'Capturar';
+            if (btn) btn.className = THEME_UNCAUGHT_BTN;
+            if (statusBadge) {
+                statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0"></span><span class="status-text font-black">Falta</span>';
+                statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 bg-slate-100 text-slate-500';
+            }
+        }
+    }
+
+    function applyShinydexMode(active) {
+        const btnToggle = document.getElementById('btn-toggle-shinydex');
+        const icon = document.getElementById('shinydex-icon');
+        const title = document.getElementById('progress-card-title');
+        const dot = document.getElementById('progress-dot');
+        const btnTransfers = document.getElementById('btn-transfers');
+
+        if (active) {
+            if (btnToggle) {
+                btnToggle.setAttribute('title', 'Modo Shinydex activo (Clic para volver a la Pokédex normal)');
+            }
+            if (icon) {
+                icon.className = 'w-7 h-7 sm:w-8 sm:h-8 object-contain pixel-art drop-shadow-[0_0_10px_rgba(245,158,11,1)]';
+            }
+            if (title) title.textContent = 'Progreso Shinydex';
+            if (dot) dot.className = 'w-2 h-2 rounded-full bg-amber-400';
+
+            // Ocultar botón de transferencias en Shinydex (los de Gen 1 no pueden ser shiny)
+            if (btnTransfers) {
+                btnTransfers.style.display = 'none';
+            }
+        } else {
+            if (btnToggle) {
+                btnToggle.setAttribute('title', 'Alternar entre Pokédex normal y Shinydex (Variocolor)');
+            }
+            if (icon) {
+                icon.className = 'w-7 h-7 sm:w-8 sm:h-8 object-contain pixel-art drop-shadow';
+            }
+            if (title) title.textContent = 'Progreso de Captura';
+            if (dot) {
+                dot.className = 'w-2 h-2 rounded-full ' + (
+                    currentGameSlug === 'blue' ? 'bg-blue-600' :
+                    (currentGameSlug === 'yellow' ? 'bg-amber-500' :
+                    (currentGameSlug === 'gold' ? 'bg-[#c59b27]' : 'bg-red-600'))
+                );
+            }
+
+            // Restaurar botón de transferencias si existe
+            if (btnTransfers) {
+                btnTransfers.style.display = '';
+            }
+        }
+
+        // Actualizar métricas de progreso
+        updateProgressBarUI();
+
+        // Actualizar imágenes y estados de todas las tarjetas
+        document.querySelectorAll('.pokemon-card').forEach(card => {
+            const entryId = card.dataset.entryId;
+            const img = document.getElementById(`img-${entryId}`);
+            const isCaught = active 
+                ? (card.dataset.shinyCaught === 'true')
+                : (card.dataset.caught === 'true');
+
+            if (img) {
+                if (active) {
+                    if (currentSpriteStyle === 'retro') {
+                        img.src = card.dataset.spriteRetroShiny || card.dataset.spriteModernShiny;
+                        img.classList.add('pixel-art');
+                    } else {
+                        img.src = card.dataset.spriteModernShiny || card.dataset.spriteRetroShiny;
+                        img.classList.remove('pixel-art');
+                    }
+                } else {
+                    if (currentSpriteStyle === 'retro') {
+                        img.src = card.dataset.spriteRetro;
+                        img.classList.add('pixel-art');
+                    } else {
+                        img.src = card.dataset.spriteModern;
+                        img.classList.remove('pixel-art');
+                    }
+                }
+            }
+
+            updateCardUI(card, isCaught);
+        });
+
+        // Reevaluar filtro activo de estado
+        filterCards();
     }
 
     function setSpriteStyle(style) {
@@ -47,12 +196,22 @@
             const entryId = card.dataset.entryId;
             const img = document.getElementById(`img-${entryId}`);
             if (img) {
-                if (style === 'retro') {
-                    img.src = card.dataset.spriteRetro;
-                    img.classList.add('pixel-art');
+                if (isShinydexMode) {
+                    if (style === 'retro') {
+                        img.src = card.dataset.spriteRetroShiny || card.dataset.spriteModernShiny;
+                        img.classList.add('pixel-art');
+                    } else {
+                        img.src = card.dataset.spriteModernShiny || card.dataset.spriteRetroShiny;
+                        img.classList.remove('pixel-art');
+                    }
                 } else {
-                    img.src = card.dataset.spriteModern;
-                    img.classList.remove('pixel-art');
+                    if (style === 'retro') {
+                        img.src = card.dataset.spriteRetro;
+                        img.classList.add('pixel-art');
+                    } else {
+                        img.src = card.dataset.spriteModern;
+                        img.classList.remove('pixel-art');
+                    }
                 }
             }
         });
@@ -84,12 +243,22 @@
                     const d = JSON.parse(dataScript.textContent);
                     const modalImg = document.getElementById('modal-pokemon-img');
                     if (modalImg) {
-                        if (style === 'retro' && d.sprite_retro) {
-                            modalImg.src = d.sprite_retro;
-                            modalImg.classList.add('pixel-art');
+                        if (isShinydexMode) {
+                            if (style === 'retro' && d.sprite_retro_shiny) {
+                                modalImg.src = d.sprite_retro_shiny;
+                                modalImg.classList.add('pixel-art');
+                            } else {
+                                modalImg.src = d.sprite_modern_shiny || d.sprite_retro_shiny || d.sprite_modern;
+                                modalImg.classList.remove('pixel-art');
+                            }
                         } else {
-                            modalImg.src = d.sprite_modern;
-                            modalImg.classList.remove('pixel-art');
+                            if (style === 'retro' && d.sprite_retro) {
+                                modalImg.src = d.sprite_retro;
+                                modalImg.classList.add('pixel-art');
+                            } else {
+                                modalImg.src = d.sprite_modern;
+                                modalImg.classList.remove('pixel-art');
+                            }
                         }
                     }
                 } catch (e) {
@@ -136,7 +305,9 @@
             const type2 = card.dataset.type2 || '';
             const type1Es = card.dataset.type1Es || '';
             const type2Es = card.dataset.type2Es || '';
-            const isCaught = card.dataset.caught === 'true';
+            const isCaught = isShinydexMode 
+                ? (card.dataset.shinyCaught === 'true')
+                : (card.dataset.caught === 'true');
 
             // Filtro de texto (nombre, número de Pokédex o tipo en español/inglés)
             const matchesText = !query || 
@@ -167,7 +338,6 @@
     async function toggleCatch(entryId) {
         const card = document.getElementById(`card-${entryId}`);
         const btn = document.getElementById(`btn-${entryId}`);
-        const btnText = document.getElementById(`btn-text-${entryId}`);
 
         if (btn) {
             btn.disabled = true;
@@ -181,7 +351,10 @@
                     'Content-Type': 'application/json',
                     'X-CSRFToken': getCsrfToken(),
                 },
-                body: JSON.stringify({ entry_id: entryId })
+                body: JSON.stringify({ 
+                    entry_id: entryId,
+                    is_shiny: isShinydexMode
+                })
             });
 
             if (!response.ok) {
@@ -190,29 +363,14 @@
 
             const data = await response.json();
             if (data.success) {
-                // Actualizar tarjeta
+                // Actualizar dataset y aspecto de la tarjeta
                 if (card) {
-                    card.dataset.caught = data.is_caught ? 'true' : 'false';
-                    const statusBadge = document.getElementById(`status-badge-${entryId}`);
-                    if (data.is_caught) {
-                        card.classList.remove('uncaught-card');
-                        card.classList.add('caught-card');
-                        if (btnText) btnText.textContent = 'Liberar';
-                        if (btn) btn.className = THEME_CAUGHT_BTN;
-                        if (statusBadge) {
-                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">✓</span><span class="status-text font-black">Atrapado</span>';
-                            statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 ' + THEME_STATUS_CAUGHT_CLASS;
-                        }
+                    if (isShinydexMode) {
+                        card.dataset.shinyCaught = data.is_caught ? 'true' : 'false';
                     } else {
-                        card.classList.remove('caught-card');
-                        card.classList.add('uncaught-card');
-                        if (btnText) btnText.textContent = 'Capturar';
-                        if (btn) btn.className = THEME_UNCAUGHT_BTN;
-                        if (statusBadge) {
-                            statusBadge.innerHTML = '<span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0"></span><span class="status-text font-black">Falta</span>';
-                            statusBadge.className = 'card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 bg-slate-100 text-slate-500';
-                        }
+                        card.dataset.caught = data.is_caught ? 'true' : 'false';
                     }
+                    updateCardUI(card, data.is_caught);
                 }
 
                 // Sincronizar con el modal si está abierto para este Pokémon
@@ -220,19 +378,21 @@
                     updateModalCatchStatus(data.is_caught);
                 }
 
-                // Sincronizar con la tarjeta de exclusivos si este Pokémon está en ella
-                updateExclusivesCardStatus(entryId, data.is_caught);
+                // Si estamos en modo normal, sincronizar exclusivos y transferencias
+                if (!isShinydexMode) {
+                    updateExclusivesCardStatus(entryId, data.is_caught);
+                    updateTransfersCardStatus(entryId, data.is_caught);
+                }
 
-                // Sincronizar con la tarjeta de transferencias si este Pokémon está en ella
-                updateTransfersCardStatus(entryId, data.is_caught);
-
-                // Actualizar métricas globales
-                const statCaught = document.getElementById('stat-caught');
-                const statPercent = document.getElementById('stat-percent');
-                const progressBar = document.getElementById('progress-bar');
-                if (statCaught) statCaught.textContent = data.caught_count;
-                if (statPercent) statPercent.textContent = data.percent;
-                if (progressBar) progressBar.style.width = `${data.percent}%`;
+                // Actualizar métricas globales de la barra activa
+                if (isShinydexMode) {
+                    shinyStats.caught = data.caught_count;
+                    shinyStats.percent = data.percent;
+                } else {
+                    normalStats.caught = data.caught_count;
+                    normalStats.percent = data.percent;
+                }
+                updateProgressBarUI();
 
                 // Si hay filtro activo, evaluar visibilidad
                 if (currentStatusFilter !== 'all') {
@@ -321,15 +481,25 @@
                 : '"No hay descripción de Pokédex registrada para esta versión."';
         }
 
-        // 2. Sprite según estilo activo (retro o modern)
+        // 2. Sprite según estilo activo (retro o modern) y modo (normal o shiny)
         const modalImg = document.getElementById('modal-pokemon-img');
         if (modalImg) {
-            if (currentSpriteStyle === 'retro' && data.sprite_retro) {
-                modalImg.src = data.sprite_retro;
-                modalImg.classList.add('pixel-art');
+            if (isShinydexMode) {
+                if (currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
+                    modalImg.src = data.sprite_retro_shiny;
+                    modalImg.classList.add('pixel-art');
+                } else {
+                    modalImg.src = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
+                    modalImg.classList.remove('pixel-art');
+                }
             } else {
-                modalImg.src = data.sprite_modern;
-                modalImg.classList.remove('pixel-art');
+                if (currentSpriteStyle === 'retro' && data.sprite_retro) {
+                    modalImg.src = data.sprite_retro;
+                    modalImg.classList.add('pixel-art');
+                } else {
+                    modalImg.src = data.sprite_modern;
+                    modalImg.classList.remove('pixel-art');
+                }
             }
             modalImg.alt = data.name;
         }
@@ -463,7 +633,9 @@
 
         // 6. Estado de captura actual
         const card = document.getElementById(`card-${entryId}`);
-        const isCaught = card ? (card.dataset.caught === 'true') : false;
+        const isCaught = card ? (
+            isShinydexMode ? (card.dataset.shinyCaught === 'true') : (card.dataset.caught === 'true')
+        ) : false;
         updateModalCatchStatus(isCaught);
 
         // 7. Mostrar modal
@@ -638,13 +810,15 @@
 
         if (badge && btn && text) {
             if (isCaught) {
-                badge.className = 'px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a]';
-                badge.textContent = '✓ Atrapado en tu partida';
+                badge.className = isShinydexMode
+                    ? 'px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-amber-400 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a]'
+                    : 'px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a]';
+                badge.textContent = isShinydexMode ? '★ Variocolor atrapado' : '✓ Atrapado en tu partida';
                 btn.className = 'py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-rose-500 hover:bg-rose-600 text-white transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5';
                 text.textContent = 'Liberar';
             } else {
                 badge.className = 'px-2.5 py-1 rounded-md text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-slate-200 text-slate-700 shadow-[1.5px_1.5px_0px_0px_#0f172a]';
-                badge.textContent = 'Pendiente de capturar';
+                badge.textContent = isShinydexMode ? 'Variocolor pendiente' : 'Pendiente de capturar';
                 btn.className = 'py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-emerald-500 hover:bg-emerald-600 text-white transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5';
                 text.textContent = 'Capturar';
             }
@@ -884,6 +1058,26 @@
             const savedStyle = localStorage.getItem('pokedex_sprite_style');
             if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
                 setSpriteStyle(savedStyle);
+            }
+        } catch (e) {}
+
+        try {
+            const gameGen = parseInt(document.getElementById('game-generation')?.value || 1, 10);
+            if (gameGen >= 2) {
+                const savedShinydex = localStorage.getItem('pokedex_shinydex_' + currentGameSlug);
+                // Si la cookie no estaba sincronizada pero en localStorage sí
+                if (savedShinydex === '1' && !isShinydexMode) {
+                    isShinydexMode = true;
+                    applyShinydexMode(true);
+                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=1; path=/; max-age=31536000; SameSite=Lax';
+                } else if (savedShinydex === '0' && isShinydexMode) {
+                    isShinydexMode = false;
+                    applyShinydexMode(false);
+                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
+                } else if (savedShinydex === null && isShinydexMode) {
+                    // Sincronizar localStorage si el servidor inició en shiny
+                    localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
+                }
             }
         } catch (e) {}
     });

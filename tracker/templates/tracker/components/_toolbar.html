@@ -42,6 +42,7 @@
             id="btn-transfers" 
             class="flex items-center gap-1.5 px-2 py-1 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
             title="Ver Pokémon a transferir ({{ transfers_info.mechanic_title }})"
+            {% if is_shinydex_active %}style="display: none;"{% endif %}
         >
             <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 border border-slate-950 shrink-0"></span>
             <span class="text-indigo-600 group-hover:text-indigo-800">

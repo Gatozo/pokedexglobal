@@ -13,21 +13,45 @@
     </div>
 
     <!-- Progress Metric (Estilo Tarjeta Coleccionable Cómic) -->
-    <div class="z-10 bg-white border-2 border-slate-950 rounded-2xl p-3.5 sm:p-4 min-w-[250px] shadow-[3.5px_3.5px_0px_#0f172a] text-center md:text-right">
-        <div class="text-[11px] font-black uppercase tracking-wider text-slate-600 flex items-center justify-center md:justify-end gap-1.5">
-            <span class="w-2 h-2 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
-            Progreso de Captura
+    <div id="progress-card" class="z-10 bg-white border-2 border-slate-950 rounded-2xl p-3.5 sm:p-4 min-w-[260px] shadow-[3.5px_3.5px_0px_#0f172a] text-center md:text-right transition-colors duration-200">
+        <div class="text-[11px] font-black uppercase tracking-wider text-slate-600 flex items-center justify-between gap-1.5">
+            <div class="flex items-center gap-1.5">
+                <span id="progress-dot" class="w-2 h-2 rounded-full {% if is_shinydex_active %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %}"></span>
+                <span id="progress-card-title">{% if is_shinydex_active %}Progreso Shinydex{% else %}Progreso de Captura{% endif %}</span>
+            </div>
         </div>
-        <div class="text-2xl sm:text-3xl font-black mt-0.5 flex items-baseline justify-center md:justify-end gap-1.5 font-mono">
-            <span id="stat-caught" class="{% if game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% elif game.slug == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
-                {{ caught_count }}
+        <div class="text-2xl sm:text-3xl font-black mt-1 flex items-center justify-center md:justify-end gap-2 font-mono">
+            {% if game.generation >= 2 %}
+            <button 
+                type="button" 
+                id="btn-toggle-shinydex"
+                onclick="toggleShinydexMode()"
+                title="{% if is_shinydex_active %}Modo Shinydex activo (Clic para volver a la Pokédex normal){% else %}Alternar entre Pokédex normal y Shinydex (Variocolor){% endif %}"
+                class="cursor-pointer focus:outline-none shrink-0 mr-1"
+            >
+                <img 
+                    id="shinydex-icon"
+                    src="/media/items/star-piece.png" 
+                    alt="Fragmento Estrella - Shinydex" 
+                    class="w-7 h-7 sm:w-8 sm:h-8 object-contain pixel-art drop-shadow{% if is_shinydex_active %} drop-shadow-[0_0_10px_rgba(245,158,11,1)]{% endif %}"
+                >
+            </button>
+            {% endif %}
+            <span id="stat-caught" class="{% if is_shinydex_active %}text-amber-600{% elif game.slug == 'yellow' %}text-amber-600{% elif game.slug == 'blue' %}text-blue-600{% elif game.slug == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} text-3xl sm:text-4xl">
+                {% if is_shinydex_active %}{{ shiny_caught_count }}{% else %}{{ caught_count }}{% endif %}
             </span>
             <span class="text-slate-400 text-xl font-bold">/</span>
             <span id="stat-total" class="text-xl font-black text-slate-800">{{ total_pokemon }}</span>
-            <span class="text-xs font-black text-slate-500 ml-1">(<span id="stat-percent">{{ caught_percent }}</span>%)</span>
+            <span class="text-xs font-black text-slate-500 ml-1">(<span id="stat-percent">{% if is_shinydex_active %}{{ shiny_caught_percent }}{% else %}{{ caught_percent }}{% endif %}</span>%)</span>
         </div>
         <div class="w-full bg-slate-100 border-2 border-slate-950 rounded-full h-3.5 mt-2 overflow-hidden p-0.5 shadow-inner">
-            <div id="progress-bar" class="{% if game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ caught_percent }}%"></div>
+            <div id="progress-bar" class="{% if is_shinydex_active %}bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {% if is_shinydex_active %}{{ shiny_caught_percent }}{% else %}{{ caught_percent }}{% endif %}%"></div>
         </div>
+        <!-- Metadatos de inicialización de progreso para JavaScript -->
+        <input type="hidden" id="initial-normal-caught" value="{{ caught_count }}">
+        <input type="hidden" id="initial-normal-percent" value="{{ caught_percent }}">
+        <input type="hidden" id="initial-shiny-caught" value="{{ shiny_caught_count|default:0 }}">
+        <input type="hidden" id="initial-shiny-percent" value="{{ shiny_caught_percent|default:0 }}">
+        <input type="hidden" id="game-generation" value="{{ game.generation }}">
     </div>
 </div>

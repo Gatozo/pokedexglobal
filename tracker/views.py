@@ -77,15 +77,19 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
 
     user, session_key = _get_user_or_session(request)
 
-    # Obtener IDs de las entradas capturadas por el usuario actual
-    catch_filter = {"pokedex_entry__pokedex": pokedex, "is_caught": True}
+    # Base filter for current user/session
+    user_filter = {"pokedex_entry__pokedex": pokedex}
     if user:
-        catch_filter["user"] = user
+        user_filter["user"] = user
     else:
-        catch_filter["session_key"] = session_key
+        user_filter["session_key"] = session_key
 
+    # Obtener IDs de las entradas capturadas normales y shiny por el usuario actual
     caught_entry_ids = set(
-        UserPokemonCatch.objects.filter(**catch_filter).values_list("pokedex_entry_id", flat=True)
+        UserPokemonCatch.objects.filter(**user_filter, is_caught=True).values_list("pokedex_entry_id", flat=True)
+    )
+    shiny_caught_entry_ids = set(
+        UserPokemonCatch.objects.filter(**user_filter, is_shiny=True).values_list("pokedex_entry_id", flat=True)
     )
 
     # Copias superficiales ultra-rápidas (~1 ms) para anotar estado de captura específico del usuario de forma thread-safe
@@ -93,14 +97,22 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     entries_by_num = {}
     for entry in entries_list:
         entry.is_caught = entry.id in caught_entry_ids
+        entry.is_shiny_caught = entry.id in shiny_caught_entry_ids
         entries_by_num[entry.pokemon.national_number] = entry
 
     total_pokemon = len(entries_list)
     caught_count = len(caught_entry_ids)
     caught_percent = round((caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 
+    shiny_caught_count = len(shiny_caught_entry_ids)
+    shiny_caught_percent = round((shiny_caught_count / total_pokemon * 100), 1) if total_pokemon else 0
+
     exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
     transfers_info = get_version_transfers_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
+
+    is_shinydex_active = False
+    if game.generation >= 2:
+        is_shinydex_active = request.COOKIES.get(f"pokedex_shinydex_{game.slug}") == "1"
 
     context = {
         "game": game,
@@ -108,9 +120,13 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "game_pokedexes": list(game.pokedexes.all().order_by("id")),
         "entries": entries_list,
         "caught_entry_ids": caught_entry_ids,
+        "shiny_caught_entry_ids": shiny_caught_entry_ids,
         "total_pokemon": total_pokemon,
         "caught_count": caught_count,
         "caught_percent": caught_percent,
+        "shiny_caught_count": shiny_caught_count,
+        "shiny_caught_percent": shiny_caught_percent,
+        "is_shinydex_active": is_shinydex_active,
         "all_games": _get_cached_all_games(),
         "exclusives_info": exclusives_info,
         "transfers_info": transfers_info,
@@ -121,10 +137,11 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
 
 @require_POST
 def toggle_catch(request):
-    """Endpoint AJAX para marcar/desmarcar un Pokémon como capturado."""
+    """Endpoint AJAX para marcar/desmarcar un Pokémon como capturado (normal o shiny)."""
     try:
         data = json.loads(request.body)
         entry_id = data.get("entry_id")
+        is_shiny = bool(data.get("is_shiny", False))
     except (ValueError, KeyError):
         return JsonResponse({"error": "Payload JSON inválido"}, status=400)
 
@@ -138,18 +155,23 @@ def toggle_catch(request):
         filter_kwargs["session_key"] = session_key
 
     catch_record, _ = UserPokemonCatch.objects.get_or_create(
-        defaults={"is_caught": False},
+        defaults={"is_caught": False, "is_shiny": False},
         **filter_kwargs
     )
 
-    # Alternar estado
-    new_status = not catch_record.is_caught
-    catch_record.is_caught = new_status
-    catch_record.caught_at = timezone.now() if new_status else None
-    catch_record.save(update_fields=["is_caught", "caught_at"])
+    # Alternar estado según la modalidad (normal vs shiny)
+    if is_shiny:
+        new_status = not catch_record.is_shiny
+        catch_record.is_shiny = new_status
+        catch_record.save(update_fields=["is_shiny"])
+        stats_filter = {"pokedex_entry__pokedex": entry.pokedex, "is_shiny": True}
+    else:
+        new_status = not catch_record.is_caught
+        catch_record.is_caught = new_status
+        catch_record.caught_at = timezone.now() if new_status else None
+        catch_record.save(update_fields=["is_caught", "caught_at"])
+        stats_filter = {"pokedex_entry__pokedex": entry.pokedex, "is_caught": True}
 
-    # Recalcular totales para la Pokédex actual
-    stats_filter = {"pokedex_entry__pokedex": entry.pokedex, "is_caught": True}
     if user:
         stats_filter["user"] = user
     else:
@@ -163,6 +185,7 @@ def toggle_catch(request):
         "success": True,
         "entry_id": entry.id,
         "is_caught": new_status,
+        "is_shiny": is_shiny,
         "caught_count": caught_count,
         "total_count": total_count,
         "percent": percent,

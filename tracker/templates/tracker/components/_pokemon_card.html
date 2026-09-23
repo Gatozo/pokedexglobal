@@ -1,6 +1,6 @@
 <div 
     id="card-{{ entry.id }}"
-    class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between h-full group cursor-pointer select-none {% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}"
+    class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between h-full group cursor-pointer select-none {% if is_shinydex_active %}{% if entry.is_shiny_caught %}caught-card{% else %}uncaught-card{% endif %}{% else %}{% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}{% endif %}"
     data-entry-id="{{ entry.id }}"
     data-number="{{ entry.entry_number }}"
     data-name="{{ entry.pokemon.name }}"
@@ -10,8 +10,11 @@
     data-type1-es="{{ entry.primary_type_es|lower }}"
     data-type2-es="{{ entry.secondary_type_es|default:''|lower }}"
     data-caught="{% if entry.is_caught %}true{% else %}false{% endif %}"
+    data-shiny-caught="{% if entry.is_shiny_caught %}true{% else %}false{% endif %}"
     data-sprite-retro="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}"
     data-sprite-modern="{{ entry.pokemon.sprite_url }}"
+    data-sprite-retro-shiny="{{ entry.game_sprite_shiny_url }}"
+    data-sprite-modern-shiny="{{ entry.modern_sprite_shiny_url }}"
     onclick="openPokemonModal({{ entry.id }})"
 >
     <!-- Embedded JSON data for Comic Modal -->
@@ -48,12 +51,12 @@
         </div>
 
         <!-- Casilla / Badge de Captura con Acento Temático del Juego -->
-        <div id="status-badge-{{ entry.id }}" class="card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 {% if entry.is_caught %}status-caught-active{% else %}bg-slate-100 text-slate-500{% endif %}">
+        <div id="status-badge-{{ entry.id }}" class="card-status-indicator h-6 min-w-[78px] flex items-center justify-center gap-1 px-1.5 rounded-md text-[10px] font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] shrink-0 {% if is_shinydex_active %}{% if entry.is_shiny_caught %}status-caught-active{% else %}bg-slate-100 text-slate-500{% endif %}{% else %}{% if entry.is_caught %}status-caught-active{% else %}bg-slate-100 text-slate-500{% endif %}{% endif %}">
             <span class="status-check-box w-2.5 h-2.5 rounded-sm border border-current flex items-center justify-center text-[8px] leading-none shrink-0">
-                {% if entry.is_caught %}✓{% endif %}
+                {% if is_shinydex_active %}{% if entry.is_shiny_caught %}✓{% endif %}{% else %}{% if entry.is_caught %}✓{% endif %}{% endif %}
             </span>
             <span class="status-text font-black">
-                {% if entry.is_caught %}Atrapado{% else %}Falta{% endif %}
+                {% if is_shinydex_active %}{% if entry.is_shiny_caught %}Atrapado{% else %}Falta{% endif %}{% else %}{% if entry.is_caught %}Atrapado{% else %}Falta{% endif %}{% endif %}
             </span>
         </div>
     </div>
@@ -63,7 +66,7 @@
         <div class="absolute inset-2 rounded-full bg-slate-100/80 border border-slate-200/70 pointer-events-none group-hover:scale-105 transition-transform"></div>
         <img 
             id="img-{{ entry.id }}"
-            src="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}" 
+            src="{% if is_shinydex_active %}{{ entry.game_sprite_shiny_url }}{% else %}{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}{% endif %}" 
             alt="{{ entry.pokemon.display_name }}"
             loading="lazy"
             class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 drop-shadow-md pixel-art relative z-10"
@@ -92,14 +95,14 @@
         type="button"
         onclick="event.stopPropagation(); toggleCatch({{ entry.id }})"
         id="btn-{{ entry.id }}"
-        class="card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 {% if entry.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}"
+        class="card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 {% if is_shinydex_active %}{% if entry.is_shiny_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}{% else %}{% if entry.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-400 text-white{% endif %}{% endif %}"
     >
         <!-- Icon Pokéball -->
         <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
         </svg>
         <span id="btn-text-{{ entry.id }}">
-            {% if entry.is_caught %}Liberar{% else %}Capturar{% endif %}
+            {% if is_shinydex_active %}{% if entry.is_shiny_caught %}Liberar{% else %}Capturar{% endif %}{% else %}{% if entry.is_caught %}Liberar{% else %}Capturar{% endif %}{% endif %}
         </span>
     </button>
 </div>

@@ -1340,6 +1340,112 @@ class FixtureExportTests(TestCase):
         self.assertContains(response, "id=\"btn-transfers\"")
         self.assertContains(response, "id=\"transfers-modal\"")
 
+    def test_shinydex_button_generation_exclusivity(self):
+        """Verifica que el botón de Shinydex NO aparezca en Gen 1 (Rojo/Azul/Amarillo) y SÍ en Gen >= 2 (Oro)."""
+        # Gen 1: Rojo
+        url_red = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        res_red = self.client.get(url_red)
+        self.assertEqual(res_red.status_code, 200)
+        self.assertNotContains(res_red, "id=\"btn-toggle-shinydex\"")
+
+        # Gen 2: Oro
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        url_gold = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+        res_gold = self.client.get(url_gold)
+        self.assertEqual(res_gold.status_code, 200)
+        self.assertContains(res_gold, "id=\"btn-toggle-shinydex\"")
+        self.assertContains(res_gold, "star-piece.png")
+
+    def test_shinydex_server_side_cookie_rendering(self):
+        """Verifica que con la cookie activa, el servidor renderiza directamente la Shinydex instantáneamente."""
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        p, _ = Pokemon.objects.get_or_create(national_number=152, defaults={"name": "chikorita", "display_name": "Chikorita", "primary_type": "grass"})
+        PokedexEntry.objects.get_or_create(pokedex=johto_dex, pokemon=p, defaults={"entry_number": 1})
+
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+        self.client.cookies["pokedex_shinydex_gold"] = "1"
+        res = self.client.get(url)
+        self.assertEqual(res.status_code, 200)
+        self.assertContains(res, "Progreso Shinydex")
+        self.assertContains(res, "drop-shadow-[0_0_10px_rgba(245,158,11,1)]")
+        self.assertContains(res, "gold_shiny/152.png")
+
+    def test_shinydex_catch_independence(self):
+        """Verifica la total independencia entre la captura normal y la captura shiny."""
+        url = reverse("tracker:toggle_catch")
+
+        # 1. Capturar normal
+        res_norm = self.client.post(url, data={"entry_id": self.entry.id, "is_shiny": False}, content_type="application/json")
+        self.assertEqual(res_norm.status_code, 200)
+        d_norm = res_norm.json()
+        self.assertTrue(d_norm["is_caught"])
+        self.assertFalse(d_norm["is_shiny"])
+        self.assertEqual(d_norm["caught_count"], 1)
+
+        # Registro en BD
+        catch = UserPokemonCatch.objects.get(pokedex_entry=self.entry)
+        self.assertTrue(catch.is_caught)
+        self.assertFalse(catch.is_shiny)
+
+        # 2. Capturar shiny
+        res_shiny = self.client.post(url, data={"entry_id": self.entry.id, "is_shiny": True}, content_type="application/json")
+        self.assertEqual(res_shiny.status_code, 200)
+        d_shiny = res_shiny.json()
+        self.assertTrue(d_shiny["is_caught"])  # En contexto shiny, is_caught refleja catch_record.is_shiny
+        self.assertTrue(d_shiny["is_shiny"])
+        self.assertEqual(d_shiny["caught_count"], 1)
+
+        # Registro en BD: ambos deben estar capturados
+        catch.refresh_from_db()
+        self.assertTrue(catch.is_caught)
+        self.assertTrue(catch.is_shiny)
+
+        # 3. Liberar normal (la captura shiny debe permanecer intacta)
+        res_rel_norm = self.client.post(url, data={"entry_id": self.entry.id, "is_shiny": False}, content_type="application/json")
+        self.assertEqual(res_rel_norm.status_code, 200)
+        d_rel_norm = res_rel_norm.json()
+        self.assertFalse(d_rel_norm["is_caught"])
+        self.assertEqual(d_rel_norm["caught_count"], 0)
+
+        catch.refresh_from_db()
+        self.assertFalse(catch.is_caught)
+        self.assertTrue(catch.is_shiny)
+
+        # 4. Liberar shiny
+        res_rel_shiny = self.client.post(url, data={"entry_id": self.entry.id, "is_shiny": True}, content_type="application/json")
+        self.assertEqual(res_rel_shiny.status_code, 200)
+        d_rel_shiny = res_rel_shiny.json()
+        self.assertFalse(d_rel_shiny["is_caught"])
+        self.assertEqual(d_rel_shiny["caught_count"], 0)
+
+        catch.refresh_from_db()
+        self.assertFalse(catch.is_caught)
+        self.assertFalse(catch.is_shiny)
+
+    def test_pokemon_and_pokedex_entry_shiny_properties(self):
+        """Verifica que las propiedades de sprites shiny se generen adecuadamente."""
+        self.assertIn("shiny/1.png", self.pokemon.sprite_shiny_url)
+        self.assertIn("official-artwork/shiny/1.png", self.pokemon.artwork_shiny_url)
+        self.assertIn("shiny/1.png", self.entry.modern_sprite_shiny_url)
+
+        # Para juego Gen 2 Oro
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+        entry_gold, _ = PokedexEntry.objects.get_or_create(pokedex=johto_dex, pokemon=self.pokemon, defaults={"entry_number": 1})
+        self.assertTrue(
+            entry_gold.game_sprite_shiny_url.endswith("/pokemon/sprites/gold_shiny/1.png") or
+            "gold/shiny/1.png" in entry_gold.game_sprite_shiny_url
+        )
+
+        # modal_data_json debe incluir las claves shiny
+        import json
+        data = json.loads(entry_gold.modal_data_json)
+        self.assertIn("sprite_retro_shiny", data)
+        self.assertIn("sprite_modern_shiny", data)
+        self.assertIn("is_shiny_caught", data)
+
 
 
 
