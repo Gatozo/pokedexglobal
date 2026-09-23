@@ -65,6 +65,12 @@ body {
     background-image: radial-gradient(rgba(197, 155, 39, 0.18) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+{% elif game.slug == 'silver' %}
+body {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(rgba(100, 116, 139, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 {% else %}
 body {
     background-color: #faebed;
@@ -231,6 +237,26 @@ body {
 .status-caught-active {
     background-color: #c59b27 !important;
     color: #0f172a !important;
+    border-color: #0f172a !important;
+}
+{% elif game.slug == 'silver' %}
+.comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #64748b,
+        #64748b 12px,
+        #475569 12px,
+        #475569 24px
+    );
+}
+.pokemon-card.caught-card {
+    background-color: #f1f5f9 !important;
+    border-color: #334155 !important;
+    box-shadow: 3.5px 3.5px 0px 0px #334155;
+}
+.status-caught-active {
+    background-color: #64748b !important;
+    color: #ffffff !important;
     border-color: #0f172a !important;
 }
 {% else %}

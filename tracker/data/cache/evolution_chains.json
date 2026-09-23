@@ -1,4 +1,113 @@
 {
+  "https://pokeapi.co/api/v2/evolution-chain/1/": {
+    "id": 1,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/1/",
+        "name": "bulbasaur"
+      },
+      "evolves_to": [
+        {
+          "is_baby": false,
+          "species": {
+            "url": "https://pokeapi.co/api/v2/pokemon-species/2/",
+            "name": "ivysaur"
+          },
+          "evolves_to": [
+            {
+              "is_baby": false,
+              "species": {
+                "url": "https://pokeapi.co/api/v2/pokemon-species/3/",
+                "name": "venusaur"
+              },
+              "evolves_to": [],
+              "evolution_details": [
+                {
+                  "item": null,
+                  "gender": null,
+                  "region": null,
+                  "trigger": {
+                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                    "name": "level-up"
+                  },
+                  "location": null,
+                  "base_form": null,
+                  "held_item": null,
+                  "min_level": 32,
+                  "min_steps": null,
+                  "used_move": null,
+                  "is_default": true,
+                  "known_move": null,
+                  "min_beauty": null,
+                  "party_type": null,
+                  "time_of_day": "",
+                  "evolved_form": null,
+                  "min_affection": null,
+                  "min_happiness": null,
+                  "party_species": null,
+                  "trade_species": null,
+                  "version_group": {
+                    "url": "https://pokeapi.co/api/v2/version-group/1/",
+                    "name": "red-blue"
+                  },
+                  "min_move_count": null,
+                  "known_move_type": null,
+                  "min_damage_taken": null,
+                  "turn_upside_down": false,
+                  "near_special_rock": false,
+                  "needs_multiplayer": false,
+                  "needs_overworld_rain": false,
+                  "relative_physical_stats": null
+                }
+              ]
+            }
+          ],
+          "evolution_details": [
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "base_form": null,
+              "held_item": null,
+              "min_level": 16,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": null,
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "evolved_form": null,
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/1/",
+                "name": "red-blue"
+              },
+              "min_move_count": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "needs_overworld_rain": false,
+              "relative_physical_stats": null
+            }
+          ]
+        }
+      ],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
+  },
   "https://pokeapi.co/api/v2/evolution-chain/79/": {
     "id": 79,
     "chain": {
@@ -103,115 +212,6 @@
               "evolved_pokemon_form": null,
               "needs_overworld_rain": false,
               "required_pokemon_form": null,
-              "relative_physical_stats": null
-            }
-          ]
-        }
-      ],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
-  "https://pokeapi.co/api/v2/evolution-chain/1/": {
-    "id": 1,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/1/",
-        "name": "bulbasaur"
-      },
-      "evolves_to": [
-        {
-          "is_baby": false,
-          "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/2/",
-            "name": "ivysaur"
-          },
-          "evolves_to": [
-            {
-              "is_baby": false,
-              "species": {
-                "url": "https://pokeapi.co/api/v2/pokemon-species/3/",
-                "name": "venusaur"
-              },
-              "evolves_to": [],
-              "evolution_details": [
-                {
-                  "item": null,
-                  "gender": null,
-                  "region": null,
-                  "trigger": {
-                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                    "name": "level-up"
-                  },
-                  "location": null,
-                  "base_form": null,
-                  "held_item": null,
-                  "min_level": 32,
-                  "min_steps": null,
-                  "used_move": null,
-                  "is_default": true,
-                  "known_move": null,
-                  "min_beauty": null,
-                  "party_type": null,
-                  "time_of_day": "",
-                  "evolved_form": null,
-                  "min_affection": null,
-                  "min_happiness": null,
-                  "party_species": null,
-                  "trade_species": null,
-                  "version_group": {
-                    "url": "https://pokeapi.co/api/v2/version-group/1/",
-                    "name": "red-blue"
-                  },
-                  "min_move_count": null,
-                  "known_move_type": null,
-                  "min_damage_taken": null,
-                  "turn_upside_down": false,
-                  "near_special_rock": false,
-                  "needs_multiplayer": false,
-                  "needs_overworld_rain": false,
-                  "relative_physical_stats": null
-                }
-              ]
-            }
-          ],
-          "evolution_details": [
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "base_form": null,
-              "held_item": null,
-              "min_level": 16,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": null,
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "evolved_form": null,
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/1/",
-                "name": "red-blue"
-              },
-              "min_move_count": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "needs_overworld_rain": false,
               "relative_physical_stats": null
             }
           ]
@@ -530,115 +530,6 @@
     },
     "baby_trigger_item": null
   },
-  "https://pokeapi.co/api/v2/evolution-chain/3/": {
-    "id": 3,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/7/",
-        "name": "squirtle"
-      },
-      "evolves_to": [
-        {
-          "is_baby": false,
-          "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/8/",
-            "name": "wartortle"
-          },
-          "evolves_to": [
-            {
-              "is_baby": false,
-              "species": {
-                "url": "https://pokeapi.co/api/v2/pokemon-species/9/",
-                "name": "blastoise"
-              },
-              "evolves_to": [],
-              "evolution_details": [
-                {
-                  "item": null,
-                  "gender": null,
-                  "region": null,
-                  "trigger": {
-                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                    "name": "level-up"
-                  },
-                  "location": null,
-                  "base_form": null,
-                  "held_item": null,
-                  "min_level": 36,
-                  "min_steps": null,
-                  "used_move": null,
-                  "is_default": true,
-                  "known_move": null,
-                  "min_beauty": null,
-                  "party_type": null,
-                  "time_of_day": "",
-                  "evolved_form": null,
-                  "min_affection": null,
-                  "min_happiness": null,
-                  "party_species": null,
-                  "trade_species": null,
-                  "version_group": {
-                    "url": "https://pokeapi.co/api/v2/version-group/1/",
-                    "name": "red-blue"
-                  },
-                  "min_move_count": null,
-                  "known_move_type": null,
-                  "min_damage_taken": null,
-                  "turn_upside_down": false,
-                  "near_special_rock": false,
-                  "needs_multiplayer": false,
-                  "needs_overworld_rain": false,
-                  "relative_physical_stats": null
-                }
-              ]
-            }
-          ],
-          "evolution_details": [
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "base_form": null,
-              "held_item": null,
-              "min_level": 16,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": null,
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "evolved_form": null,
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/1/",
-                "name": "red-blue"
-              },
-              "min_move_count": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "needs_overworld_rain": false,
-              "relative_physical_stats": null
-            }
-          ]
-        }
-      ],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
   "https://pokeapi.co/api/v2/evolution-chain/81/": {
     "id": 81,
     "chain": {
@@ -752,27 +643,27 @@
     },
     "baby_trigger_item": null
   },
-  "https://pokeapi.co/api/v2/evolution-chain/4/": {
-    "id": 4,
+  "https://pokeapi.co/api/v2/evolution-chain/3/": {
+    "id": 3,
     "chain": {
       "is_baby": false,
       "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/10/",
-        "name": "caterpie"
+        "url": "https://pokeapi.co/api/v2/pokemon-species/7/",
+        "name": "squirtle"
       },
       "evolves_to": [
         {
           "is_baby": false,
           "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/11/",
-            "name": "metapod"
+            "url": "https://pokeapi.co/api/v2/pokemon-species/8/",
+            "name": "wartortle"
           },
           "evolves_to": [
             {
               "is_baby": false,
               "species": {
-                "url": "https://pokeapi.co/api/v2/pokemon-species/12/",
-                "name": "butterfree"
+                "url": "https://pokeapi.co/api/v2/pokemon-species/9/",
+                "name": "blastoise"
               },
               "evolves_to": [],
               "evolution_details": [
@@ -787,7 +678,7 @@
                   "location": null,
                   "base_form": null,
                   "held_item": null,
-                  "min_level": 10,
+                  "min_level": 36,
                   "min_steps": null,
                   "used_move": null,
                   "is_default": true,
@@ -828,7 +719,7 @@
               "location": null,
               "base_form": null,
               "held_item": null,
-              "min_level": 7,
+              "min_level": 16,
               "min_steps": null,
               "used_move": null,
               "is_default": true,
@@ -938,6 +829,115 @@
               "base_form": null,
               "held_item": null,
               "min_level": 18,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": null,
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "evolved_form": null,
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/1/",
+                "name": "red-blue"
+              },
+              "min_move_count": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "needs_overworld_rain": false,
+              "relative_physical_stats": null
+            }
+          ]
+        }
+      ],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
+  },
+  "https://pokeapi.co/api/v2/evolution-chain/4/": {
+    "id": 4,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/10/",
+        "name": "caterpie"
+      },
+      "evolves_to": [
+        {
+          "is_baby": false,
+          "species": {
+            "url": "https://pokeapi.co/api/v2/pokemon-species/11/",
+            "name": "metapod"
+          },
+          "evolves_to": [
+            {
+              "is_baby": false,
+              "species": {
+                "url": "https://pokeapi.co/api/v2/pokemon-species/12/",
+                "name": "butterfree"
+              },
+              "evolves_to": [],
+              "evolution_details": [
+                {
+                  "item": null,
+                  "gender": null,
+                  "region": null,
+                  "trigger": {
+                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                    "name": "level-up"
+                  },
+                  "location": null,
+                  "base_form": null,
+                  "held_item": null,
+                  "min_level": 10,
+                  "min_steps": null,
+                  "used_move": null,
+                  "is_default": true,
+                  "known_move": null,
+                  "min_beauty": null,
+                  "party_type": null,
+                  "time_of_day": "",
+                  "evolved_form": null,
+                  "min_affection": null,
+                  "min_happiness": null,
+                  "party_species": null,
+                  "trade_species": null,
+                  "version_group": {
+                    "url": "https://pokeapi.co/api/v2/version-group/1/",
+                    "name": "red-blue"
+                  },
+                  "min_move_count": null,
+                  "known_move_type": null,
+                  "min_damage_taken": null,
+                  "turn_upside_down": false,
+                  "near_special_rock": false,
+                  "needs_multiplayer": false,
+                  "needs_overworld_rain": false,
+                  "relative_physical_stats": null
+                }
+              ]
+            }
+          ],
+          "evolution_details": [
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "base_form": null,
+              "held_item": null,
+              "min_level": 7,
               "min_steps": null,
               "used_move": null,
               "is_default": true,
@@ -2359,115 +2359,6 @@
     },
     "baby_trigger_item": null
   },
-  "https://pokeapi.co/api/v2/evolution-chain/17/": {
-    "id": 17,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/41/",
-        "name": "zubat"
-      },
-      "evolves_to": [
-        {
-          "is_baby": false,
-          "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/42/",
-            "name": "golbat"
-          },
-          "evolves_to": [
-            {
-              "is_baby": false,
-              "species": {
-                "url": "https://pokeapi.co/api/v2/pokemon-species/169/",
-                "name": "crobat"
-              },
-              "evolves_to": [],
-              "evolution_details": [
-                {
-                  "item": null,
-                  "gender": null,
-                  "region": null,
-                  "trigger": {
-                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                    "name": "level-up"
-                  },
-                  "location": null,
-                  "base_form": null,
-                  "held_item": null,
-                  "min_level": null,
-                  "min_steps": null,
-                  "used_move": null,
-                  "is_default": true,
-                  "known_move": null,
-                  "min_beauty": null,
-                  "party_type": null,
-                  "time_of_day": "",
-                  "evolved_form": null,
-                  "min_affection": null,
-                  "min_happiness": 160,
-                  "party_species": null,
-                  "trade_species": null,
-                  "version_group": {
-                    "url": "https://pokeapi.co/api/v2/version-group/3/",
-                    "name": "gold-silver"
-                  },
-                  "min_move_count": null,
-                  "known_move_type": null,
-                  "min_damage_taken": null,
-                  "turn_upside_down": false,
-                  "near_special_rock": false,
-                  "needs_multiplayer": false,
-                  "needs_overworld_rain": false,
-                  "relative_physical_stats": null
-                }
-              ]
-            }
-          ],
-          "evolution_details": [
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "base_form": null,
-              "held_item": null,
-              "min_level": 22,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": null,
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "evolved_form": null,
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/1/",
-                "name": "red-blue"
-              },
-              "min_move_count": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "needs_overworld_rain": false,
-              "relative_physical_stats": null
-            }
-          ]
-        }
-      ],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
   "https://pokeapi.co/api/v2/evolution-chain/15/": {
     "id": 15,
     "chain": {
@@ -2561,6 +2452,115 @@
               "version_group": {
                 "url": "https://pokeapi.co/api/v2/version-group/21/",
                 "name": "the-isle-of-armor"
+              },
+              "min_move_count": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "needs_overworld_rain": false,
+              "relative_physical_stats": null
+            }
+          ]
+        }
+      ],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
+  },
+  "https://pokeapi.co/api/v2/evolution-chain/17/": {
+    "id": 17,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/41/",
+        "name": "zubat"
+      },
+      "evolves_to": [
+        {
+          "is_baby": false,
+          "species": {
+            "url": "https://pokeapi.co/api/v2/pokemon-species/42/",
+            "name": "golbat"
+          },
+          "evolves_to": [
+            {
+              "is_baby": false,
+              "species": {
+                "url": "https://pokeapi.co/api/v2/pokemon-species/169/",
+                "name": "crobat"
+              },
+              "evolves_to": [],
+              "evolution_details": [
+                {
+                  "item": null,
+                  "gender": null,
+                  "region": null,
+                  "trigger": {
+                    "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                    "name": "level-up"
+                  },
+                  "location": null,
+                  "base_form": null,
+                  "held_item": null,
+                  "min_level": null,
+                  "min_steps": null,
+                  "used_move": null,
+                  "is_default": true,
+                  "known_move": null,
+                  "min_beauty": null,
+                  "party_type": null,
+                  "time_of_day": "",
+                  "evolved_form": null,
+                  "min_affection": null,
+                  "min_happiness": 160,
+                  "party_species": null,
+                  "trade_species": null,
+                  "version_group": {
+                    "url": "https://pokeapi.co/api/v2/version-group/3/",
+                    "name": "gold-silver"
+                  },
+                  "min_move_count": null,
+                  "known_move_type": null,
+                  "min_damage_taken": null,
+                  "turn_upside_down": false,
+                  "near_special_rock": false,
+                  "needs_multiplayer": false,
+                  "needs_overworld_rain": false,
+                  "relative_physical_stats": null
+                }
+              ]
+            }
+          ],
+          "evolution_details": [
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "base_form": null,
+              "held_item": null,
+              "min_level": 22,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": null,
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "evolved_form": null,
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/1/",
+                "name": "red-blue"
               },
               "min_move_count": null,
               "known_move_type": null,
@@ -3194,6 +3194,138 @@
     },
     "baby_trigger_item": null
   },
+  "https://pokeapi.co/api/v2/evolution-chain/103/": {
+    "id": 103,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/206/",
+        "name": "dunsparce"
+      },
+      "evolves_to": [
+        {
+          "is_baby": false,
+          "species": {
+            "url": "https://pokeapi.co/api/v2/pokemon-species/982/",
+            "name": "dudunsparce"
+          },
+          "evolves_to": [],
+          "evolution_details": [
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "held_item": null,
+              "min_level": null,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": {
+                "url": "https://pokeapi.co/api/v2/move/887/",
+                "name": "hyper-drill"
+              },
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/25/",
+                "name": "scarlet-violet"
+              },
+              "min_move_count": null,
+              "allowed_natures": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "condition_expression": {
+                "variables": [
+                  {
+                    "url": "https://pokeapi.co/api/v2/evolution-variable/1/",
+                    "name": "encryption-constant"
+                  }
+                ],
+                "expression": "EC 100 % 0 !=",
+                "percentage_chance": 99
+              },
+              "evolved_pokemon_form": {
+                "url": "https://pokeapi.co/api/v2/pokemon-form/982/",
+                "name": "dudunsparce-two-segment"
+              },
+              "needs_overworld_rain": false,
+              "required_pokemon_form": null,
+              "relative_physical_stats": null
+            },
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "held_item": null,
+              "min_level": null,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": {
+                "url": "https://pokeapi.co/api/v2/move/887/",
+                "name": "hyper-drill"
+              },
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/25/",
+                "name": "scarlet-violet"
+              },
+              "min_move_count": null,
+              "allowed_natures": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "condition_expression": {
+                "variables": [
+                  {
+                    "url": "https://pokeapi.co/api/v2/evolution-variable/1/",
+                    "name": "encryption-constant"
+                  }
+                ],
+                "expression": "EC 100 % 0 ==",
+                "percentage_chance": 1
+              },
+              "evolved_pokemon_form": {
+                "url": "https://pokeapi.co/api/v2/pokemon-form/10424/",
+                "name": "dudunsparce-three-segment"
+              },
+              "needs_overworld_rain": false,
+              "required_pokemon_form": null,
+              "relative_physical_stats": null
+            }
+          ]
+        }
+      ],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
+  },
   "https://pokeapi.co/api/v2/evolution-chain/22/": {
     "id": 22,
     "chain": {
@@ -3339,138 +3471,6 @@
               "near_special_rock": false,
               "needs_multiplayer": false,
               "needs_overworld_rain": false,
-              "relative_physical_stats": null
-            }
-          ]
-        }
-      ],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
-  "https://pokeapi.co/api/v2/evolution-chain/103/": {
-    "id": 103,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/206/",
-        "name": "dunsparce"
-      },
-      "evolves_to": [
-        {
-          "is_baby": false,
-          "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/982/",
-            "name": "dudunsparce"
-          },
-          "evolves_to": [],
-          "evolution_details": [
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "held_item": null,
-              "min_level": null,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": {
-                "url": "https://pokeapi.co/api/v2/move/887/",
-                "name": "hyper-drill"
-              },
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/25/",
-                "name": "scarlet-violet"
-              },
-              "min_move_count": null,
-              "allowed_natures": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "condition_expression": {
-                "variables": [
-                  {
-                    "url": "https://pokeapi.co/api/v2/evolution-variable/1/",
-                    "name": "encryption-constant"
-                  }
-                ],
-                "expression": "EC 100 % 0 !=",
-                "percentage_chance": 99
-              },
-              "evolved_pokemon_form": {
-                "url": "https://pokeapi.co/api/v2/pokemon-form/982/",
-                "name": "dudunsparce-two-segment"
-              },
-              "needs_overworld_rain": false,
-              "required_pokemon_form": null,
-              "relative_physical_stats": null
-            },
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "held_item": null,
-              "min_level": null,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": {
-                "url": "https://pokeapi.co/api/v2/move/887/",
-                "name": "hyper-drill"
-              },
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/25/",
-                "name": "scarlet-violet"
-              },
-              "min_move_count": null,
-              "allowed_natures": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "condition_expression": {
-                "variables": [
-                  {
-                    "url": "https://pokeapi.co/api/v2/evolution-variable/1/",
-                    "name": "encryption-constant"
-                  }
-                ],
-                "expression": "EC 100 % 0 ==",
-                "percentage_chance": 1
-              },
-              "evolved_pokemon_form": {
-                "url": "https://pokeapi.co/api/v2/pokemon-form/10424/",
-                "name": "dudunsparce-three-segment"
-              },
-              "needs_overworld_rain": false,
-              "required_pokemon_form": null,
               "relative_physical_stats": null
             }
           ]
@@ -3654,118 +3654,6 @@
     },
     "baby_trigger_item": null
   },
-  "https://pokeapi.co/api/v2/evolution-chain/24/": {
-    "id": 24,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/56/",
-        "name": "mankey"
-      },
-      "evolves_to": [
-        {
-          "is_baby": false,
-          "species": {
-            "url": "https://pokeapi.co/api/v2/pokemon-species/57/",
-            "name": "primeape"
-          },
-          "evolves_to": [
-            {
-              "is_baby": false,
-              "species": {
-                "url": "https://pokeapi.co/api/v2/pokemon-species/979/",
-                "name": "annihilape"
-              },
-              "evolves_to": [],
-              "evolution_details": [
-                {
-                  "item": null,
-                  "gender": null,
-                  "region": null,
-                  "trigger": {
-                    "url": "https://pokeapi.co/api/v2/evolution-trigger/14/",
-                    "name": "use-move"
-                  },
-                  "location": null,
-                  "base_form": null,
-                  "held_item": null,
-                  "min_level": null,
-                  "min_steps": null,
-                  "used_move": {
-                    "url": "https://pokeapi.co/api/v2/move/889/",
-                    "name": "rage-fist"
-                  },
-                  "is_default": true,
-                  "known_move": null,
-                  "min_beauty": null,
-                  "party_type": null,
-                  "time_of_day": "",
-                  "evolved_form": null,
-                  "min_affection": null,
-                  "min_happiness": null,
-                  "party_species": null,
-                  "trade_species": null,
-                  "version_group": {
-                    "url": "https://pokeapi.co/api/v2/version-group/25/",
-                    "name": "scarlet-violet"
-                  },
-                  "min_move_count": 20,
-                  "known_move_type": null,
-                  "min_damage_taken": null,
-                  "turn_upside_down": false,
-                  "near_special_rock": false,
-                  "needs_multiplayer": false,
-                  "needs_overworld_rain": false,
-                  "relative_physical_stats": null
-                }
-              ]
-            }
-          ],
-          "evolution_details": [
-            {
-              "item": null,
-              "gender": null,
-              "region": null,
-              "trigger": {
-                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
-                "name": "level-up"
-              },
-              "location": null,
-              "base_form": null,
-              "held_item": null,
-              "min_level": 28,
-              "min_steps": null,
-              "used_move": null,
-              "is_default": true,
-              "known_move": null,
-              "min_beauty": null,
-              "party_type": null,
-              "time_of_day": "",
-              "evolved_form": null,
-              "min_affection": null,
-              "min_happiness": null,
-              "party_species": null,
-              "trade_species": null,
-              "version_group": {
-                "url": "https://pokeapi.co/api/v2/version-group/1/",
-                "name": "red-blue"
-              },
-              "min_move_count": null,
-              "known_move_type": null,
-              "min_damage_taken": null,
-              "turn_upside_down": false,
-              "near_special_rock": false,
-              "needs_multiplayer": false,
-              "needs_overworld_rain": false,
-              "relative_physical_stats": null
-            }
-          ]
-        }
-      ],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
   "https://pokeapi.co/api/v2/evolution-chain/96/": {
     "id": 96,
     "chain": {
@@ -3872,6 +3760,118 @@
                 "url": "https://pokeapi.co/api/v2/pokemon-form/10422/",
                 "name": "wooper-paldea"
               },
+              "relative_physical_stats": null
+            }
+          ]
+        }
+      ],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
+  },
+  "https://pokeapi.co/api/v2/evolution-chain/24/": {
+    "id": 24,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/56/",
+        "name": "mankey"
+      },
+      "evolves_to": [
+        {
+          "is_baby": false,
+          "species": {
+            "url": "https://pokeapi.co/api/v2/pokemon-species/57/",
+            "name": "primeape"
+          },
+          "evolves_to": [
+            {
+              "is_baby": false,
+              "species": {
+                "url": "https://pokeapi.co/api/v2/pokemon-species/979/",
+                "name": "annihilape"
+              },
+              "evolves_to": [],
+              "evolution_details": [
+                {
+                  "item": null,
+                  "gender": null,
+                  "region": null,
+                  "trigger": {
+                    "url": "https://pokeapi.co/api/v2/evolution-trigger/14/",
+                    "name": "use-move"
+                  },
+                  "location": null,
+                  "base_form": null,
+                  "held_item": null,
+                  "min_level": null,
+                  "min_steps": null,
+                  "used_move": {
+                    "url": "https://pokeapi.co/api/v2/move/889/",
+                    "name": "rage-fist"
+                  },
+                  "is_default": true,
+                  "known_move": null,
+                  "min_beauty": null,
+                  "party_type": null,
+                  "time_of_day": "",
+                  "evolved_form": null,
+                  "min_affection": null,
+                  "min_happiness": null,
+                  "party_species": null,
+                  "trade_species": null,
+                  "version_group": {
+                    "url": "https://pokeapi.co/api/v2/version-group/25/",
+                    "name": "scarlet-violet"
+                  },
+                  "min_move_count": 20,
+                  "known_move_type": null,
+                  "min_damage_taken": null,
+                  "turn_upside_down": false,
+                  "near_special_rock": false,
+                  "needs_multiplayer": false,
+                  "needs_overworld_rain": false,
+                  "relative_physical_stats": null
+                }
+              ]
+            }
+          ],
+          "evolution_details": [
+            {
+              "item": null,
+              "gender": null,
+              "region": null,
+              "trigger": {
+                "url": "https://pokeapi.co/api/v2/evolution-trigger/1/",
+                "name": "level-up"
+              },
+              "location": null,
+              "base_form": null,
+              "held_item": null,
+              "min_level": 28,
+              "min_steps": null,
+              "used_move": null,
+              "is_default": true,
+              "known_move": null,
+              "min_beauty": null,
+              "party_type": null,
+              "time_of_day": "",
+              "evolved_form": null,
+              "min_affection": null,
+              "min_happiness": null,
+              "party_species": null,
+              "trade_species": null,
+              "version_group": {
+                "url": "https://pokeapi.co/api/v2/version-group/1/",
+                "name": "red-blue"
+              },
+              "min_move_count": null,
+              "known_move_type": null,
+              "min_damage_taken": null,
+              "turn_upside_down": false,
+              "near_special_rock": false,
+              "needs_multiplayer": false,
+              "needs_overworld_rain": false,
               "relative_physical_stats": null
             }
           ]
@@ -7326,19 +7326,6 @@
     },
     "baby_trigger_item": null
   },
-  "https://pokeapi.co/api/v2/evolution-chain/108/": {
-    "id": 108,
-    "chain": {
-      "is_baby": false,
-      "species": {
-        "url": "https://pokeapi.co/api/v2/pokemon-species/214/",
-        "name": "heracross"
-      },
-      "evolves_to": [],
-      "evolution_details": []
-    },
-    "baby_trigger_item": null
-  },
   "https://pokeapi.co/api/v2/evolution-chain/51/": {
     "id": 51,
     "chain": {
@@ -7453,6 +7440,19 @@
       "url": "https://pokeapi.co/api/v2/item/296/",
       "name": "luck-incense"
     }
+  },
+  "https://pokeapi.co/api/v2/evolution-chain/108/": {
+    "id": 108,
+    "chain": {
+      "is_baby": false,
+      "species": {
+        "url": "https://pokeapi.co/api/v2/pokemon-species/214/",
+        "name": "heracross"
+      },
+      "evolves_to": [],
+      "evolution_details": []
+    },
+    "baby_trigger_item": null
   },
   "https://pokeapi.co/api/v2/evolution-chain/52/": {
     "id": 52,

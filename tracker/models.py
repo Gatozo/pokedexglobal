@@ -375,7 +375,8 @@ class PokedexEntry(models.Model):
             return f"{settings.MEDIA_URL}{local_rel}"
 
         if gen == 2:
-            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/gold/shiny/{num}.png"
+            gen2_slug = slug if slug in ['gold', 'silver', 'crystal'] else 'gold'
+            return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/{gen2_slug}/shiny/{num}.png"
         elif gen == 3:
             return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/shiny/{num}.png"
         elif gen == 4:

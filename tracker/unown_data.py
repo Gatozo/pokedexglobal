@@ -44,11 +44,12 @@ UNOWN_CHAMBERS = {
 GEN2_LEGIT_SHINY_LETTERS = {"i", "v"}
 
 
-def get_unown_catalog():
+def get_unown_catalog(game_slug: str = "gold"):
     """
     Retorna la lista de las 26 formas de Unown con información de cámara,
     sprites locales de 56x56, iconos y particularidad shiny de Gen 2.
     """
+    slug = game_slug if game_slug in ["gold", "silver", "crystal"] else "gold"
     catalog = []
     chamber_by_letter = {}
     for ch_key, ch_data in UNOWN_CHAMBERS.items():
@@ -67,8 +68,8 @@ def get_unown_catalog():
             "chamber_badge_class": ch["badge_class"],
             "secret_hint": ch["secret_requirement"],
             "is_legit_shiny_gen2": letter in GEN2_LEGIT_SHINY_LETTERS,
-            "sprite_normal": f"/media/pokemon/sprites/gold/unown/{letter}.png",
-            "sprite_shiny": f"/media/pokemon/sprites/gold_shiny/unown/{letter}.png",
+            "sprite_normal": f"/media/pokemon/sprites/{slug}/unown/{letter}.png",
+            "sprite_shiny": f"/media/pokemon/sprites/{slug}_shiny/unown/{letter}.png",
             "icon_url": f"/media/pokemon/icons/gen2/201-{letter}.png",
         })
     return catalog

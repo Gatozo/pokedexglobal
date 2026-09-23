@@ -320,7 +320,17 @@ class PokedexTrackerTests(TestCase):
                 "evolves_to": [
                     {
                         "species": {"name": "hitmonlee", "url": "https://pokeapi.co/api/v2/pokemon-species/106/"},
-                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 20}],
+                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 20, "relative_physical_stats": 1}],
+                        "evolves_to": []
+                    },
+                    {
+                        "species": {"name": "hitmonchan", "url": "https://pokeapi.co/api/v2/pokemon-species/107/"},
+                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 20, "relative_physical_stats": -1}],
+                        "evolves_to": []
+                    },
+                    {
+                        "species": {"name": "hitmontop", "url": "https://pokeapi.co/api/v2/pokemon-species/237/"},
+                        "evolution_details": [{"trigger": {"name": "level-up"}, "min_level": 20, "relative_physical_stats": 0}],
                         "evolves_to": []
                     }
                 ]
@@ -330,10 +340,20 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(res_gen1_hitmonlee["badge_label"], "Premio Dojo")
         self.assertIsNone(res_gen1_hitmonlee.get("evolution_info"))
 
-        # En Gen 2, Tyrogue (#236 <= 251) sí es válido
+        # En Gen 2, Tyrogue (#236 <= 251) sí es válido con condición de estadísticas
         res_gen2_hitmonlee = resolve_obtaining_info(106, "hitmonlee", "gold", evolution_chain_data=mock_tyrogue_chain, generation=2)
         self.assertIsNotNone(res_gen2_hitmonlee.get("evolution_info"))
         self.assertEqual(res_gen2_hitmonlee["evolution_info"]["from"], "Tyrogue")
+        self.assertEqual(res_gen2_hitmonlee["evolution_info"]["condition"], "Nivel 20 si Ataque > Defensa")
+        self.assertEqual(res_gen2_hitmonlee["evolution_info"]["text"], "Evoluciona de Tyrogue (Nivel 20 si Ataque > Defensa)")
+
+        res_gen2_hitmonchan = resolve_obtaining_info(107, "hitmonchan", "silver", evolution_chain_data=mock_tyrogue_chain, generation=2)
+        self.assertEqual(res_gen2_hitmonchan["evolution_info"]["condition"], "Nivel 20 si Defensa > Ataque")
+        self.assertEqual(res_gen2_hitmonchan["evolution_info"]["text"], "Evoluciona de Tyrogue (Nivel 20 si Defensa > Ataque)")
+
+        res_gen2_hitmontop = resolve_obtaining_info(237, "hitmontop", "silver", evolution_chain_data=mock_tyrogue_chain, generation=2)
+        self.assertEqual(res_gen2_hitmontop["evolution_info"]["condition"], "Nivel 20 si Ataque = Defensa")
+        self.assertEqual(res_gen2_hitmontop["evolution_info"]["text"], "Evoluciona de Tyrogue (Nivel 20 si Ataque = Defensa)")
 
         # 5. Exclusivo de versión (Sandshrew #27 en Rojo)
         res_exclusive = resolve_obtaining_info(27, "sandshrew", "red")
@@ -1619,6 +1639,115 @@ class FixtureExportTests(TestCase):
         self.assertContains(res_shiny, 'id="unown-historical-note" class="bg-amber-100/80')
         self.assertNotContains(res_shiny, '★ Shiny Gen 2')
         self.assertNotContains(res_shiny, 'unown-legit-shiny-badge')
+
+    def test_silver_game_and_pokedexes(self):
+        """Verifica que el modelo Game y Pokédex soporte Plata correctamente."""
+        silver_game = Game.objects.create(name="Pokémon Silver", slug="silver", generation=2)
+        self.assertEqual(silver_game.display_name, "Pokémon Plata")
+        self.assertEqual(silver_game.generation, 2)
+
+        johto_dex = Pokedex.objects.create(game=silver_game, name="Pokédex de Johto", slug="johto")
+        self.assertFalse(johto_dex.is_national)
+
+        national_dex = Pokedex.objects.create(game=silver_game, name="Pokédex Nacional", slug="national", is_national=True)
+        self.assertTrue(national_dex.is_national)
+
+    def test_silver_sprites_normal_and_shiny(self):
+        """Verifica que los sprites locales de Plata (normal y shiny) existan y estén alineados en 56x56."""
+        from django.conf import settings
+        from pathlib import Path
+        from PIL import Image
+
+        # Comprobar existencia y dimensiones de sprites reales en media
+        for num in [249, 250, 201]:
+            norm_path = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "silver" / f"{num}.png"
+            shiny_path = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "silver_shiny" / f"{num}.png"
+            self.assertTrue(norm_path.exists(), f"Sprite normal #{num} debe existir")
+            self.assertTrue(shiny_path.exists(), f"Sprite shiny #{num} debe existir")
+
+            im_norm = Image.open(norm_path)
+            im_shiny = Image.open(shiny_path)
+            self.assertEqual(im_norm.size, (56, 56))
+            self.assertEqual(im_shiny.size, (56, 56))
+
+        # Comprobar resolución en PokedexEntry
+        silver_game = Game.objects.create(name="Pokémon Silver", slug="silver", generation=2)
+        johto_dex = Pokedex.objects.create(game=silver_game, name="Pokédex de Johto", slug="johto")
+        lugia = Pokemon.objects.create(national_number=249, name="lugia", display_name="Lugia", primary_type="psychic", secondary_type="flying")
+        entry_lugia = PokedexEntry.objects.create(pokedex=johto_dex, pokemon=lugia, entry_number=247)
+        self.assertTrue(entry_lugia.game_sprite_shiny_url.endswith("/pokemon/sprites/silver_shiny/249.png"))
+
+    def test_silver_flavor_texts_and_special_cases(self):
+        """Verifica descripciones oficiales en español de Plata y catálogo de casos especiales."""
+        from .utils import resolve_flavor_text, SILVER_SPECIAL_CASES, GAME_CASINO_PRIZES
+
+        mock_lugia = {
+            "flavor_text_entries": [
+                {"flavor_text": "Duerme en una dorsal marina. Si bate sus alas, puede causar tormentas de 40 días.", "language": {"name": "es"}, "version": {"name": "x"}},
+                {"flavor_text": "Dicen que es el guardián de los mares. Hay rumores de que fue visto en una noche de tormenta.", "language": {"name": "es"}, "version": {"name": "y"}},
+            ]
+        }
+        res_silver = resolve_flavor_text(249, "silver", species_data=mock_lugia)
+        self.assertIn("guardián de los mares", res_silver)
+
+        # Casos especiales de Plata: Lugia nv 40, Ho-Oh nv 70
+        self.assertIn("nivel 40", SILVER_SPECIAL_CASES[249]["summary"])
+        self.assertIn("nivel 70", SILVER_SPECIAL_CASES[250]["summary"])
+
+        # Casino Plata
+        self.assertEqual(GAME_CASINO_PRIZES["silver"][27], 700)
+        self.assertEqual(GAME_CASINO_PRIZES["silver"][63], 200)
+        self.assertEqual(GAME_CASINO_PRIZES["silver"][147], 2100)
+
+    def test_silver_exclusives_modal_and_shinydex(self):
+        """Verifica el modal de exclusivos para Plata (contraparte Oro en dorado y modo shiny)."""
+        from .exclusives import get_version_exclusives_context
+
+        silver_game = Game.objects.create(name="Pokémon Silver", slug="silver", generation=2)
+        Game.objects.create(name="Pokémon Gold", slug="gold", generation=2)
+        johto_dex = Pokedex.objects.create(game=silver_game, name="Pokédex de Johto", slug="johto")
+        vulpix = Pokemon.objects.create(national_number=37, name="vulpix", display_name="Vulpix", primary_type="fire")
+        PokedexEntry.objects.create(pokedex=johto_dex, pokemon=vulpix, entry_number=125)
+
+        ctx_excl = get_version_exclusives_context(silver_game, johto_dex, set())
+        self.assertIsNotNone(ctx_excl)
+        self.assertEqual(ctx_excl["counterpart_theme"], "gold")
+        self.assertEqual(ctx_excl["own_theme"], "silver")
+        self.assertIn("Oro", ctx_excl["counterpart_name"])
+
+        # Probar vista renderizada
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "silver"})
+        res = self.client.get(url)
+        self.assertEqual(res.status_code, 200)
+
+        # En modo Shinydex con cookie
+        self.client.cookies["pokedex_shinydex_silver"] = "1"
+        res_shiny = self.client.get(url)
+        self.assertEqual(res_shiny.status_code, 200)
+        self.assertTrue(res_shiny.context["is_shinydex_active"])
+
+    def test_gyarados_and_gen2_obtaining_adjustments(self):
+        """Verifica que Gyarados tenga etiqueta de Encuentro Variocolor garantizado, no sea único, y liste todas sus zonas."""
+        from .utils import GOLD_SPECIAL_CASES, SILVER_SPECIAL_CASES, CRYSTAL_SPECIAL_CASES
+
+        for g, sc in [("gold", GOLD_SPECIAL_CASES), ("silver", SILVER_SPECIAL_CASES), ("crystal", CRYSTAL_SPECIAL_CASES)]:
+            gya = sc[130]
+            self.assertEqual(gya["badge_label"], "Encuentro Variocolor")
+            self.assertFalse(gya["is_unique"])
+            self.assertIn("garantizado", gya["summary"])
+            self.assertGreaterEqual(len(gya["locations"]), 3)
+            areas = [loc["area"] for loc in gya["locations"]]
+            self.assertIn("Lago de la Furia", areas)
+            self.assertIn("Ciudad Fucsia", areas)
+
+        # Verificar Caterpie y Weedle en Plata
+        self.assertEqual(SILVER_SPECIAL_CASES[10]["badge_label"], "Parque Nacional")
+        self.assertNotIn(13, SILVER_SPECIAL_CASES)
+
+        # Verificar que Houndour y Houndoom no estén en GOLD_SPECIAL_CASES como exclusivos
+        self.assertNotIn(228, GOLD_SPECIAL_CASES)
+        self.assertNotIn(229, GOLD_SPECIAL_CASES)
+
 
 
 

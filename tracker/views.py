@@ -132,7 +132,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
                 unown_normal_caught = set(unown_catch.unown_forms_caught.get("normal", []))
                 unown_shiny_caught = set(unown_catch.unown_forms_caught.get("shiny", []))
 
-            raw_cat = get_unown_catalog()
+            raw_cat = get_unown_catalog(game_slug=game.slug)
             for item in raw_cat:
                 l = item["letter"]
                 item_copy = dict(item)

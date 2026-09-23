@@ -295,8 +295,19 @@ def resolve_flavor_text(
             txt = fe.get("flavor_text", "").replace("\n", " ").replace("\x0c", " ")
             return " ".join(txt.split()).strip()
 
-    # 3. Español en versiones afines/canónicas (Let's Go, X, Y, etc.)
-    related_versions = ["lets-go-pikachu", "lets-go-eevee", "x", "y", "omega-ruby", "alpha-sapphire", "sword", "shield"]
+    # 3. Español en versiones afines/canónicas según la edición
+    if game_slug == 'silver':
+        related_versions = ["silver", "soulsilver", "y", "alpha-sapphire", "shield", "lets-go-eevee"]
+    elif game_slug == 'gold':
+        related_versions = ["gold", "heartgold", "x", "omega-ruby", "sword", "lets-go-pikachu"]
+    elif game_slug == 'crystal':
+        related_versions = ["crystal", "heartgold", "soulsilver", "x", "y"]
+    elif game_slug in ['blue', 'leafgreen']:
+        related_versions = ["blue", "leafgreen", "lets-go-eevee", "y", "alpha-sapphire"]
+    elif game_slug in ['yellow']:
+        related_versions = ["yellow", "lets-go-pikachu", "lets-go-eevee", "x", "y"]
+    else:
+        related_versions = ["lets-go-pikachu", "lets-go-eevee", "x", "y", "omega-ruby", "alpha-sapphire", "sword", "shield"]
     for v in related_versions:
         for fe in flavor_entries:
             if fe.get("language", {}).get("name") == "es" and fe.get("version", {}).get("name") == v:
@@ -875,8 +886,6 @@ GOLD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     166: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Ledyba (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
     225: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     227: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
-    228: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
-    229: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Houndour (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
     231: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Plata (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     232: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Phanpy (Exclusivo de Pokémon Plata, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Plata", "method": "Intercambio con cable link"}]},
 
@@ -908,7 +917,7 @@ GOLD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
     151: {"type": "mythical", "badge_label": "Mítico / Evento", "badge_color": "violet", "is_unique": True, "summary": "Distribución oficial de Nintendo mediante evento especial (o transferir desde Gen 1)", "locations": [{"area": "Evento Nintendo", "method": "Distribución especial"}]},
 
     # 8. Encuentros estáticos únicos y legendarios de Johto
-    130: {"type": "special", "badge_label": "Variocolor Único", "badge_color": "rose", "is_unique": True, "summary": "Encuentro estático en el centro del Lago de la Furia (Gyarados Rojo variocolor a nivel 30)", "locations": [{"area": "Lago de la Furia", "method": "Encuentro Especial (Gyarados Rojo)"}]},
+    130: {"type": "special", "badge_label": "Encuentro Variocolor", "badge_color": "rose", "is_unique": False, "summary": "Encuentro variocolor garantizado en el centro del Lago de la Furia (Gyarados Rojo a nivel 30). También disponible salvaje (pesca y surf) y mediante evolución de Magikarp", "locations": [{"area": "Lago de la Furia", "method": "Encuentro Especial (Gyarados Rojo variocolor garantizado)"}, {"area": "Lago de la Furia", "method": "Caña Buena, Súper Caña, Surf"}, {"area": "Ciudad Fucsia", "method": "Caña Buena, Súper Caña"}]},
     131: {"type": "special", "badge_label": "Estático", "badge_color": "emerald", "summary": "Aparece cada viernes en el nivel inferior de la Cueva Unión (Sótano 2). También obtenible mediante crianza", "locations": [{"area": "Cueva Unión (Sótano 2)", "method": "Aparición fija los viernes"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     143: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "summary": "Durmiendo en Ciudad Carmín bloqueando la Cueva Diglett. Sintonizar la Poké Flauta en el PokéGear para despertarlo (también obtenible mediante crianza)", "locations": [{"area": "Ciudad Carmín (Cueva Diglett)", "method": "Sintonizar Poké Flauta en PokéGear"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     185: {"type": "special", "badge_label": "Estático", "badge_color": "rose", "summary": "Pokémon que bloquea la intersección de la Ruta 36 con forma de árbol. Usar la Regadera para combatir (también obtenible mediante crianza)", "locations": [{"area": "Ruta 36", "method": "Usar Regadera"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
@@ -921,7 +930,9 @@ GOLD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
 }
 
 SILVER_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
-    **{k: v for k, v in GOLD_SPECIAL_CASES.items() if k not in [37, 38, 52, 53, 165, 166, 225, 227, 228, 229, 231, 232, 249, 250]},
+    **{k: v for k, v in GOLD_SPECIAL_CASES.items() if k not in [13, 37, 38, 52, 53, 165, 166, 225, 227, 231, 232, 249, 250]},
+    # Parque Nacional en Plata (Caterpie es exclusivo del concurso, mientras Weedle es salvaje)
+    10: {"type": "contest", "badge_label": "Parque Nacional", "badge_color": "emerald", "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza", "locations": [{"area": "Parque Nacional", "method": "Concurso de Captura de Bichos"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     # Exclusivos de Pokémon Oro (obtenibles mediante intercambio o crianza en Plata)
     56: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Exclusivo de Pokémon Oro (obtenible mediante intercambio o crianza)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}, {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}]},
     57: {"type": "trade", "badge_label": "Intercambio", "badge_color": "sky", "summary": "Evoluciona de Mankey (Exclusivo de Pokémon Oro, obtenible mediante intercambio)", "locations": [{"area": "Edición Pokémon Oro", "method": "Intercambio con cable link"}]},
@@ -939,7 +950,21 @@ SILVER_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
 }
 
 # Esqueletos preparados para siguientes juegos de la franquicia
-CRYSTAL_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
+CRYSTAL_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {
+    # Encuentro variocolor garantizado en el Lago de la Furia
+    130: {
+        "type": "special",
+        "badge_label": "Encuentro Variocolor",
+        "badge_color": "rose",
+        "is_unique": False,
+        "summary": "Encuentro variocolor garantizado en el centro del Lago de la Furia (Gyarados Rojo a nivel 30). También disponible salvaje (pesca y surf) y mediante evolución de Magikarp",
+        "locations": [
+            {"area": "Lago de la Furia", "method": "Encuentro Especial (Gyarados Rojo variocolor garantizado)"},
+            {"area": "Lago de la Furia", "method": "Caña Buena, Súper Caña, Surf"},
+            {"area": "Ciudad Fucsia", "method": "Caña Buena, Súper Caña"},
+        ]
+    },
+}
 RUBY_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
 SAPPHIRE_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
 EMERALD_SPECIAL_CASES: Dict[int, Dict[str, Any]] = {}
@@ -1326,10 +1351,22 @@ def resolve_obtaining_info(
                 if trigger == "level-up":
                     min_lvl = details.get("min_level")
                     min_happ = details.get("min_happiness")
+                    rel_stats = details.get("relative_physical_stats")
+
+                    stat_cond = ""
+                    if rel_stats == 1 or (parent == "Tyrogue" and national_number == 106):
+                        stat_cond = " si Ataque > Defensa"
+                    elif rel_stats == -1 or (parent == "Tyrogue" and national_number == 107):
+                        stat_cond = " si Defensa > Ataque"
+                    elif rel_stats == 0 or (parent == "Tyrogue" and national_number == 237):
+                        stat_cond = " si Ataque = Defensa"
+
                     if min_lvl:
-                        condition = f"Nivel {min_lvl}"
+                        condition = f"Nivel {min_lvl}{stat_cond}"
                     elif min_happ:
-                        condition = "Felicidad alta"
+                        condition = f"Felicidad alta{stat_cond}"
+                    elif stat_cond:
+                        condition = f"Subir de nivel{stat_cond}"
                     else:
                         condition = "Subir de nivel"
                 elif trigger == "use-item":

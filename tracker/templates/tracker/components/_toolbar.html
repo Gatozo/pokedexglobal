@@ -57,7 +57,7 @@
         <!-- Retro/Modern Visual Mode -->
         {% if game.has_retro_sprites %}
         <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-            <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">
+            <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% else %}bg-red-600 text-white{% endif %}">
                 <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]"> Retro
             </button>
             <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition flex items-center gap-1 border border-transparent">
@@ -68,7 +68,7 @@
 
         <!-- Status Tabs -->
         <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-            <button onclick="setStatusFilter('all')" id="filter-all" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
+            <button onclick="setStatusFilter('all')" id="filter-all" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
             <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Capturados</button>
             <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Pendientes</button>
         </div>
