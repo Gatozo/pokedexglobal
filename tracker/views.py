@@ -107,7 +107,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     shiny_caught_count = len(shiny_caught_entry_ids)
     shiny_caught_percent = round((shiny_caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 
-    exclusives_info = get_version_exclusives_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
+    exclusives_info = get_version_exclusives_context(
+        game, pokedex, caught_entry_ids, entries_by_num=entries_by_num, shiny_caught_entry_ids=shiny_caught_entry_ids
+    )
     transfers_info = get_version_transfers_context(game, pokedex, caught_entry_ids, entries_by_num=entries_by_num)
 
     is_shinydex_active = False

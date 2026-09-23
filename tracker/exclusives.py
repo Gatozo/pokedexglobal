@@ -245,7 +245,8 @@ def _build_exclusive_item(
     caught_entry_ids: set,
     is_counterpart: bool,
     origin_badge: Optional[str] = None,
-    entries_by_num: Optional[Dict[int, PokedexEntry]] = None
+    entries_by_num: Optional[Dict[int, PokedexEntry]] = None,
+    shiny_caught_entry_ids: Optional[set] = None
 ) -> Optional[Dict[str, Any]]:
     """Construye los datos estructurados de un Pokémon exclusivo o faltante para la plantilla."""
     # Buscar si existe en la Pokédex actual (en memoria si está disponible, o query diferida)
@@ -265,12 +266,15 @@ def _build_exclusive_item(
         entry_id = entry.id
         number = entry.entry_number
         is_caught = entry.id in caught_entry_ids
+        is_shiny_caught = (entry.id in shiny_caught_entry_ids) if shiny_caught_entry_ids else False
         primary_type = entry.primary_type_display
         primary_type_es = entry.primary_type_es
         secondary_type = entry.secondary_type_display
         secondary_type_es = entry.secondary_type_es
         sprite_retro = entry.game_sprite_url or pokemon.sprite_url
         sprite_modern = pokemon.sprite_url
+        sprite_retro_shiny = entry.game_sprite_shiny_url
+        sprite_modern_shiny = entry.modern_sprite_shiny_url
         obtaining_summary = entry.obtaining_info.get('summary', '') if entry.obtaining_info else ''
         evolution_stone = entry.evolution_stone
     else:
@@ -283,12 +287,15 @@ def _build_exclusive_item(
         entry_id = None
         number = pokemon.national_number
         is_caught = False
+        is_shiny_caught = False
         primary_type = pokemon.primary_type
         primary_type_es = pokemon.primary_type_es
         secondary_type = pokemon.secondary_type
         secondary_type_es = pokemon.secondary_type_es
         sprite_retro = pokemon.sprite_url
         sprite_modern = pokemon.sprite_url
+        sprite_retro_shiny = pokemon.sprite_shiny_url
+        sprite_modern_shiny = pokemon.artwork_shiny_url
         obtaining_summary = ''
         evolution_stone = None
 
@@ -305,8 +312,11 @@ def _build_exclusive_item(
         'secondary_type_es': secondary_type_es or '',
         'sprite_retro': sprite_retro,
         'sprite_modern': sprite_modern,
+        'sprite_retro_shiny': sprite_retro_shiny,
+        'sprite_modern_shiny': sprite_modern_shiny,
         'pc_icon_url': pc_icon_url,
         'is_caught': is_caught,
+        'is_shiny_caught': is_shiny_caught,
         'summary': obtaining_summary,
         'is_counterpart': is_counterpart,
         'origin_badge': origin_badge,
@@ -318,7 +328,8 @@ def get_version_exclusives_context(
     current_game: Game,
     current_pokedex: Pokedex,
     caught_entry_ids: set,
-    entries_by_num: Optional[Dict[int, PokedexEntry]] = None
+    entries_by_num: Optional[Dict[int, PokedexEntry]] = None,
+    shiny_caught_entry_ids: Optional[set] = None
 ) -> Optional[Dict[str, Any]]:
     """
     Retorna el contexto completo para el botón y el modal de exclusivos de versión / Pokémon a transferir.
@@ -366,7 +377,7 @@ def get_version_exclusives_context(
     counterpart_list = []
     for num in counterpart_exclusive_nums:
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, entries_by_num=entries_by_num
+            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, entries_by_num=entries_by_num, shiny_caught_entry_ids=shiny_caught_entry_ids
         )
         if item:
             counterpart_list.append(item)
@@ -375,7 +386,7 @@ def get_version_exclusives_context(
     own_list = []
     for num in own_exclusive_nums:
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=False, entries_by_num=entries_by_num
+            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=False, entries_by_num=entries_by_num, shiny_caught_entry_ids=shiny_caught_entry_ids
         )
         if item:
             own_list.append(item)
@@ -384,9 +395,12 @@ def get_version_exclusives_context(
     counterpart_total = len(counterpart_list)
     counterpart_caught = sum(1 for p in counterpart_list if p['is_caught'])
     counterpart_percent = round((counterpart_caught / counterpart_total * 100), 1) if counterpart_total else 0
+    counterpart_shiny_caught = sum(1 for p in counterpart_list if p['is_shiny_caught'])
+    counterpart_shiny_percent = round((counterpart_shiny_caught / counterpart_total * 100), 1) if counterpart_total else 0
 
     own_total = len(own_list)
     own_caught = sum(1 for p in own_list if p['is_caught'])
+    own_shiny_caught = sum(1 for p in own_list if p['is_shiny_caught'])
 
     return {
         'has_exclusives': True,
@@ -403,8 +417,11 @@ def get_version_exclusives_context(
         'counterpart_total': counterpart_total,
         'counterpart_caught': counterpart_caught,
         'counterpart_percent': counterpart_percent,
+        'counterpart_shiny_caught': counterpart_shiny_caught,
+        'counterpart_shiny_percent': counterpart_shiny_percent,
         'own_total': own_total,
         'own_caught': own_caught,
+        'own_shiny_caught': own_shiny_caught,
     }
 
 

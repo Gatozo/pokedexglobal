@@ -947,6 +947,40 @@ class FixtureExportTests(TestCase):
         self.assertEqual(ctx_gold["button_label"], "Exclusivos")
         self.assertEqual(ctx_gold["full_button_label"], "Exclusivos de Plata")
 
+    def test_gold_exclusives_shinydex_sprites_and_status(self):
+        """Verifica que el modal de exclusivos incluya sprites shiny y estados al estar activa la Shinydex."""
+        gold_game, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", generation=2)
+        Game.objects.get_or_create(name="Pokémon Silver", slug="silver", generation=2)
+        johto_dex, _ = Pokedex.objects.get_or_create(game=gold_game, name="Pokédex de Johto", slug="johto")
+
+        # Vulpix (#37) es exclusivo de Plata
+        vulpix, _ = Pokemon.objects.get_or_create(
+            national_number=37,
+            defaults={"name": "vulpix", "display_name": "Vulpix", "primary_type": "fire"}
+        )
+        entry_vulpix, _ = PokedexEntry.objects.get_or_create(
+            pokedex=johto_dex, entry_number=125, defaults={"pokemon": vulpix}
+        )
+
+        from .exclusives import get_version_exclusives_context
+        ctx = get_version_exclusives_context(gold_game, johto_dex, set(), shiny_caught_entry_ids={entry_vulpix.id})
+        self.assertIsNotNone(ctx)
+        vulpix_item = next((p for p in ctx["counterpart_list"] if p["national_number"] == 37), None)
+        self.assertIsNotNone(vulpix_item)
+        self.assertTrue(vulpix_item["is_shiny_caught"])
+        self.assertFalse(vulpix_item["is_caught"])
+        self.assertIn("gold_shiny/37.png", vulpix_item["sprite_retro_shiny"])
+
+        # Probar renderizado de plantilla con cookie de Shinydex
+        self.client.cookies["pokedex_shinydex_gold"] = "1"
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'data-sprite-retro-shiny="')
+        self.assertContains(resp, 'data-shiny-caught="')
+        self.assertContains(resp, 'id="excl-img-37"')
+        self.assertContains(resp, 'gold_shiny/37.png')
+
     def test_gold_starters_and_skeletons(self):
         """Verifica la configuración de iniciales de Pokémon Oro con el Profesor Elm y los esqueletos de juegos futuros."""
         from .utils import STARTERS_BY_GAME, resolve_obtaining_info

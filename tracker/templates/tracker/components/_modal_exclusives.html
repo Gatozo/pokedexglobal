@@ -1,6 +1,12 @@
 <!-- Modal de Pokémon Exclusivos de Versión -->
 {% if exclusives_info and exclusives_info.has_exclusives %}
-<div id="exclusives-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" onclick="handleExclusivesBackdropClick(event)">
+<div 
+    id="exclusives-modal" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" 
+    onclick="handleExclusivesBackdropClick(event)"
+    data-counterpart-theme="{{ exclusives_info.counterpart_theme }}"
+    data-counterpart-short-name="{{ exclusives_info.counterpart_short_name }}"
+>
     <!-- Panel de la Tarjeta -->
     <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
         
@@ -31,21 +37,21 @@
             <!-- Progreso de Captura de Exclusivos de la Contraparte -->
             <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
-                    <span class="w-3 h-3 rounded-full {% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-500{% endif %} animate-pulse"></span>
+                    <span id="excl-progress-dot" class="w-3 h-3 rounded-full {% if is_shinydex_active %}bg-amber-400{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-500{% endif %} animate-pulse"></span>
                     <div>
-                        <span class="text-xs font-black uppercase text-slate-700 block">
-                            Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:
+                        <span id="excl-progress-title" class="text-xs font-black uppercase text-slate-700 block">
+                            {% if is_shinydex_active %}Exclusivos shiny de {{ exclusives_info.counterpart_short_name }} obtenidos:{% else %}Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:{% endif %}
                         </span>
                         <span class="text-[11px] text-slate-500">Registrados en tu partida de {{ game.display_name }}</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
                     <div class="font-mono font-black text-sm text-slate-900">
-                        <span id="excl-progress-caught" class="{% if exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} font-black">{{ exclusives_info.counterpart_caught }}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
-                        <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{{ exclusives_info.counterpart_percent }}</span>%)</span>
+                        <span id="excl-progress-caught" class="{% if is_shinydex_active %}text-amber-600{% elif exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% else %}text-red-600{% endif %} font-black">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_caught }}{% else %}{{ exclusives_info.counterpart_caught }}{% endif %}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                        <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_percent }}{% else %}{{ exclusives_info.counterpart_percent }}{% endif %}</span>%)</span>
                     </div>
                     <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
-                        <div id="excl-progress-bar" class="{% if exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {{ exclusives_info.counterpart_percent }}%"></div>
+                        <div id="excl-progress-bar" class="{% if is_shinydex_active %}bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_percent }}{% else %}{{ exclusives_info.counterpart_percent }}{% endif %}%"></div>
                     </div>
                 </div>
             </div>
@@ -90,6 +96,11 @@
                         id="excl-card-{{ item.national_number }}"
                         data-entry-id="{{ item.entry_id }}"
                         data-caught="{% if item.is_caught %}true{% else %}false{% endif %}"
+                        data-shiny-caught="{% if item.is_shiny_caught %}true{% else %}false{% endif %}"
+                        data-sprite-retro="{{ item.sprite_retro }}"
+                        data-sprite-modern="{{ item.sprite_modern }}"
+                        data-sprite-retro-shiny="{{ item.sprite_retro_shiny }}"
+                        data-sprite-modern-shiny="{{ item.sprite_modern_shiny }}"
                         class="bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col justify-between shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] transition-all relative overflow-hidden group cursor-pointer"
                         onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
                     >
@@ -103,9 +114,9 @@
                             </div>
                             <span 
                                 id="excl-status-badge-{{ item.national_number }}"
-                                class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center {% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}"
+                                class="px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-tight border border-slate-950 shrink-0 text-center {% if is_shinydex_active %}{% if item.is_shiny_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}{% else %}{% if item.is_caught %}bg-emerald-400 text-slate-950{% else %}bg-slate-200 text-slate-600{% endif %}{% endif %}"
                             >
-                                {% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}
+                                {% if is_shinydex_active %}{% if item.is_shiny_caught %}✓ Atrapado{% else %}Pendiente{% endif %}{% else %}{% if item.is_caught %}✓ Atrapado{% else %}Pendiente{% endif %}{% endif %}
                             </span>
                         </div>
 
@@ -113,9 +124,11 @@
                         <div class="my-1 relative flex items-center justify-center h-24">
                             <img 
                                 id="excl-img-{{ item.national_number }}"
-                                src="{{ item.sprite_retro }}" 
+                                src="{% if is_shinydex_active %}{{ item.sprite_retro_shiny }}{% else %}{{ item.sprite_retro }}{% endif %}" 
                                 data-sprite-retro="{{ item.sprite_retro }}"
                                 data-sprite-modern="{{ item.sprite_modern }}"
+                                data-sprite-retro-shiny="{{ item.sprite_retro_shiny }}"
+                                data-sprite-modern-shiny="{{ item.sprite_modern_shiny }}"
                                 alt="{{ item.name }}"
                                 class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
                             >
@@ -142,13 +155,13 @@
                             type="button" 
                             onclick="event.stopPropagation(); toggleExclusiveCatch({{ item.entry_id }}, {{ item.national_number }})" 
                             id="excl-btn-{{ item.national_number }}"
-                            class="mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 {% if item.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}"
+                            class="mt-2.5 w-full py-1.5 px-2 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-1 {% if is_shinydex_active %}{% if item.is_shiny_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}{% else %}{% if item.is_caught %}bg-rose-500 hover:bg-rose-600 text-white{% else %}bg-emerald-500 hover:bg-emerald-600 text-white{% endif %}{% endif %}"
                         >
                             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
                             </svg>
                             <span id="excl-btn-text-{{ item.national_number }}">
-                                {% if item.is_caught %}Liberar{% else %}Capturar{% endif %}
+                                {% if is_shinydex_active %}{% if item.is_shiny_caught %}Liberar{% else %}Capturar{% endif %}{% else %}{% if item.is_caught %}Liberar{% else %}Capturar{% endif %}{% endif %}
                             </span>
                         </button>
                         {% endif %}

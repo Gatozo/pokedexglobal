@@ -29,7 +29,7 @@
                 {{ exclusives_info.button_label }}
             </span>
             <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0">
-                <span id="exclusives-counterpart-caught-badge">{{ exclusives_info.counterpart_caught }}</span>/{{ exclusives_info.counterpart_total }}
+                <span id="exclusives-counterpart-caught-badge">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_caught }}{% else %}{{ exclusives_info.counterpart_caught }}{% endif %}</span>/{{ exclusives_info.counterpart_total }}
             </span>
         </button>
         {% endif %}
