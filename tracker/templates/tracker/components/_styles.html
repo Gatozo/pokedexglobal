@@ -71,6 +71,12 @@ body {
     background-image: radial-gradient(rgba(100, 116, 139, 0.20) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+{% elif game.slug == 'crystal' %}
+body {
+    background-color: #f0fdfa;
+    background-image: radial-gradient(rgba(2, 132, 199, 0.18) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 {% else %}
 body {
     background-color: #faebed;
@@ -256,6 +262,26 @@ body {
 }
 .status-caught-active {
     background-color: #64748b !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+}
+{% elif game.slug == 'crystal' %}
+.comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #0284c7,
+        #0284c7 12px,
+        #0369a1 12px,
+        #0369a1 24px
+    );
+}
+.pokemon-card.caught-card {
+    background-color: #e0f2fe !important;
+    border-color: #0369a1 !important;
+    box-shadow: 3.5px 3.5px 0px 0px #0369a1;
+}
+.status-caught-active {
+    background-color: #0284c7 !important;
     color: #ffffff !important;
     border-color: #0f172a !important;
 }

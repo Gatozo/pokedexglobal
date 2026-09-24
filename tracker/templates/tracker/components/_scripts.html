@@ -7,7 +7,9 @@
                 ? 'bg-[#c59b27] text-slate-950 font-black' 
                 : ("{{ game.slug }}" === 'silver'
                     ? 'bg-slate-500 text-white font-black'
-                    : 'bg-red-600 text-white font-black')));
+                    : ("{{ game.slug }}" === 'crystal'
+                        ? 'bg-sky-500 text-slate-950 font-black'
+                        : 'bg-red-600 text-white font-black'))));
     const THEME_STATUS_CAUGHT_CLASS = 'status-caught-active';
     const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';
     const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-rose-500 hover:bg-rose-600 text-white';
@@ -96,7 +98,8 @@
                     currentGameSlug === 'yellow' ? 'bg-amber-400' :
                     (currentGameSlug === 'blue' ? 'bg-blue-600' :
                     (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
-                    (currentGameSlug === 'silver' ? 'bg-slate-500' : 'bg-red-600')))
+                    (currentGameSlug === 'silver' ? 'bg-slate-500' :
+                    (currentGameSlug === 'crystal' ? 'bg-sky-500' : 'bg-red-600'))))
                 ) + ' h-full rounded-full transition-all duration-300';
             }
         }
@@ -163,7 +166,8 @@
                     currentGameSlug === 'blue' ? 'bg-blue-600' :
                     (currentGameSlug === 'yellow' ? 'bg-amber-500' :
                     (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
-                    (currentGameSlug === 'silver' ? 'bg-slate-400' : 'bg-red-600')))
+                    (currentGameSlug === 'silver' ? 'bg-slate-400' :
+                    (currentGameSlug === 'crystal' ? 'bg-sky-500' : 'bg-red-600'))))
                 );
             }
 
@@ -985,10 +989,14 @@
 
         if (!panelCounterpart || !panelOwn) return;
 
+        const modal = document.getElementById('exclusives-modal');
+        const counterpartTheme = modal ? modal.dataset.counterpartTheme : 'red';
+        const counterpartActiveBg = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200' : 'bg-amber-400';
+
         if (tab === 'counterpart') {
             panelCounterpart.classList.remove('hidden');
             panelOwn.classList.add('hidden');
-            if (btnCounterpart) btnCounterpart.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-amber-400 text-slate-950 flex items-center justify-center gap-2';
+            if (btnCounterpart) btnCounterpart.className = `flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all ${counterpartActiveBg} text-slate-950 flex items-center justify-center gap-2`;
             if (btnOwn) btnOwn.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2';
         } else {
             panelOwn.classList.remove('hidden');
@@ -1022,11 +1030,15 @@
         const themeColorClass = (counterpartTheme === 'blue') ? 'text-blue-600' :
             ((counterpartTheme === 'amber') ? 'text-amber-600' :
             ((counterpartTheme === 'silver') ? 'text-slate-600' :
-            ((counterpartTheme === 'gold') ? 'text-[#9e7514]' : 'text-red-600')));
+            ((counterpartTheme === 'gold') ? 'text-[#9e7514]' :
+            ((counterpartTheme === 'gold_silver') ? 'text-amber-700' :
+            ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600')))));
         const themeBarClass = (counterpartTheme === 'blue') ? 'bg-blue-600' :
             ((counterpartTheme === 'amber') ? 'bg-amber-500' :
             ((counterpartTheme === 'silver') ? 'bg-slate-500' :
-            ((counterpartTheme === 'gold') ? 'bg-[#c59b27]' : 'bg-red-600')));
+            ((counterpartTheme === 'gold') ? 'bg-[#c59b27]' :
+            ((counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-[#c59b27] to-[#94a3b8]' :
+            ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600')))));
 
         const caughtElem = document.getElementById('excl-progress-caught');
         if (caughtElem) {

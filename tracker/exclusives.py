@@ -13,8 +13,8 @@ GAME_COUNTERPARTS: Dict[str, List[str]] = {
     'blue': ['red'],
     'yellow': ['red', 'blue'],
     # Gen 2
-    'gold': ['silver'],
-    'silver': ['gold'],
+    'gold': ['silver', 'crystal'],
+    'silver': ['gold', 'crystal'],
     'crystal': ['gold', 'silver'],
     # Gen 3
     'ruby': ['sapphire'],
@@ -78,6 +78,7 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     # Gen 2
     'gold': [56, 57, 58, 59, 167, 168, 207, 216, 217, 226],
     'silver': [37, 38, 52, 53, 165, 166, 225, 227, 231, 232],
+    'crystal': [251],
     # Gen 3
     'ruby': [273, 274, 275, 303, 335, 338, 383],
     'sapphire': [270, 271, 272, 302, 336, 337, 382],
@@ -99,8 +100,8 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         125,         # Electabuzz (Rojo)
         126,         # Magmar (Azul)
     ],
-    # Gen 2 (Oro y Plata no tienen fósiles ni iniciales ni legendarios de Kanto salvajes;
-    # requieren transferencia desde Gen 1 mediante la Cápsula del Tiempo de Bill. Celebi es evento de Gen 2).
+    # Gen 2 (Oro, Plata y Cristal no tienen fósiles ni iniciales ni legendarios de Kanto salvajes;
+    # requieren transferencia desde Gen 1 mediante la Cápsula del Tiempo de Bill).
     'gold': [
         1, 2, 3,     # Bulbasaur, Ivysaur, Venusaur
         4, 5, 6,     # Charmander, Charmeleon, Charizard
@@ -118,6 +119,15 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         140, 141,    # Kabuto, Kabutops
         144, 145, 146, # Articuno, Zapdos, Moltres
         150, 151,    # Mewtwo, Mew
+    ],
+    'crystal': [
+        1, 2, 3,        # Bulbasaur, Ivysaur, Venusaur
+        4, 5, 6,        # Charmander, Charmeleon, Charizard
+        7, 8, 9,        # Squirtle, Wartortle, Blastoise
+        138, 139,       # Omanyte, Omastar
+        140, 141,       # Kabuto, Kabutops
+        144, 145, 146,  # Articuno, Zapdos, Moltres
+        150, 151,       # Mewtwo, Mew
     ],
 }
 
@@ -195,6 +205,32 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             151: 'Evento Gen 1 / Rojo / Azul',
         }
     },
+    'crystal': {
+        'mechanic_title': 'Cápsula del Tiempo • Gen 1',
+        'mechanic_badge': 'Cápsula del Tiempo',
+        'description': 'Estos 18 Pokémon no aparecen salvajes ni pueden conseguirse en Johto o Kanto de la 2.ª Generación. Para completar la Pokédex requieres transferirlos desde la 1.ª Generación (Pokémon Rojo, Azul o Amarillo) utilizando la Cápsula del Tiempo de Bill en la planta superior del Centro Pokémon.',
+        'default_origin': 'Rojo / Azul / Amarillo',
+        'origins': {
+            1: 'Rojo / Azul / Amarillo',
+            2: 'Rojo / Azul / Amarillo',
+            3: 'Rojo / Azul / Amarillo',
+            4: 'Rojo / Azul / Amarillo',
+            5: 'Rojo / Azul / Amarillo',
+            6: 'Rojo / Azul / Amarillo',
+            7: 'Rojo / Azul / Amarillo',
+            8: 'Rojo / Azul / Amarillo',
+            9: 'Rojo / Azul / Amarillo',
+            138: 'Rojo / Azul / Amarillo',
+            139: 'Rojo / Azul / Amarillo',
+            140: 'Rojo / Azul / Amarillo',
+            141: 'Rojo / Azul / Amarillo',
+            144: 'Rojo / Azul / Amarillo',
+            145: 'Rojo / Azul / Amarillo',
+            146: 'Rojo / Azul / Amarillo',
+            150: 'Rojo / Azul / Amarillo',
+            151: 'Evento Gen 1 / Rojo / Azul',
+        }
+    },
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -235,6 +271,30 @@ GAME_SHORT_NAMES: Dict[str, str] = {
     'shining-pearl': 'Perla Reluciente',
     'scarlet': 'Escarlata',
     'violet': 'Púrpura',
+}
+
+# Configuración específica para terceras versiones que hacen referencia a ambas versiones gemelas
+THIRD_VERSION_COUNTERPART_EXCLUSIVES: Dict[str, Dict[str, Any]] = {
+    'crystal': {
+        'counterpart_short_name': 'Oro y Plata',
+        'counterpart_name': 'Pokémon Oro o Pokémon Plata',
+        'counterpart_slug': 'gold',
+        'counterpart_theme': 'gold_silver',
+        'exclusive_nums': [37, 38, 56, 57, 179, 180, 181, 203, 223, 224],
+        'origins': {
+            37: 'Plata',
+            38: 'Plata',
+            56: 'Oro',
+            57: 'Oro',
+            179: 'Oro / Plata',
+            180: 'Oro / Plata',
+            181: 'Oro / Plata',
+            203: 'Oro / Plata',
+            223: 'Oro / Plata',
+            224: 'Oro / Plata',
+        },
+        'notice': 'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Cristal</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Oro</strong> o <strong>Pokémon Plata</strong>.',
+    }
 }
 
 
@@ -346,17 +406,11 @@ def get_version_exclusives_context(
     if current_game.slug == 'yellow':
         return None
 
-    counterpart_slug = counterparts[0]
-    counterpart_short_name = GAME_SHORT_NAMES.get(counterpart_slug, counterpart_slug.title())
-    counterpart_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(counterpart_slug, [])
-    own_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(current_game.slug, [])
-
-    if not counterpart_exclusive_nums and not own_exclusive_nums:
-        return None
-
     def _resolve_theme(slug: str) -> str:
         if slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet']:
             return 'blue'
+        elif slug in ['crystal']:
+            return 'crystal'
         elif slug in ['gold', 'heartgold']:
             return 'gold'
         elif slug in ['silver', 'soulsilver']:
@@ -365,11 +419,32 @@ def get_version_exclusives_context(
             return 'amber'
         return 'red'
 
-    counterpart_theme = _resolve_theme(counterpart_slug)
     own_theme = _resolve_theme(current_game.slug)
 
-    counterpart_game = Game.objects.filter(slug=counterpart_slug).first()
-    counterpart_name = counterpart_game.display_name if counterpart_game else f"Pokémon {counterpart_short_name}"
+    if current_game.slug in THIRD_VERSION_COUNTERPART_EXCLUSIVES:
+        conf = THIRD_VERSION_COUNTERPART_EXCLUSIVES[current_game.slug]
+        counterpart_short_name = conf['counterpart_short_name']
+        counterpart_name = conf['counterpart_name']
+        counterpart_slug = conf.get('counterpart_slug', counterparts[0])
+        counterpart_theme = conf.get('counterpart_theme', 'gold')
+        counterpart_exclusive_nums = conf['exclusive_nums']
+        origins = conf.get('origins', {})
+        notice = conf.get('notice')
+        own_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(current_game.slug, [])
+    else:
+        counterpart_slug = counterparts[0]
+        counterpart_short_name = GAME_SHORT_NAMES.get(counterpart_slug, counterpart_slug.title())
+        counterpart_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(counterpart_slug, [])
+        own_exclusive_nums = VERSION_EXCLUSIVES_CATALOG.get(current_game.slug, [])
+        origins = {}
+        notice = None
+        counterpart_theme = _resolve_theme(counterpart_slug)
+        counterpart_game = Game.objects.filter(slug=counterpart_slug).first()
+        counterpart_name = counterpart_game.display_name if counterpart_game else f"Pokémon {counterpart_short_name}"
+
+    if not counterpart_exclusive_nums and not own_exclusive_nums:
+        return None
+
     button_label = "Exclusivos"
     full_button_label = f"Exclusivos de {counterpart_short_name}"
 
@@ -377,7 +452,14 @@ def get_version_exclusives_context(
     counterpart_list = []
     for num in counterpart_exclusive_nums:
         item = _build_exclusive_item(
-            num, current_pokedex, current_gen, caught_entry_ids, is_counterpart=True, entries_by_num=entries_by_num, shiny_caught_entry_ids=shiny_caught_entry_ids
+            num,
+            current_pokedex,
+            current_gen,
+            caught_entry_ids,
+            is_counterpart=True,
+            origin_badge=origins.get(num),
+            entries_by_num=entries_by_num,
+            shiny_caught_entry_ids=shiny_caught_entry_ids
         )
         if item:
             counterpart_list.append(item)
@@ -412,6 +494,7 @@ def get_version_exclusives_context(
         'counterpart_name': counterpart_name,
         'counterpart_theme': counterpart_theme,
         'own_theme': own_theme,
+        'notice': notice,
         'counterpart_list': counterpart_list,
         'own_list': own_list,
         'counterpart_total': counterpart_total,

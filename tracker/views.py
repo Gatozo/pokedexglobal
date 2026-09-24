@@ -1,5 +1,6 @@
 import copy
 import json
+from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
@@ -23,17 +24,23 @@ def _get_cached_all_games():
     games = cache.get("all_games_catalog")
     if games is None:
         games = list(Game.objects.all())
-        cache.set("all_games_catalog", games, timeout=86400)
+        timeout = 60 if getattr(settings, "DEBUG", False) else 86400
+        cache.set("all_games_catalog", games, timeout=timeout)
     return games
 
 
-def get_cached_pokedex_entries(pokedex_id):
+def get_cached_pokedex_entries(pokedex_id, force_refresh=False):
     """
     Retorna la lista base de entradas de la Pokédex desde la caché en memoria.
     Evita consultas SQL y deserialización en cada cambio de juego.
     """
     cache_key = f"pokedex_entries_base_{pokedex_id}"
-    entries = cache.get(cache_key)
+    if force_refresh:
+        cache.delete(cache_key)
+        entries = None
+    else:
+        entries = cache.get(cache_key)
+
     if entries is None:
         entries = list(
             PokedexEntry.objects.filter(pokedex_id=pokedex_id)
@@ -47,7 +54,8 @@ def get_cached_pokedex_entries(pokedex_id):
             )
             .order_by("entry_number")
         )
-        cache.set(cache_key, entries, timeout=86400)
+        timeout = 60 if getattr(settings, "DEBUG", False) else 86400
+        cache.set(cache_key, entries, timeout=timeout)
     return entries
 
 
@@ -73,7 +81,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
             pokedex = get_object_or_404(Pokedex, game=game)
 
     # Entradas de la Pokédex obtenidas de la caché en memoria (0 ms DB)
-    cached_entries = get_cached_pokedex_entries(pokedex.id)
+    force_refresh = request.GET.get("refresh") == "1" or request.GET.get("nocache") == "1"
+    cached_entries = get_cached_pokedex_entries(pokedex.id, force_refresh=force_refresh)
 
     user, session_key = _get_user_or_session(request)
 

@@ -24,7 +24,7 @@
         {% include 'tracker/components/_styles.html' %}
     </style>
 </head>
-<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}bg-slate-400 selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
+<body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}bg-slate-400 selection:text-slate-950{% elif game.slug == 'crystal' %}bg-sky-500 selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}
 
     <!-- Top Navigation Header -->

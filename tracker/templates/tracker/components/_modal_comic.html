@@ -4,7 +4,7 @@
     <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
         
         <!-- Comic Header Stripe / Title Bar -->
-        <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+        <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% elif game.slug == 'crystal' %}bg-sky-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
             <div class="flex items-center gap-2.5 z-10">
                 <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                     {{ game.display_name|upper }}

@@ -1748,6 +1748,168 @@ class FixtureExportTests(TestCase):
         self.assertNotIn(228, GOLD_SPECIAL_CASES)
         self.assertNotIn(229, GOLD_SPECIAL_CASES)
 
+    def test_crystal_special_cases_and_odd_egg(self):
+        """Verifica los casos especiales de Cristal: Huevo Extraño, Suicune estático, Celebi y legendarios."""
+        from .utils import GOLD_SPECIAL_CASES, CRYSTAL_SPECIAL_CASES
+
+        # 1. Huevo Extraño exclusivo de Cristal (los 7 bebés Pokémon)
+        odd_egg_babies = [172, 173, 174, 236, 238, 239, 240]
+        for baby_num in odd_egg_babies:
+            self.assertIn(baby_num, CRYSTAL_SPECIAL_CASES)
+            case = CRYSTAL_SPECIAL_CASES[baby_num]
+            self.assertIn("Huevo Extraño", case["badge_label"])
+            self.assertIn("Puño Mareo", case["summary"])
+
+        # 2. Tyrogue en Oro NO debe tener Huevo Extraño
+        self.assertNotIn("Huevo Extraño", GOLD_SPECIAL_CASES[236]["summary"])
+
+        # 3. Suicune es estático en Torre Hojalata en Cristal (no errante)
+        suicune_case = CRYSTAL_SPECIAL_CASES[245]
+        self.assertEqual(suicune_case["badge_label"], "Legendario Estático")
+        self.assertIn("Campana Transparente", suicune_case["summary"])
+        self.assertIn("Torre Hojalata", suicune_case["locations"][0]["area"])
+
+        # 4. Celebi es capturable legalmente en la Consola Virtual de 3DS en el Encinar
+        celebi_case = CRYSTAL_SPECIAL_CASES[251]
+        self.assertEqual(celebi_case["badge_label"], "Mítico Capturable")
+        self.assertIn("Altar del Encinar", celebi_case["summary"])
+        self.assertIn("GS Ball", celebi_case["summary"])
+
+        # 5. Ho-Oh y Lugia a nivel 60 en Cristal
+        self.assertIn("nivel 60", CRYSTAL_SPECIAL_CASES[250]["summary"])
+        self.assertIn("nivel 60", CRYSTAL_SPECIAL_CASES[249]["summary"])
+
+        # 6. Aves legendarias no nativas en Gen 2 (transferencia desde Gen 1 vía Cápsula del Tiempo)
+        for bird_num in [144, 145, 146]:
+            self.assertIn(bird_num, CRYSTAL_SPECIAL_CASES)
+            self.assertEqual(CRYSTAL_SPECIAL_CASES[bird_num]["type"], "trade")
+            self.assertIn("Cápsula del Tiempo", CRYSTAL_SPECIAL_CASES[bird_num]["summary"])
+
+    def test_crystal_exclusives_transfers_and_view(self):
+        """Verifica la lógica de exclusivos, transferencias y la vista de la Pokédex de Cristal."""
+        from .exclusives import (
+            GAME_COUNTERPARTS,
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG,
+            get_version_exclusives_context,
+            get_version_transfers_context,
+        )
+
+        # 1. Emparejamiento
+        self.assertIn("gold", GAME_COUNTERPARTS["crystal"])
+        self.assertIn("silver", GAME_COUNTERPARTS["crystal"])
+
+        # 2. Catálogos de exclusivos y transferencias
+        # En exclusivos de Cristal solo debe estar Celebi (capturable legal en 3DS VC)
+        self.assertEqual(VERSION_EXCLUSIVES_CATALOG["crystal"], [251])
+        # Las transferencias corresponden a 18 especies de Gen 1 vía Cápsula del Tiempo
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["crystal"]), 18)
+        self.assertIn(144, VERSION_TRANSFERS_CATALOG["crystal"])  # Articuno
+        self.assertIn(145, VERSION_TRANSFERS_CATALOG["crystal"])  # Zapdos
+        self.assertIn(146, VERSION_TRANSFERS_CATALOG["crystal"])  # Moltres
+
+        # Catálogo de contrapartes para Cristal (Oro y Plata)
+        from .exclusives import THIRD_VERSION_COUNTERPART_EXCLUSIVES
+        crystal_counterpart_conf = THIRD_VERSION_COUNTERPART_EXCLUSIVES["crystal"]
+        self.assertEqual(crystal_counterpart_conf["counterpart_short_name"], "Oro y Plata")
+        self.assertEqual(len(crystal_counterpart_conf["exclusive_nums"]), 10)
+        self.assertIn(37, crystal_counterpart_conf["exclusive_nums"])  # Vulpix
+        self.assertIn(56, crystal_counterpart_conf["exclusive_nums"])  # Mankey
+        self.assertIn(179, crystal_counterpart_conf["exclusive_nums"])  # Mareep
+
+        # 3. Contexto de transferencias para Cristal
+        crystal_game = Game.objects.get_or_create(slug="crystal", defaults={"name": "Pokémon Cristal", "generation": 2})[0]
+        johto_dex = Pokedex.objects.get_or_create(game=crystal_game, slug="johto", defaults={"name": "Pokédex de Johto"})[0]
+        ctx_transfers = get_version_transfers_context(crystal_game, johto_dex, set())
+        self.assertIsNotNone(ctx_transfers)
+        self.assertTrue(ctx_transfers["has_transfers"])
+        self.assertGreaterEqual(ctx_transfers["total"], 1)
+
+        # 4. Contexto de exclusivos para Cristal (referencia a Oro y Plata)
+        celebi, _ = Pokemon.objects.get_or_create(
+            national_number=251,
+            defaults={"name": "celebi", "display_name": "Celebi", "primary_type": "psychic", "secondary_type": "grass"}
+        )
+        PokedexEntry.objects.get_or_create(pokedex=johto_dex, entry_number=251, defaults={"pokemon": celebi})
+
+        vulpix, _ = Pokemon.objects.get_or_create(
+            national_number=37,
+            defaults={"name": "vulpix", "display_name": "Vulpix", "primary_type": "fire"}
+        )
+        PokedexEntry.objects.get_or_create(pokedex=johto_dex, entry_number=125, defaults={"pokemon": vulpix})
+
+        ctx_excl = get_version_exclusives_context(crystal_game, johto_dex, set())
+        self.assertIsNotNone(ctx_excl)
+        self.assertEqual(ctx_excl["counterpart_short_name"], "Oro y Plata")
+        self.assertEqual(ctx_excl["own_total"], 1)  # Solo Celebi
+        self.assertGreaterEqual(ctx_excl["counterpart_total"], 1)  # Vulpix
+        self.assertEqual(ctx_excl["own_theme"], "crystal")
+        self.assertEqual(ctx_excl["counterpart_theme"], "gold_silver")
+        self.assertIn("Oro", ctx_excl["counterpart_name"])
+        self.assertIn("Plata", ctx_excl["counterpart_name"])
+
+        # 5. Vista HTTP y Shinydex
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "crystal"})
+        res = self.client.get(url)
+        self.assertEqual(res.status_code, 200)
+
+        self.client.cookies["pokedex_shinydex_crystal"] = "1"
+        res_shiny = self.client.get(url)
+        self.assertEqual(res_shiny.status_code, 200)
+        self.assertTrue(res_shiny.context["is_shinydex_active"])
+
+    def test_gen2_authentic_gbc_flavor_texts(self):
+        """Verifica que las descripciones en español de Oro, Plata y Cristal correspondan fielmente al texto original de GBC."""
+        from .utils import resolve_flavor_text, get_cached_flavor_texts
+
+        # 1. Verificar carga de los archivos JSON locales curados
+        gold_cache = get_cached_flavor_texts("gold")
+        silver_cache = get_cached_flavor_texts("silver")
+        crystal_cache = get_cached_flavor_texts("crystal")
+
+        self.assertEqual(len(gold_cache), 251, "Oro debe contener los 251 Pokémon de las dos primeras generaciones")
+        self.assertEqual(len(silver_cache), 251, "Plata debe contener los 251 Pokémon de las dos primeras generaciones")
+        self.assertEqual(len(crystal_cache), 251, "Cristal debe contener los 251 Pokémon de las dos primeras generaciones")
+
+        # Comprobar que ninguna entrada esté vacía
+        for num in range(1, 252):
+            key = str(num)
+            self.assertTrue(bool(gold_cache.get(key, {}).get("flavor_text_es")), f"Texto vacío en Oro #{num}")
+            self.assertTrue(bool(silver_cache.get(key, {}).get("flavor_text_es")), f"Texto vacío en Plata #{num}")
+            self.assertTrue(bool(crystal_cache.get(key, {}).get("flavor_text_es")), f"Texto vacío en Cristal #{num}")
+
+        # 2. Verificar Bulbasaur (#1) - textos GBC auténticos
+        res_bulba_gold = resolve_flavor_text(1, "gold")
+        res_bulba_silver = resolve_flavor_text(1, "silver")
+        res_bulba_crystal = resolve_flavor_text(1, "crystal")
+
+        self.assertIn("La semilla de su lomo está llena de nutrientes", res_bulba_gold)
+        self.assertIn("Lleva una semilla en su lomo desde que nació", res_bulba_silver)
+        self.assertIn("Cuando es joven, crece con los nutrientes que almacena en las semillas", res_bulba_crystal)
+
+        # 3. Verificar Chikorita (#152) - textos GBC auténticos
+        res_chiko_gold = resolve_flavor_text(152, "gold")
+        res_chiko_silver = resolve_flavor_text(152, "silver")
+        res_chiko_crystal = resolve_flavor_text(152, "crystal")
+
+        self.assertIn("Un dulce aroma se desprende de la hoja de su cabeza", res_chiko_gold)
+        self.assertIn("Sus hojas aromáticas son capaces de medir la humedad", res_chiko_silver)
+        self.assertIn("Le encanta disfrutar del sol. Usa la hoja que tiene en la cabeza", res_chiko_crystal)
+
+        # 4. Verificar Celebi (#251) - textos GBC auténticos
+        res_celebi_gold = resolve_flavor_text(251, "gold")
+        res_celebi_silver = resolve_flavor_text(251, "silver")
+        res_celebi_crystal = resolve_flavor_text(251, "crystal")
+
+        self.assertIn("Este Pokémon vaga por el tiempo", res_celebi_gold)
+        self.assertIn("deja tras de sí un huevo traído del futuro", res_celebi_silver)
+        self.assertIn("Conocido como el guardián del bosque", res_celebi_crystal)
+
+        # 5. Asegurar que no se utilizan fallbacks modernos (como Let's Go o X/Y)
+        self.assertNotIn("A una edad temprana", res_bulba_crystal)
+
+
+
 
 
 

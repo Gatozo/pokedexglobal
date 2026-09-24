@@ -2,12 +2,12 @@
 <header class="border-b-4 border-slate-950 bg-slate-900/95 backdrop-blur sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-400{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-400{% elif game.slug == 'crystal' %}bg-sky-400{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center">
                 <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-950"></div>
             </div>
             <div>
                 <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 drop-shadow-[2px_2px_0px_#0f172a]">
-                    Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% else %}text-red-500{% endif %}">Global</span>
+                    Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-400{% else %}text-red-500{% endif %}">Global</span>
                 </h1>
                 <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen {{ game.generation }}</p>
             </div>
@@ -15,14 +15,14 @@
 
         <!-- Game Selector & Mode Switcher (Estilo Cartucho Game Boy) -->
         <div class="flex items-center space-x-2 sm:space-x-2.5">
-            <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% else %}text-red-400{% endif %}">
+            <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-300{% else %}text-red-400{% endif %}">
                 Cartucho:
             </label>
             <div class="relative">
                 <select 
                     id="game-select" 
                     onchange="window.location.href='/' + this.value + '/'" 
-                    class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% elif game.slug == 'gold' %}bg-[#c59b27] hover:bg-[#b38819] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 hover:bg-slate-400 text-white font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
+                    class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% elif game.slug == 'gold' %}bg-[#c59b27] hover:bg-[#b38819] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 hover:bg-slate-400 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 hover:bg-sky-400 text-slate-950 font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
                 >
                     {% for g in all_games %}
                         <option value="{{ g.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if g.slug == game.slug %}selected{% endif %}>

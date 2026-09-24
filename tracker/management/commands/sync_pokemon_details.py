@@ -284,6 +284,10 @@ class Command(BaseCommand):
             with open(evo_file, "w", encoding="utf-8") as f:
                 json.dump(backup_evo_chains, f, ensure_ascii=False, indent=2)
 
+        # Invalidar caché en memoria de Django
+        from django.core.cache import cache
+        cache.clear()
+
         msg = f"¡Procesamiento finalizado con éxito! Se actualizaron {total - skipped_custom} entradas para '{game.display_name}'."
         if skipped_custom > 0:
             msg += f" ({skipped_custom} entradas con modificación manual fueron protegidas y conservadas)."
