@@ -1908,6 +1908,60 @@ class FixtureExportTests(TestCase):
         # 5. Asegurar que no se utilizan fallbacks modernos (como Let's Go o X/Y)
         self.assertNotIn("A una edad temprana", res_bulba_crystal)
 
+    def test_crystal_animated_sprites_and_modal_integration(self):
+        """Verifica la existencia y resolución de sprites animados exclusivos de Cristal en el modal cómic."""
+        from django.conf import settings
+        from pathlib import Path
+        import json
+
+        # 1. Comprobar existencia de archivos locales animados
+        anim_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "crystal_animated"
+        shiny_anim_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "crystal_animated_shiny"
+
+        self.assertTrue(anim_dir.exists(), "Debe existir directorio crystal_animated")
+        self.assertTrue(shiny_anim_dir.exists(), "Debe existir directorio crystal_animated_shiny")
+
+        # Comprobar especies clave: Chikorita (#152) y Celebi (#251)
+        for num in [152, 251]:
+            normal_file = anim_dir / f"{num}.gif"
+            shiny_file = shiny_anim_dir / f"{num}.gif"
+            self.assertTrue(normal_file.exists(), f"Sprite animado #{num} debe existir")
+            self.assertTrue(shiny_file.exists(), f"Sprite animado shiny #{num} debe existir")
+            self.assertGreater(normal_file.stat().st_size, 0)
+            self.assertGreater(shiny_file.stat().st_size, 0)
+
+        # 2. Configurar entradas de Pokédex para Cristal y Oro
+        crystal_game, _ = Game.objects.get_or_create(slug="crystal", defaults={"name": "Pokémon Cristal", "generation": 2})
+        gold_game, _ = Game.objects.get_or_create(slug="gold", defaults={"name": "Pokémon Gold", "generation": 2})
+
+        dex_crys, _ = Pokedex.objects.get_or_create(game=crystal_game, slug="johto", defaults={"name": "Pokédex de Johto"})
+        dex_gold, _ = Pokedex.objects.get_or_create(game=gold_game, slug="johto", defaults={"name": "Pokédex de Johto"})
+
+        chiko, _ = Pokemon.objects.get_or_create(
+            national_number=152,
+            defaults={"name": "chikorita", "display_name": "Chikorita", "primary_type": "grass"}
+        )
+
+        entry_crys, _ = PokedexEntry.objects.get_or_create(pokedex=dex_crys, pokemon=chiko, defaults={"entry_number": 1})
+        entry_gold, _ = PokedexEntry.objects.get_or_create(pokedex=dex_gold, pokemon=chiko, defaults={"entry_number": 1})
+
+        # 3. Validar propiedades modal_retro_sprite_url y modal_retro_sprite_shiny_url
+        self.assertIn("crystal_animated/152.gif", entry_crys.modal_retro_sprite_url)
+        self.assertIn("crystal_animated_shiny/152.gif", entry_crys.modal_retro_sprite_shiny_url)
+
+        # En Oro no debe usar GIFs animados sino sus sprites PNG
+        self.assertNotIn(".gif", entry_gold.modal_retro_sprite_url)
+        self.assertNotIn(".gif", entry_gold.modal_retro_sprite_shiny_url)
+
+        # 4. Validar serialización en modal_data_json
+        modal_crys_data = json.loads(entry_crys.modal_data_json)
+        self.assertTrue(modal_crys_data["sprite_retro"].endswith("crystal_animated/152.gif"))
+        self.assertTrue(modal_crys_data["sprite_retro_shiny"].endswith("crystal_animated_shiny/152.gif"))
+
+        modal_gold_data = json.loads(entry_gold.modal_data_json)
+        self.assertFalse(modal_gold_data["sprite_retro"].endswith(".gif"))
+        self.assertFalse(modal_gold_data["sprite_retro_shiny"].endswith(".gif"))
+
 
 
 

@@ -4,7 +4,7 @@
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md text-[10px] sm:text-xs font-black uppercase tracking-wider bg-amber-300 text-slate-950 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-1 mb-2">
             <span>Generación {{ game.generation }}</span> • <span>Región {% if game.generation == 2 %}Johto{% else %}Kanto{% endif %}</span>
         </div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wide drop-shadow-[2px_2px_0px_#0f172a] {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950 drop-shadow-none font-black{% elif game.slug == 'silver' %}text-slate-100{% elif game.slug == 'crystal' %}text-sky-100{% else %}text-white{% endif %}">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-wide antialiased {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950 font-black{% elif game.slug == 'silver' %}text-slate-100 [text-shadow:2px_2px_0px_#0f172a]{% elif game.slug == 'crystal' %}text-sky-100 [text-shadow:2px_2px_0px_#0f172a]{% else %}text-white [text-shadow:2px_2px_0px_#0f172a]{% endif %}">
             {{ pokedex.name }}
         </h2>
         <p class="text-xs sm:text-sm font-bold mt-1 {% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-900{% elif game.slug == 'silver' %}text-slate-200{% elif game.slug == 'crystal' %}text-sky-100{% else %}text-white/90{% endif %}">

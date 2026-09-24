@@ -6,7 +6,7 @@
                 <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-950"></div>
             </div>
             <div>
-                <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 drop-shadow-[2px_2px_0px_#0f172a]">
+                <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 antialiased [text-shadow:2px_2px_0px_#0f172a]">
                     Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-400{% else %}text-red-500{% endif %}">Global</span>
                 </h1>
                 <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen {{ game.generation }}</p>

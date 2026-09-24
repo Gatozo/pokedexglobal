@@ -9,7 +9,7 @@
                 <span class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                     Objeto Evolutivo • {{ game.display_name|upper }}
                 </span>
-                <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950{% elif game.slug == 'crystal' %}text-sky-100{% else %}text-white{% endif %} font-black text-base sm:text-lg tracking-wide uppercase drop-shadow-[1.5px_1.5px_0px_#0f172a] flex items-center gap-2">
+                <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950{% elif game.slug == 'crystal' %}text-sky-100 [text-shadow:1.5px_1.5px_0px_#0f172a]{% else %}text-white [text-shadow:1.5px_1.5px_0px_#0f172a]{% endif %} font-black text-base sm:text-lg tracking-wide uppercase antialiased flex items-center gap-2">
                     <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain inline-block">
                     <span id="stone-modal-name">PIEDRA LUNAR</span>
                 </h3>

@@ -390,6 +390,39 @@ class PokedexEntry(models.Model):
         return self.pokemon.artwork_shiny_url
 
     @property
+    def modal_retro_sprite_url(self):
+        """
+        Retorna el sprite retro a mostrar en la tarjeta individual (modal cómic).
+        Para Pokémon Cristal, prioriza el sprite animado oficial exclusivo de GBC (.gif).
+        Para otras versiones (o como fallback), utiliza el sprite estático del juego.
+        """
+        from django.conf import settings
+        from pathlib import Path
+        slug = self.pokedex.game.slug if (self.pokedex and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+        if slug == "crystal":
+            anim_rel = f"pokemon/sprites/crystal_animated/{num}.gif"
+            if (Path(settings.MEDIA_ROOT) / anim_rel).exists():
+                return f"{settings.MEDIA_URL}{anim_rel}"
+        return self.game_sprite_url or self.pokemon.sprite_url
+
+    @property
+    def modal_retro_sprite_shiny_url(self):
+        """
+        Retorna el sprite retro shiny a mostrar en la tarjeta individual (modal cómic).
+        Para Pokémon Cristal, prioriza el sprite animado shiny oficial de GBC (.gif).
+        """
+        from django.conf import settings
+        from pathlib import Path
+        slug = self.pokedex.game.slug if (self.pokedex and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+        if slug == "crystal":
+            anim_rel = f"pokemon/sprites/crystal_animated_shiny/{num}.gif"
+            if (Path(settings.MEDIA_ROOT) / anim_rel).exists():
+                return f"{settings.MEDIA_URL}{anim_rel}"
+        return self.game_sprite_shiny_url
+
+    @property
     def modal_data_json(self):
         """Serializa de forma segura y válida todos los datos del Pokémon para el modal estilo cómic."""
         import json
@@ -402,9 +435,9 @@ class PokedexEntry(models.Model):
             "primary_type_es": self.primary_type_es,
             "secondary_type": self.secondary_type_display or "",
             "secondary_type_es": self.secondary_type_es or "",
-            "sprite_retro": self.game_sprite_url or self.pokemon.sprite_url,
+            "sprite_retro": self.modal_retro_sprite_url,
             "sprite_modern": self.pokemon.sprite_url,
-            "sprite_retro_shiny": self.game_sprite_shiny_url,
+            "sprite_retro_shiny": self.modal_retro_sprite_shiny_url,
             "sprite_modern_shiny": self.modern_sprite_shiny_url,
             "pc_icon_url": self.pc_icon_url,
             "height": self.pokemon.height or 0,

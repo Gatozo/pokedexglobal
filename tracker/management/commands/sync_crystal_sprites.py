@@ -250,4 +250,15 @@ class Command(BaseCommand):
         u_shiny_ok = sum(1 for _, ok in unown_shiny_res if ok)
         self.stdout.write(f"Unown normales: {u_norm_ok}/26 guardados.")
         self.stdout.write(f"Unown shiny: {u_shiny_ok}/26 guardados.")
+
+        # 4. Asegurar que Unown #201 representativo sea la forma 'F'
+        unown_f_norm = normal_unown_dir / "f.png"
+        unown_f_shiny = shiny_unown_dir / "f.png"
+        if unown_f_norm.exists():
+            shutil.copyfile(unown_f_norm, normal_dir / "201.png")
+            self.stdout.write("  -> Unown #201 representativo fijado a forma [F] (normal).")
+        if unown_f_shiny.exists():
+            shutil.copyfile(unown_f_shiny, shiny_dir / "201.png")
+            self.stdout.write("  -> Unown #201 representativo fijado a forma [F] (shiny).")
+
         self.stdout.write(self.style.SUCCESS("¡Sincronización de sprites de Pokémon Cristal completada con éxito!"))
