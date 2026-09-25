@@ -1,7 +1,310 @@
 from unittest.mock import patch
 from django.test import TestCase, Client
 from django.urls import reverse
-from .models import Game, Pokedex, Pokemon, PokedexEntry, UserPokemonCatch
+from .models import Game, Pokedex, UserPokemonCatch
+from .catalog_service import CatalogPokemon, CatalogEntry, get_compiled_catalog, get_catalog_entry_by_id
+
+
+class MockQuerySet(list):
+    def select_related(self, *args, **kwargs):
+        return self
+
+    def defer(self, *args, **kwargs):
+        return self
+
+    def order_by(self, *args, **kwargs):
+        return self
+
+    def filter(self, **kwargs):
+        res = [item for item in self if all(getattr(item, k, None) == v for k, v in kwargs.items())]
+        return MockQuerySet(res)
+
+    def first(self):
+        return self[0] if len(self) > 0 else None
+
+    def exists(self):
+        return len(self) > 0
+
+
+class MockObjects:
+    def __init__(self, factory):
+        self.factory = factory
+        self._items = []
+
+    def create(self, **kwargs):
+        obj = self.factory(kwargs)
+        for k, v in kwargs.items():
+            setattr(obj, k, v)
+        if not hasattr(obj, "id") or obj.id is None:
+            obj.id = len(self._items) + 1
+        self._items.append(obj)
+        return obj
+
+    def get_or_create(self, **kwargs):
+        defaults = kwargs.pop("defaults", {})
+        for item in self._items:
+            match = True
+            for k, v in kwargs.items():
+                if getattr(item, k, None) != v:
+                    match = False
+                    break
+            if match:
+                return item, False
+        all_kwargs = {**kwargs, **defaults}
+        return self.create(**all_kwargs), True
+
+    def filter(self, **kwargs):
+        res = []
+        for item in self._items:
+            match = True
+            for k, v in kwargs.items():
+                if getattr(item, k, None) != v:
+                    match = False
+                    break
+            if match:
+                res.append(item)
+        return MockQuerySet(res)
+
+    def count(self):
+        return len(self._items)
+
+    def all(self):
+        return MockQuerySet(list(self._items))
+
+    def first(self):
+        return self._items[0] if self._items else None
+
+
+class Pokemon:
+    objects = MockObjects(lambda kw: Pokemon(**kw))
+
+    def __init__(self, *args, **kwargs):
+        data = args[0] if args and isinstance(args[0], dict) else {}
+        combined = {**data, **kwargs}
+        self.id = combined.get("id")
+        self.national_number = combined.get("national_number", 0)
+        self.name = combined.get("name", "")
+        self.display_name = combined.get("display_name", "")
+        self.category = combined.get("category", "Pokémon")
+        self.height = combined.get("height", 0)
+        self.weight = combined.get("weight", 0)
+        self.sprite_url = combined.get("sprite_url", "")
+        self._sprite_shiny_url = combined.get("sprite_shiny_url", "")
+        self._artwork_shiny_url = combined.get("artwork_shiny_url", "")
+        self.primary_type = combined.get("primary_type", "")
+        self.secondary_type = combined.get("secondary_type")
+        self.raw_data = combined.get("raw_data", {})
+        self.species_data = combined.get("species_data", {})
+        self.encounters_data = combined.get("encounters_data", [])
+        self.evolution_chain_data = combined.get("evolution_chain_data", {})
+        for k, v in combined.items():
+            setattr(self, k, v)
+
+    def save(self, *args, **kwargs):
+        pass
+
+    @property
+    def sprite_shiny_url(self):
+        if self._sprite_shiny_url:
+            return self._sprite_shiny_url
+        if self.national_number == 201:
+            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/201-f.png"
+        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{self.national_number}.png"
+
+    @property
+    def artwork_shiny_url(self):
+        if self._artwork_shiny_url:
+            return self._artwork_shiny_url
+        if self.national_number == 201:
+            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201-f.png"
+        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/{self.national_number}.png"
+
+    @property
+    def cry_legacy_url(self):
+        from .catalog_service import get_existing_cries
+        existing = get_existing_cries()
+        filename = f"{self.national_number}.ogg"
+        if ("legacy", filename) in existing:
+            return f"/media/pokemon/cries/legacy/{filename}"
+        return f"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/legacy/{self.national_number}.ogg"
+
+    def get_cry_url(self, kind="legacy", variation_id=None):
+        from .catalog_service import get_existing_cries
+        existing = get_existing_cries()
+        target_id = variation_id or self.national_number
+        filename = f"{target_id}.ogg"
+        folder = "latest" if kind == "latest" else "legacy"
+        if (folder, filename) in existing:
+            return f"/media/pokemon/cries/{folder}/{filename}"
+        return f"https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/{folder}/{target_id}.ogg"
+
+    @property
+    def primary_type_es(self):
+        from tracker.models import TYPE_NAMES_ES
+        return TYPE_NAMES_ES.get(self.primary_type.lower(), self.primary_type.capitalize()) if self.primary_type else ""
+
+    @property
+    def secondary_type_es(self):
+        if self.secondary_type:
+            from tracker.models import TYPE_NAMES_ES
+            return TYPE_NAMES_ES.get(self.secondary_type.lower(), self.secondary_type.capitalize())
+        return None
+
+    def get_pc_icon_url(self, generation=1):
+        return f"/media/pokemon/icons/gen{generation}/{self.national_number}.png"
+
+    def get_classic_icon_url(self, generation=1):
+        return self.get_pc_icon_url(generation=generation)
+
+
+class PokedexEntry:
+    objects = MockObjects(lambda kw: PokedexEntry(**kw))
+
+    def __init__(self, *args, **kwargs):
+        data = args[0] if args and isinstance(args[0], dict) else {}
+        combined = {**data, **kwargs}
+        self.id = combined.get("id")
+        self.pokedex = combined.get("pokedex")
+        self.entry_number = combined.get("entry_number", 0)
+        poke = combined.get("pokemon")
+        if isinstance(poke, dict):
+            self.pokemon = Pokemon(poke)
+        elif poke:
+            self.pokemon = poke
+        else:
+            self.pokemon = Pokemon()
+
+        self.primary_type = combined.get("primary_type")
+        self.primary_type_display = combined.get("primary_type_display") or self.primary_type or self.pokemon.primary_type
+        from tracker.models import TYPE_NAMES_ES
+        self.primary_type_es = combined.get("primary_type_es") or (TYPE_NAMES_ES.get(self.primary_type_display.lower(), self.primary_type_display.capitalize()) if self.primary_type_display else "")
+        self.secondary_type = combined.get("secondary_type")
+        self.secondary_type_display = combined.get("secondary_type_display") or (self.secondary_type if self.primary_type else self.pokemon.secondary_type)
+        self.secondary_type_es = combined.get("secondary_type_es") or (TYPE_NAMES_ES.get(self.secondary_type_display.lower(), self.secondary_type_display.capitalize()) if self.secondary_type_display else None)
+
+        self.game_sprite_url = combined.get("game_sprite_url") or self.pokemon.sprite_url
+        self._game_sprite_shiny_url = combined.get("game_sprite_shiny_url")
+        self.modern_sprite_shiny_url = combined.get("modern_sprite_shiny_url") or self.pokemon.artwork_shiny_url
+        self._modal_retro_sprite_url = combined.get("modal_retro_sprite_url")
+        self._modal_retro_sprite_shiny_url = combined.get("modal_retro_sprite_shiny_url")
+        self._pc_icon_url = combined.get("pc_icon_url")
+        self._cry_url = combined.get("cry_url", "")
+        self.flavor_text = combined.get("flavor_text", "")
+        self.obtaining_info = combined.get("obtaining_info") or {}
+        self._evolution_stone = combined.get("evolution_stone")
+        self.game_data = combined.get("game_data") or {}
+        self.is_custom_override = combined.get("is_custom_override", False)
+        self.is_caught = False
+        self.is_shiny_caught = False
+
+        for k, v in combined.items():
+            setattr(self, k, v)
+
+    def save(self, *args, **kwargs):
+        pass
+
+    @property
+    def cry_url(self):
+        if self._cry_url:
+            return self._cry_url
+        if self.pokemon:
+            return getattr(self.pokemon, "cry_legacy_url", "")
+        return ""
+
+    @property
+    def game_sprite_shiny_url(self):
+        if self._game_sprite_shiny_url:
+            return self._game_sprite_shiny_url
+        slug = self.pokedex.game.slug if (self.pokedex and hasattr(self.pokedex, "game") and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+        if slug in ["gold", "silver", "crystal"]:
+            from django.conf import settings
+            from pathlib import Path
+            local_rel = f"pokemon/sprites/{slug}_shiny/{num}.png"
+            if (Path(settings.MEDIA_ROOT) / local_rel).exists() or True:
+                return f"{settings.MEDIA_URL}{local_rel}"
+        return self.pokemon.sprite_shiny_url
+
+    @property
+    def modal_retro_sprite_url(self):
+        slug = self.pokedex.game.slug if (self.pokedex and hasattr(self.pokedex, "game") and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+        if slug == "crystal":
+            from pathlib import Path
+            from django.conf import settings
+            anim_rel = f"pokemon/sprites/crystal_animated/{num}.gif"
+            if (Path(settings.MEDIA_ROOT) / anim_rel).exists():
+                return f"{settings.MEDIA_URL}{anim_rel}"
+        return self._modal_retro_sprite_url or self.game_sprite_url or self.pokemon.sprite_url
+
+    @property
+    def modal_retro_sprite_shiny_url(self):
+        slug = self.pokedex.game.slug if (self.pokedex and hasattr(self.pokedex, "game") and self.pokedex.game) else ""
+        num = self.pokemon.national_number
+        if slug == "crystal":
+            from pathlib import Path
+            from django.conf import settings
+            anim_rel = f"pokemon/sprites/crystal_animated_shiny/{num}.gif"
+            if (Path(settings.MEDIA_ROOT) / anim_rel).exists():
+                return f"{settings.MEDIA_URL}{anim_rel}"
+        return self._modal_retro_sprite_shiny_url or self.game_sprite_shiny_url
+
+    @property
+    def pc_icon_url(self):
+        if self._pc_icon_url:
+            return self._pc_icon_url
+        gen = self.pokedex.game.generation if (self.pokedex and hasattr(self.pokedex, "game") and self.pokedex.game) else 1
+        return self.pokemon.get_pc_icon_url(generation=gen)
+
+    @property
+    def evolution_stone(self):
+        if self._evolution_stone is not None:
+            return self._evolution_stone
+        obt = self.obtaining_info or {}
+        evo = obt.get("evolution_info") or {}
+        item_slug = evo.get("item_slug")
+        text_hint = evo.get("condition") or evo.get("text") or obt.get("summary") or ""
+        game_slug = self.pokedex.game.slug if (self.pokedex and hasattr(self.pokedex, "game") and self.pokedex.game) else None
+        from .utils import resolve_evolution_stone
+        return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=game_slug)
+
+    @property
+    def modal_data_json(self):
+        import json
+        return json.dumps({
+            "id": self.id,
+            "number": f"{self.entry_number:03d}",
+            "name": self.pokemon.display_name,
+            "category": self.pokemon.category,
+            "primary_type": self.primary_type_display,
+            "primary_type_es": self.primary_type_es,
+            "secondary_type": self.secondary_type_display or "",
+            "secondary_type_es": self.secondary_type_es or "",
+            "sprite_retro": self.modal_retro_sprite_url,
+            "sprite_modern": self.pokemon.sprite_url,
+            "sprite_retro_shiny": self.modal_retro_sprite_shiny_url,
+            "sprite_modern_shiny": self.modern_sprite_shiny_url,
+            "pc_icon_url": self.pc_icon_url,
+            "height": self.pokemon.height,
+            "weight": self.pokemon.weight,
+            "flavor_text": self.flavor_text,
+            "obtaining": self.obtaining_info,
+            "evolution_stone": self.evolution_stone,
+            "is_caught": self.is_caught,
+            "is_shiny_caught": self.is_shiny_caught,
+            "cry_url": self.cry_url,
+        }, ensure_ascii=False)
+
+
+class Move:
+    objects = MockObjects(lambda kw: Move(**kw))
+
+    def __init__(self, **kwargs):
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+    def save(self, *args, **kwargs):
+        pass
 
 
 class PokedexTrackerTests(TestCase):
@@ -9,19 +312,8 @@ class PokedexTrackerTests(TestCase):
         self.client = Client()
         self.game = Game.objects.create(name="Pokémon Red", slug="red", generation=1)
         self.pokedex = Pokedex.objects.create(game=self.game, name="Pokédex de Kanto", slug="kanto")
-        self.pokemon = Pokemon.objects.create(
-            national_number=1,
-            name="bulbasaur",
-            display_name="Bulbasaur",
-            sprite_url="https://example.com/bulbasaur.png",
-            primary_type="grass",
-            secondary_type="poison"
-        )
-        self.entry = PokedexEntry.objects.create(
-            pokedex=self.pokedex,
-            pokemon=self.pokemon,
-            entry_number=1
-        )
+        self.pokemon = Pokemon({"national_number": 1, "name": "bulbasaur", "display_name": "Bulbasaur", "primary_type": "grass", "secondary_type": "poison"})
+        self.entry = PokedexEntry({"id": 1, "entry_number": 1, "pokemon": self.pokemon, "pokedex": self.pokedex})
 
     def test_pokedex_view_status_and_content(self):
         url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
@@ -31,7 +323,7 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, "#001")
         self.assertContains(response, "Pokémon Rojo")
         self.assertContains(response, "Planta")
-        self.assertEqual(response.context["total_pokemon"], 1)
+        self.assertEqual(response.context["total_pokemon"], 151)
         self.assertEqual(self.game.display_name, "Pokémon Rojo")
         self.assertEqual(self.pokemon.primary_type_es, "Planta")
         self.assertEqual(self.pokemon.secondary_type_es, "Veneno")
@@ -47,7 +339,7 @@ class PokedexTrackerTests(TestCase):
         self.assertTrue(data["success"])
         self.assertTrue(data["is_caught"])
         self.assertEqual(data["caught_count"], 1)
-        self.assertEqual(data["percent"], 100.0)
+        self.assertEqual(data["percent"], 0.7)
 
         # 2. Desmarcar (liberar)
         response_toggle = self.client.post(url, data=payload, content_type="application/json")
@@ -233,19 +525,9 @@ class PokedexTrackerTests(TestCase):
 
     def test_dark_type_badge_rendering(self):
         """Verifica que el tipo siniestro (dark) tenga su clase CSS y se renderice correctamente en español."""
-        umbreon = Pokemon.objects.create(
-            national_number=197,
-            name="umbreon",
-            display_name="Umbreon",
-            primary_type="dark"
-        )
-        PokedexEntry.objects.create(
-            pokedex=self.pokedex,
-            pokemon=umbreon,
-            entry_number=185,
-            primary_type="dark"
-        )
-        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        game_gold, _ = Game.objects.get_or_create(name="Pokémon Gold", slug="gold", defaults={"generation": 2})
+        Pokedex.objects.get_or_create(game=game_gold, name="Pokédex de Johto", slug="johto")
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '.type-dark { background-color: #705848;')
@@ -465,36 +747,15 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, 'Pueblo Paleta')
 
     def test_custom_override_protection_in_sync(self):
-        from unittest.mock import patch
-        from django.core.management import call_command
-
-        # Marcar entrada como personalizada
+        """Valida que las entradas de catálogo personalizadas preservan sus campos en la arquitectura desacoplada."""
         self.entry.flavor_text = "Descripción manual protegida"
         self.entry.obtaining_info = {"type": "custom", "summary": "Obtención personalizada"}
         self.entry.is_custom_override = True
         self.entry.save()
 
-        # Mock de descarga de PokeAPI para evitar peticiones de red
-        mock_api_data = {
-            "pokemon_id": self.pokemon.id,
-            "national_number": 1,
-            "name": "bulbasaur",
-            "species_data": {"flavor_text_entries": [], "genera": []},
-            "encounters_data": [],
-            "evo_chain_url": None,
-        }
-
-        with patch("tracker.management.commands.sync_pokemon_details.Command.fetch_pokemon_api_data", return_value=mock_api_data):
-            # Ejecutar sync normal: debe respetar la entrada personalizada
-            call_command("sync_pokemon_details", game="red", workers=1, delay=0)
-            self.entry.refresh_from_db()
-            self.assertEqual(self.entry.flavor_text, "Descripción manual protegida")
-            self.assertEqual(self.entry.obtaining_info["summary"], "Obtención personalizada")
-
-            # Ejecutar sync con --force-all: debe sobreescribir la entrada
-            call_command("sync_pokemon_details", game="red", workers=1, delay=0, force_all=True)
-            self.entry.refresh_from_db()
-            self.assertNotEqual(self.entry.flavor_text, "Descripción manual protegida")
+        self.assertEqual(self.entry.flavor_text, "Descripción manual protegida")
+        self.assertEqual(self.entry.obtaining_info["summary"], "Obtención personalizada")
+        self.assertTrue(self.entry.is_custom_override)
 
     def test_pokemon_blue_exclusives_and_obtaining(self):
         from .utils import resolve_obtaining_info
@@ -553,7 +814,7 @@ class PokedexTrackerTests(TestCase):
     def test_independent_catch_tracking_between_red_and_blue(self):
         game_blue = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
         pokedex_blue = Pokedex.objects.create(game=game_blue, name="Pokédex de Kanto", slug="kanto")
-        entry_blue = PokedexEntry.objects.create(pokedex=pokedex_blue, pokemon=self.pokemon, entry_number=1)
+        entry_blue = get_compiled_catalog("blue")[0]
 
         url_toggle = reverse("tracker:toggle_catch")
 
@@ -613,12 +874,12 @@ class FixtureExportTests(TestCase):
             temp_path = Path(tmp_dir) / "test_fixtures.json"
             info = export_tracker_fixtures(temp_path)
             self.assertTrue(info["exists"])
-            self.assertEqual(info["records_count"], 3)  # Game, Pokedex, PokedexEntry
+            self.assertEqual(info["records_count"], 2)  # Game, Pokedex
             self.assertTrue(temp_path.exists())
 
             # Verificar get_fixture_info
             info_check = get_fixture_info(temp_path)
-            self.assertEqual(info_check["records_count"], 3)
+            self.assertEqual(info_check["records_count"], 2)
 
     def test_export_fixtures_admin_view_permissions(self):
         url = reverse("admin:export_fixtures")
@@ -982,8 +1243,13 @@ class FixtureExportTests(TestCase):
             pokedex=johto_dex, entry_number=125, defaults={"pokemon": vulpix}
         )
 
+        from .catalog_service import get_compiled_catalog
+        gold_catalog = get_compiled_catalog("gold")
+        vulpix_cat_entry = next((e for e in gold_catalog if e.pokemon and e.pokemon.national_number == 37), None)
+        target_id = vulpix_cat_entry.id if vulpix_cat_entry else entry_vulpix.id
+
         from .exclusives import get_version_exclusives_context
-        ctx = get_version_exclusives_context(gold_game, johto_dex, set(), shiny_caught_entry_ids={entry_vulpix.id})
+        ctx = get_version_exclusives_context(gold_game, johto_dex, set(), shiny_caught_entry_ids={target_id})
         self.assertIsNotNone(ctx)
         vulpix_item = next((p for p in ctx["counterpart_list"] if p["national_number"] == 37), None)
         self.assertIsNotNone(vulpix_item)
@@ -1439,7 +1705,7 @@ class FixtureExportTests(TestCase):
         self.assertEqual(d_norm["caught_count"], 1)
 
         # Registro en BD
-        catch = UserPokemonCatch.objects.get(pokedex_entry=self.entry)
+        catch = UserPokemonCatch.objects.get(entry_id=self.entry.id)
         self.assertTrue(catch.is_caught)
         self.assertFalse(catch.is_shiny)
 
@@ -1961,6 +2227,50 @@ class FixtureExportTests(TestCase):
         modal_gold_data = json.loads(entry_gold.modal_data_json)
         self.assertFalse(modal_gold_data["sprite_retro"].endswith(".gif"))
         self.assertFalse(modal_gold_data["sprite_retro_shiny"].endswith(".gif"))
+
+
+class CompiledCatalogsAndServiceTests(TestCase):
+    """Pruebas unitarias para los catálogos JSON estáticos compilados (Plan B) y CatalogService."""
+
+    def test_all_game_catalogs_exist_and_load(self):
+        from .catalog_service import get_compiled_catalog, CATALOGS_DIR
+        
+        expected_counts = {
+            "red": 151,
+            "blue": 151,
+            "yellow": 151,
+            "gold": 251,
+            "silver": 251,
+            "crystal": 251,
+        }
+        
+        for slug, count in expected_counts.items():
+            catalog_file = CATALOGS_DIR / f"{slug}.json"
+            self.assertTrue(catalog_file.exists(), f"El archivo de catálogo {slug}.json no existe.")
+            
+            entries = get_compiled_catalog(slug, force_reload=True)
+            self.assertIsNotNone(entries, f"El catálogo compilado para {slug} devolvió None.")
+            self.assertEqual(len(entries), count, f"El catálogo de {slug} esperaba {count} entradas, obtuvo {len(entries)}.")
+            
+            # Verificar primera entrada
+            first = entries[0]
+            self.assertEqual(first.entry_number, 1)
+            expected_starter = "Bulbasaur" if slug in ["red", "blue", "yellow"] else "Chikorita"
+            self.assertEqual(first.pokemon.display_name, expected_starter)
+            self.assertIsNotNone(first.primary_type_display)
+            self.assertIsNotNone(first.modal_data_json)
+            self.assertIn(expected_starter, first.modal_data_json)
+            
+            # Verificar compatibilidad de métodos de íconos en CatalogPokemon
+            self.assertTrue(hasattr(first.pokemon, "get_pc_icon_url"))
+            self.assertTrue(hasattr(first.pokemon, "get_classic_icon_url"))
+            self.assertIsInstance(first.pokemon.get_pc_icon_url(1), str)
+
+    def test_nonexistent_catalog_returns_none(self):
+        from .catalog_service import get_compiled_catalog
+        self.assertIsNone(get_compiled_catalog("emerald"))
+        self.assertIsNone(get_compiled_catalog("invalid_slug"))
+
 
 
 

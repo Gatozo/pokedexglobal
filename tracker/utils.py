@@ -205,16 +205,19 @@ _ITEMS_CACHE: Optional[Dict[str, Any]] = None
 
 EVOLUTION_STONES_PATH = Path(__file__).resolve().parent / "data" / "evolution_stones.json"
 _STONES_CACHE: Optional[Dict[str, Any]] = None
+_STONES_CACHE_MTIME: float = 0.0
 
 
-def get_evolution_stones_catalog() -> Dict[str, Any]:
-    """Carga y cachea en memoria el catálogo canónico de piedras evolutivas si existe."""
-    global _STONES_CACHE
-    if _STONES_CACHE is None:
+def get_evolution_stones_catalog(force_reload: bool = False) -> Dict[str, Any]:
+    """Carga y cachea en memoria el catálogo canónico de piedras evolutivas con recarga automática por mtime."""
+    global _STONES_CACHE, _STONES_CACHE_MTIME
+    mtime = EVOLUTION_STONES_PATH.stat().st_mtime if EVOLUTION_STONES_PATH.exists() else 0.0
+    if _STONES_CACHE is None or force_reload or mtime != _STONES_CACHE_MTIME:
         if EVOLUTION_STONES_PATH.exists():
             try:
                 with open(EVOLUTION_STONES_PATH, "r", encoding="utf-8") as f:
                     _STONES_CACHE = json.load(f)
+                    _STONES_CACHE_MTIME = mtime
             except Exception:
                 _STONES_CACHE = {}
         else:

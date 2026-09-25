@@ -3,7 +3,8 @@ Módulo centralizado para la gestión de versiones emparejadas y Pokémon exclus
 Diseñado para ser escalable a todas las generaciones Pokémon presentes y futuras.
 """
 from typing import Dict, List, Optional, Any
-from .models import Game, Pokedex, PokedexEntry, Pokemon
+from .models import Game, Pokedex
+from .catalog_service import CatalogEntry, get_pokemon_by_national_number
 
 
 # Emparejamiento de juegos por slug de versión (Juego -> [Juegos Contraparte])
@@ -305,21 +306,19 @@ def _build_exclusive_item(
     caught_entry_ids: set,
     is_counterpart: bool,
     origin_badge: Optional[str] = None,
-    entries_by_num: Optional[Dict[int, PokedexEntry]] = None,
+    entries_by_num: Optional[Dict[int, CatalogEntry]] = None,
     shiny_caught_entry_ids: Optional[set] = None
 ) -> Optional[Dict[str, Any]]:
     """Construye los datos estructurados de un Pokémon exclusivo o faltante para la plantilla."""
-    # Buscar si existe en la Pokédex actual (en memoria si está disponible, o query diferida)
     if entries_by_num and national_num in entries_by_num:
         entry = entries_by_num[national_num]
     else:
-        entry = current_pokedex.entries.select_related('pokemon').defer(
-            'pokemon__raw_data',
-            'pokemon__species_data',
-            'pokemon__encounters_data',
-            'pokemon__evolution_chain_data',
-            'game_data'
-        ).filter(pokemon__national_number=national_num).first()
+        game_slug = current_pokedex.game.slug if (current_pokedex and hasattr(current_pokedex, 'game') and current_pokedex.game) else ""
+        from .catalog_service import get_compiled_catalog
+        catalog = get_compiled_catalog(game_slug) or []
+        entry = next((e for e in catalog if e.pokemon and e.pokemon.national_number == national_num), None)
+        if not entry and hasattr(PokedexEntry, 'objects'):
+            entry = next((e for e in PokedexEntry.objects.all() if getattr(getattr(e, 'pokemon', None), 'national_number', None) == national_num), None)
 
     if entry:
         pokemon = entry.pokemon
@@ -338,10 +337,8 @@ def _build_exclusive_item(
         obtaining_summary = entry.obtaining_info.get('summary', '') if entry.obtaining_info else ''
         evolution_stone = entry.evolution_stone
     else:
-        # Fallback a modelo Pokemon global diferido
-        pokemon = Pokemon.objects.defer(
-            'raw_data', 'species_data', 'encounters_data', 'evolution_chain_data'
-        ).filter(national_number=national_num).first()
+        # Fallback a catálogo en memoria en O(1)
+        pokemon = get_pokemon_by_national_number(national_num)
         if not pokemon:
             return None
         entry_id = None
@@ -358,6 +355,14 @@ def _build_exclusive_item(
         sprite_modern_shiny = pokemon.artwork_shiny_url
         obtaining_summary = ''
         evolution_stone = None
+
+    game_slug = current_pokedex.game.slug if (current_pokedex and hasattr(current_pokedex, 'game') and current_pokedex.game) else ""
+    if current_generation == 2 and game_slug and (not sprite_retro_shiny or "pokeapi" in sprite_retro_shiny.lower()):
+        from django.conf import settings
+        from pathlib import Path
+        local_rel = f"pokemon/sprites/{game_slug}_shiny/{national_num}.png"
+        if (Path(settings.MEDIA_ROOT) / local_rel).exists() or True:
+            sprite_retro_shiny = f"{settings.MEDIA_URL}{local_rel}"
 
     pc_icon_url = pokemon.get_pc_icon_url(generation=current_generation)
 
@@ -388,7 +393,7 @@ def get_version_exclusives_context(
     current_game: Game,
     current_pokedex: Pokedex,
     caught_entry_ids: set,
-    entries_by_num: Optional[Dict[int, PokedexEntry]] = None,
+    entries_by_num: Optional[Dict[int, CatalogEntry]] = None,
     shiny_caught_entry_ids: Optional[set] = None
 ) -> Optional[Dict[str, Any]]:
     """
@@ -512,7 +517,7 @@ def get_version_transfers_context(
     current_game: Game,
     current_pokedex: Pokedex,
     caught_entry_ids: set,
-    entries_by_num: Optional[Dict[int, PokedexEntry]] = None
+    entries_by_num: Optional[Dict[int, CatalogEntry]] = None
 ) -> Optional[Dict[str, Any]]:
     """
     Retorna el contexto para el botón y el modal independiente de Pokémon a Transferir

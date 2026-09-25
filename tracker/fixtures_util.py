@@ -1,4 +1,4 @@
-﻿import json
+import json
 from pathlib import Path
 from datetime import datetime
 from django.conf import settings
@@ -68,7 +68,6 @@ def export_tracker_fixtures(file_path: Path = DEFAULT_FIXTURE_PATH) -> Dict[str,
             'dumpdata',
             'tracker.Game',
             'tracker.Pokedex',
-            'tracker.PokedexEntry',
             indent=2,
             stdout=f
         )

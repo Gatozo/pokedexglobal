@@ -6,7 +6,8 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.core.cache import cache
-from .models import Game, Pokedex, PokedexEntry, UserPokemonCatch
+from .models import Game, Pokedex, UserPokemonCatch
+from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
 
 
@@ -29,44 +30,28 @@ def _get_cached_all_games():
     return games
 
 
-def get_cached_pokedex_entries(pokedex_id, force_refresh=False):
+def get_cached_pokedex_entries(pokedex_id, force_refresh=False, game_slug=""):
     """
-    Retorna la lista base de entradas de la Pokédex desde la caché en memoria.
-    Evita consultas SQL y deserialización en cada cambio de juego.
+    Retorna la lista base de entradas de la Pokédex desde los catálogos compilados inmutables (0 ms SQL).
     """
-    cache_key = f"pokedex_entries_base_{pokedex_id}"
-    if force_refresh:
-        cache.delete(cache_key)
-        entries = None
-    else:
-        entries = cache.get(cache_key)
-
-    if entries is None:
-        entries = list(
-            PokedexEntry.objects.filter(pokedex_id=pokedex_id)
-            .select_related("pokemon", "pokedex__game")
-            .defer(
-                "pokemon__raw_data",
-                "pokemon__species_data",
-                "pokemon__encounters_data",
-                "pokemon__evolution_chain_data",
-                "game_data",
-            )
-            .order_by("entry_number")
-        )
-        timeout = 60 if getattr(settings, "DEBUG", False) else 86400
-        cache.set(cache_key, entries, timeout=timeout)
-    return entries
+    if game_slug:
+        catalog = get_compiled_catalog(game_slug, force_reload=force_refresh)
+        if catalog is not None and len(catalog) > 0:
+            return catalog
+    return []
 
 
 _STONES_JSON_CACHE = None
+_STONES_JSON_MTIME = 0.0
 
 
 def _get_cached_evolution_stones_json():
-    global _STONES_JSON_CACHE
-    if _STONES_JSON_CACHE is None:
-        from .utils import get_evolution_stones_catalog
-        _STONES_JSON_CACHE = json.dumps(get_evolution_stones_catalog())
+    global _STONES_JSON_CACHE, _STONES_JSON_MTIME
+    from .utils import EVOLUTION_STONES_PATH, get_evolution_stones_catalog
+    mtime = EVOLUTION_STONES_PATH.stat().st_mtime if EVOLUTION_STONES_PATH.exists() else 0.0
+    if _STONES_JSON_CACHE is None or mtime != _STONES_JSON_MTIME:
+        _STONES_JSON_CACHE = json.dumps(get_evolution_stones_catalog(force_reload=True), ensure_ascii=False)
+        _STONES_JSON_MTIME = mtime
     return _STONES_JSON_CACHE
 
 
@@ -80,14 +65,14 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         if not pokedex:
             pokedex = get_object_or_404(Pokedex, game=game)
 
-    # Entradas de la Pokédex obtenidas de la caché en memoria (0 ms DB)
+    # Entradas de la Pokédex obtenidas del catálogo compilado o caché en memoria (0 ms DB)
     force_refresh = request.GET.get("refresh") == "1" or request.GET.get("nocache") == "1"
-    cached_entries = get_cached_pokedex_entries(pokedex.id, force_refresh=force_refresh)
+    cached_entries = get_cached_pokedex_entries(pokedex.id, force_refresh=force_refresh, game_slug=game.slug)
 
     user, session_key = _get_user_or_session(request)
 
     # Base filter for current user/session
-    user_filter = {"pokedex_entry__pokedex": pokedex}
+    user_filter = {"game_slug": game.slug}
     if user:
         user_filter["user"] = user
     else:
@@ -95,10 +80,10 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
 
     # Obtener IDs de las entradas capturadas normales y shiny por el usuario actual
     caught_entry_ids = set(
-        UserPokemonCatch.objects.filter(**user_filter, is_caught=True).values_list("pokedex_entry_id", flat=True)
+        UserPokemonCatch.objects.filter(**user_filter, is_caught=True).values_list("entry_id", flat=True)
     )
     shiny_caught_entry_ids = set(
-        UserPokemonCatch.objects.filter(**user_filter, is_shiny=True).values_list("pokedex_entry_id", flat=True)
+        UserPokemonCatch.objects.filter(**user_filter, is_shiny=True).values_list("entry_id", flat=True)
     )
 
     # Copias superficiales ultra-rápidas (~1 ms) para anotar estado de captura específico del usuario de forma thread-safe
@@ -136,7 +121,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         unown_chambers = UNOWN_CHAMBERS
         unown_entry = entries_by_num.get(201)
         if unown_entry:
-            unown_catch = UserPokemonCatch.objects.filter(**user_filter, pokedex_entry=unown_entry).first()
+            unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=unown_entry.entry_number).first()
             if unown_catch and unown_catch.unown_forms_caught:
                 unown_normal_caught = set(unown_catch.unown_forms_caught.get("normal", []))
                 unown_shiny_caught = set(unown_catch.unown_forms_caught.get("shiny", []))
@@ -187,32 +172,40 @@ def toggle_catch(request):
     except (ValueError, KeyError):
         return JsonResponse({"error": "Payload JSON inválido"}, status=400)
 
-    entry = get_object_or_404(PokedexEntry, id=entry_id)
+    entry = get_catalog_entry_by_id(entry_id)
+    if not entry:
+        return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
+
     user, session_key = _get_user_or_session(request)
 
-    filter_kwargs = {"pokedex_entry": entry}
+    filter_kwargs = {
+        "game_slug": entry.game_slug,
+        "entry_number": entry.entry_number,
+    }
     if user:
         filter_kwargs["user"] = user
     else:
         filter_kwargs["session_key"] = session_key
 
     catch_record, _ = UserPokemonCatch.objects.get_or_create(
-        defaults={"is_caught": False, "is_shiny": False},
+        defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id},
         **filter_kwargs
     )
+    if catch_record.entry_id != entry.id:
+        catch_record.entry_id = entry.id
 
     # Alternar estado según la modalidad (normal vs shiny)
     if is_shiny:
         new_status = not catch_record.is_shiny
         catch_record.is_shiny = new_status
-        catch_record.save(update_fields=["is_shiny"])
-        stats_filter = {"pokedex_entry__pokedex": entry.pokedex, "is_shiny": True}
+        catch_record.save(update_fields=["is_shiny", "entry_id"])
+        stats_filter = {"game_slug": entry.game_slug, "is_shiny": True}
     else:
         new_status = not catch_record.is_caught
         catch_record.is_caught = new_status
         catch_record.caught_at = timezone.now() if new_status else None
-        catch_record.save(update_fields=["is_caught", "caught_at"])
-        stats_filter = {"pokedex_entry__pokedex": entry.pokedex, "is_caught": True}
+        catch_record.save(update_fields=["is_caught", "caught_at", "entry_id"])
+        stats_filter = {"game_slug": entry.game_slug, "is_caught": True}
 
     if user:
         stats_filter["user"] = user
@@ -220,7 +213,8 @@ def toggle_catch(request):
         stats_filter["session_key"] = session_key
 
     caught_count = UserPokemonCatch.objects.filter(**stats_filter).count()
-    total_count = entry.pokedex.entries.count()
+    catalog = get_compiled_catalog(entry.game_slug) or []
+    total_count = len(catalog)
     percent = round((caught_count / total_count * 100), 1) if total_count else 0
 
     return JsonResponse({
@@ -248,19 +242,27 @@ def toggle_unown_catch(request):
     if not entry_id or not letter or len(letter) != 1 or not ('a' <= letter <= 'z'):
         return JsonResponse({"error": "Parámetros incompletos o letra inválida"}, status=400)
 
-    entry = get_object_or_404(PokedexEntry, id=entry_id)
+    entry = get_catalog_entry_by_id(entry_id)
+    if not entry:
+        return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
+
     user, session_key = _get_user_or_session(request)
 
-    filter_kwargs = {"pokedex_entry": entry}
+    filter_kwargs = {
+        "game_slug": entry.game_slug,
+        "entry_number": entry.entry_number,
+    }
     if user:
         filter_kwargs["user"] = user
     else:
         filter_kwargs["session_key"] = session_key
 
     catch_record, _ = UserPokemonCatch.objects.get_or_create(
-        defaults={"is_caught": False, "is_shiny": False, "unown_forms_caught": {}},
+        defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id, "unown_forms_caught": {}},
         **filter_kwargs
     )
+    if catch_record.entry_id != entry.id:
+        catch_record.entry_id = entry.id
 
     forms_data = dict(catch_record.unown_forms_caught or {})
     key = "shiny" if is_shiny else "normal"
@@ -284,13 +286,14 @@ def toggle_unown_catch(request):
     catch_record.save()
 
     # Recalcular métricas generales de la Pokédex
-    user_filter = {"pokedex_entry__pokedex": entry.pokedex}
+    user_filter = {"game_slug": entry.game_slug}
     if user:
         user_filter["user"] = user
     else:
         user_filter["session_key"] = session_key
 
-    total_pokemon = entry.pokedex.entries.count()
+    catalog = get_compiled_catalog(entry.game_slug) or []
+    total_pokemon = len(catalog)
     global_caught_count = UserPokemonCatch.objects.filter(**user_filter, is_caught=True).count()
     global_caught_percent = round((global_caught_count / total_pokemon * 100), 1) if total_pokemon else 0
 

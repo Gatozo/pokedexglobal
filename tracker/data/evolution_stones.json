@@ -124,6 +124,10 @@
           "detail": "En el suelo en la esquina noroeste del lago subterráneo donde aparece Lapras (requiere Surf)."
         },
         {
+          "area": "Ruinas de Alfa (Cámara Secreta de Aerodactyl)",
+          "detail": "En el suelo de la sala oculta tras resolver el rompecabezas de Aerodactyl y usar la MO Destello en el muro trasero."
+        },
+        {
           "area": "Plaza de Monte Moon",
           "detail": "Objeto oculto en la roca central tras el baile de los Clefairy los lunes por la noche (20:00 a 04:00, usar Golpe Roca)."
         },
@@ -133,11 +137,11 @@
         },
         {
           "area": "Ahorros de Mamá",
-          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
+          "detail": "Mamá la compra una única vez con el dinero que guardas en casa al acumular 15.000 ₽."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
-          "detail": "8% de probabilidad de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada (usar Ladrón o capturar)."
         }
       ]
     }
@@ -175,8 +179,8 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (nativo salvaje en Pokémon Oro)."
         },
         {
-          "area": "Ruta 36 (PokéGear)",
-          "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "silver": [
@@ -185,22 +189,18 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Vulpix (nativo salvaje en Pokémon Plata)."
         },
         {
-          "area": "Ruta 36 (PokéGear)",
-          "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "crystal": [
         {
-          "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe o Vulpix."
-        },
-        {
           "area": "Ruta 36 (PokéGear)",
           "detail": "Llamada telefónica del Escolar Alan tras registrar su número en el PokéGear para regalártela."
         },
         {
-          "area": "Ahorros de Mamá",
-          "detail": "Mamá puede comprarla ocasionalmente con los ahorros en Pokémon Cristal."
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe o Vulpix."
         }
       ]
     }
@@ -238,8 +238,8 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
         },
         {
-          "area": "Ruta 42 (PokéGear)",
-          "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "silver": [
@@ -248,18 +248,18 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
         },
         {
-          "area": "Ruta 42 (PokéGear)",
-          "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "crystal": [
         {
-          "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
-        },
-        {
           "area": "Ruta 42 (PokéGear)",
           "detail": "Llamada telefónica del Pescador Tulio tras registrar su número en el PokéGear para regalártela."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
         }
       ]
     }
@@ -297,8 +297,8 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
         },
         {
-          "area": "Ruta 38 (PokéGear)",
-          "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "silver": [
@@ -307,18 +307,18 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
         },
         {
-          "area": "Ruta 38 (PokéGear)",
-          "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "crystal": [
         {
-          "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
-        },
-        {
           "area": "Ruta 38 (PokéGear)",
           "detail": "Llamada telefónica de la Chica Dana tras registrar su número en el PokéGear para regalártela."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
         }
       ]
     }
@@ -360,8 +360,8 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
         },
         {
-          "area": "Ruta 34 (PokéGear)",
-          "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "silver": [
@@ -370,18 +370,18 @@
           "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
         },
         {
-          "area": "Ruta 34 (PokéGear)",
-          "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+          "area": "Regalo Misterioso",
+          "detail": "Premio infrecuente al conectar dos consolas mediante la función de Regalo Misterioso por infrarrojos."
         }
       ],
       "crystal": [
         {
-          "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
-        },
-        {
           "area": "Ruta 34 (PokéGear)",
           "detail": "Llamada telefónica de la Dominguera Gina tras registrar su número en el PokéGear para regalártela."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
         }
       ]
     }
@@ -430,12 +430,8 @@
           "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
         },
         {
-          "area": "Ahorros de Mamá",
-          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
-        },
-        {
           "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
-          "detail": "8% de probabilidad de que Slowpoke o Poliwhirl salvajes la lleven equipada."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Slowpoke o Poliwhirl salvajes la lleven equipada (capturándolos o usando Ladrón)."
         }
       ],
       "silver": [
@@ -444,12 +440,8 @@
           "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
         },
         {
-          "area": "Ahorros de Mamá",
-          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
-        },
-        {
           "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
-          "detail": "8% de probabilidad de que Slowpoke o Poliwhirl salvajes la lleven equipada."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Slowpoke o Poliwhirl salvajes la lleven equipada (capturándolos o usando Ladrón)."
         }
       ],
       "crystal": [
@@ -458,12 +450,8 @@
           "detail": "Entregada por un hombre en la orilla del lago subterráneo tras derrotar al Team Rocket (requiere Surf y Fuerza)."
         },
         {
-          "area": "Ahorros de Mamá",
-          "detail": "Mamá puede comprarla ocasionalmente con el dinero que guardas en casa."
-        },
-        {
-          "area": "Torre Batalla",
-          "detail": "Posible premio al completar una ronda victoriosa de 7 combates."
+          "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
+          "detail": "Probabilidad reducida (~2% a 8%) de que Slowpoke o Poliwhirl salvajes la lleven equipada (capturándolos o usando Ladrón)."
         }
       ]
     }
@@ -484,7 +472,7 @@
         },
         {
           "area": "Pokémon salvajes (Magnemite)",
-          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
         }
       ],
       "silver": [
@@ -494,7 +482,7 @@
         },
         {
           "area": "Pokémon salvajes (Magnemite)",
-          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
         }
       ],
       "crystal": [
@@ -503,8 +491,12 @@
           "detail": "Regalo del abuelo tras encontrar a su nieta en el camarote del capitán del barco."
         },
         {
-          "area": "Pokémon salvajes (Magnemite)",
-          "detail": "8% de probabilidad de que Magnemite salvaje en Rutas 38 o 39 lo lleve equipado."
+          "area": "Central de Energía (Kanto - Intercambio)",
+          "detail": "Viene equipado en el Magneton que te entrega un científico a cambio de un Dugtrio."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite / Magneton)",
+          "detail": "Probabilidad reducida (~2% a 8%) de que Magnemite o Magneton salvajes lo lleven equipado."
         }
       ]
     }
@@ -525,35 +517,27 @@
         },
         {
           "area": "Pokémon salvajes (Horsea / Seadra)",
-          "detail": "8% de probabilidad de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
         }
       ],
       "silver": [
-        {
-          "area": "Guarida Dragón (B1F)",
-          "detail": "En el suelo tras cruzar el lago subterráneo detrás del Gimnasio de Endrino (requiere Surf y Torbellino)."
-        },
         {
           "area": "Monte Mortero (Cámara interior superior)",
           "detail": "Objeto en el suelo en lo profundo de las cavernas superiores (requiere Surf y Cascada)."
         },
         {
           "area": "Pokémon salvajes (Horsea / Seadra)",
-          "detail": "8% de probabilidad de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
+          "detail": "Probabilidad reducida (~2% a 8%) de que Horsea o Seadra salvajes en Islas Remolino la lleven equipada."
         }
       ],
       "crystal": [
-        {
-          "area": "Guarida Dragón (B1F)",
-          "detail": "En el suelo tras cruzar el lago subterráneo detrás del Gimnasio de Endrino (requiere Surf y Torbellino)."
-        },
         {
           "area": "Monte Mortero (Cámara interior superior)",
           "detail": "Objeto en el suelo en lo profundo de las cavernas superiores (requiere Surf y Cascada)."
         },
         {
-          "area": "Pokémon salvajes (Horsea / Dratini)",
-          "detail": "8% de probabilidad de que Horsea o Dratini salvajes la lleven equipada."
+          "area": "Pokémon salvajes o regalo (Horsea / Seadra / Dratini)",
+          "detail": "Probabilidad reducida (~2% a 8%) en Horsea/Seadra salvajes o equipada en el Dratini especial del Santuario Dragón."
         }
       ]
     }
