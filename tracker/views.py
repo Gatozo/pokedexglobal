@@ -1,14 +1,18 @@
 import copy
 import json
 from django.conf import settings
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from django.core.cache import cache
+from django.contrib.auth import login, logout
+from django.contrib import messages
 from .models import Game, Pokedex, UserPokemonCatch
+from .forms import HybridLoginForm, UserRegisterForm
 from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
+
 
 
 def _get_user_or_session(request):
@@ -55,9 +59,212 @@ def _get_cached_evolution_stones_json():
     return _STONES_JSON_CACHE
 
 
+def merge_session_catches_to_user(session_key, user):
+    """
+    Si el usuario estuvo interactuando con la Pokédex como invitado (usando session_key),
+    transfiere de forma inteligente y segura todas sus capturas registradas a su cuenta de usuario.
+    Si ya existía un registro para ese Pokémon en su cuenta, fusiona los estados (is_caught, is_shiny, unown forms).
+    """
+    if not session_key:
+        return 0
+
+    anon_catches = list(UserPokemonCatch.objects.filter(session_key=session_key, user__isnull=True))
+    if not anon_catches:
+        return 0
+
+    transferred_count = 0
+    for anon in anon_catches:
+        user_catch, created = UserPokemonCatch.objects.get_or_create(
+            user=user,
+            game_slug=anon.game_slug,
+            entry_number=anon.entry_number,
+            defaults={
+                "entry_id": anon.entry_id,
+                "is_caught": anon.is_caught,
+                "is_shiny": anon.is_shiny,
+                "unown_forms_caught": anon.unown_forms_caught,
+                "caught_at": anon.caught_at,
+            }
+        )
+        if not created:
+            changed = False
+            if anon.is_caught and not user_catch.is_caught:
+                user_catch.is_caught = True
+                user_catch.caught_at = user_catch.caught_at or anon.caught_at or timezone.now()
+                changed = True
+            if anon.is_shiny and not user_catch.is_shiny:
+                user_catch.is_shiny = True
+                changed = True
+            if anon.unown_forms_caught:
+                existing_unown = dict(user_catch.unown_forms_caught or {})
+                anon_unown = dict(anon.unown_forms_caught or {})
+                for k in ["normal", "shiny"]:
+                    merged_set = set(existing_unown.get(k, [])) | set(anon_unown.get(k, []))
+                    if merged_set:
+                        existing_unown[k] = sorted(list(merged_set))
+                user_catch.unown_forms_caught = existing_unown
+                changed = True
+            if changed:
+                user_catch.save()
+
+        anon.delete()
+        transferred_count += 1
+
+    return transferred_count
+
+
+def get_target_pokedex_url(request):
+    """
+    Determina la URL de destino adecuada:
+    1. Si hay un parámetro 'next' seguro, lo usa.
+    2. Si hay un último juego visitado en sesión ('last_game_slug'), va a ese juego.
+    3. Por defecto, va a 'red' (/red/).
+    """
+    next_url = request.GET.get("next") or request.POST.get("next")
+    if next_url and next_url.startswith("/") and not next_url.startswith("//") and not next_url.startswith("/login"):
+        return next_url
+
+    last_game = request.session.get("last_game_slug")
+    if last_game:
+        games = _get_cached_all_games()
+        if any(g.slug == last_game for g in games):
+            return f"/{last_game}/"
+
+    return "/red/"
+
+
+def auth_portal_view(request):
+    """
+    Portal de bienvenida, login y registro inicial en '/'.
+    Permite iniciar sesión con usuario o correo, registrarse o continuar como invitado.
+    """
+    target_url = get_target_pokedex_url(request)
+    active_tab = request.GET.get("tab", "login")
+
+    login_form = HybridLoginForm(request=request)
+    register_form = UserRegisterForm()
+
+    if request.method == "POST":
+        action = request.POST.get("action", "login")
+        prev_session_key = request.session.session_key
+        if action == "login":
+            active_tab = "login"
+            login_form = HybridLoginForm(request.POST, request=request)
+            if login_form.is_valid():
+                user = login_form.get_user()
+                login(request, user)
+                migrated = merge_session_catches_to_user(prev_session_key, user)
+                if migrated > 0:
+                    messages.success(request, f"¡Bienvenido de vuelta, {user.username}! Se transfirieron {migrated} capturas realizadas en esta sesión a tu cuenta.")
+                else:
+                    messages.success(request, f"¡Bienvenido, Entrenador {user.username}!")
+                return redirect(target_url)
+        elif action == "register":
+            active_tab = "register"
+            register_form = UserRegisterForm(request.POST)
+            if register_form.is_valid():
+                user = register_form.save()
+                login(request, user, backend="tracker.backends.EmailOrUsernameModelBackend")
+                migrated = merge_session_catches_to_user(prev_session_key, user)
+                if migrated > 0:
+                    messages.success(request, f"¡Cuenta de Entrenador creada con éxito! Se guardaron {migrated} capturas previas en tu nueva cuenta.")
+                else:
+                    messages.success(request, f"¡Bienvenido a Pokédex Global, Entrenador {user.username}! Tu progreso se guardará de forma personal e independiente.")
+                return redirect(target_url)
+
+    last_game_slug = request.session.get("last_game_slug", "red")
+    context = {
+        "login_form": login_form,
+        "register_form": register_form,
+        "active_tab": active_tab,
+        "target_url": target_url,
+        "last_game_slug": last_game_slug,
+        "all_games": _get_cached_all_games(),
+    }
+    return render(request, "tracker/auth.html", context)
+
+
+def register_view(request):
+    """Acceso directo o alias a la pestaña de registro del portal."""
+    if request.method == "POST":
+        return auth_portal_view(request)
+    next_param = request.GET.get("next")
+    url = "/?tab=register"
+    if next_param:
+        url += f"&next={next_param}"
+    return redirect(url)
+
+
+def guest_continue_view(request):
+    """Permite al usuario continuar a la Pokédex sin iniciar sesión (Modo Invitado)."""
+    target_url = get_target_pokedex_url(request)
+    return redirect(target_url)
+
+
+def logout_view(request):
+    """Cierra la sesión del usuario y lo redirige al portal de entrada."""
+    username = request.user.username if request.user.is_authenticated else None
+    logout(request)
+    if username:
+        messages.info(request, f"Sesión de {username} cerrada correctamente. ¡Hasta la próxima aventura!")
+    return redirect("tracker:home")
+
+
+def check_username(request):
+    """
+    Endpoint AJAX liviano para comprobar en tiempo real si un nombre de usuario
+    está disponible o ya existe en la base de datos.
+    """
+    import re
+    from django.contrib.auth import get_user_model
+    User = get_user_model()
+
+    raw_username = request.GET.get("username", "").strip()
+    if not raw_username:
+        return JsonResponse({"available": False, "valid_format": False, "message": "El nombre no puede estar vacío."})
+
+    if len(raw_username) < 3:
+        return JsonResponse({
+            "available": False,
+            "valid_format": False,
+            "message": "El nombre debe tener al menos 3 caracteres."
+        })
+
+    if len(raw_username) > 25:
+        return JsonResponse({
+            "available": False,
+            "valid_format": False,
+            "message": "Máximo 25 caracteres permitidos."
+        })
+
+    if not re.match(r'^[a-zA-Z0-9_]+$', raw_username):
+        return JsonResponse({
+            "available": False,
+            "valid_format": False,
+            "message": "Solo se permiten letras, números y guiones bajos (_)."
+        })
+
+    exists = User.objects.filter(username__iexact=raw_username).exists()
+    if exists:
+        return JsonResponse({
+            "available": False,
+            "valid_format": True,
+            "message": "Este nombre de entrenador ya no está disponible."
+        })
+
+    return JsonResponse({
+        "available": True,
+        "valid_format": True,
+        "message": "¡Nombre de entrenador disponible!"
+    })
+
+
+
 def pokedex_view(request, game_slug="red", pokedex_slug=None):
     """Vista principal que lista los Pokémon de la Pokédex de un juego."""
     game = get_object_or_404(Game, slug=game_slug)
+    request.session["last_game_slug"] = game.slug
+
     if pokedex_slug:
         pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
     else:

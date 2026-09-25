@@ -2,56 +2,82 @@
 <header class="border-b-4 border-slate-950 bg-slate-900/95 backdrop-blur sticky top-0 z-50 shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-400{% elif game.slug == 'crystal' %}bg-sky-400{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center">
-                <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-950"></div>
-            </div>
-            <div>
-                <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 antialiased [text-shadow:2px_2px_0px_#0f172a]">
-                    Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-400{% else %}text-red-500{% endif %}">Global</span>
-                </h1>
-                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen {{ game.generation }}</p>
-            </div>
+            <a href="{% url 'tracker:home' %}" class="flex items-center space-x-3 group" title="Ir al Portal de Inicio">
+                <div class="w-10 h-10 rounded-full {% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-400{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-400{% elif game.slug == 'crystal' %}bg-sky-400{% else %}bg-red-600{% endif %} border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <div class="w-3.5 h-3.5 rounded-full bg-white border-2 border-slate-950"></div>
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-black tracking-wider uppercase text-white flex items-center gap-1.5 antialiased [text-shadow:2px_2px_0px_#0f172a]">
+                        Pokédex <span class="{% if game.slug == 'blue' %}text-blue-500{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-400{% else %}text-red-500{% endif %}">Global</span>
+                    </h1>
+                    <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Gestor Coleccionista • Gen {{ game.generation }}</p>
+                </div>
+            </a>
         </div>
 
-        <!-- Game Selector & Mode Switcher (Estilo Cartucho Game Boy) -->
-        <div class="flex items-center space-x-2 sm:space-x-2.5">
-            <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-300{% else %}text-red-400{% endif %}">
-                Cartucho:
-            </label>
-            <div class="relative">
-                <select 
-                    id="game-select" 
-                    onchange="window.location.href='/' + this.value + '/'" 
-                    class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% elif game.slug == 'gold' %}bg-[#c59b27] hover:bg-[#b38819] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 hover:bg-slate-400 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 hover:bg-sky-400 text-slate-950 font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
-                >
-                    {% for g in all_games %}
-                        <option value="{{ g.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if g.slug == game.slug %}selected{% endif %}>
-                            {{ g.display_name }} (Gen {{ g.generation }})
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            {% if game_pokedexes|length > 1 %}
-            <div class="flex items-center space-x-1.5 ml-1 sm:ml-2">
-                <label for="pokedex-select" class="text-xs font-black uppercase tracking-wider hidden md:inline-block text-slate-300">
-                    Pokédex:
+        <!-- Controls: Selector & Auth Widget -->
+        <div class="flex items-center">
+            <!-- Game Selector & Mode Switcher (Estilo Cartucho Game Boy) -->
+            <div class="flex items-center space-x-2 sm:space-x-2.5">
+                <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-300{% else %}text-red-400{% endif %}">
+                    Cartucho:
                 </label>
                 <div class="relative">
                     <select 
-                        id="pokedex-select" 
-                        onchange="window.location.href='/' + '{{ game.slug }}' + '/' + this.value + '/'" 
-                        class="bg-white hover:bg-slate-50 text-slate-950 border-2 border-slate-950 text-xs sm:text-sm font-black rounded-xl px-2.5 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
+                        id="game-select" 
+                        onchange="window.location.href='/' + this.value + '/'" 
+                        class="{% if game.slug == 'blue' %}bg-blue-600 hover:bg-blue-500 text-white{% elif game.slug == 'yellow' %}bg-amber-400 hover:bg-amber-300 text-slate-950 font-black{% elif game.slug == 'gold' %}bg-[#c59b27] hover:bg-[#b38819] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 hover:bg-slate-400 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 hover:bg-sky-400 text-slate-950 font-black{% else %}bg-red-600 hover:bg-red-500 text-white{% endif %} border-2 border-slate-950 text-xs sm:text-sm font-black uppercase rounded-xl px-3 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
                     >
-                        {% for p in game_pokedexes %}
-                            <option value="{{ p.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if p.slug == pokedex.slug %}selected{% endif %}>
-                                {{ p.name }}
+                        {% for g in all_games %}
+                            <option value="{{ g.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if g.slug == game.slug %}selected{% endif %}>
+                                {{ g.display_name }} (Gen {{ g.generation }})
                             </option>
                         {% endfor %}
                     </select>
                 </div>
+
+                {% if game_pokedexes|length > 1 %}
+                <div class="flex items-center space-x-1.5 ml-1 sm:ml-2">
+                    <label for="pokedex-select" class="text-xs font-black uppercase tracking-wider hidden md:inline-block text-slate-300">
+                        Pokédex:
+                    </label>
+                    <div class="relative">
+                        <select 
+                            id="pokedex-select" 
+                            onchange="window.location.href='/' + '{{ game.slug }}' + '/' + this.value + '/'" 
+                            class="bg-white hover:bg-slate-50 text-slate-950 border-2 border-slate-950 text-xs sm:text-sm font-black rounded-xl px-2.5 py-1.5 shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none cursor-pointer"
+                        >
+                            {% for p in game_pokedexes %}
+                                <option value="{{ p.slug }}" class="bg-white text-slate-950 font-bold py-1" {% if p.slug == pokedex.slug %}selected{% endif %}>
+                                    {{ p.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
+
+            <!-- Trainer Profile / Auth Widget -->
+            <div class="flex items-center space-x-2 ml-2.5 sm:ml-3.5 pl-2.5 sm:pl-3.5 border-l-2 border-slate-700">
+                {% if request.user.is_authenticated %}
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-800 text-emerald-400 border-2 border-slate-950 rounded-xl text-xs font-black shadow-[2px_2px_0px_#0f172a]" title="Sesión activa">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="hidden md:inline text-slate-300 font-bold">Entrenador:</span> {{ request.user.username }}
+                    </span>
+                    <a href="{% url 'tracker:logout' %}" class="px-2.5 py-1.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-black uppercase rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5" title="Cerrar Sesión">
+                        Salir
+                    </a>
+                {% else %}
+                    <span class="hidden md:inline-flex items-center gap-1 px-2 py-1 bg-slate-800 text-amber-300 border-2 border-slate-950 rounded-xl text-[11px] font-bold shadow-[2px_2px_0px_#0f172a]">
+                        Invitado
+                    </span>
+                    <a href="{% url 'tracker:login' %}" class="px-2.5 py-1.5 bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-black uppercase rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5 whitespace-nowrap">
+                        Iniciar Sesión
+                    </a>
+                {% endif %}
+            </div>
         </div>
+
     </div>
 </header>

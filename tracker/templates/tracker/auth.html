@@ -1,0 +1,589 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-950 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso y Registro | Pokédex Global</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pokeRed: '#EE1515',
+                        pokeDark: '#1E2328',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scrollbar-gutter: stable;
+        }
+        body {
+            background-color: #faf0e6;
+            background-image: radial-gradient(rgba(225, 29, 72, 0.16) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+        .comic-border {
+            border: 4px solid #0f172a;
+        }
+        .comic-border-sm {
+            border: 2px solid #0f172a;
+        }
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px #0f172a;
+        }
+        .comic-shadow-sm {
+            box-shadow: 3px 3px 0px 0px #0f172a;
+        }
+        .comic-shadow-btn {
+            box-shadow: 4px 4px 0px 0px #0f172a;
+        }
+        .comic-shadow-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px 0px #0f172a;
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col justify-center items-center py-8 px-4 sm:px-6 font-sans selection:bg-red-500 selection:text-white">
+
+    <!-- Tarjeta Principal Pokédex Cómic -->
+    <div class="w-full max-w-md bg-[#fffef5] text-slate-900 comic-border rounded-3xl comic-shadow overflow-hidden transition-all duration-300">
+        
+        <!-- Header Estilo Pokédex Física -->
+        <div class="bg-red-600 px-6 py-5 border-b-4 border-slate-950 relative">
+            <!-- Bisagra visual superior -->
+            <div class="flex items-center justify-between">
+                <!-- Luces LED Pokédex -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-sky-400 border-4 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center relative overflow-hidden animate-pulse">
+                        <div class="w-3.5 h-3.5 rounded-full bg-white absolute top-1.5 left-2 opacity-80"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-sky-100 absolute top-4 left-4"></div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <span class="w-3.5 h-3.5 rounded-full bg-rose-400 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a]"></span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a]"></span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a]"></span>
+                    </div>
+                </div>
+
+                <!-- Badge versión -->
+                <span class="bg-slate-950 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full tracking-widest border border-slate-800">
+                    SISTEMA v2.0
+                </span>
+            </div>
+
+            <div class="mt-4">
+                <h1 class="text-2xl sm:text-3xl font-black uppercase tracking-wider text-white [text-shadow:2px_2px_0px_#0f172a] flex items-center gap-2">
+                    Pokédex <span class="text-amber-300">Global</span>
+                </h1>
+                <p class="text-xs font-bold text-red-100 tracking-wide mt-0.5">
+                    Terminal de Coleccionistas y Registro de Entrenadores
+                </p>
+            </div>
+        </div>
+
+        <!-- Alertas y Mensajes Flash del Sistema -->
+        {% if messages %}
+        <div class="p-4 bg-amber-100 border-b-4 border-slate-950 space-y-2">
+            {% for message in messages %}
+                <div class="comic-border-sm rounded-xl p-3 text-xs font-bold flex items-start gap-2 shadow-[2px_2px_0px_#0f172a] {% if message.tags == 'success' %}bg-emerald-100 text-emerald-950 border-emerald-950{% elif message.tags == 'error' %}bg-rose-100 text-rose-950 border-rose-950{% else %}bg-sky-100 text-sky-950 border-sky-950{% endif %}">
+                    <span class="text-base select-none">
+                        {% if message.tags == 'success' %}⚡{% elif message.tags == 'error' %}⚠️{% else %}ℹ️{% endif %}
+                    </span>
+                    <span class="flex-1 leading-relaxed">{{ message }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Si el usuario ya tiene sesión iniciada -->
+        {% if request.user.is_authenticated %}
+        <div class="p-6 bg-emerald-50 border-b-4 border-slate-950">
+            <div class="comic-border-sm bg-white rounded-2xl p-4 comic-shadow-sm text-center">
+                <div class="w-12 h-12 mx-auto mb-2 rounded-full bg-red-600 border-2 border-slate-950 flex items-center justify-center text-white text-xl font-black shadow-[2px_2px_0px_#0f172a]">
+                    {{ request.user.username|make_list|first|upper }}
+                </div>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Sesión Iniciada</p>
+                <h2 class="text-xl font-black text-slate-900 mt-0.5">Entrenador {{ request.user.username }}</h2>
+                {% if request.user.email %}
+                <p class="text-xs text-slate-500 font-semibold">{{ request.user.email }}</p>
+                {% endif %}
+
+                <div class="mt-5 space-y-2.5">
+                    <a href="{{ target_url }}" class="block w-full py-3 bg-red-600 hover:bg-red-500 text-white font-black text-sm uppercase tracking-wider rounded-xl comic-border-sm comic-shadow-btn transition-transform text-center">
+                        Continuar a la Pokédex &rarr;
+                    </a>
+                    <a href="{% url 'tracker:logout' %}" class="block w-full py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-black text-xs uppercase tracking-wider rounded-xl comic-border-sm transition-colors text-center">
+                        Cerrar Sesión / Cambiar Cuenta
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Pestañas Interactivas (Tabs) -->
+        <div class="p-6">
+            <div class="flex border-b-4 border-slate-950 mb-6 bg-slate-100 rounded-2xl p-1 comic-border-sm">
+                <button type="button" id="tab-login-btn" onclick="switchAuthTab('login')" class="flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center {% if active_tab == 'login' %}bg-slate-950 text-white shadow-sm{% else %}text-slate-600 hover:text-slate-950{% endif %}">
+                    Iniciar Sesión
+                </button>
+                <button type="button" id="tab-register-btn" onclick="switchAuthTab('register')" class="flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center {% if active_tab == 'register' %}bg-slate-950 text-white shadow-sm{% else %}text-slate-600 hover:text-slate-950{% endif %}">
+                    Crear Cuenta
+                </button>
+            </div>
+
+            <!-- Panel: Iniciar Sesión -->
+            <div id="tab-login-content" class="{% if active_tab != 'login' %}hidden{% endif %}">
+                <form method="post" action="{% url 'tracker:home' %}" class="space-y-4">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="login">
+                    {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    {% endif %}
+
+                    {% if login_form.non_field_errors %}
+                    <div class="comic-border-sm bg-rose-50 text-rose-900 rounded-xl p-3 text-xs font-bold shadow-[2px_2px_0px_#0f172a]">
+                        {% for err in login_form.non_field_errors %}
+                            <p>{{ err }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div>
+                        <label for="{{ login_form.identifier.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ login_form.identifier.label }}
+                        </label>
+                        {{ login_form.identifier }}
+                        {% if login_form.identifier.errors %}
+                        <p class="text-xs text-rose-600 font-bold mt-1">{{ login_form.identifier.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label for="{{ login_form.password.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ login_form.password.label }}
+                        </label>
+                        {{ login_form.password }}
+                        {% if login_form.password.errors %}
+                        <p class="text-xs text-rose-600 font-bold mt-1">{{ login_form.password.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="w-full mt-2 py-3 bg-red-600 hover:bg-red-500 text-white font-black text-sm uppercase tracking-wider rounded-xl comic-border-sm comic-shadow-btn transition-transform cursor-pointer">
+                        Ingresar a la Pokédex
+                    </button>
+                </form>
+            </div>
+
+            <!-- Panel: Crear Cuenta (Registro) -->
+            <div id="tab-register-content" class="{% if active_tab != 'register' %}hidden{% endif %}">
+                <form method="post" action="{% url 'tracker:home' %}" class="space-y-3.5">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="register">
+                    {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    {% endif %}
+
+                    {% if register_form.non_field_errors %}
+                    <div class="comic-border-sm bg-rose-50 text-rose-900 rounded-xl p-3 text-xs font-bold shadow-[2px_2px_0px_#0f172a]">
+                        {% for err in register_form.non_field_errors %}
+                            <p>{{ err }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div>
+                        <label for="{{ register_form.username.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ register_form.username.label }}
+                        </label>
+                        {{ register_form.username }}
+                        <div id="username-feedback" class="hidden mt-1.5 flex items-center gap-1.5 text-xs font-black">
+                            <span id="username-icon" class="text-sm"></span>
+                            <span id="username-message"></span>
+                        </div>
+                        <p class="text-[11px] text-slate-500 font-semibold mt-0.5">{{ register_form.username.help_text }}</p>
+                        {% if register_form.username.errors %}
+                        <p class="text-xs text-rose-600 font-black mt-1">{{ register_form.username.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label for="{{ register_form.email.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ register_form.email.label }}
+                        </label>
+                        {{ register_form.email }}
+                        <p class="text-[11px] text-slate-500 font-semibold mt-0.5">{{ register_form.email.help_text }}</p>
+                        {% if register_form.email.errors %}
+                        <p class="text-xs text-rose-600 font-black mt-1">{{ register_form.email.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label for="{{ register_form.password.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ register_form.password.label }}
+                        </label>
+                        {{ register_form.password }}
+                        
+                        <!-- Barra de Seguridad de Contraseña (NIST / OWASP) -->
+                        <div id="password-strength-container" class="mt-2 space-y-1.5">
+                            <div class="flex items-center justify-between text-[11px] font-black uppercase">
+                                <span class="text-slate-600">Nivel de Seguridad:</span>
+                                <span id="password-strength-text" class="text-slate-400">Sin ingresar</span>
+                            </div>
+                            
+                            <!-- Barra con 4 segmentos -->
+                            <div class="grid grid-cols-4 gap-1.5 h-2.5 p-0.5 bg-slate-200 border-2 border-slate-950 rounded-full overflow-hidden">
+                                <div id="strength-seg-1" class="h-full rounded-full transition-all duration-300 bg-transparent"></div>
+                                <div id="strength-seg-2" class="h-full rounded-full transition-all duration-300 bg-transparent"></div>
+                                <div id="strength-seg-3" class="h-full rounded-full transition-all duration-300 bg-transparent"></div>
+                                <div id="strength-seg-4" class="h-full rounded-full transition-all duration-300 bg-transparent"></div>
+                            </div>
+
+                            <!-- Píldoras de Criterios de Seguridad -->
+                            <div class="grid grid-cols-2 gap-1 pt-0.5">
+                                <div id="crit-length" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
+                                    <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
+                                    <span>Entre 4 y 32 caracteres</span>
+                                </div>
+                                <div id="crit-upper" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
+                                    <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
+                                    <span>Mayúscula (A-Z)</span>
+                                </div>
+                                <div id="crit-number" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
+                                    <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
+                                    <span>Un número (0-9)</span>
+                                </div>
+                                <div id="crit-symbol" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
+                                    <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
+                                    <span>Símbolo (!@#$...)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% if register_form.password.errors %}
+                        <p class="text-xs text-rose-600 font-black mt-1">{{ register_form.password.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        <label for="{{ register_form.password_confirm.id_for_label }}" class="block text-xs font-black uppercase tracking-wider text-slate-800 mb-1">
+                            {{ register_form.password_confirm.label }}
+                        </label>
+                        {{ register_form.password_confirm }}
+                        <div id="password-match-feedback" class="hidden mt-1.5 flex items-center gap-1.5 text-xs font-black">
+                            <span id="match-icon" class="text-sm"></span>
+                            <span id="match-message"></span>
+                        </div>
+                        {% if register_form.password_confirm.errors %}
+                        <p class="text-xs text-rose-600 font-black mt-1">{{ register_form.password_confirm.errors.0 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="w-full mt-3 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wider rounded-xl comic-border-sm comic-shadow-btn transition-transform cursor-pointer">
+                        Registrarme e Iniciar
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- Separador Estilo Cómic -->
+            <div class="relative my-7">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t-2 border-slate-950/20"></div>
+                </div>
+                <div class="relative flex justify-center text-xs uppercase">
+                    <span class="bg-[#fffef5] px-3 font-black text-slate-500 tracking-wider">
+                        O bien sin registrarte
+                    </span>
+                </div>
+            </div>
+
+            <!-- Opción: Continuar sin Cuenta (Modo Invitado) -->
+            <div class="bg-amber-50 comic-border-sm rounded-2xl p-4 comic-shadow-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-amber-400 border-2 border-slate-950 flex items-center justify-center font-black text-slate-950 text-lg shadow-[1.5px_1.5px_0px_#0f172a] shrink-0">
+                        ?
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-xs font-black uppercase text-slate-900 tracking-wider">
+                            Modo Invitado
+                        </h3>
+                        <p class="text-[11px] text-slate-600 font-bold leading-tight mt-0.5">
+                            Explora y marca capturas libremente. Si luego te registras, tu avance se guardará.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="{% url 'tracker:guest_continue' %}" class="mt-3 block w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl comic-border-sm comic-shadow-btn text-center transition-transform">
+                    Continuar como Invitado &rarr;
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Footer Card -->
+        <div class="px-6 py-3.5 bg-slate-100 border-t-4 border-slate-950 text-center">
+            <p class="text-[11px] font-bold text-slate-500">
+                Pokédex Global • Progreso independiente por cada Entrenador
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts Interactivos para Autenticación y Seguridad -->
+    <script>
+        function switchAuthTab(tab) {
+            const loginBtn = document.getElementById('tab-login-btn');
+            const regBtn = document.getElementById('tab-register-btn');
+            const loginContent = document.getElementById('tab-login-content');
+            const regContent = document.getElementById('tab-register-content');
+
+            if (tab === 'login') {
+                loginBtn.className = "flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center bg-slate-950 text-white shadow-sm";
+                regBtn.className = "flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center text-slate-600 hover:text-slate-950";
+                loginContent.classList.remove('hidden');
+                regContent.classList.add('hidden');
+                history.replaceState(null, '', window.location.pathname + '?tab=login');
+            } else {
+                regBtn.className = "flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center bg-slate-950 text-white shadow-sm";
+                loginBtn.className = "flex-1 py-2.5 text-xs sm:text-sm font-black uppercase rounded-xl transition-all tracking-wider text-center text-slate-600 hover:text-slate-950";
+                regContent.classList.remove('hidden');
+                loginContent.classList.add('hidden');
+                history.replaceState(null, '', window.location.pathname + '?tab=register');
+            }
+        }
+
+        // ==========================================
+        // 1. COMPROBADOR DE DISPONIBILIDAD DE USUARIO
+        // ==========================================
+        const usernameInput = document.getElementById('id_reg_username') || document.querySelector('#tab-register-content input[name="username"]');
+        const usernameFeedback = document.getElementById('username-feedback');
+        const usernameIcon = document.getElementById('username-icon');
+        const usernameMessage = document.getElementById('username-message');
+        let usernameDebounceTimer = null;
+
+        function checkUsernameAvailability() {
+            if (!usernameInput) return;
+            clearTimeout(usernameDebounceTimer);
+            const username = usernameInput.value.trim();
+
+            if (!username) {
+                usernameFeedback.classList.add('hidden');
+                usernameInput.classList.remove('border-rose-500', 'border-emerald-500', 'border-amber-500');
+                usernameInput.classList.add('border-slate-950');
+                return;
+            }
+
+            if (username.length < 3) {
+                usernameFeedback.classList.remove('hidden');
+                usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-amber-600";
+                usernameIcon.textContent = "⚠️";
+                usernameMessage.textContent = "Mínimo 3 caracteres requeridos.";
+                usernameInput.classList.remove('border-emerald-500', 'border-rose-500');
+                usernameInput.classList.add('border-amber-500');
+                return;
+            }
+
+            // Debounce de 300ms antes de consultar el endpoint AJAX
+            usernameDebounceTimer = setTimeout(() => {
+                usernameFeedback.classList.remove('hidden');
+                usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-bold text-slate-500";
+                usernameIcon.textContent = "⏳";
+                usernameMessage.textContent = "Comprobando disponibilidad...";
+
+                fetch(`/api/auth/check-username/?username=${encodeURIComponent(username)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.valid_format) {
+                            usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-amber-600";
+                            usernameIcon.textContent = "⚠️";
+                            usernameMessage.textContent = data.message;
+                            usernameInput.classList.remove('border-emerald-500', 'border-rose-500');
+                            usernameInput.classList.add('border-amber-500');
+                        } else if (data.available) {
+                            usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-emerald-600";
+                            usernameIcon.textContent = "✓";
+                            usernameMessage.textContent = "¡Nombre de entrenador disponible!";
+                            usernameInput.classList.remove('border-rose-500', 'border-amber-500');
+                            usernameInput.classList.add('border-emerald-500');
+                        } else {
+                            usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-rose-600";
+                            usernameIcon.textContent = "✕";
+                            usernameMessage.textContent = "Este nombre de entrenador ya no está disponible.";
+                            usernameInput.classList.remove('border-emerald-500', 'border-amber-500');
+                            usernameInput.classList.add('border-rose-500');
+                        }
+                    })
+                    .catch(() => {
+                        usernameFeedback.classList.add('hidden');
+                    });
+            }, 300);
+        }
+
+        if (usernameInput) {
+            ['input', 'keyup', 'change', 'paste'].forEach(evt => {
+                usernameInput.addEventListener(evt, checkUsernameAvailability);
+            });
+        }
+
+        // ==========================================
+        // 2. BARRA DE SEGURIDAD DE CONTRASEÑA (NIST/OWASP)
+        // ==========================================
+        const passwordInput = document.getElementById('id_reg_password') || document.querySelector('#tab-register-content input[name="password"]');
+        const confirmInput = document.getElementById('id_reg_password_confirm') || document.querySelector('#tab-register-content input[name="password_confirm"]');
+        const strengthText = document.getElementById('password-strength-text');
+        const segs = [
+            document.getElementById('strength-seg-1'),
+            document.getElementById('strength-seg-2'),
+            document.getElementById('strength-seg-3'),
+            document.getElementById('strength-seg-4')
+        ];
+
+        const critLength = document.getElementById('crit-length');
+        const critUpper = document.getElementById('crit-upper');
+        const critNumber = document.getElementById('crit-number');
+        const critSymbol = document.getElementById('crit-symbol');
+
+        function updateChecklist(el, isValid) {
+            if (!el) return;
+            const bullet = el.querySelector('.crit-bullet');
+            if (isValid) {
+                bullet.textContent = "✓";
+                bullet.className = "crit-bullet w-3.5 h-3.5 rounded-full border border-emerald-950 bg-emerald-500 text-white flex items-center justify-center text-[8px] font-black";
+                el.className = el.className.replace('text-slate-500', 'text-emerald-700 font-black');
+            } else {
+                bullet.textContent = "✕";
+                bullet.className = "crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black";
+                el.className = el.className.replace('text-emerald-700 font-black', 'text-slate-500');
+            }
+        }
+
+        function evaluatePasswordStrength(pwd, username) {
+            if (!pwd) {
+                updateChecklist(critLength, false);
+                updateChecklist(critUpper, false);
+                updateChecklist(critNumber, false);
+                updateChecklist(critSymbol, false);
+                return { score: 0, label: "Sin ingresar", colorClass: "bg-transparent", textClass: "text-slate-400" };
+            }
+
+            const hasLength = pwd.length >= 4 && pwd.length <= 32;
+            const hasUpper = /[A-Z]/.test(pwd);
+            const hasLower = /[a-z]/.test(pwd);
+            const hasNumber = /[0-9]/.test(pwd);
+            const hasSymbol = /[^A-Za-z0-9]/.test(pwd);
+
+            updateChecklist(critLength, hasLength);
+            updateChecklist(critUpper, hasUpper);
+            updateChecklist(critNumber, hasNumber);
+            updateChecklist(critSymbol, hasSymbol);
+
+            let score = 0;
+            if (hasLength) score += 1;
+            if (hasUpper && hasLower) score += 1;
+            if (hasNumber) score += 1;
+            if (hasSymbol) score += 1;
+
+
+            // Bonificación por longitud extendida (12+)
+            if (pwd.length >= 12 && score >= 3) {
+                score = 4;
+            }
+
+            // Penalización si incluye el nombre de usuario
+            if (username && username.length >= 3 && pwd.toLowerCase().includes(username.toLowerCase())) {
+                score = Math.max(1, score - 1);
+            }
+
+            switch(score) {
+                case 1:
+                    return { score: 1, label: "Muy Débil", colorClass: "bg-rose-500", textClass: "text-rose-600" };
+                case 2:
+                    return { score: 2, label: "Aceptable", colorClass: "bg-amber-500", textClass: "text-amber-600" };
+                case 3:
+                    return { score: 3, label: "Fuerte / Segura", colorClass: "bg-emerald-500", textClass: "text-emerald-600" };
+                case 4:
+                    return { score: 4, label: "¡Excelente (Nivel Campeón)!", colorClass: "bg-indigo-600", textClass: "text-indigo-600" };
+                default:
+                    return { score: 0, label: "Muy Corta", colorClass: "bg-rose-500", textClass: "text-rose-600" };
+            }
+        }
+
+        function updatePasswordUI() {
+            const pwd = passwordInput ? passwordInput.value : '';
+            const uname = usernameInput ? usernameInput.value.trim() : '';
+            const evalResult = evaluatePasswordStrength(pwd, uname);
+
+            if (strengthText) {
+                strengthText.textContent = evalResult.label;
+                strengthText.className = `text-[11px] font-black uppercase ${evalResult.textClass}`;
+            }
+
+            segs.forEach((seg, idx) => {
+                if (seg) {
+                    if (idx < evalResult.score) {
+                        seg.className = `h-full rounded-full transition-all duration-300 ${evalResult.colorClass}`;
+                    } else {
+                        seg.className = "h-full rounded-full transition-all duration-300 bg-transparent";
+                    }
+                }
+            });
+
+            checkPasswordMatch();
+        }
+
+        // ==========================================
+        // 3. COMPROBACIÓN DE CONFIRMAR CONTRASEÑA
+        // ==========================================
+        const matchFeedback = document.getElementById('password-match-feedback');
+        const matchIcon = document.getElementById('match-icon');
+        const matchMessage = document.getElementById('match-message');
+
+        function checkPasswordMatch() {
+            if (!confirmInput || !passwordInput || !matchFeedback) return;
+            const pwd = passwordInput.value;
+            const confirmPwd = confirmInput.value;
+
+            if (!confirmPwd) {
+                matchFeedback.classList.add('hidden');
+                confirmInput.classList.remove('border-rose-500', 'border-emerald-500');
+                confirmInput.classList.add('border-slate-950');
+                return;
+            }
+
+            matchFeedback.classList.remove('hidden');
+            if (pwd === confirmPwd) {
+                matchFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-emerald-600";
+                matchIcon.textContent = "✓";
+                matchMessage.textContent = "Las contraseñas coinciden.";
+                confirmInput.classList.remove('border-rose-500');
+                confirmInput.classList.add('border-emerald-500');
+            } else {
+                matchFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-rose-600";
+                matchIcon.textContent = "✕";
+                matchMessage.textContent = "Las contraseñas no coinciden.";
+                confirmInput.classList.remove('border-emerald-500');
+                confirmInput.classList.add('border-rose-500');
+            }
+        }
+
+        if (passwordInput) {
+            ['input', 'keyup', 'change', 'paste'].forEach(evt => {
+                passwordInput.addEventListener(evt, () => setTimeout(updatePasswordUI, 0));
+            });
+        }
+
+        if (confirmInput) {
+            ['input', 'keyup', 'change', 'paste'].forEach(evt => {
+                confirmInput.addEventListener(evt, () => setTimeout(checkPasswordMatch, 0));
+            });
+        }
+
+    </script>
+
+</body>
+</html>

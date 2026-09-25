@@ -93,20 +93,20 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+# Password validation - Política flexible estilo Netflix (hasta 32 caracteres)
+AUTH_PASSWORD_VALIDATORS = []
+
+
+# Authentication Backends
+AUTHENTICATION_BACKENDS = [
+    'tracker.backends.EmailOrUsernameModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
+
+LOGIN_URL = 'tracker:login'
+LOGIN_REDIRECT_URL = 'tracker:home'
+LOGOUT_REDIRECT_URL = 'tracker:login'
+
 
 
 # Internationalization
