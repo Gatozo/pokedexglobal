@@ -40,6 +40,84 @@ STARTER_NATIONAL_NUMBERS = {
     906, 907, 908, 909, 910, 911, 912, 913, 914
 }
 
+# Familias evolutivas completas de fósiles (Gen 1 a Gen 8)
+FOSSIL_NATIONAL_NUMBERS = {
+    138, 139, 140, 141, 142,  # Gen 1: Omanyte, Omastar, Kabuto, Kabutops, Aerodactyl
+    345, 346, 347, 348,        # Gen 3: Lileep, Cradily, Anorith, Armaldo
+    408, 409, 410, 411,        # Gen 4: Cranidos, Rampardos, Shieldon, Bastiodon
+    564, 565, 566, 567,        # Gen 5: Tirtouga, Carracosta, Archen, Archeops
+    696, 697, 698, 699,        # Gen 6: Tyrunt, Tyrantrum, Amaura, Aurorus
+    880, 881, 882, 883         # Gen 8: Dracozolt, Arctozolt, Dracovish, Arctovish
+}
+
+# Pokémon bebés canónicos introducidos a partir de 2ª Generación
+BABY_NATIONAL_NUMBERS = {
+    172, 173, 174, 175, 236, 238, 239, 240,  # Gen 2: Pichu, Cleffa, Igglybuff, Togepi, Tyrogue, Smoochum, Elekid, Magby
+    298, 360,                                # Gen 3: Azurill, Wynaut
+    406, 433, 438, 439, 440, 446, 447, 458,  # Gen 4: Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke
+    848                                       # Gen 8: Toxel
+}
+
+_GAME_EVO_SETS: Dict[str, Dict[str, set]] = {}
+
+
+def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
+    """Extrae dinámicamente los Pokémon involucrados en intercambio, piedra y amistad para una edición."""
+    if game_slug in _GAME_EVO_SETS:
+        return _GAME_EVO_SETS[game_slug]
+
+    catalog_file = CATALOGS_DIR / f"{game_slug}.json"
+    if not catalog_file.exists():
+        return {"trade": set(), "stone": set(), "friendship": set()}
+
+    trades = set()
+    stones = set()
+    friendships = set()
+
+    try:
+        with open(catalog_file, "r", encoding="utf-8") as f:
+            raw_entries = json.load(f)
+
+        for p in raw_entries:
+            p_name = p.get("pokemon", {}).get("name", "").lower().strip()
+            obt = p.get("obtaining_info") or {}
+            evo = obt.get("evolution_info") or {}
+            evo_from = (evo.get("from") or "").lower().strip()
+            cond = (evo.get("condition") or "").lower()
+            text = (evo.get("text") or "").lower()
+            trigger = evo.get("trigger")
+            stone_data = p.get("evolution_stone")
+
+            # Trade evolution
+            if trigger == "trade" or "intercambio" in cond or "intercambio" in text:
+                if p_name:
+                    trades.add(p_name)
+                if evo_from:
+                    trades.add(evo_from)
+
+            # Stone evolution
+            slug = stone_data.get("slug") if stone_data else ""
+            if (slug and slug.endswith("-stone")) or "piedra" in cond or "piedra" in text:
+                if p_name:
+                    stones.add(p_name)
+                if evo_from:
+                    stones.add(evo_from)
+
+            # Friendship evolution
+            if any(w in cond or w in text for w in ["felicidad", "amistad", "happiness"]):
+                if p_name:
+                    friendships.add(p_name)
+                if evo_from:
+                    friendships.add(evo_from)
+    except Exception as e:
+        print(f"Error computing evo sets for {game_slug}: {e}")
+
+    _GAME_EVO_SETS[game_slug] = {
+        "trade": trades,
+        "stone": stones,
+        "friendship": friendships
+    }
+    return _GAME_EVO_SETS[game_slug]
 
 
 def get_existing_icons():
@@ -234,14 +312,19 @@ class CatalogEntry:
         if obt.get("type") in ["legendary", "mythical"]:
             tags.add("legendary")
 
-        # Métodos de obtención en texto
+        # Métodos y áreas de obtención en texto
         methods_lower = " ".join([loc.get("method", "").lower() for loc in obt.get("locations", [])])
+        areas_lower = " ".join([loc.get("area", "").lower() for loc in obt.get("locations", [])])
         summary_lower = (obt.get("summary") or "").lower()
-        full_obt_text = f"{methods_lower} {summary_lower}"
+        full_obt_text = f"{methods_lower} {areas_lower} {summary_lower}"
 
         # Regalos
         if obt.get("type") == "gift" or "regalo" in full_obt_text:
             tags.add("gift")
+
+        # Zona Safari
+        if "safari" in full_obt_text:
+            tags.add("safari")
 
         # Surf
         if "surf" in full_obt_text:
@@ -264,6 +347,34 @@ class CatalogEntry:
             tags.add("rod_super")
         if has_old or has_good or has_super:
             tags.add("rod_any")
+
+        # Fósiles y sus evoluciones
+        if (
+            obt.get("type") == "fossil"
+            or nat_num in FOSSIL_NATIONAL_NUMBERS
+            or "fósil" in full_obt_text
+            or "fosil" in full_obt_text
+            or "ámbar" in full_obt_text
+        ):
+            tags.add("fossil")
+
+        # Bebés (Solo en 2ª Gen en adelante)
+        gen = 2 if self.game_slug in ["gold", "silver", "crystal"] else 1
+        if gen >= 2 and nat_num in BABY_NATIONAL_NUMBERS:
+            tags.add("baby")
+
+        # Evoluciones dinámicas por juego (Intercambio, Piedra, Amistad)
+        evo_sets = get_game_evo_sets(self.game_slug)
+        p_name = self.pokemon.name.lower().strip() if self.pokemon else ""
+
+        if p_name in evo_sets.get("trade", set()):
+            tags.add("trade")
+
+        if p_name in evo_sets.get("stone", set()):
+            tags.add("stone")
+
+        if gen >= 2 and p_name in evo_sets.get("friendship", set()):
+            tags.add("friendship")
 
         return " ".join(sorted(tags))
 
@@ -306,10 +417,11 @@ class CatalogEntry:
 
 def clear_catalog_memory_cache():
     """Limpia la caché en memoria de los catálogos compilados."""
-    global _CATALOG_CACHE, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE
+    global _CATALOG_CACHE, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE, _GAME_EVO_SETS
     _CATALOG_CACHE.clear()
     _ENTRY_BY_ID_CACHE.clear()
     _POKEMON_BY_NATIONAL_CACHE.clear()
+    _GAME_EVO_SETS.clear()
 
 
 def get_compiled_catalog(game_slug: str, force_reload: bool = False) -> Optional[List[CatalogEntry]]:

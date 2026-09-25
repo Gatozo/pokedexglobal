@@ -2309,6 +2309,46 @@ class CompiledCatalogsAndServiceTests(TestCase):
         quagsire = next(e for e in crystal_cat if e.pokemon.display_name == "Quagsire")
         self.assertIn("surf", quagsire.filter_tags)
 
+        # Fósiles en Red
+        omanyte = next(e for e in red_cat if e.entry_number == 138)
+        omastar = next(e for e in red_cat if e.entry_number == 139)
+        self.assertIn("fossil", omanyte.filter_tags)
+        self.assertIn("fossil", omastar.filter_tags)
+
+        # Evolución por piedra en Red
+        raichu = next(e for e in red_cat if e.entry_number == 26)
+        pikachu = next(e for e in red_cat if e.entry_number == 25)
+        self.assertIn("stone", raichu.filter_tags)
+        self.assertIn("stone", pikachu.filter_tags)
+
+        # Evolución por intercambio en Red
+        alakazam = next(e for e in red_cat if e.entry_number == 65)
+        kadabra = next(e for e in red_cat if e.entry_number == 64)
+        self.assertIn("trade", alakazam.filter_tags)
+        self.assertIn("trade", kadabra.filter_tags)
+
+        # Bebés y amistad en Crystal (Gen 2) vs Red (Gen 1)
+        pichu_c = next(e for e in crystal_cat if e.pokemon.name == "pichu")
+        self.assertIn("baby", pichu_c.filter_tags)
+        self.assertIn("friendship", pichu_c.filter_tags)
+
+        crobat_c = next(e for e in crystal_cat if e.pokemon.name == "crobat")
+        self.assertIn("friendship", crobat_c.filter_tags)
+
+        # En Gen 1 no hay bebés ni amistad
+        pikachu_red = next(e for e in red_cat if e.entry_number == 25)
+        self.assertNotIn("baby", pikachu_red.filter_tags)
+        self.assertNotIn("friendship", pikachu_red.filter_tags)
+
+        # Zona Safari en Red vs Crystal
+        chansey_red = next(e for e in red_cat if e.entry_number == 113)
+        self.assertIn("safari", chansey_red.filter_tags)
+
+        chansey_c = next(e for e in crystal_cat if e.pokemon.name == "chansey")
+        self.assertNotIn("safari", chansey_c.filter_tags)
+
+
+
 
 
 

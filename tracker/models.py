@@ -106,6 +106,17 @@ class Game(models.Model):
         """Hasta la Gen 5 (Blanco/Negro 2) los juegos usaban sprites 2D."""
         return self.generation <= 5
 
+    @property
+    def has_safari_zone(self):
+        """Determina si este juego cuenta con Zona Safari activa."""
+        return self.slug in [
+            "red", "blue", "yellow",
+            "firered", "leafgreen",
+            "ruby", "sapphire", "emerald",
+            "diamond", "pearl", "platinum",
+            "heartgold", "soulsilver"
+        ]
+
 
 class Pokedex(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="pokedexes")
