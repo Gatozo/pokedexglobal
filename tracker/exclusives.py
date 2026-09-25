@@ -81,11 +81,27 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     'silver': [37, 38, 52, 53, 165, 166, 225, 227, 231, 232],
     'crystal': [251],
     # Gen 3
-    'ruby': [273, 274, 275, 303, 335, 338, 383],
-    'sapphire': [270, 271, 272, 302, 336, 337, 382],
+    'ruby': [273, 274, 275, 303, 335, 338, 381, 383],
+    'sapphire': [270, 271, 272, 302, 336, 337, 380, 382],
     'firered': [23, 24, 43, 44, 45, 54, 55, 58, 59, 123, 125, 198, 211, 215, 227, 246, 247, 248],
     'leafgreen': [27, 28, 69, 70, 71, 79, 80, 126, 127, 199, 200, 216, 217, 225, 228, 229, 241],
 }
+
+# 184 especies no nativas de Hoenn requeridas para completar la Pokédex Nacional en Pokémon Rubí
+NON_HOENN_TRANSFERS_RUBY = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 46, 47, 48, 49, 50, 51,
+    52, 53, 56, 57, 58, 59, 60, 61, 62, 69, 70, 71, 77, 78, 79, 80, 83, 86,
+    87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 102, 103, 104, 105, 106, 107,
+    108, 113, 114, 115, 122, 123, 124, 125, 126, 128, 131, 132, 133, 134, 135,
+    136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150,
+    151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165,
+    166, 167, 168, 173, 175, 176, 179, 180, 181, 185, 186, 187, 188, 189, 190,
+    191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 204, 205, 206, 207,
+    208, 209, 210, 211, 212, 213, 215, 216, 217, 220, 221, 223, 224, 225, 226,
+    228, 229, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245,
+    246, 247, 248, 249, 250, 251
+]
 
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
@@ -130,6 +146,8 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         144, 145, 146,  # Articuno, Zapdos, Moltres
         150, 151,       # Mewtwo, Mew
     ],
+    # Gen 3 (Pokédex Nacional de Rubí: 184 especies que no habitan en Hoenn)
+    'ruby': NON_HOENN_TRANSFERS_RUBY,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -232,6 +250,50 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             151: 'Evento Gen 1 / Rojo / Azul',
         }
     },
+    'ruby': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Rubí consta de 386 Pokémon. Las 184 especies no nativas de Hoenn '
+            'deben ser transferidas mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja o Pokémon Esmeralda, '
+            'o importadas desde títulos de Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Debido al cambio de arquitectura de hardware y datos, NO ES POSIBLE transferir Pokémon '
+            'de ninguna forma desde los juegos de Primera Generación (Rojo, Azul, Amarillo) ni Segunda Generación (Oro, Plata, Cristal).'
+        ),
+        'default_origin': 'Rojo Fuego / Verde Hoja / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            1: 'Rojo Fuego / Verde Hoja',
+            2: 'Rojo Fuego / Verde Hoja',
+            3: 'Rojo Fuego / Verde Hoja',
+            4: 'Rojo Fuego / Verde Hoja',
+            5: 'Rojo Fuego / Verde Hoja',
+            6: 'Rojo Fuego / Verde Hoja',
+            7: 'Rojo Fuego / Verde Hoja',
+            8: 'Rojo Fuego / Verde Hoja',
+            9: 'Rojo Fuego / Verde Hoja',
+            144: 'Rojo Fuego / Verde Hoja',
+            145: 'Rojo Fuego / Verde Hoja',
+            146: 'Rojo Fuego / Verde Hoja',
+            150: 'Rojo Fuego / Verde Hoja',
+            151: 'Evento Isla Suprema (Mapa Viejo)',
+            152: 'Pokémon Colosseum (GameCube)',
+            153: 'Pokémon Colosseum (GameCube)',
+            154: 'Pokémon Colosseum (GameCube)',
+            155: 'Pokémon Colosseum (GameCube)',
+            156: 'Pokémon Colosseum (GameCube)',
+            157: 'Pokémon Colosseum (GameCube)',
+            158: 'Pokémon Colosseum (GameCube)',
+            159: 'Pokémon Colosseum (GameCube)',
+            160: 'Pokémon Colosseum (GameCube)',
+            243: 'Pokémon Colosseum / Rojo Fuego',
+            244: 'Pokémon Colosseum / Verde Hoja',
+            245: 'Pokémon Colosseum / RF / VH',
+            249: 'Pokémon XD: Gale of Darkness (GameCube)',
+            250: 'Pokémon Colosseum (GameCube)',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+        }
+    },
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -317,8 +379,6 @@ def _build_exclusive_item(
         from .catalog_service import get_compiled_catalog
         catalog = get_compiled_catalog(game_slug) or []
         entry = next((e for e in catalog if e.pokemon and e.pokemon.national_number == national_num), None)
-        if not entry and hasattr(PokedexEntry, 'objects'):
-            entry = next((e for e in PokedexEntry.objects.all() if getattr(getattr(e, 'pokemon', None), 'national_number', None) == national_num), None)
 
     if entry:
         pokemon = entry.pokemon
@@ -524,6 +584,9 @@ def get_version_transfers_context(
     (Cápsula del Tiempo, transferencias intergeneracionales o faltantes de ediciones previas).
     Si el juego no requiere transferencias externas, devuelve None.
     """
+    if current_game.slug in ['ruby', 'sapphire', 'emerald'] and current_pokedex and not current_pokedex.is_national and current_pokedex.slug != 'national':
+        return None
+
     transfer_nums = VERSION_TRANSFERS_CATALOG.get(current_game.slug, [])
     if not transfer_nums:
         return None
@@ -532,6 +595,7 @@ def get_version_transfers_context(
     mechanic_title = meta.get("mechanic_title", "Pokémon a Transferir")
     mechanic_badge = meta.get("mechanic_badge", "Transferencia")
     description = meta.get("description", "Pokémon requeridos mediante transferencia externa para completar la Pokédex.")
+    incompatible_warning = meta.get("incompatible_warning", "")
     origins_map = meta.get("origins", {})
     default_origin = meta.get("default_origin", "Transferencia Externa")
 
@@ -561,6 +625,7 @@ def get_version_transfers_context(
         'mechanic_title': mechanic_title,
         'mechanic_badge': mechanic_badge,
         'description': description,
+        'incompatible_warning': incompatible_warning,
         'transfer_list': transfer_list,
         'total': total,
         'caught': caught,

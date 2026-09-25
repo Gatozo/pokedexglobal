@@ -1,3 +1,4 @@
+import json
 from unittest.mock import patch
 from django.test import TestCase, Client
 from django.urls import reverse
@@ -2390,6 +2391,153 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
         chansey_c = next(e for e in crystal_cat if e.pokemon.name == "chansey")
         self.assertNotIn("safari", chansey_c.filter_tags)
+
+
+class PokemonRubyGen3Tests(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.game, _ = Game.objects.get_or_create(slug="ruby", defaults={"name": "Pokémon Rubí", "generation": 3})
+        self.pokedex_hoenn, _ = Pokedex.objects.get_or_create(game=self.game, slug="hoenn", defaults={"name": "Pokédex Regional de Hoenn", "is_national": False})
+        self.pokedex_national, _ = Pokedex.objects.get_or_create(game=self.game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+    def test_ruby_catalogs_structure(self):
+        # 1. Catálogo regional de Hoenn: exactamente 202 Pokémon (#001 Treecko a #202 Deoxys)
+        hoenn_cat = get_compiled_catalog("ruby", is_national=False)
+        self.assertIsNotNone(hoenn_cat)
+        self.assertEqual(len(hoenn_cat), 202)
+        self.assertEqual(hoenn_cat[0].entry_number, 1)
+        self.assertEqual(hoenn_cat[0].pokemon.name, "treecko")
+        self.assertEqual(hoenn_cat[-1].entry_number, 202)
+        self.assertEqual(hoenn_cat[-1].pokemon.name, "deoxys")
+
+        # 2. Catálogo Nacional de Rubí: exactamente 386 Pokémon (#001 Bulbasaur a #386 Deoxys)
+        nat_cat = get_compiled_catalog("ruby", is_national=True)
+        self.assertIsNotNone(nat_cat)
+        self.assertEqual(len(nat_cat), 386)
+        self.assertEqual(nat_cat[0].entry_number, 1)
+        self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(nat_cat[-1].entry_number, 386)
+        self.assertEqual(nat_cat[-1].pokemon.name, "deoxys")
+
+        # 3. Paridad de ID entre Regional y Nacional para sincronización de capturas
+        treecko_h = next(e for e in hoenn_cat if e.pokemon.name == "treecko")
+        treecko_n = next(e for e in nat_cat if e.pokemon.name == "treecko")
+        self.assertEqual(treecko_h.id, treecko_n.id)
+
+        # 4. En todas las Pokédex el Unown predeterminado siempre es la forma F
+        unown_n = next(e for e in nat_cat if e.pokemon.national_number == 201)
+        self.assertEqual(unown_n.game_sprite_url, "/media/pokemon/sprites/ruby/201.png")
+        self.assertIn("201-f.png", unown_n.pokemon.sprite_shiny_url)
+        self.assertIn("201-f.png", unown_n.pokemon.artwork_shiny_url)
+
+    def test_ruby_views_and_theme(self):
+        # Vista regional de Hoenn (/ruby/ o /ruby/hoenn/)
+        resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "ruby", "pokedex_slug": "hoenn"}))
+        self.assertEqual(resp_hoenn.status_code, 200)
+        self.assertContains(resp_hoenn, "Pokédex Regional de Hoenn")
+        self.assertContains(resp_hoenn, "Hoenn")
+        self.assertEqual(len(resp_hoenn.context["entries"]), 202)
+
+        # Vista nacional (/ruby/national/)
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "ruby", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, "Pokédex Nacional")
+        self.assertEqual(len(resp_nat.context["entries"]), 386)
+
+    def test_ruby_exclusives_and_transfers(self):
+        from .exclusives import get_version_exclusives_context, get_version_transfers_context
+        # Exclusivos de Rubí vs Zafiro
+        excl_ctx = get_version_exclusives_context(self.game, self.pokedex_hoenn, set())
+        self.assertIsNotNone(excl_ctx)
+        self.assertTrue(excl_ctx["has_exclusives"])
+        self.assertEqual(excl_ctx["counterpart_short_name"], "Zafiro")
+
+        # En la Pokédex Regional de Hoenn no hay botón de transferencias externas
+        transfers_hoenn = get_version_transfers_context(self.game, self.pokedex_hoenn, set())
+        self.assertIsNone(transfers_hoenn)
+
+        # En la Pokédex Nacional existen 184 especies a transferir
+        transfers_nat = get_version_transfers_context(self.game, self.pokedex_national, set())
+        self.assertIsNotNone(transfers_nat)
+        self.assertEqual(transfers_nat["total"], 184)
+        self.assertIn("1.ª y 2.ª Generación", transfers_nat["incompatible_warning"])
+
+    def test_ruby_evolution_stones_and_items(self):
+        from .utils import resolve_evolution_stone
+        # Piedras evolutivas en Rubí
+        water = resolve_evolution_stone("water-stone", game_slug="ruby")
+        self.assertIsNotNone(water)
+        self.assertEqual(water["name"], "Piedra Agua")
+        self.assertTrue(any("Naufragio" in loc["area"] for loc in water["locations"]))
+
+        # Objetos de evolución por intercambio en Rubí (Diente Marino entregado en Ciudad Portual con Escáner del Naufragio)
+        deep_sea_tooth = resolve_evolution_stone("deep-sea-tooth", game_slug="ruby")
+        self.assertIsNotNone(deep_sea_tooth)
+        self.assertEqual(deep_sea_tooth["name"], "Diente Marino")
+        self.assertTrue(any("Portual" in loc["area"] or "Naufragio" in loc.get("detail", "") for loc in deep_sea_tooth["locations"]))
+
+    def test_ruby_corrections_filters(self):
+        # 1. Filtro Golpe Cabeza no debe estar presente en Rubí (solo en 2ª Gen)
+        resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "ruby", "pokedex_slug": "hoenn"}))
+        self.assertNotContains(resp_hoenn, "Golpe Cabeza")
+
+        hoenn_cat = get_compiled_catalog("ruby", is_national=False)
+        pika = next(e for e in hoenn_cat if e.pokemon.national_number == 25)
+        raichu = next(e for e in hoenn_cat if e.pokemon.national_number == 26)
+        roselia = next(e for e in hoenn_cat if e.pokemon.name == "roselia")
+        chimecho = next(e for e in hoenn_cat if e.pokemon.name == "chimecho")
+        latias = next(e for e in hoenn_cat if e.pokemon.name == "latias")
+        kyogre = next(e for e in hoenn_cat if e.pokemon.name == "kyogre")
+
+        # 2. Pikachu y Raichu no son iniciales
+        self.assertNotIn("starter", pika.filter_tags.split())
+        self.assertNotIn("starter", raichu.filter_tags.split())
+
+        # 3. Roselia y Chimecho no tienen evolución por amistad en Gen 3
+        self.assertNotIn("friendship", roselia.filter_tags.split())
+        self.assertNotIn("friendship", chimecho.filter_tags.split())
+
+        # 4. Latias y Kyogre aparecen con etiqueta legendary
+        self.assertIn("legendary", latias.filter_tags.split())
+        self.assertIn("legendary", kyogre.filter_tags.split())
+
+    def test_unown_gen3_28_forms(self):
+        from .unown_data import get_unown_catalog
+        unown_ruby = get_unown_catalog("ruby")
+        self.assertEqual(len(unown_ruby), 28)
+        letters = [u["letter"] for u in unown_ruby]
+        self.assertIn("exclamation", letters)
+        self.assertIn("question", letters)
+
+        # 1. En Gen 3 los sprites deben apuntar a la ruta de sprites de batalla y no a los iconos de menú
+        for form in unown_ruby:
+            l = form["letter"]
+            self.assertEqual(form["sprite_normal"], f"/media/pokemon/sprites/ruby/unown/{l}.png")
+            self.assertEqual(form["sprite_shiny"], f"/media/pokemon/sprites/ruby_shiny/unown/{l}.png")
+            self.assertNotIn("/icons/", form["sprite_normal"])
+
+        # 2. En la vista de Rubí, las pestañas de Ruinas Alfa y cámaras no deben mostrarse
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "ruby", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertFalse(resp_nat.context["is_johto"])
+        self.assertEqual(resp_nat.context["unown_total_forms"], 28)
+        self.assertNotContains(resp_nat, 'id="unown-tab-kabuto"')
+        self.assertNotContains(resp_nat, 'Cámara Kabuto')
+        self.assertNotContains(resp_nat, 'id="unown-chamber-hint"')
+
+        # 3. Toggle de formas especiales (!) y (?) en Gen 3
+        unown_entry = next(e for e in resp_nat.context["entries"] if e.pokemon.national_number == 201)
+        resp_toggle = self.client.post(
+            reverse("tracker:toggle_unown_catch"),
+            data=json.dumps({"entry_id": unown_entry.id, "letter": "exclamation", "is_shiny": False}),
+            content_type="application/json"
+        )
+        self.assertEqual(resp_toggle.status_code, 200)
+        data = resp_toggle.json()
+        self.assertTrue(data["success"])
+        self.assertEqual(data["unown_total_forms"], 28)
+        self.assertEqual(data["unown_normal_count"], 1)
+
 
 
 

@@ -77,6 +77,12 @@ body {
     background-image: radial-gradient(rgba(2, 132, 199, 0.18) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+{% elif game.slug == 'ruby' %}
+body {
+    background-color: #fbf2f4;
+    background-image: radial-gradient(rgba(136, 19, 55, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 {% else %}
 body {
     background-color: #faebed;
@@ -284,6 +290,26 @@ body {
     background-color: #0284c7 !important;
     color: #ffffff !important;
     border-color: #0f172a !important;
+}
+{% elif game.slug == 'ruby' %}
+.comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #881337,
+        #881337 12px,
+        #701a2e 12px,
+        #701a2e 24px
+    );
+}
+.pokemon-card.caught-card {
+    background-color: #fef2f4 !important;
+    border-color: #475569 !important;
+    box-shadow: 3.5px 3.5px 0px 0px #334155;
+}
+.status-caught-active {
+    background-color: #881337 !important;
+    color: #ffffff !important;
+    border-color: #475569 !important;
 }
 {% else %}
 .comic-header-pattern {

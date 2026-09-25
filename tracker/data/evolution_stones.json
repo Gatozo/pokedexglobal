@@ -143,6 +143,12 @@
           "area": "Pokémon salvajes (Clefairy)",
           "detail": "Probabilidad reducida (~2% a 8%) de que Clefairy salvaje en Ruta 33 o Ruta 46 la lleve equipada (usar Ladrón o capturar)."
         }
+      ],
+      "ruby": [
+        {
+          "area": "Cascada Meteoro",
+          "detail": "En el suelo en la parte superior derecha de la sala principal."
+        }
       ]
     }
   },
@@ -201,6 +207,16 @@
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe o Vulpix."
+        }
+      ],
+      "ruby": [
+        {
+          "area": "Senda Ígnea (Ruta 112)",
+          "detail": "En el suelo en el desvío bloqueado por rocas (requiere MO Fuerza)."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
         }
       ]
     }
@@ -261,6 +277,20 @@
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Staryu."
         }
+      ],
+      "ruby": [
+        {
+          "area": "Naufragio (Ruta 108)",
+          "detail": "En la habitación sumergida número 3 (requiere MO Surf y MO Buceo)."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
+        }
       ]
     }
   },
@@ -319,6 +349,16 @@
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        }
+      ],
+      "ruby": [
+        {
+          "area": "Malvalona Nueva",
+          "detail": "En el suelo cerca del generador central durante la misión de Erico."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
         }
       ]
     }
@@ -383,6 +423,16 @@
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
         }
+      ],
+      "ruby": [
+        {
+          "area": "Ruta 119",
+          "detail": "Navegando río abajo con Surf en una orilla oculta al sur del Instituto Meteorológico."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+        }
       ]
     }
   },
@@ -411,6 +461,16 @@
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "1.er premio garantizado al ganar el Concurso de Captura de Bichos (Martes, Jueves y Sábado)."
+        }
+      ],
+      "ruby": [
+        {
+          "area": "Centro Espacial de Ciudad Algaria",
+          "detail": "Regalo de un marinero en la primera planta del edificio."
+        },
+        {
+          "area": "Salvaje equipado (Exclusivo Rubí)",
+          "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro; Solrock es exclusivo de Rubí)."
         }
       ]
     }
@@ -452,6 +512,16 @@
         {
           "area": "Pokémon salvajes (Slowpoke / Poliwhirl)",
           "detail": "Probabilidad reducida (~2% a 8%) de que Slowpoke o Poliwhirl salvajes la lleven equipada (capturándolos o usando Ladrón)."
+        }
+      ],
+      "ruby": [
+        {
+          "area": "Ciudad Algaria",
+          "detail": "Regalo de un chico con gorra en el extremo norte de la ciudad."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Hariyama salvajes (5% de probabilidad en Calle Victoria)."
         }
       ]
     }
@@ -498,6 +568,12 @@
           "area": "Pokémon salvajes (Magnemite / Magneton)",
           "detail": "Probabilidad reducida (~2% a 8%) de que Magnemite o Magneton salvajes lo lleven equipado."
         }
+      ],
+      "ruby": [
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
+        }
       ]
     }
   },
@@ -539,6 +615,16 @@
           "area": "Pokémon salvajes o regalo (Horsea / Seadra / Dratini)",
           "detail": "Probabilidad reducida (~2% a 8%) en Horsea/Seadra salvajes o equipada en el Dratini especial del Santuario Dragón."
         }
+      ],
+      "ruby": [
+        {
+          "area": "Cascada Meteoro (Sala más profunda)",
+          "detail": "En el suelo en la sala de Bagon (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
+        }
       ]
     }
   },
@@ -567,6 +653,54 @@
         {
           "area": "Edificio Silph S.A. (Ciudad Azafrán)",
           "detail": "Entregada por el guardia de seguridad en el vestíbulo de la planta baja."
+        }
+      ],
+      "ruby": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No obtenible de forma nativa en Hoenn; requiere transferencia desde Silph S.A. en Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum."
+        }
+      ]
+    }
+  },
+  "deep-sea-tooth": {
+    "slug": "deep-sea-tooth",
+    "name_es": "Diente Marino",
+    "icon_url": "/media/items/deep-sea-tooth.png",
+    "description_es": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto único a elegir por partida.",
+    "games": {
+      "ruby": [
+        {
+          "area": "Puerto de Ciudad Portual",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en el Naufragio con Buceo). Se elige entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
+        }
+      ]
+    }
+  },
+  "deep-sea-scale": {
+    "slug": "deep-sea-scale",
+    "name_es": "Escama Marina",
+    "icon_url": "/media/items/deep-sea-scale.png",
+    "description_es": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto único a elegir por partida.",
+    "games": {
+      "ruby": [
+        {
+          "area": "Puerto de Ciudad Portual",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en el Naufragio con Buceo). Se elige entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipado raramente en Chinchou salvajes (5% de probabilidad buceando en Rutas 124 y 126) y Lanturn (5%)."
         }
       ]
     }

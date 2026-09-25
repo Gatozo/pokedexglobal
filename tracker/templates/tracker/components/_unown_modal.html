@@ -1,4 +1,4 @@
-<!-- Modal Especial: Bloc Unown / Unowndex (Ruinas Alfa) -->
+<!-- Modal Especial: Bloc Unown / Unowndex (Ruinas Alfa / Formas) -->
 <div 
     id="unown-modal" 
     class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200"
@@ -17,14 +17,18 @@
                 <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
                     <img 
                         id="unown-modal-header-icon"
-                        src="/media/pokemon/icons/gen2/201-f.png" 
+                        src="/media/pokemon/icons/{% if is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
                         alt="Unown" 
                         class="w-7 h-7 object-contain pixel-art"
                     >
                 </div>
                 <div>
                     <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-950 text-amber-300 mb-0.5">
-                        <span>Ruinas Alfa</span> • <span>26 Formas</span>
+                        {% if is_johto %}
+                            <span>Ruinas Alfa</span> • <span>{{ unown_total_forms }} Formas</span>
+                        {% else %}
+                            <span>{{ unown_total_forms }} Formas</span>
+                        {% endif %}
                     </div>
                     <h2 id="unown-modal-title" class="text-xl sm:text-2xl font-black uppercase tracking-wide">
                         Bloc Unown • Unowndex
@@ -52,7 +56,7 @@
                         {% if is_shinydex_active %}Progreso Unowndex Shiny{% else %}Progreso Unowndex{% endif %}:
                     </span>
                     <span class="text-sm font-black font-mono text-slate-950">
-                        <span id="unown-stat-caught">{% if is_shinydex_active %}{{ unown_shiny_count }}{% else %}{{ unown_normal_count }}{% endif %}</span> / 26
+                        <span id="unown-stat-caught">{% if is_shinydex_active %}{{ unown_shiny_count }}{% else %}{{ unown_normal_count }}{% endif %}</span> / <span id="unown-stat-total">{{ unown_total_forms }}</span>
                         (<span id="unown-stat-percent">{% if is_shinydex_active %}{{ unown_shiny_percent }}{% else %}{{ unown_normal_percent }}{% endif %}</span>%)
                     </span>
                 </div>
@@ -71,16 +75,19 @@
                 ></div>
             </div>
 
-            <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny) -->
+            {% if is_johto %}
+            <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny en Johto) -->
             <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}bg-amber-100/80 border border-amber-900/30 rounded-xl p-2.5 text-xs text-amber-950 flex items-start gap-2">
                 <span class="text-base leading-none">💡</span>
                 <p class="leading-relaxed">
                     <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
                 </p>
             </div>
+            {% endif %}
         </div>
 
-        <!-- Chamber Filter Tabs -->
+        {% if is_johto %}
+        <!-- Chamber Filter Tabs (Solo Ruinas Alfa de Johto) -->
         <div class="px-4 py-2 bg-slate-100 border-b-2 border-slate-950 flex items-center gap-1.5 overflow-x-auto shrink-0">
             <button 
                 type="button" 
@@ -88,7 +95,7 @@
                 id="unown-tab-all"
                 class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] bg-amber-400 text-slate-950 cursor-pointer shrink-0"
             >
-                Todas (26)
+                Todas ({{ unown_total_forms }})
             </button>
             <button 
                 type="button" 
@@ -131,6 +138,7 @@
                 <span id="unown-chamber-hint-text">Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.</span>
             </p>
         </div>
+        {% endif %}
 
         <!-- Cards Grid Container -->
         <div class="p-4 sm:p-5 overflow-y-auto flex-1 bg-[#fffef9] [scrollbar-gutter:stable]" style="scrollbar-gutter: stable;">
@@ -147,11 +155,13 @@
                     <!-- Header with Letter & Chamber Badge -->
                     <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-black font-mono text-slate-950">
-                            [{{ form.letter|upper }}]
+                            {% if form.letter == 'exclamation' %}[!]{% elif form.letter == 'question' %}[?]{% else %}[{{ form.letter|upper }}]{% endif %}
                         </span>
+                        {% if is_johto %}
                         <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 {{ form.chamber_badge_class }} truncate max-w-[95px]" title="{{ form.chamber_name }}">
                             {{ form.chamber_key|capfirst }}
                         </span>
+                        {% endif %}
                     </div>
 
                     <!-- Sprite Frame -->
@@ -164,7 +174,7 @@
                             data-sprite-shiny="{{ form.sprite_shiny }}"
                             alt="{{ form.display }}"
                             loading="lazy"
-                            class="w-14 h-14 object-contain pixel-art drop-shadow relative z-10 transition-transform duration-150 hover:scale-110"
+                            class="w-16 h-16 object-contain pixel-art drop-shadow relative z-10 transition-transform duration-150 hover:scale-110"
                         >
                     </div>
 
@@ -197,7 +207,11 @@
         <!-- Modal Footer with General Unown Entry Button -->
         <div class="px-5 py-3 bg-slate-100 border-t-2 border-slate-950 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
             <span class="text-xs text-slate-600 font-bold">
-                Unown #061 en Johto (#201 Nacional) • Tipo Psíquico
+                {% if is_johto %}
+                    Unown #061 en Johto (#201 Nacional) • Tipo Psíquico
+                {% else %}
+                    Unown #201 Nacional • Tipo Psíquico
+                {% endif %}
             </span>
             <div class="flex items-center gap-2">
                 {% if unown_entry %}

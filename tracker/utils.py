@@ -471,6 +471,8 @@ EVOLUTION_ITEMS_ES = {
     'metal-coat': 'Revestimiento Metálico',
     'dragon-scale': 'Escama Dragón',
     'up-grade': 'Mejora',
+    'deep-sea-tooth': 'Diente Marino',
+    'deep-sea-scale': 'Escama Marina',
 }
 
 STONE_NAME_TO_SLUG = {
@@ -494,6 +496,8 @@ STONE_NAME_TO_SLUG = {
     'escama dragón': 'dragon-scale',
     'escama dragon': 'dragon-scale',
     'mejora': 'up-grade',
+    'diente marino': 'deep-sea-tooth',
+    'escama marina': 'deep-sea-scale',
 }
 
 

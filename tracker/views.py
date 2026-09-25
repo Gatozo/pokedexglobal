@@ -371,13 +371,15 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "exclusives_info": exclusives_info,
         "transfers_info": transfers_info,
         "evolution_stones_json": _get_cached_evolution_stones_json(),
+        "is_johto": (game.generation == 2 or game.slug in ["gold", "silver", "crystal"]),
         "unown_entry": unown_entry,
         "unown_catalog": unown_catalog,
         "unown_chambers": unown_chambers,
+        "unown_total_forms": len(unown_catalog) if unown_catalog else (28 if game.generation >= 3 else 26),
         "unown_normal_count": len(unown_normal_caught),
-        "unown_normal_percent": round((len(unown_normal_caught) / 26 * 100), 1) if unown_catalog else 0,
+        "unown_normal_percent": round((len(unown_normal_caught) / (len(unown_catalog) if unown_catalog else 26) * 100), 1) if unown_catalog else 0,
         "unown_shiny_count": len(unown_shiny_caught),
-        "unown_shiny_percent": round((len(unown_shiny_caught) / 26 * 100), 1) if unown_catalog else 0,
+        "unown_shiny_percent": round((len(unown_shiny_caught) / (len(unown_catalog) if unown_catalog else 26) * 100), 1) if unown_catalog else 0,
     }
     return render(request, "tracker/pokedex_detail.html", context)
 
@@ -459,7 +461,8 @@ def toggle_unown_catch(request):
     except (ValueError, KeyError, AttributeError):
         return JsonResponse({"error": "JSON inválido"}, status=400)
 
-    if not entry_id or not letter or len(letter) != 1 or not ('a' <= letter <= 'z'):
+    valid_unown_letters = set([chr(c) for c in range(ord('a'), ord('z') + 1)] + ['exclamation', 'question'])
+    if not entry_id or not letter or letter not in valid_unown_letters:
         return JsonResponse({"error": "Parámetros incompletos o letra inválida"}, status=400)
 
     entry = get_catalog_entry_by_id(entry_id)
@@ -522,6 +525,7 @@ def toggle_unown_catch(request):
 
     normal_unown_count = len(forms_data.get("normal", []))
     shiny_unown_count = len(forms_data.get("shiny", []))
+    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else 26
 
     return JsonResponse({
         "success": True,
@@ -530,9 +534,10 @@ def toggle_unown_catch(request):
         "is_shiny": is_shiny,
         "is_caught": is_now_caught,
         "unown_normal_count": normal_unown_count,
-        "unown_normal_percent": round(normal_unown_count / 26 * 100, 1),
+        "unown_normal_percent": round(normal_unown_count / total_unown_forms * 100, 1),
         "unown_shiny_count": shiny_unown_count,
-        "unown_shiny_percent": round(shiny_unown_count / 26 * 100, 1),
+        "unown_shiny_percent": round(shiny_unown_count / total_unown_forms * 100, 1),
+        "unown_total_forms": total_unown_forms,
         "entry_is_caught": catch_record.is_caught,
         "entry_is_shiny": catch_record.is_shiny,
         "global_normal_caught": global_caught_count,

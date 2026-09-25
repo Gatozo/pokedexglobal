@@ -20,8 +20,8 @@ _EXISTING_CRIES_SET = None
 
 # Familias evolutivas completas de iniciales (Gen 1 a Gen 9)
 STARTER_NATIONAL_NUMBERS = {
-    # Gen 1: Bulbasaur, Charmander, Squirtle, Pikachu (Yellow)
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 25, 26,
+    # Gen 1: Bulbasaur, Charmander, Squirtle
+    1, 2, 3, 4, 5, 6, 7, 8, 9,
     # Gen 2: Chikorita, Cyndaquil, Totodile
     152, 153, 154, 155, 156, 157, 158, 159, 160,
     # Gen 3: Treecko, Torchic, Mudkip
@@ -56,6 +56,16 @@ BABY_NATIONAL_NUMBERS = {
     298, 360,                                # Gen 3: Azurill, Wynaut
     406, 433, 438, 439, 440, 446, 447, 458,  # Gen 4: Budew, Chingling, Bonsly, Mime Jr., Happiny, Munchlax, Riolu, Mantyke
     848                                       # Gen 8: Toxel
+}
+
+# Pokémon legendarios y singulares canónicos (Gen 1 a 3)
+LEGENDARY_NATIONAL_NUMBERS = {
+    # Gen 1: Articuno, Zapdos, Moltres, Mewtwo, Mew
+    144, 145, 146, 150, 151,
+    # Gen 2: Raikou, Entei, Suicune, Lugia, Ho-Oh, Celebi
+    243, 244, 245, 249, 250, 251,
+    # Gen 3: Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys
+    377, 378, 379, 380, 381, 382, 383, 384, 385, 386
 }
 
 _GAME_EVO_SETS: Dict[str, Dict[str, set]] = {}
@@ -111,6 +121,11 @@ def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
                     friendships.add(evo_from)
     except Exception as e:
         print(f"Error computing evo sets for {game_slug}: {e}")
+
+    # Roselia y Chimecho no tenían preevoluciones por amistad en Gen 3 (Budew y Chingling se introdujeron en Gen 4)
+    if game_slug in ["ruby", "sapphire", "emerald"]:
+        friendships.discard("roselia")
+        friendships.discard("chimecho")
 
     _GAME_EVO_SETS[game_slug] = {
         "trade": trades,
@@ -275,7 +290,12 @@ class CatalogEntry:
     def pc_icon_url(self) -> str:
         if self._pc_icon_url:
             return self._pc_icon_url
-        gen = 2 if self.game_slug in ["gold", "silver", "crystal"] else 1
+        if self.game_slug in ["ruby", "sapphire", "emerald"]:
+            gen = 3
+        elif self.game_slug in ["gold", "silver", "crystal"]:
+            gen = 2
+        else:
+            gen = 1
         return self.pokemon.get_pc_icon_url(generation=gen)
 
     @property
@@ -305,12 +325,19 @@ class CatalogEntry:
         obt = self.obtaining_info or {}
         nat_num = getattr(self.pokemon, "national_number", 0)
 
-        # Iniciales y evoluciones
-        if obt.get("type") == "starter" or nat_num in STARTER_NATIONAL_NUMBERS:
+        if self.game_slug in ["ruby", "sapphire", "emerald"]:
+            gen = 3
+        elif self.game_slug in ["gold", "silver", "crystal"]:
+            gen = 2
+        else:
+            gen = 1
+
+        # Iniciales y evoluciones (Pikachu y Raichu no cuentan como iniciales)
+        if nat_num not in [25, 26] and (obt.get("type") == "starter" or nat_num in STARTER_NATIONAL_NUMBERS):
             tags.add("starter")
 
         # Legendarios y míticos
-        if obt.get("type") in ["legendary", "mythical"]:
+        if obt.get("type") in ["legendary", "mythical"] or nat_num in LEGENDARY_NATIONAL_NUMBERS:
             tags.add("legendary")
 
         # Métodos y áreas de obtención en texto
@@ -331,8 +358,8 @@ class CatalogEntry:
         if "surf" in full_obt_text:
             tags.add("surf")
 
-        # Golpe Cabeza
-        if "golpe cabeza" in full_obt_text:
+        # Golpe Cabeza (Solo en 2ª Gen)
+        if gen == 2 and "golpe cabeza" in full_obt_text:
             tags.add("headbutt")
 
         # Cañas de pescar
@@ -360,7 +387,6 @@ class CatalogEntry:
             tags.add("fossil")
 
         # Bebés (Solo en 2ª Gen en adelante)
-        gen = 2 if self.game_slug in ["gold", "silver", "crystal"] else 1
         if gen >= 2 and nat_num in BABY_NATIONAL_NUMBERS:
             tags.add("baby")
 
@@ -375,7 +401,8 @@ class CatalogEntry:
             tags.add("stone")
 
         if gen >= 2 and p_name in evo_sets.get("friendship", set()):
-            tags.add("friendship")
+            if not (gen == 3 and p_name in ["roselia", "chimecho"]):
+                tags.add("friendship")
 
         return " ".join(sorted(tags))
 
@@ -440,6 +467,24 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
         return _CATALOG_CACHE[cache_key]
 
     if is_national:
+        # 1. Comprobar si existe un catálogo nacional dedicado compilado (ej: ruby_national.json)
+        nat_file = CATALOGS_DIR / f"{game_slug}_national.json"
+        if nat_file.exists():
+            try:
+                with open(nat_file, "r", encoding="utf-8") as f:
+                    raw_entries = json.load(f)
+                entries = [CatalogEntry(d, game_slug=game_slug) for d in raw_entries]
+                _CATALOG_CACHE[cache_key] = entries
+                for entry in entries:
+                    if entry.id is not None:
+                        _ENTRY_BY_ID_CACHE[entry.id] = entry
+                    if entry.pokemon and entry.pokemon.national_number:
+                        _POKEMON_BY_NATIONAL_CACHE[entry.pokemon.national_number] = entry.pokemon
+                return entries
+            except Exception as e:
+                print(f"Error cargando catálogo nacional dedicado para {game_slug}: {e}")
+
+        # 2. Si no hay catálogo nacional dedicado, reordenar el catálogo base (Gen 1 y 2)
         base_entries = get_compiled_catalog(game_slug, force_reload=force_reload, is_national=False)
         if not base_entries:
             return None
@@ -478,7 +523,7 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
 def ensure_all_catalogs_loaded():
     """Precarga todos los catálogos disponibles para indexación O(1)."""
     global _CATALOG_CACHE
-    all_slugs = ["red", "blue", "yellow", "gold", "silver", "crystal"]
+    all_slugs = ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby"]
     for slug in all_slugs:
         if slug not in _CATALOG_CACHE:
             get_compiled_catalog(slug)

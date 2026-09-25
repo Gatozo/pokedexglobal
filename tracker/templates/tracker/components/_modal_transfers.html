@@ -60,6 +60,15 @@
                 </div>
             </div>
 
+            {% if transfers_info.incompatible_warning %}
+            <div class="bg-rose-50 border-2 border-rose-400 text-rose-950 rounded-xl p-3 text-xs font-black flex items-start gap-2.5 shadow-sm">
+                <span class="text-base shrink-0">⚠️</span>
+                <div>
+                    {{ transfers_info.incompatible_warning }}
+                </div>
+            </div>
+            {% endif %}
+
             <!-- Lista de tarjetas de Pokémon a transferir -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {% for item in transfers_info.transfer_list %}

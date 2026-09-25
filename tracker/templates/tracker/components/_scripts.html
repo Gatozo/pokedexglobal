@@ -1580,6 +1580,10 @@
             unownStats.normal.percent = res.unown_normal_percent;
             unownStats.shiny.caught = res.unown_shiny_count;
             unownStats.shiny.percent = res.unown_shiny_percent;
+            if (res.unown_total_forms) {
+                const statTotal = document.getElementById('unown-stat-total');
+                if (statTotal) statTotal.textContent = res.unown_total_forms;
+            }
             updateUnownModalUI();
 
             // 3. Sincronizar tarjeta principal de Unown en la Pokédex general

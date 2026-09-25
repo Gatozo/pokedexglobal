@@ -79,9 +79,9 @@
                 type="button"
                 onclick="setSpriteStyle('retro')" 
                 id="btn-style-retro" 
-                class="h-full w-[80px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}"
+                class="h-full w-[80px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% elif game.slug == 'ruby' %}bg-rose-900 text-rose-100 font-black{% else %}bg-red-600 text-white{% endif %}"
             >
-                <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]">
+                <img src="{% if game.generation == 3 %}/media/pokemon/icons/gen3/383.png{% elif game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]">
                 <span>Retro</span>
             </button>
             <button 
@@ -101,7 +101,7 @@
                 type="button"
                 onclick="setStatusFilter('all')" 
                 id="filter-all" 
-                class="h-full w-[64px] text-xs font-black uppercase flex items-center justify-center border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}"
+                class="h-full w-[64px] text-xs font-black uppercase flex items-center justify-center border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% elif game.slug == 'ruby' %}bg-rose-900 text-rose-100 font-black{% else %}bg-red-600 text-white{% endif %}"
             >
                 Todos
             </button>
@@ -231,7 +231,7 @@
                         <img src="/media/items/hm03.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
                         <span>Surf</span>
                     </button>
-                    {% if game.generation >= 2 %}
+                    {% if game.generation == 2 %}
                     <button type="button" onclick="toggleFilterTag('headbutt', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="headbutt">
                         <img src="/media/items/tm-normal.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
                         <span>Golpe Cabeza</span>
