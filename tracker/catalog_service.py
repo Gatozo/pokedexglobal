@@ -231,6 +231,7 @@ class CatalogEntry:
     def __init__(self, data: Dict[str, Any], game_slug: str = ""):
         self.id = data.get("id")
         self.entry_number = data.get("entry_number", 0)
+        self.regional_number = self.entry_number
         self.game_slug = game_slug or data.get("game_slug", "")
         self.pokemon = CatalogPokemon(data.get("pokemon", {}))
 
@@ -424,15 +425,34 @@ def clear_catalog_memory_cache():
     _GAME_EVO_SETS.clear()
 
 
-def get_compiled_catalog(game_slug: str, force_reload: bool = False) -> Optional[List[CatalogEntry]]:
+def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national: bool = False) -> Optional[List[CatalogEntry]]:
     """
     Retorna la lista de CatalogEntry compiladas desde el archivo JSON local.
     Carga en memoria una sola vez por proceso servidor (~150 KB de RAM).
+    Si is_national=True, devuelve las entradas ordenadas por el número nacional (#001 Bulbasaur...)
+    con entry_number actualizado a dicho número nacional.
     """
     global _CATALOG_CACHE, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE
 
-    if not force_reload and game_slug in _CATALOG_CACHE:
-        return _CATALOG_CACHE[game_slug]
+    cache_key = f"{game_slug}__national" if is_national else game_slug
+
+    if not force_reload and cache_key in _CATALOG_CACHE:
+        return _CATALOG_CACHE[cache_key]
+
+    if is_national:
+        base_entries = get_compiled_catalog(game_slug, force_reload=force_reload, is_national=False)
+        if not base_entries:
+            return None
+        national_entries = []
+        for entry in base_entries:
+            nat_entry = copy.copy(entry)
+            nat_entry.regional_number = entry.entry_number
+            nat_entry.entry_number = entry.pokemon.national_number
+            national_entries.append(nat_entry)
+
+        national_entries.sort(key=lambda e: e.entry_number)
+        _CATALOG_CACHE[cache_key] = national_entries
+        return national_entries
 
     catalog_file = CATALOGS_DIR / f"{game_slug}.json"
     if not catalog_file.exists():

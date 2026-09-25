@@ -34,12 +34,13 @@ def _get_cached_all_games():
     return games
 
 
-def get_cached_pokedex_entries(pokedex_id, force_refresh=False, game_slug=""):
+def get_cached_pokedex_entries(pokedex_id=None, force_refresh=False, game_slug="", is_national=False):
     """
     Retorna la lista base de entradas de la Pokédex desde los catálogos compilados inmutables (0 ms SQL).
+    Soporta modo regional (Johto, Kanto, etc.) y modo nacional según is_national.
     """
     if game_slug:
-        catalog = get_compiled_catalog(game_slug, force_reload=force_refresh)
+        catalog = get_compiled_catalog(game_slug, force_reload=force_refresh, is_national=is_national)
         if catalog is not None and len(catalog) > 0:
             return catalog
     return []
@@ -268,13 +269,20 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     if pokedex_slug:
         pokedex = get_object_or_404(Pokedex, game=game, slug=pokedex_slug)
     else:
-        pokedex = game.pokedexes.first()
+        pokedex = game.pokedexes.filter(is_national=False).first() or game.pokedexes.first()
         if not pokedex:
             pokedex = get_object_or_404(Pokedex, game=game)
 
+    is_national = bool(pokedex.is_national or pokedex.slug == "national")
+
     # Entradas de la Pokédex obtenidas del catálogo compilado o caché en memoria (0 ms DB)
     force_refresh = request.GET.get("refresh") == "1" or request.GET.get("nocache") == "1"
-    cached_entries = get_cached_pokedex_entries(pokedex.id, force_refresh=force_refresh, game_slug=game.slug)
+    cached_entries = get_cached_pokedex_entries(
+        pokedex.id,
+        force_refresh=force_refresh,
+        game_slug=game.slug,
+        is_national=is_national,
+    )
 
     user, session_key = _get_user_or_session(request)
 
@@ -328,7 +336,12 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         unown_chambers = UNOWN_CHAMBERS
         unown_entry = entries_by_num.get(201)
         if unown_entry:
-            unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=unown_entry.entry_number).first()
+            unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_id=unown_entry.id).first()
+            if not unown_catch:
+                reg_num = getattr(unown_entry, 'regional_number', unown_entry.entry_number)
+                unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=reg_num).first()
+            if not unown_catch:
+                unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=unown_entry.entry_number).first()
             if unown_catch and unown_catch.unown_forms_caught:
                 unown_normal_caught = set(unown_catch.unown_forms_caught.get("normal", []))
                 unown_shiny_caught = set(unown_catch.unown_forms_caught.get("shiny", []))

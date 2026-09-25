@@ -1212,11 +1212,28 @@ class FixtureExportTests(TestCase):
         self.assertContains(resp_default, "Región Johto")
         self.assertContains(resp_default, "Exclusivos de Plata")
 
+        # Verificar que en la Pokédex de Johto, la primera entrada es Chikorita (#001) y Bulbasaur es #226
+        entries_default = resp_default.context["entries"]
+        self.assertEqual(entries_default[0].pokemon.name, "chikorita")
+        self.assertEqual(entries_default[0].entry_number, 1)
+        bulbasaur_default = next(e for e in entries_default if e.pokemon.name == "bulbasaur")
+        self.assertEqual(bulbasaur_default.entry_number, 226)
+
         # Probar vista específica (/gold/national/ -> Pokédex Nacional)
         url_nat = reverse("tracker:pokedex_detail", kwargs={"game_slug": "gold", "pokedex_slug": "national"})
         resp_nat = self.client.get(url_nat)
         self.assertEqual(resp_nat.status_code, 200)
         self.assertContains(resp_nat, "Pokédex Nacional")
+
+        # Verificar que en la Pokédex Nacional, el orden cambia al orden nacional: #001 Bulbasaur y #152 Chikorita
+        entries_nat = resp_nat.context["entries"]
+        self.assertEqual(entries_nat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(entries_nat[0].entry_number, 1)
+        chikorita_nat = next(e for e in entries_nat if e.pokemon.name == "chikorita")
+        self.assertEqual(chikorita_nat.entry_number, 152)
+        celebi_nat = entries_nat[-1]
+        self.assertEqual(celebi_nat.pokemon.name, "celebi")
+        self.assertEqual(celebi_nat.entry_number, 251)
 
         # Probar contexto de exclusividades
         from .exclusives import get_version_exclusives_context
@@ -2265,6 +2282,33 @@ class CompiledCatalogsAndServiceTests(TestCase):
             self.assertTrue(hasattr(first.pokemon, "get_pc_icon_url"))
             self.assertTrue(hasattr(first.pokemon, "get_classic_icon_url"))
             self.assertIsInstance(first.pokemon.get_pc_icon_url(1), str)
+
+    def test_national_catalog_order_and_numbering(self):
+        """Verifica que el catálogo nacional de Gen 2 (Gold, Silver, Crystal) ordene de 1 a 251 por número nacional."""
+        from .catalog_service import get_compiled_catalog
+
+        for slug in ["gold", "silver", "crystal"]:
+            reg_entries = get_compiled_catalog(slug, is_national=False)
+            nat_entries = get_compiled_catalog(slug, is_national=True)
+
+            self.assertEqual(len(reg_entries), 251)
+            self.assertEqual(len(nat_entries), 251)
+
+            # En modo regional (Johto), la 1ª entrada es Chikorita (#001)
+            self.assertEqual(reg_entries[0].entry_number, 1)
+            self.assertEqual(reg_entries[0].pokemon.name, "chikorita")
+
+            # En modo nacional, la 1ª entrada es Bulbasaur (#001) y la 152ª es Chikorita (#152)
+            self.assertEqual(nat_entries[0].entry_number, 1)
+            self.assertEqual(nat_entries[0].pokemon.name, "bulbasaur")
+            self.assertEqual(nat_entries[151].entry_number, 152)
+            self.assertEqual(nat_entries[151].pokemon.name, "chikorita")
+            self.assertEqual(nat_entries[-1].entry_number, 251)
+            self.assertEqual(nat_entries[-1].pokemon.name, "celebi")
+
+            # Verificar que los números son estrictamente consecutivos del 1 al 251
+            entry_nums = [e.entry_number for e in nat_entries]
+            self.assertEqual(entry_nums, list(range(1, 252)))
 
     def test_nonexistent_catalog_returns_none(self):
         from .catalog_service import get_compiled_catalog

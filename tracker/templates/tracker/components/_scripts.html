@@ -514,7 +514,9 @@
                 const normType2Es = normalizeSearchText(type2Es);
 
                 const matchesName = name.toLowerCase().includes(normQ) || normDisplay.includes(normQ);
-                const matchesNumber = number.includes(normQ) || ('#' + number).includes(normQ);
+                const normNum = number.padStart(3, '0');
+                const matchesNumber = number.includes(normQ) || normNum.includes(normQ) ||
+                                      ('#' + number).includes(normQ) || ('#' + normNum).includes(normQ);
                 const matchesType = type1.includes(normQ) || type2.includes(normQ) ||
                                     normType1Es.includes(normQ) || normType2Es.includes(normQ);
                 const matchesLoc = matchesLocationQuery(locations, normQ);
