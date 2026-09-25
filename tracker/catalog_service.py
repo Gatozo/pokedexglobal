@@ -18,6 +18,29 @@ _POKEMON_BY_NATIONAL_CACHE: Dict[int, "CatalogPokemon"] = {}
 _EXISTING_ICONS_SET = None
 _EXISTING_CRIES_SET = None
 
+# Familias evolutivas completas de iniciales (Gen 1 a Gen 9)
+STARTER_NATIONAL_NUMBERS = {
+    # Gen 1: Bulbasaur, Charmander, Squirtle, Pikachu (Yellow)
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 25, 26,
+    # Gen 2: Chikorita, Cyndaquil, Totodile
+    152, 153, 154, 155, 156, 157, 158, 159, 160,
+    # Gen 3: Treecko, Torchic, Mudkip
+    252, 253, 254, 255, 256, 257, 258, 259, 260,
+    # Gen 4: Turtwig, Chimchar, Piplup
+    387, 388, 389, 390, 391, 392, 393, 394, 395,
+    # Gen 5: Snivy, Tepig, Oshawott
+    495, 496, 497, 498, 499, 500, 501, 502, 503,
+    # Gen 6: Chespin, Fennekin, Froakie
+    650, 651, 652, 653, 654, 655, 656, 657, 658,
+    # Gen 7: Rowlet, Litten, Popplio
+    722, 723, 724, 725, 726, 727, 728, 729, 730,
+    # Gen 8: Grookey, Scorbunny, Sobble
+    810, 811, 812, 813, 814, 815, 816, 817, 818,
+    # Gen 9: Sprigatito, Fuecoco, Quaxly
+    906, 907, 908, 909, 910, 911, 912, 913, 914
+}
+
+
 
 def get_existing_icons():
     global _EXISTING_ICONS_SET
@@ -187,10 +210,68 @@ class CatalogEntry:
         from .utils import resolve_evolution_stone
         return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=self.game_slug)
 
+    @property
+    def filter_locations(self) -> str:
+        """Cadena concatenada de todas las áreas y descripciones para búsqueda de texto libre."""
+        obt = self.obtaining_info or {}
+        areas = [loc.get("area", "") for loc in obt.get("locations", []) if loc.get("area")]
+        summary = obt.get("summary") or ""
+        all_text = " | ".join(areas + ([summary] if summary else []))
+        return all_text
+
+    @property
+    def filter_tags(self) -> str:
+        """Conjunto de etiquetas para filtros avanzados (cañas, surf, golpe cabeza, inicial, legendario, regalo)."""
+        tags = set()
+        obt = self.obtaining_info or {}
+        nat_num = getattr(self.pokemon, "national_number", 0)
+
+        # Iniciales y evoluciones
+        if obt.get("type") == "starter" or nat_num in STARTER_NATIONAL_NUMBERS:
+            tags.add("starter")
+
+        # Legendarios y míticos
+        if obt.get("type") in ["legendary", "mythical"]:
+            tags.add("legendary")
+
+        # Métodos de obtención en texto
+        methods_lower = " ".join([loc.get("method", "").lower() for loc in obt.get("locations", [])])
+        summary_lower = (obt.get("summary") or "").lower()
+        full_obt_text = f"{methods_lower} {summary_lower}"
+
+        # Regalos
+        if obt.get("type") == "gift" or "regalo" in full_obt_text:
+            tags.add("gift")
+
+        # Surf
+        if "surf" in full_obt_text:
+            tags.add("surf")
+
+        # Golpe Cabeza
+        if "golpe cabeza" in full_obt_text:
+            tags.add("headbutt")
+
+        # Cañas de pescar
+        has_old = "vieja" in full_obt_text
+        has_good = "buena" in full_obt_text
+        has_super = "super" in full_obt_text or "súper" in full_obt_text
+
+        if has_old:
+            tags.add("rod_old")
+        if has_good:
+            tags.add("rod_good")
+        if has_super:
+            tags.add("rod_super")
+        if has_old or has_good or has_super:
+            tags.add("rod_any")
+
+        return " ".join(sorted(tags))
+
     def __copy__(self):
         new_copy = CatalogEntry.__new__(CatalogEntry)
         new_copy.__dict__.update(self.__dict__)
         return new_copy
+
 
     @property
     def modal_data_json(self) -> str:

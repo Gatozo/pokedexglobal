@@ -1,34 +1,52 @@
 <!-- Filter & Visual Controls (Estilo Mecánico / Arcade) -->
 <div class="p-2.5 sm:p-3 bg-[#fffef9] flex flex-col md:flex-row gap-2 sm:gap-2.5 items-stretch md:items-center justify-between">
-    <!-- Search input -->
-    <div class="relative w-full md:w-36 lg:w-44 xl:w-56 shrink-0">
-        <input 
-            type="text" 
-            id="search-input" 
-            placeholder="Buscar Pokémon..." 
-            class="w-full bg-white border-2 border-slate-950 rounded-xl pl-8 pr-2.5 py-1.5 text-xs sm:text-sm font-bold text-slate-900 placeholder-slate-400 shadow-[2px_2px_0px_#0f172a] focus:outline-none focus:bg-amber-50/40 transition"
-            oninput="filterCards()"
+    <!-- Search input & Advanced Filter button -->
+    <div class="flex items-center gap-2 w-full md:w-auto shrink-0 py-0.5">
+        <div class="relative flex-1 md:w-44 lg:w-56 xl:w-64 h-9">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Buscar Pokémon o ruta..." 
+                class="w-full h-full bg-white border-2 border-slate-950 rounded-xl pl-8 pr-2.5 text-xs sm:text-sm font-bold text-slate-900 placeholder-slate-400 shadow-[2px_2px_0px_#0f172a] focus:outline-none focus:bg-amber-50/40 transition"
+                oninput="filterCards()"
+            >
+            <svg class="w-3.5 h-3.5 text-slate-600 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+
+        <!-- Botón Filtros Avanzados -->
+        <button 
+            type="button" 
+            id="btn-filter-toggle" 
+            onclick="toggleFilterPanel()" 
+            class="h-9 flex items-center gap-1.5 px-3 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-100 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0"
+            title="Abrir filtros avanzados"
         >
-        <svg class="w-3.5 h-3.5 text-slate-600 absolute left-2.5 top-2.5 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
+            <svg class="w-3.5 h-3.5 text-slate-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+            </svg>
+            <span class="inline">Filtros</span>
+            <span id="active-filters-badge" class="hidden px-1.5 py-0.2 rounded-full text-[10px] font-black bg-rose-500 text-white border border-slate-950">0</span>
+        </button>
     </div>
 
-    <div class="flex items-center gap-1 sm:gap-1.5 justify-start md:justify-end shrink-0 flex-nowrap overflow-x-auto max-w-full pb-0.5 md:pb-0">
+    <!-- Right-hand Controls -->
+    <div class="flex items-center gap-2 justify-start md:justify-end shrink-0 flex-nowrap overflow-x-auto md:overflow-visible max-w-full py-0.5 pr-1.5">
         <!-- Botón de Exclusivos de Versión -->
         {% if exclusives_info and exclusives_info.has_exclusives %}
         <button 
             type="button" 
             onclick="openExclusivesModal()" 
             id="btn-exclusives" 
-            class="flex items-center gap-1.5 px-2 py-1 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
+            class="h-9 flex items-center gap-1.5 px-3 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
             title="Ver Pokémon {{ exclusives_info.full_button_label|lower }}"
         >
             <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-[linear-gradient(90deg,#c59b27_50%,#94a3b8_50%)]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %} border border-slate-950 shrink-0"></span>
             <span class="{% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-amber-700 to-slate-600 bg-clip-text text-transparent font-black{% elif exclusives_info.counterpart_theme == 'blue' %}text-blue-600 group-hover:text-blue-800{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600 group-hover:text-amber-800{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600 group-hover:text-slate-800{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514] group-hover:text-[#78590c]{% elif exclusives_info.counterpart_theme == 'crystal' %}text-sky-600 group-hover:text-sky-800{% else %}text-red-600 group-hover:text-red-800{% endif %}">
                 {{ exclusives_info.button_label }}
             </span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0">
+            <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0 leading-none">
                 <span id="exclusives-counterpart-caught-badge">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_caught }}{% else %}{{ exclusives_info.counterpart_caught }}{% endif %}</span>/{{ exclusives_info.counterpart_total }}
             </span>
         </button>
@@ -40,7 +58,7 @@
             type="button" 
             onclick="openTransfersModal()" 
             id="btn-transfers" 
-            class="flex items-center gap-1.5 px-2 py-1 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
+            class="h-9 flex items-center gap-1.5 px-3 rounded-xl border-2 border-slate-950 bg-white hover:bg-slate-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer group shrink-0"
             title="Ver Pokémon a transferir ({{ transfers_info.mechanic_title }})"
             {% if is_shinydex_active %}style="display: none;"{% endif %}
         >
@@ -48,7 +66,7 @@
             <span class="text-indigo-600 group-hover:text-indigo-800">
                 {{ transfers_info.button_label }}
             </span>
-            <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0">
+            <span class="text-[10px] px-1.5 py-0.5 rounded-md font-mono font-black bg-slate-100 text-slate-900 border border-slate-950 shrink-0 leading-none">
                 <span id="transfers-caught-badge">{{ transfers_info.caught }}</span>/{{ transfers_info.total }}
             </span>
         </button>
@@ -56,21 +74,177 @@
 
         <!-- Retro/Modern Visual Mode -->
         {% if game.has_retro_sprites %}
-        <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-            <button onclick="setSpriteStyle('retro')" id="btn-style-retro" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">
-                <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]"> Retro
+        <div class="inline-flex h-9 rounded-xl border-2 border-slate-950 bg-white shadow-[2px_2px_0px_#0f172a] overflow-hidden shrink-0">
+            <button 
+                type="button"
+                onclick="setSpriteStyle('retro')" 
+                id="btn-style-retro" 
+                class="h-full w-[80px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}"
+            >
+                <img src="{% if game.generation == 2 %}/media/pokemon/icons/classic_gen2/archetypes/monster.png{% else %}/media/pokemon/icons/classic_gen1/archetypes/mon.png{% endif %}" alt="Retro" class="w-3.5 h-3.5 object-contain inline-block [image-rendering:pixelated]">
+                <span>Retro</span>
             </button>
-            <button onclick="setSpriteStyle('modern')" id="btn-style-modern" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition flex items-center gap-1 border border-transparent">
+            <button 
+                type="button"
+                onclick="setSpriteStyle('modern')" 
+                id="btn-style-modern" 
+                class="h-full w-[96px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5 select-none"
+            >
                 Ilustración
             </button>
         </div>
         {% endif %}
 
         <!-- Status Tabs -->
-        <div class="flex items-center space-x-1 bg-slate-100 p-1 rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] shrink-0">
-            <button onclick="setStatusFilter('all')" id="filter-all" class="px-2 py-1 rounded-lg text-xs font-black uppercase transition border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}">Todos</button>
-            <button onclick="setStatusFilter('caught')" id="filter-caught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Capturados</button>
-            <button onclick="setStatusFilter('uncaught')" id="filter-uncaught" class="px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 transition border border-transparent">Pendientes</button>
+        <div class="inline-flex h-9 rounded-xl border-2 border-slate-950 bg-white shadow-[2px_2px_0px_#0f172a] overflow-hidden shrink-0">
+            <button 
+                type="button"
+                onclick="setStatusFilter('all')" 
+                id="filter-all" 
+                class="h-full w-[64px] text-xs font-black uppercase flex items-center justify-center border-r-2 border-slate-950 transition-colors select-none {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950 font-black{% elif game.slug == 'silver' %}bg-slate-500 text-white font-black{% elif game.slug == 'crystal' %}bg-sky-500 text-slate-950 font-black{% else %}bg-red-600 text-white{% endif %}"
+            >
+                Todos
+            </button>
+            <button 
+                type="button"
+                onclick="setStatusFilter('caught')" 
+                id="filter-caught" 
+                class="h-full w-[98px] text-xs font-black uppercase flex items-center justify-center text-slate-700 hover:text-slate-950 hover:bg-slate-100 border-r-2 border-slate-950 transition-colors select-none"
+            >
+                Capturados
+            </button>
+            <button 
+                type="button"
+                onclick="setStatusFilter('uncaught')" 
+                id="filter-uncaught" 
+                class="h-full w-[94px] text-xs font-black uppercase flex items-center justify-center text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors select-none"
+            >
+                Pendientes
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Panel Desplegable de Filtros Avanzados (Estilo Cómic / Pokédex) -->
+<div id="filter-panel" class="hidden border-t-2 border-slate-950 bg-[#fffdf5] p-3 sm:p-4 transition-all">
+    <div class="flex flex-col gap-3">
+        <!-- Header del panel con título, contador y limpiar -->
+        <div class="flex items-center justify-between gap-2 border-b border-slate-200 pb-2">
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                    </svg>
+                    Filtros Avanzados
+                </span>
+                <span id="filter-matches-count" class="text-[11px] font-mono font-bold text-slate-500"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button 
+                    type="button" 
+                    onclick="clearAllFilters()" 
+                    id="btn-clear-filters"
+                    class="text-[11px] font-black uppercase text-rose-600 hover:text-rose-800 hover:underline cursor-pointer disabled:opacity-40 disabled:hover:no-underline"
+                >
+                    Limpiar Filtros
+                </button>
+                <button 
+                    type="button" 
+                    onclick="toggleFilterPanel()" 
+                    class="text-slate-400 hover:text-slate-800 p-1 rounded-md cursor-pointer"
+                    title="Cerrar panel de filtros"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Fila de Categorías -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 items-start">
+            <!-- Sección 1: Tipos Elementales -->
+            <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Tipos Elementales</span>
+                <div class="grid grid-cols-3 gap-1.5">
+                    <button type="button" onclick="toggleFilterType('normal', this)" class="filter-type-pill type-normal h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="normal">Normal</button>
+                    <button type="button" onclick="toggleFilterType('fire', this)" class="filter-type-pill type-fire h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="fire">Fuego</button>
+                    <button type="button" onclick="toggleFilterType('water', this)" class="filter-type-pill type-water h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="water">Agua</button>
+
+                    <button type="button" onclick="toggleFilterType('grass', this)" class="filter-type-pill type-grass h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="grass">Planta</button>
+                    <button type="button" onclick="toggleFilterType('electric', this)" class="filter-type-pill type-electric h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-slate-950 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="electric">Eléctrico</button>
+                    <button type="button" onclick="toggleFilterType('ice', this)" class="filter-type-pill type-ice h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-slate-950 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="ice">Hielo</button>
+
+                    <button type="button" onclick="toggleFilterType('fighting', this)" class="filter-type-pill type-fighting h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="fighting">Lucha</button>
+                    <button type="button" onclick="toggleFilterType('poison', this)" class="filter-type-pill type-poison h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="poison">Veneno</button>
+                    <button type="button" onclick="toggleFilterType('ground', this)" class="filter-type-pill type-ground h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-slate-950 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="ground">Tierra</button>
+
+                    <button type="button" onclick="toggleFilterType('flying', this)" class="filter-type-pill type-flying h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="flying">Volador</button>
+                    <button type="button" onclick="toggleFilterType('psychic', this)" class="filter-type-pill type-psychic h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="psychic">Psíquico</button>
+                    <button type="button" onclick="toggleFilterType('bug', this)" class="filter-type-pill type-bug h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="bug">Bicho</button>
+
+                    <button type="button" onclick="toggleFilterType('rock', this)" class="filter-type-pill type-rock h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="rock">Roca</button>
+                    <button type="button" onclick="toggleFilterType('ghost', this)" class="filter-type-pill type-ghost h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="ghost">Fantasma</button>
+                    <button type="button" onclick="toggleFilterType('dragon', this)" class="filter-type-pill type-dragon h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="dragon">Dragón</button>
+
+                    {% if game.generation >= 2 %}
+                    <button type="button" onclick="toggleFilterType('steel', this)" class="filter-type-pill type-steel h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-slate-950 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="steel">Acero</button>
+                    <button type="button" onclick="toggleFilterType('dark', this)" class="filter-type-pill type-dark h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-white border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="dark">Siniestro</button>
+                    {% endif %}
+                    {% if game.generation >= 6 %}
+                    <button type="button" onclick="toggleFilterType('fairy', this)" class="filter-type-pill type-fairy h-7 px-1 rounded-lg text-[10px] sm:text-xs font-black uppercase text-slate-950 border-2 border-slate-950 shadow-[1px_1px_0px_#0f172a] hover:brightness-110 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center truncate" data-type="fairy">Hada</button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Sección 2: Clasificación & Métodos -->
+            <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Clasificación & Métodos</span>
+                <div class="flex flex-wrap gap-1.5">
+                    <button type="button" onclick="toggleFilterTag('starter', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="starter">
+                        <img src="/media/items/poke-ball.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Iniciales</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('legendary', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="legendary">
+                        <img src="/media/items/master-ball.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Legendarios</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('gift', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="gift">
+                        <img src="/media/items/parcel.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Regalo / NPC</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('surf', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="surf">
+                        <img src="/media/items/hm03.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Surf</span>
+                    </button>
+                    {% if game.generation >= 2 %}
+                    <button type="button" onclick="toggleFilterTag('headbutt', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="headbutt">
+                        <img src="/media/items/tm-normal.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Golpe Cabeza</span>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Sección 3: Pesca con Caña -->
+            <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Pesca con Caña</span>
+                <div class="flex flex-wrap gap-1.5">
+                    <button type="button" onclick="toggleFilterTag('rod_any', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_any">
+                        <span>Cualquier Caña</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('rod_old', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_old">
+                        <img src="/media/items/old-rod.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Caña Vieja</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('rod_good', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_good">
+                        <img src="/media/items/good-rod.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Buena Caña</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-7 px-2.5 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
+                        <img src="/media/items/super-rod.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                        <span>Supercaña</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

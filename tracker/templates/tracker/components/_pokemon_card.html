@@ -11,6 +11,8 @@
     data-type2-es="{{ entry.secondary_type_es|default:''|lower }}"
     data-caught="{% if entry.is_caught %}true{% else %}false{% endif %}"
     data-shiny-caught="{% if entry.is_shiny_caught %}true{% else %}false{% endif %}"
+    data-locations="{{ entry.filter_locations|escape }}"
+    data-tags="{{ entry.filter_tags }}"
     data-sprite-retro="{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}"
     data-sprite-modern="{{ entry.pokemon.sprite_url }}"
     data-sprite-retro-shiny="{{ entry.game_sprite_shiny_url }}"

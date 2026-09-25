@@ -27,6 +27,9 @@
     let currentSpriteStyle = 'retro';
     let activeModalEntryId = null;
     let isShinydexMode = {% if is_shinydex_active %}true{% else %}false{% endif %};
+    let selectedFilterTags = new Set();
+    let selectedFilterTypes = new Set();
+    let isFilterPanelOpen = false;
 
     let normalStats = {
         caught: parseInt(document.getElementById('initial-normal-caught')?.value || 0, 10),
@@ -230,11 +233,11 @@
 
         if (btnRetro && btnModern) {
             if (style === 'retro') {
-                btnRetro.className = 'px-2 py-1 rounded-lg text-xs font-black uppercase flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 ' + THEME_ACTIVE_BTN;
-                btnModern.className = 'px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 flex items-center gap-1 border border-transparent';
+                btnRetro.className = 'h-full w-[80px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none ' + THEME_ACTIVE_BTN;
+                btnModern.className = 'h-full w-[96px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5 select-none';
             } else {
-                btnModern.className = 'px-2 py-1 rounded-lg text-xs font-black uppercase flex items-center gap-1 border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 ' + THEME_ACTIVE_BTN;
-                btnRetro.className = 'px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 flex items-center gap-1 border border-transparent';
+                btnRetro.className = 'h-full w-[80px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 border-r-2 border-slate-950 transition-colors flex items-center justify-center gap-1.5 select-none';
+                btnModern.className = 'h-full w-[96px] text-xs font-black uppercase flex items-center justify-center gap-1.5 transition-colors select-none ' + THEME_ACTIVE_BTN;
             }
         }
 
@@ -336,46 +339,190 @@
             'uncaught': document.getElementById('filter-uncaught'),
         };
 
-        for (const [key, btn] of Object.entries(buttons)) {
-            if (btn) {
-                if (key === status) {
-                    btn.className = 'px-2 py-1 rounded-lg text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 ' + THEME_ACTIVE_BTN;
-                } else {
-                    btn.className = 'px-2 py-1 rounded-lg text-xs font-bold uppercase text-slate-600 hover:text-slate-950 border border-transparent';
-                }
+        const activeBaseClass = 'h-full text-xs font-black uppercase flex items-center justify-center transition-colors select-none ' + THEME_ACTIVE_BTN;
+        const inactiveBaseClass = 'h-full text-xs font-black uppercase flex items-center justify-center text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors select-none';
+
+        const btnAll = document.getElementById('filter-all');
+        const btnCaught = document.getElementById('filter-caught');
+        const btnUncaught = document.getElementById('filter-uncaught');
+
+        if (btnAll) {
+            btnAll.className = (status === 'all' ? activeBaseClass : inactiveBaseClass) + ' w-[64px] border-r-2 border-slate-950';
+        }
+        if (btnCaught) {
+            btnCaught.className = (status === 'caught' ? activeBaseClass : inactiveBaseClass) + ' w-[98px] border-r-2 border-slate-950';
+        }
+        if (btnUncaught) {
+            btnUncaught.className = (status === 'uncaught' ? activeBaseClass : inactiveBaseClass) + ' w-[94px]';
+        }
+
+        filterCards();
+    }
+
+    function normalizeSearchText(str) {
+        return (str || '')
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+    }
+
+    function matchesLocationQuery(locationsStr, queryStr) {
+        if (!locationsStr || !queryStr) return false;
+        const normLoc = normalizeSearchText(locationsStr);
+        const normQ = normalizeSearchText(queryStr).trim();
+        if (!normQ) return true;
+        const escapedQ = normQ.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(`(^|[^a-z0-9])${escapedQ}([^a-z0-9]|$)`, 'i');
+        return regex.test(normLoc);
+    }
+
+    function toggleFilterPanel() {
+        const panel = document.getElementById('filter-panel');
+        const btnToggle = document.getElementById('btn-filter-toggle');
+        if (!panel) return;
+
+        isFilterPanelOpen = !isFilterPanelOpen;
+        if (isFilterPanelOpen) {
+            panel.classList.remove('hidden');
+            if (btnToggle) {
+                btnToggle.classList.add('bg-amber-100', 'border-amber-950');
+            }
+        } else {
+            panel.classList.add('hidden');
+            if (btnToggle && (selectedFilterTags.size === 0 && selectedFilterTypes.size === 0)) {
+                btnToggle.classList.remove('bg-amber-100', 'border-amber-950');
             }
         }
+    }
+
+    function updateFilterUI() {
+        const totalActive = selectedFilterTags.size + selectedFilterTypes.size;
+        const badge = document.getElementById('active-filters-badge');
+        const btnToggle = document.getElementById('btn-filter-toggle');
+        const btnClear = document.getElementById('btn-clear-filters');
+
+        if (badge) {
+            if (totalActive > 0) {
+                badge.textContent = totalActive;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        if (btnToggle) {
+            if (totalActive > 0 || isFilterPanelOpen) {
+                btnToggle.classList.add('bg-amber-100');
+            } else {
+                btnToggle.classList.remove('bg-amber-100');
+            }
+        }
+
+        if (btnClear) {
+            btnClear.disabled = (totalActive === 0);
+        }
+
+        // Actualizar visualmente botones de tipos
+        const typePills = document.querySelectorAll('.filter-type-pill');
+        typePills.forEach(pill => {
+            const type = pill.dataset.type;
+            if (selectedFilterTypes.size > 0) {
+                if (selectedFilterTypes.has(type)) {
+                    pill.classList.remove('opacity-40');
+                    pill.classList.add('ring-2', 'ring-slate-950', 'brightness-110');
+                } else {
+                    pill.classList.add('opacity-40');
+                    pill.classList.remove('ring-2', 'ring-slate-950', 'brightness-110');
+                }
+            } else {
+                pill.classList.remove('opacity-40', 'ring-2', 'ring-slate-950', 'brightness-110');
+            }
+        });
+    }
+
+    function toggleFilterTag(tag, el) {
+        if (selectedFilterTags.has(tag)) {
+            selectedFilterTags.delete(tag);
+            if (el) {
+                el.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
+                el.classList.add('bg-white', 'text-slate-800');
+            }
+        } else {
+            selectedFilterTags.add(tag);
+            if (el) {
+                el.classList.remove('bg-white', 'text-slate-800');
+                el.classList.add('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
+            }
+        }
+        updateFilterUI();
+        filterCards();
+    }
+
+    function toggleFilterType(type, el) {
+        if (selectedFilterTypes.has(type)) {
+            selectedFilterTypes.delete(type);
+        } else {
+            selectedFilterTypes.add(type);
+        }
+        updateFilterUI();
+        filterCards();
+    }
+
+    function clearAllFilters() {
+        selectedFilterTags.clear();
+        selectedFilterTypes.clear();
+
+        document.querySelectorAll('.filter-tag-pill').forEach(el => {
+            el.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
+            el.classList.add('bg-white', 'text-slate-800');
+        });
+
+        document.querySelectorAll('.filter-type-pill').forEach(el => {
+            el.classList.remove('opacity-40', 'ring-2', 'ring-slate-950', 'brightness-110');
+        });
+
+        updateFilterUI();
         filterCards();
     }
 
     function filterCards() {
         const searchInput = document.getElementById('search-input');
-        const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const rawQuery = searchInput ? searchInput.value.trim() : '';
+        const normQ = normalizeSearchText(rawQuery);
         const cards = document.querySelectorAll('.pokemon-card');
+        let visibleCount = 0;
 
         cards.forEach(card => {
             const name = card.dataset.name || '';
             const display = card.dataset.display || '';
             const number = card.dataset.number || '';
-            const type1 = card.dataset.type1 || '';
-            const type2 = card.dataset.type2 || '';
+            const type1 = (card.dataset.type1 || '').toLowerCase();
+            const type2 = (card.dataset.type2 || '').toLowerCase();
             const type1Es = card.dataset.type1Es || '';
             const type2Es = card.dataset.type2Es || '';
+            const locations = card.dataset.locations || '';
+            const tags = (card.dataset.tags || '').split(' ').filter(Boolean);
             const isCaught = isShinydexMode 
                 ? (card.dataset.shinyCaught === 'true')
                 : (card.dataset.caught === 'true');
 
-            // Filtro de texto (nombre, número de Pokédex o tipo en español/inglés)
-            const matchesText = !query || 
-                name.includes(query) || 
-                display.includes(query) || 
-                number.includes(query) ||
-                type1.includes(query) ||
-                type2.includes(query) ||
-                type1Es.includes(query) ||
-                type2Es.includes(query);
+            // 1. Filtro de texto / ubicación (nombre, número, tipo en es/en, o ruta/lugar)
+            let matchesText = true;
+            if (normQ) {
+                const normDisplay = normalizeSearchText(display);
+                const normType1Es = normalizeSearchText(type1Es);
+                const normType2Es = normalizeSearchText(type2Es);
 
-            // Filtro de estado
+                const matchesName = name.toLowerCase().includes(normQ) || normDisplay.includes(normQ);
+                const matchesNumber = number.includes(normQ) || ('#' + number).includes(normQ);
+                const matchesType = type1.includes(normQ) || type2.includes(normQ) ||
+                                    normType1Es.includes(normQ) || normType2Es.includes(normQ);
+                const matchesLoc = matchesLocationQuery(locations, normQ);
+
+                matchesText = matchesName || matchesNumber || matchesType || matchesLoc;
+            }
+
+            // 2. Filtro de estado (Todos, Capturados, Pendientes)
             let matchesStatus = true;
             if (currentStatusFilter === 'caught') {
                 matchesStatus = isCaught;
@@ -383,12 +530,32 @@
                 matchesStatus = !isCaught;
             }
 
-            if (matchesText && matchesStatus) {
+            // 3. Filtro de etiquetas avanzadas (Iniciales, Legendarios, Regalos, Surf, Cañas, etc.)
+            let matchesTags = true;
+            if (selectedFilterTags.size > 0) {
+                matchesTags = tags.some(tag => selectedFilterTags.has(tag));
+            }
+
+            // 4. Filtro de tipos elementales
+            let matchesTypeFilter = true;
+            if (selectedFilterTypes.size > 0) {
+                matchesTypeFilter = selectedFilterTypes.has(type1) || (type2 && selectedFilterTypes.has(type2));
+            }
+
+            const isVisible = matchesText && matchesStatus && matchesTags && matchesTypeFilter;
+            if (isVisible) {
                 card.style.display = 'flex';
+                visibleCount++;
             } else {
                 card.style.display = 'none';
             }
         });
+
+        // Actualizar indicador de coincidencias en el panel de filtros
+        const matchesCountEl = document.getElementById('filter-matches-count');
+        if (matchesCountEl) {
+            matchesCountEl.textContent = `(${visibleCount} de ${cards.length} Pokémon)`;
+        }
     }
 
     async function toggleCatch(entryId) {
@@ -1480,10 +1647,14 @@
                     applyShinydexMode(false);
                     document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
                 } else if (savedShinydex === null && isShinydexMode) {
-                    // Sincronizar localStorage si el servidor inició en shiny
                     localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
                 }
             }
+        } catch (e) {}
+
+        try {
+            updateFilterUI();
+            filterCards();
         } catch (e) {}
     });
 </script>

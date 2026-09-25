@@ -2271,6 +2271,45 @@ class CompiledCatalogsAndServiceTests(TestCase):
         self.assertIsNone(get_compiled_catalog("emerald"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
+    def test_catalog_filter_locations_and_tags(self):
+        from .catalog_service import get_compiled_catalog
+        
+        # Test Red Catalog
+        red_cat = get_compiled_catalog("red")
+        
+        # Starters tag in Red
+        bulbasaur = next(e for e in red_cat if e.entry_number == 1)
+        self.assertIn("starter", bulbasaur.filter_tags)
+        
+        # Charizard should also have starter tag (evolution)
+        charizard = next(e for e in red_cat if e.entry_number == 6)
+        self.assertIn("starter", charizard.filter_tags)
+        
+        # Legendaries in Red
+        mewtwo = next(e for e in red_cat if e.entry_number == 150)
+        self.assertIn("legendary", mewtwo.filter_tags)
+        self.assertIn("cueva celeste", mewtwo.filter_locations.lower())
+        
+        # Route 1 in Red
+        pidgey = next(e for e in red_cat if e.entry_number == 16)
+        rattata = next(e for e in red_cat if e.entry_number == 19)
+        self.assertIn("ruta 1", pidgey.filter_locations.lower())
+        self.assertIn("ruta 1", rattata.filter_locations.lower())
+        
+        # Fishing in Red (Magikarp has old rod)
+        magikarp = next(e for e in red_cat if e.entry_number == 129)
+        self.assertIn("rod_old", magikarp.filter_tags)
+        self.assertIn("rod_any", magikarp.filter_tags)
+        
+        # Test Crystal Catalog (Headbutt, Surf)
+        crystal_cat = get_compiled_catalog("crystal")
+        heracross = next(e for e in crystal_cat if e.pokemon.display_name == "Heracross")
+        self.assertIn("headbutt", heracross.filter_tags)
+        
+        quagsire = next(e for e in crystal_cat if e.pokemon.display_name == "Quagsire")
+        self.assertIn("surf", quagsire.filter_tags)
+
+
 
 
 
