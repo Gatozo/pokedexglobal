@@ -35,6 +35,7 @@ TYPE_NAMES_ES = {
 
 # Traducción oficial de áreas de Hoenn
 HOENN_AREAS_ES = {
+    # Rutas terrestres y marítimas
     'hoenn-route-101-area': 'Ruta 101',
     'hoenn-route-102-area': 'Ruta 102',
     'hoenn-route-103-area': 'Ruta 103',
@@ -54,13 +55,16 @@ HOENN_AREAS_ES = {
     'hoenn-route-117-area': 'Ruta 117',
     'hoenn-route-118-area': 'Ruta 118',
     'hoenn-route-119-area': 'Ruta 119',
+    'hoenn-route-119-weather-institute': 'Ruta 119 (Instituto Meteorológico)',
     'hoenn-route-120-area': 'Ruta 120',
     'hoenn-route-121-area': 'Ruta 121',
     'hoenn-route-122-area': 'Ruta 122',
     'hoenn-route-123-area': 'Ruta 123',
-    'hoenn-route-124-area': 'Ruta 124 (Agua / Buceo)',
+    'hoenn-route-124-area': 'Ruta 124 (Superficie)',
+    'hoenn-route-124-underwater': 'Ruta 124 (Buceo / Fondo marino)',
     'hoenn-route-125-area': 'Ruta 125',
-    'hoenn-route-126-area': 'Ruta 126 (Agua / Buceo)',
+    'hoenn-route-126-area': 'Ruta 126 (Superficie)',
+    'hoenn-route-126-underwater': 'Ruta 126 (Buceo / Fondo marino)',
     'hoenn-route-127-area': 'Ruta 127',
     'hoenn-route-128-area': 'Ruta 128',
     'hoenn-route-129-area': 'Ruta 129',
@@ -69,36 +73,79 @@ HOENN_AREAS_ES = {
     'hoenn-route-132-area': 'Ruta 132 (Corrientes)',
     'hoenn-route-133-area': 'Ruta 133 (Corrientes)',
     'hoenn-route-134-area': 'Ruta 134 (Cámara Sellada)',
+    'roaming-hoenn-area': 'Rutas de Hoenn (Errante)',
+
+    # Ciudades y Pueblos
+    'petalburg-city-area': 'Ciudad Petalia (Pesca / Surf)',
+    'slateport-city-area': 'Ciudad Portual (Pesca / Surf)',
+    'lilycove-city-area': 'Ciudad Calagua (Pesca / Surf)',
+    'mossdeep-city-area': 'Ciudad Algaria (Pesca / Surf)',
+    'mossdeep-city-stevens-house': 'Ciudad Algaria (Casa de Máximo)',
+    'sootopolis-city-area': 'Ciudad Arrecípolis (Pesca / Surf)',
+    'pacifidlog-town-area': 'Pueblo Oromar (Pesca / Surf)',
+    'dewford-town-area': 'Pueblo Azuliza (Pesca / Surf)',
+    'ever-grande-city-area': 'Ciudad Colosalia (Pesca / Surf)',
+    'lavaridge-town-area': 'Pueblo Lavacalda (Aguas termales)',
+    'rustboro-city-area': 'Ciudad Férrica',
+    'fortree-city-area': 'Ciudad Arborada',
+    'hoenn-pokecenter-area': 'Centro Pokémon (Distribución / Evento)',
+
+    # Mazmorras y Cuevas
     'petalburg-woods-area': 'Bosque Petalia',
     'rusturf-tunnel-area': 'Túnel Férrfundido',
     'granite-cave-1f': 'Cueva Granito (P1)',
+    'granite-cave-1fsmall-room': 'Cueva Granito (P1 Sala Interior)',
     'granite-cave-b1f': 'Cueva Granito (Sótano 1)',
     'granite-cave-b2f': 'Cueva Granito (Sótano 2)',
     'fiery-path-area': 'Senda Ígnea',
     'jagged-pass-area': 'Desfiladero',
     'mt-chimney-area': 'Monte Cenizo',
-    'meteor-falls-1f-1r': 'Cascada Meteoro',
+    'desert-ruins-area': 'Ruinas del Desierto (Ruta 111)',
+    'island-cave-area': 'Cueva Insular (Ruta 105)',
+    'ancient-tomb-area': 'Tumba Antigua (Ruta 120)',
+
+    # Cascada Meteoro
+    'meteor-falls-area': 'Cascada Meteoro (Entrada)',
+    'meteor-falls-1f-1r': 'Cascada Meteoro (Entrada)',
     'meteor-falls-1f-2r': 'Cascada Meteoro (Interior)',
+    'meteor-falls-back': 'Cascada Meteoro (Interior)',
+    'meteor-falls-b1f': 'Cascada Meteoro (Sótano 1)',
     'meteor-falls-b1f-1r': 'Cascada Meteoro (Profundidades)',
     'meteor-falls-b1f-2r': 'Cascada Meteoro (Sala de Bagon)',
-    'mt-pyre-1f': 'Monte Pírico (Interior)',
-    'mt-pyre-2f': 'Monte Pírico (P2)',
-    'mt-pyre-3f': 'Monte Pírico (P3)',
-    'mt-pyre-4f': 'Monte Pírico (P4)',
-    'mt-pyre-5f': 'Monte Pírico (P5)',
-    'mt-pyre-6f': 'Monte Pírico (P6)',
+    'meteor-falls-backsmall-room': 'Cascada Meteoro (Sala de Bagon)',
+
+    # Monte Pírico
+    'mt-pyre-1f': 'Monte Pírico (Interior P1)',
+    'mt-pyre-2f': 'Monte Pírico (Interior P2)',
+    'mt-pyre-3f': 'Monte Pírico (Interior P3)',
+    'mt-pyre-4f': 'Monte Pírico (Interior P4)',
+    'mt-pyre-5f': 'Monte Pírico (Interior P5)',
+    'mt-pyre-6f': 'Monte Pírico (Interior P6)',
+    'mt-pyre-outside': 'Monte Pírico (Exterior)',
     'mt-pyre-exterior': 'Monte Pírico (Exterior)',
     'mt-pyre-summit': 'Monte Pírico (Cima)',
-    'shoal-cave-low-tide-entrance-room': 'Cueva Cardumen (Marea Baja)',
+
+    # Cueva Cardumen
+    'shoal-cave-high-tide': 'Cueva Cardumen (Marea Alta)',
+    'shoal-cave-low-tide': 'Cueva Cardumen (Marea Baja)',
+    'shoal-cave-low-tide-entrance-room': 'Cueva Cardumen (Marea Baja Entrada)',
     'shoal-cave-low-tide-ice-room': 'Cueva Cardumen (Sala Hielo)',
-    'shoal-cave-high-tide-entrance': 'Cueva Cardumen (Marea Alta)',
-    'cave-of-origin-entrance': 'Cueva del Origen',
+    'shoal-cave-high-tide-entrance': 'Cueva Cardumen (Marea Alta Entrada)',
+    'shoal-cave-b1f': 'Cueva Cardumen (Sótano 1)',
+    'shoal-cave-b2f': 'Cueva Cardumen (Sótano 2)',
+    'shoal-cave-b3f': 'Cueva Cardumen (Sala Hielo)',
+
+    # Cueva del Origen
+    'cave-of-origin-entrance': 'Cueva del Origen (Entrada)',
     'cave-of-origin-1f': 'Cueva del Origen (P1)',
     'cave-of-origin-b1f': 'Cueva del Origen (S1)',
     'cave-of-origin-b2f': 'Cueva del Origen (S2)',
     'cave-of-origin-b3f': 'Cueva del Origen (S3)',
     'cave-of-origin-b4f': 'Cueva del Origen (Groudon)',
-    'seafloor-cavern-entrance': 'Caverna Abisal',
+
+    # Caverna Abisal
+    'seafloor-cavern-area': 'Caverna Abisal',
+    'seafloor-cavern-entrance': 'Caverna Abisal (Entrada)',
     'seafloor-cavern-room-1': 'Caverna Abisal (Sala 1)',
     'seafloor-cavern-room-2': 'Caverna Abisal (Sala 2)',
     'seafloor-cavern-room-3': 'Caverna Abisal (Sala 3)',
@@ -108,35 +155,50 @@ HOENN_AREAS_ES = {
     'seafloor-cavern-room-7': 'Caverna Abisal (Sala 7)',
     'seafloor-cavern-room-8': 'Caverna Abisal (Sala 8)',
     'seafloor-cavern-room-9': 'Caverna Abisal (Fondo)',
+
+    # Pilar Celeste
     'sky-pillar-1f': 'Pilar Celeste (P1)',
     'sky-pillar-2f': 'Pilar Celeste (P2)',
     'sky-pillar-3f': 'Pilar Celeste (P3)',
     'sky-pillar-4f': 'Pilar Celeste (P4)',
     'sky-pillar-5f': 'Pilar Celeste (P5)',
     'sky-pillar-top': 'Pilar Celeste (Cima Rayquaza)',
+    'sky-pillar-apex': 'Pilar Celeste (Cima Rayquaza)',
+
+    # Calle Victoria
     'victory-road-1f': 'Calle Victoria (P1)',
     'victory-road-b1f': 'Calle Victoria (S1)',
     'victory-road-b2f': 'Calle Victoria (S2)',
+    'hoenn-victory-road-1f': 'Calle Victoria (P1)',
+    'hoenn-victory-road-b1f': 'Calle Victoria (S1)',
+    'hoenn-victory-road-b2f': 'Calle Victoria (S2)',
+
+    # Zona Safari
     'hoenn-safari-zone-area': 'Zona Safari (Hoenn)',
-    'hoenn-safari-zone-northeast': 'Zona Safari (Noreste)',
+    'hoenn-safari-zone-northeast': 'Zona Safari (Noreste - Bici Acrobática)',
+    'hoenn-safari-zone-neacro-bike-area': 'Zona Safari (Noreste - Bici Acrobática)',
     'hoenn-safari-zone-north': 'Zona Safari (Norte)',
-    'hoenn-safari-zone-northwest': 'Zona Safari (Noroeste)',
+    'hoenn-safari-zone-northwest': 'Zona Safari (Noroeste - Bici Carrera)',
+    'hoenn-safari-zone-nwmach-bike-area': 'Zona Safari (Noroeste - Bici Carrera)',
     'hoenn-safari-zone-southeast': 'Zona Safari (Sureste)',
+    'hoenn-safari-zone-se': 'Zona Safari (Sureste)',
     'hoenn-safari-zone-south': 'Zona Safari (Sur)',
     'hoenn-safari-zone-southwest': 'Zona Safari (Suroeste)',
+    'hoenn-safari-zone-sw': 'Zona Safari (Suroeste)',
+
+    # Naufragio y Malvalona
+    'abandoned-ship-area': 'Naufragio (Interior / Surf)',
     'abandoned-ship-captain-office': 'Naufragio (Camarote del Capitán)',
     'abandoned-ship-corridors-b1f': 'Naufragio (Sótano)',
     'abandoned-ship-hidden-rooms': 'Naufragio (Salas Sumergidas)',
-    'new-mauville-entrance': 'Malvalona Nueva',
+    'new-mauville-area': 'Malvalona Nueva (Interior)',
+    'new-mauville-entrance': 'Malvalona Nueva (Entrada)',
     'new-mauville-inside': 'Malvalona Nueva (Interior)',
-    'petalburg-city-area': 'Ciudad Petalia (Pesca/Surf)',
-    'slateport-city-area': 'Ciudad Portual (Pesca/Surf)',
-    'lilycove-city-area': 'Ciudad Calagua (Pesca/Surf)',
-    'mossdeep-city-area': 'Ciudad Algaria (Pesca/Surf)',
-    'sootopolis-city-area': 'Ciudad Arrecípolis (Pesca/Surf)',
-    'pacifidlog-town-area': 'Pueblo Oromar (Pesca/Surf)',
-    'dewford-town-area': 'Pueblo Azuliza (Pesca/Surf)',
-    'ever-grande-city-area': 'Ciudad Colosalia (Pesca/Surf)'
+
+    # Eventos e Islas Especiales
+    'mirage-island-area': 'Isla Espejismo (Ruta 130)',
+    'southern-island-area': 'Isla del Sur (Evento Ticket Eón)',
+    'team-magma-hideout-area': 'Guarida Magma (Ciudad Calagua)'
 }
 
 # Traducción de métodos de encuentro
@@ -151,7 +213,37 @@ METHOD_NAMES_ES = {
     'cave': 'Cueva',
     'gift': 'Regalo',
     'trade': 'Intercambio',
-    'underwater': 'Buceando'
+    'underwater': 'Buceando',
+    'seaweed': 'Hierba submarina (Algas)',
+    'devon-scope': 'Detector Devon',
+    'feebas-tile-fishing': 'Pesca en casilla especial de Feebas',
+    'gift-egg': 'Huevo de regalo',
+    'npc-trade': 'Intercambio con NPC',
+    'roaming-grass': 'Legendario errante (Hierba)',
+    'roaming-water': 'Legendario errante (Agua)',
+    'static': 'Encuentro estático',
+    'pokemon-channel-pal': 'Pokémon Channel (Europa / Australia)',
+    'colosseum-bonus-disc-us': 'Disco bonus Colosseum (EE.UU.)',
+    'colosseum-bonus-disc-jpn': 'Disco bonus Colosseum (Japón)'
+}
+
+# Nombres en español para objetos evolutivos y condiciones
+EVO_ITEMS_ES = {
+    'deep-sea-tooth': 'Diente Marino',
+    'deep-sea-scale': 'Escama Marina',
+    'dragon-scale': 'Escama Dragón',
+    'metal-coat': 'Revestimiento Metálico',
+    'kings-rock': 'Roca del Rey',
+    'upgrade': 'Mejora',
+    'sun-stone': 'Piedra Solar',
+    'moon-stone': 'Piedra Lunar',
+    'fire-stone': 'Piedra Fuego',
+    'thunder-stone': 'Piedra Trueno',
+    'water-stone': 'Piedra Agua',
+    'leaf-stone': 'Piedra Hoja',
+    'soothe-bell': 'Campana Alivio',
+    'mach-bike': 'Bici Carrera',
+    'acro-bike': 'Bici Acrobática'
 }
 
 
@@ -455,11 +547,13 @@ def build_catalogs():
                 time_of_day = details.get('time_of_day')
 
                 cond = ""
+                item_display = EVO_ITEMS_ES.get(item, item.replace('-', ' ').title()) if item else None
+                held_item_display = EVO_ITEMS_ES.get(held_item, held_item.replace('-', ' ').title()) if held_item else None
                 if trigger == 'use-item' and item:
-                    cond = f"usando {item.replace('-', ' ').title()}"
+                    cond = f"usando {item_display}"
                 elif trigger == 'trade':
                     if held_item:
-                        cond = f"Intercambio equipado con {held_item.replace('-', ' ').title()}"
+                        cond = f"Intercambio equipado con {held_item_display}"
                     else:
                         cond = "Intercambio con otro entrenador"
                 elif min_happiness:
@@ -501,7 +595,7 @@ def build_catalogs():
             'locations': [
                 {'area': 'Pueblo Lavacalda (Aguas termales)', 'method': 'Huevo de anciana'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'},
-                {'area': 'Isla Espejismo', 'method': 'Hierba alta (Isla aleatoria)'}
+                {'area': 'Isla Espejismo (Ruta 130)', 'method': 'Hierba alta (Isla aleatoria)'}
             ],
             'item_slug': 'lax-incense',
             'badge_color': 'emerald',
@@ -552,30 +646,97 @@ def build_catalogs():
             'badge_color': 'indigo',
             'badge_label': 'Evolución'
         },
-        # Legendarios
-        377: {'type': 'legendary', 'summary': 'Ruinas del Desierto en la Ruta 111 (requiere resolver el enigma Braille en la Cámara Sellada).', 'locations': [{'area': 'Ruta 111 (Ruinas del Desierto)', 'method': 'Legendario estático (Nivel 40)'}]},
-        378: {'type': 'legendary', 'summary': 'Cueva Insular en la Ruta 105 (requiere resolver el enigma Braille en la Cámara Sellada).', 'locations': [{'area': 'Ruta 105 (Cueva Insular)', 'method': 'Legendario estático (Nivel 40)'}]},
-        379: {'type': 'legendary', 'summary': 'Tumba Antigua en la Ruta 120 (requiere resolver el enigma Braille en la Cámara Sellada).', 'locations': [{'area': 'Ruta 120 (Tumba Antigua)', 'method': 'Legendario estático (Nivel 40)'}]},
-        381: {'type': 'legendary', 'summary': 'Legendario errante salvaje por todo Hoenn al Nivel 40 tras vencer al Alto Mando y elegir el color Rojo en la televisión.', 'locations': [{'area': 'Rutas de Hoenn (Errante)', 'method': 'Salvaje errante tras el Alto Mando'}]},
-        383: {'type': 'legendary', 'summary': 'Cueva del Origen en Ciudad Arrecípolis al Nivel 45 durante la crisis climática del Equipo Magma.', 'locations': [{'area': 'Ciudad Arrecípolis (Cueva del Origen)', 'method': 'Legendario estático de portada (Nivel 45)'}]},
-        384: {'type': 'legendary', 'summary': 'Cima del Pilar Celeste en la Ruta 131 al Nivel 70 (requiere la Bici Carrera para cruzar el suelo agrietado).', 'locations': [{'area': 'Ruta 131 (Pilar Celeste)', 'method': 'Legendario estático (Nivel 70)'}]},
-        # Míticos / Eventos
-        385: {'type': 'gift', 'summary': 'Transferencia desde Pokémon Channel (Europa/Australia) o disco bonus de Pokémon Colosseum (EE.UU.).', 'locations': [{'area': 'Evento / Spin-off oficial', 'method': 'Transferencia externa (Channel / Colosseum Disc)'}]},
-        386: {'type': 'legendary', 'summary': 'Isla Origen al Nivel 30 tras usar el Ticket Orión distribuido en eventos oficiales de Nintendo.', 'locations': [{'area': 'Isla Origen (Evento)', 'method': 'Evento oficial (Ticket Orión)'}]},
+        # Legendarios y Míticos de Hoenn (Alineados con WikiDex)
+        377: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Ruinas del Desierto en la Ruta 111 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth primero y Wailord al final del equipo, y en la sala de Regirock dar 2 pasos a la derecha, 2 abajo y usar Fuerza).',
+            'locations': [{'area': 'Ruta 111 (Ruinas del Desierto)', 'method': 'Legendario estático (Nivel 40)'}]
+        },
+        378: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Cueva Insular en la Ruta 105 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth y Wailord, y en la Cueva Insular esperar quieto 2 minutos frente al muro Braille).',
+            'locations': [{'area': 'Ruta 105 (Cueva Insular)', 'method': 'Legendario estático (Nivel 40)'}]
+        },
+        379: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Tumba Antigua en la Ruta 120 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth y Wailord, y en la Tumba Antigua situarse en el centro de la sala y usar Vuelo).',
+            'locations': [{'area': 'Ruta 120 (Tumba Antigua)', 'method': 'Legendario estático (Nivel 40)'}]
+        },
+        380: {
+            'type': 'trade',
+            'badge_label': 'Intercambio / Evento',
+            'badge_color': 'indigo',
+            'summary': 'Legendario errante exclusivo de Pokémon Zafiro. En Pokémon Rubí se obtiene mediante intercambio con Zafiro/Esmeralda, o de forma salvaje en la Isla del Sur (Nivel 50, equipado con Rocío Bondad) mediante el evento oficial del Ticket Eón.',
+            'locations': [
+                {'area': 'Isla del Sur (Evento Ticket Eón)', 'method': 'Salvaje estático al Nivel 50 con Ticket Eón'},
+                {'area': 'Intercambio con Pokémon Zafiro', 'method': 'Intercambio de versión (donde es errante)'}
+            ]
+        },
+        381: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Legendario errante salvaje por todo Hoenn al Nivel 40 tras vencer al Alto Mando (aparece de forma automática en Rubí sin tener que elegir color en la televisión, a diferencia de Esmeralda).',
+            'locations': [{'area': 'Rutas de Hoenn (Errante)', 'method': 'Salvaje errante tras el Alto Mando'}]
+        },
+        382: {
+            'type': 'trade',
+            'badge_label': 'Exclusivo Zafiro',
+            'badge_color': 'blue',
+            'summary': 'Pokémon Legendario de portada exclusivo de Pokémon Zafiro (Cueva del Origen). En Pokémon Rubí solo se puede obtener mediante intercambio desde Pokémon Zafiro o Pokémon Esmeralda.',
+            'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión (Cueva del Origen en Zafiro)'}]
+        },
+        383: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Cueva del Origen en Ciudad Arrecípolis al Nivel 45 durante la crisis climática del Equipo Magma.',
+            'locations': [{'area': 'Ciudad Arrecípolis (Cueva del Origen)', 'method': 'Legendario estático de portada (Nivel 45)'}]
+        },
+        384: {
+            'type': 'legendary',
+            'badge_label': 'Legendario',
+            'badge_color': 'purple',
+            'summary': 'Cima del Pilar Celeste en la Ruta 131 al Nivel 70 (requiere la Bici Carrera para cruzar el suelo agrietado).',
+            'locations': [{'area': 'Ruta 131 (Pilar Celeste)', 'method': 'Legendario estático (Nivel 70)'}]
+        },
+        385: {
+            'type': 'gift',
+            'badge_label': 'Mítico / Evento',
+            'badge_color': 'purple',
+            'summary': 'Pokémon singular de evento oficial. Obtenible mediante transferencia desde Pokémon Channel (versión europea/australiana) o desde el disco bonus de Pokémon Colosseum (versión estadounidense/japonesa) a través del cable GameCube-GBA. También distribuido en eventos presenciales oficiales de Nintendo.',
+            'locations': [
+                {'area': 'Pokémon Channel (Europa/Australia)', 'method': 'Transferencia externa (GameCube a GBA)'},
+                {'area': 'Pokémon Colosseum Bonus Disc (América/Japón)', 'method': 'Transferencia externa (GameCube a GBA)'},
+                {'area': 'Evento oficial de Nintendo', 'method': 'Distribución presencial directa'}
+            ]
+        },
+        386: {
+            'type': 'trade',
+            'badge_label': 'Intercambio / Evento',
+            'badge_color': 'indigo',
+            'summary': 'Inaccesible salvaje en Rubí (la Isla Origen no existe en esta versión). Obtenible únicamente mediante intercambio desde Pokémon Rojo Fuego, Verde Hoja o Esmeralda (o mediante evento presencial oficial de Nintendo). En Rubí adopta su Forma Normal.',
+            'locations': [
+                {'area': 'Intercambio externo (GBA)', 'method': 'Intercambio desde Rojo Fuego, Verde Hoja o Esmeralda'},
+                {'area': 'Evento presencial de Nintendo', 'method': 'Distribución oficial por cable link'}
+            ]
+        },
         # Peculiares
-        349: {'type': 'wild', 'summary': 'Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119.', 'locations': [{'area': 'Ruta 119 (Río)', 'method': 'Supercaña en 6 casillas aleatorias'}]},
+        349: {'type': 'wild', 'summary': 'Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119.', 'locations': [{'area': 'Ruta 119', 'method': 'Pesca en casilla especial de Feebas'}]},
         350: {'type': 'evolution', 'summary': 'Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.', 'locations': []},
         # Exclusivos de Zafiro
-        270: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
-        271: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio o evolucionar de Lotad.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        272: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Evoluciona de Lombre usando Piedra Agua.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        302: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
-        336: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
-        337: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
-        382: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        380: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro (errante en Zafiro). En Rubí requiere intercambio o Ticket Eón en Isla del Sur.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro / Isla del Sur (Ticket Eón)', 'method': 'Exclusivo de versión / Evento'}]},
-        382: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        380: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro (errante en Zafiro). En Rubí requiere intercambio o Ticket Eón en Isla del Sur.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro / Isla del Sur (Ticket Eón)', 'method': 'Exclusivo de versión / Evento'}]},
+        270: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro (Ruta 102 y Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        271: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro (Ruta 114). Requiere intercambio o evolucionar de Lotad.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
+        272: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro. Evoluciona de Lombre usando Piedra Agua.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
+        302: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        336: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        337: {'type': 'trade', 'badge_label': 'Exclusivo Zafiro', 'badge_color': 'blue', 'summary': 'Exclusivo de Pokémon Zafiro (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
     }
 
     # Intercambios NPC en Rubí
@@ -616,10 +777,14 @@ def build_catalogs():
         unique_locs = []
         seen_areas = set()
         for l in raw_locs:
-            k = (l['area_es'], l['method_es'])
+            raw_area = l.get('area_raw') or l.get('area_es')
+            area_translated = HOENN_AREAS_ES.get(raw_area, l.get('area_es', raw_area))
+            raw_method = l.get('method_raw') or l.get('method_es')
+            method_translated = METHOD_NAMES_ES.get(raw_method, l.get('method_es', raw_method))
+            k = (area_translated, method_translated)
             if k not in seen_areas:
                 seen_areas.add(k)
-                unique_locs.append({'area': l['area_es'], 'method': l['method_es']})
+                unique_locs.append({'area': area_translated, 'method': method_translated})
 
         obt_info = {}
         if nat_id in SPECIAL_OBT_RUBY:

@@ -1813,19 +1813,19 @@
     "flavor_text": "Cada vez que Pikachu se encuentra con algo nuevo, le lanza una sacudida eléctrica. Si ves alguna baya chamuscada, seguro que ha sido Pikachu; a veces no controla la intensidad de la descarga.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Hoenn Safari Zone Sw, Hoenn Safari Zone Se, Hoenn Pokecenter Area).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste), Centro Pokémon (Distribución / Evento)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Pokecenter Area",
-          "method": "Colosseum Bonus Disc Jpn"
+          "area": "Centro Pokémon (Distribución / Evento)",
+          "method": "Disco bonus Colosseum (Japón)"
         }
       ],
       "evolution_info": {
@@ -1900,13 +1900,13 @@
     "flavor_text": "Si las bolsas de los mofletes se le cargan demasiado, Raichu planta la cola en el suelo para liberar electricidad. Es común encontrar zonas chamuscadas cerca de la madriguera de este Pokémon.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Pikachu (usando Thunder Stone)",
+      "summary": "Evoluciona de Pikachu (usando Piedra Trueno)",
       "locations": [],
       "evolution_info": {
         "from": "Pikachu",
-        "text": "Evoluciona de Pikachu (usando Thunder Stone)",
+        "text": "Evoluciona de Pikachu (usando Piedra Trueno)",
         "trigger": "use-item",
-        "condition": "usando Thunder Stone",
+        "condition": "usando Piedra Trueno",
         "item_slug": "thunder-stone"
       },
       "badge_color": "indigo",
@@ -2290,13 +2290,13 @@
     "flavor_text": "Nidoqueen tiene un cuerpo totalmente recubierto de escamas durísimas. Suele lanzar por los aires a sus rivales de los violentos golpes que les propina. Cuando se trata de defender a sus crías, alcanza su nivel máximo de fuerza.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nidorina (usando Moon Stone)",
+      "summary": "Evoluciona de Nidorina (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Nidorina",
-        "text": "Evoluciona de Nidorina (usando Moon Stone)",
+        "text": "Evoluciona de Nidorina (usando Piedra Lunar)",
         "trigger": "use-item",
-        "condition": "usando Moon Stone",
+        "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
       },
       "badge_color": "indigo",
@@ -2528,13 +2528,13 @@
     "flavor_text": "La gruesa cola de Nidoking encierra una fuerza realmente destructora. Con una vez que la agite, es capaz de tumbar una torre metálica de transmisión. Una vez que este Pokémon se desboca, no hay quien lo pare.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nidorino (usando Moon Stone)",
+      "summary": "Evoluciona de Nidorino (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Nidorino",
-        "text": "Evoluciona de Nidorino (usando Moon Stone)",
+        "text": "Evoluciona de Nidorino (usando Piedra Lunar)",
         "trigger": "use-item",
-        "condition": "usando Moon Stone",
+        "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
       },
       "badge_color": "indigo",
@@ -2690,13 +2690,13 @@
     "flavor_text": "Clefable se mueve dando saltitos como si fuera haciendo uso de las alas. Estos pequeños brincos le permiten caminar por el agua. De todos es sabido que le encanta darse paseos por los lagos en tranquilas noches de luna llena.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Clefairy (usando Moon Stone)",
+      "summary": "Evoluciona de Clefairy (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Clefairy",
-        "text": "Evoluciona de Clefairy (usando Moon Stone)",
+        "text": "Evoluciona de Clefairy (usando Piedra Lunar)",
         "trigger": "use-item",
-        "condition": "usando Moon Stone",
+        "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
       },
       "badge_color": "indigo",
@@ -2778,10 +2778,10 @@
     "flavor_text": "Al nacer, Vulpix tiene una cola blanca que se divide en seis si recibe cariño por parte de su Entrenador. Las seis colas se le rizan de manera majestuosa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Mt Pyre Outside).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Exterior)).",
       "locations": [
         {
-          "area": "Mt Pyre Outside",
+          "area": "Monte Pírico (Exterior)",
           "method": "Hierba alta"
         }
       ],
@@ -2849,13 +2849,13 @@
     "flavor_text": "Ninetales emite una siniestra luz a través de los brillantes ojos que tiene, para conseguir controlar del todo la mente de su rival. Dicen que este Pokémon llega a vivir miles de años.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Vulpix (usando Fire Stone)",
+      "summary": "Evoluciona de Vulpix (usando Piedra Fuego)",
       "locations": [],
       "evolution_info": {
         "from": "Vulpix",
-        "text": "Evoluciona de Vulpix (usando Fire Stone)",
+        "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
         "trigger": "use-item",
-        "condition": "usando Fire Stone",
+        "condition": "usando Piedra Fuego",
         "item_slug": "fire-stone"
       },
       "badge_color": "indigo",
@@ -3019,13 +3019,13 @@
     "flavor_text": "Wigglytuff tiene unos ojos enormes con forma de platillo, que siempre están cubiertos de lágrimas. Si se le metiera algo en el ojo, enseguida se le saldría solo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Jigglypuff (usando Moon Stone)",
+      "summary": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Jigglypuff",
-        "text": "Evoluciona de Jigglypuff (usando Moon Stone)",
+        "text": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
         "trigger": "use-item",
-        "condition": "usando Moon Stone",
+        "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
       },
       "badge_color": "indigo",
@@ -3107,14 +3107,14 @@
     "flavor_text": "Durante el día, Zubat permanece inmóvil y a oscuras. Si este Pokémon pasara mucho tiempo expuesto al sol, correría el peligro de sufrir quemaduras.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 20 zona(s) de Hoenn (ej: Meteor Falls Area, Meteor Falls Area, Cueva Granito (P1)).",
+      "summary": "Salvaje en 20 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cueva Granito (P1)).",
       "locations": [
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Hierba alta"
         },
         {
@@ -3130,19 +3130,19 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Granite Cave 1Fsmall Room",
+          "area": "Cueva Granito (P1 Sala Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Hierba alta"
         },
         {
-          "area": "Cueva del Origen",
+          "area": "Cueva del Origen (Entrada)",
           "method": "Hierba alta"
         },
         {
@@ -3162,31 +3162,31 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B1F",
+          "area": "Cueva Cardumen (Sótano 1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave Low Tide",
+          "area": "Cueva Cardumen (Marea Baja)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B2F",
+          "area": "Cueva Cardumen (Sótano 2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B3F",
+          "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
         }
       ],
@@ -3254,42 +3254,42 @@
     "flavor_text": "A Golbat le encanta chuparle la sangre a los seres vivos. Este Pokémon es más activo en la oscuridad de la noche. Es al caer la noche cuando sale a revolotear y a buscar sangre fresca.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 25 zona(s) de Hoenn (ej: Meteor Falls Back, Meteor Falls Back, Meteor Falls B1F).",
+      "summary": "Salvaje en 25 zona(s) de Hoenn (ej: Cascada Meteoro (Interior), Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1)).",
       "locations": [
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Hierba alta"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Hierba alta"
         },
         {
-          "area": "Cueva del Origen",
+          "area": "Cueva del Origen (Entrada)",
           "method": "Hierba alta"
         },
         {
@@ -3309,27 +3309,27 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B1F",
+          "area": "Cueva Cardumen (Sótano 1)",
           "method": "Hierba alta"
         },
         {
@@ -3345,15 +3345,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave Low Tide",
+          "area": "Cueva Cardumen (Marea Baja)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B2F",
+          "area": "Cueva Cardumen (Sótano 2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B3F",
+          "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
         }
       ],
@@ -3455,19 +3455,19 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -3535,7 +3535,7 @@
     "flavor_text": "Gloom libera un fétido olor por los pistilos de la flor. Cuando está en peligro, el hedor se intensifica. Si este Pokémon está tranquilo y no se siente amenazado, no libera el desagradable olor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ruta 121, Ruta 123, Hoenn Safari Zone Nwmach Bike Area).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ruta 121, Ruta 123, Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
           "area": "Ruta 121",
@@ -3546,19 +3546,19 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -3633,13 +3633,13 @@
     "flavor_text": "El polen que contienen las esporas tóxicas de Vileplume causan unos ataques de alergia muy agudos. Por eso, no es aconsejable acercarse a ninguna flor que resulte atractiva, por muy bonita que sea.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Gloom (usando Leaf Stone)",
+      "summary": "Evoluciona de Gloom (usando Piedra Hoja)",
       "locations": [],
       "evolution_info": {
         "from": "Gloom",
-        "text": "Evoluciona de Gloom (usando Leaf Stone)",
+        "text": "Evoluciona de Gloom (usando Piedra Hoja)",
         "trigger": "use-item",
-        "condition": "usando Leaf Stone",
+        "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
       },
       "badge_color": "indigo",
@@ -4319,14 +4319,14 @@
     "flavor_text": "Psyduck tiene un extraño poder, consiste en generar ondas cerebrales iguales a las que se generan cuando se está dormido. Este descubrimiento levantó una gran polémica entre eruditos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area, Hoenn Safari Zone Sw).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -4395,10 +4395,10 @@
     "flavor_text": "Golduck alcanza una velocidad de vértigo gracias a las aletas palmípedas de las extremidades y a la forma aerodinámica de su cuerpo. Realmente, la velocidad de este Pokémon supera a la de cualquier nadador.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -4697,13 +4697,13 @@
     "flavor_text": "Arcanine es conocido por lo veloz que es. Dicen que es capaz de correr 10.000 km en 24 horas. El fuego que arde con vigor en el interior de este Pokémon constituye su fuente de energía.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Growlithe (usando Fire Stone)",
+      "summary": "Evoluciona de Growlithe (usando Piedra Fuego)",
       "locations": [],
       "evolution_info": {
         "from": "Growlithe",
-        "text": "Evoluciona de Growlithe (usando Fire Stone)",
+        "text": "Evoluciona de Growlithe (usando Piedra Fuego)",
         "trigger": "use-item",
-        "condition": "usando Fire Stone",
+        "condition": "usando Piedra Fuego",
         "item_slug": "fire-stone"
       },
       "badge_color": "indigo",
@@ -4937,13 +4937,13 @@
     "flavor_text": "Poliwrath tiene unos músculos fornidos y muy desarrollados, que nunca se cansan por más que los use. Es tan fuerte e incansable que cruzar el océano Pacífico un par de veces no le supone ningún esfuerzo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Poliwhirl (usando Water Stone)",
+      "summary": "Evoluciona de Poliwhirl (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Poliwhirl",
-        "text": "Evoluciona de Poliwhirl (usando Water Stone)",
+        "text": "Evoluciona de Poliwhirl (usando Piedra Agua)",
         "trigger": "use-item",
-        "condition": "usando Water Stone",
+        "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
       },
       "badge_color": "indigo",
@@ -5048,7 +5048,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Granite Cave 1Fsmall Room",
+          "area": "Cueva Granito (P1 Sala Interior)",
           "method": "Hierba alta"
         }
       ],
@@ -5635,13 +5635,13 @@
     "flavor_text": "Victreebel tiene una enredadera que le sale de la cabeza. Cuando la agita y colea, recuerda a un animal que está a punto de atacar a su presa. Como se le acerque un rival, se lo tragará entero.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Weepinbell (usando Leaf Stone)",
+      "summary": "Evoluciona de Weepinbell (usando Piedra Hoja)",
       "locations": [],
       "evolution_info": {
         "from": "Weepinbell",
-        "text": "Evoluciona de Weepinbell (usando Leaf Stone)",
+        "text": "Evoluciona de Weepinbell (usando Piedra Hoja)",
         "trigger": "use-item",
-        "condition": "usando Leaf Stone",
+        "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
       },
       "badge_color": "indigo",
@@ -5727,90 +5727,90 @@
     "flavor_text": "Tentacool está compuesto en su mayor parte por agua. Si lo sacas del mar, se secará y quedará acartonado. Si este Pokémon se deshidrata, hay que ponerlo inmediatamente de vuelta en el mar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 98 zona(s) de Hoenn (ej: Ciudad Portual (Pesca/Surf), Ciudad Portual (Pesca/Surf), Ciudad Portual (Pesca/Surf)).",
+      "summary": "Salvaje en 98 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Caña Buena"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Caña Vieja"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -5970,15 +5970,15 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -5994,15 +5994,15 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -6098,27 +6098,27 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -6186,14 +6186,14 @@
     "flavor_text": "Tentacruel tiene unas enormes esferas rojas en la cabeza, que brillan antes de lanzar una descarga ultrasónica a lo que le rodea. Este estallido crea unas olas tremendas a su alrededor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Abandoned Ship Area, Abandoned Ship Area).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Naufragio (Interior / Surf), Naufragio (Interior / Surf)).",
       "locations": [
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -6268,7 +6268,7 @@
     "flavor_text": "Cuanto más larga es la vida de Geodude, mayor es el desgaste y la erosión que sufre, y más redondeada la forma que va adquiriendo. Sin embargo, el corazón permanece siempre duro, rocoso y tosco.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Hoenn Victory Road B1F).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Calle Victoria (S1)).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -6279,7 +6279,7 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Golpe Roca"
         },
         {
@@ -6291,7 +6291,7 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Golpe Roca"
         }
       ],
@@ -6359,10 +6359,10 @@
     "flavor_text": "Graveler crece alimentándose a base de piedras. Y, según parece, las prefiere cubiertas de musgo. Cada día se abre camino comiéndose toneladas de rocas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Victory Road B1F).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Calle Victoria (S1)).",
       "locations": [
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Golpe Roca"
         }
       ],
@@ -6808,14 +6808,14 @@
     "flavor_text": "Magnemite se engancha a las líneas de tensión para nutrirse de electricidad. Si se produce un apagón en tu casa, mira el automático, no vaya a ser que haya un montón de estos Pokémon colgados de la caja de fusibles.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva, New Mauville Area).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior)).",
       "locations": [
         {
-          "area": "Malvalona Nueva",
+          "area": "Malvalona Nueva (Entrada)",
           "method": "Hierba alta"
         },
         {
-          "area": "New Mauville Area",
+          "area": "Malvalona Nueva (Interior)",
           "method": "Hierba alta"
         }
       ],
@@ -6883,10 +6883,10 @@
     "flavor_text": "Magneton emite una fuerte energía magnética que causa estragos en los instrumentos mecánicos. Por ello, en las ciudades se avisa con sirenas cuando hay concentraciones de estos Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: New Mauville Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Malvalona Nueva (Interior)).",
       "locations": [
         {
-          "area": "New Mauville Area",
+          "area": "Malvalona Nueva (Interior)",
           "method": "Hierba alta"
         }
       ],
@@ -7037,18 +7037,18 @@
     "flavor_text": "Las dos cabezas de Doduo duermen de forma independiente, por turnos. Mientras una duerme la otra hace de centinela por si aparecen enemigos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area, Hoenn Safari Zone Sw, Hoenn Safari Zone Se).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste), Zona Safari (Sureste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -7116,10 +7116,10 @@
     "flavor_text": "Hay que tener cuidado cuando las tres cabezas de Dodrio miran cada una para un lado, pues están en guardia. No te acerques a este Pokémon cuando está vigilando porque puede darte un picotazo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         }
       ],
@@ -7563,13 +7563,13 @@
     "flavor_text": "Cloyster es capaz de nadar por el mar. Su técnica consiste en tragar agua y expulsarla por el conducto que tiene en la parte trasera. Este mismo sistema es el que usa para lanzar los pinchos que tiene alrededor de la concha.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Shellder (usando Water Stone)",
+      "summary": "Evoluciona de Shellder (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Shellder",
-        "text": "Evoluciona de Shellder (usando Water Stone)",
+        "text": "Evoluciona de Shellder (usando Piedra Agua)",
         "trigger": "use-item",
-        "condition": "usando Water Stone",
+        "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
       },
       "badge_color": "indigo",
@@ -8251,19 +8251,19 @@
     "flavor_text": "Voltorb fue visto por primera vez en una empresa encargada de comercializar Poké Balls. La conexión que existe entre aquella primera vez que se le vio y el hecho de que se parece mucho a una Poké Ball sigue siendo un misterio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva, New Mauville Area, New Mauville Area).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior)).",
       "locations": [
         {
-          "area": "Malvalona Nueva",
+          "area": "Malvalona Nueva (Entrada)",
           "method": "Hierba alta"
         },
         {
-          "area": "New Mauville Area",
+          "area": "Malvalona Nueva (Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "New Mauville Area",
-          "method": "Static"
+          "area": "Malvalona Nueva (Interior)",
+          "method": "Encuentro estático"
         }
       ],
       "badge_color": "emerald",
@@ -8330,19 +8330,19 @@
     "flavor_text": "Los Electrode se alimentan de la electricidad de la atmósfera. En días de tormentas con rayos, es fácil verlos explotando por todos lados tras haber consumido demasiada electricidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: New Mauville Area, New Mauville Area, Team Magma Hideout Area).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Interior), Malvalona Nueva (Interior), Guarida Magma (Ciudad Calagua)).",
       "locations": [
         {
-          "area": "New Mauville Area",
+          "area": "Malvalona Nueva (Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "New Mauville Area",
-          "method": "Static"
+          "area": "Malvalona Nueva (Interior)",
+          "method": "Encuentro estático"
         },
         {
-          "area": "Team Magma Hideout Area",
-          "method": "Static"
+          "area": "Guarida Magma (Ciudad Calagua)",
+          "method": "Encuentro estático"
         }
       ],
       "evolution_info": {
@@ -8491,13 +8491,13 @@
     "flavor_text": "Exeggutor es originario del trópico. Cuando se expone a un sol intenso, le empiezan a crecer las cabezas. Hay quien dice que, cuando las cabezas caen al suelo, se unen para formar un Exeggcute.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Exeggcute (usando Leaf Stone)",
+      "summary": "Evoluciona de Exeggcute (usando Piedra Hoja)",
       "locations": [],
       "evolution_info": {
         "from": "Exeggcute",
-        "text": "Evoluciona de Exeggcute (usando Leaf Stone)",
+        "text": "Evoluciona de Exeggcute (usando Piedra Hoja)",
         "trigger": "use-item",
-        "condition": "usando Leaf Stone",
+        "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
       },
       "badge_color": "indigo",
@@ -9096,10 +9096,10 @@
     "flavor_text": "Rhyhorn corre en línea recta arrasando todo lo que encuentra en su camino. Aun estrellándose de cabeza contra un bloque de acero, no se vería afectado. Bueno, como mucho notaría algo de dolor al día siguiente.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         }
       ],
@@ -9621,54 +9621,54 @@
     "flavor_text": "Goldeen es un bello Pokémon que mueve con elegancia las aletas en el agua. Con todo, no hay que bajar la guardia, en cualquier momento puede embestirte con el cuerno.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 28 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca/Surf), Ciudad Petalia (Pesca/Surf), Meteor Falls Area).",
+      "summary": "Salvaje en 28 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Cascada Meteoro (Entrada)).",
       "locations": [
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Caña Vieja"
         },
         {
@@ -9712,27 +9712,27 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         }
       ],
@@ -9800,14 +9800,14 @@
     "flavor_text": "En otoño, se ven ejemplares de Seaking macho danzando en las riberas de los ríos para cortejar a las hembras. En esta época, la coloración de este Pokémon alcanza sus niveles máximos de belleza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area, Hoenn Safari Zone Sw).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         }
       ],
@@ -9882,10 +9882,10 @@
     "flavor_text": "Staryu posee un órgano central conocido como su núcleo, que brilla con una luz roja. Si vas a la playa a finales de verano, podrás ver los núcleos de estos Pokémon brillando como las estrellas del cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca/Surf)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Supercaña"
         }
       ],
@@ -9953,13 +9953,13 @@
     "flavor_text": "La parte central de Starmie (el núcleo brillante) resplandece con siete colores distintos. Debido a su naturaleza luminosa, a este Pokémon se le ha dado el apelativo de \"la gema del mar\".",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Staryu (usando Water Stone)",
+      "summary": "Evoluciona de Staryu (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Staryu",
-        "text": "Evoluciona de Staryu (usando Water Stone)",
+        "text": "Evoluciona de Staryu (usando Piedra Agua)",
         "trigger": "use-item",
-        "condition": "usando Water Stone",
+        "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
       },
       "badge_color": "indigo",
@@ -10418,10 +10418,10 @@
     "flavor_text": "Pinsir es sorprendentemente grande. Puede agarrar con los cuernos a un rival que pese el doble que él y levantarlo por los aires. En zonas frías, los movimientos de este Pokémon se vuelven lentos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Nwmach Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         }
       ],
@@ -10564,126 +10564,126 @@
     "flavor_text": "Magikarp es el triste ejemplo de un Pokémon capaz únicamente de saltar y salpicar. Esta conducta llevó a científicos a estudiarlo en profundidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 99 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca/Surf), Ciudad Petalia (Pesca/Surf), Ciudad Portual (Pesca/Surf)).",
+      "summary": "Salvaje en 99 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Arrecípolis (Pesca/Surf)",
+          "area": "Ciudad Arrecípolis (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Arrecípolis (Pesca/Surf)",
+          "area": "Ciudad Arrecípolis (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Ciudad Arrecípolis (Pesca/Surf)",
+          "area": "Ciudad Arrecípolis (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Ciudad Arrecípolis (Pesca/Surf)",
+          "area": "Ciudad Arrecípolis (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Caña Buena"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Abandoned Ship Area",
+          "area": "Naufragio (Interior / Surf)",
           "method": "Caña Vieja"
         },
         {
@@ -10843,11 +10843,11 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Caña Vieja"
         },
         {
@@ -10859,11 +10859,11 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Caña Vieja"
         },
         {
@@ -10931,35 +10931,35 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Nwmach Bike Area",
+          "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Caña Vieja"
         }
       ],
@@ -11028,10 +11028,10 @@
     "flavor_text": "Cuando Magikarp evoluciona y se convierte en Gyarados, sufre un cambio estructural en las células del cerebro. Dicen que esa transformación es la causa de la naturaleza violenta y salvaje de este Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Arrecípolis (Pesca/Surf)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Arrecípolis (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Arrecípolis (Pesca/Surf)",
+          "area": "Ciudad Arrecípolis (Pesca / Surf)",
           "method": "Supercaña"
         }
       ],
@@ -11329,13 +11329,13 @@
     "flavor_text": "Vaporeon sufrió una mutación repentina y desarrolló aletas y branquias que le permiten vivir abajo del agua. Asimismo, este Pokémon tiene la habilidad de controlar las aguas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (usando Water Stone)",
+      "summary": "Evoluciona de Eevee (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (usando Water Stone)",
+        "text": "Evoluciona de Eevee (usando Piedra Agua)",
         "trigger": "use-item",
-        "condition": "usando Water Stone",
+        "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
       },
       "badge_color": "indigo",
@@ -11425,13 +11425,13 @@
     "flavor_text": "Las células de Jolteon generan un nivel bajo de electricidad, cuya intensidad aumenta con la electricidad estática que acumula por un pelaje formado por agujas cargadas de electricidad. Esta característica le permite lanzar rayos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (usando Thunder Stone)",
+      "summary": "Evoluciona de Eevee (usando Piedra Trueno)",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (usando Thunder Stone)",
+        "text": "Evoluciona de Eevee (usando Piedra Trueno)",
         "trigger": "use-item",
-        "condition": "usando Thunder Stone",
+        "condition": "usando Piedra Trueno",
         "item_slug": "thunder-stone"
       },
       "badge_color": "indigo",
@@ -11517,13 +11517,13 @@
     "flavor_text": "La suavidad del pelaje de Flareon tiene una función clara: libera calor para que el Pokémon no se asfixie. La temperatura corporal de este Pokémon puede alcanzar los 900 grados centígrados.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (usando Fire Stone)",
+      "summary": "Evoluciona de Eevee (usando Piedra Fuego)",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (usando Fire Stone)",
+        "text": "Evoluciona de Eevee (usando Piedra Fuego)",
         "trigger": "use-item",
-        "condition": "usando Fire Stone",
+        "condition": "usando Piedra Fuego",
         "item_slug": "fire-stone"
       },
       "badge_color": "indigo",
@@ -14047,15 +14047,15 @@
     "flavor_text": "Chinchou libera cargas eléctricas positivas y negativas a través de las dos antenas que tiene para que su rival pierda el conocimiento. Asimismo, usa los destellos de electricidad para comunicarse con otros.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Route 124 Underwater, Hoenn Route 126 Underwater).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
       "locations": [
         {
-          "area": "Hoenn Route 124 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 124 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         },
         {
-          "area": "Hoenn Route 126 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 126 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         }
       ],
       "badge_color": "emerald",
@@ -14561,18 +14561,18 @@
     "flavor_text": "Natu no puede volar porque las alas no le han crecido lo suficiente. Si tu mirada se cruza con la suya, te la devolverá fijamente. Pero si haces el mínimo movimiento, huirá dando saltitos para ponerse a salvo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Hoenn Safari Zone Neacro Bike Area, Hoenn Safari Zone Sw, Hoenn Safari Zone Se).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática), Zona Safari (Suroeste), Zona Safari (Sureste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -14640,10 +14640,10 @@
     "flavor_text": "Xatu permanece de pie inmóvil y tranquilo en el mismo sitio durante todo el día. Se cree que no se mueve por temor a lo que ha visto que ocurrirá en el futuro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Neacro Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         }
       ],
@@ -14942,13 +14942,13 @@
     "flavor_text": "Cuando Bellossom se expone a gran cantidad de luz solar, le empiezan a girar las hojas que le rodean. La danza de este Pokémon es famosa en las zonas del sur.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Gloom (usando Sun Stone)",
+      "summary": "Evoluciona de Gloom (usando Piedra Solar)",
       "locations": [],
       "evolution_info": {
         "from": "Gloom",
-        "text": "Evoluciona de Gloom (usando Sun Stone)",
+        "text": "Evoluciona de Gloom (usando Piedra Solar)",
         "trigger": "use-item",
-        "condition": "usando Sun Stone",
+        "condition": "usando Piedra Solar",
         "item_slug": "sun-stone"
       },
       "badge_color": "indigo",
@@ -15034,10 +15034,10 @@
     "flavor_text": "La cola de Marill contiene un aceite que hace las veces de chaleco salvavidas. Si ves una moviéndose en el agua, seguro que debajo está Marill medio sumergido buscando plantas acuáticas para comer.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca/Surf), Ruta 102, Ruta 111 (Desierto)).",
+      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ruta 102, Ruta 111 (Desierto)).",
       "locations": [
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -15290,13 +15290,13 @@
     "flavor_text": "El mechón rizado de Politoed confirma su condición de rey. Dicen que cuanto más le crece y más se le riza, mayor es el respeto que recibe de sus súbditos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Poliwhirl (Intercambio equipado con Kings Rock)",
+      "summary": "Evoluciona de Poliwhirl (Intercambio equipado con Roca del Rey)",
       "locations": [],
       "evolution_info": {
         "from": "Poliwhirl",
-        "text": "Evoluciona de Poliwhirl (Intercambio equipado con Kings Rock)",
+        "text": "Evoluciona de Poliwhirl (Intercambio equipado con Roca del Rey)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Kings Rock",
+        "condition": "Intercambio equipado con Roca del Rey",
         "item_slug": "kings-rock"
       },
       "badge_color": "indigo",
@@ -15756,13 +15756,13 @@
     "flavor_text": "Sunflora transforma la energía solar en nutrientes. De día, cuando hace calor, está en continuo movimiento. Sólo para cuando comienza a anochecer.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Sunkern (usando Sun Stone)",
+      "summary": "Evoluciona de Sunkern (usando Piedra Solar)",
       "locations": [],
       "evolution_info": {
         "from": "Sunkern",
-        "text": "Evoluciona de Sunkern (usando Sun Stone)",
+        "text": "Evoluciona de Sunkern (usando Piedra Solar)",
         "trigger": "use-item",
-        "condition": "usando Sun Stone",
+        "condition": "usando Piedra Solar",
         "item_slug": "sun-stone"
       },
       "badge_color": "indigo",
@@ -16294,13 +16294,13 @@
     "flavor_text": "Slowking dedica cada día tiempo a investigar, en un intento por resolver los problemas del mundo. Aunque, según parece, a este Pokémon se le olvida todo lo que ha aprendido cuando el Shellder que lleva asoma.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Slowpoke (Intercambio equipado con Kings Rock)",
+      "summary": "Evoluciona de Slowpoke (Intercambio equipado con Roca del Rey)",
       "locations": [],
       "evolution_info": {
         "from": "Slowpoke",
-        "text": "Evoluciona de Slowpoke (Intercambio equipado con Kings Rock)",
+        "text": "Evoluciona de Slowpoke (Intercambio equipado con Roca del Rey)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Kings Rock",
+        "condition": "Intercambio equipado con Roca del Rey",
         "item_slug": "kings-rock"
       },
       "badge_color": "indigo",
@@ -16533,14 +16533,14 @@
     "flavor_text": "Si dos o más Wobbuffet se encuentran, se volverán competitivos e intentarán superarse en resistencia. Pero también puede que intenten aguantar sin comer; algo que los ENTRENADORES deben tener muy en cuenta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Safari Zone Sw, Hoenn Safari Zone Se).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -16615,14 +16615,14 @@
     "flavor_text": "Girafarig tiene un cerebro también en la cabeza trasera, que reacciona atacando ante olores y sonidos. Si te acercas a este Pokémon desde atrás, puedes provocar que la cabeza trasera salga de repente y te muerda.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Safari Zone Sw, Hoenn Safari Zone Se).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -16988,13 +16988,13 @@
     "flavor_text": "Steelix vive a mayor profundidad aún que Onix. Se le conoce por su tendencia a cavar hacia el centro de la tierra. Hay datos que muestran que este Pokémon ha llegado a alcanzar 1 kilómetro de profundidad cavando.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Onix (Intercambio equipado con Metal Coat)",
+      "summary": "Evoluciona de Onix (Intercambio equipado con Revestimiento Metálico)",
       "locations": [],
       "evolution_info": {
         "from": "Onix",
-        "text": "Evoluciona de Onix (Intercambio equipado con Metal Coat)",
+        "text": "Evoluciona de Onix (Intercambio equipado con Revestimiento Metálico)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Metal Coat",
+        "condition": "Intercambio equipado con Revestimiento Metálico",
         "item_slug": "metal-coat"
       },
       "badge_color": "indigo",
@@ -17301,13 +17301,13 @@
     "flavor_text": "Scizor tiene un cuerpo duro como el acero que no es fácil de alterar con ningún ataque común. Este Pokémon bate las alas para regular la temperatura corporal.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Scyther (Intercambio equipado con Metal Coat)",
+      "summary": "Evoluciona de Scyther (Intercambio equipado con Revestimiento Metálico)",
       "locations": [],
       "evolution_info": {
         "from": "Scyther",
-        "text": "Evoluciona de Scyther (Intercambio equipado con Metal Coat)",
+        "text": "Evoluciona de Scyther (Intercambio equipado con Revestimiento Metálico)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Metal Coat",
+        "condition": "Intercambio equipado con Revestimiento Metálico",
         "item_slug": "metal-coat"
       },
       "badge_color": "indigo",
@@ -17464,10 +17464,10 @@
     "flavor_text": "Heracross carga en línea recta contra el enemigo, se le queda encajado por debajo, lo agarra y lo lanza con ayuda del fuerte cuerno que tiene. Este Pokémon tiene fuerza hasta para echar abajo un árbol descomunal.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Neacro Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         }
       ],
@@ -18050,10 +18050,10 @@
     "flavor_text": "Las ramas de Corsola brillan con belleza hasta en siete colores cuando les da el sol. Si se le rompe alguna, el Pokémon la regenera en tan solo una noche.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca/Surf), Ruta 128, Pueblo Oromar (Pesca/Surf)).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ruta 128, Pueblo Oromar (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
@@ -18061,8 +18061,8 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
-          "method": "Npc Trade"
+          "area": "Pueblo Oromar (Pesca / Surf)",
+          "method": "Intercambio con NPC"
         }
       ],
       "badge_color": "emerald",
@@ -18650,13 +18650,13 @@
     "flavor_text": "Kingdra vive en lo más profundo del océano, donde no habita ninguna otra especie. Siempre se ha pensado que su bostezo causaba las corrientes en remolino que se dan en el océano.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Seadra (Intercambio equipado con Dragon Scale)",
+      "summary": "Evoluciona de Seadra (Intercambio equipado con Escama Dragón)",
       "locations": [],
       "evolution_info": {
         "from": "Seadra",
-        "text": "Evoluciona de Seadra (Intercambio equipado con Dragon Scale)",
+        "text": "Evoluciona de Seadra (Intercambio equipado con Escama Dragón)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Dragon Scale",
+        "condition": "Intercambio equipado con Escama Dragón",
         "item_slug": "dragon-scale"
       },
       "badge_color": "indigo",
@@ -18743,10 +18743,10 @@
     "flavor_text": "Phanpy cava un agujero profundo para hacer su nido en el suelo, en la ribera de los ríos, y marca con la trompa la zona para que el resto vea que ese terreno ya está ocupado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Safari Zone Neacro Bike Area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Neacro Bike Area",
+          "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         }
       ],
@@ -21712,7 +21712,9 @@
     "flavor_text": "Lotad vive en estanques y lagos, donde permanece flotando. Si se le marchita la ancha hoja que tiene en la cabeza, se debilitará. De vez en cuando se desplaza en busca de agua limpia.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Exclusivo de Pokémon Zafiro (Ruta 102 y Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -21722,9 +21724,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -21788,7 +21788,9 @@
     "flavor_text": "Lombre es, además de travieso, nocturno; entra en acción de noche. Cuando ve a gente pescando, se pone a tirar del sedal por debajo del agua y se divierte viendo la cara de enfado que se les queda.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio o evolucionar de Lotad.",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Exclusivo de Pokémon Zafiro (Ruta 114). Requiere intercambio o evolucionar de Lotad.",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -21801,9 +21803,7 @@
         "trigger": "level-up",
         "condition": "Nivel 14",
         "item_slug": null
-      },
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21867,6 +21867,8 @@
     "flavor_text": "Ludicolo empieza a bailar en cuanto oye música alegre y de fiesta. Dicen que este Pokémon aparece cuando oye cantar a los niños que van de excursión para hacer senderismo.",
     "obtaining_info": {
       "type": "trade",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
       "summary": "Exclusivo de Pokémon Zafiro. Evoluciona de Lombre usando Piedra Agua.",
       "locations": [
         {
@@ -21876,13 +21878,11 @@
       ],
       "evolution_info": {
         "from": "Lombre",
-        "text": "Evoluciona de Lombre (usando Water Stone)",
+        "text": "Evoluciona de Lombre (usando Piedra Agua)",
         "trigger": "use-item",
-        "condition": "usando Water Stone",
+        "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
-      },
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -22124,13 +22124,13 @@
     "flavor_text": "Shiftry es un enigmático Pokémon que vive, dicen, en las copas de los árboles milenarios. Este Pokémon genera fuertes corrientes de aire con los abanicos que lleva en las manos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nuzleaf (usando Leaf Stone)",
+      "summary": "Evoluciona de Nuzleaf (usando Piedra Hoja)",
       "locations": [],
       "evolution_info": {
         "from": "Nuzleaf",
-        "text": "Evoluciona de Nuzleaf (usando Leaf Stone)",
+        "text": "Evoluciona de Nuzleaf (usando Piedra Hoja)",
         "trigger": "use-item",
-        "condition": "usando Leaf Stone",
+        "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
       },
       "badge_color": "indigo",
@@ -22378,26 +22378,26 @@
     "flavor_text": "Wingull tiene la costumbre de llevar a su presa y objetos de valor en el pico, y esconderlos en distintos sitios. Este Pokémon vuela dejándose llevar por las corrientes de aire como si fuera patinando por el cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 39 zona(s) de Hoenn (ej: Ciudad Portual (Pesca/Surf), Ciudad Calagua (Pesca/Surf), Ciudad Algaria (Pesca/Surf)).",
+      "summary": "Salvaje en 39 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Mt Pyre Outside",
+          "area": "Monte Pírico (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -22485,7 +22485,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -22493,7 +22493,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -22529,11 +22529,11 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -22602,22 +22602,22 @@
     "flavor_text": "Pelipper vuela transportando pequeños huevos y Pokémon dentro del descomunal pico que tiene. Este Pokémon construye su nido en escarpados acantilados frente al mar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 31 zona(s) de Hoenn (ej: Ciudad Portual (Pesca/Surf), Ciudad Calagua (Pesca/Surf), Ciudad Algaria (Pesca/Surf)).",
+      "summary": "Salvaje en 31 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -22677,7 +22677,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -22685,7 +22685,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -22721,11 +22721,11 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -23779,14 +23779,14 @@
     "flavor_text": "Normalmente, Whismur tiene una voz tenue, casi inaudible, aunque se preste atención. No obstante, si este Pokémon siente que el peligro acecha, puede ponerse a chillar con un volumen ensordecedor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Túnel Férrfundido, Hoenn Victory Road 1F, Ruta 116).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Túnel Férrfundido, Calle Victoria (P1), Ruta 116).",
       "locations": [
         {
           "area": "Túnel Férrfundido",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
@@ -23859,10 +23859,10 @@
     "flavor_text": "Los bramidos de Loudred pueden echar abajo una casa reforzada con vigas de madera. Este Pokémon usa el vozarrón que tiene para castigar a sus rivales. Las orejas redondas le sirven de altavoces.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Hoenn Victory Road 1F).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Calle Victoria (P1)).",
       "locations": [
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         }
       ],
@@ -24012,7 +24012,7 @@
     "flavor_text": "Makuhita es tenaz. Da igual las veces que le venzan; volverá a ponerse en pie y a atacar. De hecho, cada vez que se recupera, acumula más energía para poder evolucionar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Granite Cave 1Fsmall Room).",
+      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior)).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -24023,16 +24023,16 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Granite Cave 1Fsmall Room",
+          "area": "Cueva Granito (P1 Sala Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Rustboro City Area",
-          "method": "Npc Trade"
+          "area": "Ciudad Férrica",
+          "method": "Intercambio con NPC"
         }
       ],
       "badge_color": "emerald",
@@ -24099,14 +24099,14 @@
     "flavor_text": "Hariyama practica los empujones que da estirando los brazos allá por donde va. Este Pokémon puede partir por la mitad un poste de teléfono de un enérgico golpe con los brazos estirados y las manos abiertas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Victory Road 1F, Hoenn Victory Road B1F).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (P1), Calle Victoria (S1)).",
       "locations": [
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Hierba alta"
         }
       ],
@@ -24339,15 +24339,15 @@
     "flavor_text": "A Skitty le encanta mover cosas e ir detrás de ellas. Es de todos sabido que se dedica a ir detrás de su propia cola y que, al final, acaba mareándose.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 116, Fortree City Area).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 116, Ciudad Arborada).",
       "locations": [
         {
           "area": "Ruta 116",
           "method": "Hierba alta"
         },
         {
-          "area": "Fortree City Area",
-          "method": "Npc Trade"
+          "area": "Ciudad Arborada",
+          "method": "Intercambio con NPC"
         }
       ],
       "badge_color": "emerald",
@@ -24415,13 +24415,13 @@
     "flavor_text": "Delcatty prefiere llevar una vida independiente y hacer lo que se le antoje. Como este Pokémon come y duerme según vea en cada momento, no se puede decir que tenga unos hábitos regulares en el día a día.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Skitty (usando Moon Stone)",
+      "summary": "Evoluciona de Skitty (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Skitty",
-        "text": "Evoluciona de Skitty (usando Moon Stone)",
+        "text": "Evoluciona de Skitty (usando Piedra Lunar)",
         "trigger": "use-item",
-        "condition": "usando Moon Stone",
+        "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
       },
       "badge_color": "indigo",
@@ -24504,7 +24504,9 @@
     "flavor_text": "Los Sableye hacen una vida muy tranquila en cavernas. Pero son muy temidos; se dice que, cuando los ojos les brillan de manera siniestra, están robándole el alma a alguien.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Exclusivo de Pokémon Zafiro (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -24514,9 +24516,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -24606,7 +24606,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Hierba alta"
         },
         {
@@ -24687,7 +24687,7 @@
     "flavor_text": "Este Pokémon tiene el cuerpo de acero. Para mantenerlo, se alimenta del hierro que saca de las montañas. A veces, causa verdaderos problemas, pues se come puentes y vías de tren.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Granite Cave 1Fsmall Room).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva Granito (P1 Sala Interior)).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 1)",
@@ -24698,11 +24698,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Granite Cave 1Fsmall Room",
+          "area": "Cueva Granito (P1 Sala Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         }
       ],
@@ -24770,18 +24770,18 @@
     "flavor_text": "Lairon templa su cuerpo de acero bebiendo agua mineral muy rica en nutrientes hasta que no puede más. Este Pokémon suele crear su nido cerca de manantiales de rica agua.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Hoenn Victory Road 1F, Hoenn Victory Road B1F, Hoenn Victory Road B2F).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Calle Victoria (P1), Calle Victoria (S1), Calle Victoria (S2)).",
       "locations": [
         {
-          "area": "Hoenn Victory Road 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Hierba alta"
         }
       ],
@@ -24929,14 +24929,14 @@
     "flavor_text": "Meditite lleva a cabo un entrenamiento mental exhaustivo en lo más profundo de las montañas. Aunque, cuando medita, pierde toda la concentración y se descentra. Por eso no deja nunca de entrenarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Mt Pyre Outside, Hoenn Victory Road B1F).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Monte Pírico (Exterior), Calle Victoria (S1)).",
       "locations": [
         {
-          "area": "Mt Pyre Outside",
+          "area": "Monte Pírico (Exterior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Hierba alta"
         }
       ],
@@ -25004,14 +25004,14 @@
     "flavor_text": "Dicen que, a través de la meditación, Medicham aumenta su energía interior y agudiza el sexto sentido que tiene. Este Pokémon suele esconderse mezclándose con el campo y las montañas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Victory Road B1F, Hoenn Victory Road B2F).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (S1), Calle Victoria (S2)).",
       "locations": [
         {
-          "area": "Hoenn Victory Road B1F",
+          "area": "Calle Victoria (S1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Hierba alta"
         }
       ],
@@ -25824,10 +25824,10 @@
     "flavor_text": "Conocido como \"el terror de los mares\", Sharpedo es temido por todos. Si este Pokémon pierde las escalofriantes mandíbulas que tiene, las recupera en breve. Basta con un Sharpedo para destrozar un buque-cisterna.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 15 zona(s) de Hoenn (ej: Ciudad Algaria (Pesca/Surf), Ruta 103, Ruta 118).",
+      "summary": "Salvaje en 15 zona(s) de Hoenn (ej: Ciudad Algaria (Pesca / Surf), Ruta 103, Ruta 118).",
       "locations": [
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
@@ -25843,7 +25843,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Supercaña"
         },
         {
@@ -25851,7 +25851,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Supercaña"
         },
         {
@@ -25883,7 +25883,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Supercaña"
         }
       ],
@@ -25958,54 +25958,54 @@
     "flavor_text": "Wailmer tiene los espiráculos encima de la cabeza. A este juguetón Pokémon le encanta asustar a la gente expulsando el agua que acumula a través de estos orificios.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 60 zona(s) de Hoenn (ej: Ciudad Portual (Pesca/Surf), Ciudad Portual (Pesca/Surf), Ciudad Calagua (Pesca/Surf)).",
+      "summary": "Salvaje en 60 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf)).",
       "locations": [
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Portual (Pesca/Surf)",
+          "area": "Ciudad Portual (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Calagua (Pesca/Surf)",
+          "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Algaria (Pesca/Surf)",
+          "area": "Ciudad Algaria (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Caña Buena"
         },
         {
-          "area": "Seafloor Cavern Area",
+          "area": "Caverna Abisal",
           "method": "Supercaña"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Supercaña"
         },
         {
@@ -26097,11 +26097,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 124 (Agua / Buceo)",
+          "area": "Ruta 124 (Superficie)",
           "method": "Supercaña"
         },
         {
@@ -26113,11 +26113,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruta 126 (Agua / Buceo)",
+          "area": "Ruta 126 (Superficie)",
           "method": "Supercaña"
         },
         {
@@ -26185,19 +26185,19 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Azuliza (Pesca/Surf)",
+          "area": "Pueblo Azuliza (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Pueblo Oromar (Pesca/Surf)",
+          "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Supercaña"
         }
       ],
@@ -27376,7 +27376,9 @@
     "flavor_text": "Seviper lleva años de gran enemistad con Zangoose. Las cicatrices que tiene por todo el cuerpo dan buena muestra de los encarnizados combates en los que se han enfrentado. Seviper ataca usando su cola con forma de espada.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Exclusivo de Pokémon Zafiro (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -27386,9 +27388,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -27452,7 +27452,9 @@
     "flavor_text": "Lunatone fue descubierto en el lugar de impacto de un meteorito. Por eso, hay quien especula con la idea de que procede del espacio. Con todo, hasta el día de hoy nadie ha podido probar esta teoría.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -27462,9 +27464,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza con Ditto"
         }
-      ],
-      "badge_color": "blue",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -27527,38 +27527,38 @@
     "flavor_text": "Solrock pertenece a una nueva especie de Pokémon a la que se le atribuye una procedencia extraterrestre. Este Pokémon permanece flotando en el aire y se mueve muy despacio. Al luchar, desprende una luz viva e intensa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Meteor Falls Area, Meteor Falls Area, Meteor Falls Back).",
+      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
       "locations": [
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Hierba alta"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Hierba alta"
         }
       ],
@@ -27626,46 +27626,46 @@
     "flavor_text": "Barboach tiene unos bigotes sensibles que le sirven de infalible radar. Este Pokémon se sumerge en lodo y sólo deja los bigotes por fuera de la superficie, al acecho, mientras espera a que llegue su presa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) de Hoenn (ej: Meteor Falls Area, Meteor Falls Area, Meteor Falls Back).",
+      "summary": "Salvaje en 16 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
       "locations": [
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Area",
+          "area": "Cascada Meteoro (Entrada)",
           "method": "Supercaña"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Supercaña"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Supercaña"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Caña Buena"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Supercaña"
         },
         {
@@ -27757,22 +27757,22 @@
     "flavor_text": "Whiscash defiende su territorio a toda costa. Es capaz de apoderarse de un estanque entero para sí solo. Si alguien se le acerca, se revolverá y provocará un terremoto devastador.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Meteor Falls Back, Meteor Falls B1F, Meteor Falls Backsmall Room).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1), Cascada Meteoro (Sala de Bagon)).",
       "locations": [
         {
-          "area": "Meteor Falls Back",
+          "area": "Cascada Meteoro (Interior)",
           "method": "Supercaña"
         },
         {
-          "area": "Meteor Falls B1F",
+          "area": "Cascada Meteoro (Sótano 1)",
           "method": "Supercaña"
         },
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Victory Road B2F",
+          "area": "Calle Victoria (S2)",
           "method": "Supercaña"
         }
       ],
@@ -27847,14 +27847,14 @@
     "flavor_text": "En un principio, se importaban Corphish como mascota. Pero, al final, se hicieron salvajes. Este Pokémon es muy resistente y ha aumentado su población de forma considerable.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca/Surf), Ciudad Petalia (Pesca/Surf), Ruta 102).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ruta 102).",
       "locations": [
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Petalia (Pesca/Surf)",
+          "area": "Ciudad Petalia (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
@@ -28469,8 +28469,8 @@
       "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119.",
       "locations": [
         {
-          "area": "Ruta 119 (Río)",
-          "method": "Supercaña en 6 casillas aleatorias"
+          "area": "Ruta 119",
+          "method": "Pesca en casilla especial de Feebas"
         }
       ],
       "badge_color": "emerald",
@@ -28700,7 +28700,7 @@
         },
         {
           "area": "Ruta 119",
-          "method": "Devon Scope"
+          "method": "Detector Devon"
         },
         {
           "area": "Ruta 120",
@@ -28708,7 +28708,7 @@
         },
         {
           "area": "Ruta 120",
-          "method": "Devon Scope"
+          "method": "Detector Devon"
         },
         {
           "area": "Ruta 121",
@@ -28783,18 +28783,18 @@
     "flavor_text": "A Shuppet le atraen los sentimientos de celos y rencor. Si alguien desarrolla fuertes sentimientos de venganza, aparecerá una multitud de Shuppet que se quedará bajo los aleros de su casa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Monte Pírico (P4), Monte Pírico (P5), Monte Pírico (P6)).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Monte Pírico (Interior P4), Monte Pírico (Interior P5), Monte Pírico (Interior P6)).",
       "locations": [
         {
-          "area": "Monte Pírico (P4)",
+          "area": "Monte Pírico (Interior P4)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P5)",
+          "area": "Monte Pírico (Interior P5)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P6)",
+          "area": "Monte Pírico (Interior P6)",
           "method": "Hierba alta"
         },
         {
@@ -28939,34 +28939,34 @@
     "flavor_text": "Duskull puede atravesar los muros, sea cual sea el grosor que tengan. Cuando este Pokémon elige su objetivo, lo persigue hábilmente hasta el amanecer.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Monte Pírico (Interior), Monte Pírico (P2), Monte Pírico (P3)).",
+      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Monte Pírico (Interior P1), Monte Pírico (Interior P2), Monte Pírico (Interior P3)).",
       "locations": [
         {
-          "area": "Monte Pírico (Interior)",
+          "area": "Monte Pírico (Interior P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P2)",
+          "area": "Monte Pírico (Interior P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P3)",
+          "area": "Monte Pírico (Interior P3)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P4)",
+          "area": "Monte Pírico (Interior P4)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P5)",
+          "area": "Monte Pírico (Interior P5)",
           "method": "Hierba alta"
         },
         {
-          "area": "Monte Pírico (P6)",
+          "area": "Monte Pírico (Interior P6)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Pyre Outside",
+          "area": "Monte Pírico (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -29357,7 +29357,7 @@
           "method": "Crianza con Incienso Suave"
         },
         {
-          "area": "Isla Espejismo",
+          "area": "Isla Espejismo (Ruta 130)",
           "method": "Hierba alta (Isla aleatoria)"
         }
       ],
@@ -29441,10 +29441,10 @@
     "flavor_text": "Snorunt vive en zonas de grandes nevadas. En primavera y verano (cuando no nieva), se retira a las cavernas para vivir tranquilamente entre estalactitas y estalagmitas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Shoal Cave B3F).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Cardumen (Sala Hielo)).",
       "locations": [
         {
-          "area": "Shoal Cave B3F",
+          "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
         }
       ],
@@ -29587,30 +29587,30 @@
     "flavor_text": "Spheal se desplaza por el suelo más rápido rodando que caminando. Cuando come con otros de su especie, todos se ponen a aplaudir para expresar su alegría. Por eso, a veces son algo escandalosos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Shoal Cave High Tide, Shoal Cave High Tide, Shoal Cave B1F).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Cardumen (Marea Alta), Cueva Cardumen (Marea Alta), Cueva Cardumen (Sótano 1)).",
       "locations": [
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Shoal Cave High Tide",
+          "area": "Cueva Cardumen (Marea Alta)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B1F",
+          "area": "Cueva Cardumen (Sótano 1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave Low Tide",
+          "area": "Cueva Cardumen (Marea Baja)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B2F",
+          "area": "Cueva Cardumen (Sótano 2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Shoal Cave B3F",
+          "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
         }
       ],
@@ -29827,15 +29827,15 @@
     "flavor_text": "La sólida concha que rodea a Clamperl no sólo le sirve para protegerse, sino también para poner un cepo y atrapar a su presa. Cuando la concha alcanza su mayor tamaño, presenta muescas y rasguños por todas partes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Route 124 Underwater, Hoenn Route 126 Underwater).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
       "locations": [
         {
-          "area": "Hoenn Route 124 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 124 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         },
         {
-          "area": "Hoenn Route 126 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 126 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         }
       ],
       "badge_color": "emerald",
@@ -29902,13 +29902,13 @@
     "flavor_text": "Huntail ha pasado desapercibido durante mucho tiempo por vivir en las profundidades del mar. El sentido de la vista de este Pokémon le permite ver en las oscuras y lodosas profundidades del océano.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Clamperl (Intercambio equipado con Deep Sea Tooth)",
+      "summary": "Evoluciona de Clamperl (Intercambio equipado con Diente Marino)",
       "locations": [],
       "evolution_info": {
         "from": "Clamperl",
-        "text": "Evoluciona de Clamperl (Intercambio equipado con Deep Sea Tooth)",
+        "text": "Evoluciona de Clamperl (Intercambio equipado con Diente Marino)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Deep Sea Tooth",
+        "condition": "Intercambio equipado con Diente Marino",
         "item_slug": "deep-sea-tooth"
       },
       "badge_color": "indigo",
@@ -29994,13 +29994,13 @@
     "flavor_text": "Gorebyss vive en los Mares del Sur, en lo más profundo; de ahí que tenga el cuerpo preparado para soportar la presión tan grande que hay en el fondo marino, y que no le hagan daño los ataques comunes.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Clamperl (Intercambio equipado con Deep Sea Scale)",
+      "summary": "Evoluciona de Clamperl (Intercambio equipado con Escama Marina)",
       "locations": [],
       "evolution_info": {
         "from": "Clamperl",
-        "text": "Evoluciona de Clamperl (Intercambio equipado con Deep Sea Scale)",
+        "text": "Evoluciona de Clamperl (Intercambio equipado con Escama Marina)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Deep Sea Scale",
+        "condition": "Intercambio equipado con Escama Marina",
         "item_slug": "deep-sea-scale"
       },
       "badge_color": "indigo",
@@ -30086,15 +30086,15 @@
     "flavor_text": "Relicanth pertenece a una especie de Pokémon que lleva millones de años sin cambiar de forma. Este ancestral Pokémon se alimenta de microorganismos por la boca desdentada que tiene.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Hoenn Route 124 Underwater, Hoenn Route 126 Underwater).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
       "locations": [
         {
-          "area": "Hoenn Route 124 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 124 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         },
         {
-          "area": "Hoenn Route 126 Underwater",
-          "method": "Seaweed"
+          "area": "Ruta 126 (Buceo / Fondo marino)",
+          "method": "Hierba submarina (Algas)"
         }
       ],
       "badge_color": "emerald",
@@ -30162,14 +30162,14 @@
     "flavor_text": "Luvdisc vive en aguas tropicales poco profundas. Este Pokémon con forma de corazón se ha ganado la reputación que tiene por ir nadando detrás de las parejas de enamorados que veía entre las olas del océano.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca/Surf), Ciudad Colosalia (Pesca/Surf), Ruta 128).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ciudad Colosalia (Pesca / Surf), Ruta 128).",
       "locations": [
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ciudad Colosalia (Pesca/Surf)",
+          "area": "Ciudad Colosalia (Pesca / Surf)",
           "method": "Supercaña"
         },
         {
@@ -30245,10 +30245,10 @@
     "flavor_text": "Bagon sueña con poder pasar un día volando por el cielo. En vanos intentos por volar, ha llegado a tirarse desde riscos. Como resultado de estas caídas en picado, se le ha puesto la cabeza dura como las piedras.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Meteor Falls Backsmall Room).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cascada Meteoro (Sala de Bagon)).",
       "locations": [
         {
-          "area": "Meteor Falls Backsmall Room",
+          "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Hierba alta"
         }
       ],
@@ -30683,15 +30683,15 @@
     "flavor_text": "A Regirock lo mantuvieron encerrado y lejos hace tiempo. Dicen que, si resulta dañado en combate, se pone él mismo a buscar piedras parecidas a las suyas y se las pone para recomponerse.",
     "obtaining_info": {
       "type": "legendary",
-      "summary": "Ruinas del Desierto en la Ruta 111 (requiere resolver el enigma Braille en la Cámara Sellada).",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
+      "summary": "Ruinas del Desierto en la Ruta 111 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth primero y Wailord al final del equipo, y en la sala de Regirock dar 2 pasos a la derecha, 2 abajo y usar Fuerza).",
       "locations": [
         {
           "area": "Ruta 111 (Ruinas del Desierto)",
           "method": "Legendario estático (Nivel 40)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -30754,15 +30754,15 @@
     "flavor_text": "Regice surgió durante la edad de hielo. El cuerpo de este Pokémon está totalmente congelado, ni siquiera el fuego puede derretirlo. Regice libera y regula un aire gélido de -200 grados centígrados.",
     "obtaining_info": {
       "type": "legendary",
-      "summary": "Cueva Insular en la Ruta 105 (requiere resolver el enigma Braille en la Cámara Sellada).",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
+      "summary": "Cueva Insular en la Ruta 105 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth y Wailord, y en la Cueva Insular esperar quieto 2 minutos frente al muro Braille).",
       "locations": [
         {
           "area": "Ruta 105 (Cueva Insular)",
           "method": "Legendario estático (Nivel 40)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -30825,15 +30825,15 @@
     "flavor_text": "No hay metal que supere en dureza el cuerpo de Registeel, que tiene aspecto de estar hueco. Nadie sabe de qué se alimenta este Pokémon.",
     "obtaining_info": {
       "type": "legendary",
-      "summary": "Tumba Antigua en la Ruta 120 (requiere resolver el enigma Braille en la Cámara Sellada).",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
+      "summary": "Tumba Antigua en la Ruta 120 al Nivel 40 (requiere abrir la Cámara Sellada en la Ruta 134 con Relicanth y Wailord, y en la Tumba Antigua situarse en el centro de la sala y usar Vuelo).",
       "locations": [
         {
           "area": "Ruta 120 (Tumba Antigua)",
           "method": "Legendario estático (Nivel 40)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -30895,16 +30895,20 @@
     "cry_url": "/media/pokemon/cries/legacy/380.ogg",
     "flavor_text": "Latias es muy sensible a los sentimientos de la gente. Si detecta algún ápice de hostilidad, desplegará las plumas que tiene por todo el cuerpo y se pondrá a chillar para intimidar al enemigo.",
     "obtaining_info": {
-      "type": "legendary",
-      "summary": "Pokémon Legendario exclusivo de Pokémon Zafiro (errante en Zafiro). En Rubí requiere intercambio o Ticket Eón en Isla del Sur.",
+      "type": "trade",
+      "badge_label": "Intercambio / Evento",
+      "badge_color": "indigo",
+      "summary": "Legendario errante exclusivo de Pokémon Zafiro. En Pokémon Rubí se obtiene mediante intercambio con Zafiro/Esmeralda, o de forma salvaje en la Isla del Sur (Nivel 50, equipado con Rocío Bondad) mediante el evento oficial del Ticket Eón.",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Zafiro / Isla del Sur (Ticket Eón)",
-          "method": "Exclusivo de versión / Evento"
+          "area": "Isla del Sur (Evento Ticket Eón)",
+          "method": "Salvaje estático al Nivel 50 con Ticket Eón"
+        },
+        {
+          "area": "Intercambio con Pokémon Zafiro",
+          "method": "Intercambio de versión (donde es errante)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -30967,15 +30971,15 @@
     "flavor_text": "Latios tiene la habilidad de hacer que su rival vea algo que él ha visto o imaginado. Este Pokémon es muy inteligente. Es capaz de entender el lenguaje humano.",
     "obtaining_info": {
       "type": "legendary",
-      "summary": "Legendario errante salvaje por todo Hoenn al Nivel 40 tras vencer al Alto Mando y elegir el color Rojo en la televisión.",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
+      "summary": "Legendario errante salvaje por todo Hoenn al Nivel 40 tras vencer al Alto Mando (aparece de forma automática en Rubí sin tener que elegir color en la televisión, a diferencia de Esmeralda).",
       "locations": [
         {
           "area": "Rutas de Hoenn (Errante)",
           "method": "Salvaje errante tras el Alto Mando"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -31037,16 +31041,16 @@
     "cry_url": "/media/pokemon/cries/legacy/382.ogg",
     "flavor_text": "Kyogre es capaz de crear grandes cantidades de nubarrones, cubrir el cielo y desatar lluvias torrenciales. Este Pokémon ha salvado de la sequía a mucha gente.",
     "obtaining_info": {
-      "type": "legendary",
-      "summary": "Pokémon Legendario exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "type": "trade",
+      "badge_label": "Exclusivo Zafiro",
+      "badge_color": "blue",
+      "summary": "Pokémon Legendario de portada exclusivo de Pokémon Zafiro (Cueva del Origen). En Pokémon Rubí solo se puede obtener mediante intercambio desde Pokémon Zafiro o Pokémon Esmeralda.",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
-          "method": "Exclusivo de versión"
+          "method": "Exclusivo de versión (Cueva del Origen en Zafiro)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -31109,15 +31113,15 @@
     "flavor_text": "A Groudon siempre se le ha descrito en mitología como el Pokémon que elevó la tierra y expandió los continentes. Tras un combate contra Kyogre que acabó en cataclismo, se echó a dormir.",
     "obtaining_info": {
       "type": "legendary",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
       "summary": "Cueva del Origen en Ciudad Arrecípolis al Nivel 45 durante la crisis climática del Equipo Magma.",
       "locations": [
         {
           "area": "Ciudad Arrecípolis (Cueva del Origen)",
           "method": "Legendario estático de portada (Nivel 45)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -31180,15 +31184,15 @@
     "flavor_text": "Rayquaza vivió durante cientos de millones de años en la capa de ozono sin bajar a la tierra ni una vez. Según parece, este Pokémon se alimentaba del agua y las partículas que había en la atmósfera.",
     "obtaining_info": {
       "type": "legendary",
+      "badge_label": "Legendario",
+      "badge_color": "purple",
       "summary": "Cima del Pilar Celeste en la Ruta 131 al Nivel 70 (requiere la Bici Carrera para cruzar el suelo agrietado).",
       "locations": [
         {
           "area": "Ruta 131 (Pilar Celeste)",
           "method": "Legendario estático (Nivel 70)"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -31251,15 +31255,23 @@
     "flavor_text": "Cuenta la leyenda que Jirachi hará realidad el deseo que se le escriba en las notas que lleva en la cabeza cuando las lea al despertarse. Si este Pokémon siente peligro, luchará sin haber llegado a despertarse.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Transferencia desde Pokémon Channel (Europa/Australia) o disco bonus de Pokémon Colosseum (EE.UU.).",
+      "badge_label": "Mítico / Evento",
+      "badge_color": "purple",
+      "summary": "Pokémon singular de evento oficial. Obtenible mediante transferencia desde Pokémon Channel (versión europea/australiana) o desde el disco bonus de Pokémon Colosseum (versión estadounidense/japonesa) a través del cable GameCube-GBA. También distribuido en eventos presenciales oficiales de Nintendo.",
       "locations": [
         {
-          "area": "Evento / Spin-off oficial",
-          "method": "Transferencia externa (Channel / Colosseum Disc)"
+          "area": "Pokémon Channel (Europa/Australia)",
+          "method": "Transferencia externa (GameCube a GBA)"
+        },
+        {
+          "area": "Pokémon Colosseum Bonus Disc (América/Japón)",
+          "method": "Transferencia externa (GameCube a GBA)"
+        },
+        {
+          "area": "Evento oficial de Nintendo",
+          "method": "Distribución presencial directa"
         }
-      ],
-      "badge_color": "emerald",
-      "badge_label": "Regalo"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -31321,16 +31333,20 @@
     "cry_url": "/media/pokemon/cries/legacy/386.ogg",
     "flavor_text": "Tras estar expuesto a un rayo láser, el ADN de un virus espacial sufrió una mutación y dio origen a Deoxys. Según parece, el órgano cristalino que este Pokémon tiene en el torso es el cerebro.",
     "obtaining_info": {
-      "type": "legendary",
-      "summary": "Isla Origen al Nivel 30 tras usar el Ticket Orión distribuido en eventos oficiales de Nintendo.",
+      "type": "trade",
+      "badge_label": "Intercambio / Evento",
+      "badge_color": "indigo",
+      "summary": "Inaccesible salvaje en Rubí (la Isla Origen no existe en esta versión). Obtenible únicamente mediante intercambio desde Pokémon Rojo Fuego, Verde Hoja o Esmeralda (o mediante evento presencial oficial de Nintendo). En Rubí adopta su Forma Normal.",
       "locations": [
         {
-          "area": "Isla Origen (Evento)",
-          "method": "Evento oficial (Ticket Orión)"
+          "area": "Intercambio externo (GBA)",
+          "method": "Intercambio desde Rojo Fuego, Verde Hoja o Esmeralda"
+        },
+        {
+          "area": "Evento presencial de Nintendo",
+          "method": "Distribución oficial por cable link"
         }
-      ],
-      "badge_color": "purple",
-      "badge_label": "Legendario"
+      ]
     },
     "evolution_stone": null,
     "game_data": {

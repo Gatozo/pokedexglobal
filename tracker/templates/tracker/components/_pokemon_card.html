@@ -77,10 +77,10 @@
 
     <!-- Pokemon Info & Types -->
     <div class="text-center h-[52px] flex flex-col justify-center shrink-0">
-        <h3 class="font-black text-sm text-slate-900 truncate uppercase tracking-wide">
+        <h3 id="card-name-{{ entry.id }}" class="font-black text-sm text-slate-900 truncate uppercase tracking-wide">
             {{ entry.pokemon.display_name }}
         </h3>
-        <div class="flex items-center justify-center gap-1 mt-1">
+        <div id="card-types-{{ entry.id }}" class="flex items-center justify-center gap-1 mt-1">
             <span class="type-{{ entry.primary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
                 {{ entry.primary_type_es }}
             </span>

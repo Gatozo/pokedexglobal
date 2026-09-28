@@ -294,6 +294,7 @@ class PokedexEntry:
             "is_caught": self.is_caught,
             "is_shiny_caught": self.is_shiny_caught,
             "cry_url": self.cry_url,
+            "forms": getattr(self, "forms", []),
         }, ensure_ascii=False)
 
 
@@ -2597,6 +2598,50 @@ class PokemonRubyGen3Tests(TestCase):
         self.assertIn("Concurso de Captura de Bichos", scyther.obtaining_info["summary"])
         self.assertEqual(pinsir.obtaining_info["type"], "contest")
         self.assertIn("Concurso de Captura de Bichos", pinsir.obtaining_info["summary"])
+
+    def test_pokemon_alternate_forms(self):
+        """Valida que Castform (#351) y Unown (#201) cuenten con formas alternativas configuradas correctamente."""
+        from .catalog_service import get_compiled_catalog
+        import json
+
+        # 1. Castform en Pokédex Regional de Rubí
+        ruby_entries = get_compiled_catalog("ruby", is_national=False)
+        castform = next(e for e in ruby_entries if e.pokemon.national_number == 351)
+        self.assertEqual(len(castform.forms), 4)
+        
+        # Validar claves y tipos de las formas de Castform
+        form_keys = [f["form_key"] for f in castform.forms]
+        self.assertEqual(form_keys, ["normal", "sunny", "rainy", "snowy"])
+        
+        types_map = {f["form_key"]: f["primary_type_es"] for f in castform.forms}
+        self.assertEqual(types_map["normal"], "Normal")
+        self.assertEqual(types_map["sunny"], "Fuego")
+        self.assertEqual(types_map["rainy"], "Agua")
+        self.assertEqual(types_map["snowy"], "Hielo")
+
+        # Validar presencia de sprites en las formas de Castform
+        self.assertIn("castform/sunny.png", castform.forms[1]["sprite_retro"])
+        self.assertIn("castform/sunny.png", castform.forms[1]["sprite_retro_shiny"])
+
+        # Validar serialización en modal_data_json
+        modal_json = json.loads(castform.modal_data_json)
+        self.assertIn("forms", modal_json)
+        self.assertEqual(len(modal_json["forms"]), 4)
+
+        # 2. Unown en Pokédex Nacional de Rubí
+        ruby_national = get_compiled_catalog("ruby", is_national=True)
+        unown = next(e for e in ruby_national if e.pokemon.national_number == 201)
+        self.assertEqual(len(unown.forms), 28)
+        self.assertEqual(unown.forms[0]["name"], "Unown [A]")
+        self.assertEqual(unown.forms[-2]["name"], "Unown [!]")
+        self.assertEqual(unown.forms[-1]["name"], "Unown [?]")
+
+        # 3. Pokémon sin formas alternativas (ej: Deoxys, Pikachu, Groudon)
+        deoxys = next(e for e in ruby_national if e.pokemon.national_number == 386)
+        groudon = next(e for e in ruby_entries if e.pokemon.national_number == 383)
+        self.assertEqual(len(deoxys.forms), 0)
+        self.assertEqual(len(groudon.forms), 0)
+
 
 
 

@@ -414,6 +414,13 @@ class CatalogEntry:
 
 
     @property
+    def forms(self) -> List[dict]:
+        """Retorna las formas alternativas disponibles para este Pokémon en este juego (ej: Castform, Unown)."""
+        nat_num = getattr(self.pokemon, "national_number", 0)
+        from .pokemon_forms import get_pokemon_forms
+        return get_pokemon_forms(nat_num, self.game_slug)
+
+    @property
     def modal_data_json(self) -> str:
         """Retorna el JSON serializado para el modal estilo cómic con el estado de captura actual."""
         return json.dumps({
@@ -438,6 +445,7 @@ class CatalogEntry:
             "is_caught": getattr(self, "is_caught", False),
             "is_shiny_caught": getattr(self, "is_shiny_caught", False),
             "cry_url": self.cry_url,
+            "forms": self.forms,
         }, ensure_ascii=False)
 
     def __str__(self):

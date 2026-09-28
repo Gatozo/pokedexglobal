@@ -214,6 +214,13 @@
             updateCardUI(card, isCaught);
         });
 
+        if (activeModalEntryId) {
+            const mData = getEntryData(activeModalEntryId);
+            if (mData && mData.forms && mData.forms.length > 1) {
+                applyModalForm(activeModalFormIndex);
+            }
+        }
+
         // Reevaluar filtro activo de estado
         filterCards();
 
@@ -264,6 +271,13 @@
                 }
             }
         });
+
+        if (activeModalEntryId) {
+            const mData = getEntryData(activeModalEntryId);
+            if (mData && mData.forms && mData.forms.length > 1) {
+                applyModalForm(activeModalFormIndex);
+            }
+        }
 
         document.querySelectorAll("img[id^='excl-img-']").forEach(img => {
             if (isShinydexMode) {
@@ -846,20 +860,163 @@
     }
 
     const _entryDataCache = new Map();
-    function openPokemonModalDirect(entryId) {
+    const _cardFormIndex = new Map();
+    let activeModalFormIndex = 0;
+
+    function getEntryData(entryId) {
         let data = _entryDataCache.get(entryId);
         if (!data) {
             const dataScript = document.getElementById(`entry-data-${entryId}`);
-            if (!dataScript) return;
-
+            if (!dataScript) return null;
             try {
                 data = JSON.parse(dataScript.textContent);
                 _entryDataCache.set(entryId, data);
             } catch (e) {
                 console.error("Error al parsear datos del Pokémon", e);
-                return;
+                return null;
             }
         }
+        return data;
+    }
+
+    function applyCardForm(entryId, formIdx) {
+        const data = getEntryData(entryId);
+        if (!data || !data.forms || !data.forms.length) return;
+        const form = data.forms[formIdx];
+        if (!form) return;
+
+        _cardFormIndex.set(entryId, formIdx);
+
+        // 1. Imagen en la tarjeta
+        const img = document.getElementById(`img-${entryId}`);
+        if (img) {
+            if (isShinydexMode) {
+                if (currentSpriteStyle === 'retro' && form.sprite_retro_shiny) {
+                    img.src = form.sprite_retro_shiny;
+                    img.classList.add('pixel-art');
+                } else {
+                    img.src = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
+                    img.classList.remove('pixel-art');
+                }
+            } else {
+                if (currentSpriteStyle === 'retro' && form.sprite_retro) {
+                    img.src = form.sprite_retro;
+                    img.classList.add('pixel-art');
+                } else {
+                    img.src = form.sprite_modern || form.sprite_retro;
+                    img.classList.remove('pixel-art');
+                }
+            }
+            img.alt = form.display_name || form.name || data.name;
+        }
+
+        // 2. Tipos elementales en la tarjeta
+        const cardTypes = document.getElementById(`card-types-${entryId}`);
+        if (cardTypes) {
+            cardTypes.innerHTML = '';
+            const t1 = document.createElement('span');
+            t1.className = `type-${form.primary_type} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm`;
+            t1.textContent = form.primary_type_es;
+            cardTypes.appendChild(t1);
+
+            if (form.secondary_type && form.secondary_type_es) {
+                const t2 = document.createElement('span');
+                t2.className = `type-${form.secondary_type} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm`;
+                t2.textContent = form.secondary_type_es;
+                cardTypes.appendChild(t2);
+            }
+        }
+
+        // 3. Nombre / indicador de forma en la tarjeta
+        const cardName = document.getElementById(`card-name-${entryId}`);
+        if (cardName) {
+            cardName.textContent = form.display_name || form.name || data.name;
+        }
+    }
+
+    function cycleCardPokemonForm(entryId, direction) {
+        const data = getEntryData(entryId);
+        if (!data || !data.forms || data.forms.length <= 1) return;
+        const curIdx = _cardFormIndex.get(entryId) || 0;
+        const newIdx = (curIdx + direction + data.forms.length) % data.forms.length;
+        applyCardForm(entryId, newIdx);
+
+        // Si el modal está abierto con este mismo Pokémon, sincronizar también el modal
+        if (activeModalEntryId === entryId) {
+            applyModalForm(newIdx);
+        }
+    }
+
+    function applyModalForm(formIdx) {
+        if (!activeModalEntryId) return;
+        const data = getEntryData(activeModalEntryId);
+        if (!data || !data.forms || !data.forms.length) return;
+        const form = data.forms[formIdx];
+        if (!form) return;
+
+        activeModalFormIndex = formIdx;
+        _cardFormIndex.set(activeModalEntryId, formIdx);
+
+        // 1. Sprite en modal
+        const modalImg = document.getElementById('modal-pokemon-img');
+        if (modalImg) {
+            if (isShinydexMode) {
+                if (currentSpriteStyle === 'retro' && form.sprite_retro_shiny) {
+                    modalImg.src = form.sprite_retro_shiny;
+                    modalImg.classList.add('pixel-art');
+                } else {
+                    modalImg.src = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
+                    modalImg.classList.remove('pixel-art');
+                }
+            } else {
+                if (currentSpriteStyle === 'retro' && form.sprite_retro) {
+                    modalImg.src = form.sprite_retro;
+                    modalImg.classList.add('pixel-art');
+                } else {
+                    modalImg.src = form.sprite_modern || form.sprite_retro;
+                    modalImg.classList.remove('pixel-art');
+                }
+            }
+            modalImg.alt = form.display_name || form.name || data.name;
+        }
+
+        // 2. Tipos en modal
+        const typesContainer = document.getElementById('modal-types-container');
+        if (typesContainer) {
+            typesContainer.innerHTML = '';
+            const badge1 = document.createElement('span');
+            badge1.className = `type-${form.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+            badge1.textContent = form.primary_type_es;
+            typesContainer.appendChild(badge1);
+
+            if (form.secondary_type && form.secondary_type_es) {
+                const badge2 = document.createElement('span');
+                badge2.className = `type-${form.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                badge2.textContent = form.secondary_type_es;
+                typesContainer.appendChild(badge2);
+            }
+        }
+
+        // 3. Form badge en modal
+        const formBadge = document.getElementById('modal-form-badge');
+        if (formBadge) {
+            formBadge.textContent = form.name;
+            formBadge.classList.remove('hidden');
+        }
+    }
+
+    function cycleModalPokemonForm(direction) {
+        if (!activeModalEntryId) return;
+        const data = getEntryData(activeModalEntryId);
+        if (!data || !data.forms || data.forms.length <= 1) return;
+        const newIdx = (activeModalFormIndex + direction + data.forms.length) % data.forms.length;
+        applyModalForm(newIdx);
+        applyCardForm(activeModalEntryId, newIdx);
+    }
+
+    function openPokemonModalDirect(entryId) {
+        const data = getEntryData(entryId);
+        if (!data) return;
 
         activeModalEntryId = entryId;
         activeModalCryUrl = data.cry_url || '';
@@ -886,44 +1043,59 @@
                 : '"No hay descripción de Pokédex registrada para esta versión."';
         }
 
-        // 2. Sprite según estilo activo (retro o modern) y modo (normal o shiny)
-        const modalImg = document.getElementById('modal-pokemon-img');
-        if (modalImg) {
-            if (isShinydexMode) {
-                if (currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
-                    modalImg.src = data.sprite_retro_shiny;
-                    modalImg.classList.add('pixel-art');
+        // 2 & 3. Sprite y Tipos (Soporte de Formas Alternas vs Carga Estándar)
+        const hasForms = data.forms && data.forms.length > 1;
+        const prevFormBtn = document.getElementById('modal-prev-form-btn');
+        const nextFormBtn = document.getElementById('modal-next-form-btn');
+        const formBadge = document.getElementById('modal-form-badge');
+
+        if (hasForms) {
+            if (prevFormBtn) prevFormBtn.classList.remove('hidden');
+            if (nextFormBtn) nextFormBtn.classList.remove('hidden');
+            const initialFormIdx = _cardFormIndex.get(entryId) || 0;
+            applyModalForm(initialFormIdx);
+        } else {
+            if (prevFormBtn) prevFormBtn.classList.add('hidden');
+            if (nextFormBtn) nextFormBtn.classList.add('hidden');
+            if (formBadge) formBadge.classList.add('hidden');
+
+            const modalImg = document.getElementById('modal-pokemon-img');
+            if (modalImg) {
+                if (isShinydexMode) {
+                    if (currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
+                        modalImg.src = data.sprite_retro_shiny;
+                        modalImg.classList.add('pixel-art');
+                    } else {
+                        modalImg.src = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
+                        modalImg.classList.remove('pixel-art');
+                    }
                 } else {
-                    modalImg.src = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
-                    modalImg.classList.remove('pixel-art');
+                    if (currentSpriteStyle === 'retro' && data.sprite_retro) {
+                        modalImg.src = data.sprite_retro;
+                        modalImg.classList.add('pixel-art');
+                    } else {
+                        modalImg.src = data.sprite_modern;
+                        modalImg.classList.remove('pixel-art');
+                    }
                 }
-            } else {
-                if (currentSpriteStyle === 'retro' && data.sprite_retro) {
-                    modalImg.src = data.sprite_retro;
-                    modalImg.classList.add('pixel-art');
-                } else {
-                    modalImg.src = data.sprite_modern;
-                    modalImg.classList.remove('pixel-art');
-                }
+                modalImg.alt = data.name;
             }
-            modalImg.alt = data.name;
-        }
 
-        // 3. Tipos elementales
-        const typesContainer = document.getElementById('modal-types-container');
-        if (typesContainer) {
-            typesContainer.innerHTML = '';
-            
-            const badge1 = document.createElement('span');
-            badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
-            badge1.textContent = data.primary_type_es;
-            typesContainer.appendChild(badge1);
+            const typesContainer = document.getElementById('modal-types-container');
+            if (typesContainer) {
+                typesContainer.innerHTML = '';
+                
+                const badge1 = document.createElement('span');
+                badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                badge1.textContent = data.primary_type_es;
+                typesContainer.appendChild(badge1);
 
-            if (data.secondary_type && data.secondary_type_es) {
-                const badge2 = document.createElement('span');
-                badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
-                badge2.textContent = data.secondary_type_es;
-                typesContainer.appendChild(badge2);
+                if (data.secondary_type && data.secondary_type_es) {
+                    const badge2 = document.createElement('span');
+                    badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                    badge2.textContent = data.secondary_type_es;
+                    typesContainer.appendChild(badge2);
+                }
             }
         }
 

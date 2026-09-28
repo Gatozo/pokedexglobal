@@ -76,16 +76,47 @@
                 
                 <!-- Sprite Box (Left / Top in Mobile) -->
                 <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[200px]">
-                    <!-- Category Banner -->
-                    <div class="w-full flex items-center justify-start z-10 shrink-0">
+                    <!-- Category Banner & Optional Form Badge -->
+                    <div class="w-full flex items-center justify-between z-10 shrink-0 gap-1">
                         <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
                             Pokémon Semilla
                         </span>
+                        <span id="modal-form-badge" class="hidden bg-slate-900 text-amber-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
+                            Normal
+                        </span>
                     </div>
 
-                    <!-- Pokemon Image (centrado vertical y horizontalmente en el espacio disponible) -->
+                    <!-- Pokemon Image (centrado vertical y horizontalmente) -->
                     <div class="flex-1 w-full my-1.5 flex items-center justify-center relative min-h-[120px]">
+                        <!-- Botón Forma Anterior (Sólido, sin círculo, justo por encima de los tipos) -->
+                        <button 
+                            type="button" 
+                            id="modal-prev-form-btn"
+                            onclick="event.stopPropagation(); cycleModalPokemonForm(-1)" 
+                            class="hidden absolute left-1 sm:left-2 bottom-0 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            title="Forma anterior"
+                            aria-label="Forma anterior"
+                        >
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 6l-8 6 8 6V6z"/>
+                            </svg>
+                        </button>
+
                         <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
+
+                        <!-- Botón Forma Siguiente (Sólido, sin círculo, justo por encima de los tipos) -->
+                        <button 
+                            type="button" 
+                            id="modal-next-form-btn"
+                            onclick="event.stopPropagation(); cycleModalPokemonForm(1)" 
+                            class="hidden absolute right-1 sm:right-2 bottom-0 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            title="Forma siguiente"
+                            aria-label="Forma siguiente"
+                        >
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 6l8 6-8 6V6z"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <!-- Types Badges -->
