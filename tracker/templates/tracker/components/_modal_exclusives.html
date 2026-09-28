@@ -2,13 +2,13 @@
 {% if exclusives_info and exclusives_info.has_exclusives %}
 <div 
     id="exclusives-modal" 
-    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" 
+    class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" 
     onclick="handleExclusivesBackdropClick(event)"
     data-counterpart-theme="{{ exclusives_info.counterpart_theme }}"
     data-counterpart-short-name="{{ exclusives_info.counterpart_short_name }}"
 >
     <!-- Panel de la Tarjeta -->
-    <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+    <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col h-[80vh] max-h-[80vh]">
         
         <!-- Cabecera estilo cómic -->
         <div class="{% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#c59b27] via-[#d4af37] to-[#64748b] text-slate-950{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500 text-white{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27] text-slate-950{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-600 text-white{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">

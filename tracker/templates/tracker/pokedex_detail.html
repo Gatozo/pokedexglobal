@@ -27,6 +27,18 @@
 <body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}bg-slate-400 selection:text-slate-950{% elif game.slug == 'crystal' %}bg-sky-500 selection:text-slate-950{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}
 
+    <!-- Modals (Disponibles inmediatamente antes del renderizado de tarjetas para interacción instantánea) -->
+    {% include 'tracker/components/_modal_comic.html' %}
+    {% include 'tracker/components/_modal_stones.html' %}
+    {% include 'tracker/components/_modal_exclusives.html' %}
+    {% include 'tracker/components/_modal_transfers.html' %}
+    {% if unown_catalog %}
+    {% include 'tracker/components/_unown_modal.html' %}
+    {% endif %}
+
+    <!-- Interacciones y Controladores Modularizados (Definidos antes de los componentes para máxima prioridad y respuesta instantánea) -->
+    {% include 'tracker/components/_scripts.html' %}
+
     <!-- Top Navigation Header -->
     {% include 'tracker/components/_header.html' %}
 
@@ -50,17 +62,5 @@
     <footer class="border-t-2 border-slate-950/15 py-6 text-center text-xs font-bold text-slate-600">
         Pokédex Global • Diseñado para coleccionistas y entrenadores Pokémon. Datos provistos por PokeAPI.
     </footer>
-
-    <!-- Modals -->
-    {% include 'tracker/components/_modal_comic.html' %}
-    {% include 'tracker/components/_modal_stones.html' %}
-    {% include 'tracker/components/_modal_exclusives.html' %}
-    {% include 'tracker/components/_modal_transfers.html' %}
-    {% if unown_catalog %}
-    {% include 'tracker/components/_unown_modal.html' %}
-    {% endif %}
-
-    <!-- Interacciones y Controladores Modularizados -->
-    {% include 'tracker/components/_scripts.html' %}
 </body>
 </html>

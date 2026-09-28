@@ -32,12 +32,12 @@
     let isFilterPanelOpen = false;
 
     let normalStats = {
-        caught: parseInt(document.getElementById('initial-normal-caught')?.value || 0, 10),
-        percent: parseFloat(document.getElementById('initial-normal-percent')?.value || 0.0)
+        caught: parseInt(document.getElementById('initial-normal-caught')?.value || "{{ caught_count|default:0 }}", 10),
+        percent: parseFloat(document.getElementById('initial-normal-percent')?.value || "{{ caught_percent|default:0.0 }}")
     };
     let shinyStats = {
-        caught: parseInt(document.getElementById('initial-shiny-caught')?.value || 0, 10),
-        percent: parseFloat(document.getElementById('initial-shiny-percent')?.value || 0.0)
+        caught: parseInt(document.getElementById('initial-shiny-caught')?.value || "{{ shiny_caught_count|default:0 }}", 10),
+        percent: parseFloat(document.getElementById('initial-shiny-percent')?.value || "{{ shiny_caught_percent|default:0.0 }}")
     };
 
     let unownStats = {
@@ -489,6 +489,15 @@
         const searchInput = document.getElementById('search-input');
         const rawQuery = searchInput ? searchInput.value.trim() : '';
         const normQ = normalizeSearchText(rawQuery);
+
+        // Optimización de prioridad inmediata: si no hay filtros activos ni tarjetas ocultas previamente, no bloquear el hilo principal
+        const hasActiveFilters = Boolean(normQ) || (currentStatusFilter !== 'all') || (selectedFilterTags.size > 0) || (selectedFilterTypes.size > 0);
+        if (!hasActiveFilters && document.querySelectorAll('.pokemon-card[style*="display: none"]').length === 0) {
+            const emptyState = document.getElementById('empty-state');
+            if (emptyState) emptyState.classList.add('hidden');
+            return;
+        }
+
         const cards = document.querySelectorAll('.pokemon-card');
         let visibleCount = 0;
 
@@ -694,16 +703,20 @@
         openUnownModal();
     }
 
+    const _entryDataCache = new Map();
     function openPokemonModalDirect(entryId) {
-        const dataScript = document.getElementById(`entry-data-${entryId}`);
-        if (!dataScript) return;
+        let data = _entryDataCache.get(entryId);
+        if (!data) {
+            const dataScript = document.getElementById(`entry-data-${entryId}`);
+            if (!dataScript) return;
 
-        let data;
-        try {
-            data = JSON.parse(dataScript.textContent);
-        } catch (e) {
-            console.error("Error al parsear datos del Pokémon", e);
-            return;
+            try {
+                data = JSON.parse(dataScript.textContent);
+                _entryDataCache.set(entryId, data);
+            } catch (e) {
+                console.error("Error al parsear datos del Pokémon", e);
+                return;
+            }
         }
 
         activeModalEntryId = entryId;
@@ -1744,37 +1757,71 @@
         }
     });
 
-    // Configuración inicial de estilos de botones y sprites según preferencia guardada
+    // Interceptor de máxima prioridad en fase de captura (capture: true) para respuesta inmediata al recargar
+    document.addEventListener('click', (e) => {
+        // 1. Clic en botón Exclusivos
+        if (e.target.closest('#btn-exclusives')) {
+            openExclusivesModal();
+            e.stopPropagation();
+            return;
+        }
+        // 2. Clic en botón Transferir
+        if (e.target.closest('#btn-transfers')) {
+            openTransfersModal();
+            e.stopPropagation();
+            return;
+        }
+        // 3. Clic en botón Filtros
+        if (e.target.closest('#btn-filter-toggle')) {
+            toggleFilterPanel();
+            e.stopPropagation();
+            return;
+        }
+        // 4. Clic en tarjeta de Pokémon (abre el modal cómic de inmediato sin esperar a otros eventos)
+        const card = e.target.closest('.pokemon-card');
+        if (card && !e.target.closest('button') && !e.target.closest('a') && !e.target.closest('input')) {
+            const entryId = parseInt(card.dataset.entryId, 10);
+            if (entryId) {
+                openPokemonModal(entryId);
+                e.stopPropagation();
+                return;
+            }
+        }
+    }, { capture: true, passive: false });
+
+    // Configuración inicial en segundo plano sin bloquear clics prioritarios del usuario
     document.addEventListener('DOMContentLoaded', () => {
-        try {
-            const savedStyle = localStorage.getItem('pokedex_sprite_style');
-            if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
-                setSpriteStyle(savedStyle);
-            }
-        } catch (e) {}
-
-        try {
-            const gameGen = parseInt(document.getElementById('game-generation')?.value || 1, 10);
-            if (gameGen >= 2) {
-                const savedShinydex = localStorage.getItem('pokedex_shinydex_' + currentGameSlug);
-                // Si la cookie no estaba sincronizada pero en localStorage sí
-                if (savedShinydex === '1' && !isShinydexMode) {
-                    isShinydexMode = true;
-                    applyShinydexMode(true);
-                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=1; path=/; max-age=31536000; SameSite=Lax';
-                } else if (savedShinydex === '0' && isShinydexMode) {
-                    isShinydexMode = false;
-                    applyShinydexMode(false);
-                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
-                } else if (savedShinydex === null && isShinydexMode) {
-                    localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
+        requestAnimationFrame(() => {
+            try {
+                const savedStyle = localStorage.getItem('pokedex_sprite_style');
+                if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
+                    setSpriteStyle(savedStyle);
                 }
-            }
-        } catch (e) {}
+            } catch (e) {}
 
-        try {
-            updateFilterUI();
-            filterCards();
-        } catch (e) {}
+            try {
+                const gameGen = parseInt(document.getElementById('game-generation')?.value || "{{ game.generation|default:1 }}", 10);
+                if (gameGen >= 2) {
+                    const savedShinydex = localStorage.getItem('pokedex_shinydex_' + currentGameSlug);
+                    // Si la cookie no estaba sincronizada pero en localStorage sí
+                    if (savedShinydex === '1' && !isShinydexMode) {
+                        isShinydexMode = true;
+                        applyShinydexMode(true);
+                        document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=1; path=/; max-age=31536000; SameSite=Lax';
+                    } else if (savedShinydex === '0' && isShinydexMode) {
+                        isShinydexMode = false;
+                        applyShinydexMode(false);
+                        document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
+                    } else if (savedShinydex === null && isShinydexMode) {
+                        localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
+                    }
+                }
+            } catch (e) {}
+
+            try {
+                updateFilterUI();
+                filterCards();
+            } catch (e) {}
+        });
     });
 </script>
