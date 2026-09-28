@@ -2538,6 +2538,67 @@ class PokemonRubyGen3Tests(TestCase):
         self.assertEqual(data["unown_total_forms"], 28)
         self.assertEqual(data["unown_normal_count"], 1)
 
+    def test_incenses_and_breeding_obtaining_methods(self):
+        """
+        Valida que los inciensos especiales (Incienso Marino, Incienso Suave) se resuelvan
+        como objetos estructurados (icono, localizaciones, categoría), y que Pokémon como
+        Azurill, Wynaut, Pichu, Igglybuff, Scyther y Pinsir tengan métodos de obtención
+        completos por crianza, concurso o regalo en vez de textos genéricos.
+        """
+        from .utils import resolve_evolution_stone, get_evolution_stones_catalog
+        from .catalog_service import get_compiled_catalog
+
+        # 1. Resolver Incienso Marino
+        sea_incense = resolve_evolution_stone("sea-incense", game_slug="ruby")
+        self.assertIsNotNone(sea_incense)
+        self.assertEqual(sea_incense["name"], "Incienso Marino")
+        self.assertEqual(sea_incense["category"], "incense")
+        self.assertEqual(sea_incense["icon_url"], "/media/items/sea-incense.png")
+        self.assertTrue(any("Monte Pírico" in loc["area"] for loc in sea_incense["locations"]))
+
+        # 2. Resolver Incienso Suave
+        lax_incense = resolve_evolution_stone("lax-incense", game_slug="ruby")
+        self.assertIsNotNone(lax_incense)
+        self.assertEqual(lax_incense["name"], "Incienso Suave")
+        self.assertEqual(lax_incense["category"], "incense")
+        self.assertEqual(lax_incense["icon_url"], "/media/items/lax-incense.png")
+        self.assertTrue(any("Monte Pírico" in loc["area"] for loc in lax_incense["locations"]))
+
+        # 3. Validar Azurill (#298) en Rubí
+        ruby_entries = get_compiled_catalog("ruby", is_national=False)
+        azurill = next(e for e in ruby_entries if e.pokemon.national_number == 298)
+        self.assertEqual(azurill.obtaining_info["type"], "breeding")
+        self.assertIn("Incienso Marino", azurill.obtaining_info["summary"])
+        self.assertIn("Ruta 117", azurill.obtaining_info["summary"])
+        self.assertIsNotNone(azurill.evolution_stone)
+        self.assertEqual(azurill.evolution_stone["slug"], "sea-incense")
+        self.assertEqual(azurill.evolution_stone["name"], "Incienso Marino")
+
+        # 4. Validar Wynaut (#360) en Rubí
+        wynaut = next(e for e in ruby_entries if e.pokemon.national_number == 360)
+        self.assertIn("Pueblo Lavacalda", wynaut.obtaining_info["summary"])
+        self.assertIn("Incienso Suave", wynaut.obtaining_info["summary"])
+        self.assertIsNotNone(wynaut.evolution_stone)
+        self.assertEqual(wynaut.evolution_stone["slug"], "lax-incense")
+
+        # 5. Validar Pichu (#172) e Igglybuff (#174) en Rubí
+        pichu = next(e for e in ruby_entries if e.pokemon.national_number == 172)
+        igglybuff = next(e for e in ruby_entries if e.pokemon.national_number == 174)
+        self.assertEqual(pichu.obtaining_info["type"], "breeding")
+        self.assertIn("Ruta 117", pichu.obtaining_info["summary"])
+        self.assertEqual(igglybuff.obtaining_info["type"], "breeding")
+        self.assertIn("Ruta 117", igglybuff.obtaining_info["summary"])
+
+        # 6. Validar Scyther (#123) y Pinsir (#127) en Cristal
+        crystal_entries = get_compiled_catalog("crystal", is_national=False)
+        scyther = next(e for e in crystal_entries if e.pokemon.national_number == 123)
+        pinsir = next(e for e in crystal_entries if e.pokemon.national_number == 127)
+        self.assertEqual(scyther.obtaining_info["type"], "contest")
+        self.assertIn("Concurso de Captura de Bichos", scyther.obtaining_info["summary"])
+        self.assertEqual(pinsir.obtaining_info["type"], "contest")
+        self.assertIn("Concurso de Captura de Bichos", pinsir.obtaining_info["summary"])
+
+
 
 
 

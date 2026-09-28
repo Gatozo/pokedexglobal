@@ -159,6 +159,7 @@ def clean_wikitext_entry(text: str) -> str:
     if not text:
         return ""
     text = re.sub(r"\{\{NombreHaEs\|([^|]+)(?:\|([^}]+))?\}\}", lambda m: m.group(2) or m.group(1), text)
+    text = re.sub(r"\{\{n\|([^|]+)(?:\|([^}]+))?\}\}", lambda m: m.group(2) or m.group(1), text)
     text = re.sub(r"\{\{[^}]+\}\}", "", text)
     text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", text)
     text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)
@@ -172,7 +173,7 @@ def fetch_wikidex_ruby_descriptions(species_data):
     if cache_file.exists():
         with open(cache_file, "r", encoding="utf-8") as f:
             data = json.load(f)
-            if len(data) >= 300:
+            if len(data) >= 380:
                 print(f"[CACHE] Descripciones de WikiDex cargadas desde caché ({len(data)} entradas).")
                 return data
 
@@ -226,29 +227,21 @@ def fetch_wikidex_ruby_descriptions(species_data):
                     continue
 
                 content = page.get('revisions', [{}])[0].get('*', '') if page.get('revisions') else ''
-                # 1. Buscar | rubí = ... en plantilla Pokédex
-                m = re.search(r'\|\s*rub[ií]\s*=\s*([^\n\|\}]+)', content, re.IGNORECASE)
-                if m:
-                    val = clean_wikitext_entry(m.group(1))
-                    if val and len(val) > 10 and not val.lower().startswith('ver '):
-                        descriptions[nat_id_str] = val
-                        continue
-
-                # 2. Fallback a rubí omega
-                m_roza = re.search(r'\|\s*rub[ií] omega\s*=\s*([^\n\|\}]+)', content, re.IGNORECASE)
-                if m_roza:
-                    val = clean_wikitext_entry(m_roza.group(1))
-                    if val and len(val) > 10:
-                        descriptions[nat_id_str] = val
-                        continue
-
-                # 3. Fallback a esmeralda o zafiro
-                m_alt = re.search(r'\|\s*(?:esmeralda|zafiro)\s*=\s*([^\n\|\}]+)', content, re.IGNORECASE)
-                if m_alt:
-                    val = clean_wikitext_entry(m_alt.group(1))
-                    if val and len(val) > 10:
-                        descriptions[nat_id_str] = val
-                        continue
+                # Buscar en plantilla Pokédex para rubí, zafiro, esmeralda, etc.
+                for v in ['rubí', 'rubi', 'zafiro', 'esmeralda', 'rubí omega', 'zafiro alfa', 'rojo fuego', 'verde hoja']:
+                    pattern = r'\|\s*' + re.escape(v) + r'\s*=\s*(.*?)(?=\r?\n\s*\||\r?\n\s*\}\}|\r|\n|$)'
+                    m = re.search(pattern, content, re.IGNORECASE)
+                    if m:
+                        raw_val = m.group(1).strip()
+                        if raw_val.lower() in ['rubí', 'rubi', 'zafiro', 'esmeralda', 'rojo fuego', 'verde hoja', 'oro', 'plata', 'cristal', 'oro heartgold', 'plata soulsilver', 'rubí omega', 'zafiro alfa']:
+                            ref_pattern = r'\|\s*' + re.escape(raw_val) + r'\s*=\s*(.*?)(?=\r?\n\s*\||\r?\n\s*\}\}|\r|\n|$)'
+                            m_ref = re.search(ref_pattern, content, re.IGNORECASE)
+                            if m_ref:
+                                raw_val = m_ref.group(1).strip()
+                        val = clean_wikitext_entry(raw_val)
+                        if val and len(val) > 10 and not val.lower().startswith('ver '):
+                            descriptions[nat_id_str] = val
+                            break
         except Exception as e:
             print(f"Error consultando lote WikiDex: {e}")
 
@@ -494,16 +487,71 @@ def build_catalogs():
     # Tratamientos especiales de obtención en Rubí
     SPECIAL_OBT_RUBY = {
         # Iniciales
-        252: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}]},
-        255: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}]},
-        258: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}]},
+        252: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        255: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        258: {'type': 'starter', 'summary': 'Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 101', 'method': 'Inicial de Hoenn'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
         # Fósiles
-        345: {'type': 'fossil', 'summary': 'Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).', 'locations': [{'area': 'Ruta 111 (Desierto) / Ciudad Férrica', 'method': 'Revivir Fósil Raíz'}]},
-        347: {'type': 'fossil', 'summary': 'Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).', 'locations': [{'area': 'Ruta 111 (Desierto) / Ciudad Férrica', 'method': 'Revivir Fósil Garra'}]},
+        345: {'type': 'fossil', 'summary': 'Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 111 (Desierto) / Ciudad Férrica', 'method': 'Revivir Fósil Raíz'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        347: {'type': 'fossil', 'summary': 'Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 111 (Desierto) / Ciudad Férrica', 'method': 'Revivir Fósil Garra'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
         # Regalos NPC
-        351: {'type': 'gift', 'summary': 'Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma.', 'locations': [{'area': 'Ruta 119 (Instituto Meteorológico)', 'method': 'Regalo de científicos'}]},
-        360: {'type': 'gift', 'summary': 'Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda.', 'locations': [{'area': 'Pueblo Lavacalda (Aguas termales)', 'method': 'Huevo de anciana'}]},
-        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando.', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}]},
+        351: {'type': 'gift', 'summary': 'Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma (también obtenible mediante crianza).', 'locations': [{'area': 'Ruta 119 (Instituto Meteorológico)', 'method': 'Regalo de científicos'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        360: {
+            'type': 'gift',
+            'summary': 'Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda. También salvaje en Isla Espejismo o criando a Wobbuffet con Incienso Suave en la Guardería.',
+            'locations': [
+                {'area': 'Pueblo Lavacalda (Aguas termales)', 'method': 'Huevo de anciana'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'},
+                {'area': 'Isla Espejismo', 'method': 'Hierba alta (Isla aleatoria)'}
+            ],
+            'item_slug': 'lax-incense',
+            'badge_color': 'emerald',
+            'badge_label': 'Huevo Regalo'
+        },
+        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
+        # Crianza con Incienso y Bebés de Hoenn
+        298: {
+            'type': 'breeding',
+            'summary': 'Criar a Marill o Azumarill equipado con Incienso Marino en la Guardería Pokémon (Ruta 117).',
+            'locations': [
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Incienso Marino'}
+            ],
+            'item_slug': 'sea-incense',
+            'badge_color': 'pink',
+            'badge_label': 'Crianza'
+        },
+        172: {
+            'type': 'breeding',
+            'summary': 'Criar a Pikachu o Raichu en la Guardería Pokémon (Ruta 117). Pikachu es capturable en la Zona Safari.',
+            'locations': [
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza en Guardería'}
+            ],
+            'badge_color': 'pink',
+            'badge_label': 'Crianza'
+        },
+        174: {
+            'type': 'breeding',
+            'summary': 'Criar a Jigglypuff o Wigglytuff en la Guardería Pokémon (Ruta 117). Jigglypuff es capturable en la Ruta 115.',
+            'locations': [
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza en Guardería'}
+            ],
+            'badge_color': 'pink',
+            'badge_label': 'Crianza'
+        },
+        # Evolución especial
+        292: {
+            'type': 'evolution',
+            'summary': 'Aparece en el equipo al evolucionar a Nincada a Ninjask en el nivel 20 (requiere un hueco libre en el equipo y una Poké Ball común en la mochila).',
+            'locations': [],
+            'evolution_info': {
+                'from': 'Nincada',
+                'text': 'Evoluciona de Nincada en Nivel 20 (con hueco libre en equipo y una Poké Ball)',
+                'trigger': 'shed',
+                'condition': 'Nivel 20 (hueco libre y Poké Ball en mochila)',
+                'item_slug': None
+            },
+            'badge_color': 'indigo',
+            'badge_label': 'Evolución'
+        },
         # Legendarios
         377: {'type': 'legendary', 'summary': 'Ruinas del Desierto en la Ruta 111 (requiere resolver el enigma Braille en la Cámara Sellada).', 'locations': [{'area': 'Ruta 111 (Ruinas del Desierto)', 'method': 'Legendario estático (Nivel 40)'}]},
         378: {'type': 'legendary', 'summary': 'Cueva Insular en la Ruta 105 (requiere resolver el enigma Braille en la Cámara Sellada).', 'locations': [{'area': 'Ruta 105 (Cueva Insular)', 'method': 'Legendario estático (Nivel 40)'}]},
@@ -518,12 +566,14 @@ def build_catalogs():
         349: {'type': 'wild', 'summary': 'Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119.', 'locations': [{'area': 'Ruta 119 (Río)', 'method': 'Supercaña en 6 casillas aleatorias'}]},
         350: {'type': 'evolution', 'summary': 'Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.', 'locations': []},
         # Exclusivos de Zafiro
-        270: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
+        270: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
         271: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio o evolucionar de Lotad.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
         272: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Evoluciona de Lombre usando Piedra Agua.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        302: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        336: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
-        337: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
+        302: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        336: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        337: {'type': 'trade', 'summary': 'Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
+        382: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
+        380: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro (errante en Zafiro). En Rubí requiere intercambio o Ticket Eón en Isla del Sur.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro / Isla del Sur (Ticket Eón)', 'method': 'Exclusivo de versión / Evento'}]},
         382: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión'}]},
         380: {'type': 'legendary', 'summary': 'Pokémon Legendario exclusivo de Pokémon Zafiro (errante en Zafiro). En Rubí requiere intercambio o Ticket Eón en Isla del Sur.', 'locations': [{'area': 'Intercambio con Pokémon Zafiro / Isla del Sur (Ticket Eón)', 'method': 'Exclusivo de versión / Evento'}]},
     }
@@ -557,11 +607,6 @@ def build_catalogs():
 
         # Evolución
         evo_info = evo_map.get(name)
-
-        # Piedra evolutiva
-        evo_stone = None
-        if evo_info and evo_info.get('item_slug'):
-            evo_stone = resolve_evolution_stone(item_slug=evo_info['item_slug'], game_slug="ruby")
 
         # Obtención
         is_in_hoenn = nat_id in hoenn_num_by_nat
@@ -616,11 +661,41 @@ def build_catalogs():
             elif nat_id == 251:
                 transfer_origin = "Disco bonus de Pokémon Colosseum (Japón) o evento"
 
-            obt_info = {
-                'type': 'transfer',
-                'summary': f"No disponible en Hoenn. Requiere {transfer_origin}. No es posible transferir desde Gen 1 o Gen 2.",
-                'locations': [{'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin}]
-            }
+            egg_groups = sp.get('egg_groups', [])
+            can_breed = ('no-eggs' not in egg_groups) and ('ditto' not in egg_groups)
+
+            if nat_id in [173, 175, 236, 238, 239, 240]:
+                obt_info = {
+                    'type': 'transfer',
+                    'summary': f"No disponible salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+                    'locations': [
+                        {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de sus evoluciones en Guardería'}
+                    ],
+                    'badge_color': 'pink',
+                    'badge_label': 'Crianza / Transfer'
+                }
+            elif can_breed:
+                obt_info = {
+                    'type': 'transfer',
+                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+                    'locations': [
+                        {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo (tras obtenerlo o de sus evoluciones)'}
+                    ]
+                }
+            else:
+                obt_info = {
+                    'type': 'transfer',
+                    'summary': f"No disponible en Hoenn. Requiere {transfer_origin}. No es posible transferir desde Gen 1 o Gen 2.",
+                    'locations': [{'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin}]
+                }
+
+        # Piedra evolutiva u objeto especial / incienso de crianza
+        evo_stone = None
+        item_slug_to_resolve = (evo_info.get('item_slug') if evo_info else None) or obt_info.get('item_slug')
+        if item_slug_to_resolve:
+            evo_stone = resolve_evolution_stone(item_slug=item_slug_to_resolve, game_slug="ruby")
 
         # Ajuste de evolución si existe
         if evo_info and 'evolution_info' not in obt_info:
@@ -636,12 +711,16 @@ def build_catalogs():
             'trade': ('blue', 'Intercambio'),
             'trade_npc': ('sky', 'Intercambio NPC'),
             'wild': ('emerald', 'Salvaje'),
+            'breeding': ('pink', 'Crianza'),
+            'contest': ('emerald', 'Parque Nacional'),
             'transfer': ('rose', 'Transferencia'),
             'special': ('slate', 'Especial')
         }
         b_color, b_label = type_badge_colors.get(obt_info.get('type', 'wild'), ('slate', 'Hoenn'))
-        obt_info['badge_color'] = b_color
-        obt_info['badge_label'] = b_label
+        if 'badge_color' not in obt_info:
+            obt_info['badge_color'] = b_color
+        if 'badge_label' not in obt_info:
+            obt_info['badge_label'] = b_label
 
         entry_base = {
             "id": entry_id,

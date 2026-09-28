@@ -1,55 +1,73 @@
 <!-- Comic Book Style Modal -->
-<div id="comic-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" style="z-index: 70;" onclick="handleModalBackdropClick(event)">
-    <!-- Modal Panel Window -->
-    <div id="comic-modal-card" class="relative w-full max-w-2xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
+<div id="comic-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-2 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" style="z-index: 70;" onclick="handleModalBackdropClick(event)">
+    
+    <!-- Modal Wrapper with Side Navigation Arrows -->
+    <div id="comic-modal-wrapper" class="relative w-full max-w-2xl px-10 sm:px-12 md:px-0 flex items-center justify-center">
+
+        <!-- Botón Flecha Izquierda (Anterior) -->
+        <button 
+            type="button" 
+            id="modal-prev-pokemon-btn"
+            onclick="event.stopPropagation(); navigatePokemonModal(-1)" 
+            class="modal-nav-btn absolute left-0 sm:left-1 md:-left-16 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center transition-all hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-25 disabled:pointer-events-none select-none"
+            title="Pokémon anterior (Flecha Izquierda ←)"
+            aria-label="Pokémon anterior"
+        >
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </button>
+
+        <!-- Modal Panel Window -->
+        <div id="comic-modal-card" class="relative w-full bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[92vh]">
         
-        <!-- Comic Header Stripe / Title Bar -->
-        <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% elif game.slug == 'crystal' %}bg-sky-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
-            <div class="flex items-center gap-2.5 z-10">
-                <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
-                    {{ game.display_name|upper }}
-                </span>
-                <h3 id="modal-pokemon-title" class="text-white font-black text-lg sm:text-xl tracking-wide uppercase antialiased [text-shadow:2px_2px_0px_#0f172a] flex items-center gap-1.5">
-                    <span id="modal-pokemon-number" class="text-amber-300 font-mono">#001</span>
-                    <span id="modal-pokemon-name">BULBASAUR</span>
+            <!-- Comic Header Stripe / Title Bar -->
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% elif game.slug == 'crystal' %}bg-sky-600{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+                <div class="flex items-center gap-2.5 z-10">
+                    <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                        {{ game.display_name|upper }}
+                    </span>
+                    <h3 id="modal-pokemon-title" class="text-white font-black text-lg sm:text-xl tracking-wide uppercase antialiased [text-shadow:2px_2px_0px_#0f172a] flex items-center gap-1.5">
+                        <span id="modal-pokemon-number" class="text-amber-300 font-mono">#001</span>
+                        <span id="modal-pokemon-name">BULBASAUR</span>
+                        <button 
+                            type="button" 
+                            id="modal-cry-btn"
+                            title="Escuchar sonido retro de Game Boy" 
+                            onclick="playModalCry(this)"
+                            class="ml-1 p-1 rounded-md text-amber-300 hover:text-white hover:bg-slate-950/40 transition-all active:scale-90 flex items-center justify-center"
+                        >
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                            </svg>
+                        </button>
+                    </h3>
+                </div>
+
+                <div class="flex items-center gap-2 z-10">
+                    <!-- Botón de retorno al Bloc Unown (solo activo en la ficha de Unown) -->
+                    <button 
+                        id="modal-unowndex-header-btn"
+                        type="button" 
+                        onclick="switchToUnownModal()"
+                        class="hidden py-1 px-2.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 bg-amber-400 hover:bg-amber-300 text-slate-950 items-center gap-1.5 transition-all cursor-pointer"
+                        title="Volver al Bloc de Notas Unown (Unowndex)"
+                    >
+                        <img src="/media/pokemon/icons/gen2/201-f.png" alt="Unown" class="w-4 h-4 object-contain pixel-art">
+                        <span class="hidden sm:inline">Bloc Unown</span>
+                    </button>
+
+                    <!-- Comic Style Close Button -->
                     <button 
                         type="button" 
-                        id="modal-cry-btn"
-                        title="Escuchar sonido retro de Game Boy" 
-                        onclick="playModalCry(this)"
-                        class="ml-1 p-1 rounded-md text-amber-300 hover:text-white hover:bg-slate-950/40 transition-all active:scale-90 flex items-center justify-center"
+                        onclick="closePokemonModal()" 
+                        class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
+                        title="Cerrar viñeta"
                     >
-                        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
-                        </svg>
+                        ✕
                     </button>
-                </h3>
+                </div>
             </div>
-
-            <div class="flex items-center gap-2 z-10">
-                <!-- Botón de retorno al Bloc Unown (solo activo en la ficha de Unown) -->
-                <button 
-                    id="modal-unowndex-header-btn"
-                    type="button" 
-                    onclick="switchToUnownModal()"
-                    class="hidden py-1 px-2.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 bg-amber-400 hover:bg-amber-300 text-slate-950 items-center gap-1.5 transition-all cursor-pointer"
-                    title="Volver al Bloc de Notas Unown (Unowndex)"
-                >
-                    <img src="/media/pokemon/icons/gen2/201-f.png" alt="Unown" class="w-4 h-4 object-contain pixel-art">
-                    <span class="hidden sm:inline">Bloc Unown</span>
-                </button>
-
-                <!-- Comic Style Close Button -->
-                <button 
-                    type="button" 
-                    onclick="closePokemonModal()" 
-                    class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-base sm:text-lg border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] flex items-center justify-center transition-transform active:translate-x-0.5 active:translate-y-0.5"
-                    title="Cerrar viñeta"
-                >
-                    ✕
-                </button>
-            </div>
-        </div>
 
         <!-- Scrollable Content -->
         <div class="p-4 sm:p-5 overflow-y-auto space-y-4">
@@ -57,21 +75,21 @@
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
                 
                 <!-- Sprite Box (Left / Top in Mobile) -->
-                <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl p-3 flex flex-col items-center justify-center comic-card-inner relative overflow-hidden comic-dots min-h-[190px]">
+                <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[200px]">
                     <!-- Category Banner -->
-                    <div class="absolute top-2 left-2 z-10">
+                    <div class="w-full flex items-center justify-start z-10 shrink-0">
                         <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
                             Pokémon Semilla
                         </span>
                     </div>
 
-                    <!-- Pokemon Image -->
-                    <div class="my-3 flex items-center justify-center h-32 w-32 relative">
-                        <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
+                    <!-- Pokemon Image (centrado vertical y horizontalmente en el espacio disponible) -->
+                    <div class="flex-1 w-full my-1.5 flex items-center justify-center relative min-h-[120px]">
+                        <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
                     </div>
 
                     <!-- Types Badges -->
-                    <div id="modal-types-container" class="flex items-center gap-1.5 z-10 mt-auto">
+                    <div id="modal-types-container" class="flex items-center justify-center gap-1.5 z-10 shrink-0">
                         <!-- Populated dynamically -->
                     </div>
                 </div>
@@ -170,5 +188,27 @@
                 <span id="modal-toggle-text">Capturar</span>
             </button>
         </div>
+        <!-- Footer Bar END -->
+
     </div>
+    <!-- Modal Panel Window END -->
+
+    <!-- Botón Flecha Derecha (Siguiente) -->
+    <button 
+        type="button" 
+        id="modal-next-pokemon-btn"
+        onclick="event.stopPropagation(); navigatePokemonModal(1)" 
+        class="modal-nav-btn absolute right-0 sm:right-1 md:-right-16 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-black border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] flex items-center justify-center transition-all hover:scale-110 active:scale-95 cursor-pointer disabled:opacity-25 disabled:pointer-events-none select-none"
+        title="Pokémon siguiente (Flecha Derecha →)"
+        aria-label="Pokémon siguiente"
+    >
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+    </button>
+
 </div>
+<!-- Modal Wrapper END -->
+
+</div>
+<!-- Comic Book Style Modal END -->

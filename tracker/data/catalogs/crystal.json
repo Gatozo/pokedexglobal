@@ -47174,11 +47174,20 @@
     "cry_url": "/media/pokemon/cries/legacy/123.ogg",
     "flavor_text": "Está orgulloso de la velocidad que alcanza. Sus ataques son tan rápidos que ni ves que te ha dado.",
     "obtaining_info": {
-      "type": "unknown",
-      "summary": "Método no disponible en estado salvaje en este juego",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial",
+      "type": "contest",
+      "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza",
+      "locations": [
+        {
+          "area": "Parque Nacional",
+          "method": "Concurso de Captura de Bichos"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ],
+      "badge_color": "emerald",
+      "badge_label": "Parque Nacional",
       "evolution_info": null
     },
     "evolution_stone": null,
@@ -48044,11 +48053,20 @@
     "cry_url": "/media/pokemon/cries/legacy/127.ogg",
     "flavor_text": "Por la noche, cuando refresca, se queda dormido en la copa de los árboles o bajo las raíces.",
     "obtaining_info": {
-      "type": "unknown",
-      "summary": "Método no disponible en estado salvaje en este juego",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial",
+      "type": "contest",
+      "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza",
+      "locations": [
+        {
+          "area": "Parque Nacional",
+          "method": "Concurso de Captura de Bichos"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ],
+      "badge_color": "emerald",
+      "badge_label": "Parque Nacional",
       "evolution_info": null
     },
     "evolution_stone": null,

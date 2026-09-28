@@ -704,5 +704,89 @@
         }
       ]
     }
+  },
+  "sea-incense": {
+    "slug": "sea-incense",
+    "name_es": "Incienso Marino",
+    "icon_url": "/media/items/sea-incense.png",
+    "description_es": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+    "category": "incense",
+    "games": {
+      "ruby": [
+        {
+          "area": "Monte Pírico (Tercera Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+        }
+      ],
+      "sapphire": [
+        {
+          "area": "Monte Pírico (Tercera Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Monte Pírico (Tercera Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Cueva Perdida (Isla Intemporal)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Cueva Perdida (Isla Intemporal)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
+        }
+      ]
+    }
+  },
+  "lax-incense": {
+    "slug": "lax-incense",
+    "name_es": "Incienso Suave",
+    "icon_url": "/media/items/lax-incense.png",
+    "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+    "category": "incense",
+    "games": {
+      "ruby": [
+        {
+          "area": "Monte Pírico (Cuarta Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+        }
+      ],
+      "sapphire": [
+        {
+          "area": "Monte Pírico (Cuarta Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Monte Pírico (Cuarta Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Cueva Perdida (Isla Intemporal)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Cueva Perdida (Isla Intemporal)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+        }
+      ]
+    }
   }
 }

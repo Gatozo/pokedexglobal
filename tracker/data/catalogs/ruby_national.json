@@ -29,14 +29,18 @@
     "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/ruby_shiny/1.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/1.png",
     "cry_url": "/media/pokemon/cries/legacy/1.ogg",
-    "flavor_text": "{{NombreHaEs",
+    "flavor_text": "A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -101,7 +105,7 @@
     "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/ruby_shiny/2.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/2.png",
     "cry_url": "/media/pokemon/cries/legacy/2.ogg",
-    "flavor_text": "Ivysaur es una especie de Pokémon de tipo Planta.",
+    "flavor_text": "Este Pokémon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Bulbasaur (Nivel 16)",
@@ -252,11 +256,15 @@
     "flavor_text": "La llama que tiene en la punta de la cola arde según sus sentimientos. Llamea levemente cuando está alegre y arde vigorosamente cuando está enfadado.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -472,11 +480,15 @@
     "flavor_text": "El caparazón de Squirtle no le sirve de protección únicamente. Su forma redondeada y las hendiduras que tiene le ayudan a reducir su resistencia al agua y le permiten nadar a gran velocidad.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -692,11 +704,15 @@
     "flavor_text": "Caterpie tiene un apetito voraz. Es capaz de devorar hojas que superen su tamaño en un abrir y cerrar de ojos. Atención a la antena que tiene: libera a un hedor realmente fuerte.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -909,11 +925,15 @@
     "flavor_text": "Weedle tiene un finísimo sentido del olfato. Es capaz de distinguir las hojas que le gustan de las que no le gustan olisqueando un poco con la gran nariz que tiene.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -1126,11 +1146,15 @@
     "flavor_text": "Pidgey tiene un sentido de la orientación muy desarrollado. Es capaz de regresar a su nido, por lejos que se encuentre de las zonas que le resultan familiares.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -1343,11 +1367,15 @@
     "flavor_text": "Rattata es cauto como él solo. Hasta cuando duerme mueve las orejas para oír todos los ruidos. No es nada delicado a la hora de elegir su hábitat. Cualquier sitio es bueno para cavar su madriguera.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -1487,11 +1515,15 @@
     "flavor_text": "Spearow pía con tanta fuerza que se le puede oír a 1 km de distancia. Si el agudo chillido sigue una especie de eco, estaremos oyendo la respuesta de otros Spearow que contestan ante el aviso de peligro.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -1631,11 +1663,15 @@
     "flavor_text": "Ekans se enrosca para descansar. Adoptando esta posición puede responder rápidamente a cualquier amenaza que le aceche desde cualquier lugar, levantando la cabeza con una feroz mirada.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -1893,7 +1929,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -2101,14 +2138,18 @@
     "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/ruby_shiny/29.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/29.png",
     "cry_url": "/media/pokemon/cries/legacy/29.ogg",
-    "flavor_text": "Nidoran F es una especie de Pokémon de tipo Veneno.",
+    "flavor_text": "Nidoran tiene púas que segregan un veneno muy potente. Se piensa que las desarrolló como protección del cuerpo tan pequeño que tiene. Cuando se enfada, libera una horrible sustancia tóxica por el cuerno.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -2274,7 +2315,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -2333,14 +2375,18 @@
     "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/ruby_shiny/32.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/32.png",
     "cry_url": "/media/pokemon/cries/legacy/32.ogg",
-    "flavor_text": "Nidoran M es una especie de Pokémon de tipo Veneno.",
+    "flavor_text": "El Nidoran macho ha desarrollado músculos para mover las orejas y orientarlas en cualquier dirección. De este modo, es capaz de captar hasta el sonido más leve.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -2507,7 +2553,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -2668,7 +2715,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -2830,7 +2878,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -2995,7 +3044,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -3612,7 +3662,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -3674,11 +3725,15 @@
     "flavor_text": "Paras lleva dos setas parásitas a cuestas llamadas tochukaso. Éstas crecen alimentándose de los nutrientes de este Pokémon de tipo Bicho/Planta que les sirve de huésped. Las setas se usan como elixir de vida.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -3820,11 +3875,15 @@
     "flavor_text": "Dicen que Venonat evolucionó con una fina capa de espeso pelo que le cubría todo el cuerpo a modo de protección. Tiene unos ojos tan grandes que no hay presa que le pase desapercibida.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -3964,11 +4023,15 @@
     "flavor_text": "En la mayoría de las granjas suelen criar Diglett por la sencilla razón de que, caven donde caven, dejan la tierra perfectamente labrada para sembrar. El terreno queda listo para plantar ricas verduras.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -4108,11 +4171,15 @@
     "flavor_text": "Meowth saca las afiladas uñas de las zarpas para caminar a hurtadillas, dando sigilosos pasos para pasar inadvertido. No se sabe muy bien por qué, pero este Pokémon adora las monedas brillantes que resplandecen con la luz.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -4407,11 +4474,15 @@
     "flavor_text": "Cuando Mankey empieza a temblar y a respirar con más intensidad, seguro que va a enfadarse. Aunque prever su enfado no sirve de nada porque alcanza un estado de rabia tan rápido que no hay escapatoria.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -4551,11 +4622,15 @@
     "flavor_text": "Growlithe tiene un sentido del olfato excepcional y una memoria sensitiva tremenda, nunca olvida una esencia. Este Pokémon saca provecho de este don para identificar las sensaciones que tienen otros seres vivos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -4651,7 +4726,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -4713,11 +4789,15 @@
     "flavor_text": "Poliwag tiene una piel muy fina. Tanto que es posible entrever a través de la misma las vísceras en espiral que tiene. La piel, aunque fina, tiene la ventaja de ser flexible y hacer rebotar más de un zarpazo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -4890,7 +4970,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -5406,11 +5487,15 @@
     "flavor_text": "Bellsprout tiene un cuerpo delgado y flexible que le permite inclinarse y balancearse para esquivar los ataques. Este Pokémon escupe por la boca un fluido corrosivo capaz de hacer que se derrita hasta el hierro.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -5579,7 +5664,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -6424,11 +6510,15 @@
     "flavor_text": "Al nacer, Ponyta es muy débil y apenas puede ponerse en pie. Con todo, se va haciendo más fuerte al tropezarse y caerse en su intento por seguir a sus progenitores.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -6568,11 +6658,15 @@
     "flavor_text": "Slowpoke usa la cola para atrapar a sus presas metiéndola bajo el agua en las riberas de los ríos. Con todo, es olvidadizo, se le puede pasar lo que estaba haciendo y quedarse días enteros holgazaneando en la orilla.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -6864,14 +6958,18 @@
     "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/ruby_shiny/83.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/83.png",
     "cry_url": "/media/pokemon/cries/legacy/83.ogg",
-    "flavor_text": "Farfetchd es una especie de Pokémon de tipo Normal.",
+    "flavor_text": "Farfetch'd lleva siempre una especie de palo de algún tipo de planta. Según parece, los hay mejores y peores. Tiene fama de haber luchado contra otros Pokémon con distintos palos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7096,11 +7194,15 @@
     "flavor_text": "Seel busca a sus presas en aguas heladas, bajo las capas de hielo. Cuando necesita respirar, abre un agujero en el hielo con la afilada protuberancia que tiene encima de la cabeza.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7386,11 +7488,15 @@
     "flavor_text": "Por la noche, este Pokémon usa la ancha lengua que tiene para hacer un agujero en el fondo del mar y echarse a dormir. Mientras duerme, Shellder cierra la concha, pero deja la lengua por fuera.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7490,7 +7596,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -7552,11 +7659,15 @@
     "flavor_text": "Gastly está compuesto en gran medida de materia gaseosa. Cuando hay viento, el aire arrastra parte de esta materia y el Pokémon mengua. Suelen agruparse bajo los aleros de las casas para resguardarse del viento.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7769,11 +7880,15 @@
     "flavor_text": "Onix tiene un imán en el cerebro, que actúa como una brújula para no perder la orientación cuando está cavando túneles. A medida que crece, se le redondea y suaviza el cuerpo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7840,11 +7955,15 @@
     "flavor_text": "Si te pica la nariz mientras duermes, seguro que es porque tienes a uno de estos Pokémon cerca de la almohada intentando sacarte los sueños por la nariz para comérselos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -7984,11 +8103,15 @@
     "flavor_text": "Krabby vive en la playa, enterrado en agujeros en la arena. Cuando en las playas de arena fina escasea la comida, es común ver a estos Pokémon echando un pulso panza contra panza en defensa de su territorio.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -8293,11 +8416,15 @@
     "flavor_text": "Este Pokémon está compuesto de seis huevos que forman una tupida piña que va girando. Cuando se empiezan a resquebrajar las cáscaras, no hay duda de que Exeggcute está a punto de evolucionar.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -8393,7 +8520,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -8455,11 +8583,15 @@
     "flavor_text": "A Cubone le ahoga la pena porque no volverá a ver jamás a su madre. La luna le recuerda a veces a ella y se pone a chillar. Los churretes que tiene en el cráneo que lleva puesto, son debidos a las lágrimas que derrama.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -8745,11 +8877,15 @@
     "flavor_text": "Cada vez que Lickitung se encuentra con algo que no conoce, le da un lametazo. Es la forma que tiene de memorizar las cosas, por la textura y el sabor. No soporta los sabores ácidos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -9106,11 +9242,15 @@
     "flavor_text": "Chansey pone a diario huevos con un valor nutritivo altísimo. Están tan ricos que hasta quien no tenga hambre se los comerá en un abrir y cerrar de ojos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -9177,11 +9317,15 @@
     "flavor_text": "A Tangela se le desprenden los tentáculos con facilidad en cuanto se los agarras. Y no sólo no le duele, sino que le resulta muy útil para escapar rápido. Además, al día siguiente le crecen otros.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -9248,11 +9392,15 @@
     "flavor_text": "Si te cruzas alguna vez con un Kangaskhan que esté jugando, no le molestes ni intentes atraparlo. Seguro que estará cerca alguno de sus progenitores, que reaccionará con enfado y violencia.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -9838,7 +9986,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -9900,11 +10049,15 @@
     "flavor_text": "Mr. Mime es un experto en pantomima. Con sus gestos y movimientos es capaz de convencer a sus espectadores de que algo existe, cuando en realidad no es así. Pero, cuando el público se lo cree, las ilusiones se hacen realidad.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -9971,11 +10124,15 @@
     "flavor_text": "Es espectacular ver lo rápido que es Scyther. Su increíble velocidad refuerza el efecto de su par de guadañas que tiene en los brazos, que ya son de por sí contundentes; rebanan gruesos troncos de un tajo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -10332,11 +10489,15 @@
     "flavor_text": "Este Pokémon no está contento a menos que esté continuamente de aquí para allá. Si no hay rival que luche contra Tauros, se estampa contra árboles grandes para calmarse y los embiste para echarlos abajo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -10946,11 +11107,15 @@
     "flavor_text": "Por culpa de la gente, Lapras está casi en extinción. Dicen que, al anochecer, se pone a cantar quejicoso mientras busca a los miembros de su especie que puedan quedar.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11089,11 +11254,15 @@
     "flavor_text": "La configuración genética de Eevee le permite mutar y adaptarse enseguida a cualquier medio en el que viva. La evolución de este Pokémon es posible gracias a las radiaciones emitidas por varias piedras.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11193,7 +11362,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -11284,7 +11454,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -11375,7 +11546,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -11437,11 +11609,15 @@
     "flavor_text": "Porygon es capaz de convertirse otra vez en datos informáticos y de entrar en el ciberespacio. Tiene protección anti-copia, así que es imposible duplicarlo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11508,11 +11684,15 @@
     "flavor_text": "Omanyte es uno de esos Pokémon ancestrales que se extinguieron hace muchísimo tiempo y que la gente ha recuperado a partir de fósiles. Si un enemigo le ataca, se esconderá dentro de la dura concha que tiene.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11654,11 +11834,15 @@
     "flavor_text": "Kabuto es un Pokémon regenerado a partir de un fósil. Aunque, en raras ocasiones, se han encontrado casos de ejemplares vivos. En sus 300 millones de años, este Pokémon no ha cambiado en nada.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11800,11 +11984,15 @@
     "flavor_text": "Los orígenes de Aerodactyl datan de la era de los dinosaurios. Se regeneró a partir de material genético contenido en ámbar. Se supone que fue el amo de los cielos en épocas pasadas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -11871,11 +12059,15 @@
     "flavor_text": "Un día cualquiera en la vida de Snorlax consiste nada más y nada menos que en comer y dormir. Es un Pokémon tan dócil que es fácil ver niños usando la gran panza que tiene como lugar de juegos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -12155,11 +12347,15 @@
     "flavor_text": "Dratini muda y se despoja de la vieja piel continuamente. Es algo que necesita hacer porque la energía que tiene en su interior no para de alcanzar niveles incontrolables.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -12517,11 +12713,15 @@
     "flavor_text": "Al luchar, Chikorita agita la hoja que tiene para mantener a raya al rival. Pero, al mismo tiempo, libera una suave fragancia que apacigua el encuentro y crea un ambiente agradable y de amistad.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube). No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube) (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Colosseum (GameCube)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -12737,11 +12937,15 @@
     "flavor_text": "Cyndaquil se protege soltando llamas por el lomo. Cuando está enfadado, las llamas son fieras, pero si está cansado sólo consigue echar algunas chispas que no llegan a cuajar en una completa combustión.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube). No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube) (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Colosseum (GameCube)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -12954,11 +13158,15 @@
     "flavor_text": "Totodile tiene cuerpo pequeño, pero fuertes mandíbulas. A veces, sólo piensa que está dando un mordisquito y hace unas heridas bastante considerables.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube). No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Colosseum (GameCube) (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Transferencia desde Pokémon Colosseum (GameCube)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -13174,11 +13382,15 @@
     "flavor_text": "Sentret no duerme a menos que otro haga guardia. El que hace de centinela lo despertará al mínimo signo de peligro. Cuando este Pokémon se separa de su manada, es incapaz de echarse a dormir, presa del miedo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -13318,11 +13530,15 @@
     "flavor_text": "Hoothoot tiene un órgano interno que identifica y percibe la rotación de la tierra. Gracias a este órgano, el Pokémon ulula todos los días a la misma hora.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -13462,11 +13678,15 @@
     "flavor_text": "Ledyba segrega un fluido aromático por los seis puntos de unión que tiene entre las patas y el cuerpo. A través de este fluido se comunica con otros y les informa acerca de sus sentimientos variando la esencia.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -13606,11 +13826,15 @@
     "flavor_text": "La tela que teje Spinarak puede considerarse como su segundo sistema nervioso. Dicen que puede adivinar qué tipo de presa ha caído en su red con sólo observar las leves vibraciones de los hilos de la tela.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -13970,11 +14194,16 @@
     "cry_url": "/media/pokemon/cries/legacy/172.ogg",
     "flavor_text": "A Pichu le resulta más fácil cargarse de electricidad en días de nubarrones o cuando sopla un aire muy seco. Es posible oír la electricidad estática que emana este Pokémon.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Pikachu o Raichu en la Guardería Pokémon (Ruta 117). Pikachu es capturable en la Zona Safari.",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza en Guardería"
+        }
+      ],
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
     "evolution_stone": null,
     "game_data": {
@@ -14037,15 +14266,19 @@
     "flavor_text": "Cuando hay lluvia de estrellas, a los Cleffa se les puede ver danzando en círculos durante toda la noche. Sólo para cuando rompe el día; entonces, dejan de bailar y calman su sed con el rocío de la mañana.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -14107,11 +14340,16 @@
     "cry_url": "/media/pokemon/cries/legacy/174.ogg",
     "flavor_text": "Las cuerdas vocales de Igglybuff no están suficientemente desarrolladas. Si tuviera que cantar mucho, se haría daño en la garganta. Este Pokémon suele hacer gárgaras con agua pura de manantial.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Jigglypuff o Wigglytuff en la Guardería Pokémon (Ruta 117). Jigglypuff es capturable en la Ruta 115.",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza en Guardería"
+        }
+      ],
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
     "evolution_stone": null,
     "game_data": {
@@ -14174,15 +14412,19 @@
     "flavor_text": "Togepi usa los sentimientos positivos de compasión y alegría que desprenden las personas y los Pokémon. Este Pokémon almacena sentimientos de felicidad en su interior y después los comparte con otros.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -14476,11 +14718,15 @@
     "flavor_text": "Mareep tiene un pelaje lanudo suave que produce carga estática por el roce. Cuanto más se carga de electricidad estática, más brilla la bombilla que tiene en el extremo de la cola.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -14725,7 +14971,8 @@
           "area": "Salvaje equipado (Exclusivo Rubí)",
           "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro; Solrock es exclusivo de Rubí)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -14968,11 +15215,15 @@
     "flavor_text": "Sudowoodo se camufla adoptando la imagen de un árbol para que no le ataque ningún enemigo. El problema viene en invierno; ya que las patas se le ven verdes y es fácil identificarle.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15068,7 +15319,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Hariyama salvajes (5% de probabilidad en Calle Victoria)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -15130,11 +15382,15 @@
     "flavor_text": "Este Pokémon flota en el aire y se deja llevar. Cuando percibe que el viento va a cambiar a fuerte, Hoppip entrelaza sus hojas con otros Hoppip para hacer resistencia y evitar salir volando por la fuerza de la corriente.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15350,11 +15606,15 @@
     "flavor_text": "La cola de Aipom termina en una especie de mano a la que, con un poco de cabeza, se le puede dar muy buen uso. Pero hay un problema: como se ha acostumbrado a usarla mucho, las de verdad se le han vuelto algo torponas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15421,11 +15681,15 @@
     "flavor_text": "Sunkern intenta moverse lo menos posible para conservar el mayor número de nutrientes que ha guardado en su interior y poder evolucionar. Ni siquiera come, sólo se alimenta del rocío de la mañana.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15521,7 +15785,8 @@
           "area": "Salvaje equipado (Exclusivo Rubí)",
           "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro; Solrock es exclusivo de Rubí)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -15583,11 +15848,15 @@
     "flavor_text": "Yanma tiene un ángulo de visión de 360 grados sin mover los ojos. Es un gran volador, experto en hacer repentinas paradas y cambios de dirección en el aire. Aprovecha la habilidad que tiene de volar para lanzarse sobre su presa.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15654,11 +15923,15 @@
     "flavor_text": "Wooper suele vivir en el agua, pero es posible también verle en tierra en busca de comida. Cuando está en terreno firme, se cubre con una película viscosa tóxica.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -15946,11 +16219,15 @@
     "flavor_text": "Murkrow ha sido temido y repudiado por todos por ser supuestamente fuente de mala suerte. Este Pokémon siente debilidad por todo lo que brilla y resplandece. A las mujeres les roba los anillos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16046,7 +16323,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Hariyama salvajes (5% de probabilidad en Calle Victoria)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -16109,11 +16387,15 @@
     "flavor_text": "Misdreavus asusta a la gente con un chillido escalofriante y sollozante. Y, al parecer, usa las esferas rojas para absorber los sentimientos de miedo de los enemigos y usarlos como alimento.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16408,11 +16690,15 @@
     "flavor_text": "Pineco permanece colgado de la rama de un árbol esperando pacientemente a su presa. Si alguien sacude el árbol en el que está mientras come y le molesta, se tira al suelo y explota sin dar ningún tipo de aviso.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16552,11 +16838,15 @@
     "flavor_text": "La cola de Dunsparce es un taladro que usa para enterrarse en el suelo de espaldas. De todos es sabido que este Pokémon hace su nido a gran profundidad y con una forma muy compleja.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16623,11 +16913,15 @@
     "flavor_text": "Gligar planea por el aire sin hacer ningún ruido, como si se deslizara. Este Pokémon se agarra a la cara de su rival con las patas traseras, con forma de garra, y las pinzas de las delanteras, inyectándole veneno por el aguijón.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16719,7 +17013,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -16781,11 +17076,15 @@
     "flavor_text": "Al tener los colmillos por fuera, Snubbull da miedo y espanta, aterrados, a los Pokémon pequeños. Aunque a él parece que le da un poco de pena que salgan huyendo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -16927,11 +17226,15 @@
     "flavor_text": "Qwilfish bebe agua y se hincha y, a continuación, usa la presión del agua que ha tragado para lanzar plumas tóxicas por todo el cuerpo. Para este Pokémon nadar es una especie de desafío.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17023,7 +17326,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -17085,11 +17389,15 @@
     "flavor_text": "Shuckle permanece escondido bajo las rocas en silencio y, cuando se pone a comer las bayas que almacena, se encierra en el caparazón. Las bayas se mezclan con sus fluidos corporales y originan zumo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17227,11 +17535,15 @@
     "flavor_text": "Sneasel trepa árboles encaramándose a la corteza con las garras curvas que tiene. Este Pokémon busca nidos desprovistos de vigilancia paterna para robar los huevos que haya y comérselos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17298,11 +17610,15 @@
     "flavor_text": "A este Pokémon le encanta chuparse las palmas, que tiene llenas de dulce miel. Teddiursa fabrica su propia miel mezclando frutos y el polen recogido por Beedrill.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17586,11 +17902,15 @@
     "flavor_text": "SWINUB busca el alimento frotando el hocico contra el suelo. Su comida preferida es una seta que crece bajo la hierba marchita. A veces, al frotar, descubre fuentes termales.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17810,11 +18130,15 @@
     "flavor_text": "Remoraid traga agua y usa los abdominales para lanzarla a gran velocidad contra una presa que esté en el aire. Cuando está a punto de evolucionar, este Pokémon nada en los ríos corriente abajo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -17956,11 +18280,15 @@
     "flavor_text": "Delibird usa la cola a modo de saco para llevar su alimento. En una ocasión, un famoso escalador consiguió alcanzar la cima del Everest gracias a que uno de estos Pokémon compartió sus alimentos con él.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -18028,11 +18356,15 @@
     "flavor_text": "En días soleados, es posible ver bancos de Mantine saltando con elegancia por entre las olas del mar. A estos Pokémon no les molestan los Remoraid que se les pegan.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -18170,11 +18502,15 @@
     "flavor_text": "Houndour sale a cazar con el resto de la manada con total coordinación. Estos Pokémon se comunican unos con otros usando una serie de aullidos para acorralar a su presa. El compañerismo que existe entre ellos es incomparable.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -18343,7 +18679,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -18575,7 +18912,8 @@
           "area": "Transferencia externa",
           "detail": "No obtenible de forma nativa en Hoenn; requiere transferencia desde Silph S.A. en Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -18637,11 +18975,15 @@
     "flavor_text": "Hace tiempo, se comerciaba con la magnífica cornamenta de Stantler. Se vendía como obra de arte a alto precio. Los interesados en cornamentas de valor incalculable empezaron a cazarlos y casi provocan su extinción.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -18708,11 +19050,15 @@
     "flavor_text": "Smeargle marca los límites de su territorio liberando un fluido corporal por el extremo de la cola. Hasta la fecha, se han encontrado más de 5.000 tipos de marcas distintas dejadas por este Pokémon.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -18779,15 +19125,19 @@
     "flavor_text": "Tyrogue se pone demasiado nervioso si no lo sacan a entrenarse cada día. Su ENTRENADOR debe establecer y mantener ciertos métodos de entrenamiento durante la cría.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -18923,15 +19273,19 @@
     "flavor_text": "Smoochum va corriendo por todos lados, pero se cae también con frecuencia. Y en cuanto tiene ocasión, se mira en algún sitio para ver si se ha manchado la cara.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -18994,15 +19348,19 @@
     "flavor_text": "Elekid acumula electricidad. Si entra en contacto con algo de metal y descarga accidentalmente toda la electricidad almacenada, empieza a agitar los brazos en círculo para volver a cargarse.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -19065,15 +19423,19 @@
     "flavor_text": "El estado de salud de Magby se puede determinar observando el fuego que emana al respirar. Si las llamas que echa por la boca son amarillas, está bien. Pero si, además de las llamas, sale humo negro, está cansado.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de sus evoluciones en Guardería"
         }
       ],
-      "badge_color": "rose",
-      "badge_label": "Transferencia"
+      "badge_color": "pink",
+      "badge_label": "Crianza / Transfer"
     },
     "evolution_stone": null,
     "game_data": {
@@ -19136,11 +19498,15 @@
     "flavor_text": "Miltank da al día 20 litros de una dulce leche que gusta a pequeños y mayores. Aquellos a los que no les gusta la leche, la toman en yogur.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -19493,11 +19859,15 @@
     "flavor_text": "Larvitar nace bajo tierra a gran profundidad. Para subir a la superficie, este Pokémon debe comer lo que encuentra en su camino para abrirse paso. Y, hasta que no está arriba, no puede verles la cara a sus padres.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
           "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "rose",
@@ -19923,11 +20293,15 @@
     "flavor_text": "Treecko tiene unos ganchos pequeños en las plantas de los pies con los que puede escalar superficies verticales. Este Pokémon ataca dando un golpetazo con la cola.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -20143,11 +20517,15 @@
     "flavor_text": "Torchic no se separa de su ENTRENADOR. Siempre va detrás de él con sus pasitos inseguros. Este Pokémon echa fuego en forma de bola, que llega a subir la temperatura hasta 1.000 grados centígrados.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -20360,11 +20738,15 @@
     "flavor_text": "La aleta que tiene Mudkip en la cabeza actúa de radar y es muy sensible. Puede captar movimientos que se produzcan en el agua y en el aire, y todo lo que ocurra a su alrededor, sin necesidad de abrir los ojos.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -21330,11 +21712,15 @@
     "flavor_text": "Lotad vive en estanques y lagos, donde permanece flotando. Si se le marchita la ancha hoja que tiene en la cabeza, se debilitará. De vez en cuando se desplaza en busca de agua limpia.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -21519,7 +21905,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -21766,7 +22153,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -23318,13 +23706,13 @@
     "flavor_text": "Shedinja tiene un cuerpo robusto que no mueve en absoluto. De hecho, parece una especie de caparazón hueco. Se cree que si alguien se atreviera a mirarle por la espalda lo que tiene en su interior, Shedinja le robaría el alma.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nincada (Condición especial)",
+      "summary": "Aparece en el equipo al evolucionar a Nincada a Ninjask en el nivel 20 (requiere un hueco libre en el equipo y una Poké Ball común en la mochila).",
       "locations": [],
       "evolution_info": {
         "from": "Nincada",
-        "text": "Evoluciona de Nincada (Condición especial)",
+        "text": "Evoluciona de Nincada en Nivel 20 (con hueco libre en equipo y una Poké Ball)",
         "trigger": "shed",
-        "condition": "Condición especial",
+        "condition": "Nivel 20 (hueco libre y Poké Ball en mochila)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -23792,13 +24180,34 @@
     "cry_url": "/media/pokemon/cries/legacy/298.ogg",
     "flavor_text": "Azurill enrolla la cola como si fuera un lazo y la despliega a continuación todo lo que puede. De esta forma, un Azurill llegó a lanzarse a sí mismo hasta 10 metros.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Marill o Azumarill equipado con Incienso Marino en la Guardería Pokémon (Ruta 117).",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Incienso Marino"
+        }
+      ],
+      "item_slug": "sea-incense",
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "sea-incense",
+      "name": "Incienso Marino",
+      "icon_url": "/media/items/sea-incense.png",
+      "description": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Monte Pírico (Tercera Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "moves": {
         "machine": []
@@ -24031,7 +24440,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -24094,11 +24504,15 @@
     "flavor_text": "Los Sableye hacen una vida muy tranquila en cavernas. Pero son muy temidos; se dice que, cuando los ojos les brillan de manera siniestra, están robándole el alma a alguien.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -26962,11 +27376,15 @@
     "flavor_text": "Seviper lleva años de gran enemistad con Zangoose. Las cicatrices que tiene por todo el cuerpo dan buena muestra de los encarnizados combates en los que se han enfrentado. Seviper ataca usando su cola con forma de espada.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -27034,11 +27452,15 @@
     "flavor_text": "Lunatone fue descubierto en el lugar de impacto de un meteorito. Por eso, hay quien especula con la idea de que procede del espacio. Con todo, hasta el día de hoy nadie ha podido probar esta teoría.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "blue",
@@ -27748,11 +28170,15 @@
     "flavor_text": "Los Lileep se extinguieron hace unos cien millones de años aproximadamente. Este Pokémon se ancla a una roca en el fondo del mar y atrapa a las presas que se le acercan con los tentáculos que tiene en forma de pétalos de flor.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).",
+      "summary": "Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto) / Ciudad Férrica",
           "method": "Revivir Fósil Raíz"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -27892,11 +28318,15 @@
     "flavor_text": "Anorith se regeneró a partir de un fósil prehistórico. Este Pokémon primitivo vivió en una ocasión en mares cálidos. Para cazar, utiliza las grandes pinzas que tiene y agarra con firmeza a su víctima con ellas.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).",
+      "summary": "Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto) / Ciudad Férrica",
           "method": "Revivir Fósil Garra"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -28182,11 +28612,15 @@
     "flavor_text": "El tipo de Castform cambia con las variaciones del tiempo. Este Pokémon consiguió aprender a usar el gran poder de la naturaleza para proteger el pequeño cuerpo que tiene.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma.",
+      "summary": "Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119 (Instituto Meteorológico)",
           "method": "Regalo de científicos"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -28912,17 +29346,41 @@
     "flavor_text": "Wynaut está siempre con una gran sonrisa puesta. Para ver si está enfadado, basta con mirarle la cola. Cuando se le molesta, se pone a dar golpetazos en el suelo.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda.",
+      "summary": "Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda. También salvaje en Isla Espejismo o criando a Wobbuffet con Incienso Suave en la Guardería.",
       "locations": [
         {
           "area": "Pueblo Lavacalda (Aguas termales)",
           "method": "Huevo de anciana"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Incienso Suave"
+        },
+        {
+          "area": "Isla Espejismo",
+          "method": "Hierba alta (Isla aleatoria)"
         }
       ],
+      "item_slug": "lax-incense",
       "badge_color": "emerald",
-      "badge_label": "Regalo"
+      "badge_label": "Huevo Regalo"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "lax-incense",
+      "name": "Incienso Suave",
+      "icon_url": "/media/items/lax-incense.png",
+      "description": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Monte Pírico (Cuarta Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "moves": {
         "machine": []
@@ -29473,7 +29931,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -29564,7 +30023,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Chinchou salvajes (5% de probabilidad buceando en Rutas 124 y 126) y Lanturn (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -30002,11 +30462,15 @@
     "flavor_text": "En lugar de sangre, Beldum tiene una poderosa fuerza magnética corriéndole por las venas. Este Pokémon se comunica enviando controlados impulsos magnéticos.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando.",
+      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Ciudad Algaria (Casa de Máximo)",
           "method": "Regalo de Máximo en el postgame"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",

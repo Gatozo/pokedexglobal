@@ -6,8 +6,8 @@
         <!-- Cabecera estilo cómic -->
         <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950{% elif game.slug == 'silver' %}bg-slate-600 text-white{% elif game.slug == 'crystal' %}bg-sky-600 text-white{% else %}bg-red-600 text-white{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
             <div class="flex items-center gap-2.5 z-10">
-                <span class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
-                    Objeto Evolutivo • {{ game.display_name|upper }}
+                <span id="stone-modal-category-badge" class="border-2 border-slate-950 bg-amber-300 text-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
+                    Objeto Especial • {{ game.display_name|upper }}
                 </span>
                 <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950{% elif game.slug == 'crystal' %}text-sky-100 [text-shadow:1.5px_1.5px_0px_#0f172a]{% else %}text-white [text-shadow:1.5px_1.5px_0px_#0f172a]{% endif %} font-black text-base sm:text-lg tracking-wide uppercase antialiased flex items-center gap-2">
                     <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain inline-block">
@@ -59,8 +59,8 @@
 
         <!-- Footer del modal de piedra -->
         <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-2.5 flex items-center justify-between">
-            <span class="text-[11px] font-semibold text-slate-500">
-                Guía de obtención de objetos evolutivos • Gen {{ game.generation }}
+            <span id="stone-modal-footer-text" class="text-[11px] font-semibold text-slate-500">
+                Guía de obtención de objetos especiales • Gen {{ game.generation }}
             </span>
             <button 
                 type="button" 

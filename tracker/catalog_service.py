@@ -13,6 +13,7 @@ from django.conf import settings
 CATALOGS_DIR = Path(__file__).resolve().parent / "data" / "catalogs"
 
 _CATALOG_CACHE: Dict[str, List["CatalogEntry"]] = {}
+_CATALOG_MTIMES: Dict[str, float] = {}
 _ENTRY_BY_ID_CACHE: Dict[int, "CatalogEntry"] = {}
 _POKEMON_BY_NATIONAL_CACHE: Dict[int, "CatalogPokemon"] = {}
 _EXISTING_ICONS_SET = None
@@ -304,7 +305,7 @@ class CatalogEntry:
             return self._evolution_stone
         obt = self.obtaining_info or {}
         evo = obt.get("evolution_info") or {}
-        item_slug = evo.get("item_slug")
+        item_slug = evo.get("item_slug") or obt.get("item_slug")
         text_hint = evo.get("condition") or evo.get("text") or obt.get("summary") or ""
         from .utils import resolve_evolution_stone
         return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=self.game_slug)
@@ -445,8 +446,9 @@ class CatalogEntry:
 
 def clear_catalog_memory_cache():
     """Limpia la caché en memoria de los catálogos compilados."""
-    global _CATALOG_CACHE, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE, _GAME_EVO_SETS
+    global _CATALOG_CACHE, _CATALOG_MTIMES, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE, _GAME_EVO_SETS
     _CATALOG_CACHE.clear()
+    _CATALOG_MTIMES.clear()
     _ENTRY_BY_ID_CACHE.clear()
     _POKEMON_BY_NATIONAL_CACHE.clear()
     _GAME_EVO_SETS.clear()
@@ -455,16 +457,30 @@ def clear_catalog_memory_cache():
 def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national: bool = False) -> Optional[List[CatalogEntry]]:
     """
     Retorna la lista de CatalogEntry compiladas desde el archivo JSON local.
-    Carga en memoria una sola vez por proceso servidor (~150 KB de RAM).
+    Carga en memoria y valida mtime del archivo para recarga automática transparente.
     Si is_national=True, devuelve las entradas ordenadas por el número nacional (#001 Bulbasaur...)
     con entry_number actualizado a dicho número nacional.
     """
-    global _CATALOG_CACHE, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE
+    global _CATALOG_CACHE, _CATALOG_MTIMES, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE
 
     cache_key = f"{game_slug}__national" if is_national else game_slug
 
+    target_file = None
+    if is_national:
+        dedicated_nat = CATALOGS_DIR / f"{game_slug}_national.json"
+        if dedicated_nat.exists():
+            target_file = dedicated_nat
+        else:
+            target_file = CATALOGS_DIR / f"{game_slug}.json"
+    else:
+        target_file = CATALOGS_DIR / f"{game_slug}.json"
+
+    file_mtime = target_file.stat().st_mtime if (target_file and target_file.exists()) else 0.0
+
     if not force_reload and cache_key in _CATALOG_CACHE:
-        return _CATALOG_CACHE[cache_key]
+        if _CATALOG_MTIMES.get(cache_key) == file_mtime:
+            return _CATALOG_CACHE[cache_key]
+        force_reload = True
 
     if is_national:
         # 1. Comprobar si existe un catálogo nacional dedicado compilado (ej: ruby_national.json)
@@ -475,6 +491,7 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
                     raw_entries = json.load(f)
                 entries = [CatalogEntry(d, game_slug=game_slug) for d in raw_entries]
                 _CATALOG_CACHE[cache_key] = entries
+                _CATALOG_MTIMES[cache_key] = file_mtime
                 for entry in entries:
                     if entry.id is not None:
                         _ENTRY_BY_ID_CACHE[entry.id] = entry
@@ -497,6 +514,7 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
 
         national_entries.sort(key=lambda e: e.entry_number)
         _CATALOG_CACHE[cache_key] = national_entries
+        _CATALOG_MTIMES[cache_key] = file_mtime
         return national_entries
 
     catalog_file = CATALOGS_DIR / f"{game_slug}.json"
@@ -509,6 +527,7 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
 
         entries = [CatalogEntry(d, game_slug=game_slug) for d in raw_entries]
         _CATALOG_CACHE[game_slug] = entries
+        _CATALOG_MTIMES[cache_key] = file_mtime
         for entry in entries:
             if entry.id is not None:
                 _ENTRY_BY_ID_CACHE[entry.id] = entry

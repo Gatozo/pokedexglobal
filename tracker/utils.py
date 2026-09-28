@@ -473,6 +473,15 @@ EVOLUTION_ITEMS_ES = {
     'up-grade': 'Mejora',
     'deep-sea-tooth': 'Diente Marino',
     'deep-sea-scale': 'Escama Marina',
+    'sea-incense': 'Incienso Marino',
+    'lax-incense': 'Incienso Suave',
+    'rose-incense': 'Incienso Floral',
+    'pure-incense': 'Incienso Puro',
+    'rock-incense': 'Incienso Roca',
+    'full-incense': 'Incienso Lento',
+    'luck-incense': 'Incienso Duplo',
+    'odd-incense': 'Incienso Raro',
+    'wave-incense': 'Incienso Ola',
 }
 
 STONE_NAME_TO_SLUG = {
@@ -498,6 +507,15 @@ STONE_NAME_TO_SLUG = {
     'mejora': 'up-grade',
     'diente marino': 'deep-sea-tooth',
     'escama marina': 'deep-sea-scale',
+    'incienso marino': 'sea-incense',
+    'incienso suave': 'lax-incense',
+    'incienso floral': 'rose-incense',
+    'incienso puro': 'pure-incense',
+    'incienso roca': 'rock-incense',
+    'incienso lento': 'full-incense',
+    'incienso duplo': 'luck-incense',
+    'incienso raro': 'odd-incense',
+    'incienso ola': 'wave-incense',
 }
 
 
@@ -507,8 +525,9 @@ def resolve_evolution_stone(
     game_slug: Optional[str] = None
 ) -> Optional[Dict[str, Any]]:
     """
-    Identifica si un Pokémon evoluciona mediante piedra u objeto evolutivo y retorna
-    su información estructurada (slug, nombre, icono y ubicaciones exclusivas por juego).
+    Identifica si un Pokémon evoluciona mediante piedra u objeto evolutivo o requiere
+    incienso especial de crianza y retorna su información estructurada
+    (slug, nombre, icono, categoría y ubicaciones exclusivas por juego).
     """
     catalog = get_evolution_stones_catalog()
     slug = item_slug.lower() if item_slug else None
@@ -527,11 +546,12 @@ def resolve_evolution_stone(
     name_es = stone_data.get("name_es") or EVOLUTION_ITEMS_ES.get(slug, slug.replace("-", " ").title())
     icon_url = stone_data.get("icon_url") or f"/media/items/{slug}.png"
 
-    # Resolución estricta por versión de juego sin mezclar regiones
+    # Resolución estricta por versión de juego sin mezclar regiones (manejando slugs nacionales si aplica)
+    effective_game = game_slug.replace("_national", "") if game_slug else None
     locations = []
-    if game_slug and "games" in stone_data:
-        locations = stone_data["games"].get(game_slug, [])
-    elif not game_slug and "games" in stone_data:
+    if effective_game and "games" in stone_data:
+        locations = stone_data["games"].get(effective_game, [])
+    elif not effective_game and "games" in stone_data:
         locations = next(iter(stone_data["games"].values()), [])
 
     is_purchasable = stone_data.get("is_purchasable", False)
@@ -539,11 +559,20 @@ def resolve_evolution_stone(
     availability_note = stone_data.get("availability_note", "")
 
     # En 2ª Generación (Oro, Plata, Cristal), las piedras y objetos evolutivos NO se compran en centros comerciales
-    if game_slug in ['gold', 'silver', 'crystal']:
+    if effective_game in ['gold', 'silver', 'crystal']:
         is_purchasable = False
         price = None
         if not availability_note or "2.100" in availability_note:
             availability_note = "Objeto limitado. No se encuentra a la venta en tiendas."
+
+    category = stone_data.get("category")
+    if not category:
+        if slug.endswith("-incense"):
+            category = "incense"
+        elif slug.endswith("-stone"):
+            category = "stone"
+        else:
+            category = "trade"
 
     return {
         "slug": slug,
@@ -553,7 +582,8 @@ def resolve_evolution_stone(
         "is_purchasable": is_purchasable,
         "price": price,
         "availability_note": availability_note,
-        "locations": locations
+        "locations": locations,
+        "category": category,
     }
 
 

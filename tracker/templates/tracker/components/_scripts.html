@@ -846,14 +846,37 @@
                     evoBox.innerHTML = `<img src="${evoIcon}" alt="Evolución" class="w-4 h-4 object-contain inline-block shrink-0"> <span><strong>Evolución:</strong> ${evoText}</span>`;
                 }
                 detailsContainer.appendChild(evoBox);
+            } else if (data.evolution_stone) {
+                // Objeto o Incienso especial requerido para obtención / crianza
+                const stone = data.evolution_stone;
+                const itemBox = document.createElement('div');
+                const isIncense = stone.slug.includes('incense');
+                const labelText = isIncense ? 'Incienso Requerido:' : 'Objeto Requerido:';
+                itemBox.className = 'text-xs bg-amber-50/90 border-2 border-amber-300 text-amber-950 rounded-lg p-2.5 font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-2 shadow-sm';
+                itemBox.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <img src="${stone.icon_url}" alt="${stone.name}" class="w-5 h-5 object-contain inline-block shrink-0 drop-shadow-sm pixel-art">
+                        <span><strong>${labelText}</strong> ${stone.name}</span>
+                    </div>
+                    <button 
+                        type="button" 
+                        onclick="event.stopPropagation(); openStoneModal('${stone.slug}', '${stone.name}')"
+                        class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white hover:bg-amber-100 border-2 border-slate-950 text-slate-900 text-[10px] font-black uppercase shadow-[1.5px_1.5px_0px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5 shrink-0 self-start sm:self-auto cursor-pointer"
+                        title="Ver dónde conseguir ${stone.name}"
+                    >
+                        <img src="${stone.icon_url}" alt="" class="w-3.5 h-3.5 object-contain pixel-art">
+                        <span>Dónde conseguirlo</span>
+                    </button>
+                `;
+                detailsContainer.appendChild(itemBox);
             }
 
             // 2. Mostrar ubicaciones salvajes o de crianza si las tiene
             if (obt.locations && obt.locations.length > 0) {
-                if (obt.evolution_info) {
+                if (obt.evolution_info || data.evolution_stone) {
                     const wildTitle = document.createElement('div');
                     wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
-                    wildTitle.textContent = 'Lugares de obtención:';
+                    wildTitle.textContent = (obt.type === 'breeding' || obt.type === 'gift') ? 'Lugares de obtención:' : 'Lugares de captura / encuentro:';
                     detailsContainer.appendChild(wildTitle);
                 }
 
@@ -939,6 +962,56 @@
                 }
             });
         });
+        // 10. Actualizar disponibilidad de botones de navegación anterior / siguiente
+        updateModalNavButtons();
+    }
+
+    function getModalNavigableCards() {
+        const allCards = Array.from(document.querySelectorAll('.pokemon-card'));
+        const visibleCards = allCards.filter(card => card.style.display !== 'none');
+        return visibleCards.length > 0 ? visibleCards : allCards;
+    }
+
+    function updateModalNavButtons() {
+        if (!activeModalEntryId) return;
+        const cards = getModalNavigableCards();
+        if (!cards.length) return;
+
+        const currentIndex = cards.findIndex(card => parseInt(card.dataset.entryId, 10) === activeModalEntryId);
+
+        const hasPrev = currentIndex > 0;
+        const hasNext = currentIndex >= 0 && currentIndex < cards.length - 1;
+
+        const prevBtn = document.getElementById('modal-prev-pokemon-btn');
+        const nextBtn = document.getElementById('modal-next-pokemon-btn');
+
+        if (prevBtn) {
+            prevBtn.disabled = !hasPrev;
+            prevBtn.style.opacity = hasPrev ? '1' : '0.25';
+            prevBtn.style.pointerEvents = hasPrev ? 'auto' : 'none';
+        }
+
+        if (nextBtn) {
+            nextBtn.disabled = !hasNext;
+            nextBtn.style.opacity = hasNext ? '1' : '0.25';
+            nextBtn.style.pointerEvents = hasNext ? 'auto' : 'none';
+        }
+    }
+
+    function navigatePokemonModal(direction) {
+        if (!activeModalEntryId) return;
+        const cards = getModalNavigableCards();
+        if (!cards.length) return;
+
+        const currentIndex = cards.findIndex(card => parseInt(card.dataset.entryId, 10) === activeModalEntryId);
+        if (currentIndex === -1) return;
+
+        const targetIndex = currentIndex + direction;
+        if (targetIndex >= 0 && targetIndex < cards.length) {
+            const targetCard = cards[targetIndex];
+            const nextEntryId = parseInt(targetCard.dataset.entryId, 10);
+            openPokemonModalDirect(nextEntryId);
+        }
     }
 
     function releaseScrollIfNoModalOpen() {
@@ -983,7 +1056,7 @@
     }
 
     function handleModalBackdropClick(e) {
-        if (e.target.id === 'comic-modal') {
+        if (e.target.id === 'comic-modal' || e.target.id === 'comic-modal-wrapper') {
             closePokemonModal();
         }
     }
@@ -1003,6 +1076,32 @@
         if (stoneTitle) stoneTitle.textContent = name.toUpperCase();
         const headerIcon = document.getElementById('stone-modal-icon-header');
         if (headerIcon) headerIcon.src = iconUrl;
+
+        const catBadge = document.getElementById('stone-modal-category-badge');
+        if (catBadge) {
+            let catLabel = 'Objeto Evolutivo';
+            if (stone.category === 'incense' || stoneSlug.includes('incense')) {
+                catLabel = 'Incienso Especial';
+            } else if (stone.category === 'trade' || ['kings-rock', 'metal-coat', 'dragon-scale', 'up-grade', 'deep-sea-tooth', 'deep-sea-scale'].includes(stoneSlug)) {
+                catLabel = 'Objeto de Intercambio';
+            } else if (stoneSlug.endsWith('-stone')) {
+                catLabel = 'Piedra Evolutiva';
+            }
+            catBadge.textContent = `${catLabel} • ${currentGameDisplayName.toUpperCase()}`;
+        }
+
+        const footerText = document.getElementById('stone-modal-footer-text');
+        if (footerText) {
+            let guideType = 'objetos especiales';
+            if (stone.category === 'incense' || stoneSlug.includes('incense')) {
+                guideType = 'inciensos y crianza especial';
+            } else if (stoneSlug.endsWith('-stone')) {
+                guideType = 'piedras evolutivas';
+            } else if (stone.category === 'trade' || ['kings-rock', 'metal-coat', 'dragon-scale', 'up-grade', 'deep-sea-tooth', 'deep-sea-scale'].includes(stoneSlug)) {
+                guideType = 'objetos de intercambio';
+            }
+            footerText.textContent = `Guía de ${guideType} • ${currentGameDisplayName}`;
+        }
 
         // 2. Ficha del objeto
         const stoneImg = document.getElementById('stone-modal-img');
@@ -1603,8 +1702,24 @@
         }
     }
 
-    // Atajos de teclado (Escape para cerrar modales en orden de superposición)
+    // Atajos de teclado (Escape para cerrar modales, flechas ←/→ para navegar Pokémon)
     document.addEventListener('keydown', (e) => {
+        const comicModal = document.getElementById('comic-modal');
+        const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
+
+        if (isComicOpen) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                navigatePokemonModal(-1);
+                return;
+            }
+            if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                navigatePokemonModal(1);
+                return;
+            }
+        }
+
         if (e.key === 'Escape') {
             const unownModal = document.getElementById('unown-modal');
             if (unownModal && !unownModal.classList.contains('opacity-0')) {
@@ -1616,8 +1731,7 @@
                 closeStoneModal();
                 return;
             }
-            const comicModal = document.getElementById('comic-modal');
-            if (comicModal && !comicModal.classList.contains('opacity-0')) {
+            if (isComicOpen) {
                 closePokemonModal();
                 return;
             }

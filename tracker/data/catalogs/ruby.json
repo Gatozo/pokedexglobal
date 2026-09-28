@@ -32,11 +32,15 @@
     "flavor_text": "Treecko tiene unos ganchos pequeños en las plantas de los pies con los que puede escalar superficies verticales. Este Pokémon ataca dando un golpetazo con la cola.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -252,11 +256,15 @@
     "flavor_text": "Torchic no se separa de su ENTRENADOR. Siempre va detrás de él con sus pasitos inseguros. Este Pokémon echa fuego en forma de bola, que llega a subir la temperatura hasta 1.000 grados centígrados.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -469,11 +477,15 @@
     "flavor_text": "La aleta que tiene Mudkip en la cabeza actúa de radar y es muy sensible. Puede captar movimientos que se produzcan en el agua y en el aire, y todo lo que ocurra a su alrededor, sin necesidad de abrir los ojos.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo.",
+      "summary": "Elegir en la bolsa del Profesor Abedul en la Ruta 101 al salvarlo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
           "method": "Inicial de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -1439,11 +1451,15 @@
     "flavor_text": "Lotad vive en estanques y lagos, donde permanece flotando. Si se le marchita la ancha hoja que tiene en la cabeza, se debilitará. De vez en cuando se desplaza en busca de agua limpia.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -1628,7 +1644,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -1875,7 +1892,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -3656,13 +3674,13 @@
     "flavor_text": "Shedinja tiene un cuerpo robusto que no mueve en absoluto. De hecho, parece una especie de caparazón hueco. Se cree que si alguien se atreviera a mirarle por la espalda lo que tiene en su interior, Shedinja le robaría el alma.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nincada (Condición especial)",
+      "summary": "Aparece en el equipo al evolucionar a Nincada a Ninjask en el nivel 20 (requiere un hueco libre en el equipo y una Poké Ball común en la mochila).",
       "locations": [],
       "evolution_info": {
         "from": "Nincada",
-        "text": "Evoluciona de Nincada (Condición especial)",
+        "text": "Evoluciona de Nincada en Nivel 20 (con hueco libre en equipo y una Poké Ball)",
         "trigger": "shed",
-        "condition": "Condición especial",
+        "condition": "Nivel 20 (hueco libre y Poké Ball en mochila)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -4934,13 +4952,34 @@
     "cry_url": "/media/pokemon/cries/legacy/298.ogg",
     "flavor_text": "Azurill enrolla la cola como si fuera un lazo y la despliega a continuación todo lo que puede. De esta forma, un Azurill llegó a lanzarse a sí mismo hasta 10 metros.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Marill o Azumarill equipado con Incienso Marino en la Guardería Pokémon (Ruta 117).",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Incienso Marino"
+        }
+      ],
+      "item_slug": "sea-incense",
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "sea-incense",
+      "name": "Incienso Marino",
+      "icon_url": "/media/items/sea-incense.png",
+      "description": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Monte Pírico (Tercera Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "moves": {
         "machine": []
@@ -5596,7 +5635,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -6594,11 +6634,15 @@
     "flavor_text": "Los Sableye hacen una vida muy tranquila en cavernas. Pero son muy temidos; se dice que, cuando los ojos les brillan de manera siniestra, están robándole el alma a alguien.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -8388,7 +8432,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -8479,7 +8524,8 @@
           "area": "Salvaje equipado (Exclusivo Rubí)",
           "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro; Solrock es exclusivo de Rubí)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -11200,11 +11246,15 @@
     "flavor_text": "Seviper lleva años de gran enemistad con Zangoose. Las cicatrices que tiene por todo el cuerpo dan buena muestra de los encarnizados combates en los que se han enfrentado. Seviper ataca usando su cola con forma de espada.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "blue",
@@ -11272,11 +11322,15 @@
     "flavor_text": "Lunatone fue descubierto en el lugar de impacto de un meteorito. Por eso, hay quien especula con la idea de que procede del espacio. Con todo, hasta el día de hoy nadie ha podido probar esta teoría.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola.",
+      "summary": "Exclusivo de Pokémon Zafiro. Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "blue",
@@ -11986,11 +12040,15 @@
     "flavor_text": "Los Lileep se extinguieron hace unos cien millones de años aproximadamente. Este Pokémon se ancla a una roca en el fondo del mar y atrapa a las presas que se le acercan con los tentáculos que tiene en forma de pétalos de flor.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).",
+      "summary": "Elegir el Fósil Raíz en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto) / Ciudad Férrica",
           "method": "Revivir Fósil Raíz"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -12130,11 +12188,15 @@
     "flavor_text": "Anorith se regeneró a partir de un fósil prehistórico. Este Pokémon primitivo vivió en una ocasión en mares cálidos. Para cazar, utiliza las grandes pinzas que tiene y agarra con firmeza a su víctima con ellas.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica).",
+      "summary": "Elegir el Fósil Garra en el desierto de la Ruta 111 y revivirlo en Devon S.A. (Ciudad Férrica, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto) / Ciudad Férrica",
           "method": "Revivir Fósil Garra"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -12273,11 +12335,16 @@
     "cry_url": "/media/pokemon/cries/legacy/174.ogg",
     "flavor_text": "Las cuerdas vocales de Igglybuff no están suficientemente desarrolladas. Si tuviera que cantar mucho, se haría daño en la garganta. Este Pokémon suele hacer gárgaras con agua pura de manantial.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Jigglypuff o Wigglytuff en la Guardería Pokémon (Ruta 117). Jigglypuff es capturable en la Ruta 115.",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza en Guardería"
+        }
+      ],
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
     "evolution_stone": null,
     "game_data": {
@@ -12443,7 +12510,8 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -12651,11 +12719,15 @@
     "flavor_text": "El tipo de Castform cambia con las variaciones del tiempo. Este Pokémon consiguió aprender a usar el gran poder de la naturaleza para proteger el pequeño cuerpo que tiene.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma.",
+      "summary": "Regalo de los científicos del Instituto Meteorológico en la Ruta 119 tras vencer al Equipo Magma (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119 (Instituto Meteorológico)",
           "method": "Regalo de científicos"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -12827,7 +12899,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -13647,7 +13720,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -13708,11 +13782,16 @@
     "cry_url": "/media/pokemon/cries/legacy/172.ogg",
     "flavor_text": "A Pichu le resulta más fácil cargarse de electricidad en días de nubarrones o cuando sopla un aire muy seco. Es posible oír la electricidad estática que emana este Pokémon.",
     "obtaining_info": {
-      "type": "special",
-      "summary": "Obtenible en la región de Hoenn.",
-      "locations": [],
-      "badge_color": "slate",
-      "badge_label": "Especial"
+      "type": "breeding",
+      "summary": "Criar a Pikachu o Raichu en la Guardería Pokémon (Ruta 117). Pikachu es capturable en la Zona Safari.",
+      "locations": [
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza en Guardería"
+        }
+      ],
+      "badge_color": "pink",
+      "badge_label": "Crianza"
     },
     "evolution_stone": null,
     "game_data": {
@@ -13891,7 +13970,8 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "moves": {
@@ -14109,17 +14189,41 @@
     "flavor_text": "Wynaut está siempre con una gran sonrisa puesta. Para ver si está enfadado, basta con mirarle la cola. Cuando se le molesta, se pone a dar golpetazos en el suelo.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda.",
+      "summary": "Huevo entregado por una anciana en las aguas termales de Pueblo Lavacalda. También salvaje en Isla Espejismo o criando a Wobbuffet con Incienso Suave en la Guardería.",
       "locations": [
         {
           "area": "Pueblo Lavacalda (Aguas termales)",
           "method": "Huevo de anciana"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Incienso Suave"
+        },
+        {
+          "area": "Isla Espejismo",
+          "method": "Hierba alta (Isla aleatoria)"
         }
       ],
+      "item_slug": "lax-incense",
       "badge_color": "emerald",
-      "badge_label": "Regalo"
+      "badge_label": "Huevo Regalo"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "lax-incense",
+      "name": "Incienso Suave",
+      "icon_url": "/media/items/lax-incense.png",
+      "description": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Monte Pírico (Cuarta Planta)",
+          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "moves": {
         "machine": []
@@ -15416,7 +15520,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -15507,7 +15612,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Chinchou salvajes (5% de probabilidad buceando en Rutas 124 y 126) y Lanturn (5%)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -16139,7 +16245,8 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "moves": {
@@ -16419,11 +16526,15 @@
     "flavor_text": "En lugar de sangre, Beldum tiene una poderosa fuerza magnética corriéndole por las venas. Este Pokémon se comunica enviando controlados impulsos magnéticos.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando.",
+      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Ciudad Algaria (Casa de Máximo)",
           "method": "Regalo de Máximo en el postgame"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
