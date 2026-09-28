@@ -677,17 +677,159 @@
         }
     }
 
+    /* ===== Gestor de Enlaces Profundos (Deep Linking & URL Hash) ===== */
+    let _isUpdatingHashFromPopState = false;
+
+    function setModalUrlHash(hashString, replace = false) {
+        if (_isUpdatingHashFromPopState) return;
+        const cleanHash = (hashString || '').replace(/^#/, '');
+        const currentHash = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim().toLowerCase();
+        if (currentHash === cleanHash.toLowerCase()) return;
+
+        const newUrl = cleanHash 
+            ? `${window.location.pathname}${window.location.search}#${cleanHash}`
+            : `${window.location.pathname}${window.location.search}`;
+
+        try {
+            if (replace) {
+                history.replaceState({ modalHash: cleanHash }, document.title, newUrl);
+            } else {
+                history.pushState({ modalHash: cleanHash }, document.title, newUrl);
+            }
+        } catch (e) {
+            window.location.hash = cleanHash;
+        }
+    }
+
+    function clearModalUrlHash() {
+        if (_isUpdatingHashFromPopState) return;
+        if (!window.location.hash) return;
+        const cleanUrl = `${window.location.pathname}${window.location.search}`;
+        try {
+            history.pushState({ modalHash: '' }, document.title, cleanUrl);
+        } catch (e) {
+            window.location.hash = '';
+        }
+    }
+
+    function syncUrlToCurrentOpenModal() {
+        if (_isUpdatingHashFromPopState) return;
+        const comicModal = document.getElementById('comic-modal');
+        const exclModal = document.getElementById('exclusives-modal');
+        const stoneModal = document.getElementById('stone-location-modal');
+        const transModal = document.getElementById('transfers-modal');
+        const unownModal = document.getElementById('unown-modal');
+
+        if (stoneModal && !stoneModal.classList.contains('opacity-0')) {
+            return;
+        }
+        if (comicModal && !comicModal.classList.contains('opacity-0') && activeModalEntryId) {
+            const card = document.getElementById(`card-${activeModalEntryId}`);
+            if (card) {
+                const slug = card.dataset.name || String(card.dataset.number);
+                setModalUrlHash(slug, true);
+                return;
+            }
+        }
+        if (exclModal && !exclModal.classList.contains('opacity-0')) {
+            setModalUrlHash('exclusivos', true);
+            return;
+        }
+        if (transModal && !transModal.classList.contains('opacity-0')) {
+            setModalUrlHash('transferir', true);
+            return;
+        }
+        if (unownModal && !unownModal.classList.contains('opacity-0')) {
+            setModalUrlHash('unown', true);
+            return;
+        }
+
+        clearModalUrlHash();
+    }
+
+    function syncModalFromUrlHash(retries = 3) {
+        const rawHash = decodeURIComponent(window.location.hash.replace(/^#/, '')).trim().toLowerCase();
+        if (!rawHash) {
+            closeAllModals(false);
+            return;
+        }
+
+        _isUpdatingHashFromPopState = true;
+        try {
+            // 1. Modales especiales
+            if (rawHash === 'exclusivos' || rawHash === 'exclusives') {
+                openExclusivesModal(false);
+                return;
+            }
+            if (rawHash === 'transferir' || rawHash === 'transferencias' || rawHash === 'transfers') {
+                openTransfersModal(false);
+                return;
+            }
+            if (rawHash === 'unown' || rawHash === 'unowndex' || rawHash === 'ruinas-alfa') {
+                openUnownModal(false);
+                return;
+            }
+            if (rawHash.startsWith('objeto-') || rawHash.startsWith('item-') || rawHash.startsWith('piedra-') || rawHash.startsWith('stone-')) {
+                const stoneSlug = rawHash.replace(/^(objeto|item|piedra|stone)-/, '');
+                openStoneModal(stoneSlug, '', false);
+                return;
+            }
+
+            // 2. Ficha de Pokémon por nombre o número (compatible con ambos formatos)
+            const cleanKey = rawHash.replace(/^(pokemon|p)-/, '');
+            let card = null;
+
+            // Búsqueda por número (#001, #1, #252, etc.)
+            if (/^\d+$/.test(cleanKey)) {
+                const numInt = parseInt(cleanKey, 10);
+                card = document.querySelector(`.pokemon-card[data-number="${numInt}"]`) ||
+                       document.querySelector(`.pokemon-card[data-number="${cleanKey}"]`) ||
+                       document.querySelector(`.pokemon-card[data-number="${String(numInt).padStart(3, '0')}"]`);
+            }
+
+            // Búsqueda por nombre / slug (#treecko, #bulbasaur, etc.)
+            if (!card) {
+                card = document.querySelector(`.pokemon-card[data-name="${cleanKey}"]`) ||
+                       document.querySelector(`.pokemon-card[data-display="${cleanKey}"]`);
+            }
+
+            if (card) {
+                const entryId = parseInt(card.dataset.entryId, 10);
+                if (entryId) {
+                    openPokemonModal(entryId, false);
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } else if (retries > 0) {
+                setTimeout(() => syncModalFromUrlHash(retries - 1), 120);
+            }
+        } finally {
+            _isUpdatingHashFromPopState = false;
+        }
+    }
+
+    function closeAllModals(syncUrl = true) {
+        closePokemonModal(syncUrl);
+        closeExclusivesModal(syncUrl);
+        closeTransfersModal(syncUrl);
+        closeStoneModal(syncUrl);
+        closeUnownModal(syncUrl);
+    }
+
     /* ===== Comic Book Modal Controller ===== */
-    function openPokemonModal(entryId) {
+    function openPokemonModal(entryId, updateHistory = true) {
         const card = document.getElementById(`card-${entryId}`);
         if (card && card.dataset.name === 'unown') {
             const unownModal = document.getElementById('unown-modal');
             if (unownModal) {
-                openUnownModal();
+                openUnownModal(updateHistory);
                 return;
             }
         }
         openPokemonModalDirect(entryId);
+        if (updateHistory && card) {
+            const slug = card.dataset.name || String(card.dataset.number);
+            setModalUrlHash(slug);
+        }
     }
 
     function openClassicUnownModal() {
@@ -1024,6 +1166,8 @@
             const targetCard = cards[targetIndex];
             const nextEntryId = parseInt(targetCard.dataset.entryId, 10);
             openPokemonModalDirect(nextEntryId);
+            const slug = targetCard.dataset.name || String(targetCard.dataset.number);
+            setModalUrlHash(slug, true);
         }
     }
 
@@ -1043,7 +1187,7 @@
         }
     }
 
-    function closePokemonModal() {
+    function closePokemonModal(syncUrl = true) {
         const modal = document.getElementById('comic-modal');
         const modalCard = document.getElementById('comic-modal-card');
         if (modal) {
@@ -1066,6 +1210,7 @@
         }
         releaseScrollIfNoModalOpen();
         activeModalEntryId = null;
+        if (syncUrl) syncUrlToCurrentOpenModal();
     }
 
     function handleModalBackdropClick(e) {
@@ -1179,10 +1324,13 @@
             modalCard.classList.remove('scale-95');
             modalCard.classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
+            if (updateHistory) {
+                setModalUrlHash('objeto-' + stoneSlug);
+            }
         }
     }
 
-    function closeStoneModal() {
+    function closeStoneModal(syncUrl = true) {
         const modal = document.getElementById('stone-location-modal');
         const modalCard = document.getElementById('stone-modal-card');
         if (modal) {
@@ -1194,6 +1342,7 @@
             modalCard.classList.add('scale-95');
         }
         releaseScrollIfNoModalOpen();
+        if (syncUrl) syncUrlToCurrentOpenModal();
     }
 
     function handleStoneModalBackdropClick(e) {
@@ -1231,7 +1380,7 @@
     }
 
     /* ===== Modal de Pokémon Exclusivos de Versión ===== */
-    function openExclusivesModal() {
+    function openExclusivesModal(updateHistory = true) {
         const modal = document.getElementById('exclusives-modal');
         const modalCard = document.getElementById('exclusives-modal-card');
         if (modal && modalCard) {
@@ -1241,10 +1390,13 @@
             modalCard.classList.remove('scale-95');
             modalCard.classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
+            if (updateHistory) {
+                setModalUrlHash('exclusivos');
+            }
         }
     }
 
-    function closeExclusivesModal() {
+    function closeExclusivesModal(syncUrl = true) {
         const modal = document.getElementById('exclusives-modal');
         const modalCard = document.getElementById('exclusives-modal-card');
         if (modal && modalCard) {
@@ -1254,6 +1406,7 @@
             modalCard.classList.add('scale-95');
         }
         releaseScrollIfNoModalOpen();
+        if (syncUrl) syncUrlToCurrentOpenModal();
     }
 
     function handleExclusivesBackdropClick(e) {
@@ -1451,7 +1604,7 @@
     }
 
     /* ===== Modal de Pokémon a Transferir ===== */
-    function openTransfersModal() {
+    function openTransfersModal(updateHistory = true) {
         const modal = document.getElementById('transfers-modal');
         const modalCard = document.getElementById('transfers-modal-card');
         if (modal && modalCard) {
@@ -1460,10 +1613,13 @@
             modalCard.classList.remove('scale-95');
             modalCard.classList.add('scale-100');
             document.body.classList.add('overflow-hidden');
+            if (updateHistory) {
+                setModalUrlHash('transferir');
+            }
         }
     }
 
-    function closeTransfersModal() {
+    function closeTransfersModal(syncUrl = true) {
         const modal = document.getElementById('transfers-modal');
         const modalCard = document.getElementById('transfers-modal-card');
         if (modal && modalCard) {
@@ -1473,6 +1629,7 @@
             modalCard.classList.add('scale-95');
         }
         releaseScrollIfNoModalOpen();
+        if (syncUrl) syncUrlToCurrentOpenModal();
     }
 
     function handleTransfersBackdropClick(e) {
@@ -1540,7 +1697,7 @@
     }
 
     /* ===== Bloc Unown / Unowndex Controller ===== */
-    function openUnownModal() {
+    function openUnownModal(updateHistory = true) {
         const modal = document.getElementById('unown-modal');
         const card = document.getElementById('unown-modal-card');
         if (!modal || !card) return;
@@ -1550,9 +1707,12 @@
         modal.classList.remove('opacity-0', 'pointer-events-none');
         card.classList.remove('scale-95');
         document.body.classList.add('overflow-hidden');
+        if (updateHistory) {
+            setModalUrlHash('unown');
+        }
     }
 
-    function closeUnownModal() {
+    function closeUnownModal(syncUrl = true) {
         const modal = document.getElementById('unown-modal');
         const card = document.getElementById('unown-modal-card');
         if (!modal || !card) return;
@@ -1560,6 +1720,7 @@
         modal.classList.add('opacity-0', 'pointer-events-none');
         card.classList.add('scale-95');
         releaseScrollIfNoModalOpen();
+        if (syncUrl) syncUrlToCurrentOpenModal();
     }
 
     function filterUnownChamber(chamberKey) {
@@ -1789,6 +1950,16 @@
         }
     }, { capture: true, passive: false });
 
+    // Navegación con historial del navegador (Atrás / Adelante con deep links)
+    window.addEventListener('popstate', () => {
+        syncModalFromUrlHash();
+    });
+
+    // Sincronización inicial rápida si la URL contiene un hash al cargar
+    if (window.location.hash) {
+        syncModalFromUrlHash();
+    }
+
     // Configuración inicial en segundo plano sin bloquear clics prioritarios del usuario
     document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(() => {
@@ -1822,6 +1993,11 @@
                 updateFilterUI();
                 filterCards();
             } catch (e) {}
+
+            // Re-evaluar deep link por si la tarjeta se encontraba más abajo en el streaming
+            if (window.location.hash) {
+                syncModalFromUrlHash();
+            }
         });
     });
 </script>
