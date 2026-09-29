@@ -135,6 +135,10 @@
                                 data-sprite-retro-shiny="{{ item.sprite_retro_shiny }}"
                                 data-sprite-modern-shiny="{{ item.sprite_modern_shiny }}"
                                 alt="{{ item.name }}"
+                                loading="lazy"
+                                decoding="async"
+                                width="96"
+                                height="96"
                                 class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
                             >
                         </div>
@@ -208,7 +212,7 @@
                     >
                         <!-- Icono de PC oficial (32x32) -->
                         <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
-                            <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
+                            <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
                         </div>
                         <div class="min-w-0 flex-1">
                             <div class="flex items-center gap-1.5">

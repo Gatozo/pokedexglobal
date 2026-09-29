@@ -20,6 +20,9 @@
                         id="unown-modal-header-icon"
                         src="/media/pokemon/icons/{% if is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
                         alt="Unown" 
+                        width="28"
+                        height="28"
+                        decoding="async"
                         class="w-7 h-7 object-contain pixel-art"
                     >
                 </div>
@@ -175,6 +178,9 @@
                             data-sprite-shiny="{{ form.sprite_shiny }}"
                             alt="{{ form.display }}"
                             loading="lazy"
+                            decoding="async"
+                            width="64"
+                            height="64"
                             class="w-16 h-16 object-contain pixel-art drop-shadow relative z-10 transition-transform duration-150 hover:scale-110"
                         >
                     </div>
