@@ -166,6 +166,18 @@ class UserPokemonCatch(models.Model):
             models.Index(fields=['game_slug', 'entry_id']),
             models.Index(fields=['game_slug', 'entry_number']),
         ]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'game_slug', 'entry_number'],
+                condition=models.Q(user__isnull=False),
+                name='unique_user_game_entry',
+            ),
+            models.UniqueConstraint(
+                fields=['session_key', 'game_slug', 'entry_number'],
+                condition=models.Q(session_key__isnull=False),
+                name='unique_session_game_entry',
+            ),
+        ]
 
     def __str__(self):
         owner = self.user.username if self.user else f"Anon ({self.session_key[:8]})"

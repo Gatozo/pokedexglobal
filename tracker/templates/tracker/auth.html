@@ -87,18 +87,18 @@
             </div>
         </div>
 
-        <!-- Alertas y Mensajes Flash del Sistema -->
+        <!-- Alertas y Mensajes Flash del Sistema (Excluye avisos destinados a la bandeja de notificaciones) -->
         {% if messages %}
-        <div class="p-4 bg-amber-100 border-b-4 border-slate-950 space-y-2">
-            {% for message in messages %}
-                <div class="comic-border-sm rounded-xl p-3 text-xs font-bold flex items-start gap-2 shadow-[2px_2px_0px_#0f172a] {% if message.tags == 'success' %}bg-emerald-100 text-emerald-950 border-emerald-950{% elif message.tags == 'error' %}bg-rose-100 text-rose-950 border-rose-950{% else %}bg-sky-100 text-sky-950 border-sky-950{% endif %}">
-                    <span class="text-base select-none">
-                        {% if message.tags == 'success' %}⚡{% elif message.tags == 'error' %}⚠️{% else %}ℹ️{% endif %}
-                    </span>
+        {% for message in messages %}
+            {% if 'notification' not in message.tags %}
+            <div class="p-4 bg-amber-100 border-b-4 border-slate-950">
+                <div class="comic-border-sm rounded-xl p-3 text-xs font-bold flex items-start gap-2 shadow-[2px_2px_0px_#0f172a] {% if 'success' in message.tags %}bg-emerald-100 text-emerald-950 border-emerald-950{% elif 'error' in message.tags %}bg-rose-100 text-rose-950 border-rose-950{% else %}bg-sky-100 text-sky-950 border-sky-950{% endif %}">
+                    <img src="/media/items/{% if 'success' in message.tags %}poke-ball.png{% elif 'error' in message.tags %}potion.png{% else %}town-map.png{% endif %}" alt="" class="w-5 h-5 object-contain pixel-art shrink-0 select-none">
                     <span class="flex-1 leading-relaxed">{{ message }}</span>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+            {% endif %}
+        {% endfor %}
         {% endif %}
 
         <!-- Si el usuario ya tiene sesión iniciada -->

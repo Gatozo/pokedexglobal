@@ -39,6 +39,22 @@
     <!-- Interacciones y Controladores Modularizados (Definidos antes de los componentes para máxima prioridad y respuesta instantánea) -->
     {% include 'tracker/components/_scripts.html' %}
 
+    <!-- Mensajes y Notificaciones Flash del Servidor -->
+    {% if messages %}
+    <script id="server-notifications-data" type="application/json">
+    [
+        {% for message in messages %}
+        {
+            "id": "{{ forloop.counter }}_{% now 'U' %}",
+            "text": "{{ message|escapejs }}",
+            "tags": "{{ message.tags|escapejs }}",
+            "timestamp": "{% now 'd/m/Y H:i' %}"
+        }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]
+    </script>
+    {% endif %}
+
     <!-- Top Navigation Header -->
     {% include 'tracker/components/_header.html' %}
 

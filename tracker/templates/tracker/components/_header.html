@@ -65,6 +65,64 @@
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                         <span class="hidden md:inline text-slate-300 font-bold">Entrenador:</span> {{ request.user.username }}
                     </span>
+
+                    <!-- Botón de Notificaciones con Dropdown -->
+                    <div class="relative" id="notifications-widget">
+                        <button 
+                            id="notifications-btn" 
+                            type="button" 
+                            onclick="toggleNotificationsDropdown(event)" 
+                            class="relative p-1.5 sm:px-2.5 sm:py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-400 border-2 border-slate-950 rounded-xl text-xs font-black shadow-[2px_2px_0px_#0f172a] transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center justify-center cursor-pointer group"
+                            title="Avisos y Notificaciones"
+                            aria-expanded="false"
+                        >
+                            <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                            </svg>
+                            <!-- Puntito indicador (Dot) cuando hay nueva notificación -->
+                            <span 
+                                id="notifications-dot" 
+                                class="hidden absolute -top-1 -right-1 w-3 h-3 bg-rose-500 border-2 border-slate-950 rounded-full animate-bounce shadow-[1px_1px_0px_#0f172a]"
+                            ></span>
+                        </button>
+
+                        <!-- Dropdown Panel (Estilo Cómic / Pokédex) -->
+                        <div 
+                            id="notifications-dropdown" 
+                            class="hidden absolute right-0 top-full mt-2.5 w-72 sm:w-88 md:w-96 bg-[#fffef5] border-3 border-slate-950 rounded-2xl shadow-[5px_5px_0px_0px_#0f172a] z-50 overflow-hidden"
+                            style="border-width: 3px;"
+                        >
+                            <!-- Cabecera del Panel -->
+                            <div class="bg-slate-900 px-3.5 py-2.5 border-b-2 border-slate-950 flex items-center justify-between text-white">
+                                <div class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                    </svg>
+                                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-100">Bandeja de Avisos</h3>
+                                </div>
+                                <button 
+                                    type="button" 
+                                    onclick="clearAllNotifications(event)" 
+                                    class="text-[10px] font-bold text-slate-400 hover:text-amber-300 underline uppercase tracking-wider cursor-pointer"
+                                >
+                                    Limpiar avisos
+                                </button>
+                            </div>
+
+                            <!-- Lista Dinámica de Notificaciones -->
+                            <div id="notifications-list" class="max-h-72 overflow-y-auto p-3 space-y-2.5">
+                                <!-- Contenido inyectado por JavaScript -->
+                            </div>
+
+                            <!-- Pie del Dropdown -->
+                            <div class="bg-slate-100 px-3 py-1.5 border-t-2 border-slate-950 text-center">
+                                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                                    Pokédex Global • Entrenador {{ request.user.username }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="{% url 'tracker:logout' %}" class="px-2.5 py-1.5 bg-rose-600 hover:bg-rose-500 text-white text-xs font-black uppercase rounded-xl border-2 border-slate-950 shadow-[2px_2px_0px_#0f172a] transition-transform active:translate-x-0.5 active:translate-y-0.5" title="Cerrar Sesión">
                         Salir
                     </a>
@@ -80,4 +138,205 @@
         </div>
 
     </div>
+
+    <!-- Script Controlador del Widget de Notificaciones -->
+    {% if request.user.is_authenticated %}
+    <script>
+    (function() {
+        function initNotifications() {
+            const CURRENT_USER = "{{ request.user.username|escapejs }}";
+            if (!CURRENT_USER) return;
+
+            const STORAGE_KEY = 'pokedex_notifications_' + CURRENT_USER;
+            const UNREAD_KEY = 'pokedex_notifications_unread_' + CURRENT_USER;
+
+            function getStoredNotifications() {
+                try {
+                    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            function saveNotifications(list) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+                } catch (e) {}
+            }
+
+            // Capturar mensajes enviados por Django en esta petición
+            const serverDataElem = document.getElementById('server-notifications-data');
+            let incoming = [];
+            if (serverDataElem) {
+                try {
+                    incoming = JSON.parse(serverDataElem.textContent || '[]');
+                } catch (e) {
+                    console.error("Error al parsear mensajes del servidor:", e);
+                }
+            }
+
+            let existing = getStoredNotifications();
+            let hasNew = false;
+
+            if (incoming.length > 0) {
+                incoming.forEach(inc => {
+                    const text = (inc.text || '').trim();
+                    const tags = (inc.tags || '').toLowerCase();
+                    // Evitar duplicar exactamente el mismo mensaje en un lapso corto de 60 segundos
+                    const exists = existing.some(item => item.text === text && (Date.now() - (item.time_added || 0)) < 60000);
+                    if (!exists && text) {
+                        existing.unshift({
+                            id: 'notif_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+                            text: text,
+                            tags: tags,
+                            timestamp: inc.timestamp || '',
+                            time_added: Date.now(),
+                            read: false
+                        });
+                        hasNew = true;
+                    }
+                });
+                saveNotifications(existing);
+                if (hasNew) {
+                    localStorage.setItem(UNREAD_KEY, 'true');
+                }
+            }
+
+            function updateDot() {
+                const dotElem = document.getElementById('notifications-dot');
+                if (!dotElem) return;
+                const isUnread = localStorage.getItem(UNREAD_KEY) === 'true' || existing.some(item => !item.read);
+                if (isUnread && existing.length > 0) {
+                    dotElem.classList.remove('hidden');
+                } else {
+                    dotElem.classList.add('hidden');
+                }
+            }
+
+            window.renderNotificationsList = function() {
+                const listElem = document.getElementById('notifications-list');
+                if (!listElem) return;
+
+                const notifs = getStoredNotifications();
+                if (notifs.length === 0) {
+                    listElem.innerHTML = `
+                        <div class="py-6 px-4 text-center">
+                            <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-slate-100 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a]">
+                                <img src="/media/items/soothe-bell.png" alt="" class="w-6 h-6 object-contain pixel-art">
+                            </div>
+                            <p class="text-xs font-black uppercase text-slate-700">Sin avisos pendientes</p>
+                            <p class="text-[11px] font-bold text-slate-500 mt-0.5">Tus novedades y transferencias se mostrarán aquí.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                let html = '';
+                notifs.forEach(item => {
+                    let iconHtml = '<img src="/media/items/poke-ball.png" alt="" class="w-5 h-5 object-contain pixel-art">';
+                    let bgClass = 'bg-emerald-50 border-emerald-950 text-emerald-950';
+                    let iconBg = 'bg-emerald-100 border-emerald-400';
+                    let title = 'Aviso de Colección';
+
+                    const tags = (item.tags || '').toLowerCase();
+                    if (tags.includes('catch_transfer')) {
+                        iconHtml = '<img src="/media/items/poke-ball.png" alt="" class="w-5 h-5 object-contain pixel-art">';
+                        title = 'Sincronización de Capturas';
+                        bgClass = 'bg-emerald-50 border-emerald-950 text-emerald-950';
+                        iconBg = 'bg-emerald-100 border-emerald-400';
+                    } else if (tags.includes('welcome')) {
+                        iconHtml = '<img src="/media/items/town-map.png" alt="" class="w-5 h-5 object-contain pixel-art">';
+                        title = '¡Bienvenido Entrenador!';
+                        bgClass = 'bg-amber-50 border-amber-950 text-amber-950';
+                        iconBg = 'bg-amber-100 border-amber-400';
+                    } else if (tags.includes('error')) {
+                        iconHtml = '<img src="/media/items/potion.png" alt="" class="w-5 h-5 object-contain pixel-art">';
+                        title = 'Aviso Importante';
+                        bgClass = 'bg-rose-50 border-rose-950 text-rose-950';
+                        iconBg = 'bg-rose-100 border-rose-400';
+                    } else if (tags.includes('info')) {
+                        iconHtml = '<img src="/media/items/exp-share.png" alt="" class="w-5 h-5 object-contain pixel-art">';
+                        title = 'Información';
+                        bgClass = 'bg-sky-50 border-sky-950 text-sky-950';
+                        iconBg = 'bg-sky-100 border-sky-400';
+                    }
+
+                    html += `
+                        <div class="border-2 rounded-xl p-2.5 text-xs shadow-[2px_2px_0px_#0f172a] ${bgClass} flex items-start gap-2.5 transition-all">
+                            <span class="w-7 h-7 rounded-lg border flex items-center justify-center shrink-0 shadow-[1px_1px_0px_#0f172a] ${iconBg}">
+                                ${iconHtml}
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center justify-between gap-1 mb-0.5">
+                                    <span class="font-black uppercase tracking-wider text-[10px] text-slate-800">${title}</span>
+                                    <span class="text-[9px] font-bold text-slate-500">${item.timestamp || ''}</span>
+                                </div>
+                                <p class="font-bold text-[11px] leading-snug break-words text-slate-900">${item.text}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                listElem.innerHTML = html;
+            };
+
+            window.toggleNotificationsDropdown = function(event) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                const dropdown = document.getElementById('notifications-dropdown');
+                const btn = document.getElementById('notifications-btn');
+                if (!dropdown || !btn) return;
+
+                const isHidden = dropdown.classList.contains('hidden');
+                if (isHidden) {
+                    dropdown.classList.remove('hidden');
+                    btn.setAttribute('aria-expanded', 'true');
+                    window.renderNotificationsList();
+                    // Al abrir la bandeja, marcar como leídas y apagar el puntito
+                    localStorage.setItem(UNREAD_KEY, 'false');
+                    let notifs = getStoredNotifications();
+                    notifs.forEach(n => n.read = true);
+                    saveNotifications(notifs);
+                    const dotElem = document.getElementById('notifications-dot');
+                    if (dotElem) dotElem.classList.add('hidden');
+                } else {
+                    dropdown.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            window.clearAllNotifications = function(event) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                localStorage.removeItem(STORAGE_KEY);
+                localStorage.setItem(UNREAD_KEY, 'false');
+                const dotElem = document.getElementById('notifications-dot');
+                if (dotElem) dotElem.classList.add('hidden');
+                window.renderNotificationsList();
+            };
+
+            updateDot();
+
+            document.addEventListener('click', function(e) {
+                const widget = document.getElementById('notifications-widget');
+                const dropdown = document.getElementById('notifications-dropdown');
+                if (widget && dropdown && !widget.contains(e.target)) {
+                    dropdown.classList.add('hidden');
+                    const btn = document.getElementById('notifications-btn');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initNotifications);
+        } else {
+            initNotifications();
+        }
+    })();
+    </script>
+    {% endif %}
 </header>

@@ -66,7 +66,7 @@ def merge_session_catches_to_user(session_key, user):
     transfiere de forma inteligente y segura todas sus capturas registradas a su cuenta de usuario.
     Si ya existía un registro para ese Pokémon en su cuenta, fusiona los estados (is_caught, is_shiny, unown forms).
     """
-    if not session_key:
+    if not session_key or not user:
         return 0
 
     anon_catches = list(UserPokemonCatch.objects.filter(session_key=session_key, user__isnull=True))
@@ -75,19 +75,29 @@ def merge_session_catches_to_user(session_key, user):
 
     transferred_count = 0
     for anon in anon_catches:
-        user_catch, created = UserPokemonCatch.objects.get_or_create(
+        # Descartar registros huérfanos o con datos inválidos
+        if not anon.game_slug or anon.entry_number <= 0:
+            anon.delete()
+            continue
+
+        user_catch = UserPokemonCatch.objects.filter(
             user=user,
             game_slug=anon.game_slug,
             entry_number=anon.entry_number,
-            defaults={
-                "entry_id": anon.entry_id,
-                "is_caught": anon.is_caught,
-                "is_shiny": anon.is_shiny,
-                "unown_forms_caught": anon.unown_forms_caught,
-                "caught_at": anon.caught_at,
-            }
-        )
-        if not created:
+        ).first()
+
+        if not user_catch:
+            user_catch = UserPokemonCatch.objects.create(
+                user=user,
+                game_slug=anon.game_slug,
+                entry_number=anon.entry_number,
+                entry_id=anon.entry_id,
+                is_caught=anon.is_caught,
+                is_shiny=anon.is_shiny,
+                unown_forms_caught=anon.unown_forms_caught,
+                caught_at=anon.caught_at,
+            )
+        else:
             changed = False
             if anon.is_caught and not user_catch.is_caught:
                 user_catch.is_caught = True
@@ -156,9 +166,9 @@ def auth_portal_view(request):
                 login(request, user)
                 migrated = merge_session_catches_to_user(prev_session_key, user)
                 if migrated > 0:
-                    messages.success(request, f"¡Bienvenido de vuelta, {user.username}! Se transfirieron {migrated} capturas realizadas en esta sesión a tu cuenta.")
+                    messages.success(request, f"¡Bienvenido de vuelta, {user.username}! Se transfirieron {migrated} capturas realizadas en esta sesión a tu cuenta.", extra_tags="notification catch_transfer")
                 else:
-                    messages.success(request, f"¡Bienvenido, Entrenador {user.username}!")
+                    messages.success(request, f"¡Bienvenido, Entrenador {user.username}!", extra_tags="notification welcome")
                 return redirect(target_url)
         elif action == "register":
             active_tab = "register"
@@ -168,9 +178,9 @@ def auth_portal_view(request):
                 login(request, user, backend="tracker.backends.EmailOrUsernameModelBackend")
                 migrated = merge_session_catches_to_user(prev_session_key, user)
                 if migrated > 0:
-                    messages.success(request, f"¡Cuenta de Entrenador creada con éxito! Se guardaron {migrated} capturas previas en tu nueva cuenta.")
+                    messages.success(request, f"¡Cuenta de Entrenador creada con éxito! Se guardaron {migrated} capturas previas en tu nueva cuenta.", extra_tags="notification catch_transfer")
                 else:
-                    messages.success(request, f"¡Bienvenido a Pokédex Global, Entrenador {user.username}! Tu progreso se guardará de forma personal e independiente.")
+                    messages.success(request, f"¡Bienvenido a Pokédex Global, Entrenador {user.username}! Tu progreso se guardará de forma personal e independiente.", extra_tags="notification welcome")
                 return redirect(target_url)
 
     last_game_slug = request.session.get("last_game_slug", "red")
@@ -207,7 +217,7 @@ def logout_view(request):
     username = request.user.username if request.user.is_authenticated else None
     logout(request)
     if username:
-        messages.info(request, f"Sesión de {username} cerrada correctamente. ¡Hasta la próxima aventura!")
+        messages.info(request, f"Sesión de {username} cerrada correctamente. ¡Hasta la próxima aventura!", extra_tags="portal")
     return redirect("tracker:home")
 
 

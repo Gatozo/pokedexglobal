@@ -307,3 +307,38 @@ class ViewsAndFlowTests(TestCase):
         self.assertFalse(data["valid_format"])
         self.assertIn("Solo se permiten letras", data["message"])
 
+    def test_merge_guest_catches_handles_corrupt_entries_gracefully(self):
+        """Asegura que capturas anónimas corruptas (entry_number=0 o game_slug vacía) no rompan el login."""
+        self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "red"}))
+        session_key = self.client.session.session_key
+
+        # Simular registro corrupto / huérfano con entry_number=0
+        UserPokemonCatch.objects.create(
+            session_key=session_key,
+            game_slug="",
+            entry_number=0,
+            entry_id=0,
+            is_caught=False
+        )
+        # Y una captura legítima
+        UserPokemonCatch.objects.create(
+            session_key=session_key,
+            game_slug="red",
+            entry_number=1,
+            entry_id=1,
+            is_caught=True
+        )
+
+        # Login con usuario existente
+        response = self.client.post(reverse("tracker:home"), {
+            "action": "login",
+            "identifier": "redtrainer",
+            "password": "ChampionPassword123!",
+        })
+        self.assertEqual(response.status_code, 302)
+        # La captura legítima se transfirió
+        self.assertTrue(UserPokemonCatch.objects.filter(user=self.user, game_slug="red", entry_number=1, is_caught=True).exists())
+        # La captura corrupta fue descartada
+        self.assertFalse(UserPokemonCatch.objects.filter(session_key=session_key).exists())
+
+
