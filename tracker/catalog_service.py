@@ -6,6 +6,7 @@ en 0 ms de consultas SQL, manteniendo la interfaz compatible con PokedexEntry.
 import copy
 import json
 import os
+import re
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 from django.conf import settings
@@ -238,6 +239,25 @@ class CatalogPokemon:
         return self.display_name
 
 
+def _clean_daycare_route_text(text: str) -> str:
+    """
+    Normaliza referencias de ruta asociadas a la guardería en textos explicativos,
+    para que al buscar una ruta por nombre (ej. 'Ruta 117' o 'Ruta 34')
+    solo coincidan los Pokémon con encuentros genuinamente salvajes en esa zona.
+    """
+    if not text:
+        return ""
+    # Ej: 'Ruta 117 (Guardería Pokémon)' -> 'Guardería Pokémon'
+    res = re.sub(r'(?:Ruta\s+\d+|Isla\s+Cuatro|Isla\s+Quarta|Pueblo\s+Sosiego)\s*\(\s*Guarder[íi]a[^)]*\)', 'Guardería Pokémon', text, flags=re.IGNORECASE)
+    # Ej: 'Guardería Pokémon (Ruta 117)' -> 'Guardería Pokémon'
+    res = re.sub(r'Guarder[íi]a(?:\s+Pok[ée]mon)?\s*\((?:Ruta\s+\d+|Isla\s+Cuatro|Isla\s+Quarta|Pueblo\s+Sosiego)\)', 'Guardería Pokémon', res, flags=re.IGNORECASE)
+    # Ej: 'Guardería de la Ruta 34' o 'Guardería en Ruta 117' -> 'Guardería Pokémon'
+    res = re.sub(r'Guarder[íi]a(?:\s+Pok[ée]mon)?\s+(?:de|en)\s+(?:la\s+)?(?:Ruta\s+\d+|Isla\s+Cuatro|Isla\s+Quarta|Pueblo\s+Sosiego)', 'Guardería Pokémon', res, flags=re.IGNORECASE)
+    # Ej: 'en la Ruta 34 (Guardería Pokémon)' -> 'en la Guardería Pokémon'
+    res = re.sub(r'(?:en|de)\s+(?:la\s+)?(?:Ruta\s+\d+|Isla\s+Cuatro|Isla\s+Quarta|Pueblo\s+Sosiego)\s*\(\s*Guarder[íi]a[^)]*\)', 'en la Guardería Pokémon', res, flags=re.IGNORECASE)
+    return res
+
+
 class CatalogEntry:
     """
     Adaptador inmutable de entrada de Pokédex.
@@ -322,11 +342,26 @@ class CatalogEntry:
 
     @property
     def filter_locations(self) -> str:
-        """Cadena concatenada de todas las áreas y descripciones para búsqueda de texto libre."""
+        """
+        Cadena concatenada de todas las áreas y descripciones para búsqueda de texto libre.
+        Para evitar falsos positivos al buscar por ruta (ej. 'Ruta 117' o 'Ruta 34'),
+        las áreas de crianza en guarderías se normalizan a 'Guardería Pokémon' sin asociar
+        el número de ruta como encuentro salvaje.
+        """
         obt = self.obtaining_info or {}
-        areas = [loc.get("area", "") for loc in obt.get("locations", []) if loc.get("area")]
-        summary = obt.get("summary") or ""
-        all_text = " | ".join(areas + ([summary] if summary else []))
+        clean_areas = []
+        for loc in obt.get("locations", []):
+            area = loc.get("area", "")
+            method = loc.get("method", "").lower()
+            if not area:
+                continue
+            if "crianza" in method or "huevo" in method or "guarder" in area.lower():
+                clean_areas.append("Guardería Pokémon")
+            else:
+                clean_areas.append(area)
+
+        summary = _clean_daycare_route_text(obt.get("summary") or "")
+        all_text = " | ".join(clean_areas + ([summary] if summary else []))
         return all_text
 
     @property

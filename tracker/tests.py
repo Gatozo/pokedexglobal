@@ -2346,6 +2346,18 @@ class CompiledCatalogsAndServiceTests(TestCase):
         magikarp = next(e for e in red_cat if e.entry_number == 129)
         self.assertIn("rod_old", magikarp.filter_tags)
         self.assertIn("rod_any", magikarp.filter_tags)
+
+        # Daycare route exclusion in filter_locations (only wild Pokemon match route name)
+        ruby_cat = get_compiled_catalog("ruby")
+        treecko = next(e for e in ruby_cat if e.pokemon.name == "treecko")
+        zigzagoon = next(e for e in ruby_cat if e.pokemon.name == "zigzagoon")
+        self.assertNotIn("ruta 117", treecko.filter_locations.lower())
+        self.assertIn("guardería", treecko.filter_locations.lower())
+        self.assertIn("ruta 117", zigzagoon.filter_locations.lower())
+
+        # Modal data for Treecko still keeps the daycare route
+        treecko_modal = json.loads(treecko.modal_data_json)
+        self.assertTrue(any("117" in loc.get("area", "") for loc in treecko_modal.get("obtaining", {}).get("locations", [])))
         
         # Test Crystal Catalog (Headbutt, Surf)
         crystal_cat = get_compiled_catalog("crystal")
