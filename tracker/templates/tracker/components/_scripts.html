@@ -2181,44 +2181,42 @@
         syncModalFromUrlHash();
     }
 
-    // Configuración inicial en segundo plano sin bloquear clics prioritarios del usuario
+    // Configuración inicial sincronizada sin salto de frame
     document.addEventListener('DOMContentLoaded', () => {
-        requestAnimationFrame(() => {
-            try {
-                const savedStyle = localStorage.getItem('pokedex_sprite_style');
-                if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
-                    setSpriteStyle(savedStyle);
-                }
-            } catch (e) {}
-
-            try {
-                const gameGen = parseInt(document.getElementById('game-generation')?.value || "{{ game.generation|default:1 }}", 10);
-                if (gameGen >= 2) {
-                    const savedShinydex = localStorage.getItem('pokedex_shinydex_' + currentGameSlug);
-                    // Si la cookie no estaba sincronizada pero en localStorage sí
-                    if (savedShinydex === '1' && !isShinydexMode) {
-                        isShinydexMode = true;
-                        applyShinydexMode(true);
-                        document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=1; path=/; max-age=31536000; SameSite=Lax';
-                    } else if (savedShinydex === '0' && isShinydexMode) {
-                        isShinydexMode = false;
-                        applyShinydexMode(false);
-                        document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
-                    } else if (savedShinydex === null && isShinydexMode) {
-                        localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
-                    }
-                }
-            } catch (e) {}
-
-            try {
-                updateFilterUI();
-                filterCards();
-            } catch (e) {}
-
-            // Re-evaluar deep link por si la tarjeta se encontraba más abajo en el streaming
-            if (window.location.hash) {
-                syncModalFromUrlHash();
+        try {
+            const savedStyle = localStorage.getItem('pokedex_sprite_style');
+            if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
+                setSpriteStyle(savedStyle);
             }
-        });
+        } catch (e) {}
+
+        try {
+            const gameGen = parseInt(document.getElementById('game-generation')?.value || "{{ game.generation|default:1 }}", 10);
+            if (gameGen >= 2) {
+                const savedShinydex = localStorage.getItem('pokedex_shinydex_' + currentGameSlug);
+                // Si la cookie no estaba sincronizada pero en localStorage sí
+                if (savedShinydex === '1' && !isShinydexMode) {
+                    isShinydexMode = true;
+                    applyShinydexMode(true);
+                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=1; path=/; max-age=31536000; SameSite=Lax';
+                } else if (savedShinydex === '0' && isShinydexMode) {
+                    isShinydexMode = false;
+                    applyShinydexMode(false);
+                    document.cookie = 'pokedex_shinydex_' + currentGameSlug + '=0; path=/; max-age=31536000; SameSite=Lax';
+                } else if (savedShinydex === null && isShinydexMode) {
+                    localStorage.setItem('pokedex_shinydex_' + currentGameSlug, '1');
+                }
+            }
+        } catch (e) {}
+
+        try {
+            updateFilterUI();
+            filterCards();
+        } catch (e) {}
+
+        // Re-evaluar deep link por si la tarjeta se encontraba más abajo en el streaming
+        if (window.location.hash) {
+            syncModalFromUrlHash();
+        }
     });
 </script>

@@ -1,5 +1,16 @@
 html {
+    overflow-y: scroll;
     scrollbar-gutter: stable;
+}
+
+/* Modales fijados fuera del flujo del documento desde el frame 0 (evita FOUC / salto de cabecera antes de que cargue Tailwind) */
+#comic-modal,
+#stone-location-modal,
+#exclusives-modal,
+#transfers-modal,
+#unown-modal {
+    position: fixed;
+    inset: 0;
 }
 
 /* Tipos Elementales */
