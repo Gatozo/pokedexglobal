@@ -266,6 +266,16 @@ class CatalogEntry:
         self.modal_retro_sprite_url = data.get("modal_retro_sprite_url") or self.game_sprite_url
         self.modal_retro_sprite_shiny_url = data.get("modal_retro_sprite_shiny_url") or self.game_sprite_shiny_url
 
+        nat_id = getattr(self.pokemon, "national_number", 0)
+        self.game_sprite_back_url = data.get("game_sprite_back_url") or (
+            f"/media/pokemon/sprites/{self.game_slug}/back/{nat_id}.png" if nat_id else ""
+        )
+        self.game_sprite_shiny_back_url = data.get("game_sprite_shiny_back_url") or (
+            f"/media/pokemon/sprites/{self.game_slug}_shiny/back/{nat_id}.png" if nat_id and self.game_slug not in ["red", "blue", "yellow"] else ""
+        )
+        self.modal_retro_sprite_back_url = data.get("modal_retro_sprite_back_url") or self.game_sprite_back_url
+        self.modal_retro_sprite_shiny_back_url = data.get("modal_retro_sprite_shiny_back_url") or self.game_sprite_shiny_back_url
+
         self._pc_icon_url = data.get("pc_icon_url", "")
         self._cry_url = data.get("cry_url", "")
         self.flavor_text = data.get("flavor_text", "")
@@ -436,6 +446,8 @@ class CatalogEntry:
             "sprite_modern": self.pokemon.sprite_url,
             "sprite_retro_shiny": self.modal_retro_sprite_shiny_url,
             "sprite_modern_shiny": self.modern_sprite_shiny_url,
+            "sprite_retro_back": self.modal_retro_sprite_back_url,
+            "sprite_retro_shiny_back": self.modal_retro_sprite_shiny_back_url,
             "pc_icon_url": self.pc_icon_url,
             "height": self.pokemon.height or 0,
             "weight": self.pokemon.weight or 0,

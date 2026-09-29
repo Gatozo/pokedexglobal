@@ -95,6 +95,8 @@ def get_unown_catalog(game_slug: str = "gold"):
             "is_legit_shiny_gen2": letter in GEN2_LEGIT_SHINY_LETTERS,
             "sprite_normal": f"/media/pokemon/sprites/{sprite_slug}/unown/{letter}.png",
             "sprite_shiny": f"/media/pokemon/sprites/{sprite_slug}_shiny/unown/{letter}.png",
+            "sprite_normal_back": f"/media/pokemon/sprites/{sprite_slug}/back/unown/{letter}.png",
+            "sprite_shiny_back": f"/media/pokemon/sprites/{sprite_slug}_shiny/back/unown/{letter}.png",
             "icon_url": f"/media/pokemon/icons/{icon_gen}/201-{letter}.png",
         })
     return catalog

@@ -75,9 +75,9 @@
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-stretch">
                 
                 <!-- Sprite Box (Left / Top in Mobile) -->
-                <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl p-3 sm:p-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[200px]">
-                    <!-- Category Banner & Optional Form Badge -->
-                    <div class="w-full flex items-center justify-between z-10 shrink-0 gap-1">
+                <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl px-3 sm:px-3.5 pt-2 sm:pt-2.5 pb-3 sm:pb-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[215px] sm:min-h-[225px]">
+                    <!-- Category Banner & Optional Form Badge (posicionado más arriba con mayor separación del sprite) -->
+                    <div class="w-full flex items-center justify-between z-10 shrink-0 gap-1 select-none pointer-events-none mb-0.5">
                         <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a]">
                             Pokémon Semilla
                         </span>
@@ -86,14 +86,14 @@
                         </span>
                     </div>
 
-                    <!-- Pokemon Image (centrado vertical y horizontalmente) -->
-                    <div class="flex-1 w-full my-1.5 flex items-center justify-center relative min-h-[120px]">
-                        <!-- Botón Forma Anterior (Centrado verticalmente a los lados del sprite) -->
+                    <!-- Pokemon Image (centrado vertical y horizontalmente, estático sin parpadeos) -->
+                    <div class="flex-1 w-full my-0.5 flex items-center justify-center relative min-h-[110px]">
+                        <!-- Botón Forma Anterior (Estático, sin rebotes de escala) -->
                         <button 
                             type="button" 
                             id="modal-prev-form-btn"
                             onclick="event.stopPropagation(); cycleModalPokemonForm(-1)" 
-                            class="hidden absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            class="hidden absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-colors cursor-pointer select-none p-1"
                             title="Forma anterior"
                             aria-label="Forma anterior"
                         >
@@ -102,14 +102,14 @@
                             </svg>
                         </button>
 
-                        <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
+                        <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art select-none pointer-events-none">
 
-                        <!-- Botón Forma Siguiente (Centrado verticalmente a los lados del sprite) -->
+                        <!-- Botón Forma Siguiente (Estático, sin rebotes de escala) -->
                         <button 
                             type="button" 
                             id="modal-next-form-btn"
                             onclick="event.stopPropagation(); cycleModalPokemonForm(1)" 
-                            class="hidden absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            class="hidden absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-colors cursor-pointer select-none p-1"
                             title="Forma siguiente"
                             aria-label="Forma siguiente"
                         >
@@ -119,8 +119,24 @@
                         </button>
                     </div>
 
-                    <!-- Types Badges -->
-                    <div id="modal-types-container" class="flex items-center justify-center gap-1.5 z-10 shrink-0">
+                    <!-- Botón Girar Sprite (Espalda / Frente) Estático con dimensiones ajustadas (+20% balanceado) y ligeramente más abajo -->
+                    <button 
+                        type="button" 
+                        id="modal-rotate-sprite-btn" 
+                        onclick="event.stopPropagation(); toggleModalSpriteOrientation()" 
+                        class="mt-1.5 mb-1 w-[70px] h-[23px] rounded-lg bg-slate-100 hover:bg-amber-300 active:bg-amber-400 text-slate-900 border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] text-[9.5px] font-black uppercase tracking-wider flex items-center justify-center gap-1 transition-colors cursor-pointer select-none z-10"
+                        title="Girar Pokémon (Frente / Espalda)"
+                        aria-label="Girar Pokémon"
+                    >
+                        <!-- Icono Flecha Curva de Rotación -->
+                        <svg id="modal-rotate-btn-icon" class="w-3 h-3 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 13c0-4.42-3.58-8-8-8zm-6 8c0-1.01.25-1.97.7-2.8L5.24 8.74A7.93 7.93 0 0 0 4 13c0 4.42 3.58 8 8 8v4l5-5-5-5v4c-3.31 0-6-2.69-6-6z"/>
+                        </svg>
+                        <span id="modal-rotate-btn-text" class="leading-none">Girar</span>
+                    </button>
+
+                    <!-- Types Badges (Estáticos sin interacción de puntero, más grandes y posicionados abajo) -->
+                    <div id="modal-types-container" class="flex items-center justify-center gap-2 z-10 shrink-0 mt-1 mb-0.5 select-none pointer-events-none">
                         <!-- Populated dynamically -->
                     </div>
                 </div>

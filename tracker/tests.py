@@ -2642,6 +2642,37 @@ class PokemonRubyGen3Tests(TestCase):
         self.assertEqual(len(deoxys.forms), 0)
         self.assertEqual(len(groudon.forms), 0)
 
+    def test_back_sprites_catalog_and_modal_json(self):
+        """Valida que las entradas de catálogo y modales expongan las rutas de sprites de espalda."""
+        # 1. Gen 1 (Rojo): Sin shiny pero con espalda
+        red_entries = get_compiled_catalog("red")
+        bulbasaur = next(e for e in red_entries if e.entry_number == 1)
+        self.assertIn("/media/pokemon/sprites/red/back/1.png", bulbasaur.game_sprite_back_url)
+        self.assertFalse(bulbasaur.game_sprite_shiny_back_url)
+
+        red_modal = json.loads(bulbasaur.modal_data_json)
+        self.assertIn("sprite_retro_back", red_modal)
+        self.assertEqual(red_modal["sprite_retro_back"], bulbasaur.game_sprite_back_url)
+
+        # 2. Gen 3 (Rubí): Con espalda normal y shiny
+        ruby_entries = get_compiled_catalog("ruby")
+        torchic = next(e for e in ruby_entries if e.pokemon.national_number == 255)
+        self.assertIn("/media/pokemon/sprites/ruby/back/255.png", torchic.game_sprite_back_url)
+        self.assertIn("/media/pokemon/sprites/ruby_shiny/back/255.png", torchic.game_sprite_shiny_back_url)
+
+        ruby_modal = json.loads(torchic.modal_data_json)
+        self.assertEqual(ruby_modal["sprite_retro_back"], torchic.game_sprite_back_url)
+        self.assertEqual(ruby_modal["sprite_retro_shiny_back"], torchic.game_sprite_shiny_back_url)
+
+        # 3. Formas alternas con espalda (Castform)
+        castform = next(e for e in ruby_entries if e.pokemon.national_number == 351)
+        for form in castform.forms:
+            self.assertIn("sprite_retro_back", form)
+            self.assertIn("sprite_retro_shiny_back", form)
+            self.assertIn("/back/", form["sprite_retro_back"])
+            self.assertIn("/back/", form["sprite_retro_shiny_back"])
+
+
 
 
 

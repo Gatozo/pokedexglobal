@@ -215,10 +215,7 @@
         });
 
         if (activeModalEntryId) {
-            const mData = getEntryData(activeModalEntryId);
-            if (mData && mData.forms && mData.forms.length > 1) {
-                applyModalForm(activeModalFormIndex);
-            }
+            updateModalSpriteDisplay();
         }
 
         // Reevaluar filtro activo de estado
@@ -273,10 +270,7 @@
         });
 
         if (activeModalEntryId) {
-            const mData = getEntryData(activeModalEntryId);
-            if (mData && mData.forms && mData.forms.length > 1) {
-                applyModalForm(activeModalFormIndex);
-            }
+            updateModalSpriteDisplay();
         }
 
         document.querySelectorAll("img[id^='excl-img-']").forEach(img => {
@@ -862,6 +856,100 @@
     const _entryDataCache = new Map();
     const _cardFormIndex = new Map();
     let activeModalFormIndex = 0;
+    let isModalBackView = false;
+
+    function updateRotateButtonUI() {
+        const btnText = document.getElementById('modal-rotate-btn-text');
+        const btnIcon = document.getElementById('modal-rotate-btn-icon');
+        if (btnText) {
+            btnText.textContent = isModalBackView ? 'Frente' : 'Girar';
+        }
+        if (btnIcon) {
+            if (isModalBackView) {
+                btnIcon.classList.add('rotate-180');
+            } else {
+                btnIcon.classList.remove('rotate-180');
+            }
+        }
+    }
+
+    function updateModalSpriteDisplay() {
+        if (!activeModalEntryId) return;
+        const data = getEntryData(activeModalEntryId);
+        if (!data) return;
+
+        const modalImg = document.getElementById('modal-pokemon-img');
+        if (!modalImg) return;
+
+        const hasForms = data.forms && data.forms.length > 1;
+        let targetSrc = '';
+
+        if (hasForms) {
+            const form = data.forms[activeModalFormIndex] || data.forms[0];
+            if (isModalBackView) {
+                if (isShinydexMode) {
+                    targetSrc = form.sprite_retro_shiny_back || form.sprite_retro_shiny;
+                } else {
+                    targetSrc = form.sprite_retro_back || form.sprite_retro;
+                }
+            } else {
+                if (isShinydexMode) {
+                    if (currentSpriteStyle === 'retro' && form.sprite_retro_shiny) {
+                        targetSrc = form.sprite_retro_shiny;
+                    } else {
+                        targetSrc = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
+                    }
+                } else {
+                    if (currentSpriteStyle === 'retro' && form.sprite_retro) {
+                        targetSrc = form.sprite_retro;
+                    } else {
+                        targetSrc = form.sprite_modern || form.sprite_retro;
+                    }
+                }
+            }
+            modalImg.alt = `${form.display_name || form.name || data.name} (${isModalBackView ? 'Espalda' : 'Frente'})`;
+        } else {
+            if (isModalBackView) {
+                if (isShinydexMode) {
+                    targetSrc = data.sprite_retro_shiny_back || data.sprite_retro_shiny;
+                } else {
+                    targetSrc = data.sprite_retro_back || data.sprite_retro;
+                }
+            } else {
+                if (isShinydexMode) {
+                    if (currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
+                        targetSrc = data.sprite_retro_shiny;
+                    } else {
+                        targetSrc = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
+                    }
+                } else {
+                    if (currentSpriteStyle === 'retro' && data.sprite_retro) {
+                        targetSrc = data.sprite_retro;
+                    } else {
+                        targetSrc = data.sprite_modern;
+                    }
+                }
+            }
+            modalImg.alt = `${data.name} (${isModalBackView ? 'Espalda' : 'Frente'})`;
+        }
+
+        if (targetSrc) {
+            modalImg.src = targetSrc;
+        }
+
+        if (isModalBackView || currentSpriteStyle === 'retro') {
+            modalImg.classList.add('pixel-art');
+        } else {
+            modalImg.classList.remove('pixel-art');
+        }
+
+        updateRotateButtonUI();
+    }
+
+    function toggleModalSpriteOrientation() {
+        isModalBackView = !isModalBackView;
+        updateModalSpriteDisplay();
+    }
 
     function getEntryData(entryId) {
         let data = _entryDataCache.get(entryId);
@@ -958,40 +1046,20 @@
         _cardFormIndex.set(activeModalEntryId, formIdx);
 
         // 1. Sprite en modal
-        const modalImg = document.getElementById('modal-pokemon-img');
-        if (modalImg) {
-            if (isShinydexMode) {
-                if (currentSpriteStyle === 'retro' && form.sprite_retro_shiny) {
-                    modalImg.src = form.sprite_retro_shiny;
-                    modalImg.classList.add('pixel-art');
-                } else {
-                    modalImg.src = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
-                    modalImg.classList.remove('pixel-art');
-                }
-            } else {
-                if (currentSpriteStyle === 'retro' && form.sprite_retro) {
-                    modalImg.src = form.sprite_retro;
-                    modalImg.classList.add('pixel-art');
-                } else {
-                    modalImg.src = form.sprite_modern || form.sprite_retro;
-                    modalImg.classList.remove('pixel-art');
-                }
-            }
-            modalImg.alt = form.display_name || form.name || data.name;
-        }
+        updateModalSpriteDisplay();
 
         // 2. Tipos en modal
         const typesContainer = document.getElementById('modal-types-container');
         if (typesContainer) {
             typesContainer.innerHTML = '';
             const badge1 = document.createElement('span');
-            badge1.className = `type-${form.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+            badge1.className = `type-${form.primary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
             badge1.textContent = form.primary_type_es;
             typesContainer.appendChild(badge1);
 
             if (form.secondary_type && form.secondary_type_es) {
                 const badge2 = document.createElement('span');
-                badge2.className = `type-${form.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                badge2.className = `type-${form.secondary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
                 badge2.textContent = form.secondary_type_es;
                 typesContainer.appendChild(badge2);
             }
@@ -1020,6 +1088,7 @@
 
         activeModalEntryId = entryId;
         activeModalCryUrl = data.cry_url || '';
+        isModalBackView = false;
         const modalCryBtn = document.getElementById('modal-cry-btn');
         if (modalCryBtn) {
             if (activeModalCryUrl) {
@@ -1059,40 +1128,20 @@
             if (nextFormBtn) nextFormBtn.classList.add('hidden');
             if (formBadge) formBadge.classList.add('hidden');
 
-            const modalImg = document.getElementById('modal-pokemon-img');
-            if (modalImg) {
-                if (isShinydexMode) {
-                    if (currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
-                        modalImg.src = data.sprite_retro_shiny;
-                        modalImg.classList.add('pixel-art');
-                    } else {
-                        modalImg.src = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
-                        modalImg.classList.remove('pixel-art');
-                    }
-                } else {
-                    if (currentSpriteStyle === 'retro' && data.sprite_retro) {
-                        modalImg.src = data.sprite_retro;
-                        modalImg.classList.add('pixel-art');
-                    } else {
-                        modalImg.src = data.sprite_modern;
-                        modalImg.classList.remove('pixel-art');
-                    }
-                }
-                modalImg.alt = data.name;
-            }
+            updateModalSpriteDisplay();
 
             const typesContainer = document.getElementById('modal-types-container');
             if (typesContainer) {
                 typesContainer.innerHTML = '';
                 
                 const badge1 = document.createElement('span');
-                badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
                 badge1.textContent = data.primary_type_es;
                 typesContainer.appendChild(badge1);
 
                 if (data.secondary_type && data.secondary_type_es) {
                     const badge2 = document.createElement('span');
-                    badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+                    badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
                     badge2.textContent = data.secondary_type_es;
                     typesContainer.appendChild(badge2);
                 }

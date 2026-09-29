@@ -321,7 +321,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/1.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/1.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 153,
@@ -656,7 +660,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/2.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/2.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 154,
@@ -1012,7 +1020,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/3.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/3.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 155,
@@ -1415,7 +1427,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/4.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/4.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 156,
@@ -1829,7 +1845,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/5.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/5.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 157,
@@ -2284,7 +2304,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/6.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/6.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 158,
@@ -2687,7 +2711,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/7.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/7.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 159,
@@ -3101,7 +3129,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/8.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/8.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 160,
@@ -3556,7 +3588,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/9.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/9.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 161,
@@ -3663,7 +3699,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/10.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/10.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 162,
@@ -3760,7 +3800,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/11.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/11.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 163,
@@ -4112,7 +4156,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/12.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/12.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 164,
@@ -4211,7 +4259,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/13.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/13.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 165,
@@ -4304,7 +4356,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/14.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/14.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 166,
@@ -4615,7 +4671,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/15.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/15.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 167,
@@ -4968,7 +5028,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/16.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/16.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 168,
@@ -5293,7 +5357,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/17.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/17.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 169,
@@ -5626,7 +5694,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/18.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/18.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 170,
@@ -5970,7 +6042,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/19.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/19.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 171,
@@ -6338,7 +6414,11 @@
         "capture_rate": 127,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/20.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/20.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 172,
@@ -6665,7 +6745,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/21.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/21.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 173,
@@ -6990,7 +7074,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/22.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/22.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 174,
@@ -7311,7 +7399,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/23.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/23.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 175,
@@ -7659,7 +7751,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/24.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/24.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 176,
@@ -8035,7 +8131,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/25.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/25.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 177,
@@ -8399,7 +8499,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/26.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/26.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 178,
@@ -8769,7 +8873,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/27.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/27.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 179,
@@ -9149,7 +9257,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/28.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/28.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 180,
@@ -9470,7 +9582,11 @@
         "capture_rate": 235,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/29.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/29.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 181,
@@ -9842,7 +9958,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/30.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/30.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 182,
@@ -10346,7 +10466,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/31.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/31.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 183,
@@ -10673,7 +10797,11 @@
         "capture_rate": 235,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/32.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/32.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 184,
@@ -11046,7 +11174,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/33.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/33.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 185,
@@ -11551,7 +11683,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/34.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/34.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 186,
@@ -12047,7 +12183,11 @@
         "capture_rate": 150,
         "base_happiness": 140
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/35.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/35.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 187,
@@ -12538,7 +12678,11 @@
         "capture_rate": 25,
         "base_happiness": 140
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/36.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/36.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 188,
@@ -12847,7 +12991,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/37.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/37.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 189,
@@ -13142,7 +13290,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/38.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/38.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 190,
@@ -13624,7 +13776,11 @@
         "capture_rate": 170,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/39.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/39.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 191,
@@ -14110,7 +14266,11 @@
         "capture_rate": 50,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/40.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/40.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 192,
@@ -14392,7 +14552,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/41.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/41.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 193,
@@ -14707,7 +14871,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/42.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/42.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 194,
@@ -14997,7 +15165,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/43.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/43.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 195,
@@ -15315,7 +15487,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/44.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/44.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 196,
@@ -15648,7 +15824,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/45.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/45.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 197,
@@ -15963,7 +16143,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/46.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/46.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 198,
@@ -16315,7 +16499,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/47.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/47.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 199,
@@ -16633,7 +16821,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/48.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/48.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 200,
@@ -17020,7 +17212,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/49.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/49.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 201,
@@ -17300,7 +17496,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/50.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/50.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 202,
@@ -17617,7 +17817,11 @@
         "capture_rate": 50,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/51.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/51.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 203,
@@ -17950,7 +18154,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/52.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/52.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 204,
@@ -18303,7 +18511,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/53.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/53.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 205,
@@ -18710,7 +18922,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/54.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/54.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 206,
@@ -19138,7 +19354,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/55.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/55.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 207,
@@ -19528,7 +19748,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/56.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/56.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 208,
@@ -19956,7 +20180,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/57.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/57.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 209,
@@ -20266,7 +20494,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/58.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/58.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 210,
@@ -20586,7 +20818,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/59.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/59.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 211,
@@ -21013,7 +21249,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/60.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/60.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 212,
@@ -21465,7 +21705,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/61.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/61.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 213,
@@ -21902,7 +22146,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/62.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/62.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 214,
@@ -22235,7 +22483,11 @@
         "capture_rate": 200,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/63.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/63.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 215,
@@ -22663,7 +22915,11 @@
         "capture_rate": 100,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/64.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/64.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 216,
@@ -23096,7 +23352,11 @@
         "capture_rate": 50,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/65.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/65.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 217,
@@ -23470,7 +23730,11 @@
         "capture_rate": 180,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/66.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/66.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 218,
@@ -23867,7 +24131,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/67.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/67.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 219,
@@ -24269,7 +24537,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/68.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/68.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 220,
@@ -24614,7 +24886,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/69.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/69.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 221,
@@ -24955,7 +25231,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/70.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/70.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 222,
@@ -25283,7 +25563,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/71.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/71.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 223,
@@ -25678,7 +25962,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/72.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/72.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 224,
@@ -26073,7 +26361,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/73.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/73.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 225,
@@ -26462,7 +26754,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/74.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/74.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 226,
@@ -26859,7 +27155,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/75.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/75.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 227,
@@ -27271,7 +27571,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/76.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/76.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 228,
@@ -27572,7 +27876,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/77.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/77.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 229,
@@ -27916,7 +28224,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/78.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/78.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 230,
@@ -28380,7 +28692,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/79.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/79.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 231,
@@ -28938,7 +29254,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/80.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/80.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 232,
@@ -29249,7 +29569,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/81.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/81.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 233,
@@ -29601,7 +29925,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/82.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/82.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 234,
@@ -29932,7 +30260,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/83.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/83.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 235,
@@ -30255,7 +30587,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/84.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/84.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 236,
@@ -30603,7 +30939,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/85.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/85.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 237,
@@ -30938,7 +31278,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/86.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/86.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 238,
@@ -31306,7 +31650,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/87.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/87.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 239,
@@ -31608,7 +31956,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/88.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/88.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 240,
@@ -31936,7 +32288,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/89.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/89.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 241,
@@ -32319,7 +32675,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/90.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/90.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 242,
@@ -32675,7 +33035,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/91.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/91.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 243,
@@ -32954,7 +33318,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/92.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/92.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 244,
@@ -33238,7 +33606,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/93.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/93.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 245,
@@ -33637,7 +34009,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/94.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/94.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 246,
@@ -33972,7 +34348,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/95.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/95.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 247,
@@ -34384,7 +34764,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/96.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/96.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 248,
@@ -34833,7 +35217,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/97.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/97.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 249,
@@ -35216,7 +35604,11 @@
         "capture_rate": 225,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/98.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/98.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 250,
@@ -35581,7 +35973,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/99.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/99.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 251,
@@ -35906,7 +36302,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/100.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/100.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 252,
@@ -36271,7 +36671,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/101.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/101.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 253,
@@ -36593,7 +36997,11 @@
         "capture_rate": 90,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/102.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/102.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 254,
@@ -36917,7 +37325,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/103.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/103.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 255,
@@ -37318,7 +37730,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/104.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/104.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 256,
@@ -37760,7 +38176,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/105.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/105.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 257,
@@ -38101,7 +38521,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/106.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/106.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 258,
@@ -38442,7 +38866,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/107.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/107.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 259,
@@ -38892,7 +39320,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/108.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/108.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 260,
@@ -39163,7 +39595,11 @@
         "capture_rate": 190,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/109.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/109.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 261,
@@ -39460,7 +39896,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/110.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/110.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 262,
@@ -39812,7 +40252,11 @@
         "capture_rate": 120,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/111.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/111.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 263,
@@ -40322,7 +40766,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/112.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/112.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 264,
@@ -40848,7 +41296,11 @@
         "capture_rate": 30,
         "base_happiness": 140
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/113.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/113.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 265,
@@ -41174,7 +41626,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/114.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/114.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 266,
@@ -41615,7 +42071,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/115.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/115.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 267,
@@ -41932,7 +42392,11 @@
         "capture_rate": 225,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/116.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/116.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 268,
@@ -42263,7 +42727,11 @@
         "capture_rate": 75,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/117.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/117.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 269,
@@ -42691,7 +43159,11 @@
         "capture_rate": 225,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/118.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/118.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 270,
@@ -43057,7 +43529,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/119.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/119.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 271,
@@ -43485,7 +43961,11 @@
         "capture_rate": 225,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/120.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/120.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 272,
@@ -43869,7 +44349,11 @@
         "capture_rate": 60,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/121.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/121.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 273,
@@ -44289,7 +44773,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/122.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/122.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 274,
@@ -44579,7 +45067,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/123.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/123.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 275,
@@ -45000,7 +45492,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/124.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/124.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 276,
@@ -45430,7 +45926,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/125.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/125.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 277,
@@ -45811,7 +46311,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/126.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/126.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 278,
@@ -46126,7 +46630,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/127.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/127.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 279,
@@ -46476,7 +46984,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/128.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/128.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 280,
@@ -46672,7 +47184,11 @@
         "capture_rate": 255,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/129.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/129.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 281,
@@ -47076,7 +47592,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/130.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/130.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 282,
@@ -47499,7 +48019,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/131.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/131.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 283,
@@ -47599,7 +48123,11 @@
         "capture_rate": 35,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/132.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/132.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 284,
@@ -47869,7 +48397,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/133.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/133.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 285,
@@ -48282,7 +48814,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/134.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/134.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 286,
@@ -48685,7 +49221,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/135.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/135.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 287,
@@ -49058,7 +49598,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/136.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/136.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 288,
@@ -49438,7 +49982,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/137.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/137.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 289,
@@ -49739,7 +50287,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/138.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/138.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 290,
@@ -50100,7 +50652,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/139.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/139.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 291,
@@ -50401,7 +50957,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/140.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/140.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 292,
@@ -50782,7 +51342,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/141.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/141.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 293,
@@ -51102,7 +51666,11 @@
         "capture_rate": 45,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/142.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/142.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 294,
@@ -51613,7 +52181,11 @@
         "capture_rate": 25,
         "base_happiness": 70
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/143.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/143.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 295,
@@ -51942,7 +52514,11 @@
         "capture_rate": 3,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/144.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/144.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 296,
@@ -52271,7 +52847,11 @@
         "capture_rate": 3,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/145.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/145.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 297,
@@ -52570,7 +53150,11 @@
         "capture_rate": 3,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/146.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/146.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 298,
@@ -52956,7 +53540,11 @@
         "capture_rate": 45,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/147.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/147.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 299,
@@ -53359,7 +53947,11 @@
         "capture_rate": 45,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/148.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/148.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 300,
@@ -53803,7 +54395,11 @@
         "capture_rate": 45,
         "base_happiness": 35
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/149.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/149.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 301,
@@ -54336,7 +54932,11 @@
         "capture_rate": 3,
         "base_happiness": 0
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/150.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/150.png",
+    "modal_retro_sprite_shiny_back_url": null
   },
   {
     "id": 302,
@@ -55015,6 +55615,10 @@
         "capture_rate": 45,
         "base_happiness": 100
       }
-    }
+    },
+    "game_sprite_back_url": "/media/pokemon/sprites/blue/back/151.png",
+    "game_sprite_shiny_back_url": null,
+    "modal_retro_sprite_back_url": "/media/pokemon/sprites/blue/back/151.png",
+    "modal_retro_sprite_shiny_back_url": null
   }
 ]

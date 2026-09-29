@@ -555,13 +555,13 @@ function openPokemonModalDirect(entryId) {
         typesContainer.innerHTML = '';
         
         const badge1 = document.createElement('span');
-        badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+        badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
         badge1.textContent = data.primary_type_es;
         typesContainer.appendChild(badge1);
 
         if (data.secondary_type && data.secondary_type_es) {
             const badge2 = document.createElement('span');
-            badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] text-white`;
+            badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
             badge2.textContent = data.secondary_type_es;
             typesContainer.appendChild(badge2);
         }
