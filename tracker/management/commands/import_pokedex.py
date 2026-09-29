@@ -96,6 +96,19 @@ class Command(BaseCommand):
         if resp and resp.status_code == 200 and len(resp.content) > 0:
             with open(full_path, 'wb') as f:
                 f.write(resp.content)
+
+            # Normalización automática para Gen 1: recortar lienzo transparente de 96x96 a 56x56 nativo
+            norm_path = relative_path.replace('\\', '/')
+            if any(k in norm_path for k in ['sprites/red/', 'sprites/blue/', 'sprites/yellow/']) and 'back/' not in norm_path:
+                try:
+                    from PIL import Image
+                    with Image.open(full_path) as img:
+                        if img.size == (96, 96):
+                            cropped = img.convert('RGBA').crop((20, 20, 76, 76))
+                            cropped.save(full_path, 'PNG', optimize=True)
+                except Exception:
+                    pass
+
             media_url = settings.MEDIA_URL.rstrip('/') + '/' + relative_path.replace('\\', '/')
             return media_url
 
