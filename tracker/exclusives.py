@@ -146,8 +146,9 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         144, 145, 146,  # Articuno, Zapdos, Moltres
         150, 151,       # Mewtwo, Mew
     ],
-    # Gen 3 (Pokédex Nacional de Rubí: 184 especies que no habitan en Hoenn)
+    # Gen 3 (Pokédex Nacional de Rubí y Zafiro: 184 especies que no habitan en Hoenn)
     'ruby': NON_HOENN_TRANSFERS_RUBY,
+    'sapphire': NON_HOENN_TRANSFERS_RUBY,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -255,6 +256,50 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'mechanic_badge': 'GBA / GameCube',
         'description': (
             'La Pokédex Nacional de Pokémon Rubí consta de 386 Pokémon. Las 184 especies no nativas de Hoenn '
+            'deben ser transferidas mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja o Pokémon Esmeralda, '
+            'o importadas desde títulos de Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Debido al cambio de arquitectura de hardware y datos, NO ES POSIBLE transferir Pokémon '
+            'de ninguna forma desde los juegos de Primera Generación (Rojo, Azul, Amarillo) ni Segunda Generación (Oro, Plata, Cristal).'
+        ),
+        'default_origin': 'Rojo Fuego / Verde Hoja / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            1: 'Rojo Fuego / Verde Hoja',
+            2: 'Rojo Fuego / Verde Hoja',
+            3: 'Rojo Fuego / Verde Hoja',
+            4: 'Rojo Fuego / Verde Hoja',
+            5: 'Rojo Fuego / Verde Hoja',
+            6: 'Rojo Fuego / Verde Hoja',
+            7: 'Rojo Fuego / Verde Hoja',
+            8: 'Rojo Fuego / Verde Hoja',
+            9: 'Rojo Fuego / Verde Hoja',
+            144: 'Rojo Fuego / Verde Hoja',
+            145: 'Rojo Fuego / Verde Hoja',
+            146: 'Rojo Fuego / Verde Hoja',
+            150: 'Rojo Fuego / Verde Hoja',
+            151: 'Evento Isla Suprema (Mapa Viejo)',
+            152: 'Pokémon Colosseum (GameCube)',
+            153: 'Pokémon Colosseum (GameCube)',
+            154: 'Pokémon Colosseum (GameCube)',
+            155: 'Pokémon Colosseum (GameCube)',
+            156: 'Pokémon Colosseum (GameCube)',
+            157: 'Pokémon Colosseum (GameCube)',
+            158: 'Pokémon Colosseum (GameCube)',
+            159: 'Pokémon Colosseum (GameCube)',
+            160: 'Pokémon Colosseum (GameCube)',
+            243: 'Pokémon Colosseum / Rojo Fuego',
+            244: 'Pokémon Colosseum / Verde Hoja',
+            245: 'Pokémon Colosseum / RF / VH',
+            249: 'Pokémon XD: Gale of Darkness (GameCube)',
+            250: 'Pokémon Colosseum (GameCube)',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+        }
+    },
+    'sapphire': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Zafiro consta de 386 Pokémon. Las 184 especies no nativas de Hoenn '
             'deben ser transferidas mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja o Pokémon Esmeralda, '
             'o importadas desde títulos de Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
             '¡IMPORTANTE!: Debido al cambio de arquitectura de hardware y datos, NO ES POSIBLE transferir Pokémon '
@@ -472,7 +517,11 @@ def get_version_exclusives_context(
         return None
 
     def _resolve_theme(slug: str) -> str:
-        if slug in ['blue', 'sapphire', 'pearl', 'white', 'moon', 'shield', 'violet']:
+        if slug in ['sapphire']:
+            return 'sapphire'
+        elif slug in ['ruby']:
+            return 'ruby'
+        elif slug in ['blue', 'pearl', 'white', 'moon', 'shield', 'violet']:
             return 'blue'
         elif slug in ['crystal']:
             return 'crystal'

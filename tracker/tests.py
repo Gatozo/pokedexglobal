@@ -2693,10 +2693,69 @@ class PokemonRubyGen3Tests(TestCase):
 
 
 
+class PokemonSapphireGen3Tests(TestCase):
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(slug="sapphire", defaults={"name": "Pokémon Zafiro", "generation": 3})
+        self.pokedex_hoenn, _ = Pokedex.objects.get_or_create(game=self.game, slug="hoenn", defaults={"name": "Pokédex Regional de Hoenn", "is_national": False})
+        self.pokedex_nat, _ = Pokedex.objects.get_or_create(game=self.game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
 
+    def test_sapphire_catalogs_structure(self):
+        """Valida que los catálogos compilados de Zafiro se carguen con sus 202 y 386 entradas y orden canónico."""
+        hoenn_cat = get_compiled_catalog("sapphire", is_national=False)
+        self.assertIsNotNone(hoenn_cat)
+        self.assertEqual(len(hoenn_cat), 202)
+        self.assertEqual(hoenn_cat[0].pokemon.name, "treecko")
+        self.assertEqual(hoenn_cat[0].entry_number, 1)
 
+        kyogre = next(e for e in hoenn_cat if e.pokemon.name == "kyogre")
+        self.assertEqual(kyogre.entry_number, 198)
+        self.assertEqual(kyogre.obtaining_info["type"], "legendary")
+        self.assertIn("Cueva del Origen", kyogre.obtaining_info["summary"])
 
+        nat_cat = get_compiled_catalog("sapphire", is_national=True)
+        self.assertIsNotNone(nat_cat)
+        self.assertEqual(len(nat_cat), 386)
+        self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(nat_cat[385].pokemon.name, "deoxys")
 
+    def test_sapphire_views_and_theme(self):
+        """Verifica que las vistas de Pokédex regional y nacional respondan correctamente en Zafiro."""
+        resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "sapphire", "pokedex_slug": "hoenn"}))
+        self.assertEqual(resp_hoenn.status_code, 200)
+        self.assertContains(resp_hoenn, "Pokédex Regional de Hoenn")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "sapphire", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, "Pokédex Nacional")
+
+    def test_sapphire_exclusives_and_transfers(self):
+        """Comprueba que los exclusivos propios de Zafiro y los de Rubí se resuelvan con fidelidad canónica."""
+        from .exclusives import get_version_exclusives_context, get_version_transfers_context
+        excl_ctx = get_version_exclusives_context(self.game, self.pokedex_hoenn, set())
+        self.assertIsNotNone(excl_ctx)
+        self.assertEqual(excl_ctx["counterpart_slug"], "ruby")
+
+        own_names = {p["name"] for p in excl_ctx["own_list"]}
+        self.assertIn("Lotad", own_names)
+        self.assertIn("Lombre", own_names)
+        self.assertIn("Ludicolo", own_names)
+        self.assertIn("Sableye", own_names)
+        self.assertIn("Seviper", own_names)
+        self.assertIn("Lunatone", own_names)
+        self.assertIn("Kyogre", own_names)
+        self.assertIn("Latias", own_names)
+
+        counterpart_names = {p["name"] for p in excl_ctx["counterpart_list"]}
+        self.assertIn("Seedot", counterpart_names)
+        self.assertIn("Mawile", counterpart_names)
+        self.assertIn("Zangoose", counterpart_names)
+        self.assertIn("Solrock", counterpart_names)
+        self.assertIn("Groudon", counterpart_names)
+        self.assertIn("Latios", counterpart_names)
+
+        transfers_ctx = get_version_transfers_context(self.game, self.pokedex_nat, set())
+        self.assertIsNotNone(transfers_ctx)
+        self.assertEqual(transfers_ctx["total"], 184)
 
 
 

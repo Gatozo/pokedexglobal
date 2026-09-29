@@ -149,6 +149,16 @@
           "area": "Cascada Meteoro",
           "detail": "En el suelo en la parte superior derecha de la sala principal."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Cascada Meteoro",
+          "detail": "En el suelo en la parte superior derecha de la sala principal (pasando la cascada)."
+        },
+        {
+          "area": "Salvaje equipado (Exclusivo Zafiro)",
+          "detail": "Equipada raramente en Lunatone salvajes (5% de probabilidad en Cascada Meteoro; Lunatone es exclusivo de Zafiro)."
+        }
       ]
     }
   },
@@ -210,6 +220,16 @@
         }
       ],
       "ruby": [
+        {
+          "area": "Senda Ígnea (Ruta 112)",
+          "detail": "En el suelo en el desvío bloqueado por rocas (requiere MO Fuerza)."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
+        }
+      ],
+      "sapphire": [
         {
           "area": "Senda Ígnea (Ruta 112)",
           "detail": "En el suelo en el desvío bloqueado por rocas (requiere MO Fuerza)."
@@ -291,6 +311,20 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Naufragio (Ruta 108)",
+          "detail": "En la habitación sumergida número 3 (requiere MO Surf y MO Buceo)."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
+        }
       ]
     }
   },
@@ -352,6 +386,16 @@
         }
       ],
       "ruby": [
+        {
+          "area": "Malvalona Nueva",
+          "detail": "En el suelo cerca del generador central durante la misión de Erico."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
+        }
+      ],
+      "sapphire": [
         {
           "area": "Malvalona Nueva",
           "detail": "En el suelo cerca del generador central durante la misión de Erico."
@@ -433,6 +477,16 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Ruta 119",
+          "detail": "Navegando río abajo con Surf en una orilla oculta al sur del Instituto Meteorológico."
+        },
+        {
+          "area": "Ruta 124 (Casa del Buscatesoros)",
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+        }
       ]
     }
   },
@@ -471,6 +525,16 @@
         {
           "area": "Salvaje equipado (Exclusivo Rubí)",
           "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro; Solrock es exclusivo de Rubí)."
+        }
+      ],
+      "sapphire": [
+        {
+          "area": "Centro Espacial de Ciudad Algaria",
+          "detail": "Regalo de un marinero en la primera planta del edificio."
+        },
+        {
+          "area": "Intercambio de objeto",
+          "detail": "Solrock lleva equipada la Piedra Solar en estado salvaje (5%), pero al ser exclusivo de Rubí, en Zafiro requiere intercambio con Rubí o recibirla en el Centro Espacial."
         }
       ]
     }
@@ -515,6 +579,16 @@
         }
       ],
       "ruby": [
+        {
+          "area": "Ciudad Algaria",
+          "detail": "Regalo de un chico con gorra en el extremo norte de la ciudad."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Hariyama salvajes (5% de probabilidad en Calle Victoria)."
+        }
+      ],
+      "sapphire": [
         {
           "area": "Ciudad Algaria",
           "detail": "Regalo de un chico con gorra en el extremo norte de la ciudad."
@@ -574,6 +648,12 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
+        }
       ]
     }
   },
@@ -625,6 +705,16 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Cascada Meteoro (Sala más profunda)",
+          "detail": "En el suelo en la sala de Bagon (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
+        }
       ]
     }
   },
@@ -660,6 +750,12 @@
           "area": "Transferencia externa",
           "detail": "No obtenible de forma nativa en Hoenn; requiere transferencia desde Silph S.A. en Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No obtenible de forma nativa en Hoenn; requiere transferencia desde Silph S.A. en Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum."
+        }
       ]
     }
   },
@@ -681,6 +777,16 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
         }
+      ],
+      "sapphire": [
+        {
+          "area": "Puerto de Ciudad Portual",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en el Naufragio con Buceo). Se elige entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
+        }
       ]
     }
   },
@@ -694,6 +800,16 @@
     "availability_note": "Objeto único a elegir por partida.",
     "games": {
       "ruby": [
+        {
+          "area": "Puerto de Ciudad Portual",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en el Naufragio con Buceo). Se elige entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Salvaje equipado",
+          "detail": "Equipado raramente en Chinchou salvajes (5% de probabilidad buceando en Rutas 124 y 126) y Lanturn (5%)."
+        }
+      ],
+      "sapphire": [
         {
           "area": "Puerto de Ciudad Portual",
           "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en el Naufragio con Buceo). Se elige entre Diente Marino o Escama Marina."

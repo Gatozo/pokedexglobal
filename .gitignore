@@ -44,3 +44,7 @@ htmlcov/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Guías personales y documentación privada
+guides/
+
