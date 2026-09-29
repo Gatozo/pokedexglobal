@@ -88,12 +88,12 @@
 
                     <!-- Pokemon Image (centrado vertical y horizontalmente) -->
                     <div class="flex-1 w-full my-1.5 flex items-center justify-center relative min-h-[120px]">
-                        <!-- Botón Forma Anterior (Sólido, sin círculo, justo por encima de los tipos) -->
+                        <!-- Botón Forma Anterior (Centrado verticalmente a los lados del sprite) -->
                         <button 
                             type="button" 
                             id="modal-prev-form-btn"
                             onclick="event.stopPropagation(); cycleModalPokemonForm(-1)" 
-                            class="hidden absolute left-1 sm:left-2 bottom-0 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            class="hidden absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
                             title="Forma anterior"
                             aria-label="Forma anterior"
                         >
@@ -104,12 +104,12 @@
 
                         <img id="modal-pokemon-img" src="" alt="" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art transition-transform hover:scale-110">
 
-                        <!-- Botón Forma Siguiente (Sólido, sin círculo, justo por encima de los tipos) -->
+                        <!-- Botón Forma Siguiente (Centrado verticalmente a los lados del sprite) -->
                         <button 
                             type="button" 
                             id="modal-next-form-btn"
                             onclick="event.stopPropagation(); cycleModalPokemonForm(1)" 
-                            class="hidden absolute right-1 sm:right-2 bottom-0 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
+                            class="hidden absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-20 text-slate-800 hover:text-amber-500 active:text-amber-600 transition-all hover:scale-125 active:scale-90 cursor-pointer select-none p-1"
                             title="Forma siguiente"
                             aria-label="Forma siguiente"
                         >
