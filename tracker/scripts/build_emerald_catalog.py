@@ -17,6 +17,7 @@ import os
 import sys
 import json
 import re
+import copy
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -392,41 +393,75 @@ def main():
     INGAME_TRADES_EMERALD = {
         273: {  # Seedot
             'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit).',
-            'locations': [{'area': 'Ciudad Férrica (Casa junto al Gimnasio)', 'method': 'Intercambio NPC por Ralts'}]
+            'summary': 'Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit, también salvaje en Hoenn y obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ciudad Férrica (Casa junto al Gimnasio)', 'method': 'Intercambio NPC por Ralts'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         311: {  # Plusle
             'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey).',
-            'locations': [{'area': 'Ciudad Arborada (Casa norte)', 'method': 'Intercambio NPC por Volbeat'}]
+            'summary': 'Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey, también salvaje en Hoenn y obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ciudad Arborada (Casa norte)', 'method': 'Intercambio NPC por Volbeat'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         116: {  # Horsea
             'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra).',
-            'locations': [{'area': 'Pueblo Oromar (Casa sudoeste)', 'method': 'Intercambio NPC por Bagon'}]
+            'summary': 'Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra, también salvaje pescando en Hoenn y obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Pueblo Oromar (Casa sudoeste)', 'method': 'Intercambio NPC por Bagon'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         52: {   # Meowth
             'type': 'trade',
-            'summary': 'Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth).',
-            'locations': [{'area': 'Frente de Batalla (Cabaña este)', 'method': 'Intercambio NPC por Skitty'}]
+            'summary': 'Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza tras obtenerlo o de Persian).',
+            'locations': [
+                {'area': 'Frente de Batalla (Cabaña este)', 'method': 'Intercambio NPC por Skitty'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         }
     }
 
     # Métodos especiales en Esmeralda
     SPECIAL_OBT_EMERALD = {
         # Iniciales de Hoenn
-        252: {'type': 'starter', 'summary': 'Pokémon Inicial de tipo Planta a elegir en el maletín del Profesor Abedul en la Ruta 101.', 'locations': [{'area': 'Ruta 101', 'method': 'Regalo del Profesor Abedul'}]},
-        255: {'type': 'starter', 'summary': 'Pokémon Inicial de tipo Fuego a elegir en el maletín del Profesor Abedul en la Ruta 101.', 'locations': [{'area': 'Ruta 101', 'method': 'Regalo del Profesor Abedul'}]},
-        258: {'type': 'starter', 'summary': 'Pokémon Inicial de tipo Agua a elegir en el maletín del Profesor Abedul en la Ruta 101.', 'locations': [{'area': 'Ruta 101', 'method': 'Regalo del Profesor Abedul'}]},
+        252: {
+            'type': 'starter',
+            'summary': 'Pokémon Inicial de tipo Planta a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 101', 'method': 'Inicial de Hoenn (Regalo del Profesor Abedul)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
+        },
+        255: {
+            'type': 'starter',
+            'summary': 'Pokémon Inicial de tipo Fuego a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 101', 'method': 'Inicial de Hoenn (Regalo del Profesor Abedul)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
+        },
+        258: {
+            'type': 'starter',
+            'summary': 'Pokémon Inicial de tipo Agua a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 101', 'method': 'Inicial de Hoenn (Regalo del Profesor Abedul)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
+        },
 
         # Iniciales de Johto (Regalo postgame por completar 200 de Hoenn)
         152: {
             'type': 'gift',
             'badge_label': 'Regalo Abedul',
             'badge_color': 'emerald',
-            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).',
+            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).',
             'locations': [
                 {'area': 'Villa Raíz (Laboratorio Abedul)', 'method': 'Premio por completar 200 Pokémon de Hoenn'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'},
                 {'area': 'Transferencia externa (GBA / GameCube)', 'method': 'Pokémon Colosseum'}
             ]
         },
@@ -434,9 +469,10 @@ def main():
             'type': 'gift',
             'badge_label': 'Regalo Abedul',
             'badge_color': 'emerald',
-            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).',
+            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).',
             'locations': [
                 {'area': 'Villa Raíz (Laboratorio Abedul)', 'method': 'Premio por completar 200 Pokémon de Hoenn'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'},
                 {'area': 'Transferencia externa (GBA / GameCube)', 'method': 'Pokémon Colosseum'}
             ]
         },
@@ -444,9 +480,10 @@ def main():
             'type': 'gift',
             'badge_label': 'Regalo Abedul',
             'badge_color': 'emerald',
-            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).',
+            'summary': 'Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).',
             'locations': [
                 {'area': 'Villa Raíz (Laboratorio Abedul)', 'method': 'Premio por completar 200 Pokémon de Hoenn'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'},
                 {'area': 'Transferencia externa (GBA / GameCube)', 'method': 'Pokémon Colosseum'}
             ]
         },
@@ -454,35 +491,45 @@ def main():
         # Fósiles de Hoenn (Torre Espejismo y Túnel del Desierto)
         345: {
             'type': 'fossil',
-            'summary': 'Revivir el Fósil Raíz en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20. En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.',
+            'summary': 'Revivir el Fósil Raíz en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20 (también obtenible mediante crianza). En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.',
             'locations': [
                 {'area': 'Ciudad Férrica (Devon S.A.)', 'method': 'Revivir Fósil Raíz al Nivel 20'},
                 {'area': 'Ruta 111 (Torre Espejismo)', 'method': 'Obtención de Fósil Raíz en la cima'},
-                {'area': 'Ruta 114 (Túnel del Desierto)', 'method': 'Segundo fósil en el fondo del túnel tras el Alto Mando'}
+                {'area': 'Ruta 114 (Túnel del Desierto)', 'method': 'Segundo fósil en el fondo del túnel tras el Alto Mando'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ],
             'badge_color': 'amber',
             'badge_label': 'Fósil'
         },
         347: {
             'type': 'fossil',
-            'summary': 'Revivir el Fósil Garra en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20. En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.',
+            'summary': 'Revivir el Fósil Garra en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20 (también obtenible mediante crianza). En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.',
             'locations': [
                 {'area': 'Ciudad Férrica (Devon S.A.)', 'method': 'Revivir Fósil Garra al Nivel 20'},
                 {'area': 'Ruta 111 (Torre Espejismo)', 'method': 'Obtención de Fósil Garra en la cima'},
-                {'area': 'Ruta 114 (Túnel del Desierto)', 'method': 'Segundo fósil en el fondo del túnel tras el Alto Mando'}
+                {'area': 'Ruta 114 (Túnel del Desierto)', 'method': 'Segundo fósil en el fondo del túnel tras el Alto Mando'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ],
             'badge_color': 'amber',
             'badge_label': 'Fósil'
         },
 
         # Regalos y eventos de Hoenn
-        351: {'type': 'gift', 'summary': 'Regalo de los científicos en la 1.ª planta del Instituto Meteorológico (Ruta 119) tras rescatarlos del Equipo Magma.', 'locations': [{'area': 'Ruta 119 (Instituto Meteorológico)', 'method': 'Regalo tras vencer al Equipo Magma'}]},
+        351: {
+            'type': 'gift',
+            'summary': 'Regalo de los científicos en la 1.ª planta del Instituto Meteorológico (Ruta 119) tras rescatarlos del Equipo Magma (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 119 (Instituto Meteorológico)', 'method': 'Regalo tras vencer al Equipo Magma'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
+        },
         360: {
             'type': 'gift',
-            'summary': 'Huevo entregado por una anciana junto a las aguas termales de Pueblo Lavacalda.',
+            'summary': 'Huevo entregado por una anciana junto a las aguas termales de Pueblo Lavacalda. También salvaje en Isla Espejismo o criando a Wobbuffet con Incienso Suave en la Guardería.',
             'locations': [
-                {'area': 'Pueblo Lavacalda', 'method': 'Huevo de regalo'},
-                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de Wobbuffet equipado con Incienso Suave'}
+                {'area': 'Pueblo Lavacalda (Aguas termales)', 'method': 'Huevo de regalo'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de Wobbuffet equipado con Incienso Suave'},
+                {'area': 'Isla Espejismo (Ruta 130)', 'method': 'Hierba alta (Isla aleatoria)'}
             ],
             'item_slug': 'lax-incense',
             'badge_color': 'emerald',
@@ -662,13 +709,16 @@ def main():
             'locations': [{'area': 'Roca Ombligo (Evento Ticket Místico)', 'method': 'Salvaje estático al Nivel 70'}]
         },
 
-        # Exclusivos de Rubí y Zafiro (Ausentes en Esmeralda)
+        # Exclusivos de Rubí y Zafiro (Ausentes en estado salvaje en Esmeralda)
         283: {
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.',
-            'locations': [{'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 102 en R/Z)'}]
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).',
+            'locations': [
+                {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 102 en R/Z)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         284: {
             'type': 'trade',
@@ -681,8 +731,11 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.',
-            'locations': [{'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Monte Pírico en R/Z)'}]
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).',
+            'locations': [
+                {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Monte Pírico en R/Z)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         308: {
             'type': 'trade',
@@ -695,23 +748,45 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.',
-            'locations': [{'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 117 en R/Z)'}]
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).',
+            'locations': [
+                {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 117 en R/Z)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         335: {
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí',
             'badge_color': 'rose',
-            'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí.',
-            'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión (Ruta 114 en Rubí)'}]
+            'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).',
+            'locations': [
+                {'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión (Ruta 114 en Rubí)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         337: {
             'type': 'trade',
             'badge_label': 'Exclusivo Zafiro',
             'badge_color': 'blue',
-            'summary': 'Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro.',
-            'locations': [{'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión (Cascada Meteoro en Zafiro)'}]
+            'summary': 'Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza con Ditto en la Guardería de la Ruta 117 una vez obtenido).',
+            'locations': [
+                {'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión (Cascada Meteoro en Zafiro)'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}
+            ]
         },
+    }
+
+    BABY_NAMES = {
+        'pichu', 'cleffa', 'igglybuff', 'togepi', 'tyrogue',
+        'smoochum', 'elekid', 'magby', 'azurill', 'wynaut'
+    }
+    INCENSE_PARENTS_THAT_HATCH = {'marill', 'wobbuffet'}
+    NON_BREEDABLE_NAMES = {
+        'nidorina', 'nidoqueen', 'ditto', 'unown',
+        'articuno', 'zapdos', 'moltres', 'mewtwo', 'mew',
+        'raikou', 'entei', 'suicune', 'lugia', 'ho-oh', 'celebi',
+        'regirock', 'regice', 'registeel', 'latias', 'latios',
+        'kyogre', 'groudon', 'rayquaza', 'jirachi', 'deoxys'
     }
 
     # Hoenn regional set
@@ -735,6 +810,27 @@ def main():
         flavor = wikidex_descriptions.get(str(nat_id), "")
         sp_name = sp['name'].lower()
         evo_info = evo_map.get(sp_name)
+        egg_groups = sp.get('egg_groups', [])
+
+        is_baby = sp_name in BABY_NAMES
+        is_incense_parent = sp_name in INCENSE_PARENTS_THAT_HATCH
+        is_evolution = (evo_info is not None) and not is_incense_parent
+        is_genderless = (sp.get('gender_rate') == -1) and not is_baby
+
+        # Regla Canónica de Crianza Pokémon:
+        # SOLO eclosionan de huevos las primeras etapas (formas base), especies de etapa única (sin evoluciones),
+        # bebés Pokémon (fruto de criar a sus formas evolucionadas) y excepciones de incienso en Gen 3 (Marill y Wobbuffet).
+        # Las formas evolucionadas (Grovyle, Mightyena, etc.), Legendarios/Míticos, Unown y Ditto NUNCA eclosionan de un huevo.
+        if sp_name in NON_BREEDABLE_NAMES:
+            is_hatchable = False
+        elif ('no-eggs' in egg_groups) and not is_baby:
+            is_hatchable = False
+        elif is_baby or is_incense_parent:
+            is_hatchable = True
+        elif is_evolution:
+            is_hatchable = False
+        else:
+            is_hatchable = True
 
         # Localizaciones crudas de PokeAPI para Esmeralda
         locs_raw = encounters_emerald.get(str(nat_id), [])
@@ -754,9 +850,9 @@ def main():
 
         obt_info = {}
         if nat_id in SPECIAL_OBT_EMERALD:
-            obt_info = dict(SPECIAL_OBT_EMERALD[nat_id])
+            obt_info = copy.deepcopy(SPECIAL_OBT_EMERALD[nat_id])
         elif nat_id in INGAME_TRADES_EMERALD:
-            obt_info = dict(INGAME_TRADES_EMERALD[nat_id])
+            obt_info = copy.deepcopy(INGAME_TRADES_EMERALD[nat_id])
             if unique_locs:
                 obt_info['locations'] = unique_locs + obt_info['locations']
         elif unique_locs:
@@ -794,9 +890,6 @@ def main():
             elif nat_id == 251:
                 transfer_origin = "Disco bonus de Pokémon Colosseum (Japón) o evento"
 
-            egg_groups = sp.get('egg_groups', [])
-            can_breed = ('no-eggs' not in egg_groups) and ('ditto' not in egg_groups)
-
             if nat_id in [173, 175, 236, 238, 239, 240]:
                 obt_info = {
                     'type': 'transfer',
@@ -808,13 +901,14 @@ def main():
                     'badge_color': 'pink',
                     'badge_label': 'Crianza / Transfer'
                 }
-            elif can_breed:
+            elif is_hatchable:
+                c_method = 'Crianza con Ditto (tras obtenerlo o de sus evoluciones)' if is_genderless else 'Crianza de huevo (tras obtenerlo o de sus evoluciones)'
                 obt_info = {
                     'type': 'transfer',
                     'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo (tras obtenerlo o de sus evoluciones)'}
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': c_method}
                     ]
                 }
             else:
@@ -823,6 +917,38 @@ def main():
                     'summary': f"No disponible en Hoenn. Requiere {transfer_origin}. No es posible transferir desde Gen 1 o Gen 2.",
                     'locations': [{'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin}]
                 }
+
+        # Regla Universal de Crianza: Solo aplicable si la especie PUEDE nacer de un huevo (is_hatchable).
+        # NUNCA a formas evolucionadas como Grovyle, Mightyena, etc.
+        if is_hatchable:
+            has_daycare = any('guardería' in l.get('area', '').lower() or 'crianza' in l.get('method', '').lower() for l in obt_info.get('locations', []))
+            if not has_daycare:
+                if sp_name == 'azurill':
+                    method_str = 'Crianza con Incienso Marino'
+                elif sp_name == 'wynaut':
+                    method_str = 'Crianza con Incienso Suave'
+                elif is_baby:
+                    method_str = 'Crianza de sus evoluciones en Guardería'
+                elif is_genderless:
+                    method_str = 'Crianza con Ditto'
+                else:
+                    method_str = 'Crianza de huevo'
+                
+                obt_info.setdefault('locations', []).append({
+                    'area': 'Ruta 117 (Guardería Pokémon)',
+                    'method': method_str
+                })
+            
+            summ = obt_info.get('summary', '')
+            summ_lower = summ.lower()
+            if 'crianza' not in summ_lower and 'huevo' not in summ_lower and 'criar' not in summ_lower and 'eclosi' not in summ_lower:
+                c_phrase = 'también obtenible mediante crianza con Ditto' if is_genderless else 'también obtenible mediante crianza'
+                if summ.endswith(').'):
+                    obt_info['summary'] = summ[:-2] + f", {c_phrase})."
+                elif summ.endswith('.'):
+                    obt_info['summary'] = summ[:-1] + f" ({c_phrase})."
+                else:
+                    obt_info['summary'] = summ + f" ({c_phrase})."
 
         # Piedra evolutiva u objeto especial / incienso de crianza
         evo_stone = None

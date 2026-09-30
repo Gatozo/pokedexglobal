@@ -1564,7 +1564,7 @@
     "flavor_text": "Cuando se hace una bola, repele cualquier ataque. Como vive en el desierto tiene una piel tosca y dura.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 111 (Desierto), Torre Espejismo (Ruta 111)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 111 (Desierto), Torre Espejismo (Ruta 111), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -1573,6 +1573,10 @@
         {
           "area": "Torre Espejismo (Ruta 111)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -2185,11 +2189,15 @@
     "flavor_text": "Puede controlar el fuego a su antojo y libera llamas por la boca. Tiene seis colas cuya temperatura sube de forma radical justo antes de evolucionar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Exterior)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Exterior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Pírico (Exterior)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -2446,7 +2454,7 @@
     "flavor_text": "Debido al tiempo que pasaron en oscuras cavernas, sus ojos están atrofiados y desprovistos de visión. Utilizan ondas ultrasónicas para detectar obstáculos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 21 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cueva Granito (P1)).",
+      "summary": "Salvaje en 21 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cueva Granito (P1), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -2531,6 +2539,10 @@
         {
           "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -2739,7 +2751,7 @@
     "flavor_text": "Este Pokémon crece absorbiendo luz de luna. Durante el día, se entierra en el suelo y sólo deja las hojas fuera. Así evita que los enemigos lo detecten.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Ruta 110, Ruta 117, Ruta 119).",
+      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Ruta 110, Ruta 117, Ruta 119, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 110",
@@ -2780,6 +2792,10 @@
         {
           "area": "hoenn-safari-zone-se",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -3332,7 +3348,7 @@
     "flavor_text": "Retrae sus afiladas uñas en las zarpas y camina a hurtadillas. Así pasa inadvertido. No se sabe por qué, pero adora las monedas brillantes que resplandecen con la luz.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth).",
+      "summary": "Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza tras obtenerlo o de Persian).",
       "locations": [
         {
           "area": "Frente de Batalla",
@@ -3341,6 +3357,10 @@
         {
           "area": "Frente de Batalla (Cabaña este)",
           "method": "Intercambio NPC por Skitty"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "indigo",
@@ -3448,7 +3468,7 @@
     "flavor_text": "Cuando le aumenta el dolor de cabeza, comienza a usar extraños poderes. Sin embargo, como nunca los recuerda, siempre se le ve aturdido y desconcertado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-nwmach-bike-area",
@@ -3457,6 +3477,10 @@
         {
           "area": "hoenn-safari-zone-sw",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -4008,7 +4032,7 @@
     "flavor_text": "Es un Pokémon que duerme 18 horas al día. Se ha demostrado que cada hora utiliza teletransporte para cambiar de sitio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (Sótano 2)).",
+      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -4029,6 +4053,10 @@
         {
           "area": "Ruta 116",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -4193,7 +4221,7 @@
     "flavor_text": "Se entrena hasta la extenuación para dominar todo tipo de artes marciales. Es tan fuerte que puede llevar a un luchador de sumo sobre los hombros.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Desfiladero",
@@ -4202,6 +4230,10 @@
         {
           "area": "Senda Ígnea",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -4554,7 +4586,7 @@
     "flavor_text": "Se compone casi enteramente de agua. Atrapa a su enemigo con sus dos largos tentáculos y le clava los venenosos aguijones que tiene en los extremos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 99 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
+      "summary": "Salvaje en 99 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -4951,6 +4983,10 @@
         {
           "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -5067,7 +5103,7 @@
     "flavor_text": "Sube caminos de montaña usando sólo la fuerza de los brazos. Como parece un canto rodado que delimita el camino, algunos montañeros se llegan a tropezar con él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Calle Victoria (S1)).",
+      "summary": "Salvaje en 7 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Calle Victoria (S1), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -5096,6 +5132,10 @@
         {
           "area": "Guarida Magma (Desfiladero)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -5501,7 +5541,7 @@
     "flavor_text": "Las unidades de las extremidades son imanes de largo alcance. Generan magnetismo suficiente para atraer objetos de hierro que estén a 100 m de distancia.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -5510,6 +5550,10 @@
         {
           "area": "Malvalona Nueva (Interior)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
@@ -5681,7 +5725,7 @@
     "flavor_text": "Incluso mientras come o duerme, una de las cabezas sigue estando en guardia para detectar cualquier peligro. Si lo amenazan, sale huyendo a 100 km por hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw, hoenn-safari-zone-se).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw, hoenn-safari-zone-se, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-nwmach-bike-area",
@@ -5694,6 +5738,10 @@
         {
           "area": "hoenn-safari-zone-se",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -5922,11 +5970,15 @@
     "flavor_text": "Nacido del lodo contaminado del mar, el alimento preferido de Grimer es la basura. Se alimenta de lo que encuentra en las aguas residuales de las fábricas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Senda Ígnea",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -6633,7 +6685,7 @@
     "flavor_text": "Tiene un curioso e inexplicable parecido con una Poké Ball. Como estalla a la mínima, hasta los entrenadores veteranos lo tratan con mucho cuidado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior)).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -6646,6 +6698,10 @@
         {
           "area": "Malvalona Nueva (Interior)",
           "method": "Encuentro estático"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
@@ -7190,11 +7246,15 @@
     "flavor_text": "Ver de cerca a un Koffing permite observar, a través de su fina piel, los gases tóxicos que se remolinan en su interior. A la mínima, explota.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Senda Ígnea",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -7302,11 +7362,15 @@
     "flavor_text": "Una vez que comienza a correr, no para: su minúsculo cerebro lo hace tan bobo que ni siquiera es capaz de acordarse de por qué empezó a hacerlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-nwmach-bike-area",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -7591,7 +7655,7 @@
     "flavor_text": "Batiendo hábilmente las aletas que tiene en el lomo, se mueve en cualquier dirección al avanzar. Si detecta peligro, escupe tinta para escapar.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra).",
+      "summary": "Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra, también salvaje pescando en Hoenn y obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 132 (Corrientes)",
@@ -7612,6 +7676,10 @@
         {
           "area": "Pueblo Oromar (Casa sudoeste)",
           "method": "Intercambio NPC por Bagon"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "indigo",
@@ -7719,7 +7787,7 @@
     "flavor_text": "En primavera, se pueden ver bancos de Goldeen remontando cascadas y ríos. Causa mucho daño cuando embiste con su único cuerno.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 36 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Cascada Meteoro (Entrada)).",
+      "summary": "Salvaje en 36 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Cascada Meteoro (Entrada), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -7864,6 +7932,10 @@
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -7980,11 +8052,15 @@
     "flavor_text": "De noche, se agrupan y hacen brillar su núcleo rojo. Los destellos se intercalan con el centelleo estelar. Si les arrancan alguna parte del cuerpo, la regeneran.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Ciudad Calagua (Pesca / Surf)",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
@@ -8400,11 +8476,15 @@
     "flavor_text": "Sus cuernos tienen fuerza para destrozar grandes troncos. Como tienen aversión al frío, cavan madrigueras bajo tierra donde duermen cuando bajan las temperaturas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: hoenn-safari-zone-nwmach-bike-area, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-nwmach-bike-area",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -8514,7 +8594,7 @@
     "flavor_text": "Los músculos con los que nada son débiles, así que se lo lleva la corriente con facilidad. Muchos Magikarp van a parar a piscinas naturales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 101 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
+      "summary": "Salvaje en 101 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ciudad Portual (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -8919,6 +8999,10 @@
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Caña Vieja"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -9432,7 +9516,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza con Ditto (tras obtenerlo o de sus evoluciones)"
         }
       ],
       "badge_color": "slate",
@@ -10283,11 +10367,15 @@
       "type": "gift",
       "badge_label": "Regalo Abedul",
       "badge_color": "emerald",
-      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).",
+      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).",
       "locations": [
         {
           "area": "Villa Raíz (Laboratorio Abedul)",
           "method": "Premio por completar 200 Pokémon de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         },
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -10456,11 +10544,15 @@
       "type": "gift",
       "badge_label": "Regalo Abedul",
       "badge_color": "emerald",
-      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).",
+      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).",
       "locations": [
         {
           "area": "Villa Raíz (Laboratorio Abedul)",
           "method": "Premio por completar 200 Pokémon de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         },
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -10629,11 +10721,15 @@
       "type": "gift",
       "badge_label": "Regalo Abedul",
       "badge_color": "emerald",
-      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también transferible desde Pokémon Colosseum).",
+      "summary": "Regalo del Profesor Abedul en Villa Raíz a elegir entre Chikorita, Cyndaquil o Totodile tras completar las 200 especies de la Pokédex Regional de Hoenn (también obtenible mediante crianza o transferible desde Pokémon Colosseum).",
       "locations": [
         {
           "area": "Villa Raíz (Laboratorio Abedul)",
           "method": "Premio por completar 200 Pokémon de Hoenn"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         },
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -10916,7 +11012,7 @@
     "flavor_text": "Tiene un órgano interno que percibe la rotación de la tierra. Por esta razón, Hoothoot es capaz de ulular todos los días a la misma hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
@@ -10925,6 +11021,10 @@
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -11032,11 +11132,15 @@
     "flavor_text": "Segrega un fluido por los seis puntos de unión que tiene entre patas y cuerpo. Al variar la esencia de éste, consigue expresar abiertamente su estado de ánimo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -11144,11 +11248,15 @@
     "flavor_text": "La tela que teje puede considerarse como su segundo sistema nervioso. Dicen que adivina qué presa ha caído en su red por las vibraciones de los hilos de la tela.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -11313,7 +11421,7 @@
     "flavor_text": "Cuando detecta peligro, descarga electricidad positiva y negativa por sus dos antenas. Vive en zonas profundas a las que no llega la luz del sol.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -11322,6 +11430,10 @@
         {
           "area": "Ruta 126 (Buceo / Fondo marino)",
           "method": "Hierba submarina (Algas)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -11714,7 +11826,7 @@
     "flavor_text": "Da saltitos por los árboles bajos de la sabana para picotear los brotes nuevos. Los ojos de un Natu dan la sensación de estar siempre observando algo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática), hoenn-safari-zone-sw, hoenn-safari-zone-se).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática), hoenn-safari-zone-sw, hoenn-safari-zone-se, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Noreste Bici Acrobática)",
@@ -11727,6 +11839,10 @@
         {
           "area": "hoenn-safari-zone-se",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -11839,11 +11955,15 @@
     "flavor_text": "Tiene un pelaje lanudo y suave que produce carga estática por el roce. Cuanto más se carga de electricidad estática, más brilla la bombilla que lleva en la cola.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -12080,7 +12200,7 @@
     "flavor_text": "Está cubierto de una piel impermeable. Gracias a ella, puede nadar a gran velocidad sin que le afecte la resistencia que pueda ofrecer el agua.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ruta 102, Ruta 104).",
+      "summary": "Salvaje en 11 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ruta 102, Ruta 104, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -12125,6 +12245,10 @@
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -12239,11 +12363,15 @@
     "flavor_text": "Se camufla adoptando la imagen de un árbol para que no le ataque ningún enemigo. El problema viene en invierno: las patas se le ven verdes y es fácil identificarle.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Árbol extraño en la esquina sudeste del Frente de Batalla que cobra vida al regarlo con el Cubo Wailmer (Nivel 40).",
+      "summary": "Árbol extraño en la esquina sudeste del Frente de Batalla que cobra vida al regarlo con el Cubo Wailmer (Nivel 40, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Frente de Batalla (Árbol Sudowoodo)",
           "method": "Estático al Nivel 40 con Cubo Wailmer"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -12547,7 +12675,7 @@
     "flavor_text": "Su cola termina en una especie de mano a la que puede dar muy buen uso. Pero, como se ha acostumbrado a usarla mucho, las de verdad se le han vuelto algo torpes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
@@ -12556,6 +12684,10 @@
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -12606,7 +12738,7 @@
     "flavor_text": "Intenta moverse poco para conservar los nutrientes que ha guardado en su interior y poder evolucionar. Ni siquiera come: sólo se alimenta del rocío de la mañana.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
@@ -12615,6 +12747,10 @@
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -12796,11 +12932,15 @@
     "flavor_text": "Suele vivir en el agua, pero también es posible verle en tierra en busca de comida. Cuando está en terreno firme, se cubre con una película viscosa y tóxica.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13280,7 +13420,7 @@
     "flavor_text": "Generalmente es dócil, pero si recibe un ataque en su cola negra, Wobbuffet se defenderá con ferocidad. Se guarece en cuevas hasta que anochece.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-sw, hoenn-safari-zone-se).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-sw, hoenn-safari-zone-se, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-sw",
@@ -13289,6 +13429,10 @@
         {
           "area": "hoenn-safari-zone-se",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -13346,7 +13490,7 @@
     "flavor_text": "Girafarig es herbívoro: come hierba y brotes de los árboles. Mientras se alimenta, mueve la cola como si también masticara y tragara con ella.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-sw, hoenn-safari-zone-se).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: hoenn-safari-zone-sw, hoenn-safari-zone-se, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "hoenn-safari-zone-sw",
@@ -13355,6 +13499,10 @@
         {
           "area": "hoenn-safari-zone-se",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13405,11 +13553,15 @@
     "flavor_text": "Permanece colgado de la rama de un árbol esperando a su presa. Si alguien sacude el árbol en el que está comiendo y le molesta, se tira al suelo y explota sin más.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13576,11 +13728,15 @@
     "flavor_text": "Planea por el aire sin hacer ruido. Se agarra a la cara del rival con las garras traseras y las pinzas delanteras, inyectándole veneno por el aguijón.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13703,11 +13859,15 @@
     "flavor_text": "Al tener los colmillos por fuera, Snubbull da miedo y espanta, aterrados, a los Pokémon pequeños. Aunque a él parece que le da un poco de pena que salgan huyendo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13946,11 +14106,15 @@
     "flavor_text": "Se esconde bajo las rocas, oculto en su caparazón, para comerse las bayas que ha recolectado. Las bayas se mezclan con sus fluidos corporales y originan zumo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Golpe Roca"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14001,11 +14165,15 @@
     "flavor_text": "Va en grupo al bosque en busca de la dulce savia de los árboles. Cubierto con una coraza dura como el acero, luce su cuerno orgulloso y voltea con él a los rivales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Noreste Bici Acrobática)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14115,11 +14283,15 @@
     "flavor_text": "Le encanta chuparse las palmas, que tiene llenas de dulce miel. Teddiursa fabrica la suya propia mezclando frutos y el polen recogido por Beedrill.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14227,7 +14399,7 @@
     "flavor_text": "Es una especie de Pokémon que vive en zonas volcánicas. Si su cuerpo se enfría, la piel se le endurece y lo inmoviliza. Para evitarlo, duerme cerca de donde hay magma.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Senda Ígnea, Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Senda Ígnea, Ruta 113 (Ceniza), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -14236,6 +14408,10 @@
         {
           "area": "Ruta 113 (Ceniza)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14459,7 +14635,7 @@
     "flavor_text": "Corsola vive en las cálidas aguas de los mares del Sur. Cuando hay contaminación, las bellas ramas coralinas que le cubren se decoloran y se caen a pedazos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ruta 128).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ruta 128, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -14468,6 +14644,10 @@
         {
           "area": "Ruta 128",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14518,7 +14698,7 @@
     "flavor_text": "Traga agua y usa los abdominales para lanzarla rápido contra una presa que esté en el aire. Cuando va a evolucionar, se deja arrastrar por la corriente de los ríos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
@@ -14527,6 +14707,10 @@
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14757,11 +14941,15 @@
     "flavor_text": "Tiene el cuerpo y las alas de acero. Hace mucho, la gente usaba las plumas que se le caían a Skarmory para forjar espadas y cuchillos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 113 (Ceniza)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -14812,11 +15000,15 @@
     "flavor_text": "Se comunica con sus compañeros de caza mediante aullidos para acorralar a las presas. Su capacidad de trabajo en equipo es sencillamente ejemplar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -15000,11 +15192,15 @@
     "flavor_text": "Las enormes orejas que tiene Phanpy le sirven para abanicarse. Cuando tiene calor, las usa para refrescarse. Ya desde pequeño tiene mucha fuerza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste Bici Acrobática), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Noreste Bici Acrobática)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -15184,11 +15380,15 @@
     "flavor_text": "Antes se comerciaba con la cornamenta de Stantler, considerada una obra de arte. Esto provocó que muchos intentaran darle caza y casi se extingue.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Sur), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Sur)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -15239,11 +15439,15 @@
     "flavor_text": "Marca su territorio liberando un fluido corporal por el extremo de la cola. Hasta la fecha, se conocen más de 5.000 tipos de marcas dejadas por este Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en la Cueva Taller (Artisan Cave) en el Frente de Batalla (bajo la Cueva del Sudowoodo).",
+      "summary": "Salvaje en la Cueva Taller (Artisan Cave) en el Frente de Batalla (bajo la Cueva del Sudowoodo, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Frente de Batalla (Cueva Taller)",
           "method": "Salvaje en Cueva Taller (P1 y S1)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "indigo",
@@ -15587,11 +15791,15 @@
     "flavor_text": "Miltank da al día 20 litros de una dulce leche que gusta a grandes y pequeños. Aquellos a los que no les agrada la leche, la toman en forma de yogur.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Expansión Johto Norte), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Expansión Johto Norte)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -16202,11 +16410,15 @@
     "flavor_text": "Hace su nido en un árbol gigante y defiende ferozmente su territorio de cualquier peligro. Dicen que es el protector de los árboles del bosque.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Pokémon Inicial de tipo Planta a elegir en el maletín del Profesor Abedul en la Ruta 101.",
+      "summary": "Pokémon Inicial de tipo Planta a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
-          "method": "Regalo del Profesor Abedul"
+          "method": "Inicial de Hoenn (Regalo del Profesor Abedul)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -16371,11 +16583,15 @@
     "flavor_text": "Si le atacan, se defiende escupiendo bolas de fuego que forma en el estómago. Los Torchic tienen aversión a la oscuridad porque les impide ver lo que los rodea.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Pokémon Inicial de tipo Fuego a elegir en el maletín del Profesor Abedul en la Ruta 101.",
+      "summary": "Pokémon Inicial de tipo Fuego a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
-          "method": "Regalo del Profesor Abedul"
+          "method": "Inicial de Hoenn (Regalo del Profesor Abedul)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -16540,11 +16756,15 @@
     "flavor_text": "En tierra firme, puede levantar grandes cantos rodados haciendo palanca con sus cuatro patas. Duerme enterrado en el suelo, cerca del agua.",
     "obtaining_info": {
       "type": "starter",
-      "summary": "Pokémon Inicial de tipo Agua a elegir en el maletín del Profesor Abedul en la Ruta 101.",
+      "summary": "Pokémon Inicial de tipo Agua a elegir en el maletín del Profesor Abedul en la Ruta 101 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
-          "method": "Regalo del Profesor Abedul"
+          "method": "Inicial de Hoenn (Regalo del Profesor Abedul)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -16709,7 +16929,7 @@
     "flavor_text": "Amenaza al enemigo enseñándole con violencia los colmillos. Persigue a su presa cuando huye, pero, si le atacan, sale huyendo a todo correr.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102).",
+      "summary": "Salvaje en 11 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -16754,6 +16974,10 @@
         {
           "area": "Ruta 123",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -16874,7 +17098,7 @@
     "flavor_text": "Siempre se mueve hacia adelante y hacia atrás frotando la nariz contra el suelo en busca de algo. Es fácil identificarlo por las huellas en zigzag que deja.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Ruta 101, Ruta 102, Ruta 103).",
+      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Ruta 101, Ruta 102, Ruta 103, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 101",
@@ -16895,6 +17119,10 @@
         {
           "area": "Ruta 119",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -17011,7 +17239,7 @@
     "flavor_text": "Se encarama a las ramas de los árboles y come hojas. El hilo que escupe por la boca se solidifica al contacto con el aire y ralentiza los movimientos del enemigo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -17028,6 +17256,10 @@
         {
           "area": "Ruta 104",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -17316,7 +17548,7 @@
     "flavor_text": "Vive en charcas de agua clara. Se le conoce por ayudar a los Pokémon pequeños a cruzar las charcas transportándolos sobre la hoja que tiene en la cabeza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 102, Ruta 114).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 102, Ruta 114, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 102",
@@ -17325,6 +17557,10 @@
         {
           "area": "Ruta 114",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -17513,7 +17749,7 @@
     "flavor_text": "Se cuelga de las ramas y absorbe sus nutrientes. Cuando acaba de comer, se queda tan lleno que acaba cayéndose al suelo y dándose un tortazo.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit).",
+      "summary": "Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit, también salvaje en Hoenn y obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 102",
@@ -17534,6 +17770,10 @@
         {
           "area": "Ciudad Férrica (Casa junto al Gimnasio)",
           "method": "Intercambio NPC por Ralts"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "indigo",
@@ -17718,7 +17958,7 @@
     "flavor_text": "Es pequeño, pero muy valiente. No tiene problema en enfrentarse a un Skarmory más grande en igualdad de condiciones. Pero, como tenga hambre, pierde determinación.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 104, Ruta 115).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 104, Ruta 115, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -17735,6 +17975,10 @@
         {
           "area": "Ruta 116",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -17847,7 +18091,7 @@
     "flavor_text": "Hace su nido en acantilados escarpados, a la orilla del mar. Como le cuesta batir las alas durante mucho tiempo, se deja llevar por las corrientes de aire ascendentes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 39 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
+      "summary": "Salvaje en 39 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -18004,6 +18248,10 @@
         {
           "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -18236,11 +18484,15 @@
     "flavor_text": "Ralts tiene la capacidad de detectar las sensaciones de la gente y de los Pokémon gracias a los cuernos de la cabeza. Si percibe energía negativa, se protegerá.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 102).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 102, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 102",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -18407,11 +18659,15 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
           "method": "Exclusivo de versión (Ruta 102 en R/Z)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -18522,11 +18778,15 @@
     "flavor_text": "Le encanta alimentarse de la tierra abonada y húmeda de los bosques. Si vas a un bosque después de que haya llovido, verás a Shroomish engullendo tierra.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Petalia",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -18634,11 +18894,15 @@
     "flavor_text": "Duerme prácticamente día y noche. Nunca cambia de madriguera, aunque a veces suele recorrer grandes distancias nadando en las aguas de los ríos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Petalia",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -18803,11 +19067,15 @@
     "flavor_text": "Hace su nido en las raíces de un árbol resistente. Tiene unas antenas con forma de bigotes que usa para examinar el oscuro terreno que le rodea.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 116).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 116, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 116",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -18972,7 +19240,7 @@
     "flavor_text": "Suena con el mismo volumen que un reactor. Aspira a través de sus canales auditivos, por eso puede gritar continuamente sin parar para recuperar el aliento.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Túnel Férrfundido, Calle Victoria (P1), Ruta 116).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Túnel Férrfundido, Calle Victoria (P1), Ruta 116, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Férrfundido",
@@ -18989,6 +19257,10 @@
         {
           "area": "Túnel del Desierto (Ruta 114)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19162,7 +19434,7 @@
     "flavor_text": "Lo que más le gusta es fortalecer su cuerpo. Si notas que el suelo de una cueva tiembla y el sonido retumba, es porque Makuhita está entrenándose.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior)).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -19179,6 +19451,10 @@
         {
           "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19362,11 +19638,15 @@
     "flavor_text": "Su cuerpo emite un magnetismo de gran alcance. Se alimenta de las presas que atrae. La fuerza que ejerce se intensifica en las estaciones frías.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Granito (Sótano 2)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Granito (Sótano 2), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 2)",
           "method": "Golpe Roca"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19417,11 +19697,15 @@
     "flavor_text": "La forma de ser de Skitty, entrañable y adorable, lo hace tremendamente popular. En combate, hincha la cola y amenaza a su rival con un agudo gruñido.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 116).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 116, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 116",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19544,7 +19828,7 @@
     "flavor_text": "Cava conductos en cuevas usando sus afiladas garras para buscar rocas con las que alimentarse. Sableye permanece al acecho en la oscuridad; no es fácil verlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva del Origen (P1)).",
+      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva del Origen (P1), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 1)",
@@ -19585,6 +19869,10 @@
         {
           "area": "Pilar Celeste (P5)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19635,7 +19923,7 @@
     "flavor_text": "Las gigantescas fauces que tiene fueron cuernos de acero en su día. Engaña al enemigo con gestos dóciles y a continuación abre sus fauces.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (S1), Calle Victoria (S2)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (S1), Calle Victoria (S2), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Calle Victoria (S1)",
@@ -19644,6 +19932,10 @@
         {
           "area": "Calle Victoria (S2)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19694,7 +19986,7 @@
     "flavor_text": "Está cubierto por una coraza de acero que se regenera cuando evoluciona. La coraza vieja, ya estropeada, se recicla para fabricar productos de hierro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva Granito (P1 Sala Interior)).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva Granito (P1 Sala Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 1)",
@@ -19711,6 +20003,10 @@
         {
           "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -19890,11 +20186,15 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
           "method": "Exclusivo de versión (Monte Pírico en R/Z)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -20005,7 +20305,7 @@
     "flavor_text": "Genera electricidad usando la fricción de la atmósfera. En estaciones de vientos áridos, su cuerpo se inflama y lanza chispas de forma violenta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 110, Ruta 118).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 110, Ruta 118, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 110",
@@ -20014,6 +20314,10 @@
         {
           "area": "Ruta 118",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20126,7 +20430,7 @@
     "flavor_text": "Siempre anima a sus compañeros Pokémon. Crea cortocircuitos con la electricidad que libera por las patas para hacer pompones de chispas y animar al resto.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey).",
+      "summary": "Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey, también salvaje en Hoenn y obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 110",
@@ -20139,6 +20443,10 @@
         {
           "area": "Ciudad Arborada (Casa norte)",
           "method": "Intercambio NPC por Volbeat"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "indigo",
@@ -20189,11 +20497,15 @@
     "flavor_text": "En una reunión de estudiosos de Pokémon, se anunció que la exposición simultánea a la electricidad de un Plusle y de un Minun mejora la circulación y da más vitalidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 110",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20244,11 +20556,15 @@
     "flavor_text": "Los Volbeat vuelan en enjambres dibujando con la luz de la cola formas geométricas en el cielo nocturno. Si la charca en la que viven se ensucia, se mudan a otro sitio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 117",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20299,11 +20615,15 @@
     "flavor_text": "Este Pokémon nocturno sólo está activo de noche. Guía a un enjambre de Volbeat para que hagan dibujos en el cielo de la noche y saben hacer hasta 200 distintos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 117",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20356,11 +20676,15 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro.",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
           "method": "Exclusivo de versión (Ruta 117 en R/Z)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -20409,11 +20733,15 @@
     "flavor_text": "Con el líquido que tiene en el estómago, puede digerir hasta hierro de desecho. Es capaz de tragarse de una sentada cualquier cosa que lo iguale en tamaño.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 110",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20521,7 +20849,7 @@
     "flavor_text": "Los Carvanha van en grupo atacando barcos hasta que los hunden. Aunque dicen que es un Pokémon muy violento, huye presa de la timidez en cuanto se queda solo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ruta 118, Ruta 118, Ruta 119).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ruta 118, Ruta 118, Ruta 119, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 118",
@@ -20538,6 +20866,10 @@
         {
           "area": "Ruta 119",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -20706,7 +21038,7 @@
     "flavor_text": "Aunque este Pokémon vive generalmente en el mar, puede sobrevivir en tierra, pero durante poco tiempo. Si se le seca el cuerpo, pierde vitalidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 60 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf)).",
+      "summary": "Salvaje en 60 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -20947,6 +21279,10 @@
         {
           "area": "Pueblo Oromar (Pesca / Surf)",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21059,7 +21395,7 @@
     "flavor_text": "Un Numel almacena magma en ebullición dentro de la joroba del lomo. Es robusto y puede cargar hasta con 100 kg. Ayuda a la gente en su trabajo desde hace mucho.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea, Ruta 112).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea, Ruta 112, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Desfiladero",
@@ -21072,6 +21408,10 @@
         {
           "area": "Ruta 112",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21179,7 +21519,7 @@
     "flavor_text": "Lucha usando la energía que obtiene quemando carbón. Cuando suelta humo por los orificios nasales, emite un sonido que recuerda a la chimenea de una locomotora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Senda Ígnea, Guarida Magma (Desfiladero)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Senda Ígnea, Guarida Magma (Desfiladero), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -21188,6 +21528,10 @@
         {
           "area": "Guarida Magma (Desfiladero)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21238,11 +21582,15 @@
     "flavor_text": "Manipula energía psicoquinética a su antojo. No deja de botar ni cuando está dormido. Le encanta comer setas que crecen bajo tierra.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Desfiladero).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Desfiladero, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Desfiladero",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21350,11 +21698,15 @@
     "flavor_text": "Se le diferencia por los dibujos del pelaje; no hay dos iguales. Su forma de andar, inestable y torpe, logra confundir al enemigo y hacer que su puntería falle.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 113 (Ceniza)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21405,7 +21757,7 @@
     "flavor_text": "Tiene unas enormes fauces con las que destruye piedras. Como tiene una cabeza muy grande, le cuesta conseguir ponerse de pie si se cae de espaldas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 111 (Desierto), Torre Espejismo (Ruta 111)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 111 (Desierto), Torre Espejismo (Ruta 111), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -21414,6 +21766,10 @@
         {
           "area": "Torre Espejismo (Ruta 111)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21578,11 +21934,15 @@
     "flavor_text": "Cacnea vive en desiertos donde nunca llueve. Para luchar, balancea los brazos, muy gruesos y cubiertos de pinchos. Una vez al año, le brota una flor amarilla.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21690,7 +22050,7 @@
     "flavor_text": "Tiene unas alas como nubes de algodón. Transcurrido el invierno, en el que la comida escasea, bandadas de Swablu migran a los pueblos en primavera.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 114, Ruta 115).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 114, Ruta 115, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 114",
@@ -21699,6 +22059,10 @@
         {
           "area": "Ruta 115",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21813,11 +22177,15 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí.",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
           "method": "Exclusivo de versión (Ruta 114 en Rubí)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -21866,11 +22234,15 @@
     "flavor_text": "Seviper y Zangoose son rivales eternos. Contrarresta la gran agilidad de Zangoose con una cola en forma de espada que además rezuma un veneno terrible.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 114).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 114, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 114",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -21923,11 +22295,15 @@
       "type": "trade",
       "badge_label": "Exclusivo Zafiro",
       "badge_color": "blue",
-      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro.",
+      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza con Ditto en la Guardería de la Ruta 117 una vez obtenido).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
           "method": "Exclusivo de versión (Cascada Meteoro en Zafiro)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ]
     },
@@ -21976,7 +22352,7 @@
     "flavor_text": "El origen de la fuerza de este Pokémon está en la energía solar. En días soleados, grupos de Solrock se alinean de cara al sol para absorber su luz.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
+      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -22009,6 +22385,10 @@
         {
           "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
@@ -22059,7 +22439,7 @@
     "flavor_text": "Tiene el cuerpo cubierto de una película viscosa. Esta capa actúa como barrera y evita que los gérmenes del agua fangosa penetren en el cuerpo de Barboach.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
+      "summary": "Salvaje en 16 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -22124,6 +22504,10 @@
         {
           "area": "Ruta 120",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22248,7 +22632,7 @@
     "flavor_text": "Una vez que agarra a su presa con sus grandes pinzas, no la suelta pase lo que pase. Es un Pokémon resistente que puede subsistir en cualquier medio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ruta 102).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ruta 102, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -22273,6 +22657,10 @@
         {
           "area": "Ruta 117",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22380,11 +22768,15 @@
     "flavor_text": "Los Baltoy se mueven haciendo girar su única extremidad inferior. Aparecen representados en las pinturas murales de las ruinas de una antigua ciudad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza con Ditto).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza con Ditto"
         }
       ],
       "badge_color": "emerald",
@@ -22505,7 +22897,7 @@
     "flavor_text": "Se disfraza de alga marina moviendo los tentáculos. Si una presa se le acerca despistada, será engullida de golpe. Se extinguió hace 100 millones de años.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Revivir el Fósil Raíz en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20. En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.",
+      "summary": "Revivir el Fósil Raíz en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20 (también obtenible mediante crianza). En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.",
       "locations": [
         {
           "area": "Ciudad Férrica (Devon S.A.)",
@@ -22518,6 +22910,10 @@
         {
           "area": "Ruta 114 (Túnel del Desierto)",
           "method": "Segundo fósil en el fondo del túnel tras el Alto Mando"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -22625,7 +23021,7 @@
     "flavor_text": "La ciencia logró regenerarlo a partir de un fósil. Nada batiendo las ocho alas que tiene a los lados y que fueron patas que se adaptaron a su nueva vida en el mar.",
     "obtaining_info": {
       "type": "fossil",
-      "summary": "Revivir el Fósil Garra en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20. En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.",
+      "summary": "Revivir el Fósil Garra en la 1.ª planta de Devon S.A. en Ciudad Férrica al Nivel 20 (también obtenible mediante crianza). En Esmeralda se elige en la Torre Espejismo (Ruta 111) y el otro fósil reaparece tras el Alto Mando en el Túnel del Desierto.",
       "locations": [
         {
           "area": "Ciudad Férrica (Devon S.A.)",
@@ -22638,6 +23034,10 @@
         {
           "area": "Ruta 114 (Túnel del Desierto)",
           "method": "Segundo fósil en el fondo del túnel tras el Alto Mando"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "amber",
@@ -22745,11 +23145,15 @@
     "flavor_text": "Feebas vive en charcas llenas de algas. Parece que el aspecto terriblemente descuidado que ofrece sea la causa de que pocos entrenadores lo críen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119",
           "method": "Pesca en casilla especial de Feebas"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22857,11 +23261,15 @@
     "flavor_text": "Altera su forma según el tiempo que haga. Los cambios del clima, como la temperatura y la humedad, parecen afectar a su estructura celular.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Regalo de los científicos en la 1.ª planta del Instituto Meteorológico (Ruta 119) tras rescatarlos del Equipo Magma.",
+      "summary": "Regalo de los científicos en la 1.ª planta del Instituto Meteorológico (Ruta 119) tras rescatarlos del Equipo Magma (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119 (Instituto Meteorológico)",
           "method": "Regalo tras vencer al Equipo Magma"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22912,7 +23320,7 @@
     "flavor_text": "Este Pokémon tiene la capacidad de alterar la coloración de su cuerpo para camuflarse en el medio en el que esté. Si se asusta, Kecleon recuperará sus colores originales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) de Hoenn (ej: Ruta 118, Ruta 119, Ruta 119).",
+      "summary": "Salvaje en 7 zona(s) de Hoenn (ej: Ruta 118, Ruta 119, Ruta 119, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 118",
@@ -22941,6 +23349,10 @@
         {
           "area": "Ruta 123",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22991,7 +23403,7 @@
     "flavor_text": "Este Pokémon deambula en la oscuridad de la noche en busca de sentimientos negativos, como el rencor y la envidia. Antes del amanecer, se retira a su hogar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Monte Pírico (Interior P1), Monte Pírico (Interior P2), Monte Pírico (Interior P3)).",
+      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Monte Pírico (Interior P1), Monte Pírico (Interior P2), Monte Pírico (Interior P3), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Pírico (Interior P1)",
@@ -23032,6 +23444,10 @@
         {
           "area": "Ruta 123",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23152,7 +23568,7 @@
     "flavor_text": "Una única mirada lanzada por su ojo escarlata basta para dejar petrificado de miedo al rival más fuerte. Deambula sin rumbo al amparo de la noche.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Monte Pírico (Interior P4), Monte Pírico (Interior P5), Monte Pírico (Interior P6)).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Monte Pírico (Interior P4), Monte Pírico (Interior P5), Monte Pírico (Interior P6), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Pírico (Interior P4)",
@@ -23169,6 +23585,10 @@
         {
           "area": "Monte Pírico (Cima)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23276,11 +23696,15 @@
     "flavor_text": "Logra volar agitando sus amplias hojas. El racimo de fruta que le crece alrededor del cuello es de una dulzura exquisita. En primavera, libera polen por el cuello.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23331,11 +23755,15 @@
     "flavor_text": "Se ponen a volar sin parar cuando llega la estación cálida. Se comunica con otros a través de siete tipos de grito distintos muy característicos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Cima)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Cima), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Pírico (Cima)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23386,11 +23814,15 @@
     "flavor_text": "Detecta con precisión cualquier cambio producido en la atmósfera o la tierra y predice catástrofes naturales. Es un Pokémon longevo que vive 100 años.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 120).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 120, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 120",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23441,15 +23873,19 @@
     "flavor_text": "Wynaut disfruta comiendo fruta dulce. Es vivo al escogerla: usa los brazos con pinta de oreja que tiene. Se reúne con otros en huertos frutales, atraído por el aroma.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Huevo entregado por una anciana junto a las aguas termales de Pueblo Lavacalda.",
+      "summary": "Huevo entregado por una anciana junto a las aguas termales de Pueblo Lavacalda. También salvaje en Isla Espejismo o criando a Wobbuffet con Incienso Suave en la Guardería.",
       "locations": [
         {
-          "area": "Pueblo Lavacalda",
+          "area": "Pueblo Lavacalda (Aguas termales)",
           "method": "Huevo de regalo"
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de Wobbuffet equipado con Incienso Suave"
+        },
+        {
+          "area": "Isla Espejismo (Ruta 130)",
+          "method": "Hierba alta (Isla aleatoria)"
         }
       ],
       "item_slug": "lax-incense",
@@ -23512,11 +23948,15 @@
     "flavor_text": "Tienden a desplazarse en grupos de cinco Snorunt. En las zonas de nieve se dice que, cuando se les ve entrada la noche, es porque va a nevar a la mañana siguiente.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Cardumen (Sala Hielo)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Cardumen (Sala Hielo), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23624,7 +24064,7 @@
     "flavor_text": "Está cubierto por completo con un grueso pelaje. Gracias a él, nunca siente frío: ni cuando rueda sobre placas de hielo ni cuando bucea en el mar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Cardumen (Marea Alta), Cueva Cardumen (Marea Alta), Cueva Cardumen (Sótano 1)).",
+      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Cardumen (Marea Alta), Cueva Cardumen (Marea Alta), Cueva Cardumen (Sótano 1), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cardumen (Marea Alta)",
@@ -23649,6 +24089,10 @@
         {
           "area": "Cueva Cardumen (Sala Hielo)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23813,7 +24257,7 @@
     "flavor_text": "Un Clamperl cierra de golpe la concha para evitar que escape su presa. Dicen que la perla que crea al evolucionar está dotada de una misteriosa energía.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -23822,6 +24266,10 @@
         {
           "area": "Ruta 126 (Buceo / Fondo marino)",
           "method": "Hierba submarina (Algas)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -24016,7 +24464,7 @@
     "flavor_text": "Se llegó a creer que se había extinguido. La especie no ha cambiado de forma desde hace 100 millones de años. Camina por el fondo marino usando las aletas frontales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -24025,6 +24473,10 @@
         {
           "area": "Ruta 126 (Buceo / Fondo marino)",
           "method": "Hierba submarina (Algas)"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -24075,7 +24527,7 @@
     "flavor_text": "Para Luvdisc, las ramas de Corsola son su nido. Existe una antigua costumbre que consiste en regalar un Luvdisc para expresar un sentimiento amoroso.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ciudad Colosalia (Pesca / Surf), Ruta 128).",
+      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ciudad Colosalia (Pesca / Surf), Ruta 128, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -24092,6 +24544,10 @@
         {
           "area": "Ruta 128",
           "method": "Supercaña"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -24142,11 +24598,15 @@
     "flavor_text": "Aunque pequeño, este Pokémon es muy fuerte porque su cuerpo es puro músculo. Propina cabezazos con el cráneo, que es tan duro como el hierro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cascada Meteoro (Sala de Bagon)).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cascada Meteoro (Sala de Bagon), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cascada Meteoro (Sala de Bagon)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 117 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",

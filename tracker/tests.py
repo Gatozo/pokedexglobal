@@ -2927,6 +2927,104 @@ class PokemonEmeraldGen3Tests(TestCase):
         treecko = cat_map[252]
         self.assertIn("protector de los árboles del bosque", treecko.flavor_text)
 
+    def test_emerald_breeding_obtaining_methods(self):
+        """Comprueba que SOLO los Pokémon eclosionables (primeras etapas, únicos, bebés e inciensos)
+        reflejen la Guardería y crianza en Esmeralda, y que las evoluciones (Grovyle, Mightyena, etc.)
+        y especies no criables (Rayquaza, Ditto) jamás incluyan Guardería ni crianza."""
+        hoenn_cat = get_compiled_catalog("emerald", is_national=False)
+        hoenn_map = {e.pokemon.national_number: e for e in hoenn_cat}
+
+        # 1. Primeras etapas y salvajes ordinarios (#261 Poochyena, #263 Zigzagoon, #265 Wurmple, #276 Taillow, #280 Ralts)
+        for nat_id in [261, 263, 265, 276, 280]:
+            entry = hoenn_map[nat_id]
+            self.assertIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # 2. Iniciales de Hoenn: Formas base tienen crianza, evoluciones NO
+        # Base: #252 Treecko, #255 Torchic, #258 Mudkip
+        for nat_id in [252, 255, 258]:
+            entry = hoenn_map[nat_id]
+            self.assertIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # Evoluciones de iniciales: #253 Grovyle, #254 Sceptile, #256 Combusken, #257 Blaziken, #259 Marshtomp, #260 Swampert
+        for nat_id in [253, 254, 256, 257, 259, 260]:
+            entry = hoenn_map[nat_id]
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            self.assertNotIn("guardería", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in loc_areas), f"Evolución {entry.pokemon.name} no debe tener Guardería")
+
+        # 3. Evoluciones en general (#262 Mightyena, #281 Kirlia, #282 Gardevoir, #305 Lairon, #306 Aggron)
+        for nat_id in [262, 281, 282, 305, 306]:
+            entry = hoenn_map[nat_id]
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in loc_areas), f"Evolución {entry.pokemon.name} no debe tener Guardería")
+
+        # 4. Bebés (#172 Pichu, #298 Azurill, #360 Wynaut) vs Padres sin incienso (#183 Marill, #202 Wobbuffet)
+        # Bebés: deben tener crianza/guardería
+        for nat_id in [172, 298, 360]:
+            entry = hoenn_map[nat_id]
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # Padres que eclosionan sin incienso en Gen 3 (Marill, Wobbuffet): tienen crianza/guardería
+        for nat_id in [183, 202]:
+            entry = hoenn_map[nat_id]
+            self.assertIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # Evoluciones de bebés (#25 Pikachu, #26 Raichu, #184 Azumarill): NO tienen crianza
+        for nat_id in [25, 26, 184]:
+            entry = hoenn_map[nat_id]
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in loc_areas))
+
+        # 5. Fósiles (#345 Lileep, #347 Anorith), Regalos únicos (#351 Castform, #374 Beldum)
+        for nat_id in [345, 347, 351, 374]:
+            entry = hoenn_map[nat_id]
+            self.assertIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # 6. Especies de etapa única (#302 Sableye, #303 Mawile, #311 Plusle, #335 Zangoose, #337 Lunatone)
+        for nat_id in [302, 303, 311, 335, 337]:
+            entry = hoenn_map[nat_id]
+            self.assertIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertTrue(any("Guardería" in a for a in loc_areas))
+
+        # 7. No criables / Legendarios (#384 Rayquaza, #382 Kyogre, #383 Groudon, #386 Deoxys)
+        for nat_id in [384, 382, 383, 386]:
+            entry = hoenn_map[nat_id]
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in loc_areas))
+
+        # 8. Conteo canónico en Pokédex Regional: exactamente 97 eclosionables vs 105 no eclosionables
+        regional_hatchable = [e for e in hoenn_cat if any("Guardería" in l.get("area", "") for l in e.obtaining_info.get("locations", []))]
+        self.assertEqual(len(regional_hatchable), 97)
+        self.assertEqual(len(hoenn_cat) - len(regional_hatchable), 105)
+
+        # 9. Conteo canónico en Pokédex Nacional: exactamente 181 eclosionables vs 205 no eclosionables
+        nat_cat = get_compiled_catalog("emerald", is_national=True)
+        nat_hatchable = [e for e in nat_cat if any("Guardería" in l.get("area", "") for l in e.obtaining_info.get("locations", []))]
+        self.assertEqual(len(nat_hatchable), 181)
+        self.assertEqual(len(nat_cat) - len(nat_hatchable), 205)
+
+        # 10. Comprobación nacional: Ditto (#132), Mewtwo (#150), Charizard (#6) no tienen guardería
+        nat_map = {e.pokemon.national_number: e for e in nat_cat}
+        for nat_id in [6, 132, 150, 201]:
+            entry = nat_map[nat_id]
+            loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in loc_areas))
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+
 
 
 
