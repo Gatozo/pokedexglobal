@@ -532,7 +532,7 @@ class PokedexTrackerTests(TestCase):
         url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, '.type-dark { background-color: #705848;')
+        self.assertContains(response, '.type-dark, .type-Dark { background-color: #705848;')
         self.assertContains(response, 'type-dark')
         self.assertContains(response, 'Siniestro')
 
@@ -2314,7 +2314,7 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
     def test_nonexistent_catalog_returns_none(self):
         from .catalog_service import get_compiled_catalog
-        self.assertIsNone(get_compiled_catalog("emerald"))
+        self.assertIsNone(get_compiled_catalog("firered"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
     def test_catalog_filter_locations_and_tags(self):
@@ -2756,6 +2756,179 @@ class PokemonSapphireGen3Tests(TestCase):
         transfers_ctx = get_version_transfers_context(self.game, self.pokedex_nat, set())
         self.assertIsNotNone(transfers_ctx)
         self.assertEqual(transfers_ctx["total"], 184)
+
+
+class PokemonEmeraldGen3Tests(TestCase):
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(slug="emerald", defaults={"name": "Pokémon Esmeralda", "generation": 3})
+        self.pokedex_hoenn, _ = Pokedex.objects.get_or_create(game=self.game, slug="hoenn", defaults={"name": "Pokédex Regional de Hoenn", "is_national": False})
+        self.pokedex_nat, _ = Pokedex.objects.get_or_create(game=self.game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+    def test_emerald_catalogs_structure(self):
+        """Valida que los catálogos compilados de Esmeralda se carguen con 202 y 386 entradas con sus datos canónicos."""
+        hoenn_cat = get_compiled_catalog("emerald", is_national=False)
+        self.assertIsNotNone(hoenn_cat)
+        self.assertEqual(len(hoenn_cat), 202)
+        self.assertEqual(hoenn_cat[0].pokemon.name, "treecko")
+        self.assertEqual(hoenn_cat[0].entry_number, 1)
+
+        # Mascot Rayquaza (#200 en regional)
+        rayquaza = next(e for e in hoenn_cat if e.pokemon.name == "rayquaza")
+        self.assertEqual(rayquaza.entry_number, 200)
+        self.assertEqual(rayquaza.obtaining_info["type"], "legendary")
+        self.assertIn("Pilar Celeste", rayquaza.obtaining_info["summary"])
+
+        # Ambos Groudon y Kyogre son capturables en Esmeralda
+        kyogre = next(e for e in hoenn_cat if e.pokemon.name == "kyogre")
+        self.assertEqual(kyogre.entry_number, 198)
+        self.assertIn("Cueva Marina", kyogre.obtaining_info["summary"])
+
+        groudon = next(e for e in hoenn_cat if e.pokemon.name == "groudon")
+        self.assertEqual(groudon.entry_number, 199)
+        self.assertIn("Cueva Terra", groudon.obtaining_info["summary"])
+
+        # Catálogo Nacional (386)
+        nat_cat = get_compiled_catalog("emerald", is_national=True)
+        self.assertIsNotNone(nat_cat)
+        self.assertEqual(len(nat_cat), 386)
+        self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(nat_cat[385].pokemon.name, "deoxys")
+
+    def test_emerald_views_and_theme(self):
+        """Verifica que las vistas de Pokédex regional y nacional respondan correctamente en Esmeralda con su tema verde esmeralda."""
+        resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))
+        self.assertEqual(resp_hoenn.status_code, 200)
+        self.assertContains(resp_hoenn, "Pokédex Regional de Hoenn")
+        self.assertContains(resp_hoenn, "emerald")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, "Pokédex Nacional")
+
+    def test_emerald_exclusives_and_missing_counterparts(self):
+        """Comprueba que Esmeralda reporte a Rubí y Zafiro como contraparte con los 7 Pokémon faltantes."""
+        from .exclusives import get_version_exclusives_context
+        excl_ctx = get_version_exclusives_context(self.game, self.pokedex_hoenn, set())
+        self.assertIsNotNone(excl_ctx)
+        self.assertEqual(excl_ctx["counterpart_short_name"], "Rubí y Zafiro")
+        self.assertEqual(excl_ctx["counterpart_theme"], "ruby_sapphire")
+        self.assertEqual(excl_ctx["counterpart_total"], 7)
+        self.assertEqual(excl_ctx["own_total"], 32)
+
+        counterpart_names = {p["name"] for p in excl_ctx["counterpart_list"]}
+        self.assertIn("Surskit", counterpart_names)
+        self.assertIn("Masquerain", counterpart_names)
+        self.assertIn("Meditite", counterpart_names)
+        self.assertIn("Medicham", counterpart_names)
+        self.assertIn("Roselia", counterpart_names)
+        self.assertIn("Zangoose", counterpart_names)
+        self.assertIn("Lunatone", counterpart_names)
+
+        own_names = {p["name"] for p in excl_ctx["own_list"]}
+        self.assertIn("Deoxys", own_names)
+        self.assertIn("Ditto", own_names)
+        self.assertIn("Sudowoodo", own_names)
+        self.assertIn("Smeargle", own_names)
+        self.assertIn("Mareep", own_names)
+        self.assertIn("Houndour", own_names)
+        self.assertIn("Miltank", own_names)
+
+    def test_emerald_transfers(self):
+        """Verifica que las transferencias requeridas en Esmeralda sean 153 (31 menos que R/Z debido a los salvajes de Johto/Kanto)."""
+        from .exclusives import get_version_transfers_context
+        transfers_ctx = get_version_transfers_context(self.game, self.pokedex_nat, set())
+        self.assertIsNotNone(transfers_ctx)
+        self.assertEqual(transfers_ctx["total"], 153)
+
+        # Verificar que especies como Sudowoodo (#185), Smeargle (#235), Ditto (#132) NO están en transferencias
+        transfer_nums = {p["national_number"] for p in transfers_ctx["transfer_list"]}
+        self.assertNotIn(185, transfer_nums)  # Sudowoodo (Frente de Batalla)
+        self.assertNotIn(235, transfer_nums)  # Smeargle (Cueva Taller)
+        self.assertNotIn(132, transfer_nums)  # Ditto (Túnel del Desierto)
+        self.assertNotIn(179, transfer_nums)  # Mareep (Zona Safari expansión)
+        self.assertIn(1, transfer_nums)       # Bulbasaur (requiere transferencia RF/VH)
+
+    def test_emerald_evolution_stones(self):
+        """Comprueba que todos los objetos evolutivos tengan registradas sus ubicaciones en Esmeralda."""
+        import json
+        with open("tracker/data/evolution_stones.json", "r", encoding="utf-8") as f:
+            stones_data = json.load(f)
+
+        for stone_slug, stone in stones_data.items():
+            self.assertIn("emerald", stone["games"], f"Falta información de {stone_slug} para Pokémon Esmeralda")
+            self.assertTrue(len(stone["games"]["emerald"]) > 0)
+
+    def test_emerald_animated_sprites_and_card_integration(self):
+        """Valida que las tarjetas de cuadrícula usen PNGs estáticos (sin saturar la página) y el modal cómic use GIFs animados."""
+        from django.conf import settings
+        from pathlib import Path
+        anim_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "emerald_animated"
+        shiny_anim_dir = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "emerald_animated_shiny"
+        self.assertTrue(anim_dir.exists(), "Debe existir directorio emerald_animated")
+        self.assertTrue(shiny_anim_dir.exists(), "Debe existir directorio emerald_animated_shiny")
+
+        hoenn_cat = get_compiled_catalog("emerald", is_national=False)
+        treecko = hoenn_cat[0]
+        # Cuadrícula general: PNG estático para no saturar la página
+        self.assertIn("emerald/252.png", treecko.game_sprite_url)
+        self.assertIn("emerald_shiny/252.png", treecko.game_sprite_shiny_url)
+        # Modal de ficha individual: GIF animado exclusivo
+        self.assertIn("emerald_animated/252.gif", treecko.modal_retro_sprite_url)
+        self.assertIn("emerald_animated_shiny/252.gif", treecko.modal_retro_sprite_shiny_url)
+
+        modal_data = json.loads(treecko.modal_data_json)
+        self.assertTrue(modal_data["sprite_retro"].endswith("emerald_animated/252.gif"))
+        self.assertTrue(modal_data["sprite_retro_shiny"].endswith("emerald_animated_shiny/252.gif"))
+
+    def test_emerald_type_badges_classes(self):
+        """Verifica que las etiquetas de tipo se rendericen en minúsculas y coincidan con los estilos CSS."""
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'type-grass')
+        self.assertContains(resp, '.type-grass, .type-Grass { background-color: #78C850;')
+
+    def test_emerald_deoxys_speed_form_sprites(self):
+        """Verifica que Deoxys en Esmeralda utilice canónicamente la Forma Velocidad tanto en sprites como en icono."""
+        from django.conf import settings
+        from pathlib import Path
+        deoxys_sprite = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites" / "emerald" / "386-speed.png"
+        self.assertTrue(deoxys_sprite.exists())
+        # En Esmeralda, Deoxys Velocidad (10003.png) tiene 842 bytes, diferente a la forma normal de Rubí/Zafiro (838 bytes)
+        self.assertEqual(deoxys_sprite.stat().st_size, 842)
+
+        hoenn_cat = get_compiled_catalog("emerald", is_national=False)
+        deoxys_entry = next(e for e in hoenn_cat if e.pokemon.name == "deoxys")
+        self.assertIn("emerald/386-speed.png", deoxys_entry.game_sprite_url)
+        self.assertIn("10003.png", deoxys_entry.pc_icon_url)
+
+    def test_emerald_canonical_flavor_texts(self):
+        """Comprueba que las descripciones de Pokédex correspondan estrictamente al canon de Pokémon Esmeralda."""
+        nat_cat = get_compiled_catalog("emerald", is_national=True)
+        cat_map = {e.pokemon.national_number: e for e in nat_cat}
+
+        # 1. Deoxys (#386): Exclusivo de Esmeralda destacando velocidad y agilidad
+        deoxys = cat_map[386]
+        self.assertIn("velocidad y agilidad superiores", deoxys.flavor_text)
+
+        # 2. Rayquaza (#384): Mascota de Esmeralda, texto exclusivo de Esmeralda
+        rayquaza = cat_map[384]
+        self.assertEqual(
+            rayquaza.flavor_text,
+            "Este Pokémon vuela sin parar por la capa de ozono. Dicen que, si Kyogre y Groudon fueran a luchar, bajaría a tierra firme."
+        )
+
+        # 3. Groudon (#383) y Kyogre (#382): Textos propios de Esmeralda
+        groudon = cat_map[383]
+        self.assertIn("creador de la tierra", groudon.flavor_text)
+        kyogre = cat_map[382]
+        self.assertIn("creador del mar", kyogre.flavor_text)
+
+        # 4. Treecko (#252): Inicial de Hoenn con texto de Esmeralda
+        treecko = cat_map[252]
+        self.assertIn("protector de los árboles del bosque", treecko.flavor_text)
+
+
+
 
 
 

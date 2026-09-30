@@ -20,6 +20,15 @@ db.sqlite3-journal
 media/
 staticfiles/
 
+# Prohibición de archivos de imagen en el repositorio (se sirven localmente o via media/)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.bmp
+
 # Variables de entorno y secretos
 .env
 .env.*

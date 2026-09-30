@@ -83,11 +83,33 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     # Gen 3
     'ruby': [273, 274, 275, 303, 335, 338, 381, 383],
     'sapphire': [270, 271, 272, 302, 336, 337, 380, 382],
+    'emerald': [
+        132,                                # Ditto (Túnel del Desierto)
+        163, 164,                           # Hoothoot, Noctowl (Zona Safari expansión)
+        165, 166,                           # Ledyba, Ledian (Zona Safari expansión)
+        167, 168,                           # Spinarak, Ariados (Zona Safari expansión)
+        179, 180, 181,                      # Mareep, Flaaffy, Ampharos (Zona Safari expansión)
+        185,                                # Sudowoodo (Frente de Batalla)
+        190,                                # Aipom (Zona Safari expansión)
+        191, 192,                           # Sunkern, Sunflora (Zona Safari expansión)
+        194, 195,                           # Wooper, Quagsire (Zona Safari expansión)
+        204, 205,                           # Pineco, Forretress (Zona Safari expansión)
+        207,                                # Gligar (Zona Safari expansión)
+        209, 210,                           # Snubbull, Granbull (Zona Safari expansión)
+        213,                                # Shuckle (Zona Safari expansión)
+        216, 217,                           # Teddiursa, Ursaring (Zona Safari expansión)
+        223, 224,                           # Remoraid, Octillery (Zona Safari expansión)
+        228, 229,                           # Houndour, Houndoom (Zona Safari expansión)
+        234,                                # Stantler (Zona Safari expansión)
+        235,                                # Smeargle (Cueva Taller)
+        241,                                # Miltank (Zona Safari expansión)
+        386,                                # Deoxys (Evento Isla Origen con Ori-Ticket)
+    ],
     'firered': [23, 24, 43, 44, 45, 54, 55, 58, 59, 123, 125, 198, 211, 215, 227, 246, 247, 248],
     'leafgreen': [27, 28, 69, 70, 71, 79, 80, 126, 127, 199, 200, 216, 217, 225, 228, 229, 241],
 }
 
-# 184 especies no nativas de Hoenn requeridas para completar la Pokédex Nacional en Pokémon Rubí
+# 184 especies no nativas de Hoenn requeridas para completar la Pokédex Nacional en Pokémon Rubí y Zafiro
 NON_HOENN_TRANSFERS_RUBY = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 46, 47, 48, 49, 50, 51,
@@ -102,6 +124,15 @@ NON_HOENN_TRANSFERS_RUBY = [
     228, 229, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245,
     246, 247, 248, 249, 250, 251
 ]
+
+# En Pokémon Esmeralda, la ampliación de la Zona Safari (Áreas 5 y 6), la Cueva Taller,
+# el Túnel del Desierto y el Frente de Batalla permiten capturar 31 especies de Johto/Kanto.
+# Por tanto, solo 153 especies de la Pokédex Nacional requieren transferencia externa.
+EMERALD_CATCHABLE_JOHTO = {
+    132, 163, 164, 165, 166, 167, 168, 179, 180, 181, 185, 190, 191, 192, 194, 195,
+    204, 205, 207, 209, 210, 213, 216, 217, 223, 224, 228, 229, 234, 235, 241
+}
+NON_HOENN_TRANSFERS_EMERALD = [num for num in NON_HOENN_TRANSFERS_RUBY if num not in EMERALD_CATCHABLE_JOHTO]
 
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
@@ -146,9 +177,10 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         144, 145, 146,  # Articuno, Zapdos, Moltres
         150, 151,       # Mewtwo, Mew
     ],
-    # Gen 3 (Pokédex Nacional de Rubí y Zafiro: 184 especies que no habitan en Hoenn)
+    # Gen 3 (Pokédex Nacional de Rubí, Zafiro y Esmeralda)
     'ruby': NON_HOENN_TRANSFERS_RUBY,
     'sapphire': NON_HOENN_TRANSFERS_RUBY,
+    'emerald': NON_HOENN_TRANSFERS_EMERALD,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -339,6 +371,50 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             251: 'Disco Bonus Colosseum / Evento Ageto',
         }
     },
+    'emerald': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Esmeralda consta de 386 Pokémon. Gracias a la ampliación postgame de la Zona Safari de Hoenn, '
+            'la Cueva Taller, el Túnel del Desierto y el Frente de Batalla, 31 especies de Johto y Kanto ahora son capturables en el cartucho. '
+            'Las 153 especies restantes no nativas deben transferirse mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja '
+            'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Incompatible con 1.ª y 2.ª Generación (Hardware break).'
+        ),
+        'default_origin': 'Rojo Fuego / Verde Hoja / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            1: 'Rojo Fuego / Verde Hoja',
+            2: 'Rojo Fuego / Verde Hoja',
+            3: 'Rojo Fuego / Verde Hoja',
+            4: 'Rojo Fuego / Verde Hoja',
+            5: 'Rojo Fuego / Verde Hoja',
+            6: 'Rojo Fuego / Verde Hoja',
+            7: 'Rojo Fuego / Verde Hoja',
+            8: 'Rojo Fuego / Verde Hoja',
+            9: 'Rojo Fuego / Verde Hoja',
+            144: 'Rojo Fuego / Verde Hoja',
+            145: 'Rojo Fuego / Verde Hoja',
+            146: 'Rojo Fuego / Verde Hoja',
+            150: 'Rojo Fuego / Verde Hoja',
+            151: 'Evento Isla Suprema (Mapa Viejo)',
+            152: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            153: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            154: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            155: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            156: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            157: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            158: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            159: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            160: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
+            243: 'Pokémon Colosseum / Rojo Fuego',
+            244: 'Pokémon Colosseum / Verde Hoja',
+            245: 'Pokémon Colosseum / RF / VH',
+            249: 'Evento Roca Ombligo (Ticket Místico) / XD',
+            250: 'Evento Roca Ombligo (Ticket Místico) / Colosseum',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+        }
+    },
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -402,6 +478,23 @@ THIRD_VERSION_COUNTERPART_EXCLUSIVES: Dict[str, Dict[str, Any]] = {
             224: 'Oro / Plata',
         },
         'notice': 'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Cristal</strong>. Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Oro</strong> o <strong>Pokémon Plata</strong>.',
+    },
+    'emerald': {
+        'counterpart_short_name': 'Rubí y Zafiro',
+        'counterpart_name': 'Pokémon Rubí o Pokémon Zafiro',
+        'counterpart_slug': 'ruby',
+        'counterpart_theme': 'ruby_sapphire',
+        'exclusive_nums': [283, 284, 307, 308, 315, 335, 337],
+        'origins': {
+            283: 'Rubí / Zafiro',
+            284: 'Rubí / Zafiro',
+            307: 'Rubí / Zafiro',
+            308: 'Rubí / Zafiro',
+            315: 'Rubí / Zafiro',
+            335: 'Rubí',
+            337: 'Zafiro',
+        },
+        'notice': 'Estos 7 Pokémon <span class="underline">no habitan en estado salvaje</span> en tu edición de <strong>Pokémon Esmeralda</strong>. Para completar la Pokédex de Hoenn requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Rubí</strong> o <strong>Pokémon Zafiro</strong>.',
     }
 }
 
@@ -422,8 +515,13 @@ def _build_exclusive_item(
     else:
         game_slug = current_pokedex.game.slug if (current_pokedex and hasattr(current_pokedex, 'game') and current_pokedex.game) else ""
         from .catalog_service import get_compiled_catalog
-        catalog = get_compiled_catalog(game_slug) or []
-        entry = next((e for e in catalog if e.pokemon and e.pokemon.national_number == national_num), None)
+        entry = None
+        if game_slug:
+            nat_catalog = get_compiled_catalog(game_slug, is_national=True) or []
+            entry = next((e for e in nat_catalog if e.pokemon and e.pokemon.national_number == national_num), None)
+            if not entry:
+                reg_catalog = get_compiled_catalog(game_slug, is_national=False) or []
+                entry = next((e for e in reg_catalog if e.pokemon and e.pokemon.national_number == national_num), None)
 
     if entry:
         pokemon = entry.pokemon
@@ -470,15 +568,19 @@ def _build_exclusive_item(
             sprite_retro_shiny = f"{settings.MEDIA_URL}{local_rel}"
 
     pc_icon_url = pokemon.get_pc_icon_url(generation=current_generation)
+    if game_slug == 'emerald' and national_num == 386:
+        pc_icon_url = "/media/pokemon/icons/gen3/10003.png"
+        sprite_retro = "/media/pokemon/sprites/emerald/386-speed.png"
+        sprite_retro_shiny = "/media/pokemon/sprites/emerald_shiny/386-speed.png"
 
     return {
         'entry_id': entry_id,
         'national_number': national_num,
         'number': f"{number:03d}",
         'name': pokemon.display_name,
-        'primary_type': primary_type,
+        'primary_type': (primary_type or '').lower(),
         'primary_type_es': primary_type_es,
-        'secondary_type': secondary_type or '',
+        'secondary_type': (secondary_type or '').lower(),
         'secondary_type_es': secondary_type_es or '',
         'sprite_retro': sprite_retro,
         'sprite_modern': sprite_modern,
@@ -491,6 +593,7 @@ def _build_exclusive_item(
         'is_counterpart': is_counterpart,
         'origin_badge': origin_badge,
         'evolution_stone': evolution_stone,
+        'modal_data_json': getattr(entry, 'modal_data_json', '') if entry else '',
     }
 
 
@@ -521,6 +624,8 @@ def get_version_exclusives_context(
             return 'sapphire'
         elif slug in ['ruby']:
             return 'ruby'
+        elif slug in ['emerald']:
+            return 'emerald'
         elif slug in ['blue', 'pearl', 'white', 'moon', 'shield', 'violet']:
             return 'blue'
         elif slug in ['crystal']:

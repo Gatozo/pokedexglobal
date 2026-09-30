@@ -5,25 +5,25 @@ html {
 }
 
 /* Tipos Elementales */
-.type-normal { background-color: #A8A878; }
-.type-fire { background-color: #F08030; }
-.type-water { background-color: #6890F0; }
-.type-grass { background-color: #78C850; }
-.type-electric { background-color: #F8D030; color: #1e293b; }
-.type-ice { background-color: #98D8D8; color: #1e293b; }
-.type-fighting { background-color: #C03028; }
-.type-poison { background-color: #A040A0; }
-.type-ground { background-color: #E0C068; color: #1e293b; }
-.type-flying { background-color: #A890F0; }
-.type-psychic { background-color: #F85888; }
-.type-bug { background-color: #A8B820; }
-.type-rock { background-color: #B8A038; }
-.type-ghost { background-color: #705898; }
-.type-dragon { background-color: #7038F8; }
-.type-steel { background-color: #B8B8D0; color: #1e293b; }
-.type-fairy { background-color: #EE99AC; color: #1e293b; }
-.type-dark { background-color: #705848; color: #ffffff; }
-.type-stellar { background-color: #7CC7B2; color: #ffffff; }
+.type-normal, .type-Normal { background-color: #A8A878; color: #ffffff; }
+.type-fire, .type-Fire { background-color: #F08030; color: #ffffff; }
+.type-water, .type-Water { background-color: #6890F0; color: #ffffff; }
+.type-grass, .type-Grass { background-color: #78C850; color: #ffffff; }
+.type-electric, .type-Electric { background-color: #F8D030; color: #1e293b !important; }
+.type-ice, .type-Ice { background-color: #98D8D8; color: #1e293b !important; }
+.type-fighting, .type-Fighting { background-color: #C03028; color: #ffffff; }
+.type-poison, .type-Poison { background-color: #A040A0; color: #ffffff; }
+.type-ground, .type-Ground { background-color: #E0C068; color: #1e293b !important; }
+.type-flying, .type-Flying { background-color: #A890F0; color: #ffffff; }
+.type-psychic, .type-Psychic { background-color: #F85888; color: #ffffff; }
+.type-bug, .type-Bug { background-color: #A8B820; color: #ffffff; }
+.type-rock, .type-Rock { background-color: #B8A038; color: #ffffff; }
+.type-ghost, .type-Ghost { background-color: #705898; color: #ffffff; }
+.type-dragon, .type-Dragon { background-color: #7038F8; color: #ffffff; }
+.type-steel, .type-Steel { background-color: #B8B8D0; color: #1e293b !important; }
+.type-fairy, .type-Fairy { background-color: #EE99AC; color: #1e293b !important; }
+.type-dark, .type-Dark { background-color: #705848; color: #ffffff; }
+.type-stellar, .type-Stellar { background-color: #7CC7B2; color: #ffffff; }
 
 /* Marquee Ping-Pong para texto largo en pastillas de ubicación */
 @keyframes marqueePingPong {

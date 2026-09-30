@@ -176,13 +176,15 @@ export function applyCardForm(entryId, formIdx) {
     if (cardTypes) {
         cardTypes.innerHTML = '';
         const t1 = document.createElement('span');
-        t1.className = `type-${form.primary_type} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm`;
+        const pType = String(form.primary_type || '').toLowerCase();
+        t1.className = `type-${pType} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black uppercase shadow-sm`;
         t1.textContent = form.primary_type_es;
         cardTypes.appendChild(t1);
 
         if (form.secondary_type && form.secondary_type_es) {
             const t2 = document.createElement('span');
-            t2.className = `type-${form.secondary_type} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm`;
+            const sType = String(form.secondary_type || '').toLowerCase();
+            t2.className = `type-${sType} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black uppercase shadow-sm`;
             t2.textContent = form.secondary_type_es;
             cardTypes.appendChild(t2);
         }
@@ -226,13 +228,15 @@ export function applyModalForm(formIdx) {
     if (typesContainer) {
         typesContainer.innerHTML = '';
         const badge1 = document.createElement('span');
-        badge1.className = `type-${form.primary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
+        const pType = String(form.primary_type || '').toLowerCase();
+        badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
         badge1.textContent = form.primary_type_es;
         typesContainer.appendChild(badge1);
 
         if (form.secondary_type && form.secondary_type_es) {
             const badge2 = document.createElement('span');
-            badge2.className = `type-${form.secondary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
+            const sType = String(form.secondary_type || '').toLowerCase();
+            badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
             badge2.textContent = form.secondary_type_es;
             typesContainer.appendChild(badge2);
         }
@@ -308,13 +312,15 @@ export function openPokemonModalDirect(entryId) {
             typesContainer.innerHTML = '';
             
             const badge1 = document.createElement('span');
-            badge1.className = `type-${data.primary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
+            const pType = String(data.primary_type || '').toLowerCase();
+            badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
             badge1.textContent = data.primary_type_es;
             typesContainer.appendChild(badge1);
 
             if (data.secondary_type && data.secondary_type_es) {
                 const badge2 = document.createElement('span');
-                badge2.className = `type-${data.secondary_type} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] text-white select-none pointer-events-none`;
+                const sType = String(data.secondary_type || '').toLowerCase();
+                badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
                 badge2.textContent = data.secondary_type_es;
                 typesContainer.appendChild(badge2);
             }

@@ -159,6 +159,16 @@
           "area": "Salvaje equipado (Exclusivo Zafiro)",
           "detail": "Equipada raramente en Lunatone salvajes (5% de probabilidad en Cascada Meteoro; Lunatone es exclusivo de Zafiro)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Cascada Meteoro",
+          "detail": "En el suelo en la parte superior derecha de la sala principal (pasando la cascada)."
+        },
+        {
+          "area": "Pokémon salvajes (Jigglypuff)",
+          "detail": "Equipada con 5% de probabilidad en Jigglypuff salvaje en la Ruta 115."
+        }
       ]
     }
   },
@@ -237,6 +247,16 @@
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Senda Ígnea",
+          "detail": "En el suelo tras empujar una roca con la MO Fuerza en la parte norte de la cueva."
+        },
+        {
+          "area": "Ruta 124 (Buscatesoros)",
+          "detail": "Canjeando una Parte Roja con el Buscatesoros."
         }
       ]
     }
@@ -325,6 +345,20 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad al capturar o usar Ladrón)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Nao Abandonada (Barco Hundido)",
+          "detail": "En la habitación sumergida número 3 (requiere MO Surf y MO Buceo)."
+        },
+        {
+          "area": "Ruta 124 (Buscatesoros)",
+          "detail": "Canjeando una Parte Azul con el Buscatesoros."
+        },
+        {
+          "area": "Pokémon salvajes (Corsola)",
+          "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad pescando con Supercaña en Ruta 128 o Ciudad Colosalia)."
+        }
       ]
     }
   },
@@ -403,6 +437,16 @@
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Malvalona Nueva",
+          "detail": "En el suelo junto al generador eléctrico en la parte más profunda de la central."
+        },
+        {
+          "area": "Ruta 124 (Buscatesoros)",
+          "detail": "Canjeando una Parte Amarilla con el Buscatesoros."
         }
       ]
     }
@@ -487,6 +531,16 @@
           "area": "Ruta 124 (Casa del Buscatesoros)",
           "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Ruta 119",
+          "detail": "En el suelo en la orilla del río al sur del Instituto Meteorológico (requiere Surf)."
+        },
+        {
+          "area": "Ruta 124 (Buscatesoros)",
+          "detail": "Canjeando una Parte Verde con el Buscatesoros."
+        }
       ]
     }
   },
@@ -535,6 +589,16 @@
         {
           "area": "Intercambio de objeto",
           "detail": "Solrock lleva equipada la Piedra Solar en estado salvaje (5%), pero al ser exclusivo de Rubí, en Zafiro requiere intercambio con Rubí o recibirla en el Centro Espacial."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Centro Espacial de Algaria",
+          "detail": "Regalo de un marinero en la primera planta del edificio."
+        },
+        {
+          "area": "Pokémon salvajes (Solrock)",
+          "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro)."
         }
       ]
     }
@@ -597,6 +661,24 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Hariyama salvajes (5% de probabilidad en Calle Victoria)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Ciudad Férrica",
+          "detail": "Entregada por un chico en la casa junto a la Escuela de Entrenadores tras vencer a la líder Petra."
+        },
+        {
+          "area": "Calle Victoria (Hariyama)",
+          "detail": "Equipada con un 5% de probabilidad en Hariyama salvaje en los pisos inferiores."
+        },
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable por 64 Puntos de Batalla (PB) en el Servicio de Intercambio."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Un Pokémon con la habilidad Recogida de nivel alto puede hallarla con un 1% de probabilidad tras un combate."
+        }
       ]
     }
   },
@@ -653,6 +735,16 @@
         {
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Magnemite salvajes (5% en Malvalona Nueva y Ruta 110) y Magneton (5%)."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Malvalona Nueva (Magnemite / Magneton)",
+          "detail": "Equipado con un 5% de probabilidad en Magnemite y Magneton salvajes."
+        },
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable por Puntos de Batalla (PB) en el Servicio de Intercambio del Frente."
         }
       ]
     }
@@ -715,6 +807,20 @@
           "area": "Salvaje equipado",
           "detail": "Equipada raramente en Horsea y Seadra salvajes (5% pescando con Supercaña)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Cascada Meteoro (Bagon)",
+          "detail": "Equipada con un 5% de probabilidad en Bagon salvajes en la sala profunda de Cascada Meteoro."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Seadra)",
+          "detail": "Equipada con un 5% de probabilidad en Horsea y Seadra salvajes pescando con Supercaña."
+        },
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable por 64 Puntos de Batalla (PB) en el Servicio de Intercambio."
+        }
       ]
     }
   },
@@ -756,6 +862,16 @@
           "area": "Transferencia externa",
           "detail": "No obtenible de forma nativa en Hoenn; requiere transferencia desde Silph S.A. en Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable por 64 Puntos de Batalla (PB) en el Servicio de Intercambio del Frente de Batalla."
+        },
+        {
+          "area": "Transferencia externa",
+          "detail": "Obtenible en los Silos de Isla Intemporal (Islas Sete) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
+        }
       ]
     }
   },
@@ -786,6 +902,16 @@
         {
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Carvanha salvajes (5% de probabilidad pescando) y Sharpedo (5%)."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Ciudad Portual (Capitán Babor)",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en la Nao Abandonada). Solo puedes elegir uno entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Pokémon salvajes (Carvanha / Sharpedo)",
+          "detail": "Equipado con un 5% de probabilidad en Carvanha y Sharpedo salvajes pescando o haciendo Surf."
         }
       ]
     }
@@ -818,6 +944,16 @@
           "area": "Salvaje equipado",
           "detail": "Equipado raramente en Chinchou salvajes (5% de probabilidad buceando en Rutas 124 y 126) y Lanturn (5%)."
         }
+      ],
+      "emerald": [
+        {
+          "area": "Ciudad Portual (Capitán Babor)",
+          "detail": "Regalo del Capitán Babor a cambio del Escáner (hallado en la Nao Abandonada). Solo puedes elegir uno entre Diente Marino o Escama Marina."
+        },
+        {
+          "area": "Pokémon salvajes (Chinchou / Lanturn / Relicanth)",
+          "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes en fondos marinos con Buceo."
+        }
       ]
     }
   },
@@ -845,8 +981,8 @@
       ],
       "emerald": [
         {
-          "area": "Monte Pírico (Tercera Planta)",
-          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+          "area": "Monte Pírico",
+          "detail": "En el suelo en las plantas superiores interiores del cementerio Pokémon."
         }
       ],
       "firered": [
@@ -887,8 +1023,8 @@
       ],
       "emerald": [
         {
-          "area": "Monte Pírico (Cuarta Planta)",
-          "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+          "area": "Monte Pírico",
+          "detail": "En el suelo en las plantas superiores interiores del cementerio Pokémon."
         }
       ],
       "firered": [

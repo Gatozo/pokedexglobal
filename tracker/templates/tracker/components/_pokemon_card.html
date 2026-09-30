@@ -84,11 +84,11 @@
             {{ entry.pokemon.display_name }}
         </h3>
         <div id="card-types-{{ entry.id }}" class="flex items-center justify-center gap-1 mt-1">
-            <span class="type-{{ entry.primary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
+            <span class="type-{{ entry.primary_type|default:entry.primary_type_display|lower }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black uppercase shadow-sm">
                 {{ entry.primary_type_es }}
             </span>
             {% if entry.secondary_type_display %}
-            <span class="type-{{ entry.secondary_type_display }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black text-white uppercase shadow-sm">
+            <span class="type-{{ entry.secondary_type|default:entry.secondary_type_display|lower }} border border-slate-950 px-2 py-0.5 rounded text-[9px] font-black uppercase shadow-sm">
                 {{ entry.secondary_type_es }}
             </span>
             {% endif %}

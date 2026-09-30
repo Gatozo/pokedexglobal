@@ -12,7 +12,7 @@
     <div id="exclusives-modal-card" class="relative w-full max-w-3xl bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col h-[80vh] max-h-[80vh]">
         
         <!-- Cabecera estilo cómic -->
-        <div class="{% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#c59b27] via-[#d4af37] to-[#64748b] text-slate-950{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500 text-white{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27] text-slate-950{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-600 text-white{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+        <div class="{% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#c59b27] via-[#d4af37] to-[#64748b] text-slate-950{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}bg-gradient-to-r from-[#991b1b] via-[#b91c1c] to-[#0f3870] text-white{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900 text-white{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870] text-white{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500 text-slate-950{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500 text-white{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27] text-slate-950{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-600 text-white{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
             <div class="flex items-center gap-2.5 z-10">
                 <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                     Intercambio Link • Gen {{ game.generation }}
@@ -38,7 +38,7 @@
             <!-- Progreso de Captura de Exclusivos de la Contraparte -->
             <div class="bg-white border-2 border-slate-950 rounded-xl p-3 shadow-[2px_2px_0px_0px_#0f172a] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
-                    <span id="excl-progress-dot" class="w-3.5 h-3.5 rounded-full border border-slate-950 shrink-0 {% if is_shinydex_active %}bg-amber-400{% elif exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#d4af37] to-[#94a3b8]{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-500{% endif %}"></span>
+                    <span id="excl-progress-dot" class="w-3.5 h-3.5 rounded-full border border-slate-950 shrink-0 {% if is_shinydex_active %}bg-amber-400{% elif exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#d4af37] to-[#94a3b8]{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}bg-gradient-to-r from-rose-900 to-[#0f3870]{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-500{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-500{% endif %}"></span>
                     <div>
                         <span id="excl-progress-title" class="text-xs font-black uppercase text-slate-700 block">
                             {% if is_shinydex_active %}Exclusivos shiny de {{ exclusives_info.counterpart_short_name }} obtenidos:{% else %}Exclusivos de {{ exclusives_info.counterpart_short_name }} obtenidos en tu partida:{% endif %}
@@ -48,11 +48,11 @@
                 </div>
                 <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
                     <div class="font-mono font-black text-sm text-slate-900">
-                        <span id="excl-progress-caught" class="{% if is_shinydex_active %}text-amber-600{% elif exclusives_info.counterpart_theme == 'gold_silver' %}text-amber-700{% elif exclusives_info.counterpart_theme == 'ruby' %}text-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}text-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% elif exclusives_info.counterpart_theme == 'crystal' %}text-sky-600{% else %}text-red-600{% endif %} font-black">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_caught }}{% else %}{{ exclusives_info.counterpart_caught }}{% endif %}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
+                        <span id="excl-progress-caught" class="{% if is_shinydex_active %}text-amber-600{% elif exclusives_info.counterpart_theme == 'gold_silver' %}text-amber-700{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}text-rose-900{% elif exclusives_info.counterpart_theme == 'ruby' %}text-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}text-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}text-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}text-amber-600{% elif exclusives_info.counterpart_theme == 'silver' %}text-slate-600{% elif exclusives_info.counterpart_theme == 'gold' %}text-[#9e7514]{% elif exclusives_info.counterpart_theme == 'crystal' %}text-sky-600{% else %}text-red-600{% endif %} font-black">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_caught }}{% else %}{{ exclusives_info.counterpart_caught }}{% endif %}</span> / <span id="excl-progress-total">{{ exclusives_info.counterpart_total }}</span>
                         <span class="text-xs text-slate-500 font-semibold">(<span id="excl-progress-percent">{% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_percent }}{% else %}{{ exclusives_info.counterpart_percent }}{% endif %}</span>%)</span>
                     </div>
                     <div class="w-28 sm:w-36 bg-slate-100 border-2 border-slate-950 rounded-full h-3 overflow-hidden p-0.5">
-                        <div id="excl-progress-bar" class="{% if is_shinydex_active %}bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]{% elif exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#c59b27] to-[#94a3b8]{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_percent }}{% else %}{{ exclusives_info.counterpart_percent }}{% endif %}%"></div>
+                        <div id="excl-progress-bar" class="{% if is_shinydex_active %}bg-gradient-to-r from-amber-400 to-yellow-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]{% elif exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-[#c59b27] to-[#94a3b8]{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}bg-gradient-to-r from-rose-900 to-[#0f3870]{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-500{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %} h-full rounded-full transition-all duration-300" style="width: {% if is_shinydex_active %}{{ exclusives_info.counterpart_shiny_percent }}{% else %}{{ exclusives_info.counterpart_percent }}{% endif %}%"></div>
                     </div>
                 </div>
             </div>
@@ -63,9 +63,9 @@
                     type="button" 
                     id="tab-btn-counterpart"
                     onclick="switchExclusivesTab('counterpart')"
-                    class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all {% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-amber-400 to-slate-200 text-slate-950{% else %}bg-amber-400 text-slate-950{% endif %} flex items-center justify-center gap-2"
+                    class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all {% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-gradient-to-r from-amber-400 to-slate-200 text-slate-950{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}bg-gradient-to-r from-rose-300 to-sky-300 text-slate-950{% else %}bg-amber-400 text-slate-950{% endif %} flex items-center justify-center gap-2"
                 >
-                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-[linear-gradient(90deg,#c59b27_50%,#94a3b8_50%)] border border-slate-950{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %}"></span>
+                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.counterpart_theme == 'gold_silver' %}bg-[linear-gradient(90deg,#c59b27_50%,#94a3b8_50%)] border border-slate-950{% elif exclusives_info.counterpart_theme == 'ruby_sapphire' %}bg-[linear-gradient(90deg,#991b1b_50%,#0f3870_50%)] border border-slate-950{% elif exclusives_info.counterpart_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.counterpart_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.counterpart_theme == 'blue' %}bg-blue-600{% elif exclusives_info.counterpart_theme == 'amber' %}bg-amber-500{% elif exclusives_info.counterpart_theme == 'silver' %}bg-slate-400{% elif exclusives_info.counterpart_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.counterpart_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %}"></span>
                     <span>Exclusivos de {{ exclusives_info.counterpart_short_name }} ({{ exclusives_info.counterpart_total }})</span>
                 </button>
                 <button 
@@ -74,7 +74,7 @@
                     onclick="switchExclusivesTab('own')"
                     class="flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2"
                 >
-                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.own_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% elif exclusives_info.own_theme == 'silver' %}bg-slate-400{% elif exclusives_info.own_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.own_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %}"></span>
+                    <span class="w-2.5 h-2.5 rounded-full {% if exclusives_info.own_theme == 'emerald' %}bg-emerald-600{% elif exclusives_info.own_theme == 'ruby' %}bg-rose-900{% elif exclusives_info.own_theme == 'sapphire' %}bg-[#0f3870]{% elif exclusives_info.own_theme == 'blue' %}bg-blue-600{% elif exclusives_info.own_theme == 'amber' %}bg-amber-500{% elif exclusives_info.own_theme == 'silver' %}bg-slate-400{% elif exclusives_info.own_theme == 'gold' %}bg-[#c59b27]{% elif exclusives_info.own_theme == 'crystal' %}bg-sky-500{% else %}bg-red-600{% endif %}"></span>
                     <span>Exclusivos de tu Edición ({{ exclusives_info.own_total }})</span>
                 </button>
             </div>
@@ -114,7 +114,7 @@
                             <div class="flex items-center gap-1.5 min-w-0">
                                 <span class="text-xs font-mono font-bold text-slate-500 shrink-0">#{{ item.number }}</span>
                                 {% if item.origin_badge %}
-                                <span class="px-1.5 py-0.5 rounded text-[8px] sm:text-[8.5px] font-black uppercase border border-slate-950 text-center leading-tight tracking-tight inline-block shrink min-w-0 {% if 'Oro' in item.origin_badge and 'Plata' in item.origin_badge %}bg-amber-100 text-amber-900 border-amber-950{% elif 'Oro' in item.origin_badge %}bg-yellow-100 text-yellow-900 border-yellow-950{% elif 'Plata' in item.origin_badge %}bg-slate-200 text-slate-800 border-slate-950{% elif 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">{{ item.origin_badge }}</span>
+                                <span class="px-1.5 py-0.5 rounded text-[8px] sm:text-[8.5px] font-black uppercase border border-slate-950 text-center leading-tight tracking-tight inline-block shrink min-w-0 {% if 'Oro' in item.origin_badge and 'Plata' in item.origin_badge %}bg-amber-100 text-amber-900 border-amber-950{% elif 'Oro' in item.origin_badge %}bg-yellow-100 text-yellow-900 border-yellow-950{% elif 'Plata' in item.origin_badge %}bg-slate-200 text-slate-800 border-slate-950{% elif 'Rojo' in item.origin_badge and 'Azul' in item.origin_badge %}bg-purple-100 text-purple-900 border-purple-950{% elif 'Rubí' in item.origin_badge and 'Zafiro' in item.origin_badge %}bg-gradient-to-r from-red-100 to-blue-100 text-slate-900 border-slate-950{% elif 'Rubí' in item.origin_badge %}bg-rose-100 text-rose-900 border-rose-950{% elif 'Zafiro' in item.origin_badge %}bg-blue-100 text-blue-900 border-blue-950{% elif 'Rojo' in item.origin_badge %}bg-red-100 text-red-900 border-red-950{% else %}bg-blue-100 text-blue-900 border-blue-950{% endif %}">{{ item.origin_badge }}</span>
                                 {% endif %}
                             </div>
                             <span 
@@ -147,11 +147,11 @@
                         <div class="text-center">
                             <h4 class="font-black text-sm text-slate-900 truncate uppercase">{{ item.name }}</h4>
                             <div class="flex items-center justify-center gap-1 mt-1">
-                                <span class="type-{{ item.primary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                <span class="type-{{ item.primary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold uppercase shadow-sm">
                                     {{ item.primary_type_es }}
                                 </span>
                                 {% if item.secondary_type %}
-                                <span class="type-{{ item.secondary_type }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold text-white uppercase">
+                                <span class="type-{{ item.secondary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[9px] font-bold uppercase shadow-sm">
                                     {{ item.secondary_type_es }}
                                 </span>
                                 {% endif %}
@@ -194,6 +194,54 @@
                         </p>
                     </div>
                 </div>
+                {% elif game.slug == 'emerald' %}
+                <div class="bg-emerald-50 border-2 border-emerald-300 text-emerald-950 rounded-xl p-3.5 text-xs font-bold flex items-start gap-3 shadow-sm">
+                    <img src="/media/items/star-piece.png" alt="Especial" class="w-5 h-5 shrink-0 object-contain mt-0.5">
+                    <div class="space-y-1">
+                        <h4 class="font-black text-sm uppercase">Nuevos Salvajes y Míticos Transferibles a Rubí y Zafiro</h4>
+                        <p class="font-medium text-slate-700">
+                            Estos <strong>{{ exclusives_info.own_total }} Pokémon</strong> pueden capturarse en tu partida de <strong>Pokémon Esmeralda</strong> (gracias a la ampliación postgame de la Zona Safari, el Túnel del Desierto, la Cueva Taller, el Frente de Batalla y el evento de Isla Origen para Deoxys).
+                        </p>
+                        <p class="font-medium text-slate-700">
+                            Los jugadores de <strong>Pokémon Rubí y Pokémon Zafiro</strong> no tienen acceso a estos Pokémon salvajes en Hoenn, por lo que puedes transferírselos por cable link para completar su Pokédex Nacional.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula compacta con los iconos de PC -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                    {% for item in exclusives_info.own_list %}
+                    <div 
+                        class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
+                        onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
+                        title="Ver detalles de {{ item.name }}"
+                    >
+                        {% if item.modal_data_json %}
+                        <script type="application/json" id="entry-data-{{ item.entry_id }}">{{ item.modal_data_json|safe }}</script>
+                        {% endif %}
+                        <!-- Icono de PC oficial (32x32) -->
+                        <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                            <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-1.5">
+                                <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
+                                <span class="font-black text-xs text-slate-900 uppercase leading-none">{{ item.name }}</span>
+                            </div>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="type-{{ item.primary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
+                                    {{ item.primary_type_es }}
+                                </span>
+                                {% if item.secondary_type %}
+                                <span class="type-{{ item.secondary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
+                                    {{ item.secondary_type_es }}
+                                </span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
                 {% else %}
                 <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
                     <img src="/media/items/oaks-parcel.png" alt="Paquete" class="w-5 h-5 shrink-0 object-contain">
@@ -210,6 +258,9 @@
                         onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
                         title="Ver detalles de {{ item.name }}"
                     >
+                        {% if item.modal_data_json %}
+                        <script type="application/json" id="entry-data-{{ item.entry_id }}">{{ item.modal_data_json|safe }}</script>
+                        {% endif %}
                         <!-- Icono de PC oficial (32x32) -->
                         <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
                             <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
@@ -220,11 +271,11 @@
                                 <span class="font-black text-xs text-slate-900 uppercase leading-none">{{ item.name }}</span>
                             </div>
                             <div class="flex items-center gap-1 mt-1">
-                                <span class="type-{{ item.primary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                <span class="type-{{ item.primary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
                                     {{ item.primary_type_es }}
                                 </span>
                                 {% if item.secondary_type %}
-                                <span class="type-{{ item.secondary_type }} px-1.5 py-0.2 rounded text-[8px] font-bold text-white uppercase">
+                                <span class="type-{{ item.secondary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
                                     {{ item.secondary_type_es }}
                                 </span>
                                 {% endif %}

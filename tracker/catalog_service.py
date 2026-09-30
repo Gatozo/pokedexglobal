@@ -473,9 +473,9 @@ class CatalogEntry:
             "number": f"{self.entry_number:03d}",
             "name": self.pokemon.display_name,
             "category": self.pokemon.category or "Pokémon",
-            "primary_type": self.primary_type_display,
+            "primary_type": (self.primary_type or self.primary_type_display or "").lower(),
             "primary_type_es": self.primary_type_es,
-            "secondary_type": self.secondary_type_display or "",
+            "secondary_type": (self.secondary_type or self.secondary_type_display or "").lower(),
             "secondary_type_es": self.secondary_type_es or "",
             "sprite_retro": self.modal_retro_sprite_url,
             "sprite_modern": self.pokemon.sprite_url,
@@ -597,7 +597,7 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
 def ensure_all_catalogs_loaded():
     """Precarga todos los catálogos disponibles para indexación O(1)."""
     global _CATALOG_CACHE
-    all_slugs = ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby"]
+    all_slugs = ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald"]
     for slug in all_slugs:
         if slug not in _CATALOG_CACHE:
             get_compiled_catalog(slug)
