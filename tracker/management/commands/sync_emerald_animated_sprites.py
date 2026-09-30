@@ -37,6 +37,76 @@ def download_single_gif(url: str, dest_path: Path, max_retries: int = 3) -> bool
     return False
 
 
+def generate_castform_animated_forms(normal_dir: Path, shiny_dir: Path, force: bool = False):
+    """Genera y sincroniza los sprites animados (.gif) para las formas climáticas de Castform (#351)."""
+    from PIL import Image
+
+    coords = [
+        (0, 0), (0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0), (6, 0), (6, 0),
+        (7, 0), (7, 0), (7, 0), (7, 0), (7, 1), (7, 1), (7, 1), (7, 2), (6, 2),
+        (6, 2), (5, 2), (4, 2), (3, 2), (3, 1), (2, 1), (1, 1), (0, 0), (-1, 0),
+        (-2, 0), (-3, 0), (-4, 0), (-5, 0), (-6, 0), (-7, 0), (-7, 0), (-8, 0),
+        (-8, 0), (-8, 0), (-8, 0), (-8, 1), (-8, 1), (-8, 1), (-8, 2), (-7, 2),
+        (-7, 2), (-6, 2), (-5, 2), (-4, 2), (-4, 1), (-3, 1), (-2, 1), (0, 0)
+    ]
+    durations = [80] + [20] * 49 + [2250]
+
+    media_sprites = Path(settings.MEDIA_ROOT) / "pokemon" / "sprites"
+    tasks = [
+        (media_sprites / "emerald" / "castform" / "sunny.png", normal_dir / "castform" / "sunny.gif"),
+        (media_sprites / "emerald" / "castform" / "rainy.png", normal_dir / "castform" / "rainy.gif"),
+        (media_sprites / "emerald" / "castform" / "snowy.png", normal_dir / "castform" / "snowy.gif"),
+        (media_sprites / "emerald_shiny" / "castform" / "sunny.png", shiny_dir / "castform" / "sunny.gif"),
+        (media_sprites / "emerald_shiny" / "castform" / "rainy.png", shiny_dir / "castform" / "rainy.gif"),
+        (media_sprites / "emerald_shiny" / "castform" / "snowy.png", shiny_dir / "castform" / "snowy.gif"),
+    ]
+
+    for src_png, dest_gif in tasks:
+        if not force and dest_gif.exists() and dest_gif.stat().st_size > 0:
+            continue
+        if not src_png.exists():
+            continue
+
+        src = Image.open(src_png).convert("RGBA")
+        colors = set()
+        for pixel in list(src.getdata()):
+            if pixel[3] > 0:
+                colors.add(pixel[:3])
+
+        palette = [0, 0, 0]
+        color_to_idx = {}
+        for i, c in enumerate(sorted(colors), start=1):
+            palette.extend(c)
+            color_to_idx[c] = i
+        palette += [0] * (768 - len(palette))
+
+        gif_frames = []
+        for f_idx, (dx, dy) in enumerate(coords):
+            canvas = Image.new("RGBA", (96, 96), (0, 0, 0, 0))
+            canvas.paste(src, (16 + dx, 16 + dy), src)
+            p_img = Image.new("P", (96, 96), 0)
+            p_img.putpalette(palette)
+            raw_pixels = list(canvas.getdata())
+            p_data = bytearray(96 * 96)
+            for idx, px in enumerate(raw_pixels):
+                p_data[idx] = color_to_idx.get(px[:3], 1) if px[3] > 0 else 0
+            p_img.frombytes(bytes(p_data))
+            p_img.info["transparency"] = 0
+            p_img.info["duration"] = durations[f_idx]
+            gif_frames.append(p_img)
+
+        dest_gif.parent.mkdir(parents=True, exist_ok=True)
+        gif_frames[0].save(
+            dest_gif,
+            save_all=True,
+            append_images=gif_frames[1:],
+            duration=durations,
+            loop=0,
+            transparency=0,
+            disposal=2
+        )
+
+
 class Command(BaseCommand):
     help = "Descarga y almacena localmente los sprites animados (normales y shiny) de Pokémon Esmeralda (1-386)."
 
@@ -102,6 +172,8 @@ class Command(BaseCommand):
 
                 if completed % 50 == 0 or completed == total_tasks:
                     self.stdout.write(f"Progreso: {completed}/{total_tasks} descargas completadas...")
+
+        generate_castform_animated_forms(normal_dir, shiny_dir, force=force)
 
         cache.clear()
         self.stdout.write(self.style.SUCCESS(

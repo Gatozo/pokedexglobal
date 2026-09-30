@@ -2880,6 +2880,49 @@ class PokemonEmeraldGen3Tests(TestCase):
         self.assertTrue(modal_data["sprite_retro"].endswith("emerald_animated/252.gif"))
         self.assertTrue(modal_data["sprite_retro_shiny"].endswith("emerald_animated_shiny/252.gif"))
 
+    def test_emerald_castform_animated_forms(self):
+        """Valida que Castform (#351) y todas sus formas climáticas cuenten con sprites animados (.gif) en el modal de Esmeralda."""
+        from django.conf import settings
+        from pathlib import Path
+
+        hoenn_cat = get_compiled_catalog("emerald", is_national=False)
+        castform = next(e for e in hoenn_cat if e.pokemon.national_number == 351)
+        self.assertEqual(len(castform.forms), 4)
+
+        # 1. Comprobar que en el modal individual (modal_retro_sprite_url) todas las formas usan GIFs animados
+        expected_gifs = [
+            ("normal", "emerald_animated/351.gif", "emerald_animated_shiny/351.gif"),
+            ("sunny", "emerald_animated/castform/sunny.gif", "emerald_animated_shiny/castform/sunny.gif"),
+            ("rainy", "emerald_animated/castform/rainy.gif", "emerald_animated_shiny/castform/rainy.gif"),
+            ("snowy", "emerald_animated/castform/snowy.gif", "emerald_animated_shiny/castform/snowy.gif"),
+        ]
+
+        for idx, (f_key, exp_normal, exp_shiny) in enumerate(expected_gifs):
+            form = castform.forms[idx]
+            self.assertEqual(form["form_key"], f_key)
+            self.assertIn(exp_normal, form["modal_retro_sprite_url"])
+            self.assertIn(exp_shiny, form["modal_retro_sprite_shiny_url"])
+
+            # Comprobar que los archivos existen en disco y son GIFs válidos
+            p_normal = Path(settings.MEDIA_ROOT) / exp_normal.replace("emerald_animated/", "pokemon/sprites/emerald_animated/")
+            p_shiny = Path(settings.MEDIA_ROOT) / exp_shiny.replace("emerald_animated_shiny/", "pokemon/sprites/emerald_animated_shiny/")
+            self.assertTrue(p_normal.exists(), f"Debe existir archivo {p_normal}")
+            self.assertTrue(p_shiny.exists(), f"Debe existir archivo {p_shiny}")
+
+            with open(p_normal, "rb") as f:
+                header = f.read(6)
+                self.assertIn(header, [b"GIF87a", b"GIF89a"])
+            with open(p_shiny, "rb") as f:
+                header = f.read(6)
+                self.assertIn(header, [b"GIF87a", b"GIF89a"])
+
+        # 2. Comprobar serialización en modal_data_json
+        modal_json = json.loads(castform.modal_data_json)
+        self.assertEqual(len(modal_json["forms"]), 4)
+        for idx, (_, exp_normal, exp_shiny) in enumerate(expected_gifs):
+            self.assertIn(exp_normal, modal_json["forms"][idx]["modal_retro_sprite_url"])
+            self.assertIn(exp_shiny, modal_json["forms"][idx]["modal_retro_sprite_shiny_url"])
+
     def test_emerald_type_badges_classes(self):
         """Verifica que las etiquetas de tipo se rendericen en minúsculas y coincidan con los estilos CSS."""
         resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))

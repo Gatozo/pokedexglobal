@@ -12,9 +12,11 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
     """
     Retorna las 4 formas climáticas de Castform (#351) en Hoenn:
     Forma Normal (Normal), Forma Sol (Fuego), Forma Lluvia (Agua), Forma Nieve (Hielo).
+    En Pokémon Esmeralda, incluye las URLs de los sprites animados oficiales (.gif) para el modal individual.
     """
     slug = game_slug if game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else "ruby"
-    
+    is_emerald = (slug == "emerald")
+
     return [
         {
             "form_key": "normal",
@@ -27,6 +29,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/351.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/351.png",
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else None,
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/351.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/351.png",
             "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/351.png",
@@ -43,6 +47,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/sunny.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/sunny.png",
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/sunny.gif" if is_emerald else None,
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/sunny.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/sunny.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/sunny.png",
             "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png",
@@ -59,6 +65,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/rainy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/rainy.png",
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/rainy.gif" if is_emerald else None,
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/rainy.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/rainy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/rainy.png",
             "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png",
@@ -75,6 +83,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/snowy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/snowy.png",
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/snowy.gif" if is_emerald else None,
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/snowy.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/snowy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/snowy.png",
             "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png",
