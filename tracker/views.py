@@ -364,11 +364,38 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
                 item_copy["is_shiny_caught"] = l in unown_shiny_caught
                 unown_catalog.append(item_copy)
 
+    # Barra de Generaciones/Regiones para Pokédex Nacional (Gen >= 3)
+    from .national_dex import get_national_regions_context
+    requested_gen = request.GET.get("gen")
+    session_gen_key = f"national_gen_{game.slug}"
+    if not requested_gen:
+        requested_gen = request.session.get(session_gen_key)
+
+    national_regions_ctx = get_national_regions_context(
+        game=game,
+        pokedex=pokedex,
+        entries_by_num=entries_by_num,
+        caught_entry_ids=caught_entry_ids,
+        shiny_caught_entry_ids=shiny_caught_entry_ids,
+        requested_slug=requested_gen,
+        is_shinydex=is_shinydex_active,
+    )
+
+    rendered_entries = entries_list
+    if national_regions_ctx:
+        active_slug = national_regions_ctx["active_slug"]
+        request.session[session_gen_key] = active_slug
+        start_id, end_id = national_regions_ctx["active_range"]
+        rendered_entries = [
+            e for e in entries_list if start_id <= e.pokemon.national_number <= end_id
+        ]
+
     context = {
         "game": game,
         "pokedex": pokedex,
         "game_pokedexes": list(game.pokedexes.all().order_by("id")),
-        "entries": entries_list,
+        "entries": rendered_entries,
+        "national_regions_ctx": national_regions_ctx,
         "caught_entry_ids": caught_entry_ids,
         "shiny_caught_entry_ids": shiny_caught_entry_ids,
         "total_pokemon": total_pokemon,
@@ -391,6 +418,12 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "unown_shiny_count": len(unown_shiny_caught),
         "unown_shiny_percent": round((len(unown_shiny_caught) / (len(unown_catalog) if unown_catalog else 26) * 100), 1) if unown_catalog else 0,
     }
+    if request.headers.get("x-requested-with") == "XMLHttpRequest" or request.GET.get("partial") == "grid":
+        response = render(request, "tracker/components/_pokemon_grid_partial.html", context)
+        if national_regions_ctx:
+            response["X-Active-Slug"] = national_regions_ctx["active_slug"]
+        return response
+
     return render(request, "tracker/pokedex_detail.html", context)
 
 

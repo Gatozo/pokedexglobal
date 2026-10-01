@@ -2455,7 +2455,8 @@ class PokemonRubyGen3Tests(TestCase):
         resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "ruby", "pokedex_slug": "national"}))
         self.assertEqual(resp_nat.status_code, 200)
         self.assertContains(resp_nat, "Pokédex Nacional")
-        self.assertEqual(len(resp_nat.context["entries"]), 386)
+        self.assertEqual(resp_nat.context["total_pokemon"], 386)
+        self.assertEqual(len(resp_nat.context["entries"]), 151)  # Kanto por defecto en barra de generaciones
 
     def test_ruby_exclusives_and_transfers(self):
         from .exclusives import get_version_exclusives_context, get_version_transfers_context
@@ -2539,7 +2540,7 @@ class PokemonRubyGen3Tests(TestCase):
         self.assertNotContains(resp_nat, 'id="unown-chamber-hint"')
 
         # 3. Toggle de formas especiales (!) y (?) en Gen 3
-        unown_entry = next(e for e in resp_nat.context["entries"] if e.pokemon.national_number == 201)
+        unown_entry = resp_nat.context["unown_entry"]
         resp_toggle = self.client.post(
             reverse("tracker:toggle_unown_catch"),
             data=json.dumps({"entry_id": unown_entry.id, "letter": "exclamation", "is_shiny": False}),
@@ -3165,4 +3166,138 @@ class FrontendInteractivityInvariantsTests(TestCase):
         self.assertIn("window.toggleCatch =", content)
         self.assertIn("window.__pokedexActionQueue =", content)
         self.assertIn("window.__pokedexReady =", content)
+
+
+class NationalGenerationBarTests(TestCase):
+    """
+    Pruebas para la barra de navegación por generaciones/regiones en Pokédex Nacional:
+    - No se muestra en Gen 1 (sin Pokédex Nacional).
+    - No se muestra en Gen 2 (los 251 se presentan completos sin segmentar).
+    - En Gen 3 Nacional se muestran exactamente Kanto, Johto y Hoenn (ocultando Sinnoh y posteriores).
+    - Kanto es la región activa por defecto (renderiza 151 tarjetas).
+    - Filtrado dinámico por región reduce el DOM a la generación activa (Hoenn 135 tarjetas, Johto 100).
+    - El Hero Banner preserva el acumulador total (386).
+    - La última región visitada se recuerda en sesión.
+    """
+    def setUp(self):
+        # Gen 1: Red
+        self.game_r = Game.objects.create(name="Pokémon Red", slug="red", generation=1)
+        self.dex_r = Pokedex.objects.create(game=self.game_r, name="Pokédex de Kanto", slug="kanto", is_national=False)
+
+        # Gen 2: Crystal
+        self.game_c = Game.objects.create(name="Pokémon Crystal", slug="crystal", generation=2)
+        self.dex_c_reg = Pokedex.objects.create(game=self.game_c, name="Pokédex de Johto", slug="johto", is_national=False)
+        self.dex_c_nat = Pokedex.objects.create(game=self.game_c, name="Pokédex Nacional", slug="national", is_national=True)
+
+        # Gen 3: Emerald
+        self.game_e = Game.objects.create(name="Pokémon Emerald", slug="emerald", generation=3)
+        self.dex_e_reg = Pokedex.objects.create(game=self.game_e, name="Pokédex Regional de Hoenn", slug="hoenn", is_national=False)
+        self.dex_e_nat = Pokedex.objects.create(game=self.game_e, name="Pokédex Nacional", slug="national", is_national=True)
+
+    def test_generation_bar_not_shown_in_gen1(self):
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "red", "pokedex_slug": "kanto"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertNotContains(resp, "btn-nat-gen-kanto")
+        self.assertIsNone(resp.context.get("national_regions_ctx"))
+
+    def test_generation_bar_not_shown_in_gen2(self):
+        # Regional Johto
+        resp_reg = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "crystal", "pokedex_slug": "johto"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertNotContains(resp_reg, "btn-nat-gen-kanto")
+        self.assertIsNone(resp_reg.context.get("national_regions_ctx"))
+
+        # Nacional Johto (Modo Antiguo 251)
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "crystal", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertNotContains(resp_nat, "btn-nat-gen-kanto")
+        self.assertIsNone(resp_nat.context.get("national_regions_ctx"))
+
+    def test_generation_bar_not_shown_in_gen3_regional(self):
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertNotContains(resp, "btn-nat-gen-kanto")
+        self.assertIsNone(resp.context.get("national_regions_ctx"))
+
+    def test_generation_bar_in_gen3_national_default_kanto(self):
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}))
+        self.assertEqual(resp.status_code, 200)
+
+        # 1. La barra contiene exactamente Kanto, Johto y Hoenn
+        self.assertContains(resp, "btn-nat-gen-kanto")
+        self.assertContains(resp, "btn-nat-gen-johto")
+        self.assertContains(resp, "btn-nat-gen-hoenn")
+        # Generaciones posteriores NO existen en este cartucho
+        self.assertNotContains(resp, "btn-nat-gen-sinnoh")
+        self.assertNotContains(resp, "btn-nat-gen-unova")
+        self.assertNotContains(resp, "btn-nat-gen-paldea")
+
+        # 2. Región activa por defecto es Kanto (#1..151)
+        ctx = resp.context["national_regions_ctx"]
+        self.assertEqual(ctx["active_slug"], "kanto")
+        self.assertEqual(len(resp.context["entries"]), 151)
+        self.assertEqual(resp.context["entries"][0].pokemon.national_number, 1)
+        self.assertEqual(resp.context["entries"][-1].pokemon.national_number, 151)
+
+        # 3. El total global del Hero Banner sigue siendo 386
+        self.assertEqual(resp.context["total_pokemon"], 386)
+
+    def test_generation_bar_in_gen3_national_hoenn_filter(self):
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=hoenn")
+        self.assertEqual(resp.status_code, 200)
+
+        ctx = resp.context["national_regions_ctx"]
+        self.assertEqual(ctx["active_slug"], "hoenn")
+        # Exactamente 135 especies de Hoenn (252 Treecko a 386 Deoxys)
+        self.assertEqual(len(resp.context["entries"]), 135)
+        self.assertEqual(resp.context["entries"][0].pokemon.national_number, 252)
+        self.assertEqual(resp.context["entries"][-1].pokemon.national_number, 386)
+        self.assertEqual(resp.context["total_pokemon"], 386)
+
+    def test_generation_bar_in_gen3_national_johto_filter(self):
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=johto")
+        self.assertEqual(resp.status_code, 200)
+
+        ctx = resp.context["national_regions_ctx"]
+        self.assertEqual(ctx["active_slug"], "johto")
+        # Exactamente 100 especies de Johto (152 Chikorita a 251 Celebi)
+        self.assertEqual(len(resp.context["entries"]), 100)
+        self.assertEqual(resp.context["entries"][0].pokemon.national_number, 152)
+        self.assertEqual(resp.context["entries"][-1].pokemon.national_number, 251)
+        self.assertEqual(resp.context["total_pokemon"], 386)
+
+    def test_generation_bar_session_persistence(self):
+        # 1. Visitar con gen=hoenn
+        self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=hoenn")
+
+        # 2. Visitar sin parámetro: recuerda 'hoenn' desde sesión
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.context["national_regions_ctx"]["active_slug"], "hoenn")
+        self.assertEqual(len(resp.context["entries"]), 135)
+
+    def test_generation_bar_partial_grid_ajax(self):
+        url = reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=hoenn"
+        resp = self.client.get(url, HTTP_X_REQUESTED_WITH="XMLHttpRequest")
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp["X-Active-Slug"], "hoenn")
+        self.assertTemplateUsed(resp, "tracker/components/_pokemon_grid_partial.html")
+        self.assertNotContains(resp, "<!DOCTYPE html>")
+        self.assertNotContains(resp, "<footer")
+        self.assertContains(resp, "Treecko")
+        self.assertContains(resp, "Deoxys")
+        self.assertNotContains(resp, "Bulbasaur")
+
+    def test_generation_bar_partial_grid_query_param(self):
+        url = reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=johto&partial=grid"
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp["X-Active-Slug"], "johto")
+        self.assertTemplateUsed(resp, "tracker/components/_pokemon_grid_partial.html")
+        self.assertNotContains(resp, "<!DOCTYPE html>")
+        self.assertContains(resp, "Chikorita")
+        self.assertContains(resp, "Celebi")
+        self.assertNotContains(resp, "Treecko")
+        self.assertNotContains(resp, "Bulbasaur")
+
 

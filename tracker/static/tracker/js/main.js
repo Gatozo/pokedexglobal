@@ -12,8 +12,14 @@ import {
     updateCardUI, 
     applyShinydexMode, 
     setSpriteStyle, 
-    toggleCatch 
+    toggleCatch,
+    updateNationalRegionsBadgeUI
 } from './cards.js';
+import { 
+    switchNationalRegion, 
+    updateBarButtonsUI, 
+    initNationalGenerationBar 
+} from './national_bar.js';
 import { 
     setStatusFilter, 
     normalizeSearchText, 
@@ -91,6 +97,9 @@ window.updateCardUI = updateCardUI;
 window.applyShinydexMode = applyShinydexMode;
 window.setSpriteStyle = setSpriteStyle;
 window.toggleCatch = toggleCatch;
+window.updateNationalRegionsBadgeUI = updateNationalRegionsBadgeUI;
+window.switchNationalRegion = switchNationalRegion;
+window.updateBarButtonsUI = updateBarButtonsUI;
 
 window.setStatusFilter = setStatusFilter;
 window.normalizeSearchText = normalizeSearchText;
@@ -245,9 +254,14 @@ document.addEventListener('click', (e) => {
     }
 }, { capture: true, passive: false });
 
-// Navegación con historial del navegador (Atrás / Adelante con deep links)
+// Navegación con historial del navegador (Atrás / Adelante con deep links y cambio de región)
 window.addEventListener('popstate', () => {
     syncModalFromUrlHash();
+    const url = new URL(window.location.href);
+    const gen = url.searchParams.get('gen');
+    if (gen && typeof window.switchNationalRegion === 'function') {
+        window.switchNationalRegion(gen, null, false);
+    }
 });
 
 // Sincronización inicial si la URL ya contiene un hash al cargar
@@ -294,6 +308,10 @@ onDOMReady(() => {
     try {
         updateFilterUI();
         filterCards();
+    } catch (e) {}
+
+    try {
+        initNationalGenerationBar();
     } catch (e) {}
 
     // Re-evaluar deep link por si la tarjeta se encontraba más abajo en el render inicial

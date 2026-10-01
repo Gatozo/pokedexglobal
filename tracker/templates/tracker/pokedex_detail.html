@@ -77,6 +77,9 @@
         <div class="bg-[#fffef5] border-4 border-slate-950 rounded-2xl mb-8 shadow-[6px_6px_0px_0px_#0f172a] overflow-hidden">
             {% include 'tracker/components/_hero_banner.html' %}
             {% include 'tracker/components/_toolbar.html' %}
+            {% if national_regions_ctx %}
+                {% include 'tracker/components/_national_generation_bar.html' %}
+            {% endif %}
         </div>
 
         <!-- Pokemon Cards Grid (Mosaico Coleccionable Cómic) -->

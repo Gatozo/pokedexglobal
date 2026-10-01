@@ -3,6 +3,7 @@
     class="pokemon-card relative rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between h-full group cursor-pointer select-none {% if is_shinydex_active %}{% if entry.is_shiny_caught %}caught-card{% else %}uncaught-card{% endif %}{% else %}{% if entry.is_caught %}caught-card{% else %}uncaught-card{% endif %}{% endif %}"
     data-entry-id="{{ entry.id }}"
     data-number="{{ entry.entry_number }}"
+    data-national-number="{{ entry.pokemon.national_number }}"
     data-name="{{ entry.pokemon.name }}"
     data-display="{{ entry.pokemon.display_name|lower }}"
     data-type1="{{ entry.primary_type_display }}"

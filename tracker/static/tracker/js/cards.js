@@ -10,6 +10,7 @@ import { updateModalCatchStatus, updateModalSpriteDisplay } from './modal_comic.
 import { updateExclusivesCardStatus, updateExclusivesModalUI } from './modal_exclusives.js';
 import { updateTransfersCardStatus } from './modal_transfers.js';
 import { updateUnownModalUI } from './modal_unown.js';
+import { invalidateNationalRegionCache } from './national_bar.js';
 
 export function toggleShinydexMode() {
     state.isShinydexMode = !state.isShinydexMode;
@@ -168,10 +169,10 @@ export function setSpriteStyle(style) {
 
     if (btnRetro && btnModern) {
         if (style === 'retro') {
-            btnRetro.className = 'h-full w-[80px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none ' + THEME_ACTIVE_BTN;
+            btnRetro.className = 'h-full w-[88px] text-xs font-black uppercase flex items-center justify-center gap-1.5 border-r-2 border-slate-950 transition-colors select-none ' + THEME_ACTIVE_BTN;
             btnModern.className = 'h-full w-[96px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5 select-none';
         } else {
-            btnRetro.className = 'h-full w-[80px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 border-r-2 border-slate-950 transition-colors flex items-center justify-center gap-1.5 select-none';
+            btnRetro.className = 'h-full w-[88px] text-xs font-black uppercase text-slate-700 hover:text-slate-950 hover:bg-slate-100 border-r-2 border-slate-950 transition-colors flex items-center justify-center gap-1.5 select-none';
             btnModern.className = 'h-full w-[96px] text-xs font-black uppercase flex items-center justify-center gap-1.5 transition-colors select-none ' + THEME_ACTIVE_BTN;
         }
     }
@@ -318,6 +319,9 @@ export async function toggleCatch(entryId) {
             if (!state.isShinydexMode) {
                 updateTransfersCardStatus(entryId, data.is_caught);
             }
+            const natNum = card?.dataset?.nationalNumber || card?.dataset?.number;
+            updateNationalRegionsBadgeUI(natNum, data.is_caught);
+            invalidateNationalRegionCache();
 
             // Actualizar métricas globales de la barra activa
             if (state.isShinydexMode) {
@@ -343,4 +347,23 @@ export async function toggleCatch(entryId) {
             btn.classList.remove('opacity-50');
         }
     }
+}
+
+export function updateNationalRegionsBadgeUI(nationalNumber, isCaught) {
+    if (!nationalNumber) return;
+    const num = parseInt(nationalNumber, 10);
+    const regionButtons = document.querySelectorAll("[id^='btn-nat-gen-']");
+    regionButtons.forEach(btn => {
+        const start = parseInt(btn.dataset.start, 10);
+        const end = parseInt(btn.dataset.end, 10);
+        const slug = btn.dataset.slug;
+        if (num >= start && num <= end) {
+            const countEl = document.getElementById(`nat-reg-caught-${slug}`);
+            if (countEl) {
+                let current = parseInt(countEl.textContent, 10) || 0;
+                current = isCaught ? current + 1 : Math.max(0, current - 1);
+                countEl.textContent = current;
+            }
+        }
+    });
 }
