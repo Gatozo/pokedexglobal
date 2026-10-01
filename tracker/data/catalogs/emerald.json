@@ -945,7 +945,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -1064,7 +1064,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -2285,7 +2285,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -6204,7 +6204,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -6574,7 +6574,7 @@
     "flavor_text": "Las unidades de las extremidades son imanes de largo alcance. Generan magnetismo suficiente para atraer objetos de hierro que estén a 100 m de distancia.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -6586,7 +6586,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -6699,7 +6699,7 @@
     "flavor_text": "Tiene un curioso e inexplicable parecido con una Poké Ball. Como estalla a la mínima, hasta los entrenadores veteranos lo tratan con mucho cuidado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -6715,7 +6715,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -7410,7 +7410,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -9442,7 +9442,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -9560,7 +9560,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Zafiro",
       "badge_color": "blue",
-      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza con Ditto en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -9568,7 +9568,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -9617,7 +9617,7 @@
     "flavor_text": "El origen de la fuerza de este Pokémon está en la energía solar. En días soleados, grupos de Solrock se alinean de cara al sol para absorber su luz.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -9653,7 +9653,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -10033,7 +10033,7 @@
     "flavor_text": "Los Baltoy se mueven haciendo girar su única extremidad inferior. Aparecen representados en las pinturas murales de las ruinas de una antigua ciudad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -10041,7 +10041,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -10599,7 +10599,7 @@
     "flavor_text": "Feebas vive en charcas llenas de algas. Parece que el aspecto terriblemente descuidado que ofrece sea la causa de que pocos entrenadores lo críen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza en la Guardería de la Ruta 117).",
+      "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119",
@@ -10658,11 +10658,11 @@
     "flavor_text": "Dicen que vive en el fondo de los grandes lagos. Se le considera el Pokémon más bello que existe y se le ha representado en multitud de pinturas y estatuas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
+      "summary": "Evoluciona de Feebas (Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo))",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
+        "text": "Evoluciona de Feebas (Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo))",
         "trigger": "level-up",
         "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
@@ -10774,7 +10774,7 @@
     "flavor_text": "De noche, se agrupan y hacen brillar su núcleo rojo. Los destellos se intercalan con el centelleo estelar. Si les arrancan alguna parte del cuerpo, la regeneran.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Calagua (Pesca / Surf)",
@@ -10782,7 +10782,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -13816,7 +13816,7 @@
     "flavor_text": "Cuando los Beldum van en enjambre, se mueven al unísono en perfecta armonía, como si fueran un solo Pokémon. Se comunican por ondas cerebrales.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).",
+      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Algaria (Casa de Máximo)",
@@ -13824,7 +13824,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",

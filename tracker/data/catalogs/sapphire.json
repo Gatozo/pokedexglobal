@@ -1218,7 +1218,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -1377,7 +1377,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -1793,7 +1793,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza una vez obtenido o intercambio NPC en Ciudad Férrica por un Ralts).",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza o intercambio NPC en Ciudad Férrica por un Ralts).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -7039,7 +7039,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Rubí (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -11689,7 +11689,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -11947,7 +11947,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Rubí (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -11955,7 +11955,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -13233,11 +13233,11 @@
     "flavor_text": "Milotic vive en lo más profundo de los lagos. Cuando intensifica el color rosa de la piel, libera una fuerte onda de energía que tranquiliza a todo el que tenga el ánimo alterado.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
+      "summary": "Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
+        "text": "Evoluciona de Feebas (Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo))",
         "trigger": "level-up",
         "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
@@ -17314,7 +17314,7 @@
     "flavor_text": "Beldum se mantiene flotando en el aire gracias a la fuerza magnética que genera y que repele la gravedad. Para dormir, este Pokémon se ancla a los riscos usando los ganchos que tiene.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).",
+      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Algaria (Casa de Máximo)",
@@ -17322,7 +17322,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",

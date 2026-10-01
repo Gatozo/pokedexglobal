@@ -427,7 +427,7 @@ def main():
         },
         52: {   # Meowth
             'type': 'trade',
-            'summary': 'Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza tras obtenerlo o de Persian).',
+            'summary': 'Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Frente de Batalla (Cabaña este)', 'method': 'Intercambio NPC por Skitty'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -525,6 +525,14 @@ def main():
         },
 
         # Regalos y eventos de Hoenn
+        349: {
+            'type': 'wild',
+            'summary': 'Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 119', 'method': 'Pesca en casilla especial de Feebas'},
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
+        },
         351: {
             'type': 'gift',
             'summary': 'Regalo de los científicos en la 1.ª planta del Instituto Meteorológico (Ruta 119) tras rescatarlos del Equipo Magma (también obtenible mediante crianza).',
@@ -545,7 +553,7 @@ def main():
             'badge_color': 'emerald',
             'badge_label': 'Huevo Regalo'
         },
-        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
+        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza).', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
 
         # Crianza e Inciensos
         298: {
@@ -724,7 +732,7 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).',
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 102 en R/Z)'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -741,7 +749,7 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).',
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Monte Pírico en R/Z)'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -758,7 +766,7 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí / Zafiro',
             'badge_color': 'indigo',
-            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).',
+            'summary': 'Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Intercambio con Pokémon Rubí o Zafiro', 'method': 'Exclusivo de versión (Ruta 117 en R/Z)'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -768,7 +776,7 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Rubí',
             'badge_color': 'rose',
-            'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).',
+            'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión (Ruta 114 en Rubí)'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -778,10 +786,10 @@ def main():
             'type': 'trade',
             'badge_label': 'Exclusivo Zafiro',
             'badge_color': 'blue',
-            'summary': 'Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza con Ditto en la Guardería de la Ruta 117 una vez obtenido).',
+            'summary': 'Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Intercambio con Pokémon Zafiro', 'method': 'Exclusivo de versión (Cascada Meteoro en Zafiro)'},
-                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}
+                {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ]
         },
     }
@@ -903,22 +911,21 @@ def main():
             if nat_id in [173, 175, 236, 238, 239, 240]:
                 obt_info = {
                     'type': 'transfer',
-                    'summary': f"No disponible salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+                    'summary': f"No disponible salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de sus evoluciones en Guardería'}
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
                     ],
                     'badge_color': 'pink',
                     'badge_label': 'Crianza / Transfer'
                 }
             elif is_hatchable:
-                c_method = 'Crianza con Ditto (tras obtenerlo o de sus evoluciones)' if is_genderless else 'Crianza de huevo (tras obtenerlo o de sus evoluciones)'
                 obt_info = {
                     'type': 'transfer',
-                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': c_method}
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
                     ]
                 }
             else:
@@ -937,10 +944,6 @@ def main():
                     method_str = 'Crianza con Incienso Marino'
                 elif sp_name == 'wynaut':
                     method_str = 'Crianza con Incienso Suave'
-                elif is_baby:
-                    method_str = 'Crianza de sus evoluciones en Guardería'
-                elif is_genderless:
-                    method_str = 'Crianza con Ditto'
                 else:
                     method_str = 'Crianza de huevo'
                 
@@ -952,7 +955,7 @@ def main():
             summ = obt_info.get('summary', '')
             summ_lower = summ.lower()
             if 'crianza' not in summ_lower and 'huevo' not in summ_lower and 'criar' not in summ_lower and 'eclosi' not in summ_lower:
-                c_phrase = 'también obtenible mediante crianza con Ditto' if is_genderless else 'también obtenible mediante crianza'
+                c_phrase = 'también obtenible mediante crianza'
                 if summ.endswith(').'):
                     obt_info['summary'] = summ[:-2] + f", {c_phrase})."
                 elif summ.endswith('.'):

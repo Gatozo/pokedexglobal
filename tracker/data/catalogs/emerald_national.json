@@ -36,7 +36,7 @@
     "flavor_text": "{{NombreHaEs|Bulbasaur suele tomar siestas bajo el sol. La semilla que tiene en el lomo crece poco a poco a medida que absorbe los rayos del sol.|A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -44,7 +44,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -209,7 +209,7 @@
     "flavor_text": "La llama que tiene en la punta de la cola arde según sus sentimientos. Llamea levemente cuando está alegre y arde vigorosamente cuando está enfadado.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -217,7 +217,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -382,7 +382,7 @@
     "flavor_text": "El caparazón de Squirtle no sólo lo protege; su forma redondeada y sus hendiduras reducen su resistencia al agua y le permiten nadar más rápido.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -390,7 +390,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -555,7 +555,7 @@
     "flavor_text": "Tiene un apetito voraz. Es capaz de devorar hojas que superan su tamaño en un abrir y cerrar de ojos. Libera un hedor terrible por las antenas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -563,7 +563,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -728,7 +728,7 @@
     "flavor_text": "Weedle tiene un finísimo sentido del olfato. Puede distinguir las hojas que le gustan de las que no olisqueándolas con su gran nariz roja.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -736,7 +736,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -901,7 +901,7 @@
     "flavor_text": "Pidgey tiene un sentido de la orientación muy desarrollado. Aunque se encuentre muy lejos de las zonas que le resultan familiares, es capaz de regresar a su nido.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -909,7 +909,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -1074,7 +1074,7 @@
     "flavor_text": "Rattata es cauto como él solo. Hasta cuando duerme mueve las orejas para oír todo lo que pueda suponer un peligro. Cava su madriguera en cualquier sitio.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -1082,7 +1082,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -1190,7 +1190,7 @@
     "flavor_text": "Cuando pía, se le puede oír a 1 km. Si a su agudo chillido le sigue una especie de eco, estaremos oyendo a otros Spearow responder el aviso de peligro.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -1198,7 +1198,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -1306,7 +1306,7 @@
     "flavor_text": "Se enrosca para descansar. Esta posición le permite responder rápidamente en caso de amenaza, pues le basta erguir la cabeza con ferocidad en cualquier dirección.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -1314,7 +1314,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -1684,7 +1684,7 @@
     "flavor_text": "Dado su pequeño tamaño, se cree que desarrolló las púas venenosas a modo de protección. Cuando se enfada, libera una horrible sustancia tóxica por el cuerno.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -1692,7 +1692,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -1872,7 +1872,7 @@
     "flavor_text": "El Nidoran macho ha desarrollado músculos para mover las orejas y orientarlas en cualquier dirección. De este modo, es capaz de captar hasta el sonido más leve.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -1880,7 +1880,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3000,7 +3000,7 @@
     "flavor_text": "Lleva dos setas parásitas, llamadas tochukaso, que se alimentan a partir de los nutrientes del propio Paras. Las setas se usan como elixir de vida.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3008,7 +3008,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3116,7 +3116,7 @@
     "flavor_text": "Dicen que evolucionó con una fina capa de pelo rígido a modo de protección. Tiene unos ojos tan grandes que no hay presa que le pase desapercibida.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3124,7 +3124,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3232,7 +3232,7 @@
     "flavor_text": "En muchas granjas suelen criarlos porque, caven donde caven, dejan la tierra bien labrada para sembrar. El terreno queda listo para plantar ricas verduras.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3240,7 +3240,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3348,7 +3348,7 @@
     "flavor_text": "Retrae sus afiladas uñas en las zarpas y camina a hurtadillas. Así pasa inadvertido. No se sabe por qué, pero adora las monedas brillantes que resplandecen con la luz.",
     "obtaining_info": {
       "type": "trade",
-      "summary": "Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza tras obtenerlo o de Persian).",
+      "summary": "Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Frente de Batalla",
@@ -3593,7 +3593,7 @@
     "flavor_text": "Si empieza a temblar y a respirar de forma agitada es que va a enfadarse. Aunque prever su enfado es inútil pues llega tan rápido que no da tiempo de huir.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3601,7 +3601,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3709,7 +3709,7 @@
     "flavor_text": "Tiene un sentido del olfato excepcional y una gran memoria sensitiva: nunca olvida una esencia e incluso puede identificar las emociones de otros seres vivos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3717,7 +3717,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -3840,7 +3840,7 @@
     "flavor_text": "Tiene una piel muy fina que deja ver las vísceras en espiral que posee. Ahora bien, esta piel tiene la ventaja de ser flexible, por lo que hace rebotar más de un zarpazo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -3848,7 +3848,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -4398,7 +4398,7 @@
     "flavor_text": "Tiene un cuerpo delgado y flexible que le permite inclinarse y balancearse para evitar ataques. Escupe un fluido corrosivo que derrite hasta el hierro.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -4406,7 +4406,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -5309,7 +5309,7 @@
     "flavor_text": "Al nacer, es muy débil y apenas puede ponerse en pie. Con todo, se va haciendo más fuerte al tropezarse y caerse en su intento por seguir a sus progenitores.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -5317,7 +5317,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -5425,7 +5425,7 @@
     "flavor_text": "Con la cola, atrapa a su rival metiéndolo bajo agua en las riberas de los ríos. Suele olvidar lo que estaba haciendo y pasarse días enteros holgazaneando en la orilla.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -5433,7 +5433,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -5541,7 +5541,7 @@
     "flavor_text": "Las unidades de las extremidades son imanes de largo alcance. Generan magnetismo suficiente para atraer objetos de hierro que estén a 100 m de distancia.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -5553,7 +5553,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -5666,7 +5666,7 @@
     "flavor_text": "Lleva siempre una especie de palo de algún tipo de planta y dicen que éste puede ser mejor o peor. Tiene fama de haber luchado contra otros Pokémon por algún palo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -5674,7 +5674,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -5854,7 +5854,7 @@
     "flavor_text": "Busca a sus presas en aguas heladas, bajo las capas de hielo. Cuando necesita respirar, abre un agujero en el hielo con la protuberancia que tiene en la cabeza.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -5862,7 +5862,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6086,7 +6086,7 @@
     "flavor_text": "De noche, usa su ancha lengua para hacer un agujero en el fondo del mar donde descansar. Cuando duerme, Shellder cierra la concha, pero deja la lengua fuera.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6094,7 +6094,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6221,7 +6221,7 @@
     "flavor_text": "Tiene mucha materia gaseosa. Cuando es arrastrado por un vendaval mengua. Se agrupan bajo los aleros de las casas para resguardarse del viento.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6229,7 +6229,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6394,7 +6394,7 @@
     "flavor_text": "Tiene un imán en el cerebro que le sirve de brújula para no perder la orientación cuando está cavando túneles. A medida que crece, se le redondea y suaviza el cuerpo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6402,7 +6402,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6453,7 +6453,7 @@
     "flavor_text": "Si te pica la nariz mientras duermes, seguro que es porque tienes a uno de ellos en la almohada intentando sacarte los sueños por la nariz para comérselos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6461,7 +6461,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6569,7 +6569,7 @@
     "flavor_text": "Viven en la playa, enterrados en la arena fina. Cuando escasea la comida, es común verlos enfrentados panza contra panza en defensa de su territorio.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6577,7 +6577,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6685,7 +6685,7 @@
     "flavor_text": "Tiene un curioso e inexplicable parecido con una Poké Ball. Como estalla a la mínima, hasta los entrenadores veteranos lo tratan con mucho cuidado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -6701,7 +6701,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -6826,7 +6826,7 @@
     "flavor_text": "Está compuesto de seis huevos que forman una tupida piña que va girando. Si empiezan a resquebrajarse las cáscaras, no hay duda de que está a punto de evolucionar.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6834,7 +6834,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -6957,7 +6957,7 @@
     "flavor_text": "Le apena no volver a ver a su madre. La luna llena le recuerda a ella y se pone a chillar. Los churretes que tiene en el cráneo que lleva puesto son debidos a sus lágrimas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -6965,7 +6965,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -7073,11 +7073,11 @@
     "flavor_text": "Da unas patadas demoledoras encogiendo y estirando las patas. Tras la lucha, se las masajea para relajar los músculos y descansar.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es superior a su Defensa.",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 (Ataque > Defensa))",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque > Defensa)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 (Ataque > Defensa))",
         "trigger": "level-up",
         "condition": "Nivel 20 (Ataque > Defensa)",
         "item_slug": null
@@ -7130,11 +7130,11 @@
     "flavor_text": "Dicen que su alma es la de un boxeador que se entrenó para un campeonato mundial. Tiene un espíritu indomable que nunca se doblega ante la adversidad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es inferior a su Defensa.",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 (Ataque < Defensa))",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque < Defensa)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 (Ataque < Defensa))",
         "trigger": "level-up",
         "condition": "Nivel 20 (Ataque < Defensa)",
         "item_slug": null
@@ -7187,7 +7187,7 @@
     "flavor_text": "Cada vez que se encuentra con algo que no conoce, le da un lametazo. Así memoriza las cosas: por la textura y el sabor. No soporta los sabores ácidos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -7195,7 +7195,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -7478,7 +7478,7 @@
     "flavor_text": "Pone a diario huevos con un enorme valor nutritivo. Están tan ricos que hasta quien no tenga hambre se los comerá en un abrir y cerrar de ojos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -7486,7 +7486,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -7537,7 +7537,7 @@
     "flavor_text": "Se le desprenden los tentáculos en cuanto se los agarran. Y no sólo no le duele, sino que le permite huir rápidamente. Además, al día siguiente le crecen otros.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -7545,7 +7545,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -7596,7 +7596,7 @@
     "flavor_text": "Si te cruzas con uno que esté jugando, no lo molestes ni intentes atraparlo. Seguro que uno de sus progenitores anda cerca y reaccionará con enfado y violencia.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -7604,7 +7604,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -8052,7 +8052,7 @@
     "flavor_text": "De noche, se agrupan y hacen brillar su núcleo rojo. Los destellos se intercalan con el centelleo estelar. Si les arrancan alguna parte del cuerpo, la regeneran.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Calagua (Pesca / Surf)",
@@ -8060,7 +8060,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -8187,7 +8187,7 @@
     "flavor_text": "Domina la pantomima. Con sus gestos puede convencer a sus espectadores de la existencia de algo invisible y, cuando se lo creen, las ilusiones se hacen realidad.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -8195,7 +8195,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -8246,7 +8246,7 @@
     "flavor_text": "Es espectacular ver lo rápido que es. Su velocidad potencia las guadañas que tiene en los brazos, de por sí contundentes, pues rebanan gruesos troncos de un tajo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -8254,7 +8254,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -8535,7 +8535,7 @@
     "flavor_text": "Le resulta imposible estarse quieto. Si no hay ningún rival que luche con él, se estampa contra árboles para calmarse y los embiste para echarlos abajo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -8543,7 +8543,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9115,7 +9115,7 @@
     "flavor_text": "Por culpa de la gente, está en peligro de extinción. Dicen que, al anochecer, se pone a cantar quejicoso mientras busca a los miembros de su especie que puedan quedar.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9123,7 +9123,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9229,7 +9229,7 @@
     "flavor_text": "Su configuración genética le permite mutar y adaptarse enseguida a cualquier medio. Evoluciona gracias a las radiaciones emitidas por varias piedras.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9237,7 +9237,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9508,7 +9508,7 @@
     "flavor_text": "Un Pokémon formado por códigos de programación. Se mueve libre en el ciberespacio.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9516,7 +9516,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9567,7 +9567,7 @@
     "flavor_text": "Es un Pokémon ancestral que se extinguió hace mucho tiempo y se recuperó a partir de fósiles. Si le atacan, se esconderá dentro de su dura concha.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9575,7 +9575,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9683,7 +9683,7 @@
     "flavor_text": "Lo han regenerado a partir de un fósil, pero aún queda algún raro ejemplar vivo. Aunque existe desde hace 300 millones de años, este Pokémon no ha cambiado nada.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9691,7 +9691,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9799,7 +9799,7 @@
     "flavor_text": "Surgió en la era de los dinosaurios. Se regeneró a partir de material genético contenido en ámbar. Se cree que fue el amo de los cielos en épocas pasadas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9807,7 +9807,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -9858,7 +9858,7 @@
     "flavor_text": "Se dedica a comer y dormir. Es tan dócil que es fácil ver a niños usando la gran panza que tiene como lugar de juegos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -9866,7 +9866,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -10082,7 +10082,7 @@
     "flavor_text": "Está mudando la piel continuamente. Es algo que necesita hacer porque la energía que tiene en su interior alcanza niveles que resultan incontrolables.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -10090,7 +10090,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -10896,7 +10896,7 @@
     "flavor_text": "No duerme a menos que otro haga guardia. El que hace de centinela lo despertará si hay peligro. Si se separa de su manada, es incapaz de dormir, presa del miedo.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -10904,7 +10904,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -11596,7 +11596,7 @@
     "flavor_text": "Cuando hay lluvia de estrellas, se les ve danzando en círculos durante la noche. Sólo paran de día; entonces, dejan de bailar y beben el rocío de la mañana.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -11604,7 +11604,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -11710,7 +11710,7 @@
     "flavor_text": "Usa la compasión y la alegría que emanan de la gente y de los Pokémon como energía. Almacena sentimientos positivos en su interior y después los comparte con otros.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -11718,7 +11718,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -12502,7 +12502,7 @@
     "flavor_text": "Flota en el aire y se deja llevar. Si percibe que el viento va a soplar con fuerza, entrelaza sus hojas con otros para hacer resistencia y evitar salir volando.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -12510,7 +12510,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -12873,7 +12873,7 @@
     "flavor_text": "Tiene un ángulo de visión de 360 grados. Es capaz de pararse de repente y cambiar de dirección mientras vuela, lo que le resulta útil para dar caza a sus presas.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -12881,7 +12881,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -13053,7 +13053,7 @@
     "flavor_text": "Un Espeon es muy leal al entrenador que considera digno. Dicen que desarrolló sus poderes adivinatorios para evitar que su entrenador sufriera ningún daño.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee por felicidad alta durante el día.",
+      "summary": "Evoluciona de Eevee (Felicidad alta (Día))",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
@@ -13110,7 +13110,7 @@
     "flavor_text": "Evolucionó tras haber estado expuesto a ondas lunares. Se esconde en la oscuridad en silencio y espera a que su presa se mueva. Cuando ataca, le brillan los anillos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee por felicidad alta durante la noche.",
+      "summary": "Evoluciona de Eevee (Felicidad alta (Noche))",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
@@ -13167,7 +13167,7 @@
     "flavor_text": "Murkrow ha sido temido y repudiado por todos porque se cree que da mala suerte. Le encanta todo lo que resplandece. A las mujeres les roba los anillos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -13175,7 +13175,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -13306,7 +13306,7 @@
     "flavor_text": "Asusta a la gente gritando y sollozando. Dicen que usa las esferas rojas para absorber los sentimientos de temor de sus enemigos y alimentarse con ellos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -13314,7 +13314,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -13669,7 +13669,7 @@
     "flavor_text": "La cola es un taladro que usa para enterrarse de espaldas en el suelo. Se sabe que su nido tiene una forma muy compleja y está a gran profundidad.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -13677,7 +13677,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -13975,7 +13975,7 @@
     "flavor_text": "Bebe agua, se hincha y usa la presión del agua que ha tragado para lanzar plumas tóxicas a través de la piel. Para Qwilfish, nadar es todo un desafío.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -13983,7 +13983,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -14224,7 +14224,7 @@
     "flavor_text": "Trepa a los árboles clavando en la corteza sus garras curvadas. Busca nidos desprovistos de vigilancia paterna para robar huevos y comérselos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -14232,7 +14232,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -14519,7 +14519,7 @@
     "flavor_text": "Busca alimento frotando el hocico contra el suelo. Su comida preferida es una seta que crece bajo la hierba marchita. A veces, al frotar, descubre fuentes termales.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -14527,7 +14527,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -14823,7 +14823,7 @@
     "flavor_text": "Usa la cola a modo de saco para llevar su alimento. Una vez, un escalador consiguió coronar el Everest porque uno de estos Pokémon compartió sus alimentos con él.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -14831,7 +14831,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -14882,7 +14882,7 @@
     "flavor_text": "En días soleados, es posible ver bancos de Mantine saltando con elegancia sobre las olas del mar. A este Pokémon no le molesta que se le pegue un Remoraid.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -14890,7 +14890,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -15498,7 +15498,7 @@
     "flavor_text": "Se pone demasiado nervioso si no lo sacan a entrenarse cada día. Por esta razón, su ENTRENADOR debe mantener una rutina de entrenamiento regular durante la cría.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -15506,7 +15506,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -15557,11 +15557,11 @@
     "flavor_text": "Su técnica de repartir patadas mientras gira rápidamente cabeza abajo es tanto ofensiva como defensiva. Se desplaza más rápido girando que andando.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es exactamente igual a su Defensa.",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 (Ataque = Defensa))",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque = Defensa)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 (Ataque = Defensa))",
         "trigger": "level-up",
         "condition": "Nivel 20 (Ataque = Defensa)",
         "item_slug": null
@@ -15614,7 +15614,7 @@
     "flavor_text": "Smoochum va corriendo por todos lados, pero también se cae con frecuencia y, en cuanto tiene ocasión, se mira en algún lago para ver si se ha manchado la cara.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -15622,7 +15622,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -15673,7 +15673,7 @@
     "flavor_text": "Acumula electricidad. Si entra en contacto con metal y descarga accidentalmente toda la electricidad almacenada, agita los brazos en círculo para recargarse.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -15681,7 +15681,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -15732,7 +15732,7 @@
     "flavor_text": "Observando la respiración de Magby, se sabe su estado de salud: si expulsa llamas amarillas, está bien. Pero si, además de las llamas, sale humo negro, está cansado.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+      "summary": "No disponible salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -15740,7 +15740,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de sus evoluciones en Guardería"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "pink",
@@ -16072,7 +16072,7 @@
     "flavor_text": "Nace bajo tierra a gran profundidad y se abre paso hasta la superficie comiendo lo que encuentra en su camino. Hasta que no llega arriba, no conoce a sus padres.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza en la Guardería de la Ruta 117 con Ditto del Túnel del Desierto o de sus evoluciones).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -16080,7 +16080,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza de huevo (tras obtenerlo o de sus evoluciones)"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "slate",
@@ -17319,7 +17319,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -17438,7 +17438,7 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
+        "text": "Evoluciona de Wurmple (Nivel 7 (según personalidad))",
         "trigger": "level-up",
         "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
@@ -18659,7 +18659,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (Ruta 102). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -20186,7 +20186,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de Monte Pírico y Calle Victoria). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -20676,7 +20676,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí / Zafiro",
       "badge_color": "indigo",
-      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Ausente en estado salvaje en Pokémon Esmeralda (eliminado de la Ruta 117). Requiere intercambio desde Pokémon Rubí o Pokémon Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí o Zafiro",
@@ -22177,7 +22177,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 114). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Rubí (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
@@ -22295,7 +22295,7 @@
       "type": "trade",
       "badge_label": "Exclusivo Zafiro",
       "badge_color": "blue",
-      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza con Ditto en la Guardería de la Ruta 117 una vez obtenido).",
+      "summary": "Exclusivo de Pokémon Zafiro (Cascada Meteoro). Inaccesible en estado salvaje en Esmeralda; requiere intercambio con un jugador de Zafiro (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Zafiro",
@@ -22303,7 +22303,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -22352,7 +22352,7 @@
     "flavor_text": "El origen de la fuerza de este Pokémon está en la energía solar. En días soleados, grupos de Solrock se alinean de cara al sol para absorber su luz.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -22388,7 +22388,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -22768,7 +22768,7 @@
     "flavor_text": "Los Baltoy se mueven haciendo girar su única extremidad inferior. Aparecen representados en las pinturas murales de las ruinas de una antigua ciudad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza con Ditto).",
+      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto), también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -22776,7 +22776,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",
@@ -23145,7 +23145,7 @@
     "flavor_text": "Feebas vive en charcas llenas de algas. Parece que el aspecto terriblemente descuidado que ofrece sea la causa de que pocos entrenadores lo críen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza en la Guardería de la Ruta 117).",
+      "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 119",
@@ -23204,11 +23204,11 @@
     "flavor_text": "Dicen que vive en el fondo de los grandes lagos. Se le considera el Pokémon más bello que existe y se le ha representado en multitud de pinturas y estatuas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
+      "summary": "Evoluciona de Feebas (Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo))",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
+        "text": "Evoluciona de Feebas (Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo))",
         "trigger": "level-up",
         "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
@@ -24771,7 +24771,7 @@
     "flavor_text": "Cuando los Beldum van en enjambre, se mueven al unísono en perfecta armonía, como si fueran un solo Pokémon. Se comunican por ondas cerebrales.",
     "obtaining_info": {
       "type": "gift",
-      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).",
+      "summary": "Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Algaria (Casa de Máximo)",
@@ -24779,7 +24779,7 @@
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",
-          "method": "Crianza con Ditto"
+          "method": "Crianza de huevo"
         }
       ],
       "badge_color": "emerald",

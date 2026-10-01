@@ -447,6 +447,7 @@ def build_catalogs():
                 held_item = details.get('held_item', {}).get('name') if details.get('held_item') else None
                 min_happiness = details.get('min_happiness')
                 time_of_day = details.get('time_of_day')
+                min_beauty = details.get('min_beauty')
 
                 cond = ""
                 item_display = EVO_ITEMS_ES.get(item, item.replace('-', ' ').title()) if item else None
@@ -516,7 +517,7 @@ def build_catalogs():
             'badge_color': 'emerald',
             'badge_label': 'Huevo Regalo'
         },
-        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza con Ditto).', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
+        374: {'type': 'gift', 'summary': 'Poké Ball dejada por Máximo Peñas en su casa de Ciudad Algaria tras vencer al Alto Mando (también obtenible mediante crianza).', 'locations': [{'area': 'Ciudad Algaria (Casa de Máximo)', 'method': 'Regalo de Máximo en el postgame'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
         # Crianza con Incienso y Bebés de Hoenn
         298: {
             'type': 'breeding',
@@ -647,12 +648,12 @@ def build_catalogs():
         350: {'type': 'evolution', 'summary': 'Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.', 'locations': []},
         
         # Exclusivos de Rubí (Ausentes en estado salvaje en Zafiro)
-        273: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza una vez obtenido o intercambio NPC en Ciudad Férrica por un Ralts).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Ralts'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        273: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza o intercambio NPC en Ciudad Férrica por un Ralts).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Ralts'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
         274: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Requiere intercambio o evolucionar de Seedot.', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}]},
         275: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí. Evoluciona de Nuzleaf usando Piedra Hoja.', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}]},
-        303: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
-        335: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
-        338: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza con Ditto una vez obtenido).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza con Ditto'}]},
+        303: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Cueva Granito, Cueva del Origen, Calle Victoria). Requiere intercambio con otra consola (también obtenible mediante crianza).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        335: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Ruta 114). Requiere intercambio con otra consola (también obtenible mediante crianza).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
+        338: {'type': 'trade', 'badge_label': 'Exclusivo Rubí', 'badge_color': 'rose', 'summary': 'Exclusivo de Pokémon Rubí (Cascada Meteoro). Requiere intercambio con otra consola (también obtenible mediante crianza).', 'locations': [{'area': 'Intercambio con Pokémon Rubí', 'method': 'Exclusivo de versión'}, {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}]},
     }
 
     # Intercambios NPC en Zafiro
@@ -747,10 +748,10 @@ def build_catalogs():
             if nat_id in [173, 175, 236, 238, 239, 240]:
                 obt_info = {
                     'type': 'transfer',
-                    'summary': f"No disponible salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante eclosión en la Guardería de la Ruta 117 criando a sus evoluciones).",
+                    'summary': f"No disponible salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de sus evoluciones en Guardería'}
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
                     ],
                     'badge_color': 'pink',
                     'badge_label': 'Crianza / Transfer'
@@ -758,10 +759,10 @@ def build_catalogs():
             elif can_breed:
                 obt_info = {
                     'type': 'transfer',
-                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza en la Guardería de la Ruta 117 una vez obtenido o de sus evoluciones).",
+                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo (tras obtenerlo o de sus evoluciones)'}
+                        {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
                     ]
                 }
             else:
