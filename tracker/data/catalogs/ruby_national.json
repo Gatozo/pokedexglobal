@@ -9151,13 +9151,13 @@
     "flavor_text": "Hitmonlee tiene la facilidad de encoger y estirar las patas. Con extremidades tan flexibles, propina unas patadas demoledoras. Tras la lucha, se masajea las piernas y relaja los músculos para descansar.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es superior a su Defensa.",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque > Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 (Ataque > Defensa)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -9228,13 +9228,13 @@
     "flavor_text": "Dicen que Hitmonchan tiene el alma de un boxeador que estuvo entrenándose para un campeonato mundial. Este Pokémon tiene un espíritu indomable que nunca se doblega ante la adversidad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es inferior a su Defensa.",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque < Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 (Ataque < Defensa)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -16853,13 +16853,13 @@
     "flavor_text": "Espeon es tremendamente leal al entrenador que le merece la pena. Dicen que este Pokémon desarrolló sus poderes adivinatorios para evitar que su entrenador sufra ningún daño.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta (day))",
+      "summary": "Evoluciona de Eevee por felicidad alta durante el día.",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta (day))",
+        "text": "Evoluciona de Eevee (Felicidad alta (Día))",
         "trigger": "level-up",
-        "condition": "Felicidad alta (day)",
+        "condition": "Felicidad alta (Día)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -16930,13 +16930,13 @@
     "flavor_text": "Umbreon evoluciona por exposición a la luz de la luna. Se esconde silenciosamente en la oscuridad y espera a que su enemigo se mueva. Los aros de su cuerpo brillan cuando va a atacar.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta (night))",
+      "summary": "Evoluciona de Eevee por felicidad alta durante la noche.",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta (night))",
+        "text": "Evoluciona de Eevee (Felicidad alta (Noche))",
         "trigger": "level-up",
-        "condition": "Felicidad alta (night)",
+        "condition": "Felicidad alta (Noche)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -20144,13 +20144,13 @@
     "flavor_text": "Hitmontop hace el pino con la cabeza y se pone a girar rápido al tiempo que reparte patadas. Esta es una técnica ofensiva y defensiva a la vez. Este Pokémon se desplaza más rápido girando sobre sí que caminando.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue en el Nivel 20 si su estadística de Ataque es exactamente igual a su Defensa.",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue en Nivel 20 (Ataque = Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 (Ataque = Defensa)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -22479,9 +22479,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -22638,9 +22638,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -29934,13 +29934,13 @@
     "flavor_text": "De Milotic se dice que es el Pokémon más bello. Tiene la capacidad de calmar sentimientos tales como el miedo y la hostilidad, y apaciguar las relaciones de áspera enemistad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.",
+      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (Condición especial)",
+        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
         "trigger": "level-up",
-        "condition": "Condición especial",
+        "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
       },
       "badge_color": "indigo",

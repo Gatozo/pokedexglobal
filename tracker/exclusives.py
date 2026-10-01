@@ -84,7 +84,12 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     'ruby': [273, 274, 275, 303, 335, 338, 381, 383],
     'sapphire': [270, 271, 272, 302, 336, 337, 380, 382],
     'emerald': [
+        52, 53,                             # Meowth (Intercambio en Frente de Batalla), Persian (Evolución)
         132,                                # Ditto (Túnel del Desierto)
+        151,                                # Mew (Evento Isla Suprema con Mapa Viejo)
+        152, 153, 154,                      # Chikorita (Regalo Abedul), Bayleef, Meganium
+        155, 156, 157,                      # Cyndaquil (Regalo Abedul), Quilava, Typhlosion
+        158, 159, 160,                      # Totodile (Regalo Abedul), Croconaw, Feraligatr
         163, 164,                           # Hoothoot, Noctowl (Zona Safari expansión)
         165, 166,                           # Ledyba, Ledian (Zona Safari expansión)
         167, 168,                           # Spinarak, Ariados (Zona Safari expansión)
@@ -103,6 +108,7 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         234,                                # Stantler (Zona Safari expansión)
         235,                                # Smeargle (Cueva Taller)
         241,                                # Miltank (Zona Safari expansión)
+        249, 250,                           # Lugia, Ho-Oh (Evento Roca Ombligo con Ticket Místico)
         386,                                # Deoxys (Evento Isla Origen con Ori-Ticket)
     ],
     'firered': [23, 24, 43, 44, 45, 54, 55, 58, 59, 123, 125, 198, 211, 215, 227, 246, 247, 248],
@@ -125,14 +131,40 @@ NON_HOENN_TRANSFERS_RUBY = [
     246, 247, 248, 249, 250, 251
 ]
 
-# En Pokémon Esmeralda, la ampliación de la Zona Safari (Áreas 5 y 6), la Cueva Taller,
-# el Túnel del Desierto y el Frente de Batalla permiten capturar 31 especies de Johto/Kanto.
-# Por tanto, solo 153 especies de la Pokédex Nacional requieren transferencia externa.
-EMERALD_CATCHABLE_JOHTO = {
-    132, 163, 164, 165, 166, 167, 168, 179, 180, 181, 185, 190, 191, 192, 194, 195,
-    204, 205, 207, 209, 210, 213, 216, 217, 223, 224, 228, 229, 234, 235, 241
+# En Pokémon Esmeralda, 45 especies no nativas de Hoenn pueden conseguirse directamente en el juego:
+# - Expansión postgame de la Zona Safari (Áreas 5 y 6): 30 especies de Johto
+# - Túnel del Desierto: Ditto (#132)
+# - Frente de Batalla: Sudowoodo (#185), Smeargle (#235) y Meowth (#052 por intercambio NPC) -> Persian (#053)
+# - Villa Raíz: Regalo de iniciales de Johto del Prof. Abedul tras completar las 200 de Hoenn (#152-#160)
+# - Eventos insulares del cartucho: Mew (#151 en Isla Suprema con Mapa Viejo), Lugia (#249) y Ho-Oh (#250 en Roca Ombligo con Ticket Místico)
+# Por tanto, solo 139 especies de la Pokédex Nacional requieren transferencia externa obligatoria.
+EMERALD_IN_GAME_OBTAINABLE_NON_HOENN = {
+    52, 53,                             # Meowth (Intercambio en Frente de Batalla), Persian (Evolución)
+    132,                                # Ditto (Túnel del Desierto)
+    151,                                # Mew (Evento Isla Suprema con Mapa Viejo)
+    152, 153, 154,                      # Chikorita (Regalo Abedul), Bayleef, Meganium
+    155, 156, 157,                      # Cyndaquil (Regalo Abedul), Quilava, Typhlosion
+    158, 159, 160,                      # Totodile (Regalo Abedul), Croconaw, Feraligatr
+    163, 164, 165, 166, 167, 168,       # Hoothoot, Noctowl, Ledyba, Ledian, Spinarak, Ariados (Zona Safari)
+    179, 180, 181,                      # Mareep, Flaaffy, Ampharos (Zona Safari)
+    185,                                # Sudowoodo (Frente de Batalla)
+    190,                                # Aipom (Zona Safari)
+    191, 192,                           # Sunkern, Sunflora (Zona Safari)
+    194, 195,                           # Wooper, Quagsire (Zona Safari)
+    204, 205,                           # Pineco, Forretress (Zona Safari)
+    207,                                # Gligar (Zona Safari)
+    209, 210,                           # Snubbull, Granbull (Zona Safari)
+    213,                                # Shuckle (Zona Safari)
+    216, 217,                           # Teddiursa, Ursaring (Zona Safari)
+    223, 224,                           # Remoraid, Octillery (Zona Safari)
+    228, 229,                           # Houndour, Houndoom (Zona Safari)
+    234,                                # Stantler (Zona Safari)
+    235,                                # Smeargle (Cueva Taller)
+    241,                                # Miltank (Zona Safari)
+    249, 250,                           # Lugia, Ho-Oh (Evento Roca Ombligo con Ticket Místico)
 }
-NON_HOENN_TRANSFERS_EMERALD = [num for num in NON_HOENN_TRANSFERS_RUBY if num not in EMERALD_CATCHABLE_JOHTO]
+EMERALD_CATCHABLE_JOHTO = EMERALD_IN_GAME_OBTAINABLE_NON_HOENN
+NON_HOENN_TRANSFERS_EMERALD = [num for num in NON_HOENN_TRANSFERS_RUBY if num not in EMERALD_IN_GAME_OBTAINABLE_NON_HOENN]
 
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
@@ -376,8 +408,9 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'mechanic_badge': 'GBA / GameCube',
         'description': (
             'La Pokédex Nacional de Pokémon Esmeralda consta de 386 Pokémon. Gracias a la ampliación postgame de la Zona Safari de Hoenn, '
-            'la Cueva Taller, el Túnel del Desierto y el Frente de Batalla, 31 especies de Johto y Kanto ahora son capturables en el cartucho. '
-            'Las 153 especies restantes no nativas deben transferirse mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja '
+            'la Cueva Taller, el Túnel del Desierto, el intercambio en el Frente de Batalla, el regalo inicial de Johto del Prof. Abedul '
+            'y los eventos en islas (Roca Ombligo e Isla Suprema), 45 especies de Johto y Kanto ahora son obtenibles en el propio cartucho. '
+            'Las 139 especies restantes no nativas deben transferirse mediante cable link desde Pokémon Rojo Fuego, Pokémon Verde Hoja '
             'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
             '¡IMPORTANTE!: Incompatible con 1.ª y 2.ª Generación (Hardware break).'
         ),
@@ -397,21 +430,9 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             145: 'Rojo Fuego / Verde Hoja',
             146: 'Rojo Fuego / Verde Hoja',
             150: 'Rojo Fuego / Verde Hoja',
-            151: 'Evento Isla Suprema (Mapa Viejo)',
-            152: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            153: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            154: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            155: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            156: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            157: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            158: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            159: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
-            160: 'Regalo Prof. Abedul (Hoenn 200) / Colosseum',
             243: 'Pokémon Colosseum / Rojo Fuego',
             244: 'Pokémon Colosseum / Verde Hoja',
             245: 'Pokémon Colosseum / RF / VH',
-            249: 'Evento Roca Ombligo (Ticket Místico) / XD',
-            250: 'Evento Roca Ombligo (Ticket Místico) / Colosseum',
             251: 'Disco Bonus Colosseum / Evento Ageto',
         }
     },

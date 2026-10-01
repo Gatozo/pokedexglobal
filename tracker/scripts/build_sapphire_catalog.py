@@ -458,16 +458,30 @@ def build_catalogs():
                         cond = f"Intercambio equipado con {held_item_display}"
                     else:
                         cond = "Intercambio con otro entrenador"
+                elif trigger == 'shed':
+                    cond = "Nivel 20 (hueco libre y Poké Ball en mochila)"
+                elif min_beauty:
+                    cond = "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)"
                 elif min_happiness:
-                    cond = f"Felicidad alta ({time_of_day})" if time_of_day else "Felicidad alta"
+                    tod = " (Día)" if time_of_day == "day" else " (Noche)" if time_of_day == "night" else (f" ({time_of_day})" if time_of_day else "")
+                    cond = f"Felicidad alta{tod}"
                 elif min_level:
-                    cond = f"Nivel {min_level}"
+                    if curr_name == 'hitmonlee':
+                        cond = f"Nivel {min_level} (Ataque > Defensa)"
+                    elif curr_name == 'hitmonchan':
+                        cond = f"Nivel {min_level} (Ataque < Defensa)"
+                    elif curr_name == 'hitmontop':
+                        cond = f"Nivel {min_level} (Ataque = Defensa)"
+                    elif curr_name in ['silcoon', 'cascoon']:
+                        cond = f"Nivel {min_level} (según personalidad)"
+                    else:
+                        cond = f"Nivel {min_level}"
                 else:
-                    cond = "Evolución especial"
+                    cond = "Condición especial"
 
                 evo_map[curr_name] = {
                     'from': from_name.capitalize(),
-                    'text': f"Evoluciona de {from_name.capitalize()} {cond}".strip(),
+                    'text': f"Evoluciona de {from_name.capitalize()} ({cond})",
                     'trigger': trigger,
                     'condition': cond,
                     'item_slug': item or held_item

@@ -1214,9 +1214,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -1373,9 +1373,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -13205,13 +13205,13 @@
     "flavor_text": "De Milotic se dice que es el Pokémon más bello. Tiene la capacidad de calmar sentimientos tales como el miedo y la hostilidad, y apaciguar las relaciones de áspera enemistad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.",
+      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (Condición especial)",
+        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
         "trigger": "level-up",
-        "condition": "Condición especial",
+        "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
       },
       "badge_color": "indigo",

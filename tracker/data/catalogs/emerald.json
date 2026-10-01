@@ -945,9 +945,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -1064,9 +1064,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -10599,7 +10599,7 @@
     "flavor_text": "Feebas vive en charcas llenas de algas. Parece que el aspecto terriblemente descuidado que ofrece sea la causa de que pocos entrenadores lo críen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119, también obtenible mediante crianza).",
+      "summary": "Pesca con Caña en exactamente 6 casillas aleatorias de agua en la Ruta 119 (también obtenible mediante crianza en la Guardería de la Ruta 117).",
       "locations": [
         {
           "area": "Ruta 119",
@@ -10658,13 +10658,13 @@
     "flavor_text": "Dicen que vive en el fondo de los grandes lagos. Se le considera el Pokémon más bello que existe y se le ha representado en multitud de pinturas y estatuas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas (Belleza máxima (Pañuelo Azul en Concursos))",
+      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (Belleza máxima (Pañuelo Azul en Concursos))",
+        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
         "trigger": "level-up",
-        "condition": "Belleza máxima (Pañuelo Azul en Concursos)",
+        "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
       },
       "badge_color": "indigo",

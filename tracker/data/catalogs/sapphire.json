@@ -116,11 +116,11 @@
     "flavor_text": "Este Pokémon revolotea de rama en rama con maestría. Cuando Grovyle va volando por el bosque, no hay quien lo alcance por muy rápido que sea.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Treecko Nivel 16",
+      "summary": "Evoluciona de Treecko (Nivel 16)",
       "locations": [],
       "evolution_info": {
         "from": "Treecko",
-        "text": "Evoluciona de Treecko Nivel 16",
+        "text": "Evoluciona de Treecko (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -194,11 +194,11 @@
     "flavor_text": "A Sceptile le crecen en la espalda unas semillas llenas de nutrientes que sirven para revitalizar los árboles. De hecho, se dedica a cuidarlos con mimo para que crezcan bien.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Grovyle Nivel 36",
+      "summary": "Evoluciona de Grovyle (Nivel 36)",
       "locations": [],
       "evolution_info": {
         "from": "Grovyle",
-        "text": "Evoluciona de Grovyle Nivel 36",
+        "text": "Evoluciona de Grovyle (Nivel 36)",
         "trigger": "level-up",
         "condition": "Nivel 36",
         "item_slug": null
@@ -351,11 +351,11 @@
     "flavor_text": "Combusken lucha haciendo uso de las abrasadoras llamas que expulsa por el pico y de unas patadas fulminantes. Este Pokémon emite un sonido muy fuerte y molesto.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Torchic Nivel 16",
+      "summary": "Evoluciona de Torchic (Nivel 16)",
       "locations": [],
       "evolution_info": {
         "from": "Torchic",
-        "text": "Evoluciona de Torchic Nivel 16",
+        "text": "Evoluciona de Torchic (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -428,11 +428,11 @@
     "flavor_text": "Blaziken tiene unas piernas realmente fuertes. De una patada es capaz de derribar rascacielos. Además, da unos puñetazos fulminantes que dejan al oponente chamuscado y lleno de tizne.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Combusken Nivel 36",
+      "summary": "Evoluciona de Combusken (Nivel 36)",
       "locations": [],
       "evolution_info": {
         "from": "Combusken",
-        "text": "Evoluciona de Combusken Nivel 36",
+        "text": "Evoluciona de Combusken (Nivel 36)",
         "trigger": "level-up",
         "condition": "Nivel 36",
         "item_slug": null
@@ -585,11 +585,11 @@
     "flavor_text": "Marshtomp se desplaza más rápido por el lodo que por el agua. Los cuartos traseros de este Pokémon muestran un desarrollo más que evidente, que le han proporcionado la habilidad de andar sólo sobre las patas traseras.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Mudkip Nivel 16",
+      "summary": "Evoluciona de Mudkip (Nivel 16)",
       "locations": [],
       "evolution_info": {
         "from": "Mudkip",
-        "text": "Evoluciona de Mudkip Nivel 16",
+        "text": "Evoluciona de Mudkip (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -663,11 +663,11 @@
     "flavor_text": "Swampert puede predecir con las aletas los cambios que producen las corrientes. Si está a punto de estallar una tormenta, empezará a apilar piedras para resguardarse.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Marshtomp Nivel 36",
+      "summary": "Evoluciona de Marshtomp (Nivel 36)",
       "locations": [],
       "evolution_info": {
         "from": "Marshtomp",
-        "text": "Evoluciona de Marshtomp Nivel 36",
+        "text": "Evoluciona de Marshtomp (Nivel 36)",
         "trigger": "level-up",
         "condition": "Nivel 36",
         "item_slug": null
@@ -824,11 +824,11 @@
     "flavor_text": "Mightyena se desplaza y vive con su jauría en estado salvaje. Por eso, acostumbrado a esta libertad, obedece al entrenador al que considere realmente dotado de habilidades superiores al resto.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Poochyena Nivel 18",
+      "summary": "Evoluciona de Poochyena (Nivel 18)",
       "locations": [],
       "evolution_info": {
         "from": "Poochyena",
-        "text": "Evoluciona de Poochyena Nivel 18",
+        "text": "Evoluciona de Poochyena (Nivel 18)",
         "trigger": "level-up",
         "condition": "Nivel 18",
         "item_slug": null
@@ -1049,7 +1049,7 @@
       ],
       "evolution_info": {
         "from": "Zigzagoon",
-        "text": "Evoluciona de Zigzagoon Nivel 20",
+        "text": "Evoluciona de Zigzagoon (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -1218,9 +1218,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple Nivel 7",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -1291,11 +1291,11 @@
     "flavor_text": "Beautifly tiene una boca enorme que parece una aguja y le resulta muy útil para recolectar polen. Este Pokémon va revoloteando de flor en flor para recogerlo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Silcoon Nivel 10",
+      "summary": "Evoluciona de Silcoon (Nivel 10)",
       "locations": [],
       "evolution_info": {
         "from": "Silcoon",
-        "text": "Evoluciona de Silcoon Nivel 10",
+        "text": "Evoluciona de Silcoon (Nivel 10)",
         "trigger": "level-up",
         "condition": "Nivel 10",
         "item_slug": null
@@ -1377,9 +1377,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple Nivel 7",
+        "text": "Evoluciona de Wurmple (Nivel 7 según personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 (según personalidad)",
         "item_slug": null
       },
       "badge_color": "emerald",
@@ -1450,11 +1450,11 @@
     "flavor_text": "Cuando Dustox bate las alas, libera un polvillo fino que en realidad es un peligroso veneno que puede resultar dañino hasta al más fuerte de los fuertes. Las antenas le sirven de radar para buscar comida.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Cascoon Nivel 10",
+      "summary": "Evoluciona de Cascoon (Nivel 10)",
       "locations": [],
       "evolution_info": {
         "from": "Cascoon",
-        "text": "Evoluciona de Cascoon Nivel 10",
+        "text": "Evoluciona de Cascoon (Nivel 10)",
         "trigger": "level-up",
         "condition": "Nivel 10",
         "item_slug": null
@@ -1616,7 +1616,7 @@
       ],
       "evolution_info": {
         "from": "Lotad",
-        "text": "Evoluciona de Lotad Nivel 14",
+        "text": "Evoluciona de Lotad (Nivel 14)",
         "trigger": "level-up",
         "condition": "Nivel 14",
         "item_slug": null
@@ -1690,11 +1690,11 @@
     "flavor_text": "Las células de Ludicolo se revolucionan y llenan de energía cuando oye sonidos rítmicos y alegres. En combate hace gala también de esta cantidad desmesurada de energía.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Lombre usando Piedra Agua",
+      "summary": "Evoluciona de Lombre (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Lombre",
-        "text": "Evoluciona de Lombre usando Piedra Agua",
+        "text": "Evoluciona de Lombre (usando Piedra Agua)",
         "trigger": "use-item",
         "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
@@ -1886,7 +1886,7 @@
       ],
       "evolution_info": {
         "from": "Seedot",
-        "text": "Evoluciona de Seedot Nivel 14",
+        "text": "Evoluciona de Seedot (Nivel 14)",
         "trigger": "level-up",
         "condition": "Nivel 14",
         "item_slug": null
@@ -1969,7 +1969,7 @@
       ],
       "evolution_info": {
         "from": "Nuzleaf",
-        "text": "Evoluciona de Nuzleaf usando Piedra Hoja",
+        "text": "Evoluciona de Nuzleaf (usando Piedra Hoja)",
         "trigger": "use-item",
         "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
@@ -2156,7 +2156,7 @@
       ],
       "evolution_info": {
         "from": "Taillow",
-        "text": "Evoluciona de Taillow Nivel 22",
+        "text": "Evoluciona de Taillow (Nivel 22)",
         "trigger": "level-up",
         "condition": "Nivel 22",
         "item_slug": null
@@ -2586,7 +2586,7 @@
       ],
       "evolution_info": {
         "from": "Wingull",
-        "text": "Evoluciona de Wingull Nivel 25",
+        "text": "Evoluciona de Wingull (Nivel 25)",
         "trigger": "level-up",
         "condition": "Nivel 25",
         "item_slug": null
@@ -2736,11 +2736,11 @@
     "flavor_text": "Kirlia usa los cuernos para amplificar los poderes de psicoquinesia que tiene. Cuando los usa, altera el ambiente, se transforma y crea espejismos de cosas que no existían con anterioridad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Ralts Nivel 20",
+      "summary": "Evoluciona de Ralts (Nivel 20)",
       "locations": [],
       "evolution_info": {
         "from": "Ralts",
-        "text": "Evoluciona de Ralts Nivel 20",
+        "text": "Evoluciona de Ralts (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -2814,11 +2814,11 @@
     "flavor_text": "Gardevoir tiene el poder psicoquinético de alterar las dimensiones y crear un agujero negro pequeño. Este Pokémon intenta proteger siempre a su entrenador aunque tenga que arriesgar su propia vida.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Kirlia Nivel 30",
+      "summary": "Evoluciona de Kirlia (Nivel 30)",
       "locations": [],
       "evolution_info": {
         "from": "Kirlia",
-        "text": "Evoluciona de Kirlia Nivel 30",
+        "text": "Evoluciona de Kirlia (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -3000,11 +3000,11 @@
     "flavor_text": "Masquerain tiene unas antenas con ojos dibujados que le dan aspecto de estar enfadado. Si tiene los “ojos” medio cerrados y con aspecto triste, es probable que esté a punto de caer un buen aguacero.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Surskit Nivel 22",
+      "summary": "Evoluciona de Surskit (Nivel 22)",
       "locations": [],
       "evolution_info": {
         "from": "Surskit",
-        "text": "Evoluciona de Surskit Nivel 22",
+        "text": "Evoluciona de Surskit (Nivel 22)",
         "trigger": "level-up",
         "condition": "Nivel 22",
         "item_slug": null
@@ -3154,11 +3154,11 @@
     "flavor_text": "Las semillas que Breloom tiene prendidas de la cola están formadas por sólidas esporas tóxicas. Comérselas puede resultar fatal. Hasta el más mínimo bocado puede hacerte polvo el estómago.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Shroomish Nivel 23",
+      "summary": "Evoluciona de Shroomish (Nivel 23)",
       "locations": [],
       "evolution_info": {
         "from": "Shroomish",
-        "text": "Evoluciona de Shroomish Nivel 23",
+        "text": "Evoluciona de Shroomish (Nivel 23)",
         "trigger": "level-up",
         "condition": "Nivel 23",
         "item_slug": null
@@ -3307,11 +3307,11 @@
     "flavor_text": "A Vigoroth le resulta totalmente imposible estarse quieto. Cuando intenta dormir, la sangre le fluye a velocidad de vértigo y se pone a correr por el bosque de un lado a otro hasta que se calma.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Slakoth Nivel 18",
+      "summary": "Evoluciona de Slakoth (Nivel 18)",
       "locations": [],
       "evolution_info": {
         "from": "Slakoth",
-        "text": "Evoluciona de Slakoth Nivel 18",
+        "text": "Evoluciona de Slakoth (Nivel 18)",
         "trigger": "level-up",
         "condition": "Nivel 18",
         "item_slug": null
@@ -3384,11 +3384,11 @@
     "flavor_text": "Cuando Slaking se instala a vivir en una zona, aparecen círculos de un metro de radio de terreno baldío, pues se come todo el césped que pilla mientras está tumbado boca abajo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Vigoroth Nivel 36",
+      "summary": "Evoluciona de Vigoroth (Nivel 36)",
       "locations": [],
       "evolution_info": {
         "from": "Vigoroth",
-        "text": "Evoluciona de Vigoroth Nivel 36",
+        "text": "Evoluciona de Vigoroth (Nivel 36)",
         "trigger": "level-up",
         "condition": "Nivel 36",
         "item_slug": null
@@ -3548,11 +3548,11 @@
     "flavor_text": "Kadabra lleva siempre una cuchara de plata en la mano, que usa para amplificar las ondas alfa de su cerebro. Dicen que sin la cuchara, sus poderes de telequinesia se reducen a la mitad.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Abra Nivel 16",
+      "summary": "Evoluciona de Abra (Nivel 16)",
       "locations": [],
       "evolution_info": {
         "from": "Abra",
-        "text": "Evoluciona de Abra Nivel 16",
+        "text": "Evoluciona de Abra (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -3625,11 +3625,11 @@
     "flavor_text": "El cerebro de Alakazam siempre está creciendo y el número de neuronas no deja de aumentar. Este Pokémon tiene un coeficiente intelectual de 5000. Tiene archivado en su memoria todo lo que ha ocurrido en el mundo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Kadabra Intercambio con otro entrenador",
+      "summary": "Evoluciona de Kadabra (Intercambio con otro entrenador)",
       "locations": [],
       "evolution_info": {
         "from": "Kadabra",
-        "text": "Evoluciona de Kadabra Intercambio con otro entrenador",
+        "text": "Evoluciona de Kadabra (Intercambio con otro entrenador)",
         "trigger": "trade",
         "condition": "Intercambio con otro entrenador",
         "item_slug": null
@@ -3777,11 +3777,11 @@
     "flavor_text": "Si Ninjask no recibe un entrenamiento adecuado, desobedece a su entrenador y empieza a dar zumbidos sin parar. Es muy buen Pokémon; todos dicen que pone a prueba las habilidades de su entrenador.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nincada Nivel 20",
+      "summary": "Evoluciona de Nincada (Nivel 20)",
       "locations": [],
       "evolution_info": {
         "from": "Nincada",
-        "text": "Evoluciona de Nincada Nivel 20",
+        "text": "Evoluciona de Nincada (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -4024,7 +4024,7 @@
       ],
       "evolution_info": {
         "from": "Whismur",
-        "text": "Evoluciona de Whismur Nivel 20",
+        "text": "Evoluciona de Whismur (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -4098,11 +4098,11 @@
     "flavor_text": "Exploud expresa sus sentimientos a los otros emitiendo una especie de silbidos a través de los tubos que tiene. Este Pokémon sólo levanta la voz cuando está en combate.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Loudred Nivel 40",
+      "summary": "Evoluciona de Loudred (Nivel 40)",
       "locations": [],
       "evolution_info": {
         "from": "Loudred",
-        "text": "Evoluciona de Loudred Nivel 40",
+        "text": "Evoluciona de Loudred (Nivel 40)",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -4284,7 +4284,7 @@
       ],
       "evolution_info": {
         "from": "Makuhita",
-        "text": "Evoluciona de Makuhita Nivel 24",
+        "text": "Evoluciona de Makuhita (Nivel 24)",
         "trigger": "level-up",
         "condition": "Nivel 24",
         "item_slug": null
@@ -4553,7 +4553,7 @@
       ],
       "evolution_info": {
         "from": "Goldeen",
-        "text": "Evoluciona de Goldeen Nivel 33",
+        "text": "Evoluciona de Goldeen (Nivel 33)",
         "trigger": "level-up",
         "condition": "Nivel 33",
         "item_slug": null
@@ -5103,7 +5103,7 @@
       ],
       "evolution_info": {
         "from": "Magikarp",
-        "text": "Evoluciona de Magikarp Nivel 20",
+        "text": "Evoluciona de Magikarp (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -5305,7 +5305,7 @@
       ],
       "evolution_info": {
         "from": "Azurill",
-        "text": "Evoluciona de Azurill Felicidad alta",
+        "text": "Evoluciona de Azurill (Felicidad alta)",
         "trigger": "level-up",
         "condition": "Felicidad alta",
         "item_slug": null
@@ -5379,11 +5379,11 @@
     "flavor_text": "Azumarill puede hacer burbujas de aire si ve a algún Pokémon que esté a punto de ahogarse. Estas burbujas de aire son básicas para que los Pokémon puedan seguir respirando.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Marill Nivel 18",
+      "summary": "Evoluciona de Marill (Nivel 18)",
       "locations": [],
       "evolution_info": {
         "from": "Marill",
-        "text": "Evoluciona de Marill Nivel 18",
+        "text": "Evoluciona de Marill (Nivel 18)",
         "trigger": "level-up",
         "condition": "Nivel 18",
         "item_slug": null
@@ -5561,7 +5561,7 @@
       ],
       "evolution_info": {
         "from": "Geodude",
-        "text": "Evoluciona de Geodude Nivel 25",
+        "text": "Evoluciona de Geodude (Nivel 25)",
         "trigger": "level-up",
         "condition": "Nivel 25",
         "item_slug": null
@@ -5634,11 +5634,11 @@
     "flavor_text": "Golem es conocido por su afición a bajar de las montañas rodando. La gente que vive en la falda de las mismas ha cavado surcos para conducirlo en su descenso por las laderas y evitar que se cuele en sus casas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Graveler Intercambio con otro entrenador",
+      "summary": "Evoluciona de Graveler (Intercambio con otro entrenador)",
       "locations": [],
       "evolution_info": {
         "from": "Graveler",
-        "text": "Evoluciona de Graveler Intercambio con otro entrenador",
+        "text": "Evoluciona de Graveler (Intercambio con otro entrenador)",
         "trigger": "trade",
         "condition": "Intercambio con otro entrenador",
         "item_slug": null
@@ -5870,11 +5870,11 @@
     "flavor_text": "Delcatty duerme en cualquier lugar sin tener que mantener el nido en un mismo sitio. Si otro Pokémon se le acerca mientras duerme, no se pondrá a luchar con él; simplemente se irá a otro sitio.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Skitty usando Piedra Lunar",
+      "summary": "Evoluciona de Skitty (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Skitty",
-        "text": "Evoluciona de Skitty usando Piedra Lunar",
+        "text": "Evoluciona de Skitty (usando Piedra Lunar)",
         "trigger": "use-item",
         "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
@@ -6223,7 +6223,7 @@
       ],
       "evolution_info": {
         "from": "Zubat",
-        "text": "Evoluciona de Zubat Nivel 22",
+        "text": "Evoluciona de Zubat (Nivel 22)",
         "trigger": "level-up",
         "condition": "Nivel 22",
         "item_slug": null
@@ -6296,11 +6296,11 @@
     "flavor_text": "Crobat se acerca hasta su posible presa usando las alas casi sin hacer ruido. La forma de descansar que tiene es colgarse de la rama de un árbol por las patas traseras, que también son alas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Golbat Felicidad alta",
+      "summary": "Evoluciona de Golbat (Felicidad alta)",
       "locations": [],
       "evolution_info": {
         "from": "Golbat",
-        "text": "Evoluciona de Golbat Felicidad alta",
+        "text": "Evoluciona de Golbat (Felicidad alta)",
         "trigger": "level-up",
         "condition": "Felicidad alta",
         "item_slug": null
@@ -6853,7 +6853,7 @@
       ],
       "evolution_info": {
         "from": "Tentacool",
-        "text": "Evoluciona de Tentacool Nivel 30",
+        "text": "Evoluciona de Tentacool (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -7221,7 +7221,7 @@
       ],
       "evolution_info": {
         "from": "Aron",
-        "text": "Evoluciona de Aron Nivel 32",
+        "text": "Evoluciona de Aron (Nivel 32)",
         "trigger": "level-up",
         "condition": "Nivel 32",
         "item_slug": null
@@ -7294,11 +7294,11 @@
     "flavor_text": "Aggron es increíblemente cuidadoso con su hábitat. Si su montaña sufre algún corrimiento de tierras o algún incendio, cargará con tierra nueva, plantará árboles y restaurará con cuidado el terreno.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Lairon Nivel 42",
+      "summary": "Evoluciona de Lairon (Nivel 42)",
       "locations": [],
       "evolution_info": {
         "from": "Lairon",
-        "text": "Evoluciona de Lairon Nivel 42",
+        "text": "Evoluciona de Lairon (Nivel 42)",
         "trigger": "level-up",
         "condition": "Nivel 42",
         "item_slug": null
@@ -7454,11 +7454,11 @@
     "flavor_text": "Machoke realiza sesiones de culturismo todo el día. De entrenamiento le sirven también las veces que ayuda a la gente en tareas de esfuerzo físico. En sus días libres, va al campo o a la montaña para hacer más ejercicio.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Machop Nivel 28",
+      "summary": "Evoluciona de Machop (Nivel 28)",
       "locations": [],
       "evolution_info": {
         "from": "Machop",
-        "text": "Evoluciona de Machop Nivel 28",
+        "text": "Evoluciona de Machop (Nivel 28)",
         "trigger": "level-up",
         "condition": "Nivel 28",
         "item_slug": null
@@ -7531,11 +7531,11 @@
     "flavor_text": "Machamp es conocido como el Pokémon que domina todas las artes marciales. Si agarra a su rival con los cuatro brazos que tiene, su enemigo no tendrá nada que hacer. El pobre contrincante saldrá volando hasta perderse en el horizonte.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Machoke Intercambio con otro entrenador",
+      "summary": "Evoluciona de Machoke (Intercambio con otro entrenador)",
       "locations": [],
       "evolution_info": {
         "from": "Machoke",
-        "text": "Evoluciona de Machoke Intercambio con otro entrenador",
+        "text": "Evoluciona de Machoke (Intercambio con otro entrenador)",
         "trigger": "trade",
         "condition": "Intercambio con otro entrenador",
         "item_slug": null
@@ -7700,7 +7700,7 @@
       ],
       "evolution_info": {
         "from": "Meditite",
-        "text": "Evoluciona de Meditite Nivel 37",
+        "text": "Evoluciona de Meditite (Nivel 37)",
         "trigger": "level-up",
         "condition": "Nivel 37",
         "item_slug": null
@@ -7861,7 +7861,7 @@
       ],
       "evolution_info": {
         "from": "Electrike",
-        "text": "Evoluciona de Electrike Nivel 26",
+        "text": "Evoluciona de Electrike (Nivel 26)",
         "trigger": "level-up",
         "condition": "Nivel 26",
         "item_slug": null
@@ -8176,7 +8176,7 @@
       ],
       "evolution_info": {
         "from": "Magnemite",
-        "text": "Evoluciona de Magnemite Nivel 30",
+        "text": "Evoluciona de Magnemite (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -8345,7 +8345,7 @@
       ],
       "evolution_info": {
         "from": "Voltorb",
-        "text": "Evoluciona de Voltorb Nivel 30",
+        "text": "Evoluciona de Voltorb (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -8710,7 +8710,7 @@
       ],
       "evolution_info": {
         "from": "Oddish",
-        "text": "Evoluciona de Oddish Nivel 21",
+        "text": "Evoluciona de Oddish (Nivel 21)",
         "trigger": "level-up",
         "condition": "Nivel 21",
         "item_slug": null
@@ -8783,11 +8783,11 @@
     "flavor_text": "Vileplume tiene los mayores pétalos del mundo. Los usa para atraer a sus presas y llenarlas de esporas tóxicas. Una vez ha inmovilizado a las víctimas, las atrapa y las devora.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Gloom usando Piedra Hoja",
+      "summary": "Evoluciona de Gloom (usando Piedra Hoja)",
       "locations": [],
       "evolution_info": {
         "from": "Gloom",
-        "text": "Evoluciona de Gloom usando Piedra Hoja",
+        "text": "Evoluciona de Gloom (usando Piedra Hoja)",
         "trigger": "use-item",
         "condition": "usando Piedra Hoja",
         "item_slug": "leaf-stone"
@@ -8879,11 +8879,11 @@
     "flavor_text": "La belleza de las flores que le crecen a Bellossom dependen de lo mal que oliera el Gloom a parte del cual evolucionó. A mayor hedor, mayor belleza. Por la noche este Pokémon cierra sus pétalos y se echa a dormir.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Gloom usando Piedra Solar",
+      "summary": "Evoluciona de Gloom (usando Piedra Solar)",
       "locations": [],
       "evolution_info": {
         "from": "Gloom",
-        "text": "Evoluciona de Gloom usando Piedra Solar",
+        "text": "Evoluciona de Gloom (usando Piedra Solar)",
         "trigger": "use-item",
         "condition": "usando Piedra Solar",
         "item_slug": "sun-stone"
@@ -9067,7 +9067,7 @@
       ],
       "evolution_info": {
         "from": "Doduo",
-        "text": "Evoluciona de Doduo Nivel 31",
+        "text": "Evoluciona de Doduo (Nivel 31)",
         "trigger": "level-up",
         "condition": "Nivel 31",
         "item_slug": null
@@ -9291,11 +9291,11 @@
     "flavor_text": "Swalot no tiene dientes, así que lo que come se lo traga de una vez; da igual lo que sea. A este Pokémon le cabría un neumático en la boca sin problema.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Gulpin Nivel 26",
+      "summary": "Evoluciona de Gulpin (Nivel 26)",
       "locations": [],
       "evolution_info": {
         "from": "Gulpin",
-        "text": "Evoluciona de Gulpin Nivel 26",
+        "text": "Evoluciona de Gulpin (Nivel 26)",
         "trigger": "level-up",
         "condition": "Nivel 26",
         "item_slug": null
@@ -9520,7 +9520,7 @@
       ],
       "evolution_info": {
         "from": "Carvanha",
-        "text": "Evoluciona de Carvanha Nivel 30",
+        "text": "Evoluciona de Carvanha (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -9914,7 +9914,7 @@
       ],
       "evolution_info": {
         "from": "Wailmer",
-        "text": "Evoluciona de Wailmer Nivel 40",
+        "text": "Evoluciona de Wailmer (Nivel 40)",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -10071,11 +10071,11 @@
     "flavor_text": "Las jorobas de Camerupt se originaron por una deformación de los huesos. A veces escupen magma líquido, sobre todo cuando el Pokémon se enfada.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Numel Nivel 33",
+      "summary": "Evoluciona de Numel (Nivel 33)",
       "locations": [],
       "evolution_info": {
         "from": "Numel",
-        "text": "Evoluciona de Numel Nivel 33",
+        "text": "Evoluciona de Numel (Nivel 33)",
         "trigger": "level-up",
         "condition": "Nivel 33",
         "item_slug": null
@@ -10223,11 +10223,11 @@
     "flavor_text": "Magcargo tiene una temperatura corporal de 1.000 grados centígrados aproximadamente. El agua se evapora al contacto con él. Si llueve, las gotas que le rozan se transforman en vapor al instante y crean una densa niebla.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Slugma Nivel 38",
+      "summary": "Evoluciona de Slugma (Nivel 38)",
       "locations": [],
       "evolution_info": {
         "from": "Slugma",
-        "text": "Evoluciona de Slugma Nivel 38",
+        "text": "Evoluciona de Slugma (Nivel 38)",
         "trigger": "level-up",
         "condition": "Nivel 38",
         "item_slug": null
@@ -10450,11 +10450,11 @@
     "flavor_text": "A este Pokémon le encanta comer cosas repulsivas. En ciudades sucias en las que la gente tira la basura por la calle, los Muk tienen sin duda su punto de encuentro.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Grimer Nivel 38",
+      "summary": "Evoluciona de Grimer (Nivel 38)",
       "locations": [],
       "evolution_info": {
         "from": "Grimer",
-        "text": "Evoluciona de Grimer Nivel 38",
+        "text": "Evoluciona de Grimer (Nivel 38)",
         "trigger": "level-up",
         "condition": "Nivel 38",
         "item_slug": null
@@ -10602,11 +10602,11 @@
     "flavor_text": "Weezing reduce y agranda el doble cuerpo que tiene para mezclar los gases tóxicos que contiene. Cuantos más gases mezcle, mayor serán la toxicidad y el nivel de putrefacción del Pokémon.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Koffing Nivel 35",
+      "summary": "Evoluciona de Koffing (Nivel 35)",
       "locations": [],
       "evolution_info": {
         "from": "Koffing",
-        "text": "Evoluciona de Koffing Nivel 35",
+        "text": "Evoluciona de Koffing (Nivel 35)",
         "trigger": "level-up",
         "condition": "Nivel 35",
         "item_slug": null
@@ -10754,11 +10754,11 @@
     "flavor_text": "Grumpig utiliza las perlas negras que tiene para usar fantásticos poderes mientras baila de forma muy extraña. Las perlas de este Pokémon están consideradas como valiosas obras de arte.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Spoink Nivel 32",
+      "summary": "Evoluciona de Spoink (Nivel 32)",
       "locations": [],
       "evolution_info": {
         "from": "Spoink",
-        "text": "Evoluciona de Spoink Nivel 32",
+        "text": "Evoluciona de Spoink (Nivel 32)",
         "trigger": "level-up",
         "condition": "Nivel 32",
         "item_slug": null
@@ -10910,11 +10910,11 @@
     "flavor_text": "Sandslash se puede enroscar y convertirse en una bola de largas púas. En combate, este Pokémon hará lo posible por debilitar a su rival: le clavará las púas, se le acercará y le atacará con las afiladas garras.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Sandshrew Nivel 22",
+      "summary": "Evoluciona de Sandshrew (Nivel 22)",
       "locations": [],
       "evolution_info": {
         "from": "Sandshrew",
-        "text": "Evoluciona de Sandshrew Nivel 22",
+        "text": "Evoluciona de Sandshrew (Nivel 22)",
         "trigger": "level-up",
         "condition": "Nivel 22",
         "item_slug": null
@@ -11214,11 +11214,11 @@
     "flavor_text": "Vibrava no ha desarrollado las alas del todo. Más que para volar y recorrer largas distancias, le resultan útiles para generar ondas ultrasónicas al hacer que vibren.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Trapinch Nivel 35",
+      "summary": "Evoluciona de Trapinch (Nivel 35)",
       "locations": [],
       "evolution_info": {
         "from": "Trapinch",
-        "text": "Evoluciona de Trapinch Nivel 35",
+        "text": "Evoluciona de Trapinch (Nivel 35)",
         "trigger": "level-up",
         "condition": "Nivel 35",
         "item_slug": null
@@ -11292,11 +11292,11 @@
     "flavor_text": "Flygon puede provocar una tormenta de arena batiendo las alas. Éstas, al ser agitadas, crean una melodía. Y como las \"melodías\" pueden oírse cuando hay tormenta, dicen que es el espíritu del desierto.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Vibrava Nivel 45",
+      "summary": "Evoluciona de Vibrava (Nivel 45)",
       "locations": [],
       "evolution_info": {
         "from": "Vibrava",
-        "text": "Evoluciona de Vibrava Nivel 45",
+        "text": "Evoluciona de Vibrava (Nivel 45)",
         "trigger": "level-up",
         "condition": "Nivel 45",
         "item_slug": null
@@ -11446,11 +11446,11 @@
     "flavor_text": "Si te adentras en un desierto por la noche, Cacturne te seguirá junto con varios de los suyos. Este Pokémon espera pacientemente a que el viajero se canse y no pueda continuar más, vencido por el cansancio.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Cacnea Nivel 32",
+      "summary": "Evoluciona de Cacnea (Nivel 32)",
       "locations": [],
       "evolution_info": {
         "from": "Cacnea",
-        "text": "Evoluciona de Cacnea Nivel 32",
+        "text": "Evoluciona de Cacnea (Nivel 32)",
         "trigger": "level-up",
         "condition": "Nivel 32",
         "item_slug": null
@@ -11613,7 +11613,7 @@
       ],
       "evolution_info": {
         "from": "Swablu",
-        "text": "Evoluciona de Swablu Nivel 35",
+        "text": "Evoluciona de Swablu (Nivel 35)",
         "trigger": "level-up",
         "condition": "Nivel 35",
         "item_slug": null
@@ -12180,7 +12180,7 @@
       ],
       "evolution_info": {
         "from": "Barboach",
-        "text": "Evoluciona de Barboach Nivel 30",
+        "text": "Evoluciona de Barboach (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -12349,11 +12349,11 @@
     "flavor_text": "Crawdaunt muda el caparazón regularmente y, en cuanto lo hace, se le queda la piel tersa y suave. Mientras el nuevo caparazón se endurece, permanece escondido en su madriguera para que no le ataquen.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Corphish Nivel 30",
+      "summary": "Evoluciona de Corphish (Nivel 30)",
       "locations": [],
       "evolution_info": {
         "from": "Corphish",
-        "text": "Evoluciona de Corphish Nivel 30",
+        "text": "Evoluciona de Corphish (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -12519,7 +12519,7 @@
       ],
       "evolution_info": {
         "from": "Baltoy",
-        "text": "Evoluciona de Baltoy Nivel 36",
+        "text": "Evoluciona de Baltoy (Nivel 36)",
         "trigger": "level-up",
         "condition": "Nivel 36",
         "item_slug": null
@@ -12671,11 +12671,11 @@
     "flavor_text": "A Cradily le sirve el cuerpo de ancla y sostén en aguas turbulentas. Gracias a él, no es arrastrado por las corrientes. Este Pokémon segrega un fuerte jugo digestivo a través de los tentáculos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Lileep Nivel 40",
+      "summary": "Evoluciona de Lileep (Nivel 40)",
       "locations": [],
       "evolution_info": {
         "from": "Lileep",
-        "text": "Evoluciona de Lileep Nivel 40",
+        "text": "Evoluciona de Lileep (Nivel 40)",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -12827,11 +12827,11 @@
     "flavor_text": "Armaldo es una de las especies de Pokémon que se extinguieron en la era prehistórica. Se cree que caminaban sobre las patas traseras; lo más apropiado para la vida en tierra firme.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Anorith Nivel 40",
+      "summary": "Evoluciona de Anorith (Nivel 40)",
       "locations": [],
       "evolution_info": {
         "from": "Anorith",
-        "text": "Evoluciona de Anorith Nivel 40",
+        "text": "Evoluciona de Anorith (Nivel 40)",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -12988,7 +12988,7 @@
       ],
       "evolution_info": {
         "from": "Igglybuff",
-        "text": "Evoluciona de Igglybuff Felicidad alta",
+        "text": "Evoluciona de Igglybuff (Felicidad alta)",
         "trigger": "level-up",
         "condition": "Felicidad alta",
         "item_slug": null
@@ -13061,11 +13061,11 @@
     "flavor_text": "El cuerpo de Wigglytuff es muy flexible. Dicen que, al aspirar aire, puede hincharse sin límites. Y, una vez hinchado, se pone a botar como si fuera un globo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Jigglypuff usando Piedra Lunar",
+      "summary": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
       "locations": [],
       "evolution_info": {
         "from": "Jigglypuff",
-        "text": "Evoluciona de Jigglypuff usando Piedra Lunar",
+        "text": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
         "trigger": "use-item",
         "condition": "usando Piedra Lunar",
         "item_slug": "moon-stone"
@@ -13233,13 +13233,13 @@
     "flavor_text": "Milotic vive en lo más profundo de los lagos. Cuando intensifica el color rosa de la piel, libera una fuerte onda de energía que tranquiliza a todo el que tenga el ánimo alterado.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Feebas al alcanzar 170+ de Belleza dándole Pokécubos Azules/Índigo y subiendo 1 nivel.",
+      "summary": "Evoluciona de Feebas al subir 1 nivel tras alcanzar 170+ de Belleza (dándole Pokécubos secos: Azules o Índigo preparados con bayas secas). No requiere ningún objeto equipado ni pañuelo.",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas Evolución especial",
+        "text": "Evoluciona de Feebas al subir de nivel con 170+ de Belleza (Pokécubos Azules o Índigo)",
         "trigger": "level-up",
-        "condition": "Evolución especial",
+        "condition": "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -13466,11 +13466,11 @@
     "flavor_text": "Starmie nada por el agua haciendo girar su cuerpo estrellado a modo de hélice. El núcleo de este Pokémon brilla y llega a tornarse de siete colores.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Staryu usando Piedra Agua",
+      "summary": "Evoluciona de Staryu (usando Piedra Agua)",
       "locations": [],
       "evolution_info": {
         "from": "Staryu",
-        "text": "Evoluciona de Staryu usando Piedra Agua",
+        "text": "Evoluciona de Staryu (usando Piedra Agua)",
         "trigger": "use-item",
         "condition": "usando Piedra Agua",
         "item_slug": "water-stone"
@@ -13793,7 +13793,7 @@
       ],
       "evolution_info": {
         "from": "Shuppet",
-        "text": "Evoluciona de Shuppet Nivel 37",
+        "text": "Evoluciona de Shuppet (Nivel 37)",
         "trigger": "level-up",
         "condition": "Nivel 37",
         "item_slug": null
@@ -13953,11 +13953,11 @@
     "flavor_text": "Dusclops absorbe todo lo que pilla, al margen del tamaño que tenga. Este Pokémon hipnotiza a su rival moviendo las manos de forma macabra y usando el ojo de manera implacable. Una vez hipnotizado, el enemigo obedecerá.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Duskull Nivel 37",
+      "summary": "Evoluciona de Duskull (Nivel 37)",
       "locations": [],
       "evolution_info": {
         "from": "Duskull",
-        "text": "Evoluciona de Duskull Nivel 37",
+        "text": "Evoluciona de Duskull (Nivel 37)",
         "trigger": "level-up",
         "condition": "Nivel 37",
         "item_slug": null
@@ -14331,11 +14331,11 @@
     "flavor_text": "Cuenta la leyenda que Ninetales nació de la fusión de nueve hechiceros que tenían poderes sagrados. Este Pokémon es realmente inteligente. Entiende el lenguaje humano.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Vulpix usando Piedra Fuego",
+      "summary": "Evoluciona de Vulpix (usando Piedra Fuego)",
       "locations": [],
       "evolution_info": {
         "from": "Vulpix",
-        "text": "Evoluciona de Vulpix usando Piedra Fuego",
+        "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
         "trigger": "use-item",
         "condition": "usando Piedra Fuego",
         "item_slug": "fire-stone"
@@ -14519,7 +14519,7 @@
       ],
       "evolution_info": {
         "from": "Pichu",
-        "text": "Evoluciona de Pichu Felicidad alta",
+        "text": "Evoluciona de Pichu (Felicidad alta)",
         "trigger": "level-up",
         "condition": "Felicidad alta",
         "item_slug": null
@@ -14593,11 +14593,11 @@
     "flavor_text": "Este Pokémon libera una débil carga eléctrica por todo su cuerpo, que le hace brillar en la oscuridad. Raichu descarga electricidad plantando la cola en el suelo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Pikachu usando Piedra Trueno",
+      "summary": "Evoluciona de Pikachu (usando Piedra Trueno)",
       "locations": [],
       "evolution_info": {
         "from": "Pikachu",
-        "text": "Evoluciona de Pikachu usando Piedra Trueno",
+        "text": "Evoluciona de Pikachu (usando Piedra Trueno)",
         "trigger": "use-item",
         "condition": "usando Piedra Trueno",
         "item_slug": "thunder-stone"
@@ -14779,7 +14779,7 @@
       ],
       "evolution_info": {
         "from": "Psyduck",
-        "text": "Evoluciona de Psyduck Nivel 33",
+        "text": "Evoluciona de Psyduck (Nivel 33)",
         "trigger": "level-up",
         "condition": "Nivel 33",
         "item_slug": null
@@ -14965,7 +14965,7 @@
       ],
       "evolution_info": {
         "from": "Wynaut",
-        "text": "Evoluciona de Wynaut Nivel 15",
+        "text": "Evoluciona de Wynaut (Nivel 15)",
         "trigger": "level-up",
         "condition": "Nivel 15",
         "item_slug": null
@@ -15130,7 +15130,7 @@
       ],
       "evolution_info": {
         "from": "Natu",
-        "text": "Evoluciona de Natu Nivel 25",
+        "text": "Evoluciona de Natu (Nivel 25)",
         "trigger": "level-up",
         "condition": "Nivel 25",
         "item_slug": null
@@ -15357,11 +15357,11 @@
     "flavor_text": "Si Donphan tuviera que dar un golpe con todo el cuerpo, con lo robusto que es echaría abajo hasta una casa. Estos Pokémon usan su fuerza para ayudar a despejar pasos de montaña cuando hay piedras o lodo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Phanpy Nivel 25",
+      "summary": "Evoluciona de Phanpy (Nivel 25)",
       "locations": [],
       "evolution_info": {
         "from": "Phanpy",
-        "text": "Evoluciona de Phanpy Nivel 25",
+        "text": "Evoluciona de Phanpy (Nivel 25)",
         "trigger": "level-up",
         "condition": "Nivel 25",
         "item_slug": null
@@ -15660,11 +15660,11 @@
     "flavor_text": "Rhydon tiene un cuerno anillado que le sirve de taladro. Le resulta muy útil para horadar rocas y piedras. A veces, se queda atrapado en corrientes de magma, pero la tosca piel que tiene impide que sienta el calor.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Rhyhorn Nivel 42",
+      "summary": "Evoluciona de Rhyhorn (Nivel 42)",
       "locations": [],
       "evolution_info": {
         "from": "Rhyhorn",
-        "text": "Evoluciona de Rhyhorn Nivel 42",
+        "text": "Evoluciona de Rhyhorn (Nivel 42)",
         "trigger": "level-up",
         "condition": "Nivel 42",
         "item_slug": null
@@ -15814,11 +15814,11 @@
     "flavor_text": "Glalie tiene la habilidad de controlar el hielo con total libertad. Por ejemplo, puede dejar a su rival totalmente congelado en un instante. Y, una vez helado, lo devora lentamente.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Snorunt Nivel 42",
+      "summary": "Evoluciona de Snorunt (Nivel 42)",
       "locations": [],
       "evolution_info": {
         "from": "Snorunt",
-        "text": "Evoluciona de Snorunt Nivel 42",
+        "text": "Evoluciona de Snorunt (Nivel 42)",
         "trigger": "level-up",
         "condition": "Nivel 42",
         "item_slug": null
@@ -15988,11 +15988,11 @@
     "flavor_text": "Sealeo suele balancear y hacer rodar cosas en la punta del morro. Al mismo tiempo, aprovecha para olerlas y detectar la textura que tienen para ver si le gustan o no.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Spheal Nivel 32",
+      "summary": "Evoluciona de Spheal (Nivel 32)",
       "locations": [],
       "evolution_info": {
         "from": "Spheal",
-        "text": "Evoluciona de Spheal Nivel 32",
+        "text": "Evoluciona de Spheal (Nivel 32)",
         "trigger": "level-up",
         "condition": "Nivel 32",
         "item_slug": null
@@ -16066,11 +16066,11 @@
     "flavor_text": "Walrein va nadando por mares glaciales y destrozando icebergs con los enormes e imponentes colmillos que tiene. La capa de grasa de ballena que le rodea hace que los ataques enemigos reboten y no le hagan ningún daño.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Sealeo Nivel 44",
+      "summary": "Evoluciona de Sealeo (Nivel 44)",
       "locations": [],
       "evolution_info": {
         "from": "Sealeo",
-        "text": "Evoluciona de Sealeo Nivel 44",
+        "text": "Evoluciona de Sealeo (Nivel 44)",
         "trigger": "level-up",
         "condition": "Nivel 44",
         "item_slug": null
@@ -16223,11 +16223,11 @@
     "flavor_text": "Huntail tiene una cola en forma de pez, que usa para atraer a su presa. Una vez la tiene cerca, la engulle sin más. Este Pokémon nada haciendo serpentear el cuerpo como si fuera un reptil.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Clamperl Intercambio equipado con Diente Marino",
+      "summary": "Evoluciona de Clamperl (Intercambio equipado con Diente Marino)",
       "locations": [],
       "evolution_info": {
         "from": "Clamperl",
-        "text": "Evoluciona de Clamperl Intercambio equipado con Diente Marino",
+        "text": "Evoluciona de Clamperl (Intercambio equipado con Diente Marino)",
         "trigger": "trade",
         "condition": "Intercambio equipado con Diente Marino",
         "item_slug": "deep-sea-tooth"
@@ -16319,11 +16319,11 @@
     "flavor_text": "Aunque Gorebyss es la imagen de la elegancia y la belleza al nadar, es también la definición de la crueldad. Al detectar a su presa, este Pokémon le hinca los finos dientes que tiene y le absorbe los fluidos corporales.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Clamperl Intercambio equipado con Escama Marina",
+      "summary": "Evoluciona de Clamperl (Intercambio equipado con Escama Marina)",
       "locations": [],
       "evolution_info": {
         "from": "Clamperl",
-        "text": "Evoluciona de Clamperl Intercambio equipado con Escama Marina",
+        "text": "Evoluciona de Clamperl (Intercambio equipado con Escama Marina)",
         "trigger": "trade",
         "condition": "Intercambio equipado con Escama Marina",
         "item_slug": "deep-sea-scale"
@@ -16658,11 +16658,11 @@
     "flavor_text": "Todos saben que Lanturn emite luz. Si echas un ojo al mar desde un barco en una noche cerrada, quizás veas su luz a través de las aguas, brillando desde lo más profundo, por donde suele nadar. Con él, el mar parece un cielo estrellado.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Chinchou Nivel 27",
+      "summary": "Evoluciona de Chinchou (Nivel 27)",
       "locations": [],
       "evolution_info": {
         "from": "Chinchou",
-        "text": "Evoluciona de Chinchou Nivel 27",
+        "text": "Evoluciona de Chinchou (Nivel 27)",
         "trigger": "level-up",
         "condition": "Nivel 27",
         "item_slug": null
@@ -16910,11 +16910,11 @@
     "flavor_text": "Seadra gira sobre sí mismo y crea unos remolinos lo suficientemente fuertes como para engullir barcos de pesca. Este Pokémon aprovecha las corrientes que crea para debilitar a su presa y tragársela de una vez.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Horsea Nivel 32",
+      "summary": "Evoluciona de Horsea (Nivel 32)",
       "locations": [],
       "evolution_info": {
         "from": "Horsea",
-        "text": "Evoluciona de Horsea Nivel 32",
+        "text": "Evoluciona de Horsea (Nivel 32)",
         "trigger": "level-up",
         "condition": "Nivel 32",
         "item_slug": null
@@ -16988,11 +16988,11 @@
     "flavor_text": "Kingdra duerme en el suelo marino donde, en realidad, no tiene mucha vida. Cuando estalla una tormenta, dicen que se despierta y se pone a vagar en busca de su presa.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Seadra Intercambio equipado con Escama Dragón",
+      "summary": "Evoluciona de Seadra (Intercambio equipado con Escama Dragón)",
       "locations": [],
       "evolution_info": {
         "from": "Seadra",
-        "text": "Evoluciona de Seadra Intercambio equipado con Escama Dragón",
+        "text": "Evoluciona de Seadra (Intercambio equipado con Escama Dragón)",
         "trigger": "trade",
         "condition": "Intercambio equipado con Escama Dragón",
         "item_slug": "dragon-scale"
@@ -17160,11 +17160,11 @@
     "flavor_text": "Shelgon está recubierto por una especie de capa ósea: una coraza muy dura que hace rebotar los ataques enemigos. Este Pokémon se esconde en las cavernas para evolucionar.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Bagon Nivel 30",
+      "summary": "Evoluciona de Bagon (Nivel 30)",
       "locations": [],
       "evolution_info": {
         "from": "Bagon",
-        "text": "Evoluciona de Bagon Nivel 30",
+        "text": "Evoluciona de Bagon (Nivel 30)",
         "trigger": "level-up",
         "condition": "Nivel 30",
         "item_slug": null
@@ -17237,11 +17237,11 @@
     "flavor_text": "Al evolucionar Shelgon y convertirse por fin en Salamence, ve cumplido el sueño de su vida de tener alas. Para expresar su alegría, Salamence vuela y revolotea por el cielo al tiempo que lanza llamas por la boca.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Shelgon Nivel 50",
+      "summary": "Evoluciona de Shelgon (Nivel 50)",
       "locations": [],
       "evolution_info": {
         "from": "Shelgon",
-        "text": "Evoluciona de Shelgon Nivel 50",
+        "text": "Evoluciona de Shelgon (Nivel 50)",
         "trigger": "level-up",
         "condition": "Nivel 50",
         "item_slug": null
@@ -17393,11 +17393,11 @@
     "flavor_text": "Cuando se funden dos Beldum , uniendo los cerebros por un sistema nervioso magnético, se forma un Metang. Para desplazarse a mayor velocidad, este Pokémon echa los brazos hacia atrás.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Beldum Nivel 20",
+      "summary": "Evoluciona de Beldum (Nivel 20)",
       "locations": [],
       "evolution_info": {
         "from": "Beldum",
-        "text": "Evoluciona de Beldum Nivel 20",
+        "text": "Evoluciona de Beldum (Nivel 20)",
         "trigger": "level-up",
         "condition": "Nivel 20",
         "item_slug": null
@@ -17470,11 +17470,11 @@
     "flavor_text": "Metagross es el resultado de la fusión de dos Metang. Cuando caza, acorrala a su presa, sujetándola contra el suelo con el cuerpo. Después, devora a la víctima indefensa con la gran boca del estómago.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Metang Nivel 45",
+      "summary": "Evoluciona de Metang (Nivel 45)",
       "locations": [],
       "evolution_info": {
         "from": "Metang",
-        "text": "Evoluciona de Metang Nivel 45",
+        "text": "Evoluciona de Metang (Nivel 45)",
         "trigger": "level-up",
         "condition": "Nivel 45",
         "item_slug": null

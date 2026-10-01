@@ -2813,7 +2813,7 @@ class PokemonEmeraldGen3Tests(TestCase):
         self.assertEqual(excl_ctx["counterpart_short_name"], "Rubí y Zafiro")
         self.assertEqual(excl_ctx["counterpart_theme"], "ruby_sapphire")
         self.assertEqual(excl_ctx["counterpart_total"], 7)
-        self.assertEqual(excl_ctx["own_total"], 32)
+        self.assertEqual(excl_ctx["own_total"], 46)
 
         counterpart_names = {p["name"] for p in excl_ctx["counterpart_list"]}
         self.assertIn("Surskit", counterpart_names)
@@ -2832,20 +2832,35 @@ class PokemonEmeraldGen3Tests(TestCase):
         self.assertIn("Mareep", own_names)
         self.assertIn("Houndour", own_names)
         self.assertIn("Miltank", own_names)
+        self.assertIn("Mew", own_names)
+        self.assertIn("Chikorita", own_names)
+        self.assertIn("Cyndaquil", own_names)
+        self.assertIn("Totodile", own_names)
+        self.assertIn("Meowth", own_names)
+        self.assertIn("Lugia", own_names)
+        self.assertIn("Ho Oh", own_names)
 
     def test_emerald_transfers(self):
-        """Verifica que las transferencias requeridas en Esmeralda sean 153 (31 menos que R/Z debido a los salvajes de Johto/Kanto)."""
+        """Verifica que las transferencias requeridas en Esmeralda sean 139 (45 menos que R/Z debido a los salvajes, regalos y eventos de Johto/Kanto)."""
         from .exclusives import get_version_transfers_context
         transfers_ctx = get_version_transfers_context(self.game, self.pokedex_nat, set())
         self.assertIsNotNone(transfers_ctx)
-        self.assertEqual(transfers_ctx["total"], 153)
+        self.assertEqual(transfers_ctx["total"], 139)
 
-        # Verificar que especies como Sudowoodo (#185), Smeargle (#235), Ditto (#132) NO están en transferencias
+        # Verificar que especies como Sudowoodo (#185), Smeargle (#235), Ditto (#132), Mew (#151),
+        # Iniciales de Johto (#152, #155, #158), Meowth (#52), Lugia (#249), Ho-Oh (#250) NO están en transferencias
         transfer_nums = {p["national_number"] for p in transfers_ctx["transfer_list"]}
         self.assertNotIn(185, transfer_nums)  # Sudowoodo (Frente de Batalla)
         self.assertNotIn(235, transfer_nums)  # Smeargle (Cueva Taller)
         self.assertNotIn(132, transfer_nums)  # Ditto (Túnel del Desierto)
         self.assertNotIn(179, transfer_nums)  # Mareep (Zona Safari expansión)
+        self.assertNotIn(151, transfer_nums)  # Mew (Evento Isla Suprema)
+        self.assertNotIn(152, transfer_nums)  # Chikorita (Regalo Prof. Abedul)
+        self.assertNotIn(155, transfer_nums)  # Cyndaquil (Regalo Prof. Abedul)
+        self.assertNotIn(158, transfer_nums)  # Totodile (Regalo Prof. Abedul)
+        self.assertNotIn(52, transfer_nums)   # Meowth (Intercambio Frente de Batalla)
+        self.assertNotIn(249, transfer_nums)  # Lugia (Evento Roca Ombligo)
+        self.assertNotIn(250, transfer_nums)  # Ho-Oh (Evento Roca Ombligo)
         self.assertIn(1, transfer_nums)       # Bulbasaur (requiere transferencia RF/VH)
 
     def test_emerald_evolution_stones(self):
@@ -3067,6 +3082,47 @@ class PokemonEmeraldGen3Tests(TestCase):
             loc_areas = [l.get("area", "") for l in entry.obtaining_info.get("locations", [])]
             self.assertFalse(any("Guardería" in a for a in loc_areas))
             self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+
+    def test_gen3_evolution_methods_and_obtaining_clarity(self):
+        """Verifica la claridad canónica sin ambigüedad de los métodos de evolución y obtención en Gen 3 (R/Z/E):
+        - Milotic (#350): Belleza 170+ mediante Pokécubos secos (sin mención errónea a Pañuelo Azul).
+        - Feebas (#349): Pesca en exactamente 6 casillas aleatorias en Ruta 119.
+        - Espeon/Umbreon (#196/#197): Felicidad alta en español (Día)/(Noche) sin términos en inglés.
+        - Línea de Tyrogue (#106, #107, #237): Comparaciones estadísticas explícitas (Ataque >, <, = Defensa).
+        """
+        for game_slug in ["ruby", "sapphire", "emerald"]:
+            nat_cat = get_compiled_catalog(game_slug, is_national=True)
+            cat_map = {e.pokemon.national_number: e for e in nat_cat}
+
+            # 1. Milotic (#350)
+            milotic = cat_map[350]
+            m_obt = milotic.obtaining_info
+            m_evo = m_obt.get("evolution_info", {})
+            self.assertIn("170+", m_obt.get("summary", ""))
+            self.assertIn("Belleza", m_obt.get("summary", ""))
+            self.assertIn("Pokécubos", m_obt.get("summary", ""))
+            self.assertNotIn("Pañuelo Azul", m_obt.get("summary", ""))
+            self.assertNotIn("Pañuelo Azul", m_evo.get("condition", ""))
+            self.assertEqual(m_evo.get("condition"), "Subir de nivel con 170+ de Belleza (dándole Pokécubos Azules o Índigo)")
+
+            # 2. Feebas (#349)
+            feebas = cat_map[349]
+            f_summary = feebas.obtaining_info.get("summary", "")
+            self.assertIn("6 casillas aleatorias", f_summary)
+            self.assertIn("Ruta 119", f_summary)
+
+            # 3. Espeon (#196) y Umbreon (#197)
+            espeon_evo = cat_map[196].obtaining_info.get("evolution_info", {})
+            umbreon_evo = cat_map[197].obtaining_info.get("evolution_info", {})
+            self.assertIn("(Día)", espeon_evo.get("condition", ""))
+            self.assertNotIn("(day)", espeon_evo.get("condition", ""))
+            self.assertIn("(Noche)", umbreon_evo.get("condition", ""))
+            self.assertNotIn("(night)", umbreon_evo.get("condition", ""))
+
+            # 4. Tyrogue: Hitmonlee (#106), Hitmonchan (#107), Hitmontop (#237)
+            self.assertIn("Ataque > Defensa", cat_map[106].obtaining_info.get("evolution_info", {}).get("condition", ""))
+            self.assertIn("Ataque < Defensa", cat_map[107].obtaining_info.get("evolution_info", {}).get("condition", ""))
+            self.assertIn("Ataque = Defensa", cat_map[237].obtaining_info.get("evolution_info", {}).get("condition", ""))
 
 
 class FrontendInteractivityInvariantsTests(TestCase):
