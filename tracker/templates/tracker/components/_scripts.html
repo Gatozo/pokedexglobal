@@ -8,12 +8,12 @@
         isShinydexActive: {% if is_shinydex_active %}true{% else %}false{% endif %},
         evolutionStonesCatalog: JSON.parse('{{ evolution_stones_json|escapejs }}'),
         normalStats: {
-            caught: parseInt(document.getElementById('initial-normal-caught')?.value || "{{ caught_count|default:0 }}", 10),
-            percent: parseFloat(document.getElementById('initial-normal-percent')?.value || "{{ caught_percent|default:0.0 }}")
+            caught: parseInt("{{ caught_count|default:0 }}", 10),
+            percent: parseFloat("{{ caught_percent|default:0.0 }}")
         },
         shinyStats: {
-            caught: parseInt(document.getElementById('initial-shiny-caught')?.value || "{{ shiny_caught_count|default:0 }}", 10),
-            percent: parseFloat(document.getElementById('initial-shiny-percent')?.value || "{{ shiny_caught_percent|default:0.0 }}")
+            caught: parseInt("{{ shiny_caught_count|default:0 }}", 10),
+            percent: parseFloat("{{ shiny_caught_percent|default:0.0 }}")
         },
         unownStats: {
             normal: {
@@ -28,5 +28,261 @@
     };
 </script>
 
-<!-- Controlador Modular de Interacciones y Modales (ES Modules) -->
-<script type="module" src="{% static 'tracker/js/main.js' %}"></script>
+<!-- Capa de Prioridad e Interacción Inmediata (Early Priority Dispatcher) -->
+<script id="pokedex-early-dispatcher">
+(function() {
+    window.__pokedexReady = false;
+    window.__pokedexActionQueue = [];
+    window.__earlyModalOpenId = null;
+
+    function queueOrRun(fnName, args, immediateFallback) {
+        if (window.__pokedexReady && typeof window[fnName] === 'function') {
+            return window[fnName].apply(null, args);
+        }
+        if (typeof immediateFallback === 'function') {
+            try { immediateFallback.apply(null, args); } catch(err) { console.warn(err); }
+        }
+        window.__pokedexActionQueue.push({ fnName: fnName, args: args });
+    }
+
+    // Apertura inmediata del Modal de Cómic usando datos de la tarjeta ya presentes en el DOM
+    window.openPokemonModal = function(entryId, updateHistory) {
+        queueOrRun('openPokemonModal', [entryId, updateHistory !== false], function(id) {
+            window.__earlyModalOpenId = id;
+            const modal = document.getElementById('comic-modal');
+            if (!modal) return;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+
+            const card = document.getElementById('card-' + id);
+            const dataScript = document.getElementById('entry-data-' + id);
+            let data = null;
+            if (dataScript) {
+                try { data = JSON.parse(dataScript.textContent); } catch(e) {}
+            }
+
+            const numEl = document.getElementById('modal-pokemon-number');
+            const nameEl = document.getElementById('modal-pokemon-name');
+            const catEl = document.getElementById('modal-pokemon-category');
+            const flavorEl = document.getElementById('modal-flavor-text');
+            const imgEl = document.getElementById('modal-pokemon-img');
+            const heightEl = document.getElementById('modal-pokemon-height');
+            const weightEl = document.getElementById('modal-pokemon-weight');
+            const catchBtn = document.getElementById('modal-toggle-catch-btn');
+            const catchBtnText = document.getElementById('modal-toggle-text');
+            const statusBadge = document.getElementById('modal-status-badge');
+
+            if (data) {
+                if (numEl) numEl.textContent = '#' + data.number;
+                if (nameEl) nameEl.textContent = data.name;
+                if (catEl) catEl.textContent = data.category || 'Pokémon';
+                if (flavorEl) flavorEl.textContent = data.flavor_text ? ('"' + data.flavor_text + '"') : '';
+                if (heightEl) heightEl.textContent = (data.height || '--') + ' m';
+                if (weightEl) weightEl.textContent = (data.weight || '--') + ' kg';
+                if (imgEl) {
+                    const isShiny = window.POKEDEX_CONFIG?.isShinydexActive;
+                    const src = isShiny ? (data.sprite_retro_shiny || data.sprite_modern_shiny) : (data.sprite_retro || data.sprite_modern);
+                    if (src) {
+                        imgEl.src = src;
+                        imgEl.classList.add('pixel-art');
+                    }
+                }
+            } else if (card) {
+                if (numEl && card.dataset.number) numEl.textContent = '#' + String(card.dataset.number).padStart(3, '0');
+                if (nameEl && card.dataset.display) nameEl.textContent = card.dataset.display.toUpperCase();
+                const cardImg = document.getElementById('img-' + id);
+                if (imgEl && cardImg) imgEl.src = cardImg.src;
+            }
+
+            if (card) {
+                const isCaught = window.POKEDEX_CONFIG?.isShinydexActive 
+                    ? (card.dataset.shinyCaught === 'true')
+                    : (card.dataset.caught === 'true');
+                if (catchBtnText) catchBtnText.textContent = isCaught ? 'Liberar' : 'Capturar';
+                if (catchBtn) {
+                    catchBtn.className = isCaught
+                        ? 'py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-rose-500 hover:bg-rose-600 text-white transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5'
+                        : 'py-1.5 px-4 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] bg-emerald-500 hover:bg-emerald-400 text-white transition-all active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5';
+                }
+                if (statusBadge) {
+                    statusBadge.textContent = isCaught ? '✓ Atrapado en tu partida' : 'Pendiente de capturar';
+                }
+            }
+        });
+    };
+
+    window.closePokemonModal = function() {
+        queueOrRun('closePokemonModal', [], function() {
+            window.__earlyModalOpenId = null;
+            const modal = document.getElementById('comic-modal');
+            if (modal) modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        });
+    };
+
+    window.handleModalBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'comic-modal') window.closePokemonModal();
+    };
+
+    // Capturar con feedback táctil inmediato
+    window.toggleCatch = function(entryId) {
+        queueOrRun('toggleCatch', [entryId], function(id) {
+            const btn = document.getElementById('btn-' + id);
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-50');
+            }
+            const modalBtn = document.getElementById('modal-toggle-catch-btn');
+            if (modalBtn) {
+                modalBtn.disabled = true;
+                modalBtn.classList.add('opacity-50');
+            }
+        });
+    };
+
+    window.modalToggleCatch = function() {
+        if (window.__earlyModalOpenId) {
+            window.toggleCatch(window.__earlyModalOpenId);
+        } else {
+            queueOrRun('modalToggleCatch', []);
+        }
+    };
+
+    // Modales secundarios
+    window.openExclusivesModal = function() {
+        queueOrRun('openExclusivesModal', [], function() {
+            const m = document.getElementById('exclusives-modal');
+            if (m) m.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+        });
+    };
+    window.closeExclusivesModal = function() {
+        queueOrRun('closeExclusivesModal', [], function() {
+            const m = document.getElementById('exclusives-modal');
+            if (m) m.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        });
+    };
+    window.handleExclusivesBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'exclusives-modal') window.closeExclusivesModal();
+    };
+
+    window.openTransfersModal = function() {
+        queueOrRun('openTransfersModal', [], function() {
+            const m = document.getElementById('transfers-modal');
+            if (m) m.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.classList.add('overflow-hidden');
+        });
+    };
+    window.closeTransfersModal = function() {
+        queueOrRun('closeTransfersModal', [], function() {
+            const m = document.getElementById('transfers-modal');
+            if (m) m.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        });
+    };
+    window.handleTransfersBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'transfers-modal') window.closeTransfersModal();
+    };
+
+    window.openStoneModal = function(stoneSlug, stoneName) {
+        queueOrRun('openStoneModal', [stoneSlug, stoneName], function(slug, name) {
+            const m = document.getElementById('stone-location-modal');
+            if (m) m.classList.remove('opacity-0', 'pointer-events-none');
+            const titleEl = document.getElementById('stone-modal-title');
+            if (titleEl && name) titleEl.textContent = name;
+            document.body.classList.add('overflow-hidden');
+        });
+    };
+    window.closeStoneModal = function() {
+        queueOrRun('closeStoneModal', [], function() {
+            const m = document.getElementById('stone-location-modal');
+            if (m) m.classList.add('opacity-0', 'pointer-events-none');
+            document.body.classList.remove('overflow-hidden');
+        });
+    };
+    window.handleStoneModalBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'stone-location-modal') window.closeStoneModal();
+    };
+
+    window.openUnownModal = function(hist) { queueOrRun('openUnownModal', [hist]); };
+    window.closeUnownModal = function() { queueOrRun('closeUnownModal', []); };
+    window.switchToUnownModal = function() {
+        window.closePokemonModal();
+        window.openUnownModal();
+    };
+
+    // Barra de herramientas: Filtros y visualización
+    window.toggleFilterPanel = function() {
+        const p = document.getElementById('filter-panel');
+        if (p) p.classList.toggle('hidden');
+        queueOrRun('toggleFilterPanel', []);
+    };
+    window.setStatusFilter = function(status) { queueOrRun('setStatusFilter', [status]); };
+    window.setSpriteStyle = function(style) { queueOrRun('setSpriteStyle', [style]); };
+    window.toggleShinydexMode = function() { queueOrRun('toggleShinydexMode', []); };
+    window.filterCards = function() { queueOrRun('filterCards', []); };
+    window.clearAllFilters = function() { queueOrRun('clearAllFilters', []); };
+
+    // Audio
+    window.playPokemonCry = function(url, btn) {
+        if (url) {
+            try {
+                const a = new Audio(url);
+                a.volume = 0.5;
+                a.play().catch(function() {});
+            } catch(e) {}
+        }
+        queueOrRun('playPokemonCry', [url, btn]);
+    };
+    window.playModalCry = function(btn) { queueOrRun('playModalCry', [btn]); };
+
+    // Interceptor temprano en fase de captura para interactividad desde el milisegundo 0
+    document.addEventListener('click', function(e) {
+        if (window.__pokedexReady) return;
+
+        // 1. Exclusivos
+        if (e.target.closest('#btn-exclusives')) {
+            window.openExclusivesModal();
+            e.stopPropagation();
+            return;
+        }
+        // 2. Transferencias
+        if (e.target.closest('#btn-transfers')) {
+            window.openTransfersModal();
+            e.stopPropagation();
+            return;
+        }
+        // 3. Filtros
+        if (e.target.closest('#btn-filter-toggle')) {
+            window.toggleFilterPanel();
+            e.stopPropagation();
+            return;
+        }
+        // 4. Capturar botón en tarjeta
+        const btnCatch = e.target.closest('.card-action-btn');
+        if (btnCatch) {
+            const card = btnCatch.closest('.pokemon-card');
+            if (card && card.dataset.entryId) {
+                window.toggleCatch(parseInt(card.dataset.entryId, 10));
+                e.stopPropagation();
+                return;
+            }
+        }
+        // 5. Clic en tarjeta (abrir modal)
+        const card = e.target.closest('.pokemon-card');
+        if (card && !e.target.closest('button') && !e.target.closest('a') && !e.target.closest('input')) {
+            const entryId = parseInt(card.dataset.entryId, 10);
+            if (entryId) {
+                window.openPokemonModal(entryId);
+                e.stopPropagation();
+                return;
+            }
+        }
+    }, { capture: true, passive: false });
+})();
+</script>
+
+<!-- Controlador Modular de Interacciones y Modales (ES Modules con carga asíncrona prioritaria) -->
+<script type="module" async src="{% static 'tracker/js/main.js' %}"></script>

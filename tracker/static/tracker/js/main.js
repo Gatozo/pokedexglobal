@@ -153,6 +153,24 @@ window.syncModalFromUrlHash = syncModalFromUrlHash;
 window.closeAllModals = closeAllModals;
 window.getCsrfToken = getCsrfToken;
 
+// Marcar el framework interactivo modular como 100% cargado y listo
+window.__pokedexReady = true;
+
+// Procesar inmediatamente la cola de acciones prioritarias solicitadas durante la carga inicial
+if (window.__pokedexActionQueue && window.__pokedexActionQueue.length > 0) {
+    const queue = window.__pokedexActionQueue.slice();
+    window.__pokedexActionQueue = [];
+    queue.forEach(item => {
+        if (typeof window[item.fnName] === 'function') {
+            try {
+                window[item.fnName].apply(null, item.args);
+            } catch (err) {
+                console.error('Error al ejecutar acción diferida prioritaria:', item.fnName, err);
+            }
+        }
+    });
+}
+
 // Atajos de teclado (Escape para cerrar modales, flechas ←/→ para navegar Pokémon)
 document.addEventListener('keydown', (e) => {
     const comicModal = document.getElementById('comic-modal');
@@ -237,8 +255,16 @@ if (window.location.hash) {
     syncModalFromUrlHash();
 }
 
-// Configuración inicial sincronizada sin salto de frame
-document.addEventListener('DOMContentLoaded', () => {
+// Configuración inicial sincronizada sin salto de frame (soporta ejecución asíncrona)
+function onDOMReady(fn) {
+    if (document.readyState !== 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+onDOMReady(() => {
     try {
         const savedStyle = localStorage.getItem('pokedex_sprite_style');
         if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
