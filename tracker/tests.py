@@ -3069,8 +3069,44 @@ class PokemonEmeraldGen3Tests(TestCase):
             self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
 
 
+class FrontendInteractivityInvariantsTests(TestCase):
+    """
+    Pruebas automatizadas de no-regresión para los invariantes de interactividad temprana:
+    - Preloads de módulos ES6 en <head>
+    - Despachador prioritario temprano antes de la grilla de tarjetas
+    - Carga asíncrona de main.js (type='module' async)
+    - Exposición de funciones e interfaces prioritarias en window
+    """
+    def setUp(self):
+        self.game = Game.objects.create(name="Pokémon Emerald", slug="emerald", generation=3)
+        self.pokedex = Pokedex.objects.create(game=self.game, name="Pokédex Regional de Hoenn", slug="hoenn")
 
+    def test_frontend_interactivity_invariants(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "emerald"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        content = response.content.decode("utf-8")
 
+        # 1. Asegurar etiquetas modulepreload en el <head>
+        self.assertIn('<link rel="modulepreload"', content)
+        self.assertIn('tracker/js/main.js', content)
+        self.assertIn('tracker/js/cards.js', content)
+        self.assertIn('tracker/js/modal_comic.js', content)
 
+        # 2. Asegurar que el despachador temprano esté presente antes de la grilla de tarjetas
+        early_disp_pos = content.find('id="pokedex-early-dispatcher"')
+        grid_pos = content.find('id="pokemon-grid"')
+        self.assertNotEqual(early_disp_pos, -1, "El script 'pokedex-early-dispatcher' debe existir")
+        self.assertNotEqual(grid_pos, -1, "El contenedor 'pokemon-grid' debe existir")
+        self.assertLess(early_disp_pos, grid_pos, "El despachador temprano debe situarse ANTES de la grilla de tarjetas")
 
+        # 3. Asegurar que main.js use type='module' con async
+        self.assertIn('<script type="module" async', content)
+        self.assertIn('tracker/js/main.js', content)
+
+        # 4. Asegurar funciones clave expuestas inmediatamente en el despachador temprano
+        self.assertIn("window.openPokemonModal =", content)
+        self.assertIn("window.toggleCatch =", content)
+        self.assertIn("window.__pokedexActionQueue =", content)
+        self.assertIn("window.__pokedexReady =", content)
 
