@@ -2314,7 +2314,7 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
     def test_nonexistent_catalog_returns_none(self):
         from .catalog_service import get_compiled_catalog
-        self.assertIsNone(get_compiled_catalog("firered"))
+        self.assertIsNone(get_compiled_catalog("leafgreen"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
     def test_catalog_filter_locations_and_tags(self):
@@ -3299,5 +3299,204 @@ class NationalGenerationBarTests(TestCase):
         self.assertContains(resp, "Celebi")
         self.assertNotContains(resp, "Treecko")
         self.assertNotContains(resp, "Bulbasaur")
+
+
+class PokemonFireRedGen3Tests(TestCase):
+    """
+    Suite de pruebas completa para la integración oficial de Pokémon Rojo Fuego (Gen 3):
+    - Catálogo Regional de Kanto (151 especies, IDs 2483 a 2633).
+    - Catálogo Nacional (386 especies, IDs 2483 a 2868).
+    - Invariantes de Crianza canónica en Isla Quarta (Guardería Pokémon).
+    - Forma de Ataque nativa de Deoxys (#386 con icono PC #10001).
+    - Bestias Errantes (Raikou, Entei, Suicune) condicionadas al inicial.
+    - Catálogo de Exclusivos y Transferencias con Verde Hoja.
+    - Barra de Generaciones Nacional en Rojo Fuego (Kanto, Johto, Hoenn).
+    - Disponibilidad de Sprites Estáticos Offline (normal, shiny, back normal, back shiny).
+    """
+
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(slug="firered", defaults={"name": "Pokémon Rojo Fuego", "generation": 3})
+        self.pk_kanto, _ = Pokedex.objects.get_or_create(game=self.game, slug="kanto", defaults={"name": "Pokédex de Kanto", "is_national": False})
+        self.pk_nat, _ = Pokedex.objects.get_or_create(game=self.game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+    def test_firered_regional_catalog_structure(self):
+        cat = get_compiled_catalog("firered", is_national=False)
+        self.assertIsNotNone(cat)
+        self.assertEqual(len(cat), 151)
+        self.assertEqual(cat[0].entry_number, 1)
+        self.assertEqual(cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(cat[0].id, 2483)
+        self.assertEqual(cat[-1].entry_number, 151)
+        self.assertEqual(cat[-1].pokemon.name, "mew")
+        self.assertEqual(cat[-1].id, 2633)
+
+        # IDs estrictamente consecutivos
+        ids = [e.id for e in cat]
+        self.assertEqual(ids, list(range(2483, 2634)))
+
+    def test_firered_national_catalog_structure(self):
+        cat = get_compiled_catalog("firered", is_national=True)
+        self.assertIsNotNone(cat)
+        self.assertEqual(len(cat), 386)
+        self.assertEqual(cat[0].pokemon.national_number, 1)
+        self.assertEqual(cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(cat[0].id, 2483)
+        self.assertEqual(cat[151].pokemon.national_number, 152)
+        self.assertEqual(cat[151].pokemon.name, "chikorita")
+        self.assertEqual(cat[251].pokemon.national_number, 252)
+        self.assertEqual(cat[251].pokemon.name, "treecko")
+        self.assertEqual(cat[-1].pokemon.national_number, 386)
+        self.assertEqual(cat[-1].pokemon.name, "deoxys")
+        self.assertEqual(cat[-1].id, 2868)
+
+        # IDs estrictamente consecutivos
+        ids = [e.id for e in cat]
+        self.assertEqual(ids, list(range(2483, 2869)))
+
+    def test_firered_breeding_invariants(self):
+        from .catalog_service import get_compiled_catalog
+        cat = get_compiled_catalog("firered", is_national=True)
+        cat_map = {e.pokemon.national_number: e for e in cat}
+
+        # 1. Especies base con crianza habilitada (Isla Quarta)
+        for nat_id in [1, 4, 7, 172, 175]:
+            entry = cat_map[nat_id]
+            self.assertTrue(entry.is_hatchable, f"Pokémon #{nat_id} debería ser hatchable")
+            areas = [loc.get("area", "") for loc in entry.obtaining_info.get("locations", [])]
+            self.assertIn("Isla Quarta (Guardería Pokémon)", areas)
+            self.assertNotIn("Ruta 5", " ".join(areas))
+            if "crianza" in entry.obtaining_info.get("summary", "").lower():
+                self.assertIn("(también obtenible mediante crianza)", entry.obtaining_info.get("summary", ""))
+
+        # 2. Evoluciones y legendarios NO criables
+        for nat_id in [3, 6, 9, 25, 144, 145, 146, 150, 151, 386]:
+            entry = cat_map[nat_id]
+            self.assertFalse(entry.is_hatchable, f"Pokémon #{nat_id} no debería ser hatchable")
+            areas = [loc.get("area", "") for loc in entry.obtaining_info.get("locations", [])]
+            self.assertFalse(any("Guardería" in a for a in areas), f"#{nat_id} no debe tener guardería")
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower())
+
+    def test_firered_deoxys_attack_forme(self):
+        cat = get_compiled_catalog("firered", is_national=True)
+        cat_map = {e.pokemon.national_number: e for e in cat}
+        deoxys = cat_map[386]
+
+        self.assertEqual(deoxys.pokemon.name, "deoxys")
+        self.assertEqual(deoxys.game_sprite_url, "/media/pokemon/sprites/firered/386.png")
+        self.assertEqual(deoxys.pc_icon_url, "/media/pokemon/icons/gen3/10001.png")
+        self.assertIn("Isla Origen", deoxys.obtaining_info.get("summary", ""))
+
+    def test_firered_roaming_beasts_summary(self):
+        cat = get_compiled_catalog("firered", is_national=True)
+        cat_map = {e.pokemon.national_number: e for e in cat}
+
+        raikou = cat_map[243]
+        entei = cat_map[244]
+        suicune = cat_map[245]
+
+        self.assertIn("Squirtle", raikou.obtaining_info.get("summary", ""))
+        self.assertIn("Bulbasaur", entei.obtaining_info.get("summary", ""))
+        self.assertIn("Charmander", suicune.obtaining_info.get("summary", ""))
+
+    def test_firered_exclusives_and_transfers_catalog(self):
+        from .exclusives import (
+            GAME_COUNTERPARTS,
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG,
+            VERSION_TRANSFERS_META,
+        )
+
+        self.assertIn("firered", GAME_COUNTERPARTS)
+        self.assertEqual(GAME_COUNTERPARTS["firered"], ["leafgreen"])
+
+        self.assertIn("firered", VERSION_EXCLUSIVES_CATALOG)
+        self.assertEqual(len(VERSION_EXCLUSIVES_CATALOG["firered"]), 22)
+        self.assertIn(23, VERSION_EXCLUSIVES_CATALOG["firered"])  # Ekans
+        self.assertIn(43, VERSION_EXCLUSIVES_CATALOG["firered"])  # Oddish
+        self.assertIn(58, VERSION_EXCLUSIVES_CATALOG["firered"])  # Growlithe
+        self.assertIn(123, VERSION_EXCLUSIVES_CATALOG["firered"]) # Scyther
+        self.assertIn(125, VERSION_EXCLUSIVES_CATALOG["firered"]) # Electabuzz
+
+        self.assertIn("leafgreen", VERSION_EXCLUSIVES_CATALOG)
+        self.assertEqual(len(VERSION_EXCLUSIVES_CATALOG["leafgreen"]), 23)
+        self.assertIn(27, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Sandshrew
+        self.assertIn(37, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Vulpix
+        self.assertIn(69, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Bellsprout
+        self.assertIn(126, VERSION_EXCLUSIVES_CATALOG["leafgreen"]) # Magmar
+        self.assertIn(127, VERSION_EXCLUSIVES_CATALOG["leafgreen"]) # Pinsir
+
+        self.assertIn("firered", VERSION_TRANSFERS_CATALOG)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["firered"]), 167)
+        self.assertIn(152, VERSION_TRANSFERS_CATALOG["firered"]) # Chikorita
+        self.assertIn(252, VERSION_TRANSFERS_CATALOG["firered"]) # Treecko
+        self.assertIn(382, VERSION_TRANSFERS_CATALOG["firered"]) # Kyogre
+
+    def test_firered_evolution_stones_data(self):
+        import json
+        import os
+        from django.conf import settings
+
+        stones_path = os.path.join(settings.BASE_DIR, "tracker", "data", "evolution_stones.json")
+        with open(stones_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        self.assertIn("fire-stone", data)
+        self.assertIn("firered", data["fire-stone"]["games"])
+        self.assertIn("Centro Comercial de Azulona (4F)", [l["area"] for l in data["fire-stone"]["games"]["firered"]])
+        self.assertIn("firered", data["water-stone"]["games"])
+        self.assertIn("firered", data["thunder-stone"]["games"])
+        self.assertIn("firered", data["leaf-stone"]["games"])
+        self.assertIn("moon-stone", data)
+        self.assertIn("firered", data["moon-stone"]["games"])
+        self.assertIn("firered", data["sun-stone"]["games"])
+        self.assertIn("firered", data["up-grade"]["games"])
+
+    def test_firered_views_and_national_regions_bar(self):
+        # 1. Vista regional por defecto (151 entradas, sin barra nacional de regiones)
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "firered"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertContains(resp_reg, "Bulbasaur")
+        self.assertContains(resp_reg, "Mew")
+        self.assertEqual(len(resp_reg.context["entries"]), 151)
+        self.assertFalse(any(e.pokemon.name == "chikorita" for e in resp_reg.context["entries"]))
+        self.assertIsNone(resp_reg.context.get("national_regions_ctx"))
+
+        # 2. Vista nacional: activa kanto por defecto (151 entradas)
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "firered", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertIsNotNone(resp_nat.context.get("national_regions_ctx"))
+        ctx = resp_nat.context["national_regions_ctx"]
+        self.assertEqual(ctx["active_slug"], "kanto")
+        self.assertEqual(len(resp_nat.context["entries"]), 151)
+
+        # 3. Filtrar Johto en nacional (100 entradas)
+        resp_johto = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "firered", "pokedex_slug": "national"}) + "?gen=johto")
+        self.assertEqual(resp_johto.status_code, 200)
+        self.assertEqual(len(resp_johto.context["entries"]), 100)
+        self.assertEqual(resp_johto.context["entries"][0].pokemon.national_number, 152)
+        self.assertEqual(resp_johto.context["entries"][-1].pokemon.national_number, 251)
+
+        # 4. Filtrar Hoenn en nacional (135 entradas)
+        resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "firered", "pokedex_slug": "national"}) + "?gen=hoenn")
+        self.assertEqual(resp_hoenn.status_code, 200)
+        self.assertEqual(len(resp_hoenn.context["entries"]), 135)
+        self.assertEqual(resp_hoenn.context["entries"][0].pokemon.national_number, 252)
+        self.assertEqual(resp_hoenn.context["entries"][-1].pokemon.national_number, 386)
+
+    def test_firered_offline_sprites_exist(self):
+        import os
+        from django.conf import settings
+
+        base_media = settings.MEDIA_ROOT
+        # Normal, shiny, back, shiny back
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered", "386.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "386.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered", "back", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered", "back", "386.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "back", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "back", "386.png")))
+
 
 

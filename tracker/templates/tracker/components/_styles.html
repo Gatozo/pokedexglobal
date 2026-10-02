@@ -106,6 +106,12 @@ body {
     background-image: radial-gradient(rgba(5, 150, 105, 0.20) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+{% elif game.slug == 'firered' %}
+body {
+    background-color: #fff7ed;
+    background-image: radial-gradient(rgba(234, 88, 12, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 {% else %}
 body {
     background-color: #faebed;
@@ -375,6 +381,26 @@ body {
     background-color: #059669 !important;
     color: #ffffff !important;
     border-color: #064e3b !important;
+}
+{% elif game.slug == 'firered' %}
+.comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #ea580c,
+        #ea580c 12px,
+        #c2410c 12px,
+        #c2410c 24px
+    );
+}
+.pokemon-card.caught-card {
+    background-color: #ffedd5 !important;
+    border-color: #c2410c !important;
+    box-shadow: 3.5px 3.5px 0px 0px #9a3412;
+}
+.status-caught-active {
+    background-color: #ea580c !important;
+    color: #ffffff !important;
+    border-color: #9a3412 !important;
 }
 {% else %}
 .comic-header-pattern {

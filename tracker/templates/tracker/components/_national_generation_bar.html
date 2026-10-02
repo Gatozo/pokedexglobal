@@ -2,7 +2,7 @@
 <div 
     id="national-generation-bar"
     data-game-slug="{{ game.slug }}"
-    data-active-classes="{% if game.slug == 'emerald' %}bg-[#059669] text-white shadow-[2px_2px_0px_#064e3b]{% elif game.slug == 'ruby' %}bg-rose-900 text-white shadow-[2px_2px_0px_#4c0519]{% elif game.slug == 'sapphire' %}bg-[#0f3870] text-white shadow-[2px_2px_0px_#082046]{% else %}bg-slate-900 text-white shadow-[2px_2px_0px_#0f172a]{% endif %}"
+    data-active-classes="{% if game.slug == 'emerald' %}bg-[#059669] text-white shadow-[2px_2px_0px_#064e3b]{% elif game.slug == 'ruby' %}bg-rose-900 text-white shadow-[2px_2px_0px_#4c0519]{% elif game.slug == 'sapphire' %}bg-[#0f3870] text-white shadow-[2px_2px_0px_#082046]{% elif game.slug == 'firered' %}bg-[#ea580c] text-white shadow-[2px_2px_0px_#7c2d12]{% else %}bg-slate-900 text-white shadow-[2px_2px_0px_#0f172a]{% endif %}"
     data-inactive-classes="bg-white hover:bg-slate-100 text-slate-800 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
     data-badge-active="bg-black/25 text-white border-white/30"
     data-badge-inactive="bg-slate-100 text-slate-700 border-slate-300"
@@ -28,7 +28,7 @@
             data-active="{% if reg.is_active %}true{% else %}false{% endif %}"
             onclick="switchNationalRegion('{{ reg.slug }}', event)"
             title="Ver Pokémon de {{ reg.name }} (#{{ reg.start_id|stringformat:'03d' }} - #{{ reg.end_id|stringformat:'03d' }})"
-            class="h-8 sm:h-9 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 rounded-xl border-2 border-slate-950 text-xs font-black uppercase transition-all shrink-0 cursor-pointer {% if reg.is_active %}{% if game.slug == 'emerald' %}bg-[#059669] text-white shadow-[2px_2px_0px_#064e3b]{% elif game.slug == 'ruby' %}bg-rose-900 text-white shadow-[2px_2px_0px_#4c0519]{% elif game.slug == 'sapphire' %}bg-[#0f3870] text-white shadow-[2px_2px_0px_#082046]{% else %}bg-slate-900 text-white shadow-[2px_2px_0px_#0f172a]{% endif %}{% else %}bg-white hover:bg-slate-100 text-slate-800 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none{% endif %}"
+            class="h-8 sm:h-9 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 rounded-xl border-2 border-slate-950 text-xs font-black uppercase transition-all shrink-0 cursor-pointer {% if reg.is_active %}{% if game.slug == 'emerald' %}bg-[#059669] text-white shadow-[2px_2px_0px_#064e3b]{% elif game.slug == 'ruby' %}bg-rose-900 text-white shadow-[2px_2px_0px_#4c0519]{% elif game.slug == 'sapphire' %}bg-[#0f3870] text-white shadow-[2px_2px_0px_#082046]{% elif game.slug == 'firered' %}bg-[#ea580c] text-white shadow-[2px_2px_0px_#7c2d12]{% else %}bg-slate-900 text-white shadow-[2px_2px_0px_#0f172a]{% endif %}{% else %}bg-white hover:bg-slate-100 text-slate-800 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none{% endif %}"
         >
             <span>{{ reg.name }}</span>
             <span 

@@ -25,7 +25,9 @@ export const THEME_ACTIVE_BTN = currentGameSlug === 'yellow'
                             ? 'bg-[#0f3870] text-sky-100 font-black'
                             : (currentGameSlug === 'emerald'
                                 ? 'bg-[#059669] text-emerald-100 font-black'
-                                : 'bg-red-600 text-white font-black')))))));
+                                : (currentGameSlug === 'firered'
+                                    ? 'bg-orange-600 text-white font-black'
+                                    : 'bg-red-600 text-white font-black'))))))));
 
 export const THEME_STATUS_CAUGHT_CLASS = 'status-caught-active';
 export const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';

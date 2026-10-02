@@ -111,8 +111,34 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         249, 250,                           # Lugia, Ho-Oh (Evento Roca Ombligo con Ticket Místico)
         386,                                # Deoxys (Evento Isla Origen con Ori-Ticket)
     ],
-    'firered': [23, 24, 43, 44, 45, 54, 55, 58, 59, 123, 125, 198, 211, 215, 227, 246, 247, 248],
-    'leafgreen': [27, 28, 69, 70, 71, 79, 80, 126, 127, 199, 200, 216, 217, 225, 228, 229, 241],
+    'firered': [
+        23, 24,           # Ekans, Arbok
+        43, 44, 45, 182,  # Oddish, Gloom, Vileplume, Bellossom
+        54, 55,           # Psyduck, Golduck
+        58, 59,           # Growlithe, Arcanine
+        90, 91,           # Shellder, Cloyster
+        123, 212,         # Scyther, Scizor
+        125, 239,         # Electabuzz, Elekid
+        194, 195,         # Wooper, Quagsire
+        198,              # Murkrow
+        211,              # Qwilfish
+        225,              # Delibird
+        227,              # Skarmory
+    ],
+    'leafgreen': [
+        27, 28,           # Sandshrew, Sandslash
+        37, 38,           # Vulpix, Ninetales
+        69, 70, 71,       # Bellsprout, Weepinbell, Victreebel
+        79, 80, 199,      # Slowpoke, Slowbro, Slowking
+        120, 121,         # Staryu, Starmie
+        126, 240,         # Magmar, Magby
+        127,              # Pinsir
+        183, 184, 298,    # Marill, Azumarill, Azurill
+        200,              # Misdreavus
+        215,              # Sneasel
+        223, 224,         # Remoraid, Octillery
+        226,              # Mantine
+    ],
 }
 
 # 184 especies no nativas de Hoenn requeridas para completar la Pokédex Nacional en Pokémon Rubí y Zafiro
@@ -166,6 +192,16 @@ EMERALD_IN_GAME_OBTAINABLE_NON_HOENN = {
 EMERALD_CATCHABLE_JOHTO = EMERALD_IN_GAME_OBTAINABLE_NON_HOENN
 NON_HOENN_TRANSFERS_EMERALD = [num for num in NON_HOENN_TRANSFERS_RUBY if num not in EMERALD_IN_GAME_OBTAINABLE_NON_HOENN]
 
+# 167 especies no nativas de Kanto y de las Islas Sétima requeridas para completar la Pokédex Nacional en Pokémon Rojo Fuego
+NON_KANTO_SEVII_TRANSFERS_FIRERED = sorted(list(
+    # Iniciales de Johto (9)
+    set(range(152, 161)) |
+    # Especies de Johto ausentes en FRLG (24)
+    {179, 180, 181, 185, 190, 191, 192, 196, 197, 203, 204, 205, 209, 210, 213, 216, 217, 222, 228, 229, 234, 235, 241, 251} |
+    # Especies de Hoenn ausentes en FRLG (#252 a #385, 134; #386 Deoxys es evento insular en Isla Origen)
+    set(range(252, 386))
+))
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
 VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
@@ -209,10 +245,12 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
         144, 145, 146,  # Articuno, Zapdos, Moltres
         150, 151,       # Mewtwo, Mew
     ],
-    # Gen 3 (Pokédex Nacional de Rubí, Zafiro y Esmeralda)
+    # Gen 3 (Pokédex Nacional de Rubí, Zafiro, Esmeralda y Rojo Fuego)
     'ruby': NON_HOENN_TRANSFERS_RUBY,
     'sapphire': NON_HOENN_TRANSFERS_RUBY,
     'emerald': NON_HOENN_TRANSFERS_EMERALD,
+    'firered': NON_KANTO_SEVII_TRANSFERS_FIRERED,
+    'leafgreen': NON_KANTO_SEVII_TRANSFERS_FIRERED,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -436,6 +474,60 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             251: 'Disco Bonus Colosseum / Evento Ageto',
         }
     },
+    'firered': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Rojo Fuego consta de 386 Pokémon. Las 167 especies no nativas de Kanto y de las Islas Sétima '
+            'deben transferirse mediante cable link desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn), '
+            'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Debido al salto tecnológico, es incompatible con la 1.ª y 2.ª Generación (Hardware break).'
+        ),
+        'default_origin': 'Rubí / Zafiro / Esmeralda / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            152: 'Pokémon Esmeralda / Colosseum',
+            153: 'Pokémon Esmeralda / Colosseum',
+            154: 'Pokémon Esmeralda / Colosseum',
+            155: 'Pokémon Esmeralda / Colosseum',
+            156: 'Pokémon Esmeralda / Colosseum',
+            157: 'Pokémon Esmeralda / Colosseum',
+            158: 'Pokémon Esmeralda / Colosseum',
+            159: 'Pokémon Esmeralda / Colosseum',
+            160: 'Pokémon Esmeralda / Colosseum',
+            196: 'Rubí / Zafiro / Esmeralda (Evolución Día)',
+            197: 'Rubí / Zafiro / Esmeralda (Evolución Noche)',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+            385: 'Pokémon Channel / Disco Bonus Colosseum',
+        }
+    },
+    'leafgreen': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Verde Hoja consta de 386 Pokémon. Las 167 especies no nativas de Kanto y de las Islas Sétima '
+            'deben transferirse mediante cable link desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn), '
+            'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Debido al salto tecnológico, es incompatible con la 1.ª y 2.ª Generación (Hardware break).'
+        ),
+        'default_origin': 'Rubí / Zafiro / Esmeralda / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            152: 'Pokémon Esmeralda / Colosseum',
+            153: 'Pokémon Esmeralda / Colosseum',
+            154: 'Pokémon Esmeralda / Colosseum',
+            155: 'Pokémon Esmeralda / Colosseum',
+            156: 'Pokémon Esmeralda / Colosseum',
+            157: 'Pokémon Esmeralda / Colosseum',
+            158: 'Pokémon Esmeralda / Colosseum',
+            159: 'Pokémon Esmeralda / Colosseum',
+            160: 'Pokémon Esmeralda / Colosseum',
+            196: 'Rubí / Zafiro / Esmeralda (Evolución Día)',
+            197: 'Rubí / Zafiro / Esmeralda (Evolución Noche)',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+            385: 'Pokémon Channel / Disco Bonus Colosseum',
+        }
+    },
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -647,6 +739,10 @@ def get_version_exclusives_context(
             return 'ruby'
         elif slug in ['emerald']:
             return 'emerald'
+        elif slug in ['firered']:
+            return 'firered'
+        elif slug in ['leafgreen']:
+            return 'leafgreen'
         elif slug in ['blue', 'pearl', 'white', 'moon', 'shield', 'violet']:
             return 'blue'
         elif slug in ['crystal']:

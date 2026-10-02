@@ -269,6 +269,10 @@ class CatalogEntry:
         self.entry_number = data.get("entry_number", 0)
         self.regional_number = self.entry_number
         self.game_slug = game_slug or data.get("game_slug", "")
+        self.is_hatchable = data.get("is_hatchable")
+        if self.is_hatchable is None:
+            obt_raw = data.get("obtaining_info") or {}
+            self.is_hatchable = any("guarder" in loc.get("area", "").lower() for loc in obt_raw.get("locations", []))
         self.pokemon = CatalogPokemon(data.get("pokemon", {}))
 
         self.primary_type = data.get("primary_type")

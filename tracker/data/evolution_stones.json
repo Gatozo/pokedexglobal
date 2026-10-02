@@ -169,6 +169,58 @@
           "area": "Pokémon salvajes (Jigglypuff)",
           "detail": "Equipada con 5% de probabilidad en Jigglypuff salvaje en la Ruta 115."
         }
+      ],
+      "firered": [
+        {
+          "area": "Monte Moon (Planta 1)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+        },
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+        },
+        {
+          "area": "Guarida Rocket (Sótano B2)",
+          "detail": "En el laberinto con paneles de baldosas giratorias bajo el Casino de Azulona."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
+        },
+        {
+          "area": "Cañón Sétima (Isla Sétima)",
+          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy)",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Monte Moon (Planta 1)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+        },
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+        },
+        {
+          "area": "Guarida Rocket (Sótano B2)",
+          "detail": "En el laberinto con paneles de baldosas giratorias bajo el Casino de Azulona."
+        },
+        {
+          "area": "Mansión Pokémon (Planta baja)",
+          "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
+        },
+        {
+          "area": "Cañón Sétima (Isla Sétima)",
+          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy)",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
+        }
       ]
     }
   },
@@ -257,6 +309,26 @@
         {
           "area": "Ruta 124 (Buscatesoros)",
           "detail": "Canjeando una Parte Roja con el Buscatesoros."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Monte Ascuas (Isla Prima)",
+          "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Monte Ascuas (Isla Prima)",
+          "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
         }
       ]
     }
@@ -359,6 +431,34 @@
           "area": "Pokémon salvajes (Corsola)",
           "detail": "Equipada raramente en Corsola salvajes (5% de probabilidad pescando con Supercaña en Ruta 128 o Ciudad Colosalia)."
         }
+      ],
+      "firered": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Ruta 25 (Casa de Bill)",
+          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
+        },
+        {
+          "area": "Islas Espuma (Sótano B4)",
+          "detail": "En el suelo cerca de las corrientes de agua congelada."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Ruta 25 (Casa de Bill)",
+          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
+        },
+        {
+          "area": "Islas Espuma (Sótano B4)",
+          "detail": "En el suelo cerca de las corrientes de agua congelada."
+        }
       ]
     }
   },
@@ -447,6 +547,26 @@
         {
           "area": "Ruta 124 (Buscatesoros)",
           "detail": "Canjeando una Parte Amarilla con el Buscatesoros."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Central de Energía (Interior)",
+          "detail": "En el suelo en una de las salas laberínticas de la central eléctrica abandonada."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Central de Energía (Interior)",
+          "detail": "En el suelo en una de las salas laberínticas de la central eléctrica abandonada."
         }
       ]
     }
@@ -541,6 +661,26 @@
           "area": "Ruta 124 (Buscatesoros)",
           "detail": "Canjeando una Parte Verde con el Buscatesoros."
         }
+      ],
+      "firered": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Zona Safari (Área 2 / Central)",
+          "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Centro Comercial de Azulona (4F)",
+          "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
+        },
+        {
+          "area": "Zona Safari (Área 2 / Central)",
+          "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
+        }
       ]
     }
   },
@@ -599,6 +739,26 @@
         {
           "area": "Pokémon salvajes (Solrock)",
           "detail": "Equipada raramente en Solrock salvajes (5% de probabilidad en Cascada Meteoro)."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Valle Ruinas (Isla Seis)",
+          "detail": "En el suelo como Poké Ball en la meseta del Valle Ruinas."
+        },
+        {
+          "area": "Torre Desafío / Campamento (Isla Sétima)",
+          "detail": "Premio especial tras superar desafíos en Isla Sétima."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Valle Ruinas (Isla Seis)",
+          "detail": "En el suelo como Poké Ball en la meseta del Valle Ruinas."
+        },
+        {
+          "area": "Torre Desafío / Campamento (Isla Sétima)",
+          "detail": "Premio especial tras superar desafíos en Isla Sétima."
         }
       ]
     }
@@ -679,6 +839,26 @@
           "area": "Habilidad Recogida",
           "detail": "Un Pokémon con la habilidad Recogida de nivel alto puede hallarla con un 1% de probabilidad tras un combate."
         }
+      ],
+      "firered": [
+        {
+          "area": "Cañón Sétima (Isla Sétima)",
+          "detail": "En el suelo como Poké Ball en el Cañón Sétima."
+        },
+        {
+          "area": "Pokémon salvajes (Poliwhirl)",
+          "detail": "Equipada con un 5% de probabilidad en Poliwhirl salvajes al pescar con Supercaña."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Cañón Sétima (Isla Sétima)",
+          "detail": "En el suelo como Poké Ball en el Cañón Sétima."
+        },
+        {
+          "area": "Pokémon salvajes (Poliwhirl)",
+          "detail": "Equipada con un 5% de probabilidad en Poliwhirl salvajes al pescar con Supercaña."
+        }
       ]
     }
   },
@@ -745,6 +925,26 @@
         {
           "area": "Frente de Batalla",
           "detail": "Canjeable por Puntos de Batalla (PB) en el Servicio de Intercambio del Frente."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Monumento Conmemorativo (Isla Quinta)",
+          "detail": "Regalo de un entrenador tras depositar una Limonada sobre el monolito funerario de su Onix."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite)",
+          "detail": "Equipado con un 5% de probabilidad en Magnemite salvajes en la Central de Energía."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Monumento Conmemorativo (Isla Quinta)",
+          "detail": "Regalo de un entrenador tras depositar una Limonada sobre el monolito funerario de su Onix."
+        },
+        {
+          "area": "Pokémon salvajes (Magnemite)",
+          "detail": "Equipado con un 5% de probabilidad en Magnemite salvajes en la Central de Energía."
         }
       ]
     }
@@ -821,6 +1021,26 @@
           "area": "Frente de Batalla",
           "detail": "Canjeable por 64 Puntos de Batalla (PB) en el Servicio de Intercambio."
         }
+      ],
+      "firered": [
+        {
+          "area": "Cueva Glaciada (Isla Quarta)",
+          "detail": "En el suelo sobre una plataforma de hielo en el piso inferior de la Cueva Glaciada."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Seadra)",
+          "detail": "Equipada con un 5% de probabilidad en Horsea y Seadra salvajes pescando con Supercaña."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Cueva Glaciada (Isla Quarta)",
+          "detail": "En el suelo sobre una plataforma de hielo en el piso inferior de la Cueva Glaciada."
+        },
+        {
+          "area": "Pokémon salvajes (Horsea / Seadra)",
+          "detail": "Equipada con un 5% de probabilidad en Horsea y Seadra salvajes pescando con Supercaña."
+        }
       ]
     }
   },
@@ -872,6 +1092,18 @@
           "area": "Transferencia externa",
           "detail": "Obtenible en los Silos de Isla Intemporal (Islas Sete) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
         }
+      ],
+      "firered": [
+        {
+          "area": "Edificio Silph S.A. (Ciudad Azafrán)",
+          "detail": "Entregado en la 5.ª planta de Silph S.A. tras liberar el edificio del Team Rocket."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Edificio Silph S.A. (Ciudad Azafrán)",
+          "detail": "Entregado en la 5.ª planta de Silph S.A. tras liberar el edificio del Team Rocket."
+        }
       ]
     }
   },
@@ -913,6 +1145,18 @@
           "area": "Pokémon salvajes (Carvanha / Sharpedo)",
           "detail": "Equipado con un 5% de probabilidad en Carvanha y Sharpedo salvajes pescando o haciendo Surf."
         }
+      ],
+      "firered": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
+        }
       ]
     }
   },
@@ -953,6 +1197,18 @@
         {
           "area": "Pokémon salvajes (Chinchou / Lanturn / Relicanth)",
           "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes en fondos marinos con Buceo."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Transferencia externa",
+          "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
         }
       ]
     }
