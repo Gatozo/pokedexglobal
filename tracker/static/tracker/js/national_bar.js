@@ -1,6 +1,7 @@
 /**
  * Pokédex Global - Módulo de Navegación por Regiones en Pokédex Nacional (national_bar.js)
- * Carga parcial ultra-ligera por AJAX (SPA), caché en memoria y transiciones fluidas.
+ * Carga parcial ultra-ligera por AJAX (SPA), caché en memoria, aislamiento estricto de regiones
+ * y transiciones fluidas de alta respuesta.
  */
 
 import { state } from './state.js';
@@ -8,13 +9,91 @@ import { filterCards } from './filters.js';
 import { setSpriteStyle } from './cards.js';
 
 const _regionCache = new Map();
-let _isTransitioning = false;
+let _activeAbortController = null;
+let _currentRequestId = 0;
+let _currentActiveSlug = null;
+let _gridObserver = null;
 
 /**
  * Invalida la caché en memoria cuando se modifica el estado de captura de un Pokémon.
  */
 export function invalidateNationalRegionCache() {
     _regionCache.clear();
+}
+
+/**
+ * Obtiene el rango numérico (start_id, end_id) definido en el botón de una región.
+ * @param {string} slug Slug de la región (kanto, johto, hoenn, etc.)
+ * @returns {{start: number, end: number}|null}
+ */
+export function getRegionBounds(slug) {
+    const btn = document.getElementById(`btn-nat-gen-${slug}`);
+    if (!btn) return null;
+    const start = parseInt(btn.dataset.start, 10);
+    const end = parseInt(btn.dataset.end, 10);
+    if (isNaN(start) || isNaN(end)) return null;
+    return { start, end };
+}
+
+/**
+ * Aísla y purga estrictamente cualquier tarjeta en la grilla que no pertenezca al rango de la región activa.
+ * Previene que el parser del navegador o respuestas cruzadas filtren Pokémon de otra región.
+ * @param {string} slug Slug de la región que debe quedar aislada
+ */
+export function isolateGridCards(slug) {
+    const grid = document.getElementById('pokemon-grid');
+    if (!grid) return;
+
+    const bounds = getRegionBounds(slug);
+    if (!bounds) return;
+
+    const cards = grid.querySelectorAll('.pokemon-card');
+    cards.forEach(card => {
+        const natNum = parseInt(card.dataset.nationalNumber || card.dataset.number, 10);
+        if (!isNaN(natNum) && (natNum < bounds.start || natNum > bounds.end)) {
+            card.remove();
+        }
+    });
+}
+
+/**
+ * Configura un MutationObserver permanente sobre la grilla para interceptar y purgar al vuelo
+ * cualquier nodo o tarjeta ajena al rango de la región activa mientras la página se estabiliza.
+ */
+export function setupGridObserver() {
+    const grid = document.getElementById('pokemon-grid');
+    if (!grid) return;
+
+    if (_gridObserver) {
+        _gridObserver.disconnect();
+    }
+
+    _gridObserver = new MutationObserver(mutations => {
+        if (!_currentActiveSlug) return;
+        const bounds = getRegionBounds(_currentActiveSlug);
+        if (!bounds) return;
+
+        let needsPurge = false;
+        for (const m of mutations) {
+            for (const node of m.addedNodes) {
+                if (node.nodeType === 1) { // Node.ELEMENT_NODE
+                    if (node.classList && node.classList.contains('pokemon-card')) {
+                        const num = parseInt(node.dataset.nationalNumber || node.dataset.number, 10);
+                        if (!isNaN(num) && (num < bounds.start || num > bounds.end)) {
+                            node.remove();
+                        }
+                    } else if (node.querySelector && node.querySelector('.pokemon-card')) {
+                        needsPurge = true;
+                    }
+                }
+            }
+        }
+        if (needsPurge) {
+            isolateGridCards(_currentActiveSlug);
+        }
+    });
+
+    _gridObserver.observe(grid, { childList: true, subtree: false });
 }
 
 /**
@@ -57,6 +136,7 @@ export function updateBarButtonsUI(activeSlug) {
 
 /**
  * Cambia suavemente la generación activa en la Pokédex Nacional sin recargar la página completa.
+ * Aísla la región destino abortando cualquier carga en curso y purga nodos cruzados.
  * @param {string} slug Slug de la región (kanto, johto, hoenn, etc.)
  * @param {Event|null} event Evento del clic (opcional)
  * @param {boolean} pushState Si se debe agregar una entrada al historial de navegación
@@ -73,18 +153,38 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
     const targetBtn = document.getElementById(`btn-nat-gen-${slug}`);
     if (!targetBtn) return;
 
-    if (targetBtn.dataset.active === 'true' && !_isTransitioning) {
+    // Si ya estamos en esta región y no hay petición en vuelo, no hacer nada
+    if (targetBtn.dataset.active === 'true' && _currentActiveSlug === slug && !_activeAbortController) {
         return;
     }
 
-    if (_isTransitioning) return;
-    _isTransitioning = true;
+    // 1. Si el documento aún se está cargando/parseando desde el servidor,
+    // cortar de inmediato el flujo de datos para que el navegador no siga inyectando tarjetas de la región previa.
+    if (document.readyState === 'loading') {
+        try {
+            window.stop();
+        } catch (e) {}
+    }
 
-    // 1. Actualización visual instantánea de botones
+    // 2. Cancelar cualquier petición AJAX previa en curso
+    if (_activeAbortController) {
+        try {
+            _activeAbortController.abort();
+        } catch (e) {}
+    }
+    _activeAbortController = new AbortController();
+    const requestId = ++_currentRequestId;
+
+    _currentActiveSlug = slug;
+
+    // 3. Actualización visual instantánea de botones
     updateBarButtonsUI(slug);
 
-    // 2. Transición suave de salida (Cross-fade & subtle scale)
-    grid.style.transition = 'opacity 140ms ease-out, transform 140ms ease-out';
+    // 4. Aislar de inmediato cualquier tarjeta previa antes o durante la transición
+    isolateGridCards(slug);
+
+    // 5. Transición suave de salida
+    grid.style.transition = 'opacity 120ms ease-out, transform 120ms ease-out';
     grid.style.opacity = '0';
     grid.style.transform = 'scale(0.99)';
 
@@ -99,7 +199,8 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
             const resp = await fetch(url.toString(), {
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest'
-                }
+                },
+                signal: _activeAbortController.signal
             });
 
             if (!resp.ok) {
@@ -107,16 +208,30 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
             }
 
             html = await resp.text();
-            _regionCache.set(slug, html);
+        }
+
+        // Si otra petición de región fue disparada por el usuario mientras esperábamos, descartar esta
+        if (requestId !== _currentRequestId) {
+            return;
         }
 
         // Breve pausa para completar la animación CSS de desvanecimiento
-        await new Promise(resolve => setTimeout(resolve, 140));
+        await new Promise(resolve => setTimeout(resolve, 120));
 
-        // 3. Reemplazar únicamente los nodos de las tarjetas en el DOM (~100-150 tarjetas)
+        if (requestId !== _currentRequestId) {
+            return;
+        }
+
+        // 6. Reemplazar los nodos de las tarjetas en el DOM
         grid.innerHTML = html;
 
-        // 4. Actualizar URL e historial sin recargar
+        // 7. Sanitización y aislamiento estricto de la grilla por rango
+        isolateGridCards(slug);
+
+        // 8. Guardar en caché únicamente el contenido validado y libre de fugas
+        _regionCache.set(slug, grid.innerHTML);
+
+        // 9. Actualizar URL e historial sin recargar
         if (pushState) {
             const pageUrl = new URL(window.location.href);
             pageUrl.searchParams.set('gen', slug);
@@ -124,34 +239,37 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
             history.pushState({ gen: slug }, '', pageUrl.toString());
         }
 
-        // 5. Reaplicar estilo de sprites activo (Retro / Moderno)
+        // 10. Reaplicar estilo de sprites activo (Retro / Moderno)
         if (state.currentSpriteStyle && typeof setSpriteStyle === 'function') {
             setSpriteStyle(state.currentSpriteStyle);
         }
 
-        // 6. Reaplicar filtros y búsqueda activos sobre las nuevas tarjetas cargadas
+        // 11. Reaplicar filtros y búsqueda activos sobre las nuevas tarjetas cargadas
         if (typeof filterCards === 'function') {
             filterCards();
         }
 
-        // 7. Si el usuario estaba muy abajo en el scroll, recolocar suavemente sobre la cuadrícula
+        // 12. Si el usuario estaba muy abajo en el scroll, recolocar suavemente sobre la barra
         const barRect = bar.getBoundingClientRect();
         if (barRect.top < 0) {
             bar.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     } catch (err) {
+        if (err.name === 'AbortError') {
+            // Petición cancelada intencionalmente por un nuevo cambio de región
+            return;
+        }
         console.error('Error al cambiar de generación/región:', err);
-        // Fallback a navegación estándar en caso de fallo de red
+        // Fallback a navegación estándar en caso de fallo crítico de red
         window.location.href = targetBtn.href;
     } finally {
-        // 8. Transición suave de entrada
-        requestAnimationFrame(() => {
-            grid.style.opacity = '1';
-            grid.style.transform = 'scale(1)';
-            setTimeout(() => {
-                _isTransitioning = false;
-            }, 140);
-        });
+        if (requestId === _currentRequestId) {
+            _activeAbortController = null;
+            requestAnimationFrame(() => {
+                grid.style.opacity = '1';
+                grid.style.transform = 'scale(1)';
+            });
+        }
     }
 }
 
@@ -163,11 +281,19 @@ export function initNationalGenerationBar() {
     const grid = document.getElementById('pokemon-grid');
     if (!bar || !grid) return;
 
+    setupGridObserver();
+
     const activeBtn = bar.querySelector("[id^='btn-nat-gen-'][data-active='true']");
     if (activeBtn) {
         const slug = activeBtn.dataset.slug;
-        if (slug && grid.innerHTML.trim().length > 0) {
-            _regionCache.set(slug, grid.innerHTML);
+        if (slug) {
+            _currentActiveSlug = slug;
+            // Aislar inmediatamente para asegurar que la grilla inicial esté libre de mezclas
+            isolateGridCards(slug);
+
+            if (grid.innerHTML.trim().length > 0) {
+                _regionCache.set(slug, grid.innerHTML);
+            }
         }
     }
 }

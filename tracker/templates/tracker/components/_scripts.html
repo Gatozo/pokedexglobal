@@ -238,6 +238,15 @@
     };
     window.playModalCry = function(btn) { queueOrRun('playModalCry', [btn]); };
 
+    // Navegación de Regiones en Pokédex Nacional
+    window.switchNationalRegion = function(slug, e) {
+        if (e && e.preventDefault) e.preventDefault();
+        if (document.readyState === 'loading') {
+            try { window.stop(); } catch(err) {}
+        }
+        queueOrRun('switchNationalRegion', [slug, null, true]);
+    };
+
     // Interceptor temprano en fase de captura para interactividad desde el milisegundo 0
     document.addEventListener('click', function(e) {
         if (window.__pokedexReady) return;
@@ -270,7 +279,15 @@
                 return;
             }
         }
-        // 5. Clic en tarjeta (abrir modal)
+        // 5. Clic en botón de región de la Pokédex Nacional
+        const btnNatGen = e.target.closest("[id^='btn-nat-gen-']");
+        if (btnNatGen && btnNatGen.dataset.slug) {
+            e.preventDefault();
+            window.switchNationalRegion(btnNatGen.dataset.slug, e);
+            e.stopPropagation();
+            return;
+        }
+        // 6. Clic en tarjeta (abrir modal)
         const card = e.target.closest('.pokemon-card');
         if (card && !e.target.closest('button') && !e.target.closest('a') && !e.target.closest('input')) {
             const entryId = parseInt(card.dataset.entryId, 10);
