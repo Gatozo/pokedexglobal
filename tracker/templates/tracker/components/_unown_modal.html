@@ -1,6 +1,6 @@
-<!-- Modal Especial: Bloc Unown / Unowndex (Ruinas Alfa / Formas) -->
 <div 
     id="unown-modal" 
+    data-unown-entry-id="{{ unown_entry.id|default:'' }}"
     class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200"
     style="z-index: 100;"
     role="dialog"
@@ -30,8 +30,10 @@
                     <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-950 text-amber-300 mb-0.5">
                         {% if is_johto %}
                             <span>Ruinas Alfa</span> • <span>{{ unown_total_forms }} Formas</span>
+                        {% elif is_tanoby %}
+                            <span>Ruinas Sete</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% else %}
-                            <span>{{ unown_total_forms }} Formas</span>
+                            <span>Hoenn (Transferencia)</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% endif %}
                     </div>
                     <h2 id="unown-modal-title" class="text-xl sm:text-2xl font-black uppercase tracking-wide">
@@ -142,6 +144,90 @@
                 <span id="unown-chamber-hint-text">Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.</span>
             </p>
         </div>
+        {% elif is_tanoby %}
+        <!-- Chamber Filter Tabs (Ruinas Sete / Archi7 - Rojo Fuego / Verde Hoja) -->
+        <div class="px-4 py-2 bg-slate-100 border-b-2 border-slate-950 flex items-center gap-1.5 overflow-x-auto shrink-0">
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('all')"
+                id="unown-tab-all"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] bg-amber-400 text-slate-950 cursor-pointer shrink-0"
+            >
+                Todas ({{ unown_total_forms }})
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('anemuna')"
+                id="unown-tab-anemuna"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Anémuna (A, ?)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('tulipdos')"
+                id="unown-tab-tulipdos"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Tulipdos (C,D,H,U,O)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('trisante')"
+                id="unown-tab-trisante"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Trisante (N,S,I,E)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('quarciso')"
+                id="unown-tab-quarciso"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Quarciso (P,J,L,R,Q)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('hibinca')"
+                id="unown-tab-hibinca"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Hibinca (Y,G,T,F,K)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('seiris')"
+                id="unown-tab-seiris"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Seiris (V,W,X,M,B)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('pasiete')"
+                id="unown-tab-pasiete"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Pasiete (Z, !)
+            </button>
+        </div>
+
+        <!-- Chamber Secret Hint Box (dinámico según pestaña, altura fija y estable) -->
+        <div id="unown-chamber-hint" class="px-5 py-2 bg-amber-50/40 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
+            <p class="truncate m-0">
+                <span class="font-black text-slate-900" id="unown-chamber-hint-title">Ruinas Sete (Isla Sétima)</span>: 
+                <span id="unown-chamber-hint-text">Selecciona una cámara para filtrar sus formas y consultar los porcentajes de aparición y acceso.</span>
+            </p>
+        </div>
+        {% else %}
+        <!-- Chamber Secret Hint Box for Hoenn (Sin ruinas/cámaras salvajes) -->
+        <div id="unown-hoenn-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
+            <p class="truncate m-0">
+                <span class="font-black text-slate-900">Hoenn</span>: 
+                <span>Unown no aparece en estado salvaje en esta región. Sus 28 formas se obtienen mediante transferencia externa (GBA / Colosseum).</span>
+            </p>
+        </div>
         {% endif %}
 
         <!-- Cards Grid Container -->
@@ -149,21 +235,27 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5" id="unown-cards-grid">
                 {% for form in unown_catalog %}
                 <div 
-                    class="unown-card relative rounded-2xl p-3 flex flex-col justify-between border-2 border-slate-950 shadow-[3px_3px_0px_#0f172a] transition-colors duration-150 select-none {% if is_shinydex_active %}{% if form.is_shiny_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% else %}{% if form.is_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% endif %}"
+                    class="unown-card relative rounded-2xl p-3 flex flex-col justify-between border-2 border-slate-950 shadow-[3px_3px_0px_#0f172a] transition-all duration-150 select-none cursor-pointer hover:scale-[1.02] active:scale-[0.98] {% if is_shinydex_active %}{% if form.is_shiny_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% else %}{% if form.is_caught %}bg-emerald-50/70 border-emerald-950{% else %}bg-white{% endif %}{% endif %}"
                     data-letter="{{ form.letter }}"
                     data-chamber="{{ form.chamber_key }}"
                     data-caught="{% if form.is_caught %}true{% else %}false{% endif %}"
                     data-shiny-caught="{% if form.is_shiny_caught %}true{% else %}false{% endif %}"
                     id="unown-card-{{ form.letter }}"
+                    onclick="openUnownLetterCard('{{ form.letter }}')"
+                    title="Clic para ver ficha individual de Unown [{{ form.letter|upper }}] con su localización exacta"
                 >
                     <!-- Header with Letter & Chamber Badge -->
                     <div class="flex items-center justify-between gap-1">
                         <span class="text-sm font-black font-mono text-slate-950">
                             {% if form.letter == 'exclamation' %}[!]{% elif form.letter == 'question' %}[?]{% else %}[{{ form.letter|upper }}]{% endif %}
                         </span>
-                        {% if is_johto %}
+                        {% if is_johto or is_tanoby %}
                         <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 {{ form.chamber_badge_class }} truncate max-w-[95px]" title="{{ form.chamber_name }}">
-                            {{ form.chamber_key|capfirst }}
+                            {{ form.chamber_title|default:form.chamber_key|capfirst }}
+                        </span>
+                        {% else %}
+                        <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 bg-slate-200 text-slate-700 truncate max-w-[95px]" title="Transferencia externa">
+                            Transfer
                         </span>
                         {% endif %}
                     </div>
@@ -216,6 +308,8 @@
             <span class="text-xs text-slate-600 font-bold">
                 {% if is_johto %}
                     Unown #061 en Johto (#201 Nacional) • Tipo Psíquico
+                {% elif is_tanoby %}
+                    Unown #201 Nacional (Ruinas Sete) • Tipo Psíquico
                 {% else %}
                     Unown #201 Nacional • Tipo Psíquico
                 {% endif %}

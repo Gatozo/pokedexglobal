@@ -608,6 +608,17 @@ def build_catalogs():
         'kyogre', 'groudon', 'rayquaza', 'jirachi', 'deoxys'
     }
 
+    def clean_wikitext_entry(text: str) -> str:
+        if not text:
+            return ""
+        text = re.sub(r"\{\{(?:NombreHaEs|n)\|([^|]+)(?:\|([^}]+))?\}*", lambda m: m.group(2) or m.group(1), text)
+        text = re.sub(r"\{\{[^}]+\}\}", "", text)
+        text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", text)
+        text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)
+        text = re.sub(r"<[^>]+>", "", text)
+        text = text.replace("\n", " ").replace("\r", " ")
+        return " ".join(text.split()).strip()
+
     STARTING_FIRERED_ID = 2483
 
     def build_entry(nat_id, entry_num, is_national=False):
@@ -615,7 +626,7 @@ def build_catalogs():
         if not sp:
             raise ValueError(f"Faltan datos de la especie {nat_id}")
 
-        flavor = wikidex_descriptions.get(str(nat_id), "")
+        flavor = clean_wikitext_entry(wikidex_descriptions.get(str(nat_id), ""))
         sp_name = sp['name'].lower()
         evo_info = evo_map.get(sp_name)
         egg_groups = sp.get('egg_groups', [])

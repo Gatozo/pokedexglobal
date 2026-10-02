@@ -57,22 +57,53 @@ export const state = {
     }
 };
 
-// Pistas históricas de las cámaras de Ruinas Alfa (Gen 2)
+// Pistas oficiales y metadatos de las cámaras de Unown (Ruinas Alfa en Gen 2 y Ruinas Sete en Rojo Fuego / Verde Hoja)
 export const UNOWN_CHAMBER_HINTS = {
+    // Ruinas Alfa (Johto - Gen 2)
     kabuto: {
         title: "Cámara de Kabuto (Entrada Principal)",
-        text: "Desbloquea las letras A - K. Sala secreta: Usar Cuerda Huida (Escape Rope) frente a la inscripción trasera."
+        text: "Alberga las formas A - K. Sala secreta: Usar Cuerda Huida (Escape Rope) frente a la inscripción trasera."
     },
     omanyte: {
         title: "Cámara de Omanyte (Noreste - Surf)",
-        text: "Desbloquea las letras L - R. Sala secreta: Usar Piedra Agua (Water Stone) frente a la inscripción trasera."
+        text: "Alberga las formas L - R. Sala secreta: Usar Piedra Agua (Water Stone) frente a la inscripción trasera."
     },
     aerodactyl: {
         title: "Cámara de Aerodactyl (Suroeste - Cueva Unión)",
-        text: "Desbloquea las letras S - W. Sala secreta: Usar Destello (Flash) frente a la inscripción trasera."
+        text: "Alberga las formas S - W. Sala secreta: Usar Destello (Flash) frente a la inscripción trasera."
     },
     ho_oh: {
         title: "Cámara de Ho-Oh (Noroeste - Cueva Unión)",
-        text: "Desbloquea las letras X - Z. Sala secreta: Llevar a Ho-Oh de 1.º en el equipo frente a la inscripción trasera."
+        text: "Alberga las formas X - Z. Sala secreta: Llevar a Ho-Oh de 1.º en el equipo frente a la inscripción trasera."
+    },
+    // Ruinas Sete / Cámaras Sete (Archi7 - Rojo Fuego / Verde Hoja)
+    anemuna: {
+        title: "Cámara Anémuna (Islote 1 - Sureste)",
+        text: "Alberga a Unown A (99%) y Unown ? (1%). Requiere resolver el puzzle de la Llave Sete con Fuerza en Cañón Sétano."
+    },
+    tulipdos: {
+        title: "Cámara Tulipdos (Islote 2)",
+        text: "Alberga a Unown C (50%), D (30%), H (14%), U (5%) y O (1%). Requiere la Llave Sete."
+    },
+    trisante: {
+        title: "Cámara Trisante (Islote 3)",
+        text: "Alberga a Unown N (60%), S (30%), I (8%) y E (2%). Requiere la Llave Sete."
+    },
+    quarciso: {
+        title: "Cámara Quarciso (Islote 4)",
+        text: "Alberga a Unown P (40%), J (20%), L (20%), R (14%) y Q (6%). Requiere la Llave Sete."
+    },
+    hibinca: {
+        title: "Cámara Hibinca (Islote 5)",
+        text: "Alberga a Unown Y (40%), G (25%), T (20%), F (13%) y K (2%). Requiere la Llave Sete."
+    },
+    seiris: {
+        title: "Cámara Seiris (Islote 6)",
+        text: "Alberga a Unown V (50%), W (30%), X (10%), M (8%) y B (2%). Requiere la Llave Sete."
+    },
+    pasiete: {
+        title: "Cámara Pasiete (Islote 7 - Norte de Seiris)",
+        text: "Alberga a Unown Z (99%) y Unown ! (1%). Requiere la Llave Sete."
     }
 };
+

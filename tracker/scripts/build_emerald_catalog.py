@@ -270,8 +270,7 @@ EVO_ITEMS_ES = {
 def clean_wikitext_entry(text: str) -> str:
     if not text:
         return ""
-    text = re.sub(r"\{\{NombreHaEs\|([^|]+)(?:\|([^}]+))?\}\}", lambda m: m.group(2) or m.group(1), text)
-    text = re.sub(r"\{\{n\|([^|]+)(?:\|([^}]+))?\}\}", lambda m: m.group(2) or m.group(1), text)
+    text = re.sub(r"\{\{(?:NombreHaEs|n)\|([^|]+)(?:\|([^}]+))?\}*", lambda m: m.group(2) or m.group(1), text)
     text = re.sub(r"\{\{[^}]+\}\}", "", text)
     text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", text)
     text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)

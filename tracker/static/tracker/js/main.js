@@ -57,6 +57,7 @@ import {
     openUnownModal, 
     closeUnownModal, 
     openClassicUnownModal, 
+    openUnownLetterCard,
     switchToUnownModal, 
     filterUnownChamber, 
     updateUnownModalUI, 
@@ -136,6 +137,7 @@ window.updateTransfersCardStatus = updateTransfersCardStatus;
 window.openUnownModal = openUnownModal;
 window.closeUnownModal = closeUnownModal;
 window.openClassicUnownModal = openClassicUnownModal;
+window.openUnownLetterCard = openUnownLetterCard;
 window.switchToUnownModal = switchToUnownModal;
 window.filterUnownChamber = filterUnownChamber;
 window.updateUnownModalUI = updateUnownModalUI;

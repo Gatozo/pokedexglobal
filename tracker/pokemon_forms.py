@@ -96,12 +96,45 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
 def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
     """
     Retorna las 26 (Gen 2) o 28 (Gen 3+) formas alfabéticas de Unown (#201).
+    Cada forma incluye su método de obtención y ubicación según el juego:
+    - Kanto / Archi7 (Rojo Fuego / Verde Hoja): Ruinas Sete (7 cámaras con tasas oficiales).
+    - Johto (Oro / Plata / Cristal): Ruinas Alfa (4 cámaras).
+    - Hoenn (Rubí / Zafiro / Esmeralda): No salvaje. Transferencia externa (GBA / GameCube).
     """
     from .unown_data import get_unown_catalog
     raw_unown = get_unown_catalog(game_slug)
+    is_hoenn = game_slug in ["ruby", "sapphire", "emerald"]
+
     forms = []
     for item in raw_unown:
         letter = item["letter"]
+        if is_hoenn:
+            summary = "No disponible en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum. No es posible transferir desde Gen 1 o Gen 2."
+            locations = [
+                {
+                    "area": "Transferencia externa (GBA / GameCube)",
+                    "method": "Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum"
+                }
+            ]
+            badge_color = "slate"
+            badge_label = "Transferencia"
+            obt_type = "transfer"
+            ch_name = ""
+        else:
+            ch_name = item.get("chamber_name", "Ruinas")
+            rate_val = item.get("rate", "")
+            rate_str = f" (Tasa: {rate_val})" if rate_val else ""
+            summary = f"Exclusivo de {ch_name}{rate_str}."
+            locations = [
+                {
+                    "area": ch_name,
+                    "method": f"Salvaje{rate_str}"
+                }
+            ]
+            badge_color = "emerald"
+            badge_label = "Salvaje"
+            obt_type = "wild"
+
         forms.append({
             "form_key": letter,
             "name": item["display"],
@@ -117,8 +150,21 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": item.get("sprite_shiny_back") or item["sprite_shiny"].replace(f"/{item['sprite_shiny'].split('/')[4]}/", f"/{item['sprite_shiny'].split('/')[4]}/back/"),
             "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png",
             "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201.png",
+            "chamber_key": item.get("chamber_key", ""),
+            "chamber_name": ch_name,
+            "summary": summary,
+            "locations": locations,
+            "badge_color": badge_color,
+            "badge_label": badge_label,
+            "type": obt_type,
         })
+
+    if game_slug in ["firered", "leafgreen"]:
+        # En Rojo Fuego / Verde Hoja, la forma canónica predeterminada en la Pokédex es la F
+        forms = [f for f in forms if f["form_key"] == "f"] + [f for f in forms if f["form_key"] != "f"]
+
     return forms
+
 
 
 def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dict[str, Any]]:

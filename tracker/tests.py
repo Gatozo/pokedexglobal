@@ -3334,6 +3334,15 @@ class PokemonFireRedGen3Tests(TestCase):
         ids = [e.id for e in cat]
         self.assertEqual(ids, list(range(2483, 2634)))
 
+        # Validar descripciones canónicas sin artefactos wikitext ni mezclas (100% oficial Rojo Fuego GBA)
+        self.assertEqual(
+            cat[0].flavor_text,
+            "Este Pokémon nace con una semilla en el lomo. Con el tiempo, la semilla brota."
+        )
+        self.assertNotIn("NombreHaEs", cat[0].flavor_text)
+        self.assertNotIn("{{", cat[0].flavor_text)
+        self.assertNotIn("|", cat[0].flavor_text)
+
     def test_firered_national_catalog_structure(self):
         cat = get_compiled_catalog("firered", is_national=True)
         self.assertIsNotNone(cat)
@@ -3497,6 +3506,119 @@ class PokemonFireRedGen3Tests(TestCase):
         self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered", "back", "386.png")))
         self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "back", "1.png")))
         self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "firered_shiny", "back", "386.png")))
+
+    def test_unown_firered_tanoby_chambers_and_letter_click_obtaining(self):
+        """
+        Valida que en Pokémon Rojo Fuego / Verde Hoja:
+        1. Las Ruinas Sete cuenten con las 7 cámaras oficiales (Anémuna, Tulipdos, Trisante, Quarciso, Hibinca, Seiris, Pasiete).
+        2. La forma canónica predeterminada en la Pokédex sea Unown F (primer elemento en forms).
+        3. Cada forma individual incluya su ubicación exacta y tasa sin mezclar las de otras cámaras.
+        4. En la vista de Rojo Fuego Nacional se muestren las pestañas de las cámaras de Ruinas Sete.
+        """
+        from .unown_data import get_unown_catalog, TANOBY_UNOWN_CHAMBERS, get_game_unown_chambers
+        from .pokemon_forms import get_pokemon_forms
+
+        # 1. Catálogo y cámaras de Ruinas Sete
+        chambers = get_game_unown_chambers("firered")
+        self.assertEqual(len(chambers), 7)
+        self.assertIn("anemuna", chambers)
+        self.assertIn("hibinca", chambers)
+        self.assertIn("pasiete", chambers)
+        self.assertEqual(chambers["anemuna"]["rates"]["a"], "99%")
+        self.assertEqual(chambers["anemuna"]["rates"]["question"], "1%")
+        self.assertEqual(chambers["hibinca"]["rates"]["f"], "13%")
+        self.assertEqual(chambers["pasiete"]["rates"]["z"], "99%")
+        self.assertEqual(chambers["pasiete"]["rates"]["exclamation"], "1%")
+
+        # 2. Formas en get_pokemon_forms: F debe ser la primera en firered
+        forms_fr = get_pokemon_forms(201, "firered")
+        self.assertEqual(len(forms_fr), 28)
+        self.assertEqual(forms_fr[0]["form_key"], "f")
+        self.assertEqual(forms_fr[0]["chamber_key"], "hibinca")
+        self.assertEqual(len(forms_fr[0]["locations"]), 1)
+        self.assertEqual(forms_fr[0]["locations"][0]["area"], "Cámara Hibinca (Ruinas Sete)")
+
+        # 3. Ubicaciones exactas aisladas por letra
+        forms_by_key = {f["form_key"]: f for f in forms_fr}
+        self.assertEqual(forms_by_key["a"]["locations"][0]["area"], "Cámara Anémuna (Ruinas Sete)")
+        self.assertEqual(forms_by_key["c"]["locations"][0]["area"], "Cámara Tulipdos (Ruinas Sete)")
+        self.assertEqual(forms_by_key["n"]["locations"][0]["area"], "Cámara Trisante (Ruinas Sete)")
+        self.assertEqual(forms_by_key["p"]["locations"][0]["area"], "Cámara Quarciso (Ruinas Sete)")
+        self.assertEqual(forms_by_key["v"]["locations"][0]["area"], "Cámara Seiris (Ruinas Sete)")
+        self.assertEqual(forms_by_key["z"]["locations"][0]["area"], "Cámara Pasiete (Ruinas Sete)")
+
+        # 4. En Johto, verificar aislamiento de cámaras
+        forms_gold = get_pokemon_forms(201, "gold")
+        self.assertEqual(len(forms_gold), 26)
+        self.assertEqual(forms_gold[0]["form_key"], "a")
+        gold_by_key = {f["form_key"]: f for f in forms_gold}
+        self.assertEqual(gold_by_key["a"]["locations"][0]["area"], "Cámara de Kabuto (Ruinas Alfa)")
+        self.assertEqual(gold_by_key["l"]["locations"][0]["area"], "Cámara de Omanyte (Ruinas Alfa)")
+        self.assertEqual(gold_by_key["s"]["locations"][0]["area"], "Cámara de Aerodactyl (Ruinas Alfa)")
+        self.assertEqual(gold_by_key["x"]["locations"][0]["area"], "Cámara de Ho-Oh (Ruinas Alfa)")
+
+        # 5. Renderizado en vista de Rojo Fuego
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "firered", "pokedex_slug": "national"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.context["is_tanoby"])
+        self.assertContains(resp, 'id="unown-tab-anemuna"')
+        self.assertContains(resp, 'id="unown-tab-hibinca"')
+        self.assertContains(resp, 'Ruinas Sete')
+        self.assertContains(resp, 'openUnownLetterCard')
+
+    def test_unown_obtaining_compatibility_hoenn(self):
+        """
+        Valida que en los juegos de Hoenn (Esmeralda, Rubí, Zafiro):
+        1. get_game_unown_chambers retorne un diccionario vacío (no existen ruinas ni cámaras salvajes en Hoenn).
+        2. get_unown_catalog retorne las 28 formas con indicador de no disponible en Hoenn y sin asociar cámaras de Johto.
+        3. get_pokemon_forms retorne las 28 formas con método de obtención 'Transferencia' (slate),
+           explicando que requiere Rojo Fuego / Verde Hoja o Pokémon Colosseum, sin mezclar 'Salvaje' ni Ruinas Alfa.
+        4. En la vista de Pokédex Nacional de Esmeralda, el modal de Unown no renderice pestañas de Ruinas Alfa
+           y contenga el texto informativo de Hoenn y badges de Transfer.
+        """
+        from .unown_data import get_unown_catalog, get_game_unown_chambers
+        from .pokemon_forms import get_pokemon_forms
+
+        for game_slug in ["emerald", "ruby", "sapphire"]:
+            # 1. No hay cámaras en Hoenn
+            chambers = get_game_unown_chambers(game_slug)
+            self.assertEqual(chambers, {})
+
+            # 2. Catálogo sin ruinas de Johto
+            catalog = get_unown_catalog(game_slug)
+            self.assertEqual(len(catalog), 28)
+            for item in catalog:
+                self.assertEqual(item["chamber_key"], "")
+                self.assertEqual(item["chamber_name"], "No disponible en Hoenn")
+                self.assertEqual(item["chamber_badge_class"], "hidden")
+
+            # 3. Formas con método Transferencia puro
+            forms = get_pokemon_forms(201, game_slug)
+            self.assertEqual(len(forms), 28)
+            for form in forms:
+                self.assertEqual(form["badge_label"], "Transferencia")
+                self.assertEqual(form["badge_color"], "slate")
+                self.assertEqual(form["type"], "transfer")
+                self.assertIn("No disponible en Hoenn", form["summary"])
+                self.assertIn("Rojo Fuego", form["summary"])
+                self.assertNotIn("Salvaje", form["badge_label"])
+                self.assertNotIn("Ruinas Alfa", form["summary"])
+                self.assertEqual(len(form["locations"]), 1)
+                self.assertEqual(form["locations"][0]["area"], "Transferencia externa (GBA / GameCube)")
+
+        # 4. Vista de Pokédex Nacional de Esmeralda
+        em_game, _ = Game.objects.get_or_create(slug="emerald", defaults={"name": "Pokémon Esmeralda", "generation": 3})
+        Pokedex.objects.get_or_create(game=em_game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertFalse(resp.context["is_johto"])
+        self.assertFalse(resp.context["is_tanoby"])
+        self.assertNotContains(resp, 'id="unown-tab-kabuto"')
+        self.assertNotContains(resp, 'id="unown-tab-anemuna"')
+        self.assertContains(resp, 'Unown no aparece en estado salvaje en esta región')
+        self.assertContains(resp, 'Transfer')
+
+
 
 
 

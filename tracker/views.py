@@ -342,8 +342,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     unown_normal_caught = set()
     unown_shiny_caught = set()
     if game.generation >= 2:
-        from .unown_data import get_unown_catalog, UNOWN_CHAMBERS
-        unown_chambers = UNOWN_CHAMBERS
+        from .unown_data import get_unown_catalog, UNOWN_CHAMBERS, get_game_unown_chambers
+        unown_chambers = get_game_unown_chambers(game.slug)
         unown_entry = entries_by_num.get(201)
         if unown_entry:
             unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_id=unown_entry.id).first()
@@ -409,6 +409,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "transfers_info": transfers_info,
         "evolution_stones_json": _get_cached_evolution_stones_json(),
         "is_johto": (game.generation == 2 or game.slug in ["gold", "silver", "crystal"]),
+        "is_tanoby": (game.slug in ["firered", "leafgreen"]),
         "unown_entry": unown_entry,
         "unown_catalog": unown_catalog,
         "unown_chambers": unown_chambers,

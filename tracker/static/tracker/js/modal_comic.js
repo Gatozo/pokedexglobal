@@ -219,131 +219,17 @@ export function cycleCardPokemonForm(entryId, direction) {
     }
 }
 
-export function applyModalForm(formIdx) {
-    if (!state.activeModalEntryId) return;
-    const data = getEntryData(state.activeModalEntryId);
-    if (!data || !data.forms || !data.forms.length) return;
-    const form = data.forms[formIdx];
-    if (!form) return;
+export function renderModalObtaining(data, activeForm = null) {
+    const isUnownWithForm = (data.name && data.name.toLowerCase() === 'unown') && activeForm && activeForm.locations;
+    const obt = isUnownWithForm ? {
+        type: activeForm.type || (data.obtaining ? data.obtaining.type : 'wild'),
+        summary: activeForm.summary || (data.obtaining ? data.obtaining.summary : `Exclusivo de ${activeForm.chamber_name || 'su cámara'}.`),
+        locations: activeForm.locations || (data.obtaining ? data.obtaining.locations : []),
+        badge_label: activeForm.badge_label || (data.obtaining ? data.obtaining.badge_label : 'Salvaje'),
+        badge_color: activeForm.badge_color || (data.obtaining ? data.obtaining.badge_color : 'emerald'),
+        is_unique: activeForm.is_unique || (data.obtaining ? data.obtaining.is_unique : false),
+    } : (data.obtaining || {});
 
-    activeModalFormIndex = formIdx;
-    _cardFormIndex.set(state.activeModalEntryId, formIdx);
-
-    // 1. Sprite en modal
-    updateModalSpriteDisplay();
-
-    // 2. Tipos en modal
-    const typesContainer = document.getElementById('modal-types-container');
-    if (typesContainer) {
-        typesContainer.innerHTML = '';
-        const badge1 = document.createElement('span');
-        const pType = String(form.primary_type || '').toLowerCase();
-        badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
-        badge1.textContent = form.primary_type_es;
-        typesContainer.appendChild(badge1);
-
-        if (form.secondary_type && form.secondary_type_es) {
-            const badge2 = document.createElement('span');
-            const sType = String(form.secondary_type || '').toLowerCase();
-            badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
-            badge2.textContent = form.secondary_type_es;
-            typesContainer.appendChild(badge2);
-        }
-    }
-
-    // 3. Form badge en modal
-    const formBadge = document.getElementById('modal-form-badge');
-    if (formBadge) {
-        formBadge.textContent = form.name;
-        formBadge.classList.remove('hidden');
-    }
-}
-
-export function cycleModalPokemonForm(direction) {
-    if (!state.activeModalEntryId) return;
-    const data = getEntryData(state.activeModalEntryId);
-    if (!data || !data.forms || data.forms.length <= 1) return;
-    const newIdx = (activeModalFormIndex + direction + data.forms.length) % data.forms.length;
-    applyModalForm(newIdx);
-    applyCardForm(state.activeModalEntryId, newIdx);
-}
-
-export function openPokemonModalDirect(entryId) {
-    const data = getEntryData(entryId);
-    if (!data) return;
-
-    state.activeModalEntryId = entryId;
-    setActiveModalCryUrl(data.cry_url || '');
-    isModalBackView = false;
-    const modalCryBtn = document.getElementById('modal-cry-btn');
-    if (modalCryBtn) {
-        if (data.cry_url) {
-            modalCryBtn.classList.remove('hidden');
-        } else {
-            modalCryBtn.classList.add('hidden');
-        }
-    }
-
-    // 1. Textos principales
-    const numEl = document.getElementById('modal-pokemon-number');
-    const nameEl = document.getElementById('modal-pokemon-name');
-    const catEl = document.getElementById('modal-pokemon-category');
-    const flavorEl = document.getElementById('modal-flavor-text');
-    if (numEl) numEl.textContent = `#${data.number}`;
-    if (nameEl) nameEl.textContent = data.name;
-    if (catEl) catEl.textContent = data.category || 'Pokémon';
-    if (flavorEl) {
-        flavorEl.textContent = data.flavor_text 
-            ? `"${data.flavor_text}"` 
-            : '"No hay descripción de Pokédex registrada para esta versión."';
-    }
-
-    // 2 & 3. Sprite y Tipos (Soporte de Formas Alternas vs Carga Estándar)
-    const hasForms = data.forms && data.forms.length > 1;
-    const prevFormBtn = document.getElementById('modal-prev-form-btn');
-    const nextFormBtn = document.getElementById('modal-next-form-btn');
-    const formBadge = document.getElementById('modal-form-badge');
-
-    if (hasForms) {
-        if (prevFormBtn) prevFormBtn.classList.remove('hidden');
-        if (nextFormBtn) nextFormBtn.classList.remove('hidden');
-        const initialFormIdx = _cardFormIndex.get(entryId) || 0;
-        applyModalForm(initialFormIdx);
-    } else {
-        if (prevFormBtn) prevFormBtn.classList.add('hidden');
-        if (nextFormBtn) nextFormBtn.classList.add('hidden');
-        if (formBadge) formBadge.classList.add('hidden');
-
-        updateModalSpriteDisplay();
-
-        const typesContainer = document.getElementById('modal-types-container');
-        if (typesContainer) {
-            typesContainer.innerHTML = '';
-            
-            const badge1 = document.createElement('span');
-            const pType = String(data.primary_type || '').toLowerCase();
-            badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
-            badge1.textContent = data.primary_type_es;
-            typesContainer.appendChild(badge1);
-
-            if (data.secondary_type && data.secondary_type_es) {
-                const badge2 = document.createElement('span');
-                const sType = String(data.secondary_type || '').toLowerCase();
-                badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
-                badge2.textContent = data.secondary_type_es;
-                typesContainer.appendChild(badge2);
-            }
-        }
-    }
-
-    // 4. Biometría (Altura y Peso)
-    const heightEl = document.getElementById('modal-pokemon-height');
-    const weightEl = document.getElementById('modal-pokemon-weight');
-    if (heightEl) heightEl.textContent = data.height ? `${(data.height / 10).toFixed(1)} m` : '--';
-    if (weightEl) weightEl.textContent = data.weight ? `${(data.weight / 10).toFixed(1)} kg` : '--';
-
-    // 5. Método de Obtención y Localización
-    const obt = data.obtaining || {};
     const uniqueBadgeElem = document.getElementById('modal-unique-badge');
     if (uniqueBadgeElem) {
         if (obt.is_unique) {
@@ -417,7 +303,7 @@ export function openPokemonModalDirect(entryId) {
                 evoBox.innerHTML = `<img src="${evoIcon}" alt="Evolución" class="w-4 h-4 object-contain inline-block shrink-0"> <span><strong>Evolución:</strong> ${evoText}</span>`;
             }
             detailsContainer.appendChild(evoBox);
-        } else if (data.evolution_stone) {
+        } else if (data.evolution_stone && !isUnownWithForm) {
             const stone = data.evolution_stone;
             const itemBox = document.createElement('div');
             const isIncense = stone.slug.includes('incense');
@@ -453,17 +339,18 @@ export function openPokemonModalDirect(entryId) {
             if (obt.evolution_info || data.evolution_stone) {
                 const wildTitle = document.createElement('div');
                 wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
-                wildTitle.textContent = (obt.type === 'breeding' || obt.type === 'gift') ? 'Lugares de obtención:' : 'Lugares de captura / encuentro:';
+                wildTitle.textContent = (obt.type === 'breeding' || obt.type === 'gift') ? 'Lugares de obtención:' : ((obt.type === 'transfer') ? 'Método de transferencia:' : 'Lugares de captura / encuentro:');
                 detailsContainer.appendChild(wildTitle);
             }
 
             const locList = document.createElement('div');
-            locList.className = 'grid grid-cols-1 sm:grid-cols-2 gap-1.5';
+            locList.className = (obt.locations.length === 1) ? 'grid grid-cols-1 gap-1.5' : 'grid grid-cols-1 sm:grid-cols-2 gap-1.5';
             obt.locations.forEach(loc => {
                 const item = document.createElement('div');
                 const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
+                const isTransfer = (obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia'));
                 const locIcon = isBreedingOrEgg ? '/media/items/mystery-egg.png' : '/media/items/town-map.png';
-                const cardBg = isBreedingOrEgg ? 'bg-pink-50/70 border-pink-200 text-pink-950' : 'bg-slate-50 border-slate-300 text-slate-800';
+                const cardBg = isBreedingOrEgg ? 'bg-pink-50/70 border-pink-200 text-pink-950' : (isTransfer ? 'bg-slate-100 border-slate-300 text-slate-800' : 'bg-slate-50 border-slate-300 text-slate-800');
                 item.className = `flex items-center justify-between text-[11px] border rounded px-2.5 py-1 font-semibold overflow-hidden min-h-[30px] ${cardBg}`;
                 item.title = `${loc.area} (${loc.method})`;
                 item.innerHTML = `
@@ -480,6 +367,143 @@ export function openPokemonModalDirect(entryId) {
             detailsContainer.appendChild(locList);
         }
     }
+}
+
+export function applyModalForm(formIdx) {
+    if (!state.activeModalEntryId) return;
+    const data = getEntryData(state.activeModalEntryId);
+    if (!data || !data.forms || !data.forms.length) return;
+    const form = data.forms[formIdx];
+    if (!form) return;
+
+    activeModalFormIndex = formIdx;
+    _cardFormIndex.set(state.activeModalEntryId, formIdx);
+
+    // 1. Sprite en modal
+    updateModalSpriteDisplay();
+
+    // 2. Tipos en modal
+    const typesContainer = document.getElementById('modal-types-container');
+    if (typesContainer) {
+        typesContainer.innerHTML = '';
+        const badge1 = document.createElement('span');
+        const pType = String(form.primary_type || '').toLowerCase();
+        badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
+        badge1.textContent = form.primary_type_es;
+        typesContainer.appendChild(badge1);
+
+        if (form.secondary_type && form.secondary_type_es) {
+            const badge2 = document.createElement('span');
+            const sType = String(form.secondary_type || '').toLowerCase();
+            badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
+            badge2.textContent = form.secondary_type_es;
+            typesContainer.appendChild(badge2);
+        }
+    }
+
+    // 3. Form badge en modal
+    const formBadge = document.getElementById('modal-form-badge');
+    if (formBadge) {
+        formBadge.textContent = form.name;
+        formBadge.classList.remove('hidden');
+    }
+
+    // 4. Ubicación específica si la forma define ubicaciones propias (Unown)
+    renderModalObtaining(data, form);
+}
+
+export function cycleModalPokemonForm(direction) {
+    if (!state.activeModalEntryId) return;
+    const data = getEntryData(state.activeModalEntryId);
+    if (!data || !data.forms || data.forms.length <= 1) return;
+    const newIdx = (activeModalFormIndex + direction + data.forms.length) % data.forms.length;
+    applyModalForm(newIdx);
+    applyCardForm(state.activeModalEntryId, newIdx);
+}
+
+export function openPokemonModalDirect(entryId, options = {}) {
+    const data = getEntryData(entryId);
+    if (!data) return;
+
+    state.activeModalEntryId = entryId;
+    setActiveModalCryUrl(data.cry_url || '');
+    isModalBackView = false;
+    const modalCryBtn = document.getElementById('modal-cry-btn');
+    if (modalCryBtn) {
+        if (data.cry_url) {
+            modalCryBtn.classList.remove('hidden');
+        } else {
+            modalCryBtn.classList.add('hidden');
+        }
+    }
+
+    // 1. Textos principales
+    const numEl = document.getElementById('modal-pokemon-number');
+    const nameEl = document.getElementById('modal-pokemon-name');
+    const catEl = document.getElementById('modal-pokemon-category');
+    const flavorEl = document.getElementById('modal-flavor-text');
+    if (numEl) numEl.textContent = `#${data.number}`;
+    if (nameEl) nameEl.textContent = data.name;
+    if (catEl) catEl.textContent = data.category || 'Pokémon';
+    if (flavorEl) {
+        flavorEl.textContent = data.flavor_text 
+            ? `"${data.flavor_text}"` 
+            : '"No hay descripción de Pokédex registrada para esta versión."';
+    }
+
+    // 2 & 3. Sprite y Tipos (Soporte de Formas Alternas vs Carga Estándar)
+    const hasForms = data.forms && data.forms.length > 1;
+    const prevFormBtn = document.getElementById('modal-prev-form-btn');
+    const nextFormBtn = document.getElementById('modal-next-form-btn');
+    const formBadge = document.getElementById('modal-form-badge');
+
+    if (hasForms) {
+        if (prevFormBtn) prevFormBtn.classList.remove('hidden');
+        if (nextFormBtn) nextFormBtn.classList.remove('hidden');
+        let initialFormIdx = _cardFormIndex.get(entryId) || 0;
+        if (options && options.selectedLetter) {
+            const idx = data.forms.findIndex(f => f.form_key === options.selectedLetter);
+            if (idx !== -1) {
+                initialFormIdx = idx;
+            }
+        }
+        applyModalForm(initialFormIdx);
+        applyCardForm(entryId, initialFormIdx);
+    } else {
+        if (prevFormBtn) prevFormBtn.classList.add('hidden');
+        if (nextFormBtn) nextFormBtn.classList.add('hidden');
+        if (formBadge) formBadge.classList.add('hidden');
+
+        updateModalSpriteDisplay();
+
+        const typesContainer = document.getElementById('modal-types-container');
+        if (typesContainer) {
+            typesContainer.innerHTML = '';
+            
+            const badge1 = document.createElement('span');
+            const pType = String(data.primary_type || '').toLowerCase();
+            badge1.className = `type-${pType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
+            badge1.textContent = data.primary_type_es;
+            typesContainer.appendChild(badge1);
+
+            if (data.secondary_type && data.secondary_type_es) {
+                const badge2 = document.createElement('span');
+                const sType = String(data.secondary_type || '').toLowerCase();
+                badge2.className = `type-${sType} border-2 border-slate-950 font-black text-xs sm:text-[13px] uppercase px-3.5 py-1 rounded-md shadow-[2px_2px_0px_0px_#0f172a] select-none pointer-events-none`;
+                badge2.textContent = data.secondary_type_es;
+                typesContainer.appendChild(badge2);
+            }
+        }
+
+        // 5. Método de Obtención y Localización para especies sin formas
+        renderModalObtaining(data, null);
+    }
+
+    // 4. Biometría (Altura y Peso)
+    const heightEl = document.getElementById('modal-pokemon-height');
+    const weightEl = document.getElementById('modal-pokemon-weight');
+    if (heightEl) heightEl.textContent = data.height ? `${(data.height / 10).toFixed(1)} m` : '--';
+    if (weightEl) weightEl.textContent = data.weight ? `${(data.weight / 10).toFixed(1)} kg` : '--';
 
     // 6. Estado de captura actual
     const card = document.getElementById(`card-${entryId}`);

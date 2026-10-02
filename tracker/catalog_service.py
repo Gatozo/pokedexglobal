@@ -258,6 +258,19 @@ def _clean_daycare_route_text(text: str) -> str:
     return res
 
 
+def _clean_wikitext_flavor(text: str) -> str:
+    if not text:
+        return ""
+    if "{{" in text or "[[" in text or "<" in text:
+        text = re.sub(r'\{\{(?:NombreHaEs|n)\|([^|]+)(?:\|([^}]+))?\}*', lambda m: m.group(2) or m.group(1), text)
+        text = re.sub(r'\{\{[^}]+\}\}', '', text)
+        text = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]+)\]\]', r'\1', text)
+        text = re.sub(r'<ref[^>]*>.*?</ref>', '', text, flags=re.DOTALL)
+        text = re.sub(r'<[^>]+>', '', text)
+        return ' '.join(text.split()).strip()
+    return text
+
+
 class CatalogEntry:
     """
     Adaptador inmutable de entrada de Pokédex.
@@ -302,7 +315,7 @@ class CatalogEntry:
 
         self._pc_icon_url = data.get("pc_icon_url", "")
         self._cry_url = data.get("cry_url", "")
-        self.flavor_text = data.get("flavor_text", "")
+        self.flavor_text = _clean_wikitext_flavor(data.get("flavor_text", ""))
         self.obtaining_info = data.get("obtaining_info") or {}
         self._evolution_stone = data.get("evolution_stone")
         self.game_data = data.get("game_data") or {}

@@ -33,7 +33,7 @@
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/firered_shiny/back/1.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/1.png",
     "cry_url": "/media/pokemon/cries/1.ogg",
-    "flavor_text": "{{NombreHaEs|Bulbasaur suele tomar siestas bajo el sol. La semilla que tiene en el lomo crece poco a poco a medida que absorbe los rayos del sol.|A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.",
+    "flavor_text": "Este Pokémon nace con una semilla en el lomo. Con el tiempo, la semilla brota.",
     "obtaining_info": {
       "type": "starter",
       "badge_label": "Inicial",
@@ -92,7 +92,7 @@
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/firered_shiny/back/2.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/2.png",
     "cry_url": "/media/pokemon/cries/2.ogg",
-    "flavor_text": "{{n|Este Pokémon lleva un bulbo en su lomo y, para soportar su peso, cuenta con unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, es una señal de que pronto brotará una gran flor de su bulbo.|Este Pokémon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.",
+    "flavor_text": "Este Pokémon tiene un bulbo en el lomo. Dicen que, al absorber nutrientes, el bulbo se transforma en una flor grande.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Bulbasaur (Nivel 16)",
@@ -17502,34 +17502,34 @@
     "flavor_text": "Su cuerpo fino y plano aparece siempre en los muros. Su forma parece tener algún significado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Cámara Monean (Ruinas Sétima), Cámara Liptoo (Ruinas Sétima), Cámara Weepth (Ruinas Sétima)).",
+      "summary": "Salvaje en las 7 Cámaras Sete (Ruinas Sete, Isla Sétima) tras resolver el acertijo de la Llave Sete con Fuerza.",
       "locations": [
         {
-          "area": "Cámara Monean (Ruinas Sétima)",
+          "area": "Cámara Anémuna (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Liptoo (Ruinas Sétima)",
+          "area": "Cámara Tulipdos (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Weepth (Ruinas Sétima)",
+          "area": "Cámara Trisante (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Dilford (Ruinas Sétima)",
+          "area": "Cámara Quarciso (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Scufib (Ruinas Sétima)",
+          "area": "Cámara Hibinca (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Rixy (Ruinas Sétima)",
+          "area": "Cámara Seiris (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Viapos (Ruinas Sétima)",
+          "area": "Cámara Pasiete (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         }
       ],

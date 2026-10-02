@@ -33,7 +33,7 @@
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/emerald_shiny/back/1.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/1.png",
     "cry_url": "/media/pokemon/cries/1.ogg",
-    "flavor_text": "{{NombreHaEs|Bulbasaur suele tomar siestas bajo el sol. La semilla que tiene en el lomo crece poco a poco a medida que absorbe los rayos del sol.|A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.",
+    "flavor_text": "A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.",
     "obtaining_info": {
       "type": "transfer",
       "summary": "No disponible en estado salvaje en Hoenn. Requiere Transferencia desde Pokémon Rojo Fuego o Pokémon Verde Hoja (también obtenible mediante crianza).",
@@ -92,7 +92,7 @@
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/emerald_shiny/back/2.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/2.png",
     "cry_url": "/media/pokemon/cries/2.ogg",
-    "flavor_text": "{{n|Este Pokémon lleva un bulbo en su lomo y, para soportar su peso, cuenta con unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, es una señal de que pronto brotará una gran flor de su bulbo.|Este Pokémon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.",
+    "flavor_text": "Este Pokémon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Bulbasaur (Nivel 16)",

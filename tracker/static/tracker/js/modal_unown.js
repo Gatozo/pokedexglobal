@@ -38,9 +38,24 @@ export function closeUnownModal(syncUrl = true) {
 export function openClassicUnownModal() {
     closeUnownModal();
     const unownCard = document.querySelector(".pokemon-card[data-name='unown']");
-    if (unownCard) {
-        openPokemonModalDirect(parseInt(unownCard.dataset.entryId, 10));
+    const modalEl = document.getElementById('unown-modal');
+    const entryId = unownCard 
+        ? parseInt(unownCard.dataset.entryId, 10) 
+        : parseInt(modalEl?.dataset?.unownEntryId || 0, 10);
+    if (entryId) {
+        openPokemonModalDirect(entryId);
     }
+}
+
+export function openUnownLetterCard(letter) {
+    closeUnownModal(false);
+    const unownCard = document.querySelector(".pokemon-card[data-name='unown']");
+    const modalEl = document.getElementById('unown-modal');
+    const entryId = unownCard 
+        ? parseInt(unownCard.dataset.entryId, 10) 
+        : parseInt(modalEl?.dataset?.unownEntryId || 0, 10);
+    if (!entryId) return;
+    openPokemonModalDirect(entryId, { selectedLetter: letter });
 }
 
 export function switchToUnownModal() {
@@ -61,8 +76,11 @@ export function filterUnownChamber(chamberKey) {
     const hintText = document.getElementById('unown-chamber-hint-text');
 
     if (chamberKey === 'all') {
-        if (hintTitle) hintTitle.textContent = 'Ruinas Alfa';
-        if (hintText) hintText.textContent = 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.';
+        const isTanoby = !!document.getElementById('unown-tab-anemuna');
+        if (hintTitle) hintTitle.textContent = isTanoby ? 'Ruinas Sete (Isla Sétima)' : 'Ruinas Alfa';
+        if (hintText) hintText.textContent = isTanoby
+            ? 'Selecciona una cámara para filtrar sus formas y consultar los porcentajes de aparición y acceso.'
+            : 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.';
     } else {
         const hint = UNOWN_CHAMBER_HINTS[chamberKey];
         if (hint && hintTitle && hintText) {
