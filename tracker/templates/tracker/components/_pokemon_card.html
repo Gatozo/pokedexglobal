@@ -37,7 +37,7 @@
                 class="p-1 rounded-md text-slate-400 hover:text-slate-950 hover:bg-slate-100 transition-colors active:scale-90 flex items-center justify-center shrink-0"
             >
                 <svg class="w-3.5 h-3.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                    <use href="#icon-cry"></use>
                 </svg>
             </button>
             {% endif %}
@@ -105,7 +105,7 @@
     >
         <!-- Icon Pokéball -->
         <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+            <use href="#icon-pokeball"></use>
         </svg>
         <span id="btn-text-{{ entry.id }}">
             {% if is_shinydex_active %}{% if entry.is_shiny_caught %}Liberar{% else %}Capturar{% endif %}{% else %}{% if entry.is_caught %}Liberar{% else %}Capturar{% endif %}{% endif %}

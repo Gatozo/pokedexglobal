@@ -158,15 +158,7 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
         return;
     }
 
-    // 1. Si el documento aún se está cargando/parseando desde el servidor,
-    // cortar de inmediato el flujo de datos para que el navegador no siga inyectando tarjetas de la región previa.
-    if (document.readyState === 'loading') {
-        try {
-            window.stop();
-        } catch (e) {}
-    }
-
-    // 2. Cancelar cualquier petición AJAX previa en curso
+    // 1. Cancelar cualquier petición AJAX previa en curso
     if (_activeAbortController) {
         try {
             _activeAbortController.abort();
@@ -297,3 +289,15 @@ export function initNationalGenerationBar() {
         }
     }
 }
+
+// Asegurar que si el usuario cambia de pestaña durante una animación,
+// la grilla recupere su visibilidad completa al regresar a la pestaña activa.
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        const grid = document.getElementById('pokemon-grid');
+        if (grid) {
+            grid.style.opacity = '1';
+            grid.style.transform = 'scale(1)';
+        }
+    }
+});

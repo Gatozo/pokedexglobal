@@ -241,9 +241,6 @@
     // Navegación de Regiones en Pokédex Nacional
     window.switchNationalRegion = function(slug, e) {
         if (e && e.preventDefault) e.preventDefault();
-        if (document.readyState === 'loading') {
-            try { window.stop(); } catch(err) {}
-        }
         queueOrRun('switchNationalRegion', [slug, null, true]);
     };
 

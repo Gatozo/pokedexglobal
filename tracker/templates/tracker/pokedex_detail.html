@@ -41,6 +41,18 @@
 <body class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}bg-slate-400 selection:text-slate-950{% elif game.slug == 'crystal' %}bg-sky-500 selection:text-slate-950{% elif game.slug == 'sapphire' %}bg-[#1d4ed8]{% elif game.slug == 'ruby' %}bg-red-600{% elif game.slug == 'emerald' %}bg-[#059669]{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}
 
+    <!-- Definición global de iconos SVG reutilizables para optimización de peso en DOM -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="hidden" style="display: none;" aria-hidden="true">
+        <defs>
+            <symbol id="icon-cry" viewBox="0 0 24 24">
+                <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </symbol>
+            <symbol id="icon-pokeball" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 0 0-10 10c0 5.18 3.95 9.45 9 9.95V14.83a3.5 3.5 0 0 1-2.5-3.33 3.5 3.5 0 0 1 2.5-3.33V2.05C11.34 2.02 11.67 2 12 2m1 0c.33 0 .66.02 1 .05v6.12a3.5 3.5 0 0 1 2.5 3.33 3.5 3.5 0 0 1-2.5 3.33v7.12c5.05-.5 9-4.77 9-9.95A10 10 0 0 0 13 2m-1 8a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2-2z"/>
+            </symbol>
+        </defs>
+    </svg>
+
     <!-- Modals (Disponibles inmediatamente antes del renderizado de tarjetas para interacción instantánea) -->
     {% include 'tracker/components/_modal_comic.html' %}
     {% include 'tracker/components/_modal_stones.html' %}
