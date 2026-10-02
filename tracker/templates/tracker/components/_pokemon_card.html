@@ -48,7 +48,7 @@
                 title="{% if 'incense' in entry.evolution_stone.slug %}Crianza con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% elif 'stone' in entry.evolution_stone.slug %}Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% else %}Evoluciona por intercambio con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% endif %}"
                 class="inline-flex items-center justify-center p-0 cursor-pointer transition-transform hover:scale-125 active:scale-95 focus:outline-none shrink-0"
             >
-                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" width="22" height="22" decoding="async" class="w-[22px] h-[22px] object-contain drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)] pixel-art">
+                <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" width="22" height="22" decoding="async" class="w-[22px] h-[22px] object-contain pixel-art">
             </button>
             {% endif %}
         </div>
@@ -75,7 +75,7 @@
             decoding="async"
             width="96"
             height="96"
-            class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 drop-shadow-md pixel-art relative z-10"
+            class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 pixel-art relative z-10"
         >
     </div>
 

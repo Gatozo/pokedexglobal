@@ -11,13 +11,21 @@ import { openPokemonModalDirect, closePokemonModal } from './modal_comic.js';
 export function openUnownModal(updateHistory = true) {
     const modal = document.getElementById('unown-modal');
     const card = document.getElementById('unown-modal-card');
-    if (!modal || !card) return;
-
-    updateUnownModalUI();
-
-    modal.classList.remove('opacity-0', 'pointer-events-none');
-    card.classList.remove('scale-95');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+        modal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    if (card) {
+        card.classList.remove('scale-95');
+        card.classList.add('scale-100');
+    }
     document.body.classList.add('overflow-hidden');
+    try {
+        updateUnownModalUI();
+    } catch (err) {
+        console.error('Error updating unown modal UI:', err);
+    }
     if (updateHistory) {
         setModalUrlHash('unown');
     }
@@ -26,11 +34,15 @@ export function openUnownModal(updateHistory = true) {
 export function closeUnownModal(syncUrl = true) {
     const modal = document.getElementById('unown-modal');
     const card = document.getElementById('unown-modal-card');
-    if (!modal || !card) return;
-
-    modal.classList.add('opacity-0', 'pointer-events-none');
-    card.classList.scale = 'scale-95';
-    card.classList.add('scale-95');
+    if (modal) {
+        modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+        modal.style.display = 'none';
+    }
+    if (card) {
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+    }
     releaseScrollIfNoModalOpen();
     if (syncUrl) syncUrlToCurrentOpenModal();
 }

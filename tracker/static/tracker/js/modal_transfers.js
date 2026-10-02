@@ -8,24 +8,30 @@ import { toggleCatch } from './cards.js';
 export function openTransfersModal(updateHistory = true) {
     const modal = document.getElementById('transfers-modal');
     const modalCard = document.getElementById('transfers-modal-card');
-    if (modal && modalCard) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
-        document.body.classList.add('overflow-hidden');
-        if (updateHistory) {
-            setModalUrlHash('transferir');
-        }
+    }
+    document.body.classList.add('overflow-hidden');
+    if (updateHistory) {
+        setModalUrlHash('transferir');
     }
 }
 
 export function closeTransfersModal(syncUrl = true) {
     const modal = document.getElementById('transfers-modal');
     const modalCard = document.getElementById('transfers-modal-card');
-    if (modal && modalCard) {
-        modal.classList.remove('opacity-100', 'pointer-events-auto');
-        modal.classList.add('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+        modal.style.display = 'none';
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-100');
         modalCard.classList.add('scale-95');
     }

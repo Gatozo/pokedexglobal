@@ -1,7 +1,7 @@
 <div 
     id="unown-modal" 
     data-unown-entry-id="{{ unown_entry.id|default:'' }}"
-    class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200"
+    class="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/70 opacity-0 pointer-events-none transition-opacity duration-200 hidden"
     style="z-index: 100;"
     role="dialog"
     aria-modal="true"
@@ -273,7 +273,7 @@
                             decoding="async"
                             width="64"
                             height="64"
-                            class="w-16 h-16 object-contain pixel-art drop-shadow relative z-10 transition-transform duration-150 hover:scale-110"
+                            class="w-16 h-16 object-contain pixel-art relative z-10 transition-transform duration-150 hover:scale-110"
                         >
                     </div>
 

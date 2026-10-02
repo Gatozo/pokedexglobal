@@ -103,15 +103,18 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     // 4. Mostrar modal
     const modal = document.getElementById('stone-location-modal');
     const modalCard = document.getElementById('stone-modal-card');
-    if (modal && modalCard) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
-        document.body.classList.add('overflow-hidden');
-        if (updateHistory) {
-            setModalUrlHash('objeto-' + stoneSlug);
-        }
+    }
+    document.body.classList.add('overflow-hidden');
+    if (updateHistory) {
+        setModalUrlHash('objeto-' + stoneSlug);
     }
 }
 
@@ -119,8 +122,9 @@ export function closeStoneModal(syncUrl = true) {
     const modal = document.getElementById('stone-location-modal');
     const modalCard = document.getElementById('stone-modal-card');
     if (modal) {
-        modal.classList.remove('opacity-100', 'pointer-events-auto');
-        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+        modal.style.display = 'none';
     }
     if (modalCard) {
         modalCard.classList.remove('scale-100');

@@ -540,13 +540,16 @@ export function openPokemonModalDirect(entryId, options = {}) {
     // 8. Mostrar modal
     const modal = document.getElementById('comic-modal');
     const modalCard = document.getElementById('comic-modal-card');
-    if (modal && modalCard) {
-        modal.classList.remove('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
-        document.body.classList.add('overflow-hidden');
     }
+    document.body.classList.add('overflow-hidden');
 
     // 9. Activar marquesina suave en ubicaciones
     requestAnimationFrame(() => {
@@ -622,9 +625,14 @@ export function closePokemonModal(syncUrl = true) {
     const modal = document.getElementById('comic-modal');
     const modalCard = document.getElementById('comic-modal-card');
     if (modal) {
-        modal.classList.remove('opacity-100', 'pointer-events-auto');
-        modal.classList.add('opacity-0', 'pointer-events-none');
+        modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+        modal.style.display = 'none';
     }
+    const modalImg = document.getElementById('modal-pokemon-img');
+    if (modalImg) modalImg.src = '';
+    const detailsContainer = document.getElementById('modal-obtaining-details');
+    if (detailsContainer) detailsContainer.innerHTML = '';
     if (modalCard) {
         modalCard.classList.remove('scale-100');
         modalCard.classList.add('scale-95');

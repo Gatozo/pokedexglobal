@@ -1,5 +1,5 @@
 <!-- Comic Book Style Modal -->
-<div id="comic-modal" class="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" style="z-index: 110;" onclick="handleModalBackdropClick(event)">
+<div id="comic-modal" class="fixed inset-0 z-[110] flex items-center justify-center p-3 sm:p-4 pt-20 sm:pt-24 pb-6 bg-slate-950/80 opacity-0 pointer-events-none transition-opacity duration-200 hidden" style="z-index: 110;" onclick="handleModalBackdropClick(event)">
     
     <!-- Modal Wrapper with Side Navigation Arrows -->
     <div id="comic-modal-wrapper" class="relative w-full max-w-2xl px-10 sm:px-12 md:px-0 flex items-center justify-center">
@@ -97,12 +97,12 @@
                             title="Forma anterior"
                             aria-label="Forma anterior"
                         >
-                            <svg class="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M16 6l-8 6 8 6V6z"/>
                             </svg>
                         </button>
 
-                        <img id="modal-pokemon-img" src="" alt="" width="128" height="128" decoding="async" class="h-28 w-28 sm:h-32 sm:w-32 object-contain drop-shadow-md pixel-art select-none pointer-events-none">
+                        <img id="modal-pokemon-img" src="" alt="" width="128" height="128" decoding="async" class="h-28 w-28 sm:h-32 sm:w-32 object-contain pixel-art select-none pointer-events-none">
 
                         <!-- Botón Forma Siguiente (Estático, sin rebotes de escala) -->
                         <button 
@@ -113,7 +113,7 @@
                             title="Forma siguiente"
                             aria-label="Forma siguiente"
                         >
-                            <svg class="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-[0_1px_1px_rgba(0,0,0,0.3)]" viewBox="0 0 24 24" fill="currentColor">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 6l8 6-8 6V6z"/>
                             </svg>
                         </button>

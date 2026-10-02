@@ -9,25 +9,35 @@ import { toggleCatch } from './cards.js';
 export function openExclusivesModal(updateHistory = true) {
     const modal = document.getElementById('exclusives-modal');
     const modalCard = document.getElementById('exclusives-modal-card');
-    if (modal && modalCard) {
-        updateExclusivesModalUI();
-        modal.classList.remove('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
-        document.body.classList.add('overflow-hidden');
-        if (updateHistory) {
-            setModalUrlHash('exclusivos');
-        }
+    }
+    document.body.classList.add('overflow-hidden');
+    try {
+        updateExclusivesModalUI();
+    } catch (err) {
+        console.error('Error updating exclusives modal UI:', err);
+    }
+    if (updateHistory) {
+        setModalUrlHash('exclusivos');
     }
 }
 
 export function closeExclusivesModal(syncUrl = true) {
     const modal = document.getElementById('exclusives-modal');
     const modalCard = document.getElementById('exclusives-modal-card');
-    if (modal && modalCard) {
-        modal.classList.remove('opacity-100', 'pointer-events-auto');
-        modal.classList.add('opacity-0', 'pointer-events-none');
+    if (modal) {
+        modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+        modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+        modal.style.display = 'none';
+    }
+    if (modalCard) {
         modalCard.classList.remove('scale-100');
         modalCard.classList.add('scale-95');
     }
