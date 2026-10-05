@@ -108,10 +108,14 @@ body[data-game="emerald"] {
     background-image: radial-gradient(rgba(5, 150, 105, 0.20) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
-body[data-game="firered"],
-body[data-game="leafgreen"] {
+body[data-game="firered"] {
     background-color: #fff7ed;
     background-image: radial-gradient(rgba(234, 88, 12, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="leafgreen"] {
+    background-color: #f2fcf5;
+    background-image: radial-gradient(rgba(22, 163, 74, 0.20) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
 body,
@@ -407,9 +411,8 @@ body[data-game="emerald"] .status-caught-active {
     border-color: #064e3b !important;
 }
 
-/* FireRed / LeafGreen */
-body[data-game="firered"] .comic-header-pattern,
-body[data-game="leafgreen"] .comic-header-pattern {
+/* FireRed */
+body[data-game="firered"] .comic-header-pattern {
     background: repeating-linear-gradient(
         -45deg,
         #ea580c,
@@ -418,17 +421,36 @@ body[data-game="leafgreen"] .comic-header-pattern {
         #c2410c 24px
     );
 }
-body[data-game="firered"] .pokemon-card.caught-card,
-body[data-game="leafgreen"] .pokemon-card.caught-card {
+body[data-game="firered"] .pokemon-card.caught-card {
     background-color: #ffedd5 !important;
     border-color: #c2410c !important;
     box-shadow: 3px 3px 0px 0px #9a3412;
 }
-body[data-game="firered"] .status-caught-active,
-body[data-game="leafgreen"] .status-caught-active {
+body[data-game="firered"] .status-caught-active {
     background-color: #ea580c !important;
     color: #ffffff !important;
     border-color: #9a3412 !important;
+}
+
+/* LeafGreen */
+body[data-game="leafgreen"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #16a34a,
+        #16a34a 12px,
+        #15803d 12px,
+        #15803d 24px
+    );
+}
+body[data-game="leafgreen"] .pokemon-card.caught-card {
+    background-color: #dcfce7 !important;
+    border-color: #15803d !important;
+    box-shadow: 3px 3px 0px 0px #14532d;
+}
+body[data-game="leafgreen"] .status-caught-active {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    border-color: #14532d !important;
 }
 
 /* Default / Red */

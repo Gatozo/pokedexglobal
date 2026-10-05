@@ -1,4 +1,5 @@
 import json
+import os
 from unittest.mock import patch
 from django.test import TestCase, Client
 from django.urls import reverse
@@ -72,7 +73,7 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
     def test_nonexistent_catalog_returns_none(self):
         from tracker.catalog_service import get_compiled_catalog
-        self.assertIsNone(get_compiled_catalog("leafgreen"))
+        self.assertIsNone(get_compiled_catalog("diamond"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
     def test_catalog_filter_locations_and_tags(self):
@@ -1202,6 +1203,147 @@ class PokemonFireRedGen3Tests(TestCase):
         self.assertNotContains(resp, 'id="unown-tab-anemuna"')
         self.assertContains(resp, 'Unown no aparece en estado salvaje en esta región')
         self.assertContains(resp, 'Transfer')
+
+
+class PokemonLeafGreenGen3Tests(TestCase):
+    """
+    Suite de pruebas completa para la integración oficial de Pokémon Verde Hoja (Gen 3):
+    - Catálogo Regional de Kanto (151 especies, IDs 2869 a 3019).
+    - Catálogo Nacional (386 especies, IDs 2869 a 3254).
+    - Invariantes de Crianza canónica en Isla Quarta (Guardería Pokémon).
+    - Forma de Defensa nativa de Deoxys (#386 con icono PC #10002).
+    - Intercambios NPC específicos de Verde Hoja (Ruta 5 por Nidoran♀, Ruta 18 por Slowbro).
+    - Catálogo de Exclusivos y Transferencias con Rojo Fuego.
+    - Barra de Generaciones Nacional en Verde Hoja (Kanto, Johto, Hoenn).
+    - Disponibilidad de Sprites Estáticos Offline (normal, shiny, back normal, back shiny).
+    """
+
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(slug="leafgreen", defaults={"name": "Pokémon Verde Hoja", "generation": 3})
+        self.pk_kanto, _ = Pokedex.objects.get_or_create(game=self.game, slug="kanto", defaults={"name": "Pokédex de Kanto", "is_national": False})
+        self.pk_nat, _ = Pokedex.objects.get_or_create(game=self.game, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+    def test_leafgreen_regional_catalog_structure(self):
+        cat = get_compiled_catalog("leafgreen", is_national=False)
+        self.assertIsNotNone(cat)
+        self.assertEqual(len(cat), 151)
+        self.assertEqual(cat[0].entry_number, 1)
+        self.assertEqual(cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(cat[0].id, 2869)
+        self.assertEqual(cat[-1].entry_number, 151)
+        self.assertEqual(cat[-1].pokemon.name, "mew")
+        self.assertEqual(cat[-1].id, 3019)
+
+        # IDs estrictamente consecutivos
+        ids = [e.id for e in cat]
+        self.assertEqual(ids, list(range(2869, 3020)))
+
+        # Validar descripciones canónicas sin artefactos wikitext
+        self.assertNotIn("NombreHaEs", cat[0].flavor_text)
+        self.assertNotIn("{{", cat[0].flavor_text)
+        self.assertNotIn("|", cat[0].flavor_text)
+
+    def test_leafgreen_national_catalog_structure(self):
+        cat = get_compiled_catalog("leafgreen", is_national=True)
+        self.assertIsNotNone(cat)
+        self.assertEqual(len(cat), 386)
+        self.assertEqual(cat[0].pokemon.national_number, 1)
+        self.assertEqual(cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(cat[0].id, 2869)
+        self.assertEqual(cat[151].pokemon.national_number, 152)
+        self.assertEqual(cat[151].pokemon.name, "chikorita")
+        self.assertEqual(cat[251].pokemon.national_number, 252)
+        self.assertEqual(cat[251].pokemon.name, "treecko")
+        self.assertEqual(cat[-1].pokemon.national_number, 386)
+        self.assertEqual(cat[-1].pokemon.name, "deoxys")
+        self.assertEqual(cat[-1].id, 3254)
+
+        # IDs estrictamente consecutivos
+        ids = [e.id for e in cat]
+        self.assertEqual(ids, list(range(2869, 3255)))
+
+    def test_leafgreen_breeding_invariants(self):
+        """Regla de Oro de Crianza: Formas evolucionadas NUNCA tienen Guardería ni mención de crianza."""
+        cat = get_compiled_catalog("leafgreen", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in cat}
+
+        # Formas evolucionadas
+        for num in [6, 9, 3, 26, 130, 248, 149]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower() or "crianza" in l.get("method", "").lower()]
+            self.assertEqual(daycare_locs, [], f"#{num} {entry.pokemon.name} evolucionado no debe tener Guardería")
+            self.assertNotIn("crianza", entry.obtaining_info.get("summary", "").lower(), f"#{num} {entry.pokemon.name} evolucionado no debe mencionar crianza")
+
+        # Formas base fértiles y bebés sí tienen Guardería
+        for num in [1, 4, 7, 175, 239, 240]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
+            self.assertTrue(len(daycare_locs) > 0, f"#{num} {entry.pokemon.name} base/bebé debe tener Guardería en Sevii")
+
+    def test_leafgreen_deoxys_defense_forme(self):
+        cat = get_compiled_catalog("leafgreen", is_national=True)
+        deoxys = [e for e in cat if e.pokemon.national_number == 386][0]
+        self.assertIn("Forma Defensa", deoxys.obtaining_info.get("summary", ""))
+        self.assertEqual(deoxys.pc_icon_url, "/media/pokemon/icons/gen3/10002.png")
+        self.assertEqual(deoxys.game_sprite_url, "/media/pokemon/sprites/leafgreen/386.png")
+
+    def test_leafgreen_ingame_trades(self):
+        cat = get_compiled_catalog("leafgreen", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in cat}
+
+        # #32 Nidoran♂ recibido por Nidoran♀ en Ruta 5
+        nidoran_m = cat_by_num[32]
+        self.assertEqual(nidoran_m.obtaining_info.get("type"), "trade_npc")
+        self.assertIn("Nidrán", nidoran_m.obtaining_info.get("summary", ""))
+        self.assertIn("Nidoran♀", nidoran_m.obtaining_info.get("summary", ""))
+
+        # #108 Lickitung recibido por Slowbro en Ruta 18
+        licki = cat_by_num[108]
+        self.assertEqual(licki.obtaining_info.get("type"), "trade_npc")
+        self.assertIn("Slowbro", licki.obtaining_info.get("summary", ""))
+
+    def test_leafgreen_exclusives_and_transfers_catalog(self):
+        from tracker.exclusives import (
+            GAME_COUNTERPARTS,
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG
+        )
+        self.assertIn("leafgreen", GAME_COUNTERPARTS)
+        self.assertEqual(GAME_COUNTERPARTS["leafgreen"], ["firered"])
+        self.assertIn("leafgreen", VERSION_EXCLUSIVES_CATALOG)
+        self.assertEqual(len(VERSION_EXCLUSIVES_CATALOG["leafgreen"]), 23)
+        self.assertIn(27, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Sandshrew
+        self.assertIn(37, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Vulpix
+        self.assertIn(69, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Bellsprout
+        self.assertIn(79, VERSION_EXCLUSIVES_CATALOG["leafgreen"])  # Slowpoke
+        self.assertIn(120, VERSION_EXCLUSIVES_CATALOG["leafgreen"]) # Staryu
+        self.assertIn(126, VERSION_EXCLUSIVES_CATALOG["leafgreen"]) # Magmar
+        self.assertIn(127, VERSION_EXCLUSIVES_CATALOG["leafgreen"]) # Pinsir
+
+        self.assertIn("leafgreen", VERSION_TRANSFERS_CATALOG)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["leafgreen"]), 167)
+
+    def test_leafgreen_offline_sprites_exist(self):
+        from django.conf import settings
+        base_media = settings.MEDIA_ROOT
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "leafgreen", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "leafgreen", "386.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "leafgreen_shiny", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "leafgreen_shiny", "386.png")))
+
+    def test_leafgreen_views_and_national_regions_bar(self):
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "leafgreen"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertContains(resp_reg, "Pokédex de Kanto")
+        self.assertContains(resp_reg, "Bulbasaur")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "leafgreen", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, 'id="national-generation-bar"')
+        self.assertContains(resp_nat, "Kanto")
+        self.assertContains(resp_nat, "Johto")
+        self.assertContains(resp_nat, "Hoenn")
+
 
 
 
