@@ -555,7 +555,7 @@
     "flavor_text": "Tiene la piel de color verde. Cuando la muda, se recubre de seda y se convierte en capullo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ruta 2 (Sur), Ruta 24 (Puente Pepita), Ruta 25) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 2 (Sur), Ruta 24 (Puente Pepita), Ruta 25) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 2 (Sur)",
@@ -630,7 +630,7 @@
     "flavor_text": "Aunque tiene una coraza muy dura, el cuerpo del Pokémon es blando. Un ataque violento puede acabar con él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Ruta 24 (Puente Pepita), Ruta 25, Bosque Verde).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 24 (Puente Pepita), Ruta 25, Bosque Verde).",
       "locations": [
         {
           "area": "Ruta 24 (Puente Pepita)",
@@ -754,7 +754,7 @@
     "flavor_text": "Suele habitar bosques y praderas. Tiene un afilado y venenoso aguijón de unos 5 cm encima de la cabeza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ruta 2 (Sur), Ruta 24 (Puente Pepita), Ruta 25) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 2 (Sur), Ruta 24 (Puente Pepita), Ruta 25) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 2 (Sur)",
@@ -829,7 +829,7 @@
     "flavor_text": "Este Pokémon permanece inmóvil mientras desarrolla internamente su organismo. Es prácticamente incapaz de moverse solo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Ruta 24 (Puente Pepita), Ruta 25, Bosque Verde).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 24 (Puente Pepita), Ruta 25, Bosque Verde).",
       "locations": [
         {
           "area": "Ruta 24 (Puente Pepita)",
@@ -953,7 +953,7 @@
     "flavor_text": "A este Pokémon no le gusta luchar. Suele permanecer escondido en zonas de hierba alta. Se alimenta de pequeños insectos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) (ej: Ruta 12, Ruta 1, Ruta 2 (Sur)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 16 zonas (ej: Ruta 12, Ruta 1, Ruta 2 (Sur)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -1008,11 +1008,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1072,7 +1072,7 @@
     "flavor_text": "Tiene unas garras desarrolladas. Puede atrapar un Exeggcute y transportarlo desde una distancia de casi 100 km.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Ruta 13, Ruta 14, Ruta 15).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 13, Ruta 14, Ruta 15).",
       "locations": [
         {
           "area": "Ruta 13",
@@ -1087,11 +1087,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1204,7 +1204,7 @@
     "flavor_text": "Tiene unos largos y afilados colmillos que no dejan de crecer. Le resultan muy útiles para destruir cosas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 12 zona(s) (ej: Ruta 1, Ruta 2 (Sur), Ruta 4) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 12 zonas (ej: Ruta 1, Ruta 2 (Sur), Ruta 4) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 1",
@@ -1307,7 +1307,7 @@
     "flavor_text": "Cada pata trasera tiene tres dedos palmeados que le permiten nadar por los ríos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Ruta 16, Ruta 17 (Camino de Bicis), Ruta 18).",
+      "summary": "Salvaje en 7 zonas (ej: Ruta 16, Ruta 17 (Camino de Bicis), Ruta 18).",
       "locations": [
         {
           "area": "Ruta 16",
@@ -1386,7 +1386,7 @@
     "flavor_text": "Va siempre revoloteando de aquí para allá. Aunque frágil, puede ser un duro rival cuando usa Movimiento espejo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 17 zona(s) (ej: Ruta 3, Ruta 4, Ruta 9) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 17 zonas (ej: Ruta 3, Ruta 4, Ruta 9) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -1441,7 +1441,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1509,7 +1509,7 @@
     "flavor_text": "Gracias a sus espléndidas alas puede alcanzar una gran altura y volar durante un día entero sin tener que parar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) (ej: Ruta 17 (Camino de Bicis), Ruta 18, Ruta 23).",
+      "summary": "Salvaje en 11 zonas (ej: Ruta 17 (Camino de Bicis), Ruta 18, Ruta 23).",
       "locations": [
         {
           "area": "Ruta 17 (Camino de Bicis)",
@@ -1536,7 +1536,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1604,7 +1604,7 @@
     "flavor_text": "Es fácil encontrarlo en praderas y zonas similares. A este Pokémon le basta con sacar la lengua para detectar el peligro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Ruta 4, Ruta 8, Ruta 9) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 4, Ruta 8, Ruta 9) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 4",
@@ -1683,7 +1683,7 @@
     "flavor_text": "El dibujo que tiene en la panza aterroriza. Los rivales más débiles salen huyendo al verlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Ruta 23, Calle Victoria (P1), Calle Victoria (P2)).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 23, Calle Victoria (P1), Calle Victoria (P2)).",
       "locations": [
         {
           "area": "Ruta 23",
@@ -1750,7 +1750,7 @@
     "flavor_text": "Las bolsas de las mejillas están llenas de electricidad, que libera cuando se siente amenazado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Bosque Verde, Central de Energía, Centro Pokémon (Evento / Distribución)).",
+      "summary": "Salvaje en: Bosque Verde, Central de Energía.",
       "locations": [
         {
           "area": "Bosque Verde",
@@ -1761,8 +1761,8 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Centro Pokémon (Evento / Distribución)",
-          "method": "Colosseum Bonus Disc Jpn"
+          "area": "Centro Pokémon (Transferencia GameCube)",
+          "method": "Disco Bonus Colosseum (Japón)"
         }
       ],
       "badge_color": "emerald",
@@ -2107,6 +2107,10 @@
       "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♂ a cambio de Nidoran♀ (con el mote «Nidochan») (también obtenible mediante crianza).",
       "locations": [
         {
+          "area": "Ruta 5 (Caseta)",
+          "method": "Intercambio por Nidoran♂"
+        },
+        {
           "area": "Ruta 3",
           "method": "Hierba alta / Terreno"
         },
@@ -2117,14 +2121,6 @@
         {
           "area": "Zona Safari (Área 3 Oeste)",
           "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Vía Subterránea",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Ruta 5 (Caseta)",
-          "method": "Intercambio por Nidoran♂"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -2182,8 +2178,8 @@
       "summary": "Intercambio en la caseta de la Ruta 11: entrega un Nidorino a cambio de Nidorina (con el mote «Nina»).",
       "locations": [
         {
-          "area": "Ruta 11",
-          "method": "Npc Trade"
+          "area": "Ruta 11 (Caseta)",
+          "method": "Intercambio por Nidorino"
         },
         {
           "area": "Zona Safari (Centro)",
@@ -2192,10 +2188,6 @@
         {
           "area": "Zona Safari (Área 2 Norte)",
           "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Ruta 11 (Caseta)",
-          "method": "Intercambio por Nidorino"
         }
       ]
     },
@@ -2551,7 +2543,7 @@
     "flavor_text": "Cambia la orientación de las grandes orejas que tiene para oír mejor. Si se enfada, sus venenosos cuernos crecen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -2626,7 +2618,7 @@
     "flavor_text": "Se enfada con facilidad y es capaz de romper un diamante con el potente cuerpo que tiene.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)).",
+      "summary": "Salvaje en 4 zonas (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -3000,7 +2992,7 @@
     "flavor_text": "Es una de las mascotas preferidas de todo el mundo por el aspecto tan dulce que tiene. Pero no es fácil dar con él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Monte Moon (P1), Monte Moon (S2), Casino de Ciudad Azulona).",
+      "summary": "Salvaje en: Monte Moon (P1), Monte Moon (S2).",
       "locations": [
         {
           "area": "Monte Moon (P1)",
@@ -3012,7 +3004,7 @@
         },
         {
           "area": "Casino de Ciudad Azulona",
-          "method": "Regalo"
+          "method": "Premio del Casino"
         }
       ],
       "badge_color": "emerald",
@@ -3602,7 +3594,7 @@
     "flavor_text": "Cautiva con la mirada a su enemigo y hace que se quede profundamente dormido mientras entona una dulce melodía.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Ruta 3).",
+      "summary": "Salvaje en Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3",
@@ -3964,7 +3956,7 @@
     "flavor_text": "No tiene ojos. Se guía por las ondas ultrasónicas que emite. El eco le indica por dónde tiene que ir en la oscuridad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 27 zona(s) (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 27 zonas (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Islas Espuma (P1)",
@@ -4127,7 +4119,7 @@
     "flavor_text": "Se lanza sobre su presa con los afilados colmillos que tiene y puede chuparle hasta 300 cc de sangre de una vez.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 26 zona(s) (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)).",
+      "summary": "Salvaje en 26 zonas (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)).",
       "locations": [
         {
           "area": "Islas Espuma (P1)",
@@ -4282,7 +4274,7 @@
     "flavor_text": "Su nombre científico es \"Oddium Wanderus\". Dicen que usa las raíces para desplazarse. Llega a hacerse 300 m.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 13 zona(s) (ej: Ruta 12, Ruta 5, Ruta 6) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 13 zonas (ej: Ruta 12, Ruta 5, Ruta 6) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -4321,15 +4313,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4389,7 +4381,7 @@
     "flavor_text": "Libera un fétido olor por los pistilos. El fuerte hedor acaba con cualquier rival que se encuentre a 2 km de distancia.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) (ej: Ruta 12, Ruta 13, Ruta 14).",
+      "summary": "Salvaje en 8 zonas (ej: Ruta 12, Ruta 13, Ruta 14).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -4408,15 +4400,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4651,7 +4643,7 @@
     "flavor_text": "Lleva en el lomo dos setas parásitas llamadas tochukaso, que crecen con él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Monte Moon (P1), Monte Moon (S1), Monte Moon (S2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Monte Moon (P1), Monte Moon (S1), Monte Moon (S2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Moon (P1)",
@@ -4726,7 +4718,7 @@
     "flavor_text": "Libera esporas tóxicas a través de la seta que lo cubre. En China, las esporas se usan como remedios medicinales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
+      "summary": "Salvaje en 5 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -4797,7 +4789,7 @@
     "flavor_text": "Los ojos le funcionan como radar. Gracias a ellos puede moverse en la oscuridad y disparar potentes rayos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) (ej: Ruta 12, Ruta 13, Ruta 14) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 8 zonas (ej: Ruta 12, Ruta 13, Ruta 14) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -4824,11 +4816,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4884,7 +4876,7 @@
     "flavor_text": "Tiene alas cubiertas de un polvillo de escamas que esparce cada vez que las bate.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Zona Safari (Área 2 Norte), Zona Safari (Área 3 Oeste), Bosque Baya (Isla Terciaria)).",
+      "summary": "Salvaje en: Zona Safari (Área 2 Norte), Zona Safari (Área 3 Oeste), Bosque Baya (Isla Tera).",
       "locations": [
         {
           "area": "Zona Safari (Área 2 Norte)",
@@ -4895,7 +4887,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -4947,7 +4939,7 @@
     "flavor_text": "Este Pokémon se entierra a gran profundidad, pero como levanta tierra al cavar, es fácil localizarlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Diglett) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Diglett (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Diglett",
@@ -5006,7 +4998,7 @@
     "flavor_text": "En combate, cava la tierra, se esconde y sale de repente para golpear a su rival. Nunca se sabe por dónde puede aparecer.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Diglett).",
+      "summary": "Salvaje en Cueva Diglett.",
       "locations": [
         {
           "area": "Cueva Diglett",
@@ -5061,7 +5053,7 @@
     "flavor_text": "Durante el día se dedica a dormir, y de noche vigila su territorio. Tiene unos ojos muy sensibles a todo lo que brilla.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 13 zona(s) (ej: Ruta 5, Ruta 6, Ruta 7) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 13 zonas (ej: Ruta 5, Ruta 6, Ruta 7) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 5",
@@ -5088,11 +5080,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5168,7 +5160,7 @@
     "flavor_text": "Tiene un carácter muy fuerte. Cuando va a propinar un golpe y morder al rival, suele estirar y levantar la cola.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 9 zona(s) (ej: Camino Candente (Isla Prima), Playa Tesoro (Isla Prima), Cabo Extremo (Isla Seca)).",
+      "summary": "Salvaje en 9 zonas (ej: Camino Candente (Isla Prima), Playa Tesoro (Isla Prima), Cabo Extremo (Isla Secunda)).",
       "locations": [
         {
           "area": "Camino Candente (Isla Prima)",
@@ -5179,11 +5171,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5255,7 +5247,7 @@
     "flavor_text": "Padece continuamente dolores de cabeza. Cuando son muy fuertes, empieza a usar misteriosos poderes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 83 zona(s) (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 83 zonas (ej: Islas Espuma (P1), Islas Espuma (S1), Islas Espuma (S2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Islas Espuma (P1)",
@@ -5450,15 +5442,15 @@
           "method": "Supercaña"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Supercaña"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -5498,23 +5490,23 @@
           "method": "Supercaña"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Supercaña"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -5642,7 +5634,7 @@
     "flavor_text": "Las patas traseras palmípedas le permiten nadar. Es común verlo chapotear con estilo en lagos y otras zonas acuáticas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) (ej: Islas Espuma (S1), Islas Espuma (S2), Islas Espuma (S3)).",
+      "summary": "Salvaje en 11 zonas (ej: Islas Espuma (S1), Islas Espuma (S2), Islas Espuma (S3)).",
       "locations": [
         {
           "area": "Islas Espuma (S1)",
@@ -5677,15 +5669,15 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -5737,7 +5729,7 @@
     "flavor_text": "Es muy ligero y ágil, y también violento. Cuando se enfada, no hay quien controle el estado de furia en el que entra.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Túnel Roca (P1), Túnel Roca (S1), Ruta 3) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Ruta 3) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -5816,7 +5808,7 @@
     "flavor_text": "Siempre está tremendamente enfadado. Cuando se empeña en una presa, no hay distancia para él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Cueva Celeste (P1), Ruta 23, Calle Victoria (P2)).",
+      "summary": "Salvaje en: Cueva Celeste (P1), Ruta 23, Calle Victoria (P2).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -5879,7 +5871,7 @@
     "flavor_text": "Es muy agradable y leal. Para ahuyentar al enemigo, se pone a ladrar y a dar bocados.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Ruta 7, Ruta 8, Mansión Pokémon (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 7, Ruta 8, Mansión Pokémon (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 7",
@@ -6133,7 +6125,7 @@
     "flavor_text": "Tiene una piel extraordinaria, fina y húmeda, que deja entrever las vísceras que tiene dispuestas en espiral.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 28 zona(s) (ej: Ciudad Verde, Ciudad Verde, Ciudad Fucsia) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 28 zonas (ej: Ciudad Verde, Ciudad Verde, Ciudad Fucsia) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Verde",
@@ -6212,7 +6204,7 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Caña Buena"
         },
         {
@@ -6224,11 +6216,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Caña Buena"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Supercaña"
         },
         {
@@ -6300,7 +6292,7 @@
     "flavor_text": "Tiene unas extremidades inferiores muy desarrolladas. Aunque puede vivir en tierra, prefiere el medio acuático.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) (ej: Ciudad Verde, Ruta 6, Ruta 22).",
+      "summary": "Salvaje en 11 zonas (ej: Ciudad Verde, Ruta 6, Ruta 22).",
       "locations": [
         {
           "area": "Ciudad Verde",
@@ -6335,7 +6327,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Supercaña"
         },
         {
@@ -6594,7 +6586,7 @@
     "flavor_text": "Duerme 18 horas al día y mientras lo hace es capaz de usar una serie de poderes extrasensoriales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Ruta 24 (Puente Pepita), Ruta 25, Casino de Ciudad Azulona) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 24 (Puente Pepita), Ruta 25 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 24 (Puente Pepita)",
@@ -6606,7 +6598,7 @@
         },
         {
           "area": "Casino de Ciudad Azulona",
-          "method": "Regalo"
+          "method": "Premio del Casino"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -6661,7 +6653,7 @@
     "flavor_text": "Cuentan que una mañana, un niño que tenía poderes extrasensoriales, se despertó convertido en Kadabra.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
+      "summary": "Salvaje en: Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo).",
       "locations": [
         {
           "area": "Cueva Celeste (P2)",
@@ -6777,7 +6769,7 @@
     "flavor_text": "Es una masa de músculos y, aunque es pequeño, tiene fuerza de sobra para tomar en brazos a 100 personas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 9 zona(s) (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 9 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -6868,7 +6860,7 @@
     "flavor_text": "Tiene una complexión tan fuerte que nunca se cansa. Suele ayudar a la gente a cargar objetos pesados.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
+      "summary": "Salvaje en 8 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -7299,7 +7291,7 @@
     "flavor_text": "Tiene unos ojos transparentes como el cristal, que disparan misteriosos rayos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 29 zona(s) (ej: Ruta 12, Ruta 19 (Ruta Marítima), Ruta 20 (Ruta Marítima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 29 zonas (ej: Ruta 12, Ruta 19 (Ruta Marítima), Ruta 20 (Ruta Marítima)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -7370,7 +7362,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7470,7 +7462,7 @@
     "flavor_text": "Tiene 80 tentáculos que se mueven a su aire. Con ellos pica, envenena, y causa un dolor agudo e intenso.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 15 zona(s) (ej: Cueva Glaciada (Cascada), Camino Candente (Isla Prima), Playa Tesoro (Isla Prima)).",
+      "summary": "Salvaje en 15 zonas (ej: Cueva Glaciada (Cascada), Camino Candente (Isla Prima), Playa Tesoro (Isla Prima)).",
       "locations": [
         {
           "area": "Cueva Glaciada (Cascada)",
@@ -7485,7 +7477,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7581,7 +7573,7 @@
     "flavor_text": "Es fácil atraparlo por la forma redonda que tiene. Cuando hay batallas de bolas de nieve, la gente lo usa para lanzarlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 27 zona(s) (ej: Monte Moon (P1), Túnel Roca (P1), Túnel Roca (S1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 27 zonas (ej: Monte Moon (P1), Túnel Roca (P1), Túnel Roca (S1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Moon (P1)",
@@ -7744,7 +7736,7 @@
     "flavor_text": "Este Pokémon es un peligro. Suele bajar rodando las montañas a toda velocidad por los caminos reservados para el senderismo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 12 zona(s) (ej: Túnel Roca (S1), Cueva Celeste (P1), Cueva Celeste (P2)).",
+      "summary": "Salvaje en 12 zonas (ej: Túnel Roca (S1), Cueva Celeste (P1), Cueva Celeste (P2)).",
       "locations": [
         {
           "area": "Túnel Roca (S1)",
@@ -7900,7 +7892,7 @@
     "flavor_text": "Tiene un cuerpo ligero, pero unas patas tremendamente fuertes. Es capaz de destrozar un peñón de una patada.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Monte Ascuas (Exterior), Camino Candente (Isla Prima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Monte Ascuas (Exterior), Camino Candente (Isla Prima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Ascuas (Exterior)",
@@ -7963,7 +7955,7 @@
     "flavor_text": "Al galope puede alcanzar los 240 km por hora. Impresiona verlo con sus llameantes melenas, a la velocidad del rayo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Monte Ascuas (Exterior), Camino Candente (Isla Prima)).",
+      "summary": "Salvaje en: Monte Ascuas (Exterior), Camino Candente (Isla Prima).",
       "locations": [
         {
           "area": "Monte Ascuas (Exterior)",
@@ -8136,7 +8128,7 @@
     "flavor_text": "Está suspendido en el aire y no para de moverse. A través de las extremidades laterales dispara onda trueno.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Central de Energía) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Central de Energía (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Central de Energía",
@@ -8195,7 +8187,7 @@
     "flavor_text": "Lo constituye un grupo de Magnemite. Descarga potentes ondas magnéticas de alto voltaje.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -8268,10 +8260,6 @@
       "locations": [
         {
           "area": "Ciudad Carmín",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Ciudad Carmín",
           "method": "Intercambio por Spearow"
         },
         {
@@ -8325,7 +8313,7 @@
     "flavor_text": "Este Pokémon de dos cabezas es el resultado de una mutación. Cuando corre, puede alcanzar casi 100 km por hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ruta 16, Ruta 17 (Camino de Bicis), Ruta 18) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 16, Ruta 17 (Camino de Bicis), Ruta 18) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 16",
@@ -8459,8 +8447,12 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Ponyta a cambio de Seel (con el mote «Sailor») (también obtenible mediante crianza).",
+      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Ponyta a cambio de Seel (con el mote «Sailor») (también salvaje en Islas Espuma y Cueva Glaciada o mediante crianza).",
       "locations": [
+        {
+          "area": "Isla Canela (Laboratorio)",
+          "method": "Intercambio por Ponyta"
+        },
         {
           "area": "Islas Espuma (S1)",
           "method": "Hierba alta / Terreno"
@@ -8504,14 +8496,6 @@
         {
           "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Laboratorio de Canela",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Isla Canela (Laboratorio)",
-          "method": "Intercambio por Ponyta"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -8564,7 +8548,7 @@
     "flavor_text": "Está recubierto de un luminoso pelaje blanco. Este Pokémon aumenta su actividad cuando bajan las temperaturas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Islas Espuma (S3), Islas Espuma (S3), Islas Espuma (S4)).",
+      "summary": "Salvaje en 7 zonas (ej: Islas Espuma (S3), Islas Espuma (S3), Islas Espuma (S4)).",
       "locations": [
         {
           "area": "Islas Espuma (S3)",
@@ -8643,7 +8627,7 @@
     "flavor_text": "Nace de lodo alterado al filtrarse en el agua los rayos X reflejados por la Luna. Se alimenta de sustancias desagradables.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ciudad Azulona, Mansión Pokémon (P1), Mansión Pokémon (P2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ciudad Azulona, Mansión Pokémon (P1), Mansión Pokémon (P2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Azulona",
@@ -8775,7 +8759,7 @@
     "flavor_text": "Está metido en una concha sólida como el diamante, pero tiene un cuerpo muy blando.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Isla Canela, Ciudad Carmín, Pueblo Paleta) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Isla Canela, Ciudad Carmín, Pueblo Paleta) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Isla Canela",
@@ -9057,7 +9041,7 @@
     "flavor_text": "Está compuesto prácticamente de un gas ligero con el que es capaz de asfixiar al mayor de los Pokémon en dos segundos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 16 zonas (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Torre Pokémon (P3)",
@@ -9176,7 +9160,7 @@
     "flavor_text": "Cuando tienes la sensación de que te están observando, seguro que es porque Haunter está cerca.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)).",
+      "summary": "Salvaje en 16 zonas (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)).",
       "locations": [
         {
           "area": "Torre Pokémon (P3)",
@@ -9348,7 +9332,7 @@
     "flavor_text": "Suele vivir bajo tierra. Va buscando comida a medida que se va abriendo camino a 80 km por hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -9427,14 +9411,14 @@
     "flavor_text": "Desciende del legendario animal baku, del que se dice que comesueños. Tiene grandes habilidades hipnóticas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Ruta 11, Bosque Baya (Isla Terciaria)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 11, Bosque Baya (Isla Tera) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 11",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -9490,14 +9474,14 @@
     "flavor_text": "Lleva un péndulo en la mano. Una vez, hizo desaparecer a un niño al que había hipnotizado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Bosque Baya (Isla Terciaria), Bosque Baya (Isla Terciaria)).",
+      "summary": "Salvaje en: Bosque Baya (Isla Tera), Bosque Baya (Isla Tera).",
       "locations": [
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Encuentro estático"
         }
       ],
@@ -9549,7 +9533,7 @@
     "flavor_text": "Es fácil encontrarlo cerca del mar. Las largas pinzas que tiene vuelven a crecer si se las quitan de su sitio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) (ej: Islas Espuma (S3), Islas Espuma (S4), Ruta 12) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 16 zonas (ej: Islas Espuma (S3), Islas Espuma (S4), Ruta 12) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Islas Espuma (S3)",
@@ -9725,7 +9709,7 @@
     "flavor_text": "La procedencia de esta forma de vida no está muy clara. Dicen que usa chirrido y autodestrucción.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Ruta 10, Central de Energía) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 10, Central de Energía (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 10",
@@ -9790,8 +9774,12 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Raichu a cambio de Electrode (con el mote «Doris»).",
+      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Raichu a cambio de Electrode (con el mote «Doris») (también salvaje en Central de Energía y Cueva Celeste).",
       "locations": [
+        {
+          "area": "Isla Canela (Laboratorio)",
+          "method": "Intercambio por Raichu"
+        },
         {
           "area": "Cueva Celeste (P1)",
           "method": "Hierba alta / Terreno"
@@ -9807,14 +9795,6 @@
         {
           "area": "Central de Energía",
           "method": "Encuentro estático"
-        },
-        {
-          "area": "Laboratorio de Canela",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Isla Canela (Laboratorio)",
-          "method": "Intercambio por Raichu"
         }
       ]
     },
@@ -9863,7 +9843,7 @@
     "flavor_text": "Aunque los huevos que lo constituyen parecen de verdad, se ha visto que son como semillas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -9882,7 +9862,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -10117,7 +10097,7 @@
     "flavor_text": "Lleva puesto el cráneo de su madre. Cuando se siente solo se pone a gritar muy fuerte.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Torre Pokémon (P3), Torre Pokémon (P4), Torre Pokémon (P5)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Torre Pokémon (P3)",
@@ -10196,7 +10176,7 @@
     "flavor_text": "Es pequeño y siempre ha sido muy débil. Cuando empezó a usar huesos, se volvió más violento.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Calle Victoria (P1), Calle Victoria (P2), Calle Victoria (P3)).",
+      "summary": "Salvaje en 4 zonas (ej: Calle Victoria (P1), Calle Victoria (P2), Calle Victoria (P3)).",
       "locations": [
         {
           "area": "Calle Victoria (P1)",
@@ -10386,10 +10366,6 @@
       "summary": "Intercambio en la caseta de la Ruta 18: entrega un Golduck a cambio de Lickitung (con el mote «Marc») (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruta 18",
-          "method": "Npc Trade"
-        },
-        {
           "area": "Ruta 18 (Caseta)",
           "method": "Intercambio por Golduck"
         },
@@ -10444,7 +10420,7 @@
     "flavor_text": "Tiene forma de globo y es muy ligero. Está compuesto por gases tóxicos, y apesta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Ciudad Azulona, Mansión Pokémon (P1), Mansión Pokémon (P2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ciudad Azulona, Mansión Pokémon (P1), Mansión Pokémon (P2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Azulona",
@@ -10519,7 +10495,7 @@
     "flavor_text": "En ocasiones, puede mutar y originar dos Koffing pequeños idénticos que, al unirse, forman un Weezing.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Mansión Pokémon (P1), Mansión Pokémon (P2), Mansión Pokémon (P3)).",
+      "summary": "Salvaje en 4 zonas (ej: Mansión Pokémon (P1), Mansión Pokémon (P2), Mansión Pokémon (P3)).",
       "locations": [
         {
           "area": "Mansión Pokémon (P1)",
@@ -10586,7 +10562,7 @@
     "flavor_text": "Es muy fuerte, pero no especialmente listo. Es capaz de derribar rascacielos usando placaje varias veces.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Centro), Zona Safari (Área 2 Norte) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -10706,7 +10682,7 @@
     "flavor_text": "Pone varios huevos al día. Según parece son muy nutritivos y están riquísimos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Centro), Zona Safari (Área 2 Norte) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -10771,8 +10747,12 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Venonat a cambio de Tangela (con el mote «Tangeny») (también obtenible mediante crianza).",
+      "summary": "Intercambio en el Laboratorio de Isla Canela: entrega un Venonat a cambio de Tangela (con el mote «Tangeny») (también salvaje en Ruta 21 y Playa Tesoro o mediante crianza).",
       "locations": [
+        {
+          "area": "Isla Canela (Laboratorio)",
+          "method": "Intercambio por Venonat"
+        },
         {
           "area": "Ruta 21 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
@@ -10780,14 +10760,6 @@
         {
           "area": "Playa Tesoro (Isla Prima)",
           "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Laboratorio de Canela",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Isla Canela (Laboratorio)",
-          "method": "Intercambio por Venonat"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -10840,7 +10812,7 @@
     "flavor_text": "La hembra cría a sus pequeños en la bolsa que tiene en la panza. Es muy buena usando puño cometa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Zona Safari (Área 1 Este), Zona Safari (Área 3 Oeste)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Área 1 Este), Zona Safari (Área 3 Oeste) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Área 1 Este)",
@@ -10903,7 +10875,7 @@
     "flavor_text": "Tiene enrollada la cola y la usa para mantener el equilibrio. En ocasiones echa tinta por la boca.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 64 zona(s) (ej: Islas Espuma (S3), Islas Espuma (S3), Islas Espuma (S3)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 64 zonas (ej: Islas Espuma (S3), Islas Espuma (S3), Islas Espuma (S3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Islas Espuma (S3)",
@@ -11066,11 +11038,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Caña Buena"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -11214,7 +11186,7 @@
     "flavor_text": "Las afiladas púas que le recubren el cuerpo se le erizan y pueden causar el debilitamiento con sólo tocarlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 20 zona(s) (ej: Ruta 19 (Ruta Marítima), Ruta 20 (Ruta Marítima), Isla Canela).",
+      "summary": "Salvaje en 20 zonas (ej: Ruta 19 (Ruta Marítima), Ruta 20 (Ruta Marítima), Isla Canela).",
       "locations": [
         {
           "area": "Ruta 19 (Ruta Marítima)",
@@ -11249,7 +11221,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -11345,7 +11317,7 @@
     "flavor_text": "Las aletas dorsales están tan desarrolladas que actúan como músculos. Puede nadar a casi 10 km por hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 23 zona(s) (ej: Ciudad Verde, Ciudad Fucsia, Ciudad Fucsia) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 23 zonas (ej: Ciudad Verde, Ciudad Fucsia, Ciudad Fucsia) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Verde",
@@ -11416,11 +11388,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Caña Buena"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -11428,7 +11400,7 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Caña Buena"
         },
         {
@@ -11492,7 +11464,7 @@
     "flavor_text": "El cuerno que tiene en la cabeza está tan afilado como un taladro. Suele usarlo para horadar rocas y construir su nido.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) (ej: Ciudad Fucsia, Zona Safari (Centro), Zona Safari (Área 1 Este)).",
+      "summary": "Salvaje en 6 zonas (ej: Ciudad Fucsia, Zona Safari (Centro), Zona Safari (Área 1 Este)).",
       "locations": [
         {
           "area": "Ciudad Fucsia",
@@ -11515,7 +11487,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Supercaña"
         }
       ],
@@ -11828,10 +11800,6 @@
       "summary": "Intercambio en la caseta de la Ruta 2: entrega un Abra a cambio de Mr. Mime (con el mote «Mimien») (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruta 2 (Norte)",
-          "method": "Npc Trade"
-        },
-        {
           "area": "Ruta 2 (Caseta)",
           "method": "Intercambio por Abra"
         },
@@ -11886,7 +11854,7 @@
     "flavor_text": "Destroza a su presa con las guadañas que tiene. No es común que use las alas para volar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Casino de Ciudad Azulona) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Centro), Zona Safari (Área 1 Este) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -11898,7 +11866,7 @@
         },
         {
           "area": "Casino de Ciudad Azulona",
-          "method": "Regalo"
+          "method": "Premio del Casino"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -11959,10 +11927,6 @@
       "locations": [
         {
           "area": "Ciudad Celeste",
-          "method": "Npc Trade"
-        },
-        {
-          "area": "Ciudad Celeste",
           "method": "Intercambio por Poliwhirl"
         },
         {
@@ -12016,7 +11980,7 @@
     "flavor_text": "Le encanta alimentarse de alta tensión. A veces, aparece cerca de centrales eléctricas y zonas similares.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Central de Energía).",
+      "summary": "Salvaje en Central de Energía.",
       "locations": [
         {
           "area": "Central de Energía",
@@ -12189,7 +12153,7 @@
     "flavor_text": "Cuando va a utilizar placaje se azota repetidas veces con las tres colas que tiene.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Zona Safari (Área 2 Norte), Zona Safari (Área 3 Oeste)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Área 2 Norte), Zona Safari (Área 3 Oeste) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Área 2 Norte)",
@@ -12252,17 +12216,17 @@
     "flavor_text": "No es precisamente rápido ni fuerte. Es el Pokémon más debilucho y simplón de todos los que hay.",
     "obtaining_info": {
       "type": "gift",
-      "badge_label": "Comprado",
+      "badge_label": "Comprado / Salvaje",
       "badge_color": "blue",
-      "summary": "Comprado al vendedor ambulante en el Centro Pokémon de la Ruta 4 por 500₽ (también obtenible pescando o mediante crianza).",
+      "summary": "Comprado al vendedor ambulante en el Centro Pokémon de la Ruta 4 por 500₽, o salvaje pescando en cualquier masa de agua de Kanto y las Islas Sétima con Caña Vieja o Caña Buena (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 4 (Centro Pokémon)",
           "method": "Comprado por 500₽"
         },
         {
-          "area": "Ruta 6 / 10 / 11 / 12",
-          "method": "Pesca con Caña Vieja o Surf"
+          "area": "Cualquier masa de agua (Kanto e Islas Sétima)",
+          "method": "Pesca con Caña Vieja o Buena"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -12315,7 +12279,7 @@
     "flavor_text": "Es exageradamente agresivo. Lanza hiperrayo por la boca para achicharrar a su rival.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 44 zona(s) (ej: Islas Espuma (S3), Islas Espuma (S4), Ruta 12).",
+      "summary": "Salvaje en 44 zonas (ej: Islas Espuma (S3), Islas Espuma (S4), Ruta 12).",
       "locations": [
         {
           "area": "Islas Espuma (S3)",
@@ -12414,7 +12378,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Bosque Baya (Isla Terciaria)",
+          "area": "Bosque Baya (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -12434,11 +12398,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Cabo Extremo (Isla Seca)",
+          "area": "Cabo Extremo (Isla Secunda)",
           "method": "Supercaña"
         },
         {
-          "area": "Puente Unión (Isla Terciaria)",
+          "area": "Puente Unión (Isla Tera)",
           "method": "Supercaña"
         },
         {
@@ -12605,7 +12569,7 @@
     "flavor_text": "Tiene la capacidad de reorganizar su estructura celular para convertirse en otras formas de vida.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Ruta 13, Ruta 14, Ruta 15).",
+      "summary": "Salvaje en 7 zonas (ej: Ruta 13, Ruta 14, Ruta 15).",
       "locations": [
         {
           "area": "Ruta 13",
@@ -13882,7 +13846,7 @@
     "flavor_text": "Las crías pueden medir más de 2 m y crecen más mudando muchas veces la piel.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -13902,7 +13866,7 @@
         },
         {
           "area": "Casino de Ciudad Azulona",
-          "method": "Regalo"
+          "method": "Premio del Casino"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -13957,7 +13921,7 @@
     "flavor_text": "Dicen que habita ríos y mares. Aunque no tiene alas, a veces se le ha visto volar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)).",
+      "summary": "Salvaje en 4 zonas (ej: Zona Safari (Centro), Zona Safari (Área 1 Este), Zona Safari (Área 2 Norte)).",
       "locations": [
         {
           "area": "Zona Safari (Centro)",
@@ -14710,7 +14674,7 @@
     "flavor_text": "Se apoya sobre la cola para ver a mucha distancia. Si divisa a un enemigo, dará la alarma a gritos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) (ej: Prado Isla Quinta, Vía Acuática (Isla Seis), Entrada al Cañón (Isla Sétima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Prado Isla Quinta, Vía Acuática (Isla Seis), Entrada al Cañón (Isla Sétima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Prado Isla Quinta",
@@ -14950,7 +14914,7 @@
     "flavor_text": "Cuando llega el frío, se reúnen muchos Ledyba de todas partes para darse calor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Bosque Recinto (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Bosque Recinto (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Recinto (Isla Seis)",
@@ -15066,7 +15030,7 @@
     "flavor_text": "Teje su telaraña con hilo fino pero resistente. Espera pacientemente a que caiga su presa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Bosque Recinto (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Bosque Recinto (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Recinto (Isla Seis)",
@@ -15648,7 +15612,7 @@
     "flavor_text": "Normalmente busca comida por el suelo. En raras ocasiones, salta a las ramas para picotear brotes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Valle Ruinas (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Valle Ruinas (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Ruinas (Isla Seis)",
@@ -15764,7 +15728,7 @@
     "flavor_text": "Su lana crece continuamente. En verano la pierde toda, pero le vuelve a salir en una semana.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -16420,7 +16384,7 @@
     "flavor_text": "Su cuerpo es tan ligero que debe agarrarse bien al suelo con las patas para no irse con el viento.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) (ej: Vía Ágata (Isla Quinta), Laberinto de Agua (Isla Quinta), Prado Isla Quinta) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Vía Ágata (Isla Quinta), Laberinto de Agua (Isla Quinta), Prado Isla Quinta) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Vía Ágata (Isla Quinta)",
@@ -16617,7 +16581,7 @@
     "flavor_text": "Vive en lo alto de los árboles. Cuando salta de rama en rama, usa la cola para equilibrarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -16880,7 +16844,7 @@
     "flavor_text": "Sus grandes ojos pueden girar 360 grados. Mira en todas direcciones en busca de insectos como presa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Valle Ruinas (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Valle Ruinas (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Ruinas (Isla Seis)",
@@ -16939,7 +16903,7 @@
     "flavor_text": "Cuando camina por el suelo, se envuelve en una película suave y venenosa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Cueva Glaciada (Entrada), Valle Ruinas (Isla Seis), Valle Ruinas (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Glaciada (Entrada), Valle Ruinas (Isla Seis), Valle Ruinas (Isla Seis)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Glaciada (Entrada)",
@@ -17181,7 +17145,7 @@
     "flavor_text": "Dicen que al ser perseguido, atrae al atacante hacia los caminos de la oscura montaña, donde se perderá.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 11 zona(s) (ej: Cueva Perdida (Sala 1), Cueva Perdida (Sala 2), Cueva Perdida (Sala 3)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 11 zonas (ej: Cueva Perdida (Sala 1), Cueva Perdida (Sala 2), Cueva Perdida (Sala 3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Perdida (Sala 1)",
@@ -17502,7 +17466,7 @@
     "flavor_text": "Su cuerpo fino y plano aparece siempre en los muros. Su forma parece tener algún significado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en las 7 Cámaras Sete (Ruinas Sete, Isla Sétima) tras resolver el acertijo de la Llave Sete con Fuerza.",
+      "summary": "Salvaje en 7 zonas (ej: Cámara Anémuna (Ruinas Sete), Cámara Tulipdos (Ruinas Sete), Cámara Trisante (Ruinas Sete)).",
       "locations": [
         {
           "area": "Cámara Anémuna (Ruinas Sete)",
@@ -17521,11 +17485,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Hibinca (Ruinas Sete)",
+          "area": "Cámara Seiris (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cámara Seiris (Ruinas Sete)",
+          "area": "Cámara Hibinca (Ruinas Sete)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -17581,7 +17545,7 @@
     "flavor_text": "Para mantener oculta la negra cola que tiene, vive en silencio en la oscuridad. Nunca ataca primero.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (S1 - Mewtwo)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -17711,7 +17675,7 @@
     "flavor_text": "Se cuelga y espera a los insectos que pasen cerca. No suele moverse mucho por su cuenta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -17827,10 +17791,10 @@
     "flavor_text": "Si se siente amenazado, escapa cavando con la cola. Puede flotar ligeramente usando las alas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Puerto Terciario (Isla Terciaria)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Puerto Tera (Isla Tera) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Puerto Terciario (Isla Terciaria)",
+          "area": "Puerto Tera (Isla Tera)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -18214,7 +18178,7 @@
     "flavor_text": "Las pequeñas púas que cubren su cuerpo eran escamas. Inyectan una toxina que debilita.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 9 zona(s) (ej: Vía Ágata (Isla Quinta), Laberinto de Agua (Isla Quinta), Prado Isla Quinta) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 9 zonas (ej: Vía Ágata (Isla Quinta), Laberinto de Agua (Isla Quinta), Prado Isla Quinta) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Vía Ágata (Isla Quinta)",
@@ -18458,7 +18422,7 @@
     "flavor_text": "Almacena bayas dentro del caparazón. Para evitar ataques, se esconde inmóvil bajo las rocas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -18517,7 +18481,7 @@
     "flavor_text": "Suele ser dócil, pero si se le molesta mientras succiona miel, perseguirá con su cuerno al intruso.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Bosque Recinto (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Bosque Recinto (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Recinto (Isla Seis)",
@@ -18635,7 +18599,7 @@
     "flavor_text": "Antes de que la comida escasee en invierno, tiene por costumbre ocultar comida en lugares secretos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -18751,7 +18715,7 @@
     "flavor_text": "Asiduo a las zonas volcánicas, se desliza lentamente en busca de lugares calientes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) (ej: Monte Ascuas (Sótano 1), Monte Ascuas (Sótano 2), Monte Ascuas (Sótano 3)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Monte Ascuas (Sótano 1), Monte Ascuas (Sótano 2), Monte Ascuas (Sótano 3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Ascuas (Sótano 1)",
@@ -18822,7 +18786,7 @@
     "flavor_text": "En ocasiones, lanza por la resbaladiza coraza que tiene intensas llamaradas que recorren todo su cuerpo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Monte Ascuas (Sótano 3)).",
+      "summary": "Salvaje en Monte Ascuas (Sótano 3).",
       "locations": [
         {
           "area": "Monte Ascuas (Sótano 3)",
@@ -18877,7 +18841,7 @@
     "flavor_text": "Si percibe un aroma tentador, se tira de cabeza para encontrar el origen de dicho olor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Cueva Glaciada (P1), Cueva Glaciada (S1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Cueva Glaciada (P1), Cueva Glaciada (S1) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Glaciada (P1)",
@@ -19170,7 +19134,7 @@
     "flavor_text": "Anida en el borde de escarpados acantilados. Se pasa todo el día llevando comida a sus polluelos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Cueva Glaciada (P1), Cueva Glaciada (S1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Cueva Glaciada (P1), Cueva Glaciada (S1) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Glaciada (P1)",
@@ -19292,7 +19256,7 @@
     "flavor_text": "Después de anidar en zarzas, las alas de sus polluelos crecen fortalecidas por los rasguños.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cañón Sétima (Isla Sétima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cañón Sétima (Isla Sétima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cañón Sétima (Isla Sétima)",
@@ -19351,7 +19315,7 @@
     "flavor_text": "Para arrinconar a su presa, comprueban sus posiciones con ladridos que sólo ellos entienden.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -19628,7 +19592,7 @@
     "flavor_text": "Como muestra de afecto, da golpes con la trompa. Aunque es tan fuerte que te mandará lejos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) (ej: Entrada al Cañón (Isla Sétima), Cañón Sétima (Isla Sétima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Entrada al Cañón (Isla Sétima), Cañón Sétima (Isla Sétima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Entrada al Cañón (Isla Sétima)",
@@ -19873,7 +19837,7 @@
     "flavor_text": "Todo aquél que se quede mirando su cornamenta, perderá el control y el equilibrio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -19932,7 +19896,7 @@
     "flavor_text": "Cuando llega a adulto, suele dejar que sus camaradas dejen sus huellas sobre el lomo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cueva Cambiante (Isla Seis)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Cambiante (Isla Seis) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Cambiante (Isla Seis)",
@@ -20563,7 +20527,7 @@
     "flavor_text": "Nace muy profundo en el suelo, y no podrá salir hasta que se haya comido la tierra que le rodea.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Cañón Sétima (Isla Sétima)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cañón Sétima (Isla Sétima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cañón Sétima (Isla Sétima)",
@@ -20845,16 +20809,16 @@
     "cry_url": "/media/pokemon/cries/251.ogg",
     "flavor_text": "Dicen que cuando Celebi se interna en un bosque, deja tras de sí un huevo traído del futuro.",
     "obtaining_info": {
-      "type": "wild",
-      "summary": "Salvaje en 1 zona(s) (ej: Centro Pokémon (Evento / Distribución)).",
+      "type": "mythical",
+      "badge_label": "Mítico / Disco Bonus",
+      "badge_color": "pink",
+      "summary": "Pokémon singular inaccesible de forma salvaje. Obtenible mediante transferencia con el Disco Bonus de Pokémon Colosseum (Japón) mediante cable GameCube-GBA (o distribución oficial de evento).",
       "locations": [
         {
-          "area": "Centro Pokémon (Evento / Distribución)",
-          "method": "Colosseum Bonus Disc Jpn"
+          "area": "Centro Pokémon (Transferencia GameCube)",
+          "method": "Disco Bonus Colosseum (Japón)"
         }
-      ],
-      "badge_color": "emerald",
-      "badge_label": "Salvaje"
+      ]
     },
     "evolution_stone": null,
     "game_data": {

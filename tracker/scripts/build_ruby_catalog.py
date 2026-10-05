@@ -806,8 +806,20 @@ def build_catalogs():
         elif nat_id in INGAME_TRADES_RUBY and not unique_locs:
             obt_info = INGAME_TRADES_RUBY[nat_id]
         elif unique_locs:
-            areas_str = ", ".join([l['area'] for l in unique_locs[:3]])
-            summary = f"Salvaje en {len(unique_locs)} zona(s) de Hoenn (ej: {areas_str})."
+            true_wild_locs = [l for l in unique_locs if 'colosseum' not in l.get('method', '').lower()]
+            if not true_wild_locs:
+                true_wild_locs = unique_locs
+
+            num_wild = len(true_wild_locs)
+            if num_wild == 1:
+                summary = f"Salvaje en {true_wild_locs[0]['area']}."
+            elif 2 <= num_wild <= 3:
+                areas_str = ", ".join([l['area'] for l in true_wild_locs])
+                summary = f"Salvaje en: {areas_str}."
+            else:
+                areas_str = ", ".join([l['area'] for l in true_wild_locs[:3]])
+                summary = f"Salvaje en {num_wild} zonas (ej: {areas_str})."
+
             obt_info = {
                 'type': 'wild',
                 'summary': summary,

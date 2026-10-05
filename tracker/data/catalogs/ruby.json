@@ -741,7 +741,7 @@
     "flavor_text": "La primera reacción que Poochyena tiene al ver algo moverse es darle un mordisco. Este Pokémon persigue a su presa hasta que cae agotada. Aunque, a veces, sale huyendo si su presa le responde con un ataque.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Ruta 101, Ruta 102, Ruta 103).",
+      "summary": "Salvaje en: Ruta 101, Ruta 102, Ruta 103.",
       "locations": [
         {
           "area": "Ruta 101",
@@ -901,7 +901,7 @@
     "flavor_text": "Zigzagoon está todo el día dando vueltas de aquí para allá. Es un Pokémon muy inquieto. Se interesa por todo lo que se encuentra en su camino.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 13 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102).",
+      "summary": "Salvaje en 13 zonas (ej: Bosque Petalia, Ruta 101, Ruta 102).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -1024,7 +1024,7 @@
     "flavor_text": "Linoone siempre corre todo lo rápido que puede y sólo en línea recta. Si encuentra un obstáculo en el camino, se moverá hacia la derecha para esquivarlo. Correr bien por caminos tortuosos es todo un reto para él.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Ruta 118, Ruta 119, Ruta 120).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 118, Ruta 119, Ruta 120).",
       "locations": [
         {
           "area": "Ruta 118",
@@ -1122,7 +1122,7 @@
     "flavor_text": "Wurmple usa las púas del lomo para raspar los troncos de los árboles, quitarles la corteza y beber la savia que emanan. Este Pokémon tiene unas ventosas rematándole los pies, con las que se adhiere al cristal sin resbalarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 101, Ruta 102).",
+      "summary": "Salvaje en 4 zonas (ej: Bosque Petalia, Ruta 101, Ruta 102).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -1209,7 +1209,7 @@
     "flavor_text": "Silcoon usa la seda que produce para atarse a la rama de un árbol y sujetarse bien. Y se queda ahí colgado a la espera de su evolución, asomado por un agujero del capullo de seda.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en Bosque Petalia.",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -1368,7 +1368,7 @@
     "flavor_text": "Cascoon forma el capullo que lo protege enrollándose por completo en la seda que libera por la boca. Cuando está totalmente recubierto, se prepara para evolucionar en el interior del capullo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en Bosque Petalia.",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -1796,7 +1796,7 @@
     "flavor_text": "Seedot se queda enganchado a las ramas de los árboles por el extremo que tiene en la cabeza. Mientras está ahí colgado, aprovecha para tomar toda la humedad del árbol. Cuanta más agua bebe, más lustroso se le ve.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 102, Ruta 114).",
+      "summary": "Salvaje en: Ruta 102, Ruta 114.",
       "locations": [
         {
           "area": "Ruta 102",
@@ -1876,7 +1876,7 @@
     "flavor_text": "Nuzleaf habita bosques muy poblados. Y, en ocasiones, se atreve a salir para asustar a la gente. A este Pokémon no le gusta nada que le pellizquen la nariz.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 114).",
+      "summary": "Salvaje en Ruta 114.",
       "locations": [
         {
           "area": "Ruta 114",
@@ -2056,7 +2056,7 @@
     "flavor_text": "Taillow se mantiene firme ante sus rivales, sean lo fuertes que sean. Este valiente Pokémon seguirá mostrándose desafiante, aunque pierda en combate. Además, si se enfada, se pondrá a gritar con energía.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Bosque Petalia, Ruta 104, Ruta 115).",
+      "summary": "Salvaje en 4 zonas (ej: Bosque Petalia, Ruta 104, Ruta 115).",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -2143,7 +2143,7 @@
     "flavor_text": "Swellow vuela muy alto dibujando elegantes arcos en el cielo. Este Pokémon se sumerge en el agua con rapidez y eficacia en cuanto detecta una presa. Con las garras, atrapa a la desdichada víctima y no la deja huir.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 115).",
+      "summary": "Salvaje en Ruta 115.",
       "locations": [
         {
           "area": "Ruta 115",
@@ -2225,7 +2225,7 @@
     "flavor_text": "Wingull tiene la costumbre de llevar a su presa y objetos de valor en el pico, y esconderlos en distintos sitios. Este Pokémon vuela dejándose llevar por las corrientes de aire como si fuera patinando por el cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 39 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
+      "summary": "Salvaje en 39 zonas (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -2453,7 +2453,7 @@
     "flavor_text": "Pelipper vuela transportando pequeños huevos y Pokémon dentro del descomunal pico que tiene. Este Pokémon construye su nido en escarpados acantilados frente al mar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 31 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
+      "summary": "Salvaje en 31 zonas (ej: Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf), Ciudad Algaria (Pesca / Surf)).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -2656,7 +2656,7 @@
     "flavor_text": "Ralts percibe las sensaciones de la gente por los colmillos que tiene encima y detrás de la cabeza. No es común que este Pokémon aparezca en público, pero cuando lo hace, se acerca si ve buena disposición en la gente.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 102).",
+      "summary": "Salvaje en Ruta 102.",
       "locations": [
         {
           "area": "Ruta 102",
@@ -2888,7 +2888,7 @@
     "flavor_text": "Surskit segrega un aceite por la punta de las patas que le permite caminar sobre el agua como si fuera patinando. Este Pokémon se alimenta de microorganismos en charcas y lagos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 9 zona(s) de Hoenn (ej: Ruta 102, Ruta 102, Ruta 111 (Desierto)).",
+      "summary": "Salvaje en 9 zonas (ej: Ruta 102, Ruta 102, Ruta 111 (Desierto)).",
       "locations": [
         {
           "area": "Ruta 102",
@@ -3074,7 +3074,7 @@
     "flavor_text": "Los Shroomish viven en zonas húmedas en la profunda oscuridad del bosque. Suelen quedarse tranquilamente bajo las hojas caídas. Se alimentan del abono que éstas generan al empezar a pudrirse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en Bosque Petalia.",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -3228,7 +3228,7 @@
     "flavor_text": "Slakoth se pasa más de veinte horas al día tumbado. Como se mueve tan poco, necesita muy poca comida. De hecho, la única toma que hace al día la componen tan solo tres hojas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Bosque Petalia).",
+      "summary": "Salvaje en Bosque Petalia.",
       "locations": [
         {
           "area": "Bosque Petalia",
@@ -3457,7 +3457,7 @@
     "flavor_text": "Abra duerme 18 horas al día, pero puede detectar a cualquier enemigo que se le acerque mientras duerme. En una situación así, usa teletransporte para protegerse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (Sótano 2)).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (Sótano 2)).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -3698,7 +3698,7 @@
     "flavor_text": "Nincada vive bajo tierra en la más absoluta oscuridad durante años. Este Pokémon absorbe nutrientes de las raíces de los árboles y permanece inmóvil a la espera de la evolución.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 116).",
+      "summary": "Salvaje en Ruta 116.",
       "locations": [
         {
           "area": "Ruta 116",
@@ -3927,7 +3927,7 @@
     "flavor_text": "Normalmente, Whismur tiene una voz tenue, casi inaudible, aunque se preste atención. No obstante, si este Pokémon siente que el peligro acecha, puede ponerse a chillar con un volumen ensordecedor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Túnel Férrfundido, Calle Victoria (P1), Ruta 116).",
+      "summary": "Salvaje en: Túnel Férrfundido, Calle Victoria (P1), Ruta 116.",
       "locations": [
         {
           "area": "Túnel Férrfundido",
@@ -4011,7 +4011,7 @@
     "flavor_text": "Los bramidos de Loudred pueden echar abajo una casa reforzada con vigas de madera. Este Pokémon usa el vozarrón que tiene para castigar a sus rivales. Las orejas redondas le sirven de altavoces.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Calle Victoria (P1)).",
+      "summary": "Salvaje en Calle Victoria (P1).",
       "locations": [
         {
           "area": "Calle Victoria (P1)",
@@ -4172,7 +4172,7 @@
     "flavor_text": "Makuhita es tenaz. Da igual las veces que le venzan; volverá a ponerse en pie y a atacar. De hecho, cada vez que se recupera, acumula más energía para poder evolucionar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior)).",
+      "summary": "Salvaje en 5 zonas (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior)).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -4263,7 +4263,7 @@
     "flavor_text": "Hariyama practica los empujones que da estirando los brazos allá por donde va. Este Pokémon puede partir por la mitad un poste de teléfono de un enérgico golpe con los brazos estirados y las manos abiertas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (P1), Calle Victoria (S1)).",
+      "summary": "Salvaje en: Calle Victoria (P1), Calle Victoria (S1).",
       "locations": [
         {
           "area": "Calle Victoria (P1)",
@@ -4349,7 +4349,7 @@
     "flavor_text": "Goldeen es un bello Pokémon que mueve con elegancia las aletas en el agua. Con todo, no hay que bajar la guardia, en cualquier momento puede embestirte con el cuerno.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 28 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Cascada Meteoro (Entrada)).",
+      "summary": "Salvaje en 28 zonas (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Cascada Meteoro (Entrada)).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -4532,7 +4532,7 @@
     "flavor_text": "En otoño, se ven ejemplares de Seaking macho danzando en las riberas de los ríos para cortejar a las hembras. En esta época, la coloración de este Pokémon alcanza sus niveles máximos de belleza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste)).",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -4618,7 +4618,7 @@
     "flavor_text": "Magikarp es el triste ejemplo de un Pokémon capaz únicamente de saltar y salpicar. Esta conducta llevó a científicos a estudiarlo en profundidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 99 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
+      "summary": "Salvaje en 99 zonas (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -5086,7 +5086,7 @@
     "flavor_text": "Cuando Magikarp evoluciona y se convierte en Gyarados, sufre un cambio estructural en las células del cerebro. Dicen que esa transformación es la causa de la naturaleza violenta y salvaje de este Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Arrecípolis (Pesca / Surf)).",
+      "summary": "Salvaje en Ciudad Arrecípolis (Pesca / Surf).",
       "locations": [
         {
           "area": "Ciudad Arrecípolis (Pesca / Surf)",
@@ -5260,7 +5260,7 @@
     "flavor_text": "La cola de Marill contiene un aceite que hace las veces de chaleco salvavidas. Si ves una moviéndose en el agua, seguro que debajo está Marill medio sumergido buscando plantas acuáticas para comer.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ruta 102, Ruta 111 (Desierto)).",
+      "summary": "Salvaje en 8 zonas (ej: Ciudad Petalia (Pesca / Surf), Ruta 102, Ruta 111 (Desierto)).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -5449,7 +5449,7 @@
     "flavor_text": "Cuanto más larga es la vida de Geodude, mayor es el desgaste y la erosión que sufre, y más redondeada la forma que va adquiriendo. Sin embargo, el corazón permanece siempre duro, rocoso y tosco.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Calle Victoria (S1)).",
+      "summary": "Salvaje en 6 zonas (ej: Cueva Granito (P1), Cueva Granito (Sótano 2), Calle Victoria (S1)).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -5544,7 +5544,7 @@
     "flavor_text": "Graveler crece alimentándose a base de piedras. Y, según parece, las prefiere cubiertas de musgo. Cada día se abre camino comiéndose toneladas de rocas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Calle Victoria (S1)).",
+      "summary": "Salvaje en Calle Victoria (S1).",
       "locations": [
         {
           "area": "Calle Victoria (S1)",
@@ -5703,7 +5703,7 @@
     "flavor_text": "Nosepass siempre está con el pico magnético que tiene orientado hacia el norte. Si se encuentra con otro ejemplar de su especie, no puede mirarle de frente porque sus polos magnéticos se repelen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Granito (Sótano 2)).",
+      "summary": "Salvaje en Cueva Granito (Sótano 2).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 2)",
@@ -5778,7 +5778,7 @@
     "flavor_text": "A Skitty le encanta mover cosas e ir detrás de ellas. Es de todos sabido que se dedica a ir detrás de su propia cola y que, al final, acaba mareándose.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 116, Ciudad Arborada).",
+      "summary": "Salvaje en: Ruta 116, Ciudad Arborada.",
       "locations": [
         {
           "area": "Ruta 116",
@@ -5951,7 +5951,7 @@
     "flavor_text": "Durante el día, Zubat permanece inmóvil y a oscuras. Si este Pokémon pasara mucho tiempo expuesto al sol, correría el peligro de sufrir quemaduras.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 20 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cueva Granito (P1)).",
+      "summary": "Salvaje en 20 zonas (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cueva Granito (P1)).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -6102,7 +6102,7 @@
     "flavor_text": "A Golbat le encanta chuparle la sangre a los seres vivos. Este Pokémon es más activo en la oscuridad de la noche. Es al caer la noche cuando sale a revolotear y a buscar sangre fresca.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 25 zona(s) de Hoenn (ej: Cascada Meteoro (Interior), Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1)).",
+      "summary": "Salvaje en 25 zonas (ej: Cascada Meteoro (Interior), Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1)).",
       "locations": [
         {
           "area": "Cascada Meteoro (Interior)",
@@ -6357,7 +6357,7 @@
     "flavor_text": "Tentacool está compuesto en su mayor parte por agua. Si lo sacas del mar, se secará y quedará acartonado. Si este Pokémon se deshidrata, hay que ponerlo inmediatamente de vuelta en el mar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 98 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
+      "summary": "Salvaje en 98 zonas (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf)).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -6820,7 +6820,7 @@
     "flavor_text": "Tentacruel tiene unas enormes esferas rojas en la cabeza, que brillan antes de lanzar una descarga ultrasónica a lo que le rodea. Este estallido crea unas olas tremendas a su alrededor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Naufragio (Interior / Surf), Naufragio (Interior / Surf)).",
+      "summary": "Salvaje en: Naufragio (Interior / Surf), Naufragio (Interior / Surf).",
       "locations": [
         {
           "area": "Naufragio (Interior / Surf)",
@@ -6985,7 +6985,7 @@
     "flavor_text": "Las descomunales fauces de acero de Mawile son la evolución de unos cuernos que tuvo en su día. Con su expresión dócil puede engañar al enemigo y hacer que baje la guardia para sorprenderle con las fauces.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva del Origen (P1)).",
+      "summary": "Salvaje en 10 zonas (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva del Origen (P1)).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 1)",
@@ -7097,7 +7097,7 @@
     "flavor_text": "Este Pokémon tiene el cuerpo de acero. Para mantenerlo, se alimenta del hierro que saca de las montañas. A veces, causa verdaderos problemas, pues se come puentes y vías de tren.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva Granito (P1 Sala Interior)).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Granito (Sótano 1), Cueva Granito (Sótano 2), Cueva Granito (P1 Sala Interior)).",
       "locations": [
         {
           "area": "Cueva Granito (Sótano 1)",
@@ -7184,7 +7184,7 @@
     "flavor_text": "Lairon templa su cuerpo de acero bebiendo agua mineral muy rica en nutrientes hasta que no puede más. Este Pokémon suele crear su nido cerca de manantiales de rica agua.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Calle Victoria (P1), Calle Victoria (S1), Calle Victoria (S2)).",
+      "summary": "Salvaje en: Calle Victoria (P1), Calle Victoria (S1), Calle Victoria (S2).",
       "locations": [
         {
           "area": "Calle Victoria (P1)",
@@ -7351,7 +7351,7 @@
     "flavor_text": "Machop tiene una musculatura especial que nunca se agota por mucho que la use. Este Pokémon es tan fuerte que puede derrotar a cien personas adultas de una sola vez.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea, Ruta 112).",
+      "summary": "Salvaje en: Desfiladero, Senda Ígnea, Ruta 112.",
       "locations": [
         {
           "area": "Desfiladero",
@@ -7588,7 +7588,7 @@
     "flavor_text": "Meditite lleva a cabo un entrenamiento mental exhaustivo en lo más profundo de las montañas. Aunque, cuando medita, pierde toda la concentración y se descentra. Por eso no deja nunca de entrenarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Monte Pírico (Exterior), Calle Victoria (S1)).",
+      "summary": "Salvaje en: Monte Pírico (Exterior), Calle Victoria (S1).",
       "locations": [
         {
           "area": "Monte Pírico (Exterior)",
@@ -7667,7 +7667,7 @@
     "flavor_text": "Dicen que, a través de la meditación, Medicham aumenta su energía interior y agudiza el sexto sentido que tiene. Este Pokémon suele esconderse mezclándose con el campo y las montañas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Calle Victoria (S1), Calle Victoria (S2)).",
+      "summary": "Salvaje en: Calle Victoria (S1), Calle Victoria (S2).",
       "locations": [
         {
           "area": "Calle Victoria (S1)",
@@ -7753,7 +7753,7 @@
     "flavor_text": "Electrike acumula electricidad en el largo pelaje que tiene. Este Pokémon estimula los músculos de las patas mediante descargas eléctricas. Estas explosiones de energía le permiten acelerar de forma increíble.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 110, Ruta 118).",
+      "summary": "Salvaje en: Ruta 110, Ruta 118.",
       "locations": [
         {
           "area": "Ruta 110",
@@ -7832,7 +7832,7 @@
     "flavor_text": "Manectric está continuamente descargando electricidad por la melena, y a veces causa incendios en el bosque con las chispas que suelta. Cuando entra en combate, este Pokémon crea nubarrones.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 118).",
+      "summary": "Salvaje en Ruta 118.",
       "locations": [
         {
           "area": "Ruta 118",
@@ -7914,7 +7914,7 @@
     "flavor_text": "Plusle siempre hace las veces de líder con sus compañeros. Cuando algún miembro de su grupo hace un gran esfuerzo en combate, causa un cortocircuito en su interior para mostrar con el chisporroteo su alegría.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110).",
+      "summary": "Salvaje en Ruta 110.",
       "locations": [
         {
           "area": "Ruta 110",
@@ -7989,7 +7989,7 @@
     "flavor_text": "Minun está más preocupado de animar a sus compañeros de equipo que de su propia seguridad. Para animar a los miembros de su grupo, crea un cortocircuito en su interior y libera un chisporroteo espectacular.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110).",
+      "summary": "Salvaje en Ruta 110.",
       "locations": [
         {
           "area": "Ruta 110",
@@ -8064,7 +8064,7 @@
     "flavor_text": "Magnemite se engancha a las líneas de tensión para nutrirse de electricidad. Si se produce un apagón en tu casa, mira el automático, no vaya a ser que haya un montón de estos Pokémon colgados de la caja de fusibles.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior)).",
+      "summary": "Salvaje en: Malvalona Nueva (Entrada), Malvalona Nueva (Interior).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -8143,7 +8143,7 @@
     "flavor_text": "Magneton emite una fuerte energía magnética que causa estragos en los instrumentos mecánicos. Por ello, en las ciudades se avisa con sirenas cuando hay concentraciones de estos Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Malvalona Nueva (Interior)).",
+      "summary": "Salvaje en Malvalona Nueva (Interior).",
       "locations": [
         {
           "area": "Malvalona Nueva (Interior)",
@@ -8225,7 +8225,7 @@
     "flavor_text": "Voltorb fue visto por primera vez en una empresa encargada de comercializar Poké Balls. La conexión que existe entre aquella primera vez que se le vio y el hecho de que se parece mucho a una Poké Ball sigue siendo un misterio.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior)).",
+      "summary": "Salvaje en: Malvalona Nueva (Entrada), Malvalona Nueva (Interior), Malvalona Nueva (Interior).",
       "locations": [
         {
           "area": "Malvalona Nueva (Entrada)",
@@ -8308,7 +8308,7 @@
     "flavor_text": "Los Electrode se alimentan de la electricidad de la atmósfera. En días de tormentas con rayos, es fácil verlos explotando por todos lados tras haber consumido demasiada electricidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Malvalona Nueva (Interior), Malvalona Nueva (Interior), Guarida Magma (Ciudad Calagua)).",
+      "summary": "Salvaje en: Malvalona Nueva (Interior), Malvalona Nueva (Interior), Guarida Magma (Ciudad Calagua).",
       "locations": [
         {
           "area": "Malvalona Nueva (Interior)",
@@ -8398,7 +8398,7 @@
     "flavor_text": "Cuando llega la noche, Volbeat emite luz por la cola y regula la intensidad y el destello para comunicarse con el resto. A este Pokémon le atrae el dulce aroma de Illumise.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117).",
+      "summary": "Salvaje en Ruta 117.",
       "locations": [
         {
           "area": "Ruta 117",
@@ -8474,7 +8474,7 @@
     "flavor_text": "Illumise atrae con su dulce aroma a enjambres de Volbeat. Una vez los ha agrupado, les guía en el vuelo para que dibujen formas geométricas en el lienzo del oscuro cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117).",
+      "summary": "Salvaje en Ruta 117.",
       "locations": [
         {
           "area": "Ruta 117",
@@ -8550,7 +8550,7 @@
     "flavor_text": "Durante el día, Oddish se entierra en el suelo para absorber nutrientes valiéndose de todo el cuerpo. Cuanto más fértil sea el suelo, mayor brillo tendrá en las hojas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Ruta 110, Ruta 117, Ruta 119).",
+      "summary": "Salvaje en 10 zonas (ej: Ruta 110, Ruta 117, Ruta 119).",
       "locations": [
         {
           "area": "Ruta 110",
@@ -8661,7 +8661,7 @@
     "flavor_text": "Gloom libera un fétido olor por los pistilos de la flor. Cuando está en peligro, el hedor se intensifica. Si este Pokémon está tranquilo y no se siente amenazado, no libera el desagradable olor.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ruta 121, Ruta 123, Zona Safari (Noroeste - Bici Carrera)).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 121, Ruta 123, Zona Safari (Noroeste - Bici Carrera)).",
       "locations": [
         {
           "area": "Ruta 121",
@@ -8955,7 +8955,7 @@
     "flavor_text": "Las dos cabezas de Doduo duermen de forma independiente, por turnos. Mientras una duerme la otra hace de centinela por si aparecen enemigos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste), Zona Safari (Sureste)).",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -9038,7 +9038,7 @@
     "flavor_text": "Hay que tener cuidado cuando las tres cabezas de Dodrio miran cada una para un lado, pues están en guardia. No te acerques a este Pokémon cuando está vigilando porque puede darte un picotazo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
+      "summary": "Salvaje en Zona Safari (Noroeste - Bici Carrera).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -9120,7 +9120,7 @@
     "flavor_text": "Roselia lanza finas espinas a todo el que se le acerca con intención de robarle las flores de los brazos. El aroma de este Pokémon resulta relajante a los seres vivos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 117).",
+      "summary": "Salvaje en Ruta 117.",
       "locations": [
         {
           "area": "Ruta 117",
@@ -9196,7 +9196,7 @@
     "flavor_text": "Casi la totalidad del cuerpo de Gulpin está compuesto por el estómago. Por eso puede tragarse todo lo que tenga su tamaño. En el interior del estómago, tiene un fluido capaz de corroerlo todo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 110).",
+      "summary": "Salvaje en Ruta 110.",
       "locations": [
         {
           "area": "Ruta 110",
@@ -9348,7 +9348,7 @@
     "flavor_text": "Carvanha, gracias a las descomunales fauces de afilados colmillos que tiene, es capaz de hacer trizas un barco. Son muchas las naves que han sufrido el ataque de este Pokémon y han acabado naufragando.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ruta 118, Ruta 118, Ruta 119).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 118, Ruta 118, Ruta 119).",
       "locations": [
         {
           "area": "Ruta 118",
@@ -9435,7 +9435,7 @@
     "flavor_text": "Conocido como \"el terror de los mares\", Sharpedo es temido por todos. Si este Pokémon pierde las escalofriantes mandíbulas que tiene, las recupera en breve. Basta con un Sharpedo para destrozar un buque-cisterna.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 15 zona(s) de Hoenn (ej: Ciudad Algaria (Pesca / Surf), Ruta 103, Ruta 118).",
+      "summary": "Salvaje en 15 zonas (ej: Ciudad Algaria (Pesca / Surf), Ruta 103, Ruta 118).",
       "locations": [
         {
           "area": "Ciudad Algaria (Pesca / Surf)",
@@ -9573,7 +9573,7 @@
     "flavor_text": "Wailmer tiene los espiráculos encima de la cabeza. A este juguetón Pokémon le encanta asustar a la gente expulsando el agua que acumula a través de estos orificios.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 60 zona(s) de Hoenn (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf)).",
+      "summary": "Salvaje en 60 zonas (ej: Ciudad Portual (Pesca / Surf), Ciudad Portual (Pesca / Surf), Ciudad Calagua (Pesca / Surf)).",
       "locations": [
         {
           "area": "Ciudad Portual (Pesca / Surf)",
@@ -9885,7 +9885,7 @@
     "flavor_text": "Wailord es el mayor Pokémon registrado hasta la fecha. Este coloso va nadando lánguidamente por el ancho mar con la boca abierta para que penetre la mayor cantidad posible de alimento.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 129).",
+      "summary": "Salvaje en Ruta 129.",
       "locations": [
         {
           "area": "Ruta 129",
@@ -9968,7 +9968,7 @@
     "flavor_text": "Numel tarda en percibir las cosas (no se entera ni cuando lo golpean). Pero se da cuenta enseguida de si tiene hambre. El cuerpo de este Pokémon es un caldero de magma hirviendo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Desfiladero, Senda Ígnea, Ruta 112).",
+      "summary": "Salvaje en: Desfiladero, Senda Ígnea, Ruta 112.",
       "locations": [
         {
           "area": "Desfiladero",
@@ -10128,7 +10128,7 @@
     "flavor_text": "Por el sistema circulatorio de Slugma corre magma líquido. Si este Pokémon se enfriara, el magma perdería el calor y se solidificaría, con lo que se resquebrajaría entero, perdería trozos y reduciría su tamaño.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en Senda Ígnea.",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -10280,7 +10280,7 @@
     "flavor_text": "Torkoal va cavando por las montañas en busca de carbón. Cuando lo encuentra, rellena los huecos que tiene dentro del caparazón y lo quema. Si le atacan, este Pokémon echa un humo negro que le permite la retirada.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en Senda Ígnea.",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -10355,7 +10355,7 @@
     "flavor_text": "El elástico cuerpo de lodo de Grimer le permite colarse por cualquier orificio, sea del tamaño que sea. Este Pokémon entra en los bajantes de las cloacas para beberse el agua sucia.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en Senda Ígnea.",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -10507,7 +10507,7 @@
     "flavor_text": "Si Koffing se pone nervioso, aumenta el nivel de toxicidad de los gases que tiene y los expulsa por todo el cuerpo. También suele hincharse mucho hasta llegar a explotar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Senda Ígnea).",
+      "summary": "Salvaje en Senda Ígnea.",
       "locations": [
         {
           "area": "Senda Ígnea",
@@ -10659,7 +10659,7 @@
     "flavor_text": "Spoink se pasa todo el día saltando sobre la cola. Con cada salto, hace latir el corazón. Por eso no puede permitirse dejar de saltar. Si lo hace, se le parará el corazón.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Desfiladero).",
+      "summary": "Salvaje en Desfiladero.",
       "locations": [
         {
           "area": "Desfiladero",
@@ -10811,7 +10811,7 @@
     "flavor_text": "Es capaz de absorber agua y no perder ni una gota, algo que le permite sobrevivir en el desierto. Este Pokémon se enrosca para defenderse de los enemigos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 111 (Desierto), Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en: Ruta 111 (Desierto), Ruta 113 (Ceniza).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -10967,7 +10967,7 @@
     "flavor_text": "Dicen que no hay dos Spinda que tengan los mismos dibujos en el pelaje. Este Pokémon tiene una forma de andar inestable, va tambaleándose. Da la sensación de ir bailando.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en Ruta 113 (Ceniza).",
       "locations": [
         {
           "area": "Ruta 113 (Ceniza)",
@@ -11043,7 +11043,7 @@
     "flavor_text": "Skarmory está totalmente encerrado en el interior de una fuerte coraza protectora. En vuelo, puede llegar a alcanzar los 300 km por hora y usa las afiladas alas que tiene para azotar al rival.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 113 (Ceniza)).",
+      "summary": "Salvaje en Ruta 113 (Ceniza).",
       "locations": [
         {
           "area": "Ruta 113 (Ceniza)",
@@ -11118,7 +11118,7 @@
     "flavor_text": "El nido de Trapinch está situado bajo la arena, en una zona cóncava. Este Pokémon espera con paciencia a que su presa caiga en la misma. Con las fauces que tiene puede destruir hasta piedras.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto)).",
+      "summary": "Salvaje en Ruta 111 (Desierto).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -11350,7 +11350,7 @@
     "flavor_text": "Cacnea habita en desiertos y otras zonas áridas. Para atraer a su presa, libera un fuerte aroma por la flor y, cuando se le acerca, le lanza pinchos por todo el cuerpo para reducirla.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto)).",
+      "summary": "Salvaje en Ruta 111 (Desierto).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -11504,7 +11504,7 @@
     "flavor_text": "Tiene unas alas ligeras y esponjosas que parecen nubes de algodón. A este Pokémon no le asusta la gente. De hecho, se te puede posar en la cabeza y servirte de gorro sedoso.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 114, Ruta 115).",
+      "summary": "Salvaje en: Ruta 114, Ruta 115.",
       "locations": [
         {
           "area": "Ruta 114",
@@ -11584,7 +11584,7 @@
     "flavor_text": "Altaria baila y revolotea por el cielo entre ondeantes nubes que parecen de algodón. Al entonar melodías con su voz cristalina, este Pokémon deja a sus oyentes embobados y admirados.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Pilar Celeste (P5)).",
+      "summary": "Salvaje en Pilar Celeste (P5).",
       "locations": [
         {
           "area": "Pilar Celeste (P5)",
@@ -11667,7 +11667,7 @@
     "flavor_text": "Los ecos del combate mantenido con su rival más feroz, Seviper, resuenan aún en cada célula de Zangoose. Este Pokémon esquiva los ataques con auténtica destreza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 114).",
+      "summary": "Salvaje en Ruta 114.",
       "locations": [
         {
           "area": "Ruta 114",
@@ -11901,7 +11901,7 @@
     "flavor_text": "Solrock pertenece a una nueva especie de Pokémon a la que se le atribuye una procedencia extraterrestre. Este Pokémon permanece flotando en el aire y se mueve muy despacio. Al luchar, desprende una luz viva e intensa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 8 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
+      "summary": "Salvaje en 8 zonas (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -12004,7 +12004,7 @@
     "flavor_text": "Barboach tiene unos bigotes sensibles que le sirven de infalible radar. Este Pokémon se sumerge en lodo y sólo deja los bigotes por fuera de la superficie, al acecho, mientras espera a que llegue su presa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 16 zona(s) de Hoenn (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
+      "summary": "Salvaje en 16 zonas (ej: Cascada Meteoro (Entrada), Cascada Meteoro (Entrada), Cascada Meteoro (Interior)).",
       "locations": [
         {
           "area": "Cascada Meteoro (Entrada)",
@@ -12139,7 +12139,7 @@
     "flavor_text": "Whiscash defiende su territorio a toda costa. Es capaz de apoderarse de un estanque entero para sí solo. Si alguien se le acerca, se revolverá y provocará un terremoto devastador.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1), Cascada Meteoro (Sala de Bagon)).",
+      "summary": "Salvaje en 4 zonas (ej: Cascada Meteoro (Interior), Cascada Meteoro (Sótano 1), Cascada Meteoro (Sala de Bagon)).",
       "locations": [
         {
           "area": "Cascada Meteoro (Interior)",
@@ -12233,7 +12233,7 @@
     "flavor_text": "En un principio, se importaban Corphish como mascota. Pero, al final, se hicieron salvajes. Este Pokémon es muy resistente y ha aumentado su población de forma considerable.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ruta 102).",
+      "summary": "Salvaje en 6 zonas (ej: Ciudad Petalia (Pesca / Surf), Ciudad Petalia (Pesca / Surf), Ruta 102).",
       "locations": [
         {
           "area": "Ciudad Petalia (Pesca / Surf)",
@@ -12407,7 +12407,7 @@
     "flavor_text": "Baltoy se mueve girando alrededor de sí mismo sobre la extremidad inferior que tiene. En unas ruinas antiguas, descubrieron pinturas rupestres en las que aparecía este Pokémon conviviendo con personas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 111 (Desierto)).",
+      "summary": "Salvaje en Ruta 111 (Desierto).",
       "locations": [
         {
           "area": "Ruta 111 (Desierto)",
@@ -12482,7 +12482,7 @@
     "flavor_text": "Dicen que los Claydol son figuras de barro hechas por humanos primitivos. Y dicen también que cobraron vida gracias a un misterioso rayo. Este Pokémon se mueve mientras levita.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Pilar Celeste (P1), Pilar Celeste (P3), Pilar Celeste (P5)).",
+      "summary": "Salvaje en: Pilar Celeste (P1), Pilar Celeste (P3), Pilar Celeste (P5).",
       "locations": [
         {
           "area": "Pilar Celeste (P1)",
@@ -12959,7 +12959,7 @@
     "flavor_text": "Jigglypuff tiene unas cuerdas vocales que ajustan sin problema la longitud de onda de su voz. Este Pokémon usa la habilidad que tiene para cantar con la longitud de onda necesaria para adormecer a su rival.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 115).",
+      "summary": "Salvaje en Ruta 115.",
       "locations": [
         {
           "area": "Ruta 115",
@@ -13367,7 +13367,7 @@
     "flavor_text": "Staryu posee un órgano central conocido como su núcleo, que brilla con una luz roja. Si vas a la playa a finales de verano, podrás ver los núcleos de estos Pokémon brillando como las estrellas del cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ciudad Calagua (Pesca / Surf)).",
+      "summary": "Salvaje en Ciudad Calagua (Pesca / Surf).",
       "locations": [
         {
           "area": "Ciudad Calagua (Pesca / Surf)",
@@ -13542,7 +13542,7 @@
     "flavor_text": "Kecleon puede alterar la pigmentación de la piel para mezclarse con su entorno. Lo único que no es capaz de cambiar es el trazado en zigzag que tiene en la panza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 7 zona(s) de Hoenn (ej: Ruta 118, Ruta 119, Ruta 119).",
+      "summary": "Salvaje en 7 zonas (ej: Ruta 118, Ruta 119, Ruta 119).",
       "locations": [
         {
           "area": "Ruta 118",
@@ -13641,7 +13641,7 @@
     "flavor_text": "A Shuppet le atraen los sentimientos de celos y rencor. Si alguien desarrolla fuertes sentimientos de venganza, aparecerá una multitud de Shuppet que se quedará bajo los aleros de su casa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Monte Pírico (Interior P4), Monte Pírico (Interior P5), Monte Pírico (Interior P6)).",
+      "summary": "Salvaje en 4 zonas (ej: Monte Pírico (Interior P4), Monte Pírico (Interior P5), Monte Pírico (Interior P6)).",
       "locations": [
         {
           "area": "Monte Pírico (Interior P4)",
@@ -13805,7 +13805,7 @@
     "flavor_text": "Duskull puede atravesar los muros, sea cual sea el grosor que tengan. Cuando este Pokémon elige su objetivo, lo persigue hábilmente hasta el amanecer.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 10 zona(s) de Hoenn (ej: Monte Pírico (Interior P1), Monte Pírico (Interior P2), Monte Pírico (Interior P3)).",
+      "summary": "Salvaje en 10 zonas (ej: Monte Pírico (Interior P1), Monte Pírico (Interior P2), Monte Pírico (Interior P3)).",
       "locations": [
         {
           "area": "Monte Pírico (Interior P1)",
@@ -13916,7 +13916,7 @@
     "flavor_text": "Dusclops está completamente hueco por dentro. Dicen que su cuerpo es como un agujero negro. Este Pokémon es capaz de absorber cualquier cosa, pero cosa que absorba, cosa que no dejará salir nunca más.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Pilar Celeste (P1), Pilar Celeste (P3), Pilar Celeste (P5)).",
+      "summary": "Salvaje en: Pilar Celeste (P1), Pilar Celeste (P3), Pilar Celeste (P5).",
       "locations": [
         {
           "area": "Pilar Celeste (P1)",
@@ -14006,7 +14006,7 @@
     "flavor_text": "A los niños les encantan los racimos de fruta que Tropius tiene en el cuello. Este Pokémon siempre come fruta; le encanta. De hecho, ése parece ser el motivo por el que él mismo da fruta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 119).",
+      "summary": "Salvaje en Ruta 119.",
       "locations": [
         {
           "area": "Ruta 119",
@@ -14082,7 +14082,7 @@
     "flavor_text": "Chimecho hace que sus gritos resuenen con eco en su interior. Cuando se enfada, los chillidos se convierten en ondas ultrasónicas capaces de derribar a los enemigos voladores.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Cima)).",
+      "summary": "Salvaje en Monte Pírico (Cima).",
       "locations": [
         {
           "area": "Monte Pírico (Cima)",
@@ -14157,7 +14157,7 @@
     "flavor_text": "Cada vez que Absol aparece ante la gente, ocurre una catástrofe natural como un terremoto o un maremoto. Por esta razón se le conoce como el Pokémon de las catástrofes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Ruta 120).",
+      "summary": "Salvaje en Ruta 120.",
       "locations": [
         {
           "area": "Ruta 120",
@@ -14232,7 +14232,7 @@
     "flavor_text": "Al nacer, Vulpix tiene una cola blanca que se divide en seis si recibe cariño por parte de su Entrenador. Las seis colas se le rizan de manera majestuosa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Monte Pírico (Exterior)).",
+      "summary": "Salvaje en Monte Pírico (Exterior).",
       "locations": [
         {
           "area": "Monte Pírico (Exterior)",
@@ -14478,7 +14478,7 @@
     "flavor_text": "Cada vez que Pikachu se encuentra con algo nuevo, le lanza una sacudida eléctrica. Si ves alguna baya chamuscada, seguro que ha sido Pikachu; a veces no controla la intensidad de la descarga.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste), Centro Pokémon (Distribución / Evento)).",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Suroeste)",
@@ -14666,7 +14666,7 @@
     "flavor_text": "Psyduck tiene un extraño poder, consiste en generar ondas cerebrales iguales a las que se generan cuando se está dormido. Este descubrimiento levantó una gran polémica entre eruditos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste)).",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -14746,7 +14746,7 @@
     "flavor_text": "Golduck alcanza una velocidad de vértigo gracias a las aletas palmípedas de las extremidades y a la forma aerodinámica de su cuerpo. Realmente, la velocidad de este Pokémon supera a la de cualquier nadador.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
+      "summary": "Salvaje en Zona Safari (Noroeste - Bici Carrera).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -14928,7 +14928,7 @@
     "flavor_text": "Si dos o más Wobbuffet se encuentran, se volverán competitivos e intentarán superarse en resistencia. Pero también puede que intenten aguantar sin comer; algo que los ENTRENADORES deben tener muy en cuenta.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste)).",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Suroeste)",
@@ -15014,7 +15014,7 @@
     "flavor_text": "Natu no puede volar porque las alas no le han crecido lo suficiente. Si tu mirada se cruza con la suya, te la devolverá fijamente. Pero si haces el mínimo movimiento, huirá dando saltitos para ponerse a salvo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática), Zona Safari (Suroeste), Zona Safari (Sureste)).",
+      "summary": "Salvaje en: Zona Safari (Noreste - Bici Acrobática), Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Noreste - Bici Acrobática)",
@@ -15097,7 +15097,7 @@
     "flavor_text": "Xatu permanece de pie inmóvil y tranquilo en el mismo sitio durante todo el día. Se cree que no se mueve por temor a lo que ha visto que ocurrirá en el futuro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
+      "summary": "Salvaje en Zona Safari (Noreste - Bici Acrobática).",
       "locations": [
         {
           "area": "Zona Safari (Noreste - Bici Acrobática)",
@@ -15179,7 +15179,7 @@
     "flavor_text": "Girafarig tiene un cerebro también en la cabeza trasera, que reacciona atacando ante olores y sonidos. Si te acercas a este Pokémon desde atrás, puedes provocar que la cabeza trasera salga de repente y te muerda.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Zona Safari (Suroeste), Zona Safari (Sureste)).",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Suroeste)",
@@ -15258,7 +15258,7 @@
     "flavor_text": "Phanpy cava un agujero profundo para hacer su nido en el suelo, en la ribera de los ríos, y marca con la trompa la zona para que el resto vea que ese terreno ya está ocupado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
+      "summary": "Salvaje en Zona Safari (Noreste - Bici Acrobática).",
       "locations": [
         {
           "area": "Zona Safari (Noreste - Bici Acrobática)",
@@ -15410,7 +15410,7 @@
     "flavor_text": "Pinsir es sorprendentemente grande. Puede agarrar con los cuernos a un rival que pese el doble que él y levantarlo por los aires. En zonas frías, los movimientos de este Pokémon se vuelven lentos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
+      "summary": "Salvaje en Zona Safari (Noroeste - Bici Carrera).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -15485,7 +15485,7 @@
     "flavor_text": "Heracross carga en línea recta contra el enemigo, se le queda encajado por debajo, lo agarra y lo lanza con ayuda del fuerte cuerno que tiene. Este Pokémon tiene fuerza hasta para echar abajo un árbol descomunal.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noreste - Bici Acrobática)).",
+      "summary": "Salvaje en Zona Safari (Noreste - Bici Acrobática).",
       "locations": [
         {
           "area": "Zona Safari (Noreste - Bici Acrobática)",
@@ -15560,7 +15560,7 @@
     "flavor_text": "Rhyhorn corre en línea recta arrasando todo lo que encuentra en su camino. Aun estrellándose de cabeza contra un bloque de acero, no se vería afectado. Bueno, como mucho notaría algo de dolor al día siguiente.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Zona Safari (Noroeste - Bici Carrera)).",
+      "summary": "Salvaje en Zona Safari (Noroeste - Bici Carrera).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
@@ -15714,7 +15714,7 @@
     "flavor_text": "Snorunt vive en zonas de grandes nevadas. En primavera y verano (cuando no nieva), se retira a las cavernas para vivir tranquilamente entre estalactitas y estalagmitas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cueva Cardumen (Sala Hielo)).",
+      "summary": "Salvaje en Cueva Cardumen (Sala Hielo).",
       "locations": [
         {
           "area": "Cueva Cardumen (Sala Hielo)",
@@ -15868,7 +15868,7 @@
     "flavor_text": "Spheal se desplaza por el suelo más rápido rodando que caminando. Cuando come con otros de su especie, todos se ponen a aplaudir para expresar su alegría. Por eso, a veces son algo escandalosos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zona(s) de Hoenn (ej: Cueva Cardumen (Marea Alta), Cueva Cardumen (Marea Alta), Cueva Cardumen (Sótano 1)).",
+      "summary": "Salvaje en 6 zonas (ej: Cueva Cardumen (Marea Alta), Cueva Cardumen (Marea Alta), Cueva Cardumen (Sótano 1)).",
       "locations": [
         {
           "area": "Cueva Cardumen (Marea Alta)",
@@ -16120,7 +16120,7 @@
     "flavor_text": "La sólida concha que rodea a Clamperl no sólo le sirve para protegerse, sino también para poner un cepo y atrapar a su presa. Cuando la concha alcanza su mayor tamaño, presenta muescas y rasguños por todas partes.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -16391,7 +16391,7 @@
     "flavor_text": "Relicanth pertenece a una especie de Pokémon que lleva millones de años sin cambiar de forma. Este ancestral Pokémon se alimenta de microorganismos por la boca desdentada que tiene.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -16471,7 +16471,7 @@
     "flavor_text": "Las ramas de Corsola brillan con belleza hasta en siete colores cuando les da el sol. Si se le rompe alguna, el Pokémon la regenera en tan solo una noche.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ruta 128, Pueblo Oromar (Pesca / Surf)).",
+      "summary": "Salvaje en: Ciudad Colosalia (Pesca / Surf), Ruta 128, Pueblo Oromar (Pesca / Surf).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -16555,7 +16555,7 @@
     "flavor_text": "Chinchou libera cargas eléctricas positivas y negativas a través de las dos antenas que tiene para que su rival pierda el conocimiento. Asimismo, usa los destellos de electricidad para comunicarse con otros.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 2 zona(s) de Hoenn (ej: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino)).",
+      "summary": "Salvaje en: Ruta 124 (Buceo / Fondo marino), Ruta 126 (Buceo / Fondo marino).",
       "locations": [
         {
           "area": "Ruta 124 (Buceo / Fondo marino)",
@@ -16711,7 +16711,7 @@
     "flavor_text": "Luvdisc vive en aguas tropicales poco profundas. Este Pokémon con forma de corazón se ha ganado la reputación que tiene por ir nadando detrás de las parejas de enamorados que veía entre las olas del océano.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zona(s) de Hoenn (ej: Ciudad Colosalia (Pesca / Surf), Ciudad Colosalia (Pesca / Surf), Ruta 128).",
+      "summary": "Salvaje en 4 zonas (ej: Ciudad Colosalia (Pesca / Surf), Ciudad Colosalia (Pesca / Surf), Ruta 128).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -16798,7 +16798,7 @@
     "flavor_text": "Horsea come insectos pequeños y el musgo de las rocas. Si las corrientes del océano cobran fuerza, este Pokémon se anclará con la cola a rocas o corales para evitar que las aguas lo arrastren.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 3 zona(s) de Hoenn (ej: Ruta 132 (Corrientes), Ruta 133 (Corrientes), Ruta 134 (Cámara Sellada)).",
+      "summary": "Salvaje en: Ruta 132 (Corrientes), Ruta 133 (Corrientes), Ruta 134 (Cámara Sellada).",
       "locations": [
         {
           "area": "Ruta 132 (Corrientes)",
@@ -17057,7 +17057,7 @@
     "flavor_text": "Bagon sueña con poder pasar un día volando por el cielo. En vanos intentos por volar, ha llegado a tirarse desde riscos. Como resultado de estas caídas en picado, se le ha puesto la cabeza dura como las piedras.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 1 zona(s) de Hoenn (ej: Cascada Meteoro (Sala de Bagon)).",
+      "summary": "Salvaje en Cascada Meteoro (Sala de Bagon).",
       "locations": [
         {
           "area": "Cascada Meteoro (Sala de Bagon)",

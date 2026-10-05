@@ -79,8 +79,8 @@ KANTO_SEVII_AREAS_ES = {
     'saffron-city-silph-co-7f': 'Silph S.A. (Planta 7)',
     'fuchsia-city-area': 'Ciudad Fucsia',
     'cinnabar-island-area': 'Isla Canela',
-    'cinnabar-island-cinnabar-lab': 'Laboratorio de Canela',
-    'kanto-pokecenter-area': 'Centro Pokémon (Evento / Distribución)',
+    'cinnabar-island-cinnabar-lab': 'Isla Canela (Laboratorio)',
+    'kanto-pokecenter-area': 'Centro Pokémon (Transferencia GameCube)',
 
     # Mazmorras y Cuevas de Kanto
     'viridian-forest-area': 'Bosque Verde',
@@ -130,10 +130,10 @@ KANTO_SEVII_AREAS_ES = {
     'mt-ember-b2f': 'Monte Ascuas (Sótano 2)',
     'mt-ember-b3f': 'Monte Ascuas (Sótano 3)',
 
-    'cape-brink-area': 'Cabo Extremo (Isla Seca)',
-    'bond-bridge-area': 'Puente Unión (Isla Terciaria)',
-    'three-isle-port-area': 'Puerto Terciario (Isla Terciaria)',
-    'berry-forest-area': 'Bosque Baya (Isla Terciaria)',
+    'cape-brink-area': 'Cabo Extremo (Isla Secunda)',
+    'bond-bridge-area': 'Puente Unión (Isla Tera)',
+    'three-isle-port-area': 'Puerto Tera (Isla Tera)',
+    'berry-forest-area': 'Bosque Baya (Isla Tera)',
 
     'four-island-area': 'Isla Quarta (Pueblo)',
     'icefall-cave-entrance': 'Cueva Glaciada (Entrada)',
@@ -177,13 +177,13 @@ KANTO_SEVII_AREAS_ES = {
     'canyon-entrance-area': 'Entrada al Cañón (Isla Sétima)',
     'sevault-canyon-area': 'Cañón Sétima (Isla Sétima)',
     'tanoby-ruins-area': 'Ruinas Sétima (Isla Sétima)',
-    'monean-chamber-area': 'Cámara Monean (Ruinas Sétima)',
-    'liptoo-chamber-area': 'Cámara Liptoo (Ruinas Sétima)',
-    'weepth-chamber-area': 'Cámara Weepth (Ruinas Sétima)',
-    'dilford-chamber-area': 'Cámara Dilford (Ruinas Sétima)',
-    'scufib-chamber-area': 'Cámara Scufib (Ruinas Sétima)',
-    'rixy-chamber-area': 'Cámara Rixy (Ruinas Sétima)',
-    'viapos-chamber-area': 'Cámara Viapos (Ruinas Sétima)',
+    'monean-chamber-area': 'Cámara Anémuna (Ruinas Sete)',
+    'liptoo-chamber-area': 'Cámara Tulipdos (Ruinas Sete)',
+    'weepth-chamber-area': 'Cámara Trisante (Ruinas Sete)',
+    'dilford-chamber-area': 'Cámara Quarciso (Ruinas Sete)',
+    'scufib-chamber-area': 'Cámara Seiris (Ruinas Sete)',
+    'rixy-chamber-area': 'Cámara Hibinca (Ruinas Sete)',
+    'viapos-chamber-area': 'Cámara Pasiete (Ruinas Sete)',
 
     # Islas de Evento Mítico
     'navel-rock-area': 'Roca Ombligo (Ticket Místico)',
@@ -205,7 +205,8 @@ METHOD_NAMES_ES = {
     'static': 'Encuentro estático',
     'roaming-grass': 'Legendario errante (Hierba)',
     'roaming-water': 'Legendario errante (Agua)',
-    'headbutt': 'Golpe Cabeza'
+    'headbutt': 'Golpe Cabeza',
+    'colosseum-bonus-disc-jpn': 'Disco Bonus Colosseum (Japón)'
 }
 
 EVO_ITEMS_ES = {
@@ -338,14 +339,14 @@ def build_catalogs():
             'type': 'trade_npc',
             'badge_label': 'Intercambio NPC',
             'badge_color': 'indigo',
-            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Ponyta a cambio de Seel (con el mote «Sailor») (también obtenible mediante crianza).',
+            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Ponyta a cambio de Seel (con el mote «Sailor») (también salvaje en Islas Espuma y Cueva Glaciada o mediante crianza).',
             'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Intercambio por Ponyta'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
         },
         101: {
             'type': 'trade_npc',
             'badge_label': 'Intercambio NPC',
             'badge_color': 'indigo',
-            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Raichu a cambio de Electrode (con el mote «Doris»).',
+            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Raichu a cambio de Electrode (con el mote «Doris») (también salvaje en Central de Energía y Cueva Celeste).',
             'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Intercambio por Raichu'}]
         },
         108: {
@@ -359,7 +360,7 @@ def build_catalogs():
             'type': 'trade_npc',
             'badge_label': 'Intercambio NPC',
             'badge_color': 'indigo',
-            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Venonat a cambio de Tangela (con el mote «Tangeny») (también obtenible mediante crianza).',
+            'summary': 'Intercambio en el Laboratorio de Isla Canela: entrega un Venonat a cambio de Tangela (con el mote «Tangeny») (también salvaje en Ruta 21 y Playa Tesoro o mediante crianza).',
             'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Intercambio por Venonat'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
         },
         122: {
@@ -420,10 +421,14 @@ def build_catalogs():
         },
         129: {
             'type': 'gift',
-            'badge_label': 'Comprado',
+            'badge_label': 'Comprado / Salvaje',
             'badge_color': 'blue',
-            'summary': 'Comprado al vendedor ambulante en el Centro Pokémon de la Ruta 4 por 500₽ (también obtenible pescando o mediante crianza).',
-            'locations': [{'area': 'Ruta 4 (Centro Pokémon)', 'method': 'Comprado por 500₽'}, {'area': 'Ruta 6 / 10 / 11 / 12', 'method': 'Pesca con Caña Vieja o Surf'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
+            'summary': 'Comprado al vendedor ambulante en el Centro Pokémon de la Ruta 4 por 500₽, o salvaje pescando en cualquier masa de agua de Kanto y las Islas Sétima con Caña Vieja o Caña Buena (también obtenible mediante crianza).',
+            'locations': [
+                {'area': 'Ruta 4 (Centro Pokémon)', 'method': 'Comprado por 500₽'},
+                {'area': 'Cualquier masa de agua (Kanto e Islas Sétima)', 'method': 'Pesca con Caña Vieja o Buena'},
+                {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+            ]
         },
         131: {
             'type': 'gift',
@@ -561,6 +566,13 @@ def build_catalogs():
             'summary': 'Encuentro estático en la cima de Roca Ombligo (Nivel 70) accesible en barco con el Ticket Místico de evento oficial.',
             'locations': [{'area': 'Roca Ombligo (Ticket Místico)', 'method': 'Encuentro estático al Nivel 70'}]
         },
+        251: {
+            'type': 'mythical',
+            'badge_label': 'Mítico / Disco Bonus',
+            'badge_color': 'pink',
+            'summary': 'Pokémon singular inaccesible de forma salvaje. Obtenible mediante transferencia con el Disco Bonus de Pokémon Colosseum (Japón) mediante cable GameCube-GBA (o distribución oficial de evento).',
+            'locations': [{'area': 'Centro Pokémon (Transferencia GameCube)', 'method': 'Disco Bonus Colosseum (Japón)'}]
+        },
         386: {
             'type': 'mythical',
             'badge_label': 'Evento Isla Origen',
@@ -654,10 +666,24 @@ def build_catalogs():
         unique_locs = []
         seen_areas = set()
         for l in locs_raw:
+            raw_method = l.get('method_raw', 'walk')
+            # 1. Ignorar 'npc-trade' crudo de PokeAPI para evitar duplicados en inglés
+            # con las tablas curadas oficiales de intercambios NPC (INGAME_TRADES_FIRERED).
+            if raw_method == 'npc-trade':
+                continue
+
+            # 2. Ignorar eventos de regalo externos a menos que sea Pikachu (#25, Disco Bonus replicable)
+            if raw_method == 'colosseum-bonus-disc-jpn' and nat_id != 25:
+                continue
+
             raw_area = l.get('area_raw', '')
             area_translated = KANTO_SEVII_AREAS_ES.get(raw_area, raw_area.replace('-', ' ').title())
-            raw_method = l.get('method_raw', 'walk')
             method_translated = METHOD_NAMES_ES.get(raw_method, raw_method.replace('-', ' ').title())
+
+            # Para premios canjeables del Casino de Azulona (Clefairy, Abra, Scyther, Dratini)
+            if raw_area == 'celadon-city-prize-corner':
+                method_translated = 'Premio del Casino'
+
             k = (area_translated, method_translated)
             if k not in seen_areas:
                 seen_areas.add(k)
@@ -670,11 +696,30 @@ def build_catalogs():
             obt_info = copy.deepcopy(SPECIAL_OBT_FIRERED[nat_id])
         elif nat_id in INGAME_TRADES_FIRERED:
             obt_info = copy.deepcopy(INGAME_TRADES_FIRERED[nat_id])
+            # Si la especie además posee encuentros salvajes auténticos (ej: Seel, Electrode, Tangela),
+            # incorporar las zonas salvajes preservando el intercambio como método principal
+            # y colocando la Guardería al final.
             if unique_locs:
-                obt_info['locations'] = unique_locs + obt_info['locations']
+                curated_locs = obt_info.get('locations', [])
+                trade_locs = [l for l in curated_locs if 'crianza' not in l.get('method', '').lower()]
+                daycare_locs = [l for l in curated_locs if 'crianza' in l.get('method', '').lower()]
+                obt_info['locations'] = trade_locs + unique_locs + daycare_locs
         elif unique_locs:
-            areas_str = ", ".join([l['area'] for l in unique_locs[:3]])
-            summary = f"Salvaje en {len(unique_locs)} zona(s) (ej: {areas_str})."
+            # Separar ubicaciones salvajes reales de eventos externos replicables (Pikachu) o Casino
+            true_wild_locs = [l for l in unique_locs if 'colosseum' not in l.get('method', '').lower() and 'casino' not in l.get('method', '').lower()]
+            if not true_wild_locs:
+                true_wild_locs = unique_locs
+
+            num_wild = len(true_wild_locs)
+            if num_wild == 1:
+                summary = f"Salvaje en {true_wild_locs[0]['area']}."
+            elif 2 <= num_wild <= 3:
+                areas_str = ", ".join([l['area'] for l in true_wild_locs])
+                summary = f"Salvaje en: {areas_str}."
+            else:
+                areas_str = ", ".join([l['area'] for l in true_wild_locs[:3]])
+                summary = f"Salvaje en {num_wild} zonas (ej: {areas_str})."
+
             obt_info = {
                 'type': 'wild',
                 'summary': summary,
