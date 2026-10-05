@@ -1,8 +1,6 @@
 ---
-description: Flujo de ejecución quirúrgica y eficiente de pruebas automatizadas en Django (evitar corridas globales innecesarias y optimizar consumo de tokens)
-globs:
-  - "tracker/**"
-  - "pokedex/**"
+trigger: model_decision
+description: Flujo de ejecución quirúrgica de pruebas Django con --keepdb. Solo aplicar cuando se modifique código activamente o se soliciten pruebas; omitir en charlas de análisis o consultas.
 ---
 
 # Flujo Quirúrgico de Ejecución de Pruebas

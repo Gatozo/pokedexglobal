@@ -1,4 +1,5 @@
 ---
+trigger: glob
 description: Política estricta de preservación, no sobreescritura, estandarización y exclusión de Git para assets multimedia (sprites, imágenes, iconos, audios)
 globs:
   - "media/**"

@@ -1,4 +1,5 @@
 ---
+trigger: glob
 description: Invariante crítico de arquitectura frontend para interactividad inmediata y carga prioritaria de modales y tarjetas
 globs:
   - "tracker/templates/**"
