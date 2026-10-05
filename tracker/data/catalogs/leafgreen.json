@@ -574,7 +574,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Recinto (Isla Seis)",
+          "area": "Bosque Recinto (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -645,7 +645,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Recinto (Isla Seis)",
+          "area": "Bosque Recinto (Isla Exta)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -773,7 +773,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Recinto (Isla Seis)",
+          "area": "Bosque Recinto (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -844,7 +844,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Bosque Recinto (Isla Seis)",
+          "area": "Bosque Recinto (Isla Exta)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -1016,7 +1016,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1095,7 +1095,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -1445,11 +1445,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1540,11 +1540,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1552,7 +1552,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -2429,12 +2429,12 @@
         ],
         "firered": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -2445,8 +2445,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -2455,12 +2455,12 @@
         ],
         "leafgreen": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -2471,8 +2471,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -2482,12 +2482,12 @@
       },
       "locations": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -2498,8 +2498,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -2870,12 +2870,12 @@
         ],
         "firered": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -2886,8 +2886,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -2896,12 +2896,12 @@
         ],
         "leafgreen": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -2912,8 +2912,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -2923,12 +2923,12 @@
       },
       "locations": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -2939,8 +2939,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -3240,12 +3240,12 @@
         ],
         "firered": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -3256,8 +3256,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -3266,12 +3266,12 @@
         ],
         "leafgreen": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -3282,8 +3282,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -3293,12 +3293,12 @@
       },
       "locations": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -3309,8 +3309,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -3856,12 +3856,12 @@
         ],
         "firered": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -3872,8 +3872,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -3882,12 +3882,12 @@
         ],
         "leafgreen": [
           {
-            "area": "Monte Moon (Planta 1)",
-            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+            "area": "Monte Moon (Planta baja)",
+            "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
           },
           {
             "area": "Monte Moon (Sótano B2)",
-            "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+            "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
           },
           {
             "area": "Guarida Rocket (Sótano B2)",
@@ -3898,8 +3898,8 @@
             "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
           },
           {
-            "area": "Cañón Sétima (Isla Sétima)",
-            "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+            "area": "Recreativas (Isla Secunda)",
+            "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
           },
           {
             "area": "Pokémon salvajes (Clefairy)",
@@ -3909,12 +3909,12 @@
       },
       "locations": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -3925,8 +3925,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -4085,7 +4085,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cueva Cambiante (Isla Seis)",
+          "area": "Cueva Cambiante (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5032,15 +5032,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5048,7 +5048,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5123,15 +5123,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5139,7 +5139,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -5778,11 +5778,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -5885,7 +5885,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -6058,12 +6058,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ],
         "leafgreen": [
@@ -6072,12 +6068,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ]
       },
@@ -6087,12 +6079,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ]
     },
@@ -6605,7 +6593,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6692,7 +6680,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -6998,31 +6986,31 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7030,7 +7018,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7038,7 +7026,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7113,31 +7101,31 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7145,7 +7133,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7153,7 +7141,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -7304,11 +7292,11 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Golpe Roca"
         },
         {
@@ -7411,7 +7399,7 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Golpe Roca"
         },
         {
@@ -7909,47 +7897,47 @@
           "method": "Supercaña"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -7961,7 +7949,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Supercaña"
         },
         {
@@ -7977,7 +7965,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Supercaña"
         },
         {
@@ -8947,12 +8935,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ],
         "leafgreen": [
@@ -8961,12 +8945,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ]
       },
@@ -8976,12 +8956,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ]
     },
@@ -9343,7 +9319,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -9692,59 +9668,59 @@
           "method": "Supercaña"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Caña Buena"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -9756,11 +9732,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Caña Buena"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Supercaña"
         },
         {
@@ -9772,11 +9748,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Caña Buena"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Supercaña"
         },
         {
@@ -9867,31 +9843,31 @@
           "method": "Supercaña"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -9899,7 +9875,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Supercaña"
         },
         {
@@ -9907,7 +9883,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Supercaña"
         }
       ],
@@ -10370,7 +10346,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -10441,7 +10417,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
+          "area": "Cañón Sétano (Isla Sétima)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -11382,7 +11358,7 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Caña Buena"
         },
         {
@@ -11544,7 +11520,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Supercaña"
         },
         {
@@ -11717,12 +11693,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ],
         "leafgreen": [
@@ -11731,12 +11703,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ]
       },
@@ -11746,12 +11714,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ]
     },
@@ -12410,35 +12374,35 @@
           "method": "Supercaña"
         },
         {
-          "area": "Vía Ágata (Isla Quinta)",
+          "area": "Lugar de Recreo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Laberinto de Agua (Isla Quinta)",
+          "area": "Laberinto de Agua (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Prado Isla Quinta (Isla Quinta)",
+          "area": "Prado Isla Inta (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Campamento Memorial (Isla Quinta)",
+          "area": "Pilar Recuerdo (Isla Inta)",
           "method": "Supercaña"
         },
         {
-          "area": "Isla Intempesta (Isla Seis)",
+          "area": "Isla Intempesta (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Verde (Isla Seis)",
+          "area": "Vía Verde (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Vía Acuática (Isla Seis)",
+          "area": "Vía Acuática (Isla Exta)",
           "method": "Supercaña"
         },
         {
-          "area": "Valle Ruinas (Isla Seis)",
+          "area": "Valle Ruinas (Isla Exta)",
           "method": "Supercaña"
         },
         {
@@ -12446,7 +12410,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Ruinas Sétima (Isla Sétima)",
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Supercaña"
         },
         {
@@ -12458,7 +12422,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Isla Quinta (Pueblo)",
+          "area": "Isla Inta (Pueblo)",
           "method": "Supercaña"
         }
       ],
@@ -12828,12 +12792,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ],
         "leafgreen": [
@@ -12842,12 +12802,8 @@
             "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
           },
           {
-            "area": "Ruta 25 (Casa de Bill)",
-            "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-          },
-          {
             "area": "Islas Espuma (Sótano B4)",
-            "detail": "En el suelo cerca de las corrientes de agua congelada."
+            "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
         ]
       },
@@ -12857,12 +12813,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ]
     },

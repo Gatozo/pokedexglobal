@@ -172,12 +172,12 @@
       ],
       "firered": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -188,8 +188,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -198,12 +198,12 @@
       ],
       "leafgreen": [
         {
-          "area": "Monte Moon (Planta 1)",
-          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta superior."
+          "area": "Monte Moon (Planta baja)",
+          "detail": "En el suelo como Poké Ball en la esquina noroeste de la planta principal."
         },
         {
           "area": "Monte Moon (Sótano B2)",
-          "detail": "En el suelo en el pasillo previo a la zona del Supernecio y los fósiles."
+          "detail": "Objeto oculto en una roca al final del pasillo estrecho previo a los fósiles."
         },
         {
           "area": "Guarida Rocket (Sótano B2)",
@@ -214,8 +214,8 @@
           "detail": "En el suelo en una de las salas con conmutadores en Isla Canela."
         },
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "Objeto oculto en el suelo al final del cañón rocoso."
+          "area": "Recreativas (Isla Secunda)",
+          "detail": "Entregada por el padre de Pedrita en la sala de recreativas tras rescatar a su hija en el Bosque Baya y entregarle el Meteorito."
         },
         {
           "area": "Pokémon salvajes (Clefairy)",
@@ -438,12 +438,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ],
       "leafgreen": [
@@ -452,12 +448,8 @@
           "detail": "A la venta en la 4.ª planta (El Sabio de los Elementos) por 2.100₽."
         },
         {
-          "area": "Ruta 25 (Casa de Bill)",
-          "detail": "Entregada por el Abuelo de Bill en su casa al mostrarle un Poliwag o Marill."
-        },
-        {
           "area": "Islas Espuma (Sótano B4)",
-          "detail": "En el suelo cerca de las corrientes de agua congelada."
+          "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
       ]
     }
@@ -743,22 +735,14 @@
       ],
       "firered": [
         {
-          "area": "Valle Ruinas (Isla Seis)",
-          "detail": "En el suelo como Poké Ball en la meseta del Valle Ruinas."
-        },
-        {
-          "area": "Torre Desafío / Campamento (Isla Sétima)",
-          "detail": "Premio especial tras superar desafíos en Isla Sétima."
+          "area": "Valle Ruinas (Isla Exta)",
+          "detail": "En el suelo en la zona sureste del Valle Ruinas (requiere MO Fuerza)."
         }
       ],
       "leafgreen": [
         {
-          "area": "Valle Ruinas (Isla Seis)",
-          "detail": "En el suelo como Poké Ball en la meseta del Valle Ruinas."
-        },
-        {
-          "area": "Torre Desafío / Campamento (Isla Sétima)",
-          "detail": "Premio especial tras superar desafíos en Isla Sétima."
+          "area": "Valle Ruinas (Isla Exta)",
+          "detail": "En el suelo en la zona sureste del Valle Ruinas (requiere MO Fuerza)."
         }
       ]
     }
@@ -842,8 +826,12 @@
       ],
       "firered": [
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "En el suelo como Poké Ball en el Cañón Sétima."
+          "area": "Cañón Sétano (Isla Sétima)",
+          "detail": "En el suelo tras las rocas agrietadas en el Cañón Sétano (requiere MO Fuerza y MO Golpe Roca)."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Combinado en la Torre Desafío."
         },
         {
           "area": "Pokémon salvajes (Poliwhirl)",
@@ -852,8 +840,12 @@
       ],
       "leafgreen": [
         {
-          "area": "Cañón Sétima (Isla Sétima)",
-          "detail": "En el suelo como Poké Ball en el Cañón Sétima."
+          "area": "Cañón Sétano (Isla Sétima)",
+          "detail": "En el suelo tras las rocas agrietadas en el Cañón Sétano (requiere MO Fuerza y MO Golpe Roca)."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Combinado en la Torre Desafío."
         },
         {
           "area": "Pokémon salvajes (Poliwhirl)",
@@ -929,8 +921,12 @@
       ],
       "firered": [
         {
-          "area": "Monumento Conmemorativo (Isla Quinta)",
-          "detail": "Regalo de un entrenador tras depositar una Limonada sobre el monolito funerario de su Onix."
+          "area": "Pilar Recuerdo (Isla Inta)",
+          "detail": "En el suelo como Poké Ball en la playa suroeste del Pilar Recuerdo."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Eliminatorias en la Torre Desafío."
         },
         {
           "area": "Pokémon salvajes (Magnemite)",
@@ -939,8 +935,12 @@
       ],
       "leafgreen": [
         {
-          "area": "Monumento Conmemorativo (Isla Quinta)",
-          "detail": "Regalo de un entrenador tras depositar una Limonada sobre el monolito funerario de su Onix."
+          "area": "Pilar Recuerdo (Isla Inta)",
+          "detail": "En el suelo como Poké Ball en la playa suroeste del Pilar Recuerdo."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Eliminatorias en la Torre Desafío."
         },
         {
           "area": "Pokémon salvajes (Magnemite)",
@@ -1028,6 +1028,10 @@
           "detail": "En el suelo sobre una plataforma de hielo en el piso inferior de la Cueva Glaciada."
         },
         {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Doble en la Torre Desafío."
+        },
+        {
           "area": "Pokémon salvajes (Horsea / Seadra)",
           "detail": "Equipada con un 5% de probabilidad en Horsea y Seadra salvajes pescando con Supercaña."
         }
@@ -1036,6 +1040,10 @@
         {
           "area": "Cueva Glaciada (Isla Quarta)",
           "detail": "En el suelo sobre una plataforma de hielo en el piso inferior de la Cueva Glaciada."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Doble en la Torre Desafío."
         },
         {
           "area": "Pokémon salvajes (Horsea / Seadra)",
@@ -1090,19 +1098,27 @@
         },
         {
           "area": "Transferencia externa",
-          "detail": "Obtenible en los Silos de Isla Intemporal (Islas Sete) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
+          "detail": "Obtenible en el Almacén Rocket de Isla Inta (Archi7) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
         }
       ],
       "firered": [
         {
           "area": "Edificio Silph S.A. (Ciudad Azafrán)",
           "detail": "Entregado en la 5.ª planta de Silph S.A. tras liberar el edificio del Team Rocket."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Individual en la Torre Desafío."
         }
       ],
       "leafgreen": [
         {
           "area": "Edificio Silph S.A. (Ciudad Azafrán)",
           "detail": "Entregado en la 5.ª planta de Silph S.A. tras liberar el edificio del Team Rocket."
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "detail": "Premio tras completar con éxito el Modo Individual en la Torre Desafío."
         }
       ]
     }
@@ -1243,13 +1259,13 @@
       ],
       "firered": [
         {
-          "area": "Cueva Perdida (Isla Intemporal)",
+          "area": "Cueva Perdida (Isla Inta)",
           "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
         }
       ],
       "leafgreen": [
         {
-          "area": "Cueva Perdida (Isla Intemporal)",
+          "area": "Cueva Perdida (Isla Inta)",
           "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
         }
       ]
@@ -1285,13 +1301,13 @@
       ],
       "firered": [
         {
-          "area": "Cueva Perdida (Isla Intemporal)",
+          "area": "Cueva Perdida (Isla Inta)",
           "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
         }
       ],
       "leafgreen": [
         {
-          "area": "Cueva Perdida (Isla Intemporal)",
+          "area": "Cueva Perdida (Isla Inta)",
           "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
         }
       ]
