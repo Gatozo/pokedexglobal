@@ -11,24 +11,34 @@ La suite de pruebas automatizadas en `tracker/tests.py` garantiza la estabilidad
 
 ## 2. Ejecución de Pruebas
 
-Para ejecutar la suite completa de pruebas:
+Para ejecutar la suite completa de pruebas de manera optimizada:
 ```bash
-python manage.py test
+python manage.py test --keepdb
 ```
 
-Para ejecutar únicamente las pruebas de la aplicación tracker:
-```bash
-python manage.py test tracker
-```
+### Ejecución Modular Focalizada (Recomendada para cambios rápidos)
+Gracias a la estructura modular de `tracker/tests/`, es posible ejecutar únicamente las pruebas relacionadas con el área modificada en cuestión de 1 a 3 segundos:
+
+- **Autenticación (login, registro, sesiones):**
+  ```bash
+  python manage.py test tracker.tests.test_auth --keepdb
+  ```
+- **Vistas, interactividad y barra generacional:**
+  ```bash
+  python manage.py test tracker.tests.test_views --keepdb
+  ```
+- **Catálogos y datos regionales de juegos (Gen 1-3):**
+  ```bash
+  python manage.py test tracker.tests.test_catalogs --keepdb
+  ```
+- **Fixtures y mecánicas especiales:**
+  ```bash
+  python manage.py test tracker.tests.test_fixtures --keepdb
+  ```
 
 Para ejecutar una prueba específica:
 ```bash
-python manage.py test tracker.tests.PokedexTrackerTests.test_toggle_catch_anonymous_user
-```
-
-Para ejecutar con reporte detallado:
-```bash
-python manage.py test -v 2
+python manage.py test tracker.tests.test_views.PokedexTrackerTests.test_toggle_catch_anonymous_user --keepdb
 ```
 
 ---

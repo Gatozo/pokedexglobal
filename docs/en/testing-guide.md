@@ -10,26 +10,43 @@ The test suite located in `tracker/tests.py` provides automated coverage across 
 ---
 
 ## 2. Test Execution
+ 
+ To run the entire test suite in an optimized way:
+ ```bash
+ python manage.py test --keepdb
+ ```
+ 
++### Targeted Modular Execution (Recommended for Fast Changes)
++Thanks to the modular layout in `tracker/tests/`, you can run only the tests relevant to your changed area in 1 to 3 seconds:
++
++- **Authentication (login, register, sessions):**
++  ```bash
++  python manage.py test tracker.tests.test_auth --keepdb
++  ```
++- **Views, Interactivity, and National Bar:**
++  ```bash
++  python manage.py test tracker.tests.test_views --keepdb
++  ```
++- **Catalogs & Regional Game Data (Gen 1-3):**
++  ```bash
++  python manage.py test tracker.tests.test_catalogs --keepdb
++  ```
++- **Fixtures & Special Mechanics:**
++  ```bash
++  python manage.py test tracker.tests.test_fixtures --keepdb
++  ```
++
+ To run a specific test method:
+ ```bash
+-python manage.py test tracker.tests.PokedexTrackerTests.test_toggle_catch_anonymous_user
+-```
+-
+-To run with verbose output:
+-```bash
+-python manage.py test -v 2
++python manage.py test tracker.tests.test_views.PokedexTrackerTests.test_toggle_catch_anonymous_user --keepdb
+ ```
 
-To run the entire test suite:
-```bash
-python manage.py test
-```
-
-To run only the tracker application tests:
-```bash
-python manage.py test tracker
-```
-
-To run a specific test method:
-```bash
-python manage.py test tracker.tests.PokedexTrackerTests.test_toggle_catch_anonymous_user
-```
-
-To run with verbose output:
-```bash
-python manage.py test -v 2
-```
 
 ---
 

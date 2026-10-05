@@ -33,4 +33,5 @@ Queda estrictamente prohibido introducir cambios, rediseños o refactorizaciones
   3. DEBE utilizar una función que compruebe `document.readyState !== 'loading'` antes de enganchar a `DOMContentLoaded` para evitar eventos perdidos por ejecución asíncrona.
 
 ## 3. Pruebas Automatizadas
-Cualquier cambio en la interfaz debe someterse a `python manage.py test` para garantizar que el test de regresión `test_frontend_interactivity_invariants` siga pasando satisfactoriamente.
+Cualquier cambio en la interfaz debe someterse a la prueba específica con `--keepdb` para garantizar que el invariante siga pasando satisfactoriamente de forma casi instantánea:
+`python manage.py test tracker.tests.test_views.FrontendInteractivityInvariantsTests --keepdb`
