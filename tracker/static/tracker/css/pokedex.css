@@ -1,7 +1,26 @@
-/* Pokédex Global - Estilos Estáticos Base y Componentes Cómic */
+/* Pokédex Global - Estilos Principales y Componentes Cómic */
 
 html {
+    overflow-y: scroll;
     scrollbar-gutter: stable;
+}
+
+/* Modales fijados fuera del flujo del documento desde el frame 0 (evita FOUC antes de que cargue Tailwind) */
+#comic-modal,
+#stone-location-modal,
+#exclusives-modal,
+#transfers-modal,
+#unown-modal {
+    position: fixed;
+    inset: 0;
+}
+
+#comic-modal.hidden,
+#stone-location-modal.hidden,
+#exclusives-modal.hidden,
+#transfers-modal.hidden,
+#unown-modal.hidden {
+    display: none !important;
 }
 
 /* Tipos Elementales */
@@ -48,7 +67,61 @@ html {
     animation-play-state: paused;
 }
 
-/* Pokemon Cards Grid Container - Responsive with Centered Incomplete Last Row */
+/* Fondos Temáticos Dinámicos por Juego */
+body[data-game="blue"] {
+    background-color: #edf4fc;
+    background-image: radial-gradient(rgba(37, 99, 235, 0.15) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="yellow"] {
+    background-color: #faf5e6;
+    background-image: radial-gradient(rgba(217, 119, 6, 0.15) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="gold"] {
+    background-color: #faf7ee;
+    background-image: radial-gradient(rgba(197, 155, 39, 0.18) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="silver"] {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(rgba(100, 116, 139, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="crystal"] {
+    background-color: #f0fdfa;
+    background-image: radial-gradient(rgba(2, 132, 199, 0.18) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="ruby"] {
+    background-color: #fbf2f4;
+    background-image: radial-gradient(rgba(136, 19, 55, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="sapphire"] {
+    background-color: #f0f6ff;
+    background-image: radial-gradient(rgba(15, 56, 112, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="emerald"] {
+    background-color: #f0fdf4;
+    background-image: radial-gradient(rgba(5, 150, 105, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body[data-game="firered"],
+body[data-game="leafgreen"] {
+    background-color: #fff7ed;
+    background-image: radial-gradient(rgba(234, 88, 12, 0.20) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+body,
+body[data-game="red"] {
+    background-color: #faebed;
+    background-image: radial-gradient(rgba(225, 29, 72, 0.15) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
+
+/* Contenedor de Grilla de Tarjetas - Responsivo con última fila incompleta centrada */
 #pokemon-grid {
     display: flex;
     flex-wrap: wrap;
@@ -89,12 +162,27 @@ html {
     }
 }
 
-/* Collectible Card Styling */
+/* Estilos de Tarjeta Coleccionable y Aislamiento GPU Anti-Bamboleo */
 .pokemon-card {
     background-color: #ffffff;
-    border: 2.5px solid #0f172a;
-    box-shadow: 3.5px 3.5px 0px 0px #0f172a;
+    border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0px 0px #0f172a;
     transition: background-color 0.15s ease, border-color 0.15s ease;
+    contain: layout paint;
+    isolation: isolate;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.pokemon-img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.pokemon-card .rounded-full {
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .pixel-art {
@@ -103,7 +191,7 @@ html {
     image-rendering: crisp-edges;
 }
 
-/* Comic Book Modal Styling */
+/* Estilos de Modal Cómic */
 .comic-panel {
     border: 3.5px solid #0f172a;
     box-shadow: 7px 7px 0px 0px #0f172a;
@@ -147,4 +235,222 @@ html {
 .comic-dots {
     background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
     background-size: 8px 8px;
+}
+
+/* Tintes y Patrones de Tarjetas Capturadas por Juego */
+
+/* Blue */
+body[data-game="blue"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #2563eb,
+        #2563eb 12px,
+        #1d4ed8 12px,
+        #1d4ed8 24px
+    );
+}
+body[data-game="blue"] .pokemon-card.caught-card {
+    background-color: #dbeafe !important;
+    border-color: #1e3a8a !important;
+    box-shadow: 3px 3px 0px 0px #1e3a8a;
+}
+body[data-game="blue"] .status-caught-active {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+}
+
+/* Yellow */
+body[data-game="yellow"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #f59e0b,
+        #f59e0b 12px,
+        #d97706 12px,
+        #d97706 24px
+    );
+}
+body[data-game="yellow"] .pokemon-card.caught-card {
+    background-color: #fef3c7 !important;
+    border-color: #78350f !important;
+    box-shadow: 3px 3px 0px 0px #78350f;
+}
+body[data-game="yellow"] .status-caught-active {
+    background-color: #f59e0b !important;
+    color: #0f172a !important;
+    border-color: #0f172a !important;
+}
+
+/* Gold */
+body[data-game="gold"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #c59b27,
+        #c59b27 12px,
+        #9e7514 12px,
+        #9e7514 24px
+    );
+}
+body[data-game="gold"] .pokemon-card.caught-card {
+    background-color: #fcf6e3 !important;
+    border-color: #694f0e !important;
+    box-shadow: 3px 3px 0px 0px #694f0e;
+}
+body[data-game="gold"] .status-caught-active {
+    background-color: #c59b27 !important;
+    color: #0f172a !important;
+    border-color: #0f172a !important;
+}
+
+/* Silver */
+body[data-game="silver"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #64748b,
+        #64748b 12px,
+        #475569 12px,
+        #475569 24px
+    );
+}
+body[data-game="silver"] .pokemon-card.caught-card {
+    background-color: #f1f5f9 !important;
+    border-color: #334155 !important;
+    box-shadow: 3px 3px 0px 0px #334155;
+}
+body[data-game="silver"] .status-caught-active {
+    background-color: #64748b !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+}
+
+/* Crystal */
+body[data-game="crystal"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #0284c7,
+        #0284c7 12px,
+        #0369a1 12px,
+        #0369a1 24px
+    );
+}
+body[data-game="crystal"] .pokemon-card.caught-card {
+    background-color: #e0f2fe !important;
+    border-color: #0369a1 !important;
+    box-shadow: 3px 3px 0px 0px #0369a1;
+}
+body[data-game="crystal"] .status-caught-active {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+}
+
+/* Ruby */
+body[data-game="ruby"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #881337,
+        #881337 12px,
+        #701a2e 12px,
+        #701a2e 24px
+    );
+}
+body[data-game="ruby"] .pokemon-card.caught-card {
+    background-color: #fef2f4 !important;
+    border-color: #475569 !important;
+    box-shadow: 3px 3px 0px 0px #334155;
+}
+body[data-game="ruby"] .status-caught-active {
+    background-color: #881337 !important;
+    color: #ffffff !important;
+    border-color: #475569 !important;
+}
+
+/* Sapphire */
+body[data-game="sapphire"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #0f3870,
+        #0f3870 12px,
+        #0a254a 12px,
+        #0a254a 24px
+    );
+}
+body[data-game="sapphire"] .pokemon-card.caught-card {
+    background-color: #e6f0fa !important;
+    border-color: #0f3870 !important;
+    box-shadow: 3px 3px 0px 0px #0a254a;
+}
+body[data-game="sapphire"] .status-caught-active {
+    background-color: #0f3870 !important;
+    color: #ffffff !important;
+    border-color: #0a254a !important;
+}
+
+/* Emerald */
+body[data-game="emerald"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #059669,
+        #059669 12px,
+        #065f46 12px,
+        #065f46 24px
+    );
+}
+body[data-game="emerald"] .pokemon-card.caught-card {
+    background-color: #ecfdf5 !important;
+    border-color: #064e3b !important;
+    box-shadow: 3px 3px 0px 0px #064e3b;
+}
+body[data-game="emerald"] .status-caught-active {
+    background-color: #059669 !important;
+    color: #ffffff !important;
+    border-color: #064e3b !important;
+}
+
+/* FireRed / LeafGreen */
+body[data-game="firered"] .comic-header-pattern,
+body[data-game="leafgreen"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #ea580c,
+        #ea580c 12px,
+        #c2410c 12px,
+        #c2410c 24px
+    );
+}
+body[data-game="firered"] .pokemon-card.caught-card,
+body[data-game="leafgreen"] .pokemon-card.caught-card {
+    background-color: #ffedd5 !important;
+    border-color: #c2410c !important;
+    box-shadow: 3px 3px 0px 0px #9a3412;
+}
+body[data-game="firered"] .status-caught-active,
+body[data-game="leafgreen"] .status-caught-active {
+    background-color: #ea580c !important;
+    color: #ffffff !important;
+    border-color: #9a3412 !important;
+}
+
+/* Default / Red */
+.comic-header-pattern,
+body[data-game="red"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #dc2626,
+        #dc2626 12px,
+        #b91c1c 12px,
+        #b91c1c 24px
+    );
+}
+.pokemon-card.caught-card,
+body[data-game="red"] .pokemon-card.caught-card {
+    background-color: #ffe4e6 !important;
+    border-color: #881337 !important;
+    box-shadow: 3px 3px 0px 0px #881337;
+}
+.status-caught-active,
+body[data-game="red"] .status-caught-active {
+    background-color: #e11d48 !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
 }

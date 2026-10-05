@@ -701,8 +701,8 @@ class PokemonEmeraldGen3Tests(TestCase):
         """Verifica que las etiquetas de tipo se rendericen en minúsculas y coincidan con los estilos CSS."""
         resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))
         self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'tracker/css/pokedex.css')
         self.assertContains(resp, 'type-grass')
-        self.assertContains(resp, '.type-grass, .type-Grass { background-color: #78C850;')
 
     def test_emerald_deoxys_speed_form_sprites(self):
         """Verifica que Deoxys en Esmeralda utilice canónicamente la Forma Velocidad tanto en sprites como en icono."""

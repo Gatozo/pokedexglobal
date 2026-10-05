@@ -9,8 +9,8 @@ from tracker.tests.mocks import MockQuerySet, MockObjects, Pokemon, PokedexEntry
 class PokedexTrackerTests(TestCase):
     def setUp(self):
         self.client = Client()
-        self.game = Game.objects.create(name="Pokémon Red", slug="red", generation=1)
-        self.pokedex = Pokedex.objects.create(game=self.game, name="Pokédex de Kanto", slug="kanto")
+        self.game, _ = Game.objects.get_or_create(slug="red", defaults={"name": "Pokémon Red", "generation": 1})
+        self.pokedex, _ = Pokedex.objects.get_or_create(game=self.game, slug="kanto", defaults={"name": "Pokédex de Kanto"})
         self.pokemon = Pokemon({"national_number": 1, "name": "bulbasaur", "display_name": "Bulbasaur", "primary_type": "grass", "secondary_type": "poison"})
         self.entry = PokedexEntry({"id": 1, "entry_number": 1, "pokemon": self.pokemon, "pokedex": self.pokedex})
 
@@ -202,7 +202,7 @@ class PokedexTrackerTests(TestCase):
         url = reverse("tracker:pokedex_default", kwargs={"game_slug": "gold"})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, '.type-dark, .type-Dark { background-color: #705848;')
+        self.assertContains(response, 'tracker/css/pokedex.css')
         self.assertContains(response, 'type-dark')
         self.assertContains(response, 'Siniestro')
 
@@ -461,8 +461,8 @@ class PokedexTrackerTests(TestCase):
         self.assertIn("Canje de fichas (1.200)", casino_methods)
 
     def test_pokedex_view_pokemon_blue_theming(self):
-        game_blue = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
-        pokedex_blue = Pokedex.objects.create(game=game_blue, name="Pokédex de Kanto", slug="kanto")
+        game_blue, _ = Game.objects.get_or_create(slug="blue", defaults={"name": "Pokémon Blue", "generation": 1})
+        pokedex_blue, _ = Pokedex.objects.get_or_create(game=game_blue, slug="kanto", defaults={"name": "Pokédex de Kanto"})
         PokedexEntry.objects.create(pokedex=pokedex_blue, pokemon=self.pokemon, entry_number=1)
 
         url = reverse("tracker:pokedex_default", kwargs={"game_slug": "blue"})
@@ -473,8 +473,8 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, "bg-blue-600")
 
     def test_independent_catch_tracking_between_red_and_blue(self):
-        game_blue = Game.objects.create(name="Pokémon Blue", slug="blue", generation=1)
-        pokedex_blue = Pokedex.objects.create(game=game_blue, name="Pokédex de Kanto", slug="kanto")
+        game_blue, _ = Game.objects.get_or_create(slug="blue", defaults={"name": "Pokémon Blue", "generation": 1})
+        pokedex_blue, _ = Pokedex.objects.get_or_create(game=game_blue, slug="kanto", defaults={"name": "Pokédex de Kanto"})
         entry_blue = get_compiled_catalog("blue")[0]
 
         url_toggle = reverse("tracker:toggle_catch")
