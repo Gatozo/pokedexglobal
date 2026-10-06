@@ -220,7 +220,9 @@ HOENN_AREAS_ES = {
     'team-aqua-hideout-area': 'Guarida Aqua (Ciudad Calagua)',
     'faraway-island-area': 'Isla Suprema (Evento Mapa Viejo - Mew)',
     'birth-island-area': 'Isla Origen (Evento Ori-Ticket - Deoxys)',
-    'navel-rock-area': 'Roca Ombligo (Evento Ticket Místico - Lugia/Ho-Oh)'
+    'navel-rock-area': 'Roca Ombligo (Evento Ticket Místico - Lugia/Ho-Oh)',
+    'hoenn-altering-cave-area': 'Cueva Cambiante (Ruta 103)',
+    'altering-cave-area': 'Cueva Cambiante (Ruta 103)'
 }
 
 METHOD_NAMES_ES = {
@@ -612,7 +614,10 @@ def main():
         235: {
             'type': 'wild',
             'summary': 'Salvaje en la Cueva Taller (Artisan Cave) en el Frente de Batalla (bajo la Cueva del Sudowoodo).',
-            'locations': [{'area': 'Frente de Batalla (Cueva Taller)', 'method': 'Salvaje en Cueva Taller (P1 y S1)'}],
+            'locations': [
+                {'area': 'Frente de Batalla (Cueva Taller)', 'method': 'Salvaje en Cueva Taller (P1 y S1)'},
+                {'area': 'Cueva Cambiante (Ruta 103)', 'method': 'Evento e-Reader inactivo'}
+            ],
             'badge_color': 'indigo',
             'badge_label': 'Salvaje Postgame'
         },
@@ -973,6 +978,15 @@ def main():
                     obt_info['summary'] = summ[:-1] + f" ({c_phrase})."
                 else:
                     obt_info['summary'] = summ + f" ({c_phrase})."
+
+        # Especies con evento e-Reader programado internamente en Cueva Cambiante (evento inactivo)
+        if nat_id in [179, 190, 204, 213, 216, 228, 234, 235]:
+            has_altering = any('cueva cambiante' in l.get('area', '').lower() for l in obt_info.get('locations', []))
+            if not has_altering:
+                obt_info.setdefault('locations', []).append({
+                    'area': 'Cueva Cambiante (Ruta 103)',
+                    'method': 'Evento e-Reader inactivo'
+                })
 
         # Piedra evolutiva u objeto especial / incienso de crianza
         evo_stone = None

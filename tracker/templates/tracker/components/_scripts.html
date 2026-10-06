@@ -205,6 +205,25 @@
     window.handleExclusivesBackdropClick = function(e) {
         if (e && e.target && e.target.id === 'exclusives-modal') window.closeExclusivesModal();
     };
+    window.toggleExclusivesAccordion = function(panelKey) {
+        const btn = document.getElementById('exclusives-' + panelKey + '-accordion-btn');
+        const content = document.getElementById('exclusives-' + panelKey + '-accordion-content');
+        const icon = document.getElementById('exclusives-' + panelKey + '-accordion-icon');
+        const label = document.getElementById('exclusives-' + panelKey + '-accordion-label');
+        if (!content) return;
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+            if (label) label.textContent = 'Ocultar aviso';
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+        } else {
+            content.classList.add('hidden');
+            if (icon) icon.classList.remove('rotate-180');
+            if (label) label.textContent = 'Mostrar aviso';
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    };
 
     window.openTransfersModal = function() {
         queueOrRun('openTransfersModal', [], function() {
@@ -334,6 +353,44 @@
     window.switchToUnownModal = function() {
         window.closePokemonModal();
         window.openUnownModal();
+    };
+    window.toggleUnownHistoricalAccordion = function() {
+        const btn = document.getElementById('unown-historical-accordion-btn');
+        const content = document.getElementById('unown-historical-accordion-content');
+        const icon = document.getElementById('unown-historical-accordion-icon');
+        const label = document.getElementById('unown-historical-accordion-label');
+        if (!content) return;
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+            if (label) label.textContent = 'Ocultar nota';
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+        } else {
+            content.classList.add('hidden');
+            if (icon) icon.classList.remove('rotate-180');
+            if (label) label.textContent = 'Mostrar nota';
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    };
+    window.toggleComicCaveAccordion = function(btn) {
+        if (!btn) return;
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('svg');
+        const label = btn.querySelector('.label-text');
+        if (!content) return;
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.classList.add('rotate-180');
+            if (label) label.textContent = 'Ocultar';
+            btn.setAttribute('aria-expanded', 'true');
+        } else {
+            content.classList.add('hidden');
+            if (icon) icon.classList.remove('rotate-180');
+            if (label) label.textContent = 'Ver nota';
+            btn.setAttribute('aria-expanded', 'false');
+        }
     };
 
     // Barra de herramientas: Filtros y visualización

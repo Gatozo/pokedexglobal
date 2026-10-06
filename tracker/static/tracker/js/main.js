@@ -44,7 +44,8 @@ import {
     toggleExclusiveCatch, 
     updateExclusivesProgressUI, 
     updateExclusivesModalUI, 
-    updateExclusivesCardStatus 
+    updateExclusivesCardStatus,
+    toggleExclusivesAccordion
 } from './modal_exclusives.js';
 import { 
     openTransfersModal, 
@@ -62,7 +63,8 @@ import {
     switchToUnownModal, 
     filterUnownChamber, 
     updateUnownModalUI, 
-    toggleUnownFormCatch 
+    toggleUnownFormCatch,
+    toggleUnownHistoricalAccordion
 } from './modal_unown.js';
 import { 
     openPokemonModal, 
@@ -81,7 +83,8 @@ import {
     applyCardForm, 
     cycleCardPokemonForm, 
     applyModalForm, 
-    cycleModalPokemonForm 
+    cycleModalPokemonForm,
+    toggleComicCaveAccordion
 } from './modal_comic.js';
 import { 
     setModalUrlHash, 
@@ -128,6 +131,7 @@ window.toggleExclusiveCatch = toggleExclusiveCatch;
 window.updateExclusivesProgressUI = updateExclusivesProgressUI;
 window.updateExclusivesModalUI = updateExclusivesModalUI;
 window.updateExclusivesCardStatus = updateExclusivesCardStatus;
+window.toggleExclusivesAccordion = toggleExclusivesAccordion;
 
 window.openTransfersModal = openTransfersModal;
 window.closeTransfersModal = closeTransfersModal;
@@ -144,6 +148,7 @@ window.switchToUnownModal = switchToUnownModal;
 window.filterUnownChamber = filterUnownChamber;
 window.updateUnownModalUI = updateUnownModalUI;
 window.toggleUnownFormCatch = toggleUnownFormCatch;
+window.toggleUnownHistoricalAccordion = toggleUnownHistoricalAccordion;
 
 window.openPokemonModal = openPokemonModal;
 window.openPokemonModalDirect = openPokemonModalDirect;
@@ -159,6 +164,7 @@ window.applyCardForm = applyCardForm;
 window.cycleCardPokemonForm = cycleCardPokemonForm;
 window.applyModalForm = applyModalForm;
 window.cycleModalPokemonForm = cycleModalPokemonForm;
+window.toggleComicCaveAccordion = toggleComicCaveAccordion;
 
 window.setModalUrlHash = setModalUrlHash;
 window.clearModalUrlHash = clearModalUrlHash;

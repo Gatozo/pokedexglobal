@@ -1114,7 +1114,9 @@ class Gen2MechanicsAndExclusivesTests(TestCase):
         self.client.cookies["pokedex_shinydex_gold"] = "1"
         res_shiny = self.client.get(url)
         self.assertEqual(res_shiny.status_code, 200)
-        self.assertContains(res_shiny, 'id="unown-historical-note" class="bg-amber-100/80')
+        self.assertContains(res_shiny, 'id="unown-historical-note"')
+        self.assertNotContains(res_shiny, 'id="unown-historical-note" class="hidden')
+        self.assertContains(res_shiny, 'id="unown-historical-accordion-btn"')
         self.assertNotContains(res_shiny, '★ Shiny Gen 2')
         self.assertNotContains(res_shiny, 'unown-legit-shiny-badge')
 

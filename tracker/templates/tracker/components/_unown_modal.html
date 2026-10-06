@@ -83,11 +83,36 @@
 
             {% if is_johto %}
             <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny en Johto) -->
-            <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}bg-amber-100/80 border border-amber-900/30 rounded-xl p-2.5 text-xs text-amber-950 flex items-start gap-2">
-                <img src="/media/items/fame-checker.png" alt="Nota histórica" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
-                <p class="leading-relaxed">
-                    <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
-                </p>
+            <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}border-2 border-slate-950 rounded-xl overflow-hidden shadow-sm bg-amber-50">
+                <button 
+                    type="button"
+                    id="unown-historical-accordion-btn"
+                    onclick="toggleUnownHistoricalAccordion()"
+                    class="w-full px-3 py-2 bg-amber-100/90 hover:bg-amber-100 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                    aria-expanded="false"
+                    aria-controls="unown-historical-accordion-content"
+                >
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="/media/items/fame-checker.png" alt="Nota histórica" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                        <span class="font-black text-xs uppercase tracking-wide truncate text-amber-950">
+                            Particularidad Histórica (Shinies en 2ª Gen)
+                        </span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[9px] font-black uppercase border border-slate-950 bg-amber-300 text-slate-950 shrink-0">
+                            1 nota
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                        <span id="unown-historical-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Mostrar nota</span>
+                        <svg id="unown-historical-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </button>
+                <div id="unown-historical-accordion-content" class="hidden p-2.5 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/80">
+                    <p class="leading-relaxed">
+                        <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
+                    </p>
+                </div>
             </div>
             {% endif %}
         </div>

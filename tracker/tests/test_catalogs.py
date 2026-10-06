@@ -554,6 +554,15 @@ class PokemonEmeraldGen3Tests(TestCase):
         self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
         self.assertEqual(nat_cat[385].pokemon.name, "deoxys")
 
+        # Cueva Cambiante en Esmeralda (Ruta 103)
+        zubat = next(e for e in hoenn_cat if e.pokemon.national_number == 41)
+        self.assertIn("Cueva Cambiante (Ruta 103)", [l["area"] for l in zubat.obtaining_info["locations"]])
+
+        aipom = next(e for e in nat_cat if e.pokemon.national_number == 190)
+        aipom_locs = {l["area"]: l["method"] for l in aipom.obtaining_info["locations"]}
+        self.assertIn("Cueva Cambiante (Ruta 103)", aipom_locs)
+        self.assertEqual(aipom_locs["Cueva Cambiante (Ruta 103)"], "Evento e-Reader inactivo")
+
     def test_emerald_views_and_theme(self):
         """Verifica que las vistas de Pokédex regional y nacional respondan correctamente en Esmeralda con su tema verde esmeralda."""
         resp_hoenn = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "hoenn"}))

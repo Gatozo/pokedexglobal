@@ -367,7 +367,7 @@ export function renderModalObtaining(data, activeForm = null) {
                     ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
                     : (isBreedingOrEgg ? 'bg-pink-50/70 border-pink-200 text-pink-950' : (isTransfer ? 'bg-slate-100 border-slate-300 text-slate-800' : 'bg-slate-50 border-slate-300 text-slate-800'));
                 
-                const methodLabel = isAlteringCaveInactive ? 'Evento e-Reader inactivo' : loc.method;
+                const methodLabel = isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method;
                 const methodClass = isAlteringCaveInactive ? 'text-[10px] text-amber-800 font-bold shrink-0' : 'text-[10px] text-slate-500 font-medium shrink-0';
 
                 item.className = `flex items-center justify-between text-[11px] border rounded px-2.5 py-1 font-semibold overflow-hidden min-h-[30px] ${cardBg}`;
@@ -395,16 +395,29 @@ export function renderModalObtaining(data, activeForm = null) {
 
             if (hasAlteringCaveInactive) {
                 const caveNote = document.createElement('div');
-                caveNote.className = 'mt-2 text-xs bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-2.5 font-bold flex items-start gap-2 shadow-sm';
+                caveNote.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-amber-50';
                 caveNote.innerHTML = `
-                    <img src="/media/items/card-key.png" alt="Cueva Cambiante" class="w-5 h-5 object-contain pixel-art shrink-0 mt-0.5 drop-shadow-sm">
-                    <div class="space-y-1 text-left">
-                        <span class="font-black uppercase text-[10px] text-amber-900 tracking-wide block">
-                            Nota Histórica • Cueva Cambiante (Evento e-Reader Inactivo):
-                        </span>
-                        <p class="text-[11px] leading-relaxed font-semibold text-slate-800">
-                            Aunque esta especie figura en los datos internos de la Cueva Cambiante, su aparición dependía de un evento especial con tarjetas del periférico <strong>Nintendo e-Reader (Mystery Event)</strong> que jamás llegó a distribuirse comercialmente en ningún lugar del mundo. Por ello, en el cartucho original únicamente aparece <strong>Zubat</strong> (con un ratio del 100%), siendo técnicamente imposible capturar a este Pokémon aquí de forma salvaje y requiriendo transferencia externa para completarlo en tu Pokédex.
-                        </p>
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-amber-100/90 hover:bg-amber-100 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/card-key.png" alt="Cueva Cambiante" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-amber-900 tracking-wide">
+                                Nota Histórica • Cueva Cambiante
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-amber-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-amber-50/70">
+                        Aunque esta especie figura en los datos internos de la Cueva Cambiante, su aparición salvaje dependía de un evento especial con tarjetas del periférico <strong>Nintendo e-Reader (Mystery Event)</strong> que jamás llegó a distribuirse comercialmente en ningún lugar del mundo. Por ello, en el cartucho original únicamente aparece <strong>Zubat</strong> (con un ratio del 100%), siendo imposible encontrar a este Pokémon aquí en estado salvaje sin dicho periférico.
                     </div>
                 `;
                 detailsContainer.appendChild(caveNote);
@@ -737,5 +750,25 @@ export function updateModalCatchStatus(isCaught) {
 export async function modalToggleCatch() {
     if (state.activeModalEntryId) {
         await toggleCatch(state.activeModalEntryId);
+    }
+}
+
+export function toggleComicCaveAccordion(btn) {
+    if (!btn) return;
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('svg');
+    const label = btn.querySelector('.label-text');
+    if (!content) return;
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+        content.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Ver nota';
+    } else {
+        content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar';
     }
 }

@@ -230,3 +230,24 @@ export async function toggleUnownFormCatch(letter) {
         console.error("Error al conmutar captura de Unown:", e);
     }
 }
+
+export function toggleUnownHistoricalAccordion() {
+    const btn = document.getElementById('unown-historical-accordion-btn');
+    const content = document.getElementById('unown-historical-accordion-content');
+    const icon = document.getElementById('unown-historical-accordion-icon');
+    const label = document.getElementById('unown-historical-accordion-label');
+    if (!btn || !content) return;
+
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+        content.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Mostrar nota';
+    } else {
+        content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar nota';
+    }
+}

@@ -84,9 +84,33 @@
         <div class="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1">
             <!-- Panel 1: Exclusivos de la Contraparte (Tarjetas completas con acción de captura) -->
             <div id="exclusives-panel-counterpart" class="space-y-3">
-                <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
-                    <img src="/media/items/linking-cord.png" alt="Intercambio" class="w-5 h-5 object-contain pixel-art shrink-0 drop-shadow-sm">
-                    <div>
+                <!-- Acordeón Cómic de Información de Exclusividad -->
+                <div id="exclusives-counterpart-accordion" class="border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-amber-50">
+                    <button 
+                        type="button" 
+                        id="exclusives-counterpart-accordion-btn"
+                        onclick="toggleExclusivesAccordion('counterpart')"
+                        class="w-full px-3.5 py-2 sm:py-2.5 bg-amber-100/90 hover:bg-amber-100 text-slate-900 flex items-center justify-between gap-2.5 transition-colors text-left cursor-pointer select-none"
+                        aria-expanded="false"
+                        aria-controls="exclusives-counterpart-accordion-content"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/linking-cord.png" alt="Intercambio" class="w-5 h-5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black text-xs sm:text-sm uppercase tracking-wide truncate text-amber-950">
+                                Información de Exclusividad
+                            </span>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border border-slate-950 bg-amber-300 text-slate-950 shrink-0">
+                                1 nota
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span id="exclusives-counterpart-accordion-label" class="text-[10px] sm:text-xs font-black uppercase text-amber-900/80 hidden sm:inline">Mostrar aviso</span>
+                            <svg id="exclusives-counterpart-accordion-icon" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="exclusives-counterpart-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs font-bold text-amber-950 bg-amber-50">
                         {% if exclusives_info.notice %}
                         {{ exclusives_info.notice|safe }}
                         {% else %}
@@ -185,75 +209,66 @@
 
             <!-- Panel 2: Exclusivos de la Propia Edición (Mini-fichas compactas con Iconos de PC de 32x32) -->
             <div id="exclusives-panel-own" class="hidden space-y-3">
-                {% if exclusives_info.is_yellow %}
-                <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-xl p-4 text-xs font-bold flex items-start gap-3 shadow-sm">
-                    <img src="/media/items/star-piece.png" alt="Especial" class="w-6 h-6 shrink-0 object-contain pixel-art">
-                    <div class="space-y-1">
-                        <h4 class="font-black text-sm uppercase">Sin Pokémon exclusivos bloqueados</h4>
-                        <p class="font-medium text-slate-700">
-                            <strong>Pokémon Amarillo</strong> es una edición especial extendida donde puedes obtener a los tres Pokémon iniciales de Kanto (<strong>Bulbasaur</strong> en Ciudad Celeste, <strong>Charmander</strong> en Ruta 24 y <strong>Squirtle</strong> en Ciudad Carmín) mediante eventos y regalos dentro de la partida.
-                        </p>
-                        <p class="font-medium text-slate-700">
-                            Ninguna especie nativa de Amarillo es exclusiva de forma que impida a los jugadores de Rojo o Azul completar su Pokédex. Tu objetivo principal de intercambio en esta edición es recibir los <strong>13 Pokémon faltantes</strong> desde Rojo y Azul.
-                        </p>
-                    </div>
-                </div>
-                {% elif game.slug == 'emerald' %}
-                <div class="bg-emerald-50 border-2 border-emerald-300 text-emerald-950 rounded-xl p-3.5 text-xs font-bold flex items-start gap-3 shadow-sm">
-                    <img src="/media/items/star-piece.png" alt="Especial" class="w-5 h-5 shrink-0 object-contain pixel-art mt-0.5">
-                    <div class="space-y-1">
-                        <h4 class="font-black text-sm uppercase">Nuevos Nativos, Regalos y Míticos Transferibles a Rubí y Zafiro</h4>
-                        <p class="font-medium text-slate-700">
-                            Estos <strong>{{ exclusives_info.own_total }} Pokémon</strong> pueden obtenerse en tu partida de <strong>Pokémon Esmeralda</strong> (gracias a la ampliación postgame de la Zona Safari, el Túnel del Desierto, la Cueva Taller, intercambios en el Frente de Batalla, regalos del Prof. Abedul y eventos en islas para Lugia, Ho-Oh, Mew y Deoxys).
-                        </p>
-                        <p class="font-medium text-slate-700">
-                            Los jugadores de <strong>Pokémon Rubí y Pokémon Zafiro</strong> no tienen acceso a estos Pokémon de forma nativa en Hoenn, por lo que puedes transferírselos por cable link para completar su Pokédex Nacional.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Cuadrícula compacta con los iconos de PC -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
-                    {% for item in exclusives_info.own_list %}
-                    <div 
-                        class="bg-white border-2 border-slate-950 rounded-xl p-2.5 flex items-center gap-2.5 shadow-[2px_2px_0px_0px_#0f172a] hover:shadow-[3px_3px_0px_0px_#0f172a] hover:bg-slate-50 transition-all cursor-pointer group"
-                        onclick="{% if item.entry_id %}openPokemonModal({{ item.entry_id }}){% endif %}"
-                        title="Ver detalles de {{ item.name }}"
+                <!-- Acordeón Cómic de Información de Exclusivos Propios -->
+                <div id="exclusives-own-accordion" class="border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] {% if exclusives_info.is_yellow %}bg-amber-50{% elif game.slug == 'emerald' %}bg-emerald-50{% else %}bg-blue-50{% endif %}">
+                    <button 
+                        type="button" 
+                        id="exclusives-own-accordion-btn"
+                        onclick="toggleExclusivesAccordion('own')"
+                        class="w-full px-3.5 py-2 sm:py-2.5 {% if exclusives_info.is_yellow %}bg-amber-100/90 hover:bg-amber-100 text-amber-950{% elif game.slug == 'emerald' %}bg-emerald-100/90 hover:bg-emerald-100 text-emerald-950{% else %}bg-blue-100/90 hover:bg-blue-100 text-blue-950{% endif %} flex items-center justify-between gap-2.5 transition-colors text-left cursor-pointer select-none"
+                        aria-expanded="false"
+                        aria-controls="exclusives-own-accordion-content"
                     >
-                        {% if item.modal_data_json %}
-                        <script type="application/json" id="entry-data-{{ item.entry_id }}">{{ item.modal_data_json|safe }}</script>
+                        <div class="flex items-center gap-2 min-w-0">
+                            {% if exclusives_info.is_yellow or game.slug == 'emerald' %}
+                            <img src="/media/items/star-piece.png" alt="Especial" class="w-5 h-5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            {% else %}
+                            <img src="/media/items/oaks-parcel.png" alt="Paquete" class="w-5 h-5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            {% endif %}
+                            <span class="font-black text-xs sm:text-sm uppercase tracking-wide truncate">
+                                Información de Exclusividad
+                            </span>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border border-slate-950 bg-amber-300 text-slate-950 shrink-0">
+                                1 nota
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span id="exclusives-own-accordion-label" class="text-[10px] sm:text-xs font-black uppercase opacity-80 hidden sm:inline">Mostrar aviso</span>
+                            <svg id="exclusives-own-accordion-icon" class="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="exclusives-own-accordion-content" class="hidden p-3.5 border-t-2 border-slate-950 text-xs font-bold {% if exclusives_info.is_yellow %}text-amber-950 bg-amber-50{% elif game.slug == 'emerald' %}text-emerald-950 bg-emerald-50{% else %}text-blue-950 bg-blue-50{% endif %}">
+                        {% if exclusives_info.is_yellow %}
+                        <div class="space-y-1">
+                            <h4 class="font-black text-sm uppercase">Sin Pokémon exclusivos bloqueados</h4>
+                            <p class="font-medium text-slate-700">
+                                <strong>Pokémon Amarillo</strong> es una edición especial extendida donde puedes obtener a los tres Pokémon iniciales de Kanto (<strong>Bulbasaur</strong> en Ciudad Celeste, <strong>Charmander</strong> en Ruta 24 y <strong>Squirtle</strong> en Ciudad Carmín) mediante eventos y regalos dentro de la partida.
+                            </p>
+                            <p class="font-medium text-slate-700">
+                                Ninguna especie nativa de Amarillo es exclusiva de forma que impida a los jugadores de Rojo o Azul completar su Pokédex. Tu objetivo principal de intercambio en esta edición es recibir los <strong>13 Pokémon faltantes</strong> desde Rojo y Azul.
+                            </p>
+                        </div>
+                        {% elif game.slug == 'emerald' %}
+                        <div class="space-y-1">
+                            <h4 class="font-black text-sm uppercase">Nuevos Nativos, Regalos y Míticos Transferibles a Rubí y Zafiro</h4>
+                            <p class="font-medium text-slate-700">
+                                Estos <strong>{{ exclusives_info.own_total }} Pokémon</strong> pueden obtenerse en tu partida de <strong>Pokémon Esmeralda</strong> (gracias a la ampliación postgame de la Zona Safari, el Túnel del Desierto, la Cueva Taller, intercambios en el Frente de Batalla, regalos del Prof. Abedul y eventos en islas para Lugia, Ho-Oh, Mew y Deoxys).
+                            </p>
+                            <p class="font-medium text-slate-700">
+                                Los jugadores de <strong>Pokémon Rubí y Pokémon Zafiro</strong> no tienen acceso a estos Pokémon de forma nativa en Hoenn, por lo que puedes transferírselos por cable link para completar su Pokédex Nacional.
+                            </p>
+                        </div>
+                        {% else %}
+                        <div>
+                            Estos Pokémon son exclusivos de tu cartucho de <strong>{{ game.display_name }}</strong>. Los jugadores de <strong>{{ exclusives_info.counterpart_name }}</strong> no pueden atraparlos en estado salvaje y necesitarán que se los pases por intercambio.
+                        </div>
                         {% endif %}
-                        <!-- Icono de PC oficial (32x32) -->
-                        <div class="w-9 h-9 rounded-lg bg-slate-100 border border-slate-300 flex items-center justify-center p-0.5 shrink-0 group-hover:scale-110 transition-transform">
-                            <img src="{{ item.pc_icon_url }}" alt="{{ item.name }}" width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain pixel-art drop-shadow-sm">
-                        </div>
-                        <div class="min-w-0 flex-1">
-                            <div class="flex items-center gap-1.5">
-                                <span class="text-[10px] font-mono font-bold text-slate-400">#{{ item.number }}</span>
-                                <span class="font-black text-xs text-slate-900 uppercase leading-none">{{ item.name }}</span>
-                            </div>
-                            <div class="flex items-center gap-1 mt-1">
-                                <span class="type-{{ item.primary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
-                                    {{ item.primary_type_es }}
-                                </span>
-                                {% if item.secondary_type %}
-                                <span class="type-{{ item.secondary_type|lower }} border border-slate-950 px-1.5 py-0.2 rounded text-[8px] font-bold uppercase shadow-sm">
-                                    {{ item.secondary_type_es }}
-                                </span>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                {% else %}
-                <div class="bg-blue-50 border-2 border-blue-300 text-blue-950 rounded-xl p-3 text-xs font-bold flex items-start gap-2.5 shadow-sm">
-                    <img src="/media/items/oaks-parcel.png" alt="Paquete" class="w-5 h-5 shrink-0 object-contain pixel-art">
-                    <div>
-                        Estos Pokémon son exclusivos de tu cartucho de <strong>{{ game.display_name }}</strong>. Los jugadores de <strong>{{ exclusives_info.counterpart_name }}</strong> no pueden atraparlos en estado salvaje y necesitarán que se los pases por intercambio.
                     </div>
                 </div>
 
+                {% if not exclusives_info.is_yellow %}
                 <!-- Cuadrícula compacta con los iconos de PC -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
                     {% for item in exclusives_info.own_list %}

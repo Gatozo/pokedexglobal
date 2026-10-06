@@ -238,3 +238,24 @@ export function updateExclusivesCardStatus(entryId, isCaught) {
 
     updateExclusivesProgressUI();
 }
+
+export function toggleExclusivesAccordion(panelKey) {
+    const btn = document.getElementById(`exclusives-${panelKey}-accordion-btn`);
+    const content = document.getElementById(`exclusives-${panelKey}-accordion-content`);
+    const icon = document.getElementById(`exclusives-${panelKey}-accordion-icon`);
+    const label = document.getElementById(`exclusives-${panelKey}-accordion-label`);
+    if (!btn || !content) return;
+
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+        content.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Mostrar aviso';
+    } else {
+        content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar aviso';
+    }
+}

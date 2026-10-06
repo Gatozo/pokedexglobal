@@ -2525,7 +2525,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-altering-cave-area",
+          "area": "Cueva Cambiante (Ruta 103)",
           "method": "Hierba alta"
         },
         {
@@ -11964,6 +11964,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -12688,6 +12692,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -13562,6 +13570,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -14115,6 +14127,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -14292,6 +14308,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -15009,6 +15029,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -15332,7 +15356,7 @@
         },
         {
           "area": "Transferencia externa",
-          "detail": "Obtenible en los Silos de Isla Intemporal (Islas Sete) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
+          "detail": "Obtenible en el Almacén Rocket de Isla Inta (Archi7) en Pokémon Rojo Fuego y Verde Hoja y transferible mediante cable link."
         }
       ]
     },
@@ -15389,6 +15413,10 @@
         {
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         }
       ],
       "badge_color": "emerald",
@@ -15444,6 +15472,10 @@
         {
           "area": "Frente de Batalla (Cueva Taller)",
           "method": "Salvaje en Cueva Taller (P1 y S1)"
+        },
+        {
+          "area": "Cueva Cambiante (Ruta 103)",
+          "method": "Evento e-Reader inactivo"
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",

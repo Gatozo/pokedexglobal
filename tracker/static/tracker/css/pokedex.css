@@ -46,10 +46,10 @@ html {
 
 /* Marquee Ping-Pong para texto largo en pastillas de ubicación */
 @keyframes marqueePingPong {
-    0%, 25% {
+    0%, 35% {
         transform: translateX(0);
     }
-    50%, 75% {
+    60%, 80% {
         transform: translateX(var(--marquee-dist, -40px));
     }
     95%, 100% {
