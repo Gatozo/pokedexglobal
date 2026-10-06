@@ -102,8 +102,9 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
     - Hoenn (Rubí / Zafiro / Esmeralda): No salvaje. Transferencia externa (GBA / GameCube).
     """
     from .unown_data import get_unown_catalog
-    raw_unown = get_unown_catalog(game_slug)
-    is_hoenn = game_slug in ["ruby", "sapphire", "emerald"]
+    clean_slug = (game_slug or "gold").replace("_national", "")
+    raw_unown = get_unown_catalog(clean_slug)
+    is_hoenn = clean_slug in ["ruby", "sapphire", "emerald"]
 
     forms = []
     for item in raw_unown:
@@ -120,6 +121,37 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_label = "Transferencia"
             obt_type = "transfer"
             ch_name = ""
+        elif game_slug in ["diamond", "pearl", "platinum"]:
+            rate_val = item.get("rate", "")
+            rate_str = f" (Tasa: {rate_val})" if rate_val else ""
+            if letter in ["exclamation", "question"]:
+                summary = "Exclusivo de la Cámara Superior Secreta de Ruinas Sosiego (Tasa: 50%). Solo accesible a través del Túnel Ruinamaniaco tras registrar las 26 formas alfabéticas (A-Z)."
+                locations = [
+                    {
+                        "area": "Ruinas Sosiego (Cámara Superior Secreta)",
+                        "method": "Salvaje (Tasa: 50%) • Conexión vía Túnel Ruinamaniaco (Ruta 214)"
+                    }
+                ]
+            elif letter in ["f", "r", "i", "e", "n", "d"]:
+                summary = f"Exclusivo de la sala '{letter.upper()}' en la ruta central de descenso FRIEND de Ruinas Sosiego (Tasa: 100%)."
+                locations = [
+                    {
+                        "area": f"Ruinas Sosiego (Ruta Central - Sala {letter.upper()})",
+                        "method": "Salvaje (Tasa: 100%)"
+                    }
+                ]
+            else:
+                summary = f"Salvaje en las salas sin salida al tomar desvíos de la ruta principal en Ruinas Sosiego{rate_str}."
+                locations = [
+                    {
+                        "area": "Ruinas Sosiego (Salas Sin Salida)",
+                        "method": f"Salvaje{rate_str}"
+                    }
+                ]
+            badge_color = "emerald"
+            badge_label = "Salvaje"
+            obt_type = "wild"
+            ch_name = item.get("chamber_name", "Ruinas Sosiego")
         else:
             ch_name = item.get("chamber_name", "Ruinas")
             rate_val = item.get("rate", "")
@@ -159,8 +191,8 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "type": obt_type,
         })
 
-    if game_slug in ["firered", "leafgreen"]:
-        # En Rojo Fuego / Verde Hoja, la forma canónica predeterminada en la Pokédex es la F
+    if clean_slug in ["firered", "leafgreen", "diamond", "pearl", "platinum"]:
+        # En Rojo Fuego / Verde Hoja y Diamante / Perla / Platino, la forma canónica predeterminada en la Pokédex es la F
         forms = [f for f in forms if f["form_key"] == "f"] + [f for f in forms if f["form_key"] != "f"]
 
     return forms

@@ -18,7 +18,7 @@
                 <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
                     <img 
                         id="unown-modal-header-icon"
-                        src="/media/pokemon/icons/{% if is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
+                        src="/media/pokemon/icons/{% if is_sinnoh %}gen4{% elif is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
                         alt="Unown" 
                         width="28"
                         height="28"
@@ -32,6 +32,8 @@
                             <span>Ruinas Alfa</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% elif is_tanoby %}
                             <span>Ruinas Sete</span> • <span>{{ unown_total_forms }} Formas</span>
+                        {% elif is_sinnoh %}
+                            <span>Ruinas Sosiego</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% else %}
                             <span>Hoenn (Transferencia)</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% endif %}
@@ -111,6 +113,45 @@
                 <div id="unown-historical-accordion-content" class="hidden p-2.5 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/80">
                     <p class="leading-relaxed">
                         <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
+                    </p>
+                </div>
+            </div>
+            {% elif is_sinnoh %}
+            <!-- Nota Explicativa sobre Mecánicas de Sinnoh (Ruinas Sosiego y Túnel Ruinamaniaco) -->
+            <div id="unown-sinnoh-note" class="border-2 border-slate-950 rounded-xl overflow-hidden shadow-sm bg-sky-50">
+                <button 
+                    type="button"
+                    id="unown-sinnoh-accordion-btn"
+                    onclick="toggleUnownSinnohAccordion()"
+                    class="w-full px-3 py-2 bg-sky-100/90 hover:bg-sky-100 text-sky-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                    aria-expanded="false"
+                    aria-controls="unown-sinnoh-accordion-content"
+                >
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="/media/items/journal.png" alt="Mecánicas Sinnoh" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                        <span class="font-black text-xs uppercase tracking-wide truncate text-sky-950">
+                            Mecánicas de Encuentro (Ruinas Sosiego & Túnel Ruinamaniaco)
+                        </span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[9px] font-black uppercase border border-slate-950 bg-sky-300 text-slate-950 shrink-0">
+                            Guía
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                        <span id="unown-sinnoh-accordion-label" class="text-[10px] font-black uppercase text-sky-900/80 hidden sm:inline">Mostrar guía</span>
+                        <svg id="unown-sinnoh-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </button>
+                <div id="unown-sinnoh-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-sky-950 bg-sky-50/90 space-y-2 leading-relaxed">
+                    <p>
+                        <strong>1. Ruta Central (FRIEND - 100% de aparición):</strong> Siguiendo las instrucciones de las piedras en la entrada (Arriba-Der, Abajo-Izq, Arriba-Der, Arriba-Izq, Arriba-Izq, Abajo-Izq), descenderás por 6 salas principales donde cada una alberga de forma garantizada (100%) una letra específica que deletrea <strong>F - R - I - E - N - D</strong>.
+                    </p>
+                    <p>
+                        <strong>2. Salas Sin Salida (20 formas restantes - 5% de aparición):</strong> Al tomar cualquier desvío o escalera secundaria que no siga el camino principal, entrarás en pequeñas salas cerradas donde habitan aleatoriamente las otras 20 formas del abecedario.
+                    </p>
+                    <p>
+                        <strong>3. Cámara Superior Secreta (! y ? - 50% de aparición):</strong> En la Ruta 214, el Ruinamaniaco cava una cueva cuyo túnel se extiende según las formas capturadas. Al registrar las 26 formas alfabéticas (A-Z), el túnel conecta con el balcón superior secreto de las <strong>Ruinas Sosiego</strong>, permitiendo capturar a <strong>Unown !</strong> y <strong>Unown ?</strong>. <em>(Nota: El túnel solo sirve de vía de acceso; el hábitat de encuentro sigue siendo las Ruinas Sosiego).</em>
                     </p>
                 </div>
             </div>
@@ -245,6 +286,42 @@
                 <span id="unown-chamber-hint-text">Selecciona una cámara para filtrar sus formas y consultar los porcentajes de aparición y acceso.</span>
             </p>
         </div>
+        {% elif is_sinnoh %}
+        <!-- Chamber Filter Tabs (Ruinas Sosiego - Sinnoh) -->
+        <div class="px-4 py-2 bg-slate-100 border-b-2 border-slate-950 flex items-center gap-1.5 overflow-x-auto shrink-0">
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('all')"
+                id="unown-tab-all"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] bg-amber-400 text-slate-950 cursor-pointer shrink-0"
+            >
+                Todas ({{ unown_total_forms }})
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('friend')"
+                id="unown-tab-friend"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Ruta FRIEND (F,R,I,E,N,D)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('dead_ends')"
+                id="unown-tab-dead_ends"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Salas Secundarias (20 formas)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('secret')"
+                id="unown-tab-secret"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Superior (!, ?)
+            </button>
+        </div>
         {% else %}
         <!-- Chamber Secret Hint Box for Hoenn (Sin ruinas/cámaras salvajes) -->
         <div id="unown-hoenn-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
@@ -274,12 +351,14 @@
                         <span class="text-sm font-black font-mono text-slate-950">
                             {% if form.letter == 'exclamation' %}[!]{% elif form.letter == 'question' %}[?]{% else %}[{{ form.letter|upper }}]{% endif %}
                         </span>
-                        {% if is_johto or is_tanoby %}
-                        <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 {{ form.chamber_badge_class }} truncate max-w-[95px]" title="{{ form.chamber_name }}">
-                            {{ form.chamber_title|default:form.chamber_key|capfirst }}
+                        {% if is_johto or is_tanoby or is_sinnoh %}
+                        <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-md border border-slate-950 {{ form.chamber_badge_class }} max-w-[105px] inline-flex items-center justify-center shrink-0" title="{{ form.chamber_name }}">
+                            <span class="overflow-hidden whitespace-nowrap location-marquee-wrapper inline-block max-w-full">
+                                <span class="location-marquee-text inline-block whitespace-nowrap">{{ form.chamber_title|default:form.chamber_key|capfirst }}</span>
+                            </span>
                         </span>
                         {% else %}
-                        <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded border border-slate-950 bg-slate-200 text-slate-700 truncate max-w-[95px]" title="Transferencia externa">
+                        <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-md border border-slate-950 bg-slate-200 text-slate-700 truncate max-w-[95px]" title="Transferencia externa">
                             Transfer
                         </span>
                         {% endif %}
@@ -335,6 +414,8 @@
                     Unown #061 en Johto (#201 Nacional) • Tipo Psíquico
                 {% elif is_tanoby %}
                     Unown #201 Nacional (Ruinas Sete) • Tipo Psíquico
+                {% elif is_sinnoh %}
+                    Unown #114 en Sinnoh (#201 Nacional) • Tipo Psíquico
                 {% else %}
                     Unown #201 Nacional • Tipo Psíquico
                 {% endif %}

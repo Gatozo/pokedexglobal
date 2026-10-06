@@ -411,6 +411,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "evolution_stones_json": _get_cached_evolution_stones_json(),
         "is_johto": (game.generation == 2 or game.slug in ["gold", "silver", "crystal"]),
         "is_tanoby": (game.slug in ["firered", "leafgreen"]),
+        "is_sinnoh": (game.generation == 4 or game.slug in ["diamond", "pearl", "platinum"]),
         "unown_entry": unown_entry,
         "unown_catalog": unown_catalog,
         "unown_chambers": unown_chambers,
@@ -570,7 +571,7 @@ def toggle_unown_catch(request):
 
     normal_unown_count = len(forms_data.get("normal", []))
     shiny_unown_count = len(forms_data.get("shiny", []))
-    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else 26
+    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen", "diamond", "pearl", "platinum"] else 26
 
     return JsonResponse({
         "success": True,

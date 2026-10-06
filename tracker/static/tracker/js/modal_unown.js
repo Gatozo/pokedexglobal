@@ -23,6 +23,9 @@ export function openUnownModal(updateHistory = true) {
     lockModalScroll();
     try {
         updateUnownModalUI();
+        setTimeout(() => {
+            initUnownMarquees();
+        }, 60);
     } catch (err) {
         console.error('Error updating unown modal UI:', err);
     }
@@ -89,10 +92,17 @@ export function filterUnownChamber(chamberKey) {
 
     if (chamberKey === 'all') {
         const isTanoby = !!document.getElementById('unown-tab-anemuna');
-        if (hintTitle) hintTitle.textContent = isTanoby ? 'Ruinas Sete (Isla Sétima)' : 'Ruinas Alfa';
-        if (hintText) hintText.textContent = isTanoby
-            ? 'Selecciona una cámara para filtrar sus formas y consultar los porcentajes de aparición y acceso.'
-            : 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.';
+        const isSinnoh = !!document.getElementById('unown-tab-friend');
+        if (hintTitle) {
+            hintTitle.textContent = isSinnoh ? 'Ruinas Sosiego' : (isTanoby ? 'Ruinas Sete (Isla Sétima)' : 'Ruinas Alfa');
+        }
+        if (hintText) {
+            hintText.textContent = isSinnoh
+                ? 'Selecciona una cámara para filtrar sus formas y consultar su mecánica de aparición.'
+                : (isTanoby
+                    ? 'Selecciona una cámara para filtrar sus formas y consultar los porcentajes de aparición y acceso.'
+                    : 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.');
+        }
     } else {
         const hint = UNOWN_CHAMBER_HINTS[chamberKey];
         if (hint && hintTitle && hintText) {
@@ -107,6 +117,30 @@ export function filterUnownChamber(chamberKey) {
         } else {
             card.style.display = 'none';
         }
+    });
+    setTimeout(() => {
+        initUnownMarquees();
+    }, 30);
+}
+
+export function initUnownMarquees() {
+    requestAnimationFrame(() => {
+        document.querySelectorAll('#unown-cards-grid .location-marquee-wrapper').forEach(wrapper => {
+            const textSpan = wrapper.querySelector('.location-marquee-text');
+            if (textSpan) {
+                const overflowDiff = textSpan.scrollWidth - wrapper.clientWidth;
+                if (overflowDiff > 1) {
+                    textSpan.style.setProperty('--marquee-dist', `-${overflowDiff + 6}px`);
+                    const duration = Math.max(3.2, (overflowDiff / 14) + 2.2);
+                    textSpan.style.setProperty('--marquee-dur', `${duration.toFixed(1)}s`);
+                    textSpan.classList.add('marquee-pingpong');
+                } else {
+                    textSpan.classList.remove('marquee-pingpong');
+                    textSpan.style.removeProperty('--marquee-dist');
+                    textSpan.style.removeProperty('--marquee-dur');
+                }
+            }
+        });
     });
 }
 
@@ -251,3 +285,25 @@ export function toggleUnownHistoricalAccordion() {
         if (label) label.textContent = 'Ocultar nota';
     }
 }
+
+export function toggleUnownSinnohAccordion() {
+    const btn = document.getElementById('unown-sinnoh-accordion-btn');
+    const content = document.getElementById('unown-sinnoh-accordion-content');
+    const icon = document.getElementById('unown-sinnoh-accordion-icon');
+    const label = document.getElementById('unown-sinnoh-accordion-label');
+    if (!btn || !content) return;
+
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+        content.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Mostrar guía';
+    } else {
+        content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar guía';
+    }
+}
+

@@ -104,6 +104,19 @@ export const UNOWN_CHAMBER_HINTS = {
     pasiete: {
         title: "Cámara Pasiete (Islote 7 - Norte de Seiris)",
         text: "Alberga a Unown Z (99%) y Unown ! (1%). Requiere la Llave Sete."
+    },
+    // Ruinas Sosiego (Sinnoh - Gen 4)
+    friend: {
+        title: "Ruta Central FRIEND (Ruinas Sosiego)",
+        text: "Alberga las 6 letras de FRIEND (F, R, I, E, N, D), apareciendo al 100% en sus respectivas salas principales."
+    },
+    dead_ends: {
+        title: "Salas Sin Salida (Ruinas Sosiego)",
+        text: "Alberga las otras 20 formas del abecedario (5% cada una) al tomar escaleras secundarias que no siguen la ruta FRIEND."
+    },
+    secret: {
+        title: "Cámara Superior Secreta (Ruinas Sosiego)",
+        text: "Alberga a Unown ! (50%) y Unown ? (50%). Requiere registrar las 26 formas A-Z para que el Túnel Ruinamaniaco (Ruta 214) dé acceso a este balcón."
     }
 };
 

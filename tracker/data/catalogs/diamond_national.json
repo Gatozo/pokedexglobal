@@ -14022,35 +14022,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Ruinas Sosiego (P2), Ruinas Sosiego (P1), Ruinas Sosiego (Sótano B1)).",
+      "summary": "Salvaje en Ruinas Sosiego (28 formas repartidas entre la Ruta FRIEND, salas secundarias y cámara superior vía Túnel Ruinamaniaco).",
       "locations": [
         {
-          "area": "Ruinas Sosiego (P2)",
-          "method": "Hierba alta / Terreno"
+          "area": "Ruinas Sosiego (Ruta Central FRIEND)",
+          "method": "Salas principales F, R, I, E, N, D (100%)"
         },
         {
-          "area": "Ruinas Sosiego (P1)",
-          "method": "Hierba alta / Terreno"
+          "area": "Ruinas Sosiego (Salas Sin Salida)",
+          "method": "Bifurcaciones y desvíos (20 formas alfabéticas, 5%)"
         },
         {
-          "area": "Ruinas Sosiego (Sótano B1)",
-          "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Ruinas Sosiego (Sótano B2)",
-          "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Ruinas Sosiego (Sótano B3)",
-          "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Ruinas Sosiego (Sótano B4)",
-          "method": "Hierba alta / Terreno"
-        },
-        {
-          "area": "Ruinas Sosiego (Cámara Final)",
-          "method": "Hierba alta / Terreno"
+          "area": "Ruinas Sosiego (Cámara Superior Secreta)",
+          "method": "Formas ! y ? (50%) • Acceso conectando por Túnel Ruinamaniaco"
         }
       ]
     },

@@ -1563,6 +1563,69 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertContains(resp_nat, "Hoenn")
         self.assertContains(resp_nat, "Sinnoh")
 
+    def test_diamond_unown_canonical_f_and_chambers(self):
+        """
+        Valida que en Pokémon Diamante:
+        1. get_game_unown_chambers retorne las 3 estructuras de Ruinas Sosiego (friend, dead_ends, secret).
+        2. get_unown_catalog retorne las 28 formas con rutas /media/pokemon/sprites/diamond/unown/ e iconos gen4.
+        3. get_pokemon_forms retorne las 28 formas con la forma F como primera por defecto.
+        4. Las ubicaciones de Sinnoh detallen la Ruta Central FRIEND, las salas sin salida y la cámara superior vía Túnel Ruinamaníaco.
+        5. Los archivos de sprites de Unown para Diamante existan en el sistema de archivos.
+        6. La vista de Diamante renderice is_sinnoh=True, las pestañas de Ruinas Sosiego y la guía de encuentro.
+        """
+        from tracker.unown_data import get_unown_catalog, get_game_unown_chambers, SINNOH_UNOWN_CHAMBERS
+        from tracker.pokemon_forms import get_pokemon_forms
+        from django.conf import settings
+        from pathlib import Path
+
+        # 1. Cámaras de Sinnoh
+        chambers = get_game_unown_chambers("diamond")
+        self.assertEqual(chambers, SINNOH_UNOWN_CHAMBERS)
+        self.assertIn("friend", chambers)
+        self.assertIn("dead_ends", chambers)
+        self.assertIn("secret", chambers)
+        self.assertEqual(chambers["friend"]["letters"], ["f", "r", "i", "e", "n", "d"])
+        self.assertEqual(chambers["secret"]["letters"], ["exclamation", "question"])
+
+        # 2. Catálogo de 28 formas con assets de Diamante y Gen 4
+        cat = get_unown_catalog("diamond")
+        self.assertEqual(len(cat), 28)
+        self.assertEqual(cat[0]["sprite_normal"], "/media/pokemon/sprites/diamond/unown/a.png")
+        self.assertEqual(cat[0]["icon_url"], "/media/pokemon/icons/gen4/201-a.png")
+
+        # 3. Formas: F debe ser la primera por defecto
+        forms = get_pokemon_forms(201, "diamond")
+        self.assertEqual(len(forms), 28)
+        self.assertEqual(forms[0]["form_key"], "f")
+        self.assertEqual(forms[0]["name"], "Unown [F]")
+        self.assertEqual(forms[0]["sprite_retro"], "/media/pokemon/sprites/diamond/unown/f.png")
+
+        # 4. Ubicaciones exactas
+        forms_by_key = {f["form_key"]: f for f in forms}
+        self.assertIn("Ruinas Sosiego (Ruta Central - Sala F)", forms_by_key["f"]["locations"][0]["area"])
+        self.assertEqual(forms_by_key["f"]["locations"][0]["method"], "Salvaje (Tasa: 100%)")
+        self.assertIn("Ruinas Sosiego (Salas Sin Salida)", forms_by_key["a"]["locations"][0]["area"])
+        self.assertIn("Cámara Superior Secreta", forms_by_key["exclamation"]["locations"][0]["area"])
+        self.assertIn("Túnel Ruinamaniaco", forms_by_key["exclamation"]["locations"][0]["method"])
+
+        # 5. Existencia de sprites en disco
+        base_media = Path(settings.MEDIA_ROOT)
+        self.assertTrue((base_media / "pokemon" / "sprites" / "diamond" / "201.png").exists())
+        self.assertTrue((base_media / "pokemon" / "sprites" / "diamond" / "unown" / "f.png").exists())
+        self.assertTrue((base_media / "pokemon" / "sprites" / "diamond" / "unown" / "exclamation.png").exists())
+        self.assertTrue((base_media / "pokemon" / "sprites" / "diamond" / "unown" / "question.png").exists())
+
+        # 6. Renderizado en vista
+        resp = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.context["is_sinnoh"])
+        self.assertContains(resp, 'id="unown-tab-friend"')
+        self.assertContains(resp, 'id="unown-tab-dead_ends"')
+        self.assertContains(resp, 'id="unown-tab-secret"')
+        self.assertContains(resp, 'Ruinas Sosiego')
+        self.assertContains(resp, 'id="unown-sinnoh-note"')
+
+
 
 
 

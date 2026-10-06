@@ -60,12 +60,50 @@ def download_pokemon_sprites(nat_id: int):
     return nat_id
 
 
+def sync_diamond_unown():
+    unown_dir = DIAMOND_DIR / "unown"
+    unown_shiny_dir = DIAMOND_SHINY_DIR / "unown"
+    unown_back_dir = DIAMOND_DIR / "back" / "unown"
+    unown_shiny_back_dir = DIAMOND_SHINY_DIR / "back" / "unown"
+
+    for d in [unown_dir, unown_shiny_dir, unown_back_dir, unown_shiny_back_dir]:
+        d.mkdir(parents=True, exist_ok=True)
+
+    letters = [chr(c) for c in range(ord('a'), ord('z') + 1)] + ['exclamation', 'question']
+    print(f"Sincronizando 28 formas de Unown para Diamante...")
+
+    def download_unown_letter(letter):
+        download_single_sprite(f"{BASE_URL}/201-{letter}.png", unown_dir / f"{letter}.png")
+        download_single_sprite(f"{BASE_URL}/shiny/201-{letter}.png", unown_shiny_dir / f"{letter}.png")
+        download_single_sprite(f"{BASE_URL}/back/201-{letter}.png", unown_back_dir / f"{letter}.png")
+        download_single_sprite(f"{BASE_URL}/back/shiny/201-{letter}.png", unown_shiny_back_dir / f"{letter}.png")
+        return letter
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        list(executor.map(download_unown_letter, letters))
+
+    # Forma F como sprite canónico principal de Unown (201.png) en Sinnoh
+    if (unown_dir / "f.png").exists():
+        (DIAMOND_DIR / "201.png").write_bytes((unown_dir / "f.png").read_bytes())
+        (DIAMOND_SHINY_DIR / "201.png").write_bytes((unown_shiny_dir / "f.png").read_bytes())
+        (DIAMOND_DIR / "back" / "201.png").write_bytes((unown_back_dir / "f.png").read_bytes())
+        (DIAMOND_SHINY_DIR / "back" / "201.png").write_bytes((unown_shiny_back_dir / "f.png").read_bytes())
+
+    # Icono oficial de Gen 4
+    gen4_icon_f = BASE_DIR / "media" / "pokemon" / "icons" / "gen4" / "201-f.png"
+    gen4_icon_main = BASE_DIR / "media" / "pokemon" / "icons" / "gen4" / "201.png"
+    if gen4_icon_f.exists():
+        gen4_icon_main.write_bytes(gen4_f_bytes := gen4_icon_f.read_bytes())
+
+
 def main():
     print("Sincronizando 1..493 sprites oficiales de Pokémon Diamante...")
     with ThreadPoolExecutor(max_workers=16) as executor:
         futures = {executor.submit(download_pokemon_sprites, i): i for i in range(1, 494)}
         for future in as_completed(futures):
             future.result()
+
+    sync_diamond_unown()
 
     front_count = len(list(DIAMOND_DIR.glob("*.png")))
     shiny_count = len(list(DIAMOND_SHINY_DIR.glob("*.png")))

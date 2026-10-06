@@ -64,7 +64,9 @@ import {
     filterUnownChamber, 
     updateUnownModalUI, 
     toggleUnownFormCatch,
-    toggleUnownHistoricalAccordion
+    toggleUnownHistoricalAccordion,
+    toggleUnownSinnohAccordion,
+    initUnownMarquees
 } from './modal_unown.js';
 import { 
     openPokemonModal, 
@@ -149,6 +151,8 @@ window.filterUnownChamber = filterUnownChamber;
 window.updateUnownModalUI = updateUnownModalUI;
 window.toggleUnownFormCatch = toggleUnownFormCatch;
 window.toggleUnownHistoricalAccordion = toggleUnownHistoricalAccordion;
+window.toggleUnownSinnohAccordion = toggleUnownSinnohAccordion;
+window.initUnownMarquees = initUnownMarquees;
 
 window.openPokemonModal = openPokemonModal;
 window.openPokemonModalDirect = openPokemonModalDirect;

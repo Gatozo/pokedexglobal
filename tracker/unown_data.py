@@ -118,6 +118,39 @@ TANOBY_UNOWN_CHAMBERS = {
     },
 }
 
+SINNOH_UNOWN_CHAMBERS = {
+    "friend": {
+        "key": "friend",
+        "name": "Ruinas Sosiego (Ruta Central FRIEND)",
+        "chamber_title": "Ruta FRIEND",
+        "access": "Entrada principal y descenso central (Pisos 1F a B5F)",
+        "letters": ["f", "r", "i", "e", "n", "d"],
+        "secret_requirement": "Seguir la secuencia de escaleras de la inscripción de la entrada (Arriba-Der, Abajo-Izq, Arriba-Der, Arriba-Izq, Arriba-Izq, Abajo-Izq). Cada nivel alberga exclusivamente una de las 6 letras que deletrean FRIEND.",
+        "badge_class": "bg-amber-100 text-amber-900 border-amber-950",
+        "rates": {"f": "100%", "r": "100%", "i": "100%", "e": "100%", "n": "100%", "d": "100%"},
+    },
+    "dead_ends": {
+        "key": "dead_ends",
+        "name": "Ruinas Sosiego (Salas Sin Salida)",
+        "chamber_title": "Secundarias",
+        "access": "Bifurcaciones y escaleras secundarias que no siguen la ruta FRIEND",
+        "letters": ["a", "b", "c", "g", "h", "j", "k", "l", "m", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"],
+        "secret_requirement": "Desviarse del camino principal hacia salas sin salida. En estos pasadizos cerrados habitan aleatoriamente las 20 letras restantes del abecedario.",
+        "badge_class": "bg-sky-100 text-sky-900 border-sky-950",
+        "rates": {l: "5%" for l in ["a", "b", "c", "g", "h", "j", "k", "l", "m", "o", "p", "q", "s", "t", "u", "v", "w", "x", "y", "z"]},
+    },
+    "secret": {
+        "key": "secret",
+        "name": "Ruinas Sosiego (Cámara Superior Secreta)",
+        "chamber_title": "Cám. Superior",
+        "access": "Acceso exclusivo conectando a través del Túnel Ruinamaniaco (Ruta 214)",
+        "letters": ["exclamation", "question"],
+        "secret_requirement": "El Ruinamaniaco en la Ruta 214 va excavando su túnel conforme capturas letras. Al registrar las 26 formas alfabéticas (A-Z), el túnel conecta con el piso superior secreto de las Ruinas Sosiego.",
+        "badge_class": "bg-purple-100 text-purple-900 border-purple-950",
+        "rates": {"exclamation": "50%", "question": "50%"},
+    },
+}
+
 # Alias retrocompatible
 UNOWN_CHAMBERS = JOHTO_UNOWN_CHAMBERS
 
@@ -126,9 +159,12 @@ GEN2_LEGIT_SHINY_LETTERS = {"i", "v"}
 
 def get_game_unown_chambers(game_slug: str = "gold"):
     """Retorna el diccionario de cámaras correspondiente al juego actual."""
-    if game_slug in ["firered", "leafgreen"]:
+    clean_slug = (game_slug or "gold").replace("_national", "")
+    if clean_slug in ["firered", "leafgreen"]:
         return TANOBY_UNOWN_CHAMBERS
-    if game_slug in ["ruby", "sapphire", "emerald"]:
+    if clean_slug in ["diamond", "pearl", "platinum"]:
+        return SINNOH_UNOWN_CHAMBERS
+    if clean_slug in ["ruby", "sapphire", "emerald"]:
         return {}
     return JOHTO_UNOWN_CHAMBERS
 
@@ -136,17 +172,29 @@ def get_game_unown_chambers(game_slug: str = "gold"):
 def get_unown_catalog(game_slug: str = "gold"):
     """
     Retorna la lista de las 26 formas de Unown (Gen 2) o 28 formas (Gen 3+) con información de cámara,
-    sprites locales de 56x56, iconos y particularidad shiny de Gen 2.
+    sprites locales de 56x56 / DS, iconos y particularidad shiny de Gen 2.
     """
-    is_tanoby = game_slug in ["firered", "leafgreen"]
-    is_hoenn = game_slug in ["ruby", "sapphire", "emerald"]
-    is_gen3_plus = game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]
-    slug = game_slug if game_slug in ["gold", "silver", "crystal", "ruby", "sapphire", "emerald", "firered", "leafgreen"] else "gold"
-    sprite_slug = slug
-    if is_gen3_plus and slug not in ["ruby"]:
-        sprite_slug = "ruby"
+    clean_slug = (game_slug or "gold").replace("_national", "")
+    is_tanoby = clean_slug in ["firered", "leafgreen"]
+    is_sinnoh = clean_slug in ["diamond", "pearl", "platinum"]
+    is_hoenn = clean_slug in ["ruby", "sapphire", "emerald"]
+    is_gen3_plus = is_hoenn or is_tanoby or is_sinnoh
 
-    chambers = TANOBY_UNOWN_CHAMBERS if is_tanoby else ({} if is_hoenn else JOHTO_UNOWN_CHAMBERS)
+    if is_sinnoh:
+        sprite_slug = "diamond"
+    elif is_gen3_plus:
+        sprite_slug = "ruby"
+    else:
+        sprite_slug = clean_slug if clean_slug in ["gold", "silver", "crystal"] else "gold"
+
+    if is_tanoby:
+        chambers = TANOBY_UNOWN_CHAMBERS
+    elif is_sinnoh:
+        chambers = SINNOH_UNOWN_CHAMBERS
+    elif is_hoenn:
+        chambers = {}
+    else:
+        chambers = JOHTO_UNOWN_CHAMBERS
 
     catalog = []
     chamber_by_letter = {}
@@ -184,7 +232,12 @@ def get_unown_catalog(game_slug: str = "gold"):
             hint = ch["secret_requirement"] if ch else ""
             rate_val = ch.get("rates", {}).get(letter, "") if ch else ""
 
-        icon_gen = "gen3" if is_gen3_plus else "gen2"
+        if is_sinnoh:
+            icon_gen = "gen4"
+        elif is_gen3_plus:
+            icon_gen = "gen3"
+        else:
+            icon_gen = "gen2"
 
         catalog.append({
             "letter": letter,
