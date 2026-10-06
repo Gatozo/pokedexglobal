@@ -44,6 +44,11 @@ export function clearModalUrlHash() {
     }
 }
 
+export function lockModalScroll() {
+    document.documentElement.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden');
+}
+
 export function releaseScrollIfNoModalOpen() {
     const comicModal = document.getElementById('comic-modal');
     const exclModal = document.getElementById('exclusives-modal');
@@ -56,6 +61,7 @@ export function releaseScrollIfNoModalOpen() {
     const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
     const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
     if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen) {
+        document.documentElement.classList.remove('overflow-hidden');
         document.body.classList.remove('overflow-hidden');
     }
 }

@@ -5,6 +5,12 @@ html {
     scrollbar-gutter: stable;
 }
 
+html.overflow-hidden,
+body.overflow-hidden {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
 /* Modales fijados fuera del flujo del documento desde el frame 0 (evita FOUC antes de que cargue Tailwind) */
 #comic-modal,
 #stone-location-modal,
@@ -13,6 +19,23 @@ html {
 #unown-modal {
     position: fixed;
     inset: 0;
+    overscroll-behavior: contain;
+}
+
+#comic-modal-card,
+#stone-modal-card,
+#exclusives-modal-card,
+#transfers-modal-card,
+#unown-modal-card {
+    overscroll-behavior: contain;
+}
+
+#comic-modal .overflow-y-auto,
+#stone-location-modal .overflow-y-auto,
+#exclusives-modal .overflow-y-auto,
+#transfers-modal .overflow-y-auto,
+#unown-modal .overflow-y-auto {
+    overscroll-behavior: contain;
 }
 
 #comic-modal.hidden,

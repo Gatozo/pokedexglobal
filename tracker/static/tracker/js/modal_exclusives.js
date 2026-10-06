@@ -3,7 +3,7 @@
  */
 
 import { state } from './state.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen } from './url_sync.js';
+import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
 import { toggleCatch } from './cards.js';
 
 export function openExclusivesModal(updateHistory = true) {
@@ -18,7 +18,7 @@ export function openExclusivesModal(updateHistory = true) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    document.body.classList.add('overflow-hidden');
+    lockModalScroll();
     try {
         updateExclusivesModalUI();
     } catch (err) {

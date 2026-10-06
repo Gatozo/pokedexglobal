@@ -3,7 +3,7 @@
  */
 
 import { currentGameSlug, currentGameDisplayName, evolutionStonesCatalog } from './state.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen } from './url_sync.js';
+import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
 
 export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     if (!stoneSlug) return;
@@ -112,7 +112,7 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    document.body.classList.add('overflow-hidden');
+    lockModalScroll();
     if (updateHistory) {
         setModalUrlHash('objeto-' + stoneSlug);
     }

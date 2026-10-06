@@ -45,6 +45,28 @@
         window.__pokedexActionQueue.push({ fnName: fnName, args: args });
     }
 
+    function earlyLockScroll() {
+        document.documentElement.classList.add('overflow-hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function earlyReleaseScroll() {
+        const comicModal = document.getElementById('comic-modal');
+        const exclModal = document.getElementById('exclusives-modal');
+        const transModal = document.getElementById('transfers-modal');
+        const stoneModal = document.getElementById('stone-location-modal');
+        const unownModal = document.getElementById('unown-modal');
+        const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
+        const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
+        const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
+        const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
+        const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
+        if (!isComicOpen && !isExclOpen && !isTransOpen && !isStoneOpen && !isUnownOpen) {
+            document.documentElement.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    }
+
     // Apertura inmediata del Modal de Cómic usando datos de la tarjeta ya presentes en el DOM
     window.openPokemonModal = function(entryId, updateHistory) {
         queueOrRun('openPokemonModal', [entryId, updateHistory !== false], function(id) {
@@ -60,7 +82,7 @@
                 cardPanel.classList.remove('scale-95');
                 cardPanel.classList.add('scale-100');
             }
-            document.body.classList.add('overflow-hidden');
+            earlyLockScroll();
 
             const card = document.getElementById('card-' + id);
             const dataScript = document.getElementById('entry-data-' + id);
@@ -137,7 +159,7 @@
             if (modalImg) modalImg.src = '';
             const detailsContainer = document.getElementById('modal-obtaining-details');
             if (detailsContainer) detailsContainer.innerHTML = '';
-            document.body.classList.remove('overflow-hidden');
+            earlyReleaseScroll();
         });
     };
 
@@ -183,7 +205,7 @@
                 cardPanel.classList.remove('scale-95');
                 cardPanel.classList.add('scale-100');
             }
-            document.body.classList.add('overflow-hidden');
+            earlyLockScroll();
         });
     };
     window.closeExclusivesModal = function() {
@@ -199,7 +221,7 @@
                 cardPanel.classList.remove('scale-100');
                 cardPanel.classList.add('scale-95');
             }
-            document.body.classList.remove('overflow-hidden');
+            earlyReleaseScroll();
         });
     };
     window.handleExclusivesBackdropClick = function(e) {
@@ -238,7 +260,7 @@
                 cardPanel.classList.remove('scale-95');
                 cardPanel.classList.add('scale-100');
             }
-            document.body.classList.add('overflow-hidden');
+            earlyLockScroll();
         });
     };
     window.closeTransfersModal = function() {
@@ -254,7 +276,7 @@
                 cardPanel.classList.remove('scale-100');
                 cardPanel.classList.add('scale-95');
             }
-            document.body.classList.remove('overflow-hidden');
+            earlyReleaseScroll();
         });
     };
     window.handleTransfersBackdropClick = function(e) {
@@ -295,7 +317,7 @@
             }
             const titleEl = document.getElementById('stone-modal-title');
             if (titleEl && name) titleEl.textContent = name;
-            document.body.classList.add('overflow-hidden');
+            earlyLockScroll();
         });
     };
     window.closeStoneModal = function() {
@@ -311,7 +333,7 @@
                 cardPanel.classList.remove('scale-100');
                 cardPanel.classList.add('scale-95');
             }
-            document.body.classList.remove('overflow-hidden');
+            earlyReleaseScroll();
         });
     };
     window.handleStoneModalBackdropClick = function(e) {
@@ -331,7 +353,7 @@
                 cardPanel.classList.remove('scale-95');
                 cardPanel.classList.add('scale-100');
             }
-            document.body.classList.add('overflow-hidden');
+            earlyLockScroll();
         });
     };
     window.closeUnownModal = function() {
@@ -347,7 +369,7 @@
                 cardPanel.classList.remove('scale-100');
                 cardPanel.classList.add('scale-95');
             }
-            document.body.classList.remove('overflow-hidden');
+            earlyReleaseScroll();
         });
     };
     window.switchToUnownModal = function() {

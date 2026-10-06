@@ -2,7 +2,7 @@
  * Pokédex Global - Modal de Pokémon Transferibles desde Gen 1 (modal_transfers.js)
  */
 
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen } from './url_sync.js';
+import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
 import { toggleCatch } from './cards.js';
 
 export function openTransfersModal(updateHistory = true) {
@@ -17,7 +17,7 @@ export function openTransfersModal(updateHistory = true) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    document.body.classList.add('overflow-hidden');
+    lockModalScroll();
     if (updateHistory) {
         setModalUrlHash('transferir');
     }

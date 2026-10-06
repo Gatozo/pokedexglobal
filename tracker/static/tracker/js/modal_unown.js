@@ -4,7 +4,7 @@
 
 import { state, UNOWN_CHAMBER_HINTS } from './state.js';
 import { getCsrfToken } from './api.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen } from './url_sync.js';
+import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
 import { updateCardUI, updateProgressBarUI } from './cards.js';
 import { openPokemonModalDirect, closePokemonModal } from './modal_comic.js';
 
@@ -20,7 +20,7 @@ export function openUnownModal(updateHistory = true) {
         card.classList.remove('scale-95');
         card.classList.add('scale-100');
     }
-    document.body.classList.add('overflow-hidden');
+    lockModalScroll();
     try {
         updateUnownModalUI();
     } catch (err) {

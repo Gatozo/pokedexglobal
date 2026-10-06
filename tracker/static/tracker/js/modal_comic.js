@@ -5,7 +5,7 @@
 
 import { state } from './state.js';
 import { setActiveModalCryUrl } from './audio.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen } from './url_sync.js';
+import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
 import { openStoneModal } from './modal_stones.js';
 import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
@@ -616,7 +616,7 @@ export function openPokemonModalDirect(entryId, options = {}) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    document.body.classList.add('overflow-hidden');
+    lockModalScroll();
 
     // 9. Activar marquesina suave en ubicaciones
     requestAnimationFrame(() => {
