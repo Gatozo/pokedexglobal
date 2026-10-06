@@ -107,9 +107,13 @@ def get_national_regions_context(
     valid_slugs = {r["slug"] for r in available_regions}
 
     # Resolver región activa: solicitada -> por defecto 'kanto'
-    active_slug = requested_slug if (requested_slug and requested_slug in valid_slugs) else "kanto"
-    if active_slug not in valid_slugs:
-        active_slug = available_regions[0]["slug"]
+    is_all = (requested_slug == "all")
+    if is_all:
+        active_slug = "all"
+    else:
+        active_slug = requested_slug if (requested_slug and requested_slug in valid_slugs) else "kanto"
+        if active_slug not in valid_slugs:
+            active_slug = available_regions[0]["slug"]
 
     regions_data = []
     active_region_meta = None
@@ -142,9 +146,11 @@ def get_national_regions_context(
         if is_active:
             active_region_meta = reg_item
 
+    active_range = (1, max_nat) if is_all else ((active_region_meta["start_id"], active_region_meta["end_id"]) if active_region_meta else (1, max_nat))
+
     return {
         "regions": regions_data,
         "active_slug": active_slug,
         "active_region": active_region_meta,
-        "active_range": (active_region_meta["start_id"], active_region_meta["end_id"]) if active_region_meta else None,
+        "active_range": active_range,
     }

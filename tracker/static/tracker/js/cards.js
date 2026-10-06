@@ -362,9 +362,10 @@ export function updateNationalRegionsBadgeUI(nationalNumber, isCaught) {
         const slug = btn.dataset.slug;
         if (num >= start && num <= end) {
             const countEl = document.getElementById(`nat-reg-caught-${slug}`);
+            let current = parseInt(btn.dataset.caught || (countEl ? countEl.textContent : 0), 10) || 0;
+            current = isCaught ? current + 1 : Math.max(0, current - 1);
+            btn.dataset.caught = current;
             if (countEl) {
-                let current = parseInt(countEl.textContent, 10) || 0;
-                current = isCaught ? current + 1 : Math.max(0, current - 1);
                 countEl.textContent = current;
             }
         }

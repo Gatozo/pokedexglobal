@@ -25,6 +25,8 @@
             data-slug="{{ reg.slug }}"
             data-start="{{ reg.start_id }}"
             data-end="{{ reg.end_id }}"
+            data-total="{{ reg.total }}"
+            data-caught="{{ reg.display_caught }}"
             data-active="{% if reg.is_active %}true{% else %}false{% endif %}"
             onclick="switchNationalRegion('{{ reg.slug }}', event)"
             title="Ver Pokémon de {{ reg.name }} (#{{ reg.start_id|stringformat:'03d' }} - #{{ reg.end_id|stringformat:'03d' }})"

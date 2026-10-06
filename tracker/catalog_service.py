@@ -78,54 +78,62 @@ def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
     if game_slug in _GAME_EVO_SETS:
         return _GAME_EVO_SETS[game_slug]
 
-    catalog_file = CATALOGS_DIR / f"{game_slug}.json"
-    if not catalog_file.exists():
+    files_to_check = []
+    base_file = CATALOGS_DIR / f"{game_slug}.json"
+    if base_file.exists():
+        files_to_check.append(base_file)
+    nat_file = CATALOGS_DIR / f"{game_slug}_national.json"
+    if nat_file.exists():
+        files_to_check.append(nat_file)
+
+    if not files_to_check:
         return {"trade": set(), "stone": set(), "friendship": set()}
 
     trades = set()
     stones = set()
     friendships = set()
 
-    try:
-        with open(catalog_file, "r", encoding="utf-8") as f:
-            raw_entries = json.load(f)
+    for catalog_file in files_to_check:
+        try:
+            with open(catalog_file, "r", encoding="utf-8") as f:
+                raw_entries = json.load(f)
 
-        for p in raw_entries:
-            p_name = p.get("pokemon", {}).get("name", "").lower().strip()
-            obt = p.get("obtaining_info") or {}
-            evo = obt.get("evolution_info") or {}
-            evo_from = (evo.get("from") or "").lower().strip()
-            cond = (evo.get("condition") or "").lower()
-            text = (evo.get("text") or "").lower()
-            trigger = evo.get("trigger")
-            stone_data = p.get("evolution_stone")
+            for p in raw_entries:
+                p_name = p.get("pokemon", {}).get("name", "").lower().strip()
+                obt = p.get("obtaining_info") or {}
+                evo = obt.get("evolution_info") or {}
+                evo_from = (evo.get("from") or "").lower().strip()
+                cond = (evo.get("condition") or "").lower()
+                text = (evo.get("text") or "").lower()
+                trigger = evo.get("trigger")
+                stone_data = p.get("evolution_stone")
 
-            # Trade evolution
-            if trigger == "trade" or "intercambio" in cond or "intercambio" in text:
-                if p_name:
-                    trades.add(p_name)
-                if evo_from:
-                    trades.add(evo_from)
+                # Trade evolution
+                if trigger == "trade" or "intercambio" in cond or "intercambio" in text:
+                    if p_name:
+                        trades.add(p_name)
+                    if evo_from:
+                        trades.add(evo_from)
 
-            # Stone evolution
-            slug = stone_data.get("slug") if stone_data else ""
-            if (slug and slug.endswith("-stone")) or "piedra" in cond or "piedra" in text:
-                if p_name:
-                    stones.add(p_name)
-                if evo_from:
-                    stones.add(evo_from)
+                # Stone evolution
+                slug = stone_data.get("slug") if stone_data else ""
+                if (slug and slug.endswith("-stone")) or "piedra" in cond or "piedra" in text:
+                    if p_name:
+                        stones.add(p_name)
+                    if evo_from:
+                        stones.add(evo_from)
 
-            # Friendship evolution
-            if any(w in cond or w in text for w in ["felicidad", "amistad", "happiness"]):
-                if p_name:
-                    friendships.add(p_name)
-                if evo_from:
-                    friendships.add(evo_from)
-    except Exception as e:
-        print(f"Error computing evo sets for {game_slug}: {e}")
+                # Friendship evolution
+                if any(w in cond or w in text for w in ["felicidad", "amistad", "happiness"]):
+                    if p_name:
+                        friendships.add(p_name)
+                    if evo_from:
+                        friendships.add(evo_from)
+        except Exception as e:
+            print(f"Error computing evo sets for {catalog_file}: {e}")
 
     # Roselia y Chimecho no tenían preevoluciones por amistad en Gen 3 (Budew y Chingling se introdujeron en Gen 4)
-    if game_slug in ["ruby", "sapphire", "emerald"]:
+    if game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
         friendships.discard("roselia")
         friendships.discard("chimecho")
 
@@ -338,7 +346,7 @@ class CatalogEntry:
     def pc_icon_url(self) -> str:
         if self._pc_icon_url:
             return self._pc_icon_url
-        if self.game_slug in ["ruby", "sapphire", "emerald"]:
+        if self.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
             gen = 3
         elif self.game_slug in ["gold", "silver", "crystal"]:
             gen = 2
@@ -388,7 +396,7 @@ class CatalogEntry:
         obt = self.obtaining_info or {}
         nat_num = getattr(self.pokemon, "national_number", 0)
 
-        if self.game_slug in ["ruby", "sapphire", "emerald"]:
+        if self.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
             gen = 3
         elif self.game_slug in ["gold", "silver", "crystal"]:
             gen = 2

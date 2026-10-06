@@ -1040,6 +1040,14 @@ class PokemonFireRedGen3Tests(TestCase):
         self.assertIn("Zubat", VERSION_TRANSFERS_META["firered"]["altering_cave_note"])
         self.assertIn("Cueva Cambiante inactiva", VERSION_TRANSFERS_META["firered"]["origins"][190])
 
+        from tracker.exclusives import get_version_transfers_context
+        # En la Pokédex Regional de Kanto NO debe haber transferencias
+        self.assertIsNone(get_version_transfers_context(self.game, self.pk_kanto, set()))
+        # En la Pokédex Nacional SÍ debe haber las 167 transferencias
+        nat_transfers = get_version_transfers_context(self.game, self.pk_nat, set())
+        self.assertIsNotNone(nat_transfers)
+        self.assertEqual(nat_transfers["total"], 167)
+
     def test_firered_evolution_stones_data(self):
         import json
         import os
@@ -1337,6 +1345,14 @@ class PokemonLeafGreenGen3Tests(TestCase):
         self.assertIn("leafgreen", VERSION_TRANSFERS_CATALOG)
         self.assertEqual(len(VERSION_TRANSFERS_CATALOG["leafgreen"]), 167)
 
+        from tracker.exclusives import get_version_transfers_context
+        # En la Pokédex Regional de Kanto NO debe haber transferencias
+        self.assertIsNone(get_version_transfers_context(self.game, self.pk_kanto, set()))
+        # En la Pokédex Nacional SÍ debe haber las 167 transferencias
+        nat_transfers = get_version_transfers_context(self.game, self.pk_nat, set())
+        self.assertIsNotNone(nat_transfers)
+        self.assertEqual(nat_transfers["total"], 167)
+
     def test_leafgreen_offline_sprites_exist(self):
         from django.conf import settings
         base_media = settings.MEDIA_ROOT
@@ -1357,6 +1373,30 @@ class PokemonLeafGreenGen3Tests(TestCase):
         self.assertContains(resp_nat, "Kanto")
         self.assertContains(resp_nat, "Johto")
         self.assertContains(resp_nat, "Hoenn")
+
+    def test_leafgreen_filter_tags_across_national_regions(self):
+        cat = get_compiled_catalog("leafgreen", is_national=True)
+        # Kanto (Stone, Trade)
+        raichu = next(e for e in cat if e.pokemon.name.lower() == "raichu")
+        alakazam = next(e for e in cat if e.pokemon.name.lower() == "alakazam")
+        self.assertIn("stone", raichu.filter_tags)
+        self.assertIn("trade", alakazam.filter_tags)
+
+        # Johto (Baby, Friendship, Stone)
+        pichu = next(e for e in cat if e.pokemon.name.lower() == "pichu")
+        crobat = next(e for e in cat if e.pokemon.name.lower() == "crobat")
+        bellossom = next(e for e in cat if e.pokemon.name.lower() == "bellossom")
+        self.assertIn("baby", pichu.filter_tags)
+        self.assertIn("friendship", crobat.filter_tags)
+        self.assertIn("stone", bellossom.filter_tags)
+
+        # Hoenn (Stone, Baby)
+        ludicolo = next(e for e in cat if e.pokemon.name.lower() == "ludicolo")
+        shiftry = next(e for e in cat if e.pokemon.name.lower() == "shiftry")
+        wynaut = next(e for e in cat if e.pokemon.name.lower() == "wynaut")
+        self.assertIn("stone", ludicolo.filter_tags)
+        self.assertIn("stone", shiftry.filter_tags)
+        self.assertIn("baby", wynaut.filter_tags)
 
 
 

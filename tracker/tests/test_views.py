@@ -673,6 +673,16 @@ class NationalGenerationBarTests(TestCase):
         self.assertNotContains(resp, "Treecko")
         self.assertNotContains(resp, "Bulbasaur")
 
+    def test_generation_bar_all_filter(self):
+        url = reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=all&partial=grid"
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp["X-Active-Slug"], "all")
+        self.assertContains(resp, "Bulbasaur")
+        self.assertContains(resp, "Chikorita")
+        self.assertContains(resp, "Treecko")
+        self.assertContains(resp, "Deoxys")
+
     def test_transfers_modal_has_embedded_entry_data_regardless_of_active_region(self):
         # En Esmeralda Pokédex Nacional, solicitamos la pestaña de Hoenn
         url = reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=hoenn"

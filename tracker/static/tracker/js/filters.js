@@ -4,6 +4,15 @@
  */
 
 import { state, THEME_ACTIVE_BTN } from './state.js';
+import {
+    isGlobalFilterActive,
+    isManualRegionLock,
+    setManualRegionLock,
+    enterGlobalFilterMode,
+    exitGlobalFilterMode,
+    updateNationalBadgesForFilter,
+    restoreDefaultNationalBadges
+} from './national_bar.js';
 
 export function setStatusFilter(status) {
     state.currentStatusFilter = status;
@@ -150,20 +159,44 @@ export function clearAllFilters() {
         el.classList.remove('opacity-40', 'ring-2', 'ring-slate-950', 'brightness-110');
     });
 
+    if (typeof setManualRegionLock === 'function') {
+        setManualRegionLock(false);
+    }
+
     updateFilterUI();
     filterCards();
 }
 
-export function filterCards() {
+export async function filterCards() {
     const searchInput = document.getElementById('search-input');
     const rawQuery = searchInput ? searchInput.value.trim() : '';
     const normQ = normalizeSearchText(rawQuery);
 
-    // Optimización de prioridad inmediata: si no hay filtros activos ni tarjetas ocultas previamente, no bloquear el hilo principal
     const hasActiveFilters = Boolean(normQ) || (state.currentStatusFilter !== 'all') || (state.selectedFilterTags.size > 0) || (state.selectedFilterTypes.size > 0);
+
+    const bar = document.getElementById('national-generation-bar');
+    if (bar) {
+        if (hasActiveFilters) {
+            if (!isManualRegionLock()) {
+                await enterGlobalFilterMode();
+            }
+        } else {
+            setManualRegionLock(false);
+            if (isGlobalFilterActive()) {
+                exitGlobalFilterMode();
+                const emptyState = document.getElementById('empty-state');
+                if (emptyState) emptyState.classList.add('hidden');
+                return;
+            }
+            restoreDefaultNationalBadges();
+        }
+    }
+
+    // Optimización de prioridad inmediata: si no hay filtros activos ni tarjetas ocultas previamente, no bloquear el hilo principal
     if (!hasActiveFilters && document.querySelectorAll('.pokemon-card[style*="display: none"]').length === 0) {
         const emptyState = document.getElementById('empty-state');
         if (emptyState) emptyState.classList.add('hidden');
+        if (bar) restoreDefaultNationalBadges();
         return;
     }
 
@@ -235,5 +268,23 @@ export function filterCards() {
     const matchesCountEl = document.getElementById('filter-matches-count');
     if (matchesCountEl) {
         matchesCountEl.textContent = `(${visibleCount} de ${cards.length} Pokémon)`;
+    }
+
+    const emptyState = document.getElementById('empty-state');
+    if (emptyState) {
+        if (visibleCount === 0) {
+            emptyState.classList.remove('hidden');
+        } else {
+            emptyState.classList.add('hidden');
+        }
+    }
+
+    // Actualizar badges en la barra nacional si aplica
+    if (bar) {
+        if (hasActiveFilters) {
+            updateNationalBadgesForFilter();
+        } else {
+            restoreDefaultNationalBadges();
+        }
     }
 }

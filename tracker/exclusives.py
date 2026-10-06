@@ -885,7 +885,7 @@ def get_version_transfers_context(
     (Cápsula del Tiempo, transferencias intergeneracionales o faltantes de ediciones previas).
     Si el juego no requiere transferencias externas, devuelve None.
     """
-    if current_game.slug in ['ruby', 'sapphire', 'emerald'] and current_pokedex and not current_pokedex.is_national and current_pokedex.slug != 'national':
+    if (current_game.generation >= 3 or current_game.slug in ['ruby', 'sapphire', 'emerald', 'firered', 'leafgreen']) and current_pokedex and not current_pokedex.is_national and current_pokedex.slug != 'national':
         return None
 
     transfer_nums = VERSION_TRANSFERS_CATALOG.get(current_game.slug, [])

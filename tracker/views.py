@@ -384,7 +384,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     rendered_entries = entries_list
     if national_regions_ctx:
         active_slug = national_regions_ctx["active_slug"]
-        request.session[session_gen_key] = active_slug
+        if active_slug != "all":
+            request.session[session_gen_key] = active_slug
         start_id, end_id = national_regions_ctx["active_range"]
         rendered_entries = [
             e for e in entries_list if start_id <= e.pokemon.national_number <= end_id

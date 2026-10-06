@@ -13,12 +13,32 @@ let _activeAbortController = null;
 let _currentRequestId = 0;
 let _currentActiveSlug = null;
 let _gridObserver = null;
+let _isGlobalFilterActive = false;
+let _savedActiveSlug = null;
+let _isManualRegionLock = false;
+let _allRegionsPrefetchPromise = null;
+
+export function isGlobalFilterActive() {
+    return _isGlobalFilterActive;
+}
+
+export function isManualRegionLock() {
+    return _isManualRegionLock;
+}
+
+export function setManualRegionLock(val) {
+    _isManualRegionLock = Boolean(val);
+}
 
 /**
  * Invalida la caché en memoria cuando se modifica el estado de captura de un Pokémon.
  */
 export function invalidateNationalRegionCache() {
     _regionCache.clear();
+    const bar = document.getElementById('national-generation-bar');
+    if (bar) {
+        prefetchAllRegionsGrid();
+    }
 }
 
 /**
@@ -41,6 +61,8 @@ export function getRegionBounds(slug) {
  * @param {string} slug Slug de la región que debe quedar aislada
  */
 export function isolateGridCards(slug) {
+    if (_isGlobalFilterActive) return;
+
     const grid = document.getElementById('pokemon-grid');
     if (!grid) return;
 
@@ -69,6 +91,7 @@ export function setupGridObserver() {
     }
 
     _gridObserver = new MutationObserver(mutations => {
+        if (_isGlobalFilterActive) return;
         if (!_currentActiveSlug) return;
         const bounds = getRegionBounds(_currentActiveSlug);
         if (!bounds) return;
@@ -94,6 +117,32 @@ export function setupGridObserver() {
     });
 
     _gridObserver.observe(grid, { childList: true, subtree: false });
+}
+
+/**
+ * Desactiva visualmente la selección de todas las regiones en la barra de navegación.
+ */
+export function clearActiveBarButtonsUI() {
+    const bar = document.getElementById('national-generation-bar');
+    if (!bar) return;
+
+    const activeClasses = (bar.dataset.activeClasses || '').split(' ').filter(Boolean);
+    const inactiveClasses = (bar.dataset.inactiveClasses || '').split(' ').filter(Boolean);
+    const badgeActive = (bar.dataset.badgeActive || '').split(' ').filter(Boolean);
+    const badgeInactive = (bar.dataset.badgeInactive || '').split(' ').filter(Boolean);
+
+    const buttons = bar.querySelectorAll("[id^='btn-nat-gen-']");
+    buttons.forEach(btn => {
+        btn.dataset.active = 'false';
+        if (activeClasses.length) btn.classList.remove(...activeClasses);
+        if (inactiveClasses.length) btn.classList.add(...inactiveClasses);
+        const slug = btn.dataset.slug;
+        const badge = document.getElementById(`nat-reg-badge-${slug}`);
+        if (badge) {
+            if (badgeActive.length) badge.classList.remove(...badgeActive);
+            if (badgeInactive.length) badge.classList.add(...badgeInactive);
+        }
+    });
 }
 
 /**
@@ -135,6 +184,172 @@ export function updateBarButtonsUI(activeSlug) {
 }
 
 /**
+ * Actualiza los badges de la barra nacional para mostrar el número de coincidencias por región.
+ */
+export function updateNationalBadgesForFilter() {
+    const bar = document.getElementById('national-generation-bar');
+    if (!bar) return;
+
+    const buttons = bar.querySelectorAll("[id^='btn-nat-gen-']");
+    const visibleCards = document.querySelectorAll('.pokemon-card:not([style*="display: none"])');
+
+    const visibleNums = [];
+    visibleCards.forEach(card => {
+        const num = parseInt(card.dataset.nationalNumber || card.dataset.number, 10);
+        if (!isNaN(num)) visibleNums.push(num);
+    });
+
+    buttons.forEach(btn => {
+        const slug = btn.dataset.slug;
+        const start = parseInt(btn.dataset.start, 10);
+        const end = parseInt(btn.dataset.end, 10);
+        const badge = document.getElementById(`nat-reg-badge-${slug}`);
+        if (!badge) return;
+
+        let matches = 0;
+        for (let i = 0; i < visibleNums.length; i++) {
+            if (visibleNums[i] >= start && visibleNums[i] <= end) {
+                matches++;
+            }
+        }
+
+        if (matches > 0) {
+            badge.innerHTML = `<span class="font-mono font-black">${matches}</span>`;
+            badge.title = `${matches} coincidencias en esta región`;
+            badge.classList.remove('opacity-40');
+        } else {
+            badge.innerHTML = `<span class="font-mono opacity-40">0</span>`;
+            badge.title = `0 coincidencias en esta región`;
+            badge.classList.add('opacity-40');
+        }
+    });
+}
+
+/**
+ * Restaura los badges de la barra nacional a su valor por defecto (capturados / total).
+ */
+export function restoreDefaultNationalBadges() {
+    const bar = document.getElementById('national-generation-bar');
+    if (!bar) return;
+
+    const buttons = bar.querySelectorAll("[id^='btn-nat-gen-']");
+    buttons.forEach(btn => {
+        const slug = btn.dataset.slug;
+        const total = btn.dataset.total || '';
+        const caught = btn.dataset.caught || '0';
+        const badge = document.getElementById(`nat-reg-badge-${slug}`);
+        if (!badge) return;
+
+        badge.classList.remove('opacity-40');
+        badge.removeAttribute('title');
+        badge.innerHTML = `<span id="nat-reg-caught-${slug}">${caught}</span>/${total}`;
+    });
+}
+
+/**
+ * Prefetch en background del catálogo nacional completo (todas las regiones).
+ */
+export function prefetchAllRegionsGrid() {
+    if (_regionCache.has('all') || _allRegionsPrefetchPromise) return;
+    const url = new URL(window.location.href);
+    url.searchParams.set('gen', 'all');
+    url.searchParams.set('partial', 'grid');
+
+    _allRegionsPrefetchPromise = fetch(url.toString(), {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+    })
+    .then(resp => {
+        if (!resp.ok) throw new Error('Prefetch failed');
+        return resp.text();
+    })
+    .then(html => {
+        _regionCache.set('all', html);
+        return html;
+    })
+    .catch(() => null)
+    .finally(() => {
+        _allRegionsPrefetchPromise = null;
+    });
+}
+
+/**
+ * Entra en modo de filtrado global (desactiva selección fija de región y carga todas las especies).
+ */
+export async function enterGlobalFilterMode() {
+    const bar = document.getElementById('national-generation-bar');
+    const grid = document.getElementById('pokemon-grid');
+    if (!bar || !grid) return;
+
+    if (!_isGlobalFilterActive) {
+        _savedActiveSlug = _currentActiveSlug || 'kanto';
+        _isGlobalFilterActive = true;
+        _currentActiveSlug = 'all';
+        clearActiveBarButtonsUI();
+    }
+
+    let allHtml = _regionCache.get('all');
+    if (!allHtml && _allRegionsPrefetchPromise) {
+        try {
+            allHtml = await _allRegionsPrefetchPromise;
+        } catch (e) {}
+    }
+
+    if (!allHtml) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('gen', 'all');
+        url.searchParams.set('partial', 'grid');
+        try {
+            const resp = await fetch(url.toString(), {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+            if (resp.ok) {
+                allHtml = await resp.text();
+                _regionCache.set('all', allHtml);
+            }
+        } catch (e) {
+            console.error('Error cargando cuadrícula completa para filtrado:', e);
+        }
+    }
+
+    if (allHtml && grid.children.length < 200) {
+        grid.innerHTML = allHtml;
+        if (state.currentSpriteStyle && typeof setSpriteStyle === 'function') {
+            setSpriteStyle(state.currentSpriteStyle);
+        }
+    }
+}
+
+/**
+ * Sale del modo de filtrado global y restaura la región que estaba activa previamente.
+ */
+export function exitGlobalFilterMode() {
+    if (!_isGlobalFilterActive) return;
+    _isGlobalFilterActive = false;
+    _isManualRegionLock = false;
+
+    const restoreSlug = _savedActiveSlug || 'kanto';
+    _currentActiveSlug = restoreSlug;
+    _savedActiveSlug = null;
+
+    updateBarButtonsUI(restoreSlug);
+    restoreDefaultNationalBadges();
+
+    const grid = document.getElementById('pokemon-grid');
+    if (!grid) return;
+
+    const cachedHtml = _regionCache.get(restoreSlug);
+    if (cachedHtml) {
+        grid.innerHTML = cachedHtml;
+        isolateGridCards(restoreSlug);
+        if (state.currentSpriteStyle && typeof setSpriteStyle === 'function') {
+            setSpriteStyle(state.currentSpriteStyle);
+        }
+    } else {
+        isolateGridCards(restoreSlug);
+    }
+}
+
+/**
  * Cambia suavemente la generación activa en la Pokédex Nacional sin recargar la página completa.
  * Aísla la región destino abortando cualquier carga en curso y purga nodos cruzados.
  * @param {string} slug Slug de la región (kanto, johto, hoenn, etc.)
@@ -153,9 +368,21 @@ export async function switchNationalRegion(slug, event = null, pushState = true)
     const targetBtn = document.getElementById(`btn-nat-gen-${slug}`);
     if (!targetBtn) return;
 
-    // Si ya estamos en esta región y no hay petición en vuelo, no hacer nada
+    // Si ya estamos en esta región y no hay petición en vuelo
     if (targetBtn.dataset.active === 'true' && _currentActiveSlug === slug && !_activeAbortController) {
+        if (_isManualRegionLock) {
+            _isManualRegionLock = false;
+            filterCards();
+        }
         return;
+    }
+
+    if (_isGlobalFilterActive) {
+        _isGlobalFilterActive = false;
+        _isManualRegionLock = true;
+        _savedActiveSlug = slug;
+    } else {
+        _isManualRegionLock = true;
     }
 
     // 1. Cancelar cualquier petición AJAX previa en curso
@@ -288,6 +515,8 @@ export function initNationalGenerationBar() {
             }
         }
     }
+
+    prefetchAllRegionsGrid();
 }
 
 // Asegurar que si el usuario cambia de pestaña durante una animación,
