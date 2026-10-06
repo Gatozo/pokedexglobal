@@ -84,7 +84,7 @@
             {% if is_johto %}
             <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny en Johto) -->
             <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}bg-amber-100/80 border border-amber-900/30 rounded-xl p-2.5 text-xs text-amber-950 flex items-start gap-2">
-                <span class="text-base leading-none">💡</span>
+                <img src="/media/items/fame-checker.png" alt="Nota histórica" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
                 <p class="leading-relaxed">
                     <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
                 </p>
@@ -322,7 +322,8 @@
                     class="px-3 py-1.5 rounded-xl border-2 border-slate-950 bg-white hover:bg-amber-50 text-xs font-black uppercase text-slate-900 shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer flex items-center gap-1.5"
                     title="Ver ficha técnica clásica con estadísticas y movimientos de Unown"
                 >
-                    <span>📜 Ficha Técnica Clásica</span>
+                    <img src="/media/items/journal.png" alt="" class="w-4 h-4 object-contain pixel-art inline-block shrink-0">
+                    <span>Ficha Técnica Clásica</span>
                 </button>
                 {% endif %}
                 <button 

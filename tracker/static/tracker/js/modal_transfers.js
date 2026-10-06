@@ -102,3 +102,25 @@ export function updateTransfersCardStatus(entryId, isCaught) {
         if (barElem) barElem.style.width = `${percent}%`;
     }
 }
+
+export function toggleTransfersInfoAccordion() {
+    const content = document.getElementById('transfers-accordion-content');
+    const arrow = document.getElementById('transfers-accordion-arrow');
+    const label = document.getElementById('transfers-accordion-label');
+    const btn = document.getElementById('transfers-accordion-toggle-btn');
+    if (!content) return;
+
+    const isHidden = content.classList.contains('hidden');
+    if (isHidden) {
+        content.classList.remove('hidden');
+        if (arrow) arrow.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar';
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+    } else {
+        content.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+        if (label) label.textContent = 'Ver detalles';
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+}
+

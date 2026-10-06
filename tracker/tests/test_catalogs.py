@@ -1023,8 +1023,13 @@ class PokemonFireRedGen3Tests(TestCase):
         self.assertIn("firered", VERSION_TRANSFERS_CATALOG)
         self.assertEqual(len(VERSION_TRANSFERS_CATALOG["firered"]), 167)
         self.assertIn(152, VERSION_TRANSFERS_CATALOG["firered"]) # Chikorita
+        self.assertIn(190, VERSION_TRANSFERS_CATALOG["firered"]) # Aipom (Cueva Cambiante inactiva)
         self.assertIn(252, VERSION_TRANSFERS_CATALOG["firered"]) # Treecko
         self.assertIn(382, VERSION_TRANSFERS_CATALOG["firered"]) # Kyogre
+
+        self.assertIn("altering_cave_note", VERSION_TRANSFERS_META["firered"])
+        self.assertIn("Zubat", VERSION_TRANSFERS_META["firered"]["altering_cave_note"])
+        self.assertIn("Cueva Cambiante inactiva", VERSION_TRANSFERS_META["firered"]["origins"][190])
 
     def test_firered_evolution_stones_data(self):
         import json

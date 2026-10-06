@@ -483,32 +483,12 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
             '¡IMPORTANTE!: Debido al salto tecnológico, es incompatible con la 1.ª y 2.ª Generación (Hardware break).'
         ),
-        'default_origin': 'Rubí / Zafiro / Esmeralda / GameCube',
-        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
-        'origins': {
-            152: 'Pokémon Esmeralda / Colosseum',
-            153: 'Pokémon Esmeralda / Colosseum',
-            154: 'Pokémon Esmeralda / Colosseum',
-            155: 'Pokémon Esmeralda / Colosseum',
-            156: 'Pokémon Esmeralda / Colosseum',
-            157: 'Pokémon Esmeralda / Colosseum',
-            158: 'Pokémon Esmeralda / Colosseum',
-            159: 'Pokémon Esmeralda / Colosseum',
-            160: 'Pokémon Esmeralda / Colosseum',
-            196: 'Rubí / Zafiro / Esmeralda (Evolución Día)',
-            197: 'Rubí / Zafiro / Esmeralda (Evolución Noche)',
-            251: 'Disco Bonus Colosseum / Evento Ageto',
-            385: 'Pokémon Channel / Disco Bonus Colosseum',
-        }
-    },
-    'leafgreen': {
-        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
-        'mechanic_badge': 'GBA / GameCube',
-        'description': (
-            'La Pokédex Nacional de Pokémon Verde Hoja consta de 386 Pokémon. Las 167 especies no nativas de Kanto y de las Islas Sétima '
-            'deben transferirse mediante cable link desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn), '
-            'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
-            '¡IMPORTANTE!: Debido al salto tecnológico, es incompatible con la 1.ª y 2.ª Generación (Hardware break).'
+        'altering_cave_note': (
+            'Nota sobre la Cueva Cambiante: Especies como Mareep, Aipom, Pineco, Shuckle, Teddiursa, Houndour, '
+            'Stantler y Smeargle fueron programadas internamente en la Cueva Cambiante para activarse mediante tarjetas del periférico '
+            'Nintendo e-Reader (Mystery Event). Como dichas tarjetas nunca llegaron a distribuirse en ninguna región del mundo, '
+            'en los cartuchos originales únicamente aparece Zubat (100%), siendo técnicamente imposible capturarlas allí de forma salvaje '
+            'y requiriendo transferencia externa obligatoria (desde Pokémon Esmeralda o títulos de GameCube).'
         ),
         'default_origin': 'Rubí / Zafiro / Esmeralda / GameCube',
         'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
@@ -522,8 +502,58 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             158: 'Pokémon Esmeralda / Colosseum',
             159: 'Pokémon Esmeralda / Colosseum',
             160: 'Pokémon Esmeralda / Colosseum',
+            179: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            190: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
             196: 'Rubí / Zafiro / Esmeralda (Evolución Día)',
             197: 'Rubí / Zafiro / Esmeralda (Evolución Noche)',
+            204: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            213: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            216: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            228: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            234: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            235: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            251: 'Disco Bonus Colosseum / Evento Ageto',
+            385: 'Pokémon Channel / Disco Bonus Colosseum',
+        }
+    },
+    'leafgreen': {
+        'mechanic_title': 'Transferencia Interjuegos • Gen 3',
+        'mechanic_badge': 'GBA / GameCube',
+        'description': (
+            'La Pokédex Nacional de Pokémon Verde Hoja consta de 386 Pokémon. Las 167 especies no nativas de Kanto y de las Islas Sétima '
+            'deben transferirse mediante cable link desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn), '
+            'o importarse desde Nintendo GameCube (Pokémon Colosseum y Pokémon XD: Gale of Darkness). '
+            '¡IMPORTANTE!: Debido al salto tecnológico, es incompatible con la 1.ª y 2.ª Generación (Hardware break).'
+        ),
+        'altering_cave_note': (
+            'Nota sobre la Cueva Cambiante: Especies como Mareep, Aipom, Pineco, Shuckle, Teddiursa, Houndour, '
+            'Stantler y Smeargle fueron programadas internamente en la Cueva Cambiante para activarse mediante tarjetas del periférico '
+            'Nintendo e-Reader (Mystery Event). Como dichas tarjetas nunca llegaron a distribuirse en ninguna región del mundo, '
+            'en los cartuchos originales únicamente aparece Zubat (100%), siendo técnicamente imposible capturarlas allí de forma salvaje '
+            'y requiriendo transferencia externa obligatoria (desde Pokémon Esmeralda o títulos de GameCube).'
+        ),
+        'default_origin': 'Rubí / Zafiro / Esmeralda / GameCube',
+        'incompatible_warning': 'Incompatible con 1.ª y 2.ª Generación (Hardware break). Todas las transferencias deben provenir de títulos de GBA o Nintendo GameCube.',
+        'origins': {
+            152: 'Pokémon Esmeralda / Colosseum',
+            153: 'Pokémon Esmeralda / Colosseum',
+            154: 'Pokémon Esmeralda / Colosseum',
+            155: 'Pokémon Esmeralda / Colosseum',
+            156: 'Pokémon Esmeralda / Colosseum',
+            157: 'Pokémon Esmeralda / Colosseum',
+            158: 'Pokémon Esmeralda / Colosseum',
+            159: 'Pokémon Esmeralda / Colosseum',
+            160: 'Pokémon Esmeralda / Colosseum',
+            179: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            190: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            196: 'Rubí / Zafiro / Esmeralda (Evolución Día)',
+            197: 'Rubí / Zafiro / Esmeralda (Evolución Noche)',
+            204: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            213: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            216: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            228: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            234: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
+            235: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
             251: 'Disco Bonus Colosseum / Evento Ageto',
             385: 'Pokémon Channel / Disco Bonus Colosseum',
         }
@@ -867,6 +897,7 @@ def get_version_transfers_context(
     mechanic_badge = meta.get("mechanic_badge", "Transferencia")
     description = meta.get("description", "Pokémon requeridos mediante transferencia externa para completar la Pokédex.")
     incompatible_warning = meta.get("incompatible_warning", "")
+    altering_cave_note = meta.get("altering_cave_note", "")
     origins_map = meta.get("origins", {})
     default_origin = meta.get("default_origin", "Transferencia Externa")
 
@@ -897,6 +928,7 @@ def get_version_transfers_context(
         'mechanic_badge': mechanic_badge,
         'description': description,
         'incompatible_warning': incompatible_warning,
+        'altering_cave_note': altering_cave_note,
         'transfer_list': transfer_list,
         'total': total,
         'caught': caught,

@@ -10,7 +10,7 @@
                     Objeto Especial • {{ game.display_name|upper }}
                 </span>
                 <h3 id="stone-modal-title" class="{% if game.slug == 'yellow' or game.slug == 'gold' %}text-slate-950{% elif game.slug == 'crystal' or game.slug == 'sapphire' %}text-sky-100 [text-shadow:1.5px_1.5px_0px_#0f172a]{% elif game.slug == 'ruby' %}text-rose-100 [text-shadow:1.5px_1.5px_0px_#475569]{% elif game.slug == 'emerald' %}text-emerald-100 [text-shadow:1.5px_1.5px_0px_#064e3b]{% else %}text-white [text-shadow:1.5px_1.5px_0px_#0f172a]{% endif %} font-black text-base sm:text-lg tracking-wide uppercase antialiased flex items-center gap-2">
-                    <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain inline-block">
+                    <img id="stone-modal-icon-header" src="" alt="" class="w-5 h-5 object-contain pixel-art inline-block">
                     <span id="stone-modal-name">PIEDRA LUNAR</span>
                 </h3>
             </div>
@@ -31,7 +31,7 @@
             <!-- Ficha del Objeto -->
             <div class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner flex items-center gap-3.5 shadow-sm">
                 <div class="w-14 h-14 bg-slate-100 rounded-lg border-2 border-slate-950 flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#0f172a]">
-                    <img id="stone-modal-img" src="" alt="" class="w-10 h-10 object-contain drop-shadow">
+                    <img id="stone-modal-img" src="" alt="" class="w-10 h-10 object-contain pixel-art drop-shadow">
                 </div>
                 <div class="space-y-1 flex-1 min-w-0">
                     <div class="flex items-center gap-2 flex-wrap">
@@ -46,7 +46,7 @@
             <div>
                 <div class="inline-flex items-center gap-1.5 mb-2">
                     <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
-                        <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain inline-block">
+                        <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain pixel-art inline-block">
                         Dónde conseguirlo en {{ game.display_name }}
                     </span>
                 </div>

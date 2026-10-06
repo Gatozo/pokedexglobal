@@ -87,7 +87,7 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
                     </span>
                     <div class="space-y-0.5 min-w-0 flex-1">
                         <h5 class="text-xs font-black text-slate-900 uppercase flex items-center gap-1.5">
-                            <img src="/media/items/town-map.png" alt="" class="w-3.5 h-3.5 object-contain inline-block">
+                            <img src="/media/items/town-map.png" alt="" class="w-3.5 h-3.5 object-contain pixel-art inline-block">
                             ${loc.area}
                         </h5>
                         <p class="text-[11px] text-slate-600 font-medium">

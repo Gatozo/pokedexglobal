@@ -51,7 +51,8 @@ import {
     closeTransfersModal, 
     handleTransfersBackdropClick, 
     toggleTransferCatch, 
-    updateTransfersCardStatus 
+    updateTransfersCardStatus,
+    toggleTransfersInfoAccordion
 } from './modal_transfers.js';
 import { 
     openUnownModal, 
@@ -133,6 +134,7 @@ window.closeTransfersModal = closeTransfersModal;
 window.handleTransfersBackdropClick = handleTransfersBackdropClick;
 window.toggleTransferCatch = toggleTransferCatch;
 window.updateTransfersCardStatus = updateTransfersCardStatus;
+window.toggleTransfersInfoAccordion = toggleTransfersInfoAccordion;
 
 window.openUnownModal = openUnownModal;
 window.closeUnownModal = closeUnownModal;
