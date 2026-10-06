@@ -70,6 +70,45 @@ LEGENDARY_NATIONAL_NUMBERS = {
     377, 378, 379, 380, 381, 382, 383, 384, 385, 386
 }
 
+GAME_GENERATION_MAP: Dict[str, int] = {
+    # Gen 1
+    "red": 1, "blue": 1, "yellow": 1,
+    # Gen 2
+    "gold": 2, "silver": 2, "crystal": 2,
+    # Gen 3
+    "ruby": 3, "sapphire": 3, "emerald": 3, "firered": 3, "leafgreen": 3,
+    # Gen 4
+    "diamond": 4, "pearl": 4, "platinum": 4, "heartgold": 4, "soulsilver": 4,
+    # Gen 5
+    "black": 5, "white": 5, "black-2": 5, "white-2": 5,
+    # Gen 6
+    "x": 6, "y": 6, "omega-ruby": 6, "alpha-sapphire": 6,
+    # Gen 7
+    "sun": 7, "moon": 7, "ultra-sun": 7, "ultra-moon": 7, "lets-go-pikachu": 7, "lets-go-eevee": 7,
+    # Gen 8
+    "sword": 8, "shield": 8, "brilliant-diamond": 8, "shining-pearl": 8, "legends-arceus": 8,
+    # Gen 9
+    "scarlet": 9, "violet": 9,
+}
+
+
+def get_game_generation(game_slug: str) -> int:
+    """Retorna la generación canónica a partir del slug de la edición."""
+    if not game_slug:
+        return 1
+    if game_slug in GAME_GENERATION_MAP:
+        return GAME_GENERATION_MAP[game_slug]
+    try:
+        from .models import Game
+        g = Game.objects.filter(slug=game_slug).first()
+        if g and g.generation:
+            GAME_GENERATION_MAP[game_slug] = g.generation
+            return g.generation
+    except Exception:
+        pass
+    return 1
+
+
 _GAME_EVO_SETS: Dict[str, Dict[str, set]] = {}
 
 
@@ -133,7 +172,7 @@ def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
             print(f"Error computing evo sets for {catalog_file}: {e}")
 
     # Roselia y Chimecho no tenían preevoluciones por amistad en Gen 3 (Budew y Chingling se introdujeron en Gen 4)
-    if game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
+    if get_game_generation(game_slug) == 3:
         friendships.discard("roselia")
         friendships.discard("chimecho")
 
@@ -346,12 +385,7 @@ class CatalogEntry:
     def pc_icon_url(self) -> str:
         if self._pc_icon_url:
             return self._pc_icon_url
-        if self.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
-            gen = 3
-        elif self.game_slug in ["gold", "silver", "crystal"]:
-            gen = 2
-        else:
-            gen = 1
+        gen = get_game_generation(self.game_slug)
         return self.pokemon.get_pc_icon_url(generation=gen)
 
     @property
@@ -395,13 +429,7 @@ class CatalogEntry:
         tags = set()
         obt = self.obtaining_info or {}
         nat_num = getattr(self.pokemon, "national_number", 0)
-
-        if self.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"]:
-            gen = 3
-        elif self.game_slug in ["gold", "silver", "crystal"]:
-            gen = 2
-        else:
-            gen = 1
+        gen = get_game_generation(self.game_slug)
 
         # Iniciales y evoluciones (Pikachu y Raichu no cuentan como iniciales)
         if nat_num not in [25, 26] and (obt.get("type") == "starter" or nat_num in STARTER_NATIONAL_NUMBERS):

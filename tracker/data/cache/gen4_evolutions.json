@@ -1,0 +1,2612 @@
+{
+  "11": {
+    "from_id": 10,
+    "from_name": "Caterpie",
+    "to_id": 11,
+    "to_name": "Metapod",
+    "trigger": "level-up",
+    "condition": "Nivel 7",
+    "text": "Evoluciona de Caterpie (Nivel 7)",
+    "item_slug": null
+  },
+  "12": {
+    "from_id": 11,
+    "from_name": "Metapod",
+    "to_id": 12,
+    "to_name": "Butterfree",
+    "trigger": "level-up",
+    "condition": "Nivel 10",
+    "text": "Evoluciona de Metapod (Nivel 10)",
+    "item_slug": null
+  },
+  "217": {
+    "from_id": 216,
+    "from_name": "Teddiursa",
+    "to_id": 217,
+    "to_name": "Ursaring",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Teddiursa (Nivel 30)",
+    "item_slug": null
+  },
+  "901": {
+    "from_id": 217,
+    "from_name": "Ursaring",
+    "to_id": 901,
+    "to_name": "Ursaluna",
+    "trigger": "use-item",
+    "condition": "usando Peat block",
+    "text": "Evoluciona de Ursaring (usando Peat block)",
+    "item_slug": "peat-block"
+  },
+  "67": {
+    "from_id": 66,
+    "from_name": "Machop",
+    "to_id": 67,
+    "to_name": "Machoke",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Machop (Nivel 28)",
+    "item_slug": null
+  },
+  "68": {
+    "from_id": 67,
+    "from_name": "Machoke",
+    "to_id": 68,
+    "to_name": "Machamp",
+    "trigger": "trade",
+    "condition": "por intercambio",
+    "text": "Evoluciona de Machoke (por intercambio)",
+    "item_slug": null
+  },
+  "375": {
+    "from_id": 374,
+    "from_name": "Beldum",
+    "to_id": 375,
+    "to_name": "Metang",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Beldum (Nivel 20)",
+    "item_slug": null
+  },
+  "376": {
+    "from_id": 375,
+    "from_name": "Metang",
+    "to_id": 376,
+    "to_name": "Metagross",
+    "trigger": "level-up",
+    "condition": "Nivel 45",
+    "text": "Evoluciona de Metang (Nivel 45)",
+    "item_slug": null
+  },
+  "70": {
+    "from_id": 69,
+    "from_name": "Bellsprout",
+    "to_id": 70,
+    "to_name": "Weepinbell",
+    "trigger": "level-up",
+    "condition": "Nivel 21",
+    "text": "Evoluciona de Bellsprout (Nivel 21)",
+    "item_slug": null
+  },
+  "71": {
+    "from_id": 70,
+    "from_name": "Weepinbell",
+    "to_id": 71,
+    "to_name": "Victreebel",
+    "trigger": "use-item",
+    "condition": "usando Piedra Hoja",
+    "text": "Evoluciona de Weepinbell (usando Piedra Hoja)",
+    "item_slug": "leaf-stone"
+  },
+  "121": {
+    "from_id": 120,
+    "from_name": "Staryu",
+    "to_id": 121,
+    "to_name": "Starmie",
+    "trigger": "use-item",
+    "condition": "usando Piedra Agua",
+    "text": "Evoluciona de Staryu (usando Piedra Agua)",
+    "item_slug": "water-stone"
+  },
+  "411": {
+    "from_id": 410,
+    "from_name": "Shieldon",
+    "to_id": 411,
+    "to_name": "Bastiodon",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Shieldon (Nivel 30)",
+    "item_slug": null
+  },
+  "416": {
+    "from_id": 415,
+    "from_name": "Combee",
+    "to_id": 416,
+    "to_name": "Vespiquen",
+    "trigger": "level-up",
+    "condition": "Nivel 21, (hembra)",
+    "text": "Evoluciona de Combee (Nivel 21, (hembra))",
+    "item_slug": null
+  },
+  "452": {
+    "from_id": 451,
+    "from_name": "Skorupi",
+    "to_id": 452,
+    "to_name": "Drapion",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Skorupi (Nivel 40)",
+    "item_slug": null
+  },
+  "8": {
+    "from_id": 7,
+    "from_name": "Squirtle",
+    "to_id": 8,
+    "to_name": "Wartortle",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Squirtle (Nivel 16)",
+    "item_slug": null
+  },
+  "9": {
+    "from_id": 8,
+    "from_name": "Wartortle",
+    "to_id": 9,
+    "to_name": "Blastoise",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Wartortle (Nivel 36)",
+    "item_slug": null
+  },
+  "344": {
+    "from_id": 343,
+    "from_name": "Baltoy",
+    "to_id": 344,
+    "to_name": "Claydol",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Baltoy (Nivel 36)",
+    "item_slug": null
+  },
+  "97": {
+    "from_id": 96,
+    "from_name": "Drowzee",
+    "to_id": 97,
+    "to_name": "Hypno",
+    "trigger": "level-up",
+    "condition": "Nivel 26",
+    "text": "Evoluciona de Drowzee (Nivel 26)",
+    "item_slug": null
+  },
+  "982": {
+    "from_id": 206,
+    "from_name": "Dunsparce",
+    "to_id": 982,
+    "to_name": "Dudunsparce",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Hyper drill",
+    "text": "Evoluciona de Dunsparce (al subir de nivel conociendo Hyper drill)",
+    "item_slug": null
+  },
+  "444": {
+    "from_id": 443,
+    "from_name": "Gible",
+    "to_id": 444,
+    "to_name": "Gabite",
+    "trigger": "level-up",
+    "condition": "Nivel 24",
+    "text": "Evoluciona de Gible (Nivel 24)",
+    "item_slug": null
+  },
+  "445": {
+    "from_id": 444,
+    "from_name": "Gabite",
+    "to_id": 445,
+    "to_name": "Garchomp",
+    "trigger": "level-up",
+    "condition": "Nivel 48",
+    "text": "Evoluciona de Gabite (Nivel 48)",
+    "item_slug": null
+  },
+  "87": {
+    "from_id": 86,
+    "from_name": "Seel",
+    "to_id": 87,
+    "to_name": "Dewgong",
+    "trigger": "level-up",
+    "condition": "Nivel 34",
+    "text": "Evoluciona de Seel (Nivel 34)",
+    "item_slug": null
+  },
+  "185": {
+    "from_id": 438,
+    "from_name": "Bonsly",
+    "to_id": 185,
+    "to_name": "Sudowoodo",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Mimético",
+    "text": "Evoluciona de Bonsly (al subir de nivel conociendo Mimético)",
+    "item_slug": null
+  },
+  "51": {
+    "from_id": 50,
+    "from_name": "Diglett",
+    "to_id": 51,
+    "to_name": "Dugtrio",
+    "trigger": "level-up",
+    "condition": "Nivel 26",
+    "text": "Evoluciona de Diglett (Nivel 26)",
+    "item_slug": null
+  },
+  "288": {
+    "from_id": 287,
+    "from_name": "Slakoth",
+    "to_id": 288,
+    "to_name": "Vigoroth",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Slakoth (Nivel 18)",
+    "item_slug": null
+  },
+  "289": {
+    "from_id": 288,
+    "from_name": "Vigoroth",
+    "to_id": 289,
+    "to_name": "Slaking",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Vigoroth (Nivel 36)",
+    "item_slug": null
+  },
+  "44": {
+    "from_id": 43,
+    "from_name": "Oddish",
+    "to_id": 44,
+    "to_name": "Gloom",
+    "trigger": "level-up",
+    "condition": "Nivel 21",
+    "text": "Evoluciona de Oddish (Nivel 21)",
+    "item_slug": null
+  },
+  "45": {
+    "from_id": 44,
+    "from_name": "Gloom",
+    "to_id": 45,
+    "to_name": "Vileplume",
+    "trigger": "use-item",
+    "condition": "usando Piedra Hoja",
+    "text": "Evoluciona de Gloom (usando Piedra Hoja)",
+    "item_slug": "leaf-stone"
+  },
+  "182": {
+    "from_id": 44,
+    "from_name": "Gloom",
+    "to_id": 182,
+    "to_name": "Bellossom",
+    "trigger": "use-item",
+    "condition": "usando Piedra Solar",
+    "text": "Evoluciona de Gloom (usando Piedra Solar)",
+    "item_slug": "sun-stone"
+  },
+  "171": {
+    "from_id": 170,
+    "from_name": "Chinchou",
+    "to_id": 171,
+    "to_name": "Lanturn",
+    "trigger": "level-up",
+    "condition": "Nivel 27",
+    "text": "Evoluciona de Chinchou (Nivel 27)",
+    "item_slug": null
+  },
+  "73": {
+    "from_id": 72,
+    "from_name": "Tentacool",
+    "to_id": 73,
+    "to_name": "Tentacruel",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Tentacool (Nivel 30)",
+    "item_slug": null
+  },
+  "279": {
+    "from_id": 278,
+    "from_name": "Wingull",
+    "to_id": 279,
+    "to_name": "Pelipper",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Wingull (Nivel 25)",
+    "item_slug": null
+  },
+  "117": {
+    "from_id": 116,
+    "from_name": "Horsea",
+    "to_id": 117,
+    "to_name": "Seadra",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Horsea (Nivel 32)",
+    "item_slug": null
+  },
+  "230": {
+    "from_id": 117,
+    "from_name": "Seadra",
+    "to_id": 230,
+    "to_name": "Kingdra",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Escama Dragón",
+    "text": "Evoluciona de Seadra (por intercambio equipado con Escama Dragón)",
+    "item_slug": "dragon-scale"
+  },
+  "899": {
+    "from_id": 234,
+    "from_name": "Stantler",
+    "to_id": 899,
+    "to_name": "Wyrdeer",
+    "trigger": "agile-style-move",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Stantler (por condición especial)",
+    "item_slug": null
+  },
+  "334": {
+    "from_id": 333,
+    "from_name": "Swablu",
+    "to_id": 334,
+    "to_name": "Altaria",
+    "trigger": "level-up",
+    "condition": "Nivel 35",
+    "text": "Evoluciona de Swablu (Nivel 35)",
+    "item_slug": null
+  },
+  "226": {
+    "from_id": 458,
+    "from_name": "Mantyke",
+    "to_id": 226,
+    "to_name": "Mantine",
+    "trigger": "level-up",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Mantyke (por condición especial)",
+    "item_slug": null
+  },
+  "262": {
+    "from_id": 261,
+    "from_name": "Poochyena",
+    "to_id": 262,
+    "to_name": "Mightyena",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Poochyena (Nivel 18)",
+    "item_slug": null
+  },
+  "212": {
+    "from_id": 123,
+    "from_name": "Scyther",
+    "to_id": 212,
+    "to_name": "Scizor",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Revestimiento Metálico",
+    "text": "Evoluciona de Scyther (por intercambio equipado con Revestimiento Metálico)",
+    "item_slug": "metal-coat"
+  },
+  "900": {
+    "from_id": 123,
+    "from_name": "Scyther",
+    "to_id": 900,
+    "to_name": "Kleavor",
+    "trigger": "use-item",
+    "condition": "usando Black augurite",
+    "text": "Evoluciona de Scyther (usando Black augurite)",
+    "item_slug": "black-augurite"
+  },
+  "326": {
+    "from_id": 325,
+    "from_name": "Spoink",
+    "to_id": 326,
+    "to_name": "Grumpig",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Spoink (Nivel 32)",
+    "item_slug": null
+  },
+  "192": {
+    "from_id": 191,
+    "from_name": "Sunkern",
+    "to_id": 192,
+    "to_name": "Sunflora",
+    "trigger": "use-item",
+    "condition": "usando Piedra Solar",
+    "text": "Evoluciona de Sunkern (usando Piedra Solar)",
+    "item_slug": "sun-stone"
+  },
+  "176": {
+    "from_id": 175,
+    "from_name": "Togepi",
+    "to_id": 176,
+    "to_name": "Togetic",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Togepi (por amistad)",
+    "item_slug": null
+  },
+  "468": {
+    "from_id": 176,
+    "from_name": "Togetic",
+    "to_id": 468,
+    "to_name": "Togekiss",
+    "trigger": "use-item",
+    "condition": "usando Piedra Día",
+    "text": "Evoluciona de Togetic (usando Piedra Día)",
+    "item_slug": "shiny-stone"
+  },
+  "143": {
+    "from_id": 446,
+    "from_name": "Munchlax",
+    "to_id": 143,
+    "to_name": "Snorlax",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Munchlax (por amistad)",
+    "item_slug": null
+  },
+  "432": {
+    "from_id": 431,
+    "from_name": "Glameow",
+    "to_id": 432,
+    "to_name": "Purugly",
+    "trigger": "level-up",
+    "condition": "Nivel 38",
+    "text": "Evoluciona de Glameow (Nivel 38)",
+    "item_slug": null
+  },
+  "38": {
+    "from_id": 37,
+    "from_name": "Vulpix",
+    "to_id": 38,
+    "to_name": "Ninetales",
+    "trigger": "use-item",
+    "condition": "usando Piedra Fuego",
+    "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
+    "item_slug": "fire-stone"
+  },
+  "469": {
+    "from_id": 193,
+    "from_name": "Yanma",
+    "to_id": 469,
+    "to_name": "Yanmega",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Poder Pasado",
+    "text": "Evoluciona de Yanma (al subir de nivel conociendo Poder Pasado)",
+    "item_slug": null
+  },
+  "429": {
+    "from_id": 200,
+    "from_name": "Misdreavus",
+    "to_id": 429,
+    "to_name": "Mismagius",
+    "trigger": "use-item",
+    "condition": "usando Piedra Noche",
+    "text": "Evoluciona de Misdreavus (usando Piedra Noche)",
+    "item_slug": "dusk-stone"
+  },
+  "253": {
+    "from_id": 252,
+    "from_name": "Treecko",
+    "to_id": 253,
+    "to_name": "Grovyle",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Treecko (Nivel 16)",
+    "item_slug": null
+  },
+  "254": {
+    "from_id": 253,
+    "from_name": "Grovyle",
+    "to_id": 254,
+    "to_name": "Sceptile",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Grovyle (Nivel 36)",
+    "item_slug": null
+  },
+  "348": {
+    "from_id": 347,
+    "from_name": "Anorith",
+    "to_id": 348,
+    "to_name": "Armaldo",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Anorith (Nivel 40)",
+    "item_slug": null
+  },
+  "119": {
+    "from_id": 118,
+    "from_name": "Goldeen",
+    "to_id": 119,
+    "to_name": "Seaking",
+    "trigger": "level-up",
+    "condition": "Nivel 33",
+    "text": "Evoluciona de Goldeen (Nivel 33)",
+    "item_slug": null
+  },
+  "210": {
+    "from_id": 209,
+    "from_name": "Snubbull",
+    "to_id": 210,
+    "to_name": "Granbull",
+    "trigger": "level-up",
+    "condition": "Nivel 23",
+    "text": "Evoluciona de Snubbull (Nivel 23)",
+    "item_slug": null
+  },
+  "112": {
+    "from_id": 111,
+    "from_name": "Rhyhorn",
+    "to_id": 112,
+    "to_name": "Rhydon",
+    "trigger": "level-up",
+    "condition": "Nivel 42",
+    "text": "Evoluciona de Rhyhorn (Nivel 42)",
+    "item_slug": null
+  },
+  "464": {
+    "from_id": 112,
+    "from_name": "Rhydon",
+    "to_id": 464,
+    "to_name": "Rhyperior",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Protector",
+    "text": "Evoluciona de Rhydon (por intercambio equipado con Protector)",
+    "item_slug": "protector"
+  },
+  "183": {
+    "from_id": 298,
+    "from_name": "Azurill",
+    "to_id": 183,
+    "to_name": "Marill",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Azurill (por amistad)",
+    "item_slug": null
+  },
+  "184": {
+    "from_id": 183,
+    "from_name": "Marill",
+    "to_id": 184,
+    "to_name": "Azumarill",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Marill (Nivel 18)",
+    "item_slug": null
+  },
+  "397": {
+    "from_id": 396,
+    "from_name": "Starly",
+    "to_id": 397,
+    "to_name": "Staravia",
+    "trigger": "level-up",
+    "condition": "Nivel 14",
+    "text": "Evoluciona de Starly (Nivel 14)",
+    "item_slug": null
+  },
+  "398": {
+    "from_id": 397,
+    "from_name": "Staravia",
+    "to_id": 398,
+    "to_name": "Staraptor",
+    "trigger": "level-up",
+    "condition": "Nivel 34",
+    "text": "Evoluciona de Staravia (Nivel 34)",
+    "item_slug": null
+  },
+  "17": {
+    "from_id": 16,
+    "from_name": "Pidgey",
+    "to_id": 17,
+    "to_name": "Pidgeotto",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Pidgey (Nivel 18)",
+    "item_slug": null
+  },
+  "18": {
+    "from_id": 17,
+    "from_name": "Pidgeotto",
+    "to_id": 18,
+    "to_name": "Pidgeot",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Pidgeotto (Nivel 36)",
+    "item_slug": null
+  },
+  "476": {
+    "from_id": 299,
+    "from_name": "Nosepass",
+    "to_id": 476,
+    "to_name": "Probopass",
+    "trigger": "level-up",
+    "condition": "al subir de nivel en el Monte Corona (campo magnético)",
+    "text": "Evoluciona de Nosepass (al subir de nivel en el Monte Corona (campo magnético))",
+    "item_slug": null
+  },
+  "122": {
+    "from_id": 439,
+    "from_name": "Mime-jr",
+    "to_id": 122,
+    "to_name": "Mr-mime",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Mimético",
+    "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+    "item_slug": null
+  },
+  "866": {
+    "from_id": 122,
+    "from_name": "Mr-mime",
+    "to_id": 866,
+    "to_name": "Mr-rime",
+    "trigger": "level-up",
+    "condition": "Nivel 42",
+    "text": "Evoluciona de Mr-mime (Nivel 42)",
+    "item_slug": null
+  },
+  "224": {
+    "from_id": 223,
+    "from_name": "Remoraid",
+    "to_id": 224,
+    "to_name": "Octillery",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Remoraid (Nivel 25)",
+    "item_slug": null
+  },
+  "39": {
+    "from_id": 174,
+    "from_name": "Igglybuff",
+    "to_id": 39,
+    "to_name": "Jigglypuff",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Igglybuff (por amistad)",
+    "item_slug": null
+  },
+  "40": {
+    "from_id": 39,
+    "from_name": "Jigglypuff",
+    "to_id": 40,
+    "to_name": "Wigglytuff",
+    "trigger": "use-item",
+    "condition": "usando Piedra Lunar",
+    "text": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
+    "item_slug": "moon-stone"
+  },
+  "141": {
+    "from_id": 140,
+    "from_name": "Kabuto",
+    "to_id": 141,
+    "to_name": "Kabutops",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Kabuto (Nivel 40)",
+    "item_slug": null
+  },
+  "35": {
+    "from_id": 173,
+    "from_name": "Cleffa",
+    "to_id": 35,
+    "to_name": "Clefairy",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Cleffa (por amistad)",
+    "item_slug": null
+  },
+  "36": {
+    "from_id": 35,
+    "from_name": "Clefairy",
+    "to_id": 36,
+    "to_name": "Clefable",
+    "trigger": "use-item",
+    "condition": "usando Piedra Lunar",
+    "text": "Evoluciona de Clefairy (usando Piedra Lunar)",
+    "item_slug": "moon-stone"
+  },
+  "89": {
+    "from_id": 88,
+    "from_name": "Grimer",
+    "to_id": 89,
+    "to_name": "Muk",
+    "trigger": "level-up",
+    "condition": "Nivel 38",
+    "text": "Evoluciona de Grimer (Nivel 38)",
+    "item_slug": null
+  },
+  "271": {
+    "from_id": 270,
+    "from_name": "Lotad",
+    "to_id": 271,
+    "to_name": "Lombre",
+    "trigger": "level-up",
+    "condition": "Nivel 14",
+    "text": "Evoluciona de Lotad (Nivel 14)",
+    "item_slug": null
+  },
+  "272": {
+    "from_id": 271,
+    "from_name": "Lombre",
+    "to_id": 272,
+    "to_name": "Ludicolo",
+    "trigger": "use-item",
+    "condition": "usando Piedra Agua",
+    "text": "Evoluciona de Lombre (usando Piedra Agua)",
+    "item_slug": "water-stone"
+  },
+  "126": {
+    "from_id": 240,
+    "from_name": "Magby",
+    "to_id": 126,
+    "to_name": "Magmar",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Magby (Nivel 30)",
+    "item_slug": null
+  },
+  "467": {
+    "from_id": 126,
+    "from_name": "Magmar",
+    "to_id": 467,
+    "to_name": "Magmortar",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Magmatizador",
+    "text": "Evoluciona de Magmar (por intercambio equipado con Magmatizador)",
+    "item_slug": "magmarizer"
+  },
+  "981": {
+    "from_id": 203,
+    "from_name": "Girafarig",
+    "to_id": 981,
+    "to_name": "Farigiraf",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Twin beam",
+    "text": "Evoluciona de Girafarig (al subir de nivel conociendo Twin beam)",
+    "item_slug": null
+  },
+  "321": {
+    "from_id": 320,
+    "from_name": "Wailmer",
+    "to_id": 321,
+    "to_name": "Wailord",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Wailmer (Nivel 40)",
+    "item_slug": null
+  },
+  "356": {
+    "from_id": 355,
+    "from_name": "Duskull",
+    "to_id": 356,
+    "to_name": "Dusclops",
+    "trigger": "level-up",
+    "condition": "Nivel 37",
+    "text": "Evoluciona de Duskull (Nivel 37)",
+    "item_slug": null
+  },
+  "477": {
+    "from_id": 356,
+    "from_name": "Dusclops",
+    "to_id": 477,
+    "to_name": "Dusknoir",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Tela Terrible",
+    "text": "Evoluciona de Dusclops (por intercambio equipado con Tela Terrible)",
+    "item_slug": "reaper-cloth"
+  },
+  "188": {
+    "from_id": 187,
+    "from_name": "Hoppip",
+    "to_id": 188,
+    "to_name": "Skiploom",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Hoppip (Nivel 18)",
+    "item_slug": null
+  },
+  "189": {
+    "from_id": 188,
+    "from_name": "Skiploom",
+    "to_id": 189,
+    "to_name": "Jumpluff",
+    "trigger": "level-up",
+    "condition": "Nivel 27",
+    "text": "Evoluciona de Skiploom (Nivel 27)",
+    "item_slug": null
+  },
+  "229": {
+    "from_id": 228,
+    "from_name": "Houndour",
+    "to_id": 229,
+    "to_name": "Houndoom",
+    "trigger": "level-up",
+    "condition": "Nivel 24",
+    "text": "Evoluciona de Houndour (Nivel 24)",
+    "item_slug": null
+  },
+  "75": {
+    "from_id": 74,
+    "from_name": "Geodude",
+    "to_id": 75,
+    "to_name": "Graveler",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Geodude (Nivel 25)",
+    "item_slug": null
+  },
+  "76": {
+    "from_id": 75,
+    "from_name": "Graveler",
+    "to_id": 76,
+    "to_name": "Golem",
+    "trigger": "trade",
+    "condition": "por intercambio",
+    "text": "Evoluciona de Graveler (por intercambio)",
+    "item_slug": null
+  },
+  "460": {
+    "from_id": 459,
+    "from_name": "Snover",
+    "to_id": 460,
+    "to_name": "Abomasnow",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Snover (Nivel 40)",
+    "item_slug": null
+  },
+  "156": {
+    "from_id": 155,
+    "from_name": "Cyndaquil",
+    "to_id": 156,
+    "to_name": "Quilava",
+    "trigger": "level-up",
+    "condition": "Nivel 14",
+    "text": "Evoluciona de Cyndaquil (Nivel 14)",
+    "item_slug": null
+  },
+  "157": {
+    "from_id": 156,
+    "from_name": "Quilava",
+    "to_id": 157,
+    "to_name": "Typhlosion",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Quilava (Nivel 36)",
+    "item_slug": null
+  },
+  "308": {
+    "from_id": 307,
+    "from_name": "Meditite",
+    "to_id": 308,
+    "to_name": "Medicham",
+    "trigger": "level-up",
+    "condition": "Nivel 37",
+    "text": "Evoluciona de Meditite (Nivel 37)",
+    "item_slug": null
+  },
+  "124": {
+    "from_id": 238,
+    "from_name": "Smoochum",
+    "to_id": 124,
+    "to_name": "Jynx",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Smoochum (Nivel 30)",
+    "item_slug": null
+  },
+  "435": {
+    "from_id": 434,
+    "from_name": "Stunky",
+    "to_id": 435,
+    "to_name": "Skuntank",
+    "trigger": "level-up",
+    "condition": "Nivel 34",
+    "text": "Evoluciona de Stunky (Nivel 34)",
+    "item_slug": null
+  },
+  "30": {
+    "from_id": 29,
+    "from_name": "Nidoran-f",
+    "to_id": 30,
+    "to_name": "Nidorina",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Nidoran-f (Nivel 16)",
+    "item_slug": null
+  },
+  "31": {
+    "from_id": 30,
+    "from_name": "Nidorina",
+    "to_id": 31,
+    "to_name": "Nidoqueen",
+    "trigger": "use-item",
+    "condition": "usando Piedra Lunar",
+    "text": "Evoluciona de Nidorina (usando Piedra Lunar)",
+    "item_slug": "moon-stone"
+  },
+  "463": {
+    "from_id": 108,
+    "from_name": "Lickitung",
+    "to_id": 463,
+    "to_name": "Lickilicky",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Desenrollar",
+    "text": "Evoluciona de Lickitung (al subir de nivel conociendo Desenrollar)",
+    "item_slug": null
+  },
+  "202": {
+    "from_id": 360,
+    "from_name": "Wynaut",
+    "to_id": 202,
+    "to_name": "Wobbuffet",
+    "trigger": "level-up",
+    "condition": "Nivel 15",
+    "text": "Evoluciona de Wynaut (Nivel 15)",
+    "item_slug": null
+  },
+  "402": {
+    "from_id": 401,
+    "from_name": "Kricketot",
+    "to_id": 402,
+    "to_name": "Kricketune",
+    "trigger": "level-up",
+    "condition": "Nivel 10",
+    "text": "Evoluciona de Kricketot (Nivel 10)",
+    "item_slug": null
+  },
+  "82": {
+    "from_id": 81,
+    "from_name": "Magnemite",
+    "to_id": 82,
+    "to_name": "Magneton",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Magnemite (Nivel 30)",
+    "item_slug": null
+  },
+  "462": {
+    "from_id": 82,
+    "from_name": "Magneton",
+    "to_id": 462,
+    "to_name": "Magnezone",
+    "trigger": "level-up",
+    "condition": "al subir de nivel en el Monte Corona (campo magnético)",
+    "text": "Evoluciona de Magneton (al subir de nivel en el Monte Corona (campo magnético))",
+    "item_slug": null
+  },
+  "865": {
+    "from_id": 83,
+    "from_name": "Farfetchd",
+    "to_id": 865,
+    "to_name": "Sirfetchd",
+    "trigger": "three-critical-hits",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Farfetchd (por condición especial)",
+    "item_slug": null
+  },
+  "430": {
+    "from_id": 198,
+    "from_name": "Murkrow",
+    "to_id": 430,
+    "to_name": "Honchkrow",
+    "trigger": "use-item",
+    "condition": "usando Piedra Noche",
+    "text": "Evoluciona de Murkrow (usando Piedra Noche)",
+    "item_slug": "dusk-stone"
+  },
+  "350": {
+    "from_id": 349,
+    "from_name": "Feebas",
+    "to_id": 350,
+    "to_name": "Milotic",
+    "trigger": "level-up",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Feebas (por condición especial)",
+    "item_slug": null
+  },
+  "233": {
+    "from_id": 137,
+    "from_name": "Porygon",
+    "to_id": 233,
+    "to_name": "Porygon2",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Mejora",
+    "text": "Evoluciona de Porygon (por intercambio equipado con Mejora)",
+    "item_slug": "up-grade"
+  },
+  "474": {
+    "from_id": 233,
+    "from_name": "Porygon2",
+    "to_id": 474,
+    "to_name": "Porygon-z",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Discoxtraño",
+    "text": "Evoluciona de Porygon2 (por intercambio equipado con Discoxtraño)",
+    "item_slug": "dubious-disc"
+  },
+  "59": {
+    "from_id": 58,
+    "from_name": "Growlithe",
+    "to_id": 59,
+    "to_name": "Arcanine",
+    "trigger": "use-item",
+    "condition": "usando Piedra Fuego",
+    "text": "Evoluciona de Growlithe (usando Piedra Fuego)",
+    "item_slug": "fire-stone"
+  },
+  "91": {
+    "from_id": 90,
+    "from_name": "Shellder",
+    "to_id": 91,
+    "to_name": "Cloyster",
+    "trigger": "use-item",
+    "condition": "usando Piedra Agua",
+    "text": "Evoluciona de Shellder (usando Piedra Agua)",
+    "item_slug": "water-stone"
+  },
+  "159": {
+    "from_id": 158,
+    "from_name": "Totodile",
+    "to_id": 159,
+    "to_name": "Croconaw",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Totodile (Nivel 18)",
+    "item_slug": null
+  },
+  "160": {
+    "from_id": 159,
+    "from_name": "Croconaw",
+    "to_id": 160,
+    "to_name": "Feraligatr",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Croconaw (Nivel 30)",
+    "item_slug": null
+  },
+  "340": {
+    "from_id": 339,
+    "from_name": "Barboach",
+    "to_id": 340,
+    "to_name": "Whiscash",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Barboach (Nivel 30)",
+    "item_slug": null
+  },
+  "219": {
+    "from_id": 218,
+    "from_name": "Slugma",
+    "to_id": 219,
+    "to_name": "Magcargo",
+    "trigger": "level-up",
+    "condition": "Nivel 38",
+    "text": "Evoluciona de Slugma (Nivel 38)",
+    "item_slug": null
+  },
+  "319": {
+    "from_id": 318,
+    "from_name": "Carvanha",
+    "to_id": 319,
+    "to_name": "Sharpedo",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Carvanha (Nivel 30)",
+    "item_slug": null
+  },
+  "49": {
+    "from_id": 48,
+    "from_name": "Venonat",
+    "to_id": 49,
+    "to_name": "Venomoth",
+    "trigger": "level-up",
+    "condition": "Nivel 31",
+    "text": "Evoluciona de Venonat (Nivel 31)",
+    "item_slug": null
+  },
+  "323": {
+    "from_id": 322,
+    "from_name": "Numel",
+    "to_id": 323,
+    "to_name": "Camerupt",
+    "trigger": "level-up",
+    "condition": "Nivel 33",
+    "text": "Evoluciona de Numel (Nivel 33)",
+    "item_slug": null
+  },
+  "454": {
+    "from_id": 453,
+    "from_name": "Croagunk",
+    "to_id": 454,
+    "to_name": "Toxicroak",
+    "trigger": "level-up",
+    "condition": "Nivel 37",
+    "text": "Evoluciona de Croagunk (Nivel 37)",
+    "item_slug": null
+  },
+  "221": {
+    "from_id": 220,
+    "from_name": "Swinub",
+    "to_id": 221,
+    "to_name": "Piloswine",
+    "trigger": "level-up",
+    "condition": "Nivel 33",
+    "text": "Evoluciona de Swinub (Nivel 33)",
+    "item_slug": null
+  },
+  "473": {
+    "from_id": 221,
+    "from_name": "Piloswine",
+    "to_id": 473,
+    "to_name": "Mamoswine",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Poder Pasado",
+    "text": "Evoluciona de Piloswine (al subir de nivel conociendo Poder Pasado)",
+    "item_slug": null
+  },
+  "153": {
+    "from_id": 152,
+    "from_name": "Chikorita",
+    "to_id": 153,
+    "to_name": "Bayleef",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Chikorita (Nivel 16)",
+    "item_slug": null
+  },
+  "154": {
+    "from_id": 153,
+    "from_name": "Bayleef",
+    "to_id": 154,
+    "to_name": "Meganium",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Bayleef (Nivel 32)",
+    "item_slug": null
+  },
+  "168": {
+    "from_id": 167,
+    "from_name": "Spinarak",
+    "to_id": 168,
+    "to_name": "Ariados",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Spinarak (Nivel 22)",
+    "item_slug": null
+  },
+  "266": {
+    "from_id": 265,
+    "from_name": "Wurmple",
+    "to_id": 266,
+    "to_name": "Silcoon",
+    "trigger": "level-up",
+    "condition": "Nivel 7",
+    "text": "Evoluciona de Wurmple (Nivel 7)",
+    "item_slug": null
+  },
+  "267": {
+    "from_id": 266,
+    "from_name": "Silcoon",
+    "to_id": 267,
+    "to_name": "Beautifly",
+    "trigger": "level-up",
+    "condition": "Nivel 10",
+    "text": "Evoluciona de Silcoon (Nivel 10)",
+    "item_slug": null
+  },
+  "268": {
+    "from_id": 265,
+    "from_name": "Wurmple",
+    "to_id": 268,
+    "to_name": "Cascoon",
+    "trigger": "level-up",
+    "condition": "Nivel 7",
+    "text": "Evoluciona de Wurmple (Nivel 7)",
+    "item_slug": null
+  },
+  "269": {
+    "from_id": 268,
+    "from_name": "Cascoon",
+    "to_id": 269,
+    "to_name": "Dustox",
+    "trigger": "level-up",
+    "condition": "Nivel 10",
+    "text": "Evoluciona de Cascoon (Nivel 10)",
+    "item_slug": null
+  },
+  "413": {
+    "from_id": 412,
+    "from_name": "Burmy",
+    "to_id": 413,
+    "to_name": "Wormadam",
+    "trigger": "level-up",
+    "condition": "Nivel 20, (hembra)",
+    "text": "Evoluciona de Burmy (Nivel 20, (hembra))",
+    "item_slug": null
+  },
+  "414": {
+    "from_id": 412,
+    "from_name": "Burmy",
+    "to_id": 414,
+    "to_name": "Mothim",
+    "trigger": "level-up",
+    "condition": "Nivel 20, (macho)",
+    "text": "Evoluciona de Burmy (Nivel 20, (macho))",
+    "item_slug": null
+  },
+  "388": {
+    "from_id": 387,
+    "from_name": "Turtwig",
+    "to_id": 388,
+    "to_name": "Grotle",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Turtwig (Nivel 18)",
+    "item_slug": null
+  },
+  "389": {
+    "from_id": 388,
+    "from_name": "Grotle",
+    "to_id": 389,
+    "to_name": "Torterra",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Grotle (Nivel 32)",
+    "item_slug": null
+  },
+  "421": {
+    "from_id": 420,
+    "from_name": "Cherubi",
+    "to_id": 421,
+    "to_name": "Cherrim",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Cherubi (Nivel 25)",
+    "item_slug": null
+  },
+  "310": {
+    "from_id": 309,
+    "from_name": "Electrike",
+    "to_id": 310,
+    "to_name": "Manectric",
+    "trigger": "level-up",
+    "condition": "Nivel 26",
+    "text": "Evoluciona de Electrike (Nivel 26)",
+    "item_slug": null
+  },
+  "281": {
+    "from_id": 280,
+    "from_name": "Ralts",
+    "to_id": 281,
+    "to_name": "Kirlia",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Ralts (Nivel 20)",
+    "item_slug": null
+  },
+  "282": {
+    "from_id": 281,
+    "from_name": "Kirlia",
+    "to_id": 282,
+    "to_name": "Gardevoir",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Kirlia (Nivel 30)",
+    "item_slug": null
+  },
+  "475": {
+    "from_id": 281,
+    "from_name": "Kirlia",
+    "to_id": 475,
+    "to_name": "Gallade",
+    "trigger": "use-item",
+    "condition": "usando Piedra Alba (macho)",
+    "text": "Evoluciona de Kirlia (usando Piedra Alba (macho))",
+    "item_slug": "dawn-stone"
+  },
+  "329": {
+    "from_id": 328,
+    "from_name": "Trapinch",
+    "to_id": 329,
+    "to_name": "Vibrava",
+    "trigger": "level-up",
+    "condition": "Nivel 35",
+    "text": "Evoluciona de Trapinch (Nivel 35)",
+    "item_slug": null
+  },
+  "330": {
+    "from_id": 329,
+    "from_name": "Vibrava",
+    "to_id": 330,
+    "to_name": "Flygon",
+    "trigger": "level-up",
+    "condition": "Nivel 45",
+    "text": "Evoluciona de Vibrava (Nivel 45)",
+    "item_slug": null
+  },
+  "354": {
+    "from_id": 353,
+    "from_name": "Shuppet",
+    "to_id": 354,
+    "to_name": "Banette",
+    "trigger": "level-up",
+    "condition": "Nivel 37",
+    "text": "Evoluciona de Shuppet (Nivel 37)",
+    "item_slug": null
+  },
+  "106": {
+    "from_id": 236,
+    "from_name": "Tyrogue",
+    "to_id": 106,
+    "to_name": "Hitmonlee",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "item_slug": null
+  },
+  "107": {
+    "from_id": 236,
+    "from_name": "Tyrogue",
+    "to_id": 107,
+    "to_name": "Hitmonchan",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "item_slug": null
+  },
+  "237": {
+    "from_id": 236,
+    "from_name": "Tyrogue",
+    "to_id": 237,
+    "to_name": "Hitmontop",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "item_slug": null
+  },
+  "101": {
+    "from_id": 100,
+    "from_name": "Voltorb",
+    "to_id": 101,
+    "to_name": "Electrode",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Voltorb (Nivel 30)",
+    "item_slug": null
+  },
+  "24": {
+    "from_id": 23,
+    "from_name": "Ekans",
+    "to_id": 24,
+    "to_name": "Arbok",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Ekans (Nivel 22)",
+    "item_slug": null
+  },
+  "317": {
+    "from_id": 316,
+    "from_name": "Gulpin",
+    "to_id": 317,
+    "to_name": "Swalot",
+    "trigger": "level-up",
+    "condition": "Nivel 26",
+    "text": "Evoluciona de Gulpin (Nivel 26)",
+    "item_slug": null
+  },
+  "42": {
+    "from_id": 41,
+    "from_name": "Zubat",
+    "to_id": 42,
+    "to_name": "Golbat",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Zubat (Nivel 22)",
+    "item_slug": null
+  },
+  "169": {
+    "from_id": 42,
+    "from_name": "Golbat",
+    "to_id": 169,
+    "to_name": "Crobat",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Golbat (por amistad)",
+    "item_slug": null
+  },
+  "409": {
+    "from_id": 408,
+    "from_name": "Cranidos",
+    "to_id": 409,
+    "to_name": "Rampardos",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Cranidos (Nivel 30)",
+    "item_slug": null
+  },
+  "195": {
+    "from_id": 194,
+    "from_name": "Wooper",
+    "to_id": 195,
+    "to_name": "Quagsire",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Wooper (Nivel 20)",
+    "item_slug": null
+  },
+  "980": {
+    "from_id": 194,
+    "from_name": "Wooper",
+    "to_id": 980,
+    "to_name": "Clodsire",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Wooper (Nivel 20)",
+    "item_slug": null
+  },
+  "315": {
+    "from_id": 406,
+    "from_name": "Budew",
+    "to_id": 315,
+    "to_name": "Roselia",
+    "trigger": "level-up",
+    "condition": "por amistad de day",
+    "text": "Evoluciona de Budew (por amistad de day)",
+    "item_slug": null
+  },
+  "407": {
+    "from_id": 315,
+    "from_name": "Roselia",
+    "to_id": 407,
+    "to_name": "Roserade",
+    "trigger": "use-item",
+    "condition": "usando Piedra Día",
+    "text": "Evoluciona de Roselia (usando Piedra Día)",
+    "item_slug": "shiny-stone"
+  },
+  "57": {
+    "from_id": 56,
+    "from_name": "Mankey",
+    "to_id": 57,
+    "to_name": "Primeape",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Mankey (Nivel 28)",
+    "item_slug": null
+  },
+  "979": {
+    "from_id": 57,
+    "from_name": "Primeape",
+    "to_id": 979,
+    "to_name": "Annihilape",
+    "trigger": "use-move",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Primeape (por condición especial)",
+    "item_slug": null
+  },
+  "259": {
+    "from_id": 258,
+    "from_name": "Mudkip",
+    "to_id": 259,
+    "to_name": "Marshtomp",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Mudkip (Nivel 16)",
+    "item_slug": null
+  },
+  "260": {
+    "from_id": 259,
+    "from_name": "Marshtomp",
+    "to_id": 260,
+    "to_name": "Swampert",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Marshtomp (Nivel 36)",
+    "item_slug": null
+  },
+  "28": {
+    "from_id": 27,
+    "from_name": "Sandshrew",
+    "to_id": 28,
+    "to_name": "Sandslash",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Sandshrew (Nivel 22)",
+    "item_slug": null
+  },
+  "80": {
+    "from_id": 79,
+    "from_name": "Slowpoke",
+    "to_id": 80,
+    "to_name": "Slowbro",
+    "trigger": "level-up",
+    "condition": "Nivel 37",
+    "text": "Evoluciona de Slowpoke (Nivel 37)",
+    "item_slug": null
+  },
+  "199": {
+    "from_id": 79,
+    "from_name": "Slowpoke",
+    "to_id": 199,
+    "to_name": "Slowking",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Roca del Rey",
+    "text": "Evoluciona de Slowpoke (por intercambio equipado con Roca del Rey)",
+    "item_slug": "kings-rock"
+  },
+  "465": {
+    "from_id": 114,
+    "from_name": "Tangela",
+    "to_id": 465,
+    "to_name": "Tangrowth",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Poder Pasado",
+    "text": "Evoluciona de Tangela (al subir de nivel conociendo Poder Pasado)",
+    "item_slug": null
+  },
+  "362": {
+    "from_id": 361,
+    "from_name": "Snorunt",
+    "to_id": 362,
+    "to_name": "Glalie",
+    "trigger": "level-up",
+    "condition": "Nivel 42",
+    "text": "Evoluciona de Snorunt (Nivel 42)",
+    "item_slug": null
+  },
+  "478": {
+    "from_id": 361,
+    "from_name": "Snorunt",
+    "to_id": 478,
+    "to_name": "Froslass",
+    "trigger": "use-item",
+    "condition": "usando Piedra Alba (hembra)",
+    "text": "Evoluciona de Snorunt (usando Piedra Alba (hembra))",
+    "item_slug": "dawn-stone"
+  },
+  "130": {
+    "from_id": 129,
+    "from_name": "Magikarp",
+    "to_id": 130,
+    "to_name": "Gyarados",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Magikarp (Nivel 20)",
+    "item_slug": null
+  },
+  "904": {
+    "from_id": 211,
+    "from_name": "Qwilfish",
+    "to_id": 904,
+    "to_name": "Overqwil",
+    "trigger": "strong-style-move",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Qwilfish (por condición especial)",
+    "item_slug": null
+  },
+  "297": {
+    "from_id": 296,
+    "from_name": "Makuhita",
+    "to_id": 297,
+    "to_name": "Hariyama",
+    "trigger": "level-up",
+    "condition": "Nivel 24",
+    "text": "Evoluciona de Makuhita (Nivel 24)",
+    "item_slug": null
+  },
+  "864": {
+    "from_id": 222,
+    "from_name": "Corsola",
+    "to_id": 864,
+    "to_name": "Cursola",
+    "trigger": "level-up",
+    "condition": "Nivel 38",
+    "text": "Evoluciona de Corsola (Nivel 38)",
+    "item_slug": null
+  },
+  "110": {
+    "from_id": 109,
+    "from_name": "Koffing",
+    "to_id": 110,
+    "to_name": "Weezing",
+    "trigger": "level-up",
+    "condition": "Nivel 35",
+    "text": "Evoluciona de Koffing (Nivel 35)",
+    "item_slug": null
+  },
+  "113": {
+    "from_id": 440,
+    "from_name": "Happiny",
+    "to_id": 113,
+    "to_name": "Chansey",
+    "trigger": "level-up",
+    "condition": "equipado con Piedra Oval al subir de nivel por la day",
+    "text": "Evoluciona de Happiny (equipado con Piedra Oval al subir de nivel por la day)",
+    "item_slug": "oval-stone"
+  },
+  "242": {
+    "from_id": 113,
+    "from_name": "Chansey",
+    "to_id": 242,
+    "to_name": "Blissey",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Chansey (por amistad)",
+    "item_slug": null
+  },
+  "294": {
+    "from_id": 293,
+    "from_name": "Whismur",
+    "to_id": 294,
+    "to_name": "Loudred",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Whismur (Nivel 20)",
+    "item_slug": null
+  },
+  "295": {
+    "from_id": 294,
+    "from_name": "Loudred",
+    "to_id": 295,
+    "to_name": "Exploud",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Loudred (Nivel 40)",
+    "item_slug": null
+  },
+  "448": {
+    "from_id": 447,
+    "from_name": "Riolu",
+    "to_id": 448,
+    "to_name": "Lucario",
+    "trigger": "level-up",
+    "condition": "por amistad de day",
+    "text": "Evoluciona de Riolu (por amistad de day)",
+    "item_slug": null
+  },
+  "264": {
+    "from_id": 263,
+    "from_name": "Zigzagoon",
+    "to_id": 264,
+    "to_name": "Linoone",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Zigzagoon (Nivel 20)",
+    "item_slug": null
+  },
+  "862": {
+    "from_id": 264,
+    "from_name": "Linoone",
+    "to_id": 862,
+    "to_name": "Obstagoon",
+    "trigger": "level-up",
+    "condition": "Nivel 35",
+    "text": "Evoluciona de Linoone (Nivel 35)",
+    "item_slug": null
+  },
+  "404": {
+    "from_id": 403,
+    "from_name": "Shinx",
+    "to_id": 404,
+    "to_name": "Luxio",
+    "trigger": "level-up",
+    "condition": "Nivel 15",
+    "text": "Evoluciona de Shinx (Nivel 15)",
+    "item_slug": null
+  },
+  "405": {
+    "from_id": 404,
+    "from_name": "Luxio",
+    "to_id": 405,
+    "to_name": "Luxray",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Luxio (Nivel 30)",
+    "item_slug": null
+  },
+  "25": {
+    "from_id": 172,
+    "from_name": "Pichu",
+    "to_id": 25,
+    "to_name": "Pikachu",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Pichu (por amistad)",
+    "item_slug": null
+  },
+  "26": {
+    "from_id": 25,
+    "from_name": "Pikachu",
+    "to_id": 26,
+    "to_name": "Raichu",
+    "trigger": "use-item",
+    "condition": "usando Piedra Trueno",
+    "text": "Evoluciona de Pikachu (usando Piedra Trueno)",
+    "item_slug": "thunder-stone"
+  },
+  "53": {
+    "from_id": 52,
+    "from_name": "Meowth",
+    "to_id": 53,
+    "to_name": "Persian",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Meowth (Nivel 28)",
+    "item_slug": null
+  },
+  "863": {
+    "from_id": 52,
+    "from_name": "Meowth",
+    "to_id": 863,
+    "to_name": "Perrserker",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Meowth (Nivel 28)",
+    "item_slug": null
+  },
+  "99": {
+    "from_id": 98,
+    "from_name": "Krabby",
+    "to_id": 99,
+    "to_name": "Kingler",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Krabby (Nivel 28)",
+    "item_slug": null
+  },
+  "372": {
+    "from_id": 371,
+    "from_name": "Bagon",
+    "to_id": 372,
+    "to_name": "Shelgon",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Bagon (Nivel 30)",
+    "item_slug": null
+  },
+  "373": {
+    "from_id": 372,
+    "from_name": "Shelgon",
+    "to_id": 373,
+    "to_name": "Salamence",
+    "trigger": "level-up",
+    "condition": "Nivel 50",
+    "text": "Evoluciona de Shelgon (Nivel 50)",
+    "item_slug": null
+  },
+  "394": {
+    "from_id": 393,
+    "from_name": "Piplup",
+    "to_id": 394,
+    "to_name": "Prinplup",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Piplup (Nivel 16)",
+    "item_slug": null
+  },
+  "395": {
+    "from_id": 394,
+    "from_name": "Prinplup",
+    "to_id": 395,
+    "to_name": "Empoleon",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Prinplup (Nivel 36)",
+    "item_slug": null
+  },
+  "450": {
+    "from_id": 449,
+    "from_name": "Hippopotas",
+    "to_id": 450,
+    "to_name": "Hippowdon",
+    "trigger": "level-up",
+    "condition": "Nivel 34",
+    "text": "Evoluciona de Hippopotas (Nivel 34)",
+    "item_slug": null
+  },
+  "428": {
+    "from_id": 427,
+    "from_name": "Buneary",
+    "to_id": 428,
+    "to_name": "Lopunny",
+    "trigger": "level-up",
+    "condition": "por amistad",
+    "text": "Evoluciona de Buneary (por amistad)",
+    "item_slug": null
+  },
+  "472": {
+    "from_id": 207,
+    "from_name": "Gligar",
+    "to_id": 472,
+    "to_name": "Gliscor",
+    "trigger": "level-up",
+    "condition": "equipado con Colmillo Agudo al subir de nivel por la night",
+    "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la night)",
+    "item_slug": "razor-fang"
+  },
+  "419": {
+    "from_id": 418,
+    "from_name": "Buizel",
+    "to_id": 419,
+    "to_name": "Floatzel",
+    "trigger": "level-up",
+    "condition": "Nivel 26",
+    "text": "Evoluciona de Buizel (Nivel 26)",
+    "item_slug": null
+  },
+  "164": {
+    "from_id": 163,
+    "from_name": "Hoothoot",
+    "to_id": 164,
+    "to_name": "Noctowl",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Hoothoot (Nivel 20)",
+    "item_slug": null
+  },
+  "205": {
+    "from_id": 204,
+    "from_name": "Pineco",
+    "to_id": 205,
+    "to_name": "Forretress",
+    "trigger": "level-up",
+    "condition": "Nivel 31",
+    "text": "Evoluciona de Pineco (Nivel 31)",
+    "item_slug": null
+  },
+  "457": {
+    "from_id": 456,
+    "from_name": "Finneon",
+    "to_id": 457,
+    "to_name": "Lumineon",
+    "trigger": "level-up",
+    "condition": "Nivel 31",
+    "text": "Evoluciona de Finneon (Nivel 31)",
+    "item_slug": null
+  },
+  "461": {
+    "from_id": 215,
+    "from_name": "Sneasel",
+    "to_id": 461,
+    "to_name": "Weavile",
+    "trigger": "level-up",
+    "condition": "equipado con Garra Afilada al subir de nivel por la night",
+    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la night)",
+    "item_slug": "razor-claw"
+  },
+  "903": {
+    "from_id": 215,
+    "from_name": "Sneasel",
+    "to_id": 903,
+    "to_name": "Sneasler",
+    "trigger": "level-up",
+    "condition": "equipado con Garra Afilada al subir de nivel por la day",
+    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la day)",
+    "item_slug": "razor-claw"
+  },
+  "358": {
+    "from_id": 433,
+    "from_name": "Chingling",
+    "to_id": 358,
+    "to_name": "Chimecho",
+    "trigger": "level-up",
+    "condition": "por amistad de night",
+    "text": "Evoluciona de Chingling (por amistad de night)",
+    "item_slug": null
+  },
+  "277": {
+    "from_id": 276,
+    "from_name": "Taillow",
+    "to_id": 277,
+    "to_name": "Swellow",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Taillow (Nivel 22)",
+    "item_slug": null
+  },
+  "346": {
+    "from_id": 345,
+    "from_name": "Lileep",
+    "to_id": 346,
+    "to_name": "Cradily",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Lileep (Nivel 40)",
+    "item_slug": null
+  },
+  "178": {
+    "from_id": 177,
+    "from_name": "Natu",
+    "to_id": 178,
+    "to_name": "Xatu",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Natu (Nivel 25)",
+    "item_slug": null
+  },
+  "33": {
+    "from_id": 32,
+    "from_name": "Nidoran-m",
+    "to_id": 33,
+    "to_name": "Nidorino",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Nidoran-m (Nivel 16)",
+    "item_slug": null
+  },
+  "34": {
+    "from_id": 33,
+    "from_name": "Nidorino",
+    "to_id": 34,
+    "to_name": "Nidoking",
+    "trigger": "use-item",
+    "condition": "usando Piedra Lunar",
+    "text": "Evoluciona de Nidorino (usando Piedra Lunar)",
+    "item_slug": "moon-stone"
+  },
+  "180": {
+    "from_id": 179,
+    "from_name": "Mareep",
+    "to_id": 180,
+    "to_name": "Flaaffy",
+    "trigger": "level-up",
+    "condition": "Nivel 15",
+    "text": "Evoluciona de Mareep (Nivel 15)",
+    "item_slug": null
+  },
+  "181": {
+    "from_id": 180,
+    "from_name": "Flaaffy",
+    "to_id": 181,
+    "to_name": "Ampharos",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Flaaffy (Nivel 30)",
+    "item_slug": null
+  },
+  "78": {
+    "from_id": 77,
+    "from_name": "Ponyta",
+    "to_id": 78,
+    "to_name": "Rapidash",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Ponyta (Nivel 40)",
+    "item_slug": null
+  },
+  "256": {
+    "from_id": 255,
+    "from_name": "Torchic",
+    "to_id": 256,
+    "to_name": "Combusken",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Torchic (Nivel 16)",
+    "item_slug": null
+  },
+  "257": {
+    "from_id": 256,
+    "from_name": "Combusken",
+    "to_id": 257,
+    "to_name": "Blaziken",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Combusken (Nivel 36)",
+    "item_slug": null
+  },
+  "139": {
+    "from_id": 138,
+    "from_name": "Omanyte",
+    "to_id": 139,
+    "to_name": "Omastar",
+    "trigger": "level-up",
+    "condition": "Nivel 40",
+    "text": "Evoluciona de Omanyte (Nivel 40)",
+    "item_slug": null
+  },
+  "423": {
+    "from_id": 422,
+    "from_name": "Shellos",
+    "to_id": 423,
+    "to_name": "Gastrodon",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Shellos (Nivel 30)",
+    "item_slug": null
+  },
+  "2": {
+    "from_id": 1,
+    "from_name": "Bulbasaur",
+    "to_id": 2,
+    "to_name": "Ivysaur",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Bulbasaur (Nivel 16)",
+    "item_slug": null
+  },
+  "3": {
+    "from_id": 2,
+    "from_name": "Ivysaur",
+    "to_id": 3,
+    "to_name": "Venusaur",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Ivysaur (Nivel 32)",
+    "item_slug": null
+  },
+  "424": {
+    "from_id": 190,
+    "from_name": "Aipom",
+    "to_id": 424,
+    "to_name": "Ambipom",
+    "trigger": "level-up",
+    "condition": "al subir de nivel conociendo Doble Golpe",
+    "text": "Evoluciona de Aipom (al subir de nivel conociendo Doble Golpe)",
+    "item_slug": null
+  },
+  "367": {
+    "from_id": 366,
+    "from_name": "Clamperl",
+    "to_id": 367,
+    "to_name": "Huntail",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Diente Marino",
+    "text": "Evoluciona de Clamperl (por intercambio equipado con Diente Marino)",
+    "item_slug": "deep-sea-tooth"
+  },
+  "368": {
+    "from_id": 366,
+    "from_name": "Clamperl",
+    "to_id": 368,
+    "to_name": "Gorebyss",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Escama Marina",
+    "text": "Evoluciona de Clamperl (por intercambio equipado con Escama Marina)",
+    "item_slug": "deep-sea-scale"
+  },
+  "55": {
+    "from_id": 54,
+    "from_name": "Psyduck",
+    "to_id": 55,
+    "to_name": "Golduck",
+    "trigger": "level-up",
+    "condition": "Nivel 33",
+    "text": "Evoluciona de Psyduck (Nivel 33)",
+    "item_slug": null
+  },
+  "85": {
+    "from_id": 84,
+    "from_name": "Doduo",
+    "to_id": 85,
+    "to_name": "Dodrio",
+    "trigger": "level-up",
+    "condition": "Nivel 31",
+    "text": "Evoluciona de Doduo (Nivel 31)",
+    "item_slug": null
+  },
+  "342": {
+    "from_id": 341,
+    "from_name": "Corphish",
+    "to_id": 342,
+    "to_name": "Crawdaunt",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Corphish (Nivel 30)",
+    "item_slug": null
+  },
+  "5": {
+    "from_id": 4,
+    "from_name": "Charmander",
+    "to_id": 5,
+    "to_name": "Charmeleon",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Charmander (Nivel 16)",
+    "item_slug": null
+  },
+  "6": {
+    "from_id": 5,
+    "from_name": "Charmeleon",
+    "to_id": 6,
+    "to_name": "Charizard",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Charmeleon (Nivel 36)",
+    "item_slug": null
+  },
+  "14": {
+    "from_id": 13,
+    "from_name": "Weedle",
+    "to_id": 14,
+    "to_name": "Kakuna",
+    "trigger": "level-up",
+    "condition": "Nivel 7",
+    "text": "Evoluciona de Weedle (Nivel 7)",
+    "item_slug": null
+  },
+  "15": {
+    "from_id": 14,
+    "from_name": "Kakuna",
+    "to_id": 15,
+    "to_name": "Beedrill",
+    "trigger": "level-up",
+    "condition": "Nivel 10",
+    "text": "Evoluciona de Kakuna (Nivel 10)",
+    "item_slug": null
+  },
+  "247": {
+    "from_id": 246,
+    "from_name": "Larvitar",
+    "to_id": 247,
+    "to_name": "Pupitar",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Larvitar (Nivel 30)",
+    "item_slug": null
+  },
+  "248": {
+    "from_id": 247,
+    "from_name": "Pupitar",
+    "to_id": 248,
+    "to_name": "Tyranitar",
+    "trigger": "level-up",
+    "condition": "Nivel 55",
+    "text": "Evoluciona de Pupitar (Nivel 55)",
+    "item_slug": null
+  },
+  "284": {
+    "from_id": 283,
+    "from_name": "Surskit",
+    "to_id": 284,
+    "to_name": "Masquerain",
+    "trigger": "level-up",
+    "condition": "Nivel 22",
+    "text": "Evoluciona de Surskit (Nivel 22)",
+    "item_slug": null
+  },
+  "148": {
+    "from_id": 147,
+    "from_name": "Dratini",
+    "to_id": 148,
+    "to_name": "Dragonair",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Dratini (Nivel 30)",
+    "item_slug": null
+  },
+  "149": {
+    "from_id": 148,
+    "from_name": "Dragonair",
+    "to_id": 149,
+    "to_name": "Dragonite",
+    "trigger": "level-up",
+    "condition": "Nivel 55",
+    "text": "Evoluciona de Dragonair (Nivel 55)",
+    "item_slug": null
+  },
+  "208": {
+    "from_id": 95,
+    "from_name": "Onix",
+    "to_id": 208,
+    "to_name": "Steelix",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Revestimiento Metálico",
+    "text": "Evoluciona de Onix (por intercambio equipado con Revestimiento Metálico)",
+    "item_slug": "metal-coat"
+  },
+  "105": {
+    "from_id": 104,
+    "from_name": "Cubone",
+    "to_id": 105,
+    "to_name": "Marowak",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Cubone (Nivel 28)",
+    "item_slug": null
+  },
+  "426": {
+    "from_id": 425,
+    "from_name": "Drifloon",
+    "to_id": 426,
+    "to_name": "Drifblim",
+    "trigger": "level-up",
+    "condition": "Nivel 28",
+    "text": "Evoluciona de Drifloon (Nivel 28)",
+    "item_slug": null
+  },
+  "232": {
+    "from_id": 231,
+    "from_name": "Phanpy",
+    "to_id": 232,
+    "to_name": "Donphan",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Phanpy (Nivel 25)",
+    "item_slug": null
+  },
+  "103": {
+    "from_id": 102,
+    "from_name": "Exeggcute",
+    "to_id": 103,
+    "to_name": "Exeggutor",
+    "trigger": "use-item",
+    "condition": "usando Piedra Hoja",
+    "text": "Evoluciona de Exeggcute (usando Piedra Hoja)",
+    "item_slug": "leaf-stone"
+  },
+  "286": {
+    "from_id": 285,
+    "from_name": "Shroomish",
+    "to_id": 286,
+    "to_name": "Breloom",
+    "trigger": "level-up",
+    "condition": "Nivel 23",
+    "text": "Evoluciona de Shroomish (Nivel 23)",
+    "item_slug": null
+  },
+  "301": {
+    "from_id": 300,
+    "from_name": "Skitty",
+    "to_id": 301,
+    "to_name": "Delcatty",
+    "trigger": "use-item",
+    "condition": "usando Piedra Lunar",
+    "text": "Evoluciona de Skitty (usando Piedra Lunar)",
+    "item_slug": "moon-stone"
+  },
+  "93": {
+    "from_id": 92,
+    "from_name": "Gastly",
+    "to_id": 93,
+    "to_name": "Haunter",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Gastly (Nivel 25)",
+    "item_slug": null
+  },
+  "94": {
+    "from_id": 93,
+    "from_name": "Haunter",
+    "to_id": 94,
+    "to_name": "Gengar",
+    "trigger": "trade",
+    "condition": "por intercambio",
+    "text": "Evoluciona de Haunter (por intercambio)",
+    "item_slug": null
+  },
+  "162": {
+    "from_id": 161,
+    "from_name": "Sentret",
+    "to_id": 162,
+    "to_name": "Furret",
+    "trigger": "level-up",
+    "condition": "Nivel 15",
+    "text": "Evoluciona de Sentret (Nivel 15)",
+    "item_slug": null
+  },
+  "437": {
+    "from_id": 436,
+    "from_name": "Bronzor",
+    "to_id": 437,
+    "to_name": "Bronzong",
+    "trigger": "level-up",
+    "condition": "Nivel 33",
+    "text": "Evoluciona de Bronzor (Nivel 33)",
+    "item_slug": null
+  },
+  "61": {
+    "from_id": 60,
+    "from_name": "Poliwag",
+    "to_id": 61,
+    "to_name": "Poliwhirl",
+    "trigger": "level-up",
+    "condition": "Nivel 25",
+    "text": "Evoluciona de Poliwag (Nivel 25)",
+    "item_slug": null
+  },
+  "62": {
+    "from_id": 61,
+    "from_name": "Poliwhirl",
+    "to_id": 62,
+    "to_name": "Poliwrath",
+    "trigger": "use-item",
+    "condition": "usando Piedra Agua",
+    "text": "Evoluciona de Poliwhirl (usando Piedra Agua)",
+    "item_slug": "water-stone"
+  },
+  "186": {
+    "from_id": 61,
+    "from_name": "Poliwhirl",
+    "to_id": 186,
+    "to_name": "Politoed",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Roca del Rey",
+    "text": "Evoluciona de Poliwhirl (por intercambio equipado con Roca del Rey)",
+    "item_slug": "kings-rock"
+  },
+  "166": {
+    "from_id": 165,
+    "from_name": "Ledyba",
+    "to_id": 166,
+    "to_name": "Ledian",
+    "trigger": "level-up",
+    "condition": "Nivel 18",
+    "text": "Evoluciona de Ledyba (Nivel 18)",
+    "item_slug": null
+  },
+  "274": {
+    "from_id": 273,
+    "from_name": "Seedot",
+    "to_id": 274,
+    "to_name": "Nuzleaf",
+    "trigger": "level-up",
+    "condition": "Nivel 14",
+    "text": "Evoluciona de Seedot (Nivel 14)",
+    "item_slug": null
+  },
+  "275": {
+    "from_id": 274,
+    "from_name": "Nuzleaf",
+    "to_id": 275,
+    "to_name": "Shiftry",
+    "trigger": "use-item",
+    "condition": "usando Piedra Hoja",
+    "text": "Evoluciona de Nuzleaf (usando Piedra Hoja)",
+    "item_slug": "leaf-stone"
+  },
+  "291": {
+    "from_id": 290,
+    "from_name": "Nincada",
+    "to_id": 291,
+    "to_name": "Ninjask",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Nincada (Nivel 20)",
+    "item_slug": null
+  },
+  "292": {
+    "from_id": 290,
+    "from_name": "Nincada",
+    "to_id": 292,
+    "to_name": "Shedinja",
+    "trigger": "shed",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Nincada (por condición especial)",
+    "item_slug": null
+  },
+  "47": {
+    "from_id": 46,
+    "from_name": "Paras",
+    "to_id": 47,
+    "to_name": "Parasect",
+    "trigger": "level-up",
+    "condition": "Nivel 24",
+    "text": "Evoluciona de Paras (Nivel 24)",
+    "item_slug": null
+  },
+  "20": {
+    "from_id": 19,
+    "from_name": "Rattata",
+    "to_id": 20,
+    "to_name": "Raticate",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Rattata (Nivel 20)",
+    "item_slug": null
+  },
+  "125": {
+    "from_id": 239,
+    "from_name": "Elekid",
+    "to_id": 125,
+    "to_name": "Electabuzz",
+    "trigger": "level-up",
+    "condition": "Nivel 30",
+    "text": "Evoluciona de Elekid (Nivel 30)",
+    "item_slug": null
+  },
+  "466": {
+    "from_id": 125,
+    "from_name": "Electabuzz",
+    "to_id": 466,
+    "to_name": "Electivire",
+    "trigger": "trade",
+    "condition": "por intercambio equipado con Electirizador",
+    "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+    "item_slug": "electirizer"
+  },
+  "134": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 134,
+    "to_name": "Vaporeon",
+    "trigger": "use-item",
+    "condition": "usando Piedra Agua",
+    "text": "Evoluciona de Eevee (usando Piedra Agua)",
+    "item_slug": "water-stone"
+  },
+  "135": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 135,
+    "to_name": "Jolteon",
+    "trigger": "use-item",
+    "condition": "usando Piedra Trueno",
+    "text": "Evoluciona de Eevee (usando Piedra Trueno)",
+    "item_slug": "thunder-stone"
+  },
+  "136": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 136,
+    "to_name": "Flareon",
+    "trigger": "use-item",
+    "condition": "usando Piedra Fuego",
+    "text": "Evoluciona de Eevee (usando Piedra Fuego)",
+    "item_slug": "fire-stone"
+  },
+  "196": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 196,
+    "to_name": "Espeon",
+    "trigger": "level-up",
+    "condition": "por amistad de day",
+    "text": "Evoluciona de Eevee (por amistad de day)",
+    "item_slug": null
+  },
+  "197": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 197,
+    "to_name": "Umbreon",
+    "trigger": "level-up",
+    "condition": "por amistad de night",
+    "text": "Evoluciona de Eevee (por amistad de night)",
+    "item_slug": null
+  },
+  "470": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 470,
+    "to_name": "Leafeon",
+    "trigger": "level-up",
+    "condition": "al subir de nivel cerca de la Roca Musgo (Bosque Vetusto)",
+    "text": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Musgo (Bosque Vetusto))",
+    "item_slug": null
+  },
+  "471": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 471,
+    "to_name": "Glaceon",
+    "trigger": "level-up",
+    "condition": "al subir de nivel cerca de la Roca Hielo (Ruta 217)",
+    "text": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Hielo (Ruta 217))",
+    "item_slug": null
+  },
+  "700": {
+    "from_id": 133,
+    "from_name": "Eevee",
+    "to_id": 700,
+    "to_name": "Sylveon",
+    "trigger": "level-up",
+    "condition": "por condición especial",
+    "text": "Evoluciona de Eevee (por condición especial)",
+    "item_slug": null
+  },
+  "332": {
+    "from_id": 331,
+    "from_name": "Cacnea",
+    "to_id": 332,
+    "to_name": "Cacturne",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Cacnea (Nivel 32)",
+    "item_slug": null
+  },
+  "391": {
+    "from_id": 390,
+    "from_name": "Chimchar",
+    "to_id": 391,
+    "to_name": "Monferno",
+    "trigger": "level-up",
+    "condition": "Nivel 14",
+    "text": "Evoluciona de Chimchar (Nivel 14)",
+    "item_slug": null
+  },
+  "392": {
+    "from_id": 391,
+    "from_name": "Monferno",
+    "to_id": 392,
+    "to_name": "Infernape",
+    "trigger": "level-up",
+    "condition": "Nivel 36",
+    "text": "Evoluciona de Monferno (Nivel 36)",
+    "item_slug": null
+  },
+  "64": {
+    "from_id": 63,
+    "from_name": "Abra",
+    "to_id": 64,
+    "to_name": "Kadabra",
+    "trigger": "level-up",
+    "condition": "Nivel 16",
+    "text": "Evoluciona de Abra (Nivel 16)",
+    "item_slug": null
+  },
+  "65": {
+    "from_id": 64,
+    "from_name": "Kadabra",
+    "to_id": 65,
+    "to_name": "Alakazam",
+    "trigger": "trade",
+    "condition": "por intercambio",
+    "text": "Evoluciona de Kadabra (por intercambio)",
+    "item_slug": null
+  },
+  "22": {
+    "from_id": 21,
+    "from_name": "Spearow",
+    "to_id": 22,
+    "to_name": "Fearow",
+    "trigger": "level-up",
+    "condition": "Nivel 20",
+    "text": "Evoluciona de Spearow (Nivel 20)",
+    "item_slug": null
+  },
+  "305": {
+    "from_id": 304,
+    "from_name": "Aron",
+    "to_id": 305,
+    "to_name": "Lairon",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Aron (Nivel 32)",
+    "item_slug": null
+  },
+  "306": {
+    "from_id": 305,
+    "from_name": "Lairon",
+    "to_id": 306,
+    "to_name": "Aggron",
+    "trigger": "level-up",
+    "condition": "Nivel 42",
+    "text": "Evoluciona de Lairon (Nivel 42)",
+    "item_slug": null
+  },
+  "364": {
+    "from_id": 363,
+    "from_name": "Spheal",
+    "to_id": 364,
+    "to_name": "Sealeo",
+    "trigger": "level-up",
+    "condition": "Nivel 32",
+    "text": "Evoluciona de Spheal (Nivel 32)",
+    "item_slug": null
+  },
+  "365": {
+    "from_id": 364,
+    "from_name": "Sealeo",
+    "to_id": 365,
+    "to_name": "Walrein",
+    "trigger": "level-up",
+    "condition": "Nivel 44",
+    "text": "Evoluciona de Sealeo (Nivel 44)",
+    "item_slug": null
+  },
+  "400": {
+    "from_id": 399,
+    "from_name": "Bidoof",
+    "to_id": 400,
+    "to_name": "Bibarel",
+    "trigger": "level-up",
+    "condition": "Nivel 15",
+    "text": "Evoluciona de Bidoof (Nivel 15)",
+    "item_slug": null
+  }
+}

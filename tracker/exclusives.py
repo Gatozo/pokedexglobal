@@ -139,6 +139,31 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         223, 224,         # Remoraid, Octillery
         226,              # Mantine
     ],
+    # Gen 4
+    'diamond': [
+        86, 87,           # Seel, Dewgong (Surf / Supercaña en Rutas 226, 230)
+        123, 212,         # Scyther (Ruta 229), Scizor
+        198, 430,         # Murkrow (Bosque Vetusto y Torre Perdida por la noche), Honchkrow
+        246, 247, 248,    # Larvitar (Ruta 207 con Poké Radar), Pupitar, Tyranitar
+        261, 262,         # Poochyena (Ruta 214 con Poké Radar), Mightyena
+        304, 305, 306,    # Aron (Fuego Forja con Poké Radar), Lairon, Aggron
+        352,              # Kecleon (Ruta 210 norte con Poké Radar)
+        408, 409,         # Cranidos (Fósil Cráneo en Subterráneo de Sinnoh), Rampardos
+        434, 435,         # Stunky (Rutas 206, 214, 221), Skuntank
+        483,              # Dialga (Columna Lanza)
+    ],
+    'pearl': [
+        79, 80, 199,      # Slowpoke, Slowbro, Slowking
+        127,              # Pinsir
+        200, 429,         # Misdreavus, Mismagius
+        228, 229,         # Houndour, Houndoom
+        234,              # Stantler
+        363, 364, 365,    # Spheal, Sealeo, Walrein
+        371, 372, 373,    # Bagon, Shelgon, Salamence
+        410, 411,         # Shieldon, Bastiodon
+        431, 432,         # Glameow, Purugly
+        484,              # Palkia
+    ],
 }
 
 # 184 especies no nativas de Hoenn requeridas para completar la Pokédex Nacional en Pokémon Rubí y Zafiro
@@ -202,6 +227,23 @@ NON_KANTO_SEVII_TRANSFERS_FIRERED = sorted(list(
     set(range(252, 386))
 ))
 
+# 48 especies no nativas de Sinnoh requeridas para completar la Pokédex Nacional en Pokémon Diamante
+# correspondientes a iniciales y legendarios de Kanto, Johto y Hoenn ausentes en Sinnoh
+NON_SINNOH_TRANSFERS_DIAMOND = sorted(list(
+    # Iniciales de Kanto (9)
+    set(range(1, 10)) |
+    # Iniciales de Johto (9)
+    set(range(152, 161)) |
+    # Iniciales de Hoenn (9)
+    set(range(252, 261)) |
+    # Legendarios y singulares de Kanto (Articuno, Zapdos, Moltres, Mewtwo, Mew)
+    {144, 145, 146, 150, 151} |
+    # Legendarios y singulares de Johto (Raikou, Entei, Suicune, Lugia, Ho-Oh, Celebi)
+    {243, 244, 245, 249, 250, 251} |
+    # Legendarios y singulares de Hoenn (Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys)
+    {377, 378, 379, 380, 381, 382, 383, 384, 385, 386}
+))
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
 VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
@@ -251,6 +293,8 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
     'emerald': NON_HOENN_TRANSFERS_EMERALD,
     'firered': NON_KANTO_SEVII_TRANSFERS_FIRERED,
     'leafgreen': NON_KANTO_SEVII_TRANSFERS_FIRERED,
+    # Gen 4 (Pokédex Nacional de Diamante)
+    'diamond': NON_SINNOH_TRANSFERS_DIAMOND,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -556,6 +600,68 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             235: 'Esmeralda / Colosseum (Cueva Cambiante inactiva)',
             251: 'Disco Bonus Colosseum / Evento Ageto',
             385: 'Pokémon Channel / Disco Bonus Colosseum',
+        }
+    },
+    'diamond': {
+        'mechanic_title': 'Parque Compi • Gen 3 a Gen 4',
+        'mechanic_badge': 'Parque Compi',
+        'description': (
+            'La Pokédex Nacional de Pokémon Diamante consta de 493 Pokémon. Estas 48 especies corresponden a los '
+            'iniciales y criaturas legendarias de Kanto, Johto y Hoenn que no aparecen de forma nativa en la región de Sinnoh. '
+            'Para completar la Pokédex, deben transferirse permanentemente desde cartuchos de Game Boy Advance '
+            '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
+            'insertando el cartucho de GBA en la Ranura 2 de la consola Nintendo DS.'
+        ),
+        'default_origin': 'Parque Compi (GBA: Rubí / Zafiro / Esmeralda / RF / VH)',
+        'origins': {
+            1: 'Rojo Fuego / Verde Hoja',
+            2: 'Rojo Fuego / Verde Hoja',
+            3: 'Rojo Fuego / Verde Hoja',
+            4: 'Rojo Fuego / Verde Hoja',
+            5: 'Rojo Fuego / Verde Hoja',
+            6: 'Rojo Fuego / Verde Hoja',
+            7: 'Rojo Fuego / Verde Hoja',
+            8: 'Rojo Fuego / Verde Hoja',
+            9: 'Rojo Fuego / Verde Hoja',
+            144: 'Rojo Fuego / Verde Hoja',
+            145: 'Rojo Fuego / Verde Hoja',
+            146: 'Rojo Fuego / Verde Hoja',
+            150: 'Rojo Fuego / Verde Hoja',
+            151: 'Evento GBA (Mapa Viejo)',
+            152: 'Esmeralda (Postgame) / Colosseum',
+            153: 'Esmeralda (Postgame) / Colosseum',
+            154: 'Esmeralda (Postgame) / Colosseum',
+            155: 'Esmeralda (Postgame) / Colosseum',
+            156: 'Esmeralda (Postgame) / Colosseum',
+            157: 'Esmeralda (Postgame) / Colosseum',
+            158: 'Esmeralda (Postgame) / Colosseum',
+            159: 'Esmeralda (Postgame) / Colosseum',
+            160: 'Esmeralda (Postgame) / Colosseum',
+            243: 'Rojo Fuego / Colosseum',
+            244: 'Verde Hoja / Colosseum',
+            245: 'Rojo Fuego / Verde Hoja / Colosseum',
+            249: 'XD: Gale of Darkness / Roca Ombligo',
+            250: 'Colosseum / Roca Ombligo',
+            251: 'Evento GBA / Ageto',
+            252: 'Rubí / Zafiro / Esmeralda',
+            253: 'Rubí / Zafiro / Esmeralda',
+            254: 'Rubí / Zafiro / Esmeralda',
+            255: 'Rubí / Zafiro / Esmeralda',
+            256: 'Rubí / Zafiro / Esmeralda',
+            257: 'Rubí / Zafiro / Esmeralda',
+            258: 'Rubí / Zafiro / Esmeralda',
+            259: 'Rubí / Zafiro / Esmeralda',
+            260: 'Rubí / Zafiro / Esmeralda',
+            377: 'Rubí / Zafiro / Esmeralda',
+            378: 'Rubí / Zafiro / Esmeralda',
+            379: 'Rubí / Zafiro / Esmeralda',
+            380: 'Rubí / Esmeralda',
+            381: 'Zafiro / Esmeralda',
+            382: 'Zafiro / Esmeralda',
+            383: 'Rubí / Esmeralda',
+            384: 'Rubí / Zafiro / Esmeralda',
+            385: 'Disco Bonus Colosseum / Evento GBA',
+            386: 'Evento Isla Origen (Ori-Ticket)',
         }
     },
 }

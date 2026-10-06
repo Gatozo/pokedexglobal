@@ -221,6 +221,16 @@
           "area": "Pokémon salvajes (Clefairy)",
           "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Monte Corona",
+          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+        }
       ]
     }
   },
@@ -329,6 +339,16 @@
         {
           "area": "Monte Ascuas (Isla Prima)",
           "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Fuego Forja",
+          "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
       ]
     }
@@ -451,6 +471,20 @@
           "area": "Islas Espuma (Sótano B4)",
           "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Ruta 213",
+          "detail": "En el agua al sur de la ruta navegando con Surf."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una de las rocas interiores."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
       ]
     }
   },
@@ -559,6 +593,20 @@
         {
           "area": "Central de Energía (Interior)",
           "detail": "En el suelo en una de las salas laberínticas de la central eléctrica abandonada."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Ciudad Marina",
+          "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+        },
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto entre la maleza."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
       ]
     }
@@ -673,6 +721,16 @@
           "area": "Zona Safari (Área 2 / Central)",
           "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Prado Aromaflor",
+          "detail": "Cruzando el río hacia el norte con Surf cerca de Fuego Forja."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
       ]
     }
   },
@@ -743,6 +801,16 @@
         {
           "area": "Valle Ruinas (Isla Exta)",
           "detail": "En el suelo en la zona sureste del Valle Ruinas (requiere MO Fuerza)."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Monte Corona",
+          "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
         }
       ]
     }
@@ -851,6 +919,16 @@
           "area": "Pokémon salvajes (Poliwhirl)",
           "detail": "Equipada con un 5% de probabilidad en Poliwhirl salvajes al pescar con Supercaña."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Ruta 225 / Ruta 228",
+          "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+        }
       ]
     }
   },
@@ -945,6 +1023,16 @@
         {
           "area": "Pokémon salvajes (Magnemite)",
           "detail": "Equipado con un 5% de probabilidad en Magnemite salvajes en la Central de Energía."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Isla Hierro (Casa de Acerón)",
+          "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+        },
+        {
+          "area": "Fuego Forja / Monte Corona",
+          "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
         }
       ]
     }
@@ -1049,6 +1137,12 @@
           "area": "Pokémon salvajes (Horsea / Seadra)",
           "detail": "Equipada con un 5% de probabilidad en Horsea y Seadra salvajes pescando con Supercaña."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Ruta 226",
+          "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1120,6 +1214,12 @@
           "area": "Torre Desafío (Isla Sétima)",
           "detail": "Premio tras completar con éxito el Modo Individual en la Torre Desafío."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Ciudad Vetusta (Casa del Prof. Oak)",
+          "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -1173,6 +1273,12 @@
           "area": "Transferencia externa",
           "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
         }
+      ],
+      "diamond": [
+        {
+          "area": "Ruta 218 / Gran Pantano",
+          "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
+        }
       ]
     }
   },
@@ -1225,6 +1331,12 @@
         {
           "area": "Transferencia externa",
           "detail": "No disponible de forma natural en Kanto ni en las Islas Sétima. Requiere transferirlo equipado en un Pokémon desde Pokémon Rubí, Zafiro o Esmeralda."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Ruta 220 / Ruta 226",
+          "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
         }
       ]
     }
@@ -1309,6 +1421,241 @@
         {
           "area": "Cueva Perdida (Isla Inta)",
           "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+        }
+      ]
+    }
+  },
+  "shiny-stone": {
+    "slug": "shiny-stone",
+    "name_es": "Piedra Día",
+    "icon_url": "/media/items/shiny-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 228",
+          "detail": "En la ladera de arena cerca de la entrada norte de la tormenta de arena."
+        },
+        {
+          "area": "Isla Hierro",
+          "detail": "En una de las cámaras subterráneas profundas cerca de la salida."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
+        }
+      ]
+    }
+  },
+  "dusk-stone": {
+    "slug": "dusk-stone",
+    "name_es": "Piedra Noche",
+    "icon_url": "/media/items/dusk-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Almacén Galaxia (Ciudad Rocavelo)",
+          "detail": "En el suelo del almacén tras conseguir la Llave del Almacén."
+        },
+        {
+          "area": "Cueva Extravío",
+          "detail": "En la zona profunda accesible usando Golpe Roca y Fuerza."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
+        }
+      ]
+    }
+  },
+  "dawn-stone": {
+    "slug": "dawn-stone",
+    "name_es": "Piedra Alba",
+    "icon_url": "/media/items/dawn-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 212",
+          "detail": "En el lodo pantanoso al sur de la ruta navegando con Surf."
+        },
+        {
+          "area": "Monte Corona (Sótano B1)",
+          "detail": "En una plataforma rocosa del lago subterráneo accesible con Surf y Cascada."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
+        }
+      ]
+    }
+  },
+  "oval-stone": {
+    "slug": "oval-stone",
+    "name_es": "Piedra Oval",
+    "icon_url": "/media/items/oval-stone.png",
+    "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Disponible en Sinnoh mediante minería o en Torre Perdida.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Torre Perdida (Planta 2)",
+          "detail": "En el suelo frente a las lápidas."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Ruta 209 / Ruta 210",
+          "detail": "Equipada en Chansey salvajes con un 50% de probabilidad."
+        }
+      ]
+    }
+  },
+  "protector": {
+    "slug": "protector",
+    "name_es": "Protector",
+    "icon_url": "/media/items/protector.png",
+    "description_es": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 228",
+          "detail": "En el suelo cerca del lago en la tormenta de arena (postgame)."
+        }
+      ]
+    }
+  },
+  "electirizer": {
+    "slug": "electirizer",
+    "name_es": "Electirizador",
+    "icon_url": "/media/items/electirizer.png",
+    "description_es": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Exclusivo de Pokémon Diamante mediante inserción dual de Rojo Fuego.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 205 (Sur) / Parque Eólico",
+          "detail": "Equipado en Elekid salvajes con un 50% de probabilidad (con Pokémon Rojo Fuego en Ranura 2 de NDS)."
+        }
+      ]
+    }
+  },
+  "magmarizer": {
+    "slug": "magmarizer",
+    "name_es": "Magmatizador",
+    "icon_url": "/media/items/magmarizer.png",
+    "description_es": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Exclusivo de Pokémon Perla. En Diamante requiere intercambio.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Intercambio con Pokémon Perla",
+          "detail": "En Diamante no aparece salvaje; transferir equipado en un Pokémon desde Pokémon Perla."
+        }
+      ]
+    }
+  },
+  "dubious-disc": {
+    "slug": "dubious-disc",
+    "name_es": "Discoxtraño",
+    "icon_url": "/media/items/dubious-disc.png",
+    "description_es": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 225",
+          "detail": "En un islote de agua al norte de la ruta navegando con Surf (postgame)."
+        }
+      ]
+    }
+  },
+  "reaper-cloth": {
+    "slug": "reaper-cloth",
+    "name_es": "Tela Terrible",
+    "icon_url": "/media/items/reaper-cloth.png",
+    "description_es": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto entre los árboles cortables con Corte."
+        },
+        {
+          "area": "Cueva Retorno",
+          "detail": "En una de las salas profundas tras superar tres pilares."
+        }
+      ]
+    }
+  },
+  "razor-claw": {
+    "slug": "razor-claw",
+    "name_es": "Garra Afilada",
+    "icon_url": "/media/items/razor-claw.png",
+    "description_es": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
+    "is_purchasable": true,
+    "price": 48,
+    "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 224 y Calle Victoria.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 224",
+          "detail": "En el suelo del camino rocoso hacia la Piedra Sagrada (postgame)."
+        },
+        {
+          "area": "Calle Victoria (Sótano B1)",
+          "detail": "En la sala subterránea navegando con Surf."
+        },
+        {
+          "area": "Torre Batalla (Frente de Batalla)",
+          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
+        }
+      ]
+    }
+  },
+  "razor-fang": {
+    "slug": "razor-fang",
+    "name_es": "Colmillo Agudo",
+    "icon_url": "/media/items/razor-fang.png",
+    "description_es": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
+    "is_purchasable": true,
+    "price": 48,
+    "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 214.",
+    "games": {
+      "diamond": [
+        {
+          "area": "Ruta 214",
+          "detail": "Objeto oculto en el camino sur cerca de la cueva del Ruinamaníaco."
+        },
+        {
+          "area": "Torre Batalla (Frente de Batalla)",
+          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
         }
       ]
     }

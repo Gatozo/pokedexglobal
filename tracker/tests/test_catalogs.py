@@ -73,7 +73,7 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
     def test_nonexistent_catalog_returns_none(self):
         from tracker.catalog_service import get_compiled_catalog
-        self.assertIsNone(get_compiled_catalog("diamond"))
+        self.assertIsNone(get_compiled_catalog("black"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
     def test_catalog_filter_locations_and_tags(self):
@@ -633,14 +633,20 @@ class PokemonEmeraldGen3Tests(TestCase):
         self.assertIn(1, transfer_nums)       # Bulbasaur (requiere transferencia RF/VH)
 
     def test_emerald_evolution_stones(self):
-        """Comprueba que todos los objetos evolutivos tengan registradas sus ubicaciones en Esmeralda."""
+        """Comprueba que todos los objetos evolutivos de Gen 3 tengan registradas sus ubicaciones en Esmeralda."""
         import json
         with open("tracker/data/evolution_stones.json", "r", encoding="utf-8") as f:
             stones_data = json.load(f)
 
-        for stone_slug, stone in stones_data.items():
-            self.assertIn("emerald", stone["games"], f"Falta información de {stone_slug} para Pokémon Esmeralda")
-            self.assertTrue(len(stone["games"]["emerald"]) > 0)
+        gen3_stones = [
+            'moon-stone', 'fire-stone', 'water-stone', 'thunder-stone', 'leaf-stone',
+            'sun-stone', 'kings-rock', 'metal-coat', 'dragon-scale', 'up-grade',
+            'deep-sea-tooth', 'deep-sea-scale', 'sea-incense', 'lax-incense'
+        ]
+        for stone_slug in gen3_stones:
+            self.assertIn(stone_slug, stones_data)
+            self.assertIn("emerald", stones_data[stone_slug]["games"], f"Falta información de {stone_slug} para Pokémon Esmeralda")
+            self.assertTrue(len(stones_data[stone_slug]["games"]["emerald"]) > 0)
 
     def test_emerald_animated_sprites_and_card_integration(self):
         """Valida que las tarjetas de cuadrícula usen PNGs estáticos (sin saturar la página) y el modal cómic use GIFs animados."""
@@ -1397,6 +1403,166 @@ class PokemonLeafGreenGen3Tests(TestCase):
         self.assertIn("stone", ludicolo.filter_tags)
         self.assertIn("stone", shiftry.filter_tags)
         self.assertIn("baby", wynaut.filter_tags)
+
+
+class PokemonDiamondGen4Tests(TestCase):
+    """Pruebas unitarias para Pokémon Diamante (Gen 4), catálogos, exclusividades y barras nacionales."""
+
+    def setUp(self):
+        self.client = Client()
+        self.game, _ = Game.objects.get_or_create(
+            slug="diamond",
+            defaults={"name": "Pokémon Diamante", "generation": 4}
+        )
+        self.pk_sinnoh, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="sinnoh",
+            defaults={"name": "Pokédex de Sinnoh", "is_national": False, "pokeapi_name": "original-sinnoh"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+
+    def test_diamond_catalogs_exist_and_counts(self):
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "diamond.json"
+        nat_file = CATALOGS_DIR / "diamond_national.json"
+        self.assertTrue(reg_file.exists(), "diamond.json debe existir")
+        self.assertTrue(nat_file.exists(), "diamond_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("diamond", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("diamond", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 151, "La Pokédex Regional de Sinnoh en Diamante debe tener 151 entradas")
+        self.assertEqual(len(nat_cat), 493, "La Pokédex Nacional en Diamante debe tener 493 entradas")
+
+    def test_diamond_regional_sinnoh_order_and_species(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("diamond", is_national=False)
+        self.assertEqual(reg_cat[0].entry_number, 1)
+        self.assertEqual(reg_cat[0].pokemon.name, "turtwig")
+        self.assertEqual(reg_cat[0].pokemon.national_number, 387)
+
+        # Dialga es el #149 en la Pokédex de Sinnoh
+        dialga = [e for e in reg_cat if e.pokemon.name == "dialga"][0]
+        self.assertEqual(dialga.entry_number, 149)
+        self.assertEqual(dialga.pokemon.national_number, 483)
+
+        # Palkia es el #150 en la Pokédex de Sinnoh
+        palkia = [e for e in reg_cat if e.pokemon.name == "palkia"][0]
+        self.assertEqual(palkia.entry_number, 150)
+        self.assertEqual(palkia.pokemon.national_number, 484)
+
+        # Manaphy es el #151 en la Pokédex de Sinnoh
+        self.assertEqual(reg_cat[150].entry_number, 151)
+        self.assertEqual(reg_cat[150].pokemon.name, "manaphy")
+        self.assertEqual(reg_cat[150].pokemon.national_number, 490)
+
+    def test_diamond_national_order_and_regions(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("diamond", is_national=True)
+        self.assertEqual(nat_cat[0].entry_number, 1)
+        self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(nat_cat[386].entry_number, 387)
+        self.assertEqual(nat_cat[386].pokemon.name, "turtwig")
+        self.assertEqual(nat_cat[482].entry_number, 483)
+        self.assertEqual(nat_cat[482].pokemon.name, "dialga")
+        self.assertEqual(nat_cat[492].entry_number, 493)
+        self.assertEqual(nat_cat[492].pokemon.name, "arceus")
+
+    def test_diamond_exclusives_and_transfers_catalog(self):
+        from tracker.exclusives import (
+            GAME_COUNTERPARTS,
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG,
+            get_version_transfers_context
+        )
+        self.assertIn("diamond", GAME_COUNTERPARTS)
+        self.assertEqual(GAME_COUNTERPARTS["diamond"], ["pearl"])
+        self.assertIn("diamond", VERSION_EXCLUSIVES_CATALOG)
+        self.assertEqual(len(VERSION_EXCLUSIVES_CATALOG["diamond"]), 20)
+        self.assertIn(408, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Cranidos
+        self.assertIn(434, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Stunky
+        self.assertIn(483, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Dialga
+
+        self.assertIn("diamond", VERSION_TRANSFERS_CATALOG)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["diamond"]), 48)
+
+        # En la Pokédex Regional de Sinnoh NO debe haber modal de transferencias
+        self.assertIsNone(get_version_transfers_context(self.game, self.pk_sinnoh, set()))
+        # En la Pokédex Nacional SÍ debe haber las 48 transferencias del Parque Compi
+        nat_transfers = get_version_transfers_context(self.game, self.pk_nat, set())
+        self.assertIsNotNone(nat_transfers)
+        self.assertEqual(nat_transfers["total"], 48)
+        self.assertEqual(nat_transfers["mechanic_badge"], "Parque Compi")
+
+    def test_diamond_evolution_items_and_stones(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("diamond", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in nat_cat}
+
+        # Roserade con Piedra Día
+        roserade = cat_by_num[407]
+        self.assertEqual(roserade.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(roserade.evolution_stone)
+        self.assertEqual(roserade.evolution_stone.get("slug"), "shiny-stone")
+
+        # Honchkrow con Piedra Noche
+        honchkrow = cat_by_num[430]
+        self.assertEqual(honchkrow.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(honchkrow.evolution_stone)
+        self.assertEqual(honchkrow.evolution_stone.get("slug"), "dusk-stone")
+
+        # Gallade con Piedra Alba
+        gallade = cat_by_num[475]
+        self.assertEqual(gallade.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(gallade.evolution_stone)
+        self.assertEqual(gallade.evolution_stone.get("slug"), "dawn-stone")
+
+    def test_diamond_breeding_golden_rule(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("diamond", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in nat_cat}
+
+        # Formas base y bebés sí son eclosionables y mencionan crianza
+        for num in [387, 390, 393, 403, 406, 447]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
+            self.assertTrue(len(daycare_locs) > 0, f"#{num} {entry.pokemon.name} base/bebé debe tener Guardería en Sinnoh")
+
+        # Evoluciones y legendarios NUNCA deben tener Guardería
+        for num in [388, 389, 391, 392, 405, 448, 483, 484, 487, 493]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
+            self.assertEqual(len(daycare_locs), 0, f"#{num} {entry.pokemon.name} evolucionado/legendario no debe tener Guardería")
+
+    def test_diamond_offline_sprites_exist(self):
+        from django.conf import settings
+        base_media = settings.MEDIA_ROOT
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond", "387.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond", "483.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond", "493.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "387.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "483.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "493.png")))
+
+    def test_diamond_views_and_theming(self):
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertContains(resp_reg, 'data-game="diamond"')
+        self.assertContains(resp_reg, "Turtwig")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "diamond", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, 'id="national-generation-bar"')
+        self.assertContains(resp_nat, "Kanto")
+        self.assertContains(resp_nat, "Johto")
+        self.assertContains(resp_nat, "Hoenn")
+        self.assertContains(resp_nat, "Sinnoh")
+
 
 
 
