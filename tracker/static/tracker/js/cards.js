@@ -6,7 +6,7 @@
 import { state, currentGameSlug, THEME_ACTIVE_BTN, THEME_STATUS_CAUGHT_CLASS, THEME_UNCAUGHT_BTN, THEME_CAUGHT_BTN } from './state.js';
 import { getCsrfToken } from './api.js';
 import { filterCards } from './filters.js';
-import { updateModalCatchStatus, updateModalSpriteDisplay } from './modal_comic.js';
+import { updateModalCatchStatus, updateModalSpriteDisplay, getEntryData } from './modal_comic.js';
 import { updateExclusivesCardStatus, updateExclusivesModalUI } from './modal_exclusives.js';
 import { updateTransfersCardStatus } from './modal_transfers.js';
 import { updateUnownModalUI } from './modal_unown.js';
@@ -236,32 +236,27 @@ export function setSpriteStyle(style) {
     });
 
     if (state.activeModalEntryId) {
-        const dataScript = document.getElementById(`entry-data-${state.activeModalEntryId}`);
-        if (dataScript) {
-            try {
-                const d = JSON.parse(dataScript.textContent);
-                const modalImg = document.getElementById('modal-pokemon-img');
-                if (modalImg) {
-                    if (state.isShinydexMode) {
-                        if (style === 'retro' && d.sprite_retro_shiny) {
-                            modalImg.src = d.sprite_retro_shiny;
-                            modalImg.classList.add('pixel-art');
-                        } else {
-                            modalImg.src = d.sprite_modern_shiny || d.sprite_retro_shiny || d.sprite_modern;
-                            modalImg.classList.remove('pixel-art');
-                        }
+        const d = getEntryData(state.activeModalEntryId);
+        if (d) {
+            const modalImg = document.getElementById('modal-pokemon-img');
+            if (modalImg) {
+                if (state.isShinydexMode) {
+                    if (style === 'retro' && d.sprite_retro_shiny) {
+                        modalImg.src = d.sprite_retro_shiny;
+                        modalImg.classList.add('pixel-art');
                     } else {
-                        if (style === 'retro' && d.sprite_retro) {
-                            modalImg.src = d.sprite_retro;
-                            modalImg.classList.add('pixel-art');
-                        } else {
-                            modalImg.src = d.sprite_modern;
-                            modalImg.classList.remove('pixel-art');
-                        }
+                        modalImg.src = d.sprite_modern_shiny || d.sprite_retro_shiny || d.sprite_modern;
+                        modalImg.classList.remove('pixel-art');
+                    }
+                } else {
+                    if (style === 'retro' && d.sprite_retro) {
+                        modalImg.src = d.sprite_retro;
+                        modalImg.classList.add('pixel-art');
+                    } else {
+                        modalImg.src = d.sprite_modern;
+                        modalImg.classList.remove('pixel-art');
                     }
                 }
-            } catch (e) {
-                console.error("Error parsing dataScript:", e);
             }
         }
     }
@@ -319,8 +314,16 @@ export async function toggleCatch(entryId) {
             if (!state.isShinydexMode) {
                 updateTransfersCardStatus(entryId, data.is_caught);
             }
-            const natNum = card?.dataset?.nationalNumber || card?.dataset?.number;
-            updateNationalRegionsBadgeUI(natNum, data.is_caught);
+            let natNum = card?.dataset?.nationalNumber || card?.dataset?.number;
+            if (!natNum) {
+                const entryData = getEntryData(entryId);
+                if (entryData && entryData.number) {
+                    natNum = parseInt(entryData.number, 10);
+                }
+            }
+            if (natNum) {
+                updateNationalRegionsBadgeUI(natNum, data.is_caught);
+            }
             invalidateNationalRegionCache();
 
             // Actualizar métricas globales de la barra activa

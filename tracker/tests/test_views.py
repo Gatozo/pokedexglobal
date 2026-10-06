@@ -673,4 +673,20 @@ class NationalGenerationBarTests(TestCase):
         self.assertNotContains(resp, "Treecko")
         self.assertNotContains(resp, "Bulbasaur")
 
+    def test_transfers_modal_has_embedded_entry_data_regardless_of_active_region(self):
+        # En Esmeralda Pokédex Nacional, solicitamos la pestaña de Hoenn
+        url = reverse("tracker:pokedex_detail", kwargs={"game_slug": "emerald", "pokedex_slug": "national"}) + "?gen=hoenn"
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        # La grilla activa sólo tiene Hoenn (Treecko), no tiene Bulbasaur en la grilla principal
+        self.assertContains(resp, 'id="transfers-modal"')
+        # El modal de transferir incluye especies de Kanto (ej. Bulbasaur #1) con su script de datos
+        transfers_info = resp.context.get("transfers_info")
+        self.assertIsNotNone(transfers_info)
+        self.assertTrue(transfers_info["has_transfers"])
+        first_transfer = transfers_info["transfer_list"][0]
+        self.assertIsNotNone(first_transfer["entry_id"])
+        self.assertContains(resp, f'id="entry-data-{first_transfer["entry_id"]}"')
+
+
 

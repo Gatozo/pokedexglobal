@@ -25,9 +25,19 @@ export function openPokemonModal(entryId, updateHistory = true) {
         }
     }
     openPokemonModalDirect(entryId);
-    if (updateHistory && card) {
-        const slug = card.dataset.name || String(card.dataset.number);
-        setModalUrlHash(slug);
+    if (updateHistory) {
+        let slug = null;
+        if (card) {
+            slug = card.dataset.name || String(card.dataset.number);
+        } else {
+            const data = getEntryData(entryId);
+            if (data) {
+                slug = (data.name ? data.name.toLowerCase().replace(/[^a-z0-9]/g, '') : '') || String(data.number);
+            }
+        }
+        if (slug) {
+            setModalUrlHash(slug);
+        }
     }
 }
 
@@ -507,9 +517,19 @@ export function openPokemonModalDirect(entryId, options = {}) {
 
     // 6. Estado de captura actual
     const card = document.getElementById(`card-${entryId}`);
-    const isCaught = card ? (
-        state.isShinydexMode ? (card.dataset.shinyCaught === 'true') : (card.dataset.caught === 'true')
-    ) : false;
+    let isCaught = false;
+    if (card) {
+        isCaught = state.isShinydexMode ? (card.dataset.shinyCaught === 'true') : (card.dataset.caught === 'true');
+    } else {
+        const modalRelatedCard = document.querySelector(`[data-entry-id="${entryId}"]`);
+        if (modalRelatedCard) {
+            isCaught = state.isShinydexMode
+                ? (modalRelatedCard.dataset.shinyCaught === 'true')
+                : (modalRelatedCard.dataset.caught === 'true');
+        } else {
+            isCaught = state.isShinydexMode ? Boolean(data.is_shiny_caught) : Boolean(data.is_caught);
+        }
+    }
     updateModalCatchStatus(isCaught);
 
     // 7. Botones de retorno al Bloc Unown

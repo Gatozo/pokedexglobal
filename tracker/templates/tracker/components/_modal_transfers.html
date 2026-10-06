@@ -142,6 +142,10 @@
                         </span>
                     </button>
                     {% endif %}
+
+                    {% if item.modal_data_json and item.entry_id %}
+                    <script type="application/json" id="entry-data-{{ item.entry_id }}">{{ item.modal_data_json|safe }}</script>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
