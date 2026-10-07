@@ -622,7 +622,14 @@
           "area": "Bosque Vetusto",
           "method": "Inserción Dual (GBA: Pokémon Rojo Fuego)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Caterpie",
+        "text": "Evoluciona de Caterpie (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -793,7 +800,14 @@
           "area": "Bosque Vetusto",
           "method": "Inserción Dual (GBA: Pokémon Verde Hoja)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Weedle",
+        "text": "Evoluciona de Weedle (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1145,7 +1159,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Rattata",
+        "text": "Evoluciona de Rattata (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1275,7 +1296,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spearow",
+        "text": "Evoluciona de Spearow (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1409,7 +1437,14 @@
           "area": "Gran Pantano (Zona 6)",
           "method": "Inserción Dual (GBA: Pokémon Rojo Fuego)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ekans",
+        "text": "Evoluciona de Ekans (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1464,7 +1499,14 @@
           "area": "Jardín Trofeo",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Pichu",
+        "text": "Evoluciona de Pichu (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1525,8 +1567,10 @@
     },
     "evolution_stone": {
       "slug": "thunder-stone",
+      "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": true,
       "price": 2100,
@@ -1544,7 +1588,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -1661,7 +1706,14 @@
           "area": "Ruta 228",
           "method": "Inserción Dual (GBA: Pokémon Verde Hoja)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sandshrew",
+        "text": "Evoluciona de Sandshrew (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1779,7 +1831,14 @@
           "area": "Ruta 221",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Nidoran-f",
+        "text": "Evoluciona de Nidoran-f (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1840,8 +1899,10 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
@@ -1855,7 +1916,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -1972,7 +2034,14 @@
           "area": "Ruta 221",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Nidoran-m",
+        "text": "Evoluciona de Nidoran-m (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2033,8 +2102,10 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
@@ -2048,7 +2119,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -2146,7 +2218,14 @@
           "area": "Jardín Trofeo",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cleffa",
+        "text": "Evoluciona de Cleffa (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2207,8 +2286,10 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
@@ -2222,7 +2303,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -2345,8 +2427,10 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": true,
       "price": 2100,
@@ -2360,7 +2444,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -2414,7 +2499,14 @@
           "area": "Jardín Trofeo",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Igglybuff",
+        "text": "Evoluciona de Igglybuff (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2475,8 +2567,10 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
@@ -2490,7 +2584,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -2875,7 +2970,14 @@
           "area": "Ruta 227",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Zubat",
+        "text": "Evoluciona de Zubat (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3001,7 +3103,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Oddish",
+        "text": "Evoluciona de Oddish (Nivel 21)",
+        "trigger": "level-up",
+        "condition": "Nivel 21",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3062,8 +3171,10 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": true,
       "price": 2100,
@@ -3077,7 +3188,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -3326,7 +3438,14 @@
           "area": "Ruta 229",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Venonat",
+        "text": "Evoluciona de Venonat (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3440,7 +3559,14 @@
           "area": "Ruta 228",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Diglett",
+        "text": "Evoluciona de Diglett (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3862,7 +3988,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Psyduck",
+        "text": "Evoluciona de Psyduck (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3984,7 +4117,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mankey",
+        "text": "Evoluciona de Mankey (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4108,8 +4248,10 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": true,
       "price": 2100,
@@ -4123,7 +4265,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -4252,7 +4395,14 @@
           "area": "Ruta 228",
           "method": "Surfeando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Poliwag",
+        "text": "Evoluciona de Poliwag (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4313,8 +4463,10 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": true,
       "price": 2100,
@@ -4332,7 +4484,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -4457,7 +4610,14 @@
           "area": "Ruta 215",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Abra",
+        "text": "Evoluciona de Abra (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4740,7 +4900,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Machop",
+        "text": "Evoluciona de Machop (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4923,7 +5090,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bellsprout",
+        "text": "Evoluciona de Bellsprout (Nivel 21)",
+        "trigger": "level-up",
+        "condition": "Nivel 21",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4984,8 +5158,10 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": true,
       "price": 2100,
@@ -4999,7 +5175,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -5224,7 +5401,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Surfeando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Tentacool",
+        "text": "Evoluciona de Tentacool (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5554,7 +5738,14 @@
           "area": "Ruta 227",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Geodude",
+        "text": "Evoluciona de Geodude (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5861,7 +6052,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Slowpoke transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Slowpoke",
+        "text": "Evoluciona de Slowpoke (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6274,7 +6472,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Surfeando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Seel",
+        "text": "Evoluciona de Seel (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6518,8 +6723,10 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": true,
       "price": 2100,
@@ -6537,7 +6744,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -6758,7 +6966,14 @@
           "area": "Ciudad Puntaneva (Casa Noroeste)",
           "method": "Salvaje"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Gastly",
+        "text": "Evoluciona de Gastly (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6813,7 +7028,14 @@
           "area": "Viejo Caserón (Habitación Este)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Haunter",
+        "text": "Evoluciona de Haunter (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7420,8 +7642,10 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": true,
       "price": 2100,
@@ -7435,7 +7659,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -7773,7 +7998,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -7840,7 +8070,14 @@
           "area": "Ruta 227",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Koffing",
+        "text": "Evoluciona de Koffing (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7966,7 +8203,14 @@
           "area": "Ruta 228",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Rhyhorn",
+        "text": "Evoluciona de Rhyhorn (Nivel 42)",
+        "trigger": "level-up",
+        "condition": "Nivel 42",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8033,9 +8277,41 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Happiny",
+        "text": "Evoluciona de Happiny (equipado con Piedra Oval al subir de nivel por el día)",
+        "trigger": "level-up",
+        "condition": "equipado con Piedra Oval al subir de nivel por el día",
+        "item_slug": "oval-stone"
+      }
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "oval-stone",
+      "name": "Piedra Oval",
+      "name_es": "Piedra Oval",
+      "icon_url": "/media/items/oval-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
+      "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Disponible en Sinnoh mediante minería o en Torre Perdida.",
+      "locations": [
+        {
+          "area": "Torre Perdida (Planta 2)",
+          "detail": "En el suelo frente a las lápidas."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Ruta 209 / Ruta 210",
+          "detail": "Equipada en Chansey salvajes con un 50% de probabilidad."
+        }
+      ],
+      "category": "stone"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -8083,7 +8359,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -8276,7 +8557,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Horsea",
+        "text": "Evoluciona de Horsea (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8478,7 +8766,14 @@
           "area": "Zona Descanso",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Goldeen",
+        "text": "Evoluciona de Goldeen (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8602,8 +8897,10 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": true,
       "price": 2100,
@@ -8621,7 +8918,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -8683,7 +8981,14 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mime-jr",
+        "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Mimético",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9561,7 +9866,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Magikarp",
+        "text": "Evoluciona de Magikarp (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9799,8 +10111,10 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": true,
       "price": 2100,
@@ -9818,7 +10132,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -9878,8 +10193,10 @@
     },
     "evolution_stone": {
       "slug": "thunder-stone",
+      "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": true,
       "price": 2100,
@@ -9897,7 +10214,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -9957,8 +10275,10 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": true,
       "price": 2100,
@@ -9972,7 +10292,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -10387,7 +10708,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Munchlax (por amistad)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ],
       "evolution_info": {
         "from": "Munchlax",
         "text": "Evoluciona de Munchlax (por amistad)",
@@ -10673,7 +10999,14 @@
           "area": "Monte Corona (P4)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Dratini",
+        "text": "Evoluciona de Dratini (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11661,7 +11994,14 @@
           "area": "Ruta 217",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Hoothoot",
+        "text": "Evoluciona de Hoothoot (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11711,7 +12051,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -11766,7 +12111,14 @@
           "area": "Ruta 229",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ledyba",
+        "text": "Evoluciona de Ledyba (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11816,7 +12168,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -11871,7 +12228,14 @@
           "area": "Ruta 229",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spinarak",
+        "text": "Evoluciona de Spinarak (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12042,7 +12406,14 @@
           "area": "Ruta 220 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Chinchou",
+        "text": "Evoluciona de Chinchou (Nivel 27)",
+        "trigger": "level-up",
+        "condition": "Nivel 27",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12573,7 +12944,14 @@
           "area": "Ruta 222",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mareep",
+        "text": "Evoluciona de Mareep (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12691,8 +13069,10 @@
     },
     "evolution_stone": {
       "slug": "sun-stone",
+      "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
@@ -12706,7 +13086,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -12788,7 +13169,14 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Azurill",
+        "text": "Evoluciona de Azurill (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12895,7 +13283,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Bonsly (al subir de nivel conociendo Mimético)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ],
       "evolution_info": {
         "from": "Bonsly",
         "text": "Evoluciona de Bonsly (al subir de nivel conociendo Mimético)",
@@ -12963,22 +13356,29 @@
     },
     "evolution_stone": {
       "slug": "kings-rock",
+      "name": "Roca del Rey",
       "name_es": "Roca del Rey",
       "icon_url": "/media/items/kings-rock.png",
+      "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "area": "Pueblo Caelestis",
+          "detail": "Objeto oculto en el suelo al oeste del altar central."
         },
         {
           "area": "Ruta 225 / Ruta 228",
           "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -13095,7 +13495,14 @@
           "area": "Ruta 205 (Este)",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Hoppip",
+        "text": "Evoluciona de Hoppip (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13411,8 +13818,10 @@
     },
     "evolution_stone": {
       "slug": "sun-stone",
+      "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
@@ -13426,7 +13835,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -13666,7 +14076,14 @@
           "area": "Ruta 212 (Sur)",
           "method": "Surfeando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wooper",
+        "text": "Evoluciona de Wooper (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13715,13 +14132,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Eevee (por amistad de day)",
+      "summary": "Evoluciona de Eevee (por amistad de día)",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (por amistad de day)",
+        "text": "Evoluciona de Eevee (por amistad de día)",
         "trigger": "level-up",
-        "condition": "por amistad de day",
+        "condition": "por amistad de día",
         "item_slug": null
       }
     },
@@ -13772,13 +14189,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Eevee (por amistad de night)",
+      "summary": "Evoluciona de Eevee (por amistad de noche)",
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (por amistad de night)",
+        "text": "Evoluciona de Eevee (por amistad de noche)",
         "trigger": "level-up",
-        "condition": "por amistad de night",
+        "condition": "por amistad de noche",
         "item_slug": null
       }
     },
@@ -13914,9 +14331,41 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Slowpoke transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Slowpoke",
+        "text": "Evoluciona de Slowpoke (por intercambio equipado con Roca del Rey)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Roca del Rey",
+        "item_slug": "kings-rock"
+      }
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "kings-rock",
+      "name": "Roca del Rey",
+      "name_es": "Roca del Rey",
+      "icon_url": "/media/items/kings-rock.png",
+      "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
+      "locations": [
+        {
+          "area": "Pueblo Caelestis",
+          "detail": "Objeto oculto en el suelo al oeste del altar central."
+        },
+        {
+          "area": "Ruta 225 / Ruta 228",
+          "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+        }
+      ],
+      "category": "trade"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -14022,19 +14471,35 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruinas Sosiego (28 formas repartidas entre la Ruta FRIEND, salas secundarias y cámara superior vía Túnel Ruinamaniaco).",
+      "summary": "Salvaje en 7 zonas (ej: Ruinas Sosiego (P2), Ruinas Sosiego (P1), Ruinas Sosiego (Sótano B1)).",
       "locations": [
         {
-          "area": "Ruinas Sosiego (Ruta Central FRIEND)",
-          "method": "Salas principales F, R, I, E, N, D (100%)"
+          "area": "Ruinas Sosiego (P2)",
+          "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Ruinas Sosiego (Salas Sin Salida)",
-          "method": "Bifurcaciones y desvíos (20 formas alfabéticas, 5%)"
+          "area": "Ruinas Sosiego (P1)",
+          "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Ruinas Sosiego (Cámara Superior Secreta)",
-          "method": "Formas ! y ? (50%) • Acceso conectando por Túnel Ruinamaniaco"
+          "area": "Ruinas Sosiego (Sótano B1)",
+          "method": "Hierba alta / Terreno"
+        },
+        {
+          "area": "Ruinas Sosiego (Sótano B2)",
+          "method": "Hierba alta / Terreno"
+        },
+        {
+          "area": "Ruinas Sosiego (Sótano B3)",
+          "method": "Hierba alta / Terreno"
+        },
+        {
+          "area": "Ruinas Sosiego (Sótano B4)",
+          "method": "Hierba alta / Terreno"
+        },
+        {
+          "area": "Ruinas Sosiego (Cámara Final)",
+          "method": "Hierba alta / Terreno"
         }
       ]
     },
@@ -14103,7 +14568,14 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wynaut",
+        "text": "Evoluciona de Wynaut (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -14547,9 +15019,37 @@
           "area": "Isla Hierro (Sótano B3)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Onix",
+        "text": "Evoluciona de Onix (por intercambio equipado con Revestimiento Metálico)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Revestimiento Metálico",
+        "item_slug": "metal-coat"
+      }
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "metal-coat",
+      "name": "Revestimiento Metálico",
+      "name_es": "Revestimiento Metálico",
+      "icon_url": "/media/items/metal-coat.png",
+      "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
+      "locations": [
+        {
+          "area": "Isla Hierro (Casa de Acerón)",
+          "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+        },
+        {
+          "area": "Fuego Forja / Monte Corona",
+          "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+        }
+      ],
+      "category": "trade"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -14783,8 +15283,10 @@
     },
     "evolution_stone": {
       "slug": "metal-coat",
+      "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
       "icon_url": "/media/items/metal-coat.png",
+      "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
@@ -14798,7 +15300,8 @@
           "area": "Fuego Forja / Monte Corona",
           "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -15220,7 +15723,14 @@
           "area": "Ruta 217",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Teddiursa",
+        "text": "Evoluciona de Teddiursa (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15342,7 +15852,14 @@
           "area": "Montaña Ceniza (Interior)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Slugma",
+        "text": "Evoluciona de Slugma (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15687,7 +16204,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Remoraid",
+        "text": "Evoluciona de Remoraid (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15796,7 +16320,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Mantyke (por condición especial)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ],
       "evolution_info": {
         "from": "Mantyke",
         "text": "Evoluciona de Mantyke (por condición especial)",
@@ -15980,7 +16509,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Exclusivo de versión"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Houndour",
+        "text": "Evoluciona de Houndour (Nivel 24)",
+        "trigger": "level-up",
+        "condition": "Nivel 24",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16041,8 +16577,10 @@
     },
     "evolution_stone": {
       "slug": "dragon-scale",
+      "name": "Escama Dragón",
       "name_es": "Escama Dragón",
       "icon_url": "/media/items/dragon-scale.png",
+      "description": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "is_purchasable": false,
       "price": null,
@@ -16052,7 +16590,8 @@
           "area": "Ruta 226",
           "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -16228,8 +16767,10 @@
     },
     "evolution_stone": {
       "slug": "up-grade",
+      "name": "Mejora",
       "name_es": "Mejora",
       "icon_url": "/media/items/up-grade.png",
+      "description": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "is_purchasable": false,
       "price": null,
@@ -16239,7 +16780,8 @@
           "area": "Ciudad Vetusta (Casa del Prof. Oak)",
           "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -17861,7 +18403,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -17920,7 +18467,14 @@
           "area": "Ruta 215",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Poochyena",
+        "text": "Evoluciona de Poochyena (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18310,7 +18864,14 @@
           "area": "Prado Aromaflor",
           "method": "Árboles de Miel"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wurmple",
+        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18373,7 +18934,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Silcoon",
+        "text": "Evoluciona de Silcoon (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18621,7 +19189,14 @@
           "area": "Ruta 229",
           "method": "Inserción Dual (GBA: Pokémon Zafiro)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Lotad",
+        "text": "Evoluciona de Lotad (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18682,8 +19257,10 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": true,
       "price": 2100,
@@ -18701,7 +19278,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -18834,7 +19412,14 @@
           "area": "Ruta 229",
           "method": "Inserción Dual (GBA: Pokémon Rubí)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Seedot",
+        "text": "Evoluciona de Seedot (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18895,8 +19480,10 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": true,
       "price": 2100,
@@ -18910,7 +19497,8 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -18959,7 +19547,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -19014,7 +19607,14 @@
           "area": "Ruta 213",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Taillow",
+        "text": "Evoluciona de Taillow (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19248,7 +19848,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Surfeando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wingull",
+        "text": "Evoluciona de Wingull (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19370,7 +19977,14 @@
           "area": "Ruta 204 (Sur)",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ralts",
+        "text": "Evoluciona de Ralts (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20075,7 +20689,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -20134,7 +20753,14 @@
           "area": "Monte Corona (Cima / Ventisca)",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Whismur",
+        "text": "Evoluciona de Whismur (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20388,11 +21014,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Marino"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "sea-incense",
+      "name": "Incienso Marino",
+      "name_es": "Incienso Marino",
+      "icon_url": "/media/items/sea-incense.png",
+      "description": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "description_es": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruta 204 (Sur)",
+          "detail": "En el suelo en un estanque accesible con Surf en la zona sur de la ruta."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -20569,8 +21212,10 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
@@ -20584,7 +21229,8 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -21108,7 +21754,14 @@
           "area": "Ruta 217",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Meditite",
+        "text": "Evoluciona de Meditite (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21567,7 +22220,14 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Budew",
+        "text": "Evoluciona de Budew (por amistad de día)",
+        "trigger": "level-up",
+        "condition": "por amistad de día",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21837,7 +22497,14 @@
           "area": "Ruta 222",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Carvanha",
+        "text": "Evoluciona de Carvanha (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21959,7 +22626,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wailmer",
+        "text": "Evoluciona de Wailmer (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22089,7 +22763,14 @@
           "area": "Ruta 227",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Numel",
+        "text": "Evoluciona de Numel (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22441,7 +23122,14 @@
           "area": "Ruta 228",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Trapinch",
+        "text": "Evoluciona de Trapinch (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22612,7 +23300,14 @@
           "area": "Ruta 228",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cacnea",
+        "text": "Evoluciona de Cacnea (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23346,7 +24041,14 @@
           "area": "Pueblo Caelestis",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Barboach",
+        "text": "Evoluciona de Barboach (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23460,7 +24162,14 @@
           "area": "Pueblo Caelestis",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Corphish",
+        "text": "Evoluciona de Corphish (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24100,7 +24809,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -24167,7 +24881,14 @@
           "area": "Ruta 226 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shuppet",
+        "text": "Evoluciona de Shuppet (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24281,7 +25002,14 @@
           "area": "Ruta 224",
           "method": "Poké Radar"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Duskull",
+        "text": "Evoluciona de Duskull (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24331,7 +25059,12 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza de huevo"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -24402,7 +25135,14 @@
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Chingling",
+        "text": "Evoluciona de Chingling (por amistad de noche)",
+        "trigger": "level-up",
+        "condition": "por amistad de noche",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24511,9 +25251,31 @@
       "badge_label": "Especial",
       "badge_color": "slate",
       "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
-      "locations": []
+      "locations": [
+        {
+          "area": "Pueblo Sosiego (Guardería Pokémon)",
+          "method": "Crianza con Incienso Suave"
+        }
+      ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "lax-incense",
+      "name": "Incienso Suave",
+      "name_es": "Incienso Suave",
+      "icon_url": "/media/items/lax-incense.png",
+      "description": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+      "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruta 225",
+          "detail": "En el suelo en una saliente de la Zona Sobrevivencia en el postgame (requiere Treparrocas o Corte)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -24749,7 +25511,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Exclusivo de versión"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spheal",
+        "text": "Evoluciona de Spheal (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24804,7 +25573,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Sealeo transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sealeo",
+        "text": "Evoluciona de Sealeo (Nivel 44)",
+        "trigger": "level-up",
+        "condition": "Nivel 44",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24928,8 +25704,10 @@
     },
     "evolution_stone": {
       "slug": "deep-sea-tooth",
+      "name": "Diente Marino",
       "name_es": "Diente Marino",
       "icon_url": "/media/items/deep-sea-tooth.png",
+      "description": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
       "description_es": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
       "is_purchasable": false,
       "price": null,
@@ -24939,7 +25717,8 @@
           "area": "Ruta 218 / Gran Pantano",
           "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -24999,8 +25778,10 @@
     },
     "evolution_stone": {
       "slug": "deep-sea-scale",
+      "name": "Escama Marina",
       "name_es": "Escama Marina",
       "icon_url": "/media/items/deep-sea-scale.png",
+      "description": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
       "description_es": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
       "is_purchasable": false,
       "price": null,
@@ -25010,7 +25791,8 @@
           "area": "Ruta 220 / Ruta 226",
           "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -25245,7 +26027,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Exclusivo de versión"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bagon",
+        "text": "Evoluciona de Bagon (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25300,7 +26089,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Shelgon transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shelgon",
+        "text": "Evoluciona de Shelgon (Nivel 50)",
+        "trigger": "level-up",
+        "condition": "Nivel 50",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26756,7 +27552,14 @@
           "area": "Ruta 212 (Norte)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Starly",
+        "text": "Evoluciona de Starly (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27047,7 +27850,14 @@
           "area": "Ruta 212 (Sur)",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bidoof",
+        "text": "Evoluciona de Bidoof (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27209,7 +28019,14 @@
           "area": "Ruta 215",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Kricketot",
+        "text": "Evoluciona de Kricketot (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27339,7 +28156,14 @@
           "area": "Fuego Forja",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shinx",
+        "text": "Evoluciona de Shinx (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27489,11 +28313,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Floral"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "rose-incense",
+      "name": "Incienso Floral",
+      "name_es": "Incienso Floral",
+      "icon_url": "/media/items/rose-incense.png",
+      "description": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
+      "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruta 212 (Sur)",
+          "detail": "En el suelo en la zona pantanosa al sur de la ruta (accesible con Surf o Bicicleta)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -27552,8 +28393,10 @@
     },
     "evolution_stone": {
       "slug": "shiny-stone",
+      "name": "Piedra Día",
       "name_es": "Piedra Día",
       "icon_url": "/media/items/shiny-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
       "price": null,
@@ -27571,7 +28414,8 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -27804,7 +28648,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Shieldon transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shieldon",
+        "text": "Evoluciona de Shieldon (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28486,7 +29337,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Buizel",
+        "text": "Evoluciona de Buizel (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28844,7 +29702,14 @@
           "area": "Ruta 230 (Ruta Marítima)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shellos",
+        "text": "Evoluciona de Shellos (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29188,9 +30053,41 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Evolución de Misdreavus transferido"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Misdreavus",
+        "text": "Evoluciona de Misdreavus (usando Piedra Noche)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Noche",
+        "item_slug": "dusk-stone"
+      }
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "dusk-stone",
+      "name": "Piedra Noche",
+      "name_es": "Piedra Noche",
+      "icon_url": "/media/items/dusk-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "locations": [
+        {
+          "area": "Almacén Galaxia (Ciudad Rocavelo)",
+          "detail": "En el suelo del almacén tras conseguir la Llave del Almacén."
+        },
+        {
+          "area": "Cueva Extravío",
+          "detail": "En la zona profunda accesible usando Golpe Roca y Fuerza."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
+        }
+      ],
+      "category": "stone"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -29249,8 +30146,10 @@
     },
     "evolution_stone": {
       "slug": "dusk-stone",
+      "name": "Piedra Noche",
       "name_es": "Piedra Noche",
       "icon_url": "/media/items/dusk-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
       "price": null,
@@ -29268,7 +30167,8 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -29381,7 +30281,14 @@
           "area": "Intercambio con Pokémon Perla",
           "method": "Exclusivo de versión"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Glameow",
+        "text": "Evoluciona de Glameow (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29494,11 +30401,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Puro"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "pure-incense",
+      "name": "Incienso Puro",
+      "name_es": "Incienso Puro",
+      "icon_url": "/media/items/pure-incense.png",
+      "description": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
+      "description_es": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruta 221",
+          "detail": "En el suelo en una arboleda al oeste de la casa previa a la entrada del Parque Compi."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -29622,7 +30546,14 @@
           "area": "Ruta 225",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Stunky",
+        "text": "Evoluciona de Stunky (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29816,7 +30747,14 @@
           "area": "Cueva Retorno (Cámara Giratina)",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bronzor",
+        "text": "Evoluciona de Bronzor (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29873,11 +30811,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Roca"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "rock-incense",
+      "name": "Incienso Roca",
+      "name_es": "Incienso Roca",
+      "icon_url": "/media/items/rock-incense.png",
+      "description": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
+      "description_es": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Fuego Forja (Exterior)",
+          "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -29940,11 +30895,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Raro"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "odd-incense",
+      "name": "Incienso Raro",
+      "name_es": "Incienso Raro",
+      "icon_url": "/media/items/odd-incense.png",
+      "description": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
+      "description_es": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "En el suelo en la sala más profunda de las ruinas siguiendo el recorrido de las escaleras secundarias."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -29999,11 +30971,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Duplo"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "luck-incense",
+      "name": "Incienso Duplo",
+      "name_es": "Incienso Duplo",
+      "icon_url": "/media/items/luck-incense.png",
+      "description": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
+      "description_es": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Paso Rocoso",
+          "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -30437,11 +31426,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Lento"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "full-incense",
+      "name": "Incienso Lento",
+      "name_es": "Incienso Lento",
+      "icon_url": "/media/items/full-incense.png",
+      "description": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
+      "description_es": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ciudad Rocavelo",
+          "detail": "En el suelo en la colina rocosa al sur del gimnasio (requiere la MO Treparrocas)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -30547,13 +31553,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Riolu (por amistad de day)",
+      "summary": "Evoluciona de Riolu (por amistad de día)",
       "locations": [],
       "evolution_info": {
         "from": "Riolu",
-        "text": "Evoluciona de Riolu (por amistad de day)",
+        "text": "Evoluciona de Riolu (por amistad de día)",
         "trigger": "level-up",
-        "condition": "por amistad de day",
+        "condition": "por amistad de día",
         "item_slug": null
       }
     },
@@ -30677,7 +31683,14 @@
           "area": "Ruta 228",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Hippopotas",
+        "text": "Evoluciona de Hippopotas (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30831,7 +31844,14 @@
           "area": "Gran Pantano (Zona 6)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Skorupi",
+        "text": "Evoluciona de Skorupi (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30985,7 +32005,14 @@
           "area": "Gran Pantano (Zona 6)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Croagunk",
+        "text": "Evoluciona de Croagunk (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31242,7 +32269,14 @@
           "area": "Ruta 220 (Ruta Marítima)",
           "method": "Supercaña"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Finneon",
+        "text": "Evoluciona de Finneon (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31303,11 +32337,28 @@
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Aqua"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "wave-incense",
+      "name": "Incienso Aqua",
+      "name_es": "Incienso Aqua",
+      "icon_url": "/media/items/wave-incense.png",
+      "description": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
+      "description_es": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
+      "locations": [
+        {
+          "area": "Ruta 210 (Norte)",
+          "detail": "En el suelo en la sección norte con niebla, bajo uno de los puentes de madera junto a la cascada (accesible con Surf)."
+        }
+      ],
+      "category": "incense"
+    },
     "game_data": {
       "generation": 4,
       "game_slug": "diamond",
@@ -31439,7 +32490,14 @@
           "area": "Monte Corona (Cima / Ventisca)",
           "method": "Hierba alta / Terreno"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Snover",
+        "text": "Evoluciona de Snover (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31488,20 +32546,22 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la night)",
+      "summary": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la noche)",
       "locations": [],
       "evolution_info": {
         "from": "Sneasel",
-        "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la night)",
+        "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la noche)",
         "trigger": "level-up",
-        "condition": "equipado con Garra Afilada al subir de nivel por la night",
+        "condition": "equipado con Garra Afilada al subir de nivel por la noche",
         "item_slug": "razor-claw"
       }
     },
     "evolution_stone": {
       "slug": "razor-claw",
+      "name": "Garra Afilada",
       "name_es": "Garra Afilada",
       "icon_url": "/media/items/razor-claw.png",
+      "description": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
       "description_es": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
       "is_purchasable": true,
       "price": 48,
@@ -31519,7 +32579,8 @@
           "area": "Torre Batalla (Frente de Batalla)",
           "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -31693,8 +32754,10 @@
     },
     "evolution_stone": {
       "slug": "protector",
+      "name": "Protector",
       "name_es": "Protector",
       "icon_url": "/media/items/protector.png",
+      "description": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
       "description_es": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
       "is_purchasable": false,
       "price": null,
@@ -31704,7 +32767,8 @@
           "area": "Ruta 228",
           "detail": "En el suelo cerca del lago en la tormenta de arena (postgame)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -31821,8 +32885,10 @@
     },
     "evolution_stone": {
       "slug": "electirizer",
+      "name": "Electirizador",
       "name_es": "Electirizador",
       "icon_url": "/media/items/electirizer.png",
+      "description": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
       "description_es": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
       "is_purchasable": false,
       "price": null,
@@ -31832,7 +32898,8 @@
           "area": "Ruta 205 (Sur) / Parque Eólico",
           "detail": "Equipado en Elekid salvajes con un 50% de probabilidad (con Pokémon Rojo Fuego en Ranura 2 de NDS)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -31892,18 +32959,25 @@
     },
     "evolution_stone": {
       "slug": "magmarizer",
+      "name": "Magmatizador",
       "name_es": "Magmatizador",
       "icon_url": "/media/items/magmarizer.png",
+      "description": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
       "description_es": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
       "is_purchasable": false,
       "price": null,
       "availability_note": "Exclusivo de Pokémon Perla. En Diamante requiere intercambio.",
       "locations": [
         {
+          "area": "Ruta 227 / Montaña Dura",
+          "detail": "Equipado en Magby salvajes con un 5% de probabilidad (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS)."
+        },
+        {
           "area": "Intercambio con Pokémon Perla",
-          "detail": "En Diamante no aparece salvaje; transferir equipado en un Pokémon desde Pokémon Perla."
+          "detail": "Transferir equipado en un Pokémon desde Pokémon Perla (donde aparece equipado en Magby salvajes con un 50% de probabilidad)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -31963,8 +33037,10 @@
     },
     "evolution_stone": {
       "slug": "shiny-stone",
+      "name": "Piedra Día",
       "name_es": "Piedra Día",
       "icon_url": "/media/items/shiny-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
       "price": null,
@@ -31982,7 +33058,8 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -32201,20 +33278,22 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la night)",
+      "summary": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la noche)",
       "locations": [],
       "evolution_info": {
         "from": "Gligar",
-        "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la night)",
+        "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la noche)",
         "trigger": "level-up",
-        "condition": "equipado con Colmillo Agudo al subir de nivel por la night",
+        "condition": "equipado con Colmillo Agudo al subir de nivel por la noche",
         "item_slug": "razor-fang"
       }
     },
     "evolution_stone": {
       "slug": "razor-fang",
+      "name": "Colmillo Agudo",
       "name_es": "Colmillo Agudo",
       "icon_url": "/media/items/razor-fang.png",
+      "description": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
       "description_es": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
       "is_purchasable": true,
       "price": 48,
@@ -32228,7 +33307,8 @@
           "area": "Torre Batalla (Frente de Batalla)",
           "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -32345,8 +33425,10 @@
     },
     "evolution_stone": {
       "slug": "dubious-disc",
+      "name": "Discoxtraño",
       "name_es": "Discoxtraño",
       "icon_url": "/media/items/dubious-disc.png",
+      "description": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
       "description_es": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
       "is_purchasable": false,
       "price": null,
@@ -32356,7 +33438,8 @@
           "area": "Ruta 225",
           "detail": "En un islote de agua al norte de la ruta navegando con Surf (postgame)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -32416,8 +33499,10 @@
     },
     "evolution_stone": {
       "slug": "dawn-stone",
+      "name": "Piedra Alba",
       "name_es": "Piedra Alba",
       "icon_url": "/media/items/dawn-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
       "price": null,
@@ -32435,7 +33520,8 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -32552,8 +33638,10 @@
     },
     "evolution_stone": {
       "slug": "reaper-cloth",
+      "name": "Tela Terrible",
       "name_es": "Tela Terrible",
       "icon_url": "/media/items/reaper-cloth.png",
+      "description": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
       "description_es": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
       "is_purchasable": false,
       "price": null,
@@ -32567,7 +33655,8 @@
           "area": "Cueva Retorno",
           "detail": "En una de las salas profundas tras superar tres pilares."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -32627,8 +33716,10 @@
     },
     "evolution_stone": {
       "slug": "dawn-stone",
+      "name": "Piedra Alba",
       "name_es": "Piedra Alba",
       "icon_url": "/media/items/dawn-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
       "price": null,
@@ -32646,7 +33737,8 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -33252,7 +34344,7 @@
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de Manaphy con Ditto"
+          "method": "Crianza de huevo"
         }
       ]
     },

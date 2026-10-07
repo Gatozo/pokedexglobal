@@ -17,6 +17,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "pokedex.settings")
 import django
 django.setup()
 
+from tracker.utils import resolve_evolution_stone, get_incense_for_baby
+
 CACHE_DIR = BASE_DIR / "tracker" / "data" / "cache"
 CATALOGS_DIR = BASE_DIR / "tracker" / "data" / "catalogs"
 
@@ -846,20 +848,6 @@ def main():
                 }
             }
 
-            if item_slug and item_slug in evolution_stones:
-                st_data = evolution_stones[item_slug]
-                dia_locs = st_data.get('games', {}).get('diamond', [])
-                evo_stone_obj = {
-                    'slug': item_slug,
-                    'name_es': st_data.get('name_es', item_slug),
-                    'icon_url': st_data.get('icon_url', f"/media/items/{item_slug}.png"),
-                    'description_es': st_data.get('description_es', ''),
-                    'is_purchasable': st_data.get('is_purchasable', False),
-                    'price': st_data.get('price'),
-                    'availability_note': st_data.get('availability_note', ''),
-                    'locations': dia_locs
-                }
-
         elif nat_id in diamond_transfers:
             # Transferencia Parque Compi
             origin = diamond_origins.get(nat_id, 'Cartuchos de GBA (RSE/FRLG)')
@@ -889,6 +877,62 @@ def main():
                 'summary': 'Obtención mediante distribución oficial o evento de Nintendo.',
                 'locations': []
             }
+
+        # 1. Conservar metadatos de evolución universalmente para cualquier especie que evolucione de otra
+        if evo_info and 'evolution_info' not in obt_info:
+            obt_info['evolution_info'] = {
+                'from': evo_info.get('from_name'),
+                'text': evo_info.get('text', ''),
+                'trigger': evo_info.get('trigger', 'level-up'),
+                'condition': evo_info.get('condition', ''),
+                'item_slug': evo_info.get('item_slug')
+            }
+
+        # 2. Manejo universal de Inciensos de Crianza para Bebés (Gen 3 a Gen 8)
+        baby_incense_slug = get_incense_for_baby(nat_id, generation=4)
+        
+        # Aislar y normalizar ubicaciones para evitar mutación de diccionarios compartidos
+        raw_locations = obt_info.get('locations', [])
+        new_locations = []
+        has_daycare = False
+        for loc in raw_locations:
+            if 'guardería' in loc.get('area', '').lower() or 'guarderia' in loc.get('area', '').lower():
+                has_daycare = True
+                if baby_incense_slug:
+                    incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
+                    new_locations.append({
+                        'area': 'Pueblo Sosiego (Guardería Pokémon)',
+                        'method': f"Crianza con {incense_name}"
+                    })
+                else:
+                    new_locations.append({
+                        'area': 'Pueblo Sosiego (Guardería Pokémon)',
+                        'method': 'Crianza de huevo'
+                    })
+            else:
+                new_locations.append({'area': loc.get('area', ''), 'method': loc.get('method', '')})
+
+        if is_hatchable and not has_daycare:
+            if baby_incense_slug:
+                incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
+                new_locations.append({
+                    'area': 'Pueblo Sosiego (Guardería Pokémon)',
+                    'method': f"Crianza con {incense_name}"
+                })
+            else:
+                new_locations.append({
+                    'area': 'Pueblo Sosiego (Guardería Pokémon)',
+                    'method': 'Crianza de huevo'
+                })
+
+        obt_info['locations'] = new_locations
+
+        # 3. Resolución universal del objeto evolutivo o incienso para la tarjeta y modales
+        item_slug_to_resolve = baby_incense_slug or (evo_info.get('item_slug') if evo_info else None) or obt_info.get('item_slug')
+        if item_slug_to_resolve:
+            evo_stone_obj = resolve_evolution_stone(item_slug=item_slug_to_resolve, game_slug="diamond")
+        else:
+            evo_stone_obj = None
 
         p_type = sp['primary_type']
         s_type = sp['secondary_type']

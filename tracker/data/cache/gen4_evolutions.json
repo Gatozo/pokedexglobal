@@ -1455,8 +1455,8 @@
     "to_id": 315,
     "to_name": "Roselia",
     "trigger": "level-up",
-    "condition": "por amistad de day",
-    "text": "Evoluciona de Budew (por amistad de day)",
+    "condition": "por amistad de día",
+    "text": "Evoluciona de Budew (por amistad de día)",
     "item_slug": null
   },
   "407": {
@@ -1625,8 +1625,8 @@
     "to_id": 113,
     "to_name": "Chansey",
     "trigger": "level-up",
-    "condition": "equipado con Piedra Oval al subir de nivel por la day",
-    "text": "Evoluciona de Happiny (equipado con Piedra Oval al subir de nivel por la day)",
+    "condition": "equipado con Piedra Oval al subir de nivel por el día",
+    "text": "Evoluciona de Happiny (equipado con Piedra Oval al subir de nivel por el día)",
     "item_slug": "oval-stone"
   },
   "242": {
@@ -1665,8 +1665,8 @@
     "to_id": 448,
     "to_name": "Lucario",
     "trigger": "level-up",
-    "condition": "por amistad de day",
-    "text": "Evoluciona de Riolu (por amistad de day)",
+    "condition": "por amistad de día",
+    "text": "Evoluciona de Riolu (por amistad de día)",
     "item_slug": null
   },
   "264": {
@@ -1825,8 +1825,8 @@
     "to_id": 472,
     "to_name": "Gliscor",
     "trigger": "level-up",
-    "condition": "equipado con Colmillo Agudo al subir de nivel por la night",
-    "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la night)",
+    "condition": "equipado con Colmillo Agudo al subir de nivel por la noche",
+    "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la noche)",
     "item_slug": "razor-fang"
   },
   "419": {
@@ -1875,8 +1875,8 @@
     "to_id": 461,
     "to_name": "Weavile",
     "trigger": "level-up",
-    "condition": "equipado con Garra Afilada al subir de nivel por la night",
-    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la night)",
+    "condition": "equipado con Garra Afilada al subir de nivel por la noche",
+    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la noche)",
     "item_slug": "razor-claw"
   },
   "903": {
@@ -1885,8 +1885,8 @@
     "to_id": 903,
     "to_name": "Sneasler",
     "trigger": "level-up",
-    "condition": "equipado con Garra Afilada al subir de nivel por la day",
-    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la day)",
+    "condition": "equipado con Garra Afilada al subir de nivel por el día",
+    "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por el día)",
     "item_slug": "razor-claw"
   },
   "358": {
@@ -1895,8 +1895,8 @@
     "to_id": 358,
     "to_name": "Chimecho",
     "trigger": "level-up",
-    "condition": "por amistad de night",
-    "text": "Evoluciona de Chingling (por amistad de night)",
+    "condition": "por amistad de noche",
+    "text": "Evoluciona de Chingling (por amistad de noche)",
     "item_slug": null
   },
   "277": {
@@ -2455,8 +2455,8 @@
     "to_id": 196,
     "to_name": "Espeon",
     "trigger": "level-up",
-    "condition": "por amistad de day",
-    "text": "Evoluciona de Eevee (por amistad de day)",
+    "condition": "por amistad de día",
+    "text": "Evoluciona de Eevee (por amistad de día)",
     "item_slug": null
   },
   "197": {
@@ -2465,8 +2465,8 @@
     "to_id": 197,
     "to_name": "Umbreon",
     "trigger": "level-up",
-    "condition": "por amistad de night",
-    "text": "Evoluciona de Eevee (por amistad de night)",
+    "condition": "por amistad de noche",
+    "text": "Evoluciona de Eevee (por amistad de noche)",
     "item_slug": null
   },
   "470": {

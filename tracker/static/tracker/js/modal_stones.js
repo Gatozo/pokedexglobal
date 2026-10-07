@@ -70,7 +70,8 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     if (locContainer) {
         locContainer.innerHTML = '';
         const gamesMap = stone.games || {};
-        const locations = gamesMap[currentGameSlug] || [];
+        const cleanGameSlug = (currentGameSlug || '').replace('_national', '');
+        const locations = gamesMap[cleanGameSlug] || gamesMap[currentGameSlug] || [];
 
         if (locations.length === 0) {
             const emptyMsg = document.createElement('div');

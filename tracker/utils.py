@@ -473,6 +473,13 @@ EVOLUTION_ITEMS_ES = {
     'up-grade': 'Mejora',
     'deep-sea-tooth': 'Diente Marino',
     'deep-sea-scale': 'Escama Marina',
+    'protector': 'Protector',
+    'electirizer': 'Electirizador',
+    'magmarizer': 'Magmatizador',
+    'dubious-disc': 'Discoxtraño',
+    'reaper-cloth': 'Tela Terrible',
+    'razor-claw': 'Garra Afilada',
+    'razor-fang': 'Colmillo Agudo',
     'sea-incense': 'Incienso Marino',
     'lax-incense': 'Incienso Suave',
     'rose-incense': 'Incienso Floral',
@@ -481,7 +488,7 @@ EVOLUTION_ITEMS_ES = {
     'full-incense': 'Incienso Lento',
     'luck-incense': 'Incienso Duplo',
     'odd-incense': 'Incienso Raro',
-    'wave-incense': 'Incienso Ola',
+    'wave-incense': 'Incienso Aqua',
 }
 
 STONE_NAME_TO_SLUG = {
@@ -507,6 +514,15 @@ STONE_NAME_TO_SLUG = {
     'mejora': 'up-grade',
     'diente marino': 'deep-sea-tooth',
     'escama marina': 'deep-sea-scale',
+    'protector': 'protector',
+    'electirizador': 'electirizer',
+    'magmatizador': 'magmarizer',
+    'discoxtraño': 'dubious-disc',
+    'discoxtrano': 'dubious-disc',
+    'disco extraño': 'dubious-disc',
+    'tela terrible': 'reaper-cloth',
+    'garra afilada': 'razor-claw',
+    'colmillo agudo': 'razor-fang',
     'incienso marino': 'sea-incense',
     'incienso suave': 'lax-incense',
     'incienso floral': 'rose-incense',
@@ -515,8 +531,37 @@ STONE_NAME_TO_SLUG = {
     'incienso lento': 'full-incense',
     'incienso duplo': 'luck-incense',
     'incienso raro': 'odd-incense',
+    'incienso aqua': 'wave-incense',
     'incienso ola': 'wave-incense',
 }
+
+# Mapeo canónico universal de Pokémon bebés que requieren incienso para su crianza (Gen 3 a Gen 8)
+INCENSE_BABY_MAP: Dict[int, str] = {
+    298: 'sea-incense',   # Azurill (Marill / Azumarill)
+    360: 'lax-incense',   # Wynaut (Wobbuffet)
+    406: 'rose-incense',  # Budew (Roselia / Roserade)
+    433: 'pure-incense',  # Chingling (Chimecho)
+    438: 'rock-incense',  # Bonsly (Sudowoodo)
+    439: 'odd-incense',   # Mime Jr. (Mr. Mime)
+    440: 'luck-incense',  # Happiny (Chansey / Blissey)
+    446: 'full-incense',  # Munchlax (Snorlax)
+    458: 'wave-incense',  # Mantyke (Mantine)
+}
+
+
+def get_incense_for_baby(national_number: int, generation: int = 4) -> Optional[str]:
+    """
+    Retorna el slug del incienso requerido para criar a un Pokémon bebé según la generación de la edición.
+    En Gen 1 y Gen 2 no existía la mecánica de inciensos.
+    En Gen 3 solo aplicaba a Azurill y Wynaut.
+    En Gen 4 a Gen 8 aplica al catálogo completo de 9 bebés.
+    En Gen 9 (Escarlata y Púrpura) los inciensos se eliminaron y los bebés eclosionan de forma directa en picnics.
+    """
+    if generation < 3 or generation >= 9:
+        return None
+    if generation == 3 and national_number not in (298, 360):
+        return None
+    return INCENSE_BABY_MAP.get(national_number)
 
 
 def resolve_evolution_stone(
@@ -577,8 +622,10 @@ def resolve_evolution_stone(
     return {
         "slug": slug,
         "name": name_es,
+        "name_es": name_es,
         "icon_url": icon_url,
         "description": stone_data.get("description_es", ""),
+        "description_es": stone_data.get("description_es", ""),
         "is_purchasable": is_purchasable,
         "price": price,
         "availability_note": availability_note,

@@ -1520,6 +1520,43 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertIsNotNone(gallade.evolution_stone)
         self.assertEqual(gallade.evolution_stone.get("slug"), "dawn-stone")
 
+        # Steelix (#208): Especie salvaje pero con evolución por intercambio con Revestimiento Metálico
+        steelix = cat_by_num[208]
+        self.assertIsNotNone(steelix.evolution_stone, "Steelix debe tener Revestimiento Metálico como evolution_stone")
+        self.assertEqual(steelix.evolution_stone.get("slug"), "metal-coat")
+        self.assertIsNotNone(steelix.obtaining_info.get("evolution_info"), "Steelix debe preservar evolution_info de Onix")
+
+        # Chansey (#113): Especie salvaje que evoluciona de Happiny con Piedra Oval
+        chansey = cat_by_num[113]
+        self.assertIsNotNone(chansey.evolution_stone, "Chansey debe tener Piedra Oval como evolution_stone")
+        self.assertEqual(chansey.evolution_stone.get("slug"), "oval-stone")
+        self.assertIn("Piedra Oval", chansey.obtaining_info.get("evolution_info", {}).get("text", ""))
+
+        # Mismagius (#429): Exclusivo transferible/intercambio en Diamante que evoluciona con Piedra Noche
+        mismagius = cat_by_num[429]
+        self.assertIsNotNone(mismagius.evolution_stone, "Mismagius debe tener Piedra Noche como evolution_stone")
+        self.assertEqual(mismagius.evolution_stone.get("slug"), "dusk-stone")
+
+        # Comprobación de bebés e inciensos de 4.ª Generación
+        incense_expectations = {
+            406: ("rose-incense", "Incienso Floral"),
+            433: ("pure-incense", "Incienso Puro"),
+            438: ("rock-incense", "Incienso Roca"),
+            439: ("odd-incense", "Incienso Raro"),
+            440: ("luck-incense", "Incienso Duplo"),
+            446: ("full-incense", "Incienso Lento"),
+            458: ("wave-incense", "Incienso Aqua"),
+            298: ("sea-incense", "Incienso Marino"),
+            360: ("lax-incense", "Incienso Suave"),
+        }
+        for nat_id, (slug, name) in incense_expectations.items():
+            baby_entry = cat_by_num[nat_id]
+            self.assertIsNotNone(baby_entry.evolution_stone, f"Bebé #{nat_id} debe tener evolution_stone con {slug}")
+            self.assertEqual(baby_entry.evolution_stone.get("slug"), slug)
+            daycare = next((l for l in baby_entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()), None)
+            self.assertIsNotNone(daycare, f"Bebé #{nat_id} debe tener Guardería")
+            self.assertIn(name, daycare.get("method", ""), f"Guardería de bebé #{nat_id} debe especificar {name}")
+
     def test_diamond_breeding_golden_rule(self):
         from tracker.catalog_service import get_compiled_catalog
         nat_cat = get_compiled_catalog("diamond", is_national=True)
