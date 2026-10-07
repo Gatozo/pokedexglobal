@@ -51,7 +51,7 @@ SINNOH_AREA_NAMES = {
     'eterna-forest-area': 'Bosque Vetusto',
     'floaroma-meadow-area': 'Prado Aromaflor',
     'flower-paradise-area': 'Paraíso Floral',
-    'fuego-ironworks-area': 'Fuego Forja',
+    'fuego-ironworks-area': 'Forja Fuego',
     'great-marsh-area-1': 'Gran Pantano (Zona 1)',
     'great-marsh-area-2': 'Gran Pantano (Zona 2)',
     'great-marsh-area-3': 'Gran Pantano (Zona 3)',
@@ -93,15 +93,15 @@ SINNOH_AREA_NAMES = {
     'mt-coronet-exterior-blizzard': 'Monte Corona (Cima / Ventisca)',
     'mt-coronet-exterior-snowfall': 'Monte Corona (Laderas Nevadas)',
     'newmoon-island-area': 'Isla Lunanueva',
-    'old-chateau-2f': 'Viejo Caserón (P2)',
-    'old-chateau-2f-left-room': 'Viejo Caserón (Habitación Oeste)',
-    'old-chateau-2f-leftmost-room': 'Viejo Caserón (Habitación Esquina)',
-    'old-chateau-2f-middle-room': 'Viejo Caserón (Habitación Central)',
-    'old-chateau-2f-private-room': 'Viejo Caserón (Habitación Privada)',
-    'old-chateau-2f-right-room': 'Viejo Caserón (Habitación Este)',
-    'old-chateau-2f-rightmost-room': 'Viejo Caserón (Habitación Televisión)',
-    'old-chateau-dining-room': 'Viejo Caserón (Comedor)',
-    'old-chateau-entrance': 'Viejo Caserón (Entrada)',
+    'old-chateau-2f': 'Vieja Mansión (P2)',
+    'old-chateau-2f-left-room': 'Vieja Mansión (Habitación Oeste)',
+    'old-chateau-2f-leftmost-room': 'Vieja Mansión (Habitación Esquina)',
+    'old-chateau-2f-middle-room': 'Vieja Mansión (Habitación Central)',
+    'old-chateau-2f-private-room': 'Vieja Mansión (Habitación Privada)',
+    'old-chateau-2f-right-room': 'Vieja Mansión (Habitación Este)',
+    'old-chateau-2f-rightmost-room': 'Vieja Mansión (Habitación Televisión)',
+    'old-chateau-dining-room': 'Vieja Mansión (Comedor)',
+    'old-chateau-entrance': 'Vieja Mansión (Entrada)',
     'oreburgh-city-north-west-house': 'Ciudad Pirita (Casa Noroeste)',
     'oreburgh-city-oreburgh-mining-museum': 'Museo Minero de Ciudad Pirita',
     'oreburgh-gate-1f': 'Puerta Pirita (P1)',
@@ -109,7 +109,7 @@ SINNOH_AREA_NAMES = {
     'oreburgh-mine-1f': 'Mina Pirita (P1)',
     'oreburgh-mine-b1f': 'Mina Pirita (Sótano B1)',
     'pastoria-city-area': 'Ciudad Pradera',
-    'ravaged-path-area': 'Paso Rocoso',
+    'ravaged-path-area': 'Senda Desolada',
     'resort-area-area': 'Zona Descanso',
     'roaming-sinnoh-area': 'Rutas de Sinnoh (Errante)',
     'ruin-maniac-cave-0-9-different-unown-caught': 'Cueva Ruinamaníaco (Entrada)',
@@ -186,10 +186,10 @@ SINNOH_AREA_NAMES = {
     'solaceon-ruins-b4f-d': 'Ruinas Sosiego (Sótano B4)',
     'solaceon-ruins-b5f': 'Ruinas Sosiego (Cámara Final)',
     'spear-pillar-area': 'Columna Lanza',
-    'stark-mountain-area': 'Montaña Ceniza (Exterior)',
-    'stark-mountain-entrance': 'Montaña Ceniza (Entrada)',
-    'stark-mountain-heatran-chamber': 'Montaña Ceniza (Cámara de Heatran)',
-    'stark-mountain-inside': 'Montaña Ceniza (Interior)',
+    'stark-mountain-area': 'Montaña Dura (Exterior)',
+    'stark-mountain-entrance': 'Montaña Dura (Entrada)',
+    'stark-mountain-heatran-chamber': 'Montaña Dura (Cámara de Heatran)',
+    'stark-mountain-inside': 'Montaña Dura (Interior)',
     'sunyshore-city-area': 'Ciudad Marina',
     'trophy-garden-area': 'Jardín Trofeo',
     'turnback-cave-after-pillar-3': 'Cueva Retorno (Cámara Giratina)',
@@ -412,11 +412,11 @@ SPECIAL_OBTAINING = {
     },
     479: {
         'type': 'static',
-        'badge_label': 'Viejo Caserón',
+        'badge_label': 'Vieja Mansión',
         'badge_color': 'amber',
-        'summary': 'Interactuar de noche (20:00 a 03:59) con el televisor de la habitación este del Viejo Caserón en el Bosque Vetusto al Nivel 15 (también obtenible mediante crianza).',
+        'summary': 'Interactuar de noche (20:00 a 03:59) con el televisor de la habitación este de la Vieja Mansión en el Bosque Vetusto al Nivel 15 (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Viejo Caserón (Habitación Televisión)', 'method': 'Interacción con televisor por la noche'},
+            {'area': 'Vieja Mansión (Televisor)', 'method': 'Interacción con televisor por la noche'},
             DAYCARE_LOCATION
         ]
     },
@@ -454,8 +454,8 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Legendario',
         'badge_color': 'rose',
-        'summary': 'Encuentro estático en la cámara más profunda de la Montaña Ceniza al Nivel 70 tras devolver la Piedra Magma junto a Bulgur.',
-        'locations': [{'area': 'Montaña Ceniza (Cámara de Heatran)', 'method': 'Encuentro estático al Nivel 70'}]
+        'summary': 'Encuentro estático en la cámara más profunda de la Montaña Dura al Nivel 70 tras devolver la Piedra Magma junto a Bulgur.',
+        'locations': [{'area': 'Montaña Dura (Cámara de Heatran)', 'method': 'Encuentro estático al Nivel 70'}]
     },
     486: {
         'type': 'legendary',
@@ -507,11 +507,19 @@ SPECIAL_OBTAINING = {
         'locations': [{'area': 'Paraíso Floral (Carta de Oak)', 'method': 'Encuentro estático al Nivel 30'}]
     },
     493: {
-        'type': 'mythical',
-        'badge_label': 'Evento Sala del Origen',
+        'type': 'gift',
+        'badge_label': 'Evento de Distribución',
         'badge_color': 'amber',
-        'summary': 'Encuentro estático en la Sala del Origen en la cima de la Columna Lanza al Nivel 80 subiendo por la escalera de luz tras hacer sonar la Flauta Azur.',
-        'locations': [{'area': 'Sala del Origen (Flauta Azur)', 'method': 'Encuentro estático al Nivel 80'}]
+        'summary': 'Inaccesible en estado salvaje en Pokémon Diamante. La única forma legítima de conseguirlo fue mediante eventos oficiales de distribución de Nintendo (donde se entregaba directamente al Pokémon al Nivel 100 vía Regalo Misterioso) o mediante intercambio con otro jugador que lo posea.',
+        'locations': [
+            {'area': 'Evento oficial de Nintendo', 'method': 'Distribución directa (Regalo Misterioso)'},
+            {'area': 'Intercambio con otro jugador', 'method': 'Intercambio con poseedor de evento'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • Flauta Azur y Sala del Origen',
+            'icon_url': '/media/items/azure-flute.png',
+            'text': 'Aunque en el código interno de Pokémon Diamante, Perla y Platino existe el evento para acceder a la Sala del Origen en la cima de la Columna Lanza tocando la <strong>Flauta Azur</strong> y enfrentarse a Arceus salvaje al Nivel 80, este objeto clave <strong>jamás fue distribuido oficialmente en ningún país del mundo</strong>. Junichi Masuda confirmó que el evento fue descartado por considerarse demasiado confuso para los jugadores. Por tanto, la captura salvaje en la Sala del Origen nunca fue un método legítimo en esta generación: la única vía legal en estas ediciones fue recibirlo en distribuciones oficiales de Nintendo o mediante intercambio.'
+        }
     },
 
     # Exclusivos de Pokémon Perla

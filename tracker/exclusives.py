@@ -146,7 +146,7 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         198, 430,         # Murkrow (Bosque Vetusto y Torre Perdida por la noche), Honchkrow
         246, 247, 248,    # Larvitar (Ruta 207 con Poké Radar), Pupitar, Tyranitar
         261, 262,         # Poochyena (Ruta 214 con Poké Radar), Mightyena
-        304, 305, 306,    # Aron (Fuego Forja con Poké Radar), Lairon, Aggron
+        304, 305, 306,    # Aron (Forja Fuego con Poké Radar), Lairon, Aggron
         352,              # Kecleon (Ruta 210 norte con Poké Radar)
         408, 409,         # Cranidos (Fósil Cráneo en Subterráneo de Sinnoh), Rampardos
         434, 435,         # Stunky (Rutas 206, 214, 221), Skuntank

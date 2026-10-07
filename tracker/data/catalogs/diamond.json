@@ -1245,10 +1245,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Fuego Forja, Ruta 202, Ruta 203) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Forja Fuego, Ruta 202, Ruta 203) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1320,10 +1320,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Fuego Forja.",
+      "summary": "Salvaje en Forja Fuego.",
       "locations": [
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -1656,7 +1656,7 @@
           "method": "Caña Buena, Caña Vieja"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Caña Buena, Caña Vieja"
         },
         {
@@ -1700,7 +1700,7 @@
           "method": "Caña Buena, Caña Vieja"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Caña Buena, Caña Vieja"
         },
         {
@@ -1923,7 +1923,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Supercaña"
         },
         {
@@ -1967,7 +1967,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Supercaña"
         },
         {
@@ -2497,7 +2497,7 @@
           "method": "Surfeando"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Hierba alta / Terreno, Surfeando"
         },
         {
@@ -2716,7 +2716,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Surfeando"
         },
         {
@@ -2724,15 +2724,15 @@
           "method": "Surfeando"
         },
         {
-          "area": "Montaña Ceniza (Exterior)",
+          "area": "Montaña Dura (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Entrada)",
+          "area": "Montaña Dura (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Interior)",
+          "area": "Montaña Dura (Interior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -2939,7 +2939,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -2951,11 +2951,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Entrada)",
+          "area": "Montaña Dura (Entrada)",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Montaña Ceniza (Interior)",
+          "area": "Montaña Dura (Interior)",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
@@ -3130,15 +3130,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Exterior)",
+          "area": "Montaña Dura (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Entrada)",
+          "area": "Montaña Dura (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Interior)",
+          "area": "Montaña Dura (Interior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -3341,11 +3341,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Entrada)",
+          "area": "Montaña Dura (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Interior)",
+          "area": "Montaña Dura (Interior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -3516,7 +3516,7 @@
           "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
         },
         {
-          "area": "Fuego Forja / Monte Corona",
+          "area": "Forja Fuego / Monte Corona",
           "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
         }
       ],
@@ -3951,11 +3951,11 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Entrada)",
+          "area": "Montaña Dura (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Montaña Ceniza (Interior)",
+          "area": "Montaña Dura (Interior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4126,7 +4126,7 @@
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Hierba alta / Terreno, Surfeando"
         },
         {
@@ -4273,7 +4273,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Surfeando"
         },
         {
@@ -4412,7 +4412,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -4423,7 +4423,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -4665,7 +4665,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -4676,7 +4676,7 @@
           "method": "Hierba alta / Terreno, Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -4804,7 +4804,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -4815,7 +4815,7 @@
           "method": "Hierba alta / Terreno, Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -5130,7 +5130,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -5141,7 +5141,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -5326,14 +5326,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Valle Eólico, Fuego Forja, Ruta 205 (Sur)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Valle Eólico, Forja Fuego, Ruta 205 (Sur)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5472,10 +5472,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 9 zonas (ej: Fuego Forja, Calle Victoria (Sótano B1), Calle Victoria (Interior Sótano)).",
+      "summary": "Salvaje en 9 zonas (ej: Forja Fuego, Calle Victoria (Sótano B1), Calle Victoria (Interior Sótano)).",
       "locations": [
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5566,7 +5566,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -5577,7 +5577,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -5762,14 +5762,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Valle Eólico, Fuego Forja, Ruta 205 (Sur)) (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 8 zonas (ej: Valle Eólico, Forja Fuego, Ruta 205 (Sur)) (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
           "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5849,10 +5849,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 6 zonas (ej: Fuego Forja, Ruta 218, Ruta 221).",
+      "summary": "Salvaje en 6 zonas (ej: Forja Fuego, Ruta 218, Ruta 221).",
       "locations": [
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -5931,7 +5931,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -5942,7 +5942,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -6070,7 +6070,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -6081,7 +6081,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -6498,42 +6498,42 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 15 zonas (ej: Viejo Caserón (Entrada), Viejo Caserón (Comedor), Viejo Caserón (Habitación Privada)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 15 zonas (ej: Vieja Mansión (Entrada), Vieja Mansión (Comedor), Vieja Mansión (Habitación Privada)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Viejo Caserón (Entrada)",
+          "area": "Vieja Mansión (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Comedor)",
+          "area": "Vieja Mansión (Comedor)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Privada)",
+          "area": "Vieja Mansión (Habitación Privada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (P2)",
+          "area": "Vieja Mansión (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Esquina)",
+          "area": "Vieja Mansión (Habitación Esquina)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Oeste)",
+          "area": "Vieja Mansión (Habitación Oeste)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Central)",
+          "area": "Vieja Mansión (Habitación Central)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Este)",
+          "area": "Vieja Mansión (Habitación Este)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Habitación Televisión)",
+          "area": "Vieja Mansión (Habitación Televisión)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6632,39 +6632,39 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Viejo Caserón (Entrada)",
+          "area": "Vieja Mansión (Entrada)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Comedor)",
+          "area": "Vieja Mansión (Comedor)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Privada)",
+          "area": "Vieja Mansión (Habitación Privada)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (P2)",
+          "area": "Vieja Mansión (P2)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Esquina)",
+          "area": "Vieja Mansión (Habitación Esquina)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Oeste)",
+          "area": "Vieja Mansión (Habitación Oeste)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Central)",
+          "area": "Vieja Mansión (Habitación Central)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Este)",
+          "area": "Vieja Mansión (Habitación Este)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
-          "area": "Viejo Caserón (Habitación Televisión)",
+          "area": "Vieja Mansión (Habitación Televisión)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         },
         {
@@ -6727,10 +6727,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Viejo Caserón (Habitación Este) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en Vieja Mansión (Habitación Este) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
       "locations": [
         {
-          "area": "Viejo Caserón (Habitación Este)",
+          "area": "Vieja Mansión (Habitación Este)",
           "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
         }
       ],
@@ -7465,7 +7465,7 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Caña Buena"
         },
         {
@@ -7588,7 +7588,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "method": "Supercaña"
         },
         {
@@ -8608,7 +8608,7 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Fuego Forja (Exterior)",
+          "area": "Forja Fuego (Exterior)",
           "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
         }
       ],
@@ -8900,7 +8900,7 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
         }
       ],
@@ -10054,7 +10054,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 21 zonas (ej: Valle Eólico, Bosque Vetusto, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -10065,7 +10065,7 @@
           "method": "Árboles de Miel"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Árboles de Miel"
         },
         {
@@ -10651,7 +10651,7 @@
           "method": "Surfeando"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Hierba alta / Terreno, Surfeando"
         },
         {
@@ -10766,7 +10766,7 @@
           "method": "Surfeando"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Surfeando"
         },
         {
@@ -11894,7 +11894,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 9 zonas (ej: Ciudad Canal, Valle Eólico, Fuego Forja) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 9 zonas (ej: Ciudad Canal, Valle Eólico, Forja Fuego) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Canal",
@@ -11905,7 +11905,7 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Caña Buena"
         },
         {
@@ -11985,7 +11985,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 9 zonas (ej: Ciudad Canal, Valle Eólico, Fuego Forja).",
+      "summary": "Salvaje en 9 zonas (ej: Ciudad Canal, Valle Eólico, Forja Fuego).",
       "locations": [
         {
           "area": "Ciudad Canal",
@@ -11996,7 +11996,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Supercaña"
         },
         {
@@ -12094,7 +12094,7 @@
           "method": "Surfeando"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Surfeando"
         },
         {
@@ -12205,7 +12205,7 @@
           "method": "Surfeando"
         },
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "method": "Surfeando"
         },
         {

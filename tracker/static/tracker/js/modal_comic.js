@@ -423,6 +423,38 @@ export function renderModalObtaining(data, activeForm = null) {
                 detailsContainer.appendChild(caveNote);
             }
         }
+
+        // Nota histórica personalizada (ej: Flauta Azur y Sala del Origen para Arceus)
+        if (obt.historical_note) {
+            const noteData = obt.historical_note;
+            const histNote = document.createElement('div');
+            histNote.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-amber-50';
+            histNote.innerHTML = `
+                <button 
+                    type="button" 
+                    class="w-full px-3 py-2 bg-amber-100/90 hover:bg-amber-100 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                    onclick="toggleComicCaveAccordion(this)"
+                    aria-expanded="false"
+                >
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="${noteData.icon_url || '/media/items/card-key.png'}" alt="" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                        <span class="font-black uppercase text-[10px] sm:text-xs text-amber-900 tracking-wide">
+                            ${noteData.title || 'Nota Histórica'}
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                        <span class="text-[10px] font-black uppercase text-amber-900/80 label-text">Ver nota</span>
+                        <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </button>
+                <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-amber-50/70">
+                    ${noteData.text}
+                </div>
+            `;
+            detailsContainer.appendChild(histNote);
+        }
     }
 }
 

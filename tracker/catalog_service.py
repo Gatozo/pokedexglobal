@@ -408,13 +408,15 @@ class CatalogEntry:
         el número de ruta como encuentro salvaje.
         """
         obt = self.obtaining_info or {}
+        nat_num = getattr(self.pokemon, "national_number", 0)
         clean_areas = []
         for loc in obt.get("locations", []):
             area = loc.get("area", "")
             method = loc.get("method", "").lower()
             if not area:
                 continue
-            if "crianza" in method or "huevo" in method or "guarder" in area.lower():
+            is_daycare = ("guarder" in area.lower() or "guarder" in method or "crianza" in method) and (nat_num != 490)
+            if is_daycare:
                 clean_areas.append("Guardería Pokémon")
             else:
                 clean_areas.append(area)

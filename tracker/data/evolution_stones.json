@@ -343,7 +343,7 @@
       ],
       "diamond": [
         {
-          "area": "Fuego Forja",
+          "area": "Forja Fuego",
           "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
         },
         {
@@ -725,7 +725,7 @@
       "diamond": [
         {
           "area": "Prado Aromaflor",
-          "detail": "Cruzando el río hacia el norte con Surf cerca de Fuego Forja."
+          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
         },
         {
           "area": "Subterráneo de Sinnoh",
@@ -1035,7 +1035,7 @@
           "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
         },
         {
-          "area": "Fuego Forja / Monte Corona",
+          "area": "Forja Fuego / Monte Corona",
           "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
         }
       ]
@@ -1436,7 +1436,7 @@
       "diamond": [
         {
           "area": "Ruta 225",
-          "detail": "En el suelo en una saliente de la Zona Sobrevivencia en el postgame (requiere Treparrocas o Corte)."
+          "detail": "En el suelo en una saliente de la Zona Sobrevivir en el postgame (requiere Treparrocas o Corte)."
         }
       ]
     }
@@ -1569,7 +1569,7 @@
     "games": {
       "diamond": [
         {
-          "area": "Ruta 205 (Sur) / Parque Eólico",
+          "area": "Ruta 205 (Sur) / Valle Eólico",
           "detail": "Equipado en Elekid salvajes con un 50% de probabilidad (con Pokémon Rojo Fuego en Ranura 2 de NDS)."
         }
       ]
@@ -1728,7 +1728,7 @@
     "games": {
       "diamond": [
         {
-          "area": "Fuego Forja (Exterior)",
+          "area": "Forja Fuego (Exterior)",
           "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
         }
       ]
@@ -1764,7 +1764,7 @@
     "games": {
       "diamond": [
         {
-          "area": "Paso Rocoso",
+          "area": "Senda Desolada",
           "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
         }
       ]

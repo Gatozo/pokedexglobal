@@ -117,6 +117,15 @@ class CompiledCatalogsAndServiceTests(TestCase):
         # Modal data for Treecko still keeps the daycare route
         treecko_modal = json.loads(treecko.modal_data_json)
         self.assertTrue(any("117" in loc.get("area", "") for loc in treecko_modal.get("obtaining", {}).get("locations", [])))
+
+        # Manaphy vs Phione (Manaphy no es obtenible por crianza en guardería, Phione sí)
+        diamond_cat = get_compiled_catalog("diamond", is_national=True)
+        manaphy = next(e for e in diamond_cat if e.pokemon.name == "manaphy")
+        phione = next(e for e in diamond_cat if e.pokemon.name == "phione")
+        self.assertNotIn("guardería", manaphy.filter_locations.lower())
+        self.assertNotIn("guarderia", manaphy.filter_locations.lower())
+        self.assertIn("ranger net", manaphy.filter_locations.lower())
+        self.assertIn("guardería", phione.filter_locations.lower())
         
         # Test Crystal Catalog (Headbutt, Surf)
         crystal_cat = get_compiled_catalog("crystal")
@@ -1470,6 +1479,21 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(nat_cat[482].pokemon.name, "dialga")
         self.assertEqual(nat_cat[492].entry_number, 493)
         self.assertEqual(nat_cat[492].pokemon.name, "arceus")
+        arceus_obt = nat_cat[492].obtaining_info
+        self.assertEqual(arceus_obt.get("type"), "gift")
+        self.assertEqual(arceus_obt.get("badge_label"), "Evento de Distribución")
+        self.assertIn("Flauta Azur", arceus_obt.get("historical_note", {}).get("text", ""))
+        self.assertIn("eventos oficiales de distribución", arceus_obt.get("summary", "").lower())
+
+        # Rotom y Heatran con nombres oficiales en español (Vieja Mansión, Montaña Dura)
+        rotom_obt = nat_cat[478].obtaining_info
+        self.assertEqual(rotom_obt.get("badge_label"), "Vieja Mansión")
+        self.assertIn("Vieja Mansión", rotom_obt.get("summary", ""))
+        self.assertEqual(rotom_obt.get("locations", [])[0].get("area"), "Vieja Mansión (Televisor)")
+
+        heatran_obt = nat_cat[484].obtaining_info
+        self.assertIn("Montaña Dura", heatran_obt.get("summary", ""))
+        self.assertIn("Montaña Dura", heatran_obt.get("locations", [])[0].get("area", ""))
 
     def test_diamond_exclusives_and_transfers_catalog(self):
         from tracker.exclusives import (
