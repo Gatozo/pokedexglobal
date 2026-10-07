@@ -227,21 +227,41 @@ NON_KANTO_SEVII_TRANSFERS_FIRERED = sorted(list(
     set(range(252, 386))
 ))
 
-# 48 especies no nativas de Sinnoh requeridas para completar la Pokédex Nacional en Pokémon Diamante
-# correspondientes a iniciales y legendarios de Kanto, Johto y Hoenn ausentes en Sinnoh
+# 90 especies requeridas mediante transferencia externa o intercambio para completar la Pokédex Nacional
+# en Pokémon Diamante:
+# 1. Iniciales y legendarios foráneos de Kanto, Johto y Hoenn (48 especies).
+# 2. Especies de Inserción Dual exclusiva (Ranura 2 de GBA) y sus evoluciones (39 especies).
+# 3. Especies completamente ausentes en estado salvaje en Sinnoh en D/P y sus evoluciones (3 especies: Tangela #114, Tangrowth #465 y Tropius #357).
+# (Nota: Especies como Koffing, Ledyba, Spinarak, Poochyena, Taillow, Whismur, Shuppet y Wynaut no requieren transferencia externa
+#  ya que sus evoluciones o progenitores -Weezing, Ledian, Ariados, Mightyena, Swellow, Loudred, Banette y Wobbuffet- aparecen de forma nativa en Sinnoh.
+#  Gengar tampoco requiere transferencia externa ya que Gastly y Haunter aparecen salvajes en Sinnoh y Gengar se obtiene evolucionando por intercambio).
 NON_SINNOH_TRANSFERS_DIAMOND = sorted(list(
-    # Iniciales de Kanto (9)
-    set(range(1, 10)) |
-    # Iniciales de Johto (9)
-    set(range(152, 161)) |
-    # Iniciales de Hoenn (9)
-    set(range(252, 261)) |
-    # Legendarios y singulares de Kanto (Articuno, Zapdos, Moltres, Mewtwo, Mew)
+    # Iniciales de Kanto, Johto y Hoenn (27)
+    set(range(1, 10)) | set(range(152, 161)) | set(range(252, 261)) |
+    # Legendarios y singulares de Kanto (5)
     {144, 145, 146, 150, 151} |
-    # Legendarios y singulares de Johto (Raikou, Entei, Suicune, Lugia, Ho-Oh, Celebi)
+    # Legendarios y singulares de Johto (6)
     {243, 244, 245, 249, 250, 251} |
-    # Legendarios y singulares de Hoenn (Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys)
-    {377, 378, 379, 380, 381, 382, 383, 384, 385, 386}
+    # Legendarios y singulares de Hoenn (10)
+    {377, 378, 379, 380, 381, 382, 383, 384, 385, 386} |
+    # Inserción Dual exclusiva (Ranura 2 de GBA) y sus líneas evolutivas (39)
+    {
+        # Rojo Fuego: Caterpie (10-12), Ekans (23-24), Growlithe (58-59), Elekid (239, 125, 466)
+        10, 11, 12, 23, 24, 58, 59, 239, 125, 466,
+        # Verde Hoja: Weedle (13-15), Sandshrew (27-28), Vulpix (37-38), Magby (240, 126, 467)
+        13, 14, 15, 27, 28, 37, 38, 240, 126, 467,
+        # Rubí: Seedot (273-275), Mawile (303), Zangoose (335), Solrock (338)
+        273, 274, 275, 303, 335, 338,
+        # Zafiro: Lotad (270-272), Sableye (302), Seviper (336), Lunatone (337)
+        270, 271, 272, 302, 336, 337,
+        # Esmeralda: Pineco (204-205), Gligar (207, 472), Shuckle (213), Teddiursa (216-217)
+        204, 205, 207, 472, 213, 216, 217
+    } |
+    # Especies totalmente ausentes en Sinnoh en D/P y sus evoluciones (3)
+    {
+        114, 465,           # Tangela, Tangrowth
+        357                 # Tropius
+    }
 ))
 
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
@@ -603,17 +623,20 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         }
     },
     'diamond': {
-        'mechanic_title': 'Parque Compi • Gen 3 a Gen 4',
-        'mechanic_badge': 'Parque Compi',
+        'mechanic_title': 'Transferencia y Parque Compi • Gen 4',
+        'mechanic_badge': 'Transferir / GBA',
         'description': (
-            'La Pokédex Nacional de Pokémon Diamante consta de 493 Pokémon. Estas 48 especies corresponden a los '
-            'iniciales y criaturas legendarias de Kanto, Johto y Hoenn que no aparecen de forma nativa en la región de Sinnoh. '
-            'Para completar la Pokédex, deben transferirse permanentemente desde cartuchos de Game Boy Advance '
+            'La Pokédex Nacional de Pokémon Diamante consta de 493 Pokémon. Estas 90 especies comprenden los iniciales '
+            'y criaturas legendarias foráneas, las especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 '
+            '(Inserción Dual), y las especies totalmente ausentes en estado salvaje en Sinnoh (Tangela, Tangrowth y Tropius). '
+            'Para completar tu partida, puedes transferirlos permanentemente desde cartuchos de Game Boy Advance '
             '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
-            'insertando el cartucho de GBA en la Ranura 2 de la consola Nintendo DS.'
+            'o intercambiarlos de forma directa en Nintendo DS con entregas posteriores de la misma generación '
+            '(Pokémon Platino y Pokémon HeartGold / SoulSilver).'
         ),
-        'default_origin': 'Parque Compi (GBA: Rubí / Zafiro / Esmeralda / RF / VH)',
+        'default_origin': 'Parque Compi (GBA) / Platino / HGSS',
         'origins': {
+            # Iniciales y legendarios de Kanto, Johto y Hoenn
             1: 'Rojo Fuego / Verde Hoja',
             2: 'Rojo Fuego / Verde Hoja',
             3: 'Rojo Fuego / Verde Hoja',
@@ -623,45 +646,91 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             7: 'Rojo Fuego / Verde Hoja',
             8: 'Rojo Fuego / Verde Hoja',
             9: 'Rojo Fuego / Verde Hoja',
-            144: 'Rojo Fuego / Verde Hoja',
-            145: 'Rojo Fuego / Verde Hoja',
-            146: 'Rojo Fuego / Verde Hoja',
-            150: 'Rojo Fuego / Verde Hoja',
+            144: 'Rojo Fuego / Verde Hoja / Platino',
+            145: 'Rojo Fuego / Verde Hoja / Platino',
+            146: 'Rojo Fuego / Verde Hoja / Platino',
+            150: 'Rojo Fuego / Verde Hoja / HGSS',
             151: 'Evento GBA (Mapa Viejo)',
-            152: 'Esmeralda (Postgame) / Colosseum',
-            153: 'Esmeralda (Postgame) / Colosseum',
-            154: 'Esmeralda (Postgame) / Colosseum',
-            155: 'Esmeralda (Postgame) / Colosseum',
-            156: 'Esmeralda (Postgame) / Colosseum',
-            157: 'Esmeralda (Postgame) / Colosseum',
-            158: 'Esmeralda (Postgame) / Colosseum',
-            159: 'Esmeralda (Postgame) / Colosseum',
-            160: 'Esmeralda (Postgame) / Colosseum',
-            243: 'Rojo Fuego / Colosseum',
-            244: 'Verde Hoja / Colosseum',
-            245: 'Rojo Fuego / Verde Hoja / Colosseum',
-            249: 'XD: Gale of Darkness / Roca Ombligo',
-            250: 'Colosseum / Roca Ombligo',
-            251: 'Evento GBA / Ageto',
-            252: 'Rubí / Zafiro / Esmeralda',
-            253: 'Rubí / Zafiro / Esmeralda',
-            254: 'Rubí / Zafiro / Esmeralda',
-            255: 'Rubí / Zafiro / Esmeralda',
-            256: 'Rubí / Zafiro / Esmeralda',
-            257: 'Rubí / Zafiro / Esmeralda',
-            258: 'Rubí / Zafiro / Esmeralda',
-            259: 'Rubí / Zafiro / Esmeralda',
-            260: 'Rubí / Zafiro / Esmeralda',
-            377: 'Rubí / Zafiro / Esmeralda',
-            378: 'Rubí / Zafiro / Esmeralda',
-            379: 'Rubí / Zafiro / Esmeralda',
-            380: 'Rubí / Esmeralda',
-            381: 'Zafiro / Esmeralda',
-            382: 'Zafiro / Esmeralda',
-            383: 'Rubí / Esmeralda',
-            384: 'Rubí / Zafiro / Esmeralda',
+            152: 'Esmeralda / HGSS',
+            153: 'Esmeralda / HGSS',
+            154: 'Esmeralda / HGSS',
+            155: 'Esmeralda / HGSS',
+            156: 'Esmeralda / HGSS',
+            157: 'Esmeralda / HGSS',
+            158: 'Esmeralda / HGSS',
+            159: 'Esmeralda / HGSS',
+            160: 'Esmeralda / HGSS',
+            243: 'Rojo Fuego / HGSS',
+            244: 'Verde Hoja / HGSS',
+            245: 'Rojo Fuego / Verde Hoja / HGSS',
+            249: 'XD: Gale of Darkness / HGSS',
+            250: 'Colosseum / HGSS',
+            251: 'Evento GBA / Ageto / HGSS',
+            252: 'Rubí / Zafiro / Esmeralda / HGSS',
+            253: 'Rubí / Zafiro / Esmeralda / HGSS',
+            254: 'Rubí / Zafiro / Esmeralda / HGSS',
+            255: 'Rubí / Zafiro / Esmeralda / HGSS',
+            256: 'Rubí / Zafiro / Esmeralda / HGSS',
+            257: 'Rubí / Zafiro / Esmeralda / HGSS',
+            258: 'Rubí / Zafiro / Esmeralda / HGSS',
+            259: 'Rubí / Zafiro / Esmeralda / HGSS',
+            260: 'Rubí / Zafiro / Esmeralda / HGSS',
+            377: 'Rubí / Zafiro / Esmeralda / Platino',
+            378: 'Rubí / Zafiro / Esmeralda / Platino',
+            379: 'Rubí / Zafiro / Esmeralda / Platino',
+            380: 'Rubí / Esmeralda / HGSS',
+            381: 'Zafiro / Esmeralda / HGSS',
+            382: 'Zafiro / Esmeralda / HGSS',
+            383: 'Rubí / Esmeralda / HGSS',
+            384: 'Rubí / Zafiro / Esmeralda / HGSS',
             385: 'Disco Bonus Colosseum / Evento GBA',
             386: 'Evento Isla Origen (Ori-Ticket)',
+
+            # Inserción Dual exclusiva (Ranura 2 de GBA) y sus líneas evolutivas
+            10: 'GBA: Rojo Fuego / HGSS',
+            11: 'GBA: Rojo Fuego / HGSS',
+            12: 'GBA: Rojo Fuego / HGSS',
+            13: 'GBA: Verde Hoja / HGSS',
+            14: 'GBA: Verde Hoja / HGSS',
+            15: 'GBA: Verde Hoja / HGSS',
+            23: 'GBA: Rojo Fuego / HGSS',
+            24: 'GBA: Rojo Fuego / HGSS',
+            27: 'GBA: Verde Hoja / HGSS',
+            28: 'GBA: Verde Hoja / HGSS',
+            37: 'GBA: Verde Hoja / HGSS',
+            38: 'GBA: Verde Hoja / HGSS',
+            58: 'GBA: Rojo Fuego / HGSS',
+            59: 'GBA: Rojo Fuego / HGSS',
+            125: 'GBA: Rojo Fuego / Platino',
+            126: 'GBA: Verde Hoja / Platino',
+            204: 'GBA: Esmeralda / HGSS',
+            205: 'GBA: Esmeralda / HGSS',
+            207: 'GBA: Esmeralda / Platino / HGSS',
+            213: 'GBA: Esmeralda / HGSS',
+            216: 'GBA: Esmeralda / HGSS',
+            217: 'GBA: Esmeralda / HGSS',
+            239: 'GBA: Rojo Fuego / Platino',
+            240: 'GBA: Verde Hoja / Platino',
+            270: 'GBA: Zafiro / HGSS',
+            271: 'GBA: Zafiro / HGSS',
+            272: 'GBA: Zafiro / HGSS',
+            273: 'GBA: Rubí / HGSS',
+            274: 'GBA: Rubí / HGSS',
+            275: 'GBA: Rubí / HGSS',
+            302: 'GBA: Zafiro / HGSS',
+            303: 'GBA: Rubí / HGSS',
+            335: 'GBA: Rubí / HGSS',
+            336: 'GBA: Zafiro / HGSS',
+            337: 'GBA: Zafiro / HGSS',
+            338: 'GBA: Rubí / HGSS',
+            466: 'GBA: Rojo Fuego / Platino',
+            467: 'GBA: Verde Hoja / Platino',
+            472: 'GBA: Esmeralda / Platino / HGSS',
+
+            # Especies totalmente ausentes en estado salvaje en Sinnoh en D/P y sus evoluciones
+            114: 'GBA / Platino / HGSS',
+            357: 'GBA / Platino / HGSS',
+            465: 'GBA / Platino / HGSS',
         }
     },
 }

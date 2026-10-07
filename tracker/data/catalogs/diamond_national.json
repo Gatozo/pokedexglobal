@@ -2168,43 +2168,43 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 12 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 12 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4 Cámara)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P5)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P6)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Entrada Ruta 216)",
@@ -2633,7 +2633,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 29 zonas (ej: Mina Pirita (P1), Mina Pirita (Sótano B1), Monte Corona (Entrada Ruta 207)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 29 zonas (ej: Mina Pirita (P1), Mina Pirita (Sótano B1), Monte Corona (Entrada Ruta 207)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Mina Pirita (P1)",
@@ -2673,11 +2673,11 @@
         },
         {
           "area": "Cueva Extravío (P1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Extravío (Sótano B1 - Gible)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Isla Hierro (P1)",
@@ -3026,11 +3026,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 229, Ruta 230 (Ruta Marítima) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 229, Ruta 230 (Ruta Marítima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -3494,11 +3494,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 228 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 228 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -3731,7 +3731,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 22 zonas (ej: Ciudad Vetusta, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 22 zonas (ej: Ciudad Vetusta, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Vetusta",
@@ -3739,23 +3739,23 @@
         },
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Senda Desolada",
@@ -3795,7 +3795,7 @@
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Ruta 209",
@@ -4600,7 +4600,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Calle Victoria (P2), Ruta 215 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en: Calle Victoria (P2), Ruta 215.",
       "locations": [
         {
           "area": "Calle Victoria (P2)",
@@ -4608,7 +4608,7 @@
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -4723,7 +4723,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 211), Ruta 207) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 211), Ruta 207) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Corona (Entrada Ruta 207)",
@@ -4735,7 +4735,7 @@
         },
         {
           "area": "Ruta 207",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 208",
@@ -4798,7 +4798,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 25 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 25 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
@@ -4878,7 +4878,7 @@
         },
         {
           "area": "Ruta 210 (Norte)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
@@ -5013,11 +5013,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 229, Ruta 230 (Ruta Marítima) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 229, Ruta 230 (Ruta Marítima) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -5457,7 +5457,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 25 zonas (ej: Mina Pirita (P1), Mina Pirita (Sótano B1), Monte Corona (Entrada Ruta 207)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 25 zonas (ej: Mina Pirita (P1), Mina Pirita (Sótano B1), Monte Corona (Entrada Ruta 207)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Mina Pirita (P1)",
@@ -5489,15 +5489,15 @@
         },
         {
           "area": "Montaña Dura (Entrada)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Montaña Dura (Interior)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Extravío (P1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Extravío (Sótano B1 - Gible)",
@@ -5541,7 +5541,7 @@
         },
         {
           "area": "Ruta 207",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
@@ -5557,7 +5557,7 @@
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -5612,7 +5612,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 31 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (P4)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 31 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (P4)).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
@@ -5708,15 +5708,15 @@
         },
         {
           "area": "Isla Hierro (Sótano B1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Isla Hierro (Sótano B2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Isla Hierro (Sótano B3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Valor",
@@ -5728,11 +5728,11 @@
         },
         {
           "area": "Ruta 214",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
@@ -5851,11 +5851,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 6 zonas (ej: Ruta 206 (Camino de Bicis), Ruta 210 (Sur), Ruta 211 (Oeste)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 206 (Camino de Bicis), Ruta 210 (Sur), Ruta 211 (Oeste)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 206 (Camino de Bicis)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
@@ -5867,7 +5867,7 @@
         },
         {
           "area": "Ruta 211 (Este)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
@@ -6824,7 +6824,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Vieja Mansión (Habitación Este)",
+          "area": "Vieja Mansión (Habitación del Cuadro)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6908,7 +6908,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 14 zonas (ej: Cueva Retorno (Pilar 1), Cueva Retorno (Pilar 2), Cueva Retorno (Pilar 3)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 14 zonas (ej: Cueva Retorno (Pilar 1), Cueva Retorno (Pilar 2), Cueva Retorno (Pilar 3)).",
       "locations": [
         {
           "area": "Cueva Retorno (Pilar 1)",
@@ -6928,39 +6928,39 @@
         },
         {
           "area": "Vieja Mansión (Entrada)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Comedor)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Habitación Privada)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (P2)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Habitación Esquina)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Habitación Oeste)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Habitación Central)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
-          "area": "Vieja Mansión (Habitación Este)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "area": "Vieja Mansión (Habitación del Cuadro)",
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Vieja Mansión (Habitación Televisión)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Inserción Dual (Cualquier GBA)"
         },
         {
           "area": "Ciudad Puntaneva (Casa Noroeste)",
@@ -7019,14 +7019,14 @@
     "cry_url": "/media/pokemon/cries/94.ogg",
     "flavor_text": "Se esconde entre las sombras. Se dice que donde Gengar acecha, la temperatura baja 5 grados.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Vieja Mansión (Habitación Este) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "indigo",
+      "summary": "Evoluciona de Haunter por intercambio. También aparece en estado salvaje en la Vieja Mansión (Habitación del Cuadro) insertando cualquier cartucho de GBA en la Ranura 2 de NDS.",
       "locations": [
         {
-          "area": "Vieja Mansión (Habitación Este)",
-          "method": "Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "area": "Vieja Mansión (Habitación del Cuadro)",
+          "method": "Inserción Dual (Cualquier GBA)"
         }
       ],
       "evolution_info": {
@@ -7994,10 +7994,10 @@
     "cry_url": "/media/pokemon/cries/109.ogg",
     "flavor_text": "Los gases de su cuerpo le permiten flotar. Estos gases, además de oler mal, también son explosivos.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Weezing en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8126,15 +8126,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Montaña Dura (Exterior), Ruta 227 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Montaña Dura (Exterior), Ruta 227 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8259,7 +8259,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Jardín Trofeo, Ruta 209, Ruta 210 (Sur) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Jardín Trofeo, Ruta 209, Ruta 210 (Sur) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Jardín Trofeo",
@@ -8267,11 +8267,11 @@
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8355,11 +8355,15 @@
     "cry_url": "/media/pokemon/cries/114.ogg",
     "flavor_text": "Está envuelto en lianas azules. Nadie ha logrado ver el rostro que se oculta tras ellas.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "transfer",
+      "badge_label": "Transferir",
+      "badge_color": "indigo",
+      "summary": "Transferir desde GBA (Rojo Fuego/Verde Hoja) o intercambiar con Pokémon Platino o HeartGold / SoulSilver (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Transferencia / Parque Compi",
+          "method": "GBA: RF / VH o Platino / HGSS"
+        },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -10769,11 +10773,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Verde Hoja"
+          "method": "Transferencia desde Rojo Fuego / Verde Hoja / Platino"
         }
       ]
     },
@@ -10824,11 +10828,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Verde Hoja"
+          "method": "Transferencia desde Rojo Fuego / Verde Hoja / Platino"
         }
       ]
     },
@@ -10879,11 +10883,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Verde Hoja"
+          "method": "Transferencia desde Rojo Fuego / Verde Hoja / Platino"
         }
       ]
     },
@@ -11112,11 +11116,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Verde Hoja"
+          "method": "Transferencia desde Rojo Fuego / Verde Hoja / HGSS"
         }
       ]
     },
@@ -11222,11 +11226,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda (Postgame) / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Esmeralda (Postgame) / Colosseum"
+          "method": "Transferencia desde Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -11395,11 +11399,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda (Postgame) / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Esmeralda (Postgame) / Colosseum"
+          "method": "Transferencia desde Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -11568,11 +11572,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda (Postgame) / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Esmeralda (Postgame) / Colosseum"
+          "method": "Transferencia desde Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12047,10 +12051,10 @@
     "cry_url": "/media/pokemon/cries/165.ogg",
     "flavor_text": "Es tan temeroso que no se mueve si no es en grupo. Comunica sus sentimientos con olores.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Ledian en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12164,10 +12168,10 @@
     "cry_url": "/media/pokemon/cries/167.ogg",
     "flavor_text": "Pone trampas tejiendo una red de seda fina y resistente y luego espera inmóvil a su presa.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Ariados en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12521,7 +12525,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 211), Jardín Trofeo (requiere cartucho de Pokémon Zafiro en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 211), Jardín Trofeo (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Corona (Entrada Ruta 207)",
@@ -12529,7 +12533,7 @@
         },
         {
           "area": "Monte Corona (Entrada Ruta 211)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Jardín Trofeo",
@@ -13963,7 +13967,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
@@ -13991,7 +13995,7 @@
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Surfeando"
+          "method": "Hierba alta / Terreno, Surfeando"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -15547,7 +15551,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Templo Puntaneva (P1), Templo Puntaneva (Sótano B1), Templo Puntaneva (Sótano B2)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 10 zonas (ej: Templo Puntaneva (P1), Templo Puntaneva (Sótano B1), Templo Puntaneva (Sótano B2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Templo Puntaneva (P1)",
@@ -15575,7 +15579,7 @@
         },
         {
           "area": "Lago Agudeza",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Agudeza",
@@ -15779,15 +15783,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Montaña Dura (Entrada), Montaña Dura (Interior) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Montaña Dura (Entrada), Montaña Dura (Interior) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Montaña Dura (Entrada)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Montaña Dura (Interior)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -17380,11 +17384,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Colosseum"
+          "method": "Transferencia desde Rojo Fuego / HGSS"
         }
       ]
     },
@@ -17435,11 +17439,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Verde Hoja / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Verde Hoja / Colosseum"
+          "method": "Transferencia desde Verde Hoja / HGSS"
         }
       ]
     },
@@ -17490,11 +17494,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Colosseum mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rojo Fuego / Verde Hoja / Colosseum"
+          "method": "Transferencia desde Rojo Fuego / Verde Hoja / HGSS"
         }
       ]
     },
@@ -17718,11 +17722,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde XD: Gale of Darkness / Roca Ombligo mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde XD: Gale of Darkness / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde XD: Gale of Darkness / Roca Ombligo"
+          "method": "Transferencia desde XD: Gale of Darkness / HGSS"
         }
       ]
     },
@@ -17773,11 +17777,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Colosseum / Roca Ombligo mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Colosseum / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Colosseum / Roca Ombligo"
+          "method": "Transferencia desde Colosseum / HGSS"
         }
       ]
     },
@@ -17828,11 +17832,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Evento GBA / Ageto mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Evento GBA / Ageto / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Evento GBA / Ageto"
+          "method": "Transferencia desde Evento GBA / Ageto / HGSS"
         }
       ]
     },
@@ -17883,11 +17887,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -18056,11 +18060,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -18229,11 +18233,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / HGSS"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -18399,10 +18403,10 @@
     "cry_url": "/media/pokemon/cries/261.ogg",
     "flavor_text": "Es muy persistente. Si se fija en una presa, no la dejará hasta que caiga agotada.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Mightyena en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -18920,7 +18924,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Bosque Vetusto, Ruta 224, Ruta 230 (Ruta Marítima) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en: Bosque Vetusto, Ruta 224, Ruta 230 (Ruta Marítima).",
       "locations": [
         {
           "area": "Bosque Vetusto",
@@ -18928,7 +18932,7 @@
         },
         {
           "area": "Ruta 224",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -19543,10 +19547,10 @@
     "cry_url": "/media/pokemon/cries/276.ogg",
     "flavor_text": "Es un Pokémon valiente que no teme a los rivales fuertes. Vuela en busca de climas templados.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Swellow en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -20685,10 +20689,10 @@
     "cry_url": "/media/pokemon/cries/293.ogg",
     "flavor_text": "Suele murmurar a un volumen casi inaudible, pero cuando se asusta grita con el volumen de un reactor.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Loudred o Exploud en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -20982,7 +20986,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
@@ -21002,7 +21006,7 @@
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Gran Pantano (Zona 6)",
@@ -21585,7 +21589,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 11 zonas (ej: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 216), Monte Corona (Entrada Ruta 211)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 11 zonas (ej: Monte Corona (Entrada Ruta 207), Monte Corona (Entrada Ruta 216), Monte Corona (Entrada Ruta 211)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Corona (Entrada Ruta 207)",
@@ -21597,7 +21601,7 @@
         },
         {
           "area": "Monte Corona (Entrada Ruta 211)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Sótano B1)",
@@ -21613,15 +21617,15 @@
         },
         {
           "area": "Ruta 210 (Norte)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 216",
@@ -21684,7 +21688,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 17 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 17 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
@@ -21748,11 +21752,11 @@
         },
         {
           "area": "Orilla Agudeza",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -22682,15 +22686,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Montaña Dura (Exterior), Ruta 227 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Montaña Dura (Exterior), Ruta 227 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -23235,11 +23239,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 228 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 228 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -24805,10 +24809,10 @@
     "cry_url": "/media/pokemon/cries/353.ogg",
     "flavor_text": "Les atraen los sentimientos de rencor y celos. Suelen vivir cerca de las casas de gente vengativa.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Banette en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -25055,11 +25059,15 @@
     "cry_url": "/media/pokemon/cries/357.ogg",
     "flavor_text": "Como solo comía su fruta favorita, al final terminó creciéndole en su propio cuello.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "transfer",
+      "badge_label": "Transferir",
+      "badge_color": "indigo",
+      "summary": "Transferir desde GBA (Rubí/Zafiro/Esmeralda) o intercambiar con Pokémon Platino (Gran Pantano) o HeartGold / SoulSilver (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Transferencia / Parque Compi",
+          "method": "GBA: RSE o Platino / HGSS"
+        },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -25247,10 +25255,10 @@
     "cry_url": "/media/pokemon/cries/360.ogg",
     "flavor_text": "Se fortalecen empujándose unos a otros en grupos. Les encantan los dulces.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Eclosiona al criar a Wobbuffet equipado con Incienso Suave en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -26318,11 +26326,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / Platino"
         }
       ]
     },
@@ -26373,11 +26381,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / Platino"
         }
       ]
     },
@@ -26428,11 +26436,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / Platino"
         }
       ]
     },
@@ -26483,11 +26491,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Esmeralda"
+          "method": "Transferencia desde Rubí / Esmeralda / HGSS"
         }
       ]
     },
@@ -26538,11 +26546,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Zafiro / Esmeralda"
+          "method": "Transferencia desde Zafiro / Esmeralda / HGSS"
         }
       ]
     },
@@ -26593,11 +26601,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Zafiro / Esmeralda"
+          "method": "Transferencia desde Zafiro / Esmeralda / HGSS"
         }
       ]
     },
@@ -26648,11 +26656,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Esmeralda"
+          "method": "Transferencia desde Rubí / Esmeralda / HGSS"
         }
       ]
     },
@@ -26703,11 +26711,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Rubí / Zafiro / Esmeralda"
+          "method": "Transferencia desde Rubí / Zafiro / Esmeralda / HGSS"
         }
       ]
     },
@@ -27387,7 +27395,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 14 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 14 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
@@ -27419,15 +27427,15 @@
         },
         {
           "area": "Ruta 201",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 202",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Sur)",
@@ -27435,7 +27443,7 @@
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 209",
@@ -27498,7 +27506,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 13 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 13 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)).",
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
@@ -27526,7 +27534,7 @@
         },
         {
           "area": "Fuente Despedida",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Jardín Trofeo",
@@ -27538,7 +27546,7 @@
         },
         {
           "area": "Lago Valor",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Valor",
@@ -27665,7 +27673,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 17 zonas (ej: Valle Eólico, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 17 zonas (ej: Valle Eólico, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
@@ -27689,7 +27697,7 @@
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Gran Pantano (Zona 6)",
@@ -27705,11 +27713,11 @@
         },
         {
           "area": "Ruta 202",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Sur)",
@@ -27717,7 +27725,7 @@
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Sur)",
@@ -27725,7 +27733,7 @@
         },
         {
           "area": "Ruta 205 (Este)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 208",
@@ -27733,7 +27741,7 @@
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -27788,7 +27796,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 15 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 15 zonas (ej: Gran Pantano (Zona 1), Gran Pantano (Zona 2), Gran Pantano (Zona 3)).",
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
@@ -27816,7 +27824,7 @@
         },
         {
           "area": "Fuente Despedida",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Lago Veraz",
@@ -27824,11 +27832,11 @@
         },
         {
           "area": "Lago Valor",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Lago Agudeza",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Valor",
@@ -27836,7 +27844,7 @@
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 209",
@@ -27848,7 +27856,7 @@
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -28269,11 +28277,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Bosque Vetusto, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (requiere cartucho de Pokémon Zafiro en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 10 zonas (ej: Bosque Vetusto, Gran Pantano (Zona 1), Gran Pantano (Zona 2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Vetusto",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Gran Pantano (Zona 1)",
@@ -29224,19 +29232,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Valle Eólico, Ruta 205 (Sur), Ruta 205 (Este)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Valle Eólico, Ruta 205 (Sur), Ruta 205 (Este)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Este)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 213",
@@ -29244,7 +29252,7 @@
         },
         {
           "area": "Ruta 224",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -29589,11 +29597,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Valle Eólico, Forja Fuego, Ruta 205 (Sur)) (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 8 zonas (ej: Valle Eólico, Forja Fuego, Ruta 205 (Sur)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Forja Fuego",
@@ -29601,7 +29609,7 @@
         },
         {
           "area": "Ruta 205 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Este)",
@@ -29931,11 +29939,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Bosque Vetusto (requiere cartucho de Pokémon Zafiro en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Bosque Vetusto (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Bosque Vetusto",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -30469,15 +30477,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 206 (Camino de Bicis), Ruta 214, Ruta 221 (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 206 (Camino de Bicis), Ruta 214, Ruta 221 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 206 (Camino de Bicis)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
@@ -30602,31 +30610,31 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 9 zonas (ej: Monte Corona (P2), Monte Corona (P3), Cueva Retorno (Pilar 1)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 9 zonas (ej: Monte Corona (P2), Monte Corona (P3), Cueva Retorno (Pilar 1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Cámara Giratina)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Extravío (P1)",
@@ -30693,7 +30701,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 13 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS).",
+      "summary": "Salvaje en 13 zonas (ej: Monte Corona (P2), Monte Corona (P3), Monte Corona (Laderas Nevadas)).",
       "locations": [
         {
           "area": "Monte Corona (P2)",
@@ -30705,47 +30713,47 @@
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4 Cámara)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P5)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P6)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 1)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 2)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Pilar 3)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Cueva Retorno (Cámara Giratina)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja)"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -30879,7 +30887,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Jardín Trofeo, Ruta 209, Ruta 210 (Sur) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Jardín Trofeo, Ruta 209, Ruta 210 (Sur) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Jardín Trofeo",
@@ -30887,11 +30895,11 @@
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Verde Hoja), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -31165,11 +31173,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Cueva Extravío (Sótano B1 - Gible) (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Extravío (Sótano B1 - Gible) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Cueva Extravío (Sótano B1 - Gible)",
-          "method": "Hierba alta / Terreno, Inserción Dual (GBA: Pokémon Esmeralda), Inserción Dual (GBA: Pokémon Rojo Fuego), Inserción Dual (GBA: Pokémon Rubí), Inserción Dual (GBA: Pokémon Zafiro)"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",

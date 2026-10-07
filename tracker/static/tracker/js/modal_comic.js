@@ -359,16 +359,48 @@ export function renderModalObtaining(data, activeForm = null) {
                 const item = document.createElement('div');
                 const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
                 const isTransfer = (obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia'));
+                const isDualSlot = loc.method && (loc.method.includes('Inserción Dual') || loc.method.includes('slot2-'));
                 const isAlteringCave = loc.area && (loc.area.includes('Cueva Cambiante') || loc.area.toLowerCase().includes('altering-cave'));
                 const isAlteringCaveInactive = isAlteringCave && (parseInt(data.number, 10) !== 41);
 
-                const locIcon = isBreedingOrEgg ? '/media/items/mystery-egg.png' : '/media/items/town-map.png';
+                const locIcon = isBreedingOrEgg 
+                    ? '/media/items/mystery-egg.png' 
+                    : (isDualSlot ? '/media/items/up-grade.png' : (isTransfer ? '/media/items/linking-cord.png' : '/media/items/town-map.png'));
+
                 const cardBg = isAlteringCaveInactive 
                     ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
-                    : (isBreedingOrEgg ? 'bg-pink-50/70 border-pink-200 text-pink-950' : (isTransfer ? 'bg-slate-100 border-slate-300 text-slate-800' : 'bg-slate-50 border-slate-300 text-slate-800'));
+                    : (isBreedingOrEgg 
+                        ? 'bg-pink-50/70 border-pink-200 text-pink-950' 
+                        : (isDualSlot 
+                            ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
+                            : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800')));
                 
-                const methodLabel = isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method;
-                const methodClass = isAlteringCaveInactive ? 'text-[10px] text-amber-800 font-bold shrink-0' : 'text-[10px] text-slate-500 font-medium shrink-0';
+                let methodLabel = isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method;
+                if (isDualSlot && !isAlteringCaveInactive) {
+                    if (loc.method.includes('Cualquier GBA') || (loc.method.match(/Inserción Dual/g) || []).length >= 4) {
+                        methodLabel = 'Cualquier GBA';
+                    } else if (loc.method.includes('GBA:')) {
+                        const carts = [];
+                        loc.method.split(',').forEach(part => {
+                            if (part.includes('GBA:')) {
+                                const c = part.split('GBA:')[1].replace('Pokémon', '').replace(')', '').trim();
+                                if (c && !carts.includes(c)) carts.push(c);
+                            }
+                        });
+                        if (carts.length >= 4) {
+                            methodLabel = 'Cualquier GBA';
+                        } else if (carts.length > 0) {
+                            methodLabel = `GBA: ${carts.join(' / ')}`;
+                        } else {
+                            methodLabel = 'Inserción Dual';
+                        }
+                    }
+                }
+                const methodClass = isAlteringCaveInactive 
+                    ? 'text-[10px] text-amber-800 font-bold shrink-0' 
+                    : (isDualSlot 
+                        ? 'text-[10px] text-violet-700 font-bold shrink-0' 
+                        : 'text-[10px] text-slate-500 font-medium shrink-0');
 
                 item.className = `flex items-center justify-between text-[11px] border rounded px-2.5 py-1 font-semibold overflow-hidden min-h-[30px] ${cardBg}`;
                 item.title = isAlteringCaveInactive 
@@ -421,6 +453,76 @@ export function renderModalObtaining(data, activeForm = null) {
                     </div>
                 `;
                 detailsContainer.appendChild(caveNote);
+            }
+
+            // Nota explicativa de mecánica: Inserción Dual (Ranura 2 de GBA en Nintendo DS)
+            const dualSlotLocs = obt.locations.filter(loc => loc.method && (loc.method.includes('Inserción Dual') || loc.method.includes('slot2-')));
+            if (dualSlotLocs.length > 0) {
+                // Extraer cartuchos únicos requeridos
+                const cartridgesSet = new Set();
+                let hasAnyGba = false;
+                dualSlotLocs.forEach(loc => {
+                    const m = loc.method || '';
+                    if (m.includes('Cualquier GBA') || (m.match(/Inserción Dual/g) || []).length >= 4) {
+                        hasAnyGba = true;
+                    } else {
+                        m.split(',').forEach(part => {
+                            part = part.trim();
+                            if (part.includes('GBA:')) {
+                                const cName = part.split('GBA:')[1].replace(')', '').trim();
+                                cartridgesSet.add(cName);
+                            } else if (part.includes('Inserción Dual')) {
+                                cartridgesSet.add('Cartucho de GBA compatible');
+                            }
+                        });
+                    }
+                });
+                const cartridgesList = Array.from(cartridgesSet);
+                if (cartridgesList.length >= 4) hasAnyGba = true;
+                const isSingleCart = !hasAnyGba && cartridgesList.length === 1 && !cartridgesList[0].includes('compatible');
+                const cartSummary = hasAnyGba
+                    ? `Cartuchos de GBA compatibles: <strong>Cualquier cartucho de Game Boy Advance</strong> (Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja).`
+                    : (isSingleCart 
+                        ? `Cartucho de Game Boy Advance requerido: <strong>${cartridgesList[0]}</strong>.` 
+                        : (cartridgesList.length > 1 
+                            ? `Cartuchos de GBA compatibles (cualquiera de ellos): <strong>${cartridgesList.join(', ')}</strong>.`
+                            : `Requiere insertar un <strong>cartucho de GBA compatible</strong> (Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja).`));
+
+                const dualAccordion = document.createElement('div');
+                dualAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-violet-50';
+                dualAccordion.innerHTML = `
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-violet-100/90 hover:bg-violet-100 text-violet-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/up-grade.png" alt="Inserción Dual" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-violet-900 tracking-wide truncate">
+                                Mecánica • Inserción Dual (Ranura 2 de NDS)
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-violet-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-violet-50/70">
+                        <p class="mb-1.5">
+                            Esta especie aparece en estado salvaje en Sinnoh mediante la función de <strong>Inserción Dual</strong>. Para activar estos encuentros, debes insertar el cartucho físico de Game Boy Advance en la <strong>Ranura 2 (Slot 2)</strong> de una consola Nintendo DS / Nintendo DS Lite antes de encender tu partida.
+                        </p>
+                        <p class="text-violet-950 font-bold">
+                            🎮 ${cartSummary}
+                        </p>
+                        <p class="mt-1.5 text-[10px] text-slate-600 font-medium italic">
+                            * Si no dispones del cartucho físico o juegas en hardware sin Ranura 2 (DSi, 3DS o emulación), este Pokémon puede conseguirse transfiriéndolo desde el Parque Compi o mediante intercambio directo con Pokémon Platino o HeartGold / SoulSilver.
+                        </p>
+                    </div>
+                `;
+                detailsContainer.appendChild(dualAccordion);
             }
         }
 

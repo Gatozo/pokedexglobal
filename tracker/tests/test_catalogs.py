@@ -1511,15 +1511,28 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertIn(483, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Dialga
 
         self.assertIn("diamond", VERSION_TRANSFERS_CATALOG)
-        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["diamond"]), 48)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["diamond"]), 90)
 
         # En la Pokédex Regional de Sinnoh NO debe haber modal de transferencias
         self.assertIsNone(get_version_transfers_context(self.game, self.pk_sinnoh, set()))
-        # En la Pokédex Nacional SÍ debe haber las 48 transferencias del Parque Compi
+        # En la Pokédex Nacional SÍ debe haber las 90 transferencias legítimas
         nat_transfers = get_version_transfers_context(self.game, self.pk_nat, set())
         self.assertIsNotNone(nat_transfers)
-        self.assertEqual(nat_transfers["total"], 48)
-        self.assertEqual(nat_transfers["mechanic_badge"], "Parque Compi")
+        self.assertEqual(nat_transfers["total"], 90)
+        self.assertEqual(nat_transfers["mechanic_badge"], "Transferir / GBA")
+        # Verificar que especies clave estén presentes en transferencias
+        self.assertTrue(any(p["national_number"] == 114 for p in nat_transfers["transfer_list"]))  # Tangela
+        self.assertTrue(any(p["national_number"] == 465 for p in nat_transfers["transfer_list"]))  # Tangrowth
+        self.assertTrue(any(p["national_number"] == 357 for p in nat_transfers["transfer_list"]))  # Tropius
+        self.assertTrue(any(p["national_number"] == 273 for p in nat_transfers["transfer_list"]))  # Seedot (Dual Rubí)
+        self.assertTrue(any(p["national_number"] == 270 for p in nat_transfers["transfer_list"]))  # Lotad (Dual Zafiro)
+        self.assertTrue(any(p["national_number"] == 204 for p in nat_transfers["transfer_list"]))  # Pineco (Dual Esmeralda)
+        # Gengar (#94) NO debe estar en transferencias (Gastly y Haunter son salvajes en Sinnoh y Gengar se obtiene evolucionando por intercambio)
+        self.assertFalse(any(p["national_number"] == 94 for p in nat_transfers["transfer_list"]))
+        # Verificar que especies obtenibles in-game (Weezing salvaje / Koffing por huevo) NO estén en transferencias
+        self.assertFalse(any(p["national_number"] == 109 for p in nat_transfers["transfer_list"]))  # Koffing
+        self.assertFalse(any(p["national_number"] == 110 for p in nat_transfers["transfer_list"]))  # Weezing
+        self.assertFalse(any(p["national_number"] == 360 for p in nat_transfers["transfer_list"]))  # Wynaut (cría de Wobbuffet)
 
     def test_diamond_evolution_items_and_stones(self):
         from tracker.catalog_service import get_compiled_catalog
@@ -1561,6 +1574,14 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertIsNotNone(mismagius.evolution_stone, "Mismagius debe tener Piedra Noche como evolution_stone")
         self.assertEqual(mismagius.evolution_stone.get("slug"), "dusk-stone")
 
+        # Gengar (#94): Evolución por intercambio de Haunter y encuentro salvaje por Inserción Dual (Cualquier GBA)
+        gengar = cat_by_num[94]
+        self.assertEqual(gengar.obtaining_info.get("type"), "evolution")
+        self.assertIn("Haunter", gengar.obtaining_info.get("summary", ""))
+        self.assertIn("Vieja Mansión", gengar.obtaining_info.get("summary", ""))
+        self.assertEqual(gengar.obtaining_info.get("locations", [])[0]["area"], "Vieja Mansión (Habitación del Cuadro)")
+        self.assertEqual(gengar.obtaining_info.get("locations", [])[0]["method"], "Inserción Dual (Cualquier GBA)")
+
         # Comprobación de bebés e inciensos de 4.ª Generación
         incense_expectations = {
             406: ("rose-incense", "Incienso Floral"),
@@ -1593,7 +1614,7 @@ class PokemonDiamondGen4Tests(TestCase):
             self.assertTrue(len(daycare_locs) > 0, f"#{num} {entry.pokemon.name} base/bebé debe tener Guardería en Sinnoh")
 
         # Evoluciones y legendarios NUNCA deben tener Guardería
-        for num in [388, 389, 391, 392, 405, 448, 483, 484, 487, 493]:
+        for num in [94, 388, 389, 391, 392, 405, 448, 483, 484, 487, 493]:
             entry = cat_by_num[num]
             daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
             self.assertEqual(len(daycare_locs), 0, f"#{num} {entry.pokemon.name} evolucionado/legendario no debe tener Guardería")

@@ -98,7 +98,7 @@ SINNOH_AREA_NAMES = {
     'old-chateau-2f-leftmost-room': 'Vieja Mansión (Habitación Esquina)',
     'old-chateau-2f-middle-room': 'Vieja Mansión (Habitación Central)',
     'old-chateau-2f-private-room': 'Vieja Mansión (Habitación Privada)',
-    'old-chateau-2f-right-room': 'Vieja Mansión (Habitación Este)',
+    'old-chateau-2f-right-room': 'Vieja Mansión (Habitación del Cuadro)',
     'old-chateau-2f-rightmost-room': 'Vieja Mansión (Habitación Televisión)',
     'old-chateau-dining-room': 'Vieja Mansión (Comedor)',
     'old-chateau-entrance': 'Vieja Mansión (Entrada)',
@@ -672,6 +672,95 @@ SPECIAL_OBTAINING = {
         'summary': 'Exclusivo de Pokémon Perla. Evoluciona de Shelgon al Nivel 50.',
         'locations': [{'area': 'Intercambio con Pokémon Perla', 'method': 'Evolución de Shelgon transferido'}]
     },
+    # Gengar: Evoluciona de Haunter por intercambio, pero también aparece salvaje mediante Inserción Dual (Cualquier GBA)
+    94: {
+        'type': 'evolution',
+        'badge_label': 'Evolución',
+        'badge_color': 'indigo',
+        'summary': 'Evoluciona de Haunter por intercambio. También aparece en estado salvaje en la Vieja Mansión (Habitación del Cuadro) insertando cualquier cartucho de GBA en la Ranura 2 de NDS.',
+        'locations': [
+            {'area': 'Vieja Mansión (Habitación del Cuadro)', 'method': 'Inserción Dual (Cualquier GBA)'}
+        ],
+        'evolution_info': {
+            'from': 'Haunter',
+            'text': 'Evoluciona de Haunter (por intercambio)',
+            'trigger': 'trade',
+            'condition': 'por intercambio',
+            'item_slug': None
+        }
+    },
+
+    # Especies ausentes en estado salvaje en Sinnoh en D/P pero obtenibles mediante crianza in-game de sus evoluciones salvajes
+    109: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Weezing en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    114: {
+        'type': 'transfer',
+        'badge_label': 'Transferir',
+        'badge_color': 'indigo',
+        'summary': 'Transferir desde GBA (Rojo Fuego/Verde Hoja) o intercambiar con Pokémon Platino o HeartGold / SoulSilver (también obtenible mediante crianza).',
+        'locations': [{'area': 'Transferencia / Parque Compi', 'method': 'GBA: RF / VH o Platino / HGSS'}, DAYCARE_LOCATION]
+    },
+    165: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Ledian en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    167: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Ariados en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    261: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Mightyena en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    276: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Swellow en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    293: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Loudred o Exploud en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    353: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Banette en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    357: {
+        'type': 'transfer',
+        'badge_label': 'Transferir',
+        'badge_color': 'indigo',
+        'summary': 'Transferir desde GBA (Rubí/Zafiro/Esmeralda) o intercambiar con Pokémon Platino (Gran Pantano) o HeartGold / SoulSilver (también obtenible mediante crianza).',
+        'locations': [{'area': 'Transferencia / Parque Compi', 'method': 'GBA: RSE o Platino / HGSS'}, DAYCARE_LOCATION]
+    },
+    360: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Eclosiona al criar a Wobbuffet equipado con Incienso Suave en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [{'area': 'Pueblo Sosiego (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'}]
+    },
 }
 
 
@@ -783,9 +872,21 @@ def main():
 
             loc_list = []
             for a_name, m_set in area_methods.items():
+                non_dual = [m for m in m_set if not m.startswith('Inserción Dual')]
+                dual = [m for m in m_set if m.startswith('Inserción Dual')]
+                if non_dual and dual:
+                    final_methods = sorted(non_dual)
+                elif dual:
+                    if len(dual) >= 5:
+                        final_methods = ['Inserción Dual (Cualquier GBA)']
+                    else:
+                        final_methods = sorted(dual)
+                else:
+                    final_methods = sorted(list(m_set))
+
                 loc_list.append({
                     'area': a_name,
-                    'method': ", ".join(sorted(list(m_set)))
+                    'method': ", ".join(final_methods)
                 })
 
             if is_hatchable:
@@ -795,26 +896,29 @@ def main():
             num_zones = len(area_methods)
             zone_names = list(area_methods.keys())
 
-            # Detectar si requiere dual-slot
-            all_methods = [e.get('conditions', []) for e in raw_encs]
+            # Detectar si requiere dual-slot como método exclusivo
+            all_conditions = [e.get('conditions', []) for e in raw_encs]
+            has_clean_wild = any(not any('slot2-' in c for c in conds) for conds in all_conditions)
             dual_slots_found = set()
-            for conds in all_methods:
+            for conds in all_conditions:
                 for c in conds:
                     if 'slot2-' in c:
                         dual_slots_found.add(c)
 
             dual_note = ""
-            if dual_slots_found:
-                if 'slot2-firered' in dual_slots_found:
+            if dual_slots_found and not has_clean_wild:
+                if 'slot2-firered' in dual_slots_found and len(dual_slots_found) == 1:
                     dual_note = " (requiere cartucho de Pokémon Rojo Fuego en Ranura 2 de NDS)"
-                elif 'slot2-leafgreen' in dual_slots_found:
+                elif 'slot2-leafgreen' in dual_slots_found and len(dual_slots_found) == 1:
                     dual_note = " (requiere cartucho de Pokémon Verde Hoja en Ranura 2 de NDS)"
-                elif 'slot2-ruby' in dual_slots_found:
+                elif 'slot2-ruby' in dual_slots_found and len(dual_slots_found) == 1:
                     dual_note = " (requiere cartucho de Pokémon Rubí en Ranura 2 de NDS)"
-                elif 'slot2-sapphire' in dual_slots_found:
+                elif 'slot2-sapphire' in dual_slots_found and len(dual_slots_found) == 1:
                     dual_note = " (requiere cartucho de Pokémon Zafiro en Ranura 2 de NDS)"
-                elif 'slot2-emerald' in dual_slots_found:
+                elif 'slot2-emerald' in dual_slots_found and len(dual_slots_found) == 1:
                     dual_note = " (requiere cartucho de Pokémon Esmeralda en Ranura 2 de NDS)"
+                else:
+                    dual_note = " (requiere cartucho de GBA compatible en Ranura 2 de NDS)"
 
             if num_zones == 1:
                 summary = f"Salvaje en {zone_names[0]}{dual_note}."
