@@ -1082,7 +1082,7 @@ def main():
             "modal_retro_sprite_back_url": f"/media/pokemon/sprites/diamond/back/{nat_id}.png",
             "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/diamond_shiny/back/{nat_id}.png",
             "pc_icon_url": f"/media/pokemon/icons/gen4/{nat_id}.png",
-            "cry_url": f"/media/pokemon/cries/{nat_id}.ogg",
+            "cry_url": f"/media/pokemon/cries/legacy/{nat_id}.ogg",
             "flavor_text": flavor,
             "obtaining_info": obt_info,
             "evolution_stone": evo_stone_obj,

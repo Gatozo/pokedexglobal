@@ -1631,6 +1631,21 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "483.png")))
         self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "diamond_shiny", "493.png")))
 
+    def test_diamond_cries_exist_and_resolve_legacy(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("diamond", is_national=True)
+        self.assertIsNotNone(nat_cat)
+        # Azelf (#482) y Dialga (#483) deben apuntar a legacy y existir en disco
+        azelf = next(e for e in nat_cat if e.pokemon.national_number == 482)
+        self.assertEqual(azelf.cry_url, "/media/pokemon/cries/legacy/482.ogg")
+        dialga = next(e for e in nat_cat if e.pokemon.national_number == 483)
+        self.assertEqual(dialga.cry_url, "/media/pokemon/cries/legacy/483.ogg")
+        from django.conf import settings
+        self.assertTrue(os.path.exists(os.path.join(settings.MEDIA_ROOT, "pokemon", "cries", "legacy", "482.ogg")))
+        self.assertTrue(os.path.exists(os.path.join(settings.MEDIA_ROOT, "pokemon", "cries", "legacy", "483.ogg")))
+        self.assertTrue(os.path.exists(os.path.join(settings.MEDIA_ROOT, "pokemon", "cries", "legacy", "387.ogg")))
+        self.assertTrue(os.path.exists(os.path.join(settings.MEDIA_ROOT, "pokemon", "cries", "legacy", "493.ogg")))
+
     def test_diamond_views_and_theming(self):
         resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"}))
         self.assertEqual(resp_reg.status_code, 200)

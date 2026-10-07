@@ -1058,7 +1058,7 @@ def main():
             "modal_retro_sprite_back_url": f"/media/pokemon/sprites/emerald/back/{sprite_suffix}.png",
             "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/emerald_shiny/back/{sprite_suffix}.png",
             "pc_icon_url": pc_icon_url,
-            "cry_url": f"/media/pokemon/cries/{nat_id}.ogg",
+            "cry_url": f"/media/pokemon/cries/legacy/{nat_id}.ogg",
             "flavor_text": flavor,
             "obtaining_info": obt_info,
             "evolution_stone": evo_stone,

@@ -376,6 +376,8 @@ class CatalogEntry:
     @property
     def cry_url(self) -> str:
         if self._cry_url:
+            if "/media/pokemon/cries/" in self._cry_url and not any(sub in self._cry_url for sub in ["/legacy/", "/latest/", "/yellow/"]):
+                return self._cry_url.replace("/media/pokemon/cries/", "/media/pokemon/cries/legacy/")
             return self._cry_url
         if self.pokemon:
             return getattr(self.pokemon, "cry_legacy_url", "")

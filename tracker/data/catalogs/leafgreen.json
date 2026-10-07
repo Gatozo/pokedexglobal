@@ -32,7 +32,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/1.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/1.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/1.png",
-    "cry_url": "/media/pokemon/cries/1.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/1.ogg",
     "flavor_text": "Una rara semilla le fue plantada en el lomo al nacer. La planta brota y crece con este Pokémon.",
     "obtaining_info": {
       "type": "starter",
@@ -91,7 +91,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/2.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/2.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/2.png",
-    "cry_url": "/media/pokemon/cries/2.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/2.ogg",
     "flavor_text": "Cuando el bulbo del lomo crece, le cuesta un poco ponerse de pie sobre las patas traseras.",
     "obtaining_info": {
       "type": "evolution",
@@ -148,7 +148,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/3.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/3.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/3.png",
-    "cry_url": "/media/pokemon/cries/3.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/3.ogg",
     "flavor_text": "La planta florece cuando absorbe energía solar, por eso le obliga a buscar luz del Sol.",
     "obtaining_info": {
       "type": "evolution",
@@ -205,7 +205,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/4.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/4.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/4.png",
-    "cry_url": "/media/pokemon/cries/4.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/4.ogg",
     "flavor_text": "Prefiere los sitios cálidos. Dicen que cuando llueve le sale vapor de la punta de la cola.",
     "obtaining_info": {
       "type": "starter",
@@ -264,7 +264,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/5.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/5.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/5.png",
-    "cry_url": "/media/pokemon/cries/5.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/5.ogg",
     "flavor_text": "Cuando balancea la ardiente cola, eleva la temperatura a niveles muy altos.",
     "obtaining_info": {
       "type": "evolution",
@@ -321,7 +321,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/6.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/6.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/6.png",
-    "cry_url": "/media/pokemon/cries/6.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/6.ogg",
     "flavor_text": "Escupe fuego tan caliente que funde las rocas. Causa incendios forestales sin querer.",
     "obtaining_info": {
       "type": "evolution",
@@ -378,7 +378,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/7.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/7.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/7.png",
-    "cry_url": "/media/pokemon/cries/7.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/7.ogg",
     "flavor_text": "Tras nacer, se le hincha el lomo y se le forma un caparazón. Echa potente espuma por la boca.",
     "obtaining_info": {
       "type": "starter",
@@ -437,7 +437,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/8.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/8.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/8.png",
-    "cry_url": "/media/pokemon/cries/8.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/8.ogg",
     "flavor_text": "Se oculta en el agua para cazar a sus presas. Al nadar rápidamente mueve las orejas para nivelarse.",
     "obtaining_info": {
       "type": "evolution",
@@ -494,7 +494,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/9.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/9.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/9.png",
-    "cry_url": "/media/pokemon/cries/9.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/9.ogg",
     "flavor_text": "Es un Pokémon violento. Tiene reactores de agua en el caparazón, que le sirven para atacar con fuerza.",
     "obtaining_info": {
       "type": "evolution",
@@ -551,7 +551,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/10.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/10.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/10.png",
-    "cry_url": "/media/pokemon/cries/10.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/10.ogg",
     "flavor_text": "Sus cortas patas están recubiertas de ventosas que le permiten subir incansable por muros y cuestas.",
     "obtaining_info": {
       "type": "wild",
@@ -626,7 +626,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/11.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/11.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/11.png",
-    "cry_url": "/media/pokemon/cries/11.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/11.ogg",
     "flavor_text": "Este Pokémon es vulnerable al ataque cuando su coraza es blanda y no lo protege del todo.",
     "obtaining_info": {
       "type": "wild",
@@ -693,7 +693,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/12.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/12.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/12.png",
-    "cry_url": "/media/pokemon/cries/12.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/12.ogg",
     "flavor_text": "En combate, aletea a gran velocidad para lanzar al aire sus tóxicos polvillos.",
     "obtaining_info": {
       "type": "evolution",
@@ -750,7 +750,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/13.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/13.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/13.png",
-    "cry_url": "/media/pokemon/cries/13.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/13.ogg",
     "flavor_text": "Fácil de ver por los bosques comiendo hojas. Tiene un aguijón venenoso en la cabeza.",
     "obtaining_info": {
       "type": "wild",
@@ -825,7 +825,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/14.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/14.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/14.png",
-    "cry_url": "/media/pokemon/cries/14.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/14.ogg",
     "flavor_text": "Casi incapaz de moverse, este Pokémon sólo puede endurecer su caparazón para protegerse.",
     "obtaining_info": {
       "type": "wild",
@@ -892,7 +892,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/15.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/15.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/15.png",
-    "cry_url": "/media/pokemon/cries/15.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/15.ogg",
     "flavor_text": "Vuela muy deprisa y ataca con los venenosos y grandes aguijones de la cola y las patas delanteras.",
     "obtaining_info": {
       "type": "evolution",
@@ -949,7 +949,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/16.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/16.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/16.png",
-    "cry_url": "/media/pokemon/cries/16.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/16.ogg",
     "flavor_text": "Muy común en bosques y selvas. Aletea al nivel del suelo para levantar la gravilla.",
     "obtaining_info": {
       "type": "wild",
@@ -1068,7 +1068,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/17.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/17.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/17.png",
-    "cry_url": "/media/pokemon/cries/17.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/17.ogg",
     "flavor_text": "Muy protector de su amplio territorio, este Pokémon picoteará ferozmente a los intrusos.",
     "obtaining_info": {
       "type": "wild",
@@ -1143,7 +1143,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/18.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/18.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/18.png",
-    "cry_url": "/media/pokemon/cries/18.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/18.ogg",
     "flavor_text": "Cuando caza, vuela muy deprisa a ras del agua, y sorprende a inocentes presas como Magikarp.",
     "obtaining_info": {
       "type": "evolution",
@@ -1200,7 +1200,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/19.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/19.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/19.png",
-    "cry_url": "/media/pokemon/cries/19.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/19.ogg",
     "flavor_text": "Cuando ataca lo muerde todo. Pequeño y muy rápido, es muy fácil de ver en muchos sitios.",
     "obtaining_info": {
       "type": "wild",
@@ -1303,7 +1303,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/20.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/20.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/20.png",
-    "cry_url": "/media/pokemon/cries/20.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/20.ogg",
     "flavor_text": "Utiliza los bigotes para equilibrarse. Parece que si se los cortan va más despacio.",
     "obtaining_info": {
       "type": "wild",
@@ -1382,7 +1382,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/21.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/21.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/21.png",
-    "cry_url": "/media/pokemon/cries/21.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/21.ogg",
     "flavor_text": "Come bichos en zona de hierba. Agita sus cortas alas muy rápido para mantenerse en el aire.",
     "obtaining_info": {
       "type": "wild",
@@ -1505,7 +1505,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/22.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/22.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/22.png",
-    "cry_url": "/media/pokemon/cries/22.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/22.ogg",
     "flavor_text": "Con sus enormes y magníficas alas, puede seguir volando sin tener que aterrizar para descansar.",
     "obtaining_info": {
       "type": "wild",
@@ -1600,7 +1600,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/23.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/23.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/23.png",
-    "cry_url": "/media/pokemon/cries/23.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/23.ogg",
     "flavor_text": "Es muy silencioso y cauteloso. Come huevos de pájaros como Pidgey y Spearow.",
     "obtaining_info": {
       "type": "trade",
@@ -1659,7 +1659,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/24.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/24.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/24.png",
-    "cry_url": "/media/pokemon/cries/24.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/24.ogg",
     "flavor_text": "Se dice que las feroces señales de alerta de la panza difieren de un área a otra.",
     "obtaining_info": {
       "type": "trade",
@@ -1714,7 +1714,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/25.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/25.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/25.png",
-    "cry_url": "/media/pokemon/cries/25.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/25.ogg",
     "flavor_text": "Cuando varios de estos Pokémon se juntan, su energía puede causar fuertes tormentas.",
     "obtaining_info": {
       "type": "wild",
@@ -1777,7 +1777,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/26.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/26.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/26.png",
-    "cry_url": "/media/pokemon/cries/26.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/26.ogg",
     "flavor_text": "La larga cola que tiene le sirve para protegerse a sí mismo de su potente y alto voltaje.",
     "obtaining_info": {
       "type": "evolution",
@@ -1899,6 +1899,20 @@
             "area": "Central de Energía (Interior)",
             "detail": "En el suelo en una de las salas laberínticas de la central eléctrica abandonada."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto entre la maleza."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -1952,7 +1966,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/27.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/27.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/27.png",
-    "cry_url": "/media/pokemon/cries/27.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/27.ogg",
     "flavor_text": "Se oculta bajo tierra, en zonas áridas y alejadas del agua. Sólo emerge para cazar su comida.",
     "obtaining_info": {
       "type": "wild",
@@ -2031,7 +2045,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/28.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/28.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/28.png",
-    "cry_url": "/media/pokemon/cries/28.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/28.ogg",
     "flavor_text": "Ante el peligro, se acurruca en un espinoso ovillo. De esta forma puede rodar para atacar o escapar.",
     "obtaining_info": {
       "type": "wild",
@@ -2098,7 +2112,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/29.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/29.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/29.png",
-    "cry_url": "/media/pokemon/cries/29.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/29.ogg",
     "flavor_text": "Aunque pequeñas, sus venenosas púas son muy peligrosas. La hembra tiene pequeños cuernos.",
     "obtaining_info": {
       "type": "wild",
@@ -2173,7 +2187,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/30.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/30.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/30.png",
-    "cry_url": "/media/pokemon/cries/30.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/30.ogg",
     "flavor_text": "El cuerno de la hembra crece lentamente. Prefiere ataques físicos como arañar o morder.",
     "obtaining_info": {
       "type": "wild",
@@ -2240,7 +2254,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/31.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/31.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/31.png",
-    "cry_url": "/media/pokemon/cries/31.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/31.ogg",
     "flavor_text": "Sus duras escamas le proveen gran protección. Este usa su fuerte corpulencia para ejecutar poderosos movimientos.",
     "obtaining_info": {
       "type": "evolution",
@@ -2478,6 +2492,16 @@
             "area": "Pokémon salvajes (Clefairy)",
             "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          }
         ]
       },
       "locations": [
@@ -2547,7 +2571,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/32.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/32.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/32.png",
-    "cry_url": "/media/pokemon/cries/32.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/32.ogg",
     "flavor_text": "Estira las orejas para sentir el peligro. Cuanto mayores sean los cuernos, más fuerte será su veneno.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -2618,7 +2642,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/33.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/33.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/33.png",
-    "cry_url": "/media/pokemon/cries/33.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/33.ogg",
     "flavor_text": "Un Pokémon agresivo, siempre listo para atacar. El cuerno de la cabeza segrega un potente veneno.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -2681,7 +2705,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/34.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/34.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/34.png",
-    "cry_url": "/media/pokemon/cries/34.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/34.ogg",
     "flavor_text": "Usa la potente cola en combate para aplastar y oprimir a su presa. Después le rompe los huesos.",
     "obtaining_info": {
       "type": "evolution",
@@ -2919,6 +2943,16 @@
             "area": "Pokémon salvajes (Clefairy)",
             "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          }
         ]
       },
       "locations": [
@@ -2988,7 +3022,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/35.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/35.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/35.png",
-    "cry_url": "/media/pokemon/cries/35.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/35.ogg",
     "flavor_text": "Su mágico y adorable aspecto atrae a la gente. Es raro y solo aparece en ciertas áreas.",
     "obtaining_info": {
       "type": "wild",
@@ -3051,7 +3085,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/36.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/36.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/36.png",
-    "cry_url": "/media/pokemon/cries/36.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/36.ogg",
     "flavor_text": "Un encantador y tímido Pokémon muy raro de ver. Corre y se oculta en cuanto siente que viene gente.",
     "obtaining_info": {
       "type": "evolution",
@@ -3289,6 +3323,16 @@
             "area": "Pokémon salvajes (Clefairy)",
             "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          }
         ]
       },
       "locations": [
@@ -3358,7 +3402,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/37.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/37.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/37.png",
-    "cry_url": "/media/pokemon/cries/37.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/37.ogg",
     "flavor_text": "Cuando nace sólo tiene una cola, pero a medida que crece, ésta se va dividiendo desde la punta.",
     "obtaining_info": {
       "type": "wild",
@@ -3437,7 +3481,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/38.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/38.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/38.png",
-    "cry_url": "/media/pokemon/cries/38.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/38.ogg",
     "flavor_text": "Muy inteligente y vengativo. Agarrar una de sus colas podría traer 1000 años de mala suerte.",
     "obtaining_info": {
       "type": "evolution",
@@ -3559,6 +3603,16 @@
             "area": "Monte Ascuas (Isla Prima)",
             "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -3612,7 +3666,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/39.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/39.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/39.png",
-    "cry_url": "/media/pokemon/cries/39.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/39.ogg",
     "flavor_text": "Cuando sus ojos se iluminan, canta una secreta melodía con la que duerme a sus enemigos.",
     "obtaining_info": {
       "type": "wild",
@@ -3667,7 +3721,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/40.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/40.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/40.png",
-    "cry_url": "/media/pokemon/cries/40.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/40.ogg",
     "flavor_text": "Su cuerpo es blando y gomoso. Cuando se enfada, traga aire y se hincha muchísimo.",
     "obtaining_info": {
       "type": "evolution",
@@ -3905,6 +3959,16 @@
             "area": "Pokémon salvajes (Clefairy)",
             "detail": "Equipada con un 5% de probabilidad en Clefairy salvajes en el Monte Moon."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          }
         ]
       },
       "locations": [
@@ -3974,7 +4038,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/41.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/41.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/41.png",
-    "cry_url": "/media/pokemon/cries/41.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/41.ogg",
     "flavor_text": "Forma colonias en lugares oscuros. Usa ultrasonidos para identificar y acercarse a los objetivos.",
     "obtaining_info": {
       "type": "wild",
@@ -4137,7 +4201,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/42.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/42.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/42.png",
-    "cry_url": "/media/pokemon/cries/42.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/42.ogg",
     "flavor_text": "Cuando ataque, seguirá chupando energía de su víctima, aunque pese tanto que ya no pueda volar.",
     "obtaining_info": {
       "type": "wild",
@@ -4292,7 +4356,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/43.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/43.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/43.png",
-    "cry_url": "/media/pokemon/cries/43.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/43.ogg",
     "flavor_text": "Durante el día, entierra la cara en el suelo, y de noche, va plantando semillas por ahí.",
     "obtaining_info": {
       "type": "trade",
@@ -4351,7 +4415,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/44.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/44.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/44.png",
-    "cry_url": "/media/pokemon/cries/44.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/44.ogg",
     "flavor_text": "El fluido que le cae de la boca no es la saliva, sino un néctar que usa para atraer a su presa.",
     "obtaining_info": {
       "type": "trade",
@@ -4406,7 +4470,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/45.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/45.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/45.png",
-    "cry_url": "/media/pokemon/cries/45.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/45.ogg",
     "flavor_text": "Cuanto mayores son sus pétalos, más tóxico es su polen. Le pesa la cabeza y le cuesta mantenerla erguida.",
     "obtaining_info": {
       "type": "trade",
@@ -4530,6 +4594,16 @@
             "area": "Zona Safari (Área 2 / Central)",
             "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -4583,7 +4657,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/46.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/46.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/46.png",
-    "cry_url": "/media/pokemon/cries/46.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/46.ogg",
     "flavor_text": "Cava para chupar las raíces de los árboles. Las setas del lomo crecen con él.",
     "obtaining_info": {
       "type": "wild",
@@ -4658,7 +4732,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/47.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/47.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/47.png",
-    "cry_url": "/media/pokemon/cries/47.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/47.ogg",
     "flavor_text": "Una pareja de parásitos en la que la seta ha ocupado al bicho. Prefieren los sitios húmedos.",
     "obtaining_info": {
       "type": "wild",
@@ -4729,7 +4803,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/48.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/48.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/48.png",
-    "cry_url": "/media/pokemon/cries/48.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/48.ogg",
     "flavor_text": "Vive entre las sombras de árboles altos, donde come insectos. Por la noche, le atrae la luz.",
     "obtaining_info": {
       "type": "wild",
@@ -4816,7 +4890,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/49.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/49.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/49.png",
-    "cry_url": "/media/pokemon/cries/49.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/49.ogg",
     "flavor_text": "El polvillo que cubre sus alas es de distinto color según el tipo de veneno que lleve.",
     "obtaining_info": {
       "type": "wild",
@@ -4879,7 +4953,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/50.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/50.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/50.png",
-    "cry_url": "/media/pokemon/cries/50.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/50.ogg",
     "flavor_text": "Vive un metro por debajo del suelo, donde se alimenta de raíces. También aparece en la superficie.",
     "obtaining_info": {
       "type": "wild",
@@ -4938,7 +5012,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/51.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/51.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/51.png",
-    "cry_url": "/media/pokemon/cries/51.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/51.ogg",
     "flavor_text": "Un trío de Diglett. Causa enormes terremotos al cavar 100 km por debajo del suelo.",
     "obtaining_info": {
       "type": "wild",
@@ -4993,7 +5067,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/52.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/52.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/52.png",
-    "cry_url": "/media/pokemon/cries/52.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/52.ogg",
     "flavor_text": "Adora los objetos redondos. De noche, camina por las calles en busca de monedas perdidas.",
     "obtaining_info": {
       "type": "wild",
@@ -5100,7 +5174,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/53.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/53.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/53.png",
-    "cry_url": "/media/pokemon/cries/53.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/53.ogg",
     "flavor_text": "Aunque es muy admirado por el pelo, es difícil de entrenar como mascota, porque es un poco travieso.",
     "obtaining_info": {
       "type": "wild",
@@ -5187,7 +5261,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/54.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/54.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/54.png",
-    "cry_url": "/media/pokemon/cries/54.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/54.ogg",
     "flavor_text": "Mientras calma al enemigo con su vacía mirada, este Pokémon usa poderes psicoquinéticos.",
     "obtaining_info": {
       "type": "trade",
@@ -5246,7 +5320,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/55.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/55.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/55.png",
-    "cry_url": "/media/pokemon/cries/55.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/55.ogg",
     "flavor_text": "Suele ser visto nadando de forma elegante por los lagos. Es confundido con el monstruo japonés, Kappa.",
     "obtaining_info": {
       "type": "trade",
@@ -5301,7 +5375,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/56.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/56.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/56.png",
-    "cry_url": "/media/pokemon/cries/56.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/56.ogg",
     "flavor_text": "Se enfada muy fácilmente. Puede pasar de la tranquilidad a la ira en apenas un segundo.",
     "obtaining_info": {
       "type": "wild",
@@ -5380,7 +5454,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/57.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/57.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/57.png",
-    "cry_url": "/media/pokemon/cries/57.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/57.ogg",
     "flavor_text": "Siempre furioso y tenaz con sus patadas. Perseguirá a su presa hasta que la atrape.",
     "obtaining_info": {
       "type": "wild",
@@ -5443,7 +5517,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/58.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/58.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/58.png",
-    "cry_url": "/media/pokemon/cries/58.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/58.ogg",
     "flavor_text": "Gran defensor de su territorio. Ladrará y morderá para echar a los intrusos de su espacio.",
     "obtaining_info": {
       "type": "trade",
@@ -5502,7 +5576,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/59.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/59.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/59.png",
-    "cry_url": "/media/pokemon/cries/59.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/59.ogg",
     "flavor_text": "Un Pokémon muy admirado desde la antigüedad por su belleza. Corre ágilmente como si tuviera alas.",
     "obtaining_info": {
       "type": "trade",
@@ -5622,6 +5696,16 @@
             "area": "Monte Ascuas (Isla Prima)",
             "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -5675,7 +5759,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/60.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/60.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/60.png",
-    "cry_url": "/media/pokemon/cries/60.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/60.ogg",
     "flavor_text": "Sus nuevas y pequeñas patas no le dejan correr. Parece que prefiere nadar a estar de pie.",
     "obtaining_info": {
       "type": "wild",
@@ -5842,7 +5926,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/61.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/61.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/61.png",
-    "cry_url": "/media/pokemon/cries/61.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/61.ogg",
     "flavor_text": "Capaz de vivir dentro o fuera del agua. Fuera del agua suda para mantener baboso su cuerpo.",
     "obtaining_info": {
       "type": "wild",
@@ -5937,7 +6021,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/62.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/62.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/62.png",
-    "cry_url": "/media/pokemon/cries/62.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/62.ogg",
     "flavor_text": "Experto nadador tanto a braza como a crol. Gana fácilmente a los nadadores profesionales.",
     "obtaining_info": {
       "type": "evolution",
@@ -6071,6 +6155,20 @@
             "area": "Islas Espuma (Sótano B4)",
             "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 213",
+            "detail": "En el agua al sur de la ruta navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una de las rocas interiores."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -6124,7 +6222,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/63.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/63.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/63.png",
-    "cry_url": "/media/pokemon/cries/63.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/63.ogg",
     "flavor_text": "Con su capacidad de leer la mente, detecta cualquier peligro y se teletransporta a un lugar seguro.",
     "obtaining_info": {
       "type": "wild",
@@ -6191,7 +6289,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/64.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/64.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/64.png",
-    "cry_url": "/media/pokemon/cries/64.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/64.ogg",
     "flavor_text": "Emite ondas alfa especiales que causan jaquecas a todo el que se le acerca.",
     "obtaining_info": {
       "type": "wild",
@@ -6250,7 +6348,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/65.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/65.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/65.png",
-    "cry_url": "/media/pokemon/cries/65.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/65.ogg",
     "flavor_text": "Su cerebro puede ganar al de un ordenador de alta gama. Tiene un coeficiente intelectual de 5000.",
     "obtaining_info": {
       "type": "evolution",
@@ -6307,7 +6405,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/66.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/66.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/66.png",
-    "cry_url": "/media/pokemon/cries/66.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/66.ogg",
     "flavor_text": "Le encanta ser musculoso. Se entrena en todo tipo de arte marcial para ser aún más fuerte.",
     "obtaining_info": {
       "type": "wild",
@@ -6398,7 +6496,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/67.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/67.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/67.png",
-    "cry_url": "/media/pokemon/cries/67.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/67.ogg",
     "flavor_text": "Su musculoso cuerpo es tan fuerte que usa un cinto anti-fuerza para controlar sus movimientos.",
     "obtaining_info": {
       "type": "wild",
@@ -6481,7 +6579,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/68.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/68.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/68.png",
-    "cry_url": "/media/pokemon/cries/68.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/68.ogg",
     "flavor_text": "Usa los fuertes músculos que tiene para lanzar bestiales puñetazos y enviar muy lejos a su víctima.",
     "obtaining_info": {
       "type": "evolution",
@@ -6538,7 +6636,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/69.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/69.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/69.png",
-    "cry_url": "/media/pokemon/cries/69.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/69.ogg",
     "flavor_text": "Un Pokémon carnívoro que caza insectos. Usa sus raíces para absorber humedad.",
     "obtaining_info": {
       "type": "wild",
@@ -6645,7 +6743,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/70.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/70.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/70.png",
-    "cry_url": "/media/pokemon/cries/70.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/70.ogg",
     "flavor_text": "Escupe polvo-veneno para envenenar al enemigo, y luego lo liquida con su ácido.",
     "obtaining_info": {
       "type": "wild",
@@ -6728,7 +6826,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/71.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/71.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/71.png",
-    "cry_url": "/media/pokemon/cries/71.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/71.ogg",
     "flavor_text": "Dicen que vive en grandes colonias en el interior de las junglas, aunque nadie ha podido verificarlo.",
     "obtaining_info": {
       "type": "evolution",
@@ -6854,6 +6952,16 @@
             "area": "Zona Safari (Área 2 / Central)",
             "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -6907,7 +7015,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/72.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/72.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/72.png",
-    "cry_url": "/media/pokemon/cries/72.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/72.ogg",
     "flavor_text": "Va a la deriva a poca profundidad. Si es pescado por accidente, el castigo será su punzante ácido.",
     "obtaining_info": {
       "type": "wild",
@@ -7078,7 +7186,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/73.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/73.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/73.png",
-    "cry_url": "/media/pokemon/cries/73.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/73.ogg",
     "flavor_text": "Cuando caza, extiende los cortos tentáculos que tiene para atrapar e inmovilizar a su presa.",
     "obtaining_info": {
       "type": "wild",
@@ -7189,7 +7297,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/74.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/74.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/74.png",
-    "cry_url": "/media/pokemon/cries/74.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/74.ogg",
     "flavor_text": "Aparecen en llanos y montañas. Como parecen rocas, la gente se tropieza con ellos o los pisa.",
     "obtaining_info": {
       "type": "wild",
@@ -7352,7 +7460,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/75.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/75.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/75.png",
-    "cry_url": "/media/pokemon/cries/75.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/75.ogg",
     "flavor_text": "Se mueve rodando cuesta abajo y sobre cualquier obstáculo, sin frenar ni cambiar de dirección.",
     "obtaining_info": {
       "type": "wild",
@@ -7451,7 +7559,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/76.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/76.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/76.png",
-    "cry_url": "/media/pokemon/cries/76.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/76.ogg",
     "flavor_text": "Su cuerpo rocoso es superduro. Soporta explosiones de dinamita sin sufrir daño.",
     "obtaining_info": {
       "type": "evolution",
@@ -7508,7 +7616,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/77.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/77.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/77.png",
-    "cry_url": "/media/pokemon/cries/77.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/77.ogg",
     "flavor_text": "Sus cascos son 10 veces más duros que el diamante. Puede pisotear cualquier cosa en poco tiempo.",
     "obtaining_info": {
       "type": "wild",
@@ -7571,7 +7679,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/78.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/78.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/78.png",
-    "cry_url": "/media/pokemon/cries/78.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/78.ogg",
     "flavor_text": "Muy competitivo, este Pokémon perseguirá a todo lo que se mueva rápido e intentará salir airoso.",
     "obtaining_info": {
       "type": "wild",
@@ -7630,7 +7738,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/79.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/79.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/79.png",
-    "cry_url": "/media/pokemon/cries/79.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/79.ogg",
     "flavor_text": "Increíblemente lento y torpe. Tarda 5 segundos en sentir dolor si lo atacan.",
     "obtaining_info": {
       "type": "wild",
@@ -8017,7 +8125,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/80.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/80.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/80.png",
-    "cry_url": "/media/pokemon/cries/80.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/80.ogg",
     "flavor_text": "Dicen que el Shellder pegado a la cola de Slowpoke se nutre de los residuos del anfitrión.",
     "obtaining_info": {
       "type": "wild",
@@ -8116,7 +8224,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/81.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/81.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/81.png",
-    "cry_url": "/media/pokemon/cries/81.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/81.ogg",
     "flavor_text": "Anula la gravedad para mantenerse en el aire. Sin previo aviso usa onda trueno y parecidos.",
     "obtaining_info": {
       "type": "wild",
@@ -8175,7 +8283,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/82.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/82.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/82.png",
-    "cry_url": "/media/pokemon/cries/82.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/82.ogg",
     "flavor_text": "Están formados por Magnemite unidos. Suelen aparecer cuando arden las manchas solares.",
     "obtaining_info": {
       "type": "wild",
@@ -8242,7 +8350,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/83.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/83.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/83.png",
-    "cry_url": "/media/pokemon/cries/83.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/83.ogg",
     "flavor_text": "La ramita que lleva es su mejor arma. Suele usarla como espada para cortar cosas.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -8301,7 +8409,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/84.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/84.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/84.png",
-    "cry_url": "/media/pokemon/cries/84.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/84.ogg",
     "flavor_text": "Un pájaro que compensa su pobre vuelo caminando muy rápidamente. Deja enormes huellas.",
     "obtaining_info": {
       "type": "wild",
@@ -8376,7 +8484,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/85.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/85.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/85.png",
-    "cry_url": "/media/pokemon/cries/85.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/85.ogg",
     "flavor_text": "Para tramar sus planes usa sus tres cerebros. Cuando dos cabezas duermen, la otra sigue despierta.",
     "obtaining_info": {
       "type": "evolution",
@@ -8433,7 +8541,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/86.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/86.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/86.png",
-    "cry_url": "/media/pokemon/cries/86.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/86.ogg",
     "flavor_text": "El cuerno que sobresale de su cabeza es muy duro. Suele usarlo para romper el hielo.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -8536,7 +8644,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/87.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/87.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/87.png",
-    "cry_url": "/media/pokemon/cries/87.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/87.ogg",
     "flavor_text": "Guarda energía térmica en su cuerpo. Nada a 15 km por hora sin parar hasta en aguas muy frías.",
     "obtaining_info": {
       "type": "wild",
@@ -8615,7 +8723,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/88.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/88.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/88.png",
-    "cry_url": "/media/pokemon/cries/88.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/88.ogg",
     "flavor_text": "Aparece en zonas asquerosas. Crece absorbiendo los residuos tóxicos expulsados por las fábricas.",
     "obtaining_info": {
       "type": "wild",
@@ -8690,7 +8798,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/89.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/89.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/89.png",
-    "cry_url": "/media/pokemon/cries/89.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/89.ogg",
     "flavor_text": "Está cubierto por un repugnante lodo. Es tan tóxico que hasta sus huellas son venenosas.",
     "obtaining_info": {
       "type": "wild",
@@ -8757,7 +8865,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/90.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/90.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/90.png",
-    "cry_url": "/media/pokemon/cries/90.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/90.ogg",
     "flavor_text": "La concha lo protege de cualquier tipo de ataque. Sólo es vulnerable cuando se abre.",
     "obtaining_info": {
       "type": "trade",
@@ -8816,7 +8924,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/91.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/91.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/91.png",
-    "cry_url": "/media/pokemon/cries/91.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/91.ogg",
     "flavor_text": "Cuando es atacado, lanza sus cuernos con gran rapidez. Sus entrañas jamás han sido vistas.",
     "obtaining_info": {
       "type": "trade",
@@ -8948,6 +9056,20 @@
             "area": "Islas Espuma (Sótano B4)",
             "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 213",
+            "detail": "En el agua al sur de la ruta navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una de las rocas interiores."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -9001,7 +9123,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/92.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/92.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/92.png",
-    "cry_url": "/media/pokemon/cries/92.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/92.ogg",
     "flavor_text": "Casi invisible, este gaseoso Pokémon cubre al enemigo y lo adormece sin previo aviso.",
     "obtaining_info": {
       "type": "wild",
@@ -9120,7 +9242,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/93.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/93.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/93.png",
-    "cry_url": "/media/pokemon/cries/93.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/93.ogg",
     "flavor_text": "Por su habilidad para atravesar muros de piedra, se dice que viene de otra dimensión",
     "obtaining_info": {
       "type": "wild",
@@ -9235,7 +9357,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/94.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/94.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/94.png",
-    "cry_url": "/media/pokemon/cries/94.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/94.ogg",
     "flavor_text": "En luna llena, a este Pokémon le gusta imitar las sombras de la gente y burlarse de sus miedos.",
     "obtaining_info": {
       "type": "evolution",
@@ -9292,7 +9414,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/95.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/95.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/95.png",
-    "cry_url": "/media/pokemon/cries/95.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/95.ogg",
     "flavor_text": "Cuando crece, las partes rocosas de su cuerpo se endurecen. Acaba pareciéndose a un diamante negro.",
     "obtaining_info": {
       "type": "wild",
@@ -9371,7 +9493,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/96.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/96.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/96.png",
-    "cry_url": "/media/pokemon/cries/96.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/96.ogg",
     "flavor_text": "Adormece a sus enemigos y se come sus sueños. A veces se pone enfermo si come pesadillas.",
     "obtaining_info": {
       "type": "wild",
@@ -9434,7 +9556,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/97.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/97.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/97.png",
-    "cry_url": "/media/pokemon/cries/97.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/97.ogg",
     "flavor_text": "Cuando mira al enemigo, usa una mezcla de movimientos psíquicos como hipnosis y confusión.",
     "obtaining_info": {
       "type": "wild",
@@ -9493,7 +9615,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/98.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/98.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/98.png",
-    "cry_url": "/media/pokemon/cries/98.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/98.ogg",
     "flavor_text": "Usa las pinzas como potentes armas y para equilibrarse cuando camina de lado.",
     "obtaining_info": {
       "type": "wild",
@@ -9804,7 +9926,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/99.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/99.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/99.png",
-    "cry_url": "/media/pokemon/cries/99.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/99.ogg",
     "flavor_text": "La pinza más grande tiene una enorme potencia, pero su gran tamaño la hace poco manejable",
     "obtaining_info": {
       "type": "wild",
@@ -9931,7 +10053,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/100.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/100.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/100.png",
-    "cry_url": "/media/pokemon/cries/100.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/100.ogg",
     "flavor_text": "Suele vivir en centrales de energía. Mucha gente acaba muy mal al confundirlo con una Poké Ball.",
     "obtaining_info": {
       "type": "wild",
@@ -9994,7 +10116,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/101.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/101.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/101.png",
-    "cry_url": "/media/pokemon/cries/101.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/101.ogg",
     "flavor_text": "Almacena energía eléctrica a gran presión. Suele explotar a la mínima provocación.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -10065,7 +10187,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/102.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/102.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/102.png",
-    "cry_url": "/media/pokemon/cries/102.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/102.ogg",
     "flavor_text": "Son muy parecidos a los huevos. Cuando se les molesta, se agrupan y atacan todos juntos.",
     "obtaining_info": {
       "type": "wild",
@@ -10140,7 +10262,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/103.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/103.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/103.png",
-    "cry_url": "/media/pokemon/cries/103.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/103.ogg",
     "flavor_text": "Dice la leyenda que en raras ocasiones una de sus cabezas cae y sobrevive como un Exeggcute.",
     "obtaining_info": {
       "type": "evolution",
@@ -10266,6 +10388,16 @@
             "area": "Zona Safari (Área 2 / Central)",
             "detail": "En el suelo en una de las secciones de hierba alta de la Zona Safari."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -10319,7 +10451,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/104.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/104.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/104.png",
-    "cry_url": "/media/pokemon/cries/104.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/104.ogg",
     "flavor_text": "Como no se quita nunca el cráneo que lleva puesto, nadie le ha visto la cara a este Pokémon.",
     "obtaining_info": {
       "type": "wild",
@@ -10398,7 +10530,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/105.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/105.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/105.png",
-    "cry_url": "/media/pokemon/cries/105.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/105.ogg",
     "flavor_text": "El hueso que lleva es su gran arma. Lo lanza hábilmente como un bumerán y deja a todos fuera de combate.",
     "obtaining_info": {
       "type": "wild",
@@ -10465,7 +10597,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/106.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/106.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/106.png",
-    "cry_url": "/media/pokemon/cries/106.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/106.ogg",
     "flavor_text": "Cuando tiene prisa, extiende las patas. Corre suavemente dando enormes zancadas.",
     "obtaining_info": {
       "type": "gift",
@@ -10524,7 +10656,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/107.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/107.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/107.png",
-    "cry_url": "/media/pokemon/cries/107.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/107.ogg",
     "flavor_text": "Aunque parezca que no hace nada, sus rápidos puñetazos-voleas son imposibles de ver.",
     "obtaining_info": {
       "type": "gift",
@@ -10583,7 +10715,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/108.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/108.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/108.png",
-    "cry_url": "/media/pokemon/cries/108.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/108.ogg",
     "flavor_text": "Su lengua se extiende como la de un camaleón. Cuando lame a sus enemigos, se estremecen.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -10642,7 +10774,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/109.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/109.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/109.png",
-    "cry_url": "/media/pokemon/cries/109.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/109.ogg",
     "flavor_text": "Como encierra varios tipos de gases tóxicos en su cuerpo, suele explosionar sin previo aviso.",
     "obtaining_info": {
       "type": "wild",
@@ -10717,7 +10849,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/110.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/110.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/110.png",
-    "cry_url": "/media/pokemon/cries/110.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/110.ogg",
     "flavor_text": "Donde se junten 2 tipos de gases venenosos, 2 Koffing podrán fusionarse y convertirse en un Weezing.",
     "obtaining_info": {
       "type": "evolution",
@@ -10774,7 +10906,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/111.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/111.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/111.png",
-    "cry_url": "/media/pokemon/cries/111.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/111.ogg",
     "flavor_text": "Tiene unos huesos 1000 veces más macizos que los de las personas. Es famoso por su gran fuerza.",
     "obtaining_info": {
       "type": "wild",
@@ -10837,7 +10969,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/112.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/112.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/112.png",
-    "cry_url": "/media/pokemon/cries/112.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/112.ogg",
     "flavor_text": "La piel le sirve de escudo protector. Puede vivir en lava líquida a 2.000 grados de temperatura.",
     "obtaining_info": {
       "type": "evolution",
@@ -10894,7 +11026,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/113.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/113.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/113.png",
-    "cry_url": "/media/pokemon/cries/113.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/113.ogg",
     "flavor_text": "Un raro y evasivo Pokémon que, según dicen, lleva la felicidad a quienes lo atrapan.",
     "obtaining_info": {
       "type": "wild",
@@ -10957,7 +11089,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/114.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/114.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/114.png",
-    "cry_url": "/media/pokemon/cries/114.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/114.ogg",
     "flavor_text": "Tiene el cuerpo cubierto con anchas cintas del tipo alga que se mueven cuando camina.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -11024,7 +11156,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/115.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/115.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/115.png",
-    "cry_url": "/media/pokemon/cries/115.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/115.ogg",
     "flavor_text": "El bebé no suele salir de la segura bolsa de su madre hasta que cumple los tres años.",
     "obtaining_info": {
       "type": "wild",
@@ -11087,7 +11219,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/116.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/116.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/116.png",
-    "cry_url": "/media/pokemon/cries/116.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/116.ogg",
     "flavor_text": "Es famoso por derribar a bichos voladores lanzando tinta desde la superficie del agua.",
     "obtaining_info": {
       "type": "wild",
@@ -11210,7 +11342,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/117.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/117.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/117.png",
-    "cry_url": "/media/pokemon/cries/117.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/117.ogg",
     "flavor_text": "Puede nadar hacia atrás moviendo rápidamente las aletas pectorales y la robusta cola que tiene.",
     "obtaining_info": {
       "type": "evolution",
@@ -11267,7 +11399,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/118.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/118.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/118.png",
-    "cry_url": "/media/pokemon/cries/118.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/118.ogg",
     "flavor_text": "La aleta de la cola se infla como un elegante traje de baile. Le llaman Reina del agua.",
     "obtaining_info": {
       "type": "wild",
@@ -11414,7 +11546,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/119.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/119.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/119.png",
-    "cry_url": "/media/pokemon/cries/119.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/119.ogg",
     "flavor_text": "En otoño, cuando se reproducen, se les puede ver nadando con energía por ríos y arroyos.",
     "obtaining_info": {
       "type": "wild",
@@ -11489,7 +11621,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/120.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/120.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/120.png",
-    "cry_url": "/media/pokemon/cries/120.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/120.ogg",
     "flavor_text": "Un enigmático Pokémon que puede regenerar con facilidad todo apéndice que pierda luchando.",
     "obtaining_info": {
       "type": "wild",
@@ -11572,7 +11704,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/121.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/121.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/121.png",
-    "cry_url": "/media/pokemon/cries/121.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/121.ogg",
     "flavor_text": "Su núcleo central brilla con los 7 colores del arco iris. Para algunos tiene el valor de una gema.",
     "obtaining_info": {
       "type": "evolution",
@@ -11706,6 +11838,20 @@
             "area": "Islas Espuma (Sótano B4)",
             "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 213",
+            "detail": "En el agua al sur de la ruta navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una de las rocas interiores."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -11759,7 +11905,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/122.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/122.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/122.png",
-    "cry_url": "/media/pokemon/cries/122.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/122.ogg",
     "flavor_text": "Si alguien lo interrumpe mientras excava, se pondrá a darle bofetadas con las enormes manos que tiene.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -11818,7 +11964,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/123.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/123.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/123.png",
-    "cry_url": "/media/pokemon/cries/123.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/123.ogg",
     "flavor_text": "Con una agilidad y velocidad de ninja, puede hacer creer que hay más de uno.",
     "obtaining_info": {
       "type": "trade",
@@ -11877,7 +12023,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/124.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/124.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/124.png",
-    "cry_url": "/media/pokemon/cries/124.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/124.ogg",
     "flavor_text": "Camina moviendo las caderas de forma llamativa. Puede hacer que la gente baile a su ritmo.",
     "obtaining_info": {
       "type": "trade_npc",
@@ -11936,7 +12082,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/125.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/125.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/125.png",
-    "cry_url": "/media/pokemon/cries/125.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/125.ogg",
     "flavor_text": "Suelen andar por las centrales eléctricas, pero también merodean por otras zonas y causan grandes apagones.",
     "obtaining_info": {
       "type": "trade",
@@ -11995,7 +12141,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/126.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/126.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/126.png",
-    "cry_url": "/media/pokemon/cries/126.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/126.ogg",
     "flavor_text": "Su cuerpo siempre arde con un brillo naranja, con el que se oculta entre las llamas.",
     "obtaining_info": {
       "type": "wild",
@@ -12050,7 +12196,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/127.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/127.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/127.png",
-    "cry_url": "/media/pokemon/cries/127.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/127.ogg",
     "flavor_text": "Si no consigue triturar a su víctima con sus pinzas, le dará vueltas y la arrojará lejos.",
     "obtaining_info": {
       "type": "wild",
@@ -12117,7 +12263,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/128.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/128.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/128.png",
-    "cry_url": "/media/pokemon/cries/128.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/128.ogg",
     "flavor_text": "Cuando ve a un enemigo, carga ferozmente con todo el cuerpo, azotándole con las largas colas que tiene.",
     "obtaining_info": {
       "type": "wild",
@@ -12180,7 +12326,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/129.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/129.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/129.png",
-    "cry_url": "/media/pokemon/cries/129.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/129.ogg",
     "flavor_text": "En un pasado lejano, era más fuerte que sus horribles descendientes de hoy en día.",
     "obtaining_info": {
       "type": "gift",
@@ -12243,7 +12389,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/130.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/130.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/130.png",
-    "cry_url": "/media/pokemon/cries/130.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/130.ogg",
     "flavor_text": "No es frecuente verlo en su medio. Es enorme y malvado y capaz de destruir ciudades enteras de un ataque.",
     "obtaining_info": {
       "type": "wild",
@@ -12470,7 +12616,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/131.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/131.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/131.png",
-    "cry_url": "/media/pokemon/cries/131.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/131.ogg",
     "flavor_text": "Un Pokémon que ha sido cazado casi hasta la extinción. Puede llevar a la gente por el agua.",
     "obtaining_info": {
       "type": "gift",
@@ -12533,7 +12679,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/132.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/132.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/132.png",
-    "cry_url": "/media/pokemon/cries/132.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/132.ogg",
     "flavor_text": "Puede copiar el código genético de un enemigo y transformarse en una réplica de mismo.",
     "obtaining_info": {
       "type": "wild",
@@ -12612,7 +12758,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/133.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/133.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/133.png",
-    "cry_url": "/media/pokemon/cries/133.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/133.ogg",
     "flavor_text": "De irregular código genético, puede mutar si se le expone a la radiación de los elementos roca.",
     "obtaining_info": {
       "type": "gift",
@@ -12671,7 +12817,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/134.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/134.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/134.png",
-    "cry_url": "/media/pokemon/cries/134.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/134.ogg",
     "flavor_text": "Vive cerca del agua. La larga cola que tiene termina en una aleta muy parecida a la de una sirena.",
     "obtaining_info": {
       "type": "evolution",
@@ -12805,6 +12951,20 @@
             "area": "Islas Espuma (Sótano B4)",
             "detail": "Objeto oculto en una roca cerca de la escalera oeste en el nivel inferior."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 213",
+            "detail": "En el agua al sur de la ruta navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una de las rocas interiores."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -12858,7 +13018,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/135.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/135.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/135.png",
-    "cry_url": "/media/pokemon/cries/135.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/135.ogg",
     "flavor_text": "Acumula iones negativos de la atmósfera para lanzar rayos de 10.000 voltios de potencia.",
     "obtaining_info": {
       "type": "evolution",
@@ -12980,6 +13140,20 @@
             "area": "Central de Energía (Interior)",
             "detail": "En el suelo en una de las salas laberínticas de la central eléctrica abandonada."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto entre la maleza."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -13033,7 +13207,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/136.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/136.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/136.png",
-    "cry_url": "/media/pokemon/cries/136.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/136.ogg",
     "flavor_text": "Cuando almacena energía térmica en su cuerpo, su temperatura puede subir a más de 900 grados.",
     "obtaining_info": {
       "type": "evolution",
@@ -13155,6 +13329,16 @@
             "area": "Monte Ascuas (Isla Prima)",
             "detail": "En el suelo como Poké Ball en el sendero exterior del volcán."
           }
+        ],
+        "diamond": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          }
         ]
       },
       "locations": [
@@ -13208,7 +13392,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/137.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/137.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/137.png",
-    "cry_url": "/media/pokemon/cries/137.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/137.ogg",
     "flavor_text": "Es obra de unos científicos que usaron una tecnología de punta para crearlo.",
     "obtaining_info": {
       "type": "game_corner",
@@ -13267,7 +13451,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/138.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/138.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/138.png",
-    "cry_url": "/media/pokemon/cries/138.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/138.ogg",
     "flavor_text": "Aunque extinto, en algunas ocasiones puede ser recuperado genéticamente a partir de los fósiles.",
     "obtaining_info": {
       "type": "fossil",
@@ -13330,7 +13514,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/139.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/139.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/139.png",
-    "cry_url": "/media/pokemon/cries/139.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/139.ogg",
     "flavor_text": "Un prehistórico Pokémon que se extinguió porque su pesada concha le impedía atrapar sus presas.",
     "obtaining_info": {
       "type": "evolution",
@@ -13387,7 +13571,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/140.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/140.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/140.png",
-    "cry_url": "/media/pokemon/cries/140.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/140.ogg",
     "flavor_text": "Un Pokémon recuperado a partir de un fósil encontrado en lo que hace años fue el fondo oceánico.",
     "obtaining_info": {
       "type": "fossil",
@@ -13450,7 +13634,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/141.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/141.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/141.png",
-    "cry_url": "/media/pokemon/cries/141.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/141.ogg",
     "flavor_text": "Con su impecable forma es un gran nadador. Corta a su presa con las garras y absorbe sus fluidos.",
     "obtaining_info": {
       "type": "evolution",
@@ -13507,7 +13691,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/142.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/142.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/142.png",
-    "cry_url": "/media/pokemon/cries/142.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/142.ogg",
     "flavor_text": "Un prehistórico y feroz Pokémon que se lanza con los colmillos a la garganta del enemigo.",
     "obtaining_info": {
       "type": "fossil",
@@ -13570,7 +13754,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/143.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/143.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/143.png",
-    "cry_url": "/media/pokemon/cries/143.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/143.ogg",
     "flavor_text": "Es muy vago. Sólo come y duerme. A medida que engorda se vuelve cada vez más perezoso.",
     "obtaining_info": {
       "type": "static",
@@ -13633,7 +13817,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/144.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/144.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/144.png",
-    "cry_url": "/media/pokemon/cries/144.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/144.ogg",
     "flavor_text": "Es un legendario pájaro Pokémon. Se aparece a la gente que se ha perdido en las heladas montañas.",
     "obtaining_info": {
       "type": "legendary",
@@ -13688,7 +13872,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/145.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/145.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/145.png",
-    "cry_url": "/media/pokemon/cries/145.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/145.ogg",
     "flavor_text": "Es un legendario pájaro Pokémon. Dicen que aparece entre las nubes lanzando enormes rayos brillantes.",
     "obtaining_info": {
       "type": "legendary",
@@ -13743,7 +13927,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/146.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/146.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/146.png",
-    "cry_url": "/media/pokemon/cries/146.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/146.ogg",
     "flavor_text": "Es más conocido como el legendario pájaro de fuego. Con cada aleteo crea brillantes llamas.",
     "obtaining_info": {
       "type": "legendary",
@@ -13798,7 +13982,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/147.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/147.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/147.png",
-    "cry_url": "/media/pokemon/cries/147.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/147.ogg",
     "flavor_text": "Durante años se dudó de su existencia, hasta que se encontró una colonia submarina.",
     "obtaining_info": {
       "type": "wild",
@@ -13873,7 +14057,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/148.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/148.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/148.png",
-    "cry_url": "/media/pokemon/cries/148.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/148.ogg",
     "flavor_text": "Es un Pokémon misterioso. Está rodeado de una sutil aura y tiene la capacidad de cambiar el clima.",
     "obtaining_info": {
       "type": "wild",
@@ -13940,7 +14124,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/149.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/149.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/149.png",
-    "cry_url": "/media/pokemon/cries/149.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/149.ogg",
     "flavor_text": "Es un Pokémon marino muy raro de ver. Dicen que es tan inteligente como los humanos.",
     "obtaining_info": {
       "type": "evolution",
@@ -13997,7 +14181,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/150.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/150.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/150.png",
-    "cry_url": "/media/pokemon/cries/150.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/150.ogg",
     "flavor_text": "Fue creado por un científico tras años de horribles experimentos de ingeniería genética.",
     "obtaining_info": {
       "type": "legendary",
@@ -14052,7 +14236,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/leafgreen/back/151.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/leafgreen_shiny/back/151.png",
     "pc_icon_url": "/media/pokemon/icons/gen3/151.png",
-    "cry_url": "/media/pokemon/cries/151.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/151.ogg",
     "flavor_text": "Es tan raro que muchos expertos opinan que es solo una ilusión. Solo unos pocos lo han visto.",
     "obtaining_info": {
       "type": "mythical",

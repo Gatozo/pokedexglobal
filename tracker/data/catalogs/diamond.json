@@ -32,7 +32,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/387.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/387.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/387.png",
-    "cry_url": "/media/pokemon/cries/387.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/387.ogg",
     "flavor_text": "La concha de su espalda es de tierra y se endurece cuando bebe agua. Vive cerca de los lagos.",
     "obtaining_info": {
       "type": "starter",
@@ -91,7 +91,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/388.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/388.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/388.png",
-    "cry_url": "/media/pokemon/cries/388.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/388.ogg",
     "flavor_text": "Vive en los bosques cerca del agua. Por el día, sale a que les dé el sol a las plantas de su espalda.",
     "obtaining_info": {
       "type": "evolution",
@@ -148,7 +148,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/389.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/389.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/389.png",
-    "cry_url": "/media/pokemon/cries/389.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/389.ogg",
     "flavor_text": "Algunos Pokémon pequeños se juntan en su espalda para hacer sus nidos.",
     "obtaining_info": {
       "type": "evolution",
@@ -205,7 +205,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/390.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/390.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/390.png",
-    "cry_url": "/media/pokemon/cries/390.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/390.ogg",
     "flavor_text": "Escala acantilados escarpados con agilidad. Vive en las montañas y su fuego se apaga cuando duerme.",
     "obtaining_info": {
       "type": "starter",
@@ -264,7 +264,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/391.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/391.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/391.png",
-    "cry_url": "/media/pokemon/cries/391.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/391.ogg",
     "flavor_text": "Intimida a sus enemigos desplegando el fuego en su cola para parecer más grande.",
     "obtaining_info": {
       "type": "evolution",
@@ -321,7 +321,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/392.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/392.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/392.png",
-    "cry_url": "/media/pokemon/cries/392.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/392.ogg",
     "flavor_text": "Utiliza un tipo especial de artes marciales con todos sus miembros. Su fuego nunca se extingue.",
     "obtaining_info": {
       "type": "evolution",
@@ -378,7 +378,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/393.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/393.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/393.png",
-    "cry_url": "/media/pokemon/cries/393.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/393.ogg",
     "flavor_text": "Es muy orgulloso, por lo que odia aceptar comida de la gente. Su grueso plumón le protege del frío.",
     "obtaining_info": {
       "type": "starter",
@@ -437,7 +437,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/394.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/394.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/394.png",
-    "cry_url": "/media/pokemon/cries/394.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/394.ogg",
     "flavor_text": "Vive solo, alejado de los demás. Cada uno piensa que es el más importante.",
     "obtaining_info": {
       "type": "evolution",
@@ -494,7 +494,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/395.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/395.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/395.png",
-    "cry_url": "/media/pokemon/cries/395.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/395.ogg",
     "flavor_text": "Los tres cuernos de su pico son muestra de su fuerza. El líder tiene los cuernos más grandes.",
     "obtaining_info": {
       "type": "evolution",
@@ -551,7 +551,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/396.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/396.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/396.png",
-    "cry_url": "/media/pokemon/cries/396.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/396.ogg",
     "flavor_text": "Viaja en grandes bandadas. Aunque es pequeño, agita las alas con gran fuerza.",
     "obtaining_info": {
       "type": "wild",
@@ -662,7 +662,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/397.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/397.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/397.png",
-    "cry_url": "/media/pokemon/cries/397.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/397.ogg",
     "flavor_text": "Vuela por bosques y campos en busca de Pokémon de tipo bicho. Siempre va en bandadas.",
     "obtaining_info": {
       "type": "wild",
@@ -772,7 +772,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/398.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/398.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/398.png",
-    "cry_url": "/media/pokemon/cries/398.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/398.ogg",
     "flavor_text": "Tiene un carácter salvaje. No duda en desafiar a rivales mucho mayores.",
     "obtaining_info": {
       "type": "evolution",
@@ -829,7 +829,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/399.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/399.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/399.png",
-    "cry_url": "/media/pokemon/cries/399.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/399.ogg",
     "flavor_text": "Tiene nervios de acero y nada puede perturbarlo. Es más ágil y activo de lo que aparenta.",
     "obtaining_info": {
       "type": "wild",
@@ -952,7 +952,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/400.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/400.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/400.png",
-    "cry_url": "/media/pokemon/cries/400.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/400.ogg",
     "flavor_text": "Para anidar, crea presas en los ríos con maderas y barro. Tiene fama de trabajador.",
     "obtaining_info": {
       "type": "wild",
@@ -1070,7 +1070,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/401.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/401.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/401.png",
-    "cry_url": "/media/pokemon/cries/401.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/401.ogg",
     "flavor_text": "Al agitar la cabeza de atrás hacia delante, sus antenas chocan y suenan como un xilófono.",
     "obtaining_info": {
       "type": "wild",
@@ -1149,7 +1149,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/402.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/402.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/402.png",
-    "cry_url": "/media/pokemon/cries/402.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/402.ogg",
     "flavor_text": "Cuando llora, cruza sus brazos con forma de cuchillo. Puede improvisar melodías.",
     "obtaining_info": {
       "type": "wild",
@@ -1239,7 +1239,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/403.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/403.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/403.png",
-    "cry_url": "/media/pokemon/cries/403.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/403.ogg",
     "flavor_text": "Si siente peligro, todo su pelaje brilla. Aprovecha la ceguera temporal de su rival para huir.",
     "obtaining_info": {
       "type": "wild",
@@ -1314,7 +1314,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/404.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/404.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/404.png",
-    "cry_url": "/media/pokemon/cries/404.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/404.ogg",
     "flavor_text": "Sus garras emiten electricidad que puede debilitar a sus rivales. Viven en grupos pequeños.",
     "obtaining_info": {
       "type": "wild",
@@ -1376,7 +1376,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/405.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/405.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/405.png",
-    "cry_url": "/media/pokemon/cries/405.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/405.ogg",
     "flavor_text": "Sus ojos pueden ver a través de todo. Localiza a las presas detrás de objetos y las captura.",
     "obtaining_info": {
       "type": "evolution",
@@ -1433,7 +1433,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/63.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/63.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/63.png",
-    "cry_url": "/media/pokemon/cries/63.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/63.ogg",
     "flavor_text": "Duerme 18 horas al día. Cuando está despierto no se levanta ni para teletransportarse.",
     "obtaining_info": {
       "type": "wild",
@@ -1500,7 +1500,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/64.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/64.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/64.png",
-    "cry_url": "/media/pokemon/cries/64.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/64.ogg",
     "flavor_text": "Si se acerca uno, una extraña sombra aparece en los televisores. Se dice que verla trae mala suerte.",
     "obtaining_info": {
       "type": "wild",
@@ -1566,7 +1566,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/65.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/65.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/65.png",
-    "cry_url": "/media/pokemon/cries/65.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/65.ogg",
     "flavor_text": "Su gran memoria le permite recordar todo desde su nacimiento. Su CI es superior a 5000.",
     "obtaining_info": {
       "type": "evolution",
@@ -1623,7 +1623,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/129.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/129.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/129.png",
-    "cry_url": "/media/pokemon/cries/129.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/129.ogg",
     "flavor_text": "Se dice que es el Pokémon más débil del mundo. No se sabe cómo ha logrado sobrevivir.",
     "obtaining_info": {
       "type": "wild",
@@ -1890,7 +1890,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/130.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/130.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/130.png",
-    "cry_url": "/media/pokemon/cries/130.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/130.ogg",
     "flavor_text": "Cuando se enfada, su rabia solo se disipa tras arrasar los campos y montañas vecinos.",
     "obtaining_info": {
       "type": "wild",
@@ -2156,7 +2156,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/406.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/406.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/406.png",
-    "cry_url": "/media/pokemon/cries/406.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/406.ogg",
     "flavor_text": "En invierno cierra su capullo para protegerse del frío. En primavera, el capullo se abre y esparce polen.",
     "obtaining_info": {
       "type": "wild",
@@ -2268,7 +2268,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/315.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/315.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/315.png",
-    "cry_url": "/media/pokemon/cries/315.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/315.ogg",
     "flavor_text": "Si este Pokémon crece con agua limpia y potable, le brotarán flores de vivos colores.",
     "obtaining_info": {
       "type": "wild",
@@ -2382,7 +2382,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/407.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/407.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/407.png",
-    "cry_url": "/media/pokemon/cries/407.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/407.ogg",
     "flavor_text": "Atrae a las presas con un dulce aroma y las derrota con los látigos espinosos de sus brazos.",
     "obtaining_info": {
       "type": "evolution",
@@ -2464,7 +2464,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/41.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/41.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/41.png",
-    "cry_url": "/media/pokemon/cries/41.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/41.ogg",
     "flavor_text": "Aunque carezca de ojos, puede detectar obstáculos con las ondas ultrasónicas que emite su boca.",
     "obtaining_info": {
       "type": "wild",
@@ -2635,7 +2635,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/42.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/42.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/42.png",
-    "cry_url": "/media/pokemon/cries/42.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/42.ogg",
     "flavor_text": "Le encanta la sangre, tanto la de Pokémon como la humana. Sale a calmar su sed por la noche.",
     "obtaining_info": {
       "type": "wild",
@@ -2857,7 +2857,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/169.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/169.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/169.png",
-    "cry_url": "/media/pokemon/cries/169.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/169.ogg",
     "flavor_text": "Sus cuatro alas le permiten volar más rápida y sigilosamente. Es un Pokémon nocturno.",
     "obtaining_info": {
       "type": "evolution",
@@ -2914,7 +2914,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/74.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/74.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/74.png",
-    "cry_url": "/media/pokemon/cries/74.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/74.ogg",
     "flavor_text": "Muchos viven en zonas montañosas y permanecen semienterrados mientras miran a los escaladores.",
     "obtaining_info": {
       "type": "wild",
@@ -3069,7 +3069,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/75.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/75.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/75.png",
-    "cry_url": "/media/pokemon/cries/75.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/75.ogg",
     "flavor_text": "Muchos Graveler hacen agujeros en acantilados escarpados para establecerse dentro de ellos.",
     "obtaining_info": {
       "type": "wild",
@@ -3251,7 +3251,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/76.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/76.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/76.png",
-    "cry_url": "/media/pokemon/cries/76.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/76.ogg",
     "flavor_text": "Muda su piel una vez al año. Su cuerpo rocoso es tan duro que ni la dinamita lo daña.",
     "obtaining_info": {
       "type": "evolution",
@@ -3308,7 +3308,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/95.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/95.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/95.png",
-    "cry_url": "/media/pokemon/cries/95.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/95.ogg",
     "flavor_text": "Cuando viaja bajo tierra causa temblores y estruendo. Se puede mover a 80 km por hora.",
     "obtaining_info": {
       "type": "wild",
@@ -3427,7 +3427,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/208.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/208.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/208.png",
-    "cry_url": "/media/pokemon/cries/208.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/208.ogg",
     "flavor_text": "Su cuerpo es más duro que cualquier metal debido a la gran presión y calor de su hábitat.",
     "obtaining_info": {
       "type": "wild",
@@ -3562,7 +3562,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/408.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/408.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/408.png",
-    "cry_url": "/media/pokemon/cries/408.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/408.ogg",
     "flavor_text": "Vivía en la jungla hace unos 100 millones de años. Su cráneo es tan duro como el hierro.",
     "obtaining_info": {
       "type": "fossil",
@@ -3625,7 +3625,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/409.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/409.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/409.png",
-    "cry_url": "/media/pokemon/cries/409.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/409.ogg",
     "flavor_text": "Su potente cabezazo puede hacer añicos cualquier cosa.",
     "obtaining_info": {
       "type": "evolution",
@@ -3682,7 +3682,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/410.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/410.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/410.png",
-    "cry_url": "/media/pokemon/cries/410.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/410.ogg",
     "flavor_text": "Vivía en la jungla hace unos 100 millones de años. Su protección facial es tremendamente dura.",
     "obtaining_info": {
       "type": "trade",
@@ -3741,7 +3741,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/411.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/411.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/411.png",
-    "cry_url": "/media/pokemon/cries/411.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/411.ogg",
     "flavor_text": "Repele cualquier ataque frontal. Es muy dócil y se alimenta de hierba y bayas.",
     "obtaining_info": {
       "type": "trade",
@@ -3803,7 +3803,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/66.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/66.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/66.png",
-    "cry_url": "/media/pokemon/cries/66.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/66.ogg",
     "flavor_text": "Levanta un Graveler para mantener sus músculos en forma. Domina todas las artes marciales.",
     "obtaining_info": {
       "type": "wild",
@@ -3878,7 +3878,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/67.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/67.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/67.png",
-    "cry_url": "/media/pokemon/cries/67.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/67.ogg",
     "flavor_text": "La gran fortaleza de Machoke es peligrosa, así que lleva un cinturón que disminuye su energía.",
     "obtaining_info": {
       "type": "wild",
@@ -4036,7 +4036,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/68.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/68.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/68.png",
-    "cry_url": "/media/pokemon/cries/68.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/68.ogg",
     "flavor_text": "Golpea con sus cuatro brazos a gran velocidad. Puede dar 1000 golpes en dos segundos.",
     "obtaining_info": {
       "type": "evolution",
@@ -4093,7 +4093,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/54.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/54.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/54.png",
-    "cry_url": "/media/pokemon/cries/54.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/54.ogg",
     "flavor_text": "Cuando su jaqueca empeora, usa sus poderes misteriosos. Sin embargo, nunca recuerda haberlos usado.",
     "obtaining_info": {
       "type": "wild",
@@ -4236,7 +4236,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/55.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/55.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/55.png",
-    "cry_url": "/media/pokemon/cries/55.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/55.ogg",
     "flavor_text": "Este Pokémon vive en lagos. En el agua es más rápido que cualquier nadador profesional.",
     "obtaining_info": {
       "type": "wild",
@@ -4406,7 +4406,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/412.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/412.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/412.png",
-    "cry_url": "/media/pokemon/cries/412.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/412.ogg",
     "flavor_text": "Para protegerse de los vientos fríos invernales, se cubre con un caparazón de ramas y hojas.",
     "obtaining_info": {
       "type": "wild",
@@ -4545,7 +4545,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/413.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/413.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/413.png",
-    "cry_url": "/media/pokemon/cries/413.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/413.ogg",
     "flavor_text": "Cuando Burmy evolucionó, su caparazón pasó a formar parte de este Pokémon.",
     "obtaining_info": {
       "type": "evolution",
@@ -4602,7 +4602,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/414.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/414.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/414.png",
-    "cry_url": "/media/pokemon/cries/414.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/414.ogg",
     "flavor_text": "Le encanta la miel de las flores y roba la que recoge Combee.",
     "obtaining_info": {
       "type": "evolution",
@@ -4659,7 +4659,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/265.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/265.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/265.png",
-    "cry_url": "/media/pokemon/cries/265.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/265.ogg",
     "flavor_text": "Le encanta comer hojas. Si le ataca un Starly, se defenderá con sus púas.",
     "obtaining_info": {
       "type": "wild",
@@ -4798,7 +4798,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/266.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/266.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/266.png",
-    "cry_url": "/media/pokemon/cries/266.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/266.ogg",
     "flavor_text": "La seda que segrega su cuerpo le permite agarrarse a los árboles y esperar su evolución.",
     "obtaining_info": {
       "type": "wild",
@@ -4940,7 +4940,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/267.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/267.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/267.png",
-    "cry_url": "/media/pokemon/cries/267.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/267.ogg",
     "flavor_text": "Es un Pokémon agresivo. Con su boca larga y afilada ataca a sus rivales para drenar sus fluidos.",
     "obtaining_info": {
       "type": "wild",
@@ -5010,7 +5010,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/268.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/268.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/268.png",
-    "cry_url": "/media/pokemon/cries/268.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/268.ogg",
     "flavor_text": "Mantiene el calor en su capullo. Dedica todas las células de su cuerpo a evolucionar.",
     "obtaining_info": {
       "type": "evolution",
@@ -5067,7 +5067,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/269.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/269.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/269.png",
-    "cry_url": "/media/pokemon/cries/269.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/269.ogg",
     "flavor_text": "Pokémon nocturno. Atraído por las luces de la ciudad, se come las hojas y arbustos de las avenidas.",
     "obtaining_info": {
       "type": "evolution",
@@ -5124,7 +5124,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/415.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/415.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/415.png",
-    "cry_url": "/media/pokemon/cries/415.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/415.ogg",
     "flavor_text": "Está formado por otros tres Pokémon. Le lleva miel floral a Vespiquen.",
     "obtaining_info": {
       "type": "wild",
@@ -5263,7 +5263,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/416.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/416.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/416.png",
-    "cry_url": "/media/pokemon/cries/416.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/416.ogg",
     "flavor_text": "Su abdomen es un panal de larvas que alimenta con la miel recogida por Combee.",
     "obtaining_info": {
       "type": "evolution",
@@ -5320,7 +5320,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/417.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/417.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/417.png",
-    "cry_url": "/media/pokemon/cries/417.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/417.ogg",
     "flavor_text": "Crea bolas de pelo que crepitan con electricidad estática. Las almacena en agujeros de árboles.",
     "obtaining_info": {
       "type": "wild",
@@ -5391,7 +5391,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/418.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/418.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/418.png",
-    "cry_url": "/media/pokemon/cries/418.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/418.ogg",
     "flavor_text": "Posee un flotador en forma de collar hinchable. Flota en el agua con la cabeza fuera.",
     "obtaining_info": {
       "type": "wild",
@@ -5466,7 +5466,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/419.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/419.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/419.png",
-    "cry_url": "/media/pokemon/cries/419.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/419.ogg",
     "flavor_text": "Nada gracias a su flotador. Ayuda en los rescates de gente que se está ahogando.",
     "obtaining_info": {
       "type": "wild",
@@ -5560,7 +5560,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/420.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/420.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/420.png",
-    "cry_url": "/media/pokemon/cries/420.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/420.ogg",
     "flavor_text": "La pequeña esfera, dulce y sabrosa, contiene los nutrientes necesarios para evolucionar.",
     "obtaining_info": {
       "type": "wild",
@@ -5699,7 +5699,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/421.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/421.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/421.png",
-    "cry_url": "/media/pokemon/cries/421.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/421.ogg",
     "flavor_text": "Florece en épocas de mucha luz solar. Intenta compensar lo que soportó como capullo.",
     "obtaining_info": {
       "type": "evolution",
@@ -5756,7 +5756,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/422.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/422.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/422.png",
-    "cry_url": "/media/pokemon/cries/422.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/422.ogg",
     "flavor_text": "El color y la forma varían según la región. En Sinnoh hay dos tipos confirmados.",
     "obtaining_info": {
       "type": "wild",
@@ -5843,7 +5843,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/423.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/423.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/423.png",
-    "cry_url": "/media/pokemon/cries/423.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/423.ogg",
     "flavor_text": "Posee un cuerpo flexible sin huesos. Si pierde alguna parte, le vuelve a crecer.",
     "obtaining_info": {
       "type": "wild",
@@ -5925,7 +5925,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/214.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/214.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/214.png",
-    "cry_url": "/media/pokemon/cries/214.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/214.ogg",
     "flavor_text": "Forman grupos en los bosques para buscar savia de árboles, su comida favorita. Puede voltear a su presa.",
     "obtaining_info": {
       "type": "wild",
@@ -6064,7 +6064,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/190.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/190.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/190.png",
-    "cry_url": "/media/pokemon/cries/190.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/190.ogg",
     "flavor_text": "Usa su cola para recoger la fruta que no está a su alcance. Su cola es más hábil que sus manos.",
     "obtaining_info": {
       "type": "wild",
@@ -6203,7 +6203,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/424.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/424.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/424.png",
-    "cry_url": "/media/pokemon/cries/424.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/424.ogg",
     "flavor_text": "Para comer, rompe nueces con sus dos colas. Raras veces utiliza sus brazos.",
     "obtaining_info": {
       "type": "evolution",
@@ -6260,7 +6260,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/425.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/425.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/425.png",
-    "cry_url": "/media/pokemon/cries/425.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/425.ogg",
     "flavor_text": "Está formado por los espíritus de personas y Pokémon. Le encantan las estaciones húmedas.",
     "obtaining_info": {
       "type": "static",
@@ -6319,7 +6319,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/426.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/426.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/426.png",
-    "cry_url": "/media/pokemon/cries/426.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/426.ogg",
     "flavor_text": "Durante el día está somnoliento, pero por la noche sale volando en grupo, aunque nadie sabe adónde.",
     "obtaining_info": {
       "type": "evolution",
@@ -6376,7 +6376,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/427.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/427.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/427.png",
-    "cry_url": "/media/pokemon/cries/427.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/427.ogg",
     "flavor_text": "Ataca a sus enemigos con un golpe rápido de sus orejas. Sus picotazos son muy dolorosos.",
     "obtaining_info": {
       "type": "wild",
@@ -6435,7 +6435,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/428.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/428.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/428.png",
-    "cry_url": "/media/pokemon/cries/428.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/428.ogg",
     "flavor_text": "Es un Pokémon muy precavido. Si siente peligro, se envuelve con el pelaje de sus orejas.",
     "obtaining_info": {
       "type": "evolution",
@@ -6492,7 +6492,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/92.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/92.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/92.png",
-    "cry_url": "/media/pokemon/cries/92.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/92.ogg",
     "flavor_text": "El cuerpo de este Pokémon está compuesto en un 95% de gases que el viento puede arrastrar.",
     "obtaining_info": {
       "type": "wild",
@@ -6607,7 +6607,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/93.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/93.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/93.png",
-    "cry_url": "/media/pokemon/cries/93.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/93.ogg",
     "flavor_text": "Puede atravesar cualquier obstáculo. Atraviesa las paredes para espiar a sus enemigos.",
     "obtaining_info": {
       "type": "wild",
@@ -6721,7 +6721,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/94.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/94.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/94.png",
-    "cry_url": "/media/pokemon/cries/94.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/94.ogg",
     "flavor_text": "Se esconde entre las sombras. Se dice que donde Gengar acecha, la temperatura baja 5 grados.",
     "obtaining_info": {
       "type": "evolution",
@@ -6783,7 +6783,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/200.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/200.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/200.png",
-    "cry_url": "/media/pokemon/cries/200.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/200.ogg",
     "flavor_text": "Le encanta sorprender a la gente de noche y asustarla con sus estridentes gritos.",
     "obtaining_info": {
       "type": "trade",
@@ -6842,7 +6842,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/429.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/429.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/429.png",
-    "cry_url": "/media/pokemon/cries/429.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/429.ogg",
     "flavor_text": "Sus gritos parecen cánticos. Los que los escuchan padecen migrañas y alucinaciones.",
     "obtaining_info": {
       "type": "trade",
@@ -6929,7 +6929,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/198.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/198.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/198.png",
-    "cry_url": "/media/pokemon/cries/198.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/198.ogg",
     "flavor_text": "Se dice que ver a este Pokémon por la noche es señal de que van a ocurrir cosas terribles.",
     "obtaining_info": {
       "type": "wild",
@@ -7008,7 +7008,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/430.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/430.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/430.png",
-    "cry_url": "/media/pokemon/cries/430.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/430.ogg",
     "flavor_text": "Está activo por la noche y pulula arrastrando a numerosos Murkrow.",
     "obtaining_info": {
       "type": "evolution",
@@ -7090,7 +7090,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/431.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/431.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/431.png",
-    "cry_url": "/media/pokemon/cries/431.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/431.ogg",
     "flavor_text": "Araña cuando está enfadado y ronronea cuando esta cariñoso. Su imprevisibilidad es famosa.",
     "obtaining_info": {
       "type": "trade",
@@ -7149,7 +7149,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/432.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/432.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/432.png",
-    "cry_url": "/media/pokemon/cries/432.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/432.ogg",
     "flavor_text": "Es un bruto descarado que entra en el nido de cualquier Pokémon y se lo apropia.",
     "obtaining_info": {
       "type": "trade",
@@ -7211,7 +7211,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/118.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/118.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/118.png",
-    "cry_url": "/media/pokemon/cries/118.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/118.ogg",
     "flavor_text": "Nada elegantemente moviendo la aleta de su cola como un vestido. Parece una reina.",
     "obtaining_info": {
       "type": "wild",
@@ -7314,7 +7314,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/119.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/119.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/119.png",
-    "cry_url": "/media/pokemon/cries/119.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/119.ogg",
     "flavor_text": "Hace su nido en los agujeros que cava con el cuerno. Defiende sus huevos con su vida.",
     "obtaining_info": {
       "type": "wild",
@@ -7420,7 +7420,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/339.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/339.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/339.png",
-    "cry_url": "/media/pokemon/cries/339.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/339.ogg",
     "flavor_text": "Recubre su cuerpo de una película viscosa que le permite escapar si alguien lo agarra.",
     "obtaining_info": {
       "type": "wild",
@@ -7547,7 +7547,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/340.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/340.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/340.png",
-    "cry_url": "/media/pokemon/cries/340.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/340.ogg",
     "flavor_text": "Es muy territorial. Expulsa a los intrusos con unos temblores que se sienten en un radio de 5 km.",
     "obtaining_info": {
       "type": "wild",
@@ -7673,7 +7673,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/433.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/433.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/433.png",
-    "cry_url": "/media/pokemon/cries/433.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/433.ogg",
     "flavor_text": "Emite chillidos al agitar la esfera de su garganta. Se mueve con enérgicos saltos.",
     "obtaining_info": {
       "type": "wild",
@@ -7805,7 +7805,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/358.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/358.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/358.png",
-    "cry_url": "/media/pokemon/cries/358.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/358.ogg",
     "flavor_text": "Sus gritos sacuden el aire para derribar a los rivales voladores. Habla con siete tipos de gritos.",
     "obtaining_info": {
       "type": "wild",
@@ -7883,7 +7883,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/434.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/434.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/434.png",
-    "cry_url": "/media/pokemon/cries/434.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/434.ogg",
     "flavor_text": "Se protege expulsando un fluido nocivo por su parte trasera. El hedor dura 24 horas.",
     "obtaining_info": {
       "type": "wild",
@@ -7950,7 +7950,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/435.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/435.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/435.png",
-    "cry_url": "/media/pokemon/cries/435.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/435.ogg",
     "flavor_text": "Para atacar, emite un fluido maloliente por la punta de su cola que puede llegar a más de 50 m.",
     "obtaining_info": {
       "type": "wild",
@@ -8016,7 +8016,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/307.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/307.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/307.png",
-    "cry_url": "/media/pokemon/cries/307.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/307.ogg",
     "flavor_text": "Solo come una baya al día. El ayuno fortalece su espíritu y su capacidad de concentración.",
     "obtaining_info": {
       "type": "wild",
@@ -8115,7 +8115,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/308.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/308.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/308.png",
-    "cry_url": "/media/pokemon/cries/308.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/308.ogg",
     "flavor_text": "El yoga ha perfeccionado su sexto sentido. Sus movimientos son extremadamente elegantes.",
     "obtaining_info": {
       "type": "wild",
@@ -8241,7 +8241,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/436.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/436.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/436.png",
-    "cry_url": "/media/pokemon/cries/436.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/436.ogg",
     "flavor_text": "Se descubrieron herramientas con su forma en tumbas antiguas, pero se desconoce si tiene relación.",
     "obtaining_info": {
       "type": "wild",
@@ -8332,7 +8332,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/437.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/437.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/437.png",
-    "cry_url": "/media/pokemon/cries/437.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/437.ogg",
     "flavor_text": "Se produjo un gran revuelo cuando encontraron uno en una obra después de 2000 años durmiendo.",
     "obtaining_info": {
       "type": "wild",
@@ -8442,7 +8442,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/77.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/77.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/77.png",
-    "cry_url": "/media/pokemon/cries/77.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/77.ogg",
     "flavor_text": "Sus impresionantes cola y crin de fuego le crecen una hora después de nacer.",
     "obtaining_info": {
       "type": "wild",
@@ -8521,7 +8521,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/78.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/78.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/78.png",
-    "cry_url": "/media/pokemon/cries/78.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/78.ogg",
     "flavor_text": "Galopa a casi 240 km por hora. Su crin ardiente parece una flecha cuando corre.",
     "obtaining_info": {
       "type": "evolution",
@@ -8578,7 +8578,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/438.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/438.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/438.png",
-    "cry_url": "/media/pokemon/cries/438.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/438.ogg",
     "flavor_text": "Parece que siempre está llorando, pero en realidad está eliminando el exceso de fluidos corporales.",
     "obtaining_info": {
       "type": "wild",
@@ -8654,7 +8654,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/185.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/185.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/185.png",
-    "cry_url": "/media/pokemon/cries/185.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/185.ogg",
     "flavor_text": "Aunque parezca un árbol, su cuerpo se asemeja a las rocas y piedras. Es débil frente al agua",
     "obtaining_info": {
       "type": "evolution",
@@ -8716,7 +8716,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/439.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/439.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/439.png",
-    "cry_url": "/media/pokemon/cries/439.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/439.ogg",
     "flavor_text": "Suele imitar a sus enemigos. Cuando lo hace, su rival no puede apartar los ojos de él.",
     "obtaining_info": {
       "type": "wild",
@@ -8800,7 +8800,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/122.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/122.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/122.png",
-    "cry_url": "/media/pokemon/cries/122.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/122.ogg",
     "flavor_text": "Es un experto mimo que puede crear paredes invisibles pero sólidas solo con sus gestos.",
     "obtaining_info": {
       "type": "wild",
@@ -8870,7 +8870,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/440.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/440.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/440.png",
-    "cry_url": "/media/pokemon/cries/440.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/440.ogg",
     "flavor_text": "Le encantan las cosas blancas y redondas. Imita a Chansey llevando una roca en forma de huevo.",
     "obtaining_info": {
       "type": "gift",
@@ -8946,7 +8946,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/113.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/113.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/113.png",
-    "cry_url": "/media/pokemon/cries/113.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/113.ogg",
     "flavor_text": "Se dice que reparte felicidad. Es compasivo y reparte sus huevos entre la gente herida.",
     "obtaining_info": {
       "type": "wild",
@@ -9045,7 +9045,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/242.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/242.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/242.png",
-    "cry_url": "/media/pokemon/cries/242.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/242.ogg",
     "flavor_text": "Este amable Pokémon cuida de Pokémon enfermos y los sana. Puede presentir la tristeza.",
     "obtaining_info": {
       "type": "evolution",
@@ -9102,7 +9102,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/173.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/173.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/173.png",
-    "cry_url": "/media/pokemon/cries/173.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/173.ogg",
     "flavor_text": "Tiene forma de estrella. Se cree que llega cabalgando sobre estrellas fugaces.",
     "obtaining_info": {
       "type": "wild",
@@ -9169,7 +9169,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/35.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/35.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/35.png",
-    "cry_url": "/media/pokemon/cries/35.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/35.ogg",
     "flavor_text": "El preferido de mucha gente por su naturaleza afable. Se cree que vive en grupo en montañas tranquilas.",
     "obtaining_info": {
       "type": "wild",
@@ -9275,7 +9275,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/36.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/36.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/36.png",
-    "cry_url": "/media/pokemon/cries/36.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/36.ogg",
     "flavor_text": "Rara vez se le ve. Se dice que en noches de luna llena sale a jugar en lagos solitarios.",
     "obtaining_info": {
       "type": "evolution",
@@ -9353,7 +9353,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/441.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/441.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/441.png",
-    "cry_url": "/media/pokemon/cries/441.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/441.ogg",
     "flavor_text": "Pueden aprender y hablar lenguas humanas. Si se juntan, todos aprenden las mismas palabras.",
     "obtaining_info": {
       "type": "wild",
@@ -9420,7 +9420,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/172.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/172.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/172.png",
-    "cry_url": "/media/pokemon/cries/172.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/172.ogg",
     "flavor_text": "Las bolsas de sus mejillas son aún demasiado pequeñas para almacenar mucha electricidad.",
     "obtaining_info": {
       "type": "wild",
@@ -9479,7 +9479,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/25.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/25.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/25.png",
-    "cry_url": "/media/pokemon/cries/25.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/25.ogg",
     "flavor_text": "Cuando se siente amenazado, las bolsas de sus mejillas emiten chisporroteos de electricidad.",
     "obtaining_info": {
       "type": "wild",
@@ -9541,7 +9541,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/26.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/26.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/26.png",
-    "cry_url": "/media/pokemon/cries/26.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/26.ogg",
     "flavor_text": "Se vuelve agresivo si su cuerpo acumula demasiada electricidad, que descarga a través de la cola.",
     "obtaining_info": {
       "type": "evolution",
@@ -9623,7 +9623,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/163.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/163.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/163.png",
-    "cry_url": "/media/pokemon/cries/163.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/163.ogg",
     "flavor_text": "Siempre se yergue sobre una pata. Nunca apoya ambas, ni siquiera al sufrir un ataque.",
     "obtaining_info": {
       "type": "wild",
@@ -9710,7 +9710,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/164.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/164.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/164.png",
-    "cry_url": "/media/pokemon/cries/164.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/164.ogg",
     "flavor_text": "Sus ojos son especiales: pueden distinguir objetos siempre y cuando haya algo de luz.",
     "obtaining_info": {
       "type": "wild",
@@ -9816,7 +9816,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/442.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/442.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/442.png",
-    "cry_url": "/media/pokemon/cries/442.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/442.ogg",
     "flavor_text": "Se formó a partir de 108 espíritus. Está unido a la fisura de una piedra angular mística.",
     "obtaining_info": {
       "type": "static",
@@ -9875,7 +9875,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/443.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/443.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/443.png",
-    "cry_url": "/media/pokemon/cries/443.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/443.ogg",
     "flavor_text": "Anida en pequeños agujeros en las paredes de cuevas. Cuando una presa pasa cerca, salta hacia ella.",
     "obtaining_info": {
       "type": "wild",
@@ -9934,7 +9934,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/444.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/444.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/444.png",
-    "cry_url": "/media/pokemon/cries/444.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/444.ogg",
     "flavor_text": "Existe la arraigada creencia de que una medicina hecha de sus escamas puede curarlo todo.",
     "obtaining_info": {
       "type": "evolution",
@@ -9991,7 +9991,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/445.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/445.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/445.png",
-    "cry_url": "/media/pokemon/cries/445.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/445.ogg",
     "flavor_text": "Cuando despliega su cuerpo y sus alas, parece un avión a reacción. Vuela a velocidad sónica.",
     "obtaining_info": {
       "type": "evolution",
@@ -10048,7 +10048,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/446.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/446.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/446.png",
-    "cry_url": "/media/pokemon/cries/446.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/446.ogg",
     "flavor_text": "Engulle su peso en comida una vez al día. Se lo traga todo sin apenas masticar.",
     "obtaining_info": {
       "type": "wild",
@@ -10204,7 +10204,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/143.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/143.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/143.png",
-    "cry_url": "/media/pokemon/cries/143.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/143.ogg",
     "flavor_text": "Su estómago puede digerir todo tipo de comida, incluso si está podrida o mohosa.",
     "obtaining_info": {
       "type": "evolution",
@@ -10266,7 +10266,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/201.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/201.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/201.png",
-    "cry_url": "/media/pokemon/cries/201.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/201.ogg",
     "flavor_text": "Tienen forma de letras antiguas. Se desconoce qué fue antes: si la escritura o los Unown.",
     "obtaining_info": {
       "type": "wild",
@@ -10345,7 +10345,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/447.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/447.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/447.png",
-    "cry_url": "/media/pokemon/cries/447.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/447.ogg",
     "flavor_text": "Su aura se intensifica para alertar a otros cuando está triste o tiene miedo.",
     "obtaining_info": {
       "type": "gift",
@@ -10404,7 +10404,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/448.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/448.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/448.png",
-    "cry_url": "/media/pokemon/cries/448.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/448.ogg",
     "flavor_text": "Puede sentir el aura de todas las cosas. Comprende el lenguaje humano.",
     "obtaining_info": {
       "type": "evolution",
@@ -10461,7 +10461,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/194.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/194.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/194.png",
-    "cry_url": "/media/pokemon/cries/194.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/194.ogg",
     "flavor_text": "Vive en aguas frías. Para dormir se entierra a medias en el lodo del fondo.",
     "obtaining_info": {
       "type": "wild",
@@ -10544,7 +10544,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/195.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/195.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/195.png",
-    "cry_url": "/media/pokemon/cries/195.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/195.ogg",
     "flavor_text": "Es un Pokémon bastante perezoso. Para pescar permanece en el fondo del río con la boca abierta.",
     "obtaining_info": {
       "type": "wild",
@@ -10630,7 +10630,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/278.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/278.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/278.png",
-    "cry_url": "/media/pokemon/cries/278.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/278.ogg",
     "flavor_text": "Anida en acantilados y alcanza gran altura aprovechando las corrientes ascendentes.",
     "obtaining_info": {
       "type": "wild",
@@ -10737,7 +10737,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/279.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/279.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/279.png",
-    "cry_url": "/media/pokemon/cries/279.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/279.ogg",
     "flavor_text": "Hunde su gran pico en el mar para sacar numerosas presas junto con mucha agua.",
     "obtaining_info": {
       "type": "wild",
@@ -10871,7 +10871,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/203.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/203.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/203.png",
-    "cry_url": "/media/pokemon/cries/203.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/203.ogg",
     "flavor_text": "Su cola tiene un pequeño cerebro y muerde a los enemigos que intentan acercarse por la espalda.",
     "obtaining_info": {
       "type": "wild",
@@ -10934,7 +10934,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/449.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/449.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/449.png",
-    "cry_url": "/media/pokemon/cries/449.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/449.ogg",
     "flavor_text": "Vive en zonas áridas. En lugar de sudar, su cuerpo expulsa granos de arena.",
     "obtaining_info": {
       "type": "wild",
@@ -11001,7 +11001,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/450.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/450.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/450.png",
-    "cry_url": "/media/pokemon/cries/450.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/450.ogg",
     "flavor_text": "Cuando ataca, expulsa arena almacenada en su interior para crear un gran tornado.",
     "obtaining_info": {
       "type": "wild",
@@ -11063,7 +11063,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/298.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/298.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/298.png",
-    "cry_url": "/media/pokemon/cries/298.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/298.ogg",
     "flavor_text": "Vive cerca del agua. En la tierra se mueve muy rápido botando sobre su gran cola.",
     "obtaining_info": {
       "type": "wild",
@@ -11163,7 +11163,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/183.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/183.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/183.png",
-    "cry_url": "/media/pokemon/cries/183.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/183.ogg",
     "flavor_text": "Bucea usando su cola a modo de boya. Le gusta comer las plantas del fondo fluvial.",
     "obtaining_info": {
       "type": "wild",
@@ -11253,7 +11253,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/184.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/184.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/184.png",
-    "cry_url": "/media/pokemon/cries/184.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/184.ogg",
     "flavor_text": "Vive en ríos y lagos. En el agua, sus colores y dibujos confunden a los enemigos.",
     "obtaining_info": {
       "type": "evolution",
@@ -11310,7 +11310,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/451.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/451.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/451.png",
-    "cry_url": "/media/pokemon/cries/451.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/451.ogg",
     "flavor_text": "Agarra a sus presas con las garras de la cola y les inyecta veneno. Espera hasta que hace efecto.",
     "obtaining_info": {
       "type": "wild",
@@ -11389,7 +11389,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/452.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/452.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/452.png",
-    "cry_url": "/media/pokemon/cries/452.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/452.ogg",
     "flavor_text": "Sus brazos tienen fuerza para destrozar un coche. La punta de sus zarpas segrega veneno.",
     "obtaining_info": {
       "type": "wild",
@@ -11471,7 +11471,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/453.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/453.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/453.png",
-    "cry_url": "/media/pokemon/cries/453.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/453.ogg",
     "flavor_text": "Tiene bolsas venenosas en las mejillas. Pilla desprevenidos a sus rivales para pincharles.",
     "obtaining_info": {
       "type": "wild",
@@ -11550,7 +11550,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/454.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/454.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/454.png",
-    "cry_url": "/media/pokemon/cries/454.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/454.ogg",
     "flavor_text": "Sus garras segregan una toxina tan potente que un simple arañazo puede ser mortal.",
     "obtaining_info": {
       "type": "wild",
@@ -11632,7 +11632,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/455.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/455.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/455.png",
-    "cry_url": "/media/pokemon/cries/455.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/455.ogg",
     "flavor_text": "Atrae a sus presas con saliva de olor dulce y las mastica. Tarda todo un día en comérselas.",
     "obtaining_info": {
       "type": "wild",
@@ -11711,7 +11711,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/223.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/223.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/223.png",
-    "cry_url": "/media/pokemon/cries/223.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/223.ogg",
     "flavor_text": "Escupe potentes chorros de agua para derribar presas voladoras.",
     "obtaining_info": {
       "type": "wild",
@@ -11798,7 +11798,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/224.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/224.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/224.png",
-    "cry_url": "/media/pokemon/cries/224.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/224.ogg",
     "flavor_text": "Se refugia en los agujeros de las rocas y el fondo marino. Sus ventosas son muy potentes.",
     "obtaining_info": {
       "type": "wild",
@@ -11888,7 +11888,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/456.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/456.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/456.png",
-    "cry_url": "/media/pokemon/cries/456.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/456.ogg",
     "flavor_text": "Si se expone mucho al sol, los dibujos de sus aletas brillan en la oscuridad.",
     "obtaining_info": {
       "type": "wild",
@@ -11979,7 +11979,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/457.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/457.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/457.png",
-    "cry_url": "/media/pokemon/cries/457.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/457.ogg",
     "flavor_text": "Vive en las profundidades marinas. Atrae a sus presas con parpadeos del dibujo de sus cuatro aletas.",
     "obtaining_info": {
       "type": "wild",
@@ -12073,7 +12073,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/72.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/72.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/72.png",
-    "cry_url": "/media/pokemon/cries/72.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/72.ogg",
     "flavor_text": "Su cuerpo se compone casi en exclusiva de agua. Lanza extraños rayos con sus ojos cristalinos.",
     "obtaining_info": {
       "type": "wild",
@@ -12176,7 +12176,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/73.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/73.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/73.png",
-    "cry_url": "/media/pokemon/cries/73.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/73.ogg",
     "flavor_text": "Posee 80 tentáculos con los que aprisiona a sus presas hasta que se debilitan por el veneno.",
     "obtaining_info": {
       "type": "wild",
@@ -12306,7 +12306,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/349.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/349.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/349.png",
-    "cry_url": "/media/pokemon/cries/349.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/349.ogg",
     "flavor_text": "Se caracterizan por su aspecto endeble. Se agrupan en gran número en lugares muy concretos.",
     "obtaining_info": {
       "type": "wild",
@@ -12365,7 +12365,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/350.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/350.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/350.png",
-    "cry_url": "/media/pokemon/cries/350.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/350.ogg",
     "flavor_text": "Se dice que emerge del fondo de los lagos cuando la gente discute para apaciguarla.",
     "obtaining_info": {
       "type": "evolution",
@@ -12422,7 +12422,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/458.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/458.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/458.png",
-    "cry_url": "/media/pokemon/cries/458.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/458.ogg",
     "flavor_text": "Un Pokémon amable que captura los débiles flujos de agua marina con sus antenas.",
     "obtaining_info": {
       "type": "wild",
@@ -12502,7 +12502,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/226.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/226.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/226.png",
-    "cry_url": "/media/pokemon/cries/226.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/226.ogg",
     "flavor_text": "Cuando el mar está en calma, se pueden ver bancos de Mantine nadando como si volasen.",
     "obtaining_info": {
       "type": "evolution",
@@ -12564,7 +12564,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/459.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/459.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/459.png",
-    "cry_url": "/media/pokemon/cries/459.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/459.ogg",
     "flavor_text": "Vive en montañas nevadas. Apenas tiene contacto con los humanos y es muy curioso.",
     "obtaining_info": {
       "type": "wild",
@@ -12639,7 +12639,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/460.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/460.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/460.png",
-    "cry_url": "/media/pokemon/cries/460.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/460.ogg",
     "flavor_text": "Es el abominable hombre de las nieves. Produce ventiscas en las montañas cubiertas de nieve.",
     "obtaining_info": {
       "type": "wild",
@@ -12705,7 +12705,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/215.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/215.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/215.png",
-    "cry_url": "/media/pokemon/cries/215.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/215.ogg",
     "flavor_text": "Se alimenta de huevos robados en nidos. Clava sus afiladas garras en los puntos débiles de sus rivales.",
     "obtaining_info": {
       "type": "wild",
@@ -12800,7 +12800,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/461.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/461.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/461.png",
-    "cry_url": "/media/pokemon/cries/461.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/461.ogg",
     "flavor_text": "Viven en zonas frías y forman grupos de cuatro o cinco para cazar con gran coordinación.",
     "obtaining_info": {
       "type": "evolution",
@@ -12882,7 +12882,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/480.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/480.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/480.png",
-    "cry_url": "/media/pokemon/cries/480.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/480.ogg",
     "flavor_text": "Se le conoce como el \"ser de la sabiduría\". Se dice que puede borrar la memoria con una mirada.",
     "obtaining_info": {
       "type": "legendary",
@@ -12937,7 +12937,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/481.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/481.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/481.png",
-    "cry_url": "/media/pokemon/cries/481.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/481.ogg",
     "flavor_text": "Se le conoce como el \"ser de la emoción\". Enseñó a los humanos la nobleza del dolor y la alegría.",
     "obtaining_info": {
       "type": "legendary",
@@ -12992,7 +12992,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/482.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/482.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/482.png",
-    "cry_url": "/media/pokemon/cries/482.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/482.ogg",
     "flavor_text": "Se le conoce como el Ser de la Voluntad. Duerme en el fondo de un lago para equilibrar el mundo.",
     "obtaining_info": {
       "type": "legendary",
@@ -13047,7 +13047,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/483.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/483.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/483.png",
-    "cry_url": "/media/pokemon/cries/483.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/483.ogg",
     "flavor_text": "Tiene el poder de controlar el tiempo. Aparece en los mitos de Sinnoh como una vieja deidad.",
     "obtaining_info": {
       "type": "legendary",
@@ -13102,7 +13102,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/484.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/484.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/484.png",
-    "cry_url": "/media/pokemon/cries/484.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/484.ogg",
     "flavor_text": "Tiene la habilidad de distorsionar el espacio. La mitología de Sinnoh lo describe como una deidad.",
     "obtaining_info": {
       "type": "trade",
@@ -13157,7 +13157,7 @@
     "modal_retro_sprite_back_url": "/media/pokemon/sprites/diamond/back/490.png",
     "modal_retro_sprite_shiny_back_url": "/media/pokemon/sprites/diamond_shiny/back/490.png",
     "pc_icon_url": "/media/pokemon/icons/gen4/490.png",
-    "cry_url": "/media/pokemon/cries/490.ogg",
+    "cry_url": "/media/pokemon/cries/legacy/490.ogg",
     "flavor_text": "Nació en el frío fondo marino. Nada grandes distancias para regresar a su lugar de origen.",
     "obtaining_info": {
       "type": "gift",
