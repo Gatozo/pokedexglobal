@@ -231,14 +231,30 @@ export function cycleCardPokemonForm(entryId, direction) {
 
 export function renderModalObtaining(data, activeForm = null) {
     const isUnownWithForm = (data.name && data.name.toLowerCase() === 'unown') && activeForm && activeForm.locations;
-    const obt = isUnownWithForm ? {
-        type: activeForm.type || (data.obtaining ? data.obtaining.type : 'wild'),
-        summary: activeForm.summary || (data.obtaining ? data.obtaining.summary : `Exclusivo de ${activeForm.chamber_name || 'su cámara'}.`),
-        locations: activeForm.locations || (data.obtaining ? data.obtaining.locations : []),
-        badge_label: activeForm.badge_label || (data.obtaining ? data.obtaining.badge_label : 'Salvaje'),
-        badge_color: activeForm.badge_color || (data.obtaining ? data.obtaining.badge_color : 'emerald'),
-        is_unique: activeForm.is_unique || (data.obtaining ? data.obtaining.is_unique : false),
-    } : (data.obtaining || {});
+    const hasFormObtaining = Boolean(activeForm && (activeForm.locations || activeForm.summary));
+
+    let obt;
+    if (isUnownWithForm) {
+        obt = {
+            type: activeForm.type || (data.obtaining ? data.obtaining.type : 'wild'),
+            summary: activeForm.summary || (data.obtaining ? data.obtaining.summary : `Exclusivo de ${activeForm.chamber_name || 'su cámara'}.`),
+            locations: activeForm.locations || (data.obtaining ? data.obtaining.locations : []),
+            badge_label: activeForm.badge_label || (data.obtaining ? data.obtaining.badge_label : 'Salvaje'),
+            badge_color: activeForm.badge_color || (data.obtaining ? data.obtaining.badge_color : 'emerald'),
+            is_unique: activeForm.is_unique || (data.obtaining ? data.obtaining.is_unique : false),
+        };
+    } else if (hasFormObtaining) {
+        obt = {
+            type: activeForm.type || (data.obtaining ? data.obtaining.type : 'wild'),
+            summary: activeForm.summary || (data.obtaining ? data.obtaining.summary : ''),
+            locations: activeForm.locations || (data.obtaining ? data.obtaining.locations : []),
+            badge_label: activeForm.badge_label || (data.obtaining ? data.obtaining.badge_label : 'Salvaje'),
+            badge_color: activeForm.badge_color || (data.obtaining ? data.obtaining.badge_color : 'emerald'),
+            is_unique: activeForm.is_unique || (data.obtaining ? data.obtaining.is_unique : false),
+        };
+    } else {
+        obt = data.obtaining || {};
+    }
 
     const uniqueBadgeElem = document.getElementById('modal-unique-badge');
     if (uniqueBadgeElem) {
@@ -626,6 +642,83 @@ export function renderModalObtaining(data, activeForm = null) {
     }
 }
 
+export function toggleModalNotesAccordion() {
+    const content = document.getElementById('modal-notes-content');
+    const chevron = document.getElementById('modal-notes-chevron');
+    const btn = document.getElementById('modal-notes-accordion-btn');
+    if (!content || !chevron) return;
+    const isCollapsed = content.classList.contains('hidden');
+    if (isCollapsed) {
+        content.classList.remove('hidden');
+        chevron.classList.add('rotate-180');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+    } else {
+        content.classList.add('hidden');
+        chevron.classList.remove('rotate-180');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+}
+window.toggleModalNotesAccordion = toggleModalNotesAccordion;
+
+export function renderModalNotes(data, activeForm = null) {
+    const section = document.getElementById('modal-notes-section');
+    const content = document.getElementById('modal-notes-content');
+    const counter = document.getElementById('modal-notes-counter');
+    const title = document.getElementById('modal-notes-title');
+    const icon = document.getElementById('modal-notes-icon');
+    if (!section || !content) return;
+
+    const formNotes = (activeForm && Array.isArray(activeForm.notes)) ? activeForm.notes : [];
+    const baseNotes = (data && Array.isArray(data.notes)) ? data.notes : [];
+    const singleFormNote = (activeForm && activeForm.form_note) ? [{
+        title: activeForm.name ? `Nota de ${activeForm.name}` : "Mecánica de Forma",
+        text: activeForm.form_note,
+        tag: "Mecánica",
+        icon: "/media/items/rule-book.png"
+    }] : [];
+
+    const allNotes = [...formNotes, ...singleFormNote, ...baseNotes];
+
+    if (allNotes.length === 0) {
+        section.classList.add('hidden');
+        content.innerHTML = '';
+        return;
+    }
+
+    section.classList.remove('hidden');
+    if (counter) counter.textContent = allNotes.length;
+
+    if (allNotes.length > 1) {
+        if (title) title.textContent = "Notas y Detalles";
+        if (icon) icon.src = "/media/items/journal.png";
+    } else {
+        if (title) title.textContent = allNotes[0].title || "Notas y Detalles";
+        if (icon) icon.src = allNotes[0].icon || "/media/items/journal.png";
+    }
+
+    content.innerHTML = '';
+    allNotes.forEach(note => {
+        const card = document.createElement('div');
+        card.className = 'flex items-start gap-2.5 p-2.5 rounded-lg border-2 border-slate-950 bg-amber-50/80 shadow-[1px_1px_0px_0px_#0f172a]';
+        const iconSrc = note.icon || '/media/items/rule-book.png';
+        const tagHtml = note.tag ? `<span class="text-[9px] font-black uppercase px-1.5 py-0.2 rounded border border-slate-900 bg-amber-300 text-slate-950 shadow-sm">${note.tag}</span>` : '';
+
+        card.innerHTML = `
+            <div class="w-7 h-7 flex items-center justify-center shrink-0 pt-0.5">
+                <img src="${iconSrc}" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+            </div>
+            <div class="min-w-0 flex-1 space-y-0.5 text-left">
+                <div class="flex items-center gap-1.5 flex-wrap">
+                    <span class="text-xs font-black uppercase text-slate-900 tracking-tight">${note.title || 'Nota'}</span>
+                    ${tagHtml}
+                </div>
+                <p class="text-xs font-semibold text-slate-700 leading-snug">${note.text}</p>
+            </div>
+        `;
+        content.appendChild(card);
+    });
+}
+
 export function applyModalForm(formIdx) {
     if (!state.activeModalEntryId) return;
     const data = getEntryData(state.activeModalEntryId);
@@ -665,8 +758,11 @@ export function applyModalForm(formIdx) {
         formBadge.classList.remove('hidden');
     }
 
-    // 4. Ubicación específica si la forma define ubicaciones propias (Unown)
+    // 4. Ubicación específica si la forma define ubicaciones propias (Unown, Shellos, etc.)
     renderModalObtaining(data, form);
+
+    // 5. Notas y mecánicas de la forma
+    renderModalNotes(data, form);
 }
 
 export function cycleModalPokemonForm(direction) {
@@ -754,6 +850,7 @@ export function openPokemonModalDirect(entryId, options = {}) {
 
         // 5. Método de Obtención y Localización para especies sin formas
         renderModalObtaining(data, null);
+        renderModalNotes(data, null);
     }
 
     // 4. Biometría (Altura y Peso)

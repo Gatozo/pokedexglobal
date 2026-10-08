@@ -86,7 +86,9 @@ import {
     cycleCardPokemonForm, 
     applyModalForm, 
     cycleModalPokemonForm,
-    toggleComicCaveAccordion
+    toggleComicCaveAccordion,
+    toggleModalNotesAccordion,
+    renderModalNotes
 } from './modal_comic.js';
 import { 
     setModalUrlHash, 
@@ -169,6 +171,8 @@ window.cycleCardPokemonForm = cycleCardPokemonForm;
 window.applyModalForm = applyModalForm;
 window.cycleModalPokemonForm = cycleModalPokemonForm;
 window.toggleComicCaveAccordion = toggleComicCaveAccordion;
+window.toggleModalNotesAccordion = toggleModalNotesAccordion;
+window.renderModalNotes = renderModalNotes;
 
 window.setModalUrlHash = setModalUrlHash;
 window.clearModalUrlHash = clearModalUrlHash;

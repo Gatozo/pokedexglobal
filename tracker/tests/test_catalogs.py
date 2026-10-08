@@ -1794,6 +1794,103 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(porygon.obtaining_info.get("badge_label"), "Jardín Trofeo")
         self.assertIn("gift", eevee.filter_tags)
 
+    def test_gen4_pokemon_alternate_forms(self):
+        """Valida que todas las formas canónicas de Gen 4 en Diamante (regional y nacional)
+        estén correctamente configuradas, con tipos elementales, notas canónicas, ubicaciones
+        y rutas de sprites nativos de Sinnoh."""
+        from tracker.catalog_service import get_compiled_catalog
+        import json
+
+        diamond_reg = get_compiled_catalog("diamond", is_national=False)
+        diamond_nat = get_compiled_catalog("diamond", is_national=True)
+
+        # 1. Castform (#351) en Diamante Nacional: Sprites nativos de Gen 4
+        castform = next(e for e in diamond_nat if e.pokemon.national_number == 351)
+        self.assertEqual(len(castform.forms), 4)
+        self.assertIn("/media/pokemon/sprites/diamond/351.png", castform.forms[0]["sprite_retro"])
+        self.assertIn("/media/pokemon/sprites/diamond/castform/sunny.png", castform.forms[1]["sprite_retro"])
+        self.assertIn("/media/pokemon/sprites/diamond/castform/rainy.png", castform.forms[2]["sprite_retro"])
+        self.assertIn("/media/pokemon/sprites/diamond/castform/snowy.png", castform.forms[3]["sprite_retro"])
+        self.assertEqual(castform.forms[1]["primary_type_es"], "Fuego")
+        self.assertEqual(castform.forms[2]["primary_type_es"], "Agua")
+        self.assertEqual(castform.forms[3]["primary_type_es"], "Hielo")
+        self.assertTrue(len(castform.forms[0]["notes"]) > 0)
+        self.assertIn("Predicción", castform.forms[0]["notes"][0]["title"])
+
+        # 2. Deoxys (#386) en Diamante Nacional: 4 formas y notas de meteoritos
+        deoxys = next(e for e in diamond_nat if e.pokemon.national_number == 386)
+        self.assertEqual(len(deoxys.forms), 4)
+        form_names = [f["name"] for f in deoxys.forms]
+        self.assertEqual(form_names, ["Forma Normal", "Forma Ataque", "Forma Defensa", "Forma Velocidad"])
+        self.assertIn("meteorito", deoxys.forms[1]["notes"][0]["text"].lower())
+        self.assertIn("Ciudad Rocavelo", deoxys.forms[1]["notes"][0]["text"])
+
+        # 3. Burmy (#412) en Diamante Regional: 3 troncos con notas de entorno y crianza
+        burmy = next(e for e in diamond_reg if e.pokemon.national_number == 412)
+        self.assertEqual(len(burmy.forms), 3)
+        self.assertEqual([f["form_key"] for f in burmy.forms], ["plant", "sandy", "trash"])
+        burmy_notes_text = " ".join(f"{n['title']} {n['text']}" for n in burmy.forms[0]["notes"])
+        self.assertIn("huevo", burmy_notes_text.lower())
+        self.assertIn("eclosi", burmy_notes_text.lower())
+
+        # 4. Wormadam (#413): 3 troncos fijos con tipos elementales distintos
+        wormadam = next(e for e in diamond_reg if e.pokemon.national_number == 413)
+        self.assertEqual(len(wormadam.forms), 3)
+        self.assertEqual(wormadam.forms[0]["secondary_type_es"], "Planta")
+        self.assertEqual(wormadam.forms[1]["secondary_type_es"], "Tierra")
+        self.assertEqual(wormadam.forms[2]["secondary_type_es"], "Acero")
+        self.assertEqual(wormadam.forms[0]["secondary_type"], "grass")
+        self.assertEqual(wormadam.forms[1]["secondary_type"], "ground")
+        self.assertEqual(wormadam.forms[2]["secondary_type"], "steel")
+
+        # 5. Cherrim (#421): 2 formas (Encapuchada y Soleada) con Don Floral
+        cherrim = next(e for e in diamond_reg if e.pokemon.national_number == 421)
+        self.assertEqual(len(cherrim.forms), 2)
+        self.assertEqual(cherrim.forms[0]["name"], "Forma Encapuchada")
+        self.assertEqual(cherrim.forms[1]["name"], "Forma Soleada")
+        self.assertIn("Don Floral", cherrim.forms[1]["notes"][0]["tag"])
+
+        # 6. Shellos (#422) y Gastrodon (#423): Mar Oeste vs Mar Este delimitados por Monte Corona
+        shellos = next(e for e in diamond_reg if e.pokemon.national_number == 422)
+        self.assertEqual(len(shellos.forms), 2)
+        self.assertEqual(shellos.forms[0]["name"], "Mar Oeste")
+        self.assertEqual(shellos.forms[1]["name"], "Mar Este")
+        self.assertIn("Ruta 205", [loc["area"] for loc in shellos.forms[0]["locations"]])
+        self.assertIn("Ruta 213", [loc["area"] for loc in shellos.forms[1]["locations"]])
+
+        gastrodon = next(e for e in diamond_reg if e.pokemon.national_number == 423)
+        self.assertEqual(len(gastrodon.forms), 2)
+        self.assertIn("Ruta 205", [loc["area"] for loc in gastrodon.forms[0]["locations"]])
+        self.assertIn("Ruta 213", [loc["area"] for loc in gastrodon.forms[1]["locations"]])
+
+        # 7. Arceus (#493): 17 formas (Normal + 16 tablas elementales, SIN hada ni tabla duende)
+        arceus = next(e for e in diamond_nat if e.pokemon.national_number == 493)
+        self.assertEqual(len(arceus.forms), 17)
+        arceus_types = [f["primary_type"] for f in arceus.forms]
+        self.assertNotIn("fairy", arceus_types)
+        self.assertIn("normal", arceus_types)
+        self.assertIn("fire", arceus_types)
+        self.assertIn("water", arceus_types)
+        self.assertIn("electric", arceus_types)
+        self.assertIn("grass", arceus_types)
+        self.assertIn("ice", arceus_types)
+        self.assertIn("fighting", arceus_types)
+        self.assertIn("poison", arceus_types)
+        self.assertIn("ground", arceus_types)
+        self.assertIn("flying", arceus_types)
+        self.assertIn("psychic", arceus_types)
+        self.assertIn("bug", arceus_types)
+        self.assertIn("rock", arceus_types)
+        self.assertIn("ghost", arceus_types)
+        self.assertIn("dragon", arceus_types)
+        self.assertIn("steel", arceus_types)
+        self.assertIn("dark", arceus_types)
+
+        # 8. Unown (#201): 28 formas intactas
+        unown = next(e for e in diamond_reg if e.pokemon.national_number == 201)
+        self.assertEqual(len(unown.forms), 28)
+
+
 
 
 

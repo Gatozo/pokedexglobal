@@ -538,6 +538,23 @@ class FrontendInteractivityInvariantsTests(TestCase):
         self.assertIn("window.__pokedexActionQueue =", content)
         self.assertIn("window.__pokedexReady =", content)
 
+    def test_modal_comic_notes_accordion_and_badge_elements(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "emerald"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        content = response.content.decode("utf-8")
+
+        # 1. Verificar acordeón de notas y mecánicas
+        self.assertIn('id="modal-notes-section"', content)
+        self.assertIn('id="modal-notes-accordion-btn"', content)
+        self.assertIn('id="modal-notes-content"', content)
+        self.assertIn('id="modal-notes-title"', content)
+
+        # 2. Verificar badges balanceados en modal cómic
+        self.assertIn('id="modal-pokemon-category"', content)
+        self.assertIn('id="modal-form-badge"', content)
+        self.assertIn('[text-wrap:balance]', content)
+
 
 
 
