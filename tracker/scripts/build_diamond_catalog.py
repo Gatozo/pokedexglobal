@@ -47,7 +47,7 @@ SINNOH_AREA_NAMES = {
     'canalave-city-area': 'Ciudad Canal',
     'celestic-town-area': 'Pueblo Caelestis',
     'eterna-city-area': 'Ciudad Vetusta',
-    'eterna-city-eterna-condominiums': 'Edificio Vetusta',
+    'eterna-city-eterna-condominiums': 'Ciudad Vetusta (Condominios Vetusta)',
     'eterna-forest-area': 'Bosque Vetusto',
     'floaroma-meadow-area': 'Prado Aromaflor',
     'flower-paradise-area': 'Paraíso Floral',
@@ -268,16 +268,6 @@ SPECIAL_OBTAINING = {
     },
 
     # Huevos y Regalos en Sinnoh
-    175: {
-        'type': 'gift',
-        'badge_label': 'Huevo Regalo',
-        'badge_color': 'pink',
-        'summary': 'Huevo entregado por Cintia en Ciudad Vetusta tras expulsar al Equipo Galaxia del edificio comandante (también obtenible mediante crianza).',
-        'locations': [
-            {'area': 'Ciudad Vetusta (Edificio Galaxia)', 'method': 'Huevo entregado por Cintia'},
-            DAYCARE_LOCATION
-        ]
-    },
     440: {
         'type': 'gift',
         'badge_label': 'Huevo Regalo',
@@ -310,13 +300,22 @@ SPECIAL_OBTAINING = {
         ]
     },
     137: {
-        'type': 'gift',
-        'badge_label': 'Regalo NPC',
-        'badge_color': 'sky',
-        'summary': 'Entregado por un hombre en la casa detrás del Centro Pokémon de Ciudad Rocavelo (también obtenible mediante crianza o en el Jardín Trofeo).',
+        'type': 'wild',
+        'badge_label': 'Jardín Trofeo',
+        'badge_color': 'amber',
+        'summary': 'Aparece en el Jardín Trofeo de la Mansión Pokémon (Ruta 212) tras obtener la Pokédex Nacional, cuando el Sr. Fortuny lo menciona en su relato diario (también obtenible mediante crianza con Ditto en Pueblo Sosiego).',
         'locations': [
-            {'area': 'Ciudad Rocavelo (Casa tras Centro Pokémon)', 'method': 'Regalo de NPC'},
-            {'area': 'Jardín Trofeo', 'method': 'Hierba alta (Mención del Sr. Fortuny)'},
+            {'area': 'Jardín Trofeo (Mansión Pokémon)', 'method': 'Hierba alta (Mención diaria del Sr. Fortuny)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    175: {
+        'type': 'wild',
+        'badge_label': 'Poké Radar',
+        'badge_color': 'sky',
+        'summary': 'Aparece en estado salvaje en la hierba alta de la Ruta 230 utilizando el Poké Radar tras obtener la Pokédex Nacional (también obtenible mediante crianza en Pueblo Sosiego).',
+        'locations': [
+            {'area': 'Ruta 230', 'method': 'Poké Radar (Hierba alta)'},
             DAYCARE_LOCATION
         ]
     },
@@ -486,7 +485,7 @@ SPECIAL_OBTAINING = {
         'locations': [{'area': 'Pueblo Sosiego (Guardería Pokémon)', 'method': 'Crianza de Manaphy con Ditto'}]
     },
     490: {
-        'type': 'gift',
+        'type': 'event',
         'badge_label': 'Pokémon Ranger',
         'badge_color': 'sky',
         'summary': 'Transferir el Huevo de Manaphy desde el videojuego Pokémon Ranger a través de la función Ranger Net y hacerlo eclosionar en Sinnoh.',
@@ -507,7 +506,7 @@ SPECIAL_OBTAINING = {
         'locations': [{'area': 'Paraíso Floral (Carta de Oak)', 'method': 'Encuentro estático al Nivel 30'}]
     },
     493: {
-        'type': 'gift',
+        'type': 'event',
         'badge_label': 'Evento de Distribución',
         'badge_color': 'amber',
         'summary': 'Inaccesible en estado salvaje en Pokémon Diamante. La única forma legítima de conseguirlo fue mediante eventos oficiales de distribución de Nintendo (donde se entregaba directamente al Pokémon al Nivel 100 vía Regalo Misterioso) o mediante intercambio con otro jugador que lo posea.',
@@ -799,6 +798,17 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         return 'Surfeando'
     if method_raw == 'walk':
         return 'Hierba alta / Terreno'
+    if method_raw == 'npc-trade':
+        trade_desc_map = {
+            'trade-buizel': 'Intercambio in-game (por Buizel)',
+            'trade-machop': 'Intercambio in-game (por Machop)',
+            'trade-medicham': 'Intercambio in-game (por Medicham con Piedra Eterna)',
+            'trade-finneon': 'Intercambio in-game (por Finneon)',
+        }
+        for cond, desc in trade_desc_map.items():
+            if cond in conditions:
+                return desc
+        return 'Intercambio in-game (NPC)'
     return 'Salvaje'
 
 
@@ -961,9 +971,9 @@ def main():
             }
 
         elif nat_id in diamond_transfers:
-            # Transferencia Parque Compi
+            # Transferencia Parque Compi o Intercambio
             origin = diamond_origins.get(nat_id, 'Cartuchos de GBA (RSE/FRLG)')
-            summary = f"Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde {origin} mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2"
+            summary = f"Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde {origin} mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones"
             if is_hatchable:
                 summary += " (también obtenible mediante crianza)."
             else:

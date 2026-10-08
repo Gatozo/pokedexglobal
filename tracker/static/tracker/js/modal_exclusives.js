@@ -97,18 +97,20 @@ export function updateExclusivesProgressUI() {
 
     const modal = document.getElementById('exclusives-modal');
     const counterpartTheme = modal ? modal.dataset.counterpartTheme : 'red';
-    const themeColorClass = (counterpartTheme === 'blue') ? 'text-blue-600' :
+    const themeColorClass = (counterpartTheme === 'blue' || counterpartTheme === 'diamond') ? 'text-blue-600' :
+        ((counterpartTheme === 'pearl') ? 'text-pink-600' :
         ((counterpartTheme === 'amber') ? 'text-amber-600' :
         ((counterpartTheme === 'silver') ? 'text-slate-600' :
         ((counterpartTheme === 'gold') ? 'text-[#9e7514]' :
         ((counterpartTheme === 'gold_silver') ? 'text-amber-700' :
-        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600')))));
-    const themeBarClass = (counterpartTheme === 'blue') ? 'bg-blue-600' :
+        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600'))))));
+    const themeBarClass = (counterpartTheme === 'blue' || counterpartTheme === 'diamond') ? 'bg-blue-600' :
+        ((counterpartTheme === 'pearl') ? 'bg-pink-500' :
         ((counterpartTheme === 'amber') ? 'bg-amber-500' :
         ((counterpartTheme === 'silver') ? 'bg-slate-500' :
         ((counterpartTheme === 'gold') ? 'bg-[#c59b27]' :
         ((counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-[#c59b27] to-[#94a3b8]' :
-        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600')))));
+        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600'))))));
 
     const caughtElem = document.getElementById('excl-progress-caught');
     if (caughtElem) {

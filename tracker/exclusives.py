@@ -948,7 +948,11 @@ def get_version_exclusives_context(
             return 'firered'
         elif slug in ['leafgreen']:
             return 'leafgreen'
-        elif slug in ['blue', 'pearl', 'white', 'moon', 'shield', 'violet']:
+        elif slug in ['diamond', 'brilliant-diamond']:
+            return 'diamond'
+        elif slug in ['pearl', 'shining-pearl']:
+            return 'pearl'
+        elif slug in ['blue', 'white', 'moon', 'shield', 'violet']:
             return 'blue'
         elif slug in ['crystal']:
             return 'crystal'

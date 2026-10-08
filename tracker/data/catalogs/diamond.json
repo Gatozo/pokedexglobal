@@ -1451,7 +1451,7 @@
         },
         {
           "area": "Ciudad Pirita (Casa Noroeste)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Machop)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -1841,7 +1841,7 @@
         },
         {
           "area": "Ruta 226 (Casa del Maestro)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Finneon)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -6669,7 +6669,7 @@
         },
         {
           "area": "Ciudad Puntaneva (Casa Noroeste)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Medicham con Piedra Eterna)"
         }
       ],
       "evolution_info": {
@@ -9359,7 +9359,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 222, Ruta 224, Edificio Vetusta (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 222, Ruta 224, Ciudad Vetusta (Condominios Vetusta) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 222",
@@ -9370,8 +9370,8 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Edificio Vetusta",
-          "method": "Salvaje"
+          "area": "Ciudad Vetusta (Condominios Vetusta)",
+          "method": "Intercambio in-game (por Buizel)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -13160,7 +13160,7 @@
     "cry_url": "/media/pokemon/cries/legacy/490.ogg",
     "flavor_text": "Nació en el frío fondo marino. Nada grandes distancias para regresar a su lugar de origen.",
     "obtaining_info": {
-      "type": "gift",
+      "type": "event",
       "badge_label": "Pokémon Ranger",
       "badge_color": "sky",
       "summary": "Transferir el Huevo de Manaphy desde el videojuego Pokémon Ranger a través de la función Ranger Net y hacerlo eclosionar en Sinnoh.",

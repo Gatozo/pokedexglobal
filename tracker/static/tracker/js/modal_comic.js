@@ -354,12 +354,13 @@ export function renderModalObtaining(data, activeForm = null) {
             }
 
             const locList = document.createElement('div');
-            locList.className = (obt.locations.length === 1) ? 'grid grid-cols-1 gap-1.5' : 'grid grid-cols-1 sm:grid-cols-2 gap-1.5';
+            locList.className = (obt.locations.length === 1) ? 'grid grid-cols-1 gap-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2';
             obt.locations.forEach(loc => {
                 const item = document.createElement('div');
                 const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
                 const isTransfer = (obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia'));
                 const isDualSlot = loc.method && (loc.method.includes('Inserción Dual') || loc.method.includes('slot2-'));
+                const isSwarm = loc.method && (loc.method.toLowerCase().includes('manada') || loc.method.toLowerCase().includes('swarm'));
                 const isAlteringCave = loc.area && (loc.area.includes('Cueva Cambiante') || loc.area.toLowerCase().includes('altering-cave'));
                 const isAlteringCaveInactive = isAlteringCave && (parseInt(data.number, 10) !== 41);
 
@@ -373,7 +374,9 @@ export function renderModalObtaining(data, activeForm = null) {
                         ? 'bg-pink-50/70 border-pink-200 text-pink-950' 
                         : (isDualSlot 
                             ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
-                            : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800')));
+                            : (isSwarm
+                                ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950'
+                                : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800'))));
                 
                 let methodLabel = isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method;
                 if (isDualSlot && !isAlteringCaveInactive) {
@@ -397,23 +400,33 @@ export function renderModalObtaining(data, activeForm = null) {
                     }
                 }
                 const methodClass = isAlteringCaveInactive 
-                    ? 'text-[10px] text-amber-800 font-bold shrink-0' 
+                    ? 'text-[10px] text-amber-800 font-bold' 
                     : (isDualSlot 
-                        ? 'text-[10px] text-violet-700 font-bold shrink-0' 
-                        : 'text-[10px] text-slate-500 font-medium shrink-0');
+                        ? 'text-[10px] text-violet-700 font-bold' 
+                        : (isSwarm
+                            ? 'text-[10px] text-emerald-700 font-bold'
+                            : (isBreedingOrEgg
+                                ? 'text-[10px] text-pink-800/90 font-semibold'
+                                : (isTransfer
+                                    ? 'text-[10px] text-indigo-800/90 font-semibold'
+                                    : 'text-[10px] text-slate-500 font-semibold'))));
 
-                item.className = `flex items-center justify-between text-[11px] border rounded px-2.5 py-1 font-semibold overflow-hidden min-h-[30px] ${cardBg}`;
+                item.className = `flex items-center gap-3 px-3 py-2.5 border rounded-xl overflow-hidden min-h-[52px] shadow-[1px_1px_0px_0px_#0f172a] ${cardBg}`;
                 item.title = isAlteringCaveInactive 
                     ? `${loc.area} (Evento e-Reader inactivo: imposible de encontrar in-game, solo Zubat aparece)` 
                     : `${loc.area} (${loc.method})`;
                 item.innerHTML = `
-                    <div class="flex items-center gap-1.5 min-w-0 flex-1 mr-1.5 overflow-hidden">
-                        <img src="${locIcon}" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0 drop-shadow-sm pixel-art">
-                        <div class="location-marquee-wrapper overflow-hidden whitespace-nowrap min-w-0 flex-1 relative">
-                            <span class="location-marquee-text inline-block whitespace-nowrap">${loc.area}</span>
+                    <div class="w-7 h-7 flex items-center justify-center shrink-0">
+                        <img src="${locIcon}" alt="" class="w-7 h-7 object-contain pixel-art drop-shadow-sm">
+                    </div>
+                    <div class="min-w-0 flex-1 space-y-0.5 text-left">
+                        <div class="location-marquee-wrapper overflow-hidden whitespace-nowrap min-w-0 w-full relative">
+                            <span class="location-marquee-text inline-block whitespace-nowrap font-black text-xs uppercase tracking-tight text-slate-900">${loc.area}</span>
+                        </div>
+                        <div class="${methodClass} truncate leading-tight" title="${methodLabel}">
+                            ${methodLabel}
                         </div>
                     </div>
-                    <span class="${methodClass}">(${methodLabel})</span>
                 `;
                 locList.appendChild(item);
             });
@@ -524,7 +537,60 @@ export function renderModalObtaining(data, activeForm = null) {
                 `;
                 detailsContainer.appendChild(dualAccordion);
             }
+
+            // Nota explicativa de mecánica: Manadas Pokémon Diarias (Brotes)
+            const swarmLocs = obt.locations.filter(loc => loc.method && (loc.method.toLowerCase().includes('manada') || loc.method.toLowerCase().includes('swarm')));
+            if (swarmLocs.length > 0) {
+                // Comprobar si es exclusivamente salvaje por manada (sin contar guardería / crianza)
+                const otherWildLocs = obt.locations.filter(loc => {
+                    const m = (loc.method || '').toLowerCase();
+                    const a = (loc.area || '').toLowerCase();
+                    return !m.includes('manada') && !m.includes('swarm') && !m.includes('crianza') && !a.includes('guardería') && !a.includes('guarderia');
+                });
+                const isExclusiveWild = otherWildLocs.length === 0;
+
+                const introText = isExclusiveWild
+                    ? `Esta especie aparece en estado salvaje exclusivamente durante eventos de <strong>Manada Pokémon diaria</strong> tras obtener la Pokédex Nacional.`
+                    : `Esta especie aparece con una alta frecuencia especial durante eventos de <strong>Manada Pokémon diaria</strong> tras obtener la Pokédex Nacional.`;
+
+                const swarmAccordion = document.createElement('div');
+                swarmAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-emerald-50';
+                swarmAccordion.innerHTML = `
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-emerald-100/90 hover:bg-emerald-100 text-emerald-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/town-map.png" alt="Manada Pokémon" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-emerald-900 tracking-wide truncate">
+                                Mecánica • Manada Pokémon Diaria
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-emerald-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-emerald-50/70">
+                        <p class="mb-1.5">
+                            ${introText}
+                        </p>
+                        <p class="text-emerald-950 font-bold">
+                            📺 ¿Cómo funciona la mecánica?
+                        </p>
+                        <p class="mt-1 text-[10px] text-slate-700">
+                            Visita diariamente Pueblo Arena y habla con la hermana pequeña de Maya / León en su casa, o sintoniza los boletines informativos de la televisión. Te anunciará qué ruta concreta está siendo visitada hoy por una manada, donde este Pokémon aparecerá con una alta tasa de encuentro (~40%). La especie de la manada cambia cada día a medianoche.
+                        </p>
+                    </div>
+                `;
+                detailsContainer.appendChild(swarmAccordion);
+            }
         }
+
 
         // Nota histórica personalizada (ej: Flauta Azur y Sala del Origen para Arceus)
         if (obt.historical_note) {
@@ -760,7 +826,7 @@ export function openPokemonModalDirect(entryId, options = {}) {
                 const overflowDiff = textSpan.scrollWidth - wrapper.clientWidth;
                 if (overflowDiff > 3) {
                     textSpan.style.setProperty('--marquee-dist', `-${overflowDiff + 6}px`);
-                    const duration = Math.max(4.5, (overflowDiff / 18) + 3);
+                    const duration = Math.max(8.0, (overflowDiff / 10) + 5);
                     textSpan.style.setProperty('--marquee-dur', `${duration.toFixed(1)}s`);
                     textSpan.classList.add('marquee-pingpong');
                 }

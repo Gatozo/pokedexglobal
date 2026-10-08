@@ -60,14 +60,16 @@ BABY_NATIONAL_NUMBERS = {
     848                                       # Gen 8: Toxel
 }
 
-# Pokémon legendarios y singulares canónicos (Gen 1 a 3)
+# Pokémon legendarios y singulares canónicos (Gen 1 a 4)
 LEGENDARY_NATIONAL_NUMBERS = {
     # Gen 1: Articuno, Zapdos, Moltres, Mewtwo, Mew
     144, 145, 146, 150, 151,
     # Gen 2: Raikou, Entei, Suicune, Lugia, Ho-Oh, Celebi
     243, 244, 245, 249, 250, 251,
     # Gen 3: Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys
-    377, 378, 379, 380, 381, 382, 383, 384, 385, 386
+    377, 378, 379, 380, 381, 382, 383, 384, 385, 386,
+    # Gen 4: Uxie, Mesprit, Azelf, Dialga, Palkia, Heatran, Regigigas, Giratina, Cresselia, Phione, Manaphy, Darkrai, Shaymin, Arceus
+    480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493
 }
 
 GAME_GENERATION_MAP: Dict[str, int] = {
@@ -448,14 +450,47 @@ class CatalogEntry:
         areas_lower = " ".join([loc.get("area", "").lower() for loc in obt.get("locations", [])])
         summary_lower = (obt.get("summary") or "").lower()
         full_obt_text = f"{methods_lower} {areas_lower} {summary_lower}"
+        loc_text = f"{methods_lower} {areas_lower}"
+        is_transfer = (obt.get("type") == "transfer")
 
-        # Regalos
-        if obt.get("type") == "gift" or "regalo" in full_obt_text:
-            tags.add("gift")
+        # Regalos de NPC in-game (excluyendo míticos, eventos de distribución, spin-offs o transferencias)
+        is_event_or_mythical = (
+            obt.get("type") in ["event", "mythical"]
+            or nat_num in LEGENDARY_NATIONAL_NUMBERS
+            or "regalo misterioso" in full_obt_text
+            or "mystery gift" in full_obt_text
+            or "distribución" in full_obt_text
+            or "distribucion" in full_obt_text
+            or "ranger net" in full_obt_text
+        )
+        if not is_event_or_mythical and not is_transfer:
+            if obt.get("type") == "gift" or ("regalo" in full_obt_text and "huevo" in full_obt_text) or "regalo" in loc_text:
+                tags.add("gift")
 
         # Zona Safari
-        if "safari" in full_obt_text:
+        if "safari" in loc_text and not is_transfer:
             tags.add("safari")
+
+        # Gran Pantano (Sinnoh)
+        if ("gran pantano" in loc_text or "great-marsh" in loc_text) and not is_transfer:
+            tags.add("great_marsh")
+
+        # Árboles de Miel (Sinnoh)
+        if ("miel" in loc_text or "honey" in loc_text) and not is_transfer:
+            tags.add("honey_tree")
+
+        # Poké Radar (Sinnoh)
+        if "radar" in loc_text and not is_transfer:
+            tags.add("radar")
+
+        # Inserción Dual GBA (Sinnoh)
+        if ("inserción dual" in loc_text or "insercion dual" in loc_text or "dual-slot" in loc_text or "gba:" in loc_text) and not is_transfer:
+            tags.add("dual_slot")
+
+        # Manadas Pokémon / Brotes
+        if ("manada" in loc_text or "swarm" in loc_text) and not is_transfer:
+            tags.add("swarm")
+
 
         # Surf
         if "surf" in full_obt_text:

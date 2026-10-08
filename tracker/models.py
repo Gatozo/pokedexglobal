@@ -108,13 +108,54 @@ class Game(models.Model):
 
     @property
     def has_safari_zone(self):
-        """Determina si este juego cuenta con Zona Safari activa."""
+        """Determina si este juego cuenta con Zona Safari clásica activa."""
         return self.slug in [
             "red", "blue", "yellow",
             "firered", "leafgreen",
             "ruby", "sapphire", "emerald",
-            "diamond", "pearl", "platinum",
             "heartgold", "soulsilver"
+        ]
+
+    @property
+    def has_great_marsh(self):
+        """Determina si este juego cuenta con Gran Pantano (Sinnoh)."""
+        return self.slug in [
+            "diamond", "pearl", "platinum",
+            "brilliant-diamond", "shining-pearl"
+        ]
+
+    @property
+    def has_honey_trees(self):
+        """Determina si este juego cuenta con Árboles de Miel (Sinnoh)."""
+        return self.slug in [
+            "diamond", "pearl", "platinum",
+            "brilliant-diamond", "shining-pearl"
+        ]
+
+    @property
+    def has_poke_radar(self):
+        """Determina si este juego cuenta con Poké Radar (Sinnoh)."""
+        return self.slug in [
+            "diamond", "pearl", "platinum",
+            "brilliant-diamond", "shining-pearl"
+        ]
+
+    @property
+    def has_dual_slot(self):
+        """Determina si este juego cuenta con Inserción Dual de cartuchos GBA (Sinnoh DS)."""
+        return self.slug in [
+            "diamond", "pearl", "platinum"
+        ]
+
+    @property
+    def has_swarms(self):
+        """Determina si este juego cuenta con mecánicas de Manadas Pokémon / Brotes diarios."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "ruby", "sapphire", "emerald",
+            "diamond", "pearl", "platinum",
+            "heartgold", "soulsilver",
+            "brilliant-diamond", "shining-pearl"
         ]
 
 

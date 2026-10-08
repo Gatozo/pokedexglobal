@@ -38,7 +38,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -211,7 +211,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -384,7 +384,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -4545,7 +4545,7 @@
         },
         {
           "area": "Ciudad Pirita (Casa Noroeste)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Machop)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -6964,7 +6964,7 @@
         },
         {
           "area": "Ciudad Puntaneva (Casa Noroeste)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Medicham con Piedra Eterna)"
         }
       ],
       "evolution_info": {
@@ -9605,7 +9605,7 @@
         },
         {
           "area": "Ruta 226 (Casa del Maestro)",
-          "method": "Salvaje"
+          "method": "Intercambio in-game (por Finneon)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -10342,18 +10342,14 @@
     "cry_url": "/media/pokemon/cries/legacy/137.ogg",
     "flavor_text": "Es el primer Pokémon creado de forma artificial. Puede viajar por el ciberespacio.",
     "obtaining_info": {
-      "type": "gift",
-      "badge_label": "Regalo NPC",
-      "badge_color": "sky",
-      "summary": "Entregado por un hombre en la casa detrás del Centro Pokémon de Ciudad Rocavelo (también obtenible mediante crianza o en el Jardín Trofeo).",
+      "type": "wild",
+      "badge_label": "Jardín Trofeo",
+      "badge_color": "amber",
+      "summary": "Aparece en el Jardín Trofeo de la Mansión Pokémon (Ruta 212) tras obtener la Pokédex Nacional, cuando el Sr. Fortuny lo menciona en su relato diario (también obtenible mediante crianza con Ditto en Pueblo Sosiego).",
       "locations": [
         {
-          "area": "Ciudad Rocavelo (Casa tras Centro Pokémon)",
-          "method": "Regalo de NPC"
-        },
-        {
-          "area": "Jardín Trofeo",
-          "method": "Hierba alta (Mención del Sr. Fortuny)"
+          "area": "Jardín Trofeo (Mansión Pokémon)",
+          "method": "Hierba alta (Mención diaria del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -10773,7 +10769,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -10828,7 +10824,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -10883,7 +10879,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -11116,7 +11112,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -11171,7 +11167,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Evento GBA (Mapa Viejo) mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Evento GBA (Mapa Viejo) mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -11226,7 +11222,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -11399,7 +11395,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -11572,7 +11568,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -12648,14 +12644,14 @@
     "cry_url": "/media/pokemon/cries/legacy/175.ogg",
     "flavor_text": "Se dice que su cascarón está lleno de alegría que comparte con las personas de buen corazón.",
     "obtaining_info": {
-      "type": "gift",
-      "badge_label": "Huevo Regalo",
-      "badge_color": "pink",
-      "summary": "Huevo entregado por Cintia en Ciudad Vetusta tras expulsar al Equipo Galaxia del edificio comandante (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Poké Radar",
+      "badge_color": "sky",
+      "summary": "Aparece en estado salvaje en la hierba alta de la Ruta 230 utilizando el Poké Radar tras obtener la Pokédex Nacional (también obtenible mediante crianza en Pueblo Sosiego).",
       "locations": [
         {
-          "area": "Ciudad Vetusta (Edificio Galaxia)",
-          "method": "Huevo entregado por Cintia"
+          "area": "Ruta 230",
+          "method": "Poké Radar (Hierba alta)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -17384,7 +17380,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17439,7 +17435,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17494,7 +17490,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rojo Fuego / Verde Hoja / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17722,7 +17718,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde XD: Gale of Darkness / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde XD: Gale of Darkness / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17777,7 +17773,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Colosseum / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Colosseum / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17832,7 +17828,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Evento GBA / Ageto / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Evento GBA / Ageto / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -17887,7 +17883,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -18060,7 +18056,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -18233,7 +18229,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2 (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26326,7 +26322,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26381,7 +26377,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26436,7 +26432,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / Platino mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26491,7 +26487,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26546,7 +26542,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26601,7 +26597,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26656,7 +26652,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26711,7 +26707,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Rubí / Zafiro / Esmeralda / HGSS mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26766,7 +26762,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Disco Bonus Colosseum / Evento GBA mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Disco Bonus Colosseum / Evento GBA mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -26821,7 +26817,7 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Sinnoh. Requiere transferir desde Evento Isla Origen (Ori-Ticket) mediante el Parque Compi (Ruta 221) insertando el cartucho de GBA en la Ranura 2.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Diamante. Requiere transferir desde Evento Isla Origen (Ori-Ticket) mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
@@ -31047,7 +31043,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 222, Ruta 224, Edificio Vetusta (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 222, Ruta 224, Ciudad Vetusta (Condominios Vetusta) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 222",
@@ -31058,8 +31054,8 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Edificio Vetusta",
-          "method": "Salvaje"
+          "area": "Ciudad Vetusta (Condominios Vetusta)",
+          "method": "Intercambio in-game (por Buizel)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -34400,7 +34396,7 @@
     "cry_url": "/media/pokemon/cries/legacy/490.ogg",
     "flavor_text": "Nació en el frío fondo marino. Nada grandes distancias para regresar a su lugar de origen.",
     "obtaining_info": {
-      "type": "gift",
+      "type": "event",
       "badge_label": "Pokémon Ranger",
       "badge_color": "sky",
       "summary": "Transferir el Huevo de Manaphy desde el videojuego Pokémon Ranger a través de la función Ranger Net y hacerlo eclosionar en Sinnoh.",
@@ -34565,7 +34561,7 @@
     "cry_url": "/media/pokemon/cries/legacy/493.ogg",
     "flavor_text": "La mitología lo describe como el Pokémon que dio forma al Universo con sus 1000 brazos.",
     "obtaining_info": {
-      "type": "gift",
+      "type": "event",
       "badge_label": "Evento de Distribución",
       "badge_color": "amber",
       "summary": "Inaccesible en estado salvaje en Pokémon Diamante. La única forma legítima de conseguirlo fue mediante eventos oficiales de distribución de Nintendo (donde se entregaba directamente al Pokémon al Nivel 100 vía Regalo Misterioso) o mediante intercambio con otro jugador que lo posea.",

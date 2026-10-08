@@ -67,12 +67,27 @@ body.overflow-hidden {
 .type-dark, .type-Dark { background-color: #705848; color: #ffffff; }
 .type-stellar, .type-Stellar { background-color: #7CC7B2; color: #ffffff; }
 
+/* Botones de Filtro de Tipos Elementales (Texto blanco uniforme con perfilado cómic nítido) */
+.filter-type-pill {
+    color: #ffffff !important;
+    text-shadow: 
+        1px 1px 0px #0f172a,
+        -1px -1px 0px #0f172a,
+        1px -1px 0px #0f172a,
+        -1px 1px 0px #0f172a,
+        0px 1px 0px #0f172a,
+        0px -1px 0px #0f172a,
+        1px 0px 0px #0f172a,
+        -1px 0px 0px #0f172a;
+}
+
+
 /* Marquee Ping-Pong para texto largo en pastillas de ubicación */
 @keyframes marqueePingPong {
-    0%, 35% {
+    0%, 25% {
         transform: translateX(0);
     }
-    60%, 80% {
+    60%, 78% {
         transform: translateX(var(--marquee-dist, -40px));
     }
     95%, 100% {
@@ -83,7 +98,7 @@ body.overflow-hidden {
 .marquee-pingpong {
     display: inline-block;
     will-change: transform;
-    animation: marqueePingPong var(--marquee-dur, 5s) ease-in-out infinite;
+    animation: marqueePingPong var(--marquee-dur, 8s) ease-in-out infinite;
 }
 
 .location-marquee-wrapper:hover .marquee-pingpong {

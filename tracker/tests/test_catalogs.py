@@ -1480,7 +1480,7 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(nat_cat[492].entry_number, 493)
         self.assertEqual(nat_cat[492].pokemon.name, "arceus")
         arceus_obt = nat_cat[492].obtaining_info
-        self.assertEqual(arceus_obt.get("type"), "gift")
+        self.assertEqual(arceus_obt.get("type"), "event")
         self.assertEqual(arceus_obt.get("badge_label"), "Evento de Distribución")
         self.assertIn("Flauta Azur", arceus_obt.get("historical_note", {}).get("text", ""))
         self.assertIn("eventos oficiales de distribución", arceus_obt.get("summary", "").lower())
@@ -1500,7 +1500,8 @@ class PokemonDiamondGen4Tests(TestCase):
             GAME_COUNTERPARTS,
             VERSION_EXCLUSIVES_CATALOG,
             VERSION_TRANSFERS_CATALOG,
-            get_version_transfers_context
+            get_version_transfers_context,
+            get_version_exclusives_context
         )
         self.assertIn("diamond", GAME_COUNTERPARTS)
         self.assertEqual(GAME_COUNTERPARTS["diamond"], ["pearl"])
@@ -1509,6 +1510,11 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertIn(408, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Cranidos
         self.assertIn(434, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Stunky
         self.assertIn(483, VERSION_EXCLUSIVES_CATALOG["diamond"])  # Dialga
+
+        excl_ctx = get_version_exclusives_context(self.game, self.pk_sinnoh, set())
+        self.assertIsNotNone(excl_ctx)
+        self.assertEqual(excl_ctx["own_theme"], "diamond")
+        self.assertEqual(excl_ctx["counterpart_theme"], "pearl")
 
         self.assertIn("diamond", VERSION_TRANSFERS_CATALOG)
         self.assertEqual(len(VERSION_TRANSFERS_CATALOG["diamond"]), 90)
@@ -1721,6 +1727,75 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertContains(resp, 'id="unown-tab-secret"')
         self.assertContains(resp, 'Ruinas Sosiego')
         self.assertContains(resp, 'id="unown-sinnoh-note"')
+
+    def test_diamond_filter_tags_and_mechanics(self):
+        """Valida que Pokémon Diamante active los filtros correctos de Sinnoh (Gran Pantano, Miel, Radar, Dual)."""
+        from tracker.catalog_service import get_compiled_catalog
+
+        # Propiedades de modelo
+        self.assertTrue(self.game.has_great_marsh)
+        self.assertTrue(self.game.has_honey_trees)
+        self.assertTrue(self.game.has_poke_radar)
+        self.assertTrue(self.game.has_dual_slot)
+        self.assertFalse(self.game.has_safari_zone)
+
+        # Tags en catálogo Regional
+        reg_cat = get_compiled_catalog("diamond", is_national=False)
+        starly = next(e for e in reg_cat if e.pokemon.national_number == 396)
+        self.assertIn("great_marsh", starly.filter_tags)
+
+        burmy = next(e for e in reg_cat if e.pokemon.national_number == 412)
+        self.assertIn("honey_tree", burmy.filter_tags)
+
+        # Tags en catálogo Nacional
+        nat_cat = get_compiled_catalog("diamond", is_national=True)
+        nidoran = next(e for e in nat_cat if e.pokemon.national_number == 29)
+        self.assertIn("radar", nidoran.filter_tags)
+
+        caterpie = next(e for e in nat_cat if e.pokemon.national_number == 10)
+        self.assertIn("dual_slot", caterpie.filter_tags)
+
+        # Tropius (#357) es exclusivamente transferible en Diamante y NO debe recibir el tag great_marsh
+        tropius = next(e for e in nat_cat if e.pokemon.national_number == 357)
+        self.assertNotIn("great_marsh", tropius.filter_tags)
+
+        # Visibilidad del Poké Radar: solo en Pokédex Nacional, desactivado/oculto en Regional
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertNotContains(resp_reg, 'data-tag="radar"')
+        self.assertNotContains(resp_reg, 'data-tag="swarm"')
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "diamond", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, 'data-tag="radar"')
+        self.assertContains(resp_nat, 'data-tag="swarm"')
+
+        # Manadas Pokémon (Brotes diarios) en Sinnoh
+        self.assertTrue(self.game.has_swarms)
+        beldum = next(e for e in nat_cat if e.pokemon.national_number == 374)
+        pidgey = next(e for e in nat_cat if e.pokemon.national_number == 16)
+        self.assertIn("swarm", beldum.filter_tags)
+        self.assertIn("swarm", pidgey.filter_tags)
+
+        # Regalo / NPC: Manaphy, Arceus, Togepi y Porygon NO deben recibir tag gift
+        manaphy = next(e for e in nat_cat if e.pokemon.national_number == 490)
+        arceus = next(e for e in nat_cat if e.pokemon.national_number == 493)
+        togepi = next(e for e in nat_cat if e.pokemon.national_number == 175)
+        porygon = next(e for e in nat_cat if e.pokemon.national_number == 137)
+        eevee = next(e for e in nat_cat if e.pokemon.national_number == 133)
+        self.assertNotIn("gift", manaphy.filter_tags)
+        self.assertNotIn("gift", arceus.filter_tags)
+        self.assertNotIn("gift", togepi.filter_tags)
+        self.assertNotIn("gift", porygon.filter_tags)
+        self.assertIn("radar", togepi.filter_tags)
+        self.assertEqual(togepi.obtaining_info.get("type"), "wild")
+        self.assertEqual(togepi.obtaining_info.get("badge_label"), "Poké Radar")
+        self.assertEqual(porygon.obtaining_info.get("type"), "wild")
+        self.assertEqual(porygon.obtaining_info.get("badge_label"), "Jardín Trofeo")
+        self.assertIn("gift", eevee.filter_tags)
+
+
+
 
 
 
