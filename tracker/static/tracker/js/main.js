@@ -91,7 +91,9 @@ import {
     renderModalNotes,
     resetModalNotesAccordion,
     toggleModalObtainingAccordion,
-    resetModalObtainingAccordion
+    resetModalObtainingAccordion,
+    renderModalGender,
+    toggleModalGender
 } from './modal_comic.js';
 import { 
     setModalUrlHash, 
@@ -179,6 +181,8 @@ window.resetModalNotesAccordion = resetModalNotesAccordion;
 window.renderModalNotes = renderModalNotes;
 window.toggleModalObtainingAccordion = toggleModalObtainingAccordion;
 window.resetModalObtainingAccordion = resetModalObtainingAccordion;
+window.renderModalGender = renderModalGender;
+window.toggleModalGender = toggleModalGender;
 
 window.setModalUrlHash = setModalUrlHash;
 window.clearModalUrlHash = clearModalUrlHash;

@@ -1891,13 +1891,96 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(len(unown.forms), 28)
 
 
+class GenderDifferencesAndModalDataTests(TestCase):
+    """
+    Pruebas para el sistema de diferencias de género de Gen 4 en catálogos y modales:
+    - Clasificación correcta (diferencia física, sin diferencia, solo hembra, solo macho, sin género).
+    - Exclusión en generaciones anteriores (Gen 1-3 retornan None).
+    - Presencia de 'gender_info' en modal_data_json para Gen 4 y ausencia en Gen 1-3.
+    """
 
+    def test_gender_info_classification_gen4(self):
+        from tracker.gender_differences import get_pokemon_gender_info, GENDER_DIFFERENCES_GEN4
 
+        # 1. Especie con diferencias visuales (ej. Pikachu #25, Combee #415)
+        pika_info = get_pokemon_gender_info(25, "diamond")
+        self.assertIsNotNone(pika_info)
+        self.assertEqual(pika_info["gender_type"], "both_with_diff")
+        self.assertTrue(pika_info["can_toggle"])
+        self.assertTrue(pika_info["has_visual_differences"])
+        self.assertTrue(pika_info["female_sprite_available"])
+        self.assertEqual(pika_info["default_gender"], "male")
+        self.assertEqual(pika_info["difference_note"], GENDER_DIFFERENCES_GEN4[25])
 
+        combee_info = get_pokemon_gender_info(415, "pearl")
+        self.assertIsNotNone(combee_info)
+        self.assertEqual(combee_info["gender_type"], "both_with_diff")
+        self.assertTrue(combee_info["has_visual_differences"])
+        self.assertTrue(combee_info["female_sprite_available"])
 
+        # 2. Especie con ambos géneros pero sin diferencias visuales (ej. Turtwig #387)
+        turtwig_info = get_pokemon_gender_info(387, "diamond")
+        self.assertIsNotNone(turtwig_info)
+        self.assertEqual(turtwig_info["gender_type"], "both_no_diff")
+        self.assertTrue(turtwig_info["can_toggle"])
+        self.assertFalse(turtwig_info["has_visual_differences"])
+        self.assertFalse(turtwig_info["female_sprite_available"])
+        self.assertEqual(turtwig_info["default_gender"], "male")
+        self.assertEqual(turtwig_info["difference_note"], "Sin cambios visuales entre géneros")
 
+        # 3. Especie sin género / asexual (ej. Magnemite #81, Dialga #483)
+        magnemite_info = get_pokemon_gender_info(81, "diamond")
+        self.assertIsNotNone(magnemite_info)
+        self.assertEqual(magnemite_info["gender_type"], "genderless")
+        self.assertFalse(magnemite_info["can_toggle"])
+        self.assertFalse(magnemite_info["has_visual_differences"])
+        self.assertFalse(magnemite_info["female_sprite_available"])
 
+        dialga_info = get_pokemon_gender_info(483, "diamond")
+        self.assertIsNotNone(dialga_info)
+        self.assertEqual(dialga_info["gender_type"], "genderless")
 
+        # 4. Solo hembra (ej. Chansey #113, Blissey #242)
+        chansey_info = get_pokemon_gender_info(113, "diamond")
+        self.assertIsNotNone(chansey_info)
+        self.assertEqual(chansey_info["gender_type"], "female_only")
+        self.assertFalse(chansey_info["can_toggle"])
+        self.assertEqual(chansey_info["default_gender"], "female")
+        self.assertFalse(chansey_info["female_sprite_available"])
 
+        # 5. Solo macho (ej. Tauros #128, Hitmonlee #106)
+        tauros_info = get_pokemon_gender_info(128, "diamond")
+        self.assertIsNotNone(tauros_info)
+        self.assertEqual(tauros_info["gender_type"], "male_only")
+        self.assertFalse(tauros_info["can_toggle"])
+        self.assertEqual(tauros_info["default_gender"], "male")
+        self.assertFalse(tauros_info["female_sprite_available"])
 
+    def test_gender_info_excluded_in_gen1_to_gen3(self):
+        from tracker.gender_differences import get_pokemon_gender_info
 
+        # Gen 1, 2 y 3 no deben tener gender_info activo
+        self.assertIsNone(get_pokemon_gender_info(25, "red"))
+        self.assertIsNone(get_pokemon_gender_info(25, "gold"))
+        self.assertIsNone(get_pokemon_gender_info(25, "emerald"))
+        self.assertIsNone(get_pokemon_gender_info(25, "fire-red"))
+
+    def test_catalog_modal_data_contains_gender_info_for_gen4(self):
+        from tracker.catalog_service import get_compiled_catalog
+
+        # Gen 4: Diamond debe incluir gender_info en modal_data_json
+        diamond_entries = get_compiled_catalog("diamond", is_national=True)
+        self.assertIsNotNone(diamond_entries)
+
+        pika_entry = next(e for e in diamond_entries if e.pokemon.national_number == 25)
+        pika_modal = json.loads(pika_entry.modal_data_json)
+        self.assertIn("gender_info", pika_modal)
+        self.assertIsNotNone(pika_modal["gender_info"])
+        self.assertTrue(pika_modal["gender_info"]["has_visual_differences"])
+
+        # Gen 3: Emerald NO debe incluir gender_info (o debe ser None)
+        emerald_entries = get_compiled_catalog("emerald", is_national=False)
+        self.assertIsNotNone(emerald_entries)
+        treecko = emerald_entries[0]
+        treecko_modal = json.loads(treecko.modal_data_json)
+        self.assertIsNone(treecko_modal.get("gender_info"))

@@ -14,6 +14,7 @@ const _entryDataCache = new Map();
 const _cardFormIndex = new Map();
 let activeModalFormIndex = 0;
 let isModalBackView = false;
+let activeModalGender = 'male';
 
 export function openPokemonModal(entryId, updateHistory = true) {
     const card = document.getElementById(`card-${entryId}`);
@@ -92,36 +93,42 @@ export function updateModalSpriteDisplay() {
         }
         modalImg.alt = `${form.display_name || form.name || data.name} (${isModalBackView ? 'Espalda' : 'Frente'})`;
     } else {
+        const isFemale = (activeModalGender === 'female');
+        const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
+
         if (isModalBackView) {
             if (state.isShinydexMode) {
-                targetSrc = data.sprite_retro_shiny_back || data.sprite_retro_shiny;
+                targetSrc = (femaleSprites && femaleSprites.retro_shiny_back) || data.sprite_retro_shiny_back || data.sprite_retro_shiny;
             } else {
-                targetSrc = data.sprite_retro_back || data.sprite_retro;
+                targetSrc = (femaleSprites && femaleSprites.retro_back) || data.sprite_retro_back || data.sprite_retro;
             }
         } else {
             if (state.isShinydexMode) {
-                if (state.currentSpriteStyle === 'retro' && data.sprite_retro_shiny) {
-                    targetSrc = data.sprite_retro_shiny;
+                if (state.currentSpriteStyle === 'retro' && ((femaleSprites && femaleSprites.retro_shiny) || data.sprite_retro_shiny)) {
+                    targetSrc = (femaleSprites && femaleSprites.retro_shiny) || data.sprite_retro_shiny;
                 } else {
-                    targetSrc = data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
+                    targetSrc = (femaleSprites && femaleSprites.modern_shiny) || (femaleSprites && femaleSprites.retro_shiny) || data.sprite_modern_shiny || data.sprite_retro_shiny || data.sprite_modern;
                 }
             } else {
-                if (state.currentSpriteStyle === 'retro' && data.sprite_retro) {
-                    targetSrc = data.sprite_retro;
+                if (state.currentSpriteStyle === 'retro' && ((femaleSprites && femaleSprites.retro) || data.sprite_retro)) {
+                    targetSrc = (femaleSprites && femaleSprites.retro) || data.sprite_retro;
                 } else {
-                    targetSrc = data.sprite_modern;
+                    targetSrc = (femaleSprites && femaleSprites.modern) || (femaleSprites && femaleSprites.retro) || data.sprite_modern;
                 }
             }
         }
-        modalImg.alt = `${data.name} (${isModalBackView ? 'Espalda' : 'Frente'})`;
+        const genderText = isFemale ? 'Hembra' : 'Macho';
+        modalImg.alt = `${data.name} (${genderText}, ${isModalBackView ? 'Espalda' : 'Frente'})`;
     }
 
     if (targetSrc) {
         modalImg.onerror = () => {
             modalImg.onerror = null;
+            const isFemale = (activeModalGender === 'female');
+            const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
             const fallback = hasForms
                 ? (form.sprite_retro || form.sprite_modern)
-                : (data.sprite_modern || data.sprite_retro);
+                : ((femaleSprites && femaleSprites.retro) || data.sprite_modern || data.sprite_retro);
             if (fallback && modalImg.src !== fallback) {
                 modalImg.src = fallback;
             }
@@ -142,6 +149,88 @@ export function toggleModalSpriteOrientation() {
     isModalBackView = !isModalBackView;
     updateModalSpriteDisplay();
 }
+
+const GENDER_ICON_MALE_SVG = `<svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.5" cy="14.5" r="5.5"></circle><path d="M13.5 10.5L20 4M14.5 4H20v5.5"></path></svg>`;
+const GENDER_ICON_FEMALE_SVG = `<svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M12 14.5V21M8.5 18h7"></path></svg>`;
+
+export function renderModalGender(data) {
+    const container = document.getElementById('modal-gender-container');
+    const btn = document.getElementById('modal-gender-btn');
+    const icon = document.getElementById('modal-gender-icon');
+    const label = document.getElementById('modal-gender-label');
+    const notice = document.getElementById('modal-gender-notice');
+    if (!container || !btn || !icon || !label || !notice) return;
+
+    const gInfo = data ? data.gender_info : null;
+    if (!gInfo || gInfo.gender_type === 'genderless') {
+        container.classList.add('hidden');
+        return;
+    }
+
+    container.classList.remove('hidden');
+
+    if (gInfo.gender_type === 'female_only') {
+        activeModalGender = 'female';
+        btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 select-none cursor-default bg-pink-300 text-pink-950 pointer-events-none';
+        icon.innerHTML = GENDER_ICON_FEMALE_SVG;
+        label.textContent = 'Hembra';
+        notice.classList.remove('hidden');
+        notice.textContent = 'Solo hembra';
+        return;
+    }
+
+    if (gInfo.gender_type === 'male_only') {
+        activeModalGender = 'male';
+        btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 select-none cursor-default bg-sky-200 text-sky-950 pointer-events-none';
+        icon.innerHTML = GENDER_ICON_MALE_SVG;
+        label.textContent = 'Macho';
+        notice.classList.remove('hidden');
+        notice.textContent = 'Solo macho';
+        return;
+    }
+
+    // Especies con ambos géneros (con o sin diferencias visuales)
+    activeModalGender = 'male';
+    btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5';
+    icon.innerHTML = GENDER_ICON_MALE_SVG;
+    label.textContent = 'Macho';
+    notice.classList.add('hidden');
+}
+
+export function toggleModalGender() {
+    if (!state.activeModalEntryId) return;
+    const data = getEntryData(state.activeModalEntryId);
+    if (!data || !data.gender_info || !data.gender_info.can_toggle) return;
+
+    activeModalGender = (activeModalGender === 'male') ? 'female' : 'male';
+
+    const btn = document.getElementById('modal-gender-btn');
+    const icon = document.getElementById('modal-gender-icon');
+    const label = document.getElementById('modal-gender-label');
+    const notice = document.getElementById('modal-gender-notice');
+
+    if (activeModalGender === 'female') {
+        if (btn) btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-pink-300 text-pink-950 hover:bg-pink-400 active:translate-x-0.5 active:translate-y-0.5';
+        if (icon) icon.innerHTML = GENDER_ICON_FEMALE_SVG;
+        if (label) label.textContent = 'Hembra';
+        if (notice) {
+            if (!data.gender_info.has_visual_differences) {
+                notice.classList.remove('hidden');
+                notice.textContent = 'Sin cambios';
+            } else {
+                notice.classList.add('hidden');
+            }
+        }
+    } else {
+        if (btn) btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5';
+        if (icon) icon.innerHTML = GENDER_ICON_MALE_SVG;
+        if (label) label.textContent = 'Macho';
+        if (notice) notice.classList.add('hidden');
+    }
+
+    updateModalSpriteDisplay();
+}
+window.toggleModalGender = toggleModalGender;
 
 export function getEntryData(entryId) {
     let data = _entryDataCache.get(entryId);
@@ -889,6 +978,7 @@ export function openPokemonModalDirect(entryId, options = {}) {
     isModalBackView = false;
     resetModalNotesAccordion();
     resetModalObtainingAccordion();
+    renderModalGender(data);
     const modalCryBtn = document.getElementById('modal-cry-btn');
     if (modalCryBtn) {
         if (data.cry_url) {

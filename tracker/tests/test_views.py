@@ -535,6 +535,7 @@ class FrontendInteractivityInvariantsTests(TestCase):
         # 4. Asegurar funciones clave expuestas inmediatamente en el despachador temprano
         self.assertIn("window.openPokemonModal =", content)
         self.assertIn("window.toggleCatch =", content)
+        self.assertIn("window.toggleModalGender =", content)
         self.assertIn("window.__pokedexActionQueue =", content)
         self.assertIn("window.__pokedexReady =", content)
 
@@ -570,6 +571,20 @@ class FrontendInteractivityInvariantsTests(TestCase):
         self.assertIn('id="modal-obtaining-details"', content)
         self.assertIn('hidden mt-2.5 space-y-1.5', content)
         self.assertIn('window.toggleModalObtainingAccordion', content)
+
+    def test_modal_comic_gender_elements(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "emerald"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        content = response.content.decode("utf-8")
+
+        # Verificar presencia de contenedor y elementos de género en modal cómic
+        self.assertIn('id="modal-gender-container"', content)
+        self.assertIn('id="modal-gender-btn"', content)
+        self.assertIn('id="modal-gender-icon"', content)
+        self.assertIn('id="modal-gender-label"', content)
+        self.assertIn('id="modal-gender-notice"', content)
+        self.assertIn('window.toggleModalGender', content)
 
 
 

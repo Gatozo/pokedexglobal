@@ -464,6 +464,10 @@
         }
     };
 
+    window.toggleModalGender = function() {
+        queueOrRun('toggleModalGender', []);
+    };
+
     // Barra de herramientas: Filtros y visualización
     window.toggleFilterPanel = function() {
         const p = document.getElementById('filter-panel');
@@ -550,4 +554,4 @@
 </script>
 
 <!-- Controlador Modular de Interacciones y Modales (ES Modules con carga asíncrona prioritaria) -->
-<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261008_cta_pill"></script>
+<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261008_gender2"></script>

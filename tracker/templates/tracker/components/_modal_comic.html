@@ -76,14 +76,39 @@
                 
                 <!-- Sprite Box (Left / Top in Mobile) -->
                 <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl px-3 sm:px-3.5 pt-2 sm:pt-2.5 pb-3 sm:pb-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[215px] sm:min-h-[225px]">
-                    <!-- Category Banner & Optional Form Badge (apilados en la parte superior izquierda en una sola línea) -->
-                    <div class="w-full flex flex-col items-start gap-1 z-10 shrink-0 select-none pointer-events-none mb-0.5">
-                        <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
-                            Pokémon Semilla
-                        </span>
-                        <span id="modal-form-badge" class="hidden bg-slate-900 text-amber-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
-                            Normal
-                        </span>
+                    <!-- Category Banner & Gender Selector (Gen 4+) -->
+                    <div class="w-full flex items-start justify-between gap-1 z-10 shrink-0 mb-0.5">
+                        <div class="flex flex-col items-start gap-1 select-none pointer-events-none">
+                            <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
+                                Pokémon Semilla
+                            </span>
+                            <span id="modal-form-badge" class="hidden bg-slate-900 text-amber-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
+                                Normal
+                            </span>
+                        </div>
+
+                        <!-- Selector de Género (Gen 4+) -->
+                        <div id="modal-gender-container" class="hidden relative flex flex-col items-end z-20 shrink-0">
+                            <button 
+                                type="button" 
+                                id="modal-gender-btn" 
+                                onclick="event.stopPropagation(); toggleModalGender()"
+                                class="h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5"
+                                title="Cambiar género (Macho / Hembra)"
+                                aria-label="Cambiar género"
+                            >
+                                <span id="modal-gender-icon" class="flex items-center justify-center shrink-0">
+                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="9.5" cy="14.5" r="5.5"></circle>
+                                        <path d="M13.5 10.5L20 4M14.5 4H20v5.5"></path>
+                                    </svg>
+                                </span>
+                                <span id="modal-gender-label" class="text-[10px] font-black uppercase tracking-wider leading-none mt-[0.5px]">Macho</span>
+                            </button>
+                            <span id="modal-gender-notice" class="hidden absolute top-[calc(100%+3px)] right-0 text-[8.5px] font-black tracking-tight uppercase text-slate-500 select-none pointer-events-none bg-slate-100/95 px-1.5 py-0.5 rounded border border-slate-300 shadow-sm whitespace-nowrap z-20">
+                                Sin cambios
+                            </span>
+                        </div>
                     </div>
 
                     <!-- Pokemon Image (centrado vertical y horizontalmente, estático sin parpadeos) -->

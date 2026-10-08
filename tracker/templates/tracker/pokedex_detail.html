@@ -22,19 +22,19 @@
     <!-- Estilos Principales y Componentes Cómic (Cacheados en Navegador) -->
     <link rel="stylesheet" href="{% static 'tracker/css/pokedex.css' %}?v=20261006_overscroll1">
     <!-- Preload prioritario de módulos JavaScript para interactividad instantánea -->
-    <link rel="modulepreload" href="{% static 'tracker/js/main.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/state.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/api.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/audio.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/cards.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/filters.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_comic.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_stones.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_exclusives.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_transfers.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_unown.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/national_bar.js' %}?v=20261008_cta_pill">
-    <link rel="modulepreload" href="{% static 'tracker/js/url_sync.js' %}?v=20261008_cta_pill">
+    <link rel="modulepreload" href="{% static 'tracker/js/main.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/state.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/api.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/audio.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/cards.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/filters.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_comic.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_stones.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_exclusives.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_transfers.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_unown.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/national_bar.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/url_sync.js' %}?v=20261008_gender2">
 </head>
 <body data-game="{{ game.slug }}" class="min-h-full flex flex-col font-sans selection:{% if game.slug == 'blue' %}bg-blue-500{% elif game.slug == 'yellow' %}bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}bg-slate-400 selection:text-slate-950{% elif game.slug == 'crystal' %}bg-sky-500 selection:text-slate-950{% elif game.slug == 'sapphire' %}bg-[#1d4ed8]{% elif game.slug == 'ruby' %}bg-red-600{% elif game.slug == 'emerald' %}bg-[#059669]{% else %}bg-red-500{% endif %} selection:text-white">
     {% csrf_token %}

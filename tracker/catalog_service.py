@@ -559,7 +559,13 @@ class CatalogEntry:
 
     @property
     def modal_data_json(self) -> str:
-        """Retorna el JSON serializado para el modal estilo cómic con el estado de captura actual."""
+        gen = get_game_generation(self.game_slug)
+        gender_info = None
+        if gen >= 4:
+            from .gender_differences import get_pokemon_gender_info
+            nat_num = getattr(self.pokemon, "national_number", 0)
+            gender_info = get_pokemon_gender_info(nat_num, self.game_slug)
+
         return json.dumps({
             "id": self.id,
             "number": f"{self.entry_number:03d}",
@@ -585,6 +591,7 @@ class CatalogEntry:
             "is_shiny_caught": getattr(self, "is_shiny_caught", False),
             "cry_url": self.cry_url,
             "forms": self.forms,
+            "gender_info": gender_info,
         }, ensure_ascii=False)
 
     def __str__(self):
