@@ -76,12 +76,12 @@
                 
                 <!-- Sprite Box (Left / Top in Mobile) -->
                 <div class="sm:col-span-5 bg-white border-2 border-slate-950 rounded-xl px-3 sm:px-3.5 pt-2 sm:pt-2.5 pb-3 sm:pb-3.5 flex flex-col justify-between items-center comic-card-inner relative overflow-hidden comic-dots min-h-[215px] sm:min-h-[225px]">
-                    <!-- Category Banner & Optional Form Badge -->
-                    <div class="w-full flex items-start justify-between z-10 shrink-0 gap-1.5 select-none pointer-events-none mb-0.5">
-                        <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] inline-flex flex-col items-center justify-center text-center leading-tight [text-wrap:balance] w-fit max-w-[50%]">
+                    <!-- Category Banner & Optional Form Badge (apilados en la parte superior izquierda en una sola línea) -->
+                    <div class="w-full flex flex-col items-start gap-1 z-10 shrink-0 select-none pointer-events-none mb-0.5">
+                        <span id="modal-pokemon-category" class="bg-yellow-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
                             Pokémon Semilla
                         </span>
-                        <span id="modal-form-badge" class="hidden bg-slate-900 text-amber-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] inline-flex flex-col items-center justify-center text-center leading-tight [text-wrap:balance] w-fit max-w-[50%]">
+                        <span id="modal-form-badge" class="hidden bg-slate-900 text-amber-300 border-2 border-slate-950 text-[10px] font-black uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] whitespace-nowrap">
                             Normal
                         </span>
                     </div>
@@ -176,9 +176,15 @@
                 </div>
             </div>
 
-            <!-- Bottom Section: Obtaining Method & Location (Comic Panel) -->
-            <div class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner">
-                <div class="flex items-center justify-between mb-2">
+            <!-- Bottom Section: Obtaining Method & Location (Comic Panel with Accordion) -->
+            <div id="modal-obtaining-section" class="bg-white border-2 border-slate-950 rounded-xl p-3.5 comic-card-inner">
+                <button 
+                    type="button" 
+                    id="modal-obtaining-accordion-btn"
+                    onclick="toggleModalObtainingAccordion()"
+                    class="w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none select-none mb-2"
+                    aria-expanded="false"
+                >
                     <span class="bg-emerald-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1">
                         <img src="/media/items/town-map.png" alt="Mapa" class="w-3.5 h-3.5 object-contain pixel-art inline-block">
                         Cómo conseguirlo en {{ game.display_name }}
@@ -190,16 +196,25 @@
                         <span id="modal-obtaining-badge" class="border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-emerald-400 text-slate-950">
                             Regalo / Inicial
                         </span>
+                        <svg id="modal-obtaining-chevron" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
                     </div>
+                </button>
+
+                <!-- Summary Preview (Always visible, concise, clickable to toggle) -->
+                <div 
+                    id="modal-obtaining-summary-container" 
+                    onclick="toggleModalObtainingAccordion()" 
+                    class="cursor-pointer group flex items-start gap-1.5 text-xs sm:text-sm font-bold text-slate-900 select-none py-0.5"
+                >
+                    <p id="modal-obtaining-summary" class="leading-snug">
+                        Entregado como regalo o Pokémon inicial en Pueblo Paleta.
+                    </p>
                 </div>
 
-                <!-- Summary Explanation -->
-                <p id="modal-obtaining-summary" class="text-xs sm:text-sm font-bold text-slate-900 mb-2.5">
-                    Entregado como regalo o Pokémon inicial en Pueblo Paleta.
-                </p>
-
-                <!-- Detailed Locations or Evolution Condition List -->
-                <div id="modal-obtaining-details" class="space-y-1.5">
+                <!-- Detailed Locations or Evolution Condition List (Collapsible, closed by default) -->
+                <div id="modal-obtaining-details" class="hidden mt-2.5 space-y-1.5">
                     <!-- Dynamic chips -->
                 </div>
             </div>
@@ -211,7 +226,7 @@
                     id="modal-notes-accordion-btn"
                     onclick="toggleModalNotesAccordion()"
                     class="w-full flex items-center justify-between text-left group cursor-pointer focus:outline-none select-none"
-                    aria-expanded="true"
+                    aria-expanded="false"
                 >
                     <span class="bg-amber-300 border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center gap-1.5">
                         <img id="modal-notes-icon" src="/media/items/journal.png" alt="" class="w-3.5 h-3.5 object-contain pixel-art inline-block">
@@ -219,12 +234,12 @@
                     </span>
                     <span class="flex items-center gap-1.5 text-[11px] font-black text-slate-700 group-hover:text-amber-600 transition-colors">
                         <span id="modal-notes-counter" class="text-[10px] bg-slate-100 border border-slate-900 rounded px-1.5 py-0.2 font-mono">1</span>
-                        <svg id="modal-notes-chevron" class="w-4 h-4 transform transition-transform duration-200 rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                        <svg id="modal-notes-chevron" class="w-4 h-4 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </span>
                 </button>
-                <div id="modal-notes-content" class="mt-2.5 space-y-2">
+                <div id="modal-notes-content" class="hidden mt-2.5 space-y-2">
                     <!-- Dynamic note cards -->
                 </div>
             </div>

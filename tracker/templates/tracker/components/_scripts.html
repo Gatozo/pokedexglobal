@@ -107,8 +107,8 @@
                 if (nameEl) nameEl.textContent = data.name;
                 if (catEl) catEl.textContent = data.category || 'Pokémon';
                 if (flavorEl) flavorEl.textContent = data.flavor_text ? ('"' + data.flavor_text + '"') : '';
-                if (heightEl) heightEl.textContent = (data.height || '--') + ' m';
-                if (weightEl) weightEl.textContent = (data.weight || '--') + ' kg';
+                if (heightEl) heightEl.textContent = data.height ? ((data.height / 10).toFixed(1) + ' m') : '--';
+                if (weightEl) weightEl.textContent = data.weight ? ((data.weight / 10).toFixed(1) + ' kg') : '--';
                 if (imgEl) {
                     const isShiny = window.POKEDEX_CONFIG?.isShinydexActive;
                     const src = isShiny ? (data.sprite_retro_shiny || data.sprite_modern_shiny) : (data.sprite_retro || data.sprite_modern);
@@ -415,6 +415,55 @@
         }
     };
 
+    window.toggleModalNotesAccordion = function() {
+        const content = document.getElementById('modal-notes-content');
+        const chevron = document.getElementById('modal-notes-chevron');
+        const btn = document.getElementById('modal-notes-accordion-btn');
+        if (!content || !chevron) return;
+        const isCollapsed = content.classList.contains('hidden');
+        if (isCollapsed) {
+            content.classList.remove('hidden');
+            chevron.classList.add('rotate-180');
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+        } else {
+            content.classList.add('hidden');
+            chevron.classList.remove('rotate-180');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        }
+    };
+
+    window.toggleModalObtainingAccordion = function() {
+        const details = document.getElementById('modal-obtaining-details');
+        const chevron = document.getElementById('modal-obtaining-chevron');
+        const btn = document.getElementById('modal-obtaining-accordion-btn');
+        const cta = document.getElementById('modal-obtaining-cta');
+        if (!details || !chevron) return;
+        const isCollapsed = details.classList.contains('hidden');
+        if (isCollapsed) {
+            details.classList.remove('hidden');
+            chevron.classList.add('rotate-180');
+            if (btn) btn.setAttribute('aria-expanded', 'true');
+            if (cta) {
+                const label = cta.querySelector('.cta-label');
+                const icon = cta.querySelector('.cta-icon');
+                if (label) label.textContent = 'Ocultar detalles';
+                else cta.textContent = 'Ocultar detalles ▴';
+                if (icon) icon.classList.add('rotate-180');
+            }
+        } else {
+            details.classList.add('hidden');
+            chevron.classList.remove('rotate-180');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+            if (cta) {
+                const label = cta.querySelector('.cta-label');
+                const icon = cta.querySelector('.cta-icon');
+                if (label) label.textContent = 'Ver detalles';
+                else cta.textContent = 'Ver detalles ▾';
+                if (icon) icon.classList.remove('rotate-180');
+            }
+        }
+    };
+
     // Barra de herramientas: Filtros y visualización
     window.toggleFilterPanel = function() {
         const p = document.getElementById('filter-panel');
@@ -501,4 +550,4 @@
 </script>
 
 <!-- Controlador Modular de Interacciones y Modales (ES Modules con carga asíncrona prioritaria) -->
-<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261002_gpu3"></script>
+<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261008_cta_pill"></script>

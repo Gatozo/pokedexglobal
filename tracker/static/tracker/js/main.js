@@ -88,7 +88,10 @@ import {
     cycleModalPokemonForm,
     toggleComicCaveAccordion,
     toggleModalNotesAccordion,
-    renderModalNotes
+    renderModalNotes,
+    resetModalNotesAccordion,
+    toggleModalObtainingAccordion,
+    resetModalObtainingAccordion
 } from './modal_comic.js';
 import { 
     setModalUrlHash, 
@@ -172,7 +175,10 @@ window.applyModalForm = applyModalForm;
 window.cycleModalPokemonForm = cycleModalPokemonForm;
 window.toggleComicCaveAccordion = toggleComicCaveAccordion;
 window.toggleModalNotesAccordion = toggleModalNotesAccordion;
+window.resetModalNotesAccordion = resetModalNotesAccordion;
 window.renderModalNotes = renderModalNotes;
+window.toggleModalObtainingAccordion = toggleModalObtainingAccordion;
+window.resetModalObtainingAccordion = resetModalObtainingAccordion;
 
 window.setModalUrlHash = setModalUrlHash;
 window.clearModalUrlHash = clearModalUrlHash;

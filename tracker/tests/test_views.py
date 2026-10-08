@@ -550,10 +550,26 @@ class FrontendInteractivityInvariantsTests(TestCase):
         self.assertIn('id="modal-notes-content"', content)
         self.assertIn('id="modal-notes-title"', content)
 
-        # 2. Verificar badges balanceados en modal cómic
+        # 2. Verificar badges apilados en modal cómic
         self.assertIn('id="modal-pokemon-category"', content)
         self.assertIn('id="modal-form-badge"', content)
-        self.assertIn('[text-wrap:balance]', content)
+        self.assertIn('whitespace-nowrap', content)
+
+    def test_modal_comic_obtaining_accordion_elements(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "emerald"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        content = response.content.decode("utf-8")
+
+        # 1. Verificar acordeón colapsable de obtención y ubicación
+        self.assertIn('id="modal-obtaining-section"', content)
+        self.assertIn('id="modal-obtaining-accordion-btn"', content)
+        self.assertIn('id="modal-obtaining-chevron"', content)
+        self.assertIn('id="modal-obtaining-summary-container"', content)
+        self.assertIn('id="modal-obtaining-summary"', content)
+        self.assertIn('id="modal-obtaining-details"', content)
+        self.assertIn('hidden mt-2.5 space-y-1.5', content)
+        self.assertIn('window.toggleModalObtainingAccordion', content)
 
 
 
