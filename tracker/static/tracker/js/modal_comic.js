@@ -66,10 +66,10 @@ export function updateModalSpriteDisplay() {
     if (!modalImg) return;
 
     const hasForms = data.forms && data.forms.length > 1;
+    const form = (hasForms && data.forms) ? (data.forms[activeModalFormIndex] || data.forms[0]) : null;
     let targetSrc = '';
 
-    if (hasForms) {
-        const form = data.forms[activeModalFormIndex] || data.forms[0];
+    if (hasForms && form) {
         if (isModalBackView) {
             if (state.isShinydexMode) {
                 targetSrc = form.sprite_retro_shiny_back || form.sprite_retro_shiny;
@@ -126,7 +126,7 @@ export function updateModalSpriteDisplay() {
             modalImg.onerror = null;
             const isFemale = (activeModalGender === 'female');
             const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
-            const fallback = hasForms
+            const fallback = (hasForms && form)
                 ? (form.sprite_retro || form.sprite_modern)
                 : ((femaleSprites && femaleSprites.retro) || data.sprite_modern || data.sprite_retro);
             if (fallback && modalImg.src !== fallback) {
@@ -171,9 +171,12 @@ export function renderModalGender(data) {
 
     if (gInfo.gender_type === 'female_only') {
         activeModalGender = 'female';
-        btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 select-none cursor-default bg-pink-300 text-pink-950 pointer-events-none';
+        btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center select-none cursor-default bg-pink-300 text-pink-950 pointer-events-none shrink-0';
+        btn.title = 'Solo hembra';
+        btn.setAttribute('aria-label', 'Solo hembra');
         icon.innerHTML = GENDER_ICON_FEMALE_SVG;
         label.textContent = 'Hembra';
+        notice.className = 'absolute top-[calc(100%+4px)] right-0 text-[8px] sm:text-[8.5px] font-black tracking-wider uppercase text-pink-950 bg-pink-100/95 px-1.5 py-0.5 rounded border border-slate-950 shadow-[1px_1px_0px_0px_#0f172a] whitespace-nowrap select-none pointer-events-none z-30';
         notice.classList.remove('hidden');
         notice.textContent = 'Solo hembra';
         return;
@@ -181,9 +184,12 @@ export function renderModalGender(data) {
 
     if (gInfo.gender_type === 'male_only') {
         activeModalGender = 'male';
-        btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 select-none cursor-default bg-sky-200 text-sky-950 pointer-events-none';
+        btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center select-none cursor-default bg-sky-200 text-sky-950 pointer-events-none shrink-0';
+        btn.title = 'Solo macho';
+        btn.setAttribute('aria-label', 'Solo macho');
         icon.innerHTML = GENDER_ICON_MALE_SVG;
         label.textContent = 'Macho';
+        notice.className = 'absolute top-[calc(100%+4px)] right-0 text-[8px] sm:text-[8.5px] font-black tracking-wider uppercase text-sky-950 bg-sky-100/95 px-1.5 py-0.5 rounded border border-slate-950 shadow-[1px_1px_0px_0px_#0f172a] whitespace-nowrap select-none pointer-events-none z-30';
         notice.classList.remove('hidden');
         notice.textContent = 'Solo macho';
         return;
@@ -191,7 +197,9 @@ export function renderModalGender(data) {
 
     // Especies con ambos géneros (con o sin diferencias visuales)
     activeModalGender = 'male';
-    btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5';
+    btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
+    btn.title = 'Cambiar género (Macho)';
+    btn.setAttribute('aria-label', 'Cambiar género');
     icon.innerHTML = GENDER_ICON_MALE_SVG;
     label.textContent = 'Macho';
     notice.classList.add('hidden');
@@ -210,11 +218,16 @@ export function toggleModalGender() {
     const notice = document.getElementById('modal-gender-notice');
 
     if (activeModalGender === 'female') {
-        if (btn) btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-pink-300 text-pink-950 hover:bg-pink-400 active:translate-x-0.5 active:translate-y-0.5';
+        if (btn) {
+            btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-pink-300 text-pink-950 hover:bg-pink-400 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
+            btn.title = 'Cambiar género (Hembra)';
+            btn.setAttribute('aria-label', 'Cambiar género');
+        }
         if (icon) icon.innerHTML = GENDER_ICON_FEMALE_SVG;
         if (label) label.textContent = 'Hembra';
         if (notice) {
             if (!data.gender_info.has_visual_differences) {
+                notice.className = 'absolute top-[calc(100%+4px)] right-0 text-[8px] sm:text-[8.5px] font-black tracking-wider uppercase text-slate-800 bg-white/95 px-1.5 py-0.5 rounded border border-slate-950 shadow-[1px_1px_0px_0px_#0f172a] whitespace-nowrap select-none pointer-events-none z-30';
                 notice.classList.remove('hidden');
                 notice.textContent = 'Sin cambios';
             } else {
@@ -222,7 +235,11 @@ export function toggleModalGender() {
             }
         }
     } else {
-        if (btn) btn.className = 'h-[25px] px-2.5 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] font-black text-xs flex items-center justify-center gap-1.5 transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5';
+        if (btn) {
+            btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
+            btn.title = 'Cambiar género (Macho)';
+            btn.setAttribute('aria-label', 'Cambiar género');
+        }
         if (icon) icon.innerHTML = GENDER_ICON_MALE_SVG;
         if (label) label.textContent = 'Macho';
         if (notice) notice.classList.add('hidden');
@@ -795,20 +812,82 @@ export function updateModalObtainingCta(isOpen) {
     }
 }
 
+export function animateAccordionToggle(element, isOpen) {
+    if (!element) return;
+    if (element._animCleanup) {
+        element._animCleanup();
+    }
+
+    if (isOpen) {
+        element.classList.remove('hidden');
+        element.style.overflow = 'hidden';
+        element.style.transition = 'max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out';
+        element.style.maxHeight = '0px';
+        element.style.opacity = '0';
+
+        requestAnimationFrame(() => {
+            const targetHeight = element.scrollHeight;
+            element.style.maxHeight = targetHeight + 'px';
+            element.style.opacity = '1';
+        });
+
+        const onEnd = (e) => {
+            if (e && e.target !== element) return;
+            element.style.maxHeight = 'none';
+            element.style.overflow = '';
+            element.style.opacity = '';
+            element.style.transition = '';
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+        element.addEventListener('transitionend', onEnd);
+        element._animCleanup = () => {
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+    } else {
+        element.style.overflow = 'hidden';
+        element.style.transition = 'max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-in';
+        element.style.maxHeight = element.scrollHeight + 'px';
+        element.style.opacity = '1';
+
+        requestAnimationFrame(() => {
+            element.style.maxHeight = '0px';
+            element.style.opacity = '0';
+        });
+
+        const onEnd = (e) => {
+            if (e && e.target !== element) return;
+            element.classList.add('hidden');
+            element.style.maxHeight = '';
+            element.style.overflow = '';
+            element.style.opacity = '';
+            element.style.transition = '';
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+        element.addEventListener('transitionend', onEnd);
+        element._animCleanup = () => {
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+    }
+}
+
 export function toggleModalObtainingAccordion() {
     const details = document.getElementById('modal-obtaining-details');
     const chevron = document.getElementById('modal-obtaining-chevron');
     const btn = document.getElementById('modal-obtaining-accordion-btn');
     if (!details || !chevron) return;
-    const isCollapsed = details.classList.contains('hidden');
+    const isCollapsed = details.classList.contains('hidden') || details.style.maxHeight === '0px';
     if (isCollapsed) {
-        details.classList.remove('hidden');
+        animateAccordionToggle(details, true);
         chevron.classList.add('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'true');
         updateModalObtainingCta(true);
         initObtainingMarquees();
     } else {
-        details.classList.add('hidden');
+        animateAccordionToggle(details, false);
         chevron.classList.remove('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'false');
         updateModalObtainingCta(false);
@@ -820,7 +899,14 @@ export function resetModalObtainingAccordion() {
     const details = document.getElementById('modal-obtaining-details');
     const chevron = document.getElementById('modal-obtaining-chevron');
     const btn = document.getElementById('modal-obtaining-accordion-btn');
-    if (details) details.classList.add('hidden');
+    if (details) {
+        if (details._animCleanup) details._animCleanup();
+        details.classList.add('hidden');
+        details.style.maxHeight = '';
+        details.style.overflow = '';
+        details.style.opacity = '';
+        details.style.transition = '';
+    }
     if (chevron) chevron.classList.remove('rotate-180');
     if (btn) btn.setAttribute('aria-expanded', 'false');
     updateModalObtainingCta(false);
@@ -832,13 +918,13 @@ export function toggleModalNotesAccordion() {
     const chevron = document.getElementById('modal-notes-chevron');
     const btn = document.getElementById('modal-notes-accordion-btn');
     if (!content || !chevron) return;
-    const isCollapsed = content.classList.contains('hidden');
+    const isCollapsed = content.classList.contains('hidden') || content.style.maxHeight === '0px';
     if (isCollapsed) {
-        content.classList.remove('hidden');
+        animateAccordionToggle(content, true);
         chevron.classList.add('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'true');
     } else {
-        content.classList.add('hidden');
+        animateAccordionToggle(content, false);
         chevron.classList.remove('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'false');
     }
@@ -849,7 +935,14 @@ export function resetModalNotesAccordion() {
     const content = document.getElementById('modal-notes-content');
     const chevron = document.getElementById('modal-notes-chevron');
     const btn = document.getElementById('modal-notes-accordion-btn');
-    if (content) content.classList.add('hidden');
+    if (content) {
+        if (content._animCleanup) content._animCleanup();
+        content.classList.add('hidden');
+        content.style.maxHeight = '';
+        content.style.overflow = '';
+        content.style.opacity = '';
+        content.style.transition = '';
+    }
     if (chevron) chevron.classList.remove('rotate-180');
     if (btn) btn.setAttribute('aria-expanded', 'false');
 }
@@ -1256,12 +1349,12 @@ export function toggleComicCaveAccordion(btn) {
     if (!content) return;
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
     if (isExpanded) {
-        content.classList.add('hidden');
+        animateAccordionToggle(content, false);
         btn.setAttribute('aria-expanded', 'false');
         if (icon) icon.classList.remove('rotate-180');
         if (label) label.textContent = 'Ver nota';
     } else {
-        content.classList.remove('hidden');
+        animateAccordionToggle(content, true);
         btn.setAttribute('aria-expanded', 'true');
         if (icon) icon.classList.add('rotate-180');
         if (label) label.textContent = 'Ocultar';
