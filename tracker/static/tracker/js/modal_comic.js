@@ -338,7 +338,7 @@ export function cycleCardPokemonForm(entryId, direction) {
 export function getObtainingCtaHtml(isOpen) {
     const label = isOpen ? 'Ocultar detalles' : 'Ver detalles';
     const chevronClass = isOpen ? 'rotate-180' : '';
-    return `<span id="modal-obtaining-cta" class="inline-flex items-center gap-1 whitespace-nowrap text-[10.5px] font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-400 px-1.5 py-0.5 rounded shadow-xs ml-1.5 align-middle select-none transition-colors"><span class="cta-label">${label}</span><svg class="cta-icon w-3 h-3 text-emerald-900 transform transition-transform duration-200 ${chevronClass}" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></span>`;
+    return `<span id="modal-obtaining-cta" class="inline-flex items-center gap-1.5 whitespace-nowrap text-[10px] sm:text-xs font-black text-slate-950 bg-emerald-400 hover:bg-emerald-300 active:translate-y-0.5 border-2 border-slate-950 rounded px-2.5 py-0.5 shadow-[1.5px_1.5px_0px_0px_#0f172a] select-none transition-all cursor-pointer"><span class="cta-label">${label}</span><svg class="cta-icon w-3.5 h-3.5 text-slate-950 transform transition-transform duration-200 ${chevronClass}" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></span>`;
 }
 
 export function renderModalObtaining(data, activeForm = null) {
@@ -396,34 +396,38 @@ export function renderModalObtaining(data, activeForm = null) {
     }
 
     const summaryEl = document.getElementById('modal-obtaining-summary');
+    const ctaContainer = document.getElementById('modal-obtaining-cta-container');
     const detailsContainer = document.getElementById('modal-obtaining-details');
     const isDetailsOpen = Boolean(detailsContainer && !detailsContainer.classList.contains('hidden'));
 
     if (summaryEl) {
         const hasDetails = (obt.locations && obt.locations.length > 0) || Boolean(obt.evolution_info) || Boolean(data.evolution_stone) || Boolean(obt.historical_note);
-        const ctaHtml = hasDetails ? getObtainingCtaHtml(isDetailsOpen) : '';
 
         if (obt.locations && obt.locations.length > 2) {
             const loc1 = obt.locations[0].area;
             const loc2 = obt.locations[1].area;
             const remCount = obt.locations.length - 2;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
-            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>, <span class="text-slate-950 font-black">${loc2}</span> y <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${remCount} ${remCount === 1 ? 'zona más' : 'zonas más'}</span> ${ctaHtml}`;
+            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>, <span class="text-slate-950 font-black">${loc2}</span> y <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${remCount} ${remCount === 1 ? 'zona más' : 'zonas más'}</span>.`;
         } else if (obt.locations && obt.locations.length === 2) {
             const loc1 = obt.locations[0].area;
             const loc2 = obt.locations[1].area;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
-            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span> y <span class="text-slate-950 font-black">${loc2}</span>. ${ctaHtml}`;
+            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span> y <span class="text-slate-950 font-black">${loc2}</span>.`;
         } else if (obt.locations && obt.locations.length === 1) {
             const loc1 = obt.locations[0].area;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
             const textBase = obt.summary ? obt.summary : `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>.`;
-            summaryEl.innerHTML = `${textBase} ${ctaHtml}`;
+            summaryEl.innerHTML = `${textBase}`;
         } else if (obt.evolution_info) {
             const evoFrom = obt.evolution_info.from;
-            summaryEl.innerHTML = `Evoluciona de <span class="text-slate-950 font-black">${evoFrom}</span>. ${ctaHtml}`;
+            summaryEl.innerHTML = `Evoluciona de <span class="text-slate-950 font-black">${evoFrom}</span>.`;
         } else {
-            summaryEl.innerHTML = `${obt.summary || 'Sin información de obtención registrada.'} ${ctaHtml}`;
+            summaryEl.innerHTML = `${obt.summary || 'Sin información de obtención registrada.'}`;
+        }
+
+        if (ctaContainer) {
+            ctaContainer.innerHTML = hasDetails ? getObtainingCtaHtml(isDetailsOpen) : '';
         }
     }
 
@@ -878,17 +882,17 @@ export function toggleModalObtainingAccordion() {
     const details = document.getElementById('modal-obtaining-details');
     const chevron = document.getElementById('modal-obtaining-chevron');
     const btn = document.getElementById('modal-obtaining-accordion-btn');
-    if (!details || !chevron) return;
+    if (!details) return;
     const isCollapsed = details.classList.contains('hidden') || details.style.maxHeight === '0px';
     if (isCollapsed) {
         animateAccordionToggle(details, true);
-        chevron.classList.add('rotate-180');
+        if (chevron) chevron.classList.add('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'true');
         updateModalObtainingCta(true);
         initObtainingMarquees();
     } else {
         animateAccordionToggle(details, false);
-        chevron.classList.remove('rotate-180');
+        if (chevron) chevron.classList.remove('rotate-180');
         if (btn) btn.setAttribute('aria-expanded', 'false');
         updateModalObtainingCta(false);
     }

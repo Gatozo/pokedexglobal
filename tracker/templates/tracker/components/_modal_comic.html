@@ -221,9 +221,6 @@
                         <span id="modal-obtaining-badge" class="border-2 border-slate-950 font-black text-[10px] sm:text-xs uppercase px-2.5 py-0.5 rounded shadow-[1.5px_1.5px_0px_0px_#0f172a] bg-emerald-400 text-slate-950">
                             Regalo / Inicial
                         </span>
-                        <svg id="modal-obtaining-chevron" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
                     </div>
                 </button>
 
@@ -231,11 +228,14 @@
                 <div 
                     id="modal-obtaining-summary-container" 
                     onclick="toggleModalObtainingAccordion()" 
-                    class="cursor-pointer group flex items-start gap-1.5 text-xs sm:text-sm font-bold text-slate-900 select-none py-0.5"
+                    class="cursor-pointer group flex flex-col gap-1 text-xs sm:text-sm font-bold text-slate-900 select-none py-0.5"
                 >
                     <p id="modal-obtaining-summary" class="leading-snug">
                         Entregado como regalo o Pokémon inicial en Pueblo Paleta.
                     </p>
+                    <div id="modal-obtaining-cta-container" class="flex justify-end items-center empty:hidden">
+                        <!-- Dynamic CTA button placed at bottom-right -->
+                    </div>
                 </div>
 
                 <!-- Detailed Locations or Evolution Condition List (Collapsible, closed by default) -->

@@ -437,11 +437,11 @@
         const chevron = document.getElementById('modal-obtaining-chevron');
         const btn = document.getElementById('modal-obtaining-accordion-btn');
         const cta = document.getElementById('modal-obtaining-cta');
-        if (!details || !chevron) return;
+        if (!details) return;
         const isCollapsed = details.classList.contains('hidden');
         if (isCollapsed) {
             details.classList.remove('hidden');
-            chevron.classList.add('rotate-180');
+            if (chevron) chevron.classList.add('rotate-180');
             if (btn) btn.setAttribute('aria-expanded', 'true');
             if (cta) {
                 const label = cta.querySelector('.cta-label');
@@ -452,7 +452,7 @@
             }
         } else {
             details.classList.add('hidden');
-            chevron.classList.remove('rotate-180');
+            if (chevron) chevron.classList.remove('rotate-180');
             if (btn) btn.setAttribute('aria-expanded', 'false');
             if (cta) {
                 const label = cta.querySelector('.cta-label');

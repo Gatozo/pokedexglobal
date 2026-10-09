@@ -565,9 +565,10 @@ class FrontendInteractivityInvariantsTests(TestCase):
         # 1. Verificar acordeón colapsable de obtención y ubicación
         self.assertIn('id="modal-obtaining-section"', content)
         self.assertIn('id="modal-obtaining-accordion-btn"', content)
-        self.assertIn('id="modal-obtaining-chevron"', content)
+        self.assertIn('id="modal-obtaining-badge"', content)
         self.assertIn('id="modal-obtaining-summary-container"', content)
         self.assertIn('id="modal-obtaining-summary"', content)
+        self.assertIn('id="modal-obtaining-cta-container"', content)
         self.assertIn('id="modal-obtaining-details"', content)
         self.assertIn('hidden mt-2.5 space-y-1.5', content)
         self.assertIn('window.toggleModalObtainingAccordion', content)

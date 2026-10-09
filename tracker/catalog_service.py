@@ -500,10 +500,10 @@ class CatalogEntry:
         if gen == 2 and "golpe cabeza" in full_obt_text:
             tags.add("headbutt")
 
-        # Cañas de pescar
-        has_old = "vieja" in full_obt_text
-        has_good = "buena" in full_obt_text
-        has_super = "super" in full_obt_text or "súper" in full_obt_text
+        # Cañas de pescar (requiere coincidencia explícita con la caña correspondiente para evitar falsos positivos como 'superar', 'superficie' o 'vieja mansión')
+        has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", full_obt_text))
+        has_good = bool(re.search(r"\b(caña\s*buena|cañabuena|good\s*rod)\b", full_obt_text))
+        has_super = bool(re.search(r"\b(s[uú]per\s*caña|supercaña|súpercaña|super\s*rod)\b", full_obt_text))
 
         if has_old:
             tags.add("rod_old")
@@ -511,7 +511,7 @@ class CatalogEntry:
             tags.add("rod_good")
         if has_super:
             tags.add("rod_super")
-        if has_old or has_good or has_super:
+        if has_old or has_good or has_super or obt.get("type") == "fishing" or "pesca con caña" in full_obt_text:
             tags.add("rod_any")
 
         # Fósiles y sus evoluciones
