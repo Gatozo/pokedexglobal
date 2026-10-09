@@ -167,9 +167,9 @@ class ViewsAndFlowTests(TestCase):
         self.assertContains(response, "Crear Cuenta")
         self.assertContains(response, "Modo Invitado")
 
-    def test_guest_continue_defaults_to_red(self):
+    def test_guest_continue_redirects_to_game_selector(self):
         response = self.client.get(reverse("tracker:guest_continue"))
-        self.assertRedirects(response, "/red/")
+        self.assertRedirects(response, reverse("tracker:game_selector"))
 
     def test_login_post_with_email(self):
         response = self.client.post(reverse("tracker:home"), {
@@ -177,7 +177,7 @@ class ViewsAndFlowTests(TestCase):
             "identifier": "red@indigo.com",
             "password": "ChampionPassword123!",
         })
-        self.assertRedirects(response, "/red/")
+        self.assertRedirects(response, reverse("tracker:game_selector"))
         # Verificar que la sesión está autenticada
         self.assertEqual(int(self.client.session["_auth_user_id"]), self.user.pk)
 
@@ -189,7 +189,7 @@ class ViewsAndFlowTests(TestCase):
             "password": "RivalPassword123!",
             "password_confirm": "RivalPassword123!",
         })
-        self.assertRedirects(response, "/red/")
+        self.assertRedirects(response, reverse("tracker:game_selector"))
         new_user = User.objects.get(username="BlueRival")
         self.assertEqual(int(self.client.session["_auth_user_id"]), new_user.pk)
 
@@ -200,13 +200,14 @@ class ViewsAndFlowTests(TestCase):
         self.assertNotIn("_auth_user_id", self.client.session)
 
     def test_remember_last_game_visited(self):
-        # Visitar Pokémon Cristal
+        # Visitar Pokémon Cristal registra el juego visitado en sesión
         self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "crystal"}))
         self.assertEqual(self.client.session.get("last_game_slug"), "crystal")
 
-        # Ahora guest continue debe redirigir a /crystal/
+        # El flujo global siempre conduce al selector de juego /games/
         response = self.client.get(reverse("tracker:guest_continue"))
-        self.assertRedirects(response, "/crystal/")
+        self.assertRedirects(response, reverse("tracker:game_selector"))
+
 
     def test_user_progress_isolation(self):
         user_a = User.objects.create_user(username="TrainerA", password="Password123!")

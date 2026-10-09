@@ -536,3 +536,22 @@ body[data-game="red"] .status-caught-active {
     color: #ffffff !important;
     border-color: #0f172a !important;
 }
+
+/* Hub de Selección de Juegos - Estilo Neutro y Cómic */
+body.game-hub-page,
+body[data-page="game-hub"] {
+    background-color: #f1f5f9 !important;
+    background-image: radial-gradient(rgba(15, 23, 42, 0.14) 1.5px, transparent 1.5px) !important;
+    background-size: 16px 16px !important;
+}
+
+.comic-header-neutral {
+    background: repeating-linear-gradient(
+        -45deg,
+        #1e293b,
+        #1e293b 12px,
+        #0f172a 12px,
+        #0f172a 24px
+    ) !important;
+}
+

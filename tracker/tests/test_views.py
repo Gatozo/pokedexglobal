@@ -748,4 +748,80 @@ class NationalGenerationBarTests(TestCase):
         self.assertContains(resp, f'id="entry-data-{first_transfer["entry_id"]}"')
 
 
+class GameSelectorHubTests(TestCase):
+    def setUp(self):
+        from tracker.models import Game
+        Game.objects.get_or_create(slug="red", defaults={"name": "Pokémon Rojo", "generation": 1})
+        Game.objects.get_or_create(slug="diamond", defaults={"name": "Pokémon Diamante", "generation": 4})
+
+    def test_game_selector_view_rendering_and_structure(self):
+        url = reverse("tracker:game_selector")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, "Selección de juego")
+        self.assertContains(resp, 'id="pokemon-search-input"')
+        self.assertContains(resp, 'data-gen="all"')
+        self.assertContains(resp, 'data-gen="1"')
+        self.assertContains(resp, 'data-gen="4"')
+
+        # Verificar presencia de tarjetas de juegos activos y no disponibles
+        self.assertContains(resp, 'id="card-game-red"')
+        self.assertContains(resp, 'id="card-game-diamond"')
+        self.assertContains(resp, 'id="card-game-pearl"')
+        self.assertContains(resp, 'id="card-game-scarlet"')
+
+    def test_guest_continue_redirects_to_game_selector(self):
+        url = reverse("tracker:guest_continue")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 302)
+        self.assertEqual(resp.url, reverse("tracker:game_selector"))
+
+    def test_progress_bars_generation_rules_and_buttons(self):
+        url = reverse("tracker:game_selector")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+
+        # Gen 1 (red) inicialmente sin capturas: botón Empezar y sin barra nacional
+        self.assertContains(resp, 'id="card-game-red"')
+
+        # Simular una captura en Pokémon Rojo para la sesión actual
+        session = self.client.session
+        session.save()
+        s_key = session.session_key
+
+        from tracker.models import UserPokemonCatch
+        UserPokemonCatch.objects.create(
+            session_key=s_key,
+            game_slug="red",
+            entry_id=1,
+            entry_number=1,
+            is_caught=True
+        )
+
+        resp2 = self.client.get(url)
+        self.assertEqual(resp2.status_code, 200)
+        # Red ahora tiene capturas -> botón debe decir Continuar
+        context_games = {g["slug"]: g for g in resp2.context["games_cards"]}
+        self.assertEqual(context_games["red"]["button_label"], "Continuar")
+        self.assertTrue(context_games["red"]["has_started"])
+        self.assertFalse(context_games["red"]["has_national_dex"])
+
+        # Diamante (Gen 4) tiene Pokédex Nacional
+        self.assertTrue(context_games["diamond"]["has_national_dex"])
+
+        # Mascota y números canónicos de Gen 9 corregidos
+        self.assertEqual(context_games["scarlet"]["mascot_num"], 1007)
+        self.assertEqual(context_games["violet"]["mascot_num"], 1008)
+
+        # Iconos de PC modernos en todas las tarjetas
+        self.assertEqual(context_games["red"]["mascot_icon"], "/media/pokemon/icons/gen8/6.png")
+        self.assertEqual(context_games["scarlet"]["mascot_icon"], "/media/pokemon/icons/gen8/1007.png")
+        self.assertEqual(context_games["violet"]["mascot_icon"], "/media/pokemon/icons/gen8/1008.png")
+
+        # Clases de fondo cómic y banner neutro
+        self.assertContains(resp2, "game-hub-page")
+        self.assertContains(resp2, "comic-header-neutral")
+
+
+
 

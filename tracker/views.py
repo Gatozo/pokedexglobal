@@ -8,10 +8,12 @@ from django.utils import timezone
 from django.core.cache import cache
 from django.contrib.auth import login, logout
 from django.contrib import messages
+from django.urls import reverse
 from .models import Game, Pokedex, UserPokemonCatch
 from .forms import HybridLoginForm, UserRegisterForm
 from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
+from .game_hub_data import MAIN_SERIES_GAMES
 
 
 
@@ -126,22 +128,15 @@ def merge_session_catches_to_user(session_key, user):
 
 def get_target_pokedex_url(request):
     """
-    Determina la URL de destino adecuada:
-    1. Si hay un parámetro 'next' seguro, lo usa.
-    2. Si hay un último juego visitado en sesión ('last_game_slug'), va a ese juego.
-    3. Por defecto, va a 'red' (/red/).
+    Determina la URL de destino adecuada tras autenticación o acceso de invitado:
+    1. Si hay un parámetro 'next' seguro (que no sea login o portal), lo usa.
+    2. Por defecto, redirige al selector de juegos central (/games/).
     """
     next_url = request.GET.get("next") or request.POST.get("next")
-    if next_url and next_url.startswith("/") and not next_url.startswith("//") and not next_url.startswith("/login"):
+    if next_url and next_url.startswith("/") and not next_url.startswith("//") and not next_url.startswith("/login") and next_url != "/":
         return next_url
 
-    last_game = request.session.get("last_game_slug")
-    if last_game:
-        games = _get_cached_all_games()
-        if any(g.slug == last_game for g in games):
-            return f"/{last_game}/"
-
-    return "/red/"
+    return reverse("tracker:game_selector")
 
 
 def auth_portal_view(request):
@@ -219,6 +214,110 @@ def logout_view(request):
     if username:
         messages.info(request, f"Sesión de {username} cerrada correctamente. ¡Hasta la próxima aventura!", extra_tags="portal")
     return redirect("tracker:home")
+
+
+def game_selector_view(request):
+    """
+    Selector principal de juegos (Game Hub) en '/games/'.
+    Presenta un banner central neutro con buscador en vivo de Pokémon y filtro por generación,
+    así como una cuadrícula continua de 3 columnas de juegos de la saga principal con sus
+    respectivas barras de progreso y mascotas oficiales.
+    """
+    user, session_key = _get_user_or_session(request)
+    if user:
+        user_filter = {"user": user}
+    else:
+        user_filter = {"session_key": session_key}
+
+    # Obtener todas las capturas del usuario en una sola consulta
+    user_catches = UserPokemonCatch.objects.filter(**user_filter, is_caught=True).values("game_slug", "entry_id")
+    catches_by_game = {}
+    for c in user_catches:
+        g_slug = c["game_slug"]
+        if g_slug not in catches_by_game:
+            catches_by_game[g_slug] = set()
+        catches_by_game[g_slug].add(c["entry_id"])
+
+    # Juegos instalados y disponibles en la base de datos
+    available_games = {g.slug: g for g in _get_cached_all_games()}
+
+    games_cards = []
+    pokemon_search_dict = {}
+
+    for item in MAIN_SERIES_GAMES:
+        g_slug = item["slug"]
+        is_available = g_slug in available_games
+        game_catches = catches_by_game.get(g_slug, set())
+        has_started = len(game_catches) > 0
+
+        card_data = dict(item)
+        card_data["is_available"] = is_available
+        card_data["has_started"] = has_started
+        card_data["mascot_icon"] = f"/media/pokemon/icons/gen8/{item['mascot_num']}.png"
+        card_data["mascot_artwork"] = f"/media/pokemon/artwork/{item['mascot_num']}.png"
+
+        if is_available:
+            reg_cat = get_compiled_catalog(g_slug, is_national=False) or []
+            nat_cat = get_compiled_catalog(g_slug, is_national=True) or []
+
+            reg_ids = set(e.id for e in reg_cat)
+            nat_ids = set(e.id for e in nat_cat)
+
+            reg_total = len(reg_cat)
+            reg_caught = len(game_catches.intersection(reg_ids))
+            reg_percent = round((reg_caught / reg_total * 100), 1) if reg_total else 0.0
+
+            has_national_dex = (item["generation"] >= 3)
+            nat_total = len(nat_cat) if has_national_dex else 0
+            nat_caught = len(game_catches.intersection(nat_ids)) if has_national_dex else 0
+            nat_percent = round((nat_caught / nat_total * 100), 1) if nat_total else 0.0
+
+            card_data["has_national_dex"] = has_national_dex
+            card_data["reg_total"] = reg_total
+            card_data["reg_caught"] = reg_caught
+            card_data["reg_percent"] = reg_percent
+            card_data["nat_total"] = nat_total
+            card_data["nat_caught"] = nat_caught
+            card_data["nat_percent"] = nat_percent
+            card_data["button_label"] = "Continuar" if has_started else "Empezar"
+            card_data["url"] = f"/{g_slug}/"
+
+            # Indexar pokémon para el buscador interactivo del banner
+            for entry in nat_cat:
+                p_num = entry.pokemon.national_number
+                p_name = entry.pokemon.name
+                if p_num not in pokemon_search_dict:
+                    pokemon_search_dict[p_num] = {
+                        "id": p_num,
+                        "name": p_name,
+                        "games": {},
+                    }
+                pokemon_search_dict[p_num]["games"][g_slug] = {
+                    "is_caught": entry.id in game_catches,
+                }
+        else:
+            card_data["has_national_dex"] = (item["generation"] >= 3)
+            card_data["reg_total"] = 0
+            card_data["reg_caught"] = 0
+            card_data["reg_percent"] = 0.0
+            card_data["nat_total"] = 0
+            card_data["nat_caught"] = 0
+            card_data["nat_percent"] = 0.0
+            card_data["button_label"] = "No disponible"
+            card_data["url"] = "#"
+
+        games_cards.append(card_data)
+
+    pokemon_search_list = sorted(list(pokemon_search_dict.values()), key=lambda x: x["id"])
+
+    context = {
+        "games_cards": games_cards,
+        "generations_list": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "pokemon_search_json": json.dumps(pokemon_search_list),
+        "total_active_games": len(available_games),
+        "total_main_games": len(MAIN_SERIES_GAMES),
+    }
+    return render(request, "tracker/game_selector.html", context)
 
 
 def check_username(request):

@@ -9,6 +9,7 @@ urlpatterns = [
     path("register/", views.register_view, name="register"),
     path("guest/", views.guest_continue_view, name="guest_continue"),
     path("logout/", views.logout_view, name="logout"),
+    path("games/", views.game_selector_view, name="game_selector"),
     path("<slug:game_slug>/", views.pokedex_view, name="pokedex_default"),
     path("<slug:game_slug>/<slug:pokedex_slug>/", views.pokedex_view, name="pokedex_detail"),
     path("api/catch/toggle/", views.toggle_catch, name="toggle_catch"),

@@ -19,6 +19,16 @@
         <div class="flex items-center">
             <!-- Game Selector & Mode Switcher (Estilo Cartucho Game Boy) -->
             <div class="flex items-center space-x-2 sm:space-x-2.5">
+                <a 
+                    href="{% url 'tracker:game_selector' %}" 
+                    class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-amber-300 border-2 border-slate-950 font-black text-xs uppercase px-2.5 py-1.5 rounded-xl shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all"
+                    title="Ir al Selector de Juegos"
+                >
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/>
+                    </svg>
+                    <span class="hidden md:inline">Juegos</span>
+                </a>
                 <label for="game-select" class="text-xs font-black uppercase tracking-wider hidden sm:inline-block {% if game.slug == 'blue' %}text-blue-400{% elif game.slug == 'yellow' %}text-amber-400{% elif game.slug == 'gold' %}text-[#c59b27]{% elif game.slug == 'silver' %}text-slate-300{% elif game.slug == 'crystal' %}text-sky-300{% elif game.slug == 'ruby' %}text-rose-400{% elif game.slug == 'sapphire' %}text-sky-300{% elif game.slug == 'emerald' %}text-emerald-400{% elif game.slug == 'firered' %}text-orange-400{% elif game.slug == 'leafgreen' %}text-emerald-400{% elif game.slug == 'diamond' %}text-blue-400{% else %}text-red-400{% endif %}">
                     Cartucho:
                 </label>
