@@ -570,10 +570,10 @@ class CatalogEntry:
     @property
     def modal_data_json(self) -> str:
         gen = get_game_generation(self.game_slug)
+        nat_num = getattr(self.pokemon, "national_number", 0)
         gender_info = None
         if gen >= 4:
             from .gender_differences import get_pokemon_gender_info
-            nat_num = getattr(self.pokemon, "national_number", 0)
             gender_info = get_pokemon_gender_info(nat_num, self.game_slug)
 
         return json.dumps({
@@ -591,6 +591,8 @@ class CatalogEntry:
             "sprite_modern_shiny": self.modern_sprite_shiny_url,
             "sprite_retro_back": self.modal_retro_sprite_back_url,
             "sprite_retro_shiny_back": self.modal_retro_sprite_shiny_back_url,
+            "sprite_modern_back": f"/media/pokemon/home/back/{nat_num}.png" if nat_num in {255, 399, 418, 419} else "",
+            "sprite_modern_shiny_back": f"/media/pokemon/home/shiny/back/{nat_num}.png" if nat_num in {255, 399, 418, 419} else "",
             "pc_icon_url": self.pc_icon_url,
             "height": self.pokemon.height or 0,
             "weight": self.pokemon.weight or 0,

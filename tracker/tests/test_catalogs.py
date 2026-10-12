@@ -2000,6 +2000,26 @@ class GenderDifferencesAndModalDataTests(TestCase):
         treecko_modal = json.loads(treecko.modal_data_json)
         self.assertIsNone(treecko_modal.get("gender_info"))
 
+    def test_modern_back_sprites_for_special_species(self):
+        from tracker.catalog_service import get_compiled_catalog
+        diamond_entries = get_compiled_catalog("diamond", is_national=True)
+        self.assertIsNotNone(diamond_entries)
+
+        # Torchic (#255), Bidoof (#399), Buizel (#418), Floatzel (#419)
+        for num in [255, 399, 418, 419]:
+            entry = next(e for e in diamond_entries if e.pokemon.national_number == num)
+            m_data = json.loads(entry.modal_data_json)
+            self.assertEqual(m_data.get("sprite_modern_back"), f"/media/pokemon/home/back/{num}.png")
+            self.assertEqual(m_data.get("sprite_modern_shiny_back"), f"/media/pokemon/home/shiny/back/{num}.png")
+            if m_data.get("gender_info") and m_data["gender_info"].get("female_sprites"):
+                self.assertEqual(m_data["gender_info"]["female_sprites"].get("modern_back"), f"/media/pokemon/home/back/female/{num}.png")
+                self.assertEqual(m_data["gender_info"]["female_sprites"].get("modern_shiny_back"), f"/media/pokemon/home/shiny/back/female/{num}.png")
+
+        # Otro Pokémon (ej. Pikachu #25) no debe tener sprite_modern_back
+        pika_entry = next(e for e in diamond_entries if e.pokemon.national_number == 25)
+        pika_data = json.loads(pika_entry.modal_data_json)
+        self.assertEqual(pika_data.get("sprite_modern_back"), "")
+
     def test_pokemon_forms_artwork_local_and_correct(self):
         """
         Valida que todas las formas de Pokémon (Cherrim, Shellos, Gastrodon, Burmy,

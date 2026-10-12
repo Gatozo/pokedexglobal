@@ -182,6 +182,8 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
             "retro_shiny_back": f"/media/pokemon/sprites/{base_slug}_shiny/back/female/{national_number}.png",
             "modern": f"/media/pokemon/home/female/{national_number}.png",
             "modern_shiny": f"/media/pokemon/home/shiny/female/{national_number}.png",
+            "modern_back": f"/media/pokemon/home/back/female/{national_number}.png",
+            "modern_shiny_back": f"/media/pokemon/home/shiny/back/female/{national_number}.png",
         }
 
     return {

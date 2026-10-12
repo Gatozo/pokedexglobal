@@ -42,16 +42,19 @@ export function openPokemonModal(entryId, updateHistory = true) {
     }
 }
 
+const BACK_SUPPORTED_MODERN_SPECIES = new Set([255, 399, 418, 419]);
+
 export function updateRotateButtonUI() {
     const rotateBtn = document.getElementById('modal-rotate-sprite-btn');
     const btnText = document.getElementById('modal-rotate-btn-text');
     const btnIcon = document.getElementById('modal-rotate-btn-icon');
 
     const data = state.activeModalEntryId ? getEntryData(state.activeModalEntryId) : null;
-    const isTorchic = Boolean(data && (parseInt(data.number, 10) === 255 || (data.name && data.name.toLowerCase() === 'torchic')));
+    const num = data ? parseInt(data.number, 10) : 0;
+    const hasModernBack = Boolean(data && (BACK_SUPPORTED_MODERN_SPECIES.has(num) || data.sprite_modern_back));
 
-    // En modo moderno, no existen vistas de espaldas excepto para Torchic (#255) cuya diferencia de género solo se aprecia por detrás
-    if (state.currentSpriteStyle === 'modern' && !isTorchic) {
+    // En modo moderno, solo se activa el giro para las especies con renders de espalda oficiales (Torchic, Bidoof, Buizel, Floatzel)
+    if (state.currentSpriteStyle === 'modern' && !hasModernBack) {
         if (rotateBtn) rotateBtn.classList.add('hidden');
         isModalBackView = false;
         return;
@@ -88,9 +91,13 @@ export function updateModalSpriteDisplay() {
     if (hasForms && form) {
         if (isModalBackView) {
             if (state.isShinydexMode) {
-                targetSrc = form.sprite_retro_shiny_back || form.sprite_retro_shiny;
+                targetSrc = (state.currentSpriteStyle === 'modern' && form.sprite_modern_shiny_back)
+                    ? form.sprite_modern_shiny_back
+                    : (form.sprite_retro_shiny_back || form.sprite_retro_shiny);
             } else {
-                targetSrc = form.sprite_retro_back || form.sprite_retro;
+                targetSrc = (state.currentSpriteStyle === 'modern' && form.sprite_modern_back)
+                    ? form.sprite_modern_back
+                    : (form.sprite_retro_back || form.sprite_retro);
             }
         } else {
             if (state.isShinydexMode) {
@@ -113,10 +120,18 @@ export function updateModalSpriteDisplay() {
         const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
 
         if (isModalBackView) {
-            if (state.isShinydexMode) {
-                targetSrc = (femaleSprites && femaleSprites.retro_shiny_back) || data.sprite_retro_shiny_back || data.sprite_retro_shiny;
+            if (state.currentSpriteStyle === 'modern') {
+                if (state.isShinydexMode) {
+                    targetSrc = (femaleSprites && femaleSprites.modern_shiny_back) || data.sprite_modern_shiny_back || (femaleSprites && femaleSprites.retro_shiny_back) || data.sprite_retro_shiny_back;
+                } else {
+                    targetSrc = (femaleSprites && femaleSprites.modern_back) || data.sprite_modern_back || (femaleSprites && femaleSprites.retro_back) || data.sprite_retro_back;
+                }
             } else {
-                targetSrc = (femaleSprites && femaleSprites.retro_back) || data.sprite_retro_back || data.sprite_retro;
+                if (state.isShinydexMode) {
+                    targetSrc = (femaleSprites && femaleSprites.retro_shiny_back) || data.sprite_retro_shiny_back || data.sprite_retro_shiny;
+                } else {
+                    targetSrc = (femaleSprites && femaleSprites.retro_back) || data.sprite_retro_back || data.sprite_retro;
+                }
             }
         } else {
             if (state.isShinydexMode) {
@@ -152,7 +167,8 @@ export function updateModalSpriteDisplay() {
         modalImg.src = targetSrc;
     }
 
-    if (isModalBackView || state.currentSpriteStyle === 'retro') {
+    const isCurrentModernBack = (state.currentSpriteStyle === 'modern' && isModalBackView && targetSrc && targetSrc.includes('/home/'));
+    if (state.currentSpriteStyle === 'retro' || (isModalBackView && !isCurrentModernBack)) {
         modalImg.classList.add('pixel-art');
     } else {
         modalImg.classList.remove('pixel-art');
