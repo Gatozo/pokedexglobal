@@ -235,31 +235,7 @@ export function setSpriteStyle(style) {
         }
     });
 
-    if (state.activeModalEntryId) {
-        const d = getEntryData(state.activeModalEntryId);
-        if (d) {
-            const modalImg = document.getElementById('modal-pokemon-img');
-            if (modalImg) {
-                if (state.isShinydexMode) {
-                    if (style === 'retro' && d.sprite_retro_shiny) {
-                        modalImg.src = d.sprite_retro_shiny;
-                        modalImg.classList.add('pixel-art');
-                    } else {
-                        modalImg.src = d.sprite_modern_shiny || d.sprite_retro_shiny || d.sprite_modern;
-                        modalImg.classList.remove('pixel-art');
-                    }
-                } else {
-                    if (style === 'retro' && d.sprite_retro) {
-                        modalImg.src = d.sprite_retro;
-                        modalImg.classList.add('pixel-art');
-                    } else {
-                        modalImg.src = d.sprite_modern;
-                        modalImg.classList.remove('pixel-art');
-                    }
-                }
-            }
-        }
-    }
+
 
     try {
         localStorage.setItem('pokedex_sprite_style', style);

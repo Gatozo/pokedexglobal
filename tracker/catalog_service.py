@@ -218,7 +218,13 @@ class CatalogPokemon:
         self.category = data.get("category", "Pokémon")
         self.height = data.get("height", 0)
         self.weight = data.get("weight", 0)
-        self.sprite_url = data.get("sprite_url", "")
+        raw_sprite_url = data.get("sprite_url", "")
+        # En modo moderno, usar preferentemente los renders oficiales de Pokémon HOME
+        if self.national_number:
+            unown_suffix = "-f" if self.national_number == 201 else ""
+            self.sprite_url = f"/media/pokemon/home/{self.national_number}{unown_suffix}.png"
+        else:
+            self.sprite_url = raw_sprite_url
         self._sprite_shiny_url = data.get("sprite_shiny_url", "")
         self._artwork_shiny_url = data.get("artwork_shiny_url", "")
         self.primary_type = data.get("primary_type", "")
@@ -229,16 +235,17 @@ class CatalogPokemon:
         if self._sprite_shiny_url:
             return self._sprite_shiny_url
         if self.national_number == 201:
-            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/201-f.png"
-        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{self.national_number}.png"
+            return "/media/pokemon/home/shiny/201-f.png"
+        return f"/media/pokemon/home/shiny/{self.national_number}.png"
 
     @property
     def artwork_shiny_url(self) -> str:
         if self._artwork_shiny_url:
             return self._artwork_shiny_url
-        if self.national_number == 201:
-            return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201-f.png"
-        return f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/{self.national_number}.png"
+        if self.national_number:
+            unown_suffix = "-f" if self.national_number == 201 else ""
+            return f"/media/pokemon/home/shiny/{self.national_number}{unown_suffix}.png"
+        return ""
 
     @property
     def cry_legacy_url(self) -> str:
@@ -347,7 +354,10 @@ class CatalogEntry:
 
         self.game_sprite_url = data.get("game_sprite_url") or self.pokemon.sprite_url
         self.game_sprite_shiny_url = data.get("game_sprite_shiny_url") or self.pokemon.sprite_shiny_url
-        self.modern_sprite_shiny_url = data.get("modern_sprite_shiny_url") or self.pokemon.artwork_shiny_url
+        if self.pokemon and self.pokemon.national_number:
+            self.modern_sprite_shiny_url = self.pokemon.artwork_shiny_url
+        else:
+            self.modern_sprite_shiny_url = data.get("modern_sprite_shiny_url") or ""
 
         self.modal_retro_sprite_url = data.get("modal_retro_sprite_url") or self.game_sprite_url
         self.modal_retro_sprite_shiny_url = data.get("modal_retro_sprite_shiny_url") or self.game_sprite_shiny_url

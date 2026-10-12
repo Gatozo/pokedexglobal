@@ -1153,13 +1153,14 @@ class PokemonFireRedGen3Tests(TestCase):
         self.assertEqual(chambers["pasiete"]["rates"]["z"], "99%")
         self.assertEqual(chambers["pasiete"]["rates"]["exclamation"], "1%")
 
-        # 2. Formas en get_pokemon_forms: F debe ser la primera en firered
+        # 2. Formas en get_pokemon_forms: lista en orden alfabético estricto
         forms_fr = get_pokemon_forms(201, "firered")
         self.assertEqual(len(forms_fr), 28)
-        self.assertEqual(forms_fr[0]["form_key"], "f")
-        self.assertEqual(forms_fr[0]["chamber_key"], "hibinca")
-        self.assertEqual(len(forms_fr[0]["locations"]), 1)
-        self.assertEqual(forms_fr[0]["locations"][0]["area"], "Cámara Hibinca (Ruinas Sete)")
+        self.assertEqual(forms_fr[0]["form_key"], "a")
+        f_form = next(f for f in forms_fr if f["form_key"] == "f")
+        self.assertEqual(f_form["chamber_key"], "hibinca")
+        self.assertEqual(len(f_form["locations"]), 1)
+        self.assertEqual(f_form["locations"][0]["area"], "Cámara Hibinca (Ruinas Sete)")
 
         # 3. Ubicaciones exactas aisladas por letra
         forms_by_key = {f["form_key"]: f for f in forms_fr}
@@ -1696,12 +1697,13 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(cat[0]["sprite_normal"], "/media/pokemon/sprites/diamond/unown/a.png")
         self.assertEqual(cat[0]["icon_url"], "/media/pokemon/icons/gen4/201-a.png")
 
-        # 3. Formas: F debe ser la primera por defecto
+        # 3. Formas: lista en orden alfabético estricto (A-Z)
         forms = get_pokemon_forms(201, "diamond")
         self.assertEqual(len(forms), 28)
-        self.assertEqual(forms[0]["form_key"], "f")
-        self.assertEqual(forms[0]["name"], "Unown [F]")
-        self.assertEqual(forms[0]["sprite_retro"], "/media/pokemon/sprites/diamond/unown/f.png")
+        self.assertEqual(forms[0]["form_key"], "a")
+        f_form = next(f for f in forms if f["form_key"] == "f")
+        self.assertEqual(f_form["name"], "Unown [F]")
+        self.assertEqual(f_form["sprite_retro"], "/media/pokemon/sprites/diamond/unown/f.png")
 
         # 4. Ubicaciones exactas
         forms_by_key = {f["form_key"]: f for f in forms}
@@ -1997,3 +1999,73 @@ class GenderDifferencesAndModalDataTests(TestCase):
         treecko = emerald_entries[0]
         treecko_modal = json.loads(treecko.modal_data_json)
         self.assertIsNone(treecko_modal.get("gender_info"))
+
+    def test_pokemon_forms_artwork_local_and_correct(self):
+        """
+        Valida que todas las formas de Pokémon (Cherrim, Shellos, Gastrodon, Burmy,
+        Wormadam, Arceus, Unown, Deoxys, Castform) usen rutas locales en media
+        y no apunten a URLs externas ni a IDs incorrectos (ej. Rotom Heat/Wash/Frost).
+        """
+        from tracker.pokemon_forms import get_pokemon_forms
+        from pathlib import Path
+        from django.conf import settings
+
+        media_root = Path(settings.MEDIA_ROOT)
+
+        # 1. Cherrim (#421)
+        cherrim_forms = {f["form_key"]: f for f in get_pokemon_forms(421, "diamond")}
+        self.assertIn("sunshine", cherrim_forms)
+        sunshine = cherrim_forms["sunshine"]
+        self.assertEqual(sunshine["sprite_modern"], "/media/pokemon/home/421-sunshine.png")
+        self.assertEqual(sunshine["sprite_modern_shiny"], "/media/pokemon/home/shiny/421-sunshine.png")
+        self.assertNotIn("10008", sunshine["sprite_modern"])  # NO debe ser Rotom-Heat
+        self.assertTrue((media_root / "pokemon" / "home" / "421-sunshine.png").exists())
+        self.assertTrue((media_root / "pokemon" / "home" / "shiny" / "421-sunshine.png").exists())
+
+        # 2. Shellos (#422) y Gastrodon (#423)
+        shellos_forms = {f["form_key"]: f for f in get_pokemon_forms(422, "diamond")}
+        self.assertEqual(shellos_forms["east"]["sprite_modern"], "/media/pokemon/home/422-east.png")
+        self.assertNotIn("10009", shellos_forms["east"]["sprite_modern"])  # NO debe ser Rotom-Wash
+        self.assertTrue((media_root / "pokemon" / "home" / "422-east.png").exists())
+
+        gastro_forms = {f["form_key"]: f for f in get_pokemon_forms(423, "diamond")}
+        self.assertEqual(gastro_forms["east"]["sprite_modern"], "/media/pokemon/home/423-east.png")
+        self.assertNotIn("10010", gastro_forms["east"]["sprite_modern"])  # NO debe ser Rotom-Frost
+        self.assertTrue((media_root / "pokemon" / "home" / "423-east.png").exists())
+
+        # 3. Burmy (#412) y Wormadam (#413)
+        burmy_forms = {f["form_key"]: f for f in get_pokemon_forms(412, "diamond")}
+        self.assertEqual(burmy_forms["sandy"]["sprite_modern"], "/media/pokemon/home/412-sandy.png")
+        self.assertEqual(burmy_forms["trash"]["sprite_modern"], "/media/pokemon/home/412-trash.png")
+        self.assertTrue((media_root / "pokemon" / "home" / "412-sandy.png").exists())
+
+        worm_forms = {f["form_key"]: f for f in get_pokemon_forms(413, "diamond")}
+        self.assertEqual(worm_forms["sandy"]["sprite_modern"], "/media/pokemon/home/10004.png")
+        self.assertEqual(worm_forms["trash"]["sprite_modern"], "/media/pokemon/home/10005.png")
+
+        # 4. Arceus (#493) - Discrimina tipos elementales
+        arceus_forms = {f["form_key"]: f for f in get_pokemon_forms(493, "diamond")}
+        self.assertEqual(arceus_forms["normal"]["sprite_modern"], "/media/pokemon/home/493.png")
+        self.assertEqual(arceus_forms["fire"]["sprite_modern"], "/media/pokemon/home/493-fire.png")
+        self.assertEqual(arceus_forms["water"]["sprite_modern"], "/media/pokemon/home/493-water.png")
+        self.assertTrue((media_root / "pokemon" / "home" / "493-fire.png").exists())
+        self.assertTrue((media_root / "pokemon" / "home" / "shiny" / "493-fire.png").exists())
+
+        # 5. Unown (#201)
+        unown_forms = {f["form_key"]: f for f in get_pokemon_forms(201, "diamond")}
+        self.assertEqual(unown_forms["a"]["sprite_modern"], "/media/pokemon/home/201-a.png")
+        self.assertEqual(unown_forms["f"]["sprite_modern"], "/media/pokemon/home/201-f.png")
+        self.assertEqual(unown_forms["b"]["sprite_modern"], "/media/pokemon/home/201-b.png")
+        self.assertTrue((media_root / "pokemon" / "home" / "201-a.png").exists())
+        self.assertTrue((media_root / "pokemon" / "home" / "201-f.png").exists())
+        self.assertTrue((media_root / "pokemon" / "home" / "shiny" / "201-f.png").exists())
+
+        # 6. Deoxys (#386) y Castform (#351)
+        deoxys_forms = {f["form_key"]: f for f in get_pokemon_forms(386, "diamond")}
+        self.assertEqual(deoxys_forms["attack"]["sprite_modern"], "/media/pokemon/home/10001.png")
+        self.assertTrue((media_root / "pokemon" / "home" / "10001.png").exists())
+
+        cast_forms = {f["form_key"]: f for f in get_pokemon_forms(351, "diamond")}
+        self.assertEqual(cast_forms["sunny"]["sprite_modern"], "/media/pokemon/home/10013.png")
+        self.assertTrue((media_root / "pokemon" / "home" / "10013.png").exists())
+

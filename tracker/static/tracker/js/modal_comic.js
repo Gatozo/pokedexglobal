@@ -43,8 +43,24 @@ export function openPokemonModal(entryId, updateHistory = true) {
 }
 
 export function updateRotateButtonUI() {
+    const rotateBtn = document.getElementById('modal-rotate-sprite-btn');
     const btnText = document.getElementById('modal-rotate-btn-text');
     const btnIcon = document.getElementById('modal-rotate-btn-icon');
+
+    const data = state.activeModalEntryId ? getEntryData(state.activeModalEntryId) : null;
+    const isTorchic = Boolean(data && (parseInt(data.number, 10) === 255 || (data.name && data.name.toLowerCase() === 'torchic')));
+
+    // En modo moderno, no existen vistas de espaldas excepto para Torchic (#255) cuya diferencia de género solo se aprecia por detrás
+    if (state.currentSpriteStyle === 'modern' && !isTorchic) {
+        if (rotateBtn) rotateBtn.classList.add('hidden');
+        isModalBackView = false;
+        return;
+    }
+
+    if (rotateBtn) {
+        rotateBtn.classList.remove('hidden');
+    }
+
     if (btnText) {
         btnText.textContent = isModalBackView ? 'Frente' : 'Girar';
     }
@@ -143,6 +159,7 @@ export function updateModalSpriteDisplay() {
     }
 
     updateRotateButtonUI();
+    renderModalGender(data);
 }
 
 export function toggleModalSpriteOrientation() {
@@ -196,13 +213,27 @@ export function renderModalGender(data) {
     }
 
     // Especies con ambos géneros (con o sin diferencias visuales)
-    activeModalGender = 'male';
-    btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
-    btn.title = 'Cambiar género (Macho)';
-    btn.setAttribute('aria-label', 'Cambiar género');
-    icon.innerHTML = GENDER_ICON_MALE_SVG;
-    label.textContent = 'Macho';
-    notice.classList.add('hidden');
+    if (activeModalGender === 'female') {
+        btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-pink-300 text-pink-950 hover:bg-pink-400 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
+        btn.title = 'Cambiar género (Hembra)';
+        btn.setAttribute('aria-label', 'Cambiar género');
+        icon.innerHTML = GENDER_ICON_FEMALE_SVG;
+        label.textContent = 'Hembra';
+        if (!gInfo.has_visual_differences) {
+            notice.className = 'absolute top-[calc(100%+4px)] right-0 text-[8px] sm:text-[8.5px] font-black tracking-wider uppercase text-slate-800 bg-white/95 px-1.5 py-0.5 rounded border border-slate-950 shadow-[1px_1px_0px_0px_#0f172a] whitespace-nowrap select-none pointer-events-none z-30';
+            notice.classList.remove('hidden');
+            notice.textContent = 'Sin cambios';
+        } else {
+            notice.classList.add('hidden');
+        }
+    } else {
+        btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
+        btn.title = 'Cambiar género (Macho)';
+        btn.setAttribute('aria-label', 'Cambiar género');
+        icon.innerHTML = GENDER_ICON_MALE_SVG;
+        label.textContent = 'Macho';
+        notice.classList.add('hidden');
+    }
 }
 
 export function toggleModalGender() {
@@ -211,40 +242,7 @@ export function toggleModalGender() {
     if (!data || !data.gender_info || !data.gender_info.can_toggle) return;
 
     activeModalGender = (activeModalGender === 'male') ? 'female' : 'male';
-
-    const btn = document.getElementById('modal-gender-btn');
-    const icon = document.getElementById('modal-gender-icon');
-    const label = document.getElementById('modal-gender-label');
-    const notice = document.getElementById('modal-gender-notice');
-
-    if (activeModalGender === 'female') {
-        if (btn) {
-            btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-pink-300 text-pink-950 hover:bg-pink-400 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
-            btn.title = 'Cambiar género (Hembra)';
-            btn.setAttribute('aria-label', 'Cambiar género');
-        }
-        if (icon) icon.innerHTML = GENDER_ICON_FEMALE_SVG;
-        if (label) label.textContent = 'Hembra';
-        if (notice) {
-            if (!data.gender_info.has_visual_differences) {
-                notice.className = 'absolute top-[calc(100%+4px)] right-0 text-[8px] sm:text-[8.5px] font-black tracking-wider uppercase text-slate-800 bg-white/95 px-1.5 py-0.5 rounded border border-slate-950 shadow-[1px_1px_0px_0px_#0f172a] whitespace-nowrap select-none pointer-events-none z-30';
-                notice.classList.remove('hidden');
-                notice.textContent = 'Sin cambios';
-            } else {
-                notice.classList.add('hidden');
-            }
-        }
-    } else {
-        if (btn) {
-            btn.className = 'w-7 h-7 rounded-lg border-[1.5px] border-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex items-center justify-center transition-all select-none cursor-pointer bg-sky-200 text-sky-950 hover:bg-sky-300 active:translate-x-0.5 active:translate-y-0.5 shrink-0';
-            btn.title = 'Cambiar género (Macho)';
-            btn.setAttribute('aria-label', 'Cambiar género');
-        }
-        if (icon) icon.innerHTML = GENDER_ICON_MALE_SVG;
-        if (label) label.textContent = 'Macho';
-        if (notice) notice.classList.add('hidden');
-    }
-
+    renderModalGender(data);
     updateModalSpriteDisplay();
 }
 window.toggleModalGender = toggleModalGender;
@@ -1073,6 +1071,7 @@ export function openPokemonModalDirect(entryId, options = {}) {
     state.activeModalEntryId = entryId;
     setActiveModalCryUrl(data.cry_url || '');
     isModalBackView = false;
+    activeModalGender = 'male';
     resetModalNotesAccordion();
     resetModalObtainingAccordion();
     renderModalGender(data);
@@ -1108,7 +1107,16 @@ export function openPokemonModalDirect(entryId, options = {}) {
     if (hasForms) {
         if (prevFormBtn) prevFormBtn.classList.remove('hidden');
         if (nextFormBtn) nextFormBtn.classList.remove('hidden');
-        let initialFormIdx = _cardFormIndex.get(entryId) || 0;
+        let initialFormIdx = _cardFormIndex.get(entryId);
+        if (initialFormIdx === undefined || initialFormIdx === null) {
+            const isUnown = Boolean(data.name && data.name.toLowerCase() === 'unown');
+            if (isUnown) {
+                const fIdx = data.forms.findIndex(f => f.form_key === 'f');
+                initialFormIdx = (fIdx !== -1) ? fIdx : 0;
+            } else {
+                initialFormIdx = 0;
+            }
+        }
         if (options && options.selectedLetter) {
             const idx = data.forms.findIndex(f => f.form_key === options.selectedLetter);
             if (idx !== -1) {

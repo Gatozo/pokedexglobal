@@ -77,8 +77,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/351.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/351.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/351.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/351.png",
+            "sprite_modern": "/media/pokemon/home/351.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/351.png",
             "notes": notes_normal,
         },
         {
@@ -96,8 +96,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/sunny.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/sunny.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/sunny.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10013.png",
+            "sprite_modern": "/media/pokemon/home/10013.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10013.png",
             "notes": notes_sunny,
         },
         {
@@ -115,8 +115,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/rainy.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/rainy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/rainy.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10014.png",
+            "sprite_modern": "/media/pokemon/home/10014.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10014.png",
             "notes": notes_rainy,
         },
         {
@@ -134,8 +134,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/snowy.gif" if is_emerald else None,
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/snowy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/snowy.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10015.png",
+            "sprite_modern": "/media/pokemon/home/10015.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10015.png",
             "notes": notes_snowy,
         }
     ]
@@ -162,8 +162,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/386.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/386.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/386.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/386.png",
+            "sprite_modern": "/media/pokemon/home/386.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/386.png",
             "notes": [
                 {
                     "title": "Meteoritos de Ciudad Rocavelo",
@@ -186,8 +186,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/attack.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/attack.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/attack.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10001.png",
+            "sprite_modern": "/media/pokemon/home/10001.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10001.png",
             "notes": [
                 {
                     "title": "Meteorito de Ataque (Ciudad Rocavelo)",
@@ -210,8 +210,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/defense.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/defense.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/defense.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10002.png",
+            "sprite_modern": "/media/pokemon/home/10002.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10002.png",
             "notes": [
                 {
                     "title": "Meteorito de Defensa (Ciudad Rocavelo)",
@@ -234,8 +234,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/speed.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/speed.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/speed.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10003.png",
+            "sprite_modern": "/media/pokemon/home/10003.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10003.png",
             "notes": [
                 {
                     "title": "Meteorito de Velocidad (Ciudad Rocavelo)",
@@ -268,8 +268,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/plant.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/plant.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/plant.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/412.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/412.png",
+            "sprite_modern": "/media/pokemon/home/412.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/412.png",
             "summary": "Salvaje en árboles de miel en exteriores y rutas abiertas.",
             "locations": [
                 {"area": "Árboles de Miel (Exteriores)", "method": "Untar Miel (Hierba/Rutas abiertas)"}
@@ -308,8 +308,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/sandy.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/sandy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/sandy.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/412.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/412.png",
+            "sprite_modern": "/media/pokemon/home/412-sandy.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/412-sandy.png",
             "summary": "Adopta este camuflaje tras combatir en cuevas o playas arenosas.",
             "locations": [
                 {"area": "Cuevas y Playas de Sinnoh", "method": "Combatir en cueva/playa o Árboles de Miel de la zona"}
@@ -348,8 +348,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/trash.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/trash.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/trash.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/412.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/412.png",
+            "sprite_modern": "/media/pokemon/home/412-trash.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/412-trash.png",
             "summary": "Adopta este camuflaje tras combatir dentro de edificios o estancias cerradas.",
             "locations": [
                 {"area": "Edificios e Interiores", "method": "Combatir en cualquier edificio cerrado"}
@@ -399,8 +399,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/plant.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/plant.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/plant.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/413.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/413.png",
+            "sprite_modern": "/media/pokemon/home/413.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/413.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Planta al nivel 20.",
             "locations": [
                 {"area": "Evolución de Burmy Hembra", "method": "Nivel 20 (Burmy Tronco Planta)"}
@@ -427,8 +427,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/sandy.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/sandy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/sandy.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10004.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10004.png",
+            "sprite_modern": "/media/pokemon/home/10004.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10004.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Arena al nivel 20.",
             "locations": [
                 {"area": "Evolución de Burmy Hembra", "method": "Nivel 20 (Burmy Tronco Arena)"}
@@ -455,8 +455,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/trash.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/trash.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/trash.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10005.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10005.png",
+            "sprite_modern": "/media/pokemon/home/10005.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10005.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Basura al nivel 20.",
             "locations": [
                 {"area": "Evolución de Burmy Hembra", "method": "Nivel 20 (Burmy Tronco Basura)"}
@@ -493,8 +493,8 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/overcast.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/overcast.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/overcast.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/421.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/421.png",
+            "sprite_modern": "/media/pokemon/home/421.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/421.png",
             "notes": [
                 {
                     "title": "Forma Base de Cherrim",
@@ -517,8 +517,8 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/sunshine.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/sunshine.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/sunshine.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10008.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10008.png",
+            "sprite_modern": "/media/pokemon/home/421-sunshine.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/421-sunshine.png",
             "notes": [
                 {
                     "title": "Transformación por Sol Intenso",
@@ -552,8 +552,8 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/west.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/west.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/west.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/422.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/422.png",
+            "sprite_modern": "/media/pokemon/home/422.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/422.png",
             "summary": "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona).",
             "locations": [
                 {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
@@ -583,8 +583,8 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/east.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/east.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/east.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10009.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10009.png",
+            "sprite_modern": "/media/pokemon/home/422-east.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/422-east.png",
             "summary": "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona).",
             "locations": [
                 {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
@@ -626,8 +626,8 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/west.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/west.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/west.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/423.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/423.png",
+            "sprite_modern": "/media/pokemon/home/423.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/423.png",
             "summary": "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona).",
             "locations": [
                 {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
@@ -658,8 +658,8 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/east.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/east.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/east.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10010.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/10010.png",
+            "sprite_modern": "/media/pokemon/home/423-east.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/423-east.png",
             "summary": "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona).",
             "locations": [
                 {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
@@ -722,8 +722,8 @@ def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/arceus/{f_key}.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/arceus/{f_key}.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/arceus/{f_key}.png",
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/493.png",
+            "sprite_modern": "/media/pokemon/home/493.png" if f_key == "normal" else f"/media/pokemon/home/493-{f_key}.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/493.png" if f_key == "normal" else f"/media/pokemon/home/shiny/493-{f_key}.png",
             "notes": [
                 {
                     "title": f"Mecánica Multitipo ({plate_name})",
@@ -825,8 +825,8 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": item["sprite_shiny"],
             "sprite_retro_back": item.get("sprite_normal_back") or item["sprite_normal"].replace(f"/{item['sprite_normal'].split('/')[4]}/", f"/{item['sprite_normal'].split('/')[4]}/back/"),
             "sprite_retro_shiny_back": item.get("sprite_shiny_back") or item["sprite_shiny"].replace(f"/{item['sprite_shiny'].split('/')[4]}/", f"/{item['sprite_shiny'].split('/')[4]}/back/"),
-            "sprite_modern": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png",
-            "sprite_modern_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/201.png",
+            "sprite_modern": f"/media/pokemon/home/201-{letter}.png",
+            "sprite_modern_shiny": f"/media/pokemon/home/shiny/201-{letter}.png",
             "chamber_key": item.get("chamber_key", ""),
             "chamber_name": ch_name,
             "summary": summary,
@@ -835,10 +835,6 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "badge_label": badge_label,
             "type": obt_type,
         })
-
-    if clean_slug in ["firered", "leafgreen", "diamond", "pearl", "platinum"]:
-        # En Rojo Fuego / Verde Hoja y Diamante / Perla / Platino, la forma canónica predeterminada en la Pokédex es la F
-        forms = [f for f in forms if f["form_key"] == "f"] + [f for f in forms if f["form_key"] != "f"]
 
     return forms
 

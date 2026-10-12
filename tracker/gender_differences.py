@@ -180,8 +180,8 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
             "retro_back": f"/media/pokemon/sprites/{base_slug}/back/female/{national_number}.png",
             "retro_shiny": f"/media/pokemon/sprites/{base_slug}_shiny/female/{national_number}.png",
             "retro_shiny_back": f"/media/pokemon/sprites/{base_slug}_shiny/back/female/{national_number}.png",
-            "modern": f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/{national_number}.png",
-            "modern_shiny": f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/{national_number}.png",
+            "modern": f"/media/pokemon/home/female/{national_number}.png",
+            "modern_shiny": f"/media/pokemon/home/shiny/female/{national_number}.png",
         }
 
     return {
