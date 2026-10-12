@@ -812,6 +812,17 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_label = "Salvaje"
             obt_type = "wild"
 
+        is_crystal = (clean_slug == "crystal")
+        is_emerald = (clean_slug == "emerald")
+        modal_retro_url = None
+        modal_retro_shiny_url = None
+        if is_crystal:
+            modal_retro_url = f"/media/pokemon/sprites/crystal_animated/unown/{letter}.gif"
+            modal_retro_shiny_url = f"/media/pokemon/sprites/crystal_animated_shiny/unown/{letter}.gif"
+        elif is_emerald:
+            modal_retro_url = f"/media/pokemon/sprites/emerald_animated/unown/{letter}.gif"
+            modal_retro_shiny_url = f"/media/pokemon/sprites/emerald_animated_shiny/unown/{letter}.gif"
+
         forms.append({
             "form_key": letter,
             "name": item["display"],
@@ -823,6 +834,8 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": item["sprite_normal"],
             "sprite_retro_shiny": item["sprite_shiny"],
+            "modal_retro_sprite_url": modal_retro_url,
+            "modal_retro_sprite_shiny_url": modal_retro_shiny_url,
             "sprite_retro_back": item.get("sprite_normal_back") or item["sprite_normal"].replace(f"/{item['sprite_normal'].split('/')[4]}/", f"/{item['sprite_normal'].split('/')[4]}/back/"),
             "sprite_retro_shiny_back": item.get("sprite_shiny_back") or item["sprite_shiny"].replace(f"/{item['sprite_shiny'].split('/')[4]}/", f"/{item['sprite_shiny'].split('/')[4]}/back/"),
             "sprite_modern": f"/media/pokemon/home/201-{letter}.png",

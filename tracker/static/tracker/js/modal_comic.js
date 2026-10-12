@@ -95,13 +95,13 @@ export function updateModalSpriteDisplay() {
         } else {
             if (state.isShinydexMode) {
                 if (state.currentSpriteStyle === 'retro') {
-                    targetSrc = form.modal_retro_sprite_shiny_url || (activeModalFormIndex === 0 ? data.sprite_retro_shiny : null) || form.sprite_retro_shiny;
+                    targetSrc = form.modal_retro_sprite_shiny_url || form.sprite_retro_shiny || data.sprite_retro_shiny;
                 } else {
                     targetSrc = form.sprite_modern_shiny || form.modal_retro_sprite_shiny_url || form.sprite_retro_shiny || form.sprite_modern;
                 }
             } else {
                 if (state.currentSpriteStyle === 'retro') {
-                    targetSrc = form.modal_retro_sprite_url || (activeModalFormIndex === 0 ? data.sprite_retro : null) || form.sprite_retro;
+                    targetSrc = form.modal_retro_sprite_url || form.sprite_retro || data.sprite_retro;
                 } else {
                     targetSrc = form.sprite_modern || form.modal_retro_sprite_url || form.sprite_retro;
                 }
