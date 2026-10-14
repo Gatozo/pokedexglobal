@@ -5,10 +5,10 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from tracker.models import Game, Pokedex, UserPokemonCatch
 from tracker.catalog_service import CatalogPokemon, CatalogEntry, get_compiled_catalog, get_catalog_entry_by_id
-from tracker.tests.mocks import MockQuerySet, MockObjects, Pokemon, PokedexEntry, Move
+from tracker.tests.mocks import Pokemon, PokedexEntry, Move
 
 class CompiledCatalogsAndServiceTests(TestCase):
-    """Pruebas unitarias para los catálogos JSON estáticos compilados (Plan B) y CatalogService."""
+    """Pruebas unitarias para los catálogos JSON estáticos precompilados en memoria y CatalogService."""
 
     def test_all_game_catalogs_exist_and_load(self):
         from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR

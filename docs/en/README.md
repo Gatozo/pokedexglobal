@@ -1,26 +1,26 @@
 # 📚 Pokédex Global Tracker — Technical Documentation (English)
 
-Welcome to the comprehensive technical documentation for **Pokédex Global Tracker**. This documentation covers architectural principles, database modeling, synchronization pipelines, frontend components, administrative tooling, and testing suites.
+Welcome to the comprehensive technical documentation for **Pokédex Global Tracker**. Here you will find up-to-date guides covering system architecture, data modeling, in-memory catalogs, UI components, administrative tooling, and automated testing.
 
 ---
 
-## 📑 Documentation Table of Contents
+## 📑 Table of Contents
 
 | Document | Description |
 | :--- | :--- |
-| **[1. Architecture & Design](architecture.md)** | High-level system architecture, client-server data flow, offline-first strategy, and concurrency models. |
-| **[2. Database Models & Schema](database-models.md)** | Deep dive into ORM models (`Game`, `Pokedex`, `Pokemon`, `PokedexEntry`, `UserPokemonCatch`, `Move`), schema constraints, indexes, and JSON structures. |
-| **[3. Management Commands Reference](management-commands.md)** | Complete manual for the 5 CLI management commands (`import_pokedex`, `sync_pokemon_cache`, `sync_pokemon_details`, `sync_moves`, `backfill_pokedex_types`). |
-| **[4. API Endpoints & Views](api-and-endpoints.md)** | Specification of HTTP views, `/api/catch/toggle/` AJAX endpoint, session-based & authenticated catch tracking, and error handling. |
-| **[5. UI & Comic-Book Component Design](ui-and-components.md)** | Detailed guide on the comic-strip aesthetic, Tailwind CSS integration, dynamic modals, sound system (8-bit vs modern audio cries), and responsive layouts. |
-| **[6. Admin Customizations & Fixtures](admin-and-fixtures.md)** | Customizations in the Django admin interface, `is_custom_override` manual lock mechanism, and one-click JSON fixture export/import tools. |
-| **[7. Testing Guide & Quality Assurance](testing-guide.md)** | Test runner commands, test fixture mocks, coverage across views, models, AJAX endpoints, and historical generation mechanics. |
+| **[1. Architecture & Design](architecture.md)** | High-level system architecture, client-server data flow, Offline-First strategy, in-memory precompiled catalogs (0 ms SQL), and concurrency model. |
+| **[2. Database Models & Schemas](database-models.md)** | In-depth analysis of relational models (`Game`, `Pokedex`, `UserPokemonCatch`), composite indices, constraints, and the JSON `CatalogEntry` schema. |
+| **[3. Management Commands & Scripts](management-commands.md)** | Operational manual for media asset synchronization commands (sprites, cries, animations, icons) and catalog builders in `tracker/scripts/`. |
+| **[4. API Endpoints & Routes](api-and-endpoints.md)** | Full routing table, auth portal, Game Hub (`/games/`), and AJAX endpoints (`/api/catch/toggle/` and `/api/unown-catch/toggle/`). |
+| **[5. Comic-Book UI Design](ui-and-components.md)** | Comic visual aesthetic, Tailwind CSS integration, Game Hub, dynamic modals, shiny tracking, Unown glyphs, and dual audio engine. |
+| **[6. Admin Panel & Fixtures](admin-and-fixtures.md)** | Django Admin customizations, catch monitoring, and structural metadata exporter/importer (`tracker.Game` and `tracker.Pokedex`). |
+| **[7. Testing & Quality Assurance](testing-guide.md)** | Automated test execution (173 tests), network isolation, `--keepdb` workflow, and canonical rule verification. |
 
 ---
 
-## 🧭 Key Project Highlights
+## 🧭 Core Architectural Pillars
 
-1. **Django 6.1.1 + Python 3.12+**: Utilizing modern Django capabilities, asynchronous-ready adapters (`psycopg3`), and typed utility helpers.
-2. **PostgreSQL Relational Storage**: Optimized schema with database-level indexes, foreign key cascading, and native JSONField queries.
-3. **PokeAPI Rate-Limiting & Fault Tolerance**: Pacing delays, HTTP 429 backoff, random jitter, and local caching prevent Cloudflare IP blocks.
-4. **Historical Canon Accuracy**: Dynamically adjusts Pokémon types and cries to match retro video games instead of modern revisions.
+1. **Django 6.1.1 + Python 3.12+**: Modern Django patterns, native `psycopg3` connector, and strict type hinting.
+2. **In-Memory Precompiled Catalogs (0 ms SQL)**: Zero-latency in-memory data delivery via `catalog_service.py` with 0 ms SQL overhead.
+3. **Efficient Relational Tracking**: Lean PostgreSQL schema focused on user catch activity (`UserPokemonCatch`) with support for anonymous guests and registered users.
+4. **Historical Canonical Fidelity**: Official Spanish locations (WikiDex), generation-accurate typings, and dual-era audio cries (8-bit chiptune vs orchestrated).

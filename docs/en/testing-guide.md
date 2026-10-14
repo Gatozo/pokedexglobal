@@ -1,82 +1,56 @@
 # 🧪 Testing Guide & Quality Assurance (English)
 
-## 1. Test Suite Philosophy
+## 1. Testing Philosophy & Coverage
 
-The test suite located in `tracker/tests.py` provides automated coverage across critical domain workflows:
-- **Zero External Network Dependencies**: All unit tests run against local SQLite/PostgreSQL memory fixtures without hitting PokeAPI over the network.
-- **Contract Verification**: Validates JSON payloads, status codes, and error formats for the AJAX catch toggle API.
-- **Data Integrity Tests**: Ensures historical typing rules, localized string fallbacks, and custom override locks behave as specified.
+The automated test suite of **Pokédex Global Tracker** consists of **173 unit and integration tests** organized across four modular suites in `tracker/tests/`:
 
----
-
-## 2. Test Execution
- 
- To run the entire test suite in an optimized way:
- ```bash
- python manage.py test --keepdb
- ```
- 
-+### Targeted Modular Execution (Recommended for Fast Changes)
-+Thanks to the modular layout in `tracker/tests/`, you can run only the tests relevant to your changed area in 1 to 3 seconds:
-+
-+- **Authentication (login, register, sessions):**
-+  ```bash
-+  python manage.py test tracker.tests.test_auth --keepdb
-+  ```
-+- **Views, Interactivity, and National Bar:**
-+  ```bash
-+  python manage.py test tracker.tests.test_views --keepdb
-+  ```
-+- **Catalogs & Regional Game Data (Gen 1-3):**
-+  ```bash
-+  python manage.py test tracker.tests.test_catalogs --keepdb
-+  ```
-+- **Fixtures & Special Mechanics:**
-+  ```bash
-+  python manage.py test tracker.tests.test_fixtures --keepdb
-+  ```
-+
- To run a specific test method:
- ```bash
--python manage.py test tracker.tests.PokedexTrackerTests.test_toggle_catch_anonymous_user
--```
--
--To run with verbose output:
--```bash
--python manage.py test -v 2
-+python manage.py test tracker.tests.test_views.PokedexTrackerTests.test_toggle_catch_anonymous_user --keepdb
- ```
-
+* **Offline-First Isolation**: All tests run against local in-memory catalogs or test databases without making outbound HTTP requests to PokeAPI.
+* **Canonical Data Integrity**: Validates that historical typings, localized Spanish locations, and Pokédex numbers strictly follow official generation rules.
+* **Session & Catch Isolation**: Guarantees that progress remains isolated between authenticated users and guest sessions.
+* **API Contract Verification**: Validates status codes, headers, and JSON payloads for AJAX endpoints (`toggle_catch`, `toggle_unown_catch`, `check_username`).
 
 ---
 
-## 3. Overview of Test Cases (20 Tests)
+## 2. Fast Targeted Execution with `--keepdb`
 
-| Test Method | Focus Area | Verification Criteria |
-| :--- | :--- | :--- |
-| `test_pokedex_view_status_and_content` | Main View | Confirms HTTP 200 status, entry context count, localized game name, and Spanish type rendering. |
-| `test_toggle_catch_anonymous_user` | AJAX Endpoint | Validates session creation, `is_caught` toggle to `True`, capture percentage (100%), and subsequent release toggle back to `False`. |
-| `test_toggle_catch_authenticated_user` | AJAX Endpoint | Verifies capture record association with a registered `auth.User` instance rather than a session key. |
-| `test_toggle_catch_invalid_payload` | Error Handling | Asserts that malformed JSON payloads return HTTP 400 with descriptive error messages. |
-| `test_toggle_catch_nonexistent_entry` | Error Handling | Asserts that invalid `entry_id` values return HTTP 404. |
-| `test_localized_text_fallback` | Internationalization | Tests 3-tier cascade: primary language (`es`) -> fallback language (`en`) -> default fallback string. |
-| `test_resolve_types_for_generation` | Historical Typings | Tests Magnemite (Electric in Gen 1; Electric/Steel in Gen 2+) and Clefairy (Normal in Gen 1; Fairy in Gen 6+). |
-| `test_sync_pokemon_details_override` | Data Protection | Proves that entries flagged with `is_custom_override=True` remain untouched during automated synchronizations. |
-| `test_export_fixtures_util` | Fixtures System | Verifies that `export_tracker_fixtures()` generates valid JSON containing expected model entries and valid metadata. |
-| `test_pokedex_view_404` | Routing | Confirms that non-existent game or pokedex slugs properly trigger HTTP 404 responses. |
+In accordance with the project workflow, tests must be run using the `--keepdb` flag to reuse the test database, keeping execution times under 1 to 5 seconds per module.
+
+### Modular Test Commands:
+
+* **Authentication & Sessions (29 tests):**
+  ```bash
+  python manage.py test tracker.tests.test_auth --keepdb
+  ```
+* **Views, Game Hub & Interactivity (34 tests):**
+  ```bash
+  python manage.py test tracker.tests.test_views --keepdb
+  ```
+* **Compiled Catalogs & Canonical Rules (65 tests):**
+  ```bash
+  python manage.py test tracker.tests.test_catalogs --keepdb
+  ```
+* **Fixtures, Gen 2 Mechanics & Unown (45 tests):**
+  ```bash
+  python manage.py test tracker.tests.test_fixtures --keepdb
+  ```
+
+### Running a Specific Test:
+```bash
+python manage.py test tracker.tests.test_views.PokedexTrackerTests.test_toggle_catch_anonymous_user --keepdb
+```
+
+### Running the Full Test Suite:
+```bash
+python manage.py test --keepdb
+```
 
 ---
 
-## 4. Continuous Integration (CI) Guidance
+## 3. Test Suite Breakdown
 
-When deploying to continuous integration pipelines (GitHub Actions, GitLab CI):
-1. Provision a PostgreSQL service container.
-2. Inject test database environment variables:
-   ```env
-   DB_NAME=test_pokedex_db
-   DB_USER=postgres
-   DB_PASSWORD=postgres
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   ```
-3. Run migrations and execute `python manage.py test --no-input`.
+| Module | File | Tests | Key Focus Areas |
+| :--- | :--- | :---: | :--- |
+| **Authentication** | `tracker/tests/test_auth.py` | 29 | Login, reactive registration, guest sessions, password hashing, and session security. |
+| **Views & UI** | `tracker/tests/test_views.py` | 34 | AJAX catch endpoints (normal and shiny), Game Hub, cry audio, and template invariants. |
+| **Catalogs & Canon** | `tracker/tests/test_catalogs.py` | 65 | JSON catalog loading, historical typings per generation, Spanish location strings, and sprites. |
+| **Fixtures & Mechanics** | `tracker/tests/test_fixtures.py` | 45 | Fixture exports (`export_tracker_fixtures`), 26 Unown forms, evolution stones, and breeding. |

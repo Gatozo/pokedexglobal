@@ -1,5 +1,5 @@
 """
-Servicio centralizado de catálogos compilados inmutables (Plan B).
+Servicio centralizado de catálogos precompilados en memoria (0 ms SQL).
 Permite servir las entradas de la Pokédex desde archivos JSON compilados en memoria
 en 0 ms de consultas SQL, manteniendo la interfaz compatible con PokedexEntry.
 """

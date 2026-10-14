@@ -4,7 +4,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from tracker.models import Game, Pokedex, UserPokemonCatch
 from tracker.catalog_service import CatalogPokemon, CatalogEntry, get_compiled_catalog, get_catalog_entry_by_id
-from tracker.tests.mocks import MockQuerySet, MockObjects, Pokemon, PokedexEntry, Move
+from tracker.tests.mocks import Pokemon, PokedexEntry, Move
 
 class PokedexTrackerTests(TestCase):
     def setUp(self):

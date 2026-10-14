@@ -1,142 +1,159 @@
-# 🏛️ Architecture & System Design (English)
+# 🏛️ Architecture and System Design (English)
 
 ## 1. System Overview
 
-**Pokédex Global Tracker** is engineered as a monolithic Django application designed for high read performance, resilient offline-first data caching, and responsive frontend interaction. The project separates concerns into well-defined layers:
+**Pokédex Global Tracker** is engineered as a high-performance Django web platform tailored for multi-generational Pokémon tracking and historical canon preservation.
 
-1. **Presentation Layer (Frontend)**: Semantic HTML5 templates styled with Tailwind CSS, leveraging custom CSS classes for a retro comic-strip style. Client-side state is handled through vanilla JavaScript using the Fetch API and modern Audio APIs.
-2. **Application & Routing Layer**: Django URL routing dispatching to functional views (`pokedex_view`) and JSON API endpoints (`toggle_catch`).
-3. **Domain & Data Layer**: Django ORM models mapping to a PostgreSQL relational database with JSONField payloads for flexible external metadata storage.
-4. **Data Ingestion & CLI Pipeline**: Multi-threaded, rate-limited management commands that crawl, normalize, and ingest data from PokeAPI v2 into local cache files and relational tables.
+The system is built upon a strategic decoupling between **canonical static data** and **dynamic user progress**:
+1. **In-Memory Immutable Catalogs (0 ms SQL)**: Pokémon species, regional numbering, stats, historical typings, official encounter methods in Spanish, and sprite paths are not queried from heavy database tables on every request. Instead, they are loaded into memory from precompiled JSON files managed by `catalog_service.py`.
+2. **Lightweight Relational Persistence**: PostgreSQL exclusively stores game structural entities (`Game`, `Pokedex`) and user catch records (`UserPokemonCatch`), supporting both anonymous guest sessions and authenticated user accounts.
+3. **Retro-Interactive User Experience**: Comic-book aesthetic (Ben-Day dots, hard ink drop shadows), dynamic chiptune/orchestrated cries, generational Game Hub, shiny variant tracking, and Unown glyph albums.
 
 ---
 
-## 2. Component Architecture Diagram
+## 2. System Architecture Diagram
 
 ```mermaid
 graph TB
-    subgraph Client ["Client Layer"]
-        Browser["Desktop & Mobile Web Browser"]
-        DOM["DOM + Comic Panel Components"]
-        AudioEngine["HTML5 Web Audio (Cries Player)"]
-        CatchState["Client-side Catch State"]
+    subgraph Client ["Client Layer (Browser)"]
+        Browser["Web Browser (Desktop / Mobile)"]
+        DOM["DOM + Comic-Book Components"]
+        AudioEngine["HTML5 Audio Engine (8-bit vs Modern Cries)"]
+        Hub["Game Hub (Game Selector & Progress)"]
+        CatchState["Reactive Catch State (Normal / Shiny / Unown)"]
     end
 
-    subgraph Django ["Django Application Server (Port 8000)"]
+    subgraph Django ["Django 6.1 Server (Backend)"]
         subgraph Middleware
-            SecMid["Security & Common Middleware"]
-            SessMid["Session Middleware (django.contrib.sessions)"]
-            AuthMid["Authentication Middleware (django.contrib.auth)"]
-            CsrfMid["CSRF Token Middleware"]
+            SecMid["Security Middleware"]
+            SessMid["Session Middleware"]
+            AuthMid["Authentication Middleware"]
+            CsrfMid["CSRF Protection"]
         end
 
-        subgraph Controllers
-            HomeView["pokedex_view(game_slug, pokedex_slug)"]
-            AjaxToggle["toggle_catch(request) [POST]"]
-            AdminSite["Django Custom Admin Site"]
+        subgraph Controllers ["Views & Controllers"]
+            AuthView["auth_portal_view / guest_continue_view"]
+            HubView["game_selector_view (Game Hub)"]
+            DexView["pokedex_view(game_slug, pokedex_slug)"]
+            AjaxCatch["toggle_catch (POST - Normal & Shiny)"]
+            AjaxUnown["toggle_unown_catch (POST - Unown Forms)"]
+            AdminSite["Custom Admin Panel & Exporter"]
         end
 
-        subgraph DomainServices
-            TypeResolver["Historical Type Resolver"]
-            NameResolver["Localized Name Resolver"]
-            FixtureUtil["Fixture Exporter & Inspector"]
-            SafeClient["safe_api_get (Rate Limiter & Backoff)"]
+        subgraph Services ["Domain Services"]
+            CatService["catalog_service.py (In-Memory Catalog Service)"]
+            FixtureUtil["fixtures_util.py (Game Metadata Exporter)"]
         end
     end
 
-    subgraph Database ["PostgreSQL Relational DB"]
-        T_Game[(tracker_game)]
-        T_Dex[(tracker_pokedex)]
-        T_Poke[(tracker_pokemon)]
-        T_Entry[(tracker_pokedexentry)]
-        T_Catch[(tracker_userpokemoncatch)]
-        T_Move[(tracker_move)]
-    end
+    subgraph Storage ["Storage & Persistence"]
+        subgraph PostgreSQL ["PostgreSQL Database"]
+            T_Game[(tracker_game)]
+            T_Dex[(tracker_pokedex)]
+            T_Catch[(tracker_userpokemoncatch)]
+        end
 
-    subgraph Filesystem ["Local Storage & Cache"]
-        DiskCache["data/cache/ (JSON responses)"]
-        MovesCache["data/moves_gen1.json"]
-        MediaDir["media/ (Sprites & Covers)"]
-        Fixtures["tracker/fixtures/pokedex_entries.json"]
-    end
-
-    subgraph External ["External Services"]
-        PokeAPI["PokeAPI v2 (REST API)"]
+        subgraph StaticFiles ["Local Disk Storage"]
+            CatalogsJSON["tracker/data/catalogs/<slug>.json"]
+            MediaRoot["media/pokemon/ (Sprites, Cries, Icons)"]
+            FixturesJSON["tracker/fixtures/pokedex_entries.json"]
+        end
     end
 
     Browser --> DOM
     DOM --> AudioEngine
+    DOM --> Hub
     DOM --> CatchState
-    CatchState --> AjaxToggle
-    DOM --> HomeView
 
-    HomeView --> SessMid
-    AjaxToggle --> CsrfMid
-    CsrfMid --> SessMid
-    SessMid --> AuthMid
+    CatchState --> AjaxCatch
+    CatchState --> AjaxUnown
+    Hub --> HubView
+    DOM --> DexView
+    DOM --> AuthView
 
-    HomeView --> T_Game
-    HomeView --> T_Dex
-    HomeView --> T_Entry
-    HomeView --> T_Catch
+    DexView --> CatService
+    AjaxCatch --> CatService
+    CatService --> CatalogsJSON
 
-    AjaxToggle --> T_Catch
-    AjaxToggle --> T_Entry
+    DexView --> T_Game
+    DexView --> T_Dex
+    DexView --> T_Catch
+
+    AjaxCatch --> T_Catch
+    AjaxUnown --> T_Catch
 
     AdminSite --> FixtureUtil
-    FixtureUtil --> Fixtures
-
-    SafeClient --> PokeAPI
-    SafeClient --> DiskCache
-    DomainServices --> MovesCache
-    DomainServices --> MediaDir
+    FixtureUtil --> T_Game
+    FixtureUtil --> T_Dex
+    FixtureUtil --> FixturesJSON
 ```
 
 ---
 
-## 3. Data Flow & Catch Tracking Lifecycle
+## 3. System Evolution: In-Memory Precompiled Catalogs Architecture (0 ms SQL)
 
-### 3.1 Dual-Identity Catch Tracking (Guest vs Authenticated)
-A core architectural requirement of the application is enabling visitors to mark Pokémon as caught immediately without requiring registration, while preserving their progress across page navigation, and seamlessly supporting authenticated users.
+> [!NOTE]
+> **Design Rationale:** In early versions, species and pokedex entries were stored as traditional Django ORM tables (`Pokemon`, `PokedexEntry`, `Move`). This resulted in thousands of static database rows, complex $N+1$ queries for grid rendering, and recurring database migration overhead when introducing new games.
 
-This is achieved through `_get_user_or_session(request)`:
+To eliminate this bottleneck and provide an instant, zero-latency *Offline-First* experience:
+1. **Precompiled Immutable Catalogs**: Canonical game data is compiled into static JSON files under `tracker/data/catalogs/<game_slug>.json`.
+2. **In-Memory `CatalogService`**: When handling requests, `tracker.catalog_service` deserializes and caches catalog entries (`_CATALOG_CACHE`), validating file `mtime` for hot-reloads during development.
+3. **Dedicated Relational Tracking**: PostgreSQL resources are dedicated to indexing user progress (`UserPokemonCatch`) with optimized composite indices.
+
+---
+
+## 4. Catch Lifecycle and Tracking Mechanics
+
+### 4.1 Dual User Identity (Guest vs Authenticated)
+The platform allows immediate catching without forced registration by utilizing Django anonymous sessions:
 
 ```mermaid
 sequenceDiagram
     autonumber
     actor User as User / Browser
     participant View as views.toggle_catch
-    participant Session as Session Engine
-    participant DB as UserPokemonCatch Table
+    participant Session as Django Session Engine
+    participant Cat as catalog_service
+    participant DB as UserPokemonCatch (PostgreSQL)
 
-    User->>View: POST /api/catch/toggle/ {"entry_id": 1}
-    View->>Session: Inspect request.user & request.session
-    alt User is Authenticated
+    User->>View: POST /api/catch/toggle/ {"entry_id": 25, "is_shiny": false}
+    View->>Cat: get_catalog_entry_by_id(25)
+    Cat-->>View: CatalogEntry(game_slug="red", entry_number=25)
+    View->>Session: Inspect request.user and request.session
+    alt Authenticated User
         Session-->>View: user = request.user, session_key = None
-        View->>DB: get_or_create(pokedex_entry_id=1, user=user)
-    else User is Anonymous
-        opt Session does not exist yet
+        View->>DB: get_or_create(game_slug="red", entry_number=25, user=user)
+    else Anonymous Guest
+        opt Session without assigned key
             Session->>Session: request.session.save()
         end
-        Session-->>View: user = None, session_key = request.session.session_key
-        View->>DB: get_or_create(pokedex_entry_id=1, session_key=session_key)
+        Session-->>View: user = None, session_key = session.session_key
+        View->>DB: get_or_create(game_slug="red", entry_number=25, session_key=session_key)
     end
-    View->>DB: Invert is_caught status (True <-> False) & update timestamp
-    View->>DB: Query caught count & total count for Pokédex
-    View-->>User: 200 OK JSON {success: true, is_caught: true, caught_count: 1, percent: 100.0}
-    User->>User: Update DOM card border, badge, and live progress bar
+    View->>DB: Toggle is_caught (or is_shiny) and update timestamp
+    View->>DB: Count active catches for this game
+    View-->>User: 200 OK JSON {success: true, is_caught: true, caught_count: 12, percent: 7.9}
+    User->>User: Update retro card border, shiny star, and progress bar
 ```
 
-### 3.2 Offline-First Data Ingestion Strategy
-To prevent IP bans from PokeAPI and guarantee deterministic offline development, all data synchronization commands adhere to a **Store-and-Verify** pattern:
-1. **Local JSON Cache**: All HTTP calls to PokeAPI store responses under `tracker/data/cache/` keyed by URL digest or entity ID.
-2. **Pacing Delays & Exponential Backoff**: The custom `safe_api_get` utility incorporates a polite delay (0.05s default), detects HTTP 429 status codes, respects `Retry-After` headers, and falls back to randomized exponential backoff ($base\_delay \times 2^{attempt} + \text{jitter}$).
-3. **Custom Override Protection**: The `is_custom_override` boolean flag on `PokedexEntry` guarantees that manually curated community data (special encounter locations, customized flavor texts) will never be overwritten during re-synchronizations.
+### 4.2 Dual Mode Tracking (Normal vs Shiny)
+* The `/api/catch/toggle/` endpoint accepts the boolean flag `is_shiny`.
+* The database stores `is_caught` and `is_shiny` independently on the same `UserPokemonCatch` record identified by `(game_slug, entry_number)`.
+* This allows live switching between normal and shiny modes without page reloads.
+
+### 4.3 Unown Glyph Tracking
+* For titles with ruins (Gen 2 Gold/Silver/Crystal, Gen 3 FireRed/LeafGreen), `/api/unown-catch/toggle/` updates the native `JSONField(unown_forms_caught)`.
+* Payload structure: `{"normal": ["A", "F", "R"], "shiny": ["A"]}`.
+* Catching at least one glyph registers Unown as caught in the overall Pokédex while preserving individual letter tracking in the dedicated album modal.
 
 ---
 
-## 4. Key Performance Optimizations
+## 5. Performance Optimizations
 
-1. **Select Related Queries**: In `pokedex_view`, entries are queried with `.select_related("pokemon")` to eliminate $N+1$ database query overhead.
-2. **Bulk ID Set In-Memory Lookup**: User catches are fetched in a single flat list query (`values_list('pokedex_entry_id', flat=True)`), transformed into a Python `set`, allowing $O(1)$ constant-time lookup when annotating cards.
-3. **Database Indexing**: Compound indexes on `[pokedex, entry_number]`, `[user, pokedex_entry]`, and `[session_key, pokedex_entry]` guarantee sub-millisecond lookups under high concurrency.
+1. **$O(1)$ Catalog Access**: Instant in-memory retrieval without database locks or transaction overhead.
+2. **In-Memory Set Lookup**: In `pokedex_view`, user catches for the active game are fetched in a single indexed query (`values_list('entry_number', flat=True)`) and evaluated in constant time $O(1)$.
+3. **Composite Database Indices**:
+   * `[user, game_slug]`
+   * `[session_key, game_slug]`
+   * `[game_slug, entry_number]`
+4. **Reactive Cache Invalidation**: Django signals (`post_save`, `post_delete`) on `Game` invalidate the `all_games_catalog` cache key upon admin edits.

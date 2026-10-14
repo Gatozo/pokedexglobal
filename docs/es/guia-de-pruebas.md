@@ -1,75 +1,56 @@
 # 🧪 Guía de Pruebas y Aseguramiento de Calidad (Español)
 
-## 1. Filosofía de Pruebas
+## 1. Filosofía de Pruebas y Cobertura
 
-La suite de pruebas automatizadas en `tracker/tests.py` garantiza la estabilidad de los flujos críticos del proyecto:
-- **Aislamiento Total de Red**: Todas las pruebas se ejecutan contra bases de datos en memoria o fixtures locales simuladas, sin emitir tráfico real hacia PokeAPI.
-- **Verificación de Contrato API**: Comprueba el formato de las respuestas JSON, códigos de estado HTTP y manejo de errores del endpoint AJAX de captura.
-- **Validación de Integridad y Reglas de Negocio**: Verifica la resolución de tipos históricos, la cascada de traducción idiomática y la protección de datos personalizados.
+La suite de pruebas automatizadas de **Pokédex Global Tracker** comprende **173 pruebas unitarias y de integración** organizadas modularmente en `tracker/tests/`:
+
+* **Aislamiento Total de Red (Offline-First)**: Todas las pruebas se ejecutan contra catálogos locales simulados o compilados y bases de datos de pruebas locales, sin emitir tráfico real hacia PokeAPI ni depender de conexiones externas.
+* **Integridad Canónica de Datos**: Valida que los tipos históricos, ubicaciones oficiales en español y números de Pokédex coincidan con las reglas de cada generación.
+* **Aislamiento de Sesiones y Capturas**: Comprueba que el progreso de capturas se mantenga estrictamente separado entre usuarios autenticados y sesiones de invitados.
+* **Verificación de Contrato API**: Evalúa los códigos HTTP y respuestas JSON de los endpoints AJAX (`toggle_catch`, `toggle_unown_catch`, `check_username`).
 
 ---
 
-## 2. Ejecución de Pruebas
+## 2. Ejecución Focalizada con `--keepdb`
 
-Para ejecutar la suite completa de pruebas de manera optimizada:
-```bash
-python manage.py test --keepdb
-```
+De acuerdo con el protocolo técnico del proyecto, las pruebas se deben ejecutar reutilizando la base de datos de pruebas mediante la bandera `--keepdb`, lo que reduce los tiempos de ejecución a tan solo 1 a 5 segundos por módulo.
 
-### Ejecución Modular Focalizada (Recomendada para cambios rápidos)
-Gracias a la estructura modular de `tracker/tests/`, es posible ejecutar únicamente las pruebas relacionadas con el área modificada en cuestión de 1 a 3 segundos:
+### Comandos de Ejecución Modular:
 
-- **Autenticación (login, registro, sesiones):**
+* **Autenticación y Sesiones (29 pruebas):**
   ```bash
   python manage.py test tracker.tests.test_auth --keepdb
   ```
-- **Vistas, interactividad y barra generacional:**
+* **Vistas, Game Hub e Interactividad (34 pruebas):**
   ```bash
   python manage.py test tracker.tests.test_views --keepdb
   ```
-- **Catálogos y datos regionales de juegos (Gen 1-3):**
+* **Catálogos Compilados y Reglas de Juego (65 pruebas):**
   ```bash
   python manage.py test tracker.tests.test_catalogs --keepdb
   ```
-- **Fixtures y mecánicas especiales:**
+* **Fixtures, Mecánicas de Gen 2 y Unown (45 pruebas):**
   ```bash
   python manage.py test tracker.tests.test_fixtures --keepdb
   ```
 
-Para ejecutar una prueba específica:
+### Ejecución de una Prueba Específica:
 ```bash
 python manage.py test tracker.tests.test_views.PokedexTrackerTests.test_toggle_catch_anonymous_user --keepdb
 ```
 
----
-
-## 3. Catálogo de Casos de Prueba (20 Pruebas)
-
-| Caso de Prueba | Área Evaluada | Criterio de Aprobación |
-| :--- | :--- | :--- |
-| `test_pokedex_view_status_and_content` | Vista Principal | Confirma código de estado HTTP 200, conteo de entradas en el contexto, nombre oficial del juego y renderizado de tipos en español. |
-| `test_toggle_catch_anonymous_user` | Endpoint AJAX | Verifica generación automática de sesión, marcado de captura en `True`, porcentaje de completitud (100%) y liberación posterior a `False`. |
-| `test_toggle_catch_authenticated_user` | Endpoint AJAX | Comprueba la vinculación de la captura a una instancia `auth.User` en lugar de una cookie de sesión. |
-| `test_toggle_catch_invalid_payload` | Manejo de Errores | Asegura que peticiones JSON corruptas devuelvan HTTP 400 con mensaje de error informativo. |
-| `test_toggle_catch_nonexistent_entry` | Manejo de Errores | Comprueba que identificadores de entrada inexistentes retornen código HTTP 404. |
-| `test_localized_text_fallback` | Internacionalización | Prueba la cascada de 3 niveles: idioma primario (`es`) -> idioma secundario (`en`) -> texto de respaldo por defecto. |
-| `test_resolve_types_for_generation` | Tipos Históricos | Valida que Magnemite sea Eléctrico puro en Gen 1 y Eléctrico/Acero en Gen 2+, y que Clefairy sea Normal en Gen 1 y Hada en Gen 6+. |
-| `test_sync_pokemon_details_override` | Protección de Datos | Demuestra que los registros con `is_custom_override=True` se conservan intactos ante sincronizaciones automáticas. |
-| `test_export_fixtures_util` | Sistema de Fixtures | Verifica que `export_tracker_fixtures()` genere un archivo JSON sintácticamente válido con todos los registros y metadatos correctos. |
-| `test_pokedex_view_404` | Enrutamiento | Confirma que slugs de juego o Pokédex inexistentes devuelvan código HTTP 404. |
+### Ejecución de la Suite Completa:
+```bash
+python manage.py test --keepdb
+```
 
 ---
 
-## 4. Integración Continua (CI/CD)
+## 3. Desglose de Módulos de Prueba
 
-Para incorporar esta suite en flujos de integración continua (GitHub Actions, GitLab CI):
-1. Iniciar un contenedor de servicio con PostgreSQL.
-2. Definir las variables de entorno de conexión en el entorno de pruebas:
-   ```env
-   DB_NAME=test_pokedex_db
-   DB_USER=postgres
-   DB_PASSWORD=postgres
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   ```
-3. Aplicar migraciones y ejecutar `python manage.py test --no-input`.
+| Módulo | Archivo | Tests | Áreas Evaluadas |
+| :--- | :--- | :---: | :--- |
+| **Autenticación** | `tracker/tests/test_auth.py` | 29 | Login, registro reactivo, modo invitado, hash de contraseñas y aislamiento de sesión. |
+| **Vistas e Interfaz** | `tracker/tests/test_views.py` | 34 | Endpoints AJAX de captura normal y shiny, selector de juegos (Game Hub), gritos de audio e invariantes de plantilla. |
+| **Catálogos y Canon** | `tracker/tests/test_catalogs.py` | 65 | Carga de catálogos JSON, tipos históricos por generación, zonas de encuentro en castellano y sprites de cartucho. |
+| **Fixtures y Mecánicas** | `tracker/tests/test_fixtures.py` | 45 | Exportación de respaldos (`export_tracker_fixtures`), 26 glifos de Unown, piedras evolutivas y compatibilidad. |

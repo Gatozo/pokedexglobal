@@ -246,7 +246,7 @@ class MockCatalogManager:
     def __init__(self):
         self._items = []
     def get(self, *args, **kwargs):
-        raise NotImplementedError("Las tablas del catálogo fueron migradas a JSON estáticos en Plan C. Usa catalog_service.")
+        raise NotImplementedError("Las tablas del catálogo fueron migradas a JSON estáticos en memoria. Usa catalog_service.")
     def filter(self, *args, **kwargs):
         return self
     def select_related(self, *args, **kwargs):

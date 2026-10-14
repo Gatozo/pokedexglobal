@@ -1,5 +1,4 @@
-# tracker/tests/mocks.py
-# Clases shim y mocks en memoria para compatibilidad de pruebas pre-catálogo Plan C.
+# Clases shim y mocks en memoria para compatibilidad de pruebas pre-catálogo.
 
 class MockQuerySet(list):
     def select_related(self, *args, **kwargs):
@@ -215,10 +214,8 @@ class PokedexEntry:
         num = self.pokemon.national_number
         if slug in ["gold", "silver", "crystal"]:
             from django.conf import settings
-            from pathlib import Path
             local_rel = f"pokemon/sprites/{slug}_shiny/{num}.png"
-            if (Path(settings.MEDIA_ROOT) / local_rel).exists() or True:
-                return f"{settings.MEDIA_URL}{local_rel}"
+            return f"{settings.MEDIA_URL}{local_rel}"
         return self.pokemon.sprite_shiny_url
 
     @property

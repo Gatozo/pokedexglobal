@@ -36,7 +36,7 @@ def _get_cached_all_games():
     return games
 
 
-def get_cached_pokedex_entries(pokedex_id=None, force_refresh=False, game_slug="", is_national=False):
+def get_cached_pokedex_entries(game_slug="", is_national=False, force_refresh=False):
     """
     Retorna la lista base de entradas de la Pokédex desde los catálogos compilados inmutables (0 ms SQL).
     Soporta modo regional (Johto, Kanto, etc.) y modo nacional según is_national.
@@ -387,10 +387,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     # Entradas de la Pokédex obtenidas del catálogo compilado o caché en memoria (0 ms DB)
     force_refresh = request.GET.get("refresh") == "1" or request.GET.get("nocache") == "1"
     cached_entries = get_cached_pokedex_entries(
-        pokedex.id,
-        force_refresh=force_refresh,
         game_slug=game.slug,
         is_national=is_national,
+        force_refresh=force_refresh,
     )
 
     user, session_key = _get_user_or_session(request)

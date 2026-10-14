@@ -1,122 +1,71 @@
-# ⚙️ Referencia de Comandos de Gestión (Español)
+# ⚙️ Referencia de Comandos de Gestión y Scripts de Catálogo (Español)
 
-Los comandos de gestión personalizados de Django residen en el directorio `tracker/management/commands/`. Están diseñados para automatizar la importación, enriquecimiento, respaldo y saneamiento de los datos de la Pokédex.
+Los comandos de gestión personalizados de Django residen en `tracker/management/commands/`. Están enfocados en la sincronización, descarga y normalización de activos multimedia offline (sprites, animaciones, iconos y sonidos de gritos).
+
+Por su parte, la generación y compilación de catálogos de juegos se realiza a través de los constructores dedicados en `tracker/scripts/` bajo el estándar de `guides/especificacion-nuevo-juego.md`.
 
 ---
 
-## 1. Resumen de Comandos
+## 1. Comandos de Sincronización Multimedia (`manage.py`)
 
-| Comando | Archivo | Propósito |
+Todos los comandos se ejecutan a través de la CLI estándar de Django: `python manage.py <comando> [opciones]`.
+
+| Comando | Propósito | Directorio de Destino |
 | :--- | :--- | :--- |
-| `import_pokedex` | `import_pokedex.py` | Descarga un juego y su Pokédex regional desde PokeAPI, crea los registros `Game`, `Pokedex`, `Pokemon`, `PokedexEntry` y descarga sprites a `media/`. |
-| `sync_pokemon_cache` | `sync_pokemon_cache.py` | Sincroniza y guarda el JSON crudo (`raw_data`) de PokeAPI en la tabla `Pokemon` local. |
-| `sync_pokemon_details` | `sync_pokemon_details.py` | Enriquece entradas con estadísticas por generación, movimientos por nivel, biomas de encuentro y textos oficiales en español con modo Offline-First. |
-| `sync_moves` | `sync_moves.py` | Descarga el catálogo de movimientos de combate con nombres oficiales en español, poder, precisión y PP. |
-| `backfill_pokedex_types` | `backfill_pokedex_types.py` | Revisa y actualiza todas las entradas con los tipos elementales históricos canónicos de su generación. |
+| `sync_pokemon_cries` | Descarga y organiza los gritos sonoros vintage (8 bits) y modernos en formato OGG. | `media/pokemon/cries/` |
+| `sync_pokemon_icons` | Sincroniza los iconos de menú/PC estándar para las especies de la Pokédex. | `media/pokemon/icons/` |
+| `sync_classic_icons` | Descarga iconos de menú con la estética pixel-art clásica de cartucho. | `media/pokemon/icons/classic/` |
+| `sync_items` | Sincroniza los iconos oficiales de objetos, piedras evolutivas e ítems clave. | `media/items/` |
+| `sync_unown_sprites` | Descarga las 26 a 28 formas alfabéticas de Unown (versiones normales y variocolor). | `media/pokemon/sprites/unown/` |
+| `sync_crystal_sprites` | Sincroniza los sprites estáticos del cartucho oficial de Pokémon Cristal. | `media/pokemon/sprites/crystal/` |
+| `sync_crystal_animated_sprites` | Descarga los archivos GIF animados con la animación de entrada de Pokémon Cristal. | `media/pokemon/sprites/crystal_animated/` |
+| `sync_emerald_animated_sprites` | Descarga los sprites animados exclusivos de Pokémon Esmeralda. | `media/pokemon/sprites/emerald_animated/` |
+| `sync_gold_shiny_sprites` | Sincroniza los sprites de variantes variocolor (shiny) de Pokémon Oro. | `media/pokemon/sprites/gold_shiny/` |
+| `sync_silver_sprites` | Sincroniza los sprites del cartucho de Pokémon Plata. | `media/pokemon/sprites/silver/` |
+| `normalize_gen1_sprites` | Normaliza el escalado y paleta de los sprites clásicos de Generación 1. | `media/pokemon/sprites/` |
+| `sync_wikidex_flavor_texts` | Extrae y actualiza las descripciones oficiales en castellano desde WikiDex. | `tracker/data/catalogs/` |
 
 ---
 
-## 2. Especificación Detallada de Comandos
+## 2. Ejemplos de Uso Operativo
 
-### 2.1 `import_pokedex`
-Realiza la ingesta inicial de una edición de videojuego y su lista regional.
-
+### Sincronización de Gritos de Audio
+Descarga los sonidos de gritos tanto en su variante clásica chiptune como en su versión moderna:
 ```bash
-python manage.py import_pokedex [opciones]
+python manage.py sync_pokemon_cries
 ```
 
-#### Opciones y Argumentos:
-- `--game <slug>`: Slug del juego (por defecto: `"red"`). Ejemplos: `blue`, `yellow`, `gold`, `firered`, `ultra-sun`.
-- `--game-name <nombre>`: Nombre descriptivo opcional. Si no se indica, se toma el nombre oficial en español del mapeo interno.
-- `--generation <int>`: Número de generación del juego (por defecto: `1`).
-- `--pokedex <slug>`: Slug de la Pokédex en PokeAPI (por defecto: `"kanto"`). Ejemplos: `original-johto`, `hoenn`, `national`.
-- `--pokedex-name <nombre>`: Nombre descriptivo para la Pokédex (por defecto: `"Pokédex Regional de Kanto"`).
-- `--force-refresh`: Fuerza la descarga desde PokeAPI aunque la especie ya exista en la base de datos local.
-- `--workers <int>`: Hilos concurrentes de descarga en `ThreadPoolExecutor` (por defecto: `4`).
-- `--delay <float>`: Retardo de cortesía en segundos entre peticiones (por defecto: `0.05`).
-
-#### Ejemplos de Uso:
+### Sincronización de Sprites Animados de Pokémon Cristal
+Aprovisiona las animaciones de batalla en formato GIF para la modal retro:
 ```bash
-# Importar Pokémon Rojo (Generación 1, Kanto)
-python manage.py import_pokedex --game red --generation 1 --pokedex kanto --workers 4
-
-# Importar Pokémon Oro (Generación 2, Johto)
-python manage.py import_pokedex --game gold --generation 2 --pokedex original-johto --pokedex-name "Pokédex de Johto"
+python manage.py sync_crystal_animated_sprites
 ```
 
----
-
-### 2.2 `sync_pokemon_cache`
-Descarga y almacena en el campo `raw_data` de `Pokemon` la respuesta completa del endpoint `/pokemon/{id}` de PokeAPI (sonidos, gritos, metadatos y listas de movimientos).
-
+### Sincronización de Formas Unown
+Descarga el conjunto completo de glifos alfabéticos para la vista de ruinas:
 ```bash
-python manage.py sync_pokemon_cache [opciones]
-```
-
-#### Opciones y Argumentos:
-- `--all`: Actualiza todos los registros, incluso si ya tienen información en `raw_data`.
-- `--workers <int>`: Número de hilos concurrentes (por defecto: `4`).
-- `--delay <float>`: Retardo de cortesía en segundos (por defecto: `0.05`).
-
-#### Ejemplo de Uso:
-```bash
-python manage.py sync_pokemon_cache --workers 6
+python manage.py sync_unown_sprites
 ```
 
 ---
 
-### 2.3 `sync_pokemon_details`
-Realiza el enriquecimiento detallado de las entradas `PokedexEntry` de un cartucho determinado:
-- Texto descriptivo oficial en español (`flavor_text`).
-- Zonas de aparición, hábitats y métodos de obtención (`obtaining_info`).
-- Estadísticas del cartucho y movimientos aprendidos por nivel (`game_data`).
-- Categoría o género biológico en español (`category`).
+## 3. Flujo de Generación y Compilación de Catálogos de Juegos
 
-> **Garantía de Seguridad**: Omite automáticamente cualquier entrada que tenga activo el indicador `is_custom_override = True`, protegiendo los ajustes manuales efectuados por administradores.
+A diferencia de las versiones iniciales que utilizaban comandos ORM genéricos, la arquitectura actual utiliza **constructores especializados por edición** en `tracker/scripts/`:
 
-```bash
-python manage.py sync_pokemon_details [opciones]
-```
+* `tracker/scripts/build_ruby_catalog.py`
+* `tracker/scripts/build_sapphire_catalog.py`
+* `tracker/scripts/build_emerald_catalog.py`
+* `tracker/scripts/build_firered_catalog.py`
+* `tracker/scripts/build_leafgreen_catalog.py`
+* `tracker/scripts/build_diamond_catalog.py`
 
-#### Opciones y Argumentos:
-- `--game <slug>`: Slug del juego a procesar (por defecto: `"red"`).
-- `--workers <int>`: Hilos concurrentes (por defecto: `5`).
-- `--delay <float>`: Retardo entre peticiones (por defecto: `0.05`).
+### Protocolo para Compilar un Nuevo Catálogo:
+1. El script define las especies presentes en el juego con su numeración regional y nacional canónica.
+2. Aplica los nombres de áreas y métodos de captura oficiales en español de España (evitando slugs en inglés o traducciones automáticas).
+3. Resuelve los tipos históricos de la generación (ej. Magnemite Eléctrico puro en Gen 1).
+4. Exporta el archivo estático inmutable a `tracker/data/catalogs/<game_slug>.json`.
+5. Una vez compilado, el catálogo se versiona directamente en Git y está listo para ser servido por `catalog_service.py` con 0 ms de latencia SQL.
 
-#### Ejemplo de Uso:
-```bash
-python manage.py sync_pokemon_details --game red --workers 5
-```
-
----
-
-### 2.4 `sync_moves`
-Puebla la tabla `Move` con la información canónica de ataques y técnicas de combate.
-
-```bash
-python manage.py sync_moves [opciones]
-```
-
-#### Opciones y Argumentos:
-- `--generation <int>`: Generación de movimientos (por defecto: `1`, movimientos 1 al 165).
-- `--workers <int>`: Hilos concurrentes de descarga (por defecto: `10`).
-- `--local`: Prioriza la lectura desde el archivo local de caché (`tracker/data/moves_gen1.json`) antes de realizar solicitudes a la red.
-
-#### Ejemplo de Uso:
-```bash
-python manage.py sync_moves --generation 1 --local
-```
-
----
-
-### 2.5 `backfill_pokedex_types`
-Recorre todas las entradas de Pokédex registradas y reasigna los tipos elementales históricos (`primary_type` y `secondary_type`) evaluando el atributo `past_types` de PokeAPI según la generación de cada juego.
-
-```bash
-python manage.py backfill_pokedex_types
-```
-
-#### Comportamiento:
-- Convierte a Magnemite y Magneton en únicamente Eléctrico para juegos de Generación 1.
-- Restaura a Clefairy, Clefable, Jigglypuff, Wigglytuff y Togepi al tipo Normal para juegos previos a la Generación 6.
-- Ejecuta todas las modificaciones dentro de una transacción atómica de base de datos (`transaction.atomic()`).
+> [!TIP]
+> Para la guía técnica completa paso a paso sobre cómo agregar cualquier edición de Gen 1 a Gen 9 y Leyendas, consulta [guides/especificacion-nuevo-juego.md](../../guides/especificacion-nuevo-juego.md).
