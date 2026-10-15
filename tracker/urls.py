@@ -15,6 +15,7 @@ urlpatterns = [
     path("api/catch/toggle/", views.toggle_catch, name="toggle_catch"),
     path("api/unown-catch/toggle/", views.toggle_unown_catch, name="toggle_unown_catch"),
     path("api/auth/check-username/", views.check_username, name="check_username"),
+    path("api/catalog/entry/<int:entry_id>/modal/", views.catalog_entry_modal, name="catalog_entry_modal"),
 ]
 
 

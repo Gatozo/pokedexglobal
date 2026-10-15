@@ -760,3 +760,27 @@ def toggle_unown_catch(request):
         "global_shiny_caught": global_shiny_count,
         "global_shiny_percent": global_shiny_percent,
     })
+
+
+def catalog_entry_modal(request, entry_id):
+    """
+    Retorna los datos del modal en formato JSON para carga bajo demanda (0 ms SQL).
+    Soporta anotación dinámica del estado de captura del usuario o sesión actual.
+    """
+    entry = get_catalog_entry_by_id(entry_id)
+    if not entry:
+        return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
+
+    user, session_key = _get_user_or_session(request)
+    user_filter = {"game_slug": entry.game_slug, "entry_number": entry.entry_number}
+    if user:
+        user_filter["user"] = user
+    else:
+        user_filter["session_key"] = session_key
+
+    catch_rec = UserPokemonCatch.objects.filter(**user_filter).first()
+    data = json.loads(entry.modal_data_json)
+    data["is_caught"] = catch_rec.is_caught if catch_rec else False
+    data["is_shiny_caught"] = catch_rec.is_shiny if catch_rec else False
+
+    return JsonResponse(data, safe=False)

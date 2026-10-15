@@ -20,9 +20,6 @@
     data-sprite-modern-shiny="{{ entry.modern_sprite_shiny_url }}"
     onclick="openPokemonModal({{ entry.id }})"
 >
-    <!-- Embedded JSON data for Comic Modal -->
-    <script type="application/json" id="entry-data-{{ entry.id }}">{{ entry.modal_data_json|safe }}</script>
-
     <!-- Header with Number, Stone, Sound & Status Badge -->
     <div class="flex items-center justify-between gap-1 h-7 shrink-0">
         <div class="flex items-center gap-1.5 shrink-0">

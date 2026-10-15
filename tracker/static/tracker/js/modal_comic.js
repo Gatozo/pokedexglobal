@@ -16,7 +16,7 @@ let activeModalFormIndex = 0;
 let isModalBackView = false;
 let activeModalGender = 'male';
 
-export function openPokemonModal(entryId, updateHistory = true) {
+export async function openPokemonModal(entryId, updateHistory = true) {
     const card = document.getElementById(`card-${entryId}`);
     if (card && card.dataset.name === 'unown') {
         const unownModal = document.getElementById('unown-modal');
@@ -25,7 +25,7 @@ export function openPokemonModal(entryId, updateHistory = true) {
             return;
         }
     }
-    openPokemonModalDirect(entryId);
+    await openPokemonModalDirect(entryId);
     if (updateHistory) {
         let slug = null;
         if (card) {
@@ -277,6 +277,34 @@ export function getEntryData(entryId) {
         }
     }
     return data;
+}
+
+export async function getEntryDataAsync(entryId) {
+    let data = _entryDataCache.get(entryId);
+    if (data) return data;
+
+    const dataScript = document.getElementById(`entry-data-${entryId}`);
+    if (dataScript) {
+        try {
+            data = JSON.parse(dataScript.textContent);
+            _entryDataCache.set(entryId, data);
+            return data;
+        } catch (e) {
+            console.error("Error al parsear datos locales del Pokémon", e);
+        }
+    }
+
+    try {
+        const res = await fetch(`/api/catalog/entry/${entryId}/modal/`);
+        if (res.ok) {
+            data = await res.json();
+            _entryDataCache.set(entryId, data);
+            return data;
+        }
+    } catch (e) {
+        console.error("Error al obtener detalle del Pokémon bajo demanda", e);
+    }
+    return null;
 }
 
 export function applyCardForm(entryId, formIdx) {
@@ -1080,8 +1108,11 @@ export function cycleModalPokemonForm(direction) {
     applyCardForm(state.activeModalEntryId, newIdx);
 }
 
-export function openPokemonModalDirect(entryId, options = {}) {
-    const data = getEntryData(entryId);
+export async function openPokemonModalDirect(entryId, options = {}) {
+    let data = getEntryData(entryId);
+    if (!data) {
+        data = await getEntryDataAsync(entryId);
+    }
     if (!data) return;
 
     state.activeModalEntryId = entryId;
@@ -1252,6 +1283,22 @@ export function openPokemonModalDirect(entryId, options = {}) {
 
     // 10. Actualizar botones de navegación anterior / siguiente
     updateModalNavButtons();
+
+    // Precarga en segundo plano de tarjetas adyacentes para navegación a 0 ms
+    const navigableCards = getModalNavigableCards();
+    if (navigableCards && navigableCards.length) {
+        const currentIdx = navigableCards.findIndex(c => parseInt(c.dataset.entryId, 10) === entryId);
+        if (currentIdx !== -1) {
+            if (navigableCards[currentIdx - 1]) {
+                const prevId = parseInt(navigableCards[currentIdx - 1].dataset.entryId, 10);
+                if (prevId) getEntryDataAsync(prevId);
+            }
+            if (navigableCards[currentIdx + 1]) {
+                const nextId = parseInt(navigableCards[currentIdx + 1].dataset.entryId, 10);
+                if (nextId) getEntryDataAsync(nextId);
+            }
+        }
+    }
 }
 
 export function getModalNavigableCards() {

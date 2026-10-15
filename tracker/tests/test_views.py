@@ -412,13 +412,25 @@ class PokedexTrackerTests(TestCase):
         self.assertContains(response, 'comic-bubble')
         self.assertContains(response, 'openPokemonModal(')
 
-        # Verificar datos embebidos en el script JSON
-        self.assertContains(response, f'id="entry-data-{self.entry.id}"')
-        self.assertContains(response, 'Pokémon Semilla')
-        self.assertContains(response, 'Una rara semilla fue plantada')
-        self.assertContains(response, 'Pueblo Paleta')
+        # Verificar que el HTML principal no esté sobrecargado con scripts JSON embebidos redundantes
+        self.assertNotContains(response, f'<script type="application/json" id="entry-data-{self.entry.id}">')
 
-    def test_pokemon_blue_exclusives_and_obtaining(self):
+        # Verificar endpoint AJAX de carga bajo demanda para el modal
+        modal_url = reverse("tracker:catalog_entry_modal", kwargs={"entry_id": self.entry.id})
+        modal_res = self.client.get(modal_url)
+        self.assertEqual(modal_res.status_code, 200)
+        data = modal_res.json()
+        self.assertEqual(data["name"], "Bulbasaur")
+        self.assertIn("Semilla", data["category"])
+        self.assertIn("Una rara semilla fue plantada", data["flavor_text"])
+        self.assertIn("Pueblo Paleta", str(data["obtaining"]))
+        self.assertFalse(data["is_caught"])
+
+    def test_catalog_entry_modal_404_on_invalid_id(self):
+        """Verifica que el endpoint de detalle de modal responda 404 si la entrada no existe."""
+        modal_url = reverse("tracker:catalog_entry_modal", kwargs={"entry_id": 999999})
+        res = self.client.get(modal_url)
+        self.assertEqual(res.status_code, 404)
         from tracker.utils import resolve_obtaining_info
 
         # 1. Ekans en Azul: debe figurar como exclusivo de Pokémon Rojo por intercambio
