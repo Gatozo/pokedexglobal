@@ -16,7 +16,7 @@ from .models import Game, Pokedex, UserPokemonCatch
 from .forms import HybridLoginForm, UserRegisterForm
 from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
-from .game_hub_data import MAIN_SERIES_GAMES
+from .game_hub_data import MAIN_SERIES_GAMES, GENERATIONS_METADATA
 from .security import check_username_rate_limit
 
 
@@ -356,8 +356,29 @@ def game_selector_view(request):
         })
     pokemon_search_list.sort(key=lambda x: x["id"])
 
+    # Agrupar tarjetas por generación y subgrupos cronológicos (Tríos, Dúos y Solitarios)
+    cards_by_slug = {c["slug"]: c for c in games_cards}
+    generation_groups = []
+    for gen_meta in GENERATIONS_METADATA:
+        gen_data = {
+            "generation": gen_meta["generation"],
+            "region_name": gen_meta["region_name"],
+            "platform": gen_meta["platform"],
+            "subgroups": [],
+        }
+        for sub in gen_meta["subgroups"]:
+            subgroup_games = [cards_by_slug[s] for s in sub["slugs"] if s in cards_by_slug]
+            if subgroup_games:
+                gen_data["subgroups"].append({
+                    "title": sub["title"],
+                    "games": subgroup_games,
+                    "count": len(subgroup_games),
+                })
+        generation_groups.append(gen_data)
+
     context = {
         "games_cards": games_cards,
+        "generation_groups": generation_groups,
         "generations_list": [1, 2, 3, 4, 5, 6, 7, 8, 9],
         "pokemon_search_json": json.dumps(pokemon_search_list),
         "total_active_games": len(available_games),

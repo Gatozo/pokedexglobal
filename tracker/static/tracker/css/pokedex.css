@@ -82,6 +82,29 @@ body.overflow-hidden {
         -1px 0px 0px #0f172a;
 }
 
+/* Tipografía Cómic para Títulos de Juegos en Game Hub (Uniforme, idéntico a Etiquetas de Tipos) */
+.game-title-comic {
+    color: #ffffff !important;
+    text-shadow: 
+        1.5px 1.5px 0px #0f172a,
+        -1.5px -1.5px 0px #0f172a,
+        1.5px -1.5px 0px #0f172a,
+        -1.5px 1.5px 0px #0f172a,
+        0px 1.5px 0px #0f172a,
+        0px -1.5px 0px #0f172a,
+        1.5px 0px 0px #0f172a,
+        -1.5px 0px 0px #0f172a,
+        2px 2px 0px #0f172a;
+    letter-spacing: 0.02em;
+}
+
+/* Textura de puntos estilo cómic suave para cuerpo de tarjeta de juego */
+.game-card-comic-body {
+    position: relative;
+    background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1.2px, transparent 1.2px);
+    background-size: 12px 12px;
+}
+
 
 /* Marquee Ping-Pong para texto largo en pastillas de ubicación */
 @keyframes marqueePingPong {

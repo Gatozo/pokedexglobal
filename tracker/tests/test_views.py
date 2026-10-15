@@ -810,6 +810,22 @@ class GameSelectorHubTests(TestCase):
         self.assertContains(resp, 'id="card-game-pearl"')
         self.assertContains(resp, 'id="card-game-scarlet"')
 
+        # Verificar presencia de secciones de generación estilo cómic
+        self.assertContains(resp, 'class="generation-section"')
+        self.assertContains(resp, 'Generación 1')
+        self.assertContains(resp, 'Kanto')
+        self.assertContains(resp, 'Generación 2')
+        self.assertContains(resp, 'Johto')
+        self.assertIn("generation_groups", resp.context)
+        self.assertEqual(len(resp.context["generation_groups"]), 9)
+
+        # Verificar estilo de tarjeta cómic uniforme, textura y fondo temático suave
+        self.assertContains(resp, 'game-title-comic')
+        self.assertContains(resp, 'game-card-comic-body')
+        self.assertContains(resp, 'background-color: #fff1f2;')
+        # Verificar que la tarjeta es estática y no tiene animación de brinco al pasar el cursor
+        self.assertNotContains(resp, 'hover:-translate-y-1')
+
     def test_guest_continue_redirects_to_game_selector(self):
         url = reverse("tracker:guest_continue")
         resp = self.client.get(url)

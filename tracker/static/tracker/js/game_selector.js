@@ -134,6 +134,32 @@
             }
         });
 
+        // 3. Actualizar visibilidad de secciones de generación completas
+        document.querySelectorAll('.generation-section').forEach(section => {
+            const sectionGen = section.dataset.generation;
+            const matchesGen = (currentGenFilter === 'all') || (sectionGen === currentGenFilter);
+            if (!matchesGen) {
+                section.classList.add('hidden');
+                section.hidden = true;
+                return;
+            }
+
+            // Si hay búsqueda activa y coincide algún Pokémon, ocultar secciones sin coincidencias
+            if (query && matchedPokemon) {
+                const hasMatchingCards = section.querySelector('.game-card.ring-3') !== null;
+                if (!hasMatchingCards) {
+                    section.classList.add('hidden');
+                    section.hidden = true;
+                } else {
+                    section.classList.remove('hidden');
+                    section.hidden = false;
+                }
+            } else {
+                section.classList.remove('hidden');
+                section.hidden = false;
+            }
+        });
+
         // Actualizar mensaje de feedback
         if (searchFeedback) {
             if (query) {

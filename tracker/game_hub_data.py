@@ -516,3 +516,133 @@ MAIN_SERIES_GAMES = [
         "progress_color": "bg-emerald-700",
     },
 ]
+
+GAME_CARD_TINTS = {
+    "red": "#fff1f2",
+    "blue": "#eff6ff",
+    "yellow": "#fefce8",
+    "gold": "#fef9ee",
+    "silver": "#f1f5f9",
+    "crystal": "#ecfeff",
+    "ruby": "#fff1f2",
+    "sapphire": "#eff6ff",
+    "emerald": "#ecfdf5",
+    "firered": "#fff7ed",
+    "leafgreen": "#f0fdf4",
+    "diamond": "#eff6ff",
+    "pearl": "#fdf2f8",
+    "platinum": "#f8fafc",
+    "heartgold": "#fef9ee",
+    "soulsilver": "#f8fafc",
+    "black": "#f1f5f9",
+    "white": "#f8fafc",
+    "black-2": "#f1f5f9",
+    "white-2": "#f8fafc",
+    "x": "#eff6ff",
+    "y": "#fff1f2",
+    "omega-ruby": "#fff1f2",
+    "alpha-sapphire": "#eef2ff",
+    "sun": "#fff7ed",
+    "moon": "#eef2ff",
+    "ultra-sun": "#fffbeb",
+    "ultra-moon": "#eff6ff",
+    "lets-go-pikachu": "#fefce8",
+    "lets-go-eevee": "#fef3c7",
+    "sword": "#ecfeff",
+    "shield": "#fff1f2",
+    "brilliant-diamond": "#f0f9ff",
+    "shining-pearl": "#fdf4ff",
+    "legends-arceus": "#f0fdfa",
+    "scarlet": "#fff1f2",
+    "violet": "#faf5ff",
+    "legends-za": "#ecfdf5",
+}
+
+for _g in MAIN_SERIES_GAMES:
+    _g["card_bg"] = GAME_CARD_TINTS.get(_g["slug"], "#f8fafc")
+
+GENERATIONS_METADATA = [
+    {
+        "generation": 1,
+        "region_name": "Kanto",
+        "platform": "Game Boy",
+        "subgroups": [
+            {"slugs": ["red", "blue", "yellow"], "title": "Trío Original"}
+        ]
+    },
+    {
+        "generation": 2,
+        "region_name": "Johto",
+        "platform": "Game Boy Color",
+        "subgroups": [
+            {"slugs": ["gold", "silver", "crystal"], "title": "Trío Original"}
+        ]
+    },
+    {
+        "generation": 3,
+        "region_name": "Hoenn / Kanto",
+        "platform": "Game Boy Advance",
+        "subgroups": [
+            {"slugs": ["ruby", "sapphire", "emerald"], "title": "Trío de Hoenn"},
+            {"slugs": ["firered", "leafgreen"], "title": "Remakes de Kanto"}
+        ]
+    },
+    {
+        "generation": 4,
+        "region_name": "Sinnoh / Johto",
+        "platform": "Nintendo DS",
+        "subgroups": [
+            {"slugs": ["diamond", "pearl", "platinum"], "title": "Trío de Sinnoh"},
+            {"slugs": ["heartgold", "soulsilver"], "title": "Remakes de Johto"}
+        ]
+    },
+    {
+        "generation": 5,
+        "region_name": "Teselia (Unova)",
+        "platform": "Nintendo DS",
+        "subgroups": [
+            {"slugs": ["black", "white"], "title": "Ediciones Originales"},
+            {"slugs": ["black-2", "white-2"], "title": "Secuelas"}
+        ]
+    },
+    {
+        "generation": 6,
+        "region_name": "Kalos / Hoenn",
+        "platform": "Nintendo 3DS",
+        "subgroups": [
+            {"slugs": ["x", "y"], "title": "Ediciones Originales"},
+            {"slugs": ["omega-ruby", "alpha-sapphire"], "title": "Remakes de Hoenn"}
+        ]
+    },
+    {
+        "generation": 7,
+        "region_name": "Alola / Kanto",
+        "platform": "Nintendo 3DS / Switch",
+        "subgroups": [
+            {"slugs": ["sun", "moon"], "title": "Ediciones Originales"},
+            {"slugs": ["ultra-sun", "ultra-moon"], "title": "Ediciones Ultra"},
+            {"slugs": ["lets-go-pikachu", "lets-go-eevee"], "title": "Remakes de Kanto"}
+        ]
+    },
+    {
+        "generation": 8,
+        "region_name": "Galar / Sinnoh / Hisui",
+        "platform": "Nintendo Switch",
+        "subgroups": [
+            {"slugs": ["sword", "shield"], "title": "Ediciones Originales"},
+            {"slugs": ["brilliant-diamond", "shining-pearl"], "title": "Remakes de Sinnoh"},
+            {"slugs": ["legends-arceus"], "title": "Saga Leyendas"}
+        ]
+    },
+    {
+        "generation": 9,
+        "region_name": "Paldea / Kalos",
+        "platform": "Nintendo Switch",
+        "subgroups": [
+            {"slugs": ["scarlet", "violet"], "title": "Ediciones Originales"},
+            {"slugs": ["legends-za"], "title": "Saga Leyendas"}
+        ]
+    },
+]
+
+
