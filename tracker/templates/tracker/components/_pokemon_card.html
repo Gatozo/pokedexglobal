@@ -33,7 +33,8 @@
             <button 
                 type="button" 
                 title="Escuchar grito Pokémon" 
-                onclick="event.stopPropagation(); playPokemonCry('{{ entry.cry_url }}', this)"
+                data-cry-url="{{ entry.cry_url }}"
+                onclick="event.stopPropagation(); playPokemonCry(this.dataset.cryUrl, this)"
                 class="p-1 rounded-md text-slate-400 hover:text-slate-950 hover:bg-slate-100 transition-colors active:scale-90 flex items-center justify-center shrink-0"
             >
                 <svg class="w-3.5 h-3.5 transition-transform" viewBox="0 0 24 24" fill="currentColor">
@@ -44,7 +45,9 @@
             {% if entry.evolution_stone %}
             <button 
                 type="button" 
-                onclick="event.stopPropagation(); openStoneModal('{{ entry.evolution_stone.slug }}', '{{ entry.evolution_stone.name|escapejs }}')"
+                data-stone-slug="{{ entry.evolution_stone.slug }}"
+                data-stone-name="{{ entry.evolution_stone.name }}"
+                onclick="event.stopPropagation(); openStoneModal(this.dataset.stoneSlug, this.dataset.stoneName)"
                 title="{% if 'incense' in entry.evolution_stone.slug %}Crianza con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% elif 'stone' in entry.evolution_stone.slug %}Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% else %}Evoluciona por intercambio con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% endif %}"
                 class="inline-flex items-center justify-center p-0 cursor-pointer transition-transform hover:scale-125 active:scale-95 focus:outline-none shrink-0"
             >

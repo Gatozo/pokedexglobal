@@ -605,6 +605,7 @@ class CatalogEntry:
             "forms": self.forms,
             "gender_info": gender_info,
         }, ensure_ascii=False)
+        return raw_json.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
 
     def __str__(self):
         return f"#{self.entry_number:03d}: {self.pokemon.display_name} ({self.game_slug})"
@@ -630,6 +631,10 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
     global _CATALOG_CACHE, _CATALOG_MTIMES, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE
 
     cache_key = f"{game_slug}__national" if is_national else game_slug
+
+    # En producción (DEBUG=False), reutilizar la caché en memoria directamente sin llamadas a disco stat()
+    if not getattr(settings, "DEBUG", True) and not force_reload and cache_key in _CATALOG_CACHE:
+        return _CATALOG_CACHE[cache_key]
 
     target_file = None
     if is_national:

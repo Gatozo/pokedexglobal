@@ -1,10 +1,13 @@
 import copy
+import functools
 import json
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
+from django.utils.http import url_has_allowed_host_and_scheme
+from django.db import transaction
 from django.core.cache import cache
 from django.contrib.auth import login, logout
 from django.contrib import messages
@@ -14,6 +17,41 @@ from .forms import HybridLoginForm, UserRegisterForm
 from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
 from .game_hub_data import MAIN_SERIES_GAMES
+from .security import check_username_rate_limit
+
+
+
+@functools.lru_cache(maxsize=64)
+def _get_game_catalog_metadata(g_slug: str):
+    """Retorna identificadores compilados y totales del juego cacheados en memoria para acelerar el selector."""
+    reg_cat = get_compiled_catalog(g_slug, is_national=False) or []
+    nat_cat = get_compiled_catalog(g_slug, is_national=True) or []
+    return {
+        "reg_ids": set(e.id for e in reg_cat),
+        "nat_ids": set(e.id for e in nat_cat),
+        "reg_total": len(reg_cat),
+        "nat_total": len(nat_cat),
+    }
+
+
+@functools.lru_cache(maxsize=1)
+def _get_base_pokemon_search_index():
+    """Construye en memoria una sola vez la estructura base estática de búsqueda nacional de los 38 juegos."""
+    index = {}
+    for item in MAIN_SERIES_GAMES:
+        g_slug = item["slug"]
+        nat_cat = get_compiled_catalog(g_slug, is_national=True) or []
+        for entry in nat_cat:
+            p_num = entry.pokemon.national_number
+            p_name = entry.pokemon.name
+            if p_num not in index:
+                index[p_num] = {
+                    "id": p_num,
+                    "name": p_name,
+                    "games": {},
+                }
+            index[p_num]["games"][g_slug] = entry.id
+    return index
 
 
 
@@ -76,52 +114,53 @@ def merge_session_catches_to_user(session_key, user):
         return 0
 
     transferred_count = 0
-    for anon in anon_catches:
-        # Descartar registros huérfanos o con datos inválidos
-        if not anon.game_slug or anon.entry_number <= 0:
-            anon.delete()
-            continue
+    with transaction.atomic():
+        for anon in anon_catches:
+            # Descartar registros huérfanos o con datos inválidos
+            if not anon.game_slug or anon.entry_number <= 0:
+                anon.delete()
+                continue
 
-        user_catch = UserPokemonCatch.objects.filter(
-            user=user,
-            game_slug=anon.game_slug,
-            entry_number=anon.entry_number,
-        ).first()
-
-        if not user_catch:
-            user_catch = UserPokemonCatch.objects.create(
+            user_catch = UserPokemonCatch.objects.filter(
                 user=user,
                 game_slug=anon.game_slug,
                 entry_number=anon.entry_number,
-                entry_id=anon.entry_id,
-                is_caught=anon.is_caught,
-                is_shiny=anon.is_shiny,
-                unown_forms_caught=anon.unown_forms_caught,
-                caught_at=anon.caught_at,
-            )
-        else:
-            changed = False
-            if anon.is_caught and not user_catch.is_caught:
-                user_catch.is_caught = True
-                user_catch.caught_at = user_catch.caught_at or anon.caught_at or timezone.now()
-                changed = True
-            if anon.is_shiny and not user_catch.is_shiny:
-                user_catch.is_shiny = True
-                changed = True
-            if anon.unown_forms_caught:
-                existing_unown = dict(user_catch.unown_forms_caught or {})
-                anon_unown = dict(anon.unown_forms_caught or {})
-                for k in ["normal", "shiny"]:
-                    merged_set = set(existing_unown.get(k, [])) | set(anon_unown.get(k, []))
-                    if merged_set:
-                        existing_unown[k] = sorted(list(merged_set))
-                user_catch.unown_forms_caught = existing_unown
-                changed = True
-            if changed:
-                user_catch.save()
+            ).first()
 
-        anon.delete()
-        transferred_count += 1
+            if not user_catch:
+                user_catch = UserPokemonCatch.objects.create(
+                    user=user,
+                    game_slug=anon.game_slug,
+                    entry_number=anon.entry_number,
+                    entry_id=anon.entry_id,
+                    is_caught=anon.is_caught,
+                    is_shiny=anon.is_shiny,
+                    unown_forms_caught=anon.unown_forms_caught,
+                    caught_at=anon.caught_at,
+                )
+            else:
+                changed = False
+                if anon.is_caught and not user_catch.is_caught:
+                    user_catch.is_caught = True
+                    user_catch.caught_at = user_catch.caught_at or anon.caught_at or timezone.now()
+                    changed = True
+                if anon.is_shiny and not user_catch.is_shiny:
+                    user_catch.is_shiny = True
+                    changed = True
+                if anon.unown_forms_caught:
+                    existing_unown = dict(user_catch.unown_forms_caught or {})
+                    anon_unown = dict(anon.unown_forms_caught or {})
+                    for k in ["normal", "shiny"]:
+                        merged_set = set(existing_unown.get(k, [])) | set(anon_unown.get(k, []))
+                        if merged_set:
+                            existing_unown[k] = sorted(list(merged_set))
+                    user_catch.unown_forms_caught = existing_unown
+                    changed = True
+                if changed:
+                    user_catch.save()
+
+            anon.delete()
+            transferred_count += 1
 
     return transferred_count
 
@@ -133,8 +172,14 @@ def get_target_pokedex_url(request):
     2. Por defecto, redirige al selector de juegos central (/games/).
     """
     next_url = request.GET.get("next") or request.POST.get("next")
-    if next_url and next_url.startswith("/") and not next_url.startswith("//") and not next_url.startswith("/login") and next_url != "/":
-        return next_url
+    if next_url:
+        next_url = next_url.strip()
+        # Rechazar URLs con barras invertidas o que inicien con doble barra para evitar redirección abierta
+        if "\\" not in next_url and not next_url.startswith("//"):
+            allowed_hosts = {request.get_host()}
+            if url_has_allowed_host_and_scheme(url=next_url, allowed_hosts=allowed_hosts, require_https=request.is_secure()):
+                if not next_url.startswith("/login") and next_url != "/":
+                    return next_url
 
     return reverse("tracker:game_selector")
 
@@ -207,8 +252,9 @@ def guest_continue_view(request):
     return redirect(target_url)
 
 
+@require_POST
 def logout_view(request):
-    """Cierra la sesión del usuario y lo redirige al portal de entrada."""
+    """Cierra la sesión del usuario mediante método POST y lo redirige al portal de entrada."""
     username = request.user.username if request.user.is_authenticated else None
     logout(request)
     if username:
@@ -222,6 +268,7 @@ def game_selector_view(request):
     Presenta un banner central neutro con buscador en vivo de Pokémon y filtro por generación,
     así como una cuadrícula continua de 3 columnas de juegos de la saga principal con sus
     respectivas barras de progreso y mascotas oficiales.
+    Optimizado con índices y totales en memoria LRU (0 ms I/O repetido).
     """
     user, session_key = _get_user_or_session(request)
     if user:
@@ -242,7 +289,6 @@ def game_selector_view(request):
     available_games = {g.slug: g for g in _get_cached_all_games()}
 
     games_cards = []
-    pokemon_search_dict = {}
 
     for item in MAIN_SERIES_GAMES:
         g_slug = item["slug"]
@@ -257,44 +303,29 @@ def game_selector_view(request):
         card_data["mascot_artwork"] = f"/media/pokemon/artwork/{item['mascot_num']}.png"
 
         if is_available:
-            reg_cat = get_compiled_catalog(g_slug, is_national=False) or []
-            nat_cat = get_compiled_catalog(g_slug, is_national=True) or []
+            meta = _get_game_catalog_metadata(g_slug)
+            reg_ids = meta["reg_ids"]
+            nat_ids = meta["nat_ids"]
+            reg_total = meta["reg_total"]
+            nat_total = meta["nat_total"]
 
-            reg_ids = set(e.id for e in reg_cat)
-            nat_ids = set(e.id for e in nat_cat)
-
-            reg_total = len(reg_cat)
             reg_caught = len(game_catches.intersection(reg_ids))
             reg_percent = round((reg_caught / reg_total * 100), 1) if reg_total else 0.0
 
             has_national_dex = (item["generation"] >= 3)
-            nat_total = len(nat_cat) if has_national_dex else 0
+            nat_total_dex = nat_total if has_national_dex else 0
             nat_caught = len(game_catches.intersection(nat_ids)) if has_national_dex else 0
-            nat_percent = round((nat_caught / nat_total * 100), 1) if nat_total else 0.0
+            nat_percent = round((nat_caught / nat_total_dex * 100), 1) if nat_total_dex else 0.0
 
             card_data["has_national_dex"] = has_national_dex
             card_data["reg_total"] = reg_total
             card_data["reg_caught"] = reg_caught
             card_data["reg_percent"] = reg_percent
-            card_data["nat_total"] = nat_total
+            card_data["nat_total"] = nat_total_dex
             card_data["nat_caught"] = nat_caught
             card_data["nat_percent"] = nat_percent
             card_data["button_label"] = "Continuar" if has_started else "Empezar"
             card_data["url"] = f"/{g_slug}/"
-
-            # Indexar pokémon para el buscador interactivo del banner
-            for entry in nat_cat:
-                p_num = entry.pokemon.national_number
-                p_name = entry.pokemon.name
-                if p_num not in pokemon_search_dict:
-                    pokemon_search_dict[p_num] = {
-                        "id": p_num,
-                        "name": p_name,
-                        "games": {},
-                    }
-                pokemon_search_dict[p_num]["games"][g_slug] = {
-                    "is_caught": entry.id in game_catches,
-                }
         else:
             card_data["has_national_dex"] = (item["generation"] >= 3)
             card_data["reg_total"] = 0
@@ -308,7 +339,22 @@ def game_selector_view(request):
 
         games_cards.append(card_data)
 
-    pokemon_search_list = sorted(list(pokemon_search_dict.values()), key=lambda x: x["id"])
+    # Construir lista para buscador a partir de la estructura estática precalculada
+    base_search_index = _get_base_pokemon_search_index()
+    pokemon_search_list = []
+    for p_num, base_item in base_search_index.items():
+        entry_games = {}
+        for g_slug, eid in base_item["games"].items():
+            if g_slug in available_games:
+                entry_games[g_slug] = {
+                    "is_caught": eid in catches_by_game.get(g_slug, set())
+                }
+        pokemon_search_list.append({
+            "id": p_num,
+            "name": base_item["name"],
+            "games": entry_games,
+        })
+    pokemon_search_list.sort(key=lambda x: x["id"])
 
     context = {
         "games_cards": games_cards,
@@ -324,7 +370,15 @@ def check_username(request):
     """
     Endpoint AJAX liviano para comprobar en tiempo real si un nombre de usuario
     está disponible o ya existe en la base de datos.
+    Protegido contra enumeración mediante limitador de tasa (20 req/min por IP).
     """
+    if not check_username_rate_limit(request):
+        return JsonResponse({
+            "available": False,
+            "valid_format": False,
+            "message": "Demasiadas consultas de disponibilidad. Por favor espera un momento."
+        }, status=429)
+
     import re
     from django.contrib.auth import get_user_model
     User = get_user_model()
@@ -401,13 +455,16 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     else:
         user_filter["session_key"] = session_key
 
-    # Obtener IDs de las entradas capturadas normales y shiny por el usuario actual
-    caught_entry_ids = set(
-        UserPokemonCatch.objects.filter(**user_filter, is_caught=True).values_list("entry_id", flat=True)
+    # Consolidar capturas normales, shiny y formas de Unown en una sola consulta optimizada
+    user_catches = list(
+        UserPokemonCatch.objects.filter(**user_filter).values(
+            "entry_id", "entry_number", "is_caught", "is_shiny", "unown_forms_caught"
+        )
     )
-    shiny_caught_entry_ids = set(
-        UserPokemonCatch.objects.filter(**user_filter, is_shiny=True).values_list("entry_id", flat=True)
-    )
+    caught_entry_ids = {c["entry_id"] for c in user_catches if c["is_caught"]}
+    shiny_caught_entry_ids = {c["entry_id"] for c in user_catches if c["is_shiny"]}
+    catches_by_id = {c["entry_id"]: c for c in user_catches}
+    catches_by_num = {c["entry_number"]: c for c in user_catches}
 
     # Copias superficiales ultra-rápidas (~1 ms) para anotar estado de captura específico del usuario de forma thread-safe
     entries_list = [copy.copy(e) for e in cached_entries]
@@ -444,15 +501,16 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         unown_chambers = get_game_unown_chambers(game.slug)
         unown_entry = entries_by_num.get(201)
         if unown_entry:
-            unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_id=unown_entry.id).first()
-            if not unown_catch:
-                reg_num = getattr(unown_entry, 'regional_number', unown_entry.entry_number)
-                unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=reg_num).first()
-            if not unown_catch:
-                unown_catch = UserPokemonCatch.objects.filter(**user_filter, entry_number=unown_entry.entry_number).first()
-            if unown_catch and unown_catch.unown_forms_caught:
-                unown_normal_caught = set(unown_catch.unown_forms_caught.get("normal", []))
-                unown_shiny_caught = set(unown_catch.unown_forms_caught.get("shiny", []))
+            reg_num = getattr(unown_entry, 'regional_number', unown_entry.entry_number)
+            unown_data = (
+                catches_by_id.get(unown_entry.id)
+                or catches_by_num.get(reg_num)
+                or catches_by_num.get(unown_entry.entry_number)
+            )
+            if unown_data and unown_data.get("unown_forms_caught"):
+                forms_map = unown_data["unown_forms_caught"]
+                unown_normal_caught = set(forms_map.get("normal", []))
+                unown_shiny_caught = set(forms_map.get("shiny", []))
 
             raw_cat = get_unown_catalog(game_slug=game.slug)
             for item in raw_cat:
@@ -535,6 +593,7 @@ def toggle_catch(request):
         data = json.loads(request.body)
         entry_id = data.get("entry_id")
         is_shiny = bool(data.get("is_shiny", False))
+        target_status = data.get("target_status")
     except (ValueError, KeyError):
         return JsonResponse({"error": "Payload JSON inválido"}, status=400)
 
@@ -553,32 +612,34 @@ def toggle_catch(request):
     else:
         filter_kwargs["session_key"] = session_key
 
-    catch_record, _ = UserPokemonCatch.objects.get_or_create(
-        defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id},
-        **filter_kwargs
-    )
-    if catch_record.entry_id != entry.id:
-        catch_record.entry_id = entry.id
+    with transaction.atomic():
+        catch_record, _ = UserPokemonCatch.objects.get_or_create(
+            defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id},
+            **filter_kwargs
+        )
+        if catch_record.entry_id != entry.id:
+            catch_record.entry_id = entry.id
 
-    # Alternar estado según la modalidad (normal vs shiny)
-    if is_shiny:
-        new_status = not catch_record.is_shiny
-        catch_record.is_shiny = new_status
-        catch_record.save(update_fields=["is_shiny", "entry_id"])
-        stats_filter = {"game_slug": entry.game_slug, "is_shiny": True}
-    else:
-        new_status = not catch_record.is_caught
-        catch_record.is_caught = new_status
-        catch_record.caught_at = timezone.now() if new_status else None
-        catch_record.save(update_fields=["is_caught", "caught_at", "entry_id"])
-        stats_filter = {"game_slug": entry.game_slug, "is_caught": True}
+        # Alternar estado según la modalidad (normal vs shiny) o asignar estado explícito idempotente
+        if is_shiny:
+            new_status = bool(target_status) if target_status is not None else not catch_record.is_shiny
+            catch_record.is_shiny = new_status
+            catch_record.save(update_fields=["is_shiny", "entry_id"])
+            stats_filter = {"game_slug": entry.game_slug, "is_shiny": True}
+        else:
+            new_status = bool(target_status) if target_status is not None else not catch_record.is_caught
+            catch_record.is_caught = new_status
+            catch_record.caught_at = timezone.now() if new_status else None
+            catch_record.save(update_fields=["is_caught", "caught_at", "entry_id"])
+            stats_filter = {"game_slug": entry.game_slug, "is_caught": True}
 
-    if user:
-        stats_filter["user"] = user
-    else:
-        stats_filter["session_key"] = session_key
+        if user:
+            stats_filter["user"] = user
+        else:
+            stats_filter["session_key"] = session_key
 
-    caught_count = UserPokemonCatch.objects.filter(**stats_filter).count()
+        caught_count = UserPokemonCatch.objects.filter(**stats_filter).count()
+
     catalog = get_compiled_catalog(entry.game_slug) or []
     total_count = len(catalog)
     percent = round((caught_count / total_count * 100), 1) if total_count else 0
@@ -602,6 +663,7 @@ def toggle_unown_catch(request):
         entry_id = data.get("entry_id")
         letter = str(data.get("letter", "")).lower().strip()
         is_shiny = bool(data.get("is_shiny", False))
+        target_status = data.get("target_status")
     except (ValueError, KeyError, AttributeError):
         return JsonResponse({"error": "JSON inválido"}, status=400)
 
@@ -624,33 +686,42 @@ def toggle_unown_catch(request):
     else:
         filter_kwargs["session_key"] = session_key
 
-    catch_record, _ = UserPokemonCatch.objects.get_or_create(
-        defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id, "unown_forms_caught": {}},
-        **filter_kwargs
-    )
-    if catch_record.entry_id != entry.id:
-        catch_record.entry_id = entry.id
+    with transaction.atomic():
+        catch_record, _ = UserPokemonCatch.objects.get_or_create(
+            defaults={"is_caught": False, "is_shiny": False, "entry_id": entry.id, "unown_forms_caught": {}},
+            **filter_kwargs
+        )
+        if catch_record.entry_id != entry.id:
+            catch_record.entry_id = entry.id
 
-    forms_data = dict(catch_record.unown_forms_caught or {})
-    key = "shiny" if is_shiny else "normal"
-    form_set = set(forms_data.get(key, []))
+        forms_data = dict(catch_record.unown_forms_caught or {})
+        key = "shiny" if is_shiny else "normal"
+        form_set = set(forms_data.get(key, []))
 
-    if letter in form_set:
-        form_set.remove(letter)
-        is_now_caught = False
-    else:
-        form_set.add(letter)
-        is_now_caught = True
+        if target_status is not None:
+            if target_status:
+                form_set.add(letter)
+                is_now_caught = True
+            else:
+                form_set.discard(letter)
+                is_now_caught = False
+        else:
+            if letter in form_set:
+                form_set.remove(letter)
+                is_now_caught = False
+            else:
+                form_set.add(letter)
+                is_now_caught = True
 
-    forms_data[key] = sorted(list(form_set))
-    catch_record.unown_forms_caught = forms_data
+        forms_data[key] = sorted(list(form_set))
+        catch_record.unown_forms_caught = forms_data
 
-    # Sincronizar captura general del Pokémon:
-    catch_record.is_caught = len(forms_data.get("normal", [])) > 0
-    catch_record.is_shiny = len(forms_data.get("shiny", [])) > 0
-    if not is_shiny and is_now_caught and not catch_record.caught_at:
-        catch_record.caught_at = timezone.now()
-    catch_record.save()
+        # Sincronizar captura general del Pokémon:
+        catch_record.is_caught = len(forms_data.get("normal", [])) > 0
+        catch_record.is_shiny = len(forms_data.get("shiny", [])) > 0
+        if not is_shiny and is_now_caught and not catch_record.caught_at:
+            catch_record.caught_at = timezone.now()
+        catch_record.save()
 
     # Recalcular métricas generales de la Pokédex
     user_filter = {"game_slug": entry.game_slug}

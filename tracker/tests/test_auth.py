@@ -113,15 +113,16 @@ class AuthenticationFormsTests(TestCase):
         self.assertIn("email", form.errors)
 
     def test_register_form_simple_password_allowed(self):
+        # Con la política flexible, una contraseña simple de 8 caracteres es permitida sin validadores de complejidad
         form = UserRegisterForm(data={
             "username": "SimpleTrainer",
             "email": "simple@paleta.com",
-            "password": "1234",
-            "password_confirm": "1234",
+            "password": "12345678",
+            "password_confirm": "12345678",
         })
         self.assertTrue(form.is_valid())
         user = form.save()
-        self.assertTrue(user.check_password("1234"))
+        self.assertTrue(user.check_password("12345678"))
 
     def test_register_form_password_too_long(self):
         form = UserRegisterForm(data={
@@ -134,14 +135,16 @@ class AuthenticationFormsTests(TestCase):
         self.assertIn("password", form.errors)
 
     def test_register_form_password_too_short(self):
-        form = UserRegisterForm(data={
-            "username": "ShortTrainer",
-            "email": "short@paleta.com",
-            "password": "123",
-            "password_confirm": "123",
-        })
-        self.assertFalse(form.is_valid())
-        self.assertIn("password", form.errors)
+        # Menos de 8 caracteres debe ser rechazado
+        for short_pwd in ["123", "1234", "1234567"]:
+            form = UserRegisterForm(data={
+                "username": f"ShortTrainer_{len(short_pwd)}",
+                "email": f"short{len(short_pwd)}@paleta.com",
+                "password": short_pwd,
+                "password_confirm": short_pwd,
+            })
+            self.assertFalse(form.is_valid())
+            self.assertIn("password", form.errors)
 
 
 
@@ -195,7 +198,12 @@ class ViewsAndFlowTests(TestCase):
 
     def test_logout_redirects_to_home(self):
         self.client.login(username="RedTrainer", password="ChampionPassword123!")
-        response = self.client.get(reverse("tracker:logout"))
+        # GET debe ser rechazado con 405 Method Not Allowed
+        get_res = self.client.get(reverse("tracker:logout"))
+        self.assertEqual(get_res.status_code, 405)
+
+        # POST debe cerrar sesión correctamente y redirigir
+        response = self.client.post(reverse("tracker:logout"))
         self.assertRedirects(response, reverse("tracker:home"))
         self.assertNotIn("_auth_user_id", self.client.session)
 
@@ -341,5 +349,80 @@ class ViewsAndFlowTests(TestCase):
         self.assertTrue(UserPokemonCatch.objects.filter(user=self.user, game_slug="red", entry_number=1, is_caught=True).exists())
         # La captura corrupta fue descartada
         self.assertFalse(UserPokemonCatch.objects.filter(session_key=session_key).exists())
+
+    def test_login_brute_force_lockout_after_5_failed_attempts(self):
+        """Verifica que tras 5 intentos fallidos de login, la cuenta/IP quede bloqueada temporalmente."""
+        from django.core.cache import cache
+        cache.clear()
+
+        # Realizar 4 intentos fallidos
+        for i in range(4):
+            res = self.client.post(reverse("tracker:home"), {
+                "action": "login",
+                "identifier": "redtrainer",
+                "password": f"WrongPass{i}",
+            })
+            self.assertEqual(res.status_code, 200)
+            self.assertIn("Usuario/correo o contraseña incorrectos", res.content.decode("utf-8"))
+
+        # El 5to intento fallido activa el bloqueo
+        res_5 = self.client.post(reverse("tracker:home"), {
+            "action": "login",
+            "identifier": "redtrainer",
+            "password": "WrongPass5",
+        })
+        self.assertEqual(res_5.status_code, 200)
+
+        # El 6to intento debe estar bloqueado incluso con contraseña correcta
+        res_6 = self.client.post(reverse("tracker:home"), {
+            "action": "login",
+            "identifier": "redtrainer",
+            "password": "ChampionPassword123!",
+        })
+        self.assertEqual(res_6.status_code, 200)
+        self.assertIn("Demasiados intentos fallidos", res_6.content.decode("utf-8"))
+
+        cache.clear()
+
+    def test_next_url_open_redirect_prevention(self):
+        """Verifica que cadenas maliciosas en el parámetro 'next' sean neutralizadas."""
+        # URLs maliciosas con barras invertidas o externas
+        malicious_urls = [
+            "/\\evil.com",
+            "//evil.com",
+            "http://evil.com/phishing",
+            "https://evil.com",
+            "javascript:alert(1)",
+        ]
+        for bad_url in malicious_urls:
+            res = self.client.get(f"/?next={bad_url}")
+            self.assertEqual(res.status_code, 200)
+            # El target_url debe haber sido saneado al selector de juegos por defecto
+            self.assertEqual(res.context["target_url"], reverse("tracker:game_selector"))
+
+        # URL interna legítima debe ser aceptada
+        valid_res = self.client.get("/?next=/crystal/")
+        self.assertEqual(valid_res.status_code, 200)
+        self.assertEqual(valid_res.context["target_url"], "/crystal/")
+
+    def test_check_username_rate_limiting(self):
+        """Verifica que el endpoint check_username responda HTTP 429 tras superar el límite de 20 req/min."""
+        from django.core.cache import cache
+        cache.clear()
+
+        # Realizar 20 consultas permitidas
+        for i in range(20):
+            res = self.client.get(reverse("tracker:check_username"), {"username": f"trainer_{i}"})
+            self.assertEqual(res.status_code, 200)
+
+        # La consulta 21 debe retornar 429 Too Many Requests
+        res_blocked = self.client.get(reverse("tracker:check_username"), {"username": "trainer_over_limit"})
+        self.assertEqual(res_blocked.status_code, 429)
+        data = res_blocked.json()
+        self.assertFalse(data["available"])
+        self.assertIn("Demasiadas consultas", data["message"])
+
+        cache.clear()
+
 
 

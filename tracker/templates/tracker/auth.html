@@ -120,9 +120,12 @@
                     <a href="{{ target_url }}" class="block w-full py-3 bg-red-600 hover:bg-red-500 text-white font-black text-sm uppercase tracking-wider rounded-xl comic-border-sm comic-shadow-btn transition-transform text-center">
                         Continuar a la Pokédex &rarr;
                     </a>
-                    <a href="{% url 'tracker:logout' %}" class="block w-full py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-black text-xs uppercase tracking-wider rounded-xl comic-border-sm transition-colors text-center">
-                        Cerrar Sesión / Cambiar Cuenta
-                    </a>
+                    <form method="post" action="{% url 'tracker:logout' %}" class="w-full">
+                        {% csrf_token %}
+                        <button type="submit" class="block w-full py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-black text-xs uppercase tracking-wider rounded-xl comic-border-sm transition-colors text-center cursor-pointer">
+                            Cerrar Sesión / Cambiar Cuenta
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -250,7 +253,7 @@
                             <div class="grid grid-cols-2 gap-1 pt-0.5">
                                 <div id="crit-length" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
                                     <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
-                                    <span>Entre 4 y 32 caracteres</span>
+                                    <span>Entre 8 y 32 caracteres</span>
                                 </div>
                                 <div id="crit-upper" class="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 transition-colors">
                                     <span class="crit-bullet w-3.5 h-3.5 rounded-full border border-slate-950 bg-slate-300 text-slate-700 flex items-center justify-center text-[8px] font-black">✕</span>
@@ -390,7 +393,7 @@
                 return;
             }
 
-            // Debounce de 300ms antes de consultar el endpoint AJAX
+            // Debounce de 400ms antes de consultar el endpoint AJAX
             usernameDebounceTimer = setTimeout(() => {
                 usernameFeedback.classList.remove('hidden');
                 usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-bold text-slate-500";
@@ -398,7 +401,12 @@
                 usernameMessage.textContent = "Comprobando disponibilidad...";
 
                 fetch(`/api/auth/check-username/?username=${encodeURIComponent(username)}`)
-                    .then(res => res.json())
+                    .then(res => {
+                        if (res.status === 429) {
+                            return { valid_format: false, available: false, message: "Demasiadas consultas. Por favor espera un momento." };
+                        }
+                        return res.json();
+                    })
                     .then(data => {
                         if (!data.valid_format) {
                             usernameFeedback.className = "mt-1.5 flex items-center gap-1.5 text-xs font-black text-amber-600";
@@ -423,7 +431,7 @@
                     .catch(() => {
                         usernameFeedback.classList.add('hidden');
                     });
-            }, 300);
+            }, 400);
         }
 
         if (usernameInput) {
@@ -473,7 +481,7 @@
                 return { score: 0, label: "Sin ingresar", colorClass: "bg-transparent", textClass: "text-slate-400" };
             }
 
-            const hasLength = pwd.length >= 4 && pwd.length <= 32;
+            const hasLength = pwd.length >= 8 && pwd.length <= 32;
             const hasUpper = /[A-Z]/.test(pwd);
             const hasLower = /[a-z]/.test(pwd);
             const hasNumber = /[0-9]/.test(pwd);

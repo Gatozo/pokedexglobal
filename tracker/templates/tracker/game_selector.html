@@ -50,13 +50,16 @@
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span class="text-slate-200">Entrenador: <strong class="text-amber-300">{{ user.username }}</strong></span>
                 </div>
-                <a 
-                    href="{% url 'tracker:logout' %}" 
-                    class="bg-rose-600 hover:bg-rose-500 text-white border-2 border-slate-950 font-black text-xs uppercase px-3 py-1.5 rounded-xl shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all"
-                    title="Cerrar sesión"
-                >
-                    Salir
-                </a>
+                <form method="post" action="{% url 'tracker:logout' %}" class="inline">
+                    {% csrf_token %}
+                    <button 
+                        type="submit"
+                        class="bg-rose-600 hover:bg-rose-500 text-white border-2 border-slate-950 font-black text-xs uppercase px-3 py-1.5 rounded-xl shadow-[2px_2px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+                        title="Cerrar sesión"
+                    >
+                        Salir
+                    </button>
+                </form>
                 {% else %}
                 <div class="hidden sm:flex items-center gap-2 bg-slate-800 border-2 border-slate-950 rounded-xl px-3 py-1 text-xs font-black shadow-[1.5px_1.5px_0px_#0f172a]">
                     <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>

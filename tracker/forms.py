@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
+from .security import is_login_locked_out, record_failed_login, reset_login_attempts
 
 User = get_user_model()
 
@@ -44,12 +45,24 @@ class HybridLoginForm(forms.Form):
 
         if identifier and password:
             identifier = identifier.strip()
+
+            if is_login_locked_out(self.request, identifier):
+                raise ValidationError(
+                    "Demasiados intentos fallidos. Por motivos de seguridad, el acceso ha sido bloqueado temporalmente durante 10 minutos. Por favor inténtalo más tarde.",
+                    code="locked_out"
+                )
+
             self.user_cache = authenticate(self.request, username=identifier, password=password)
             if self.user_cache is None:
+                record_failed_login(self.request, identifier)
                 raise ValidationError(
                     "Usuario/correo o contraseña incorrectos. Por favor verifica tus credenciales.",
                     code="invalid_login"
                 )
+
+            # Restablecer intentos fallidos tras login correcto
+            reset_login_attempts(self.request, identifier)
+
             if not self.user_cache.is_active:
                 raise ValidationError(
                     "Esta cuenta de entrenador está desactivada.",
@@ -94,7 +107,7 @@ class UserRegisterForm(forms.Form):
     )
     password = forms.CharField(
         label="Contraseña",
-        min_length=4,
+        min_length=8,
         max_length=32,
         widget=forms.PasswordInput(attrs={
             "id": "id_reg_password",
@@ -103,7 +116,7 @@ class UserRegisterForm(forms.Form):
             "autocomplete": "new-password",
             "class": "w-full px-3.5 py-2.5 text-sm font-bold text-slate-900 bg-white border-2 border-slate-950 rounded-xl shadow-[2.5px_2.5px_0px_#0f172a] focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-400/50 transition-all placeholder:text-slate-400 font-sans",
         }),
-        help_text="Entre 4 y 32 caracteres. Elige la clave que prefieras."
+        help_text="Entre 8 y 32 caracteres. Elige la clave que prefieras."
     )
     password_confirm = forms.CharField(
         label="Confirmar Contraseña",
