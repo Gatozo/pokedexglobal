@@ -142,7 +142,7 @@
                     <div class="my-1 relative flex items-center justify-center h-24">
                         <img 
                             id="transfer-img-{{ item.national_number }}"
-                            src="{{ item.sprite_retro }}" 
+                            src="{% if is_modern_active %}{{ item.sprite_modern }}{% else %}{{ item.sprite_retro }}{% endif %}" 
                             data-sprite-retro="{{ item.sprite_retro }}"
                             data-sprite-modern="{{ item.sprite_modern }}"
                             alt="{{ item.name }}"
@@ -150,7 +150,7 @@
                             decoding="async"
                             width="96"
                             height="96"
-                            class="h-24 w-24 object-contain drop-shadow-md pixel-art transition-transform group-hover:scale-110"
+                            class="h-24 w-24 object-contain drop-shadow-md {% if not is_modern_active and game.has_retro_sprites %}pixel-art{% endif %} transition-transform group-hover:scale-110"
                         >
                     </div>
 

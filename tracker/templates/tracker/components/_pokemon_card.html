@@ -69,13 +69,13 @@
         <div class="absolute inset-2 rounded-full bg-slate-100/80 border border-slate-200/70 pointer-events-none group-hover:scale-105 transition-transform"></div>
         <img 
             id="img-{{ entry.id }}"
-            src="{% if is_shinydex_active %}{{ entry.game_sprite_shiny_url }}{% else %}{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}{% endif %}" 
+            src="{% if is_shinydex_active %}{% if is_modern_active %}{{ entry.modern_sprite_shiny_url|default:entry.game_sprite_shiny_url }}{% else %}{{ entry.game_sprite_shiny_url }}{% endif %}{% else %}{% if is_modern_active %}{{ entry.pokemon.sprite_url }}{% else %}{{ entry.game_sprite_url|default:entry.pokemon.sprite_url }}{% endif %}{% endif %}" 
             alt="{{ entry.pokemon.display_name }}"
             loading="lazy"
             decoding="async"
             width="96"
             height="96"
-            class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 pixel-art relative z-10"
+            class="pokemon-img h-24 w-24 object-contain transition-transform duration-200 group-hover:scale-110 {% if not is_modern_active and game.has_retro_sprites %}pixel-art{% endif %} relative z-10"
         >
     </div>
 

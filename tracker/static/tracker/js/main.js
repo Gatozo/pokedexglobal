@@ -309,8 +309,16 @@ function onDOMReady(fn) {
 onDOMReady(() => {
     try {
         const savedStyle = localStorage.getItem('pokedex_sprite_style');
-        if (savedStyle && savedStyle !== 'retro' && document.getElementById('btn-style-retro')) {
-            setSpriteStyle(savedStyle);
+        const cookieMatch = document.cookie.match(/(?:^|;\s*)pokedex_sprite_style=([^;]*)/);
+        const cookieStyle = cookieMatch ? cookieMatch[1] : null;
+
+        if (savedStyle && savedStyle !== cookieStyle) {
+            document.cookie = 'pokedex_sprite_style=' + savedStyle + '; path=/; max-age=31536000; SameSite=Lax';
+        }
+
+        const targetStyle = savedStyle || cookieStyle;
+        if (targetStyle && targetStyle !== state.currentSpriteStyle && document.getElementById('btn-style-retro')) {
+            setSpriteStyle(targetStyle);
         }
     } catch (e) {}
 

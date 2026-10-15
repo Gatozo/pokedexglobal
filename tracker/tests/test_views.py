@@ -27,6 +27,34 @@ class PokedexTrackerTests(TestCase):
         self.assertEqual(self.pokemon.primary_type_es, "Planta")
         self.assertEqual(self.pokemon.secondary_type_es, "Veneno")
 
+    def test_pokedex_view_sprite_style_cookie_retro_default(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["is_modern_active"])
+        self.assertEqual(response.context["sprite_style"], "retro")
+        # El botón retro debe tener la clase de tema activo (bg-red-600)
+        content = response.content.decode("utf-8")
+        self.assertIn('id="btn-style-retro"', content)
+        self.assertIn('bg-red-600 text-white', content)
+        # El sprite debe incluir pixel-art
+        self.assertIn('pixel-art', content)
+
+    def test_pokedex_view_sprite_style_cookie_modern(self):
+        url = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        self.client.cookies["pokedex_sprite_style"] = "modern"
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["is_modern_active"])
+        self.assertEqual(response.context["sprite_style"], "modern")
+        content = response.content.decode("utf-8")
+        # El botón moderno debe tener la clase activa
+        self.assertIn('id="btn-style-modern"', content)
+        self.assertIn('bg-red-600 text-white', content)
+        # La configuración inyectada al frontend debe reflejar isModernActive: true
+        self.assertIn('isModernActive: true', content)
+        self.assertIn('spriteStyle: "modern"', content)
+
     def test_toggle_catch_anonymous_user(self):
         url = reverse("tracker:toggle_catch")
         payload = {"entry_id": self.entry.id}

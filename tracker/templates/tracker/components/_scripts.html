@@ -6,6 +6,8 @@
         gameDisplayName: "{{ game.display_name|escapejs }}",
         gameGeneration: {{ game.generation|default:1 }},
         isShinydexActive: {% if is_shinydex_active %}true{% else %}false{% endif %},
+        isModernActive: {% if is_modern_active %}true{% else %}false{% endif %},
+        spriteStyle: "{{ sprite_style|default:'retro' }}",
         evolutionStonesCatalog: JSON.parse('{{ evolution_stones_json|escapejs }}'),
         normalStats: {
             caught: parseInt("{{ caught_count|default:0 }}", 10),

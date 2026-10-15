@@ -490,6 +490,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
     if game.generation >= 2:
         is_shinydex_active = request.COOKIES.get(f"pokedex_shinydex_{game.slug}") == "1"
 
+    sprite_style = request.COOKIES.get("pokedex_sprite_style", "retro")
+    is_modern_active = (sprite_style == "modern")
+
     # Catálogo de Unown para Gen >= 2
     unown_entry = None
     unown_catalog = []
@@ -561,6 +564,8 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "shiny_caught_count": shiny_caught_count,
         "shiny_caught_percent": shiny_caught_percent,
         "is_shinydex_active": is_shinydex_active,
+        "is_modern_active": is_modern_active,
+        "sprite_style": sprite_style,
         "all_games": _get_cached_all_games(),
         "exclusives_info": exclusives_info,
         "transfers_info": transfers_info,

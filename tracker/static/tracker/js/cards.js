@@ -239,6 +239,7 @@ export function setSpriteStyle(style) {
 
     try {
         localStorage.setItem('pokedex_sprite_style', style);
+        document.cookie = 'pokedex_sprite_style=' + style + '; path=/; max-age=31536000; SameSite=Lax';
     } catch (e) {}
 }
 

@@ -36,7 +36,7 @@ export const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl
 // Estado mutable compartido
 export const state = {
     currentStatusFilter: 'all',
-    currentSpriteStyle: 'retro',
+    currentSpriteStyle: config.spriteStyle || 'retro',
     activeModalEntryId: null,
     isShinydexMode: !!config.isShinydexActive,
     selectedFilterTags: new Set(),
