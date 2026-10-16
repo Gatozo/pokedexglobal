@@ -578,9 +578,21 @@ AVAILABLE_CONSOLES = [
     {"slug": "switch", "name": "Nintendo Switch", "short_name": "Switch"},
 ]
 
+MASCOT_HOME_IDS = {
+    "omega-ruby": 10077,     # Groudon Primigenio
+    "alpha-sapphire": 10078,  # Kyogre Primigenio
+    "platinum": 10007,        # Giratina Forma Origen
+    "black-2": 10022,         # Kyurem Negro
+    "white-2": 10023,         # Kyurem Blanco
+    "ultra-sun": 10155,       # Necrozma Melena Crepuscular
+    "ultra-moon": 10156,      # Necrozma Alas del Alba
+}
+
 for _g in MAIN_SERIES_GAMES:
     _g["card_bg"] = GAME_CARD_TINTS.get(_g["slug"], "#f8fafc")
     _g["platforms"] = GAME_PLATFORMS_MAP.get(_g["slug"], [_g["platform"]])
+    _g["mascot_home_id"] = MASCOT_HOME_IDS.get(_g["slug"], _g["mascot_num"])
+    _g["mascot_home_sprite"] = f"/media/pokemon/home/{_g['mascot_home_id']}.png"
 
 GENERATIONS_METADATA = [
     {

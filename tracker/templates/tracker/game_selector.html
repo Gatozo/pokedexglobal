@@ -86,8 +86,8 @@
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-wider text-white [text-shadow:3px_3px_0px_#000] mb-2">
                     Selección de juego
                 </h2>
-                <p class="text-xs sm:text-sm font-bold text-slate-300 uppercase tracking-widest mb-6">
-                    Elige tu cartucho para continuar tu aventura o busca en qué juego capturar a cualquier Pokémon
+                <p class="text-xs sm:text-sm font-bold text-slate-300 uppercase tracking-wide mb-6">
+                    Explora las diferentes ediciones y descubre en qué juego capturar a tu Pokémon
                 </p>
 
                 <!-- Barra de Búsqueda y Botón de Filtros -->
@@ -262,7 +262,7 @@
                         {% for game in subgroup.games %}
                         <div 
                             id="card-game-{{ game.slug }}" 
-                            class="game-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[400px] flex flex-col justify-between rounded-2xl border-3 border-slate-950 shadow-[5px_5px_0px_0px_#0f172a] overflow-hidden select-none {% if not game.is_available %}border-dashed{% endif %}"
+                            class="game-card group w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[400px] flex flex-col justify-between rounded-2xl border-3 border-slate-950 shadow-[5px_5px_0px_0px_#0f172a] overflow-hidden select-none {% if not game.is_available %}border-dashed{% endif %}"
                             style="background-color: {{ game.card_bg|default:'#ffffff' }};"
                             data-slug="{{ game.slug }}"
                             data-generation="{{ game.generation }}"
@@ -293,15 +293,27 @@
 
                 <!-- Cuerpo Central: Mascota y Progreso -->
                 <div class="game-card-comic-body p-4 flex-1 flex flex-col justify-between">
-                    <!-- Mascota Oficial -->
-                    <div class="my-2">
-                        <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-0.5">Mascota Oficial</p>
-                        <h4 class="text-sm font-black text-slate-900 uppercase truncate">{{ game.mascot_name }}</h4>
-                        <span class="text-[11px] font-bold text-slate-600 font-mono">#{{ game.mascot_num|stringformat:"03d" }}</span>
-                        
-                        <!-- Search Match Badge (Visible dinámicamente cuando el buscador coincide) -->
-                        <div class="search-match-badge hidden mt-1.5">
-                            <span class="inline-flex items-center gap-1 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 shadow-xs"></span>
+                    <!-- Mascota Oficial (Texto + Sprite Pokémon HOME Flotante) -->
+                    <div class="my-2 flex items-center justify-between gap-3 min-h-[96px]">
+                        <div class="flex-1 min-w-0 pr-1">
+                            <p class="text-[10px] font-black text-slate-500 uppercase tracking-wider mb-0.5">Mascota Oficial</p>
+                            <h4 class="text-sm sm:text-base font-black text-slate-900 uppercase truncate leading-tight">{{ game.mascot_name }}</h4>
+                            <span class="inline-block mt-0.5 text-[11px] font-bold text-slate-600 font-mono">#{{ game.mascot_num|stringformat:"03d" }}</span>
+                            
+                            <!-- Search Match Badge (Visible dinámicamente cuando el buscador coincide) -->
+                            <div class="search-match-badge hidden mt-1.5">
+                                <span class="inline-flex items-center gap-1 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 shadow-xs"></span>
+                            </div>
+                        </div>
+
+                        <!-- Sprite 3D Pokémon HOME -->
+                        <div class="relative shrink-0 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28">
+                            <img 
+                                src="{{ game.mascot_home_sprite }}" 
+                                alt="{{ game.mascot_name }}" 
+                                loading="lazy" 
+                                class="w-full h-full object-contain filter drop-shadow-[2px_4px_6px_rgba(0,0,0,0.18)] select-none pointer-events-none {% if game.is_available %}transition-transform duration-300 group-hover:scale-110{% else %}grayscale opacity-35 brightness-95 transform-none{% endif %}"
+                            >
                         </div>
                     </div>
 

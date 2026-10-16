@@ -301,6 +301,7 @@ def game_selector_view(request):
         card_data["has_started"] = has_started
         card_data["mascot_icon"] = f"/media/pokemon/icons/gen8/{item['mascot_num']}.png"
         card_data["mascot_artwork"] = f"/media/pokemon/artwork/{item['mascot_num']}.png"
+        card_data["mascot_home_sprite"] = item.get("mascot_home_sprite", f"/media/pokemon/home/{item['mascot_num']}.png")
         card_data["platforms_str"] = ",".join(item.get("platforms", [item["platform"]]))
 
         if is_available:
