@@ -23078,15 +23078,11 @@
       "type": "trade",
       "badge_label": "Exclusivo Rubí",
       "badge_color": "rose",
-      "summary": "Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza o intercambio NPC en Ciudad Férrica por un Ralts).",
+      "summary": "Exclusivo de Pokémon Rubí (Ruta 102). En Zafiro requiere intercambio con Rubí (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Rubí",
           "method": "Exclusivo de versión"
-        },
-        {
-          "area": "Ciudad Férrica",
-          "method": "Intercambio NPC por Ralts"
         },
         {
           "area": "Ruta 117 (Guardería Pokémon)",

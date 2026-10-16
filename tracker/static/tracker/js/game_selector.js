@@ -169,9 +169,6 @@
             if (!matchesCatalogFilters) {
                 card.classList.add('hidden');
                 return;
-            } else {
-                card.classList.remove('hidden');
-                totalVisibleCards++;
             }
 
             // 3. Verificar coincidencia del buscador de Pokémon
@@ -181,29 +178,79 @@
             if (query && matchedPokemon) {
                 const gameInfo = matchedPokemon.games[cardSlug];
 
+                // Si hay búsqueda activa:
+                // Solo se muestran los juegos ACTIVOS donde el Pokémon es obtenible de forma nativa
                 if (gameInfo && isAvailable) {
                     matchingGamesCount++;
-                    card.classList.remove('opacity-30');
+                    totalVisibleCards++;
+                    card.classList.remove('hidden', 'opacity-30');
                     card.classList.add('ring-3', 'ring-amber-400');
 
                     if (matchBadge && badgeSpan) {
                         matchBadge.classList.remove('hidden');
+                        const method = gameInfo.method_badge || 'Salvaje';
+
+                        // Iconos oficiales de objetos (media/items/)
+                        const methodIcons = {
+                            'Poké Radar': '/media/items/poke-radar.png',
+                            'Árbol de Miel': '/media/items/honey.png',
+                            'Pesca Especial': '/media/items/super-rod.png',
+                            'Fósil Restaurado': '/media/items/helix-fossil.png',
+                        };
+
                         if (gameInfo.is_caught) {
-                            badgeSpan.className = 'inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded border border-slate-950 bg-emerald-400 text-slate-950 shadow-xs';
-                            badgeSpan.innerHTML = `✓ Capturado: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            badgeSpan.className = 'inline-flex items-center gap-1.5 text-[11px] font-black px-2 py-0.5 rounded border border-slate-950 bg-emerald-400 text-slate-950 shadow-xs';
+                            badgeSpan.innerHTML = `<img src="/media/items/poke-ball.png" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0"> Capturado: ${matchedPokemon.name} (#${matchedPokemon.id})`;
                         } else {
-                            badgeSpan.className = 'inline-flex items-center gap-1 text-[11px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-300 text-slate-950 shadow-xs';
-                            badgeSpan.innerHTML = `★ Disponible: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            const iconUrl = methodIcons[method];
+                            const iconHtml = iconUrl ? `<img src="${iconUrl}" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0"> ` : '';
+
+                            if (method.includes('Inserción Dual')) {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-indigo-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Inserción Dual (GBA): ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Poké Radar') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-sky-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Poké Radar: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Árbol de Miel') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Árbol de Miel: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Pesca Especial') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-cyan-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Pesca Especial: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Fósil Restaurado') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-200 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Fósil: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Manada Diaria') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Manada Diaria: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Intercambio NPC') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-purple-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Intercambio NPC: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Evolución / Cría') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-violet-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Evolución / Cría: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Regalo / Inicial') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-teal-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Regalo / Inicial: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Encuentro Especial') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-orange-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Encuentro Especial: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}${method}: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            }
                         }
                     }
                 } else {
-                    card.classList.add('opacity-30');
+                    // Ocultar cualquier juego que no esté disponible o donde el Pokémon no sea obtenible nativamente
+                    card.classList.add('hidden');
                     card.classList.remove('ring-3', 'ring-amber-400');
                     if (matchBadge) matchBadge.classList.add('hidden');
                 }
             } else {
-                // Sin búsqueda activa o sin coincidencia
-                card.classList.remove('opacity-30', 'ring-3', 'ring-amber-400');
+                // Sin búsqueda activa: visible si coincide con el catálogo
+                card.classList.remove('hidden', 'opacity-30', 'ring-3', 'ring-amber-400');
+                totalVisibleCards++;
                 if (matchBadge) matchBadge.classList.add('hidden');
             }
         });
@@ -257,18 +304,6 @@
                 section.classList.add('hidden');
                 section.hidden = true;
                 return;
-            }
-
-            // Si hay búsqueda activa y coincide algún Pokémon, ocultar secciones sin coincidencias destacadas
-            if (query && matchedPokemon) {
-                const hasMatchingCards = section.querySelector('.game-card.ring-3') !== null;
-                if (!hasMatchingCards) {
-                    section.classList.add('hidden');
-                    section.hidden = true;
-                } else {
-                    section.classList.remove('hidden');
-                    section.hidden = false;
-                }
             } else {
                 section.classList.remove('hidden');
                 section.hidden = false;
@@ -280,7 +315,11 @@
             if (query) {
                 searchFeedback.classList.remove('hidden');
                 if (matchedPokemon) {
-                    searchFeedback.textContent = `Mostrando disponibilidad para ${matchedPokemon.name} (#${matchedPokemon.id}) en ${matchingGamesCount} juego(s) instalado(s).`;
+                    if (matchingGamesCount > 0) {
+                        searchFeedback.textContent = `Disponible para capturar en ${matchingGamesCount} juego(s) instalado(s): ${matchedPokemon.name} (#${matchedPokemon.id}).`;
+                    } else {
+                        searchFeedback.textContent = `${matchedPokemon.name} (#${matchedPokemon.id}) no está disponible para captura directa en los juegos instalados actuales.`;
+                    }
                 } else {
                     searchFeedback.textContent = `No se encontraron juegos compatibles para "${searchInput.value}".`;
                 }
