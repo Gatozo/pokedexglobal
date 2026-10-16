@@ -90,54 +90,141 @@
                     Elige tu cartucho para continuar tu aventura o busca en qué juego capturar a cualquier Pokémon
                 </p>
 
-                <!-- Buscador de Pokémon -->
-                <div class="relative max-w-lg mx-auto mb-6">
-                    <div class="relative flex items-center">
-                        <div class="absolute left-3.5 pointer-events-none text-slate-400">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                <!-- Barra de Búsqueda y Botón de Filtros -->
+                <div class="max-w-2xl mx-auto mb-4">
+                    <div class="flex items-center gap-2 sm:gap-3">
+                        <div class="relative flex-1">
+                            <div class="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                            <input 
+                                type="text" 
+                                id="pokemon-search-input" 
+                                placeholder="Buscar Pokémon específico (ej. Pikachu, Charizard, #487)..." 
+                                autocomplete="off"
+                                class="w-full pl-11 pr-10 py-3 rounded-xl border-3 border-slate-950 bg-white text-slate-950 text-sm font-black shadow-[3px_3px_0px_0px_#0f172a] focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-slate-400"
+                            >
+                            <button 
+                                type="button" 
+                                id="pokemon-search-clear" 
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-950 hidden font-black text-lg focus:outline-none"
+                                title="Limpiar búsqueda"
+                            >
+                                ✕
+                            </button>
                         </div>
-                        <input 
-                            type="text" 
-                            id="pokemon-search-input" 
-                            placeholder="Buscar Pokémon específico (ej. Pikachu, Charizard, #487)..." 
-                            autocomplete="off"
-                            class="w-full pl-11 pr-10 py-3 rounded-xl border-3 border-slate-950 bg-white text-slate-950 text-sm font-black shadow-[3px_3px_0px_0px_#0f172a] focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-slate-400"
-                        >
+                        <!-- Botón Filtro Universal (Estilo Cómic Pokédex) -->
                         <button 
                             type="button" 
-                            id="pokemon-search-clear" 
-                            class="absolute right-3 text-slate-400 hover:text-slate-950 hidden font-black text-lg focus:outline-none"
-                            title="Limpiar búsqueda"
+                            id="btn-hub-filter-toggle" 
+                            onclick="toggleHubFilterPanel()" 
+                            class="h-[46px] flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 rounded-xl border-3 border-slate-950 bg-white hover:bg-slate-100 text-xs sm:text-sm font-black uppercase text-slate-900 shadow-[3px_3px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer select-none shrink-0"
+                            title="Abrir panel de filtros de juegos"
                         >
-                            ✕
+                            <svg class="w-4 h-4 text-slate-800 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                            </svg>
+                            <span class="inline">Filtros</span>
+                            <span id="active-filters-badge" class="hidden px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white border border-slate-950 leading-none">0</span>
                         </button>
                     </div>
                     <!-- Feedback de Búsqueda -->
                     <div id="search-feedback" class="mt-2 text-xs font-black text-amber-300 hidden"></div>
                 </div>
 
-                <!-- Barra de Filtros por Generación -->
-                <div class="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
-                    <button 
-                        type="button" 
-                        onclick="filterByGeneration('all')" 
-                        data-gen="all"
-                        class="gen-filter-btn px-3 py-1.5 rounded-xl border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-amber-400 text-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all hover:bg-amber-300 cursor-pointer active:translate-y-0.5"
-                    >
-                        Todas
-                    </button>
-                    {% for gen in generations_list %}
-                    <button 
-                        type="button" 
-                        onclick="filterByGeneration('{{ gen }}')" 
-                        data-gen="{{ gen }}"
-                        class="gen-filter-btn px-3 py-1.5 rounded-xl border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-slate-800 text-slate-300 shadow-[2px_2px_0px_0px_#0f172a] transition-all hover:bg-slate-700 hover:text-white cursor-pointer active:translate-y-0.5"
-                    >
-                        Gen {{ gen }}
-                    </button>
-                    {% endfor %}
+                <!-- Panel Desplegable de Filtros Avanzados (Estilo Cómic) -->
+                <div id="hub-filter-panel" class="hidden max-w-3xl sm:max-w-4xl mx-auto rounded-2xl border-3 border-slate-950 bg-slate-800/95 backdrop-blur-md p-4 sm:p-5 shadow-[5px_5px_0px_0px_#0f172a] text-center transition-all">
+                    <!-- Header del Panel -->
+                    <div class="flex items-center justify-between pb-3 border-b-2 border-slate-700/80 mb-3.5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                                <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                                </svg>
+                                Filtros de Juegos
+                            </span>
+                            <span id="hub-filter-matches-count" class="text-[11px] font-mono font-bold text-slate-300"></span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button 
+                                type="button" 
+                                onclick="clearHubFilters()" 
+                                id="btn-clear-hub-filters"
+                                class="text-xs font-black uppercase text-rose-400 hover:text-rose-300 hover:underline cursor-pointer disabled:opacity-40"
+                            >
+                                Limpiar Filtros
+                            </button>
+                            <button 
+                                type="button" 
+                                onclick="toggleHubFilterPanel()" 
+                                class="text-slate-400 hover:text-white p-1 rounded-md cursor-pointer"
+                                title="Cerrar panel de filtros"
+                            >
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Fila 1: Filtro por Generación (Centrado en una sola línea) -->
+                    <div class="mb-4">
+                        <div class="flex items-center justify-center mb-2">
+                            <label class="text-[11px] font-black uppercase tracking-wider text-slate-300">
+                                Generación
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
+                            <button 
+                                type="button" 
+                                onclick="filterByGeneration('all')" 
+                                data-gen="all"
+                                class="gen-filter-btn px-2.5 py-1 rounded-lg border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-amber-400 text-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] transition-all cursor-pointer active:translate-y-0.5"
+                            >
+                                Todas
+                            </button>
+                            {% for gen in generations_list %}
+                            <button 
+                                type="button" 
+                                onclick="filterByGeneration('{{ gen }}')" 
+                                data-gen="{{ gen }}"
+                                class="gen-filter-btn px-2.5 py-1 rounded-lg border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-slate-900 text-slate-300 shadow-[1.5px_1.5px_0px_#0f172a] transition-all hover:bg-slate-700 hover:text-white cursor-pointer active:translate-y-0.5"
+                            >
+                                Gen {{ gen }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Filtro por Consola / Plataforma (Centrado en una sola línea con siglas compactas) -->
+                    <div>
+                        <div class="flex items-center justify-center mb-2">
+                            <label class="text-[11px] font-black uppercase tracking-wider text-slate-300">
+                                Consola / Plataforma
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+                            <button 
+                                type="button" 
+                                onclick="filterByConsole('all')" 
+                                data-console="all"
+                                class="console-filter-btn px-3 py-1 rounded-lg border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-amber-400 text-slate-950 shadow-[1.5px_1.5px_0px_#0f172a] transition-all cursor-pointer active:translate-y-0.5"
+                            >
+                                Todas
+                            </button>
+                            {% for c in available_consoles %}
+                            <button 
+                                type="button" 
+                                onclick="filterByConsole('{{ c.name }}')" 
+                                data-console="{{ c.name }}"
+                                title="{{ c.name }}"
+                                class="console-filter-btn px-3 py-1 rounded-lg border-2 border-slate-950 text-xs font-black uppercase tracking-wider bg-slate-900 text-slate-300 shadow-[1.5px_1.5px_0px_#0f172a] transition-all hover:bg-slate-700 hover:text-white cursor-pointer active:translate-y-0.5"
+                            >
+                                {{ c.short_name|default:c.name }}
+                            </button>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,10 +262,11 @@
                         {% for game in subgroup.games %}
                         <div 
                             id="card-game-{{ game.slug }}" 
-                            class="game-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[400px] flex flex-col justify-between rounded-2xl border-3 border-slate-950 shadow-[5px_5px_0px_0px_#0f172a] overflow-hidden select-none {% if not game.is_available %}grayscale opacity-60 bg-slate-100 border-dashed{% endif %}"
+                            class="game-card w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[400px] flex flex-col justify-between rounded-2xl border-3 border-slate-950 shadow-[5px_5px_0px_0px_#0f172a] overflow-hidden select-none {% if not game.is_available %}border-dashed{% endif %}"
                             style="background-color: {{ game.card_bg|default:'#ffffff' }};"
                             data-slug="{{ game.slug }}"
                             data-generation="{{ game.generation }}"
+                            data-platforms="{{ game.platforms_str }}"
                             data-available="{{ game.is_available|yesno:'true,false' }}"
                         >
                 <!-- Cabecera de la Tarjeta con Color Representativo -->

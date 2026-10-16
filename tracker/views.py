@@ -16,7 +16,7 @@ from .models import Game, Pokedex, UserPokemonCatch
 from .forms import HybridLoginForm, UserRegisterForm
 from .catalog_service import get_compiled_catalog, get_catalog_entry_by_id
 from .exclusives import get_version_exclusives_context, get_version_transfers_context
-from .game_hub_data import MAIN_SERIES_GAMES, GENERATIONS_METADATA
+from .game_hub_data import MAIN_SERIES_GAMES, GENERATIONS_METADATA, AVAILABLE_CONSOLES
 from .security import check_username_rate_limit
 
 
@@ -301,6 +301,7 @@ def game_selector_view(request):
         card_data["has_started"] = has_started
         card_data["mascot_icon"] = f"/media/pokemon/icons/gen8/{item['mascot_num']}.png"
         card_data["mascot_artwork"] = f"/media/pokemon/artwork/{item['mascot_num']}.png"
+        card_data["platforms_str"] = ",".join(item.get("platforms", [item["platform"]]))
 
         if is_available:
             meta = _get_game_catalog_metadata(g_slug)
@@ -327,6 +328,12 @@ def game_selector_view(request):
             card_data["button_label"] = "Continuar" if has_started else "Empezar"
             card_data["url"] = f"/{g_slug}/"
         else:
+            card_data["header_bg"] = "bg-slate-500"
+            card_data["header_text"] = "text-white font-black"
+            card_data["card_bg"] = "#f8fafc"
+            card_data["badge_bg"] = "bg-slate-600 text-white"
+            card_data["border_color"] = "border-slate-500"
+            card_data["progress_color"] = "bg-slate-500"
             card_data["has_national_dex"] = (item["generation"] >= 3)
             card_data["reg_total"] = 0
             card_data["reg_caught"] = 0
@@ -380,6 +387,7 @@ def game_selector_view(request):
         "games_cards": games_cards,
         "generation_groups": generation_groups,
         "generations_list": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "available_consoles": AVAILABLE_CONSOLES,
         "pokemon_search_json": json.dumps(pokemon_search_list),
         "total_active_games": len(available_games),
         "total_main_games": len(MAIN_SERIES_GAMES),

@@ -558,8 +558,29 @@ GAME_CARD_TINTS = {
     "legends-za": "#ecfdf5",
 }
 
+GAME_PLATFORMS_MAP = {
+    "red": ["Game Boy", "Nintendo 3DS"],
+    "blue": ["Game Boy", "Nintendo 3DS"],
+    "yellow": ["Game Boy", "Nintendo 3DS"],
+    "gold": ["Game Boy Color", "Nintendo 3DS"],
+    "silver": ["Game Boy Color", "Nintendo 3DS"],
+    "crystal": ["Game Boy Color", "Nintendo 3DS"],
+    "firered": ["Game Boy Advance", "Nintendo Switch"],
+    "leafgreen": ["Game Boy Advance", "Nintendo Switch"],
+}
+
+AVAILABLE_CONSOLES = [
+    {"slug": "gb", "name": "Game Boy", "short_name": "GB"},
+    {"slug": "gbc", "name": "Game Boy Color", "short_name": "GBC"},
+    {"slug": "gba", "name": "Game Boy Advance", "short_name": "GBA"},
+    {"slug": "nds", "name": "Nintendo DS", "short_name": "DS"},
+    {"slug": "3ds", "name": "Nintendo 3DS", "short_name": "3DS"},
+    {"slug": "switch", "name": "Nintendo Switch", "short_name": "Switch"},
+]
+
 for _g in MAIN_SERIES_GAMES:
     _g["card_bg"] = GAME_CARD_TINTS.get(_g["slug"], "#f8fafc")
+    _g["platforms"] = GAME_PLATFORMS_MAP.get(_g["slug"], [_g["platform"]])
 
 GENERATIONS_METADATA = [
     {
