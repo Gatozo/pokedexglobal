@@ -5,7 +5,14 @@
 
 import { state } from './state.js';
 import { setActiveModalCryUrl } from './audio.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
+import { 
+    setModalUrlHash, 
+    syncUrlToCurrentOpenModal, 
+    releaseScrollIfNoModalOpen, 
+    lockModalScroll,
+    bringModalToFront,
+    registerModalClose
+} from './url_sync.js';
 import { openStoneModal } from './modal_stones.js';
 import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
@@ -468,11 +475,41 @@ export function renderModalObtaining(data, activeForm = null) {
         }
     }
 
+    // Detección especial de Feebas en Rubí, Zafiro y Esmeralda (Gen 3 Hoenn)
+    const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug);
+    const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
+    let isFeebasConfigured = false;
+    let feebasSpotCount = 0;
+
+    if (isGen3Hoenn && isFeebasSpecies) {
+        const gameCfg = loadGameConfig();
+        if (gameCfg && gameCfg.spots && gameCfg.spots.length > 0) {
+            isFeebasConfigured = true;
+            feebasSpotCount = gameCfg.spots.length;
+        }
+    }
+
     if (summaryEl) {
         const hasDetails = (displayLocations && displayLocations.length > 0) || Boolean(obt.evolution_info) || Boolean(data.evolution_stone) || Boolean(obt.historical_note);
 
         if (isMunchlaxConfigured) {
             summaryEl.innerHTML = `<span class="text-amber-800 font-black">Árboles de tu Partida:</span> Disponible en tus <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${munchlaxTreeCount} árboles de miel configurados</span> (y crianza con Incienso Lento).`;
+        } else if (isFeebasConfigured) {
+            summaryEl.innerHTML = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-sky-900 font-black">Casillas de Pesca Calculadas:</span> Pesca en tus <span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${feebasSpotCount} casillas de la Ruta 119</span>.
+                    </div>
+                    <button 
+                        type="button" 
+                        onclick="event.stopPropagation(); openFeebasMapModal();" 
+                        class="px-2.5 py-1 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer inline-flex items-center gap-1.5 shrink-0 self-start sm:self-auto"
+                        title="Abrir mapa interactivo de casillas de Feebas en Ruta 119"
+                    >
+                        <span>🗺️ Ver Mapa</span>
+                    </button>
+                </div>
+            `;
         } else if (displayLocations && displayLocations.length > 2) {
             const loc1 = displayLocations[0].area;
             const loc2 = displayLocations[1].area;
@@ -594,6 +631,29 @@ export function renderModalObtaining(data, activeForm = null) {
                     </button>
                 `;
                 detailsContainer.appendChild(cfgHeader);
+            }
+
+            if (isFeebasConfigured) {
+                const feebasHeader = document.createElement('div');
+                feebasHeader.className = 'mb-2 p-2.5 rounded-xl bg-sky-50 border-2 border-sky-400 text-sky-950 text-xs font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-[2px_2px_0px_0px_#0284c7]';
+                feebasHeader.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">🗺️</span>
+                        <div>
+                            <span class="font-black uppercase text-sky-950 block">Mapa de Casillas de Feebas (${feebasSpotCount} calculadas)</span>
+                            <span class="text-[10px] text-sky-800 font-bold block">50% de probabilidad en Ruta 119</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        <button type="button" onclick="event.stopPropagation(); openFeebasMapModal();" class="px-2.5 py-1 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer flex items-center gap-1">
+                            <span>🗺️ Abrir Mapa</span>
+                        </button>
+                        <button type="button" onclick="event.stopPropagation(); openGameConfigModal();" class="text-[10px] font-black uppercase text-sky-900 underline hover:text-sky-700 cursor-pointer">
+                            Editar Frase
+                        </button>
+                    </div>
+                `;
+                detailsContainer.appendChild(feebasHeader);
             }
 
             const locList = document.createElement('div');
@@ -1306,12 +1366,12 @@ export async function openPokemonModalDirect(entryId, options = {}) {
         modal.style.display = 'flex';
         modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+        bringModalToFront(modal);
     }
     if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    lockModalScroll();
 
     // 9. Activar marquesina suave en ubicaciones
     requestAnimationFrame(() => {
@@ -1406,6 +1466,7 @@ export function closePokemonModal(syncUrl = true) {
         modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
         modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
         modal.style.display = 'none';
+        registerModalClose(modal);
     }
     const modalImg = document.getElementById('modal-pokemon-img');
     if (modalImg) modalImg.src = '';
@@ -1425,7 +1486,6 @@ export function closePokemonModal(syncUrl = true) {
         unownHeaderBtn.classList.add('hidden');
         unownHeaderBtn.classList.remove('flex');
     }
-    releaseScrollIfNoModalOpen();
     state.activeModalEntryId = null;
     if (syncUrl) syncUrlToCurrentOpenModal();
 }

@@ -126,6 +126,137 @@
                 </div>
             </div>
             {% endif %}
+
+            <!-- Sección: Calculadora de Feebas (Gen 3: Rubí, Zafiro, Esmeralda) -->
+            {% if game.slug in 'ruby,sapphire,emerald' %}
+            <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+                    <h4 class="font-black text-sm uppercase tracking-wide text-slate-950">
+                        Calculadora de Casillas de Feebas (Ruta 119)
+                    </h4>
+                </div>
+                
+                <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
+                    En Hoenn, Feebas sólo puede aparecer en <strong class="text-sky-800">6 de las 447 casillas de agua de la Ruta 119</strong>. Estas casillas están determinadas matemáticamente por tu <strong class="text-slate-900">ID de Entrenador (TID)</strong> y la <strong class="text-slate-900">Frase de Moda de Pueblo Azuliza</strong>. Configura tus datos para habilitar el mapa de pesca en la tarjeta de Feebas.
+                </p>
+
+                <div class="space-y-3">
+                    <!-- TID Field -->
+                    <div>
+                        <label for="cfg-trainer-id" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                            ID de Entrenador (TID) <span class="text-rose-600">*</span>
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="cfg-trainer-id" 
+                                inputmode="numeric"
+                                pattern="[0-9]*"
+                                maxlength="5"
+                                placeholder="Ej. 12345" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                            >
+                            <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                5 dígitos
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-slate-500 font-semibold mt-1">
+                            Visible en tu Ficha de Entrenador en el juego.
+                        </p>
+                    </div>
+
+                    <!-- Dewford Phrase: 2 Words -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div>
+                            <label for="cfg-feebas-word1" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                                Frase Palabra 1 (Condición) <span class="text-rose-600">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="cfg-feebas-word1" 
+                                list="cfg-feebas-word1-list"
+                                autocomplete="off"
+                                placeholder="Ej. BONDADOSO" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner uppercase"
+                            >
+                            <datalist id="cfg-feebas-word1-list"></datalist>
+                        </div>
+                        <div>
+                            <label for="cfg-feebas-word2" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                                Frase Palabra 2 (Modo de Vida) <span class="text-rose-600">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="cfg-feebas-word2" 
+                                list="cfg-feebas-word2-list"
+                                autocomplete="off"
+                                placeholder="Ej. PESCAR" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner uppercase"
+                            >
+                            <datalist id="cfg-feebas-word2-list"></datalist>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-500 font-semibold leading-snug">
+                        Pregunta o habla con el chico junto al Centro Pokémon de Pueblo Azuliza para consultar la frase actual.
+                    </p>
+
+                    <!-- Preview de Casillas Calculadas -->
+                    <div id="cfg-feebas-preview" class="hidden mt-3 pt-3 border-t-2 border-dashed border-slate-200">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[11px] font-black uppercase tracking-wider text-sky-800 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                Casillas Calculadas (Ruta 119):
+                            </span>
+                            <span id="cfg-feebas-count-badge" class="text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-sky-200 text-slate-900">
+                                6 Casillas
+                            </span>
+                        </div>
+                        <div id="cfg-feebas-spots-summary" class="text-xs font-bold text-slate-800 flex flex-wrap gap-1.5">
+                            <!-- Generado dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Acordeón Explicativo: Por qué no cambiar manualmente la frase -->
+                    <div class="border-2 border-slate-950 rounded-xl overflow-hidden mt-3 shadow-[1.5px_1.5px_0px_0px_#0f172a]">
+                        <button 
+                            type="button" 
+                            id="feebas-phrase-accordion-btn"
+                            onclick="toggleFeebasPhraseAccordion()"
+                            class="w-full px-3 py-2 bg-amber-100 hover:bg-amber-200 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            aria-expanded="false"
+                            aria-controls="feebas-phrase-accordion-content"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="text-base select-none shrink-0">⚠️</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950 truncate">¿Por qué no debes cambiar manualmente la frase?</span>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <span id="feebas-phrase-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
+                                <svg id="feebas-phrase-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="feebas-phrase-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
+                            <p>
+                                <strong>Generación determinista de la semilla:</strong> En Rubí, Zafiro y Esmeralda, la frase de moda inicial se genera mediante el generador de números pseudoaleatorios (PRNG) a partir de tu <strong>TID</strong> al comenzar la partida, o evoluciona de forma natural con los días en el juego.
+                            </p>
+                            <p>
+                                <strong>Consecuencia de alterarla:</strong> Si hablas con el joven de Pueblo Azuliza e ingresas una frase manual personalizada, dicha frase <strong>no provendrá del flujo matemático natural del PRNG</strong>. Como resultado, la calculadora no podrá deducir la semilla original de la ROM y las casillas calculadas dejarán de coincidir con tu juego. <strong>Recomendación:</strong> Deja siempre la frase que el juego te dé por defecto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Créditos a la comunidad -->
+                    <div class="text-[10px] text-slate-500 font-bold border-t border-slate-200 pt-2 flex items-center justify-between">
+                        <span>Agradecimientos a <strong>MucksX</strong> y al proyecto <strong>pret/pokeemerald</strong> por la ingeniería inversa del algoritmo PRNG.</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
 
         <!-- Footer con Acciones -->

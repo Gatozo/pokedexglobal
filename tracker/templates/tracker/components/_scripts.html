@@ -59,13 +59,15 @@
         const stoneModal = document.getElementById('stone-location-modal');
         const unownModal = document.getElementById('unown-modal');
         const cfgModal = document.getElementById('game-config-modal');
+        const feebasModal = document.getElementById('feebas-map-modal');
         const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
         const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
         const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
         const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
         const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
         const isCfgOpen = cfgModal && !cfgModal.classList.contains('opacity-0');
-        if (!isComicOpen && !isExclOpen && !isTransOpen && !isStoneOpen && !isUnownOpen && !isCfgOpen) {
+        const isFeebasOpen = feebasModal && !feebasModal.classList.contains('opacity-0');
+        if (!isComicOpen && !isExclOpen && !isTransOpen && !isStoneOpen && !isUnownOpen && !isCfgOpen && !isFeebasOpen) {
             document.documentElement.classList.remove('overflow-hidden');
             document.body.classList.remove('overflow-hidden');
         }
@@ -379,6 +381,82 @@
     window.switchToUnownModal = function() {
         window.closePokemonModal();
         window.openUnownModal();
+    };
+
+    window.openGameConfigModal = function() {
+        queueOrRun('openGameConfigModal', [], function() {
+            const m = document.getElementById('game-config-modal');
+            const cardPanel = document.getElementById('game-config-modal-card');
+            if (m) {
+                m.style.display = 'flex';
+                m.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                m.classList.add('opacity-100', 'pointer-events-auto');
+                if (typeof window.bringModalToFront === 'function') window.bringModalToFront(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-95');
+                cardPanel.classList.add('scale-100');
+            }
+            earlyLockScroll();
+        });
+    };
+    window.closeGameConfigModal = function() {
+        queueOrRun('closeGameConfigModal', [], function() {
+            const m = document.getElementById('game-config-modal');
+            const cardPanel = document.getElementById('game-config-modal-card');
+            if (m) {
+                m.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+                m.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                m.style.display = 'none';
+                if (typeof window.registerModalClose === 'function') window.registerModalClose(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-100');
+                cardPanel.classList.add('scale-95');
+            }
+            earlyReleaseScroll();
+        });
+    };
+    window.handleGameConfigBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'game-config-modal') window.closeGameConfigModal();
+    };
+
+    window.openFeebasMapModal = function() {
+        queueOrRun('openFeebasMapModal', [], function() {
+            const m = document.getElementById('feebas-map-modal');
+            const cardPanel = document.getElementById('feebas-map-modal-card');
+            if (m) {
+                m.style.display = 'flex';
+                m.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                m.classList.add('opacity-100', 'pointer-events-auto');
+                if (typeof window.bringModalToFront === 'function') window.bringModalToFront(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-95');
+                cardPanel.classList.add('scale-100');
+            }
+            earlyLockScroll();
+        });
+    };
+    window.closeFeebasMapModal = function() {
+        queueOrRun('closeFeebasMapModal', [], function() {
+            const m = document.getElementById('feebas-map-modal');
+            const cardPanel = document.getElementById('feebas-map-modal-card');
+            if (m) {
+                m.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+                m.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                m.style.display = 'none';
+                if (typeof window.registerModalClose === 'function') window.registerModalClose(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-100');
+                cardPanel.classList.add('scale-95');
+            }
+            earlyReleaseScroll();
+        });
+    };
+    window.handleFeebasMapBackdropClick = function(e) {
+        if (e && e.target && e.target.id === 'feebas-map-modal') window.closeFeebasMapModal();
     };
     window.toggleUnownHistoricalAccordion = function() {
         const btn = document.getElementById('unown-historical-accordion-btn');

@@ -1102,6 +1102,37 @@ class GameSelectorClassificationTests(TestCase):
         content_red = resp_red.content.decode("utf-8")
         self.assertNotIn('id="btn-game-config"', content_red)
 
+    def test_feebas_game_config_and_map_elements(self):
+        # Asegurar modelos para Hoenn (Esmeralda) y Kanto Remake (Rojo Fuego)
+        game_eme, _ = Game.objects.get_or_create(slug="emerald", defaults={"name": "Pokémon Emerald", "generation": 3})
+        Pokedex.objects.get_or_create(game=game_eme, slug="hoenn", defaults={"name": "Pokédex de Hoenn"})
+
+        game_fr, _ = Game.objects.get_or_create(slug="firered", defaults={"name": "Pokémon FireRed", "generation": 3})
+        Pokedex.objects.get_or_create(game=game_fr, slug="kanto", defaults={"name": "Pokédex de Kanto"})
+
+        # En Esmeralda (Gen 3 Hoenn), el botón de configuración y el modal de mapa deben existir
+        url_eme = reverse("tracker:pokedex_default", kwargs={"game_slug": "emerald"})
+        resp_eme = self.client.get(url_eme)
+        self.assertEqual(resp_eme.status_code, 200)
+        content_eme = resp_eme.content.decode("utf-8")
+
+        self.assertIn('id="btn-game-config"', content_eme)
+        self.assertIn('id="game-config-modal"', content_eme)
+        self.assertIn('id="cfg-trainer-id"', content_eme)
+        self.assertIn('id="cfg-feebas-word1"', content_eme)
+        self.assertIn('id="cfg-feebas-word2"', content_eme)
+        self.assertIn('id="feebas-phrase-accordion-btn"', content_eme)
+        self.assertIn('id="feebas-map-modal"', content_eme)
+        self.assertIn('/media/maps/emerald/route-119.png', content_eme)
+
+        # En Rojo Fuego (Gen 3 Kanto), no debe haber configuración de Feebas ni modal de mapa
+        url_fr = reverse("tracker:pokedex_default", kwargs={"game_slug": "firered"})
+        resp_fr = self.client.get(url_fr)
+        self.assertEqual(resp_fr.status_code, 200)
+        content_fr = resp_fr.content.decode("utf-8")
+        self.assertNotIn('id="btn-game-config"', content_fr)
+        self.assertNotIn('id="feebas-map-modal"', content_fr)
+
 
 
 

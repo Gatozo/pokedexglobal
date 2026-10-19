@@ -44,6 +44,41 @@ export function clearModalUrlHash() {
     }
 }
 
+let _modalTopZIndex = 100;
+const _activeModalStack = [];
+
+/**
+ * Eleva dinámicamente un modal a la capa superior activa (z-index incremental).
+ */
+export function bringModalToFront(modalEl) {
+    if (!modalEl) return;
+    _modalTopZIndex += 10;
+    modalEl.style.zIndex = String(_modalTopZIndex);
+    if (!_activeModalStack.includes(modalEl.id)) {
+        _activeModalStack.push(modalEl.id);
+    }
+    lockModalScroll();
+}
+
+/**
+ * Registra el cierre de un modal en la pila y restablece el z-index si ya no hay modales abiertos.
+ */
+export function registerModalClose(modalEl) {
+    if (modalEl) {
+        if (modalEl.id) {
+            const idx = _activeModalStack.indexOf(modalEl.id);
+            if (idx !== -1) {
+                _activeModalStack.splice(idx, 1);
+            }
+        }
+        modalEl.style.zIndex = '';
+    }
+    if (_activeModalStack.length === 0) {
+        _modalTopZIndex = 100;
+    }
+    releaseScrollIfNoModalOpen();
+}
+
 export function lockModalScroll() {
     document.documentElement.classList.add('overflow-hidden');
     document.body.classList.add('overflow-hidden');
@@ -55,12 +90,16 @@ export function releaseScrollIfNoModalOpen() {
     const stoneModal = document.getElementById('stone-location-modal');
     const transModal = document.getElementById('transfers-modal');
     const unownModal = document.getElementById('unown-modal');
+    const cfgModal = document.getElementById('game-config-modal');
+    const feebasModal = document.getElementById('feebas-map-modal');
     const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
     const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
     const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
     const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
     const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
-    if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen) {
+    const isCfgOpen = cfgModal && !cfgModal.classList.contains('opacity-0');
+    const isFeebasOpen = feebasModal && !feebasModal.classList.contains('opacity-0');
+    if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen && !isCfgOpen && !isFeebasOpen) {
         document.documentElement.classList.remove('overflow-hidden');
         document.body.classList.remove('overflow-hidden');
     }

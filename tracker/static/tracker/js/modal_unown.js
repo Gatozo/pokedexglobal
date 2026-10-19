@@ -4,7 +4,14 @@
 
 import { state, UNOWN_CHAMBER_HINTS } from './state.js';
 import { getCsrfToken } from './api.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
+import { 
+    setModalUrlHash, 
+    syncUrlToCurrentOpenModal, 
+    releaseScrollIfNoModalOpen, 
+    lockModalScroll,
+    bringModalToFront,
+    registerModalClose
+} from './url_sync.js';
 import { updateCardUI, updateProgressBarUI } from './cards.js';
 import { openPokemonModalDirect, closePokemonModal } from './modal_comic.js';
 
@@ -15,12 +22,12 @@ export function openUnownModal(updateHistory = true) {
         modal.style.display = 'flex';
         modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+        bringModalToFront(modal);
     }
     if (card) {
         card.classList.remove('scale-95');
         card.classList.add('scale-100');
     }
-    lockModalScroll();
     try {
         updateUnownModalUI();
         setTimeout(() => {
@@ -41,12 +48,12 @@ export function closeUnownModal(syncUrl = true) {
         modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
         modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
         modal.style.display = 'none';
+        registerModalClose(modal);
     }
     if (card) {
         card.classList.remove('scale-100');
         card.classList.add('scale-95');
     }
-    releaseScrollIfNoModalOpen();
     if (syncUrl) syncUrlToCurrentOpenModal();
 }
 

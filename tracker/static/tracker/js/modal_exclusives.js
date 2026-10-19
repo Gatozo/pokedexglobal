@@ -3,7 +3,14 @@
  */
 
 import { state } from './state.js';
-import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen, lockModalScroll } from './url_sync.js';
+import { 
+    setModalUrlHash, 
+    syncUrlToCurrentOpenModal, 
+    releaseScrollIfNoModalOpen, 
+    lockModalScroll,
+    bringModalToFront,
+    registerModalClose
+} from './url_sync.js';
 import { toggleCatch } from './cards.js';
 
 export function openExclusivesModal(updateHistory = true) {
@@ -13,12 +20,12 @@ export function openExclusivesModal(updateHistory = true) {
         modal.style.display = 'flex';
         modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
         modal.classList.add('opacity-100', 'pointer-events-auto');
+        bringModalToFront(modal);
     }
     if (modalCard) {
         modalCard.classList.remove('scale-95');
         modalCard.classList.add('scale-100');
     }
-    lockModalScroll();
     try {
         updateExclusivesModalUI();
     } catch (err) {
@@ -36,12 +43,12 @@ export function closeExclusivesModal(syncUrl = true) {
         modal.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
         modal.classList.add('hidden', 'opacity-0', 'pointer-events-none');
         modal.style.display = 'none';
+        registerModalClose(modal);
     }
     if (modalCard) {
         modalCard.classList.remove('scale-100');
         modalCard.classList.add('scale-95');
     }
-    releaseScrollIfNoModalOpen();
     if (syncUrl) syncUrlToCurrentOpenModal();
 }
 

@@ -101,7 +101,9 @@ import {
     syncUrlToCurrentOpenModal, 
     syncModalFromUrlHash, 
     closeAllModals, 
-    releaseScrollIfNoModalOpen 
+    releaseScrollIfNoModalOpen,
+    bringModalToFront,
+    registerModalClose 
 } from './url_sync.js';
 import {
     openGameConfigModal,
@@ -110,7 +112,13 @@ import {
     saveGameConfig,
     resetGameConfig,
     renderConfigPreview,
-    initGameConfig
+    initGameConfig,
+    toggleFeebasPhraseAccordion,
+    openFeebasMapModal,
+    closeFeebasMapModal,
+    handleFeebasMapBackdropClick,
+    scrollFeebasMapTo,
+    highlightFeebasSpot
 } from './game_config.js';
 
 // Exposición al objeto window para compatibilidad total con eventos inline onclick="..." de los templates
@@ -198,14 +206,22 @@ window.clearModalUrlHash = clearModalUrlHash;
 window.syncModalFromUrlHash = syncModalFromUrlHash;
 window.closeAllModals = closeAllModals;
 window.getCsrfToken = getCsrfToken;
+window.bringModalToFront = bringModalToFront;
+window.registerModalClose = registerModalClose;
 
-// Funciones de configuración de partida / Munchlax
+// Funciones de configuración de partida (Munchlax y Feebas)
 window.openGameConfigModal = openGameConfigModal;
 window.closeGameConfigModal = closeGameConfigModal;
 window.handleGameConfigBackdropClick = handleGameConfigBackdropClick;
 window.saveGameConfig = saveGameConfig;
 window.resetGameConfig = resetGameConfig;
 window.renderConfigPreview = renderConfigPreview;
+window.toggleFeebasPhraseAccordion = toggleFeebasPhraseAccordion;
+window.openFeebasMapModal = openFeebasMapModal;
+window.closeFeebasMapModal = closeFeebasMapModal;
+window.handleFeebasMapBackdropClick = handleFeebasMapBackdropClick;
+window.scrollFeebasMapTo = scrollFeebasMapTo;
+window.highlightFeebasSpot = highlightFeebasSpot;
 
 // Marcar el framework interactivo modular como 100% cargado y listo
 window.__pokedexReady = true;

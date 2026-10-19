@@ -21,12 +21,12 @@
             </div>
         </div>
         <div class="text-2xl sm:text-3xl font-black mt-1 flex items-center justify-center md:justify-end gap-2 font-mono">
-            {% if game.generation == 4 or game.slug in 'diamond,pearl,platinum' %}
+            {% if game.generation == 4 or game.slug in 'diamond,pearl,platinum' or game.slug in 'ruby,sapphire,emerald' %}
             <button 
                 type="button" 
                 id="btn-game-config"
                 onclick="openGameConfigModal()"
-                title="Configuración de Partida (Calculadora de Árboles de Miel de Munchlax)"
+                title="Configuración de Partida{% if game.slug in 'ruby,sapphire,emerald' %} (Calculadora de Feebas){% elif game.generation == 4 or game.slug in 'diamond,pearl,platinum' %} (Calculadora de Árboles de Miel de Munchlax){% endif %}"
                 class="cursor-pointer focus:outline-none shrink-0 mr-1 relative group"
             >
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg border-2 border-slate-950 bg-white hover:bg-amber-100 flex items-center justify-center shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
