@@ -879,5 +879,204 @@ class GameSelectorHubTests(TestCase):
         self.assertContains(resp2, "comic-header-neutral")
 
 
+class GameSelectorClassificationTests(TestCase):
+    """Pruebas exhaustivas para la clasificación quirúrgica de métodos de obtención en el selector de juegos."""
+
+    def test_deoxys_classification_and_exclusion_in_ruby_sapphire(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        # Deoxys en Rubí y Zafiro debe estar descartado
+        ruby_cat = get_compiled_catalog("ruby", is_national=True)
+        sapphire_cat = get_compiled_catalog("sapphire", is_national=True)
+        res_ruby = _classify_catalog_for_game(ruby_cat, game_slug="ruby")
+        res_sapphire = _classify_catalog_for_game(sapphire_cat, game_slug="sapphire")
+        self.assertEqual(res_ruby.get(386), (False, None))
+        self.assertEqual(res_sapphire.get(386), (False, None))
+
+        # Deoxys en Esmeralda y Rojo Fuego debe ser Único
+        emerald_cat = get_compiled_catalog("emerald", is_national=True)
+        firered_cat = get_compiled_catalog("firered", is_national=True)
+        res_emerald = _classify_catalog_for_game(emerald_cat, game_slug="emerald")
+        res_firered = _classify_catalog_for_game(firered_cat, game_slug="firered")
+        self.assertEqual(res_emerald.get(386), (True, "Único"))
+        self.assertEqual(res_firered.get(386), (True, "Único"))
+
+    def test_jirachi_hardware_external_method_in_rse(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        # Jirachi debe ser Método Externo solo en Rubí, Zafiro y Esmeralda
+        for g_slug in ["ruby", "sapphire", "emerald"]:
+            cat = get_compiled_catalog(g_slug, is_national=True)
+            res = _classify_catalog_for_game(cat, game_slug=g_slug)
+            self.assertEqual(res.get(385), (True, "Método Externo"))
+
+        # En Rojo Fuego / Verde Hoja no es compatible
+        fr_cat = get_compiled_catalog("firered", is_national=True)
+        res_fr = _classify_catalog_for_game(fr_cat, game_slug="firered")
+        self.assertEqual(res_fr.get(385), (False, None))
+
+    def test_celebi_virtual_console_in_crystal_only(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        crystal_cat = get_compiled_catalog("crystal", is_national=True)
+        res_crystal = _classify_catalog_for_game(crystal_cat, game_slug="crystal")
+        self.assertEqual(res_crystal.get(251), (True, "Único"))
+
+        gold_cat = get_compiled_catalog("gold", is_national=True)
+        res_gold = _classify_catalog_for_game(gold_cat, game_slug="gold")
+        self.assertEqual(res_gold.get(251), (False, None))
+
+    def test_lugia_and_hooh_islands_and_exclusions(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        # Inaccesibles en Rubí y Zafiro
+        for g_slug in ["ruby", "sapphire"]:
+            cat = get_compiled_catalog(g_slug, is_national=True)
+            res = _classify_catalog_for_game(cat, game_slug=g_slug)
+            self.assertEqual(res.get(249), (False, None))
+            self.assertEqual(res.get(250), (False, None))
+
+        # Únicos en FRLG, Esmeralda y Gen 2
+        for g_slug in ["crystal", "gold", "firered", "leafgreen", "emerald"]:
+            cat = get_compiled_catalog(g_slug, is_national=True)
+            res = _classify_catalog_for_game(cat, game_slug=g_slug)
+            self.assertEqual(res.get(249), (True, "Único"))
+            self.assertEqual(res.get(250), (True, "Único"))
+
+    def test_specific_badges_casino_starter_gift(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        fr_cat = get_compiled_catalog("firered", is_national=True)
+        res_fr = _classify_catalog_for_game(fr_cat, game_slug="firered")
+
+        # Porygon en Casino
+        self.assertEqual(res_fr.get(137), (True, "Casino"))
+        # Charmander Inicial
+        self.assertEqual(res_fr.get(4), (True, "Inicial"))
+        # Eevee Regalo
+        self.assertEqual(res_fr.get(133), (True, "Regalo"))
+        # Articuno Único
+        self.assertEqual(res_fr.get(144), (True, "Único"))
+
+    def test_game_selector_search_json_payload(self):
+        url = reverse("tracker:game_selector")
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+
+        search_data = json.loads(resp.context["pokemon_search_json"])
+        by_id = {item["id"]: item for item in search_data}
+
+        # Deoxys (#386) no debe tener 'ruby' ni 'sapphire'
+        deoxys = by_id.get(386)
+        self.assertIsNotNone(deoxys)
+        self.assertNotIn("ruby", deoxys["games"])
+        self.assertNotIn("sapphire", deoxys["games"])
+        if "emerald" in deoxys["games"]:
+            self.assertEqual(deoxys["games"]["emerald"]["method_badge"], "Único")
+        if "firered" in deoxys["games"]:
+            self.assertEqual(deoxys["games"]["firered"]["method_badge"], "Único")
+
+        # Jirachi (#385) debe tener Método Externo en RSE
+        jirachi = by_id.get(385)
+        self.assertIsNotNone(jirachi)
+        for g_slug in ["ruby", "sapphire", "emerald"]:
+            if g_slug in jirachi["games"]:
+                self.assertEqual(jirachi["games"][g_slug]["method_badge"], "Método Externo")
+        self.assertNotIn("firered", jirachi["games"])
+
+        # Celebi (#251) no debe estar en gold ni silver
+        celebi = by_id.get(251)
+        self.assertIsNotNone(celebi)
+        self.assertNotIn("gold", celebi["games"])
+        self.assertNotIn("silver", celebi["games"])
+        if "crystal" in celebi["games"]:
+            self.assertEqual(celebi["games"]["crystal"]["method_badge"], "Único")
+
+        # Porygon (#137) en firered debe ser Casino
+        porygon = by_id.get(137)
+        self.assertIsNotNone(porygon)
+        if "firered" in porygon["games"]:
+            self.assertEqual(porygon["games"]["firered"]["method_badge"], "Casino")
+
+    def test_crianza_and_evolucion_classification(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game
+
+        # Cleffa (#173):
+        # En Oro y Plata debe ser Crianza (padres Clefairy nativos en Ruta 34 / Mt. Moon)
+        # En Cristal debe ser Regalo (Huevo Extraño)
+        # En Diamante debe ser Jardín Trofeo
+        # En Rubí, Zafiro y Esmeralda debe estar descartado (ausencia general de Clefairy)
+        gold_cat = get_compiled_catalog("gold", is_national=True)
+        silver_cat = get_compiled_catalog("silver", is_national=True)
+        crystal_cat = get_compiled_catalog("crystal", is_national=True)
+        diamond_cat = get_compiled_catalog("diamond", is_national=True)
+        ruby_cat = get_compiled_catalog("ruby", is_national=True)
+
+        res_gold = _classify_catalog_for_game(gold_cat, game_slug="gold")
+        res_silver = _classify_catalog_for_game(silver_cat, game_slug="silver")
+        res_crystal = _classify_catalog_for_game(crystal_cat, game_slug="crystal")
+        res_diamond = _classify_catalog_for_game(diamond_cat, game_slug="diamond")
+        res_ruby = _classify_catalog_for_game(ruby_cat, game_slug="ruby")
+
+        self.assertEqual(res_gold.get(173), (True, "Crianza"))
+        self.assertEqual(res_silver.get(173), (True, "Crianza"))
+        self.assertEqual(res_crystal.get(173), (True, "Regalo"))
+        self.assertEqual(res_diamond.get(173), (True, "Jardín Trofeo"))
+        self.assertEqual(res_ruby.get(173), (False, None))
+
+        # Evoluciones deben tener etiqueta 'Evolución' (ej. Charizard #6)
+        fr_cat = get_compiled_catalog("firered", is_national=True)
+        res_fr = _classify_catalog_for_game(fr_cat, game_slug="firered")
+        self.assertEqual(res_fr.get(6), (True, "Evolución"))
+
+    def test_npc_trade_and_gen4_mythicals_classification(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.views import _classify_catalog_for_game, _get_base_pokemon_search_index
+
+        # 1. Intercambios NPC
+        # Mr. Mime (#122) en Rojo y Rojo Fuego debe ser 'Intercambio NPC' (Ruta 2 Caseta)
+        red_cat = get_compiled_catalog("red", is_national=True)
+        res_red = _classify_catalog_for_game(red_cat, game_slug="red")
+        self.assertEqual(res_red.get(122), (True, "Intercambio NPC"))
+
+        # Lickitung (#108) en Rojo debe ser 'Intercambio NPC' (Ruta 18 Caseta), pero en Amarillo debe ser 'Salvaje' (Zona Safari)
+        yellow_cat = get_compiled_catalog("yellow", is_national=True)
+        res_yellow = _classify_catalog_for_game(yellow_cat, game_slug="yellow")
+        self.assertEqual(res_red.get(108), (True, "Intercambio NPC"))
+        self.assertEqual(res_yellow.get(108), (True, "Salvaje"))
+
+        # Machamp (#68) en Amarillo debe ser 'Intercambio NPC' (Ruta 5 Vía Subterránea)
+        self.assertEqual(res_yellow.get(68), (True, "Intercambio NPC"))
+
+        # Aerodactyl (#142) en Cristal debe ser 'Intercambio NPC' (Ruta 14)
+        crystal_cat = get_compiled_catalog("crystal", is_national=True)
+        res_crystal = _classify_catalog_for_game(crystal_cat, game_slug="crystal")
+        self.assertEqual(res_crystal.get(142), (True, "Intercambio NPC"))
+
+        # 2. Singulares de Gen 4 (Diamante)
+        diamond_cat = get_compiled_catalog("diamond", is_national=True)
+        res_diamond = _classify_catalog_for_game(diamond_cat, game_slug="diamond")
+        self.assertEqual(res_diamond.get(490), (True, "Método Externo"))  # Manaphy
+        self.assertEqual(res_diamond.get(489), (True, "Crianza"))         # Phione
+        self.assertEqual(res_diamond.get(493), (True, "Evento"))          # Arceus
+
+        # Verificar presencia en el índice de búsqueda
+        idx = _get_base_pokemon_search_index()
+        self.assertIn("diamond", idx[490]["games"])
+        self.assertEqual(idx[490]["games"]["diamond"]["method_badge"], "Método Externo")
+        self.assertIn("diamond", idx[489]["games"])
+        self.assertEqual(idx[489]["games"]["diamond"]["method_badge"], "Crianza")
+        self.assertIn("diamond", idx[493]["games"])
+        self.assertEqual(idx[493]["games"]["diamond"]["method_badge"], "Evento")
+
+
+
+
 
 

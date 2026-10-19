@@ -42,11 +42,37 @@ EXTERNAL_KEYWORDS = [
     "edición pokémon", "edicion pokemon", "edición rojo", "edición azul",
     "edición oro", "edición plata", "edición rubí", "edición zafiro",
     "edición diamante", "edición perla", "distribución oficial", "evento presencial",
-    "distribución especial", "evento nintendo", "conexión con pokémon ranger", "disco bonus"
+    "distribución especial", "distribucion especial", "evento nintendo", "conexión con pokémon ranger", "disco bonus",
+    "intercambio externo", "intercambio desde", "transferencia externa",
+    "regalo misterioso", "distribución directa", "distribucion directa",
+    "conseguir mediante intercambio"
 ]
 
 
-def _classify_catalog_for_game(nat_cat):
+BABY_PARENTS = {
+    172: ["pikachu", "raichu"],
+    173: ["clefairy", "clefable"],
+    174: ["jigglypuff", "wigglytuff"],
+    175: ["togetic", "togekiss"],
+    236: ["hitmonlee", "hitmonchan", "hitmontop"],
+    238: ["jynx"],
+    239: ["electabuzz", "electivire"],
+    240: ["magmar", "magmortar"],
+    298: ["marill", "azumarill"],
+    360: ["wobbuffet"],
+    406: ["roselia", "roserade"],
+    433: ["chimecho"],
+    438: ["sudowoodo"],
+    439: ["mr-mime"],
+    440: ["chansey", "blissey"],
+    446: ["snorlax"],
+    447: ["lucario"],
+    458: ["mantine"],
+    489: ["manaphy"],
+}
+
+
+def _classify_catalog_for_game(nat_cat, game_slug=None):
     """
     Clasifica las entradas del catálogo nacional de un juego determinando con precisión quirúrgica
     si cada Pokémon es capturable/obtenible de forma nativa en dicha edición.
@@ -56,6 +82,7 @@ def _classify_catalog_for_game(nat_cat):
     if not nat_cat:
         return {}
 
+    g_slug = str(game_slug or (nat_cat[0].game_slug if nat_cat else "")).lower().strip()
     by_name = {entry.pokemon.name.lower(): entry for entry in nat_cat}
     by_clean_name = {entry.pokemon.name.lower().split('-')[0]: entry for entry in nat_cat}
 
@@ -64,17 +91,68 @@ def _classify_catalog_for_game(nat_cat):
 
     for entry in nat_cat:
         p_name = entry.pokemon.name.lower()
+        p_num = entry.pokemon.national_number
         obt = getattr(entry, "obtaining_info", {}) or {}
         obt_type = str(obt.get("type", "")).lower().strip()
         locs = obt.get("locations", []) or []
         summary = str(obt.get("summary", "")).lower()
+        badge_label_lower = str(obt.get("badge_label", "")).lower()
 
-        # Filtrar ubicaciones locales descartando crianza y transferencias/intercambios externos
+        # 1. Reglas específicas por especie y juego
+        # Jirachi: Sólo compatible con métodos externos (hardware GameCube) en Rubí, Zafiro y Esmeralda
+        if p_num == 385:
+            if g_slug in ["ruby", "sapphire", "emerald"]:
+                native_status[p_name] = True
+                method_badges[p_name] = "Método Externo"
+            else:
+                native_status[p_name] = False
+                method_badges[p_name] = None
+            continue
+
+        # Celebi: En Cristal es obtenible gracias al evento GS Ball nativo en Consola Virtual 3DS
+        if p_num == 251:
+            if g_slug == "crystal":
+                native_status[p_name] = True
+                method_badges[p_name] = "Único"
+            else:
+                native_status[p_name] = False
+                method_badges[p_name] = None
+            continue
+
+        # Deoxys, Lugia y Ho-Oh: Inaccesibles salvajes en Rubí y Zafiro (no existen Isla Origen ni Roca Ombligo)
+        if g_slug in ["ruby", "sapphire"] and p_num in [249, 250, 386]:
+            native_status[p_name] = False
+            method_badges[p_name] = None
+            continue
+
+        # Manaphy (#490): Obtenible en Gen 4 mediante conexión/transferencia de Huevo desde Pokémon Ranger
+        if p_num == 490:
+            if g_slug in ["diamond", "pearl", "platinum"]:
+                native_status[p_name] = True
+                method_badges[p_name] = "Método Externo"
+            else:
+                native_status[p_name] = False
+                method_badges[p_name] = None
+            continue
+
+        # Arceus (#493): En Gen 4 sólo fue obtenible mediante eventos de distribución oficial de Nintendo
+        if p_num == 493:
+            if g_slug in ["diamond", "pearl", "platinum"]:
+                native_status[p_name] = True
+                method_badges[p_name] = "Evento"
+            else:
+                native_status[p_name] = False
+                method_badges[p_name] = None
+            continue
+
+        # Filtrar ubicaciones locales descartando crianza, transferencias y huevo extraño en oro/plata
         local_locs = []
         for l in locs:
             m = l.get("method", "").lower().strip()
             a = l.get("area", "").lower().strip()
             if "crianza" in m:
+                continue
+            if g_slug in ["gold", "silver"] and "huevo extrañ" in m:
                 continue
             if any(kw in m or kw in a for kw in EXTERNAL_KEYWORDS):
                 continue
@@ -82,13 +160,16 @@ def _classify_catalog_for_game(nat_cat):
 
         methods_str = " ".join([l.get("method", "").lower() for l in local_locs])
         areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
-        full_str = methods_str + " " + areas_str
+        full_str = methods_str + " " + areas_str + " " + summary
 
         # Exclusivos de versión contraparte: Si está marcado como exclusivo de otra edición
         # y no cuenta con captura salvaje local directa, debe descartarse inequívocamente.
         wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari"]
-        has_wild = any(kw in full_str for kw in wild_kw)
-        badge_label_lower = str(obt.get("badge_label", "")).lower()
+        has_wild = (
+            obt_type == "wild"
+            or any(kw in methods_str for kw in wild_kw)
+            or any(kw in full_str for kw in wild_kw if kw not in ["interior"])
+        )
         is_version_exclusive = (
             any("exclusivo de versi" in l.get("method", "").lower() for l in locs)
             or any("intercambio con pokémon" in l.get("area", "").lower() for l in locs)
@@ -100,7 +181,64 @@ def _classify_catalog_for_game(nat_cat):
             method_badges[p_name] = None
             continue
 
-        # Si tiene ubicaciones salvajes/encuentro local comprobables
+        # Descartar si el tipo de obtención es puramente externo y no tiene ubicaciones locales válidas
+        if obt_type in ["transfer", "trade", "exclusive", "event"] and not local_locs and not has_wild:
+            native_status[p_name] = False
+            method_badges[p_name] = None
+            continue
+
+        # Detección de Casino / Game Corner (ej. Porygon, Dratini)
+        if obt_type in ["casino", "game_corner", "prize"] or "casino" in full_str or "game corner" in full_str or "premio casino" in badge_label_lower or "fichas" in full_str:
+            if not has_wild:
+                native_status[p_name] = True
+                method_badges[p_name] = "Casino"
+                continue
+
+        # Detección de Concurso de Captura (Parque Nacional en Gen 2)
+        if obt_type == "contest" or "concurso de captura" in full_str:
+            native_status[p_name] = True
+            method_badges[p_name] = "Concurso de Captura"
+            continue
+
+        # Detección de Legendarios / Estáticos / Encuentros Únicos en el mapa
+        is_static_or_legendary = (
+            obt_type in ["legendary", "mythical"]
+            or (obt_type == "static" and not has_wild)
+            or p_num in [143, 185, 442, 479]
+            or "torre sagrada" in full_str or "vieja mansión" in full_str
+            or "despertar con poké flauta" in full_str or "usar regadera" in full_str
+        )
+        if is_static_or_legendary and (local_locs or obt_type in ["legendary", "static", "mythical"]):
+            native_status[p_name] = True
+            method_badges[p_name] = "Único"
+            continue
+
+        # Detección de Iniciales
+        if obt_type == "starter" or "inicial" in badge_label_lower or "elección de inicial" in full_str or "eleccion de inicial" in full_str:
+            native_status[p_name] = True
+            method_badges[p_name] = "Inicial"
+            continue
+
+        # Detección de Regalos de NPC dentro del juego (incluyendo Huevo Extraño en Cristal)
+        is_gift_egg = (g_slug == "crystal" and "huevo extrañ" in full_str)
+        if obt_type == "gift" or is_gift_egg or "regalo" in badge_label_lower or "huevo entregado" in full_str or "regalo de" in full_str or "poké ball en el ático" in full_str or "dojo kárate" in full_str:
+            native_status[p_name] = True
+            method_badges[p_name] = "Regalo"
+            continue
+
+        # Detección de Intercambio NPC dentro del juego (sin encuentros salvajes directos)
+        is_npc_trade = (
+            obt_type == "trade_npc"
+            or "intercambio por " in full_str
+            or "intercambio con npc" in full_str
+            or "intercambio npc" in full_str
+        )
+        if is_npc_trade and not any(kw in methods_str for kw in ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "pantano", "safari"]):
+            native_status[p_name] = True
+            method_badges[p_name] = "Intercambio NPC"
+            continue
+
+        # Mecánicas locales comprobables
         if local_locs:
             if all("inserci" in l.get("method", "").lower() for l in local_locs):
                 native_status[p_name] = True
@@ -135,16 +273,14 @@ def _classify_catalog_for_game(nat_cat):
                 method_badges[p_name] = "Fósil Restaurado"
                 continue
 
-            # Salvaje prioritario (rutas, hierba, pesca, surf, cueva, buceo, pantano, safari, etc.)
-            # Se evalúa antes de NPC trade para que especies como Seedot o Horsea en Esmeralda
-            # (que tienen rutas salvajes y un intercambio NPC secundario) se clasifiquen como Salvaje.
+            # Salvaje prioritario (hierba, pesca, surf, cueva, buceo, pantano, safari, etc.)
             if obt_type == "wild" or has_wild:
                 native_status[p_name] = True
                 method_badges[p_name] = "Salvaje"
                 continue
 
-            # Intercambio con NPC in-game (ej. Meowth en Esmeralda, Farfetch'd en Rojo)
-            if obt_type == "trade_npc" or "intercambio con npc" in full_str or "intercambio npc" in full_str:
+            # Fallback a intercambio NPC si llegó hasta aquí
+            if is_npc_trade:
                 native_status[p_name] = True
                 method_badges[p_name] = "Intercambio NPC"
                 continue
@@ -153,18 +289,7 @@ def _classify_catalog_for_game(nat_cat):
             method_badges[p_name] = "Salvaje"
             continue
 
-        # Si no tiene local_locs:
-        if obt_type in ["gift", "starter"]:
-            native_status[p_name] = True
-            method_badges[p_name] = "Regalo / Inicial"
-            continue
-
-        if obt_type in ["static", "legendary"]:
-            if not any(kw in summary for kw in ["evento presencial", "distribución oficial", "exclusivo de", "transferir", "ranger"]):
-                native_status[p_name] = True
-                method_badges[p_name] = "Encuentro Especial"
-                continue
-
+        # Si no tiene local_locs ni se clasificó antes:
         if obt_type in ["transfer", "trade", "exclusive", "mythical", "event"]:
             native_status[p_name] = False
             method_badges[p_name] = None
@@ -173,7 +298,7 @@ def _classify_catalog_for_game(nat_cat):
         # Si es evolución o cría, se resolverá en la segunda pasada
         native_status[p_name] = None
 
-    # Segunda pasada: Resolver linaje evolutivo recursivamente
+    # Segunda pasada: Resolver linaje evolutivo recursivamente (Evolución y Crianza separadas)
     def resolve_line(p_name, visited=None):
         if visited is None:
             visited = set()
@@ -188,16 +313,43 @@ def _classify_catalog_for_game(nat_cat):
         if not entry:
             return False
 
+        p_num = entry.pokemon.national_number
         obt = getattr(entry, "obtaining_info", {}) or {}
+        summary = str(obt.get("summary", "")).lower()
+
+        # Si es un bebé reconocido, verificar si alguno de sus progenitores es nativo en este juego
+        if p_num in BABY_PARENTS:
+            for parent_name in BABY_PARENTS[p_num]:
+                parent_entry = by_name.get(parent_name) or by_clean_name.get(parent_name)
+                if parent_entry:
+                    parent_res = resolve_line(parent_name, visited)
+                    if parent_res:
+                        native_status[p_name] = True
+                        method_badges[p_name] = "Crianza"
+                        return True
+            native_status[p_name] = False
+            return False
+
+        # Si es crianza de un Pokémon no bebé (ej. Weezing -> Koffing, Swellow -> Taillow)
+        if "crianza de " in summary or "criar a " in summary or "eclosiona al criar a " in summary:
+            match = re.search(r"(?:crianza de|criar a|eclosiona al criar a) ([a-záéíóúñ\-]+)", summary)
+            if match:
+                parent = match.group(1).strip()
+                res = resolve_line(parent, visited)
+                native_status[p_name] = res
+                if res:
+                    method_badges[p_name] = "Crianza"
+                return res
+
+        # Si evoluciona de otro Pokémon nativo
         evo_from = obt.get("evolution_info", {}).get("from", "")
         if evo_from:
             res = resolve_line(evo_from.lower(), visited)
             native_status[p_name] = res
             if res:
-                method_badges[p_name] = "Evolución / Cría"
+                method_badges[p_name] = "Evolución"
             return res
 
-        summary = str(obt.get("summary", "")).lower()
         if "evoluciona de " in summary:
             match = re.search(r"evoluciona de ([a-záéíóúñ\-]+)", summary)
             if match:
@@ -205,17 +357,7 @@ def _classify_catalog_for_game(nat_cat):
                 res = resolve_line(parent, visited)
                 native_status[p_name] = res
                 if res:
-                    method_badges[p_name] = "Evolución / Cría"
-                return res
-
-        if "eclosiona al criar a " in summary or "criar a " in summary:
-            match = re.search(r"criar a ([a-záéíóúñ\-]+)", summary)
-            if match:
-                parent = match.group(1).strip()
-                res = resolve_line(parent, visited)
-                native_status[p_name] = res
-                if res:
-                    method_badges[p_name] = "Evolución / Cría"
+                    method_badges[p_name] = "Evolución"
                 return res
 
         native_status[p_name] = False
@@ -241,9 +383,40 @@ def _classify_obtaining_method(entry):
     """
     Función de compatibilidad para clasificar una sola entrada sin contexto del catálogo completo.
     """
+    if not entry:
+        return False, None
+
+    g_slug = str(getattr(entry, "game_slug", "")).lower().strip()
+    p_num = entry.pokemon.national_number
     obt = getattr(entry, "obtaining_info", {}) or {}
     obt_type = str(obt.get("type", "")).lower().strip()
     locs = obt.get("locations", []) or []
+    summary = str(obt.get("summary", "")).lower()
+    badge_label_lower = str(obt.get("badge_label", "")).lower()
+
+    # 1. Reglas específicas por especie y juego
+    if p_num == 385:
+        if g_slug in ["ruby", "sapphire", "emerald"]:
+            return True, "Método Externo"
+        return False, None
+
+    if p_num == 251:
+        if g_slug == "crystal":
+            return True, "Único"
+        return False, None
+
+    if g_slug in ["ruby", "sapphire"] and p_num in [249, 250, 386]:
+        return False, None
+
+    if p_num == 490:
+        if g_slug in ["diamond", "pearl", "platinum"]:
+            return True, "Método Externo"
+        return False, None
+
+    if p_num == 493:
+        if g_slug in ["diamond", "pearl", "platinum"]:
+            return True, "Evento"
+        return False, None
 
     local_locs = []
     for l in locs:
@@ -255,33 +428,88 @@ def _classify_obtaining_method(entry):
             continue
         local_locs.append(l)
 
+    methods_str = " ".join([l.get("method", "").lower() for l in local_locs])
+    areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
+    full_str = methods_str + " " + areas_str + " " + summary
+
+    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari"]
+    has_wild = (
+        obt_type == "wild"
+        or any(kw in methods_str for kw in wild_kw)
+        or any(kw in full_str for kw in wild_kw if kw not in ["interior"])
+    )
+
+    is_version_exclusive = (
+        any("exclusivo de versi" in l.get("method", "").lower() for l in locs)
+        or any("intercambio con pokémon" in l.get("area", "").lower() for l in locs)
+        or any("intercambio con pokemon" in l.get("area", "").lower() for l in locs)
+        or ("exclusivo " in badge_label_lower and "fósil" not in badge_label_lower and "fosil" not in badge_label_lower)
+    )
+    if is_version_exclusive and not has_wild:
+        return False, None
+
+    if obt_type in ["transfer", "trade", "exclusive", "event"] and not local_locs and not has_wild:
+        return False, None
+
+    if obt_type in ["casino", "game_corner", "prize"] or "casino" in full_str or "game corner" in full_str or "premio casino" in badge_label_lower or "fichas" in full_str:
+        if not has_wild:
+            return True, "Casino"
+
+    if obt_type == "contest" or "concurso de captura" in full_str:
+        return True, "Concurso de Captura"
+
+    is_static_or_legendary = (
+        obt_type in ["legendary", "static", "mythical"]
+        or "estático" in full_str or "estatico" in full_str
+        or "encuentro legendario" in full_str or "legendario" in full_str
+        or "torre sagrada" in full_str or "vieja mansión" in full_str
+        or "despertar con poké flauta" in full_str or "usar regadera" in full_str
+    )
+    if is_static_or_legendary and (local_locs or obt_type in ["legendary", "static", "mythical"]):
+        return True, "Único"
+
+    if obt_type == "starter" or "inicial" in badge_label_lower or "elección de inicial" in full_str or "eleccion de inicial" in full_str:
+        return True, "Inicial"
+
+    if obt_type == "gift" or "regalo" in badge_label_lower or "huevo entregado" in full_str or "regalo de" in full_str or "poké ball en el ático" in full_str or "dojo kárate" in full_str:
+        return True, "Regalo"
+
+    is_npc_trade = (
+        obt_type == "trade_npc"
+        or "intercambio por " in full_str
+        or "intercambio con npc" in full_str
+        or "intercambio npc" in full_str
+    )
+    if is_npc_trade and not any(kw in methods_str for kw in ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "pantano", "safari"]):
+        return True, "Intercambio NPC"
+
     if local_locs:
-        methods_str = " ".join([l.get("method", "").lower() for l in local_locs])
         if all("inserci" in l.get("method", "").lower() for l in local_locs):
             return True, "Inserción Dual (GBA)"
-        if "radar" in methods_str:
+        if "radar" in full_str and not any("hierba" in l.get("method", "").lower() and "radar" not in l.get("method", "").lower() for l in local_locs):
             return True, "Poké Radar"
-        if "baldosas especiales" in methods_str:
+        if "baldosas especiales" in full_str:
             return True, "Pesca Especial"
-        if "manada" in methods_str:
+        if "manada" in full_str:
             return True, "Manada Diaria"
-        if "miel" in methods_str:
+        if "miel" in full_str:
             return True, "Árbol de Miel"
-        if "fósil" in methods_str or "fosil" in methods_str or obt_type == "fossil":
+        if "trofeo" in full_str or "fortuny" in full_str:
+            return True, "Jardín Trofeo"
+        if "viernes" in full_str:
+            return True, "Solo los Viernes"
+        if "fósil" in full_str or "fosil" in full_str or obt_type == "fossil":
             return True, "Fósil Restaurado"
-        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari"]
-        if obt_type == "wild" or any(kw in methods_str for kw in wild_kw):
+        if obt_type == "wild" or has_wild:
             return True, "Salvaje"
-        if obt_type == "trade_npc" or "intercambio con npc" in methods_str or "intercambio npc" in methods_str:
+        if obt_type == "trade_npc" or "intercambio con npc" in full_str or "intercambio npc" in full_str:
             return True, "Intercambio NPC"
         return True, "Salvaje"
 
-    if obt_type in ["gift", "starter"]:
-        return True, "Regalo / Inicial"
-    if obt_type in ["static", "legendary"]:
-        return True, "Encuentro Especial"
-    if obt_type in ["evolution", "breeding"]:
-        return True, "Evolución / Cría"
+    if obt_type == "breeding" or "crianza" in summary or "eclosiona" in summary:
+        return True, "Crianza"
+    if obt_type == "evolution" or "evoluciona" in summary:
+        return True, "Evolución"
     return False, None
 
 
@@ -292,7 +520,7 @@ def _get_base_pokemon_search_index():
     for item in MAIN_SERIES_GAMES:
         g_slug = item["slug"]
         nat_cat = get_compiled_catalog(g_slug, is_national=True) or []
-        game_classification = _classify_catalog_for_game(nat_cat)
+        game_classification = _classify_catalog_for_game(nat_cat, game_slug=g_slug)
 
         for entry in nat_cat:
             p_num = entry.pokemon.national_number

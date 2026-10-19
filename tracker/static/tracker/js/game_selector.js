@@ -196,6 +196,12 @@
                             'Árbol de Miel': '/media/items/honey.png',
                             'Pesca Especial': '/media/items/super-rod.png',
                             'Fósil Restaurado': '/media/items/helix-fossil.png',
+                            'Casino': '/media/items/coin-case.png',
+                            'Concurso de Captura': '/media/items/sport-ball.png',
+                            'Único': '/media/items/master-ball.png',
+                            'Método Externo': '/media/items/cherish-ball.png',
+                            'Evento': '/media/items/member-card.png',
+                            'Crianza': '/media/items/lucky-egg.png',
                         };
 
                         if (gameInfo.is_caught) {
@@ -205,7 +211,34 @@
                             const iconUrl = methodIcons[method];
                             const iconHtml = iconUrl ? `<img src="${iconUrl}" alt="" class="w-3.5 h-3.5 object-contain inline-block shrink-0"> ` : '';
 
-                            if (method.includes('Inserción Dual')) {
+                            if (method === 'Único') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-violet-400 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Único: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Método Externo') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-indigo-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Método Externo: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Evento') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-fuchsia-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Evento: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Casino') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-amber-400 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Casino: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Concurso de Captura') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-lime-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Concurso: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Inicial') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Inicial: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Regalo') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-teal-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Regalo: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Crianza') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-pink-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `${iconHtml}Crianza: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method === 'Evolución') {
+                                badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-violet-300 text-slate-950 shadow-xs';
+                                badgeSpan.innerHTML = `Evolución: ${matchedPokemon.name} (#${matchedPokemon.id})`;
+                            } else if (method.includes('Inserción Dual')) {
                                 badgeSpan.className = 'inline-flex items-center gap-1.5 text-[10px] font-black px-2 py-0.5 rounded border border-slate-950 bg-indigo-300 text-slate-950 shadow-xs';
                                 badgeSpan.innerHTML = `${iconHtml}Inserción Dual (GBA): ${matchedPokemon.name} (#${matchedPokemon.id})`;
                             } else if (method === 'Poké Radar') {
