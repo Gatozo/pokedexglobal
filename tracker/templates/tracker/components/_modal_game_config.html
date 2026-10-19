@@ -1,0 +1,160 @@
+<!-- Modal de Configuración de Juego / Calculadoras de Partida (Estilo Cómic) -->
+<div 
+    id="game-config-modal" 
+    class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-200 select-none hidden"
+    onclick="handleGameConfigBackdropClick(event)"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+>
+    <div 
+        id="game-config-modal-card" 
+        class="bg-[#fffef5] border-4 border-slate-950 rounded-2xl w-full max-w-lg shadow-[8px_8px_0px_0px_#0f172a] transform scale-95 transition-all duration-200 overflow-hidden flex flex-col max-h-[90vh]"
+        onclick="event.stopPropagation()"
+    >
+        <!-- Header del Modal -->
+        <div class="bg-amber-400 border-b-4 border-slate-950 px-4 py-3 sm:px-5 sm:py-3.5 flex items-center justify-between gap-3 comic-header-pattern relative shrink-0">
+            <div class="flex items-center gap-2 min-w-0">
+                <div class="w-8 h-8 rounded-lg border-2 border-slate-950 bg-white flex items-center justify-center shadow-[1.5px_1.5px_0px_0px_#0f172a] shrink-0">
+                    <svg class="w-5 h-5 text-slate-900 animate-spin-slow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </div>
+                <div class="min-w-0">
+                    <h3 class="text-base sm:text-lg font-black text-slate-950 uppercase tracking-tight truncate leading-tight">
+                        Configuración de Partida
+                    </h3>
+                    <p class="text-[11px] font-bold text-slate-800 leading-none mt-0.5">
+                        {{ game.display_name }}
+                    </p>
+                </div>
+            </div>
+            
+            <button 
+                type="button" 
+                onclick="closeGameConfigModal()"
+                class="w-8 h-8 rounded-xl border-2 border-slate-950 bg-white text-slate-900 hover:bg-rose-500 hover:text-white transition-colors flex items-center justify-center font-black text-sm shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer shrink-0"
+                aria-label="Cerrar ventana"
+            >
+                ✕
+            </button>
+        </div>
+
+        <!-- Cuerpo del Modal -->
+        <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-slate-900">
+            <!-- Sección: Calculadora de Árboles de Munchlax (Gen 4) -->
+            {% if game.generation == 4 or game.slug in 'diamond,pearl,platinum' %}
+            <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="/media/items/honey.png" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+                    <h4 class="font-black text-sm uppercase tracking-wide text-slate-950">
+                        Calculadora de Árboles de Munchlax
+                    </h4>
+                </div>
+                
+                <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
+                    En Sinnoh, Munchlax sólo puede aparecer en <strong class="text-amber-800">4 de los 21 árboles de miel</strong> asignados aleatoriamente a tu partida mediante tu <strong class="text-slate-900">ID de Entrenador</strong>. Configura tus datos para que la Pokédex filtre y resalte automáticamente tus rutas específicas.
+                </p>
+
+                <div class="space-y-3">
+                    <!-- TID Field -->
+                    <div>
+                        <label for="cfg-trainer-id" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                            ID de Entrenador (TID) <span class="text-rose-600">*</span>
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="cfg-trainer-id" 
+                                inputmode="numeric"
+                                pattern="[0-9]*"
+                                maxlength="5"
+                                placeholder="Ej. 12345" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                            >
+                            <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                5 dígitos
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-slate-500 font-semibold mt-1">
+                            Visible en tu Tarjeta de Entrenador en el juego.
+                        </p>
+                    </div>
+
+                    <!-- SID Field -->
+                    <div>
+                        <label for="cfg-secret-id" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                            ID Secreto (SID) <span class="text-slate-500 text-[9px] font-bold">(Opcional)</span>
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="cfg-secret-id" 
+                                inputmode="numeric"
+                                pattern="[0-9]*"
+                                maxlength="5"
+                                placeholder="Ej. 54321 (Opcional)" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                            >
+                            <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase select-none pointer-events-none">
+                                Opcional
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-slate-500 font-semibold mt-1 leading-snug">
+                            Si no conoces tu ID Secreto, déjalo en blanco. Calcularemos con <strong class="text-slate-800">100% de certeza</strong> los <strong class="text-slate-800">2 árboles garantizados</strong> de tu ID de Entrenador.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Preview de Árboles Calculados -->
+                <div id="cfg-calculated-preview" class="hidden mt-4 pt-3 border-t-2 border-dashed border-slate-200">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-[11px] font-black uppercase tracking-wider text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            Árboles de tu Partida:
+                        </span>
+                        <span id="cfg-trees-count-badge" class="text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-amber-200 text-slate-900">
+                            2 Árboles
+                        </span>
+                    </div>
+                    <ul id="cfg-trees-list" class="space-y-1 text-xs font-bold text-slate-800">
+                        <!-- Generado dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Footer con Acciones -->
+        <div class="bg-slate-100 border-t-2 border-slate-950 p-3 sm:p-4 flex items-center justify-between gap-2 shrink-0">
+            <button 
+                type="button" 
+                id="cfg-btn-reset"
+                onclick="resetGameConfig()"
+                class="px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-white hover:bg-rose-100 text-slate-800 hover:text-rose-700 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+            >
+                Restablecer
+            </button>
+            <div class="flex items-center gap-2">
+                <button 
+                    type="button" 
+                    onclick="closeGameConfigModal()"
+                    class="px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-white hover:bg-slate-200 text-slate-800 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+                >
+                    Cancelar
+                </button>
+                <button 
+                    type="button" 
+                    id="cfg-btn-save"
+                    onclick="saveGameConfig()"
+                    class="px-4 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer flex items-center gap-1.5"
+                >
+                    <span>Guardar y Aplicar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

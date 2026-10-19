@@ -1075,6 +1075,34 @@ class GameSelectorClassificationTests(TestCase):
         self.assertIn("diamond", idx[493]["games"])
         self.assertEqual(idx[493]["games"]["diamond"]["method_badge"], "Evento")
 
+    def test_game_config_button_and_modal_elements(self):
+        # Asegurar que existan los modelos en la base de datos de pruebas
+        game_dia, _ = Game.objects.get_or_create(slug="diamond", defaults={"name": "Pokémon Diamond", "generation": 4})
+        Pokedex.objects.get_or_create(game=game_dia, slug="sinnoh", defaults={"name": "Pokédex de Sinnoh"})
+
+        game_red, _ = Game.objects.get_or_create(slug="red", defaults={"name": "Pokémon Red", "generation": 1})
+        Pokedex.objects.get_or_create(game=game_red, slug="kanto", defaults={"name": "Pokédex de Kanto"})
+
+        # En Diamante (Gen 4), el botón de configuración de partida (#btn-game-config) debe existir
+        url_dia = reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"})
+        resp_dia = self.client.get(url_dia)
+        self.assertEqual(resp_dia.status_code, 200)
+        content_dia = resp_dia.content.decode("utf-8")
+
+        self.assertIn('id="btn-game-config"', content_dia)
+        self.assertIn('id="game-config-modal"', content_dia)
+        self.assertIn('id="cfg-trainer-id"', content_dia)
+        self.assertIn('id="cfg-secret-id"', content_dia)
+        self.assertIn('id="cfg-btn-save"', content_dia)
+
+        # En Rojo (Gen 1), el botón de configuración de partida NO debe mostrarse
+        url_red = reverse("tracker:pokedex_default", kwargs={"game_slug": "red"})
+        resp_red = self.client.get(url_red)
+        self.assertEqual(resp_red.status_code, 200)
+        content_red = resp_red.content.decode("utf-8")
+        self.assertNotIn('id="btn-game-config"', content_red)
+
+
 
 
 

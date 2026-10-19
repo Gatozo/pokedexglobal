@@ -9,6 +9,7 @@ import { setModalUrlHash, syncUrlToCurrentOpenModal, releaseScrollIfNoModalOpen,
 import { openStoneModal } from './modal_stones.js';
 import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
+import { loadGameConfig, getMunchlaxTreeNames } from './game_config.js';
 
 const _entryDataCache = new Map();
 const _cardFormIndex = new Map();
@@ -442,22 +443,49 @@ export function renderModalObtaining(data, activeForm = null) {
     const detailsContainer = document.getElementById('modal-obtaining-details');
     const isDetailsOpen = Boolean(detailsContainer && !detailsContainer.classList.contains('hidden'));
 
-    if (summaryEl) {
-        const hasDetails = (obt.locations && obt.locations.length > 0) || Boolean(obt.evolution_info) || Boolean(data.evolution_stone) || Boolean(obt.historical_note);
+    // Filtrado dinámico especial para Munchlax según configuración de partida del usuario (Gen 4)
+    let displayLocations = obt.locations ? [...obt.locations] : [];
+    let isMunchlaxConfigured = false;
+    let munchlaxTreeCount = 0;
 
-        if (obt.locations && obt.locations.length > 2) {
-            const loc1 = obt.locations[0].area;
-            const loc2 = obt.locations[1].area;
-            const remCount = obt.locations.length - 2;
+    const isMunchlaxSpecies = (data.name && data.name.toLowerCase() === 'munchlax') || (parseInt(data.number, 10) === 446);
+    if (isMunchlaxSpecies) {
+        const gameCfg = loadGameConfig();
+        if (gameCfg && (gameCfg.tid !== undefined && gameCfg.tid !== null)) {
+            const calculatedTreeNames = getMunchlaxTreeNames(gameCfg.tid, gameCfg.sid);
+            if (calculatedTreeNames && calculatedTreeNames.length > 0) {
+                isMunchlaxConfigured = true;
+                munchlaxTreeCount = calculatedTreeNames.length;
+                displayLocations = displayLocations.filter(loc => {
+                    // Mantener crianza u otros métodos no relacionados con árboles
+                    if (loc.method && !loc.method.includes('Árboles de Miel') && !loc.method.includes('Miel')) {
+                        return true;
+                    }
+                    // Mantener únicamente los árboles coincidentes con los calculados
+                    return calculatedTreeNames.includes(loc.area);
+                });
+            }
+        }
+    }
+
+    if (summaryEl) {
+        const hasDetails = (displayLocations && displayLocations.length > 0) || Boolean(obt.evolution_info) || Boolean(data.evolution_stone) || Boolean(obt.historical_note);
+
+        if (isMunchlaxConfigured) {
+            summaryEl.innerHTML = `<span class="text-amber-800 font-black">Árboles de tu Partida:</span> Disponible en tus <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${munchlaxTreeCount} árboles de miel configurados</span> (y crianza con Incienso Lento).`;
+        } else if (displayLocations && displayLocations.length > 2) {
+            const loc1 = displayLocations[0].area;
+            const loc2 = displayLocations[1].area;
+            const remCount = displayLocations.length - 2;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
             summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>, <span class="text-slate-950 font-black">${loc2}</span> y <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${remCount} ${remCount === 1 ? 'zona más' : 'zonas más'}</span>.`;
-        } else if (obt.locations && obt.locations.length === 2) {
-            const loc1 = obt.locations[0].area;
-            const loc2 = obt.locations[1].area;
+        } else if (displayLocations && displayLocations.length === 2) {
+            const loc1 = displayLocations[0].area;
+            const loc2 = displayLocations[1].area;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
             summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span> y <span class="text-slate-950 font-black">${loc2}</span>.`;
-        } else if (obt.locations && obt.locations.length === 1) {
-            const loc1 = obt.locations[0].area;
+        } else if (displayLocations && displayLocations.length === 1) {
+            const loc1 = displayLocations[0].area;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
             const textBase = obt.summary ? obt.summary : `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>.`;
             summaryEl.innerHTML = `${textBase}`;
@@ -545,7 +573,7 @@ export function renderModalObtaining(data, activeForm = null) {
             detailsContainer.appendChild(itemBox);
         }
 
-        if (obt.locations && obt.locations.length > 0) {
+        if (displayLocations && displayLocations.length > 0) {
             if (obt.evolution_info || data.evolution_stone) {
                 const wildTitle = document.createElement('div');
                 wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
@@ -553,9 +581,24 @@ export function renderModalObtaining(data, activeForm = null) {
                 detailsContainer.appendChild(wildTitle);
             }
 
+            if (isMunchlaxConfigured) {
+                const cfgHeader = document.createElement('div');
+                cfgHeader.className = 'mb-2 p-2 rounded-lg bg-amber-50 border border-amber-300 text-amber-950 text-xs font-bold flex items-center justify-between gap-2';
+                cfgHeader.innerHTML = `
+                    <div class="flex items-center gap-1.5">
+                        <img src="/media/items/honey.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                        <span>Árboles calculados por tu ID de Entrenador (${munchlaxTreeCount} activos)</span>
+                    </div>
+                    <button type="button" onclick="event.stopPropagation(); openGameConfigModal();" class="text-[10px] font-black uppercase text-amber-900 underline hover:text-amber-700 cursor-pointer">
+                        Editar ID
+                    </button>
+                `;
+                detailsContainer.appendChild(cfgHeader);
+            }
+
             const locList = document.createElement('div');
-            locList.className = (obt.locations.length === 1) ? 'grid grid-cols-1 gap-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2';
-            obt.locations.forEach(loc => {
+            locList.className = (displayLocations.length === 1) ? 'grid grid-cols-1 gap-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2';
+            displayLocations.forEach(loc => {
                 const item = document.createElement('div');
                 const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
                 const isTransfer = (obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia'));
@@ -563,22 +606,27 @@ export function renderModalObtaining(data, activeForm = null) {
                 const isSwarm = loc.method && (loc.method.toLowerCase().includes('manada') || loc.method.toLowerCase().includes('swarm'));
                 const isAlteringCave = loc.area && (loc.area.includes('Cueva Cambiante') || loc.area.toLowerCase().includes('altering-cave'));
                 const isAlteringCaveInactive = isAlteringCave && (parseInt(data.number, 10) !== 41);
+                const isConfiguredHoneyTree = isMunchlaxConfigured && loc.method && loc.method.includes('Árboles de Miel');
 
-                const locIcon = isBreedingOrEgg 
-                    ? '/media/items/mystery-egg.png' 
-                    : (isDualSlot ? '/media/items/up-grade.png' : (isTransfer ? '/media/items/linking-cord.png' : '/media/items/town-map.png'));
-
-                const cardBg = isAlteringCaveInactive 
-                    ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
+                const locIcon = isConfiguredHoneyTree
+                    ? '/media/items/honey.png'
                     : (isBreedingOrEgg 
-                        ? 'bg-pink-50/70 border-pink-200 text-pink-950' 
-                        : (isDualSlot 
-                            ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
-                            : (isSwarm
-                                ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950'
-                                : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800'))));
+                        ? '/media/items/mystery-egg.png' 
+                        : (isDualSlot ? '/media/items/up-grade.png' : (isTransfer ? '/media/items/linking-cord.png' : '/media/items/town-map.png')));
+
+                const cardBg = isConfiguredHoneyTree
+                    ? 'bg-gradient-to-r from-amber-100 to-amber-50 border-amber-400 text-amber-950 shadow-[1.5px_1.5px_0px_0px_#d97706]'
+                    : (isAlteringCaveInactive 
+                        ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
+                        : (isBreedingOrEgg 
+                            ? 'bg-pink-50/70 border-pink-200 text-pink-950' 
+                            : (isDualSlot 
+                                ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
+                                : (isSwarm
+                                    ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950'
+                                    : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800')))));
                 
-                let methodLabel = isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method;
+                let methodLabel = isConfiguredHoneyTree ? 'Árbol de Miel de tu partida' : (isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method);
                 if (isDualSlot && !isAlteringCaveInactive) {
                     if (loc.method.includes('Cualquier GBA') || (loc.method.match(/Inserción Dual/g) || []).length >= 4) {
                         methodLabel = 'Cualquier GBA';

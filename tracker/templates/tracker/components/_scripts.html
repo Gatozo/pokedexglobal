@@ -58,12 +58,14 @@
         const transModal = document.getElementById('transfers-modal');
         const stoneModal = document.getElementById('stone-location-modal');
         const unownModal = document.getElementById('unown-modal');
+        const cfgModal = document.getElementById('game-config-modal');
         const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
         const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
         const isTransOpen = transModal && !transModal.classList.contains('opacity-0');
         const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
         const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
-        if (!isComicOpen && !isExclOpen && !isTransOpen && !isStoneOpen && !isUnownOpen) {
+        const isCfgOpen = cfgModal && !cfgModal.classList.contains('opacity-0');
+        if (!isComicOpen && !isExclOpen && !isTransOpen && !isStoneOpen && !isUnownOpen && !isCfgOpen) {
             document.documentElement.classList.remove('overflow-hidden');
             document.body.classList.remove('overflow-hidden');
         }

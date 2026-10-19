@@ -103,6 +103,15 @@ import {
     closeAllModals, 
     releaseScrollIfNoModalOpen 
 } from './url_sync.js';
+import {
+    openGameConfigModal,
+    closeGameConfigModal,
+    handleGameConfigBackdropClick,
+    saveGameConfig,
+    resetGameConfig,
+    renderConfigPreview,
+    initGameConfig
+} from './game_config.js';
 
 // Exposición al objeto window para compatibilidad total con eventos inline onclick="..." de los templates
 window.toggleShinydexMode = toggleShinydexMode;
@@ -189,6 +198,14 @@ window.clearModalUrlHash = clearModalUrlHash;
 window.syncModalFromUrlHash = syncModalFromUrlHash;
 window.closeAllModals = closeAllModals;
 window.getCsrfToken = getCsrfToken;
+
+// Funciones de configuración de partida / Munchlax
+window.openGameConfigModal = openGameConfigModal;
+window.closeGameConfigModal = closeGameConfigModal;
+window.handleGameConfigBackdropClick = handleGameConfigBackdropClick;
+window.saveGameConfig = saveGameConfig;
+window.resetGameConfig = resetGameConfig;
+window.renderConfigPreview = renderConfigPreview;
 
 // Marcar el framework interactivo modular como 100% cargado y listo
 window.__pokedexReady = true;
@@ -348,6 +365,10 @@ onDOMReady(() => {
 
     try {
         initNationalGenerationBar();
+    } catch (e) {}
+
+    try {
+        initGameConfig();
     } catch (e) {}
 
     // Re-evaluar deep link por si la tarjeta se encontraba más abajo en el render inicial

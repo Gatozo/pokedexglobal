@@ -21,6 +21,24 @@
             </div>
         </div>
         <div class="text-2xl sm:text-3xl font-black mt-1 flex items-center justify-center md:justify-end gap-2 font-mono">
+            {% if game.generation == 4 or game.slug in 'diamond,pearl,platinum' %}
+            <button 
+                type="button" 
+                id="btn-game-config"
+                onclick="openGameConfigModal()"
+                title="Configuración de Partida (Calculadora de Árboles de Miel de Munchlax)"
+                class="cursor-pointer focus:outline-none shrink-0 mr-1 relative group"
+            >
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg border-2 border-slate-950 bg-white hover:bg-amber-100 flex items-center justify-center shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+                    <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-slate-800 group-hover:rotate-45 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <!-- Indicador activo cuando hay configuración guardada -->
+                    <span id="cfg-active-dot" class="hidden absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-500 border border-slate-950 rounded-full shadow-xs"></span>
+                </div>
+            </button>
+            {% endif %}
             {% if game.generation >= 2 %}
             <button 
                 type="button" 
