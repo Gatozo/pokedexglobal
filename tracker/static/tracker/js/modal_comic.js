@@ -167,7 +167,7 @@ export function updateModalSpriteDisplay() {
             const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
             const fallback = (hasForms && form)
                 ? (form.sprite_retro || form.sprite_modern)
-                : ((femaleSprites && femaleSprites.retro) || data.sprite_modern || data.sprite_retro);
+                : ((femaleSprites && (femaleSprites.retro_static || femaleSprites.retro)) || data.sprite_modern || data.sprite_retro);
             if (fallback && modalImg.src !== fallback) {
                 modalImg.src = fallback;
             }

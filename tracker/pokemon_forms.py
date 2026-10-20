@@ -27,6 +27,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
     is_gen4 = game_slug in ["diamond", "pearl", "platinum"]
     slug = "diamond" if is_gen4 else (game_slug if game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else "ruby")
     is_emerald = (slug == "emerald")
+    is_diamond = (slug == "diamond")
 
     notes_normal = [
         {
@@ -73,8 +74,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/351.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/351.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else None,
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else None,
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else ("/media/pokemon/sprites/diamond_animated/351.png" if is_diamond else None),
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else ("/media/pokemon/sprites/diamond_animated_shiny/351.png" if is_diamond else None),
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/351.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/351.png",
             "sprite_modern": "/media/pokemon/home/351.png",
@@ -160,6 +161,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/386.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/386.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/deoxys/normal.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/deoxys/normal.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/386.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/386.png",
             "sprite_modern": "/media/pokemon/home/386.png",
@@ -184,6 +187,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/attack.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/attack.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/deoxys/attack.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/deoxys/attack.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/attack.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/attack.png",
             "sprite_modern": "/media/pokemon/home/10001.png",
@@ -208,6 +213,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/defense.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/defense.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/deoxys/defense.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/deoxys/defense.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/defense.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/defense.png",
             "sprite_modern": "/media/pokemon/home/10002.png",
@@ -232,6 +239,8 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/speed.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/speed.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/deoxys/speed.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/deoxys/speed.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/speed.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/speed.png",
             "sprite_modern": "/media/pokemon/home/10003.png",
@@ -266,6 +275,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/plant.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/plant.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/burmy/plant.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/burmy/plant.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/plant.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/plant.png",
             "sprite_modern": "/media/pokemon/home/412.png",
@@ -306,6 +317,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/sandy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/sandy.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/burmy/sandy.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/burmy/sandy.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/sandy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/sandy.png",
             "sprite_modern": "/media/pokemon/home/412-sandy.png",
@@ -346,6 +359,8 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/trash.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/trash.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/burmy/trash.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/burmy/trash.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/trash.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/trash.png",
             "sprite_modern": "/media/pokemon/home/412-trash.png",
@@ -397,6 +412,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "Planta",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/plant.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/plant.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/wormadam/plant.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/wormadam/plant.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/plant.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/plant.png",
             "sprite_modern": "/media/pokemon/home/413.png",
@@ -425,6 +442,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "Tierra",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/sandy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/sandy.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/wormadam/sandy.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/wormadam/sandy.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/sandy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/sandy.png",
             "sprite_modern": "/media/pokemon/home/10004.png",
@@ -453,6 +472,8 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "Acero",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/trash.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/trash.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/wormadam/trash.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/wormadam/trash.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/trash.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/trash.png",
             "sprite_modern": "/media/pokemon/home/10005.png",
@@ -491,6 +512,8 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/cherrim/overcast.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/overcast.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/cherrim/overcast.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/cherrim/overcast.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/overcast.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/overcast.png",
             "sprite_modern": "/media/pokemon/home/421.png",
@@ -515,6 +538,8 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/cherrim/sunshine.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/sunshine.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/cherrim/sunshine.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/cherrim/sunshine.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/sunshine.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/sunshine.png",
             "sprite_modern": "/media/pokemon/home/421-sunshine.png",
@@ -550,6 +575,8 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/shellos/west.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/west.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/shellos/west.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/shellos/west.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/west.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/west.png",
             "sprite_modern": "/media/pokemon/home/422.png",
@@ -581,6 +608,8 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/shellos/east.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/east.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/shellos/east.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/shellos/east.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/east.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/east.png",
             "sprite_modern": "/media/pokemon/home/422-east.png",
@@ -624,6 +653,8 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "Tierra",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/gastrodon/west.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/west.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/gastrodon/west.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/gastrodon/west.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/west.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/west.png",
             "sprite_modern": "/media/pokemon/home/423.png",
@@ -656,6 +687,8 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": "Tierra",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/gastrodon/east.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/east.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/gastrodon/east.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/gastrodon/east.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/east.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/east.png",
             "sprite_modern": "/media/pokemon/home/423-east.png",
@@ -720,6 +753,8 @@ def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "secondary_type_es": s_type_es,
             "sprite_retro": f"/media/pokemon/sprites/{slug}/arceus/{f_key}.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/arceus/{f_key}.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/diamond_animated/arceus/{f_key}.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/diamond_animated_shiny/arceus/{f_key}.png",
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/arceus/{f_key}.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/arceus/{f_key}.png",
             "sprite_modern": "/media/pokemon/home/493.png" if f_key == "normal" else f"/media/pokemon/home/493-{f_key}.png",
@@ -814,6 +849,7 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
 
         is_crystal = (clean_slug == "crystal")
         is_emerald = (clean_slug == "emerald")
+        is_diamond = (clean_slug in ["diamond", "pearl", "platinum"])
         modal_retro_url = None
         modal_retro_shiny_url = None
         if is_crystal:
@@ -822,6 +858,9 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
         elif is_emerald:
             modal_retro_url = f"/media/pokemon/sprites/emerald_animated/unown/{letter}.gif"
             modal_retro_shiny_url = f"/media/pokemon/sprites/emerald_animated_shiny/unown/{letter}.gif"
+        elif is_diamond:
+            modal_retro_url = f"/media/pokemon/sprites/diamond_animated/unown/{letter}.png"
+            modal_retro_shiny_url = f"/media/pokemon/sprites/diamond_animated_shiny/unown/{letter}.png"
 
         forms.append({
             "form_key": letter,

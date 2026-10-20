@@ -2089,3 +2089,117 @@ class GenderDifferencesAndModalDataTests(TestCase):
         self.assertEqual(cast_forms["sunny"]["sprite_modern"], "/media/pokemon/home/10013.png")
         self.assertTrue((media_root / "pokemon" / "home" / "10013.png").exists())
 
+
+    def test_diamond_modal_animated_sprites_and_gender_and_forms(self):
+        """
+        Valida que los sprites retro animados (APNG) se apliquen exclusivamente
+        en el modal de cómic de Pokémon Diamante:
+        1. Las entradas base tienen modal_retro_sprite_url y modal_retro_sprite_shiny_url en diamond_animated.
+        2. La cuadrícula de la Pokédex mantiene game_sprite_url estático en diamond.
+        3. Los sprites de espalda se mantienen estáticos en diamond/back y diamond_shiny/back.
+        4. Las formas alternativas (Deoxys, Burmy, Wormadam, Cherrim, Shellos, Gastrodon, Arceus, Unown, Castform)
+           tienen modal_retro_sprite_url y modal_retro_sprite_shiny_url animados.
+        5. Las diferencias de género femeninas en Diamante tienen sprites animados retro_animated.
+        """
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.gender_differences import get_pokemon_gender_info
+        from tracker.pokemon_forms import get_pokemon_forms
+        import json
+
+        diamond_entries = get_compiled_catalog("diamond", is_national=True)
+        self.assertIsNotNone(diamond_entries)
+
+        # 1. Base Pokémon (Turtwig #387, Pikachu #25, Dialga #483)
+        turtwig = next(e for e in diamond_entries if e.pokemon.national_number == 387)
+        self.assertEqual(turtwig.game_sprite_url, "/media/pokemon/sprites/diamond/387.png")
+        self.assertEqual(turtwig.game_sprite_shiny_url, "/media/pokemon/sprites/diamond_shiny/387.png")
+        self.assertEqual(turtwig.modal_retro_sprite_url, "/media/pokemon/sprites/diamond_animated/387.png")
+        self.assertEqual(turtwig.modal_retro_sprite_shiny_url, "/media/pokemon/sprites/diamond_animated_shiny/387.png")
+        self.assertEqual(turtwig.game_sprite_back_url, "/media/pokemon/sprites/diamond/back/387.png")
+        self.assertEqual(turtwig.game_sprite_shiny_back_url, "/media/pokemon/sprites/diamond_shiny/back/387.png")
+
+        m_data = json.loads(turtwig.modal_data_json)
+        self.assertEqual(m_data["sprite_retro"], "/media/pokemon/sprites/diamond_animated/387.png")
+        self.assertEqual(m_data["sprite_retro_shiny"], "/media/pokemon/sprites/diamond_animated_shiny/387.png")
+        self.assertEqual(m_data["sprite_retro_back"], "/media/pokemon/sprites/diamond/back/387.png")
+
+        # 2. Diferencias de género femeninas (Pikachu #25)
+        pika_gender = get_pokemon_gender_info(25, "diamond")
+        self.assertTrue(pika_gender["has_visual_differences"])
+        fem_sprites = pika_gender["female_sprites"]
+        self.assertIsNotNone(fem_sprites)
+        self.assertEqual(fem_sprites["retro"], "/media/pokemon/sprites/diamond_animated/female/25.png")
+        self.assertEqual(fem_sprites["retro_shiny"], "/media/pokemon/sprites/diamond_animated_shiny/female/25.png")
+        self.assertEqual(fem_sprites["retro_animated"], "/media/pokemon/sprites/diamond_animated/female/25.png")
+        self.assertEqual(fem_sprites["retro_static"], "/media/pokemon/sprites/diamond/female/25.png")
+        self.assertEqual(fem_sprites["retro_back"], "/media/pokemon/sprites/diamond/back/female/25.png")
+
+        # 3. Formas alternativas animadas en Diamante
+        # Deoxys
+        deoxys_forms = {f["form_key"]: f for f in get_pokemon_forms(386, "diamond")}
+        self.assertEqual(deoxys_forms["normal"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/deoxys/normal.png")
+        self.assertEqual(deoxys_forms["attack"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/deoxys/attack.png")
+        self.assertEqual(deoxys_forms["defense"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/deoxys/defense.png")
+        self.assertEqual(deoxys_forms["speed"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/deoxys/speed.png")
+
+        # Burmy & Wormadam
+        burmy_forms = {f["form_key"]: f for f in get_pokemon_forms(412, "diamond")}
+        self.assertEqual(burmy_forms["plant"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/burmy/plant.png")
+        self.assertEqual(burmy_forms["sandy"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/burmy/sandy.png")
+        self.assertEqual(burmy_forms["trash"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/burmy/trash.png")
+
+        worm_forms = {f["form_key"]: f for f in get_pokemon_forms(413, "diamond")}
+        self.assertEqual(worm_forms["plant"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/wormadam/plant.png")
+        self.assertEqual(worm_forms["sandy"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/wormadam/sandy.png")
+        self.assertEqual(worm_forms["trash"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/wormadam/trash.png")
+
+        # Cherrim
+        cherrim_forms = {f["form_key"]: f for f in get_pokemon_forms(421, "diamond")}
+        self.assertEqual(cherrim_forms["overcast"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/cherrim/overcast.png")
+        self.assertEqual(cherrim_forms["sunshine"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/cherrim/sunshine.png")
+
+        # Shellos & Gastrodon
+        shellos_forms = {f["form_key"]: f for f in get_pokemon_forms(422, "diamond")}
+        self.assertEqual(shellos_forms["west"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/shellos/west.png")
+        self.assertEqual(shellos_forms["east"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/shellos/east.png")
+
+        gastro_forms = {f["form_key"]: f for f in get_pokemon_forms(423, "diamond")}
+        self.assertEqual(gastro_forms["west"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/gastrodon/west.png")
+        self.assertEqual(gastro_forms["east"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/gastrodon/east.png")
+
+        # Arceus
+        arceus_forms = {f["form_key"]: f for f in get_pokemon_forms(493, "diamond")}
+        self.assertEqual(arceus_forms["normal"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/arceus/normal.png")
+        self.assertEqual(arceus_forms["fire"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/arceus/fire.png")
+        self.assertEqual(arceus_forms["water"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/arceus/water.png")
+
+        # Unown
+        unown_forms = {f["form_key"]: f for f in get_pokemon_forms(201, "diamond")}
+        self.assertEqual(unown_forms["a"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/unown/a.png")
+        self.assertEqual(unown_forms["exclamation"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/unown/exclamation.png")
+        self.assertEqual(unown_forms["question"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/unown/question.png")
+
+        # Castform normal
+        cast_forms = {f["form_key"]: f for f in get_pokemon_forms(351, "diamond")}
+        self.assertEqual(cast_forms["normal"]["modal_retro_sprite_url"], "/media/pokemon/sprites/diamond_animated/351.png")
+
+        # 4. Validar integridad de fotogramas y diferenciación de formas
+        from PIL import Image
+        from pathlib import Path
+        from django.conf import settings
+        media_root = Path(settings.MEDIA_ROOT)
+        
+        # Cherrim overcast debe tener 30 frames animados (desde Platino) y forma de capullo morado
+        cherrim_anim = Image.open(media_root / "pokemon" / "sprites" / "diamond_animated" / "cherrim" / "overcast.png")
+        self.assertEqual(getattr(cherrim_anim, "n_frames", 1), 30)
+
+        # Burmy sandy y trash deben tener 22 frames y colores no invertidos
+        burmy_sandy = Image.open(media_root / "pokemon" / "sprites" / "diamond_animated" / "burmy" / "sandy.png")
+        burmy_trash = Image.open(media_root / "pokemon" / "sprites" / "diamond_animated" / "burmy" / "trash.png")
+        self.assertEqual(getattr(burmy_sandy, "n_frames", 1), 22)
+        self.assertEqual(getattr(burmy_trash, "n_frames", 1), 22)
+        pix_sandy = [p for p in burmy_sandy.convert("RGBA").getdata() if p[3] > 50]
+        pix_trash = [p for p in burmy_trash.convert("RGBA").getdata() if p[3] > 50]
+        avg_sandy = (sum(p[0] for p in pix_sandy) // len(pix_sandy), sum(p[1] for p in pix_sandy) // len(pix_sandy), sum(p[2] for p in pix_sandy) // len(pix_sandy))
+        avg_trash = (sum(p[0] for p in pix_trash) // len(pix_trash), sum(p[1] for p in pix_trash) // len(pix_trash), sum(p[2] for p in pix_trash) // len(pix_trash))
+        self.assertGreater(avg_trash[0] - avg_trash[1], avg_sandy[0] - avg_sandy[1])
