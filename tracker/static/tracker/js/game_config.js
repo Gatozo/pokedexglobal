@@ -429,23 +429,31 @@ export function renderConfigPreview() {
 export function saveGameConfig() {
     const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
-    const tidInput = document.getElementById('cfg-trainer-id');
-
-    if (!tidInput) return;
-
-    const tidVal = parseInt(tidInput.value, 10);
-    if (isNaN(tidVal) || tidVal < 0 || tidVal > 65535) {
-        alert('Por favor introduce un ID de Entrenador (TID) válido entre 0 y 65535.');
-        tidInput.focus();
-        return;
-    }
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
 
     if (isGen3Hoenn) {
+        const tidInput = document.getElementById('cfg-trainer-id');
+        const tidRaw = tidInput ? tidInput.value.trim() : '';
         const w1Input = document.getElementById('cfg-feebas-word1');
         const w2Input = document.getElementById('cfg-feebas-word2');
 
         const w1 = w1Input ? w1Input.value.trim().toUpperCase() : '';
         const w2 = w2Input ? w2Input.value.trim().toUpperCase() : '';
+
+        // Si todos los campos están vacíos, se limpia la configuración
+        if (!tidRaw && !w1 && !w2) {
+            saveGameConfigData(null);
+            closeGameConfigModal();
+            refreshOpenModals();
+            return;
+        }
+
+        const tidVal = parseInt(tidRaw, 10);
+        if (isNaN(tidVal) || tidVal < 0 || tidVal > 65535) {
+            alert('Por favor introduce un ID de Entrenador (TID) válido entre 0 y 65535.');
+            if (tidInput) tidInput.focus();
+            return;
+        }
 
         if (!w1 || !w2) {
             alert('Por favor ingresa las dos palabras de la Frase de Moda de Pueblo Azuliza.');
@@ -476,32 +484,70 @@ export function saveGameConfig() {
         return;
     }
 
-    // Gen 4 Sinnoh (Munchlax y Feebas)
-    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
+    // Gen 4 Sinnoh (Munchlax y Feebas son configuraciones independientes)
     if (isGen4Sinnoh) {
+        const tidInput = document.getElementById('cfg-trainer-id');
         const sidInput = document.getElementById('cfg-secret-id');
         const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
         const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
 
-        const sidVal = sidInput && sidInput.value.trim() !== '' ? parseInt(sidInput.value, 10) : null;
-        if (sidVal !== null && (isNaN(sidVal) || sidVal < 0 || sidVal > 65535)) {
-            alert('El ID Secreto (SID) debe ser un número válido entre 0 y 65535 o dejarse en blanco.');
-            sidInput.focus();
-            return;
-        }
-
+        const tidRaw = tidInput ? tidInput.value.trim() : '';
+        const sidRaw = sidInput ? sidInput.value.trim() : '';
         const todayRaw = lottoTodayInput ? lottoTodayInput.value.trim() : '';
         const yestRaw = lottoYestInput ? lottoYestInput.value.trim() : '';
 
+        // Si todos los campos están vacíos, se limpia la configuración
+        if (!tidRaw && !sidRaw && !todayRaw && !yestRaw) {
+            saveGameConfigData(null);
+            closeGameConfigModal();
+            refreshOpenModals();
+            return;
+        }
+
+        // 1. Validación de Árboles de Munchlax
+        let tidVal = null;
+        let sidVal = null;
+
+        if (sidRaw !== '' && tidRaw === '') {
+            alert('Para configurar los Árboles de Munchlax, el ID de Entrenador (TID) es obligatorio.');
+            if (tidInput) tidInput.focus();
+            return;
+        }
+
+        if (tidRaw !== '') {
+            tidVal = parseInt(tidRaw, 10);
+            if (isNaN(tidVal) || tidVal < 0 || tidVal > 65535) {
+                alert('El ID de Entrenador (TID) para los árboles de Munchlax debe ser un número entre 0 y 65535.');
+                if (tidInput) tidInput.focus();
+                return;
+            }
+
+            if (sidRaw !== '') {
+                sidVal = parseInt(sidRaw, 10);
+                if (isNaN(sidVal) || sidVal < 0 || sidVal > 65535) {
+                    alert('El ID Secreto (SID) debe ser un número válido entre 0 y 65535 o dejarse en blanco.');
+                    if (sidInput) sidInput.focus();
+                    return;
+                }
+            }
+        }
+
+        // 2. Validación de Casillas de Feebas
         let lottoTodayVal = null;
         let lottoYestVal = null;
         let feebasSpots = null;
+
+        if (yestRaw !== '' && todayRaw === '') {
+            alert('Para configurar las Casillas de Feebas, el número de la Lotería de Hoy es obligatorio.');
+            if (lottoTodayInput) lottoTodayInput.focus();
+            return;
+        }
 
         if (todayRaw !== '') {
             lottoTodayVal = parseInt(todayRaw, 10);
             if (isNaN(lottoTodayVal) || lottoTodayVal < 0 || lottoTodayVal > 65535) {
                 alert('El número de Lotería de Hoy (Jubilife TV) debe ser un número entre 00000 y 65535.');
-                lottoTodayInput.focus();
+                if (lottoTodayInput) lottoTodayInput.focus();
                 return;
             }
 
@@ -509,7 +555,7 @@ export function saveGameConfig() {
                 lottoYestVal = parseInt(yestRaw, 10);
                 if (isNaN(lottoYestVal) || lottoYestVal < 0 || lottoYestVal > 65535) {
                     alert('El número de Lotería de Ayer debe ser un número entre 00000 y 65535 o dejarse en blanco.');
-                    lottoYestInput.focus();
+                    if (lottoYestInput) lottoYestInput.focus();
                     return;
                 }
             }
@@ -523,7 +569,7 @@ export function saveGameConfig() {
             lottoToday: lottoTodayVal,
             lottoYesterday: lottoYestVal,
             feebasSpots: feebasSpots,
-            spots: feebasSpots, // Alias para compatibilidad con mapa
+            spots: feebasSpots, // Alias para compatibilidad con el modal del mapa
             updatedAt: new Date().toISOString()
         };
 
@@ -533,23 +579,23 @@ export function saveGameConfig() {
         return;
     }
 
-    // Gen 4 Munchlax u otros juegos
-    const sidInput = document.getElementById('cfg-secret-id');
-    const sidVal = sidInput && sidInput.value.trim() !== '' ? parseInt(sidInput.value, 10) : null;
-
-    if (sidVal !== null && (isNaN(sidVal) || sidVal < 0 || sidVal > 65535)) {
-        alert('El ID Secreto (SID) debe ser un número válido entre 0 y 65535 o dejarse en blanco.');
-        sidInput.focus();
-        return;
+    // Otros juegos / Fallback
+    const tidInput = document.getElementById('cfg-trainer-id');
+    const tidRaw = tidInput ? tidInput.value.trim() : '';
+    if (tidRaw !== '') {
+        const tidVal = parseInt(tidRaw, 10);
+        if (isNaN(tidVal) || tidVal < 0 || tidVal > 65535) {
+            alert('Por favor introduce un ID de Entrenador (TID) válido entre 0 y 65535.');
+            if (tidInput) tidInput.focus();
+            return;
+        }
+        saveGameConfigData({
+            tid: tidVal,
+            updatedAt: new Date().toISOString()
+        });
+    } else {
+        saveGameConfigData(null);
     }
-
-    const configData = {
-        tid: tidVal,
-        sid: sidVal,
-        updatedAt: new Date().toISOString()
-    };
-
-    saveGameConfigData(configData);
     closeGameConfigModal();
     refreshOpenModals();
 }
