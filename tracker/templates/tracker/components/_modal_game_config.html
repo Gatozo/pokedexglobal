@@ -42,7 +42,7 @@
         </div>
 
         <!-- Cuerpo del Modal -->
-        <div class="p-4 sm:p-5 overflow-y-auto space-y-4 text-slate-900">
+        <div class="p-4 sm:p-5 overflow-y-auto [scrollbar-gutter:stable] space-y-4 text-slate-900">
             <!-- Sección: Calculadora de Árboles de Munchlax (Gen 4) -->
             {% if game.generation == 4 or game.slug in 'diamond,pearl,platinum' %}
             <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
@@ -167,10 +167,10 @@
                     </div>
 
                     <!-- Dewford Phrase: 2 Words -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div>
-                            <label for="cfg-feebas-word1" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
-                                Frase Palabra 1 (Condición) <span class="text-rose-600">*</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 items-end">
+                        <div class="flex flex-col justify-end">
+                            <label for="cfg-feebas-word1" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
+                                Palabra 1 <span class="text-slate-600 font-bold whitespace-nowrap">(Condición) <span class="text-rose-600">*</span></span>
                             </label>
                             <input 
                                 type="text" 
@@ -182,9 +182,9 @@
                             >
                             <datalist id="cfg-feebas-word1-list"></datalist>
                         </div>
-                        <div>
-                            <label for="cfg-feebas-word2" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
-                                Frase Palabra 2 (Modo de Vida) <span class="text-rose-600">*</span>
+                        <div class="flex flex-col justify-end">
+                            <label for="cfg-feebas-word2" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
+                                Palabra 2 <span class="text-slate-600 font-bold whitespace-nowrap">(Modo de vida) <span class="text-rose-600">*</span></span>
                             </label>
                             <input 
                                 type="text" 
@@ -231,7 +231,7 @@
                         >
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="text-base select-none shrink-0">⚠️</span>
-                                <span class="text-xs font-black uppercase tracking-tight text-amber-950 truncate">¿Por qué no debes cambiar manualmente la frase?</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Por qué no cambiar la frase?</span>
                             </div>
                             <div class="flex items-center gap-1 shrink-0">
                                 <span id="feebas-phrase-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>

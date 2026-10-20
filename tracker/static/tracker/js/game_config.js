@@ -225,6 +225,23 @@ export function closeGameConfigModal() {
         modal.classList.add('hidden');
         modal.style.display = 'none';
         registerModalClose(modal);
+
+        // Restablecer acordeón de Feebas para próxima apertura
+        const phraseContent = document.getElementById('feebas-phrase-accordion-content');
+        const phraseIcon = document.getElementById('feebas-phrase-accordion-icon');
+        const phraseLabel = document.getElementById('feebas-phrase-accordion-label');
+        const phraseBtn = document.getElementById('feebas-phrase-accordion-btn');
+        if (phraseContent) {
+            if (phraseContent._animCleanup) phraseContent._animCleanup();
+            phraseContent.classList.add('hidden');
+            phraseContent.style.maxHeight = '';
+            phraseContent.style.overflow = '';
+            phraseContent.style.opacity = '';
+            phraseContent.style.transition = '';
+        }
+        if (phraseIcon) phraseIcon.classList.remove('rotate-180');
+        if (phraseLabel) phraseLabel.textContent = 'Ver nota';
+        if (phraseBtn) phraseBtn.setAttribute('aria-expanded', 'false');
     }, 150);
 }
 
@@ -426,7 +443,72 @@ export function resetGameConfig() {
 }
 
 /**
- * Alterna el acordeón de advertencia de la frase de Feebas.
+ * Anima la apertura y cierre de un acordeón de forma fluida.
+ */
+function animateAccordionToggle(element, isOpen) {
+    if (!element) return;
+    if (element._animCleanup) {
+        element._animCleanup();
+    }
+
+    if (isOpen) {
+        element.classList.remove('hidden');
+        element.style.overflow = 'hidden';
+        element.style.transition = 'max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out';
+        element.style.maxHeight = '0px';
+        element.style.opacity = '0';
+
+        requestAnimationFrame(() => {
+            const targetHeight = element.scrollHeight;
+            element.style.maxHeight = targetHeight + 'px';
+            element.style.opacity = '1';
+        });
+
+        const onEnd = (e) => {
+            if (e && e.target !== element) return;
+            element.style.maxHeight = 'none';
+            element.style.overflow = '';
+            element.style.opacity = '';
+            element.style.transition = '';
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+        element.addEventListener('transitionend', onEnd);
+        element._animCleanup = () => {
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+    } else {
+        element.style.overflow = 'hidden';
+        element.style.transition = 'max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-in';
+        element.style.maxHeight = element.scrollHeight + 'px';
+        element.style.opacity = '1';
+
+        requestAnimationFrame(() => {
+            element.style.maxHeight = '0px';
+            element.style.opacity = '0';
+        });
+
+        const onEnd = (e) => {
+            if (e && e.target !== element) return;
+            element.classList.add('hidden');
+            element.style.maxHeight = '';
+            element.style.overflow = '';
+            element.style.opacity = '';
+            element.style.transition = '';
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+        element.addEventListener('transitionend', onEnd);
+        element._animCleanup = () => {
+            element.removeEventListener('transitionend', onEnd);
+            element._animCleanup = null;
+        };
+    }
+}
+
+/**
+ * Alterna el acordeón de advertencia de la frase de Feebas con transición fluida.
  */
 export function toggleFeebasPhraseAccordion() {
     const content = document.getElementById('feebas-phrase-accordion-content');
@@ -435,14 +517,14 @@ export function toggleFeebasPhraseAccordion() {
     const btn = document.getElementById('feebas-phrase-accordion-btn');
     if (!content) return;
 
-    const isCollapsed = content.classList.contains('hidden');
+    const isCollapsed = content.classList.contains('hidden') || content.style.maxHeight === '0px';
     if (isCollapsed) {
-        content.classList.remove('hidden');
+        animateAccordionToggle(content, true);
         if (icon) icon.classList.add('rotate-180');
         if (label) label.textContent = 'Ocultar nota';
         if (btn) btn.setAttribute('aria-expanded', 'true');
     } else {
-        content.classList.add('hidden');
+        animateAccordionToggle(content, false);
         if (icon) icon.classList.remove('rotate-180');
         if (label) label.textContent = 'Ver nota';
         if (btn) btn.setAttribute('aria-expanded', 'false');
