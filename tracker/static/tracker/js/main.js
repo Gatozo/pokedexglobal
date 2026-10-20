@@ -119,7 +119,8 @@ import {
     closeFeebasMapModal,
     handleFeebasMapBackdropClick,
     scrollFeebasMapTo,
-    highlightFeebasSpot
+    highlightFeebasSpot,
+    toggleFeebasMapGrid
 } from './game_config.js';
 
 // Exposición al objeto window para compatibilidad total con eventos inline onclick="..." de los templates
@@ -224,6 +225,7 @@ window.closeFeebasMapModal = closeFeebasMapModal;
 window.handleFeebasMapBackdropClick = handleFeebasMapBackdropClick;
 window.scrollFeebasMapTo = scrollFeebasMapTo;
 window.highlightFeebasSpot = highlightFeebasSpot;
+window.toggleFeebasMapGrid = toggleFeebasMapGrid;
 
 // Marcar el framework interactivo modular como 100% cargado y listo
 window.__pokedexReady = true;

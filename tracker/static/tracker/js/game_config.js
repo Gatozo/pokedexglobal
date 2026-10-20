@@ -800,19 +800,39 @@ export function openFeebasMapModal() {
                 }
             }
 
+            if (isGen4Sinnoh) {
+                return `
+                    <div 
+                        id="feebas-marker-${idx}"
+                        class="absolute cursor-pointer group z-20 flex items-center justify-center pointer-events-auto"
+                        style="left: ${spot.x}px; top: ${spot.y}px; width: 32px; height: 32px; transform: translate(-50%, -50%);"
+                        onclick="highlightFeebasSpot(${idx})"
+                        title="${tooltipText} (${spot.rawX || spot.x}, ${spot.rawY || spot.y})"
+                    >
+                        <span class="animate-ping absolute w-5 h-5 rounded-full ${pingClass} opacity-60 pointer-events-none"></span>
+                        <div class="relative w-[22px] h-[22px] rounded-full ${bgClass} border-[1.5px] border-white text-[10px] font-black text-white flex items-center justify-center shadow-md group-hover:scale-125 transition-transform select-none">
+                            ${badgeText}
+                        </div>
+                        <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-0.5 bg-slate-950 text-amber-300 border border-slate-700 rounded text-[10px] font-black whitespace-nowrap shadow-lg pointer-events-none z-30">
+                            ${tooltipText}
+                        </div>
+                    </div>
+                `;
+            }
+
             return `
                 <div 
                     id="feebas-marker-${idx}"
-                    class="absolute cursor-pointer group z-20"
-                    style="left: ${spot.x}px; top: ${spot.y}px; transform: translate(-50%, -50%);"
+                    class="absolute cursor-pointer group z-20 flex items-center justify-center pointer-events-auto"
+                    style="left: ${spot.x}px; top: ${spot.y}px; width: 16px; height: 16px; transform: translate(-50%, -50%);"
                     onclick="highlightFeebasSpot(${idx})"
-                    title="${tooltipText} (${spot.rawX || spot.x}, ${spot.rawY || spot.y})"
+                    title="${tooltipText} (${spot.x}, ${spot.y})"
                 >
-                    <span class="animate-ping absolute inline-flex h-7 w-7 rounded-full ${pingClass} opacity-75"></span>
-                    <div class="relative w-7 h-7 rounded-full ${bgClass} border-2 border-white text-xs font-black text-white flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
+                    <span class="animate-ping absolute w-3 h-3 rounded-full ${pingClass} opacity-60 pointer-events-none"></span>
+                    <div class="relative w-[12px] h-[12px] rounded-full ${bgClass} border border-white text-[8px] font-black text-white flex items-center justify-center shadow-sm group-hover:scale-150 transition-transform select-none">
                         ${badgeText}
                     </div>
-                    <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-0.5 bg-slate-950 text-amber-300 border border-slate-700 rounded text-[10px] font-black whitespace-nowrap shadow-lg pointer-events-none">
+                    <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-0.5 bg-slate-950 text-amber-300 border border-slate-700 rounded text-[10px] font-black whitespace-nowrap shadow-lg pointer-events-none z-30">
                         ${tooltipText}
                     </div>
                 </div>
@@ -899,6 +919,34 @@ export function closeFeebasMapModal() {
 export function handleFeebasMapBackdropClick(e) {
     if (e && e.target && e.target.id === 'feebas-map-modal') {
         closeFeebasMapModal();
+    }
+}
+
+/**
+ * Alterna la visibilidad de la cuadrícula suave en el mapa de Feebas.
+ */
+export function toggleFeebasMapGrid() {
+    const grid = document.getElementById('feebas-map-grid');
+    const btn = document.getElementById('feebas-grid-toggle-btn');
+    if (!grid) return;
+
+    const isHidden = grid.classList.contains('hidden') || grid.style.display === 'none';
+    if (isHidden) {
+        grid.classList.remove('hidden');
+        grid.style.display = 'block';
+        if (btn) {
+            btn.classList.remove('bg-white', 'text-slate-600');
+            btn.classList.add('bg-amber-200', 'text-slate-900');
+            btn.setAttribute('aria-pressed', 'true');
+        }
+    } else {
+        grid.classList.add('hidden');
+        grid.style.display = 'none';
+        if (btn) {
+            btn.classList.remove('bg-amber-200', 'text-slate-900');
+            btn.classList.add('bg-white', 'text-slate-600');
+            btn.setAttribute('aria-pressed', 'false');
+        }
     }
 }
 

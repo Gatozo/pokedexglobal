@@ -458,6 +458,31 @@
     window.handleFeebasMapBackdropClick = function(e) {
         if (e && e.target && e.target.id === 'feebas-map-modal') window.closeFeebasMapModal();
     };
+    window.toggleFeebasMapGrid = function() {
+        queueOrRun('toggleFeebasMapGrid', [], function() {
+            const grid = document.getElementById('feebas-map-grid');
+            const btn = document.getElementById('feebas-grid-toggle-btn');
+            if (!grid) return;
+            const isHidden = grid.classList.contains('hidden') || grid.style.display === 'none';
+            if (isHidden) {
+                grid.classList.remove('hidden');
+                grid.style.display = 'block';
+                if (btn) {
+                    btn.classList.remove('bg-white', 'text-slate-600');
+                    btn.classList.add('bg-amber-200', 'text-slate-900');
+                    btn.setAttribute('aria-pressed', 'true');
+                }
+            } else {
+                grid.classList.add('hidden');
+                grid.style.display = 'none';
+                if (btn) {
+                    btn.classList.remove('bg-amber-200', 'text-slate-900');
+                    btn.classList.add('bg-white', 'text-slate-600');
+                    btn.setAttribute('aria-pressed', 'false');
+                }
+            }
+        });
+    };
     window.toggleFeebasPhraseAccordion = function() {
         queueOrRun('toggleFeebasPhraseAccordion', [], function() {
             const content = document.getElementById('feebas-phrase-accordion-content');

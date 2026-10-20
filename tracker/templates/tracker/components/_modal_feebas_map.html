@@ -1,4 +1,20 @@
 <!-- Modal del Mapa de Pesca de Feebas en Ruta 119 (Estilo Cómic) -->
+<style>
+.feebas-grid-gen4 {
+    background-size: 32px 32px;
+    background-position: 0 0;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+}
+.feebas-grid-gen3 {
+    background-size: 16px 16px;
+    background-position: 0 0;
+    background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.22) 1px, transparent 1px);
+}
+</style>
 <div 
     id="feebas-map-modal" 
     class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/85 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-200 select-none hidden"
@@ -96,6 +112,17 @@
                     🌲 Sur (Ruta 118)
                 </button>
                 {% endif %}
+                <!-- Botón de conmutación de la cuadrícula suave -->
+                <button 
+                    type="button" 
+                    id="feebas-grid-toggle-btn"
+                    onclick="toggleFeebasMapGrid()"
+                    class="px-2 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg border border-slate-950 bg-amber-200 hover:bg-amber-300 text-slate-900 shadow-[1px_1px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer flex items-center gap-1 shrink-0 select-none ml-auto sm:ml-0"
+                    title="Activar o desactivar cuadrícula de casillas"
+                    aria-pressed="true"
+                >
+                    <span>🔲 Cuadrícula</span>
+                </button>
             </div>
 
             <!-- Botones de salto a casillas calculadas -->
@@ -115,8 +142,11 @@
                     class="block w-[576px] h-[1088px] pixel-art pointer-events-none select-none"
                     loading="eager"
                 >
+                <!-- Capa de cuadrícula suave para Gen 4 (32x32 px) -->
+                <div id="feebas-map-grid" class="feebas-grid-gen4 absolute inset-0 pointer-events-none z-10 transition-opacity duration-150"></div>
+
                 <!-- Capa de marcadores dinámicos calculados -->
-                <div id="feebas-map-markers-layer" class="absolute inset-0 pointer-events-auto">
+                <div id="feebas-map-markers-layer" class="absolute inset-0 pointer-events-auto z-20">
                     <!-- Marcadores inyectados dinámicamente -->
                 </div>
             </div>
@@ -129,8 +159,11 @@
                     class="block w-[640px] h-[2240px] pixel-art pointer-events-none select-none"
                     loading="eager"
                 >
+                <!-- Capa de cuadrícula suave para Gen 3 (16x16 px) -->
+                <div id="feebas-map-grid" class="feebas-grid-gen3 absolute inset-0 pointer-events-none z-10 transition-opacity duration-150"></div>
+
                 <!-- Capa de marcadores dinámicos calculados -->
-                <div id="feebas-map-markers-layer" class="absolute inset-0 pointer-events-auto">
+                <div id="feebas-map-markers-layer" class="absolute inset-0 pointer-events-auto z-20">
                     <!-- Marcadores inyectados dinámicamente -->
                 </div>
             </div>
