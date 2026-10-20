@@ -114,6 +114,7 @@ import {
     renderConfigPreview,
     initGameConfig,
     toggleFeebasPhraseAccordion,
+    toggleFeebasGen4LottoAccordion,
     openFeebasMapModal,
     closeFeebasMapModal,
     handleFeebasMapBackdropClick,
@@ -217,6 +218,7 @@ window.saveGameConfig = saveGameConfig;
 window.resetGameConfig = resetGameConfig;
 window.renderConfigPreview = renderConfigPreview;
 window.toggleFeebasPhraseAccordion = toggleFeebasPhraseAccordion;
+window.toggleFeebasGen4LottoAccordion = toggleFeebasGen4LottoAccordion;
 window.openFeebasMapModal = openFeebasMapModal;
 window.closeFeebasMapModal = closeFeebasMapModal;
 window.handleFeebasMapBackdropClick = handleFeebasMapBackdropClick;

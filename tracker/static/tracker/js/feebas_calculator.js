@@ -8,7 +8,8 @@ import {
     FEEBAS_CONDITIONS_ES, 
     FEEBAS_LIFESTYLE_ES, 
     FEEBAS_HOBBIES_ES, 
-    FEEBAS_TILE_COORDINATES 
+    FEEBAS_TILE_COORDINATES,
+    FEEBAS_MT_CORONET_TILES
 } from './feebas_data.js';
 
 const UNREACHABLE_TILES = [105, 119, 144, 296, 297, 298];
@@ -183,4 +184,124 @@ export function calculateFeebasFishingSpots(tid, word1, word2, isEmerald = false
             y: coords[1]
         };
     });
+}
+
+/**
+ * Operaciones PRNG de 32 bits para Gen 4 (Monte Corona B1F).
+ * Créditos: DRayX, Lincoln-LM, EzPzStreamz (RNG Research Community).
+ */
+function mrngr4(seed) {
+    return (seed * 0xEEB9EB65n + 0xFC77A683n) & 0xFFFFFFFFn;
+}
+
+function arng4(seed) {
+    return (seed * 0x6C078965n + 0x1n) & 0xFFFFFFFFn;
+}
+
+function mrng4(seed) {
+    return (seed * 0x41C64E6Dn + 0x3039n) & 0xFFFFFFFFn;
+}
+
+function intabs4(seed) {
+    if (seed > 0x80000000n) {
+        return 0x100000000n - seed;
+    }
+    return seed;
+}
+
+/**
+ * Calcula las casillas de Feebas en el Monte Corona (Gen 4: Diamante, Perla y Platino).
+ * Si se ingresan 2 números de lotería (ayer y hoy), calcula con 100% de certeza las 4 casillas de hoy.
+ * Si solo se ingresa el de hoy, calcula las 4 casillas tentativas divididas en dos grupos (A y B) con 50% de probabilidad cada uno.
+ *
+ * @param {number} lottoToday - Número de lotería de Jubilife TV de hoy (0 - 99999).
+ * @param {number|null} lottoYesterday - Número de lotería de ayer (0 - 99999, opcional).
+ * @returns {Array<{tileId: number, x: number, y: number, certainty: number, group: string, rawX: number, rawY: number}>}
+ */
+export function calculateGen4FeebasSpots(lottoToday, lottoYesterday = null) {
+    const lottoNum = parseInt(lottoToday, 10);
+    if (isNaN(lottoNum) || lottoNum < 0 || lottoNum > 99999) {
+        return [];
+    }
+
+    const yestNum = (lottoYesterday !== null && lottoYesterday !== undefined && String(lottoYesterday).trim() !== '') 
+        ? parseInt(lottoYesterday, 10) 
+        : null;
+    const hasYesterday = (yestNum !== null && !isNaN(yestNum) && yestNum >= 0 && yestNum <= 99999);
+
+    // Mapeo a píxeles en el mapa de Monte Corona B1F (288x544 escalado a 576x1088, cada tile de 16x16 pasa a medir 32x32)
+    const mapTile = (tilePos, idx, group, certainty) => {
+        const rawX = tilePos[0];
+        const rawY = tilePos[1];
+        const x = (rawX - 9) * 32 + 16;
+        const y = (rawY - 18) * 32 + 16;
+        return {
+            tileId: idx + 1,
+            rawX: rawX,
+            rawY: rawY,
+            x: x,
+            y: y,
+            group: group,
+            certainty: certainty
+        };
+    };
+
+    if (hasYesterday) {
+        const lotto0 = yestNum;
+        const lotto1 = lottoNum;
+        const matchingSeeds = [];
+
+        for (let lotto0_val = lotto0; lotto0_val < 0x100000; lotto0_val += 100000) {
+            for (let low = 0; low < 0x1000; low++) {
+                const yeste_seed = mrngr4((BigInt(lotto0_val) << 12n) | BigInt(low));
+                const today_seed = arng4(yeste_seed);
+
+                if (BigInt(lotto1) !== (((mrng4(today_seed)) >> 12n) % 100000n)) {
+                    continue;
+                }
+                matchingSeeds.push(today_seed);
+            }
+        }
+
+        if (matchingSeeds.length > 0) {
+            const today_daily = intabs4(matchingSeeds[0]);
+            const spots = [];
+            for (let tile = 0; tile < 4; tile++) {
+                const pos = ((Number(today_daily) >> (tile * 8)) & 0xFF) % 0x84;
+                const idx = 0x85 * (3 - tile) + pos;
+                const tilePos = FEEBAS_MT_CORONET_TILES[idx];
+                if (tilePos) {
+                    spots.push(mapTile(tilePos, idx, 'Garantizada', 100));
+                }
+            }
+            return spots;
+        }
+    }
+
+    // Modo 1 día (aproximación rápida de 4 casillas con 50% de probabilidad por par A/B)
+    const seed = (lottoNum * 0xEB65 + 0xA683) & 0xFFFF;
+    const seed_neg = (0x10000 - seed) & 0xFFFF;
+
+    const low = seed & 0xFF;
+    const high = (seed >> 8) & 0xFF;
+    const low_neg = seed_neg & 0xFF;
+    const high_neg = (seed_neg >> 8) & 0xFF;
+
+    const idx_low_pos = 3 + 0x84 * 3 + (low % 0x84);
+    const idx_high_pos = 2 + 0x84 * 2 + (high % 0x84);
+    const idx_low_neg = 3 + 0x84 * 3 + (low_neg % 0x84);
+    const idx_high_neg = 2 + 0x84 * 2 + (high_neg % 0x84);
+
+    const tile_low_pos = FEEBAS_MT_CORONET_TILES[idx_low_pos];
+    const tile_high_pos = FEEBAS_MT_CORONET_TILES[idx_high_pos];
+    const tile_low_neg = FEEBAS_MT_CORONET_TILES[idx_low_neg];
+    const tile_high_neg = FEEBAS_MT_CORONET_TILES[idx_high_neg];
+
+    const spots = [];
+    if (tile_low_pos) spots.push(mapTile(tile_low_pos, idx_low_pos, 'Grupo A', 50));
+    if (tile_high_pos) spots.push(mapTile(tile_high_pos, idx_high_pos, 'Grupo A', 50));
+    if (tile_low_neg) spots.push(mapTile(tile_low_neg, idx_low_neg, 'Grupo B', 50));
+    if (tile_high_neg) spots.push(mapTile(tile_high_neg, idx_high_neg, 'Grupo B', 50));
+
+    return spots;
 }

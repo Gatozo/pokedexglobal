@@ -458,6 +458,48 @@
     window.handleFeebasMapBackdropClick = function(e) {
         if (e && e.target && e.target.id === 'feebas-map-modal') window.closeFeebasMapModal();
     };
+    window.toggleFeebasPhraseAccordion = function() {
+        queueOrRun('toggleFeebasPhraseAccordion', [], function() {
+            const content = document.getElementById('feebas-phrase-accordion-content');
+            const icon = document.getElementById('feebas-phrase-accordion-icon');
+            const label = document.getElementById('feebas-phrase-accordion-label');
+            const btn = document.getElementById('feebas-phrase-accordion-btn');
+            if (!content) return;
+            const isHidden = content.classList.contains('hidden');
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (icon) icon.classList.add('rotate-180');
+                if (label) label.textContent = 'Ocultar nota';
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+            } else {
+                content.classList.add('hidden');
+                if (icon) icon.classList.remove('rotate-180');
+                if (label) label.textContent = 'Ver nota';
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    };
+    window.toggleFeebasGen4LottoAccordion = function() {
+        queueOrRun('toggleFeebasGen4LottoAccordion', [], function() {
+            const content = document.getElementById('feebas-gen4-accordion-content');
+            const icon = document.getElementById('feebas-gen4-accordion-icon');
+            const label = document.getElementById('feebas-gen4-accordion-label');
+            const btn = document.getElementById('feebas-gen4-accordion-btn');
+            if (!content) return;
+            const isHidden = content.classList.contains('hidden');
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (icon) icon.classList.add('rotate-180');
+                if (label) label.textContent = 'Ocultar nota';
+                if (btn) btn.setAttribute('aria-expanded', 'true');
+            } else {
+                content.classList.add('hidden');
+                if (icon) icon.classList.remove('rotate-180');
+                if (label) label.textContent = 'Ver nota';
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    };
     window.toggleUnownHistoricalAccordion = function() {
         const btn = document.getElementById('unown-historical-accordion-btn');
         const content = document.getElementById('unown-historical-accordion-content');

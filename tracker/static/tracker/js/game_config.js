@@ -10,7 +10,7 @@ import {
     FEEBAS_LIFESTYLE_ES, 
     FEEBAS_HOBBIES_ES 
 } from './feebas_data.js';
-import { calculateFeebasFishingSpots } from './feebas_calculator.js';
+import { calculateFeebasFishingSpots, calculateGen4FeebasSpots } from './feebas_calculator.js';
 import { bringModalToFront, registerModalClose } from './url_sync.js';
 
 // Lista canónica de los 21 árboles de miel de Sinnoh (índices internos 0 a 20 de la ROM de DPPt/BDSP)
@@ -135,7 +135,10 @@ export function updateConfigDotIndicator() {
     const dot = document.getElementById('cfg-active-dot');
     if (!dot) return;
     const cfg = loadGameConfig();
-    if (cfg && (cfg.tid !== null && cfg.tid !== undefined)) {
+    const hasTid = cfg && (cfg.tid !== null && cfg.tid !== undefined);
+    const hasGen3Feebas = cfg && (Boolean(cfg.phrase1) && Boolean(cfg.phrase2));
+    const hasGen4Feebas = cfg && (cfg.lottoToday !== null && cfg.lottoToday !== undefined);
+    if (hasTid || hasGen3Feebas || hasGen4Feebas) {
         dot.classList.remove('hidden');
     } else {
         dot.classList.add('hidden');
@@ -177,6 +180,8 @@ export function openGameConfigModal() {
     const sidInput = document.getElementById('cfg-secret-id');
     const w1Input = document.getElementById('cfg-feebas-word1');
     const w2Input = document.getElementById('cfg-feebas-word2');
+    const todayInput = document.getElementById('cfg-feebas-gen4-today');
+    const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
 
     if (tidInput) {
         tidInput.value = (cfg && cfg.tid !== undefined && cfg.tid !== null) ? cfg.tid : '';
@@ -189,6 +194,12 @@ export function openGameConfigModal() {
     }
     if (w2Input) {
         w2Input.value = (cfg && cfg.phrase2) ? cfg.phrase2 : '';
+    }
+    if (todayInput) {
+        todayInput.value = (cfg && cfg.lottoToday !== undefined && cfg.lottoToday !== null) ? cfg.lottoToday : '';
+    }
+    if (yestInput) {
+        yestInput.value = (cfg && cfg.lottoYesterday !== undefined && cfg.lottoYesterday !== null) ? cfg.lottoYesterday : '';
     }
 
     renderConfigPreview();
@@ -226,7 +237,7 @@ export function closeGameConfigModal() {
         modal.style.display = 'none';
         registerModalClose(modal);
 
-        // Restablecer acordeón de Feebas para próxima apertura
+        // Restablecer acordeón de Feebas Gen 3 para próxima apertura
         const phraseContent = document.getElementById('feebas-phrase-accordion-content');
         const phraseIcon = document.getElementById('feebas-phrase-accordion-icon');
         const phraseLabel = document.getElementById('feebas-phrase-accordion-label');
@@ -242,6 +253,23 @@ export function closeGameConfigModal() {
         if (phraseIcon) phraseIcon.classList.remove('rotate-180');
         if (phraseLabel) phraseLabel.textContent = 'Ver nota';
         if (phraseBtn) phraseBtn.setAttribute('aria-expanded', 'false');
+
+        // Restablecer acordeón de Feebas Gen 4 para próxima apertura
+        const gen4Content = document.getElementById('feebas-gen4-accordion-content');
+        const gen4Icon = document.getElementById('feebas-gen4-accordion-icon');
+        const gen4Label = document.getElementById('feebas-gen4-accordion-label');
+        const gen4Btn = document.getElementById('feebas-gen4-accordion-btn');
+        if (gen4Content) {
+            if (gen4Content._animCleanup) gen4Content._animCleanup();
+            gen4Content.classList.add('hidden');
+            gen4Content.style.maxHeight = '';
+            gen4Content.style.overflow = '';
+            gen4Content.style.opacity = '';
+            gen4Content.style.transition = '';
+        }
+        if (gen4Icon) gen4Icon.classList.remove('rotate-180');
+        if (gen4Label) gen4Label.textContent = 'Ver nota';
+        if (gen4Btn) gen4Btn.setAttribute('aria-expanded', 'false');
     }, 150);
 }
 
@@ -262,49 +290,96 @@ export function renderConfigPreview() {
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
 
     const tidInput = document.getElementById('cfg-trainer-id');
-    if (!tidInput) return;
-
-    const tidVal = parseInt(tidInput.value, 10);
+    const tidVal = tidInput ? parseInt(tidInput.value, 10) : NaN;
     const hasValidTid = !isNaN(tidVal) && tidVal >= 0 && tidVal <= 65535;
 
-    // 1. Previsualización de Munchlax (Gen 4)
+    // 1. Previsualización para Gen 4 (Munchlax y Feebas en Sinnoh)
     if (!isGen3Hoenn) {
         const sidInput = document.getElementById('cfg-secret-id');
         const previewContainer = document.getElementById('cfg-calculated-preview');
         const treesList = document.getElementById('cfg-trees-list');
         const countBadge = document.getElementById('cfg-trees-count-badge');
 
-        if (!previewContainer || !treesList) return;
+        if (previewContainer && treesList) {
+            if (!hasValidTid) {
+                previewContainer.classList.add('hidden');
+                treesList.innerHTML = '';
+            } else {
+                const sidVal = sidInput ? parseInt(sidInput.value, 10) : null;
+                const hasValidSid = !isNaN(sidVal) && sidVal >= 0 && sidVal <= 65535;
+                const names = getMunchlaxTreeNames(tidVal, hasValidSid ? sidVal : null);
 
-        if (!hasValidTid) {
-            previewContainer.classList.add('hidden');
-            treesList.innerHTML = '';
-            return;
+                if (names.length === 0) {
+                    previewContainer.classList.add('hidden');
+                } else {
+                    previewContainer.classList.remove('hidden');
+                    if (countBadge) {
+                        countBadge.textContent = `${names.length} Árboles`;
+                        countBadge.className = names.length === 4 
+                            ? 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950'
+                            : 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-amber-200 text-slate-900';
+                    }
+
+                    treesList.innerHTML = names.map(name => `
+                        <li class="flex items-center gap-1.5 py-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                            <span class="font-black text-slate-900">${name}</span>
+                        </li>
+                    `).join('');
+                }
+            }
         }
 
-        const sidVal = sidInput ? parseInt(sidInput.value, 10) : null;
-        const hasValidSid = !isNaN(sidVal) && sidVal >= 0 && sidVal <= 65535;
-        const names = getMunchlaxTreeNames(tidVal, hasValidSid ? sidVal : null);
+        // Feebas Gen 4 (Lotería Jubilife TV -> Casillas Monte Corona B1F)
+        const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
+        const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+        const gen4Preview = document.getElementById('cfg-feebas-gen4-preview');
+        const gen4CountBadge = document.getElementById('cfg-feebas-gen4-count-badge');
+        const gen4Summary = document.getElementById('cfg-feebas-gen4-spots-summary');
 
-        if (names.length === 0) {
-            previewContainer.classList.add('hidden');
-            return;
+        if (gen4Preview && gen4Summary && lottoTodayInput) {
+            const todayRaw = lottoTodayInput.value.trim();
+            const yestRaw = lottoYestInput ? lottoYestInput.value.trim() : '';
+
+            const todayVal = todayRaw !== '' ? parseInt(todayRaw, 10) : NaN;
+            const hasValidToday = !isNaN(todayVal) && todayVal >= 0 && todayVal <= 65535;
+
+            if (!hasValidToday) {
+                gen4Preview.classList.add('hidden');
+                gen4Summary.innerHTML = '';
+            } else {
+                const yestVal = yestRaw !== '' ? parseInt(yestRaw, 10) : null;
+                const hasValidYest = (yestVal !== null && !isNaN(yestVal) && yestVal >= 0 && yestVal <= 65535);
+
+                const spots = calculateGen4FeebasSpots(todayVal, hasValidYest ? yestVal : null);
+
+                if (!spots || spots.length === 0) {
+                    gen4Preview.classList.add('hidden');
+                    gen4Summary.innerHTML = '';
+                } else {
+                    gen4Preview.classList.remove('hidden');
+                    const isGuaranteed = spots.some(s => s.certainty === 100);
+
+                    if (gen4CountBadge) {
+                        gen4CountBadge.textContent = isGuaranteed ? `${spots.length} Casillas (100% Certeza)` : `${spots.length} Casillas (50% Prob.)`;
+                        gen4CountBadge.className = isGuaranteed
+                            ? 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950'
+                            : 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-sky-200 text-slate-900';
+                    }
+
+                    gen4Summary.innerHTML = spots.map((s, idx) => {
+                        const badgeBg = isGuaranteed
+                            ? 'bg-emerald-50 border-emerald-400 text-emerald-950'
+                            : (s.group === 'Grupo A' ? 'bg-sky-50 border-sky-400 text-sky-950' : 'bg-purple-50 border-purple-400 text-purple-950');
+                        return `
+                            <span class="px-2 py-1 rounded-md ${badgeBg} border text-[11px] font-black shadow-xs">
+                                #${idx + 1}: Casilla ${s.tileId} (${s.rawX}, ${s.rawY})
+                            </span>
+                        `;
+                    }).join('');
+                }
+            }
         }
-
-        previewContainer.classList.remove('hidden');
-        if (countBadge) {
-            countBadge.textContent = `${names.length} Árboles`;
-            countBadge.className = names.length === 4 
-                ? 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950'
-                : 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-amber-200 text-slate-900';
-        }
-
-        treesList.innerHTML = names.map(name => `
-            <li class="flex items-center gap-1.5 py-0.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                <span class="font-black text-slate-900">${name}</span>
-            </li>
-        `).join('');
         return;
     }
 
@@ -401,7 +476,64 @@ export function saveGameConfig() {
         return;
     }
 
-    // Gen 4 Munchlax
+    // Gen 4 Sinnoh (Munchlax y Feebas)
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
+    if (isGen4Sinnoh) {
+        const sidInput = document.getElementById('cfg-secret-id');
+        const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
+        const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+
+        const sidVal = sidInput && sidInput.value.trim() !== '' ? parseInt(sidInput.value, 10) : null;
+        if (sidVal !== null && (isNaN(sidVal) || sidVal < 0 || sidVal > 65535)) {
+            alert('El ID Secreto (SID) debe ser un número válido entre 0 y 65535 o dejarse en blanco.');
+            sidInput.focus();
+            return;
+        }
+
+        const todayRaw = lottoTodayInput ? lottoTodayInput.value.trim() : '';
+        const yestRaw = lottoYestInput ? lottoYestInput.value.trim() : '';
+
+        let lottoTodayVal = null;
+        let lottoYestVal = null;
+        let feebasSpots = null;
+
+        if (todayRaw !== '') {
+            lottoTodayVal = parseInt(todayRaw, 10);
+            if (isNaN(lottoTodayVal) || lottoTodayVal < 0 || lottoTodayVal > 65535) {
+                alert('El número de Lotería de Hoy (Jubilife TV) debe ser un número entre 00000 y 65535.');
+                lottoTodayInput.focus();
+                return;
+            }
+
+            if (yestRaw !== '') {
+                lottoYestVal = parseInt(yestRaw, 10);
+                if (isNaN(lottoYestVal) || lottoYestVal < 0 || lottoYestVal > 65535) {
+                    alert('El número de Lotería de Ayer debe ser un número entre 00000 y 65535 o dejarse en blanco.');
+                    lottoYestInput.focus();
+                    return;
+                }
+            }
+
+            feebasSpots = calculateGen4FeebasSpots(lottoTodayVal, lottoYestVal);
+        }
+
+        const configData = {
+            tid: tidVal,
+            sid: sidVal,
+            lottoToday: lottoTodayVal,
+            lottoYesterday: lottoYestVal,
+            feebasSpots: feebasSpots,
+            spots: feebasSpots, // Alias para compatibilidad con mapa
+            updatedAt: new Date().toISOString()
+        };
+
+        saveGameConfigData(configData);
+        closeGameConfigModal();
+        refreshOpenModals();
+        return;
+    }
+
+    // Gen 4 Munchlax u otros juegos
     const sidInput = document.getElementById('cfg-secret-id');
     const sidVal = sidInput && sidInput.value.trim() !== '' ? parseInt(sidInput.value, 10) : null;
 
@@ -431,11 +563,15 @@ export function resetGameConfig() {
     const sidInput = document.getElementById('cfg-secret-id');
     const w1Input = document.getElementById('cfg-feebas-word1');
     const w2Input = document.getElementById('cfg-feebas-word2');
+    const todayInput = document.getElementById('cfg-feebas-gen4-today');
+    const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
 
     if (tidInput) tidInput.value = '';
     if (sidInput) sidInput.value = '';
     if (w1Input) w1Input.value = '';
     if (w2Input) w2Input.value = '';
+    if (todayInput) todayInput.value = '';
+    if (yestInput) yestInput.value = '';
 
     renderConfigPreview();
     closeGameConfigModal();
@@ -532,7 +668,31 @@ export function toggleFeebasPhraseAccordion() {
 }
 
 /**
- * Abre el modal del mapa de pesca de Feebas en Ruta 119.
+ * Alterna el acordeón de advertencia de la lotería de Feebas en Gen 4 con transición fluida.
+ */
+export function toggleFeebasGen4LottoAccordion() {
+    const content = document.getElementById('feebas-gen4-accordion-content');
+    const icon = document.getElementById('feebas-gen4-accordion-icon');
+    const label = document.getElementById('feebas-gen4-accordion-label');
+    const btn = document.getElementById('feebas-gen4-accordion-btn');
+    if (!content) return;
+
+    const isCollapsed = content.classList.contains('hidden') || content.style.maxHeight === '0px';
+    if (isCollapsed) {
+        animateAccordionToggle(content, true);
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar nota';
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+    } else {
+        animateAccordionToggle(content, false);
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Ver nota';
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+}
+
+/**
+ * Abre el modal del mapa de pesca de Feebas (Ruta 119 en Hoenn o Monte Corona B1F en Sinnoh).
  */
 export function openFeebasMapModal() {
     const modal = document.getElementById('feebas-map-modal');
@@ -540,53 +700,109 @@ export function openFeebasMapModal() {
     if (!modal) return;
 
     const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || 'emerald';
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
     let cfg = loadGameConfig(gameSlug);
 
-    // Recalcular dinámicamente si los spots provienen de una sesión previa para garantizar coordenadas canónicas 1:1
-    if (cfg && cfg.tid !== undefined && cfg.phrase1 && cfg.phrase2) {
-        const isEmerald = (gameSlug === 'emerald');
-        const updatedSpots = calculateFeebasFishingSpots(cfg.tid, cfg.phrase1, cfg.phrase2, isEmerald);
-        if (updatedSpots && updatedSpots.length > 0) {
-            cfg.spots = updatedSpots;
+    let spots = [];
+    if (isGen4Sinnoh) {
+        if (cfg && cfg.lottoToday !== undefined && cfg.lottoToday !== null) {
+            spots = calculateGen4FeebasSpots(cfg.lottoToday, cfg.lottoYesterday);
+            cfg.feebasSpots = spots;
+            cfg.spots = spots;
             saveGameConfigData(cfg, gameSlug);
+        } else if (cfg && (cfg.feebasSpots || cfg.spots)) {
+            spots = cfg.feebasSpots || cfg.spots;
         }
+    } else {
+        // Gen 3 Hoenn
+        if (cfg && cfg.tid !== undefined && cfg.phrase1 && cfg.phrase2) {
+            const isEmerald = (gameSlug === 'emerald');
+            const updatedSpots = calculateFeebasFishingSpots(cfg.tid, cfg.phrase1, cfg.phrase2, isEmerald);
+            if (updatedSpots && updatedSpots.length > 0) {
+                cfg.spots = updatedSpots;
+                saveGameConfigData(cfg, gameSlug);
+            }
+        }
+        spots = (cfg && cfg.spots) ? cfg.spots : [];
     }
-    const spots = (cfg && cfg.spots) ? cfg.spots : [];
 
     const markersLayer = document.getElementById('feebas-map-markers-layer');
     const jumpNav = document.getElementById('feebas-spots-jump-nav');
 
     if (markersLayer) {
-        markersLayer.innerHTML = spots.map((spot, idx) => `
-            <div 
-                id="feebas-marker-${idx}"
-                class="absolute cursor-pointer group z-20"
-                style="left: ${spot.x}px; top: ${spot.y}px; transform: translate(-50%, -50%);"
-                onclick="highlightFeebasSpot(${idx})"
-                title="Casilla #${spot.tileId} (${spot.x}, ${spot.y})"
-            >
-                <span class="animate-ping absolute inline-flex h-7 w-7 rounded-full bg-rose-400 opacity-75"></span>
-                <div class="relative w-7 h-7 rounded-full bg-rose-600 border-2 border-white text-xs font-black text-white flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
-                    ${idx + 1}
+        markersLayer.innerHTML = spots.map((spot, idx) => {
+            let bgClass = 'bg-rose-600';
+            let pingClass = 'bg-rose-400';
+            let badgeText = `${idx + 1}`;
+            let tooltipText = `Casilla #${spot.tileId}`;
+
+            if (spot.group) {
+                if (spot.group === 'Garantizada') {
+                    bgClass = 'bg-emerald-600';
+                    pingClass = 'bg-emerald-400';
+                    tooltipText = `Casilla #${spot.tileId} (100% Certeza)`;
+                } else if (spot.group === 'Grupo A') {
+                    bgClass = 'bg-sky-600';
+                    pingClass = 'bg-sky-400';
+                    badgeText = `A${(idx % 2) + 1}`;
+                    tooltipText = `Casilla #${spot.tileId} (Grupo A • 50%)`;
+                } else if (spot.group === 'Grupo B') {
+                    bgClass = 'bg-purple-600';
+                    pingClass = 'bg-purple-400';
+                    badgeText = `B${(idx % 2) + 1}`;
+                    tooltipText = `Casilla #${spot.tileId} (Grupo B • 50%)`;
+                }
+            }
+
+            return `
+                <div 
+                    id="feebas-marker-${idx}"
+                    class="absolute cursor-pointer group z-20"
+                    style="left: ${spot.x}px; top: ${spot.y}px; transform: translate(-50%, -50%);"
+                    onclick="highlightFeebasSpot(${idx})"
+                    title="${tooltipText} (${spot.rawX || spot.x}, ${spot.rawY || spot.y})"
+                >
+                    <span class="animate-ping absolute inline-flex h-7 w-7 rounded-full ${pingClass} opacity-75"></span>
+                    <div class="relative w-7 h-7 rounded-full ${bgClass} border-2 border-white text-xs font-black text-white flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform">
+                        ${badgeText}
+                    </div>
+                    <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-0.5 bg-slate-950 text-amber-300 border border-slate-700 rounded text-[10px] font-black whitespace-nowrap shadow-lg pointer-events-none">
+                        ${tooltipText}
+                    </div>
                 </div>
-                <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-1 px-2 py-0.5 bg-slate-950 text-amber-300 border border-slate-700 rounded text-[10px] font-black whitespace-nowrap shadow-lg pointer-events-none">
-                    Casilla #${spot.tileId}
-                </div>
-            </div>
-        `).join('');
+            `;
+        }).join('');
     }
 
     if (jumpNav) {
-        jumpNav.innerHTML = spots.map((spot, idx) => `
-            <button 
-                type="button" 
-                onclick="highlightFeebasSpot(${idx})"
-                class="px-2 py-0.5 text-[10px] font-black uppercase rounded border border-slate-950 bg-rose-500 hover:bg-rose-400 text-white shadow-[1px_1px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
-                title="Ir a Casilla #${spot.tileId}"
-            >
-                #${idx + 1} (${spot.tileId})
-            </button>
-        `).join('');
+        jumpNav.innerHTML = spots.map((spot, idx) => {
+            let btnBg = 'bg-rose-500 hover:bg-rose-400';
+            let label = `#${idx + 1} (${spot.tileId})`;
+
+            if (spot.group) {
+                if (spot.group === 'Garantizada') {
+                    btnBg = 'bg-emerald-600 hover:bg-emerald-500';
+                    label = `#${idx + 1} (${spot.tileId})`;
+                } else if (spot.group === 'Grupo A') {
+                    btnBg = 'bg-sky-600 hover:bg-sky-500';
+                    label = `A${(idx % 2) + 1} (${spot.tileId})`;
+                } else if (spot.group === 'Grupo B') {
+                    btnBg = 'bg-purple-600 hover:bg-purple-500';
+                    label = `B${(idx % 2) + 1} (${spot.tileId})`;
+                }
+            }
+
+            return `
+                <button 
+                    type="button" 
+                    onclick="highlightFeebasSpot(${idx})"
+                    class="px-2 py-0.5 text-[10px] font-black uppercase rounded border border-slate-950 ${btnBg} text-white shadow-[1px_1px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer"
+                    title="Ir a Casilla #${spot.tileId}"
+                >
+                    ${label}
+                </button>
+            `;
+        }).join('');
     }
 
     modal.style.display = 'flex';
@@ -641,16 +857,25 @@ export function handleFeebasMapBackdropClick(e) {
 }
 
 /**
- * Desplaza la vista del mapa de Feebas hacia una zona de la Ruta 119.
+ * Desplaza la vista del mapa de Feebas hacia una zona de la ruta o monte.
  */
 export function scrollFeebasMapTo(section) {
     const viewport = document.getElementById('feebas-map-viewport');
     if (!viewport) return;
 
+    const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
+
     let targetY = 0;
-    if (section === 'north') targetY = 50;
-    else if (section === 'center') targetY = 900;
-    else if (section === 'south') targetY = 1750;
+    if (isGen4Sinnoh) {
+        if (section === 'north') targetY = 50;
+        else if (section === 'center') targetY = 500;
+        else if (section === 'south') targetY = 950;
+    } else {
+        if (section === 'north') targetY = 50;
+        else if (section === 'center') targetY = 900;
+        else if (section === 'south') targetY = 1750;
+    }
 
     viewport.scrollTo({
         top: targetY,
@@ -663,8 +888,11 @@ export function scrollFeebasMapTo(section) {
  */
 export function highlightFeebasSpot(index, smooth = true) {
     const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || 'emerald';
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
     const cfg = loadGameConfig(gameSlug);
-    const spots = (cfg && cfg.spots) ? cfg.spots : [];
+    const spots = isGen4Sinnoh
+        ? ((cfg && (cfg.feebasSpots || cfg.spots)) || [])
+        : ((cfg && cfg.spots) || []);
     const spot = spots[index];
     if (!spot) return;
 
@@ -709,6 +937,8 @@ export function initGameConfig() {
     const sidInput = document.getElementById('cfg-secret-id');
     const w1Input = document.getElementById('cfg-feebas-word1');
     const w2Input = document.getElementById('cfg-feebas-word2');
+    const todayInput = document.getElementById('cfg-feebas-gen4-today');
+    const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
 
     const sanitizeDigits = (input) => {
         if (!input) return;
@@ -734,6 +964,18 @@ export function initGameConfig() {
     }
     if (w2Input) {
         w2Input.addEventListener('input', () => {
+            renderConfigPreview();
+        });
+    }
+    if (todayInput) {
+        todayInput.addEventListener('input', () => {
+            sanitizeDigits(todayInput);
+            renderConfigPreview();
+        });
+    }
+    if (yestInput) {
+        yestInput.addEventListener('input', () => {
+            sanitizeDigits(yestInput);
             renderConfigPreview();
         });
     }

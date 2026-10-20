@@ -1133,6 +1133,26 @@ class GameSelectorClassificationTests(TestCase):
         self.assertNotIn('id="btn-game-config"', content_fr)
         self.assertNotIn('id="feebas-map-modal"', content_fr)
 
+    def test_feebas_gen4_game_config_and_map_elements(self):
+        # Asegurar modelos para Sinnoh (Diamante)
+        game_dia, _ = Game.objects.get_or_create(slug="diamond", defaults={"name": "Pokémon Diamond", "generation": 4})
+        Pokedex.objects.get_or_create(game=game_dia, slug="sinnoh", defaults={"name": "Pokédex de Sinnoh"})
+
+        url_dia = reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"})
+        resp_dia = self.client.get(url_dia)
+        self.assertEqual(resp_dia.status_code, 200)
+        content_dia = resp_dia.content.decode("utf-8")
+
+        self.assertIn('id="btn-game-config"', content_dia)
+        self.assertIn('id="game-config-modal"', content_dia)
+        self.assertIn('id="cfg-trainer-id"', content_dia)
+        self.assertIn('id="cfg-secret-id"', content_dia)
+        self.assertIn('id="cfg-feebas-gen4-today"', content_dia)
+        self.assertIn('id="cfg-feebas-gen4-yesterday"', content_dia)
+        self.assertIn('id="feebas-gen4-accordion-btn"', content_dia)
+        self.assertIn('id="feebas-map-modal"', content_dia)
+        self.assertIn('/media/maps/diamond/mt-coronet-b1f.png', content_dia)
+
 
 
 

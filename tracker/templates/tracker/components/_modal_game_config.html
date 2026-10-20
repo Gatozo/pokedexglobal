@@ -125,6 +125,117 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- Sección: Calculadora de Feebas en Monte Corona (Gen 4: Diamante, Perla, Platino) -->
+            <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+                    <h4 class="font-black text-sm uppercase tracking-wide text-slate-950">
+                        Calculadora de Casillas de Feebas (Monte Corona)
+                    </h4>
+                </div>
+                
+                <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
+                    En Sinnoh, Feebas sólo aparece en <strong class="text-sky-800">4 de las 528 casillas de agua del Monte Corona (B1F)</strong>, cambiando cada día a medianoche. Estas casillas están vinculadas a la <strong class="text-slate-900">Lotería de Jubilife TV</strong>. Ingresa el número de tu boleto para localizar tus casillas activas.
+                </p>
+
+                <div class="space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 items-end">
+                        <div class="flex flex-col justify-end">
+                            <label for="cfg-feebas-gen4-today" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
+                                Lotería de Hoy <span class="text-slate-600 font-bold whitespace-nowrap">(Jubilife TV) <span class="text-rose-600">*</span></span>
+                            </label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="cfg-feebas-gen4-today" 
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="5"
+                                    placeholder="Ej. 54321" 
+                                    class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                                >
+                                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                    5 dígitos
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-end">
+                            <label for="cfg-feebas-gen4-yesterday" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
+                                Lotería de Ayer <span class="text-slate-500 text-[9px] font-bold whitespace-nowrap">(Opcional)</span>
+                            </label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="cfg-feebas-gen4-yesterday" 
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="5"
+                                    placeholder="Ej. 12345 (100% Certeza)" 
+                                    class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                                >
+                                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase select-none pointer-events-none">
+                                    Opcional
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[10px] text-slate-500 font-semibold leading-snug">
+                        Habla con la recepcionista en la planta baja de Jubilife TV (Ciudad Jubileo). Con 1 número obtendrás 2 pares de casillas tentativas; con el de ayer obtendrás las 4 casillas 100% exactas de hoy.
+                    </p>
+
+                    <!-- Preview de Casillas Calculadas Gen 4 -->
+                    <div id="cfg-feebas-gen4-preview" class="hidden mt-3 pt-3 border-t-2 border-dashed border-slate-200">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[11px] font-black uppercase tracking-wider text-sky-800 flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 text-sky-600" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                Casillas Calculadas (Monte Corona):
+                            </span>
+                            <span id="cfg-feebas-gen4-count-badge" class="text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-sky-200 text-slate-900">
+                                4 Casillas
+                            </span>
+                        </div>
+                        <div id="cfg-feebas-gen4-spots-summary" class="text-xs font-bold text-slate-800 flex flex-wrap gap-1.5">
+                            <!-- Generado dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Acordeón Explicativo: Cómo funciona la lotería y Feebas -->
+                    <div class="border-2 border-slate-950 rounded-xl overflow-hidden mt-3 shadow-[1.5px_1.5px_0px_0px_#0f172a]">
+                        <button 
+                            type="button" 
+                            id="feebas-gen4-accordion-btn"
+                            onclick="toggleFeebasGen4LottoAccordion()"
+                            class="w-full px-3 py-2 bg-amber-100 hover:bg-amber-200 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            aria-expanded="false"
+                            aria-controls="feebas-gen4-accordion-content"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="text-base select-none shrink-0">⚠️</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funciona la Lotería y Feebas?</span>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <span id="feebas-gen4-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
+                                <svg id="feebas-gen4-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="feebas-gen4-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
+                            <p>
+                                <strong>Semilla Diaria de Sinnoh:</strong> Cada medianoche el juego reinicia la semilla de eventos diarios. La Lotería de Jubilife TV y las 4 casillas de Feebas comparten exactamente el mismo algoritmo matemático (PRNG LCG).
+                            </p>
+                            <p>
+                                <strong>Precisión de 1 vs 2 días:</strong> Un solo boleto de lotería acota la búsqueda a 2 pares de casillas (Grupo A y Grupo B). Si pruebas una casilla de cada grupo sabrás de inmediato cuál grupo alberga a Feebas. Si además introduces el número del boleto de ayer, la calculadora deduce la semilla completa al 100% de certeza.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endif %}
 
             <!-- Sección: Calculadora de Feebas (Gen 3: Rubí, Zafiro, Esmeralda) -->

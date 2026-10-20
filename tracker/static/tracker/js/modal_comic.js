@@ -475,17 +475,24 @@ export function renderModalObtaining(data, activeForm = null) {
         }
     }
 
-    // Detección especial de Feebas en Rubí, Zafiro y Esmeralda (Gen 3 Hoenn)
-    const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug);
+    // Detección especial de Feebas en Rubí, Zafiro y Esmeralda (Gen 3 Hoenn) o Diamante, Perla y Platino (Gen 4 Sinnoh)
+    const activeGameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
+    const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(activeGameSlug);
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(activeGameSlug);
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
+    let feebasLocationName = isGen4Sinnoh ? 'Monte Corona (B1F)' : 'Ruta 119';
+    let feebasEditActionName = isGen4Sinnoh ? 'Editar Lotería' : 'Editar Frase';
 
-    if (isGen3Hoenn && isFeebasSpecies) {
-        const gameCfg = loadGameConfig();
-        if (gameCfg && gameCfg.spots && gameCfg.spots.length > 0) {
+    if (isFeebasSpecies) {
+        const gameCfg = loadGameConfig(activeGameSlug);
+        if (isGen3Hoenn && gameCfg && gameCfg.spots && gameCfg.spots.length > 0) {
             isFeebasConfigured = true;
             feebasSpotCount = gameCfg.spots.length;
+        } else if (isGen4Sinnoh && gameCfg && ((gameCfg.feebasSpots && gameCfg.feebasSpots.length > 0) || (gameCfg.lottoToday !== undefined && gameCfg.lottoToday !== null))) {
+            isFeebasConfigured = true;
+            feebasSpotCount = (gameCfg.feebasSpots && gameCfg.feebasSpots.length) ? gameCfg.feebasSpots.length : 4;
         }
     }
 
@@ -498,13 +505,13 @@ export function renderModalObtaining(data, activeForm = null) {
             summaryEl.innerHTML = `
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
-                        <span class="text-sky-900 font-black">Casillas de Pesca Calculadas:</span> Pesca en tus <span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${feebasSpotCount} casillas de la Ruta 119</span>.
+                        <span class="text-sky-900 font-black">Casillas de Pesca Calculadas:</span> Pesca en tus <span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${feebasSpotCount} casillas de ${feebasLocationName}</span>.
                     </div>
                     <button 
                         type="button" 
                         onclick="event.stopPropagation(); openFeebasMapModal();" 
                         class="px-2.5 py-1 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer inline-flex items-center gap-1.5 shrink-0 self-start sm:self-auto"
-                        title="Abrir mapa interactivo de casillas de Feebas en Ruta 119"
+                        title="Abrir mapa interactivo de casillas de Feebas en ${feebasLocationName}"
                     >
                         <span>🗺️ Ver Mapa</span>
                     </button>
@@ -641,7 +648,7 @@ export function renderModalObtaining(data, activeForm = null) {
                         <span class="text-lg">🗺️</span>
                         <div>
                             <span class="font-black uppercase text-sky-950 block">Mapa de Casillas de Feebas (${feebasSpotCount} calculadas)</span>
-                            <span class="text-[10px] text-sky-800 font-bold block">50% de probabilidad en Ruta 119</span>
+                            <span class="text-[10px] text-sky-800 font-bold block">50% de probabilidad en ${feebasLocationName}</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2 shrink-0">
@@ -649,7 +656,7 @@ export function renderModalObtaining(data, activeForm = null) {
                             <span>🗺️ Abrir Mapa</span>
                         </button>
                         <button type="button" onclick="event.stopPropagation(); openGameConfigModal();" class="text-[10px] font-black uppercase text-sky-900 underline hover:text-sky-700 cursor-pointer">
-                            Editar Frase
+                            ${feebasEditActionName}
                         </button>
                     </div>
                 `;
