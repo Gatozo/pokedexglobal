@@ -1,9 +1,7 @@
 ---
 trigger: glob
 description: Política estricta de preservación, no sobreescritura, estandarización y exclusión de Git para assets multimedia (sprites, imágenes, iconos, audios)
-globs:
-  - "media/**"
-  - "tracker/scripts/**"
+globs: "media/**, tracker/scripts/**"
 ---
 
 # Política de Manejo de Assets Multimedia (Media Policy)

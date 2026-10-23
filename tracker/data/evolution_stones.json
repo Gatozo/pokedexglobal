@@ -231,6 +231,16 @@
           "area": "Monte Corona",
           "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Monte Corona",
+          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+        }
       ]
     }
   },
@@ -342,6 +352,16 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Forja Fuego",
+          "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
+      ],
+      "pearl": [
         {
           "area": "Forja Fuego",
           "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
@@ -485,6 +505,20 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 213",
+          "detail": "En el agua al sur de la ruta navegando con Surf."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una de las rocas interiores."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
       ]
     }
   },
@@ -596,6 +630,20 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Ciudad Marina",
+          "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+        },
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto entre la maleza."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ciudad Marina",
           "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
@@ -731,6 +779,16 @@
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Prado Aromaflor",
+          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        }
       ]
     }
   },
@@ -804,6 +862,16 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Monte Corona",
+          "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
+        }
+      ],
+      "pearl": [
         {
           "area": "Subterráneo de Sinnoh",
           "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
@@ -933,6 +1001,20 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Pueblo Caelestis",
+          "detail": "Objeto oculto en el suelo al oeste del altar central."
+        },
+        {
+          "area": "Ruta 225 / Ruta 228",
+          "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+        }
       ]
     }
   },
@@ -1030,6 +1112,16 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Isla Hierro (Casa de Acerón)",
+          "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+        },
+        {
+          "area": "Forja Fuego / Monte Corona",
+          "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+        }
+      ],
+      "pearl": [
         {
           "area": "Isla Hierro (Casa de Acerón)",
           "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
@@ -1147,6 +1239,12 @@
           "area": "Ruta 226",
           "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 226",
+          "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1224,6 +1322,12 @@
           "area": "Ciudad Vetusta (Casa del Prof. Oak)",
           "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ciudad Vetusta (Casa del Prof. Oak)",
+          "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -1279,6 +1383,12 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Ruta 218 / Gran Pantano",
+          "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 218 / Gran Pantano",
           "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
@@ -1342,6 +1452,12 @@
           "area": "Ruta 220 / Ruta 226",
           "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 220 / Ruta 226",
+          "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1386,6 +1502,12 @@
         }
       ],
       "diamond": [
+        {
+          "area": "Ruta 204 (Sur)",
+          "detail": "En el suelo en un estanque accesible con Surf en la zona sur de la ruta."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 204 (Sur)",
           "detail": "En el suelo en un estanque accesible con Surf en la zona sur de la ruta."
@@ -1438,6 +1560,12 @@
           "area": "Ruta 225",
           "detail": "En el suelo en una saliente de la Zona Sobrevivir en el postgame (requiere Treparrocas o Corte)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 225",
+          "detail": "En el suelo en una saliente de la Zona Sobrevivir en el postgame (requiere Treparrocas o Corte)."
+        }
       ]
     }
   },
@@ -1451,6 +1579,20 @@
     "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 228",
+          "detail": "En la ladera de arena cerca de la entrada norte de la tormenta de arena."
+        },
+        {
+          "area": "Isla Hierro",
+          "detail": "En una de las cámaras subterráneas profundas cerca de la salida."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 228",
           "detail": "En la ladera de arena cerca de la entrada norte de la tormenta de arena."
@@ -1488,6 +1630,20 @@
           "area": "Habilidad Recogida",
           "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Almacén Galaxia (Ciudad Rocavelo)",
+          "detail": "En el suelo del almacén tras conseguir la Llave del Almacén."
+        },
+        {
+          "area": "Cueva Extravío",
+          "detail": "En la zona profunda accesible usando Golpe Roca y Fuerza."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
+        }
       ]
     }
   },
@@ -1501,6 +1657,20 @@
     "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 212",
+          "detail": "En el lodo pantanoso al sur de la ruta navegando con Surf."
+        },
+        {
+          "area": "Monte Corona (Sótano B1)",
+          "detail": "En una plataforma rocosa del lago subterráneo accesible con Surf y Cascada."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 212",
           "detail": "En el lodo pantanoso al sur de la ruta navegando con Surf."
@@ -1538,6 +1708,20 @@
           "area": "Ruta 209 / Ruta 210",
           "detail": "Equipada en Chansey salvajes con un 50% de probabilidad."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Torre Perdida (Planta 2)",
+          "detail": "En el suelo frente a las lápidas."
+        },
+        {
+          "area": "Subterráneo de Sinnoh",
+          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+        },
+        {
+          "area": "Ruta 209 / Ruta 210",
+          "detail": "Equipada en Chansey salvajes con un 50% de probabilidad."
+        }
       ]
     }
   },
@@ -1551,6 +1735,12 @@
     "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 228",
+          "detail": "En el suelo cerca del lago en la tormenta de arena (postgame)."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 228",
           "detail": "En el suelo cerca del lago en la tormenta de arena (postgame)."
@@ -1571,6 +1761,12 @@
         {
           "area": "Ruta 205 (Sur) / Valle Eólico",
           "detail": "Equipado en Elekid salvajes con un 50% de probabilidad (con Pokémon Rojo Fuego en Ranura 2 de NDS)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Inaccesible salvaje en Perla",
+          "detail": "Requiere intercambio con Pokémon Diamante (donde Elekid lo lleva equipado en estado salvaje mediante la Ranura 2 de GBA con Pokémon Rojo Fuego)."
         }
       ]
     }
@@ -1593,6 +1789,12 @@
           "area": "Intercambio con Pokémon Perla",
           "detail": "Transferir equipado en un Pokémon desde Pokémon Perla (donde aparece equipado en Magby salvajes con un 50% de probabilidad)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 227 / Montaña Dura",
+          "detail": "Equipado en Magby salvajes con un 50% de probabilidad (requiere cartucho de Pokémon Verde Hoja en la Ranura 2 de NDS)."
+        }
       ]
     }
   },
@@ -1610,6 +1812,12 @@
           "area": "Ruta 225",
           "detail": "En un islote de agua al norte de la ruta navegando con Surf (postgame)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 225",
+          "detail": "En un islote de agua al norte de la ruta navegando con Surf (postgame)."
+        }
       ]
     }
   },
@@ -1623,6 +1831,16 @@
     "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto entre los árboles cortables con Corte."
+        },
+        {
+          "area": "Cueva Retorno",
+          "detail": "En una de las salas profundas tras superar tres pilares."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 229",
           "detail": "Objeto oculto entre los árboles cortables con Corte."
@@ -1656,6 +1874,20 @@
           "area": "Torre Batalla (Frente de Batalla)",
           "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 224",
+          "detail": "En el suelo del camino rocoso hacia la Piedra Sagrada (postgame)."
+        },
+        {
+          "area": "Calle Victoria (Sótano B1)",
+          "detail": "En la sala subterránea navegando con Surf."
+        },
+        {
+          "area": "Torre Batalla (Frente de Batalla)",
+          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
+        }
       ]
     }
   },
@@ -1669,6 +1901,16 @@
     "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 214.",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 214",
+          "detail": "Objeto oculto en el camino sur cerca de la cueva del Ruinamaníaco."
+        },
+        {
+          "area": "Torre Batalla (Frente de Batalla)",
+          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 214",
           "detail": "Objeto oculto en el camino sur cerca de la cueva del Ruinamaníaco."
@@ -1695,6 +1937,12 @@
           "area": "Ruta 212 (Sur)",
           "detail": "En el suelo en la zona pantanosa al sur de la ruta (accesible con Surf o Bicicleta)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ruta 212 (Sur)",
+          "detail": "En el suelo en la zona pantanosa al sur de la ruta (accesible con Surf o Bicicleta)."
+        }
       ]
     }
   },
@@ -1709,6 +1957,12 @@
     "category": "incense",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 221",
+          "detail": "En el suelo en una arboleda al oeste de la casa previa a la entrada del Parque Compi."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 221",
           "detail": "En el suelo en una arboleda al oeste de la casa previa a la entrada del Parque Compi."
@@ -1731,6 +1985,12 @@
           "area": "Forja Fuego (Exterior)",
           "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Forja Fuego (Exterior)",
+          "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
+        }
       ]
     }
   },
@@ -1745,6 +2005,12 @@
     "category": "incense",
     "games": {
       "diamond": [
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "En el suelo en la sala más profunda de las ruinas siguiendo el recorrido de las escaleras secundarias."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruinas Sosiego",
           "detail": "En el suelo en la sala más profunda de las ruinas siguiendo el recorrido de las escaleras secundarias."
@@ -1767,6 +2033,12 @@
           "area": "Senda Desolada",
           "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Senda Desolada",
+          "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
+        }
       ]
     }
   },
@@ -1785,6 +2057,12 @@
           "area": "Ciudad Rocavelo",
           "detail": "En el suelo en la colina rocosa al sur del gimnasio (requiere la MO Treparrocas)."
         }
+      ],
+      "pearl": [
+        {
+          "area": "Ciudad Rocavelo",
+          "detail": "En el suelo en la colina rocosa al sur del gimnasio (requiere la MO Treparrocas)."
+        }
       ]
     }
   },
@@ -1799,6 +2077,12 @@
     "category": "incense",
     "games": {
       "diamond": [
+        {
+          "area": "Ruta 210 (Norte)",
+          "detail": "En el suelo en la sección norte con niebla, bajo uno de los puentes de madera junto a la cascada (accesible con Surf)."
+        }
+      ],
+      "pearl": [
         {
           "area": "Ruta 210 (Norte)",
           "detail": "En el suelo en la sección norte con niebla, bajo uno de los puentes de madera junto a la cascada (accesible con Surf)."

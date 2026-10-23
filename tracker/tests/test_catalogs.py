@@ -1906,6 +1906,338 @@ class PokemonDiamondGen4Tests(TestCase):
         self.assertEqual(len(unown.forms), 28)
 
 
+class PokemonPearlGen4Tests(TestCase):
+    """Pruebas unitarias para Pokémon Perla (Gen 4), catálogos, exclusividades y barras nacionales."""
+
+    def setUp(self):
+        self.client = Client()
+        self.game, _ = Game.objects.get_or_create(
+            slug="pearl",
+            defaults={"name": "Pokémon Perla", "generation": 4}
+        )
+        self.pk_sinnoh, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="sinnoh",
+            defaults={"name": "Pokédex de Sinnoh", "is_national": False, "pokeapi_name": "original-sinnoh"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+
+    def test_pearl_catalogs_exist_and_counts(self):
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "pearl.json"
+        nat_file = CATALOGS_DIR / "pearl_national.json"
+        self.assertTrue(reg_file.exists(), "pearl.json debe existir")
+        self.assertTrue(nat_file.exists(), "pearl_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("pearl", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("pearl", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 151, "La Pokédex Regional de Sinnoh en Perla debe tener 151 entradas")
+        self.assertEqual(len(nat_cat), 493, "La Pokédex Nacional en Perla debe tener 493 entradas")
+
+    def test_pearl_regional_sinnoh_order_and_species(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("pearl", is_national=False)
+        self.assertEqual(reg_cat[0].entry_number, 1)
+        self.assertEqual(reg_cat[0].pokemon.name, "turtwig")
+        self.assertEqual(reg_cat[0].pokemon.national_number, 387)
+
+        # Dialga es el #149 en la Pokédex de Sinnoh
+        dialga = [e for e in reg_cat if e.pokemon.name == "dialga"][0]
+        self.assertEqual(dialga.entry_number, 149)
+        self.assertEqual(dialga.pokemon.national_number, 483)
+
+        # Palkia es el #150 en la Pokédex de Sinnoh (Legendario insignia de Perla)
+        palkia = [e for e in reg_cat if e.pokemon.name == "palkia"][0]
+        self.assertEqual(palkia.entry_number, 150)
+        self.assertEqual(palkia.pokemon.national_number, 484)
+        self.assertEqual(palkia.obtaining_info.get("type"), "legendary")
+        self.assertIn("Columna Lanza", palkia.obtaining_info.get("summary", ""))
+
+        # Shieldon (#410) es el #38 en Sinnoh (Fósil exclusivo en Perla)
+        shieldon = [e for e in reg_cat if e.pokemon.national_number == 410][0]
+        self.assertEqual(shieldon.entry_number, 38)
+        self.assertIn("Fósil Coraza", shieldon.obtaining_info.get("summary", ""))
+
+        # Manaphy es el #151 en la Pokédex de Sinnoh
+        self.assertEqual(reg_cat[150].entry_number, 151)
+        self.assertEqual(reg_cat[150].pokemon.name, "manaphy")
+        self.assertEqual(reg_cat[150].pokemon.national_number, 490)
+
+    def test_pearl_national_order_and_regions(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("pearl", is_national=True)
+        self.assertEqual(nat_cat[0].entry_number, 1)
+        self.assertEqual(nat_cat[0].pokemon.name, "bulbasaur")
+        self.assertEqual(nat_cat[386].entry_number, 387)
+        self.assertEqual(nat_cat[386].pokemon.name, "turtwig")
+        self.assertEqual(nat_cat[483].entry_number, 484)
+        self.assertEqual(nat_cat[483].pokemon.name, "palkia")
+        self.assertEqual(nat_cat[492].entry_number, 493)
+        self.assertEqual(nat_cat[492].pokemon.name, "arceus")
+        arceus_obt = nat_cat[492].obtaining_info
+        self.assertEqual(arceus_obt.get("type"), "event")
+        self.assertEqual(arceus_obt.get("badge_label"), "Evento de Distribución")
+        self.assertIn("Flauta Azur", arceus_obt.get("historical_note", {}).get("text", ""))
+
+        rotom_obt = nat_cat[478].obtaining_info
+        self.assertEqual(rotom_obt.get("badge_label"), "Vieja Mansión")
+        self.assertIn("Vieja Mansión", rotom_obt.get("summary", ""))
+        self.assertEqual(rotom_obt.get("locations", [])[0].get("area"), "Vieja Mansión (Televisor)")
+
+        heatran_obt = nat_cat[484].obtaining_info
+        self.assertIn("Montaña Dura", heatran_obt.get("summary", ""))
+        self.assertIn("Montaña Dura", heatran_obt.get("locations", [])[0].get("area", ""))
+
+    def test_pearl_exclusives_and_transfers_catalog(self):
+        from tracker.exclusives import (
+            GAME_COUNTERPARTS,
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG,
+            get_version_transfers_context,
+            get_version_exclusives_context
+        )
+        self.assertIn("pearl", GAME_COUNTERPARTS)
+        self.assertEqual(GAME_COUNTERPARTS["pearl"], ["diamond"])
+        self.assertIn("pearl", VERSION_EXCLUSIVES_CATALOG)
+        self.assertEqual(len(VERSION_EXCLUSIVES_CATALOG["pearl"]), 20)
+        self.assertIn(410, VERSION_EXCLUSIVES_CATALOG["pearl"])  # Shieldon
+        self.assertIn(431, VERSION_EXCLUSIVES_CATALOG["pearl"])  # Glameow
+        self.assertIn(484, VERSION_EXCLUSIVES_CATALOG["pearl"])  # Palkia
+
+        excl_ctx = get_version_exclusives_context(self.game, self.pk_sinnoh, set())
+        self.assertIsNotNone(excl_ctx)
+        self.assertEqual(excl_ctx["own_theme"], "pearl")
+        self.assertEqual(excl_ctx["counterpart_theme"], "diamond")
+
+        self.assertIn("pearl", VERSION_TRANSFERS_CATALOG)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["pearl"]), 90)
+
+        # En la Pokédex Regional de Sinnoh NO debe haber modal de transferencias
+        self.assertIsNone(get_version_transfers_context(self.game, self.pk_sinnoh, set()))
+        # En la Pokédex Nacional SÍ debe haber las 90 transferencias legítimas
+        nat_transfers = get_version_transfers_context(self.game, self.pk_nat, set())
+        self.assertIsNotNone(nat_transfers)
+        self.assertEqual(nat_transfers["total"], 90)
+        self.assertEqual(nat_transfers["mechanic_badge"], "Transferir / GBA")
+        # Verificar que especies clave estén presentes en transferencias
+        self.assertTrue(any(p["national_number"] == 114 for p in nat_transfers["transfer_list"]))  # Tangela
+        self.assertTrue(any(p["national_number"] == 465 for p in nat_transfers["transfer_list"]))  # Tangrowth
+        self.assertTrue(any(p["national_number"] == 357 for p in nat_transfers["transfer_list"]))  # Tropius
+        self.assertTrue(any(p["national_number"] == 273 for p in nat_transfers["transfer_list"]))  # Seedot (Dual Rubí)
+        self.assertTrue(any(p["national_number"] == 270 for p in nat_transfers["transfer_list"]))  # Lotad (Dual Zafiro)
+        self.assertTrue(any(p["national_number"] == 204 for p in nat_transfers["transfer_list"]))  # Pineco (Dual Esmeralda)
+        # Gengar (#94) NO debe estar en transferencias
+        self.assertFalse(any(p["national_number"] == 94 for p in nat_transfers["transfer_list"]))
+        # Especies obtenibles in-game NO deben estar en transferencias
+        self.assertFalse(any(p["national_number"] == 109 for p in nat_transfers["transfer_list"]))  # Koffing
+        self.assertFalse(any(p["national_number"] == 110 for p in nat_transfers["transfer_list"]))  # Weezing
+        self.assertFalse(any(p["national_number"] == 360 for p in nat_transfers["transfer_list"]))  # Wynaut
+
+    def test_pearl_evolution_items_and_stones(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("pearl", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in nat_cat}
+
+        # Roserade con Piedra Día
+        roserade = cat_by_num[407]
+        self.assertEqual(roserade.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(roserade.evolution_stone)
+        self.assertEqual(roserade.evolution_stone.get("slug"), "shiny-stone")
+
+        # Honchkrow (#430) en Perla es exclusivo de Diamante (trade) con Piedra Noche
+        honchkrow = cat_by_num[430]
+        self.assertEqual(honchkrow.obtaining_info.get("type"), "trade")
+        self.assertIsNotNone(honchkrow.evolution_stone)
+        self.assertEqual(honchkrow.evolution_stone.get("slug"), "dusk-stone")
+
+        # Mismagius (#429) con Piedra Noche
+        mismagius = cat_by_num[429]
+        self.assertEqual(mismagius.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(mismagius.evolution_stone)
+        self.assertEqual(mismagius.evolution_stone.get("slug"), "dusk-stone")
+
+        # Magmortar (#467): Magmatizador
+        magmortar = cat_by_num[467]
+        self.assertIsNotNone(magmortar.evolution_stone)
+        self.assertEqual(magmortar.evolution_stone.get("slug"), "magmarizer")
+
+        # Electivire (#466): Electirizador (requiere intercambio desde Diamante)
+        electivire = cat_by_num[466]
+        self.assertIsNotNone(electivire.evolution_stone)
+        self.assertEqual(electivire.evolution_stone.get("slug"), "electirizer")
+
+        # Gallade con Piedra Alba
+        gallade = cat_by_num[475]
+        self.assertEqual(gallade.obtaining_info.get("type"), "evolution")
+        self.assertIsNotNone(gallade.evolution_stone)
+        self.assertEqual(gallade.evolution_stone.get("slug"), "dawn-stone")
+
+        # Inciensos de 4.ª Generación
+        incense_expectations = {
+            406: ("rose-incense", "Incienso Floral"),
+            433: ("pure-incense", "Incienso Puro"),
+            438: ("rock-incense", "Incienso Roca"),
+            439: ("odd-incense", "Incienso Raro"),
+            440: ("luck-incense", "Incienso Duplo"),
+            446: ("full-incense", "Incienso Lento"),
+            458: ("wave-incense", "Incienso Aqua"),
+            298: ("sea-incense", "Incienso Marino"),
+            360: ("lax-incense", "Incienso Suave"),
+        }
+        for nat_id, (slug, name) in incense_expectations.items():
+            baby_entry = cat_by_num[nat_id]
+            self.assertIsNotNone(baby_entry.evolution_stone, f"Bebé #{nat_id} debe tener evolution_stone con {slug}")
+            self.assertEqual(baby_entry.evolution_stone.get("slug"), slug)
+            daycare = next((l for l in baby_entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()), None)
+            self.assertIsNotNone(daycare, f"Bebé #{nat_id} debe tener Guardería")
+            self.assertIn(name, daycare.get("method", ""), f"Guardería de bebé #{nat_id} debe especificar {name}")
+
+    def test_pearl_breeding_golden_rule(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("pearl", is_national=True)
+        cat_by_num = {e.pokemon.national_number: e for e in nat_cat}
+
+        # Formas base y bebés sí son eclosionables y mencionan crianza
+        for num in [387, 390, 393, 403, 406, 447]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
+            self.assertTrue(len(daycare_locs) > 0, f"#{num} {entry.pokemon.name} base/bebé debe tener Guardería en Sinnoh")
+
+        # Evoluciones y legendarios NUNCA deben tener Guardería
+        for num in [94, 388, 389, 391, 392, 405, 448, 483, 484, 487, 493]:
+            entry = cat_by_num[num]
+            daycare_locs = [l for l in entry.obtaining_info.get("locations", []) if "guardería" in l.get("area", "").lower()]
+            self.assertEqual(len(daycare_locs), 0, f"#{num} {entry.pokemon.name} evolucionado/legendario no debe tener Guardería")
+
+    def test_pearl_offline_sprites_exist(self):
+        from django.conf import settings
+        base_media = settings.MEDIA_ROOT
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl", "387.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl", "484.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl", "493.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl_shiny", "1.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl_shiny", "387.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl_shiny", "484.png")))
+        self.assertTrue(os.path.exists(os.path.join(base_media, "pokemon", "sprites", "pearl_shiny", "493.png")))
+
+    def test_pearl_views_and_theming(self):
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "pearl"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertContains(resp_reg, 'data-game="pearl"')
+        self.assertContains(resp_reg, "Turtwig")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "pearl", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, 'id="national-generation-bar"')
+        self.assertContains(resp_nat, "Kanto")
+        self.assertContains(resp_nat, "Johto")
+        self.assertContains(resp_nat, "Hoenn")
+        self.assertContains(resp_nat, "Sinnoh")
+
+    def test_pearl_unown_canonical_f_and_chambers(self):
+        from tracker.unown_data import get_unown_catalog, get_game_unown_chambers, SINNOH_UNOWN_CHAMBERS
+        from tracker.pokemon_forms import get_pokemon_forms
+        from django.conf import settings
+        from pathlib import Path
+
+        chambers = get_game_unown_chambers("pearl")
+        self.assertEqual(chambers, SINNOH_UNOWN_CHAMBERS)
+
+        cat = get_unown_catalog("pearl")
+        self.assertEqual(len(cat), 28)
+        self.assertEqual(cat[0]["sprite_normal"], "/media/pokemon/sprites/pearl/unown/a.png")
+        self.assertEqual(cat[0]["icon_url"], "/media/pokemon/icons/gen4/201-a.png")
+
+        forms = get_pokemon_forms(201, "pearl")
+        self.assertEqual(len(forms), 28)
+        self.assertEqual(forms[0]["form_key"], "a")
+        f_form = next(f for f in forms if f["form_key"] == "f")
+        self.assertEqual(f_form["name"], "Unown [F]")
+        self.assertEqual(f_form["sprite_retro"], "/media/pokemon/sprites/pearl/unown/f.png")
+
+        base_media = Path(settings.MEDIA_ROOT)
+        self.assertTrue((base_media / "pokemon" / "sprites" / "pearl" / "201.png").exists())
+        self.assertTrue((base_media / "pokemon" / "sprites" / "pearl" / "unown" / "f.png").exists())
+
+        resp = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "pearl"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.context["is_sinnoh"])
+        self.assertContains(resp, 'id="unown-tab-friend"')
+        self.assertContains(resp, 'Ruinas Sosiego')
+
+    def test_pearl_filter_tags_and_mechanics(self):
+        from tracker.catalog_service import get_compiled_catalog
+
+        self.assertTrue(self.game.has_great_marsh)
+        self.assertTrue(self.game.has_honey_trees)
+        self.assertTrue(self.game.has_poke_radar)
+        self.assertTrue(self.game.has_dual_slot)
+        self.assertTrue(self.game.has_swarms)
+        self.assertFalse(self.game.has_safari_zone)
+
+        reg_cat = get_compiled_catalog("pearl", is_national=False)
+        starly = next(e for e in reg_cat if e.pokemon.national_number == 396)
+        self.assertIn("great_marsh", starly.filter_tags)
+
+        burmy = next(e for e in reg_cat if e.pokemon.national_number == 412)
+        self.assertIn("honey_tree", burmy.filter_tags)
+
+        nat_cat = get_compiled_catalog("pearl", is_national=True)
+        nidoran = next(e for e in nat_cat if e.pokemon.national_number == 29)
+        self.assertIn("radar", nidoran.filter_tags)
+
+        caterpie = next(e for e in nat_cat if e.pokemon.national_number == 10)
+        self.assertIn("dual_slot", caterpie.filter_tags)
+
+        beldum = next(e for e in nat_cat if e.pokemon.national_number == 374)
+        self.assertIn("swarm", beldum.filter_tags)
+
+        tropius = next(e for e in nat_cat if e.pokemon.national_number == 357)
+        self.assertNotIn("great_marsh", tropius.filter_tags)
+
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "pearl"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertNotContains(resp_reg, 'data-tag="radar"')
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "pearl", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertContains(resp_nat, 'data-tag="radar"')
+
+    def test_gen4_pearl_alternate_forms(self):
+        from tracker.catalog_service import get_compiled_catalog
+
+        pearl_reg = get_compiled_catalog("pearl", is_national=False)
+        pearl_nat = get_compiled_catalog("pearl", is_national=True)
+
+        castform = next(e for e in pearl_nat if e.pokemon.national_number == 351)
+        self.assertEqual(len(castform.forms), 4)
+        self.assertIn("/media/pokemon/sprites/pearl/351.png", castform.forms[0]["sprite_retro"])
+        self.assertIn("/media/pokemon/sprites/pearl/castform/sunny.png", castform.forms[1]["sprite_retro"])
+
+        deoxys = next(e for e in pearl_nat if e.pokemon.national_number == 386)
+        self.assertEqual(len(deoxys.forms), 4)
+
+        burmy = next(e for e in pearl_reg if e.pokemon.national_number == 412)
+        self.assertEqual(len(burmy.forms), 3)
+
+        wormadam = next(e for e in pearl_reg if e.pokemon.national_number == 413)
+        self.assertEqual(len(wormadam.forms), 3)
+
+        cherrim = next(e for e in pearl_reg if e.pokemon.national_number == 421)
+        self.assertEqual(len(cherrim.forms), 2)
+
+        shellos = next(e for e in pearl_reg if e.pokemon.national_number == 422)
+        self.assertEqual(len(shellos.forms), 2)
+
+        arceus = next(e for e in pearl_nat if e.pokemon.national_number == 493)
+        self.assertEqual(len(arceus.forms), 17)
+
+
 class GenderDifferencesAndModalDataTests(TestCase):
     """
     Pruebas para el sistema de diferencias de género de Gen 4 en catálogos y modales:

@@ -181,7 +181,7 @@ def get_unown_catalog(game_slug: str = "gold"):
     is_gen3_plus = is_hoenn or is_tanoby or is_sinnoh
 
     if is_sinnoh:
-        sprite_slug = "diamond"
+        sprite_slug = clean_slug if clean_slug in ["diamond", "pearl"] else "diamond"
     elif is_gen3_plus:
         sprite_slug = "ruby"
     else:
