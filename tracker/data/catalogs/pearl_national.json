@@ -1090,11 +1090,11 @@
       "locations": [
         {
           "area": "Ruta 225",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 226 (Ruta Marítima)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -1153,11 +1153,11 @@
       "locations": [
         {
           "area": "Ruta 225",
-          "method": "Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 226 (Ruta Marítima)",
-          "method": "Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -1219,11 +1219,11 @@
       "locations": [
         {
           "area": "Ruta 225",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 226 (Ruta Marítima)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -1282,19 +1282,19 @@
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 225",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 226 (Ruta Marítima)",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -2180,11 +2180,11 @@
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
@@ -3030,11 +3030,11 @@
       "locations": [
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -3097,11 +3097,11 @@
         },
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -3498,7 +3498,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -3557,7 +3557,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -3771,11 +3771,11 @@
         },
         {
           "area": "Lago Valor",
-          "method": "Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Lago Agudeza",
-          "method": "Hierba alta / Terreno, Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 203",
@@ -3795,7 +3795,7 @@
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Manada diaria, Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 209",
@@ -4537,11 +4537,11 @@
       "locations": [
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 215",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ciudad Pirita (Casa Noroeste)",
@@ -4608,7 +4608,7 @@
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -4735,15 +4735,15 @@
         },
         {
           "area": "Ruta 207",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -4810,11 +4810,11 @@
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
@@ -4874,23 +4874,23 @@
         },
         {
           "area": "Orilla Agudeza",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 225",
@@ -4898,7 +4898,7 @@
         },
         {
           "area": "Ruta 226 (Ruta Marítima)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -5017,11 +5017,11 @@
       "locations": [
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -5084,11 +5084,11 @@
         },
         {
           "area": "Ruta 229",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -5537,27 +5537,27 @@
         },
         {
           "area": "Ruta 206 (Camino de Bicis)",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 207",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -5720,7 +5720,7 @@
         },
         {
           "area": "Orilla Valor",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
@@ -5728,11 +5728,11 @@
         },
         {
           "area": "Ruta 214",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
@@ -5855,7 +5855,7 @@
       "locations": [
         {
           "area": "Ruta 206 (Camino de Bicis)",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
@@ -5863,19 +5863,19 @@
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8043,7 +8043,7 @@
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Montaña Dura (Entrada)",
@@ -8055,7 +8055,7 @@
         },
         {
           "area": "Ruta 227",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -8117,11 +8117,11 @@
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8184,11 +8184,11 @@
         },
         {
           "area": "Ruta 227",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -8254,11 +8254,11 @@
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12623,14 +12623,14 @@
     "cry_url": "/media/pokemon/cries/legacy/175.ogg",
     "flavor_text": "Se dice que su cascarón está lleno de alegría que comparte con las personas de buen corazón.",
     "obtaining_info": {
-      "type": "gift",
-      "badge_label": "Huevo Regalo",
-      "badge_color": "pink",
-      "summary": "Huevo entregado por Cintia en Ciudad Vetusta tras derrotar a Venus en el Edificio Galaxia (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Poké Radar",
+      "badge_color": "sky",
+      "summary": "Aparece en estado salvaje en la hierba alta de la Ruta 230 utilizando el Poké Radar tras obtener la Pokédex Nacional (también obtenible mediante crianza en Pueblo Sosiego).",
       "locations": [
         {
-          "area": "Ciudad Vetusta (Edificio Galaxia)",
-          "method": "Huevo entregado por Cintia"
+          "area": "Ruta 230",
+          "method": "Poké Radar (Hierba alta)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -13265,11 +13265,11 @@
       "locations": [
         {
           "area": "Ruta 214",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -13978,7 +13978,7 @@
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -14610,11 +14610,11 @@
       "locations": [
         {
           "area": "Orilla Valor",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -15562,7 +15562,7 @@
         },
         {
           "area": "Lago Agudeza",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Agudeza",
@@ -15570,11 +15570,11 @@
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -18644,7 +18644,7 @@
         },
         {
           "area": "Bosque Vetusto",
-          "method": "Hierba alta / Terreno, Manada diaria, Árboles de Miel"
+          "method": "Hierba alta / Terreno, Árboles de Miel"
         },
         {
           "area": "Forja Fuego",
@@ -18836,7 +18836,7 @@
       "locations": [
         {
           "area": "Ruta 224",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -18902,7 +18902,7 @@
         },
         {
           "area": "Bosque Vetusto",
-          "method": "Manada diaria, Árboles de Miel"
+          "method": "Hierba alta / Terreno, Árboles de Miel"
         },
         {
           "area": "Forja Fuego",
@@ -19040,7 +19040,7 @@
       "locations": [
         {
           "area": "Bosque Vetusto",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -19689,11 +19689,11 @@
         },
         {
           "area": "Ruta 213",
-          "method": "Hierba alta / Terreno, Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 218",
-          "method": "Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 219",
@@ -19701,11 +19701,11 @@
         },
         {
           "area": "Ruta 221",
-          "method": "Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 222",
-          "method": "Navegando con Surf, Poké Radar"
+          "method": "Hierba alta / Terreno, Navegando con Surf"
         },
         {
           "area": "Ruta 229",
@@ -21617,23 +21617,23 @@
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Este)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
@@ -21704,11 +21704,11 @@
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
@@ -21756,11 +21756,11 @@
         },
         {
           "area": "Orilla Agudeza",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -22056,7 +22056,7 @@
       "locations": [
         {
           "area": "Ruta 229",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -22202,11 +22202,11 @@
         },
         {
           "area": "Ruta 212 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
@@ -22214,11 +22214,11 @@
         },
         {
           "area": "Ruta 224",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 225",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -22690,11 +22690,11 @@
       "locations": [
         {
           "area": "Montaña Dura (Exterior)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 227",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -22765,7 +22765,7 @@
         },
         {
           "area": "Ruta 227",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -23243,7 +23243,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -23302,7 +23302,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -27416,31 +27416,31 @@
         },
         {
           "area": "Lago Veraz",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 201",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 202",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 209",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Norte)",
@@ -27539,7 +27539,7 @@
         },
         {
           "area": "Lago Valor",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Valor",
@@ -27547,7 +27547,7 @@
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Norte)",
@@ -27670,7 +27670,7 @@
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Gran Pantano (Zona 1)",
@@ -27698,43 +27698,43 @@
         },
         {
           "area": "Lago Veraz",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 201",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 202",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Sur)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Este)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 208",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 211 (Oeste)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -27825,23 +27825,23 @@
         },
         {
           "area": "Lago Valor",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Lago Agudeza",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Orilla Valor",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 208",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Norte)",
@@ -27849,7 +27849,7 @@
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -27998,19 +27998,19 @@
         },
         {
           "area": "Ruta 206 (Camino de Bicis)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 214",
@@ -28018,7 +28018,7 @@
         },
         {
           "area": "Ruta 215",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -28084,19 +28084,19 @@
         },
         {
           "area": "Ruta 202",
-          "method": "Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 203",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -28155,7 +28155,7 @@
       "locations": [
         {
           "area": "Forja Fuego",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -28274,7 +28274,7 @@
       "locations": [
         {
           "area": "Bosque Vetusto",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Gran Pantano (Zona 1)",
@@ -28302,15 +28302,15 @@
         },
         {
           "area": "Ruta 204 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 204 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 212 (Norte)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -29158,7 +29158,7 @@
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Forja Fuego",
@@ -29229,19 +29229,19 @@
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Este)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 213",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 224",
@@ -29304,7 +29304,7 @@
       "locations": [
         {
           "area": "Forja Fuego",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Calle Victoria (Sótano B1)",
@@ -29316,23 +29316,23 @@
         },
         {
           "area": "Ruta 213",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 218",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 222",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 224",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -29594,27 +29594,27 @@
       "locations": [
         {
           "area": "Valle Eólico",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Forja Fuego",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 205 (Este)",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 213",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 218",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
@@ -29622,7 +29622,7 @@
         },
         {
           "area": "Ruta 224",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -29681,23 +29681,23 @@
       "locations": [
         {
           "area": "Forja Fuego",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 218",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 221",
-          "method": "Hierba alta / Terreno, Manada diaria, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 222",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 224",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 230 (Ruta Marítima)",
@@ -29936,7 +29936,7 @@
       "locations": [
         {
           "area": "Bosque Vetusto",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -30221,11 +30221,11 @@
       "locations": [
         {
           "area": "Ruta 218",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 222",
-          "method": "Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -30284,11 +30284,11 @@
       "locations": [
         {
           "area": "Ruta 222",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 229",
-          "method": "Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -30702,11 +30702,11 @@
         },
         {
           "area": "Monte Corona (Laderas Nevadas)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (Cima / Ventisca)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Monte Corona (P4)",
@@ -30808,11 +30808,11 @@
         },
         {
           "area": "Ruta 209",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 210 (Sur)",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -31678,7 +31678,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "method": "Hierba alta / Terreno, Poké Radar"
+          "method": "Hierba alta / Terreno"
         }
       ],
       "evolution_info": {
@@ -32418,11 +32418,11 @@
         },
         {
           "area": "Ruta 216",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Ruta 217",
-          "method": "Hierba alta / Terreno, Manada diaria"
+          "method": "Hierba alta / Terreno"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",

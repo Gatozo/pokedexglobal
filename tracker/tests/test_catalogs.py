@@ -2194,11 +2194,21 @@ class PokemonPearlGen4Tests(TestCase):
         nidoran = next(e for e in nat_cat if e.pokemon.national_number == 29)
         self.assertIn("radar", nidoran.filter_tags)
 
+        togepi = next(e for e in nat_cat if e.pokemon.national_number == 175)
+        self.assertIn("radar", togepi.filter_tags)
+        self.assertEqual(togepi.obtaining_info.get("badge_label"), "Poké Radar")
+        self.assertEqual(len([e for e in nat_cat if "radar" in e.filter_tags]), 39)
+
+        rattata = next(e for e in nat_cat if e.pokemon.national_number == 19)
+        self.assertNotIn("radar", rattata.filter_tags)
+        self.assertNotIn("swarm", rattata.filter_tags)
+
         caterpie = next(e for e in nat_cat if e.pokemon.national_number == 10)
         self.assertIn("dual_slot", caterpie.filter_tags)
 
         beldum = next(e for e in nat_cat if e.pokemon.national_number == 374)
         self.assertIn("swarm", beldum.filter_tags)
+        self.assertEqual(len([e for e in nat_cat if "swarm" in e.filter_tags]), 28)
 
         tropius = next(e for e in nat_cat if e.pokemon.national_number == 357)
         self.assertNotIn("great_marsh", tropius.filter_tags)

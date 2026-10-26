@@ -300,12 +300,12 @@ SPECIAL_OBTAINING = {
         ]
     },
     175: {
-        'type': 'gift',
-        'badge_label': 'Huevo Regalo',
-        'badge_color': 'pink',
-        'summary': 'Huevo entregado por Cintia en Ciudad Vetusta tras derrotar a Venus en el Edificio Galaxia (también obtenible mediante crianza).',
+        'type': 'wild',
+        'badge_label': 'Poké Radar',
+        'badge_color': 'sky',
+        'summary': 'Aparece en estado salvaje en la hierba alta de la Ruta 230 utilizando el Poké Radar tras obtener la Pokédex Nacional (también obtenible mediante crianza en Pueblo Sosiego).',
         'locations': [
-            {'area': 'Ciudad Vetusta (Edificio Galaxia)', 'method': 'Huevo entregado por Cintia'},
+            {'area': 'Ruta 230', 'method': 'Poké Radar (Hierba alta)'},
             DAYCARE_LOCATION
         ]
     },
@@ -672,9 +672,9 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         if cond in dual_map:
             return dual_map[cond]
 
-    if 'radar-on' in conditions or 'radar' in conditions or any('radar' in c for c in conditions):
+    if 'radar-on' in conditions:
         return 'Poké Radar'
-    if 'swarm-yes' in conditions or 'swarm' in conditions or any('swarm' in c for c in conditions):
+    if 'swarm-yes' in conditions:
         return 'Manada diaria'
 
     if method_raw == 'walk':
