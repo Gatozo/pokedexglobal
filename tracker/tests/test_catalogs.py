@@ -2264,6 +2264,14 @@ class GenderDifferencesAndModalDataTests(TestCase):
         self.assertEqual(combee_info["gender_type"], "both_with_diff")
         self.assertTrue(combee_info["has_visual_differences"])
         self.assertTrue(combee_info["female_sprite_available"])
+        self.assertEqual(combee_info["female_sprites"]["retro"], "/media/pokemon/sprites/pearl_animated/female/415.png")
+        self.assertEqual(combee_info["female_sprites"]["retro_animated"], "/media/pokemon/sprites/pearl_animated/female/415.png")
+        self.assertEqual(combee_info["female_sprites"]["retro_static"], "/media/pokemon/sprites/pearl/female/415.png")
+
+        # Kricketune (#402) en Perla debe resolver sprite animado femenino
+        kricket_info = get_pokemon_gender_info(402, "pearl")
+        self.assertIsNotNone(kricket_info)
+        self.assertEqual(kricket_info["female_sprites"]["retro"], "/media/pokemon/sprites/pearl_animated/female/402.png")
 
         # 2. Especie con ambos géneros pero sin diferencias visuales (ej. Turtwig #387)
         turtwig_info = get_pokemon_gender_info(387, "diamond")

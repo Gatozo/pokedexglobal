@@ -185,9 +185,10 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
             "modern_back": f"/media/pokemon/home/back/female/{national_number}.png",
             "modern_shiny_back": f"/media/pokemon/home/shiny/back/female/{national_number}.png",
         }
-        if base_slug == "diamond" and national_number not in {277, 278}:
-            female_sprites["retro_animated"] = f"/media/pokemon/sprites/diamond_animated/female/{national_number}.png"
-            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/diamond_animated_shiny/female/{national_number}.png"
+        anim_slug = base_slug if base_slug in ["diamond", "pearl"] else "diamond"
+        if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] and national_number not in {277, 278}:
+            female_sprites["retro_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated/female/{national_number}.png"
+            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated_shiny/female/{national_number}.png"
             female_sprites["retro_static"] = female_sprites["retro"]
             female_sprites["retro_shiny_static"] = female_sprites["retro_shiny"]
             female_sprites["retro"] = female_sprites["retro_animated"]
