@@ -149,8 +149,19 @@ class Command(BaseCommand):
             tasks.append((f"{BASE_SHINY_URL}/{src_name}", base_shiny_dir / "arceus" / f"{t}.png", f"Arceus {t} shiny"))
 
         # 9. Castform (#351)
-        tasks.append((f"{BASE_NORMAL_URL}/351.png", base_normal_dir / "castform" / "normal.png", "Castform normal"))
-        tasks.append((f"{BASE_SHINY_URL}/351.png", base_shiny_dir / "castform" / "normal.png", "Castform shiny"))
+        castform_forms = [
+            ("normal", "351.png"),
+            ("sunny", "10013.png"),
+            ("rainy", "10014.png"),
+            ("snowy", "10015.png"),
+        ]
+        for form_key, src_name in castform_forms:
+            dest_norm = base_normal_dir / "castform" / f"{form_key}.png"
+            if not dest_norm.exists() or force:
+                tasks.append((f"{BASE_NORMAL_URL}/{src_name}", dest_norm, f"Castform {form_key} normal"))
+            dest_shiny = base_shiny_dir / "castform" / f"{form_key}.png"
+            if not dest_shiny.exists() or force:
+                tasks.append((f"{BASE_SHINY_URL}/{src_name}", dest_shiny, f"Castform {form_key} shiny"))
 
         total_tasks = len(tasks)
         self.stdout.write(f"Iniciando sincronización de {total_tasks} sprites animados de Pokémon Diamante...")
