@@ -264,6 +264,24 @@ NON_SINNOH_TRANSFERS_DIAMOND = sorted(list(
     }
 ))
 
+# 48 especies requeridas mediante transferencia externa o intercambio para completar la Pokédex Nacional
+# en Pokémon Platino (desclasificando a las Aves Legendarias errantes y especies nativas de la Pokédex expandida):
+NON_SINNOH_TRANSFERS_PLATINUM = sorted(list(
+    # Iniciales de Kanto, Johto y Hoenn (27)
+    set(range(1, 10)) | set(range(152, 161)) | set(range(252, 261)) |
+    # Legendarios y singulares foráneos de Kanto (2: Mewtwo y Mew)
+    {150, 151} |
+    # Legendarios y singulares foráneos de Johto (6: Raikou, Entei, Suicune, Lugia, Ho-Oh, Celebi)
+    {243, 244, 245, 249, 250, 251} |
+    # Legendarios y singulares foráneos de Hoenn (7: Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys)
+    {380, 381, 382, 383, 384, 385, 386} |
+    # Especies ausentes en estado salvaje en Sinnoh en Platino (6)
+    {
+        328, 329, 330,      # Trapinch, Vibrava, Flygon
+        366, 367, 368       # Clamperl, Huntail, Gorebyss
+    }
+))
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
 VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
@@ -313,9 +331,10 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
     'emerald': NON_HOENN_TRANSFERS_EMERALD,
     'firered': NON_KANTO_SEVII_TRANSFERS_FIRERED,
     'leafgreen': NON_KANTO_SEVII_TRANSFERS_FIRERED,
-    # Gen 4 (Pokédex Nacional de Diamante y Perla)
+    # Gen 4 (Pokédex Nacional de Diamante, Perla y Platino)
     'diamond': NON_SINNOH_TRANSFERS_DIAMOND,
     'pearl': NON_SINNOH_TRANSFERS_DIAMOND,
+    'platinum': NON_SINNOH_TRANSFERS_PLATINUM,
 }
 
 # Metadatos descriptivos de la mecánica de transferencia según la generación y juego
@@ -849,6 +868,81 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             465: 'GBA / Platino / HGSS',
         }
     },
+    'platinum': {
+        'mechanic_title': 'Transferencia y Parque Compi • Gen 4',
+        'mechanic_badge': 'Transferir / GBA',
+        'description': (
+            'La Pokédex Nacional de Pokémon Platino consta de 493 Pokémon. Estas 48 especies comprenden los iniciales '
+            'y criaturas legendarias foráneas de Kanto, Johto y Hoenn que no habitan en estado salvaje en Sinnoh, '
+            'así como las líneas evolutivas de Trapinch y Clamperl ausentes en esta edición. '
+            'Para completar tu partida, puedes transferirlos desde cartuchos de Game Boy Advance '
+            '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
+            'o intercambiarlos de forma directa en Nintendo DS con entregas coetáneas '
+            '(Pokémon Diamante, Pokémon Perla y Pokémon HeartGold / SoulSilver).'
+        ),
+        'default_origin': 'Parque Compi (GBA) / D/P / HGSS',
+        'origins': {
+            # Iniciales de Kanto, Johto y Hoenn
+            1: 'GBA: Rojo Fuego / Verde Hoja',
+            2: 'GBA: Rojo Fuego / Verde Hoja',
+            3: 'GBA: Rojo Fuego / Verde Hoja',
+            4: 'GBA: Rojo Fuego / Verde Hoja',
+            5: 'GBA: Rojo Fuego / Verde Hoja',
+            6: 'GBA: Rojo Fuego / Verde Hoja',
+            7: 'GBA: Rojo Fuego / Verde Hoja',
+            8: 'GBA: Rojo Fuego / Verde Hoja',
+            9: 'GBA: Rojo Fuego / Verde Hoja',
+
+            152: 'GBA: Esmeralda / D/P / HGSS',
+            153: 'GBA: Esmeralda / D/P / HGSS',
+            154: 'GBA: Esmeralda / D/P / HGSS',
+            155: 'GBA: Esmeralda / D/P / HGSS',
+            156: 'GBA: Esmeralda / D/P / HGSS',
+            157: 'GBA: Esmeralda / D/P / HGSS',
+            158: 'GBA: Esmeralda / D/P / HGSS',
+            159: 'GBA: Esmeralda / D/P / HGSS',
+            160: 'GBA: Esmeralda / D/P / HGSS',
+
+            252: 'GBA: R/Z/E / D/P',
+            253: 'GBA: R/Z/E / D/P',
+            254: 'GBA: R/Z/E / D/P',
+            255: 'GBA: R/Z/E / D/P',
+            256: 'GBA: R/Z/E / D/P',
+            257: 'GBA: R/Z/E / D/P',
+            258: 'GBA: R/Z/E / D/P',
+            259: 'GBA: R/Z/E / D/P',
+            260: 'GBA: R/Z/E / D/P',
+
+            # Legendarios foráneos de Kanto
+            150: 'GBA: Rojo Fuego / Verde Hoja',
+            151: 'Evento / Parque Compi',
+
+            # Legendarios foráneos de Johto
+            243: 'GBA: Rojo Fuego / Verde Hoja',
+            244: 'GBA: Rojo Fuego / Verde Hoja',
+            245: 'GBA: Rojo Fuego / Verde Hoja',
+            249: 'GBA / Evento Roca Ombligo',
+            250: 'GBA / Evento Roca Ombligo',
+            251: 'Evento / Colosseum Bonus Disc',
+
+            # Legendarios foráneos de Hoenn
+            380: 'GBA: Zafiro / Esmeralda',
+            381: 'GBA: Rubí / Esmeralda',
+            382: 'GBA: Zafiro / Esmeralda',
+            383: 'GBA: Rubí / Esmeralda',
+            384: 'GBA: R/Z/E',
+            385: 'Evento / Pokémon Channel',
+            386: 'GBA / Evento Isla Origen',
+
+            # Especies ausentes en estado salvaje en Sinnoh en Platino
+            328: 'Diamante / Perla (Ruta 228)',
+            329: 'Evolución de Trapinch',
+            330: 'Evolución de Vibrava',
+            366: 'Diamante / Perla (Ruta 219)',
+            367: 'Intercambio con Diente Marino',
+            368: 'Intercambio con Escama Marina',
+        }
+    },
 }
 
 # Nombres cortos amigables para los botones y pestañas (ej: "Exclusivos de Azul")
@@ -929,6 +1023,28 @@ THIRD_VERSION_COUNTERPART_EXCLUSIVES: Dict[str, Dict[str, Any]] = {
             337: 'Zafiro',
         },
         'notice': 'Estos 7 Pokémon <span class="underline">no habitan en estado salvaje</span> en tu edición de <strong>Pokémon Esmeralda</strong>. Para completar la Pokédex de Hoenn requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Rubí</strong> o <strong>Pokémon Zafiro</strong>.',
+    },
+    'platinum': {
+        'counterpart_short_name': 'Diamante y Perla',
+        'counterpart_name': 'Pokémon Diamante o Pokémon Perla',
+        'counterpart_slug': 'diamond',
+        'counterpart_theme': 'diamond_pearl',
+        'exclusive_nums': [198, 200, 429, 430, 431, 432, 434, 435],
+        'origins': {
+            198: 'Diamante',      # Murkrow
+            430: 'Diamante',      # Honchkrow
+            434: 'Diamante',      # Stunky
+            435: 'Diamante',      # Skuntank
+            200: 'Perla',         # Misdreavus
+            429: 'Perla',         # Mismagius
+            431: 'Perla',         # Glameow
+            432: 'Perla',         # Purugly
+        },
+        'notice': (
+            'Estos 8 Pokémon <span class="underline">no habitan en estado salvaje</span> en tu edición de <strong>Pokémon Platino</strong>. '
+            'Para completar la Pokédex de Sinnoh requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Diamante</strong> '
+            'o <strong>Pokémon Perla</strong>.'
+        ),
     }
 }
 
@@ -1078,6 +1194,8 @@ def get_version_exclusives_context(
             return 'silver'
         elif slug in ['yellow']:
             return 'amber'
+        elif slug in ['platinum']:
+            return 'platinum'
         return 'red'
 
     own_theme = _resolve_theme(current_game.slug)

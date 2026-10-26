@@ -2254,6 +2254,183 @@ class PokemonPearlGen4Tests(TestCase):
         self.assertEqual(len(arceus.forms), 17)
 
 
+class PokemonPlatinumGen4Tests(TestCase):
+    """Pruebas unitarias para Pokémon Platino (Gen 4), catálogos, exclusividades, formas y mecánicas."""
+
+    def setUp(self):
+        self.client = Client()
+        self.game, _ = Game.objects.get_or_create(
+            slug="platinum",
+            defaults={"name": "Pokémon Platino", "generation": 4}
+        )
+        self.pk_sinnoh, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="sinnoh",
+            defaults={"name": "Pokédex de Sinnoh", "is_national": False, "pokeapi_name": "extended-sinnoh"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+
+    def test_platinum_catalogs_exist_and_counts(self):
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "platinum.json"
+        nat_file = CATALOGS_DIR / "platinum_national.json"
+        self.assertTrue(reg_file.exists(), "platinum.json debe existir")
+        self.assertTrue(nat_file.exists(), "platinum_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("platinum", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("platinum", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 210, "La Pokédex Regional de Sinnoh en Platino debe tener 210 entradas")
+        self.assertEqual(len(nat_cat), 493, "La Pokédex Nacional en Platino debe tener 493 entradas")
+
+    def test_platinum_regional_sinnoh_order_and_species(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("platinum", is_national=False)
+        self.assertEqual(reg_cat[0].entry_number, 1)
+        self.assertEqual(reg_cat[0].pokemon.name, "turtwig")
+        self.assertEqual(reg_cat[0].pokemon.national_number, 387)
+
+        # Rotom (#479) es el #152 en la Pokédex de Sinnoh ampliada
+        rotom = [e for e in reg_cat if e.pokemon.national_number == 479][0]
+        self.assertEqual(rotom.entry_number, 152)
+        self.assertEqual(rotom.primary_type, "electric")
+        self.assertEqual(rotom.secondary_type, "ghost")
+
+        # Giratina (#487) es el #210 en la Pokédex de Sinnoh ampliada (Mascota insignia de Platino)
+        giratina = [e for e in reg_cat if e.pokemon.national_number == 487][0]
+        self.assertEqual(giratina.entry_number, 210)
+        self.assertEqual(giratina.obtaining_info.get("type"), "legendary")
+        self.assertIn("Mundo Distorsión", giratina.obtaining_info.get("summary", ""))
+
+        # Manaphy (#490) es el #151 en la Pokédex de Sinnoh
+        manaphy = [e for e in reg_cat if e.pokemon.national_number == 490][0]
+        self.assertEqual(manaphy.entry_number, 151)
+
+    def test_platinum_gifts_and_encounters(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("platinum", is_national=False)
+
+        # Eevee (#133) regalo de Tecla en Ciudad Coraz\\u00f3n
+        eevee = next(e for e in reg_cat if e.pokemon.national_number == 133)
+        self.assertEqual(eevee.obtaining_info.get("type"), "gift")
+        self.assertIn("Tecla", eevee.obtaining_info.get("summary", ""))
+
+        # Porygon (#137) regalo en Ciudad Rocavelo
+        porygon = next(e for e in reg_cat if e.pokemon.national_number == 137)
+        self.assertEqual(porygon.obtaining_info.get("type"), "gift")
+        self.assertIn("Ciudad Rocavelo", porygon.obtaining_info.get("summary", ""))
+
+        # Togepi (#175) huevo regalado por Cintia
+        togepi = next(e for e in reg_cat if e.pokemon.national_number == 175)
+        self.assertEqual(togepi.obtaining_info.get("type"), "gift")
+        self.assertIn("Cintia", togepi.obtaining_info.get("summary", ""))
+
+        # Riolu (#447) huevo regalado por Quinoa en Isla Hierro
+        riolu = next(e for e in reg_cat if e.pokemon.national_number == 447)
+        self.assertEqual(riolu.obtaining_info.get("type"), "gift")
+        self.assertIn("Quinoa", riolu.obtaining_info.get("summary", ""))
+
+        # Drifloon (#425) encuentro \único los viernes en Valle E\\u00f3lico
+        drifloon = next(e for e in reg_cat if e.pokemon.national_number == 425)
+        self.assertIn(drifloon.obtaining_info.get("type"), ["wild", "static"])
+        self.assertTrue(len(drifloon.obtaining_info.get("locations", [])) > 0)
+
+    def test_platinum_missing_counterpart_exclusives(self):
+        from tracker.exclusives import THIRD_VERSION_COUNTERPART_EXCLUSIVES, get_version_exclusives_context
+
+        self.assertIn("platinum", THIRD_VERSION_COUNTERPART_EXCLUSIVES)
+        conf = THIRD_VERSION_COUNTERPART_EXCLUSIVES["platinum"]
+        self.assertEqual(conf["counterpart_theme"], "diamond_pearl")
+        self.assertEqual(len(conf["exclusive_nums"]), 8)
+        expected_missing = [198, 200, 429, 430, 431, 432, 434, 435]
+        self.assertEqual(sorted(conf["exclusive_nums"]), expected_missing)
+
+        info = get_version_exclusives_context(self.game, self.pk_sinnoh, set())
+        self.assertIsNotNone(info)
+        self.assertTrue(info["has_exclusives"])
+        self.assertEqual(info["counterpart_total"], 8)
+        self.assertEqual(info["counterpart_theme"], "diamond_pearl")
+
+    def test_platinum_transfers(self):
+        from tracker.exclusives import VERSION_TRANSFERS_CATALOG, VERSION_TRANSFERS_META, get_version_transfers_context
+
+        self.assertIn("platinum", VERSION_TRANSFERS_CATALOG)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["platinum"]), 48)
+        origins = VERSION_TRANSFERS_META["platinum"]["origins"]
+        self.assertEqual(len(origins), 48)
+
+        t_info = get_version_transfers_context(self.game, self.pk_nat, set())
+        self.assertIsNotNone(t_info)
+        self.assertTrue(t_info["has_transfers"])
+        self.assertEqual(t_info["total"], 48)
+
+    def test_platinum_rotom_giratina_shaymin_forms(self):
+        from tracker.pokemon_forms import get_pokemon_forms
+        from tracker.catalog_service import get_compiled_catalog
+
+        # Rotom en Platino: 6 formas, todas El\\u00e9ctrico/Fantasma en Gen 4
+        rotom_forms = get_pokemon_forms(479, "platinum")
+        self.assertEqual(len(rotom_forms), 6)
+        for rf in rotom_forms:
+            self.assertEqual(rf["primary_type"], "electric")
+            self.assertEqual(rf["secondary_type"], "ghost")
+            self.assertIn("/media/pokemon/sprites/platinum/", rf["sprite_retro"])
+            self.assertIn("/media/pokemon/sprites/platinum_animated/", rf["modal_retro_sprite_url"])
+
+        # Rotom en Perla: debe ser lista vac\\u00eda
+        self.assertEqual(get_pokemon_forms(479, "pearl"), [])
+
+        # Giratina en Platino: 2 formas (Modificada y Origen #10007)
+        giratina_forms = get_pokemon_forms(487, "platinum")
+        self.assertEqual(len(giratina_forms), 2)
+        origen = next(f for f in giratina_forms if f["form_key"] == "origin")
+        self.assertEqual(origen["sprite_modern"], "/media/pokemon/home/10007.png")
+        self.assertIn("/media/pokemon/sprites/platinum/giratina/origin.png", origen["sprite_retro"])
+
+        # Shaymin en Platino: 2 formas (Tierra y Cielo #10006)
+        shaymin_forms = get_pokemon_forms(492, "platinum")
+        self.assertEqual(len(shaymin_forms), 2)
+        cielo = next(f for f in shaymin_forms if f["form_key"] == "sky")
+        self.assertEqual(cielo["sprite_modern"], "/media/pokemon/home/10006.png")
+        self.assertIn("/media/pokemon/sprites/platinum/shaymin/sky.png", cielo["sprite_retro"])
+
+    def test_platinum_evolution_stones(self):
+        import json
+        from pathlib import Path
+        from django.conf import settings
+
+        stones_path = Path(settings.BASE_DIR) / "tracker" / "data" / "evolution_stones.json"
+        with open(stones_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        platinum_items = [slug for slug, it in data.items() if "platinum" in it.get("games", {})]
+        self.assertEqual(len(platinum_items), 32)
+        # Verificar piedras y objetos clave
+        self.assertIn("dusk-stone", platinum_items)
+        self.assertIn("dawn-stone", platinum_items)
+        self.assertIn("shiny-stone", platinum_items)
+        self.assertIn("reaper-cloth", platinum_items)
+        self.assertIn("protector", platinum_items)
+        self.assertIn("electirizer", platinum_items)
+        self.assertIn("magmarizer", platinum_items)
+
+    def test_platinum_http_views_and_theme(self):
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "platinum"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertTrue(resp_reg.context["is_sinnoh"])
+        self.assertEqual(resp_reg.context["total_pokemon"], 210)
+        self.assertContains(resp_reg, 'data-game="platinum"')
+        self.assertContains(resp_reg, "Giratina")
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "platinum", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertEqual(resp_nat.context["total_pokemon"], 493)
+
+
+
 class GenderDifferencesAndModalDataTests(TestCase):
     """
     Pruebas para el sistema de diferencias de género de Gen 4 en catálogos y modales:

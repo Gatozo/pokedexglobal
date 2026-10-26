@@ -891,6 +891,179 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
     return forms
 
 
+
+
+def get_giratina_forms(game_slug: str = "platinum"):
+    """
+    Retorna las 2 formas de Giratina (#487):
+    Forma Modificada (terrestre) y Forma Origen (serpenteante del Mundo Distorsión / Griseosfera).
+    """
+    slug = game_slug
+    return [
+        {
+            "form_key": "altered",
+            "name": "Forma Modificada",
+            "display_name": "Giratina (Forma Modificada)",
+            "category": "Pokémon Renegado",
+            "primary_type": "ghost",
+            "primary_type_es": "Fantasma",
+            "secondary_type": "dragon",
+            "secondary_type_es": "Dragón",
+            "sprite_retro": f"/media/pokemon/sprites/{slug}/487.png",
+            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/487.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/487.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/487.png",
+            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/487.png",
+            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/487.png",
+            "sprite_modern": "/media/pokemon/home/487.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/487.png",
+            "notes": [
+                {
+                    "title": "Mundo Real",
+                    "text": "Forma con patas adoptada fuera del Mundo Distorsión cuando no lleva equipada la Griseosfera. Posee la habilidad Presión y mayores defensas.",
+                    "tag": "Presión",
+                    "icon": "/media/items/griseous-orb.png",
+                }
+            ],
+        },
+        {
+            "form_key": "origin",
+            "name": "Forma Origen",
+            "display_name": "Giratina (Forma Origen)",
+            "category": "Pokémon Renegado",
+            "primary_type": "ghost",
+            "primary_type_es": "Fantasma",
+            "secondary_type": "dragon",
+            "secondary_type_es": "Dragón",
+            "sprite_retro": f"/media/pokemon/sprites/{slug}/giratina/origin.png",
+            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/giratina/origin.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/giratina/origin.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/giratina/origin.png",
+            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/giratina/origin.png",
+            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/giratina/origin.png",
+            "sprite_modern": "/media/pokemon/home/10007.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10007.png",
+            "notes": [
+                {
+                    "title": "Mundo Distorsión / Griseosfera",
+                    "text": "Forma serpenteante original de Giratina. Se manifiesta dentro del Mundo Distorsión o llevando equipada la Griseosfera en el mundo real. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque.",
+                    "tag": "Levitación",
+                    "icon": "/media/items/griseous-orb.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_shaymin_forms(game_slug: str = "platinum"):
+    """
+    Retorna las 2 formas de Shaymin (#492):
+    Forma Tierra (Erizo) y Forma Cielo (Grácidea de día).
+    """
+    slug = game_slug
+    return [
+        {
+            "form_key": "land",
+            "name": "Forma Tierra",
+            "display_name": "Shaymin (Forma Tierra)",
+            "category": "Pokémon Gratitud",
+            "primary_type": "grass",
+            "primary_type_es": "Planta",
+            "secondary_type": "",
+            "secondary_type_es": "",
+            "sprite_retro": f"/media/pokemon/sprites/{slug}/492.png",
+            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/492.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/492.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/492.png",
+            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/492.png",
+            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/492.png",
+            "sprite_modern": "/media/pokemon/home/492.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/492.png",
+            "notes": [
+                {
+                    "title": "Forma Base",
+                    "text": "Forma terrestre original de Shaymin. Posee la habilidad Cura Natural y estadísticas homogéneas de 100 en todos sus atributos.",
+                    "tag": "Cura Natural",
+                    "icon": "/media/items/gracidea.png",
+                }
+            ],
+        },
+        {
+            "form_key": "sky",
+            "name": "Forma Cielo",
+            "display_name": "Shaymin (Forma Cielo)",
+            "category": "Pokémon Gratitud",
+            "primary_type": "grass",
+            "primary_type_es": "Planta",
+            "secondary_type": "flying",
+            "secondary_type_es": "Volador",
+            "sprite_retro": f"/media/pokemon/sprites/{slug}/shaymin/sky.png",
+            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shaymin/sky.png",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/shaymin/sky.png",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/shaymin/sky.png",
+            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shaymin/sky.png",
+            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shaymin/sky.png",
+            "sprite_modern": "/media/pokemon/home/10006.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10006.png",
+            "notes": [
+                {
+                    "title": "Flor Grácidea",
+                    "text": "Forma alada adoptada al usar la Flor Grácidea entre las 05:00 y las 19:59. Adquiere el tipo secundario Volador, la habilidad Dicha y estadísticas altas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse.",
+                    "tag": "Dicha",
+                    "icon": "/media/items/gracidea.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_rotom_forms(game_slug: str = "platinum"):
+    """
+    Retorna las 6 formas de Rotom (#479) en Sinnoh:
+    Normal y los 5 electrodomésticos (Calor, Lavado, Frío, Ventilador y Corte).
+    Canónico Gen 4: Todas las formas conservan estrictamente el tipo Eléctrico / Fantasma.
+    """
+    slug = game_slug
+    appliances = [
+        ("normal", "Forma Normal", "Rotom", "479.png", "479.png", 479, "Forma original de plasma de Rotom.", "Rayo"),
+        ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat.png", "rotom/heat.png", 10008, "Posee un microondas. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Sofoco.", "Sofoco"),
+        ("wash", "Rotom Lavado", "Rotom Lavado (Lavadora)", "rotom/wash.png", "rotom/wash.png", 10009, "Posee una lavadora. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Hidrobomba.", "Hidrobomba"),
+        ("frost", "Rotom Frío", "Rotom Frío (Frigorífico)", "rotom/frost.png", "rotom/frost.png", 10010, "Posee un frigorífico. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Ventisca.", "Ventisca"),
+        ("fan", "Rotom Ventilador", "Rotom Ventilador (Ventilador)", "rotom/fan.png", "rotom/fan.png", 10011, "Posee un ventilador. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Tajo Aéreo.", "Tajo Aéreo"),
+        ("mow", "Rotom Corte", "Rotom Corte (Cortacésped)", "rotom/mow.png", "rotom/mow.png", 10012, "Posee un cortacésped. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Lluevehojas.", "Lluevehojas"),
+    ]
+
+    forms = []
+    for f_key, f_name, d_name, rel_sprite, rel_anim, home_id, desc, special_move in appliances:
+        forms.append({
+            "form_key": f_key,
+            "name": f_name,
+            "display_name": d_name,
+            "category": "Pokémon Plasma",
+            "primary_type": "electric",
+            "primary_type_es": "Eléctrico",
+            "secondary_type": "ghost",
+            "secondary_type_es": "Fantasma",
+            "sprite_retro": f"/media/pokemon/sprites/{slug}/{rel_sprite}",
+            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/{rel_sprite}",
+            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/{rel_anim}",
+            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_anim}",
+            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
+            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
+            "sprite_modern": f"/media/pokemon/home/{home_id}.png",
+            "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
+            "notes": [
+                {
+                    "title": f"Edificio Galaxia ({special_move})",
+                    "text": f"{desc} Requiere la Llave Secreta en la Sala Secreta del Edificio Galaxia de Ciudad Vetusta.",
+                    "tag": special_move,
+                    "icon": "/media/items/secret-key.png",
+                }
+            ],
+        })
+    return forms
+
+
 def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dict[str, Any]]:
     """
     Punto de entrada unificado y escalable para obtener las formas alternas de un Pokémon.
@@ -921,6 +1094,12 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
             return get_shellos_forms(clean_slug)
         elif national_number == 423:
             return get_gastrodon_forms(clean_slug)
+        elif national_number == 479 and clean_slug in ["platinum", "heartgold", "soulsilver"]:
+            return get_rotom_forms(clean_slug)
+        elif national_number == 487 and clean_slug in ["platinum", "heartgold", "soulsilver"]:
+            return get_giratina_forms(clean_slug)
+        elif national_number == 492 and clean_slug in ["platinum", "heartgold", "soulsilver"]:
+            return get_shaymin_forms(clean_slug)
         elif national_number == 493:
             return get_arceus_forms(clean_slug)
 

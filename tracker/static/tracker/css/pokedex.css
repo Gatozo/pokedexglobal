@@ -557,6 +557,27 @@ body[data-game="pearl"] .status-caught-active {
     border-color: #831843 !important;
 }
 
+/* Platinum */
+body[data-game="platinum"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #475569,
+        #475569 12px,
+        #334155 12px,
+        #334155 24px
+    );
+}
+body[data-game="platinum"] .pokemon-card.caught-card {
+    background-color: #f1f5f9 !important;
+    border-color: #475569 !important;
+    box-shadow: 3px 3px 0px 0px #1e293b;
+}
+body[data-game="platinum"] .status-caught-active {
+    background-color: #475569 !important;
+    color: #ffffff !important;
+    border-color: #1e293b !important;
+}
+
 /* Default / Red */
 .comic-header-pattern,
 body[data-game="red"] .comic-header-pattern {
