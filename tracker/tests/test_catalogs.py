@@ -2417,6 +2417,50 @@ class PokemonPlatinumGen4Tests(TestCase):
         self.assertIn("electirizer", platinum_items)
         self.assertIn("magmarizer", platinum_items)
 
+    def test_platinum_breeding_and_counterpart_obtaining_methods(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("platinum", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("platinum", is_national=True, force_reload=True)
+
+        # 1. Elekid (#239) y Magby (#240) deben obtenerse canónicamente mediante crianza en Pueblo Sosiego
+        elekid = next(e for e in reg_cat if e.pokemon.national_number == 239)
+        self.assertEqual(elekid.obtaining_info.get("type"), "breeding")
+        self.assertEqual(elekid.obtaining_info.get("badge_label"), "Crianza")
+        self.assertIn("Electabuzz", elekid.obtaining_info.get("summary", ""))
+
+        magby = next(e for e in reg_cat if e.pokemon.national_number == 240)
+        self.assertEqual(magby.obtaining_info.get("type"), "breeding")
+        self.assertEqual(magby.obtaining_info.get("badge_label"), "Crianza")
+        self.assertIn("Magmar", magby.obtaining_info.get("summary", ""))
+
+        # 2. Exclusivos de versión en Platino (Murkrow de Diamante, Misdreavus de Perla)
+        murkrow = next(e for e in reg_cat if e.pokemon.national_number == 198)
+        self.assertEqual(murkrow.obtaining_info.get("type"), "trade")
+        self.assertEqual(murkrow.obtaining_info.get("badge_label"), "Exclusivo Diamante")
+
+        misdreavus = next(e for e in reg_cat if e.pokemon.national_number == 200)
+        self.assertEqual(misdreavus.obtaining_info.get("type"), "trade")
+        self.assertEqual(misdreavus.obtaining_info.get("badge_label"), "Exclusivo Perla")
+
+        # 3. Encuentros estáticos icónicos (Drifloon y Spiritomb)
+        drifloon = next(e for e in reg_cat if e.pokemon.national_number == 425)
+        self.assertEqual(drifloon.obtaining_info.get("type"), "static")
+        self.assertEqual(drifloon.obtaining_info.get("badge_label"), "Evento Semanal")
+
+        spiritomb = next(e for e in reg_cat if e.pokemon.national_number == 442)
+        self.assertEqual(spiritomb.obtaining_info.get("type"), "static")
+        self.assertEqual(spiritomb.obtaining_info.get("badge_label"), "Torre Sagrada")
+
+        # 4. Asegurar que ningún Pokémon en regional o nacional tenga badge "Especial" (falso evento)
+        for cat, name in [(reg_cat, "regional"), (nat_cat, "nacional")]:
+            for entry in cat:
+                badge = entry.obtaining_info.get("badge_label")
+                self.assertNotEqual(badge, "Especial", f"Pokémon {entry.pokemon.name} en Platino {name} no debe tener badge 'Especial'")
+                # Comprobar que no haya fugas de nombres de áreas en inglés
+                summary = entry.obtaining_info.get("summary", "").lower()
+                self.assertNotIn("sinnoh route", summary)
+                self.assertNotIn(" area", summary)
+
     def test_platinum_http_views_and_theme(self):
         resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "platinum"}))
         self.assertEqual(resp_reg.status_code, 200)
