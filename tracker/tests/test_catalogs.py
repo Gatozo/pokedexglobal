@@ -2736,3 +2736,47 @@ class GenderDifferencesAndModalDataTests(TestCase):
         avg_sandy = (sum(p[0] for p in pix_sandy) // len(pix_sandy), sum(p[1] for p in pix_sandy) // len(pix_sandy), sum(p[2] for p in pix_sandy) // len(pix_sandy))
         avg_trash = (sum(p[0] for p in pix_trash) // len(pix_trash), sum(p[1] for p in pix_trash) // len(pix_trash), sum(p[2] for p in pix_trash) // len(pix_trash))
         self.assertGreater(avg_trash[0] - avg_trash[1], avg_sandy[0] - avg_sandy[1])
+
+    def test_platinum_forms_static_and_animated_assets_exist(self):
+        """
+        Garantiza que todas las formas alternas de Pokémon Platino (Wormadam, Burmy, Castform, etc.)
+        tengan tanto sus sprites estáticos (para la cuadrícula de la Pokédex) como animados
+        (para el modal cómic) presentes físicamente en media/ sin devolver 404.
+        """
+        from tracker.pokemon_forms import get_pokemon_forms
+        from pathlib import Path
+        from django.conf import settings
+
+        media_root = Path(settings.MEDIA_ROOT)
+
+        # 1. Wormadam (#413) en Platino: plant, sandy, trash
+        worm_forms = get_pokemon_forms(413, "platinum")
+        self.assertEqual(len(worm_forms), 3)
+        for f in worm_forms:
+            for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back",
+                        "modal_retro_sprite_url", "modal_retro_sprite_shiny_url"]:
+                url = f.get(key)
+                if url and url.startswith("/media/"):
+                    disk_path = media_root / url.replace("/media/", "")
+                    self.assertTrue(disk_path.exists(), f"Falta el archivo para Wormadam {f['form_key']} ({key}): {url}")
+
+        # 2. Burmy (#412) en Platino: plant, sandy, trash
+        burmy_forms = get_pokemon_forms(412, "platinum")
+        self.assertEqual(len(burmy_forms), 3)
+        for f in burmy_forms:
+            for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back",
+                        "modal_retro_sprite_url", "modal_retro_sprite_shiny_url"]:
+                url = f.get(key)
+                if url and url.startswith("/media/"):
+                    disk_path = media_root / url.replace("/media/", "")
+                    self.assertTrue(disk_path.exists(), f"Falta el archivo para Burmy {f['form_key']} ({key}): {url}")
+
+        # 3. Castform (#351) en Platino
+        cast_forms = get_pokemon_forms(351, "platinum")
+        self.assertEqual(len(cast_forms), 4)
+        for f in cast_forms:
+            for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back"]:
+                url = f.get(key)
+                if url and url.startswith("/media/"):
+                    disk_path = media_root / url.replace("/media/", "")
+                    self.assertTrue(disk_path.exists(), f"Falta el archivo para Castform {f['form_key']} ({key}): {url}")

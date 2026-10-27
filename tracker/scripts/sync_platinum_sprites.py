@@ -77,8 +77,8 @@ def build_tasks():
     for nat_id in GENDER_DIFFERENCES_GEN4.keys():
         tasks.append((f"{BASE_URL}/female/{nat_id}.png", PLATINUM_DIR / "female" / f"{nat_id}.png"))
         tasks.append((f"{BASE_URL}/shiny/female/{nat_id}.png", PLATINUM_SHINY_DIR / "female" / f"{nat_id}.png"))
-        tasks.append((f"{BASE_URL}/back/female/{nat_id}.png", PLATINUM_DIR / "female" / "back" / f"{nat_id}.png"))
-        tasks.append((f"{BASE_URL}/back/shiny/female/{nat_id}.png", PLATINUM_SHINY_DIR / "female" / "back" / f"{nat_id}.png"))
+        tasks.append((f"{BASE_URL}/back/female/{nat_id}.png", PLATINUM_DIR / "back" / "female" / f"{nat_id}.png"))
+        tasks.append((f"{BASE_URL}/back/shiny/female/{nat_id}.png", PLATINUM_SHINY_DIR / "back" / "female" / f"{nat_id}.png"))
 
     # 3. Giratina Forma Origen (#487, ID 10007)
     tasks.append((f"{BASE_URL}/10007.png", PLATINUM_DIR / "giratina" / "origin.png"))
@@ -100,19 +100,29 @@ def build_tasks():
         tasks.append((f"{BASE_URL}/back/shiny/{f_id}.png", PLATINUM_SHINY_DIR / "back" / "rotom" / f"{f_name}.png"))
 
     # 6. Burmy (#412) y Wormadam (#413) (plant, sandy, trash)
-    # PokeAPI invierte sandy y trash en sus nombres de archivo
-    burmy_wormadam_map = {
-        "plant": "{num}.png",
-        "sandy": "{num}-trash.png",
-        "trash": "{num}-sandy.png",
+    # PokeAPI invierte sandy y trash en sus nombres de archivo para Burmy (412)
+    burmy_map = {
+        "plant": "412.png",
+        "sandy": "412-trash.png",
+        "trash": "412-sandy.png",
     }
-    for num, key in [(412, "burmy"), (413, "wormadam")]:
-        for form, file_tmpl in burmy_wormadam_map.items():
-            src_name = file_tmpl.format(num=num)
-            tasks.append((f"{BASE_URL}/{src_name}", PLATINUM_DIR / key / f"{form}.png"))
-            tasks.append((f"{BASE_URL}/shiny/{src_name}", PLATINUM_SHINY_DIR / key / f"{form}.png"))
-            tasks.append((f"{BASE_URL}/back/{src_name}", PLATINUM_DIR / "back" / key / f"{form}.png"))
-            tasks.append((f"{BASE_URL}/back/shiny/{src_name}", PLATINUM_SHINY_DIR / "back" / key / f"{form}.png"))
+    for form, src_name in burmy_map.items():
+        tasks.append((f"{BASE_URL}/{src_name}", PLATINUM_DIR / "burmy" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/shiny/{src_name}", PLATINUM_SHINY_DIR / "burmy" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/{src_name}", PLATINUM_DIR / "back" / "burmy" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/shiny/{src_name}", PLATINUM_SHINY_DIR / "back" / "burmy" / f"{form}.png"))
+
+    # Wormadam (#413): En PokeAPI Platino estático, las formas usan IDs de PokeAPI 10004 (sandy) y 10005 (trash)
+    wormadam_map = {
+        "plant": "413.png",
+        "sandy": "10004.png",
+        "trash": "10005.png",
+    }
+    for form, src_name in wormadam_map.items():
+        tasks.append((f"{BASE_URL}/{src_name}", PLATINUM_DIR / "wormadam" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/shiny/{src_name}", PLATINUM_SHINY_DIR / "wormadam" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/{src_name}", PLATINUM_DIR / "back" / "wormadam" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/shiny/{src_name}", PLATINUM_SHINY_DIR / "back" / "wormadam" / f"{form}.png"))
 
     # 7. Shellos (#422) y Gastrodon (#423)
     for num, key, form in [(422, "shellos", "west"), (422, "shellos", "east"),
@@ -155,6 +165,18 @@ def build_tasks():
     tasks.append((f"{BASE_URL}/back/shiny/421.png", PLATINUM_SHINY_DIR / "back" / "cherrim" / "overcast.png"))
     tasks.append((f"{BASE_URL}/back/421-sunshine.png", PLATINUM_DIR / "back" / "cherrim" / "sunshine.png"))
     tasks.append((f"{BASE_URL}/back/shiny/421-sunshine.png", PLATINUM_SHINY_DIR / "back" / "cherrim" / "sunshine.png"))
+
+    # 12. Castform (#351) formas climáticas para Platino Nacional (10013=sunny, 10014=rainy, 10015=snowy)
+    castform_map = {
+        "sunny": "10013.png",
+        "rainy": "10014.png",
+        "snowy": "10015.png",
+    }
+    for form, src_name in castform_map.items():
+        tasks.append((f"{BASE_URL}/{src_name}", PLATINUM_DIR / "castform" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/shiny/{src_name}", PLATINUM_SHINY_DIR / "castform" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/{src_name}", PLATINUM_DIR / "back" / "castform" / f"{form}.png"))
+        tasks.append((f"{BASE_URL}/back/shiny/{src_name}", PLATINUM_SHINY_DIR / "back" / "castform" / f"{form}.png"))
 
     return tasks
 

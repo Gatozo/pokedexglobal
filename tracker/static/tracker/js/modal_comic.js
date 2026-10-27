@@ -326,22 +326,40 @@ export function applyCardForm(entryId, formIdx) {
     // 1. Imagen en la tarjeta
     const img = document.getElementById(`img-${entryId}`);
     if (img) {
+        let targetSrc = '';
         if (state.isShinydexMode) {
             if (state.currentSpriteStyle === 'retro' && form.sprite_retro_shiny) {
-                img.src = form.sprite_retro_shiny;
+                targetSrc = form.sprite_retro_shiny;
                 img.classList.add('pixel-art');
             } else {
-                img.src = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
+                targetSrc = form.sprite_modern_shiny || form.sprite_retro_shiny || form.sprite_modern;
                 img.classList.remove('pixel-art');
             }
         } else {
             if (state.currentSpriteStyle === 'retro' && form.sprite_retro) {
-                img.src = form.sprite_retro;
+                targetSrc = form.sprite_retro;
                 img.classList.add('pixel-art');
             } else {
-                img.src = form.sprite_modern || form.sprite_retro;
+                targetSrc = form.sprite_modern || form.sprite_retro;
                 img.classList.remove('pixel-art');
             }
+        }
+
+        img.onerror = () => {
+            img.onerror = null;
+            const fallback = (state.isShinydexMode ? (form.modal_retro_sprite_shiny_url || form.sprite_modern_shiny || data.sprite_modern_shiny) : null)
+                || form.modal_retro_sprite_url
+                || form.sprite_modern
+                || form.sprite_retro
+                || data.sprite_modern
+                || data.sprite_retro;
+            if (fallback && img.src !== fallback) {
+                img.src = fallback;
+            }
+        };
+
+        if (targetSrc) {
+            img.src = targetSrc;
         }
         img.alt = form.display_name || form.name || data.name;
     }
