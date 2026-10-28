@@ -2417,6 +2417,34 @@ class PokemonPlatinumGen4Tests(TestCase):
         self.assertIn("electirizer", platinum_items)
         self.assertIn("magmarizer", platinum_items)
 
+        # Validaciones canonicas de ubicaciones exclusivas y corregidas en Platino vs Diamante/Perla
+        dawn_plat_areas = [loc["area"] for loc in data["dawn-stone"]["games"]["platinum"]]
+        self.assertIn("Ruta 212", dawn_plat_areas)
+        self.assertIn("Ruta 225", dawn_plat_areas)
+        self.assertNotIn("Ruta 212", [loc["area"] for loc in data["dawn-stone"]["games"]["diamond"]])
+
+        sea_incense_plat_areas = [loc["area"] for loc in data["sea-incense"]["games"]["platinum"]]
+        self.assertIn("Ruta 204 (Sur)", sea_incense_plat_areas)
+
+        full_incense_plat_areas = [loc["area"] for loc in data["full-incense"]["games"]["platinum"]]
+        self.assertIn("Ciudad Rocavelo", full_incense_plat_areas)
+
+        luck_incense_plat_areas = [loc["area"] for loc in data["luck-incense"]["games"]["platinum"]]
+        self.assertIn("Senda Desolada", luck_incense_plat_areas)
+
+        upgrade_plat_areas = [loc["area"] for loc in data["up-grade"]["games"]["platinum"]]
+        self.assertIn("Edificio Galaxia de Ciudad Vetusta", upgrade_plat_areas)
+        self.assertIn("Ruta 224", upgrade_plat_areas)
+        self.assertIn("Ciudad Vetusta (Casa del Profesor Oak)", upgrade_plat_areas)
+
+        metal_coat_plat_areas = [loc["area"] for loc in data["metal-coat"]["games"]["platinum"]]
+        self.assertIn("Ruinas Hierro (Isla Hierro)", metal_coat_plat_areas)
+
+        # En 4.a Generacion, Dusclops (Baya Drasi) y Sneasel (Garra Garfio/Rapida) no portan Tela Terrible ni Garra Afilada
+        for g in ["diamond", "pearl", "platinum"]:
+            self.assertFalse(any("salvaje" in loc["area"].lower() for loc in data["reaper-cloth"]["games"][g]))
+            self.assertFalse(any("salvaje" in loc["area"].lower() for loc in data["razor-claw"]["games"][g]))
+
     def test_platinum_breeding_and_counterpart_obtaining_methods(self):
         from tracker.catalog_service import get_compiled_catalog
         reg_cat = get_compiled_catalog("platinum", is_national=False, force_reload=True)
