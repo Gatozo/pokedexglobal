@@ -163,7 +163,7 @@
 
                         <div class="flex flex-col justify-end">
                             <label for="cfg-feebas-gen4-yesterday" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
-                                Lotería de Ayer <span class="text-slate-500 text-[9px] font-bold whitespace-nowrap">(Opcional)</span>
+                                Lotería de Ayer <span class="text-slate-600 font-bold whitespace-nowrap">(Jubilife TV) <span class="text-rose-600">*</span></span>
                             </label>
                             <div class="relative">
                                 <input 
@@ -175,16 +175,47 @@
                                     placeholder="Ej. 12345" 
                                     class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg pl-3 pr-20 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
                                 >
-                                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase select-none pointer-events-none">
-                                    Opcional
+                                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                    5 dígitos
                                 </span>
                             </div>
                         </div>
                     </div>
 
                     <p class="text-[10px] text-slate-500 font-semibold leading-snug">
-                        Habla con la recepcionista en la planta baja de Jubilife TV (Ciudad Jubileo). Con 1 número obtendrás 2 pares de casillas tentativas; con el de ayer obtendrás las 4 casillas 100% exactas de hoy.
+                        Habla con la recepcionista en Jubilife TV. Se requieren ambos números (ayer y hoy) para calcular tus casillas en Nintendo DS.
                     </p>
+
+                    <!-- Separador: O bien Semilla Hexadecimal -->
+                    <div class="relative flex py-1 items-center">
+                        <div class="flex-grow border-t-2 border-dashed border-slate-200"></div>
+                        <span class="flex-shrink mx-2 text-[10px] font-black uppercase tracking-wider text-slate-500 bg-white px-2">
+                            O bien (Método Directo)
+                        </span>
+                        <div class="flex-grow border-t-2 border-dashed border-slate-200"></div>
+                    </div>
+
+                    <!-- Campo Semilla Hexadecimal (Group Seed) -->
+                    <div>
+                        <label for="cfg-feebas-gen4-seed" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
+                            Semilla Hexadecimal <span class="text-slate-600 font-bold whitespace-nowrap">(Group Seed) <span class="text-slate-500 text-[9px] font-bold">(Opcional)</span></span>
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="cfg-feebas-gen4-seed" 
+                                maxlength="10"
+                                placeholder="Ej. 4A2F8B1C o 0x4A2F8B1C" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg pl-3 pr-24 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner uppercase font-mono"
+                            >
+                            <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                32 bits Hex
+                            </span>
+                        </div>
+                        <p class="text-[10px] text-slate-500 font-semibold mt-1 leading-snug">
+                            Si juegas en emulador o extraes tu <strong class="text-slate-800">Group Seed</strong> (con PokéFinder o PKHeX), ingrésala aquí. Se calcularán tus 4 casillas de inmediato sin necesidad de los números de lotería.
+                        </p>
+                    </div>
 
                     <!-- Preview de Casillas Calculadas Gen 4 -->
                     <div id="cfg-feebas-gen4-preview" class="hidden mt-3 pt-3 border-t-2 border-dashed border-slate-200">
@@ -216,7 +247,7 @@
                         >
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="text-base select-none shrink-0">⚠️</span>
-                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funciona la Lotería y Feebas?</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funcionan la Lotería y la Semilla de Feebas?</span>
                             </div>
                             <div class="flex items-center gap-1 shrink-0">
                                 <span id="feebas-gen4-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
@@ -227,12 +258,20 @@
                         </button>
                         <div id="feebas-gen4-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
                             <p>
-                                <strong>Semilla Diaria de Sinnoh:</strong> Cada medianoche el juego reinicia la semilla de eventos diarios. La Lotería de Jubilife TV y las 4 casillas de Feebas comparten exactamente el mismo algoritmo matemático (PRNG LCG).
+                                <strong>Semilla Diaria de Grupo (Group Seed):</strong> En Diamante, Perla y Platino (NDS), el lago del Monte Corona se divide matemáticamente en 4 cuadrantes de 132 casillas cada uno. Cada uno de los 4 bytes de la semilla de grupo define la casilla activa en su cuadrante.
                             </p>
                             <p>
-                                <strong>Precisión de 1 vs 2 días:</strong> Un solo boleto de lotería acota la búsqueda a 2 pares de casillas (Grupo A y Grupo B). Si pruebas una casilla de cada grupo sabrás de inmediato cuál grupo alberga a Feebas. Si además introduces el número del boleto de ayer, la calculadora deduce la semilla completa al 100% de certeza.
+                                <strong>Método por Lotería:</strong> Al ingresar los boletos de 2 días consecutivos (ayer y hoy), el algoritmo canónico de NDS de PokéMow deduce la semilla de grupo. En algunos pares de boletos se obtiene 1 semilla única (4 casillas garantizadas); en otros pares se obtienen matemáticamente 2 semillas gemelas (4 casillas moradas y 4 casillas verdes con 50% cada una).
+                            </p>
+                            <p>
+                                <strong>Método Hexadecimal:</strong> Si juegas en emulador o inspeccionas tu archivo de guardado (.sav con PokéFinder o PKHeX), puedes ingresar directamente tu semilla hexadecimal de 32 bits (Group Seed) para obtener tus 4 casillas definitivas de forma instantánea.
                             </p>
                         </div>
+                    </div>
+
+                    <!-- Créditos a la comunidad Gen 4 -->
+                    <div class="text-[10px] text-slate-500 font-bold border-t border-slate-200 pt-2 flex items-center justify-between">
+                        <span>Agradecimientos a <strong>Mow (PokéMow)</strong> y a la comunidad de RNG por la ingeniería inversa del algoritmo PRNG de Nintendo DS.</span>
                     </div>
                 </div>
             </div>

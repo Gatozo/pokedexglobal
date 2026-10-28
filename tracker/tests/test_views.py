@@ -1149,6 +1149,7 @@ class GameSelectorClassificationTests(TestCase):
         self.assertIn('id="cfg-secret-id"', content_dia)
         self.assertIn('id="cfg-feebas-gen4-today"', content_dia)
         self.assertIn('id="cfg-feebas-gen4-yesterday"', content_dia)
+        self.assertIn('id="cfg-feebas-gen4-seed"', content_dia)
         self.assertIn('id="feebas-gen4-accordion-btn"', content_dia)
         self.assertIn('id="feebas-map-modal"', content_dia)
         self.assertIn('/media/maps/diamond/mt-coronet-b1f.png', content_dia)

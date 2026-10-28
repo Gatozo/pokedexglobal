@@ -10,7 +10,7 @@ import {
     FEEBAS_LIFESTYLE_ES, 
     FEEBAS_HOBBIES_ES 
 } from './feebas_data.js';
-import { calculateFeebasFishingSpots, calculateGen4FeebasSpots } from './feebas_calculator.js';
+import { calculateFeebasFishingSpots, calculateGen4FeebasSpots, calculateGen4FeebasFromSeed } from './feebas_calculator.js';
 import { bringModalToFront, registerModalClose } from './url_sync.js';
 
 // Lista canónica de los 21 árboles de miel de Sinnoh (índices internos 0 a 20 de la ROM de DPPt/BDSP)
@@ -137,7 +137,7 @@ export function updateConfigDotIndicator() {
     const cfg = loadGameConfig();
     const hasTid = cfg && (cfg.tid !== null && cfg.tid !== undefined);
     const hasGen3Feebas = cfg && (Boolean(cfg.phrase1) && Boolean(cfg.phrase2));
-    const hasGen4Feebas = cfg && (cfg.lottoToday !== null && cfg.lottoToday !== undefined);
+    const hasGen4Feebas = cfg && (Boolean(cfg.groupSeed) || (cfg.lottoToday !== null && cfg.lottoToday !== undefined) || (cfg.feebasSpots && cfg.feebasSpots.length > 0));
     if (hasTid || hasGen3Feebas || hasGen4Feebas) {
         dot.classList.remove('hidden');
     } else {
@@ -182,6 +182,7 @@ export function openGameConfigModal() {
     const w2Input = document.getElementById('cfg-feebas-word2');
     const todayInput = document.getElementById('cfg-feebas-gen4-today');
     const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+    const seedInput = document.getElementById('cfg-feebas-gen4-seed');
 
     if (tidInput) {
         tidInput.value = (cfg && cfg.tid !== undefined && cfg.tid !== null) ? cfg.tid : '';
@@ -200,6 +201,9 @@ export function openGameConfigModal() {
     }
     if (yestInput) {
         yestInput.value = (cfg && cfg.lottoYesterday !== undefined && cfg.lottoYesterday !== null) ? cfg.lottoYesterday : '';
+    }
+    if (seedInput) {
+        seedInput.value = (cfg && cfg.groupSeed) ? cfg.groupSeed : '';
     }
 
     renderConfigPreview();
@@ -330,54 +334,84 @@ export function renderConfigPreview() {
             }
         }
 
-        // Feebas Gen 4 (Lotería Jubilife TV -> Casillas Monte Corona B1F)
+        // Feebas Gen 4 (Semilla Hexadecimal Directa o Lotería Jubilife TV -> Casillas Monte Corona B1F)
         const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
         const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+        const seedInput = document.getElementById('cfg-feebas-gen4-seed');
         const gen4Preview = document.getElementById('cfg-feebas-gen4-preview');
         const gen4CountBadge = document.getElementById('cfg-feebas-gen4-count-badge');
         const gen4Summary = document.getElementById('cfg-feebas-gen4-spots-summary');
 
-        if (gen4Preview && gen4Summary && lottoTodayInput) {
-            const todayRaw = lottoTodayInput.value.trim();
+        if (gen4Preview && gen4Summary) {
+            const seedRaw = seedInput ? seedInput.value.trim() : '';
+            const todayRaw = lottoTodayInput ? lottoTodayInput.value.trim() : '';
             const yestRaw = lottoYestInput ? lottoYestInput.value.trim() : '';
 
-            const todayVal = todayRaw !== '' ? parseInt(todayRaw, 10) : NaN;
-            const hasValidToday = !isNaN(todayVal) && todayVal >= 0 && todayVal <= 65535;
+            let spots = [];
+            let badgeText = '';
+            let isGuaranteed = false;
 
-            if (!hasValidToday) {
+            // Prioridad 1: Semilla Hexadecimal directa
+            if (seedRaw !== '') {
+                let cleanHex = seedRaw.toLowerCase().startsWith('0x') ? seedRaw.substring(2) : seedRaw;
+                if (/^[0-9a-fA-F]{1,8}$/.test(cleanHex)) {
+                    spots = calculateGen4FeebasFromSeed(cleanHex);
+                    isGuaranteed = true;
+                    badgeText = `${spots.length} Casillas (100% Certeza • Semilla Hex)`;
+                }
+            } 
+            // Prioridad 2: Números de Lotería
+            else if (todayRaw !== '') {
+                const todayVal = parseInt(todayRaw, 10);
+                const hasValidToday = !isNaN(todayVal) && todayVal >= 0 && todayVal <= 65535;
+
+                if (hasValidToday) {
+                    const yestVal = yestRaw !== '' ? parseInt(yestRaw, 10) : null;
+                    const hasValidYest = (yestVal !== null && !isNaN(yestVal) && yestVal >= 0 && yestVal <= 65535);
+
+                    if (hasValidYest) {
+                        spots = calculateGen4FeebasSpots(todayVal, yestVal);
+                        isGuaranteed = spots.some(s => s.certainty === 100);
+                        if (isGuaranteed) {
+                            badgeText = `${spots.length} Casillas (100% Certeza • Lotería)`;
+                        } else if (spots.length === 8) {
+                            badgeText = `8 Casillas (2 Grupos de 4 • 50% Prob.)`;
+                        } else {
+                            badgeText = `${spots.length} Casillas`;
+                        }
+                    }
+                }
+            }
+
+            if (!spots || spots.length === 0) {
                 gen4Preview.classList.add('hidden');
                 gen4Summary.innerHTML = '';
             } else {
-                const yestVal = yestRaw !== '' ? parseInt(yestRaw, 10) : null;
-                const hasValidYest = (yestVal !== null && !isNaN(yestVal) && yestVal >= 0 && yestVal <= 65535);
+                gen4Preview.classList.remove('hidden');
 
-                const spots = calculateGen4FeebasSpots(todayVal, hasValidYest ? yestVal : null);
-
-                if (!spots || spots.length === 0) {
-                    gen4Preview.classList.add('hidden');
-                    gen4Summary.innerHTML = '';
-                } else {
-                    gen4Preview.classList.remove('hidden');
-                    const isGuaranteed = spots.some(s => s.certainty === 100);
-
-                    if (gen4CountBadge) {
-                        gen4CountBadge.textContent = isGuaranteed ? `${spots.length} Casillas (100% Certeza)` : `${spots.length} Casillas (50% Prob.)`;
-                        gen4CountBadge.className = isGuaranteed
-                            ? 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950'
-                            : 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-sky-200 text-slate-900';
-                    }
-
-                    gen4Summary.innerHTML = spots.map((s, idx) => {
-                        const badgeBg = isGuaranteed
-                            ? 'bg-emerald-50 border-emerald-400 text-emerald-950'
-                            : (s.group === 'Grupo A' ? 'bg-sky-50 border-sky-400 text-sky-950' : 'bg-purple-50 border-purple-400 text-purple-950');
-                        return `
-                            <span class="px-2 py-1 rounded-md ${badgeBg} border text-[11px] font-black shadow-xs">
-                                #${idx + 1}: Casilla ${s.tileId} (${s.rawX}, ${s.rawY})
-                            </span>
-                        `;
-                    }).join('');
+                if (gen4CountBadge) {
+                    gen4CountBadge.textContent = badgeText;
+                    gen4CountBadge.className = isGuaranteed
+                        ? 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-emerald-300 text-slate-950'
+                        : 'text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-purple-200 text-purple-950';
                 }
+
+                gen4Summary.innerHTML = spots.map((s, idx) => {
+                    let badgeBg = 'bg-emerald-50 border-emerald-400 text-emerald-950';
+                    let groupPrefix = `#${idx + 1}`;
+                    if (s.group && (s.group.includes('Morada') || s.group === 'Grupo 1')) {
+                        badgeBg = 'bg-purple-50 border-purple-400 text-purple-950';
+                        groupPrefix = `Morada #${(idx % 4) + 1}`;
+                    } else if (s.group && (s.group.includes('Verde') || s.group === 'Grupo 2')) {
+                        badgeBg = 'bg-emerald-50 border-emerald-400 text-emerald-950';
+                        groupPrefix = `Verde #${(idx % 4) + 1}`;
+                    }
+                    return `
+                        <span class="px-2 py-1 rounded-md ${badgeBg} border text-[11px] font-black shadow-xs">
+                            ${groupPrefix}: Casilla ${s.tileId} (${s.rawX}, ${s.rawY})
+                        </span>
+                    `;
+                }).join('');
             }
         }
         return;
@@ -490,14 +524,16 @@ export function saveGameConfig() {
         const sidInput = document.getElementById('cfg-secret-id');
         const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
         const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+        const seedInput = document.getElementById('cfg-feebas-gen4-seed');
 
         const tidRaw = tidInput ? tidInput.value.trim() : '';
         const sidRaw = sidInput ? sidInput.value.trim() : '';
         const todayRaw = lottoTodayInput ? lottoTodayInput.value.trim() : '';
         const yestRaw = lottoYestInput ? lottoYestInput.value.trim() : '';
+        const seedRaw = seedInput ? seedInput.value.trim() : '';
 
         // Si todos los campos están vacíos, se limpia la configuración
-        if (!tidRaw && !sidRaw && !todayRaw && !yestRaw) {
+        if (!tidRaw && !sidRaw && !todayRaw && !yestRaw && !seedRaw) {
             saveGameConfigData(null);
             closeGameConfigModal();
             refreshOpenModals();
@@ -533,39 +569,67 @@ export function saveGameConfig() {
         }
 
         // 2. Validación de Casillas de Feebas
+        let groupSeedVal = null;
         let lottoTodayVal = null;
         let lottoYestVal = null;
         let feebasSpots = null;
 
-        if (yestRaw !== '' && todayRaw === '') {
-            alert('Para configurar las Casillas de Feebas, el número de la Lotería de Hoy es obligatorio.');
-            if (lottoTodayInput) lottoTodayInput.focus();
-            return;
-        }
+        // Caso A: Se ingresó la Semilla Hexadecimal directa (Método 100% exacto e instantáneo)
+        if (seedRaw !== '') {
+            let cleanHex = seedRaw.toLowerCase().startsWith('0x') ? seedRaw.substring(2) : seedRaw;
+            if (!/^[0-9a-fA-F]{1,8}$/.test(cleanHex)) {
+                alert('La Semilla Hexadecimal (Group Seed) debe ser un valor hexadecimal válido de 1 a 8 caracteres (ej. 4A2F8B1C o 0x4A2F8B1C).');
+                if (seedInput) seedInput.focus();
+                return;
+            }
+            groupSeedVal = cleanHex.toUpperCase();
+            feebasSpots = calculateGen4FeebasFromSeed(cleanHex);
 
-        if (todayRaw !== '') {
+            // Si además ingresó boletos de lotería válidos, se registran opcionalmente
+            if (todayRaw !== '') {
+                const tv = parseInt(todayRaw, 10);
+                if (!isNaN(tv) && tv >= 0 && tv <= 99999) lottoTodayVal = tv;
+            }
+            if (yestRaw !== '') {
+                const yv = parseInt(yestRaw, 10);
+                if (!isNaN(yv) && yv >= 0 && yv <= 99999) lottoYestVal = yv;
+            }
+        }
+        // Caso B: No hay semilla hexadecimal, se evalúa el método por Lotería
+        else if (todayRaw !== '' || yestRaw !== '') {
+            if (todayRaw === '' || yestRaw === '') {
+                alert('Para calcular las casillas de Feebas por lotería se requieren los 2 números (ayer y hoy). Alternativamente, puedes ingresar directamente la Semilla Hexadecimal (Group Seed).');
+                if (todayRaw === '' && lottoTodayInput) lottoTodayInput.focus();
+                else if (yestRaw === '' && lottoYestInput) lottoYestInput.focus();
+                return;
+            }
+
             lottoTodayVal = parseInt(todayRaw, 10);
-            if (isNaN(lottoTodayVal) || lottoTodayVal < 0 || lottoTodayVal > 65535) {
-                alert('El número de Lotería de Hoy (Jubilife TV) debe ser un número entre 00000 y 65535.');
+            lottoYestVal = parseInt(yestRaw, 10);
+
+            if (isNaN(lottoTodayVal) || lottoTodayVal < 0 || lottoTodayVal > 99999) {
+                alert('El número de Lotería de Hoy (Jubilife TV) debe ser un número entre 00000 y 99999.');
                 if (lottoTodayInput) lottoTodayInput.focus();
                 return;
             }
 
-            if (yestRaw !== '') {
-                lottoYestVal = parseInt(yestRaw, 10);
-                if (isNaN(lottoYestVal) || lottoYestVal < 0 || lottoYestVal > 65535) {
-                    alert('El número de Lotería de Ayer debe ser un número entre 00000 y 65535 o dejarse en blanco.');
-                    if (lottoYestInput) lottoYestInput.focus();
-                    return;
-                }
+            if (isNaN(lottoYestVal) || lottoYestVal < 0 || lottoYestVal > 99999) {
+                alert('El número de Lotería de Ayer debe ser un número entre 00000 y 99999.');
+                if (lottoYestInput) lottoYestInput.focus();
+                return;
             }
 
             feebasSpots = calculateGen4FeebasSpots(lottoTodayVal, lottoYestVal);
+            if (!feebasSpots || feebasSpots.length === 0) {
+                alert('No se pudo encontrar una semilla coincidente con esos números de lotería. Asegúrate de ingresar boletos de dos días consecutivos.');
+                return;
+            }
         }
 
         const configData = {
             tid: tidVal,
             sid: sidVal,
+            groupSeed: groupSeedVal,
             lottoToday: lottoTodayVal,
             lottoYesterday: lottoYestVal,
             feebasSpots: feebasSpots,
@@ -611,6 +675,7 @@ export function resetGameConfig() {
     const w2Input = document.getElementById('cfg-feebas-word2');
     const todayInput = document.getElementById('cfg-feebas-gen4-today');
     const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+    const seedInput = document.getElementById('cfg-feebas-gen4-seed');
 
     if (tidInput) tidInput.value = '';
     if (sidInput) sidInput.value = '';
@@ -618,6 +683,7 @@ export function resetGameConfig() {
     if (w2Input) w2Input.value = '';
     if (todayInput) todayInput.value = '';
     if (yestInput) yestInput.value = '';
+    if (seedInput) seedInput.value = '';
 
     renderConfigPreview();
     closeGameConfigModal();
@@ -751,8 +817,12 @@ export function openFeebasMapModal() {
 
     let spots = [];
     if (isGen4Sinnoh) {
-        if (cfg && cfg.lottoToday !== undefined && cfg.lottoToday !== null) {
-            spots = calculateGen4FeebasSpots(cfg.lottoToday, cfg.lottoYesterday);
+        if (cfg && (cfg.groupSeed || (cfg.lottoToday !== undefined && cfg.lottoToday !== null))) {
+            if (cfg.groupSeed) {
+                spots = calculateGen4FeebasFromSeed(cfg.groupSeed);
+            } else {
+                spots = calculateGen4FeebasSpots(cfg.lottoToday, cfg.lottoYesterday);
+            }
             cfg.feebasSpots = spots;
             cfg.spots = spots;
             saveGameConfigData(cfg, gameSlug);
@@ -787,16 +857,16 @@ export function openFeebasMapModal() {
                     bgClass = 'bg-emerald-600';
                     pingClass = 'bg-emerald-400';
                     tooltipText = `Casilla #${spot.tileId} (100% Certeza)`;
-                } else if (spot.group === 'Grupo A') {
-                    bgClass = 'bg-sky-600';
-                    pingClass = 'bg-sky-400';
-                    badgeText = `A${(idx % 2) + 1}`;
-                    tooltipText = `Casilla #${spot.tileId} (Grupo A • 50%)`;
-                } else if (spot.group === 'Grupo B') {
+                } else if (spot.group.includes('Morada') || spot.group === 'Grupo 1') {
                     bgClass = 'bg-purple-600';
                     pingClass = 'bg-purple-400';
-                    badgeText = `B${(idx % 2) + 1}`;
-                    tooltipText = `Casilla #${spot.tileId} (Grupo B • 50%)`;
+                    badgeText = `M${(idx % 4) + 1}`;
+                    tooltipText = `Casilla #${spot.tileId} (Grupo 1 • Moradas • 50%)`;
+                } else if (spot.group.includes('Verde') || spot.group === 'Grupo 2') {
+                    bgClass = 'bg-emerald-600';
+                    pingClass = 'bg-emerald-400';
+                    badgeText = `V${(idx % 4) + 1}`;
+                    tooltipText = `Casilla #${spot.tileId} (Grupo 2 • Verdes • 50%)`;
                 }
             }
 
@@ -849,12 +919,12 @@ export function openFeebasMapModal() {
                 if (spot.group === 'Garantizada') {
                     btnBg = 'bg-emerald-600 hover:bg-emerald-500';
                     label = `#${idx + 1} (${spot.tileId})`;
-                } else if (spot.group === 'Grupo A') {
-                    btnBg = 'bg-sky-600 hover:bg-sky-500';
-                    label = `A${(idx % 2) + 1} (${spot.tileId})`;
-                } else if (spot.group === 'Grupo B') {
+                } else if (spot.group.includes('Morada') || spot.group === 'Grupo 1') {
                     btnBg = 'bg-purple-600 hover:bg-purple-500';
-                    label = `B${(idx % 2) + 1} (${spot.tileId})`;
+                    label = `M${(idx % 4) + 1} (${spot.tileId})`;
+                } else if (spot.group.includes('Verde') || spot.group === 'Grupo 2') {
+                    btnBg = 'bg-emerald-600 hover:bg-emerald-500';
+                    label = `V${(idx % 4) + 1} (${spot.tileId})`;
                 }
             }
 
@@ -1033,6 +1103,7 @@ export function initGameConfig() {
     const w2Input = document.getElementById('cfg-feebas-word2');
     const todayInput = document.getElementById('cfg-feebas-gen4-today');
     const yestInput = document.getElementById('cfg-feebas-gen4-yesterday');
+    const seedInput = document.getElementById('cfg-feebas-gen4-seed');
 
     const sanitizeDigits = (input) => {
         if (!input) return;
@@ -1070,6 +1141,18 @@ export function initGameConfig() {
     if (yestInput) {
         yestInput.addEventListener('input', () => {
             sanitizeDigits(yestInput);
+            renderConfigPreview();
+        });
+    }
+    if (seedInput) {
+        seedInput.addEventListener('input', () => {
+            let val = seedInput.value.trim();
+            if (val.toLowerCase().startsWith('0x')) {
+                val = '0x' + val.slice(2).replace(/[^0-9a-fA-F]/g, '').slice(0, 8);
+            } else {
+                val = val.replace(/[^0-9a-fA-F]/g, '').slice(0, 8);
+            }
+            seedInput.value = val.toUpperCase();
             renderConfigPreview();
         });
     }

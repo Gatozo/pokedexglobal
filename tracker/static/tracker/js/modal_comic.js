@@ -508,7 +508,7 @@ export function renderModalObtaining(data, activeForm = null) {
         if (isGen3Hoenn && gameCfg && gameCfg.spots && gameCfg.spots.length > 0) {
             isFeebasConfigured = true;
             feebasSpotCount = gameCfg.spots.length;
-        } else if (isGen4Sinnoh && gameCfg && ((gameCfg.feebasSpots && gameCfg.feebasSpots.length > 0) || (gameCfg.lottoToday !== undefined && gameCfg.lottoToday !== null))) {
+        } else if (isGen4Sinnoh && gameCfg && ((gameCfg.feebasSpots && gameCfg.feebasSpots.length > 0) || Boolean(gameCfg.groupSeed) || (gameCfg.lottoToday !== undefined && gameCfg.lottoToday !== null))) {
             isFeebasConfigured = true;
             feebasSpotCount = (gameCfg.feebasSpots && gameCfg.feebasSpots.length) ? gameCfg.feebasSpots.length : 4;
         }

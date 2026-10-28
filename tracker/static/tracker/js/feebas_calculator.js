@@ -1,7 +1,8 @@
 /**
- * Pokédex Global - Calculadora Matemática de Feebas para Gen 3 (feebas_calculator.js)
- * Implementa el algoritmo canónico de ingeniería inversa de la ROM de Hoenn (Rubí, Zafiro y Esmeralda).
- * Créditos: MucksX / pret/pokeemerald
+ * Pokédex Global - Calculadora Matemática de Feebas para Gen 3 y Gen 4 (feebas_calculator.js)
+ * Implementa los algoritmos canónicos de ingeniería inversa de las ROMs originales:
+ * - Gen 3 (Rubí, Zafiro y Esmeralda): MucksX / pret/pokeemerald
+ * - Gen 4 (Diamante, Perla y Platino): Mow (PokéMow) / pret / RNG Research Community
  */
 
 import { 
@@ -186,122 +187,213 @@ export function calculateFeebasFishingSpots(tid, word1, word2, isEmerald = false
     });
 }
 
+// ============================================================================
+// CÁLCULO CANÓNICO DE CASILLAS DE FEEBAS EN MONTE CORONA B1F (GEN 4 NDS: DPPt)
+// Basado en el algoritmo de ingeniería inversa de la ROM de NDS (PokéMow).
+// ============================================================================
+
 /**
- * Operaciones PRNG de 32 bits para Gen 4 (Monte Corona B1F).
- * Créditos: DRayX, Lincoln-LM, EzPzStreamz (RNG Research Community).
+ * Tabla de desplazamiento para búsqueda inversa rápida de semillas diarias en NDS.
+ * Precalculada al cargar el módulo para rendimiento instantáneo.
  */
-function mrngr4(seed) {
-    return (seed * 0xEEB9EB65n + 0xFC77A683n) & 0xFFFFFFFFn;
-}
+const daySeedOffsetTable = new Uint32Array(65536);
 
-function arng4(seed) {
-    return (seed * 0x6C078965n + 0x1n) & 0xFFFFFFFFn;
-}
-
-function mrng4(seed) {
-    return (seed * 0x41C64E6Dn + 0x3039n) & 0xFFFFFFFFn;
-}
-
-function intabs4(seed) {
-    if (seed > 0x80000000n) {
-        return 0x100000000n - seed;
+(function buildTable() {
+    let acc = 0;
+    let accInv = 0;
+    let i = 0;
+    daySeedOffsetTable[i++] = acc;
+    while (i < 65536) {
+        if (accInv < 18933) {
+            accInv += 17799;
+            daySeedOffsetTable[i++] = (acc += 46423);
+            daySeedOffsetTable[i++] = (acc += 63468);
+        } else if (accInv > 28803) {
+            accInv -= 28804;
+            daySeedOffsetTable[i++] = (acc += 63468);
+        } else {
+            accInv += 17799;
+            daySeedOffsetTable[i++] = (acc += 109891);
+        }
     }
-    return seed;
-}
+})();
 
 /**
- * Calcula las casillas de Feebas en el Monte Corona (Gen 4: Diamante, Perla y Platino).
- * Si se ingresan 2 números de lotería (ayer y hoy), calcula con 100% de certeza las 4 casillas de hoy.
- * Si solo se ingresa el de hoy, calcula las 4 casillas tentativas divididas en dos grupos (A y B) con 50% de probabilidad cada uno.
- *
- * @param {number} lottoToday - Número de lotería de Jubilife TV de hoy (0 - 99999).
- * @param {number|null} lottoYesterday - Número de lotería de ayer (0 - 99999, opcional).
- * @returns {Array<{tileId: number, x: number, y: number, certainty: number, group: string, rawX: number, rawY: number}>}
+ * Deduce las semillas de grupo de 32 bits a partir de 2 números de lotería de NDS.
+ * @param {number} prevLotto - Número de lotería de ayer (0 - 65535).
+ * @param {number} currLotto - Número de lotería de hoy (0 - 65535).
+ * @returns {Array<number>} Semillas de grupo coincidentes (0, 1 o 2 semillas).
  */
-export function calculateGen4FeebasSpots(lottoToday, lottoYesterday = null) {
-    const lottoNum = parseInt(lottoToday, 10);
-    if (isNaN(lottoNum) || lottoNum < 0 || lottoNum > 99999) {
+export function calculateGen4DaySeeds(prevLotto, currLotto) {
+    const pLotto = parseInt(prevLotto, 10);
+    const cLotto = parseInt(currLotto, 10);
+    if (isNaN(pLotto) || isNaN(cLotto) || pLotto < 0 || pLotto > 65535 || cLotto < 0 || cLotto > 65535) {
         return [];
     }
 
-    const yestNum = (lottoYesterday !== null && lottoYesterday !== undefined && String(lottoYesterday).trim() !== '') 
-        ? parseInt(lottoYesterday, 10) 
-        : null;
-    const hasYesterday = (yestNum !== null && !isNaN(yestNum) && yestNum >= 0 && yestNum <= 99999);
+    const matches = [];
+    let base = Math.imul(pLotto, 2305097728);
+    base += 3394631465;
 
-    // Mapeo a píxeles en el mapa de Monte Corona B1F (288x544 escalado a 576x1088, cada tile de 16x16 pasa a medir 32x32)
-    const mapTile = (tilePos, idx, group, certainty) => {
-        const rawX = tilePos[0];
-        const rawY = tilePos[1];
-        const x = (rawX - 9) * 32 + 16;
-        const y = (rawY - 18) * 32 + 16;
-        return {
-            tileId: idx + 1,
-            rawX: rawX,
-            rawY: rawY,
-            x: x,
-            y: y,
-            group: group,
-            certainty: certainty
-        };
-    };
+    const target = ((cLotto << 16) - base) >>> 0;
 
-    if (hasYesterday) {
-        const lotto0 = yestNum;
-        const lotto1 = lottoNum;
-        const matchingSeeds = [];
-
-        for (let lotto0_val = lotto0; lotto0_val < 0x100000; lotto0_val += 100000) {
-            for (let low = 0; low < 0x1000; low++) {
-                const yeste_seed = mrngr4((BigInt(lotto0_val) << 12n) | BigInt(low));
-                const today_seed = arng4(yeste_seed);
-
-                if (BigInt(lotto1) !== (((mrng4(today_seed)) >> 12n) % 100000n)) {
-                    continue;
-                }
-                matchingSeeds.push(today_seed);
-            }
-        }
-
-        if (matchingSeeds.length > 0) {
-            const today_daily = intabs4(matchingSeeds[0]);
-            const spots = [];
-            for (let tile = 0; tile < 4; tile++) {
-                const pos = ((Number(today_daily) >> (tile * 8)) & 0xFF) % 0x84;
-                const idx = 0x85 * (3 - tile) + pos;
-                const tilePos = FEEBAS_MT_CORONET_TILES[idx];
-                if (tilePos) {
-                    spots.push(mapTile(tilePos, idx, 'Garantizada', 100));
-                }
-            }
-            return spots;
+    let lm = 0;
+    let hm = 65535;
+    while (lm !== hm) {
+        const cm = (lm + hm) >>> 1;
+        if (daySeedOffsetTable[cm] < target) {
+            lm = cm + 1;
+        } else {
+            hm = cm;
         }
     }
 
-    // Modo 1 día (aproximación rápida de 4 casillas con 50% de probabilidad por par A/B)
-    const seed = (lottoNum * 0xEB65 + 0xA683) & 0xFFFF;
-    const seed_neg = (0x10000 - seed) & 0xFFFF;
+    let candidate = (base + daySeedOffsetTable[lm]) >>> 0;
+    while ((candidate >>> 16) === cLotto) {
+        matches.push(candidate);
+        lm = (lm + 1) % 65536;
+        candidate = (base + daySeedOffsetTable[lm]) >>> 0;
+    }
 
-    const low = seed & 0xFF;
-    const high = (seed >> 8) & 0xFF;
-    const low_neg = seed_neg & 0xFF;
-    const high_neg = (seed_neg >> 8) & 0xFF;
+    return matches.map(s => (Math.imul(s, 4005161829) + 4235699843) >>> 0);
+}
 
-    const idx_low_pos = 3 + 0x84 * 3 + (low % 0x84);
-    const idx_high_pos = 2 + 0x84 * 2 + (high % 0x84);
-    const idx_low_neg = 3 + 0x84 * 3 + (low_neg % 0x84);
-    const idx_high_neg = 2 + 0x84 * 2 + (high_neg % 0x84);
+/**
+ * Calcula los 4 índices de casillas de Feebas a partir de una semilla de grupo de NDS.
+ * Los 528 tiles se dividen en 4 cuadrantes exactos de 132 casillas (0x84).
+ * @param {number} seedValue - Semilla de grupo de 32 bits.
+ * @returns {Array<number>} Los 4 índices (0 a 527) en FEEBAS_MT_CORONET_TILES.
+ */
+export function getFeebasTilesGen4(seedValue) {
+    const val = [
+        (seedValue >>> 24) & 0xFF,
+        (seedValue >>> 16) & 0xFF,
+        (seedValue >>>  8) & 0xFF,
+        (seedValue       ) & 0xFF,
+    ];
 
-    const tile_low_pos = FEEBAS_MT_CORONET_TILES[idx_low_pos];
-    const tile_high_pos = FEEBAS_MT_CORONET_TILES[idx_high_pos];
-    const tile_low_neg = FEEBAS_MT_CORONET_TILES[idx_low_neg];
-    const tile_high_neg = FEEBAS_MT_CORONET_TILES[idx_high_neg];
+    const chunkSize = 132;
+    const indices = [];
+    for (let i = 0; i < 4; i++) {
+        indices.push((chunkSize * i) + (val[i] % chunkSize));
+    }
+    return indices;
+}
 
+/**
+ * Mapea las coordenadas internas de la cuadrícula de Monte Corona B1F a píxeles.
+ * Las coordenadas van de X: 9..26 (18 casillas) e Y: 18..51 (34 casillas).
+ * En escala 2x (576x1088), cada tile de 16x16 pasa a medir 32x32 píxeles.
+ */
+function mapGen4Tile(tilePos, idx, group, certainty) {
+    const rawX = tilePos[0];
+    const rawY = tilePos[1];
+    const x = (rawX - 9) * 32 + 16;
+    const y = (rawY - 18) * 32 + 16;
+    return {
+        tileId: idx + 1,
+        rawX: rawX,
+        rawY: rawY,
+        x: x,
+        y: y,
+        group: group,
+        certainty: certainty
+    };
+}
+
+/**
+ * Calcula las 4 casillas canónicas de Feebas en el Monte Corona (B1F)
+ * a partir de la Group Seed de 32 bits de cuarta generación (DPPt / NDS).
+ *
+ * @param {string|number|bigint} groupSeed - Semilla de 32 bits (hexadecimal o numérica).
+ * @returns {Array<{tileId: number, x: number, y: number, certainty: number, group: string, rawX: number, rawY: number}>}
+ */
+export function calculateGen4FeebasFromSeed(groupSeed) {
+    if (groupSeed === null || groupSeed === undefined) return [];
+
+    let cleanHex = String(groupSeed).trim();
+    if (cleanHex.toLowerCase().startsWith('0x')) {
+        cleanHex = cleanHex.substring(2);
+    }
+    if (!/^[0-9a-fA-F]{1,8}$/.test(cleanHex)) {
+        return [];
+    }
+
+    const seed = Number(BigInt('0x' + cleanHex) & 0xFFFFFFFFn) >>> 0;
+    const tileIndices = getFeebasTilesGen4(seed);
+
+    return tileIndices.map(idx => {
+        const tilePos = FEEBAS_MT_CORONET_TILES[idx];
+        return mapGen4Tile(tilePos, idx, 'Garantizada', 100);
+    });
+}
+
+/**
+ * Calcula las casillas de Feebas en el Monte Corona para Pokémon Diamante, Perla y Platino (NDS).
+ *
+ * 1. Si se proporciona `groupSeed`, calcula de inmediato las 4 casillas exactas (100% certeza).
+ * 2. Si se ingresan 2 boletos consecutivos (ayer y hoy), ejecuta el algoritmo canónico de NDS:
+ *    - Si arroja 1 semilla: devuelve 4 casillas garantizadas (100% certeza).
+ *    - Si arroja 2 semillas: devuelve 8 casillas divididas en Grupo 1 (Moradas, 50%) y Grupo 2 (Verdes, 50%).
+ *
+ * @param {number|null} lottoToday - Número de lotería de hoy (0 - 65535).
+ * @param {number|null} lottoYesterday - Número de lotería de ayer (0 - 65535).
+ * @param {string|null} groupSeed - Semilla de grupo hexadecimal opcional.
+ * @returns {Array<{tileId: number, x: number, y: number, certainty: number, group: string, rawX: number, rawY: number}>}
+ */
+export function calculateGen4FeebasSpots(lottoToday, lottoYesterday = null, groupSeed = null) {
+    if (groupSeed !== null && groupSeed !== undefined && String(groupSeed).trim() !== '') {
+        const fromSeedSpots = calculateGen4FeebasFromSeed(groupSeed);
+        if (fromSeedSpots.length > 0) {
+            return fromSeedSpots;
+        }
+    }
+
+    const yestNum = (lottoYesterday !== null && lottoYesterday !== undefined && String(lottoYesterday).trim() !== '')
+        ? parseInt(lottoYesterday, 10)
+        : null;
+    const todayNum = (lottoToday !== null && lottoToday !== undefined && String(lottoToday).trim() !== '')
+        ? parseInt(lottoToday, 10)
+        : null;
+
+    if (yestNum === null || todayNum === null || isNaN(yestNum) || isNaN(todayNum)) {
+        return [];
+    }
+
+    const seeds = calculateGen4DaySeeds(yestNum, todayNum);
+    if (!seeds || seeds.length === 0) {
+        return [];
+    }
+
+    if (seeds.length === 1) {
+        const tileIndices = getFeebasTilesGen4(seeds[0]);
+        return tileIndices.map(idx => {
+            const tilePos = FEEBAS_MT_CORONET_TILES[idx];
+            return mapGen4Tile(tilePos, idx, 'Garantizada', 100);
+        });
+    }
+
+    // Caso 2 semillas (como en el ejemplo de PokéMow: Grupo 1 Moradas y Grupo 2 Verdes)
     const spots = [];
-    if (tile_low_pos) spots.push(mapTile(tile_low_pos, idx_low_pos, 'Grupo A', 50));
-    if (tile_high_pos) spots.push(mapTile(tile_high_pos, idx_high_pos, 'Grupo A', 50));
-    if (tile_low_neg) spots.push(mapTile(tile_low_neg, idx_low_neg, 'Grupo B', 50));
-    if (tile_high_neg) spots.push(mapTile(tile_high_neg, idx_high_neg, 'Grupo B', 50));
+    const tilesSeed0 = getFeebasTilesGen4(seeds[0]);
+    tilesSeed0.forEach(idx => {
+        const tilePos = FEEBAS_MT_CORONET_TILES[idx];
+        spots.push(mapGen4Tile(tilePos, idx, 'Grupo 1 (Moradas)', 50));
+    });
+
+    const tilesSeed1 = getFeebasTilesGen4(seeds[1]);
+    tilesSeed1.forEach(idx => {
+        const tilePos = FEEBAS_MT_CORONET_TILES[idx];
+        spots.push(mapGen4Tile(tilePos, idx, 'Grupo 2 (Verdes)', 50));
+    });
 
     return spots;
+}
+
+/**
+ * Operaciones PRNG de BDSP (Switch - ILCA) preservadas para futura integración.
+ */
+export function calculateBDSPFeebasSpots(lottoToday, lottoYesterday = null) {
+    // Preservado para BDSP
+    return calculateGen4FeebasSpots(lottoToday, lottoYesterday);
 }
