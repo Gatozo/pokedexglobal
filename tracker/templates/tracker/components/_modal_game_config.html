@@ -136,14 +136,14 @@
                 </div>
                 
                 <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
-                    En Sinnoh, Feebas sólo aparece en <strong class="text-sky-800">4 de las 528 casillas de agua del Monte Corona (B1F)</strong>, cambiando cada día a medianoche. Estas casillas están vinculadas a la <strong class="text-slate-900">Lotería de Jubilife TV</strong>. Ingresa el número de tu boleto para localizar tus casillas activas.
+                    En Sinnoh, Feebas sólo aparece en <strong class="text-sky-800">4 de las 528 casillas de agua del Monte Corona (Sótano)</strong>, cambiando cada día a medianoche. Estas casillas están vinculadas a la <strong class="text-slate-900">Lotería de Jubileo TV</strong>. Ingresa el número de tu boleto para localizar tus casillas activas.
                 </p>
 
                 <div class="space-y-3">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 items-end">
                         <div class="flex flex-col justify-end">
                             <label for="cfg-feebas-gen4-today" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
-                                Lotería de Hoy <span class="text-slate-600 font-bold whitespace-nowrap">(Jubilife TV) <span class="text-rose-600">*</span></span>
+                                Lotería de Hoy <span class="text-slate-600 font-bold whitespace-nowrap">(Jubileo TV) <span class="text-rose-600">*</span></span>
                             </label>
                             <div class="relative">
                                 <input 
@@ -163,7 +163,7 @@
 
                         <div class="flex flex-col justify-end">
                             <label for="cfg-feebas-gen4-yesterday" class="block text-[11px] font-black uppercase text-slate-800 mb-1 leading-snug">
-                                Lotería de Ayer <span class="text-slate-600 font-bold whitespace-nowrap">(Jubilife TV) <span class="text-rose-600">*</span></span>
+                                Lotería de Ayer <span class="text-slate-600 font-bold whitespace-nowrap">(Jubileo TV) <span class="text-rose-600">*</span></span>
                             </label>
                             <div class="relative">
                                 <input 
@@ -183,7 +183,7 @@
                     </div>
 
                     <p class="text-[10px] text-slate-500 font-semibold leading-snug">
-                        Habla con la recepcionista en Jubilife TV. Se requieren ambos números (ayer y hoy) para calcular tus casillas en Nintendo DS.
+                        Habla con la recepcionista en Jubileo TV. Se requieren ambos números (ayer y hoy) para calcular tus casillas en Nintendo DS.
                     </p>
 
                     <!-- Separador: O bien Semilla Hexadecimal -->
@@ -247,7 +247,7 @@
                         >
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="text-base select-none shrink-0">⚠️</span>
-                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funcionan la Lotería y la Semilla de Feebas?</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funciona la Lotería para encontrar a Feebas?</span>
                             </div>
                             <div class="flex items-center gap-1 shrink-0">
                                 <span id="feebas-gen4-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
@@ -258,21 +258,19 @@
                         </button>
                         <div id="feebas-gen4-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
                             <p>
-                                <strong>Semilla Diaria de Grupo (Group Seed):</strong> En Diamante, Perla y Platino (NDS), el lago del Monte Corona se divide matemáticamente en 4 cuadrantes de 132 casillas cada uno. Cada uno de los 4 bytes de la semilla de grupo define la casilla activa en su cuadrante.
+                                <strong>Casillas diarias:</strong> En Sinnoh, las 4 casillas de agua donde pica Feebas cambian cada día a medianoche y están directamente conectadas con la lotería de Jubileo TV.
                             </p>
                             <p>
-                                <strong>Método por Lotería:</strong> Al ingresar los boletos de 2 días consecutivos (ayer y hoy), el algoritmo canónico de NDS de PokéMow deduce la semilla de grupo. En algunos pares de boletos se obtiene 1 semilla única (4 casillas garantizadas); en otros pares se obtienen matemáticamente 2 semillas gemelas (4 casillas moradas y 4 casillas verdes con 50% cada una).
+                                <strong>¿Por qué se piden dos números?:</strong> Al ingresar el boleto de hoy y el de ayer, la Pokédex deduce la posición exacta de tus casillas. Según los números del juego, obtendrás 4 casillas seguras (100% de certeza) o dos grupos posibles de 4 casillas (verdes y moradas) para probar.
                             </p>
                             <p>
-                                <strong>Método Hexadecimal:</strong> Si juegas en emulador o inspeccionas tu archivo de guardado (.sav con PokéFinder o PKHeX), puedes ingresar directamente tu semilla hexadecimal de 32 bits (Group Seed) para obtener tus 4 casillas definitivas de forma instantánea.
+                                <strong>Método Directo (Opcional):</strong> Si juegas en emulador y conoces la semilla de tu partida, puedes ingresarla directamente para localizar tus 4 casillas sin tener que esperar a conseguir dos boletos consecutivos.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Créditos a la comunidad Gen 4 -->
-                    <div class="text-[10px] text-slate-500 font-bold border-t border-slate-200 pt-2 flex items-center justify-between">
-                        <span>Agradecimientos a <strong>Mow (PokéMow)</strong> y a la comunidad de RNG por la ingeniería inversa del algoritmo PRNG de Nintendo DS.</span>
-                    </div>
+                    <!-- Créditos a la comunidad Gen 4 (conservados en código interno):
+                         Agradecimientos a Mow (PokéMow) y a la comunidad de RNG por la ingeniería inversa del algoritmo PRNG de Nintendo DS. -->
                 </div>
             </div>
             {% endif %}
@@ -381,7 +379,7 @@
                         >
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="text-base select-none shrink-0">⚠️</span>
-                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Por qué no cambiar la frase?</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo funciona la Frase de Moda de Feebas?</span>
                             </div>
                             <div class="flex items-center gap-1 shrink-0">
                                 <span id="feebas-phrase-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
@@ -392,18 +390,16 @@
                         </button>
                         <div id="feebas-phrase-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
                             <p>
-                                <strong>Generación determinista de la semilla:</strong> En Rubí, Zafiro y Esmeralda, la frase de moda inicial se genera mediante el generador de números pseudoaleatorios (PRNG) a partir de tu <strong>TID</strong> al comenzar la partida, o evoluciona de forma natural con los días en el juego.
+                                <strong>Frase original del juego:</strong> En Rubí, Zafiro y Esmeralda, las 6 casillas de pesca de Feebas en la Ruta 119 están vinculadas a tu ID de Entrenador y a la frase de moda que el juego asigna automáticamente en Pueblo Azuliza.
                             </p>
                             <p>
-                                <strong>Consecuencia de alterarla:</strong> Si hablas con el joven de Pueblo Azuliza e ingresas una frase manual personalizada, dicha frase <strong>no provendrá del flujo matemático natural del PRNG</strong>. Como resultado, la calculadora no podrá deducir la semilla original de la ROM y las casillas calculadas dejarán de coincidir con tu juego. <strong>Recomendación:</strong> Deja siempre la frase que el juego te dé por defecto.
+                                <strong>Recomendación importante:</strong> No cambies manualmente la frase con el chico de Pueblo Azuliza; mantén siempre la frase generada por el juego. Si la cambias manualmente por una personalizada, las casillas calculadas dejarán de coincidir con tu partida.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Créditos a la comunidad -->
-                    <div class="text-[10px] text-slate-500 font-bold border-t border-slate-200 pt-2 flex items-center justify-between">
-                        <span>Agradecimientos a <strong>MucksX</strong> y al proyecto <strong>pret/pokeemerald</strong> por la ingeniería inversa del algoritmo PRNG.</span>
-                    </div>
+                    <!-- Créditos a la comunidad Gen 3 (conservados en código interno):
+                         Agradecimientos a MucksX y al proyecto pret/pokeemerald por la ingeniería inversa del algoritmo PRNG. -->
                 </div>
             </div>
             {% endif %}

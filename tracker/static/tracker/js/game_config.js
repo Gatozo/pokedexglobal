@@ -334,7 +334,7 @@ export function renderConfigPreview() {
             }
         }
 
-        // Feebas Gen 4 (Semilla Hexadecimal Directa o Lotería Jubilife TV -> Casillas Monte Corona B1F)
+        // Feebas Gen 4 (Semilla Hexadecimal Directa o Lotería Jubileo TV -> Casillas Monte Corona Sótano)
         const lottoTodayInput = document.getElementById('cfg-feebas-gen4-today');
         const lottoYestInput = document.getElementById('cfg-feebas-gen4-yesterday');
         const seedInput = document.getElementById('cfg-feebas-gen4-seed');
@@ -608,7 +608,7 @@ export function saveGameConfig() {
             lottoYestVal = parseInt(yestRaw, 10);
 
             if (isNaN(lottoTodayVal) || lottoTodayVal < 0 || lottoTodayVal > 99999) {
-                alert('El número de Lotería de Hoy (Jubilife TV) debe ser un número entre 00000 y 99999.');
+                alert('El número de Lotería de Hoy (Jubileo TV) debe ser un número entre 00000 y 99999.');
                 if (lottoTodayInput) lottoTodayInput.focus();
                 return;
             }

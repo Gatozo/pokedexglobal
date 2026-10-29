@@ -500,7 +500,7 @@ export function renderModalObtaining(data, activeForm = null) {
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
-    let feebasLocationName = isGen4Sinnoh ? 'Monte Corona (B1F)' : 'Ruta 119';
+    let feebasLocationName = isGen4Sinnoh ? 'Monte Corona (Sótano)' : 'Ruta 119';
     let feebasEditActionName = isGen4Sinnoh ? 'Editar Lotería' : 'Editar Frase';
 
     if (isFeebasSpecies) {
