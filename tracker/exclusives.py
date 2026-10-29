@@ -264,8 +264,8 @@ NON_SINNOH_TRANSFERS_DIAMOND = sorted(list(
     }
 ))
 
-# 48 especies requeridas mediante transferencia externa o intercambio para completar la Pokédex Nacional
-# en Pokémon Platino (desclasificando a las Aves Legendarias errantes y especies nativas de la Pokédex expandida):
+# 79 especies requeridas mediante transferencia externa, Parque Compi o intercambio para completar la Pokédex Nacional
+# en Pokémon Platino (desclasificando a las Aves Legendarias errantes y especies nativas de la Pokédex expandida como Tangela, Tropius, Electabuzz, Magmar y Gligar):
 NON_SINNOH_TRANSFERS_PLATINUM = sorted(list(
     # Iniciales de Kanto, Johto y Hoenn (27)
     set(range(1, 10)) | set(range(152, 161)) | set(range(252, 261)) |
@@ -279,6 +279,19 @@ NON_SINNOH_TRANSFERS_PLATINUM = sorted(list(
     {
         328, 329, 330,      # Trapinch, Vibrava, Flygon
         366, 367, 368       # Clamperl, Huntail, Gorebyss
+    } |
+    # Inserción Dual exclusiva (Ranura 2 de GBA) y sus líneas evolutivas sin otra forma de obtención en Platino (31)
+    {
+        # Rojo Fuego: Caterpie (10-12), Ekans (23-24), Growlithe (58-59)
+        10, 11, 12, 23, 24, 58, 59,
+        # Verde Hoja: Weedle (13-15), Sandshrew (27-28), Vulpix (37-38)
+        13, 14, 15, 27, 28, 37, 38,
+        # Rubí: Seedot (273-275), Mawile (303), Zangoose (335), Solrock (338)
+        273, 274, 275, 303, 335, 338,
+        # Zafiro: Lotad (270-272), Sableye (302), Seviper (336), Lunatone (337)
+        270, 271, 272, 302, 336, 337,
+        # Esmeralda: Pineco (204-205), Shuckle (213), Teddiursa (216-217)
+        204, 205, 213, 216, 217
     }
 ))
 
@@ -647,12 +660,13 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'mechanic_badge': 'Transferir / GBA',
         'description': (
             'La Pokédex Nacional de Pokémon Diamante consta de 493 Pokémon. Estas 90 especies comprenden los iniciales '
-            'y criaturas legendarias foráneas, las especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 '
-            '(Inserción Dual), y las especies totalmente ausentes en estado salvaje en Sinnoh (Tangela, Tangrowth y Tropius). '
-            'Para completar tu partida, puedes transferirlos permanentemente desde cartuchos de Game Boy Advance '
-            '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
-            'o intercambiarlos de forma directa en Nintendo DS con entregas posteriores de la misma generación '
-            '(Pokémon Platino y Pokémon HeartGold / SoulSilver).'
+            'y criaturas legendarias foráneas de otras regiones, las especies totalmente ausentes en estado salvaje en Sinnoh (Tangela, Tangrowth y Tropius), '
+            'y aquellas especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 (Inserción Dual). '
+            'Se incluyen los Pokémon de Inserción Dual en este apartado debido a que dependen de hardware específico '
+            '(consola Nintendo DS / DS Lite con ranura GBA y un cartucho físico original de GBA insertado en simultáneo), '
+            'un método complejo de replicar para la gran mayoría de jugadores actuales. Para completar tu partida, '
+            'puedes transferirlos permanentemente desde cartuchos de Game Boy Advance a través del Parque Compi en la Ruta 221, '
+            'o intercambiarlos directamente con otras ediciones de Cuarta Generación.'
         ),
         'default_origin': 'Parque Compi (GBA) / Platino / HGSS',
         'origins': {
@@ -758,12 +772,13 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'mechanic_badge': 'Transferir / GBA',
         'description': (
             'La Pokédex Nacional de Pokémon Perla consta de 493 Pokémon. Estas 90 especies comprenden los iniciales '
-            'y criaturas legendarias foráneas, las especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 '
-            '(Inserción Dual), y las especies totalmente ausentes en estado salvaje en Sinnoh (Tangela, Tangrowth y Tropius). '
-            'Para completar tu partida, puedes transferirlos permanentemente desde cartuchos de Game Boy Advance '
-            '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
-            'o intercambiarlos de forma directa en Nintendo DS con entregas posteriores de la misma generación '
-            '(Pokémon Platino y Pokémon HeartGold / SoulSilver).'
+            'y criaturas legendarias foráneas de otras regiones, las especies totalmente ausentes en estado salvaje en Sinnoh (Tangela, Tangrowth y Tropius), '
+            'y aquellas especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 (Inserción Dual). '
+            'Se incluyen los Pokémon de Inserción Dual en este apartado debido a que dependen de hardware específico '
+            '(consola Nintendo DS / DS Lite con ranura GBA y un cartucho físico original de GBA insertado en simultáneo), '
+            'un método complejo de replicar para la gran mayoría de jugadores actuales. Para completar tu partida, '
+            'puedes transferirlos permanentemente desde cartuchos de Game Boy Advance a través del Parque Compi en la Ruta 221, '
+            'o intercambiarlos directamente con otras ediciones de Cuarta Generación.'
         ),
         'default_origin': 'Parque Compi (GBA) / Platino / HGSS',
         'origins': {
@@ -872,13 +887,15 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'mechanic_title': 'Transferencia y Parque Compi • Gen 4',
         'mechanic_badge': 'Transferir / GBA',
         'description': (
-            'La Pokédex Nacional de Pokémon Platino consta de 493 Pokémon. Estas 48 especies comprenden los iniciales '
-            'y criaturas legendarias foráneas de Kanto, Johto y Hoenn que no habitan en estado salvaje en Sinnoh, '
-            'así como las líneas evolutivas de Trapinch y Clamperl ausentes en esta edición. '
-            'Para completar tu partida, puedes transferirlos desde cartuchos de Game Boy Advance '
-            '(Pokémon Rubí, Zafiro, Esmeralda, Rojo Fuego o Verde Hoja) a través del Parque Compi en la Ruta 221, '
-            'o intercambiarlos de forma directa en Nintendo DS con entregas coetáneas '
-            '(Pokémon Diamante, Pokémon Perla y Pokémon HeartGold / SoulSilver).'
+            'La Pokédex Nacional de Pokémon Platino consta de 493 Pokémon. Estas 79 especies comprenden los iniciales '
+            'y criaturas legendarias foráneas de otras regiones, las líneas evolutivas ausentes en estado salvaje en Platino (Trapinch y Clamperl), '
+            'y aquellas especies cuya única presencia salvaje requiere cartuchos de GBA en la Ranura 2 (Inserción Dual). '
+            'Se incluyen los Pokémon de Inserción Dual en este apartado debido a que dependen de hardware específico '
+            '(consola Nintendo DS / DS Lite con ranura GBA y un cartucho físico original de GBA insertado en simultáneo), '
+            'un método complejo de replicar para la gran mayoría de jugadores actuales (especies como Gengar, Electabuzz, Magmar y Gligar '
+            'cuyas etapas se consiguen de forma nativa en Platino se mantienen en el juego regular). Para completar tu partida, '
+            'puedes transferirlos permanentemente desde cartuchos de Game Boy Advance a través del Parque Compi en la Ruta 221, '
+            'o intercambiarlos directamente con otras ediciones de Cuarta Generación.'
         ),
         'default_origin': 'Parque Compi (GBA) / D/P / HGSS',
         'origins': {
@@ -941,6 +958,43 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             366: 'Diamante / Perla (Ruta 219)',
             367: 'Intercambio con Diente Marino',
             368: 'Intercambio con Escama Marina',
+
+            # Inserción Dual exclusiva (Ranura 2 de GBA) y sus líneas evolutivas
+            10: 'GBA: Rojo Fuego',
+            11: 'GBA: Rojo Fuego',
+            12: 'GBA: Rojo Fuego',
+            23: 'GBA: Rojo Fuego',
+            24: 'GBA: Rojo Fuego',
+            58: 'GBA: Rojo Fuego',
+            59: 'GBA: Rojo Fuego',
+
+            13: 'GBA: Verde Hoja',
+            14: 'GBA: Verde Hoja',
+            15: 'GBA: Verde Hoja',
+            27: 'GBA: Verde Hoja',
+            28: 'GBA: Verde Hoja',
+            37: 'GBA: Verde Hoja',
+            38: 'GBA: Verde Hoja',
+
+            273: 'GBA: Rubí',
+            274: 'GBA: Rubí',
+            275: 'GBA: Rubí',
+            303: 'GBA: Rubí',
+            335: 'GBA: Rubí',
+            338: 'GBA: Rubí',
+
+            270: 'GBA: Zafiro',
+            271: 'GBA: Zafiro',
+            272: 'GBA: Zafiro',
+            302: 'GBA: Zafiro',
+            336: 'GBA: Zafiro',
+            337: 'GBA: Zafiro',
+
+            204: 'GBA: Esmeralda',
+            205: 'GBA: Esmeralda',
+            213: 'GBA: Esmeralda',
+            216: 'GBA: Esmeralda',
+            217: 'GBA: Esmeralda',
         }
     },
 }

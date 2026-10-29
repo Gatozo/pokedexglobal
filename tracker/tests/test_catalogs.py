@@ -2390,14 +2390,23 @@ class PokemonPlatinumGen4Tests(TestCase):
         from tracker.exclusives import VERSION_TRANSFERS_CATALOG, VERSION_TRANSFERS_META, get_version_transfers_context
 
         self.assertIn("platinum", VERSION_TRANSFERS_CATALOG)
-        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["platinum"]), 48)
+        self.assertEqual(len(VERSION_TRANSFERS_CATALOG["platinum"]), 79)
         origins = VERSION_TRANSFERS_META["platinum"]["origins"]
-        self.assertEqual(len(origins), 48)
+        self.assertEqual(len(origins), 79)
 
         t_info = get_version_transfers_context(self.game, self.pk_nat, set())
         self.assertIsNotNone(t_info)
         self.assertTrue(t_info["has_transfers"])
-        self.assertEqual(t_info["total"], 48)
+        self.assertEqual(t_info["total"], 79)
+
+        # Inserción Dual exclusiva incluida en Platino
+        plat_transfers = set(VERSION_TRANSFERS_CATALOG["platinum"])
+        for pid in [10, 11, 12, 13, 14, 15, 23, 24, 27, 28, 37, 38, 58, 59, 204, 205, 213, 216, 217, 270, 271, 272, 273, 274, 275, 302, 303, 335, 336, 337, 338]:
+            self.assertIn(pid, plat_transfers)
+
+        # Especies con métodos nativos en Platino NO deben estar en transferencias
+        for excluded_id in [94, 114, 125, 126, 207, 239, 240, 357, 465, 466, 467, 472]:
+            self.assertNotIn(excluded_id, plat_transfers)
 
     def test_platinum_rotom_giratina_shaymin_forms(self):
         from tracker.pokemon_forms import get_pokemon_forms
