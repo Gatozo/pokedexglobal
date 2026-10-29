@@ -2323,10 +2323,23 @@ class PokemonPlatinumGen4Tests(TestCase):
         self.assertEqual(porygon.obtaining_info.get("type"), "gift")
         self.assertIn("Ciudad Rocavelo", porygon.obtaining_info.get("summary", ""))
 
-        # Togepi (#175) huevo regalado por Cintia
+        # Togepi (#175) huevo regalado por Cintia y salvaje con Poké Radar en Ruta 230
         togepi = next(e for e in reg_cat if e.pokemon.national_number == 175)
         self.assertEqual(togepi.obtaining_info.get("type"), "gift")
+        self.assertEqual(togepi.obtaining_info.get("badge_label"), "Huevo / Radar")
         self.assertIn("Cintia", togepi.obtaining_info.get("summary", ""))
+        self.assertIn("Ruta 230", togepi.obtaining_info.get("summary", ""))
+        self.assertIn("radar", togepi.filter_tags)
+        self.assertIn("gift", togepi.filter_tags)
+
+        # Happiny (#440) salvaje en Jardín Trofeo y crianza con Incienso Duplo (no regalo de montañero en Platino)
+        happiny = next(e for e in reg_cat if e.pokemon.national_number == 440)
+        self.assertEqual(happiny.obtaining_info.get("type"), "wild")
+        self.assertEqual(happiny.obtaining_info.get("badge_label"), "Jardín Trofeo")
+        self.assertIn("Jardín Trofeo", happiny.obtaining_info.get("summary", ""))
+        self.assertNotIn("montañero", happiny.obtaining_info.get("summary", "").lower())
+        self.assertIn("baby", happiny.filter_tags)
+        self.assertNotIn("gift", happiny.filter_tags)
 
         # Riolu (#447) huevo regalado por Quinoa en Isla Hierro
         riolu = next(e for e in reg_cat if e.pokemon.national_number == 447)
@@ -2337,6 +2350,25 @@ class PokemonPlatinumGen4Tests(TestCase):
         drifloon = next(e for e in reg_cat if e.pokemon.national_number == 425)
         self.assertIn(drifloon.obtaining_info.get("type"), ["wild", "static"])
         self.assertTrue(len(drifloon.obtaining_info.get("locations", [])) > 0)
+
+    def test_platinum_radar_and_swarm_filter_tags_invariants(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("platinum", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("platinum", is_national=True, force_reload=True)
+
+        for cat in [reg_cat, nat_cat]:
+            # Poké Radar invariants: Geodude (#74), Gastly (#92), Piloswine (#221), Dusclops (#356), Chingling (#433)
+            # no deben tener la etiqueta 'radar' (cuevas, edificios interiores o DP-only)
+            bogus_radar_nums = [74, 92, 221, 356, 433]
+            for nat_num in bogus_radar_nums:
+                entry = next((e for e in cat if e.pokemon.national_number == nat_num), None)
+                if entry:
+                    self.assertNotIn("radar", entry.filter_tags, f"#{nat_num} {entry.pokemon.name} no debe tener tag 'radar'")
+
+            # Swarm invariant: Onix (#95) en Isla Hierro B3F no es manada
+            onix = next((e for e in cat if e.pokemon.national_number == 95), None)
+            if onix:
+                self.assertNotIn("swarm", onix.filter_tags, "Onix (#95) no debe tener tag 'swarm'")
 
     def test_platinum_missing_counterpart_exclusives(self):
         from tracker.exclusives import THIRD_VERSION_COUNTERPART_EXCLUSIVES, get_version_exclusives_context

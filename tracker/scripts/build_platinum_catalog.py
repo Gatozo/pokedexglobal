@@ -315,11 +315,12 @@ SPECIAL_OBTAINING = {
     # Huevos y Regalos en Sinnoh
     175: {
         'type': 'gift',
-        'badge_label': 'Huevo Regalo',
+        'badge_label': 'Huevo / Radar',
         'badge_color': 'sky',
-        'summary': 'Huevo entregado por Cintia en el acceso oeste de Ciudad Vetusta tras derrotar a Júpiter en el Edificio Galaxia (también obtenible mediante crianza).',
+        'summary': 'Huevo entregado por Cintia en el acceso oeste de Ciudad Vetusta tras derrotar a Júpiter en el Edificio Galaxia, o salvaje en la Ruta 230 usando el Poké Radar (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Ciudad Vetusta (Acceso Oeste)', 'method': 'Huevo entregado por Cintia'},
+            {'area': 'Ruta 230 (Ruta Marítima)', 'method': 'Poké Radar (Hierba alta)'},
             DAYCARE_LOCATION
         ]
     },
@@ -344,13 +345,13 @@ SPECIAL_OBTAINING = {
         ]
     },
     440: {
-        'type': 'gift',
-        'badge_label': 'Huevo Regalo',
+        'type': 'wild',
+        'badge_label': 'Jardín Trofeo',
         'badge_color': 'pink',
-        'summary': 'Huevo entregado por un montañero en el acceso este de Ciudad Corazón (también obtenible mediante crianza).',
+        'summary': 'Aparición diaria en la hierba del Jardín Trofeo tras obtener la Pokédex Nacional (también mediante crianza con Incienso Duplo en Pueblo Sosiego).',
         'locations': [
-            {'area': 'Ciudad Corazón (Acceso Este)', 'method': 'Huevo entregado por un montañero'},
-            DAYCARE_LOCATION
+            {'area': 'Jardín Trofeo', 'method': 'Hierba alta (Mención del Sr. Fortuny)'},
+            {'area': 'Pueblo Sosiego (Guardería Pokémon)', 'method': 'Crianza con Incienso Duplo'}
         ]
     },
     447: {
@@ -777,6 +778,10 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         return 'Poké Radar'
     if 'swarm-yes' in cond_names:
         return 'Manada diaria'
+    if 'backlot-mentioned' in cond_names:
+        return 'Hierba alta (Mención del Sr. Fortuny)'
+    if any('great-marsh-daily' in c for c in cond_names):
+        return 'Zona diaria del Gran Pantano (Prismáticos)'
     if method_raw == 'honey-tree':
         return 'Árboles de Miel'
     if method_raw == 'feebas-tile-fishing':
@@ -876,8 +881,19 @@ def main():
             area_methods = {}
             for e in raw_encs:
                 area_key = e.get('area_raw', '')
+                cond_list = list(e.get('conditions', []))
+
+                # Ignorar falsos positivos de PokeAPI (Poké Radar en cuevas/edificios o manadas en cuevas)
+                if 'radar-on' in cond_list:
+                    cave_or_indoor = any(k in area_key for k in ('mine', 'cave', 'tower', 'turnback'))
+                    if cave_or_indoor or nat_id in (74, 92, 221, 356, 433):
+                        cond_list = [c for c in cond_list if c != 'radar-on']
+                if 'swarm-yes' in cond_list:
+                    if nat_id == 95 or 'iron-island' in area_key:
+                        cond_list = [c for c in cond_list if c != 'swarm-yes']
+
                 clean_area = SINNOH_AREA_NAMES.get(area_key, area_key.replace('-', ' ').title())
-                meth_desc = format_wild_method(e.get('method_raw', 'walk'), e.get('conditions', []))
+                meth_desc = format_wild_method(e.get('method_raw', 'walk'), cond_list)
                 if clean_area not in area_methods:
                     area_methods[clean_area] = set()
                 area_methods[clean_area].add(meth_desc)

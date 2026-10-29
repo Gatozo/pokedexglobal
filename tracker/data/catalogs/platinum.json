@@ -2106,8 +2106,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Ruta 212 (Sector Sur)",
-          "detail": "En el laberinto vegetal con hierba alta (requiere Corte)."
+          "area": "Ruta 212 (Norte)",
+          "detail": "Al oeste de la Mansión Pokémon cruzando el pequeño estanque con Surf."
         }
       ],
       "category": "incense"
@@ -2278,12 +2278,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Isla Hierro (Nivel 3)",
-          "detail": "En la sala final antes del ascensor de salida."
+          "area": "Isla Hierro (Sótano B3)",
+          "detail": "En la sala final antes del ascensor de salida de la mina."
+        },
+        {
+          "area": "Ruta 210 (Sector Norte)",
+          "detail": "Objeto oculto en un saliente elevado al sur de la ruta (requiere Treparrocas)."
         },
         {
           "area": "Ruta 228",
-          "detail": "Cerca de la casa del tutor de movimientos combinados."
+          "detail": "Cerca de la casa del tutor de movimientos combinados de los iniciales."
         },
         {
           "area": "Habilidad Recogida",
@@ -2792,11 +2796,11 @@
       "locations": [
         {
           "area": "Mina Pirita (P1)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Mina Pirita (Sótano B1)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Monte Corona (Entrada Ruta 207)",
@@ -2816,7 +2820,7 @@
         },
         {
           "area": "Cueva Extravío (P1)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Cueva Extravío (Sótano B1 - Gible)",
@@ -3190,7 +3194,7 @@
         },
         {
           "area": "Isla Hierro (Sótano B3)",
-          "method": "Manada diaria"
+          "method": "Salvaje"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -3296,12 +3300,16 @@
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Isla Hierro",
-          "detail": "Regalo de Acerón en su casa de la isla tras derrotar a los reclutas Galaxia y completar la Liga."
+          "area": "Ruinas Hierro (Isla Hierro)",
+          "detail": "En el suelo como Poké Ball en el interior de la cámara de Registeel (exclusivo de Platino; disponible si no llevas al Regigigas de evento en el equipo)."
         },
         {
-          "area": "Magnemite, Magneton, Steelix y Bronzor",
-          "detail": "5% de probabilidad de llevarlo equipado en estado salvaje."
+          "area": "Isla Hierro (Casa de Acerón)",
+          "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix, Bronzor y Bronzong."
         }
       ],
       "category": "trade"
@@ -6227,15 +6235,15 @@
         },
         {
           "area": "Torre Perdida (P3)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Torre Perdida (P4)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Torre Perdida (P5)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -6513,15 +6521,15 @@
       "locations": [
         {
           "area": "Almacén Galaxia (Ciudad Rocavelo)",
-          "detail": "En el suelo tras obtener la Llave del Almacén."
+          "detail": "En el suelo tras abrir la puerta con la Llave del Almacén."
         },
         {
           "area": "Cueva Extravío (Sótano B1)",
-          "detail": "Zona profunda con Golpe Roca y Fuerza."
+          "detail": "Zona profunda subterránea bajo el Camino de Bicis (requiere Golpe Roca y Fuerza)."
         },
         {
-          "area": "Ruta 214",
-          "detail": "Objeto oculto en la valla cerca de las ruinas (requiere Zahorí)."
+          "area": "Calle Victoria",
+          "detail": "En la cámara de la salida este hacia la Ruta 224 (accesible con Bulgur tras registrar la Pokédex Nacional)."
         },
         {
           "area": "Habilidad Recogida",
@@ -6663,15 +6671,15 @@
       "locations": [
         {
           "area": "Almacén Galaxia (Ciudad Rocavelo)",
-          "detail": "En el suelo tras obtener la Llave del Almacén."
+          "detail": "En el suelo tras abrir la puerta con la Llave del Almacén."
         },
         {
           "area": "Cueva Extravío (Sótano B1)",
-          "detail": "Zona profunda con Golpe Roca y Fuerza."
+          "detail": "Zona profunda subterránea bajo el Camino de Bicis (requiere Golpe Roca y Fuerza)."
         },
         {
-          "area": "Ruta 214",
-          "detail": "Objeto oculto en la valla cerca de las ruinas (requiere Zahorí)."
+          "area": "Calle Victoria",
+          "detail": "En la cámara de la salida este hacia la Ruta 224 (accesible con Bulgur tras registrar la Pokédex Nacional)."
         },
         {
           "area": "Habilidad Recogida",
@@ -7381,7 +7389,7 @@
         },
         {
           "area": "Cueva Retorno (Pilar 2)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Ruta 211 (Oeste)",
@@ -7410,7 +7418,7 @@
       "locations": [
         {
           "area": "Ruta 221",
-          "detail": "En el suelo cerca de la casa del anciano de los desafíos."
+          "detail": "Entre los árboles al oeste de la casa solitaria de los desafíos."
         }
       ],
       "category": "incense"
@@ -8166,7 +8174,7 @@
       "locations": [
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8187,7 +8195,7 @@
       "locations": [
         {
           "area": "Forja Fuego",
-          "detail": "En la esquina noroeste sorteando las baldosas aceleradoras."
+          "detail": "En la esquina sureste del interior de la fábrica sorteando las baldosas giratorias."
         }
       ],
       "category": "incense"
@@ -8308,7 +8316,7 @@
       "locations": [
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8329,7 +8337,7 @@
       "locations": [
         {
           "area": "Ruinas Sosiego",
-          "detail": "En la cámara interior de las ruinas ingresando por la cámara lateral superior."
+          "detail": "En la cámara interior más profunda de las ruinas."
         }
       ],
       "category": "incense"
@@ -8443,14 +8451,14 @@
     "cry_url": "/media/pokemon/cries/legacy/440.ogg",
     "flavor_text": "Se pasea por ahí con una roquita. A veces se cuela entre los pies de los demás y hace que tropiecen.",
     "obtaining_info": {
-      "type": "gift",
-      "badge_label": "Huevo Regalo",
+      "type": "wild",
+      "badge_label": "Jardín Trofeo",
       "badge_color": "pink",
-      "summary": "Huevo entregado por un montañero en el acceso este de Ciudad Corazón (también obtenible mediante crianza).",
+      "summary": "Aparición diaria en la hierba del Jardín Trofeo tras obtener la Pokédex Nacional (también mediante crianza con Incienso Duplo en Pueblo Sosiego).",
       "locations": [
         {
-          "area": "Ciudad Corazón (Acceso Este)",
-          "method": "Huevo entregado por un montañero"
+          "area": "Jardín Trofeo",
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8470,8 +8478,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Gran Pantano (Pastoria)",
-          "detail": "En un islote navegando con Surf en la Zona 1 o Zona 2."
+          "area": "Senda Desolada",
+          "detail": "En la cámara norte más profunda de la cueva (requiere Golpe Roca y Surf)."
         }
       ],
       "category": "incense"
@@ -8526,7 +8534,7 @@
       "locations": [
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Ruta 209",
@@ -8565,12 +8573,12 @@
           "detail": "En el suelo como Poké Ball."
         },
         {
-          "area": "Subsuelo de Sinnoh",
-          "detail": "Excavación en las paredes del subsuelo."
+          "area": "Ciudad Corazón",
+          "detail": "Equipada en el Happiny que nace del Huevo entregado por el Montañero."
         },
         {
-          "area": "Happiny salvaje",
-          "detail": "50% de probabilidad de llevarla equipada al capturarlo."
+          "area": "Pokémon salvajes (Happiny y Chansey)",
+          "detail": "50% de probabilidad de llevarla equipada al capturarlos en el Jardín Trofeo."
         }
       ],
       "category": "stone"
@@ -8686,7 +8694,7 @@
         },
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -8785,7 +8793,7 @@
         },
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         }
       ],
       "evolution_info": {
@@ -8865,12 +8873,20 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
+          "area": "Ciudad Vetusta",
+          "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+        },
+        {
+          "area": "Monte Corona",
+          "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+        },
+        {
           "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
-          "area": "Clefairy y Cleffa salvajes",
-          "detail": "5% de probabilidad de llevarla equipada (Monte Corona)."
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -9136,7 +9152,15 @@
       "locations": [
         {
           "area": "Ciudad Marina",
-          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+        },
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
         },
         {
           "area": "Subsuelo de Sinnoh",
@@ -9737,8 +9761,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Pueblo Sosiego",
-          "detail": "En el acantilado oriental accesible escalando con Treparrocas desde la Ruta 209."
+          "area": "Ciudad Rocavelo",
+          "detail": "En la colina situada junto al Gimnasio Pokémon (requiere Treparrocas)."
         }
       ],
       "category": "incense"
@@ -10050,27 +10074,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -10129,27 +10153,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje, Surf"
+          "method": "Salvaje, Surf, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Ruta 212 (Sur)",
@@ -10608,7 +10632,7 @@
       "locations": [
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -10628,8 +10652,8 @@
       "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Ruta 230",
-          "detail": "En la isla rocosa central (requiere Romperrocas y Surf)."
+          "area": "Ruta 204 (Sur)",
+          "detail": "En un islote en el estanque suroeste navegando con Surf."
         }
       ],
       "category": "incense"
@@ -10684,7 +10708,7 @@
       "locations": [
         {
           "area": "Jardín Trofeo",
-          "method": "Salvaje"
+          "method": "Hierba alta (Mención del Sr. Fortuny)"
         },
         {
           "area": "Ruta 212 (Norte)",
@@ -10824,27 +10848,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -10903,27 +10927,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         }
       ],
       "evolution_info": {
@@ -10985,27 +11009,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Ruta 212 (Sur)",
@@ -11068,27 +11092,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         }
       ],
       "evolution_info": {
@@ -11150,27 +11174,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -11980,8 +12004,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Ruta 210 (Sector Norte)",
-          "detail": "Detrás de la cascada navegando por el río con Surf."
+          "area": "Ruta 210 (Norte)",
+          "detail": "Detrás de la segunda cascada navegando por el río con Surf y Cascada desde Pueblo Caelestis."
         }
       ],
       "category": "incense"
@@ -12356,16 +12380,20 @@
       "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 224 y Calle Victoria.",
       "locations": [
         {
+          "area": "Edificio Galaxia de Ciudad Rocavelo",
+          "detail": "Objeto oculto en el despacho de Helio en la planta superior (requiere Zahorí)."
+        },
+        {
           "area": "Calle Victoria (Planta Baja)",
-          "detail": "En la zona rocosa con Fuerza y Golpe Roca."
+          "detail": "En la zona rocosa con agua (requiere Surf, Fuerza y Golpe Roca)."
         },
         {
-          "area": "Frente de Batalla de Sinnoh",
+          "area": "Ruta 224",
+          "detail": "En un pequeño islote al sur surfeando desde la costa este."
+        },
+        {
+          "area": "Frente de Batalla",
           "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
-        },
-        {
-          "area": "Sneasel salvaje",
-          "detail": "5% de probabilidad de llevarla equipada (Rutas 216 y 217)."
         }
       ],
       "category": "trade"
@@ -12890,12 +12918,16 @@
       "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 214.",
       "locations": [
         {
-          "area": "Frente de Batalla de Sinnoh",
-          "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
+          "area": "Ruta 214",
+          "detail": "Objeto oculto en la hierba alta en la esquina inferior derecha de la valla (requiere Zahorí)."
         },
         {
-          "area": "Ruta 214",
-          "detail": "Objeto oculto con Zahorí en el sector sur junto a las vallas."
+          "area": "Ruta 225",
+          "detail": "En una elevación rocosa en el sector sur de la ruta (requiere Treparrocas)."
+        },
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
         }
       ],
       "category": "trade"
@@ -13322,12 +13354,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 225",
-          "detail": "En un saliente rocoso accesible con Treparrocas."
+          "area": "Ruta 212",
+          "detail": "Objeto oculto en el fango de la zona pantanosa cerca de Ciudad Pradera (requiere Zahorí)."
         },
         {
           "area": "Monte Corona (Sótano B1)",
           "detail": "Acceso desde Ruta 207 cruzando el estanque con Surf."
+        },
+        {
+          "area": "Ruta 225",
+          "detail": "En un saliente rocoso accesible con Treparrocas."
         },
         {
           "area": "Habilidad Recogida",
@@ -13584,11 +13620,15 @@
       "locations": [
         {
           "area": "Ruinas Sosiego",
-          "detail": "En la cámara interior de las ruinas."
+          "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
         },
         {
           "area": "Ruta 213",
           "detail": "En un banco de arena poco profundo navegando con Surf."
+        },
+        {
+          "area": "Ruta 230",
+          "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
         },
         {
           "area": "Subsuelo de Sinnoh",
@@ -13666,7 +13706,15 @@
       "locations": [
         {
           "area": "Ciudad Marina",
-          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+        },
+        {
+          "area": "Ruta 229",
+          "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
         },
         {
           "area": "Subsuelo de Sinnoh",
@@ -13744,7 +13792,15 @@
       "locations": [
         {
           "area": "Forja Fuego",
-          "detail": "En el suelo entre las baldosas giratorias de la fábrica."
+          "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+        },
+        {
+          "area": "Montaña Dura",
+          "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
         },
         {
           "area": "Subsuelo de Sinnoh",
@@ -14141,13 +14197,17 @@
     "flavor_text": "Transforma la bondad y alegría de los demás en felicidad y la almacena en su cascarón.",
     "obtaining_info": {
       "type": "gift",
-      "badge_label": "Huevo Regalo",
+      "badge_label": "Huevo / Radar",
       "badge_color": "sky",
-      "summary": "Huevo entregado por Cintia en el acceso oeste de Ciudad Vetusta tras derrotar a Júpiter en el Edificio Galaxia (también obtenible mediante crianza).",
+      "summary": "Huevo entregado por Cintia en el acceso oeste de Ciudad Vetusta tras derrotar a Júpiter en el Edificio Galaxia, o salvaje en la Ruta 230 usando el Poké Radar (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Vetusta (Acceso Oeste)",
           "method": "Huevo entregado por Cintia"
+        },
+        {
+          "area": "Ruta 230 (Ruta Marítima)",
+          "method": "Poké Radar (Hierba alta)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -14281,12 +14341,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Isla Hierro (Nivel 3)",
-          "detail": "En la sala final antes del ascensor de salida."
+          "area": "Isla Hierro (Sótano B3)",
+          "detail": "En la sala final antes del ascensor de salida de la mina."
+        },
+        {
+          "area": "Ruta 210 (Sector Norte)",
+          "detail": "Objeto oculto en un saliente elevado al sur de la ruta (requiere Treparrocas)."
         },
         {
           "area": "Ruta 228",
-          "detail": "Cerca de la casa del tutor de movimientos combinados."
+          "detail": "Cerca de la casa del tutor de movimientos combinados de los iniciales."
         },
         {
           "area": "Habilidad Recogida",
@@ -14651,27 +14715,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -14787,27 +14851,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -14923,27 +14987,27 @@
       "locations": [
         {
           "area": "Gran Pantano (Zona 1)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 2)",
-          "method": "Salvaje"
+          "method": "Salvaje, Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 3)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 4)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 5)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Gran Pantano (Zona 6)",
-          "method": "Salvaje"
+          "method": "Zona diaria del Gran Pantano (Prismáticos)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -15177,12 +15241,12 @@
       "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 228",
-          "detail": "En un saliente con rampa de arena (requiere Bici Carrera y Golpe Roca)."
+          "area": "Isla Hierro (Sótano B1)",
+          "detail": "En la plataforma elevada de la cámara subterránea antes de unirse a Quinoa."
         },
         {
-          "area": "Isla Hierro (Sótano B2)",
-          "detail": "En la cámara de la derecha antes de reunirse con Quinoa."
+          "area": "Ruta 228",
+          "detail": "En un foso de arena al este de Entrenador Guay José (requiere Bici Carrera y Golpe Roca)."
         }
       ],
       "category": "trade"
@@ -15328,7 +15392,7 @@
         },
         {
           "area": "Cueva Retorno (Pilar 1)",
-          "method": "Poké Radar, Salvaje"
+          "method": "Salvaje"
         },
         {
           "area": "Cueva Retorno (Pilar 2)",
@@ -15420,16 +15484,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Torre Perdida (Planta 5)",
-          "detail": "En la planta superior cerca de las ancianas."
+          "area": "Orilla Agudeza",
+          "detail": "En la ladera sureste del acantilado con vistas al lago (requiere Treparrocas)."
         },
         {
           "area": "Ruta 229",
-          "detail": "En la hierba espesa al sur de la Zona de Descanso."
+          "detail": "Al este de la ruta tras un arbusto que requiere Corte."
         },
         {
-          "area": "Dusclops y Dusknoir salvajes",
-          "detail": "5% de probabilidad de llevarla equipada."
+          "area": "Cueva Retorno",
+          "detail": "En la cámara final alcanzando los 3 pilares en menos de 4 salas."
         }
       ],
       "category": "trade"
@@ -15561,8 +15625,16 @@
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Ciudad Vetusta",
-          "detail": "Entregado por el Profesor Oak en su casa de campo tras registrar la Pokédex Nacional."
+          "area": "Edificio Galaxia de Ciudad Vetusta",
+          "detail": "En la Planta 4 (4F) a la derecha de la Comandante Júpiter tras derrotarla."
+        },
+        {
+          "area": "Ruta 224",
+          "detail": "En el suelo dentro de la gran parcela de hierba al noroeste del Entrenador Guay Rubén (exclusivo de Platino)."
+        },
+        {
+          "area": "Ciudad Vetusta (Casa del Profesor Oak)",
+          "detail": "Entregado por el Profesor Oak tras registrar la Pokédex Nacional y haberlo visitado previamente en el Parque Compi."
         }
       ],
       "category": "trade"
@@ -15634,6 +15706,10 @@
       "price": null,
       "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
       "locations": [
+        {
+          "area": "Edificio Galaxia de Ciudad Rocavelo",
+          "detail": "En la planta baja (1F) tras abrir la puerta cerrada con la Llave del Almacén."
+        },
         {
           "area": "Ruta 225",
           "detail": "En una pequeña isla fluvial navegando con Surf (requiere Corte)."
@@ -15776,12 +15852,16 @@
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Isla Hierro",
-          "detail": "Regalo de Acerón en su casa de la isla tras derrotar a los reclutas Galaxia y completar la Liga."
+          "area": "Ruinas Hierro (Isla Hierro)",
+          "detail": "En el suelo como Poké Ball en el interior de la cámara de Registeel (exclusivo de Platino; disponible si no llevas al Regigigas de evento en el equipo)."
         },
         {
-          "area": "Magnemite, Magneton, Steelix y Bronzor",
-          "detail": "5% de probabilidad de llevarlo equipado en estado salvaje."
+          "area": "Isla Hierro (Casa de Acerón)",
+          "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix, Bronzor y Bronzong."
         }
       ],
       "category": "trade"
@@ -15972,11 +16052,11 @@
       "locations": [
         {
           "area": "Valle Eólico",
-          "detail": "Detrás de la central eólica navegando por el río con Surf."
+          "detail": "Detrás de la central eólica navegando hacia el norte por el río con Surf."
         },
         {
-          "area": "Elekid salvaje",
-          "detail": "5% de probabilidad de llevarlo equipado (Inserción Dual GBA Rojo Fuego)."
+          "area": "Pokémon salvajes (Electabuzz)",
+          "detail": "5% de probabilidad de llevarlo equipado en estado salvaje (Ruta 222)."
         }
       ],
       "category": "trade"
@@ -16166,12 +16246,12 @@
       "availability_note": "Exclusivo de Pokémon Perla. En Diamante requiere intercambio.",
       "locations": [
         {
-          "area": "Forja Fuego",
-          "detail": "En el sector exterior navegando hacia el sur con Surf."
+          "area": "Ruta 214",
+          "detail": "En una Poké Ball entre las rocas cerca de la Cueva del Ruinamaníaco (requiere Golpe Roca)."
         },
         {
-          "area": "Magby salvaje",
-          "detail": "5% de probabilidad de llevarlo equipado (Inserción Dual GBA Verde Hoja)."
+          "area": "Pokémon salvajes (Magmar)",
+          "detail": "5% de probabilidad de llevarlo equipado en estado salvaje (Forja Fuego)."
         }
       ],
       "category": "trade"
@@ -16282,16 +16362,11 @@
     "cry_url": "/media/pokemon/cries/legacy/221.ogg",
     "flavor_text": "Su tupido pelaje le protege del frío. Sus colmillos de hielo se endurecen cuando nieva.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 217.",
-      "locations": [
-        {
-          "area": "Ruta 217",
-          "method": "Poké Radar"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "indigo",
+      "summary": "Evoluciona de Swinub (Nivel 33)",
+      "locations": [],
       "evolution_info": {
         "from": "Swinub",
         "text": "Evoluciona de Swinub (Nivel 33)",
@@ -16554,12 +16629,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 225",
-          "detail": "En un saliente rocoso accesible con Treparrocas."
+          "area": "Ruta 212",
+          "detail": "Objeto oculto en el fango de la zona pantanosa cerca de Ciudad Pradera (requiere Zahorí)."
         },
         {
           "area": "Monte Corona (Sótano B1)",
           "detail": "Acceso desde Ruta 207 cruzando el estanque con Surf."
+        },
+        {
+          "area": "Ruta 225",
+          "detail": "En un saliente rocoso accesible con Treparrocas."
         },
         {
           "area": "Habilidad Recogida",

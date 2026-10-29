@@ -3833,13 +3833,6 @@
       "conditions": []
     },
     {
-      "area_raw": "oreburgh-mine-1f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
       "area_raw": "oreburgh-mine-b1f",
       "method_raw": "walk",
       "conditions": []
@@ -3905,13 +3898,6 @@
       "conditions": []
     },
     {
-      "area_raw": "oreburgh-mine-b1f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
       "area_raw": "mt-coronet-1f-route-207",
       "method_raw": "walk",
       "conditions": []
@@ -4001,13 +3987,6 @@
       "method_raw": "walk",
       "conditions": [
         "slot2-firered"
-      ]
-    },
-    {
-      "area_raw": "wayward-cave-1f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
       ]
     },
     {
@@ -6137,13 +6116,6 @@
       "conditions": []
     },
     {
-      "area_raw": "lost-tower-3f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
       "area_raw": "lost-tower-4f",
       "method_raw": "walk",
       "conditions": []
@@ -6232,13 +6204,6 @@
       "conditions": []
     },
     {
-      "area_raw": "lost-tower-4f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
       "area_raw": "lost-tower-5f",
       "method_raw": "walk",
       "conditions": []
@@ -6320,13 +6285,6 @@
       "area_raw": "lost-tower-5f",
       "method_raw": "walk",
       "conditions": []
-    },
-    {
-      "area_raw": "lost-tower-5f",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
     }
   ],
   "93": [
@@ -6694,9 +6652,7 @@
     {
       "area_raw": "iron-island-b3f",
       "method_raw": "walk",
-      "conditions": [
-        "swarm-yes"
-      ]
+      "conditions": []
     }
   ],
   "96": [
@@ -14955,36 +14911,7 @@
       "conditions": []
     }
   ],
-  "221": [
-    {
-      "area_raw": "sinnoh-route-217-area",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
-      "area_raw": "sinnoh-route-217-area",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
-      "area_raw": "sinnoh-route-217-area",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
-      "area_raw": "sinnoh-route-217-area",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    }
-  ],
+  "221": [],
   "222": [
     {
       "area_raw": "sinnoh-sea-route-230-area",
@@ -19668,13 +19595,6 @@
       ]
     },
     {
-      "area_raw": "turnback-cave-pillar-1",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
-      ]
-    },
-    {
       "area_raw": "turnback-cave-pillar-2",
       "method_raw": "walk",
       "conditions": [
@@ -19780,13 +19700,6 @@
       "method_raw": "walk",
       "conditions": [
         "slot2-leafgreen"
-      ]
-    },
-    {
-      "area_raw": "turnback-cave-before-pillar-1",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
       ]
     },
     {
@@ -24184,13 +24097,6 @@
       "method_raw": "walk",
       "conditions": [
         "slot2-leafgreen"
-      ]
-    },
-    {
-      "area_raw": "turnback-cave-between-pillars-1-and-2",
-      "method_raw": "walk",
-      "conditions": [
-        "radar-on"
       ]
     },
     {
