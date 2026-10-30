@@ -2647,28 +2647,42 @@ class PokemonHeartGoldGen4Tests(TestCase):
         from tracker.exclusives import VERSION_EXCLUSIVES_CATALOG, get_version_exclusives_context
 
         exclusives_hg = VERSION_EXCLUSIVES_CATALOG.get("heartgold", [])
-        self.assertEqual(len(exclusives_hg), 22)
+        self.assertEqual(len(exclusives_hg), 21)
         self.assertIn(58, exclusives_hg)   # Growlithe
-        self.assertIn(250, exclusives_hg)  # Ho-Oh
+        self.assertIn(380, exclusives_hg)  # Latias (Exclusivo errante en HeartGold)
         self.assertIn(382, exclusives_hg)  # Kyogre
+        self.assertNotIn(381, exclusives_hg) # Latios (SoulSilver)
         self.assertNotIn(37, exclusives_hg) # Vulpix (SoulSilver)
-        self.assertNotIn(249, exclusives_hg) # Lugia (SoulSilver)
+        self.assertNotIn(250, exclusives_hg) # Ho-Oh no es exclusivo (capturable en ambos)
+        self.assertNotIn(249, exclusives_hg) # Lugia no es exclusivo (capturable en ambos)
 
-        ctx = get_version_exclusives_context(self.game, set(), set())
+        ctx = get_version_exclusives_context(self.game, self.pk_johto, set())
         self.assertTrue(ctx["has_exclusives"])
         self.assertEqual(ctx["counterpart_slug"], "soulsilver")
         self.assertEqual(ctx["counterpart_theme"], "silver")
-        self.assertEqual(ctx["own_total"], 22)
+        self.assertEqual(ctx["counterpart_total"], 19)
+        self.assertEqual(ctx["own_total"], 21)
+        # Verificar presencia de exclusivos de SoulSilver en la contraparte
+        counterpart_nums = [p["national_number"] for p in ctx["counterpart_list"]]
+        self.assertIn(37, counterpart_nums)   # Vulpix
+        self.assertIn(381, counterpart_nums)  # Latios (SoulSilver)
+        self.assertIn(383, counterpart_nums)  # Groudon
+        self.assertNotIn(380, counterpart_nums) # Latias es de HeartGold
+        self.assertNotIn(249, counterpart_nums) # Lugia no es exclusivo
 
     def test_heartgold_transfers(self):
         from tracker.exclusives import VERSION_TRANSFERS_CATALOG, VERSION_TRANSFERS_META
 
         transfers_hg = VERSION_TRANSFERS_CATALOG.get("heartgold", [])
-        self.assertEqual(len(transfers_hg), 35)
+        self.assertEqual(len(transfers_hg), 42)
         self.assertIn(387, transfers_hg)  # Turtwig
         self.assertIn(408, transfers_hg)  # Cranidos
         self.assertIn(410, transfers_hg)  # Shieldon
+        self.assertIn(425, transfers_hg)  # Drifloon
+        self.assertIn(431, transfers_hg)  # Glameow
+        self.assertIn(434, transfers_hg)  # Stunky
         self.assertIn(470, transfers_hg)  # Leafeon
+        self.assertIn(479, transfers_hg)  # Rotom
         self.assertIn(493, transfers_hg)  # Arceus
 
         meta = VERSION_TRANSFERS_META.get("heartgold", {})

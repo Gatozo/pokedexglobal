@@ -181,7 +181,63 @@ JOHTO_KANTO_AREA_NAMES = {
     'whirl-islands-1f': 'Islas Remolino (P1)',
     'whirl-islands-b1f': 'Islas Remolino (Sótano B1)',
     'whirl-islands-b2f': 'Islas Remolino (Sótano B2)',
-    'whirl-islands-b3f': 'Islas Remolino (Sótano B3 - Lugia)',
+        'cianwood-city-kirks-house': 'Ciudad Orquídea (Casa de Kirk)',
+    'cianwood-city-pokemon-center': 'Ciudad Orquídea (Centro Pokémon)',
+    'dark-cave-violet-city-entrance': 'Cueva Oscura (Entrada de Ciudad Malva)',
+    'embedded-tower-kyogre-room': 'Torre Oculta (Sala de Kyogre)',
+    'embedded-tower-rayquaza-room': 'Torre Oculta (Sala de Rayquaza)',
+    'goldenrod-city-bills-house': 'Ciudad Trigal (Casa de Bill)',
+    'goldenrod-city-department-store-5f': 'Centro Comercial de Ciudad Trigal (P5)',
+    'goldenrod-city-game-corner': 'Casino de Ciudad Trigal',
+    'goldenrod-city-north-gate': 'Ciudad Trigal (Paso Norte)',
+    'ice-path-b2f': 'Ruta de Hielo (Sótano B2)',
+    'johto-pokemart-area': 'Tienda Pokémon de Johto',
+    'johto-route-47-cave-gate': 'Ruta 47 (Entrada de la Cueva)',
+    'johto-route-47-inside-cave': 'Ruta 47 (Interior de la Cueva)',
+    'johto-safari-zone-desert': 'Zona Safari (Desierto)',
+    'johto-safari-zone-forest': 'Zona Safari (Bosque)',
+    'johto-safari-zone-marshland': 'Zona Safari (Marisma)',
+    'johto-safari-zone-meadow': 'Zona Safari (Prado)',
+    'johto-safari-zone-mountain': 'Zona Safari (Montaña)',
+    'johto-safari-zone-peak': 'Zona Safari (Pico)',
+    'johto-safari-zone-plains': 'Zona Safari (Llanura)',
+    'johto-safari-zone-rocky-beach': 'Zona Safari (Playa Rocosa)',
+    'johto-safari-zone-savannah': 'Zona Safari (Sabana)',
+    'johto-safari-zone-swamp': 'Zona Safari (Pantano)',
+    'johto-safari-zone-wasteland': 'Zona Safari (Terreno Baldío)',
+    'johto-safari-zone-wetland': 'Zona Safari (Humedal)',
+    'kanto-power-plant-area': 'Central de Energía de Kanto',
+    'kanto-route-2-north-towards-pewter-city': 'Ruta 2 (Norte hacia Ciudad Plateada)',
+    'kanto-route-2-south-towards-viridian-city': 'Ruta 2 (Sur hacia Ciudad Verde)',
+    'kanto-sea-route-21-area': 'Ruta 21 (Ruta Marítima de Kanto)',
+    'kanto-victory-road-1-1f': 'Calle Victoria de Kanto (P1)',
+    'kanto-victory-road-1-2f': 'Calle Victoria de Kanto (P2)',
+    'kanto-victory-road-1-3f': 'Calle Victoria de Kanto (P3)',
+    'mt-moon-mt-moon-square': 'Plaza del Monte Moon',
+    'mt-mortar-1f': 'Monte Mortero (P1)',
+    'mt-mortar-lower-cave': 'Monte Mortero (Cueva Inferior)',
+    'mt-mortar-upper-cave': 'Monte Mortero (Cueva Superior)',
+    'mt-silver-1f-top': 'Monte Plateado (P1 Superior)',
+    'mt-silver-4f': 'Monte Plateado (P4)',
+    'mt-silver-outside': 'Monte Plateado (Exterior)',
+    'mt-silver-top': 'Cima del Monte Plateado',
+    'olivine-city-gym': 'Gimnasio de Ciudad Olivo',
+    'pewter-city-pewter-museum-of-science': 'Museo de la Ciencia de Ciudad Plateada',
+    'ruins-of-alph-interior-a': 'Ruins Alfa (Cámara A)',
+    'ruins-of-alph-interior-b': 'Ruins Alfa (Cámara B)',
+    'ruins-of-alph-interior-c': 'Ruins Alfa (Cámara C)',
+    'ruins-of-alph-interior-d': 'Ruins Alfa (Cámara D)',
+    'ruins-of-alph-outside': 'Ruins Alfa (Exterior)',
+    'saffron-city-magnet-train-station': 'Estación del Magnetotrón de Ciudad Azafrán',
+    'saffron-city-silph-co': 'Ciudad Azafrán (Silph S.A.)',
+    'team-rocket-hq-area': 'Guarida del Team Rocket (Ciudad Caoba)',
+    'unknown-all-bugs-area': 'Parque Nacional (Concurso de Captura de Bichos)',
+    'unknown-all-poliwag-area': 'Ruta 30 / Ruta 31 (Encuentro especial)',
+    'unknown-all-rattata-area': 'Ruta 29 / Ruta 30 (Llamada del Pokégear)',
+    'vermilion-city-ss-anne-dock': 'Muelle del S.S. Aqua (Ciudad Carmín)',
+    'violet-city-poke-mart': 'Ciudad Malva (Tienda Pokémon)',
+    'violet-city-pokemon-center': 'Ciudad Malva (Centro Pokémon)',
+    'whirl-islands-b3f': 'Islas Remolino (Sótano B3)',
 }
 
 BABY_NAMES = {
@@ -370,13 +426,31 @@ SPECIAL_OBTAINING = {
             {'area': 'Ruta 47 (Torre Oculta)', 'method': 'Encuentro legendario a nivel 50 (Esfera Azul)'}
         ]
     },
-    381: {
+    380: {
         'type': 'legendary',
         'badge_label': 'Errante Exclusivo',
         'badge_color': 'blue',
         'summary': 'Pokémon errante exclusivo de HeartGold por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Azafrán.',
         'locations': [
             {'area': 'Rutas de Kanto (Errante)', 'method': 'Pokémon errante tras evento de Máximo Peñas'}
+        ]
+    },
+    381: {
+        'type': 'event',
+        'badge_label': 'Evento Especial',
+        'badge_color': 'indigo',
+        'summary': 'Encuentro estático al Nivel 40 en Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.',
+        'locations': [
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Evento del Misticristal / Intercambio con SoulSilver'}
+        ]
+    },
+    384: {
+        'type': 'legendary',
+        'badge_label': 'Legendario Especial',
+        'badge_color': 'emerald',
+        'summary': 'Encuentro en la Torre Oculta al Nivel 50 llevando la Esfera Verde (obtenida del Prof. Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).',
+        'locations': [
+            {'area': 'Torre Oculta (Ruta 47)', 'method': 'Encuentro fijo a nivel 50 con Esfera Verde'}
         ]
     },
     243: {

@@ -592,7 +592,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -608,7 +608,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -616,7 +616,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -672,7 +672,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 12 zonas (ej: Ruta 37, Ruta 43, Kanto Route 2 South Towards Viridian City).",
+      "summary": "Salvaje en 12 zonas (ej: Ruta 37, Ruta 43, Ruta 2 (Sur hacia Ciudad Verde)).",
       "locations": [
         {
           "area": "Ruta 37",
@@ -683,7 +683,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -707,7 +707,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -715,11 +715,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -902,7 +902,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Goldenrod City North Gate",
+          "area": "Ciudad Trigal (Paso Norte)",
           "method": "Gift"
         },
         {
@@ -910,7 +910,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -1001,15 +1001,15 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Desert",
+          "area": "Zona Safari (Desierto)",
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -1183,7 +1183,7 @@
           "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
@@ -1223,7 +1223,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -1235,7 +1235,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
@@ -1318,7 +1318,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -1338,7 +1338,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -1496,11 +1496,11 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Lower Cave",
+          "area": "Monte Mortero (Cueva Inferior)",
           "method": "Hierba alta"
         },
         {
@@ -1516,7 +1516,7 @@
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Unknown All Rattata Area",
+          "area": "Ruta 29 / Ruta 30 (Llamada del Pokégear)",
           "method": "Hierba alta"
         },
         {
@@ -1623,7 +1623,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
@@ -1659,15 +1659,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -1726,7 +1726,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 29, Ruta 1, Johto Safari Zone Swamp) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 29, Ruta 1, Zona Safari (Pantano)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 29",
@@ -1737,11 +1737,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -1797,18 +1797,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 1, Johto Safari Zone Swamp, Johto Safari Zone Wetland.",
+      "summary": "Salvaje en: Ruta 1, Zona Safari (Pantano), Zona Safari (Humedal).",
       "locations": [
         {
           "area": "Ruta 1",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta"
         }
       ],
@@ -1926,14 +1926,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Bosque Verde, Saffron City Magnet Train Station.",
+      "summary": "Salvaje en: Bosque Verde, Estación del Magnetotrón de Ciudad Azafrán.",
       "locations": [
         {
           "area": "Bosque Verde",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Saffron City Magnet Train Station",
+          "area": "Estación del Magnetotrón de Ciudad Azafrán",
           "method": "Npc trade"
         }
       ],
@@ -2090,15 +2090,15 @@
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Unknown All Bugs Area",
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -2181,11 +2181,11 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Mañana)"
         },
         {
@@ -2263,11 +2263,11 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Mañana)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -2716,7 +2716,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Golpe Cabeza en árboles, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -2736,7 +2736,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -2744,7 +2744,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Golpe Cabeza en árboles, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -2808,14 +2808,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Kanto Route 2 South Towards Viridian City, Kanto Route 2 North Towards Pewter City, Bosque Verde.",
+      "summary": "Salvaje en: Ruta 2 (Sur hacia Ciudad Verde), Ruta 2 (Norte hacia Ciudad Plateada), Bosque Verde.",
       "locations": [
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -2878,10 +2878,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 23 zonas (ej: Ruins Of Alph Outside, Cueva Unión (P1), Cueva Unión (Sótano B1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 23 zonas (ej: Ruins Alfa (Exterior), Cueva Unión (P1), Cueva Unión (Sótano B1)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Golpe Roca"
         },
         {
@@ -2897,15 +2897,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Lower Cave",
+          "area": "Monte Mortero (Cueva Inferior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
@@ -2921,7 +2921,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -2929,7 +2929,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta"
         },
         {
@@ -2949,7 +2949,7 @@
           "method": "Golpe Roca, Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Golpe Roca"
         },
         {
@@ -2961,15 +2961,15 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Team Rocket Hq Area",
+          "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Static"
         },
         {
@@ -3025,10 +3025,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Mt Mortar Upper Cave, Ruta 45, Cueva Oscura (Entrada Ciudad Endrino)).",
+      "summary": "Salvaje en 10 zonas (ej: Monte Mortero (Cueva Superior), Ruta 45, Cueva Oscura (Entrada Ciudad Endrino)).",
       "locations": [
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
@@ -3040,7 +3040,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -3048,15 +3048,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 1F",
+          "area": "Calle Victoria de Kanto (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 2F",
+          "area": "Calle Victoria de Kanto (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -3123,10 +3123,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Peak.",
+      "summary": "Salvaje en Zona Safari (Pico).",
       "locations": [
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -3240,7 +3240,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Islas Remolino (Sótano B3 - Lugia)",
+          "area": "Islas Remolino (Sótano B3)",
           "method": "Hierba alta"
         },
         {
@@ -3248,11 +3248,11 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Lower Cave",
+          "area": "Monte Mortero (Cueva Inferior)",
           "method": "Hierba alta"
         },
         {
@@ -3268,7 +3268,7 @@
           "method": "Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Ice Path B2F",
+          "area": "Ruta de Hielo (Sótano B2)",
           "method": "Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -3276,7 +3276,7 @@
           "method": "Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Hierba alta"
         },
         {
@@ -3300,7 +3300,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -3332,15 +3332,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -3419,11 +3419,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Islas Remolino (Sótano B3 - Lugia)",
+          "area": "Islas Remolino (Sótano B3)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
@@ -3435,7 +3435,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ice Path B2F",
+          "area": "Ruta de Hielo (Sótano B2)",
           "method": "Hierba alta"
         },
         {
@@ -3471,15 +3471,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
@@ -3495,11 +3495,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 1F",
+          "area": "Calle Victoria de Kanto (P1)",
           "method": "Hierba alta"
         },
         {
@@ -3507,11 +3507,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 2F",
+          "area": "Calle Victoria de Kanto (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Hierba alta"
         },
         {
@@ -3527,11 +3527,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -3702,7 +3702,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Moon (P1), Monte Moon (P2), Johto Safari Zone Meadow.",
+      "summary": "Salvaje en: Monte Moon (P1), Monte Moon (P2), Zona Safari (Prado).",
       "locations": [
         {
           "area": "Monte Moon (P1)",
@@ -3713,7 +3713,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -3906,7 +3906,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 3, Ruta 4, Johto Safari Zone Meadow).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 3, Ruta 4, Zona Safari (Prado)).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -3917,11 +3917,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -4194,7 +4194,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Desert",
+          "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -4269,7 +4269,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Desert",
+          "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -4328,14 +4328,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Johto Safari Zone Marshland, Goldenrod City Game Corner (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Marisma), Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Goldenrod City Game Corner",
+          "area": "Casino de Ciudad Trigal",
           "method": "Gift"
         },
         {
@@ -4391,10 +4391,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Marshland.",
+      "summary": "Salvaje en Zona Safari (Marisma).",
       "locations": [
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -4453,10 +4453,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Dark Cave Violet City Entrance (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Oscura (Entrada de Ciudad Malva) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -4527,11 +4527,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Violet City Pokemon Center",
+          "area": "Ciudad Malva (Centro Pokémon)",
           "method": "Gift egg"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta"
         },
         {
@@ -4710,14 +4710,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Ruta 32, Ruins Of Alph Outside, Cueva Unión (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 10 zonas (ej: Ruta 32, Ruins Alfa (Exterior), Cueva Unión (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 32",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Surf"
         },
         {
@@ -4729,27 +4729,27 @@
           "method": "Surf"
         },
         {
-          "area": "Johto Route 47 Cave Gate",
+          "area": "Ruta 47 (Entrada de la Cueva)",
           "method": "Surf"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Violet City Pokemon Center",
+          "area": "Ciudad Malva (Centro Pokémon)",
           "method": "Gift egg"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta, Hierba alta (Noche), Surf"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
@@ -4805,14 +4805,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Ruta 32, Ruins Of Alph Outside, Cueva Unión (P1)).",
+      "summary": "Salvaje en 21 zonas (ej: Ruta 32, Ruins Alfa (Exterior), Cueva Unión (P1)).",
       "locations": [
         {
           "area": "Ruta 32",
           "method": "Surf"
         },
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Surf"
         },
         {
@@ -4832,19 +4832,19 @@
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Route 47 Cave Gate",
+          "area": "Ruta 47 (Entrada de la Cueva)",
           "method": "Surf"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -4852,7 +4852,7 @@
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -4884,11 +4884,11 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta (Noche), Surf"
         }
       ],
@@ -4994,7 +4994,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -5050,14 +5050,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 8, Johto Safari Zone Forest.",
+      "summary": "Salvaje en: Ruta 8, Zona Safari (Bosque).",
       "locations": [
         {
           "area": "Ruta 8",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -5173,22 +5173,22 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruins Of Alph Interior A, Ruins Of Alph Interior B, Ruins Of Alph Interior C).",
+      "summary": "Salvaje en 4 zonas (ej: Ruins Alfa (Cámara A), Ruins Alfa (Cámara B), Ruins Alfa (Cámara C)).",
       "locations": [
         {
-          "area": "Ruins Of Alph Interior A",
+          "area": "Ruins Alfa (Cámara A)",
           "method": "Hierba alta"
         },
         {
-          "area": "Ruins Of Alph Interior B",
+          "area": "Ruins Alfa (Cámara B)",
           "method": "Hierba alta"
         },
         {
-          "area": "Ruins Of Alph Interior C",
+          "area": "Ruins Alfa (Cámara C)",
           "method": "Hierba alta"
         },
         {
-          "area": "Ruins Of Alph Interior D",
+          "area": "Ruins Alfa (Cámara D)",
           "method": "Hierba alta"
         }
       ]
@@ -5259,7 +5259,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta"
         },
         {
@@ -5275,19 +5275,19 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 1F",
+          "area": "Calle Victoria de Kanto (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 2F",
+          "area": "Calle Victoria de Kanto (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -5343,18 +5343,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Plateado (P2), Johto Route 47 Inside Cave, Olivine City Gym.",
+      "summary": "Salvaje en: Monte Plateado (P2), Ruta 47 (Interior de la Cueva), Gimnasio de Ciudad Olivo.",
       "locations": [
         {
           "area": "Monte Plateado (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta"
         },
         {
-          "area": "Olivine City Gym",
+          "area": "Gimnasio de Ciudad Olivo",
           "method": "Npc trade"
         }
       ],
@@ -5462,11 +5462,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta"
         },
         {
@@ -5537,7 +5537,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         }
       ],
@@ -5706,7 +5706,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -5762,14 +5762,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 14, Johto Safari Zone Meadow.",
+      "summary": "Salvaje en: Ruta 14, Zona Safari (Prado).",
       "locations": [
         {
           "area": "Ruta 14",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Surf"
         }
       ],
@@ -5828,10 +5828,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Marshland.",
+      "summary": "Salvaje en Zona Safari (Marisma).",
       "locations": [
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta, Surf"
         }
       ],
@@ -5909,11 +5909,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -5984,7 +5984,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         }
       ],
@@ -6058,7 +6058,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6090,19 +6090,19 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Moon Mt Moon Square",
+          "area": "Plaza del Monte Moon",
           "method": "Pesca (Caña Buena), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Unknown All Poliwag Area",
+          "area": "Ruta 30 / Ruta 31 (Encuentro especial)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Johto Route 47 Cave Gate",
+          "area": "Ruta 47 (Entrada de la Cueva)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6134,19 +6134,19 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6225,7 +6225,7 @@
           "method": "Surf"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Surf"
         },
         {
@@ -6253,19 +6253,19 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         }
       ],
@@ -6509,7 +6509,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6577,11 +6577,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6613,7 +6613,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6625,11 +6625,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Mt Moon Mt Moon Square",
+          "area": "Plaza del Monte Moon",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Unknown All Poliwag Area",
+          "area": "Ruta 30 / Ruta 31 (Encuentro especial)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6641,19 +6641,19 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Route 47 Cave Gate",
+          "area": "Ruta 47 (Entrada de la Cueva)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6661,11 +6661,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Unknown All Rattata Area",
+          "area": "Ruta 29 / Ruta 30 (Llamada del Pokégear)",
           "method": "Surf"
         },
         {
@@ -6737,7 +6737,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
@@ -6769,27 +6769,27 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Pesca (Caña Vieja)"
         },
         {
@@ -6930,11 +6930,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6942,7 +6942,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6954,11 +6954,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6966,11 +6966,11 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Unknown All Rattata Area",
+          "area": "Ruta 29 / Ruta 30 (Llamada del Pokégear)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -7014,11 +7014,11 @@
           "method": "Pesca (Caña Buena)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -7097,11 +7097,11 @@
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
@@ -7109,7 +7109,7 @@
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Dark Cave Violet City Entrance",
+          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
           "method": "Pesca (Supercaña)"
         },
         {
@@ -7121,11 +7121,11 @@
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
@@ -7133,7 +7133,7 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Pesca (Supercaña), Surf"
         },
         {
@@ -7165,11 +7165,11 @@
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -7243,7 +7243,7 @@
           "method": "Hierba alta, Surf"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -7299,7 +7299,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Pozo Slowpoke (Sótano B1), Islas Espuma (Sótano B4 - Articuno), Johto Safari Zone Peak).",
+      "summary": "Salvaje en 4 zonas (ej: Pozo Slowpoke (Sótano B1), Islas Espuma (Sótano B4 - Articuno), Zona Safari (Pico)).",
       "locations": [
         {
           "area": "Pozo Slowpoke (Sótano B1)",
@@ -7310,11 +7310,11 @@
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -7471,7 +7471,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7542,7 +7542,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta, Hierba alta (Noche)"
         }
       ],
@@ -7774,7 +7774,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7830,14 +7830,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 11, Johto Safari Zone Swamp.",
+      "summary": "Salvaje en: Ruta 11, Zona Safari (Pantano).",
       "locations": [
         {
           "area": "Ruta 11",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -7927,11 +7927,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Goldenrod City Game Corner",
+          "area": "Casino de Ciudad Trigal",
           "method": "Gift"
         },
         {
@@ -8141,7 +8141,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -8304,7 +8304,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 South Towards Viridian City",
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -8336,7 +8336,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Route 2 North Towards Pewter City",
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -8457,7 +8457,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 35, Ruta 36, Johto Safari Zone Savannah (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 35, Ruta 36, Zona Safari (Sabana) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -8468,7 +8468,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -8539,7 +8539,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -8755,7 +8755,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -9009,7 +9009,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Parque Nacional, Ruta 24, Johto Safari Zone Meadow (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Parque Nacional, Ruta 24, Zona Safari (Prado) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Nacional",
@@ -9020,7 +9020,7 @@
           "method": "Hierba alta (Día)"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día)"
         },
         {
@@ -9462,7 +9462,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -9886,7 +9886,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -9974,7 +9974,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Torre Quemada (P1), Torre Quemada (Sótano B1), Johto Safari Zone Marshland) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Torre Quemada (P1), Torre Quemada (Sótano B1), Zona Safari (Marisma)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Torre Quemada (P1)",
@@ -9985,11 +9985,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Team Rocket Hq Area",
+          "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Static"
         },
         {
@@ -10045,10 +10045,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Marshland.",
+      "summary": "Salvaje en Zona Safari (Marisma).",
       "locations": [
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -10126,7 +10126,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Surf"
         },
         {
@@ -10201,7 +10201,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta, Surf"
         }
       ],
@@ -10279,11 +10279,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -10354,15 +10354,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Power Plant Area",
+          "area": "Central de Energía de Kanto",
           "method": "Npc trade"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -10421,7 +10421,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ciudad Olivo, Ruta 10, Johto Safari Zone Swamp) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ciudad Olivo, Ruta 10, Zona Safari (Pantano)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Olivo",
@@ -10432,11 +10432,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         },
         {
-          "area": "Team Rocket Hq Area",
+          "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Static"
         },
         {
@@ -10507,7 +10507,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Team Rocket Hq Area",
+          "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Static"
         }
       ],
@@ -10589,7 +10589,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -11118,7 +11118,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 36, Ruta 37, Johto Safari Zone Plains (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 36, Ruta 37, Zona Safari (Llanura) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 36",
@@ -11129,7 +11129,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -11185,14 +11185,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Mt Mortar 1F, Johto Safari Zone Meadow (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Monte Mortero (P1), Zona Safari (Prado) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
@@ -11327,7 +11327,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Marshland",
+          "area": "Zona Safari (Marisma)",
           "method": "Hierba alta"
         },
         {
@@ -11733,7 +11733,7 @@
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
@@ -11824,11 +11824,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
@@ -11840,7 +11840,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -11860,11 +11860,11 @@
           "method": "Surf"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta, Hierba alta (Noche), Surf"
         }
       ],
@@ -11923,18 +11923,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Mt Mortar 1F, Mt Mortar Lower Cave, Mt Mortar Upper Cave) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 8 zonas (ej: Monte Mortero (P1), Monte Mortero (Cueva Inferior), Monte Mortero (Cueva Superior)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Mortar 1F",
+          "area": "Monte Mortero (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Lower Cave",
+          "area": "Monte Mortero (Cueva Inferior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
@@ -11942,7 +11942,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta"
         },
         {
@@ -11950,11 +11950,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Goldenrod City Department Store 5F",
+          "area": "Centro Comercial de Ciudad Trigal (P5)",
           "method": "Npc trade"
         },
         {
@@ -12010,14 +12010,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Mt Mortar Upper Cave, Johto Route 47 Inside Cave, Túnel Roca (P1)).",
+      "summary": "Salvaje en 7 zonas (ej: Monte Mortero (Cueva Superior), Ruta 47 (Interior de la Cueva), Túnel Roca (P1)).",
       "locations": [
         {
-          "area": "Mt Mortar Upper Cave",
+          "area": "Monte Mortero (Cueva Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta"
         },
         {
@@ -12037,7 +12037,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -12383,7 +12383,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 43, Ruta 48, Johto Safari Zone Plains (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 43, Ruta 48, Zona Safari (Llanura) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 43",
@@ -12394,7 +12394,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -12465,7 +12465,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -12643,14 +12643,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Torre Quemada (Sótano B1), Johto Safari Zone Peak.",
+      "summary": "Salvaje en: Torre Quemada (Sótano B1), Zona Safari (Pico).",
       "locations": [
         {
           "area": "Torre Quemada (Sótano B1)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Peak",
+          "area": "Zona Safari (Pico)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -12764,7 +12764,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ice Path B2F).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta de Hielo (Sótano B2)).",
       "locations": [
         {
           "area": "Ruta Helada (P1)",
@@ -12775,7 +12775,7 @@
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
-          "area": "Ice Path B2F",
+          "area": "Ruta de Hielo (Sótano B2)",
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
@@ -12897,14 +12897,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 10, Johto Safari Zone Forest.",
+      "summary": "Salvaje en: Ruta 10, Zona Safari (Bosque).",
       "locations": [
         {
           "area": "Ruta 10",
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta"
         }
       ],
@@ -12963,14 +12963,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Kanto Sea Route 21 Area, Johto Safari Zone Forest, Ciudad Azulona (Rincón de Premios) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 21 (Ruta Marítima de Kanto), Zona Safari (Bosque), Ciudad Azulona (Rincón de Premios) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -13037,14 +13037,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruins Of Alph Outside, Johto Safari Zone Plains (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruins Alfa (Exterior), Zona Safari (Llanura) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -13119,7 +13119,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -13175,14 +13175,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruins Of Alph Outside, Mt Silver Outside, Monte Plateado (Laderas)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruins Alfa (Exterior), Monte Plateado (Exterior), Monte Plateado (Laderas)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruins Of Alph Outside",
+          "area": "Ruins Alfa (Exterior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -13458,15 +13458,15 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Cianwood City Pokemon Center",
+          "area": "Ciudad Orquídea (Centro Pokémon)",
           "method": "Gift"
         },
         {
@@ -13609,11 +13609,11 @@
           "method": "Surf"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Supercaña), Surf"
         }
       ],
@@ -13707,7 +13707,7 @@
           "method": "Hierba alta, Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Islas Remolino (Sótano B3 - Lugia)",
+          "area": "Islas Remolino (Sótano B3)",
           "method": "Hierba alta"
         },
         {
@@ -13719,7 +13719,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -13727,11 +13727,11 @@
           "method": "Golpe Roca, Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche), Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
@@ -13826,7 +13826,7 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -13834,11 +13834,11 @@
           "method": "Golpe Roca, Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta, Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta"
         }
       ],
@@ -14165,11 +14165,11 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
@@ -14546,11 +14546,11 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
@@ -14645,11 +14645,11 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Vermilion City Ss Anne Dock",
+          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -14723,7 +14723,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Islas Remolino (Sótano B3 - Lugia)",
+          "area": "Islas Remolino (Sótano B3)",
           "method": "Hierba alta"
         },
         {
@@ -14865,18 +14865,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 44, Johto Safari Zone Forest, Johto Safari Zone Mountain (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 44, Zona Safari (Bosque), Zona Safari (Montaña) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 44",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -14989,14 +14989,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Ruta 44, Mt Silver Outside, Ruta 12) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 10 zonas (ej: Ruta 44, Monte Plateado (Exterior), Ruta 12) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 44",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -15028,7 +15028,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Kanto Sea Route 21 Area",
+          "area": "Ruta 21 (Ruta Marítima de Kanto)",
           "method": "Golpe Cabeza en árboles, Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -15881,7 +15881,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ice Path B2F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta de Hielo (Sótano B2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta Helada (P1)",
@@ -15892,7 +15892,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ice Path B2F",
+          "area": "Ruta de Hielo (Sótano B2)",
           "method": "Hierba alta"
         },
         {
@@ -16178,14 +16178,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ruta 45, Mt Silver 1F Top, Monte Plateado (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 45, Monte Plateado (P1 Superior), Monte Plateado (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 45",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
@@ -16253,22 +16253,22 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 12 zonas (ej: Monte Plateado (P2), Mt Silver 1F Top, Mt Silver 4F).",
+      "summary": "Salvaje en 12 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)).",
       "locations": [
         {
           "area": "Monte Plateado (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -16284,7 +16284,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta"
         },
         {
@@ -16292,15 +16292,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 1F",
+          "area": "Calle Victoria de Kanto (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 2F",
+          "area": "Calle Victoria de Kanto (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Hierba alta"
         }
       ],
@@ -16480,10 +16480,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Mt Silver Outside, Ruta 26, Ruta 27) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Monte Plateado (Exterior), Ruta 26, Ruta 27) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -16503,11 +16503,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Wetland",
+          "area": "Zona Safari (Humedal)",
           "method": "Hierba alta"
         },
         {
@@ -16563,14 +16563,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ciudad Endrino, Mt Silver Outside, Ruta 26).",
+      "summary": "Salvaje en 5 zonas (ej: Ciudad Endrino, Monte Plateado (Exterior), Ruta 26).",
       "locations": [
         {
           "area": "Ciudad Endrino",
           "method": "Npc trade"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -16582,7 +16582,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Johto Safari Zone Rocky Beach",
+          "area": "Zona Safari (Playa Rocosa)",
           "method": "Hierba alta"
         }
       ],
@@ -16641,10 +16641,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 6 zonas (ej: Mt Silver Outside, Ruta 26, Ruta 27) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Monte Plateado (Exterior), Ruta 26, Ruta 27) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -16664,7 +16664,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta"
         },
         {
@@ -16720,10 +16720,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Mt Silver Outside, Ruta 28.",
+      "summary": "Salvaje en: Monte Plateado (Exterior), Ruta 28.",
       "locations": [
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -16786,7 +16786,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Túnel Roca (P1), Túnel Roca (Sótano B1), Johto Safari Zone Desert (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Túnel Roca (P1), Túnel Roca (Sótano B1), Zona Safari (Desierto) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -16797,7 +16797,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Desert",
+          "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -16853,14 +16853,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Túnel Roca (Sótano B1), Johto Safari Zone Desert.",
+      "summary": "Salvaje en: Túnel Roca (Sótano B1), Zona Safari (Desierto).",
       "locations": [
         {
           "area": "Túnel Roca (Sótano B1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Desert",
+          "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -16919,14 +16919,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Túnel Roca (Sótano B1), Johto Safari Zone Wasteland (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Túnel Roca (Sótano B1), Zona Safari (Terreno Baldío) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (Sótano B1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Wasteland",
+          "area": "Zona Safari (Terreno Baldío)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -16982,10 +16982,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Kanto Victory Road 1 1F, Cueva Diglett, Kanto Victory Road 1 2F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Calle Victoria de Kanto (P1), Cueva Diglett, Calle Victoria de Kanto (P2)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Kanto Victory Road 1 1F",
+          "area": "Calle Victoria de Kanto (P1)",
           "method": "Hierba alta"
         },
         {
@@ -16993,15 +16993,15 @@
           "method": "Npc trade"
         },
         {
-          "area": "Kanto Victory Road 1 2F",
+          "area": "Calle Victoria de Kanto (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Kanto Victory Road 1 3F",
+          "area": "Calle Victoria de Kanto (P3)",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -17057,10 +17057,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Savannah.",
+      "summary": "Salvaje en Zona Safari (Sabana).",
       "locations": [
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta"
         }
       ],
@@ -17119,7 +17119,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 7, Ruta 16, Johto Safari Zone Swamp (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 7, Ruta 16, Zona Safari (Pantano) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 7",
@@ -17130,7 +17130,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche), Surf"
         },
         {
@@ -17186,14 +17186,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 7, Johto Safari Zone Savannah (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 7, Zona Safari (Sabana) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 7",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Savannah",
+          "area": "Zona Safari (Sabana)",
           "method": "Hierba alta"
         },
         {
@@ -17249,10 +17249,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Johto Safari Zone Plains.",
+      "summary": "Salvaje en Zona Safari (Llanura).",
       "locations": [
         {
-          "area": "Johto Safari Zone Plains",
+          "area": "Zona Safari (Llanura)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -17326,7 +17326,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Violet City Pokemon Center",
+          "area": "Ciudad Malva (Centro Pokémon)",
           "method": "Gift egg"
         },
         {
@@ -17439,22 +17439,22 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Mt Silver 1F Top, Mt Silver 4F, Mt Silver Outside) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Monte Plateado (P1 Superior), Monte Plateado (P4), Monte Plateado (Exterior)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Outside",
+          "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta"
         },
         {
@@ -17514,22 +17514,22 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Monte Plateado (P2), Mt Silver 1F Top, Mt Silver 4F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 7 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Plateado (P2)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Route 47 Inside Cave",
+          "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -17537,11 +17537,11 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Johto Safari Zone Forest",
+          "area": "Zona Safari (Bosque)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -17742,7 +17742,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Meadow",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta"
         },
         {
@@ -18059,10 +18059,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Pewter City Pewter Museum Of Science (también obtenible mediante crianza).",
+      "summary": "Salvaje en Museo de la Ciencia de Ciudad Plateada (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Pewter City Pewter Museum Of Science",
+          "area": "Museo de la Ciencia de Ciudad Plateada",
           "method": "Gift"
         },
         {
@@ -19153,18 +19153,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Guarida Dragón, Johto Safari Zone Swamp, Goldenrod City Game Corner (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Guarida Dragón, Zona Safari (Pantano), Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Guarida Dragón",
           "method": "Gift, Pesca (Caña Buena), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Goldenrod City Game Corner",
+          "area": "Casino de Ciudad Trigal",
           "method": "Gift"
         },
         {
@@ -19220,14 +19220,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Guarida Dragón, Johto Safari Zone Swamp.",
+      "summary": "Salvaje en: Guarida Dragón, Zona Safari (Pantano).",
       "locations": [
         {
           "area": "Guarida Dragón",
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Johto Safari Zone Swamp",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -19343,18 +19343,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Monte Plateado (P2), Mt Silver 1F Top, Mt Silver 4F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 8 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Plateado (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 1F Top",
+          "area": "Monte Plateado (P1 Superior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver 4F",
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
@@ -19370,11 +19370,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Mt Silver Top",
+          "area": "Cima del Monte Plateado",
           "method": "Hierba alta"
         },
         {
-          "area": "Johto Safari Zone Mountain",
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
