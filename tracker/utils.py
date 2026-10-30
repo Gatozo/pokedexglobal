@@ -608,8 +608,8 @@ def resolve_evolution_stone(
     price = stone_data.get("price")
     availability_note = stone_data.get("availability_note", "")
 
-    # En 2ª Generación (Oro, Plata, Cristal), las piedras y objetos evolutivos NO se compran en centros comerciales
-    if effective_game in ['gold', 'silver', 'crystal']:
+    # Las piedras y objetos evolutivos solo se compran en centros comerciales en Kanto (Gen 1 y RF/VH)
+    if effective_game and effective_game not in ['red', 'blue', 'yellow', 'firered', 'leafgreen']:
         is_purchasable = False
         price = None
         if not availability_note or "2.100" in availability_note:
@@ -629,6 +629,7 @@ def resolve_evolution_stone(
         "name": name_es,
         "name_es": name_es,
         "icon_url": icon_url,
+        "sprite_url": icon_url,
         "description": stone_data.get("description_es", ""),
         "description_es": stone_data.get("description_es", ""),
         "is_purchasable": is_purchasable,

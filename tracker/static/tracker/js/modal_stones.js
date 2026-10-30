@@ -61,11 +61,19 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     if (badgeName) badgeName.textContent = name;
     if (descEl) descEl.textContent = `"${desc}"`;
 
+    // Discriminación de compra en tienda según la versión activa (solo en Kanto Gen 1 y RF/VH se compran en tiendas)
+    const cleanGameSlug = (currentGameSlug || '').replace('_national', '');
+    const gamesSellingStones = ['red', 'blue', 'yellow', 'firered', 'leafgreen'];
+    const isPurchasableInCurrentGame = isPurchasable && gamesSellingStones.includes(cleanGameSlug);
+
     const priceBadge = document.getElementById('stone-modal-price-badge');
     if (priceBadge) {
-        if (isPurchasable) {
+        if (isPurchasableInCurrentGame) {
             priceBadge.className = 'border border-emerald-950 bg-emerald-200 text-emerald-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
             priceBadge.textContent = price ? `En tienda: ${price.toLocaleString('es-ES')} ₽` : 'Compra en tienda';
+        } else if (['razor-claw', 'razor-fang'].includes(stoneSlug) && ['diamond', 'pearl', 'platinum', 'heartgold', 'soulsilver'].includes(cleanGameSlug)) {
+            priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+            priceBadge.textContent = 'Frente de Batalla (48 PB)';
         } else {
             priceBadge.className = 'border border-amber-950 bg-amber-200 text-amber-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
             priceBadge.textContent = 'Objeto Limitado';

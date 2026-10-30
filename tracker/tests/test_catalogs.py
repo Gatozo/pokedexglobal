@@ -2690,15 +2690,44 @@ class PokemonHeartGoldGen4Tests(TestCase):
 
     def test_heartgold_evolution_stones(self):
         import json
-        from tracker.catalog_service import CATALOGS_DIR
+        from tracker.catalog_service import CATALOGS_DIR, get_compiled_catalog
         with open(CATALOGS_DIR.parent / "evolution_stones.json", encoding="utf-8") as f:
             stones_data = json.load(f)
 
-        fire_stone = stones_data.get("fire-stone", {})
-        self.assertIn("heartgold", fire_stone.get("games", {}))
-        hg_info = fire_stone["games"]["heartgold"]
-        self.assertTrue(len(hg_info) > 0)
-        self.assertIn("area", hg_info[0])
+        # 1. Validar Piedra Trueno y fuentes oficiales en castellano (Chica Sara, no Dana)
+        thunder_stone = stones_data.get("thunder-stone", {})
+        self.assertIn("heartgold", thunder_stone.get("games", {}))
+        hg_thunder_locs = thunder_stone["games"]["heartgold"]
+        thunder_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in hg_thunder_locs)
+        self.assertIn("Chica Sara", thunder_text)
+        self.assertNotIn("Dana", thunder_text)
+        self.assertIn("jueves", thunder_text.lower())
+        self.assertIn("miércoles y sábados", thunder_text.lower())
+
+        # 2. Validar que Raichu en el catálogo tiene icon_url y name normalizados
+        reg_cat = get_compiled_catalog("heartgold", is_national=False, force_reload=True)
+        raichu = [e for e in reg_cat if e.pokemon.national_number == 26][0]
+        self.assertIsNotNone(raichu.evolution_stone)
+        self.assertEqual(raichu.evolution_stone["slug"], "thunder-stone")
+        self.assertEqual(raichu.evolution_stone["name"], "Piedra Trueno")
+        self.assertEqual(raichu.evolution_stone["icon_url"], "/media/items/thunder-stone.png")
+        self.assertFalse(raichu.evolution_stone.get("is_purchasable", False))
+
+        # 3. Validar bebés e inciensos en Pokédex Nacional
+        nat_cat = get_compiled_catalog("heartgold", is_national=True, force_reload=True)
+        baby_expectations = {
+            360: ("lax-incense", "Incienso Suave"),
+            298: ("sea-incense", "Incienso Marino"),
+            440: ("luck-incense", "Incienso Duplo"),
+            438: ("rock-incense", "Incienso Roca"),
+            406: ("rose-incense", "Incienso Floral"),
+        }
+        for nat_id, (expected_slug, expected_name) in baby_expectations.items():
+            entry = [e for e in nat_cat if e.pokemon.national_number == nat_id][0]
+            self.assertIsNotNone(entry.evolution_stone, f"Bebé #{nat_id} debe tener evolution_stone")
+            self.assertEqual(entry.evolution_stone["slug"], expected_slug)
+            self.assertEqual(entry.evolution_stone["name"], expected_name)
+            self.assertEqual(entry.evolution_stone["icon_url"], f"/media/items/{expected_slug}.png")
 
     def test_heartgold_breeding_and_invariants(self):
         from tracker.catalog_service import get_compiled_catalog
@@ -2723,11 +2752,15 @@ class PokemonHeartGoldGen4Tests(TestCase):
         self.assertEqual(resp_reg.context["total_pokemon"], 256)
         self.assertContains(resp_reg, 'data-game="heartgold"')
         self.assertContains(resp_reg, "Ho-Oh")
+        self.assertContains(resp_reg, '/media/items/thunder-stone.png')
+        self.assertContains(resp_reg, 'alt="Piedra Trueno"')
 
-        # Detalle Pokédex Nacional
-        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "heartgold", "pokedex_slug": "national"}))
+        # Detalle Pokédex Nacional (Gen 3 - Hoenn para verificar cría de Wynaut con Incienso Suave)
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "heartgold", "pokedex_slug": "national"}) + "?gen=hoenn")
         self.assertEqual(resp_nat.status_code, 200)
         self.assertEqual(resp_nat.context["total_pokemon"], 493)
+        self.assertContains(resp_nat, '/media/items/lax-incense.png')
+        self.assertContains(resp_nat, 'alt="Incienso Suave"')
 
         # Selector de juegos en Game Hub
         resp_hub = self.client.get(reverse("tracker:game_selector"))

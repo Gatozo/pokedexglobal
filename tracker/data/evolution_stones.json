@@ -270,20 +270,62 @@
       ],
       "heartgold": [
         {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
+        {
           "area": "Cueva Unión (Sótano B2)",
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
-          "area": "Monte Moon (Plaza de las Rocas)",
-          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         },
         {
           "area": "Pueblo Primavera (Regalo de Mamá)",
-          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
+        {
+          "area": "Cueva Unión (Sótano B2)",
+          "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+        },
+        {
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        },
+        {
+          "area": "Pueblo Primavera (Regalo de Mamá)",
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
         }
       ]
     }
@@ -444,15 +486,33 @@
       "heartgold": [
         {
           "area": "Ruta 36 (Llamada del Pokégear)",
-          "detail": "Regalo del Colegial Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          "detail": "Regalo del Escolar Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (o Vulpix)."
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y jueves."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 36 (Llamada del Pokégear)",
+          "detail": "Regalo del Escolar Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -629,19 +689,41 @@
       "heartgold": [
         {
           "area": "Ruta 42 (Llamada del Pokégear)",
-          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
         },
         {
-          "area": "Islas Remolino",
-          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 42 (Llamada del Pokégear)",
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+        },
+        {
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -814,7 +896,7 @@
       "heartgold": [
         {
           "area": "Ruta 38 (Llamada del Pokégear)",
-          "detail": "Regalo de la Joven Dana tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -822,7 +904,25 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 38 (Llamada del Pokégear)",
+          "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -983,7 +1083,7 @@
       "heartgold": [
         {
           "area": "Ruta 34 (Llamada del Pokégear)",
-          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -995,7 +1095,29 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 34 (Llamada del Pokégear)",
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+        },
+        {
+          "area": "Bosque Verde (Kanto)",
+          "detail": "Oculta en la maleza en el camino boscoso."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -1122,15 +1244,29 @@
       "heartgold": [
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
-          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso de los martes, jueves o sábados."
+          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 13 (Kanto)",
-          "detail": "Equipado raramente en Solrock salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
         }
       ]
     }
@@ -1289,11 +1425,25 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Islas Remolino / Pozo Slowpoke",
-          "detail": "Equipado raramente en Poliwhirl o Slowpoke salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Pozo Slowpoke (Sótano B2)",
+          "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
         }
       ]
     }
@@ -1428,15 +1578,37 @@
       "heartgold": [
         {
           "area": "S.S. Aqua (Barco Transatlántico)",
-          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta jugando con el capitán."
+          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 38 / Central de Energía",
-          "detail": "Equipado en Magnemite o Steelix salvajes (5% prob.)."
+          "area": "Gimnasio de Ciudad Olivo",
+          "detail": "Equipado en el Steelix que intercambia Yasmina."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "S.S. Aqua (Barco Transatlántico)",
+          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Gimnasio de Ciudad Olivo",
+          "detail": "Equipado en el Steelix que intercambia Yasmina."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
         }
       ]
     }
@@ -1574,16 +1746,30 @@
       ],
       "heartgold": [
         {
-          "area": "Monte Mortero (Sótano Central)",
-          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate."
+          "area": "Monte Mortero (Sótano Central B1)",
+          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate Kiyo."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Islas Remolino / Cueva Dragón",
-          "detail": "Equipado en Horsea, Seadra o Dratini salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Monte Mortero (Sótano Central B1)",
+          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate Kiyo."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
         }
       ]
     }
@@ -1686,11 +1872,13 @@
       "heartgold": [
         {
           "area": "Ciudad Azafrán (Silph S.A.)",
-          "detail": "Regalo del vigilante de seguridad en el vestíbulo del edificio."
-        },
+          "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
+        }
+      ],
+      "soulsilver": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves."
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
         }
       ]
     }
@@ -1766,12 +1954,22 @@
       ],
       "heartgold": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y jueves."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
         },
         {
-          "area": "Carvanha Salvaje",
-          "detail": "Equipado raramente en Carvanha salvajes (5% prob.)."
+          "area": "Transferencia / Evento",
+          "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
+        },
+        {
+          "area": "Transferencia / Evento",
+          "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
         }
       ]
     }
@@ -1847,12 +2045,22 @@
       ],
       "heartgold": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los miércoles y sábados."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
         },
         {
-          "area": "Chinchou / Lanturn Salvaje",
-          "detail": "Equipado raramente en Chinchou o Lanturn salvajes (5% prob.)."
+          "area": "Transferencia / Evento",
+          "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
+        },
+        {
+          "area": "Transferencia / Evento",
+          "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
         }
       ]
     }
@@ -1917,8 +2125,14 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Acantilado (Ruta 47)",
-          "detail": "En una de las plataformas interiores con escaleras hacia la costa."
+          "area": "Cueva Celeste (Planta 1)",
+          "detail": "En el suelo en el laberinto de roca tras conseguir las 16 medallas de gimnasio."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Cueva Celeste (Planta 1)",
+          "detail": "En el suelo en el laberinto de roca tras conseguir las 16 medallas de gimnasio."
         }
       ]
     }
@@ -1983,8 +2197,14 @@
       ],
       "heartgold": [
         {
-          "area": "Ruta 38",
-          "detail": "En el camino lateral entre vallas y arbustos cortables."
+          "area": "Ruta 38 (Johto)",
+          "detail": "En una repisa de hierba elevada accesible usando Treparrocas."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 38 (Johto)",
+          "detail": "En una repisa de hierba elevada accesible usando Treparrocas."
         }
       ]
     }
@@ -2047,7 +2267,7 @@
       "heartgold": [
         {
           "area": "Parque Nacional",
-          "detail": "En una repisa de hierba accesible a través de la brecha en la valla exterior con Golpe Roca y Treparrocas."
+          "detail": "En una repisa de hierba exterior accesible cruzando la valla con Golpe Roca y Treparrocas."
         },
         {
           "area": "Ruta 14 (Kanto)",
@@ -2055,7 +2275,25 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (tras obtener la Pokédex Nacional)."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, miércoles, jueves, sábados y domingos (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Parque Nacional",
+          "detail": "En una repisa de hierba exterior accesible cruzando la valla con Golpe Roca y Treparrocas."
+        },
+        {
+          "area": "Ruta 14 (Kanto)",
+          "detail": "Regalo de una chica en el mirador al mostrarle una Chansey capturada."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, miércoles, jueves, sábados y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2130,15 +2368,33 @@
       "heartgold": [
         {
           "area": "Cueva Celeste (Kanto)",
-          "detail": "En el suelo en el piso superior de la cueva."
+          "detail": "En el suelo en el piso superior de la cueva (requiere Surf)."
         },
         {
-          "area": "Zona Safari de Johto (Bahía Blanca)",
+          "area": "Zona Safari de Johto",
           "detail": "Objeto en el suelo en la zona de cueva."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (tras obtener la Pokédex Nacional)."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, martes, jueves, viernes y sábados (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Cueva Celeste (Kanto)",
+          "detail": "En el suelo en el piso superior de la cueva (requiere Surf)."
+        },
+        {
+          "area": "Zona Safari de Johto",
+          "detail": "Objeto en el suelo en la zona de cueva."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, martes, jueves, viernes y sábados (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2213,7 +2469,25 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes y domingos (tras la Pokédex Nacional)."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes, miércoles, viernes, sábados y domingos (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Monte Plateado (Exterior)",
+          "detail": "Cerca del lago en la base de la cascada accesible con Cascada y Surf."
+        },
+        {
+          "area": "Ruta 17 (Camino de Bicis de Kanto)",
+          "detail": "En el arcén derecho del camino descendente."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes, miércoles, viernes, sábados y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2276,15 +2550,29 @@
       "heartgold": [
         {
           "area": "Ruta Helada (Johto)",
-          "detail": "En el laberinto de hielo en el sótano B1."
-        },
-        {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes."
+          "detail": "En el suelo en el laberinto de hielo del sótano B1."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 50% de probabilidad en Chansey salvajes."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta Helada (Johto)",
+          "detail": "En el suelo en el laberinto de hielo del sótano B1."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 50% de probabilidad en Chansey salvajes."
         }
       ]
     }
@@ -2324,10 +2612,12 @@
         {
           "area": "Monte Mortero (Zona Este)",
           "detail": "En una cornisa superior accesible navegando con Surf y remontando la Cascada."
-        },
+        }
+      ],
+      "soulsilver": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los sábados."
+          "area": "Monte Mortero (Zona Este)",
+          "detail": "En una cornisa superior accesible navegando con Surf y remontando la Cascada."
         }
       ]
     }
@@ -2365,12 +2655,22 @@
       ],
       "heartgold": [
         {
-          "area": "Ciudad Celeste (Cueva Celeste)",
+          "area": "Cueva Celeste (Kanto)",
           "detail": "En una orilla rocosa del lago subterráneo accesible con Surf."
         },
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los viernes y domingos (post-game)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Elekid salvajes (transferidos o Pokéwalker)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Cueva Celeste (Kanto)",
+          "detail": "En una orilla rocosa del lago subterráneo accesible con Surf."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Elekid salvajes (transferidos o Pokéwalker)."
         }
       ]
     }
@@ -2409,11 +2709,21 @@
       "heartgold": [
         {
           "area": "Islas Espuma (Sótano B2)",
-          "detail": "En el laberinto helado inferior de las islas en Kanto."
+          "detail": "En el laberinto helado inferior de las cavernas en Kanto."
         },
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes y domingos (post-game)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magby salvajes (transferidos o Pokéwalker)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Islas Espuma (Sótano B2)",
+          "detail": "En el laberinto helado inferior de las cavernas en Kanto."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magby salvajes (transferidos o Pokéwalker)."
         }
       ]
     }
@@ -2452,11 +2762,13 @@
       "heartgold": [
         {
           "area": "Frente de Batalla (Johto)",
-          "detail": "En la plaza exterior de acceso a las instalaciones."
-        },
+          "detail": "En el suelo en la esquina superior derecha de la plaza exterior cerca de las vallas."
+        }
+      ],
+      "soulsilver": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes."
+          "area": "Frente de Batalla (Johto)",
+          "detail": "En el suelo en la esquina superior derecha de la plaza exterior cerca de las vallas."
         }
       ]
     }
@@ -2508,10 +2820,12 @@
         {
           "area": "Monte Plateado (Interior de la Cueva)",
           "detail": "En una cornisa alta que requiere usar Treparrocas."
-        },
+        }
+      ],
+      "soulsilver": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves."
+          "area": "Monte Plateado (Interior de la Cueva)",
+          "detail": "En una cornisa alta que requiere usar Treparrocas."
         }
       ]
     }
@@ -2521,9 +2835,9 @@
     "name_es": "Garra Afilada",
     "icon_url": "/media/items/razor-claw.png",
     "description_es": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
-    "is_purchasable": true,
-    "price": 48,
-    "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 224 y Calle Victoria.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
     "games": {
       "diamond": [
         {
@@ -2574,11 +2888,21 @@
       "heartgold": [
         {
           "area": "Frente de Batalla",
-          "detail": "Canjeable en el mostrador del Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+          "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
         },
         {
           "area": "Ruta 28 (Camino a Monte Plateado)",
-          "detail": "Objeto oculto en la hierba alta."
+          "detail": "Objeto oculto en la hierba alta cerca de la entrada (requiere Corte)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+        },
+        {
+          "area": "Ruta 28 (Camino a Monte Plateado)",
+          "detail": "Objeto oculto en la hierba alta cerca de la entrada (requiere Corte)."
         }
       ]
     }
@@ -2588,9 +2912,9 @@
     "name_es": "Colmillo Agudo",
     "icon_url": "/media/items/razor-fang.png",
     "description_es": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
-    "is_purchasable": true,
-    "price": 48,
-    "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 214.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
     "games": {
       "diamond": [
         {
@@ -2629,7 +2953,13 @@
       "heartgold": [
         {
           "area": "Frente de Batalla",
-          "detail": "Canjeable en el mostrador del Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+          "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
         }
       ]
     }
@@ -2664,8 +2994,14 @@
       ],
       "heartgold": [
         {
-          "area": "Ruta 42",
-          "detail": "En una pequeña franja de tierra accesible cortando un arbusto."
+          "area": "Ruta 15 (Kanto)",
+          "detail": "En el camino inferior al sur tras saltar el desnivel (requiere Corte)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 15 (Kanto)",
+          "detail": "En el camino inferior al sur tras saltar el desnivel (requiere Corte)."
         }
       ]
     }
@@ -2700,8 +3036,14 @@
       ],
       "heartgold": [
         {
-          "area": "Monte Mortero",
-          "detail": "En una caverna secundaria accesible con Surf."
+          "area": "Monte Plateado (Exterior Nevado)",
+          "detail": "En la ladera nevada superior accesible usando Treparrocas."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Monte Plateado (Exterior Nevado)",
+          "detail": "En la ladera nevada superior accesible usando Treparrocas."
         }
       ]
     }
@@ -2736,8 +3078,14 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Unión",
-          "detail": "En una sección rocosa tras romper rocas con Golpe Roca."
+          "area": "Cueva Diglett (Kanto)",
+          "detail": "En una cornisa interior elevada accesible usando Treparrocas."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Cueva Diglett (Kanto)",
+          "detail": "En una cornisa interior elevada accesible usando Treparrocas."
         }
       ]
     }
@@ -2772,8 +3120,14 @@
       ],
       "heartgold": [
         {
-          "area": "Ruinas Alfa",
-          "detail": "En una de las cámaras secretas tras resolver el puzzle."
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En el suelo cerca de la cámara inferior accesible con Surf."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En el suelo cerca de la cámara inferior accesible con Surf."
         }
       ]
     }
@@ -2808,8 +3162,14 @@
       ],
       "heartgold": [
         {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable por Puntos Atleta o regalo especial."
+          "area": "Ciudad Carmín (Kanto)",
+          "detail": "En la orilla derecha de la dársena marina navegando con Surf al sur del puerto."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ciudad Carmín (Kanto)",
+          "detail": "En la orilla derecha de la dársena marina navegando con Surf al sur del puerto."
         }
       ]
     }
@@ -2844,8 +3204,14 @@
       ],
       "heartgold": [
         {
-          "area": "Monte Mortero",
-          "detail": "En una repisa rocosa interior."
+          "area": "Monte Mortero (Profundidades)",
+          "detail": "En una cornisa interior en las profundidades que requiere Treparrocas."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Monte Mortero (Profundidades)",
+          "detail": "En una cornisa interior en las profundidades que requiere Treparrocas."
         }
       ]
     }
@@ -2880,8 +3246,14 @@
       ],
       "heartgold": [
         {
-          "area": "Ruta 47",
-          "detail": "En un saliente marino accesible surfeando junto a la Cascada."
+          "area": "Ruta 47 (Acantilados)",
+          "detail": "En un saliente de roca en los acantilados inferiores cerca de la Torre Oculta (requiere Treparrocas y Surf)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruta 47 (Acantilados)",
+          "detail": "En un saliente de roca en los acantilados inferiores cerca de la Torre Oculta (requiere Treparrocas y Surf)."
         }
       ]
     }

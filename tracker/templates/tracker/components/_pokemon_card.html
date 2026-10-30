@@ -45,7 +45,7 @@
                 data-stone-slug="{{ entry.evolution_stone.slug }}"
                 data-stone-name="{{ entry.evolution_stone.name }}"
                 onclick="event.stopPropagation(); openStoneModal(this.dataset.stoneSlug, this.dataset.stoneName)"
-                title="{% if 'incense' in entry.evolution_stone.slug %}Crianza con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% elif 'stone' in entry.evolution_stone.slug %}Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% else %}Evoluciona por intercambio con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% endif %}"
+                title="{% if 'incense' in entry.evolution_stone.slug %}Crianza con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% elif 'stone' in entry.evolution_stone.slug %}Evoluciona con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% elif 'claw' in entry.evolution_stone.slug or 'fang' in entry.evolution_stone.slug or 'oval' in entry.evolution_stone.slug %}Evoluciona al subir de nivel sosteniendo {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% else %}Evoluciona por intercambio con {{ entry.evolution_stone.name }} (Clic para ver localizaciones){% endif %}"
                 class="inline-flex items-center justify-center p-0 cursor-pointer transition-transform hover:scale-125 active:scale-95 focus:outline-none shrink-0"
             >
                 <img src="{{ entry.evolution_stone.icon_url }}" alt="{{ entry.evolution_stone.name }}" width="22" height="22" decoding="async" class="w-[22px] h-[22px] object-contain pixel-art">

@@ -2004,12 +2004,18 @@
     },
     "evolution_stone": {
       "slug": "thunder-stone",
+      "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
-      "sprite_url": "/media/items/thunder-stone.png",
+      "icon_url": "/media/items/thunder-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 38 (Llamada del Pokégear)",
-          "detail": "Regalo de la Joven Dana tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -2017,13 +2023,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -3784,26 +3791,45 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
-      "sprite_url": "/media/items/moon-stone.png",
+      "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
         {
           "area": "Cueva Unión (Sótano B2)",
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
-          "area": "Monte Moon (Plaza de las Rocas)",
-          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         },
         {
           "area": "Pueblo Primavera (Regalo de Mamá)",
-          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -3992,26 +4018,45 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
-      "sprite_url": "/media/items/moon-stone.png",
+      "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
         {
           "area": "Cueva Unión (Sótano B2)",
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
-          "area": "Monte Moon (Plaza de las Rocas)",
-          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         },
         {
           "area": "Pueblo Primavera (Regalo de Mamá)",
-          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -5368,22 +5413,33 @@
     },
     "evolution_stone": {
       "slug": "metal-coat",
+      "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
-      "sprite_url": "/media/items/metal-coat.png",
+      "icon_url": "/media/items/metal-coat.png",
+      "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
           "area": "S.S. Aqua (Barco Transatlántico)",
-          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta jugando con el capitán."
+          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 38 / Central de Energía",
-          "detail": "Equipado en Magnemite o Steelix salvajes (5% prob.)."
+          "area": "Gimnasio de Ciudad Olivo",
+          "detail": "Equipado en el Steelix que intercambia Yasmina."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -5608,12 +5664,18 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
-      "sprite_url": "/media/items/leaf-stone.png",
+      "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 34 (Llamada del Pokégear)",
-          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -5625,13 +5687,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -6336,30 +6399,37 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
-      "sprite_url": "/media/items/water-stone.png",
+      "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 42 (Llamada del Pokégear)",
-          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
         },
         {
-          "area": "Islas Remolino",
-          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -6419,8 +6489,14 @@
     },
     "evolution_stone": {
       "slug": "kings-rock",
+      "name": "Roca del Rey",
       "name_es": "Roca del Rey",
-      "sprite_url": "/media/items/kings-rock.png",
+      "icon_url": "/media/items/kings-rock.png",
+      "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
           "area": "Pozo Slowpoke (Sótano B2)",
@@ -6428,13 +6504,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Islas Remolino / Pozo Slowpoke",
-          "detail": "Equipado raramente en Poliwhirl o Slowpoke salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -7385,8 +7462,14 @@
     },
     "evolution_stone": {
       "slug": "kings-rock",
+      "name": "Roca del Rey",
       "name_es": "Roca del Rey",
-      "sprite_url": "/media/items/kings-rock.png",
+      "icon_url": "/media/items/kings-rock.png",
+      "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
           "area": "Pozo Slowpoke (Sótano B2)",
@@ -7394,13 +7477,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Islas Remolino / Pozo Slowpoke",
-          "detail": "Equipado raramente en Poliwhirl o Slowpoke salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -7613,12 +7697,18 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
-      "sprite_url": "/media/items/leaf-stone.png",
+      "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 34 (Llamada del Pokégear)",
-          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -7630,13 +7720,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -7696,22 +7787,29 @@
     },
     "evolution_stone": {
       "slug": "sun-stone",
+      "name": "Piedra Solar",
       "name_es": "Piedra Solar",
-      "sprite_url": "/media/items/sun-stone.png",
+      "icon_url": "/media/items/sun-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
       "locations": [
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
-          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso de los martes, jueves o sábados."
+          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 13 (Kanto)",
-          "detail": "Equipado raramente en Solrock salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -8610,26 +8708,45 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
-      "sprite_url": "/media/items/moon-stone.png",
+      "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
         {
           "area": "Cueva Unión (Sótano B2)",
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
-          "area": "Monte Moon (Plaza de las Rocas)",
-          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         },
         {
           "area": "Pueblo Primavera (Regalo de Mamá)",
-          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -8826,26 +8943,45 @@
     },
     "evolution_stone": {
       "slug": "moon-stone",
+      "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
-      "sprite_url": "/media/items/moon-stone.png",
+      "icon_url": "/media/items/moon-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+        },
         {
           "area": "Cueva Unión (Sótano B2)",
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
-          "area": "Monte Moon (Plaza de las Rocas)",
-          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+          "area": "Ruinas Alfa",
+          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         },
         {
           "area": "Pueblo Primavera (Regalo de Mamá)",
-          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+          "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -9088,22 +9224,29 @@
     },
     "evolution_stone": {
       "slug": "sun-stone",
+      "name": "Piedra Solar",
       "name_es": "Piedra Solar",
-      "sprite_url": "/media/items/sun-stone.png",
+      "icon_url": "/media/items/sun-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
       "locations": [
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
-          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso de los martes, jueves o sábados."
+          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 13 (Kanto)",
-          "detail": "Equipado raramente en Solrock salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -9306,12 +9449,18 @@
     },
     "evolution_stone": {
       "slug": "leaf-stone",
+      "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
-      "sprite_url": "/media/items/leaf-stone.png",
+      "icon_url": "/media/items/leaf-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 34 (Llamada del Pokégear)",
-          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -9323,13 +9472,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -9737,22 +9887,33 @@
     },
     "evolution_stone": {
       "slug": "metal-coat",
+      "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
-      "sprite_url": "/media/items/metal-coat.png",
+      "icon_url": "/media/items/metal-coat.png",
+      "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
           "area": "S.S. Aqua (Barco Transatlántico)",
-          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta jugando con el capitán."
+          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes y domingos."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Ruta 38 / Central de Energía",
-          "detail": "Equipado en Magnemite o Steelix salvajes (5% prob.)."
+          "area": "Gimnasio de Ciudad Olivo",
+          "detail": "Equipado en el Steelix que intercambia Yasmina."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -10897,26 +11058,33 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
-      "sprite_url": "/media/items/fire-stone.png",
+      "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 36 (Llamada del Pokégear)",
-          "detail": "Regalo del Colegial Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          "detail": "Regalo del Escolar Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (o Vulpix)."
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y jueves."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -11051,26 +11219,33 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
-      "sprite_url": "/media/items/fire-stone.png",
+      "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 36 (Llamada del Pokégear)",
-          "detail": "Regalo del Colegial Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          "detail": "Regalo del Escolar Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (o Vulpix)."
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y jueves."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -14055,30 +14230,37 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
-      "sprite_url": "/media/items/water-stone.png",
+      "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 42 (Llamada del Pokégear)",
-          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
         },
         {
-          "area": "Islas Remolino",
-          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -14237,30 +14419,37 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
-      "sprite_url": "/media/items/water-stone.png",
+      "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 42 (Llamada del Pokégear)",
-          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
         },
         {
-          "area": "Islas Remolino",
-          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -15212,30 +15401,37 @@
     },
     "evolution_stone": {
       "slug": "water-stone",
+      "name": "Piedra Agua",
       "name_es": "Piedra Agua",
-      "sprite_url": "/media/items/water-stone.png",
+      "icon_url": "/media/items/water-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 42 (Llamada del Pokégear)",
-          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo del Pescador Juan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
           "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
         },
         {
-          "area": "Islas Remolino",
-          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+          "area": "Islas Remolino (Sótano B2)",
+          "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -15295,12 +15491,18 @@
     },
     "evolution_stone": {
       "slug": "thunder-stone",
+      "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
-      "sprite_url": "/media/items/thunder-stone.png",
+      "icon_url": "/media/items/thunder-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 38 (Llamada del Pokégear)",
-          "detail": "Regalo de la Joven Dana tras registrar su número de teléfono al llamarte."
+          "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
@@ -15308,13 +15510,14 @@
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y sábados."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -15374,26 +15577,33 @@
     },
     "evolution_stone": {
       "slug": "fire-stone",
+      "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
-      "sprite_url": "/media/items/fire-stone.png",
+      "icon_url": "/media/items/fire-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 36 (Llamada del Pokégear)",
-          "detail": "Regalo del Colegial Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          "detail": "Regalo del Escolar Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Ruta 25 (Kanto - Casa del Mar)",
-          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (o Vulpix)."
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y jueves."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,
@@ -15704,22 +15914,29 @@
     },
     "evolution_stone": {
       "slug": "dragon-scale",
+      "name": "Escama Dragón",
       "name_es": "Escama Dragón",
-      "sprite_url": "/media/items/dragon-scale.png",
+      "icon_url": "/media/items/dragon-scale.png",
+      "description": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
+      "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Monte Mortero (Sótano Central)",
-          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate."
+          "area": "Monte Mortero (Sótano Central B1)",
+          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate Kiyo."
         },
         {
           "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes (tras obtener la Pokédex Nacional)."
         },
         {
-          "area": "Islas Remolino / Cueva Dragón",
-          "detail": "Equipado en Horsea, Seadra o Dratini salvajes (5% prob.)."
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -17668,18 +17885,21 @@
     },
     "evolution_stone": {
       "slug": "up-grade",
+      "name": "Mejora",
       "name_es": "Mejora",
-      "sprite_url": "/media/items/up-grade.png",
+      "icon_url": "/media/items/up-grade.png",
+      "description": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
+      "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
           "area": "Ciudad Azafrán (Silph S.A.)",
-          "detail": "Regalo del vigilante de seguridad en el vestíbulo del edificio."
-        },
-        {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves."
+          "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
         }
-      ]
+      ],
+      "category": "trade"
     },
     "game_data": {
       "generation": 4,
@@ -17760,22 +17980,29 @@
     },
     "evolution_stone": {
       "slug": "oval-stone",
+      "name": "Piedra Oval",
       "name_es": "Piedra Oval",
-      "sprite_url": "/media/items/oval-stone.png",
+      "icon_url": "/media/items/oval-stone.png",
+      "description": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
+      "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Disponible en Sinnoh mediante minería o en Torre Perdida.",
       "locations": [
         {
           "area": "Ruta Helada (Johto)",
-          "detail": "En el laberinto de hielo en el sótano B1."
-        },
-        {
-          "area": "Domo Pokéathlon",
-          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes."
+          "detail": "En el suelo en el laberinto de hielo del sótano B1."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada con un 50% de probabilidad en Chansey salvajes."
         }
-      ]
+      ],
+      "category": "stone"
     },
     "game_data": {
       "generation": 4,

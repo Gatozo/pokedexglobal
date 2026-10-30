@@ -929,15 +929,13 @@ def main():
 
         obt_info['locations'] = new_locations
 
-        # 3. Resolver objeto evolutivo para el modal de piedras
-        item_slug = obt_info.get('evolution_info', {}).get('item_slug')
-        if item_slug and item_slug in evolution_stones:
-            evo_stone_obj = {
-                'slug': item_slug,
-                'name_es': evolution_stones[item_slug].get('name_es', item_slug),
-                'sprite_url': f"/media/items/{item_slug}.png",
-                'locations': evolution_stones[item_slug].get('games', {}).get('heartgold', [])
-            }
+        # 3. Resolución universal del objeto evolutivo o incienso de crianza para la tarjeta y el modal
+        item_slug_to_resolve = baby_incense_slug or (evo_info.get('item_slug') if evo_info else None) or obt_info.get('item_slug')
+        if item_slug_to_resolve:
+            from tracker.utils import resolve_evolution_stone
+            evo_stone_obj = resolve_evolution_stone(item_slug=item_slug_to_resolve, game_slug="heartgold")
+        else:
+            evo_stone_obj = None
 
         # Construir entrada canónica de catálogo para PokedexGlobal
         entry = {

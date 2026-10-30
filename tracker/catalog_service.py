@@ -405,6 +405,17 @@ class CatalogEntry:
     @property
     def evolution_stone(self):
         if self._evolution_stone is not None:
+            if isinstance(self._evolution_stone, dict):
+                st = dict(self._evolution_stone)
+                if not st.get("icon_url") and st.get("sprite_url"):
+                    st["icon_url"] = st["sprite_url"]
+                if not st.get("sprite_url") and st.get("icon_url"):
+                    st["sprite_url"] = st["icon_url"]
+                if not st.get("name") and st.get("name_es"):
+                    st["name"] = st["name_es"]
+                if not st.get("name_es") and st.get("name"):
+                    st["name_es"] = st["name"]
+                return st
             return self._evolution_stone
         obt = self.obtaining_info or {}
         evo = obt.get("evolution_info") or {}
