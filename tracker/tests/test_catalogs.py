@@ -2544,6 +2544,184 @@ class PokemonPlatinumGen4Tests(TestCase):
 
 
 
+class PokemonHeartGoldGen4Tests(TestCase):
+    """Pruebas unitarias para Pokémon Oro HeartGold (Gen 4), catálogos, exclusividades, formas y mecánicas."""
+
+    def setUp(self):
+        self.client = Client()
+        self.game, _ = Game.objects.get_or_create(
+            slug="heartgold",
+            defaults={"name": "Pokémon Oro HeartGold", "generation": 4}
+        )
+        self.pk_johto, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="johto",
+            defaults={"name": "Pokédex de Johto", "is_national": False, "pokeapi_name": "updated-johto"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+
+    def test_heartgold_catalogs_exist_and_counts(self):
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "heartgold.json"
+        nat_file = CATALOGS_DIR / "heartgold_national.json"
+        self.assertTrue(reg_file.exists(), "heartgold.json debe existir")
+        self.assertTrue(nat_file.exists(), "heartgold_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("heartgold", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("heartgold", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 256, "La Pokédex Regional de Johto en HeartGold debe tener 256 entradas")
+        self.assertEqual(len(nat_cat), 493, "La Pokédex Nacional en HeartGold debe tener 493 entradas")
+
+    def test_heartgold_regional_johto_order_and_species(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("heartgold", is_national=False)
+        # Chikorita (#152) es el #1 en Johto
+        self.assertEqual(reg_cat[0].entry_number, 1)
+        self.assertEqual(reg_cat[0].pokemon.name, "chikorita")
+        self.assertEqual(reg_cat[0].pokemon.national_number, 152)
+
+        # Celebi (#251) es el #256 en Johto
+        self.assertEqual(reg_cat[255].entry_number, 256)
+        self.assertEqual(reg_cat[255].pokemon.name, "celebi")
+        self.assertEqual(reg_cat[255].pokemon.national_number, 251)
+
+        # 5 evoluciones de Gen 4 introducidas en la Pokédex de Johto Actualizada
+        evo_map = {
+            124: (424, "ambipom"),
+            102: (469, "yanmega"),
+            181: (463, "lickilicky"),
+            183: (465, "tangrowth"),
+            197: (473, "mamoswine"),
+        }
+        for reg_num, (nat_num, p_name) in evo_map.items():
+            entry = [e for e in reg_cat if e.entry_number == reg_num][0]
+            self.assertEqual(entry.pokemon.national_number, nat_num)
+            self.assertEqual(entry.pokemon.name, p_name)
+
+    def test_heartgold_legendaries_and_toponymy(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("heartgold", is_national=False)
+
+        # Ho-Oh (#250) es el legendario mascota en la Torre Campana
+        ho_oh = [e for e in reg_cat if e.pokemon.national_number == 250][0]
+        self.assertEqual(ho_oh.obtaining_info.get("type"), "legendary")
+        locations_str = str(ho_oh.obtaining_info.get("locations", []))
+        self.assertIn("Torre Campana", locations_str)
+        self.assertNotIn("Torre Bell", locations_str)
+        self.assertIn("45", locations_str)
+
+        # Lugia (#249) en Islas Remolino a nivel 70
+        lugia = [e for e in reg_cat if e.pokemon.national_number == 249][0]
+        lugia_locs = str(lugia.obtaining_info.get("locations", []))
+        self.assertIn("Islas Remolino", lugia_locs)
+        self.assertIn("70", lugia_locs)
+
+    def test_heartgold_pichu_forms_and_spiky_eared(self):
+        from tracker.pokemon_forms import get_pokemon_forms
+        from tracker.catalog_service import get_compiled_catalog
+
+        forms = get_pokemon_forms(172, "heartgold")
+        self.assertEqual(len(forms), 2)
+        self.assertEqual(forms[0]["form_key"], "standard")
+        self.assertEqual(forms[1]["form_key"], "spiky_eared")
+        self.assertEqual(forms[1]["name"], "Pichu Picorejita")
+        self.assertEqual(forms[1]["sprite_retro"], "/media/pokemon/sprites/heartgold/172-spiky-eared.png")
+        self.assertEqual(forms[1]["modal_retro_sprite_url"], "/media/pokemon/sprites/heartgold_animated/172-spiky-eared.png")
+
+        # Verificar Unown (28 formas en Gen 4 HG)
+        unown_forms = get_pokemon_forms(201, "heartgold")
+        self.assertEqual(len(unown_forms), 28)
+
+        # Verificar Rotom (6 formas en HG)
+        rotom_forms = get_pokemon_forms(479, "heartgold")
+        self.assertEqual(len(rotom_forms), 6)
+
+        # En Pearl, Pichu no tiene formas alternativas
+        self.assertEqual(get_pokemon_forms(172, "pearl"), [])
+
+    def test_heartgold_version_exclusives(self):
+        from tracker.exclusives import VERSION_EXCLUSIVES_CATALOG, get_version_exclusives_context
+
+        exclusives_hg = VERSION_EXCLUSIVES_CATALOG.get("heartgold", [])
+        self.assertEqual(len(exclusives_hg), 22)
+        self.assertIn(58, exclusives_hg)   # Growlithe
+        self.assertIn(250, exclusives_hg)  # Ho-Oh
+        self.assertIn(382, exclusives_hg)  # Kyogre
+        self.assertNotIn(37, exclusives_hg) # Vulpix (SoulSilver)
+        self.assertNotIn(249, exclusives_hg) # Lugia (SoulSilver)
+
+        ctx = get_version_exclusives_context(self.game, set(), set())
+        self.assertTrue(ctx["has_exclusives"])
+        self.assertEqual(ctx["counterpart_slug"], "soulsilver")
+        self.assertEqual(ctx["counterpart_theme"], "silver")
+        self.assertEqual(ctx["own_total"], 22)
+
+    def test_heartgold_transfers(self):
+        from tracker.exclusives import VERSION_TRANSFERS_CATALOG, VERSION_TRANSFERS_META
+
+        transfers_hg = VERSION_TRANSFERS_CATALOG.get("heartgold", [])
+        self.assertEqual(len(transfers_hg), 35)
+        self.assertIn(387, transfers_hg)  # Turtwig
+        self.assertIn(408, transfers_hg)  # Cranidos
+        self.assertIn(410, transfers_hg)  # Shieldon
+        self.assertIn(470, transfers_hg)  # Leafeon
+        self.assertIn(493, transfers_hg)  # Arceus
+
+        meta = VERSION_TRANSFERS_META.get("heartgold", {})
+        self.assertIn("Parque Compi", meta.get("mechanic_title", ""))
+
+    def test_heartgold_evolution_stones(self):
+        import json
+        from tracker.catalog_service import CATALOGS_DIR
+        with open(CATALOGS_DIR.parent / "evolution_stones.json", encoding="utf-8") as f:
+            stones_data = json.load(f)
+
+        fire_stone = stones_data.get("fire-stone", {})
+        self.assertIn("heartgold", fire_stone.get("games", {}))
+        hg_info = fire_stone["games"]["heartgold"]
+        self.assertTrue(len(hg_info) > 0)
+        self.assertIn("area", hg_info[0])
+
+    def test_heartgold_breeding_and_invariants(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("heartgold", is_national=True)
+
+        # Bebés/Básicos incubables
+        pichu = [e for e in nat_cat if e.pokemon.national_number == 172][0]
+        self.assertTrue(pichu.is_hatchable)
+
+        # Evoluciones finales NO incubables
+        charizard = [e for e in nat_cat if e.pokemon.national_number == 6][0]
+        self.assertFalse(charizard.is_hatchable)
+        dragonite = [e for e in nat_cat if e.pokemon.national_number == 149][0]
+        self.assertFalse(dragonite.is_hatchable)
+        tyranitar = [e for e in nat_cat if e.pokemon.national_number == 248][0]
+        self.assertFalse(tyranitar.is_hatchable)
+
+    def test_heartgold_http_views_and_theme(self):
+        # Detalle Pokédex de Johto
+        resp_reg = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "heartgold", "pokedex_slug": "johto"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        self.assertEqual(resp_reg.context["total_pokemon"], 256)
+        self.assertContains(resp_reg, 'data-game="heartgold"')
+        self.assertContains(resp_reg, "Ho-Oh")
+
+        # Detalle Pokédex Nacional
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "heartgold", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        self.assertEqual(resp_nat.context["total_pokemon"], 493)
+
+        # Selector de juegos en Game Hub
+        resp_hub = self.client.get(reverse("tracker:game_selector"))
+        self.assertEqual(resp_hub.status_code, 200)
+        self.assertContains(resp_hub, 'id="card-game-heartgold"')
+        self.assertContains(resp_hub, "Pokémon Oro HeartGold")
+
+
 class GenderDifferencesAndModalDataTests(TestCase):
     """
     Pruebas para el sistema de diferencias de género de Gen 4 en catálogos y modales:

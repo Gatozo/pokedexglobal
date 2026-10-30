@@ -267,6 +267,24 @@
           "area": "Pokémon salvajes (Clefairy y Cleffa)",
           "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Cueva Unión (Sótano B2)",
+          "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+        },
+        {
+          "area": "Monte Moon (Plaza de las Rocas)",
+          "detail": "En el suelo los lunes entre las 20:00 y las 23:59 tras presenciar el baile de los Clefairy usando Golpe Roca en la roca central."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y miércoles."
+        },
+        {
+          "area": "Pueblo Primavera (Regalo de Mamá)",
+          "detail": "Mamá la compra ocasionalmente con los ahorros del jugador."
+        }
       ]
     }
   },
@@ -421,6 +439,24 @@
         {
           "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 36 (Llamada del Pokégear)",
+          "detail": "Regalo del Colegial Alan tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (o Vulpix)."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y jueves."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
       ]
     }
@@ -589,6 +625,28 @@
           "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 42 (Llamada del Pokégear)",
+          "detail": "Regalo del Pescador Tully tras registrar su número de teléfono al llamarte."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+        },
+        {
+          "area": "Islas Remolino",
+          "detail": "En el suelo en el laberinto subterráneo de cuevas."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -752,6 +810,24 @@
           "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 38 (Llamada del Pokégear)",
+          "detail": "Regalo de la Joven Dana tras registrar su número de teléfono al llamarte."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y sábados."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -903,6 +979,28 @@
           "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 34 (Llamada del Pokégear)",
+          "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte."
+        },
+        {
+          "area": "Ruta 25 (Kanto - Casa del Mar)",
+          "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+        },
+        {
+          "area": "Bosque Verde (Kanto)",
+          "detail": "Oculta en la maleza en el camino boscoso."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes y sábados."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -1019,6 +1117,20 @@
         {
           "area": "Pokémon salvajes (Solrock)",
           "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Premio garantizado por obtener el 1.er puesto en el concurso de los martes, jueves o sábados."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos."
+        },
+        {
+          "area": "Ruta 13 (Kanto)",
+          "detail": "Equipado raramente en Solrock salvajes (5% prob.)."
         }
       ]
     }
@@ -1169,6 +1281,20 @@
           "area": "Habilidad Recogida",
           "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Pozo Slowpoke (Sótano B2)",
+          "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves y domingos."
+        },
+        {
+          "area": "Islas Remolino / Pozo Slowpoke",
+          "detail": "Equipado raramente en Poliwhirl o Slowpoke salvajes (5% prob.)."
+        }
       ]
     }
   },
@@ -1297,6 +1423,20 @@
         {
           "area": "Pokémon salvajes",
           "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix, Bronzor y Bronzong."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "S.S. Aqua (Barco Transatlántico)",
+          "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta jugando con el capitán."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes y domingos."
+        },
+        {
+          "area": "Ruta 38 / Central de Energía",
+          "detail": "Equipado en Magnemite o Steelix salvajes (5% prob.)."
         }
       ]
     }
@@ -1431,6 +1571,20 @@
           "area": "Pokémon salvajes (Dratini y Dragonair)",
           "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Monte Corona (detrás de la cascada)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Mortero (Sótano Central)",
+          "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes."
+        },
+        {
+          "area": "Islas Remolino / Cueva Dragón",
+          "detail": "Equipado en Horsea, Seadra o Dratini salvajes (5% prob.)."
+        }
       ]
     }
   },
@@ -1528,6 +1682,16 @@
           "area": "Ciudad Vetusta (Casa del Profesor Oak)",
           "detail": "Entregado por el Profesor Oak tras registrar la Pokédex Nacional y haberlo visitado previamente en el Parque Compi."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "detail": "Regalo del vigilante de seguridad en el vestíbulo del edificio."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves."
+        }
       ]
     }
   },
@@ -1598,6 +1762,16 @@
         {
           "area": "Pokémon salvajes (Carvanha y Sharpedo)",
           "detail": "5% de probabilidad de llevarlo equipado pescando con Supercaña (Ruta 222)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes y jueves."
+        },
+        {
+          "area": "Carvanha Salvaje",
+          "detail": "Equipado raramente en Carvanha salvajes (5% prob.)."
         }
       ]
     }
@@ -1670,6 +1844,16 @@
           "area": "Pokémon salvajes (Chinchou, Lanturn y Relicanth)",
           "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña (Ruta 220)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los miércoles y sábados."
+        },
+        {
+          "area": "Chinchou / Lanturn Salvaje",
+          "detail": "Equipado raramente en Chinchou o Lanturn salvajes (5% prob.)."
+        }
       ]
     }
   },
@@ -1729,6 +1913,12 @@
         {
           "area": "Ruta 204 (Sur)",
           "detail": "En un islote en el estanque suroeste navegando con Surf."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Cueva Acantilado (Ruta 47)",
+          "detail": "En una de las plataformas interiores con escaleras hacia la costa."
         }
       ]
     }
@@ -1790,6 +1980,12 @@
           "area": "Ruta 225",
           "detail": "Al oeste de la casa en un claro cortando el arbusto con Corte."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 38",
+          "detail": "En el camino lateral entre vallas y arbustos cortables."
+        }
       ]
     }
   },
@@ -1846,6 +2042,24 @@
         {
           "area": "Habilidad Recogida",
           "detail": "Probabilidad aleatoria con Pokémon de Lv 41 o superior."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Parque Nacional",
+          "detail": "En una repisa de hierba accesible a través de la brecha en la valla exterior con Golpe Roca y Treparrocas."
+        },
+        {
+          "area": "Ruta 14 (Kanto)",
+          "detail": "Regalo de una chica en el mirador al mostrarle una Chansey capturada."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
       ]
     }
@@ -1912,6 +2126,24 @@
           "area": "Habilidad Recogida",
           "detail": "Probabilidad aleatoria con Pokémon de Lv 31 o superior."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Cueva Celeste (Kanto)",
+          "detail": "En el suelo en el piso superior de la cueva."
+        },
+        {
+          "area": "Zona Safari de Johto (Bahía Blanca)",
+          "detail": "Objeto en el suelo en la zona de cueva."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (tras obtener la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -1969,6 +2201,24 @@
           "area": "Habilidad Recogida",
           "detail": "Probabilidad aleatoria con Pokémon de Lv 51 o superior."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Plateado (Exterior)",
+          "detail": "Cerca del lago en la base de la cascada accesible con Cascada y Surf."
+        },
+        {
+          "area": "Ruta 17 (Camino de Bicis de Kanto)",
+          "detail": "En el arcén derecho del camino descendente."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes y domingos (tras la Pokédex Nacional)."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -2022,6 +2272,20 @@
           "area": "Pokémon salvajes (Happiny y Chansey)",
           "detail": "50% de probabilidad de llevarla equipada al capturarlos en el Jardín Trofeo."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta Helada (Johto)",
+          "detail": "En el laberinto de hielo en el sótano B1."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes."
+        },
+        {
+          "area": "Parque Nacional (Concurso de Captura de Bichos)",
+          "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
       ]
     }
   },
@@ -2054,6 +2318,16 @@
         {
           "area": "Ruta 228",
           "detail": "En un foso de arena al este de Entrenador Guay José (requiere Bici Carrera y Golpe Roca)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Mortero (Zona Este)",
+          "detail": "En una cornisa superior accesible navegando con Surf y remontando la Cascada."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los sábados."
         }
       ]
     }
@@ -2088,6 +2362,16 @@
           "area": "Pokémon salvajes (Electabuzz)",
           "detail": "5% de probabilidad de llevarlo equipado en estado salvaje (Ruta 222)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ciudad Celeste (Cueva Celeste)",
+          "detail": "En una orilla rocosa del lago subterráneo accesible con Surf."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los viernes y domingos (post-game)."
+        }
       ]
     }
   },
@@ -2121,6 +2405,16 @@
           "area": "Pokémon salvajes (Magmar)",
           "detail": "5% de probabilidad de llevarlo equipado en estado salvaje (Forja Fuego)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Islas Espuma (Sótano B2)",
+          "detail": "En el laberinto helado inferior de las islas en Kanto."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los martes y domingos (post-game)."
+        }
       ]
     }
   },
@@ -2153,6 +2447,16 @@
         {
           "area": "Ruta 225",
           "detail": "En una pequeña isla fluvial navegando con Surf (requiere Corte)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Frente de Batalla (Johto)",
+          "detail": "En la plaza exterior de acceso a las instalaciones."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes."
         }
       ]
     }
@@ -2198,6 +2502,16 @@
         {
           "area": "Cueva Retorno",
           "detail": "En la cámara final alcanzando los 3 pilares en menos de 4 salas."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Plateado (Interior de la Cueva)",
+          "detail": "En una cornisa alta que requiere usar Treparrocas."
+        },
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los jueves."
         }
       ]
     }
@@ -2256,6 +2570,16 @@
           "area": "Frente de Batalla",
           "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable en el mostrador del Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+        },
+        {
+          "area": "Ruta 28 (Camino a Monte Plateado)",
+          "detail": "Objeto oculto en la hierba alta."
+        }
       ]
     }
   },
@@ -2301,6 +2625,12 @@
           "area": "Frente de Batalla",
           "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Frente de Batalla",
+          "detail": "Canjeable en el mostrador del Servicio de Intercambio por 48 Puntos de Batalla (PB)."
+        }
       ]
     }
   },
@@ -2330,6 +2660,12 @@
         {
           "area": "Ruta 212 (Norte)",
           "detail": "Al oeste de la Mansión Pokémon cruzando el pequeño estanque con Surf."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 42",
+          "detail": "En una pequeña franja de tierra accesible cortando un arbusto."
         }
       ]
     }
@@ -2361,6 +2697,12 @@
           "area": "Ruta 221",
           "detail": "Entre los árboles al oeste de la casa solitaria de los desafíos."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Mortero",
+          "detail": "En una caverna secundaria accesible con Surf."
+        }
       ]
     }
   },
@@ -2390,6 +2732,12 @@
         {
           "area": "Forja Fuego",
           "detail": "En la esquina sureste del interior de la fábrica sorteando las baldosas giratorias."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Cueva Unión",
+          "detail": "En una sección rocosa tras romper rocas con Golpe Roca."
         }
       ]
     }
@@ -2421,6 +2769,12 @@
           "area": "Ruinas Sosiego",
           "detail": "En la cámara interior más profunda de las ruinas."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruinas Alfa",
+          "detail": "En una de las cámaras secretas tras resolver el puzzle."
+        }
       ]
     }
   },
@@ -2450,6 +2804,12 @@
         {
           "area": "Senda Desolada",
           "detail": "En la cámara norte más profunda de la cueva (requiere Golpe Roca y Surf)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Domo Pokéathlon",
+          "detail": "Canjeable por Puntos Atleta o regalo especial."
         }
       ]
     }
@@ -2481,6 +2841,12 @@
           "area": "Ciudad Rocavelo",
           "detail": "En la colina situada junto al Gimnasio Pokémon (requiere Treparrocas)."
         }
+      ],
+      "heartgold": [
+        {
+          "area": "Monte Mortero",
+          "detail": "En una repisa rocosa interior."
+        }
       ]
     }
   },
@@ -2510,6 +2876,12 @@
         {
           "area": "Ruta 210 (Norte)",
           "detail": "Detrás de la segunda cascada navegando por el río con Surf y Cascada desde Pueblo Caelestis."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruta 47",
+          "detail": "En un saliente marino accesible surfeando junto a la Cascada."
         }
       ]
     }
