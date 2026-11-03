@@ -2768,6 +2768,123 @@ class PokemonHeartGoldGen4Tests(TestCase):
         self.assertContains(resp_hub, 'id="card-game-heartgold"')
         self.assertContains(resp_hub, "Pokémon Oro HeartGold")
 
+    def test_heartgold_unown_ruins_of_alph_mechanics_and_forms(self):
+        """
+        Valida que HeartGold implemente fielmente las Ruinas Alfa de Johto para 28 formas de Unown:
+        1. Contexto regional: is_johto=True, is_hgss=True, is_sinnoh=False, is_gen2_johto=False.
+        2. Vistas y modal: Ruinas Alfa (28 Formas), pestañas de las 4 cámaras + Sala Secreta (!, ?), guía de HGSS.
+        3. Exclusión total de Ruinas Sosiego y nota histórica de Gen 2 (DVs I y V).
+        4. Catálogo de formas: orden alfabético estricto (A-Z, !, ?), donde F es el sprite representativo base 201.png.
+        5. Métodos de obtención individuales: A-Z apuntan a su cámara y rompecabezas, y !/? indican el requisito de las 26 formas A-Z y 4 acertijos.
+        """
+        from tracker.unown_data import get_unown_catalog, get_game_unown_chambers, HGSS_UNOWN_CHAMBERS
+        from tracker.pokemon_forms import get_unown_forms
+        from pathlib import Path
+        from django.conf import settings
+
+        # 1. Estructura de cámaras HGSS en orden de progresión natural con rangos de 4.ª Gen (Kabuto -> Aerodactyl -> Omanyte -> Ho-Oh -> Sala Secreta)
+        chambers = get_game_unown_chambers("heartgold")
+        self.assertEqual(list(chambers.keys()), ["kabuto", "aerodactyl", "omanyte", "ho_oh", "secret_entrance"])
+        self.assertEqual(chambers["kabuto"]["letters"], ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"])
+        self.assertEqual(chambers["aerodactyl"]["letters"], ["r", "s", "t", "u", "v"])
+        self.assertEqual(chambers["omanyte"]["letters"], ["k", "l", "m", "n", "o", "p", "q"])
+        self.assertEqual(chambers["ho_oh"]["letters"], ["w", "x", "y", "z"])
+        self.assertEqual(chambers["secret_entrance"]["letters"], ["exclamation", "question"])
+
+        # 2. Catálogo Unown (28 formas)
+        catalog = get_unown_catalog("heartgold")
+        self.assertEqual(len(catalog), 28)
+        self.assertEqual(catalog[0]["letter"], "a")
+        self.assertEqual(catalog[0]["chamber_key"], "kabuto")
+        self.assertEqual(catalog[9]["letter"], "j")
+        self.assertEqual(catalog[9]["chamber_key"], "kabuto")
+        self.assertEqual(catalog[10]["letter"], "k")
+        self.assertEqual(catalog[10]["chamber_key"], "omanyte")
+        self.assertEqual(catalog[16]["letter"], "q")
+        self.assertEqual(catalog[16]["chamber_key"], "omanyte")
+        self.assertEqual(catalog[17]["letter"], "r")
+        self.assertEqual(catalog[17]["chamber_key"], "aerodactyl")
+        self.assertEqual(catalog[21]["letter"], "v")
+        self.assertEqual(catalog[21]["chamber_key"], "aerodactyl")
+        self.assertEqual(catalog[22]["letter"], "w")
+        self.assertEqual(catalog[22]["chamber_key"], "ho_oh")
+        self.assertEqual(catalog[25]["letter"], "z")
+        self.assertEqual(catalog[25]["chamber_key"], "ho_oh")
+        self.assertEqual(catalog[26]["letter"], "exclamation")
+        self.assertEqual(catalog[26]["chamber_key"], "secret_entrance")
+        self.assertEqual(catalog[27]["letter"], "question")
+        self.assertEqual(catalog[27]["chamber_key"], "secret_entrance")
+
+        # 3. Formas detalladas para modales (orden alfabético y obtención precisa)
+        forms = get_unown_forms("heartgold")
+        self.assertEqual(len(forms), 28)
+        self.assertEqual(forms[0]["form_key"], "a")
+        self.assertIn("Cámara de Kabuto", forms[0]["summary"])
+        self.assertEqual(forms[0]["locations"][0]["area"], "Cámara de Kabuto (Ruinas Alfa)")
+
+        # Forma K (desbloqueada en Omanyte en HGSS)
+        form_k = [f for f in forms if f["form_key"] == "k"][0]
+        self.assertIn("Cámara de Omanyte", form_k["summary"])
+        self.assertEqual(form_k["locations"][0]["area"], "Cámara de Omanyte (Ruinas Alfa)")
+
+        # Forma R (desbloqueada en Aerodactyl en HGSS)
+        form_r = [f for f in forms if f["form_key"] == "r"][0]
+        self.assertIn("Cámara de Aerodactyl", form_r["summary"])
+        self.assertEqual(form_r["locations"][0]["area"], "Cámara de Aerodactyl (Ruinas Alfa)")
+
+        # Forma W (desbloqueada en Ho-Oh en HGSS)
+        form_w = [f for f in forms if f["form_key"] == "w"][0]
+        self.assertIn("Cámara de Ho-Oh", form_w["summary"])
+        self.assertEqual(form_w["locations"][0]["area"], "Cámara de Ho-Oh (Ruinas Alfa)")
+
+        # Formas ! y ?
+        form_excl = [f for f in forms if f["form_key"] == "exclamation"][0]
+        self.assertIn("Sala Secreta de Entrada", form_excl["summary"])
+        self.assertIn("26 formas", form_excl["summary"])
+        self.assertIn("4 salas secretas", form_excl["summary"])
+        self.assertEqual(form_excl["locations"][0]["area"], "Ruinas Alfa (Sala Secreta de Entrada)")
+
+        # 4. Sprite representativo principal (Unown F en 201.png)
+        base_media = Path(settings.MEDIA_ROOT)
+        hg_sprite_main = base_media / "pokemon" / "sprites" / "heartgold" / "201.png"
+        hg_sprite_f = base_media / "pokemon" / "sprites" / "heartgold" / "unown" / "f.png"
+        self.assertTrue(hg_sprite_main.exists())
+        self.assertTrue(hg_sprite_f.exists())
+        self.assertEqual(hg_sprite_main.read_bytes(), hg_sprite_f.read_bytes())
+
+        # 5. Renderizado en vista HTTP
+        resp = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "heartgold", "pokedex_slug": "johto"}))
+        self.assertEqual(resp.status_code, 200)
+        self.assertTrue(resp.context["is_johto"])
+        self.assertTrue(resp.context["is_hgss"])
+        self.assertFalse(resp.context["is_sinnoh"])
+        self.assertFalse(resp.context["is_gen2_johto"])
+        self.assertEqual(resp.context["unown_total_forms"], 28)
+
+        # Aserciones en el HTML renderizado (pestañas en orden natural de HGSS: Kabuto -> Aerodactyl -> Omanyte -> Ho-Oh -> Sala Secreta)
+        self.assertContains(resp, "Ruinas Alfa</span> • <span>28 Formas</span>")
+        self.assertContains(resp, 'id="unown-tab-secret_entrance"')
+        self.assertContains(resp, 'Cámara Kabuto (A-J)')
+        self.assertContains(resp, 'Cámara Aerodactyl (R-V)')
+        self.assertContains(resp, 'Cámara Omanyte (K-Q)')
+        self.assertContains(resp, 'Cámara Ho-Oh (W-Z)')
+        self.assertContains(resp, 'Sala Secreta (!, ?)')
+
+        html_content = resp.content.decode('utf-8')
+        pos_kabuto = html_content.index('id="unown-tab-kabuto"')
+        pos_aero = html_content.index('id="unown-tab-aerodactyl"')
+        pos_oma = html_content.index('id="unown-tab-omanyte"')
+        pos_hooh = html_content.index('id="unown-tab-ho_oh"')
+        pos_secret = html_content.index('id="unown-tab-secret_entrance"')
+        self.assertTrue(pos_kabuto < pos_aero < pos_oma < pos_hooh < pos_secret)
+        self.assertContains(resp, 'id="unown-hgss-note"')
+        self.assertContains(resp, 'Mecánicas de Encuentro (Ruinas Alfa & Salas Secretas)')
+        self.assertNotContains(resp, 'Ruinas Sosiego • 28 Formas')
+        self.assertNotContains(resp, 'id="unown-sinnoh-note"')
+        self.assertNotContains(resp, 'id="unown-tab-friend"')
+        self.assertNotContains(resp, 'id="unown-tab-dead_ends"')
+        self.assertNotContains(resp, 'Particularidad Histórica (Shinies en 2ª Gen)')
+
 
 class GenderDifferencesAndModalDataTests(TestCase):
     """

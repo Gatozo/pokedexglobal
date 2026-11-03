@@ -2,7 +2,7 @@
  * Pokédex Global - Modal de Ruinas Alfa / Bloc Unown (modal_unown.js)
  */
 
-import { state, UNOWN_CHAMBER_HINTS } from './state.js';
+import { state, UNOWN_CHAMBER_HINTS, HGSS_UNOWN_CHAMBER_HINTS } from './state.js';
 import { getCsrfToken } from './api.js';
 import { 
     setModalUrlHash, 
@@ -111,7 +111,10 @@ export function filterUnownChamber(chamberKey) {
                     : 'Selecciona una cámara para filtrar las letras y consultar el acertijo de su sala secreta.');
         }
     } else {
-        const hint = UNOWN_CHAMBER_HINTS[chamberKey];
+        const isHgss = !!document.getElementById('unown-tab-secret_entrance');
+        const hint = (isHgss && HGSS_UNOWN_CHAMBER_HINTS && HGSS_UNOWN_CHAMBER_HINTS[chamberKey])
+            ? HGSS_UNOWN_CHAMBER_HINTS[chamberKey]
+            : UNOWN_CHAMBER_HINTS[chamberKey];
         if (hint && hintTitle && hintText) {
             hintTitle.textContent = hint.title;
             hintText.textContent = hint.text;
@@ -290,6 +293,27 @@ export function toggleUnownHistoricalAccordion() {
         btn.setAttribute('aria-expanded', 'true');
         if (icon) icon.classList.add('rotate-180');
         if (label) label.textContent = 'Ocultar nota';
+    }
+}
+
+export function toggleUnownHgssAccordion() {
+    const btn = document.getElementById('unown-hgss-accordion-btn');
+    const content = document.getElementById('unown-hgss-accordion-content');
+    const icon = document.getElementById('unown-hgss-accordion-icon');
+    const label = document.getElementById('unown-hgss-accordion-label');
+    if (!btn || !content) return;
+
+    const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+        content.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Mostrar guía';
+    } else {
+        content.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar guía';
     }
 }
 

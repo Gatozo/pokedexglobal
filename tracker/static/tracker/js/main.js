@@ -65,6 +65,7 @@ import {
     updateUnownModalUI, 
     toggleUnownFormCatch,
     toggleUnownHistoricalAccordion,
+    toggleUnownHgssAccordion,
     toggleUnownSinnohAccordion,
     initUnownMarquees
 } from './modal_unown.js';
@@ -177,6 +178,7 @@ window.filterUnownChamber = filterUnownChamber;
 window.updateUnownModalUI = updateUnownModalUI;
 window.toggleUnownFormCatch = toggleUnownFormCatch;
 window.toggleUnownHistoricalAccordion = toggleUnownHistoricalAccordion;
+window.toggleUnownHgssAccordion = toggleUnownHgssAccordion;
 window.toggleUnownSinnohAccordion = toggleUnownSinnohAccordion;
 window.initUnownMarquees = initUnownMarquees;
 

@@ -17,7 +17,7 @@
                 <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
                     <img 
                         id="unown-modal-header-icon"
-                        src="/media/pokemon/icons/{% if is_sinnoh %}gen4{% elif is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
+                        src="/media/pokemon/icons/{% if is_sinnoh or is_hgss %}gen4{% elif is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
                         alt="Unown" 
                         width="28"
                         height="28"
@@ -82,8 +82,8 @@
                 ></div>
             </div>
 
-            {% if is_johto %}
-            <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny en Johto) -->
+            {% if is_gen2_johto %}
+            <!-- Historical Note about Gen 2 Shiny Limitation (Visible solo en modo Shiny en Johto Gen 2) -->
             <div id="unown-historical-note" class="{% if not is_shinydex_active %}hidden {% endif %}border-2 border-slate-950 rounded-xl overflow-hidden shadow-sm bg-amber-50">
                 <button 
                     type="button"
@@ -112,6 +112,45 @@
                 <div id="unown-historical-accordion-content" class="hidden p-2.5 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/80">
                     <p class="leading-relaxed">
                         <strong>Particularidad histórica de 2ª Generación:</strong> Debido a la relación matemática entre los DVs (valores individuales) y la forma de Unown en Game Boy Color, en los juegos originales únicamente <strong>Unown I</strong> y <strong>Unown V</strong> podían aparecer variocolor de forma legal en estado salvaje.
+                    </p>
+                </div>
+            </div>
+            {% elif is_hgss %}
+            <!-- Guía de Mecánicas de Ruinas Alfa (HeartGold & SoulSilver) -->
+            <div id="unown-hgss-note" class="border-2 border-slate-950 rounded-xl overflow-hidden shadow-sm bg-amber-50">
+                <button 
+                    type="button"
+                    id="unown-hgss-accordion-btn"
+                    onclick="toggleUnownHgssAccordion()"
+                    class="w-full px-3 py-2 bg-amber-100/90 hover:bg-amber-100 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                    aria-expanded="false"
+                    aria-controls="unown-hgss-accordion-content"
+                >
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="/media/items/journal.png" alt="Mecánicas Johto" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                        <span class="font-black text-xs uppercase tracking-wide truncate text-amber-950">
+                            Mecánicas de Encuentro (Ruinas Alfa & Salas Secretas)
+                        </span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[9px] font-black uppercase border border-slate-950 bg-amber-300 text-slate-950 shrink-0">
+                            Guía
+                        </span>
+                    </div>
+                    <div class="flex items-center gap-1.5 shrink-0">
+                        <span id="unown-hgss-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Mostrar guía</span>
+                        <svg id="unown-hgss-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </button>
+                <div id="unown-hgss-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
+                    <p>
+                        <strong>1. Rompecabezas de las 4 Cámaras (A-Z en la cueva principal):</strong> Resolver cada panel de piedra abre el acceso subterráneo para que aparezcan sus respectivas letras según tu progresión: <strong>Kabuto</strong> (A - J), <strong>Aerodactyl</strong> (R - V), <strong>Omanyte</strong> (K - Q) y <strong>Ho-Oh</strong> (W - Z).
+                    </p>
+                    <p>
+                        <strong>2. Acertijos de las 4 Salas Secretas:</strong> La inscripción trasera de cada cámara requiere una acción especial: <em>HUIDA</em> (usar Cuerda Huida en Kabuto), <em>DESTELLO</em> (usar Destello en Aerodactyl), <em>AGUA</em> (usar Piedra Agua en Omanyte) y <em>HO-OH</em> (llevar a Ho-Oh de acompañante en primer lugar).
+                    </p>
+                    <p>
+                        <strong>3. Sala Secreta de Entrada (! y ? - 50% de aparición):</strong> Al registrar las 26 formas alfabéticas (A-Z) en tu Bloc Unown y haber resuelto las 4 salas secretas tras los rompecabezas, se abrirá un orificio en el suelo de la sala de entrada principal que conduce al recinto exclusivo donde habitan <strong>Unown !</strong> y <strong>Unown ?</strong>.
                     </p>
                 </div>
             </div>
@@ -168,6 +207,48 @@
             >
                 Todas ({{ unown_total_forms }})
             </button>
+            {% if is_hgss %}
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('kabuto')"
+                id="unown-tab-kabuto"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Kabuto (A-J)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('aerodactyl')"
+                id="unown-tab-aerodactyl"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Aerodactyl (R-V)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('omanyte')"
+                id="unown-tab-omanyte"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Omanyte (K-Q)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('ho_oh')"
+                id="unown-tab-ho_oh"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Cámara Ho-Oh (W-Z)
+            </button>
+            <button 
+                type="button" 
+                onclick="filterUnownChamber('secret_entrance')"
+                id="unown-tab-secret_entrance"
+                class="unown-tab px-3 py-1 rounded-xl text-xs font-black uppercase border-2 border-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-200/60 cursor-pointer shrink-0"
+            >
+                Sala Secreta (!, ?)
+            </button>
+            {% else %}
             <button 
                 type="button" 
                 onclick="filterUnownChamber('kabuto')"
@@ -200,6 +281,7 @@
             >
                 Cámara Ho-Oh (X-Z)
             </button>
+            {% endif %}
         </div>
 
         <!-- Chamber Secret Hint Box (dinámico según pestaña, altura fija y estable) -->

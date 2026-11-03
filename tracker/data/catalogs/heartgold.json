@@ -5218,23 +5218,27 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruins Alfa (Cámara A), Ruins Alfa (Cámara B), Ruins Alfa (Cámara C)).",
+      "summary": "Salvaje en Ruinas Alfa (desbloqueado mediante los rompecabezas de Kabuto, Aerodactyl, Omanyte y Ho-Oh, y sala secreta de entrada para ! y ?).",
       "locations": [
         {
-          "area": "Ruins Alfa (Cámara A)",
-          "method": "Hierba alta"
+          "area": "Cámara de Kabuto (Ruinas Alfa)",
+          "method": "Cueva • Tras resolver el rompecabezas de Kabuto (Formas A - J)"
         },
         {
-          "area": "Ruins Alfa (Cámara B)",
-          "method": "Hierba alta"
+          "area": "Cámara de Aerodactyl (Ruinas Alfa)",
+          "method": "Cueva • Tras resolver el rompecabezas de Aerodactyl (Formas R - V)"
         },
         {
-          "area": "Ruins Alfa (Cámara C)",
-          "method": "Hierba alta"
+          "area": "Cámara de Omanyte (Ruinas Alfa)",
+          "method": "Cueva • Tras resolver el rompecabezas de Omanyte (Formas K - Q)"
         },
         {
-          "area": "Ruins Alfa (Cámara D)",
-          "method": "Hierba alta"
+          "area": "Cámara de Ho-Oh (Ruinas Alfa)",
+          "method": "Cueva • Tras resolver el rompecabezas de Ho-Oh (Formas W - Z)"
+        },
+        {
+          "area": "Sala Secreta de Entrada (Ruinas Alfa)",
+          "method": "Descenso secreto • Requiere capturar las 26 formas A-Z y abrir las 4 salas secretas (Formas ! y ?)"
         }
       ]
     },

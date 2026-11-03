@@ -58,6 +58,29 @@ export const state = {
 };
 
 // Pistas oficiales y metadatos de las cámaras de Unown (Ruinas Alfa en Gen 2 y Ruinas Sete en Rojo Fuego / Verde Hoja)
+export const HGSS_UNOWN_CHAMBER_HINTS = {
+    kabuto: {
+        title: "Cámara de Kabuto (Noreste - Entrada Principal)",
+        text: "Alberga las formas A - J. Sala secreta: Usar Cuerda Huida (Escape Rope) frente a la inscripción trasera."
+    },
+    aerodactyl: {
+        title: "Cámara de Aerodactyl (Sureste - Surf)",
+        text: "Alberga las formas R - V. Sala secreta: Usar Destello (Flash) frente a la inscripción trasera."
+    },
+    omanyte: {
+        title: "Cámara de Omanyte (Suroeste - Cueva Unión)",
+        text: "Alberga las formas K - Q. Sala secreta: Usar Piedra Agua (Water Stone) frente a la inscripción trasera."
+    },
+    ho_oh: {
+        title: "Cámara de Ho-Oh (Noroeste - Cueva Unión)",
+        text: "Alberga las formas W - Z. Sala secreta: Llevar a Ho-Oh de acompañante frente a la inscripción trasera."
+    },
+    secret_entrance: {
+        title: "Sala Secreta de Entrada (Ruinas Alfa)",
+        text: "Alberga a Unown ! (50%) y Unown ? (50%). Requiere registrar las 26 formas A-Z y abrir las 4 salas secretas tras los rompecabezas para abrir la trampilla en el suelo de la entrada."
+    }
+};
+
 export const UNOWN_CHAMBER_HINTS = {
     // Ruinas Alfa (Johto - Gen 2)
     kabuto: {
@@ -75,6 +98,10 @@ export const UNOWN_CHAMBER_HINTS = {
     ho_oh: {
         title: "Cámara de Ho-Oh (Noroeste - Cueva Unión)",
         text: "Alberga las formas X - Z. Sala secreta: Llevar a Ho-Oh de 1.º en el equipo frente a la inscripción trasera."
+    },
+    secret_entrance: {
+        title: "Sala Secreta de Entrada (Ruinas Alfa)",
+        text: "Alberga a Unown ! (50%) y Unown ? (50%). Requiere registrar las 26 formas A-Z y abrir las 4 salas secretas tras los rompecabezas para abrir la trampilla en el suelo de la entrada."
     },
     // Ruinas Sete / Cámaras Sete (Archi7 - Rojo Fuego / Verde Hoja)
     anemuna: {
