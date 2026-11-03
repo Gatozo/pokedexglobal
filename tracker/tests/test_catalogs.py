@@ -2620,6 +2620,23 @@ class PokemonHeartGoldGen4Tests(TestCase):
         self.assertIn("Islas Remolino", lugia_locs)
         self.assertIn("70", lugia_locs)
 
+        # Validación topónimos y textos oficiales canónicos (Pikachu, Magnetotrén, Ruinas Alfa, Ruta Helada)
+        pikachu = [e for e in reg_cat if e.pokemon.national_number == 25][0]
+        pika_locs = str(pikachu.obtaining_info.get("locations", []))
+        self.assertIn("Magnetotrén", pika_locs)
+        self.assertNotIn("Magnetotrón", pika_locs)
+        self.assertNotIn("Npc trade", pika_locs)
+        self.assertEqual(pikachu.obtaining_info.get("badge_label"), "Salvaje / Intercambio")
+
+        # Verificar que no existen anglicismos ni deformaciones en todo el catálogo
+        for entry in reg_cat:
+            obt_str = str(entry.obtaining_info)
+            self.assertNotIn("Magnetotrón", obt_str)
+            self.assertNotIn("Ruins Alfa", obt_str)
+            self.assertNotIn("Ruta de Hielo", obt_str)
+            self.assertNotIn("'Npc trade'", obt_str)
+            self.assertNotIn("'Gift egg'", obt_str)
+
     def test_heartgold_pichu_forms_and_spiky_eared(self):
         from tracker.pokemon_forms import get_pokemon_forms
         from tracker.catalog_service import get_compiled_catalog

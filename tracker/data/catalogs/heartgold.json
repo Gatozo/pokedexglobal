@@ -833,85 +833,17 @@
     "flavor_text": "Aletea con sus cortas alas para hacer salir a los insectos de la hierba, y los caza con su pico.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Regalo",
       "badge_color": "emerald",
-      "summary": "Salvaje en 19 zonas (ej: Ruta 33, Ruta 42, Ruta 44) (también obtenible mediante crianza).",
+      "summary": "Salvaje en múltiples rutas de Johto y Kanto (hierba alta y árboles con Golpe Cabeza). También regalo de Randy en el Paso Norte de Ciudad Trigal con Carta (Spearow apodado Kenya).",
       "locations": [
         {
-          "area": "Ruta 33",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 42",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 44",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ruta 45",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ruta 46",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 47",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ciudad Carmín",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ciudad Azulona",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ruta 3",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 4",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 7",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 9",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 10",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 11",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ruta 16",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Ruta 22",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Rutas de Johto y Kanto",
+          "method": "Hierba alta / Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Trigal (Paso Norte)",
-          "method": "Gift"
-        },
-        {
-          "area": "Pueblo Azalea",
-          "method": "Golpe Cabeza en árboles"
-        },
-        {
-          "area": "Zona Safari (Humedal)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Regalo de Randy con Carta (Kenya)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1072,183 +1004,183 @@
       "locations": [
         {
           "area": "Pueblo Primavera",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 29",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Cerezo",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 30",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 31",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Malva",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 32",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Encinar",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 35",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Parque Nacional",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 36",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 37",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Iris",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 38",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 39",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 43",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Lago de la Furia",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 12",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Verde",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Celeste",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Fucsia",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Pueblo Paleta",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 48",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 26",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 27",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 1",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 2 (Sur hacia Ciudad Verde)",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 3",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 4",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 5",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 6",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 8",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 13",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 14",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 15",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 18",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
-          "method": "Golpe Cabeza en árboles"
+          "area": "Ruta 21 (Ruta Marítima)",
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 22",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 25",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Bosque Verde",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles, Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Plateada",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Zona Safari (Bahía Blanca)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1307,7 +1239,7 @@
       "locations": [
         {
           "area": "Encinar",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 43",
@@ -1343,7 +1275,7 @@
         },
         {
           "area": "Bosque Verde",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
         }
       ],
       "evolution_info": {
@@ -1924,17 +1856,21 @@
     "flavor_text": "Este inteligente Pokémon tuesta las duras bayas con electricidad para hacerlas más comestibles.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Bosque Verde, Estación del Magnetotrón de Ciudad Azafrán.",
+      "badge_label": "Salvaje / Intercambio",
+      "badge_color": "amber",
+      "summary": "Salvaje en Bosque Verde (hierba alta). También obtenible mediante intercambio con el Teniente Surge en la Estación del Magnetotrén de Ciudad Azafrán (intercambia su Pikachu por uno tuyo).",
       "locations": [
         {
           "area": "Bosque Verde",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Estación del Magnetotrón de Ciudad Azafrán",
-          "method": "Npc trade"
+          "area": "Estación del Magnetotrén de Ciudad Azafrán",
+          "method": "Intercambio con Teniente Surge (por Pikachu)"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -2007,6 +1943,7 @@
       "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "sprite_url": "/media/items/thunder-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": false,
@@ -2185,7 +2122,7 @@
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 2 (Sur hacia Ciudad Verde)",
@@ -2259,7 +2196,7 @@
       "locations": [
         {
           "area": "Encinar",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Parque Nacional",
@@ -2267,7 +2204,7 @@
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 2 (Sur hacia Ciudad Verde)",
@@ -2517,11 +2454,15 @@
     "cry_url": "/media/pokemon/cries/legacy/165.ogg",
     "flavor_text": "Es muy tímido. Tiene miedo de moverse cuando va solo. Pero si va en grupo, se vuelve muy activo.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 30, 31, 37 por la mañana). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -2573,10 +2514,15 @@
     "flavor_text": "Cuando parpadean las estrellas en el cielo nocturno, se mece desprendiendo un polvo brillante.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Ledyba (Nivel 18)",
-      "locations": [],
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Ledyba al Nivel 18 (requiere intercambio desde SoulSilver).",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Evolución de Ledyba transferido"
+        }
+      ],
       "evolution_info": {
         "from": "Ledyba",
         "text": "Evoluciona de Ledyba (Nivel 18)",
@@ -2636,59 +2582,59 @@
       "locations": [
         {
           "area": "Pueblo Primavera",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 29",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ciudad Cerezo",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 30",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
         },
         {
           "area": "Ruta 31",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
         },
         {
           "area": "Ruta 34",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 35",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Parque Nacional",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 36",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 37",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Iris",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 38",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 39",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 12",
@@ -2696,7 +2642,7 @@
         },
         {
           "area": "Ciudad Verde",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ciudad Fucsia",
@@ -2704,27 +2650,27 @@
         },
         {
           "area": "Pueblo Paleta",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 48",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 26",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 27",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 1",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 2 (Sur hacia Ciudad Verde)",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Ruta 13",
@@ -2743,16 +2689,16 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 22",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Bosque Verde",
@@ -2760,7 +2706,7 @@
         },
         {
           "area": "Zona Safari (Bahía Blanca)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2827,7 +2773,7 @@
         },
         {
           "area": "Bosque Verde",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         }
       ],
       "evolution_info": {
@@ -2885,99 +2831,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 23 zonas (ej: Ruins Alfa (Exterior), Cueva Unión (P1), Cueva Unión (Sótano B1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje común en Ruinas Alfa, Cueva Unión, Cueva Oscura y rutas montañosas. También encuentro trampa en la Guarida Rocket de Caoba.",
       "locations": [
         {
-          "area": "Ruins Alfa (Exterior)",
-          "method": "Golpe Roca"
-        },
-        {
-          "area": "Cueva Unión (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Unión (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Unión (Sótano B2 - Lapras)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Cueva Inferior)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Cueva Superior)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 45",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 46",
-          "method": "Hierba alta, Hierba alta (Noche)"
-        },
-        {
-          "area": "Cueva Oscura (Entrada de Ciudad Malva)",
-          "method": "Golpe Roca, Hierba alta"
-        },
-        {
-          "area": "Cueva Oscura (Entrada Ciudad Endrino)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Moon (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Moon (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Túnel Roca (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Túnel Roca (Sótano B1)",
-          "method": "Golpe Roca, Hierba alta"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P3)",
-          "method": "Golpe Roca"
-        },
-        {
-          "area": "Cueva Celeste (P1)",
-          "method": "Golpe Roca"
-        },
-        {
-          "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
-          "method": "Golpe Roca"
-        },
-        {
-          "area": "Zona Safari (Pico)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Ruinas Alfa / Cueva Unión / Cueva Oscura",
+          "method": "Hierba alta / Golpe Roca"
         },
         {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
-          "method": "Static"
+          "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -3055,15 +2917,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P1)",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P2)",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P3)",
+          "area": "Calle Victoria (P3)",
           "method": "Golpe Roca, Hierba alta"
         },
         {
@@ -3275,7 +3137,7 @@
           "method": "Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Ruta de Hielo (Sótano B2)",
+          "area": "Ruta Helada (Sótano B2)",
           "method": "Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -3442,7 +3304,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ruta de Hielo (Sótano B2)",
+          "area": "Ruta Helada (Sótano B2)",
           "method": "Hierba alta"
         },
         {
@@ -3506,7 +3368,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P1)",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
@@ -3514,11 +3376,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P2)",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P3)",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta"
         },
         {
@@ -3651,10 +3513,10 @@
     "cry_url": "/media/pokemon/cries/legacy/173.ogg",
     "flavor_text": "Por su inusual forma estrellada, la gente cree que procede de un meteorito que cayó a la tierra.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "baby",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable (también en el Pokéwalker).",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -3794,6 +3656,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -3874,10 +3737,10 @@
     "cry_url": "/media/pokemon/cries/legacy/174.ogg",
     "flavor_text": "Su cuerpo es muy blando. Si se pone a rodar, rebotará contra todo y será imposible de parar.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "baby",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff (también en el Pokéwalker).",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4021,6 +3884,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -4371,17 +4235,17 @@
     "flavor_text": "Puede separar su mandíbula para engullir a grandes presas, aunque esto le dificulte el movimiento.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Zona Safari (Marisma), Casino de Ciudad Trigal (también obtenible mediante crianza).",
+      "summary": "Salvaje en la Zona Safari (Marisma) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Marisma)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Casino de Ciudad Trigal",
-          "method": "Gift"
+          "method": "Premio del Casino (700 fichas)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4502,7 +4366,7 @@
       "locations": [
         {
           "area": "Cueva Oscura (Entrada de Ciudad Malva)",
-          "method": "Golpe Roca, Hierba alta"
+          "method": "Golpe Roca, Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4555,29 +4419,17 @@
     "flavor_text": "Cuando almacena electricidad en su cuerpo, dobla su volumen. Tócalo y recibirás una descarga.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Regalo",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ruta 32, Ruta 42, Ruta 43) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Rutas 32, 42, 43 y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.",
       "locations": [
         {
-          "area": "Ruta 32",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
-          "area": "Ruta 42",
+          "area": "Ruta 32 / Ruta 42 / Ruta 43",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 43",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Ciudad Malva (Centro Pokémon)",
-          "method": "Gift egg"
-        },
-        {
-          "area": "Zona Safari (Playa Rocosa)",
-          "method": "Hierba alta"
+          "method": "Huevo de regalo de Primo (Contraseña basada en tu ID)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4753,49 +4605,17 @@
     "flavor_text": "Este Pokémon vive en aguas frías. Sale del agua para buscar comida cuando refresca el ambiente.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Regalo",
       "badge_color": "emerald",
-      "summary": "Salvaje en 10 zonas (ej: Ruta 32, Ruins Alfa (Exterior), Cueva Unión (P1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.",
       "locations": [
         {
-          "area": "Ruta 32",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Ruins Alfa (Exterior)",
-          "method": "Surf"
-        },
-        {
-          "area": "Cueva Unión (P1)",
-          "method": "Surf"
-        },
-        {
-          "area": "Cueva Unión (Sótano B1)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 47 (Entrada de la Cueva)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Ruta 32 / Ruinas Alfa / Cueva Unión",
+          "method": "Hierba alta / Surf"
         },
         {
           "area": "Ciudad Malva (Centro Pokémon)",
-          "method": "Gift egg"
-        },
-        {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta, Hierba alta (Noche), Surf"
-        },
-        {
-          "area": "Zona Safari (Marisma)",
-          "method": "Hierba alta (Noche), Surf"
-        },
-        {
-          "area": "Zona Safari (Humedal)",
-          "method": "Hierba alta (Noche), Surf"
+          "method": "Huevo de regalo de Primo (Contraseña basada en tu ID)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4850,14 +4670,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 21 zonas (ej: Ruta 32, Ruins Alfa (Exterior), Cueva Unión (P1)).",
+      "summary": "Salvaje en 21 zonas (ej: Ruta 32, Ruinas Alfa (Exterior), Cueva Unión (P1)).",
       "locations": [
         {
           "area": "Ruta 32",
           "method": "Surf"
         },
         {
-          "area": "Ruins Alfa (Exterior)",
+          "area": "Ruinas Alfa (Exterior)",
           "method": "Surf"
         },
         {
@@ -5218,27 +5038,23 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruinas Alfa (desbloqueado mediante los rompecabezas de Kabuto, Aerodactyl, Omanyte y Ho-Oh, y sala secreta de entrada para ! y ?).",
+      "summary": "Salvaje en 4 zonas (ej: Ruinas Alfa (Cámara A), Ruinas Alfa (Cámara B), Ruinas Alfa (Cámara C)).",
       "locations": [
         {
-          "area": "Cámara de Kabuto (Ruinas Alfa)",
-          "method": "Cueva • Tras resolver el rompecabezas de Kabuto (Formas A - J)"
+          "area": "Ruinas Alfa (Cámara A)",
+          "method": "Hierba alta"
         },
         {
-          "area": "Cámara de Aerodactyl (Ruinas Alfa)",
-          "method": "Cueva • Tras resolver el rompecabezas de Aerodactyl (Formas R - V)"
+          "area": "Ruinas Alfa (Cámara B)",
+          "method": "Hierba alta"
         },
         {
-          "area": "Cámara de Omanyte (Ruinas Alfa)",
-          "method": "Cueva • Tras resolver el rompecabezas de Omanyte (Formas K - Q)"
+          "area": "Ruinas Alfa (Cámara C)",
+          "method": "Hierba alta"
         },
         {
-          "area": "Cámara de Ho-Oh (Ruinas Alfa)",
-          "method": "Cueva • Tras resolver el rompecabezas de Ho-Oh (Formas W - Z)"
-        },
-        {
-          "area": "Sala Secreta de Entrada (Ruinas Alfa)",
-          "method": "Descenso secreto • Requiere capturar las 26 formas A-Z y abrir las 4 salas secretas (Formas ! y ?)"
+          "area": "Ruinas Alfa (Cámara D)",
+          "method": "Hierba alta"
         }
       ]
     },
@@ -5287,57 +5103,17 @@
     "flavor_text": "Gira y se retuerce bajo la tierra. El atronador rugido de su excavación resuena a lo lejos.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en 12 zonas (ej: Ciudad Malva, Cueva Unión (P1), Cueva Unión (Sótano B1)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Cueva Unión, Ruta 47, Monte Plateado, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva a cambio de un Bellsprout.",
       "locations": [
         {
+          "area": "Cueva Unión / Ruta 47 / Túnel Roca",
+          "method": "Encuentro en cuevas"
+        },
+        {
           "area": "Ciudad Malva",
-          "method": "Npc trade"
-        },
-        {
-          "area": "Cueva Unión (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Unión (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Unión (Sótano B2 - Lapras)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (Laderas)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Túnel Roca (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P3)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Terreno Baldío)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Intercambio por un Bellsprout (Onix Rocoso)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5390,21 +5166,17 @@
     "flavor_text": "Su cuerpo ha sido comprimido en el interior de la tierra y, por eso, es hasta más duro que el diamante.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Plateado (P2), Ruta 47 (Interior de la Cueva), Gimnasio de Ciudad Olivo.",
+      "badge_label": "Salvaje / Intercambio",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Monte Plateado (P2) y Ruta 47. También por intercambio con Yasmina en el Gimnasio de Ciudad Olivo por cualquier Pokémon, o evolucionando de Onix.",
       "locations": [
         {
-          "area": "Monte Plateado (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
+          "area": "Monte Plateado (P2) / Ruta 47",
+          "method": "Encuentro en cuevas"
         },
         {
           "area": "Gimnasio de Ciudad Olivo",
-          "method": "Npc trade"
+          "method": "Intercambio con Yasmina (por cualquier Pokémon)"
         }
       ],
       "evolution_info": {
@@ -5420,6 +5192,7 @@
       "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
       "icon_url": "/media/items/metal-coat.png",
+      "sprite_url": "/media/items/metal-coat.png",
       "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -5671,6 +5444,7 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
@@ -6125,7 +5899,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Ruins Alfa (Exterior)",
+          "area": "Ruinas Alfa (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6406,6 +6180,7 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
@@ -6496,6 +6271,7 @@
       "name": "Roca del Rey",
       "name_es": "Roca del Rey",
       "icon_url": "/media/items/kings-rock.png",
+      "sprite_url": "/media/items/kings-rock.png",
       "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -6590,7 +6366,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Ruins Alfa (Exterior)",
+          "area": "Ruinas Alfa (Exterior)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -6818,7 +6594,7 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
@@ -7469,6 +7245,7 @@
       "name": "Roca del Rey",
       "name_es": "Roca del Rey",
       "icon_url": "/media/items/kings-rock.png",
+      "sprite_url": "/media/items/kings-rock.png",
       "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -7704,6 +7481,7 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
@@ -7794,6 +7572,7 @@
       "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "sprite_url": "/media/items/sun-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
@@ -7996,45 +7775,17 @@
     "flavor_text": "Siente los ataques inminentes y se teletransporta a un lugar seguro, antes de que estos puedan darle.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en 9 zonas (ej: Ruta 34, Ruta 35, Ruta 5) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Rutas 34, 35, Kanto y Zona Safari. También canjeable por 200 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruta 34",
+          "area": "Ruta 34 / Ruta 35 / Rutas de Kanto",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 35",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 5",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 6",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 8",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 24",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 25",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Llanura)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Casino de Ciudad Trigal",
-          "method": "Gift"
+          "method": "Premio del Casino (200 fichas)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8228,7 +7979,7 @@
         },
         {
           "area": "Ruta 47",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Cueva Celeste (P1)",
@@ -8331,7 +8082,7 @@
         },
         {
           "area": "Encinar",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 34",
@@ -8715,6 +8466,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -8950,6 +8702,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -9037,7 +8790,7 @@
       "locations": [
         {
           "area": "Ruta 35",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9231,6 +8984,7 @@
       "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "sprite_url": "/media/items/sun-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
@@ -9302,91 +9056,91 @@
       "locations": [
         {
           "area": "Pueblo Primavera",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 29",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Cerezo",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 30",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 31",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Malva",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 32",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 35",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Parque Nacional",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 36",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 37",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Iris",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 38",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 39",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 43",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Lago de la Furia",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 48",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 26",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 27",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Zona Safari (Bahía Blanca)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9456,6 +9210,7 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
@@ -9687,11 +9442,11 @@
         },
         {
           "area": "Ruta 43",
-          "method": "Golpe Cabeza en árboles, Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Lago de la Furia",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 24",
@@ -9894,6 +9649,7 @@
       "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
       "icon_url": "/media/items/metal-coat.png",
+      "sprite_url": "/media/items/metal-coat.png",
       "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -10048,15 +9804,15 @@
         },
         {
           "area": "Ruta 47",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Monte Plateado (Exterior)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Monte Plateado (Laderas)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ciudad Carmín",
@@ -10068,7 +9824,7 @@
         },
         {
           "area": "Ruta 28",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 7",
@@ -10139,23 +9895,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Torre Quemada (P1), Torre Quemada (Sótano B1), Zona Safari (Marisma)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Torre Quemada y Zona Safari. También encuentro trampa en la Guarida Rocket de Caoba.",
       "locations": [
         {
-          "area": "Torre Quemada (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Torre Quemada (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Marisma)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Torre Quemada (P1 y Sótano B1)",
+          "method": "Encuentro en torre"
         },
         {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
-          "method": "Static"
+          "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10502,33 +10250,21 @@
     "flavor_text": "Tres Magnemite se enlazan por una intensa fuerza magnética. Si te acercas, te dolerán los oídos.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en 6 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (Sótano B1 - Mewtwo)).",
+      "badge_label": "Salvaje / Intercambio",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Cueva Celeste y Zona Safari. También por intercambio en la Central de Energía de Kanto a cambio de un Dugtrio, o evolucionando de Magnemite al Nivel 30.",
       "locations": [
         {
-          "area": "Cueva Celeste (P1)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Cueva Celeste (P1, P2 y Sótano B1)",
+          "method": "Encuentro en cueva"
         },
         {
-          "area": "Cueva Celeste (P2)",
+          "area": "Central de Energía",
+          "method": "Intercambio por un Dugtrio"
+        },
+        {
+          "area": "Zona Safari (Pico / Montaña)",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Central de Energía de Kanto",
-          "method": "Npc trade"
-        },
-        {
-          "area": "Zona Safari (Pico)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
       "evolution_info": {
@@ -10584,25 +10320,21 @@
     "flavor_text": "Se mueve rodando, si el terreno es irregular, una chispa provocada por algún bache lo haría explotar.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ciudad Olivo, Ruta 10, Zona Safari (Pantano)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 10 y Zona Safari. Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.",
       "locations": [
         {
-          "area": "Ciudad Olivo",
-          "method": "Npc trade"
-        },
-        {
-          "area": "Ruta 10",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
+          "area": "Ruta 10 / Zona Safari (Pantano)",
           "method": "Hierba alta"
         },
         {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
-          "method": "Static"
+          "method": "Trampa con forma de Poké Ball en el suelo"
+        },
+        {
+          "area": "Ciudad Olivo",
+          "method": "Intercambio por un Krabby (Voltorb Billy)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10655,25 +10387,17 @@
     "flavor_text": "Es peligroso. Si almacena mucha electricidad y está ocioso, se entretiene explosionando.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Interactivo",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Cueva Celeste (P1), Cueva Celeste (P2), Cueva Celeste (Sótano B1 - Mewtwo)).",
+      "summary": "Salvaje en Cueva Celeste. Encuentro interactivo obligatorio combatiendo contra los 3 Electrode que alimentan el generador en la Guarida del Team Rocket en Caoba.",
       "locations": [
         {
-          "area": "Cueva Celeste (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Celeste (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
-          "method": "Static"
+          "method": "Encuentro interactivo (Generador Rocket a Nivel 23)"
+        },
+        {
+          "area": "Cueva Celeste (P1, P2 y Sótano B1)",
+          "method": "Encuentro en cueva"
         }
       ],
       "evolution_info": {
@@ -10735,39 +10459,39 @@
       "locations": [
         {
           "area": "Ruta 33",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 42",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 44",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 45",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 46",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Monte Plateado (Exterior)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Monte Plateado (Laderas)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 28",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Pueblo Azalea",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10883,7 +10607,7 @@
       "locations": [
         {
           "area": "Ruta 38",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10992,11 +10716,15 @@
     "cry_url": "/media/pokemon/cries/legacy/37.ogg",
     "flavor_text": "A medida que crece, su blanca cola gana color y se divide en seis. Es cálido y adorable.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 7, 8, 36, 37, 48). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -11048,10 +10776,15 @@
     "flavor_text": "Cuentan algunas leyendas que cada una de sus nueve colas posee su propio y único poder místico.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Vulpix (usando Piedra Fuego)",
-      "locations": [],
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Vulpix usando Piedra Fuego (requiere intercambio desde SoulSilver).",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Evolución de Vulpix transferido"
+        }
+      ],
       "evolution_info": {
         "from": "Vulpix",
         "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
@@ -11065,6 +10798,7 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
@@ -11226,6 +10960,7 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
@@ -11368,7 +11103,7 @@
       "locations": [
         {
           "area": "Monte Mortero (P1)",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Zona Safari (Prado)",
@@ -11750,11 +11485,15 @@
     "cry_url": "/media/pokemon/cries/legacy/52.ogg",
     "flavor_text": "Le fascinan los objetos redondos. No deja de jugar con ellos hasta que se cansa y cae rendido.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 5, 6, 7, 8, 38, 39). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -11806,10 +11545,15 @@
     "flavor_text": "Muy valorado por su aire sofisticado. Sin embargo, ataca y araña por el más mínimo motivo.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Meowth (Nivel 28)",
-      "locations": [],
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Meowth al Nivel 28 (requiere intercambio desde SoulSilver).",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Evolución de Meowth transferido"
+        }
+      ],
       "evolution_info": {
         "from": "Meowth",
         "text": "Evoluciona de Meowth (Nivel 28)",
@@ -12100,41 +11844,17 @@
     "flavor_text": "Siempre rebosante de fuerza, pasa el tiempo levantando piedras. Esto le lleva a ser aún más fuerte.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Monte Mortero (P1), Monte Mortero (Cueva Inferior), Monte Mortero (Cueva Superior)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Monte Mortero, Ruta 47, Túnel Roca y Zona Safari. También por intercambio en el Centro Comercial de Ciudad Trigal (P5) a cambio de un Drowzee.",
       "locations": [
         {
-          "area": "Monte Mortero (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Cueva Inferior)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Cueva Superior)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Mortero (Sótano B1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Túnel Roca (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Terreno Baldío)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Monte Mortero / Ruta 47 / Túnel Roca",
+          "method": "Encuentro en cuevas (Hierba alta)"
         },
         {
           "area": "Centro Comercial de Ciudad Trigal (P5)",
-          "method": "Npc trade"
+          "method": "Intercambio por un Drowzee (Machop Machito)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12764,10 +12484,10 @@
     "cry_url": "/media/pokemon/cries/legacy/240.ogg",
     "flavor_text": "Cada vez que inspira y expira, lanza ascuas por su boca y por sus fosas nasales.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "baby",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar (también en el Pokéwalker).",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12885,10 +12605,10 @@
     "cry_url": "/media/pokemon/cries/legacy/238.ogg",
     "flavor_text": "Sus labios son la parte más sensible de su cuerpo. Siempre los usa para examinar las cosas.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "baby",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jynx (también en el Pokéwalker).",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12943,7 +12663,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta de Hielo (Sótano B2)).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta Helada (Sótano B2)).",
       "locations": [
         {
           "area": "Ruta Helada (P1)",
@@ -12954,7 +12674,7 @@
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
-          "area": "Ruta de Hielo (Sótano B2)",
+          "area": "Ruta Helada (Sótano B2)",
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
@@ -13018,10 +12738,10 @@
     "cry_url": "/media/pokemon/cries/legacy/239.ogg",
     "flavor_text": "Gira sus brazos para generar electricidad, pero se agota rápido, así que solo se recarga un poco.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "baby",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire (también en el Pokéwalker).",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13140,21 +12860,17 @@
     "flavor_text": "Un hábil mimo desde que nace. Aprende a crear objetos invisibles a medida que crece.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 21 (Ruta Marítima de Kanto), Zona Safari (Bosque), Ciudad Azulona (Rincón de Premios) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 21 y Zona Safari (Bosque). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
-          "method": "Hierba alta, Hierba alta (Día)"
-        },
-        {
-          "area": "Zona Safari (Bosque)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Ruta 21 (Ruta Marítima) / Zona Safari",
+          "method": "Hierba alta"
         },
         {
           "area": "Ciudad Azulona (Rincón de Premios)",
-          "method": "Gift"
+          "method": "Premio del Casino (3.333 fichas)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13216,10 +12932,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruins Alfa (Exterior), Zona Safari (Llanura) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruinas Alfa (Exterior), Zona Safari (Llanura) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruins Alfa (Exterior)",
+          "area": "Ruinas Alfa (Exterior)",
           "method": "Hierba alta"
         },
         {
@@ -13354,23 +13070,23 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruins Alfa (Exterior), Monte Plateado (Exterior), Monte Plateado (Laderas)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruinas Alfa (Exterior), Monte Plateado (Exterior), Monte Plateado (Laderas)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruins Alfa (Exterior)",
+          "area": "Ruinas Alfa (Exterior)",
           "method": "Hierba alta"
         },
         {
           "area": "Monte Plateado (Exterior)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Monte Plateado (Laderas)",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 28",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13422,14 +13138,14 @@
     "cry_url": "/media/pokemon/cries/legacy/178.ogg",
     "flavor_text": "Dicen que se mantiene quieto y en silencio porque observa el pasado y el futuro al mismo tiempo.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Ciudad Plateada.",
+      "type": "trade",
+      "badge_label": "Intercambio NPC",
+      "badge_color": "amber",
+      "summary": "Inaccesible en estado salvaje en HeartGold. Obtenible mediante intercambio por un Haunter en el Centro Pokémon de Ciudad Plateada, o evolucionando de Natu al Nivel 25.",
       "locations": [
         {
-          "area": "Ciudad Plateada",
-          "method": "Npc trade"
+          "area": "Ciudad Plateada (Centro Pokémon)",
+          "method": "Intercambio por un Haunter (Xatu Paulie)"
         }
       ],
       "evolution_info": {
@@ -13491,7 +13207,7 @@
       "locations": [
         {
           "area": "Ruta 32",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
+          "method": "Manada Pokémon (Aviso del Pokégear), Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
           "area": "Ruta 12",
@@ -13554,99 +13270,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 23 zonas (ej: Pueblo Primavera, Ciudad Cerezo, Ruta 32) (también obtenible mediante crianza).",
+      "summary": "Abundante en estado salvaje mediante Surf y Pesca en rutas costeras y marítimas de Johto y Kanto (también regalo antiactasco en Orquídea).",
       "locations": [
         {
-          "area": "Pueblo Primavera",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ciudad Cerezo",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 32",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
-        },
-        {
-          "area": "Cueva Unión (Sótano B2 - Lapras)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 34",
-          "method": "Surf"
-        },
-        {
-          "area": "Ciudad Olivo",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 40 (Ruta Marítima)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 41 (Ruta Marítima)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Islas Remolino (P1)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ciudad Orquídea",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 47",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ruta 12",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
-        },
-        {
-          "area": "Ruta 19 (Ruta Marítima)",
-          "method": "Surf"
-        },
-        {
-          "area": "Ruta 20 (Ruta Marítima)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Isla Canela",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ciudad Carmín",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Pueblo Paleta",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ruta 26",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ruta 27",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Ruta 13",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
-        },
-        {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
+          "area": "Rutas marítimas de Johto y Kanto",
+          "method": "Surf y Pesca (Caña Vieja, Buena y Supercaña)"
         },
         {
           "area": "Ciudad Orquídea (Centro Pokémon)",
-          "method": "Gift"
+          "method": "Regalo NPC si no tienes Pokémon con Surf ni caña"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13788,7 +13420,7 @@
           "method": "Surf"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Pesca (Supercaña), Surf"
         },
         {
@@ -14237,6 +13869,7 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
@@ -14351,7 +13984,7 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
@@ -14426,6 +14059,7 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
@@ -14588,7 +14222,7 @@
       "locations": [
         {
           "area": "Ruta 44",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
+          "method": "Manada Pokémon (Aviso del Pokégear), Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -14739,7 +14373,7 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
@@ -14838,7 +14472,7 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
+          "area": "Ruta 21 (Ruta Marítima)",
           "method": "Pesca (Supercaña)"
         },
         {
@@ -15194,11 +14828,11 @@
         },
         {
           "area": "Ruta 12",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ciudad Fucsia",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 28",
@@ -15206,23 +14840,23 @@
         },
         {
           "area": "Ruta 13",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 14",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 15",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 18",
-          "method": "Golpe Cabeza en árboles"
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
-          "area": "Ruta 21 (Ruta Marítima de Kanto)",
-          "method": "Golpe Cabeza en árboles, Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Ruta 21 (Ruta Marítima)",
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15408,6 +15042,7 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
@@ -15498,6 +15133,7 @@
       "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "sprite_url": "/media/items/thunder-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": false,
@@ -15584,6 +15220,7 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
@@ -15921,6 +15558,7 @@
       "name": "Escama Dragón",
       "name_es": "Escama Dragón",
       "icon_url": "/media/items/dragon-scale.png",
+      "sprite_url": "/media/items/dragon-scale.png",
       "description": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "is_purchasable": false,
@@ -16044,11 +15682,15 @@
     "cry_url": "/media/pokemon/cries/legacy/225.ogg",
     "flavor_text": "Siempre lleva comida. Dicen que hay muchos desaparecidos que sobrevivieron gracias a esta.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta Helada). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -16102,7 +15744,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta de Hielo (Sótano B2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta Helada (P1), Ruta Helada (Sótano B1), Ruta Helada (Sótano B2)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta Helada (P1)",
@@ -16113,7 +15755,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ruta de Hielo (Sótano B2)",
+          "area": "Ruta Helada (Sótano B2)",
           "method": "Hierba alta"
         },
         {
@@ -16284,11 +15926,15 @@
     "cry_url": "/media/pokemon/cries/legacy/216.ogg",
     "flavor_text": "Si encuentra miel, brillará la marca de su frente. Se lame las garras cuando están llenas de miel.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 45, Cueva Oscura). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -16339,11 +15985,16 @@
     "cry_url": "/media/pokemon/cries/legacy/217.ogg",
     "flavor_text": "Aunque trepa muy bien, prefiere agitar los árboles con sus patas y comer las bayas caídas.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Teddiursa (Nivel 30)",
-      "locations": [],
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 28, Monte Plateado). Requiere intercambio o evolucionar de Teddiursa al Nivel 30.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        }
+      ],
       "evolution_info": {
         "from": "Teddiursa",
         "text": "Evoluciona de Teddiursa (Nivel 30)",
@@ -16513,15 +16164,15 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P1)",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P2)",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria de Kanto (P3)",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta"
         }
       ],
@@ -16643,11 +16294,15 @@
     "cry_url": "/media/pokemon/cries/legacy/227.ogg",
     "flavor_text": "Sus fuertes alas parecen pesadas, aunque son huecas y ligeras, y le permiten volar libremente.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 45). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -16782,25 +16437,17 @@
     "flavor_text": "Recoge datos y hace planes el triple de rápido, pero si piensa demasiado podría quedar paralizado.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Ciudad Endrino, Monte Plateado (Exterior), Ruta 26).",
+      "summary": "Salvaje en Monte Plateado, Ruta 26, Ruta 28 y Zona Safari. También por intercambio en Ciudad Endrino a cambio de un Dragonair hembra, o evolucionando de Doduo al Nivel 31.",
       "locations": [
         {
+          "area": "Ruta 26 / Ruta 28 / Monte Plateado",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Ciudad Endrino",
-          "method": "Npc trade"
-        },
-        {
-          "area": "Monte Plateado (Exterior)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 26",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 28",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Intercambio por Dragonair hembra (Dodrio Doris)"
         },
         {
           "area": "Zona Safari (Playa Rocosa)",
@@ -17201,29 +16848,17 @@
     "flavor_text": "Es un poco torpe al girar debido a sus cuatro cortas patas. Solo puede atacar y correr en una dirección.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Calle Victoria de Kanto (P1), Cueva Diglett, Calle Victoria de Kanto (P2)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Calle Victoria y Zona Safari. También por intercambio con Brock en la Cueva Diglett a cambio de un Bonsly.",
       "locations": [
         {
-          "area": "Calle Victoria de Kanto (P1)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P1, P2, P3)",
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Cueva Diglett",
-          "method": "Npc trade"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Calle Victoria de Kanto (P3)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Intercambio con Brock por Bonsly (con Colmillo Rayo)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17530,25 +17165,17 @@
     "flavor_text": "No duerme nunca. Tiene que seguir moviéndose porque si se detiene, su cuerpo de lava podría enfriarse.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Regalo",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 16, Ruta 17 (Camino de Bicis), Ruta 18) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Rutas 16, 17 y 18 (Camino de Bicis). También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.",
       "locations": [
         {
-          "area": "Ruta 16",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Ruta 17 (Camino de Bicis)",
-          "method": "Hierba alta, Hierba alta (Día)"
-        },
-        {
-          "area": "Ruta 18",
+          "area": "Ruta 16 / Ruta 17 / Ruta 18",
           "method": "Hierba alta"
         },
         {
           "area": "Ciudad Malva (Centro Pokémon)",
-          "method": "Gift egg"
+          "method": "Huevo de regalo de Primo (Contraseña basada en tu ID)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17815,14 +17442,14 @@
     "cry_url": "/media/pokemon/cries/legacy/137.ogg",
     "flavor_text": "Es un Pokémon creado por el hombre. Como no respira, la gente quiere probarlo en cualquier sitio.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Ciudad Azulona (Rincón de Premios) (también obtenible mediante crianza).",
+      "type": "casino",
+      "badge_label": "Casino",
+      "badge_color": "amber",
+      "summary": "Premio canjeable por 9.999 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Azulona (Rincón de Premios)",
-          "method": "Gift"
+          "method": "Canje por 9.999 fichas del Casino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17892,6 +17519,7 @@
       "name": "Mejora",
       "name_es": "Mejora",
       "icon_url": "/media/items/up-grade.png",
+      "sprite_url": "/media/items/up-grade.png",
       "description": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "is_purchasable": false,
@@ -17955,7 +17583,7 @@
       "locations": [
         {
           "area": "Ruta 13",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
           "area": "Ruta 14",
@@ -17987,6 +17615,7 @@
       "name": "Piedra Oval",
       "name_es": "Piedra Oval",
       "icon_url": "/media/items/oval-stone.png",
+      "sprite_url": "/media/items/oval-stone.png",
       "description": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
       "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
       "is_purchasable": false,
@@ -18287,14 +17916,18 @@
     "cry_url": "/media/pokemon/cries/legacy/140.ogg",
     "flavor_text": "En raras ocasiones se han encontrado como fósiles, porque se habían escondido en el fondo marino.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Museo de la Ciencia de Ciudad Plateada (también obtenible mediante crianza).",
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en HeartGold (el Fósil Domo es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.",
       "locations": [
         {
-          "area": "Museo de la Ciencia de Ciudad Plateada",
-          "method": "Gift"
+          "area": "Intercambio con SoulSilver / Parque Compi",
+          "method": "Transferencia de Fósil Domo o Pokémon"
+        },
+        {
+          "area": "Ciudad Plateada (Museo)",
+          "method": "Revitalización de Fósil Domo (si se transfiere)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18346,11 +17979,16 @@
     "cry_url": "/media/pokemon/cries/legacy/141.ogg",
     "flavor_text": "Repliega sus extremidades en el agua para hacerse más compacto, y mueve su concha para nadar rápido.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Kabuto (Nivel 40)",
-      "locations": [],
+      "type": "trade",
+      "badge_label": "Exclusivo SoulSilver",
+      "badge_color": "sky",
+      "summary": "Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Kabuto al Nivel 40.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Plata SoulSilver",
+          "method": "Exclusivo de versión"
+        }
+      ],
       "evolution_info": {
         "from": "Kabuto",
         "text": "Evoluciona de Kabuto (Nivel 40)",
@@ -19382,21 +19020,21 @@
     "flavor_text": "Al nacer ya tiene un tamaño considerable. Muda continuamente de piel a la vez que crece.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Guarida Dragón, Zona Safari (Pantano), Casino de Ciudad Trigal (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Regalo",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Guarida Dragón (pesca y surf) y Zona Safari. Regalo del Maestro Dragón en la Guarida Dragón con Velocidad Extrema o canjeable por 2.100 fichas en el Casino de Trigal.",
       "locations": [
         {
           "area": "Guarida Dragón",
-          "method": "Gift, Pesca (Caña Buena), Pesca (Supercaña), Surf"
+          "method": "Surf / Pesca (Caña Buena y Supercaña)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Buena), Pesca (Supercaña)"
+          "area": "Guarida Dragón (Templo)",
+          "method": "Regalo del Maestro Dragón (con Velocidad Extrema)"
         },
         {
           "area": "Casino de Ciudad Trigal",
-          "method": "Gift"
+          "method": "Premio del Casino (2.100 fichas)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

@@ -190,7 +190,7 @@ JOHTO_KANTO_AREA_NAMES = {
     'goldenrod-city-department-store-5f': 'Centro Comercial de Ciudad Trigal (P5)',
     'goldenrod-city-game-corner': 'Casino de Ciudad Trigal',
     'goldenrod-city-north-gate': 'Ciudad Trigal (Paso Norte)',
-    'ice-path-b2f': 'Ruta de Hielo (Sótano B2)',
+    'ice-path-b2f': 'Ruta Helada (Sótano B2)',
     'johto-pokemart-area': 'Tienda Pokémon de Johto',
     'johto-route-47-cave-gate': 'Ruta 47 (Entrada de la Cueva)',
     'johto-route-47-inside-cave': 'Ruta 47 (Interior de la Cueva)',
@@ -206,13 +206,13 @@ JOHTO_KANTO_AREA_NAMES = {
     'johto-safari-zone-swamp': 'Zona Safari (Pantano)',
     'johto-safari-zone-wasteland': 'Zona Safari (Terreno Baldío)',
     'johto-safari-zone-wetland': 'Zona Safari (Humedal)',
-    'kanto-power-plant-area': 'Central de Energía de Kanto',
+    'kanto-power-plant-area': 'Central de Energía',
     'kanto-route-2-north-towards-pewter-city': 'Ruta 2 (Norte hacia Ciudad Plateada)',
     'kanto-route-2-south-towards-viridian-city': 'Ruta 2 (Sur hacia Ciudad Verde)',
-    'kanto-sea-route-21-area': 'Ruta 21 (Ruta Marítima de Kanto)',
-    'kanto-victory-road-1-1f': 'Calle Victoria de Kanto (P1)',
-    'kanto-victory-road-1-2f': 'Calle Victoria de Kanto (P2)',
-    'kanto-victory-road-1-3f': 'Calle Victoria de Kanto (P3)',
+    'kanto-sea-route-21-area': 'Ruta 21 (Ruta Marítima)',
+    'kanto-victory-road-1-1f': 'Calle Victoria (P1)',
+    'kanto-victory-road-1-2f': 'Calle Victoria (P2)',
+    'kanto-victory-road-1-3f': 'Calle Victoria (P3)',
     'mt-moon-mt-moon-square': 'Plaza del Monte Moon',
     'mt-mortar-1f': 'Monte Mortero (P1)',
     'mt-mortar-lower-cave': 'Monte Mortero (Cueva Inferior)',
@@ -223,12 +223,12 @@ JOHTO_KANTO_AREA_NAMES = {
     'mt-silver-top': 'Cima del Monte Plateado',
     'olivine-city-gym': 'Gimnasio de Ciudad Olivo',
     'pewter-city-pewter-museum-of-science': 'Museo de la Ciencia de Ciudad Plateada',
-    'ruins-of-alph-interior-a': 'Ruins Alfa (Cámara A)',
-    'ruins-of-alph-interior-b': 'Ruins Alfa (Cámara B)',
-    'ruins-of-alph-interior-c': 'Ruins Alfa (Cámara C)',
-    'ruins-of-alph-interior-d': 'Ruins Alfa (Cámara D)',
-    'ruins-of-alph-outside': 'Ruins Alfa (Exterior)',
-    'saffron-city-magnet-train-station': 'Estación del Magnetotrón de Ciudad Azafrán',
+    'ruins-of-alph-interior-a': 'Ruinas Alfa (Cámara A)',
+    'ruins-of-alph-interior-b': 'Ruinas Alfa (Cámara B)',
+    'ruins-of-alph-interior-c': 'Ruinas Alfa (Cámara C)',
+    'ruins-of-alph-interior-d': 'Ruinas Alfa (Cámara D)',
+    'ruins-of-alph-outside': 'Ruinas Alfa (Exterior)',
+    'saffron-city-magnet-train-station': 'Estación del Magnetotrén de Ciudad Azafrán',
     'saffron-city-silph-co': 'Ciudad Azafrán (Silph S.A.)',
     'team-rocket-hq-area': 'Guarida del Team Rocket (Ciudad Caoba)',
     'unknown-all-bugs-area': 'Parque Nacional (Concurso de Captura de Bichos)',
@@ -430,9 +430,9 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Errante Exclusivo',
         'badge_color': 'blue',
-        'summary': 'Pokémon errante exclusivo de HeartGold por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Azafrán.',
+        'summary': 'Pokémon errante exclusivo de HeartGold por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Carmín (al salir del Club de Fans Pokémon).',
         'locations': [
-            {'area': 'Rutas de Kanto (Errante)', 'method': 'Pokémon errante tras evento de Máximo Peñas'}
+            {'area': 'Rutas de Kanto (Errante)', 'method': 'Pokémon errante tras evento de Máximo Peñas en Ciudad Carmín'}
         ]
     },
     381: {
@@ -704,6 +704,710 @@ SPECIAL_OBTAINING = {
             DAYCARE_LOCATION
         ]
     },
+
+    # --- ENCUENTROS ESPECIALES / INTERCAMBIOS IN-GAME / CASINOS ---
+    25: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'amber',
+        'summary': 'Salvaje en Bosque Verde (hierba alta). También obtenible mediante intercambio con el Teniente Surge en la Estación del Magnetotrén de Ciudad Azafrán (intercambia su Pikachu por uno tuyo).',
+        'locations': [
+            {'area': 'Bosque Verde', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Estación del Magnetotrén de Ciudad Azafrán', 'method': 'Intercambio con Teniente Surge (por Pikachu)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    21: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en múltiples rutas de Johto y Kanto (hierba alta y árboles con Golpe Cabeza). También regalo de Randy en el Paso Norte de Ciudad Trigal con Carta (Spearow apodado Kenya).',
+        'locations': [
+            {'area': 'Rutas de Johto y Kanto', 'method': 'Hierba alta / Golpe Cabeza en árboles'},
+            {'area': 'Ciudad Trigal (Paso Norte)', 'method': 'Regalo de Randy con Carta (Kenya)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    66: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Monte Mortero, Ruta 47, Túnel Roca y Zona Safari. También por intercambio en el Centro Comercial de Ciudad Trigal (P5) a cambio de un Drowzee.',
+        'locations': [
+            {'area': 'Monte Mortero / Ruta 47 / Túnel Roca', 'method': 'Encuentro en cuevas (Hierba alta)'},
+            {'area': 'Centro Comercial de Ciudad Trigal (P5)', 'method': 'Intercambio por un Drowzee (Machop Machito)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    82: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'indigo',
+        'summary': 'Salvaje en Cueva Celeste y Zona Safari. También por intercambio en la Central de Energía de Kanto a cambio de un Dugtrio, o evolucionando de Magnemite al Nivel 30.',
+        'locations': [
+            {'area': 'Cueva Celeste (P1, P2 y Sótano B1)', 'method': 'Encuentro en cueva'},
+            {'area': 'Central de Energía', 'method': 'Intercambio por un Dugtrio'},
+            {'area': 'Zona Safari (Pico / Montaña)', 'method': 'Hierba alta'}
+        ]
+    },
+    85: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Monte Plateado, Ruta 26, Ruta 28 y Zona Safari. También por intercambio en Ciudad Endrino a cambio de un Dragonair hembra, o evolucionando de Doduo al Nivel 31.',
+        'locations': [
+            {'area': 'Ruta 26 / Ruta 28 / Monte Plateado', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ciudad Endrino', 'method': 'Intercambio por Dragonair hembra (Dodrio Doris)'},
+            {'area': 'Zona Safari (Playa Rocosa)', 'method': 'Hierba alta'}
+        ]
+    },
+    95: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Cueva Unión, Ruta 47, Monte Plateado, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva a cambio de un Bellsprout.',
+        'locations': [
+            {'area': 'Cueva Unión / Ruta 47 / Túnel Roca', 'method': 'Encuentro en cuevas'},
+            {'area': 'Ciudad Malva', 'method': 'Intercambio por un Bellsprout (Onix Rocoso)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    100: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Ruta 10 y Zona Safari. Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.',
+        'locations': [
+            {'area': 'Ruta 10 / Zona Safari (Pantano)', 'method': 'Hierba alta'},
+            {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
+            {'area': 'Ciudad Olivo', 'method': 'Intercambio por un Krabby (Voltorb Billy)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    101: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Interactivo',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Cueva Celeste. Encuentro interactivo obligatorio combatiendo contra los 3 Electrode que alimentan el generador en la Guarida del Team Rocket en Caoba.',
+        'locations': [
+            {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Encuentro interactivo (Generador Rocket a Nivel 23)'},
+            {'area': 'Cueva Celeste (P1, P2 y Sótano B1)', 'method': 'Encuentro en cueva'}
+        ]
+    },
+    74: {
+        'type': 'wild',
+        'badge_label': 'Salvaje',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje común en Ruinas Alfa, Cueva Unión, Cueva Oscura y rutas montañosas. También encuentro trampa en la Guarida Rocket de Caoba.',
+        'locations': [
+            {'area': 'Ruinas Alfa / Cueva Unión / Cueva Oscura', 'method': 'Hierba alta / Golpe Roca'},
+            {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
+            DAYCARE_LOCATION
+        ]
+    },
+    109: {
+        'type': 'wild',
+        'badge_label': 'Salvaje',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Torre Quemada y Zona Safari. También encuentro trampa en la Guarida Rocket de Caoba.',
+        'locations': [
+            {'area': 'Torre Quemada (P1 y Sótano B1)', 'method': 'Encuentro en torre'},
+            {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
+            DAYCARE_LOCATION
+        ]
+    },
+    111: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Calle Victoria y Zona Safari. También por intercambio con Brock en la Cueva Diglett a cambio de un Bonsly.',
+        'locations': [
+            {'area': 'Calle Victoria (P1, P2, P3)', 'method': 'Encuentro en cueva'},
+            {'area': 'Cueva Diglett', 'method': 'Intercambio con Brock por Bonsly (con Colmillo Rayo)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    178: {
+        'type': 'trade',
+        'badge_label': 'Intercambio NPC',
+        'badge_color': 'amber',
+        'summary': 'Inaccesible en estado salvaje en HeartGold. Obtenible mediante intercambio por un Haunter en el Centro Pokémon de Ciudad Plateada, o evolucionando de Natu al Nivel 25.',
+        'locations': [
+            {'area': 'Ciudad Plateada (Centro Pokémon)', 'method': 'Intercambio por un Haunter (Xatu Paulie)'}
+        ]
+    },
+    208: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Intercambio',
+        'badge_color': 'indigo',
+        'summary': 'Salvaje en Monte Plateado (P2) y Ruta 47. También por intercambio con Yasmina en el Gimnasio de Ciudad Olivo por cualquier Pokémon, o evolucionando de Onix.',
+        'locations': [
+            {'area': 'Monte Plateado (P2) / Ruta 47', 'method': 'Encuentro en cuevas'},
+            {'area': 'Gimnasio de Ciudad Olivo', 'method': 'Intercambio con Yasmina (por cualquier Pokémon)'}
+        ]
+    },
+    137: {
+        'type': 'casino',
+        'badge_label': 'Casino',
+        'badge_color': 'amber',
+        'summary': 'Premio canjeable por 9.999 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Ciudad Azulona (Rincón de Premios)', 'method': 'Canje por 9.999 fichas del Casino'},
+            DAYCARE_LOCATION
+        ]
+    },
+    23: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Casino',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en la Zona Safari (Marisma) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Zona Safari (Marisma)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (700 fichas)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    63: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Casino',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Rutas 34, 35, Kanto y Zona Safari. También canjeable por 200 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Ruta 34 / Ruta 35 / Rutas de Kanto', 'method': 'Hierba alta'},
+            {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (200 fichas)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    122: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Casino',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Ruta 21 y Zona Safari (Bosque). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Ruta 21 (Ruta Marítima) / Zona Safari', 'method': 'Hierba alta'},
+            {'area': 'Ciudad Azulona (Rincón de Premios)', 'method': 'Premio del Casino (3.333 fichas)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    147: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'indigo',
+        'summary': 'Salvaje en Guarida Dragón (pesca y surf) y Zona Safari. Regalo del Maestro Dragón en la Guarida Dragón con Velocidad Extrema o canjeable por 2.100 fichas en el Casino de Trigal.',
+        'locations': [
+            {'area': 'Guarida Dragón', 'method': 'Surf / Pesca (Caña Buena y Supercaña)'},
+            {'area': 'Guarida Dragón (Templo)', 'method': 'Regalo del Maestro Dragón (con Velocidad Extrema)'},
+            {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (2.100 fichas)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    72: {
+        'type': 'wild',
+        'badge_label': 'Salvaje',
+        'badge_color': 'emerald',
+        'summary': 'Abundante en estado salvaje mediante Surf y Pesca en rutas costeras y marítimas de Johto y Kanto (también regalo antiactasco en Orquídea).',
+        'locations': [
+            {'area': 'Rutas marítimas de Johto y Kanto', 'method': 'Surf y Pesca (Caña Vieja, Buena y Supercaña)'},
+            {'area': 'Ciudad Orquídea (Centro Pokémon)', 'method': 'Regalo NPC si no tienes Pokémon con Surf ni caña'},
+            DAYCARE_LOCATION
+        ]
+    },
+    179: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Rutas 32, 42, 43 y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'locations': [
+            {'area': 'Ruta 32 / Ruta 42 / Ruta 43', 'method': 'Hierba alta'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    194: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'locations': [
+            {'area': 'Ruta 32 / Ruinas Alfa / Cueva Unión', 'method': 'Hierba alta / Surf'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    218: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Rutas 16, 17 y 18 (Camino de Bicis). También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'locations': [
+            {'area': 'Ruta 16 / Ruta 17 / Ruta 18', 'method': 'Hierba alta'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            DAYCARE_LOCATION
+        ]
+    },
+
+    # --- FÓSILES RESTANTES ---
+    408: {
+        'type': 'fossil',
+        'badge_label': 'Fósil Cráneo',
+        'badge_color': 'amber',
+        'summary': 'Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Dex Nacional) en el Museo de Ciudad Plateada.',
+        'locations': [
+            {'area': 'Ruinas Alfa / Cueva Acantilado', 'method': 'Fósil Cráneo (Golpe Roca tras Dex Nacional)'},
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Cráneo'},
+            DAYCARE_LOCATION
+        ]
+    },
+    140: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible de forma directa en HeartGold (el Fósil Domo es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.',
+        'locations': [
+            {'area': 'Intercambio con SoulSilver / Parque Compi', 'method': 'Transferencia de Fósil Domo o Pokémon'},
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Domo (si se transfiere)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    141: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Kabuto al Nivel 40.',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'}
+        ]
+    },
+    345: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible de forma directa en HeartGold (el Fósil Raíz es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.',
+        'locations': [
+            {'area': 'Intercambio con SoulSilver / Parque Compi', 'method': 'Transferencia de Fósil Raíz o Pokémon'},
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Raíz (si se transfiere)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    346: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Lileep al Nivel 40.',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'}
+        ]
+    },
+    410: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible de forma directa en HeartGold (el Fósil Coraza es exclusivo de SoulSilver). Requiere transferir el fósil o intercambiar con SoulSilver.',
+        'locations': [
+            {'area': 'Intercambio con SoulSilver / Parque Compi', 'method': 'Transferencia de Fósil Coraza o Pokémon'},
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Coraza (si se transfiere)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    411: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Shieldon al Nivel 30.',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'}
+        ]
+    },
+
+    # --- EVENTOS Y LEGENDARIOS ESPECIALES ---
+    483: {
+        'type': 'event',
+        'badge_label': 'Ruinas de Sinjoh',
+        'badge_color': 'indigo',
+        'summary': 'Obtenible al Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Diamansfera). Elige el círculo de la izquierda (azul).',
+        'locations': [
+            {'area': 'Ruinas de Sinjoh', 'method': 'Creación mística de Arceus a Nivel 1 (Diamansfera)'}
+        ]
+    },
+    484: {
+        'type': 'event',
+        'badge_label': 'Ruinas de Sinjoh',
+        'badge_color': 'indigo',
+        'summary': 'Obtenible al Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Lustresfera). Elige el círculo de la derecha (rosa).',
+        'locations': [
+            {'area': 'Ruinas de Sinjoh', 'method': 'Creación mística de Arceus a Nivel 1 (Lustresfera)'}
+        ]
+    },
+    487: {
+        'type': 'event',
+        'badge_label': 'Ruinas de Sinjoh',
+        'badge_color': 'indigo',
+        'summary': 'Obtenible al Nivel 1 en su Forma Origen en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Griseosfera). Elige el círculo superior (rojo).',
+        'locations': [
+            {'area': 'Ruinas de Sinjoh', 'method': 'Creación mística de Arceus a Nivel 1 (Griseosfera)'}
+        ]
+    },
+    490: {
+        'type': 'event',
+        'badge_label': 'Huevo Ranger',
+        'badge_color': 'sky',
+        'summary': 'Transferencia del Huevo de Manaphy desde el juego Pokémon Ranger. Se recibe hablando con el repartidor en cualquier Tienda Pokémon de Johto (también permite criar a Phione).',
+        'locations': [
+            {'area': 'Tienda Pokémon de Johto', 'method': 'Repartidor de evento (Transferencia desde Pokémon Ranger)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    383: {
+        'type': 'legendary',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'rose',
+        'summary': 'Legendario exclusivo de Pokémon Plata SoulSilver en la Torre Oculta (Ruta 47) con la Esfera Roja. Requiere intercambio para registrarlo en HeartGold (y desbloquear a Rayquaza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Legendario exclusivo de versión'}
+        ]
+    },
+
+    # --- EXCLUSIVOS DE SOULSILVER ---
+    37: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Rutas 7, 8, 36, 37, 48). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    38: {
+        'type': 'evolution',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Vulpix usando Piedra Fuego (requiere intercambio desde SoulSilver).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Evolución de Vulpix transferido'}
+        ]
+    },
+    52: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Rutas 5, 6, 7, 8, 38, 39). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    53: {
+        'type': 'evolution',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Meowth al Nivel 28 (requiere intercambio desde SoulSilver).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Evolución de Meowth transferido'}
+        ]
+    },
+    165: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Rutas 30, 31, 37 por la mañana). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    166: {
+        'type': 'evolution',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Ledyba al Nivel 18 (requiere intercambio desde SoulSilver).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Evolución de Ledyba transferido'}
+        ]
+    },
+    216: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 45, Cueva Oscura). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    217: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 28, Monte Plateado). Requiere intercambio o evolucionar de Teddiursa al Nivel 30.',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'}
+        ]
+    },
+    225: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta Helada). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    227: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 45). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    303: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 9 con Radio Hoenn). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    316: {
+        'type': 'trade',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 3 con Radio Hoenn). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
+            DAYCARE_LOCATION
+        ]
+    },
+    317: {
+        'type': 'evolution',
+        'badge_label': 'Exclusivo SoulSilver',
+        'badge_color': 'sky',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Gulpin al Nivel 26 (requiere intercambio desde SoulSilver).',
+        'locations': [
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Evolución de Gulpin transferido'}
+        ]
+    },
+
+    # --- POKÉMON BEBÉ ESTÁNDAR (CRIANZA EN RUTA 34) ---
+    173: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable (también en el Pokéwalker).',
+        'locations': [DAYCARE_LOCATION]
+    },
+    174: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff (también en el Pokéwalker).',
+        'locations': [DAYCARE_LOCATION]
+    },
+    238: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jynx (también en el Pokéwalker).',
+        'locations': [DAYCARE_LOCATION]
+    },
+    239: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire (también en el Pokéwalker).',
+        'locations': [DAYCARE_LOCATION]
+    },
+    240: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar (también en el Pokéwalker).',
+        'locations': [DAYCARE_LOCATION]
+    },
+
+    # --- POKÉMON BEBÉ CON INCIENSO (CRIANZA EN RUTA 34) ---
+    360: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Wobbuffet equipado con Incienso Lento.',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Lento'}]
+    },
+    438: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Sudowoodo equipado con Incienso Roca.',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Roca'}]
+    },
+    439: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mr. Mime equipado con Incienso Raro.',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Raro'}]
+    },
+    440: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Chansey o Blissey equipado con Incienso Suave.',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'}]
+    },
+    446: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Snorlax equipado con Incienso Lento (o transferencia desde D/P/Pt).',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Lento'}]
+    },
+    458: {
+        'type': 'baby',
+        'badge_label': 'Crianza Incienso',
+        'badge_color': 'pink',
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mantine equipado con Incienso Marino.',
+        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Marino'}]
+    },
+
+    # --- ESPECIES NO AUTÓCTONAS DE HOENN / SINNOH (TRANSFERENCIA / POKÉWALKER) ---
+    300: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Prado Amistad).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Prado Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    318: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Playa Cálida).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Playa Cálida)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    320: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Playa Cálida).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Playa Cálida)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    349: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Serena).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    351: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Casa del Árbol).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Casa del Árbol)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    352: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Casa del Árbol).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Casa del Árbol)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    357: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Gran Bosque).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Gran Bosque)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    361: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Camino Helado).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Camino Helado)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    422: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    442: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    456: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormentosa).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Playa Tormentosa)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
+    459: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Pokéwalker',
+        'badge_color': 'violet',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Camino Helado).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Pokéwalker (Camino Helado)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
+    },
 }
 
 
@@ -713,7 +1417,7 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         return 'Radio Pokégear (Sintonía de Hoenn)'
     if 'radio-sinnoh' in cond_names:
         return 'Radio Pokégear (Sintonía de Sinnoh)'
-    if 'swarm' in cond_names:
+    if 'swarm' in cond_names or 'swarm-yes' in cond_names:
         return 'Manada Pokémon (Aviso del Pokégear)'
 
     if method_raw == 'walk':
@@ -733,11 +1437,61 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
     if method_raw == 'super-rod':
         return 'Pesca (Supercaña)'
     if method_raw == 'headbutt':
+        if 'headbutt-tree-special' in cond_names or 'headbutt-tree-rare' in cond_names or 'headbutt-tree-secret' in cond_names:
+            return 'Golpe Cabeza (Árboles especiales)'
         return 'Golpe Cabeza en árboles'
     if method_raw == 'rock-smash':
         return 'Golpe Roca'
     if method_raw == 'bug-catching-contest':
         return 'Concurso de Captura de Bichos'
+    if method_raw == 'npc-trade':
+        if 'trade-pikachu' in cond_names:
+            return 'Intercambio con Teniente Surge (por Pikachu)'
+        if 'trade-drowzee' in cond_names:
+            return 'Intercambio por un Drowzee (Machop Machito)'
+        if 'trade-dugtrio' in cond_names:
+            return 'Intercambio por un Dugtrio'
+        if 'trade-dragonair' in cond_names:
+            return 'Intercambio por Dragonair hembra (Dodrio Doris)'
+        if 'trade-bellsprout' in cond_names:
+            return 'Intercambio por un Bellsprout (Onix Rocoso)'
+        if 'trade-krabby' in cond_names:
+            return 'Intercambio por un Krabby (Voltorb Billy)'
+        if 'trade-bonsly' in cond_names:
+            return 'Intercambio con Brock (por Bonsly)'
+        if 'trade-haunter' in cond_names:
+            return 'Intercambio por un Haunter (Xatu Paulie)'
+        if 'trade-forretress' in cond_names:
+            return 'Intercambio con Máximo Peñas (por Forretress)'
+        if 'trade-any-pokemon' in cond_names:
+            return 'Intercambio con Yasmina (por cualquier Pokémon)'
+        return 'Intercambio en el juego (NPC)'
+    if method_raw == 'gift-egg':
+        if 'other-correct-password' in cond_names:
+            return 'Huevo de regalo de Primo (Contraseña de ID)'
+        return 'Huevo de regalo'
+    if method_raw == 'gift':
+        coin_conds = [c for c in cond_names if 'coins' in c]
+        if coin_conds:
+            val = coin_conds[0].replace('coins-', '')
+            return f'Premio del Casino ({val} fichas)'
+        if 'story-progress-receive-tm-from-claire' in cond_names:
+            return 'Regalo del Maestro Dragón (con Velocidad Extrema)'
+        if any('fossil' in c for c in cond_names):
+            return 'Revitalización de Fósil en Museo'
+        return 'Regalo de NPC'
+    if method_raw == 'static':
+        if 'other-event-arceus-in-party' in cond_names:
+            return 'Creación mística de Arceus a Nivel 1'
+        return 'Encuentro interactivo / Trampa'
+    if method_raw == 'pokemon-ranger':
+        return 'Transferencia de Huevo desde Pokémon Ranger'
+    if method_raw == 'squirt-bottle':
+        return 'Interacción con Regadera'
+    if method_raw == 'pokeflute':
+        return 'Despertar con Flauta Pokémon'
+    if method_raw == 'roaming-grass':
+        return 'Pokémon errante (Hierba alta)'
 
     return method_raw.replace('-', ' ').capitalize()
 
@@ -847,9 +1601,24 @@ def main():
             item_slug = evo_info.get('item_slug')
             summary = evo_info.get('text', '')
 
+            badge_label = 'Evolución'
+            # Ajuste de evoluciones dependientes de Sinnoh ausentes en HGSS
+            if nat_id == 462:
+                summary = "Evoluciona de Magneton (al subir de nivel en un campo magnético del Monte Corona). Al no existir en Johto ni Kanto, requiere evolucionar en D/P/Pt y transferir a HeartGold."
+                badge_label = 'Evolución (D/P/Pt)'
+            elif nat_id == 476:
+                summary = "Evoluciona de Nosepass (al subir de nivel en un campo magnético del Monte Corona). Al no existir en Johto ni Kanto, requiere evolucionar en D/P/Pt y transferir a HeartGold."
+                badge_label = 'Evolución (D/P/Pt)'
+            elif nat_id == 470:
+                summary = "Evoluciona de Eevee (al subir de nivel cerca de la Roca Musgo). Al no existir en Johto ni Kanto, requiere evolucionar en D/P/Pt y transferir a HeartGold."
+                badge_label = 'Evolución (D/P/Pt)'
+            elif nat_id == 471:
+                summary = "Evoluciona de Eevee (al subir de nivel cerca de la Roca Hielo). Al no existir en Johto ni Kanto, requiere evolucionar en D/P/Pt y transferir a HeartGold."
+                badge_label = 'Evolución (D/P/Pt)'
+
             obt_info = {
                 'type': 'evolution',
-                'badge_label': 'Evolución',
+                'badge_label': badge_label,
                 'badge_color': 'indigo',
                 'summary': summary,
                 'locations': [],
