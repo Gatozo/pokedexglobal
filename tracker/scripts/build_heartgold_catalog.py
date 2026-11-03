@@ -195,17 +195,17 @@ JOHTO_KANTO_AREA_NAMES = {
     'johto-route-47-cave-gate': 'Ruta 47 (Entrada de la Cueva)',
     'johto-route-47-inside-cave': 'Ruta 47 (Interior de la Cueva)',
     'johto-safari-zone-desert': 'Zona Safari (Desierto)',
-    'johto-safari-zone-forest': 'Zona Safari (Bosque)',
-    'johto-safari-zone-marshland': 'Zona Safari (Marisma)',
-    'johto-safari-zone-meadow': 'Zona Safari (Prado)',
+    'johto-safari-zone-forest': 'Zona Safari (Arboleda)',
+    'johto-safari-zone-marshland': 'Zona Safari (Pantano)',
+    'johto-safari-zone-meadow': 'Zona Safari (Parterre)',
     'johto-safari-zone-mountain': 'Zona Safari (Montaña)',
-    'johto-safari-zone-peak': 'Zona Safari (Pico)',
-    'johto-safari-zone-plains': 'Zona Safari (Llanura)',
-    'johto-safari-zone-rocky-beach': 'Zona Safari (Playa Rocosa)',
+    'johto-safari-zone-peak': 'Zona Safari (Peña)',
+    'johto-safari-zone-plains': 'Zona Safari (Prado)',
+    'johto-safari-zone-rocky-beach': 'Zona Safari (Lagos)',
     'johto-safari-zone-savannah': 'Zona Safari (Sabana)',
-    'johto-safari-zone-swamp': 'Zona Safari (Pantano)',
-    'johto-safari-zone-wasteland': 'Zona Safari (Terreno Baldío)',
-    'johto-safari-zone-wetland': 'Zona Safari (Humedal)',
+    'johto-safari-zone-swamp': 'Zona Safari (Laguna)',
+    'johto-safari-zone-wasteland': 'Zona Safari (Páramo)',
+    'johto-safari-zone-wetland': 'Zona Safari (Albufera)',
     'kanto-power-plant-area': 'Central de Energía',
     'kanto-route-2-north-towards-pewter-city': 'Ruta 2 (Norte hacia Ciudad Plateada)',
     'kanto-route-2-south-towards-viridian-city': 'Ruta 2 (Sur hacia Ciudad Verde)',
@@ -602,14 +602,28 @@ SPECIAL_OBTAINING = {
         ]
     },
 
+    # Pidgeotto (#17) NO aparece en la Zona Safari (solo Pidgey)
+    17: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Evolución',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Ruta 37, Ruta 43, Rutas 2, 8, 13, 14, 15, 25 y Bosque Verde. También evolucionando de Pidgey al Nivel 18.',
+        'locations': [
+            {'area': 'Ruta 37 / Ruta 43', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 2 / Ruta 8 / Ruta 13 / Ruta 14 / Ruta 15 / Ruta 25', 'method': 'Hierba alta'},
+            {'area': 'Bosque Verde', 'method': 'Hierba alta'},
+            DAYCARE_LOCATION
+        ]
+    },
+
     # Zona Safari de Baoba (Bloques y Días)
     304: {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'slate',
-        'summary': 'Zona Safari (Área Montaña con 24 Bloques de Roca, sin espera de días).',
+        'summary': 'Zona Safari (Área Lagos con 24 Bloques de Peña, sin espera de días).',
         'locations': [
-            {'area': 'Zona Safari (Montaña)', 'method': '24 Bloques Roca (Inmediato)'},
+            {'area': 'Zona Safari (Lagos)', 'method': '24 Bloques Peña (Inmediato)'},
             DAYCARE_LOCATION
         ]
     },
@@ -617,9 +631,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'amber',
-        'summary': 'Zona Safari (Área Desierto con 25 Bloques de Roca y 30 días de espera de Baoba).',
+        'summary': 'Zona Safari (Área Desierto con 25 Bloques de Peña y 30 días de espera de Baoba).',
         'locations': [
-            {'area': 'Zona Safari (Desierto)', 'method': '25 Bloques Roca + 30 días de espera'},
+            {'area': 'Zona Safari (Desierto)', 'method': '25 Bloques Peña + 30 días de espera'},
             DAYCARE_LOCATION
         ]
     },
@@ -627,9 +641,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'indigo',
-        'summary': 'Zona Safari (Área Humedal con 9 Bloques Llanura y 19 Bloques Roca tras 110 días de espera de Baoba).',
+        'summary': 'Zona Safari (Área Laguna con 9 Bloques Bosque y 19 Bloques Peña tras 110 días de espera de Baoba).',
         'locations': [
-            {'area': 'Zona Safari (Humedal)', 'method': '9 Bloques Llanura + 19 Roca (110 días de espera)'},
+            {'area': 'Zona Safari (Laguna)', 'method': '9 Bloques Bosque + 19 Peña (110 días de espera)'},
             DAYCARE_LOCATION
         ]
     },
@@ -637,9 +651,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'blue',
-        'summary': 'Zona Safari (Área Terreno Baldío con 21 Bloques de Roca y 70 días de espera de Baoba). También regalo de Steven Stone en su casa de Hoenn.',
+        'summary': 'Zona Safari (Área Arboleda con 21 Bloques de Peña y 70 días de espera de Baoba). También regalo de Steven Stone en su casa de Hoenn.',
         'locations': [
-            {'area': 'Zona Safari (Terreno Baldío)', 'method': '21 Bloques Roca + 70 días de espera'},
+            {'area': 'Zona Safari (Arboleda)', 'method': '21 Bloques Peña + 70 días de espera'},
             DAYCARE_LOCATION
         ]
     },
@@ -647,9 +661,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'blue',
-        'summary': 'Zona Safari (Área Humedal con 13 Bloques Llanura y 17 Bloques Roca tras 100 días de espera de Baoba).',
+        'summary': 'Zona Safari (Área Lagos con 13 Bloques Planicie y 17 Bloques Peña tras 100 días de espera de Baoba).',
         'locations': [
-            {'area': 'Zona Safari (Humedal)', 'method': '13 Bloques Llanura + 17 Roca (100 días de espera)'},
+            {'area': 'Zona Safari (Lagos)', 'method': '13 Bloques Planicie + 17 Peña (100 días de espera)'},
             DAYCARE_LOCATION
         ]
     },
@@ -657,9 +671,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'blue',
-        'summary': 'Zona Safari (Área Jardín con 10 Bloques Llanura y 14 Bloques Roca tras 70 días de espera de Baoba).',
+        'summary': 'Zona Safari (Área Parterre con 10 Bloques Bosque y 14 Bloques Peña tras 70 días de espera de Baoba).',
         'locations': [
-            {'area': 'Zona Safari (Jardín)', 'method': '10 Bloques Llanura + 14 Roca (70 días de espera)'},
+            {'area': 'Zona Safari (Parterre)', 'method': '10 Bloques Bosque + 14 Peña (70 días de espera)'},
             DAYCARE_LOCATION
         ]
     },
@@ -667,9 +681,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'indigo',
-        'summary': 'Zona Safari (Área Montaña con 18 Bloques Roca y 30 días de espera) o mediante sintonía de Sinnoh en la Radio.',
+        'summary': 'Zona Safari (Área Peña con 18 Bloques Peña y 30 días de espera) o mediante sintonía de Sinnoh en la Radio.',
         'locations': [
-            {'area': 'Zona Safari (Montaña)', 'method': '18 Bloques Roca (30 días de espera)'},
+            {'area': 'Zona Safari (Peña)', 'method': '18 Bloques Peña (30 días de espera)'},
             {'area': 'Ruta 33 / Ruta 45', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
             DAYCARE_LOCATION
         ]
@@ -678,9 +692,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'amber',
-        'summary': 'Zona Safari (Área Desierto con 28 Bloques Roca, aparición inmediata).',
+        'summary': 'Zona Safari (Área Desierto con 28 Bloques Peña, aparición inmediata).',
         'locations': [
-            {'area': 'Zona Safari (Desierto)', 'method': '28 Bloques Roca (Inmediato)'},
+            {'area': 'Zona Safari (Desierto)', 'method': '28 Bloques Peña (Inmediato)'},
             DAYCARE_LOCATION
         ]
     },
@@ -688,9 +702,9 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'purple',
-        'summary': 'Zona Safari (Área Pantano con 28 Bloques Roca, aparición inmediata).',
+        'summary': 'Zona Safari (Área Páramo con 28 Bloques Peña, aparición inmediata).',
         'locations': [
-            {'area': 'Zona Safari (Pantano)', 'method': '28 Bloques Roca (Inmediato)'},
+            {'area': 'Zona Safari (Páramo)', 'method': '28 Bloques Peña (Inmediato)'},
             DAYCARE_LOCATION
         ]
     },
@@ -698,9 +712,139 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'emerald',
-        'summary': 'Zona Safari (Área Pantano con 25 Bloques Llanura y 10 días de espera de Baoba).',
+        'summary': 'Zona Safari (Área Pantano con 25 Bloques Planicie y 10 días de espera de Baoba).',
         'locations': [
-            {'area': 'Zona Safari (Pantano)', 'method': '25 Bloques Llanura (10 días de espera)'},
+            {'area': 'Zona Safari (Pantano)', 'method': '25 Bloques Planicie (10 días de espera)'},
+            DAYCARE_LOCATION
+        ]
+    },
+
+    # Especies de Johto/Kanto con encuentros mediante bloques de Baoba
+    82: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'slate',
+        'summary': 'Salvaje en Cueva Celeste. En la Zona Safari aparece en el área Peña con 3 Bloques de Peña. También por intercambio en la Central de Energía.',
+        'locations': [
+            {'area': 'Cueva Celeste (P1, P2 y Sótano B1)', 'method': 'Encuentro en cueva'},
+            {'area': 'Zona Safari (Peña)', 'method': '3 Bloques Peña (Inmediato)'},
+            {'area': 'Central de Energía', 'method': 'Intercambio por un Dugtrio'},
+            DAYCARE_LOCATION
+        ]
+    },
+    110: {
+        'type': 'safari',
+        'badge_label': 'Safari Baoba / Evolución',
+        'badge_color': 'purple',
+        'summary': 'Zona Safari (Área Pantano con 8 Bloques de Planicie, aparición inmediata). También mediante evolución de Koffing (Nv. 35).',
+        'locations': [
+            {'area': 'Zona Safari (Pantano)', 'method': '8 Bloques Planicie (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    112: {
+        'type': 'safari',
+        'badge_label': 'Safari Baoba / Evolución',
+        'badge_color': 'amber',
+        'summary': 'Zona Safari (Área Sabana con 10 Bloques de Planicie, aparición inmediata). También mediante evolución de Rhyhorn (Nv. 42).',
+        'locations': [
+            {'area': 'Zona Safari (Sabana)', 'method': '10 Bloques Planicie (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    115: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'amber',
+        'summary': 'Salvaje en Túnel Roca. En la Zona Safari aparece de forma natural en el Páramo (Mañana y Día).',
+        'locations': [
+            {'area': 'Túnel Roca (Sótano B1)', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Páramo)', 'method': 'Hierba alta (Mañana y Día)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    198: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'indigo',
+        'summary': 'Salvaje en Ruta 7 y 16 (Noche). En la Zona Safari aparece de forma natural en la Laguna (Noche, Surf) o mediante 10 Bloques de Agua.',
+        'locations': [
+            {'area': 'Ruta 7', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Ruta 16', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Zona Safari (Laguna)', 'method': 'Hierba alta (Noche), Surf'},
+            {'area': 'Zona Safari (Laguna)', 'method': '10 Bloques Agua (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    200: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'indigo',
+        'summary': 'Salvaje en Monte Plateado y Ruta 47 (Noche). En la Zona Safari aparece de forma natural en la Arboleda (Noche) o mediante 4 Bloques de Bosque.',
+        'locations': [
+            {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Monte Plateado', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Zona Safari (Arboleda)', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Zona Safari (Arboleda)', 'method': '4 Bloques Bosque (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    202: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'blue',
+        'summary': 'Salvaje en Cueva Oscura y Cueva Celeste. En la Zona Safari aparece de forma natural en la Peña o mediante 5 Bloques de Peña.',
+        'locations': [
+            {'area': 'Cueva Oscura (Entrada Ciudad Endrino)', 'method': 'Hierba alta'},
+            {'area': 'Cueva Celeste', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Peña)', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Peña)', 'method': '5 Bloques Peña (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    228: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'amber',
+        'summary': 'Salvaje en Ruta 7 (Noche). En la Zona Safari aparece colocando 4 Bloques de Bosque en la Sabana.',
+        'locations': [
+            {'area': 'Ruta 7', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Zona Safari (Sabana)', 'method': '4 Bloques Bosque (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    229: {
+        'type': 'safari',
+        'badge_label': 'Safari Baoba / Evolución',
+        'badge_color': 'amber',
+        'summary': 'Zona Safari (Área Prado con 10 Bloques de Peña, aparición inmediata). También mediante evolución de Houndour (Nv. 24).',
+        'locations': [
+            {'area': 'Zona Safari (Prado)', 'method': '10 Bloques Peña (Inmediato)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    234: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Ruta 36 y Ruta 37. En la Zona Safari (Prado) aparece de forma natural (Noche, Nv. 17) o colocando 3 Bloques de Planicie (Noche, Nv. 40).',
+        'locations': [
+            {'area': 'Ruta 36', 'method': 'Hierba alta'},
+            {'area': 'Ruta 37', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Prado)', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Zona Safari (Prado)', 'method': '3 Bloques Planicie (Noche)'},
+            DAYCARE_LOCATION
+        ]
+    },
+    246: {
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
+        'badge_color': 'emerald',
+        'summary': 'Salvaje en Monte Plateado. En la Zona Safari aparece de forma natural en la Montaña (Mañana y Día) o mediante 5 Bloques de Peña.',
+        'locations': [
+            {'area': 'Monte Plateado', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Montaña)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Zona Safari (Montaña)', 'method': '5 Bloques Peña (Inmediato)'},
             DAYCARE_LOCATION
         ]
     },
@@ -747,7 +891,8 @@ SPECIAL_OBTAINING = {
         'locations': [
             {'area': 'Cueva Celeste (P1, P2 y Sótano B1)', 'method': 'Encuentro en cueva'},
             {'area': 'Central de Energía', 'method': 'Intercambio por un Dugtrio'},
-            {'area': 'Zona Safari (Pico / Montaña)', 'method': 'Hierba alta'}
+            {'area': 'Zona Safari (Peña)', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Montaña)', 'method': 'Hierba alta'}
         ]
     },
     85: {
@@ -758,7 +903,7 @@ SPECIAL_OBTAINING = {
         'locations': [
             {'area': 'Ruta 26 / Ruta 28 / Monte Plateado', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Ciudad Endrino', 'method': 'Intercambio por Dragonair hembra (Dodrio Doris)'},
-            {'area': 'Zona Safari (Playa Rocosa)', 'method': 'Hierba alta'}
+            {'area': 'Zona Safari (Lagos)', 'method': 'Hierba alta'}
         ]
     },
     95: {
@@ -776,9 +921,10 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 10 y Zona Safari. Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.',
+        'summary': 'Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.',
         'locations': [
-            {'area': 'Ruta 10 / Zona Safari (Pantano)', 'method': 'Hierba alta'},
+            {'area': 'Ruta 10', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Laguna)', 'method': 'Hierba alta'},
             {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
             {'area': 'Ciudad Olivo', 'method': 'Intercambio por un Krabby (Voltorb Billy)'},
             DAYCARE_LOCATION
@@ -860,9 +1006,9 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Casino',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en la Zona Safari (Marisma) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).',
+        'summary': 'Salvaje en la Zona Safari (Pantano) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Zona Safari (Marisma)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Zona Safari (Pantano)', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (700 fichas)'},
             DAYCARE_LOCATION
         ]
@@ -882,9 +1028,10 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Casino',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 21 y Zona Safari (Bosque). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).',
+        'summary': 'Salvaje en Ruta 21 y Zona Safari (Arboleda). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Ruta 21 (Ruta Marítima) / Zona Safari', 'method': 'Hierba alta'},
+            {'area': 'Ruta 21 (Ruta Marítima)', 'method': 'Hierba alta'},
+            {'area': 'Zona Safari (Arboleda)', 'method': 'Hierba alta'},
             {'area': 'Ciudad Azulona (Rincón de Premios)', 'method': 'Premio del Casino (3.333 fichas)'},
             DAYCARE_LOCATION
         ]
@@ -1507,6 +1654,21 @@ def main():
 
     with open(CACHE_DIR / "encounters_heartgold.json", "r", encoding="utf-8") as f:
         encounters_hg = json.load(f)
+
+    # Filtrar encuentros erróneos de la Zona Safari en la base de PokeAPI (ej: #17 Pidgeotto y #76 Golem)
+    VALID_SAFARI_SPECIES_IDS = {
+        16, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 32, 33, 35, 39, 41, 42, 43, 44, 46, 47, 50, 
+        54, 55, 60, 61, 63, 66, 67, 69, 70, 74, 75, 77, 79, 80, 81, 82, 83, 84, 85, 88, 89, 92, 
+        93, 95, 96, 97, 98, 99, 100, 104, 105, 108, 109, 110, 111, 112, 113, 115, 118, 119, 122, 
+        125, 126, 128, 129, 130, 131, 132, 147, 148, 161, 162, 179, 183, 187, 188, 189, 191, 194, 
+        195, 198, 200, 202, 203, 213, 228, 229, 234, 235, 246, 263, 264, 270, 271, 273, 274, 283, 
+        284, 285, 286, 288, 298, 299, 304, 305, 307, 308, 309, 310, 313, 314, 315, 324, 327, 328, 
+        329, 331, 332, 335, 336, 337, 338, 339, 341, 353, 354, 355, 356, 358, 363, 364, 371, 372, 
+        374, 375, 399, 403, 404, 406, 417, 418, 419, 433, 436, 437, 443, 447, 449, 451, 453, 455
+    }
+    for pid_str, elist in encounters_hg.items():
+        if int(pid_str) not in VALID_SAFARI_SPECIES_IDS:
+            encounters_hg[pid_str] = [e for e in elist if not e.get('area_raw', '').startswith('johto-safari-zone-')]
 
     with open(CACHE_DIR / "wikidex_heartgold_descriptions.json", "r", encoding="utf-8") as f:
         descriptions_hg = json.load(f)

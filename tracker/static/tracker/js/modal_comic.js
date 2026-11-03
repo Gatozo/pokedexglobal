@@ -17,6 +17,7 @@ import { openStoneModal } from './modal_stones.js';
 import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
 import { loadGameConfig, getMunchlaxTreeNames } from './game_config.js';
+import { getSafariHgssRequirements } from './safari_hgss_data.js';
 
 const _entryDataCache = new Map();
 const _cardFormIndex = new Map();
@@ -497,6 +498,7 @@ export function renderModalObtaining(data, activeForm = null) {
     const activeGameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(activeGameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(activeGameSlug);
+    const isGen4HGSS = ['heartgold', 'soulsilver'].includes(activeGameSlug);
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
@@ -883,8 +885,16 @@ export function renderModalObtaining(data, activeForm = null) {
                 const isExclusiveWild = otherWildLocs.length === 0;
 
                 const introText = isExclusiveWild
-                    ? `Esta especie aparece en estado salvaje exclusivamente durante eventos de <strong>Manada Pokémon diaria</strong> tras obtener la Pokédex Nacional.`
-                    : `Esta especie aparece con una alta frecuencia especial durante eventos de <strong>Manada Pokémon diaria</strong> tras obtener la Pokédex Nacional.`;
+                    ? `Esta especie aparece en estado salvaje exclusivamente durante eventos de <strong>Manada Pokémon diaria</strong>${isGen4Sinnoh ? ' tras obtener la Pokédex Nacional' : ''}.`
+                    : `Esta especie aparece con una alta frecuencia especial durante eventos de <strong>Manada Pokémon diaria</strong>${isGen4Sinnoh ? ' tras obtener la Pokédex Nacional' : ''}.`;
+
+                const howItWorksTitle = isGen4HGSS 
+                    ? '📻 ¿Cómo funciona la mecánica en Johto y Kanto?' 
+                    : '📺 ¿Cómo funciona la mecánica?';
+
+                const howItWorksText = isGen4HGSS
+                    ? `Sintoniza en la radio del <strong>Pokégear</strong> el programa <em>"La Hora Pokémon del Profesor Oak"</em> (conducido por el Prof. Oak y Rosa en la frecuencia superior izquierda). Cada día a medianoche se anunciará una ruta concreta de Johto o Kanto donde se ha producido un brote masivo de esta especie, elevando su probabilidad de encuentro al <strong>40% – 50%</strong>.<br><br>Adicionalmente, varios entrenadores registrados en la agenda del Pokégear te llamarán por teléfono para avisarte en tiempo real si se desata una manada en su ruta.`
+                    : `Visita diariamente Pueblo Arena y habla con la hermana pequeña de Maya / León en su casa, o sintoniza los boletines informativos de la televisión. Te anunciará qué ruta concreta está siendo visitada hoy por una manada, donde este Pokémon aparecerá con una alta tasa de encuentro (~40%). La especie de la manada cambia cada día a medianoche.`;
 
                 const swarmAccordion = document.createElement('div');
                 swarmAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-emerald-50';
@@ -898,7 +908,7 @@ export function renderModalObtaining(data, activeForm = null) {
                         <div class="flex items-center gap-2 min-w-0">
                             <img src="/media/items/town-map.png" alt="Manada Pokémon" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
                             <span class="font-black uppercase text-[10px] sm:text-xs text-emerald-900 tracking-wide truncate">
-                                Mecánica • Manada Pokémon Diaria
+                                Mecánica • Manada Pokémon Diaria${isGen4HGSS ? ' (Pokégear)' : ''}
                             </span>
                         </div>
                         <div class="flex items-center gap-1.5 shrink-0">
@@ -913,14 +923,251 @@ export function renderModalObtaining(data, activeForm = null) {
                             ${introText}
                         </p>
                         <p class="text-emerald-950 font-bold">
-                            📺 ¿Cómo funciona la mecánica?
+                            ${howItWorksTitle}
                         </p>
-                        <p class="mt-1 text-[10px] text-slate-700">
-                            Visita diariamente Pueblo Arena y habla con la hermana pequeña de Maya / León en su casa, o sintoniza los boletines informativos de la televisión. Te anunciará qué ruta concreta está siendo visitada hoy por una manada, donde este Pokémon aparecerá con una alta tasa de encuentro (~40%). La especie de la manada cambia cada día a medianoche.
+                        <p class="mt-1 text-[10px] text-slate-700 leading-normal">
+                            ${howItWorksText}
                         </p>
                     </div>
                 `;
                 detailsContainer.appendChild(swarmAccordion);
+            }
+
+            // Nota explicativa de mecánica: Radio Pokégear (Sonidos de Hoenn / Sonidos de Sinnoh)
+            const radioSoundLocs = obt.locations.filter(loc => {
+                const m = (loc.method || '').toLowerCase();
+                return m.includes('sintonía de hoenn') || m.includes('sintonía de sinnoh') || m.includes('sonidos de hoenn') || m.includes('sonidos de sinnoh') || (m.includes('radio pokégear') && (m.includes('hoenn') || m.includes('sinnoh')));
+            });
+
+            if (radioSoundLocs.length > 0) {
+                const hasHoenn = radioSoundLocs.some(loc => (loc.method || '').toLowerCase().includes('hoenn'));
+                const hasSinnoh = radioSoundLocs.some(loc => (loc.method || '').toLowerCase().includes('sinnoh'));
+                
+                let radioTitle = 'Mecánica • Radio Pokégear (Sonidos de Hoenn y Sinnoh)';
+                if (hasHoenn && !hasSinnoh) radioTitle = 'Mecánica • Radio Pokégear (Sonidos de Hoenn)';
+                if (!hasHoenn && hasSinnoh) radioTitle = 'Mecánica • Radio Pokégear (Sonidos de Sinnoh)';
+
+                const radioAccordion = document.createElement('div');
+                radioAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-sky-50';
+                radioAccordion.innerHTML = `
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-sky-100/90 hover:bg-sky-100 text-sky-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/blue-card.png" alt="Radio Pokégear" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-sky-900 tracking-wide truncate">
+                                ${radioTitle}
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-sky-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-sky-50/70">
+                        <p class="mb-1.5">
+                            Esta especie aparece en estado salvaje mediante sintonías especiales de la <strong>Radio del Pokégear</strong> tras haber obtenido la <strong>Pokédex Nacional</strong>.
+                        </p>
+                        <p class="text-sky-950 font-bold mb-1">
+                            📻 Canal de emisión y días correspondientes:
+                        </p>
+                        <div class="space-y-1.5 text-[10px] text-slate-700 leading-normal">
+                            ${hasHoenn ? `
+                            <p>
+                                • <strong>Sonidos de Hoenn (Miércoles):</strong> Sintoniza el programa <em>"Música Pokémon"</em> de DJ Ben (cuadrante superior derecho) los <strong>miércoles</strong>. Mientras la melodía permanezca sonando en el Pokégear, camina por las zonas indicadas para que aparezca esta especie (~20% de probabilidad).
+                            </p>` : ''}
+                            ${hasSinnoh ? `
+                            <p>
+                                • <strong>Sonidos de Sinnoh (Jueves):</strong> Sintoniza el programa <em>"Música Pokémon"</em> de DJ Ben (cuadrante superior derecho) los <strong>jueves</strong>. Mientras la melodía permanezca sonando en el Pokégear, camina por las zonas indicadas para que aparezca esta especie (~20% de probabilidad).
+                            </p>` : ''}
+                            <p class="mt-1 text-[10px] text-slate-500 italic">
+                                * La música debe mantenerse sonando activamente en la radio del Pokégear mientras buscas encuentros en la hierba, agua o cuevas.
+                            </p>
+                        </div>
+                    </div>
+                `;
+                detailsContainer.appendChild(radioAccordion);
+            }
+
+            // Nota explicativa de mecánica: Concurso de Captura de Bichos (Parque Nacional)
+            const bugContestLocs = obt.locations.filter(loc => {
+                const a = (loc.area || '').toLowerCase();
+                const m = (loc.method || '').toLowerCase();
+                return a.includes('parque nacional') || a.includes('concurso') || m.includes('concurso');
+            });
+
+            if (bugContestLocs.length > 0) {
+                const natNum = parseInt(data.number, 10);
+                const isPostNationalBug = [265, 266, 267, 268, 269, 290, 291, 313, 314, 401, 402, 415].includes(natNum);
+
+                const bugAccordion = document.createElement('div');
+                bugAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-lime-50';
+                bugAccordion.innerHTML = `
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-lime-100/90 hover:bg-lime-100 text-lime-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/park-ball.png" alt="Concurso de Bichos" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-lime-900 tracking-wide truncate">
+                                Mecánica • Concurso de Captura de Bichos
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-lime-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-lime-50/70">
+                        <p class="mb-1.5">
+                            El <strong>Concurso de Captura de Bichos</strong> se celebra en el <strong>Parque Nacional</strong> de Johto exclusivamente los <strong>martes, jueves y sábados</strong>. Se te entrega una Parque Ball y 20 minutos para atrapar al mejor Pokémon sin debilitarlo.
+                        </p>
+                        <p class="text-lime-950 font-bold mb-1">
+                            🏆 Días de aparición y Pokédex Nacional:
+                        </p>
+                        <p class="text-[10px] text-slate-700 leading-normal">
+                            ${isPostNationalBug 
+                                ? `Esta especie es exclusiva de los concursos celebrados los <strong>jueves y sábados tras haber obtenido la Pokédex Nacional</strong> (los martes se mantiene el concurso clásico de Johto).`
+                                : `Esta especie aparece en el concurso clásico desde el inicio del juego y está disponible los <strong>martes, jueves y sábados</strong> (los jueves y sábados post-Dex Nacional comparte ratio con bichos de Hoenn y Sinnoh).`
+                            }
+                        </p>
+                    </div>
+                `;
+                detailsContainer.appendChild(bugAccordion);
+            }
+
+            // Nota explicativa de mecánica: Golpe Cabeza en Árboles
+            const headbuttLocs = obt.locations.filter(loc => {
+                const m = (loc.method || '').toLowerCase();
+                return m.includes('golpe cabeza') || m.includes('headbutt');
+            });
+
+            if (headbuttLocs.length > 0) {
+                const natNum = parseInt(data.number, 10);
+                const isSpecialTreeExclusive = [204, 214].includes(natNum); // Pineco, Heracross
+                const isPostNationalHeadbutt = [287, 412, 415, 420].includes(natNum); // Slakoth, Burmy, Combee, Cherubi
+
+                const headbuttAccordion = document.createElement('div');
+                headbuttAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-amber-50';
+                headbuttAccordion.innerHTML = `
+                    <button 
+                        type="button" 
+                        class="w-full px-3 py-2 bg-amber-100/90 hover:bg-amber-100 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                        onclick="toggleComicCaveAccordion(this)"
+                        aria-expanded="false"
+                    >
+                        <div class="flex items-center gap-2 min-w-0">
+                            <img src="/media/items/wood-mail.png" alt="Golpe Cabeza" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                            <span class="font-black uppercase text-[10px] sm:text-xs text-amber-900 tracking-wide truncate">
+                                Mecánica • Golpe Cabeza en Árboles
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-1.5 shrink-0">
+                            <span class="text-[10px] font-black uppercase text-amber-900/80 label-text">Ver nota</span>
+                            <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-amber-50/70">
+                        <p class="mb-1.5">
+                            Al sacudir árboles con el movimiento de campo <strong>Golpe Cabeza</strong> (MT02) en Johto y Kanto, caen Pokémon salvajes que anidan en las copas.
+                        </p>
+                        <p class="text-amber-950 font-bold mb-1">
+                            🌲 Árboles Comunes vs. Árboles Especiales:
+                        </p>
+                        <p class="text-[10px] text-slate-700 leading-normal">
+                            ${isSpecialTreeExclusive
+                                ? `En cada ruta existen árboles normales y <strong>árboles especiales fijos</strong> (determinados por las coordenadas ocultas del mapa). Esta especie <strong>únicamente cae de los árboles especiales</strong> (ratio del 50% al 80%), teniendo un 0% de aparición en árboles comunes. Si un árbol no te da resultados, prueba sacudiendo otros árboles distintos de la misma ruta hasta localizar el especial.`
+                                : (isPostNationalHeadbutt
+                                    ? `Esta especie solo puede conseguirse sacudiendo árboles mediante Golpe Cabeza <strong>tras haber desbloqueado la Pokédex Nacional</strong> en las rutas y zonas específicas indicadas en la lista superior.`
+                                    : `En cada ruta existen árboles normales (donde caen especies comunes o no cae nada) y árboles especiales donde los Pokémon aparecen con mayor probabilidad y a niveles más elevados.`
+                                )
+                            }
+                        </p>
+                    </div>
+                `;
+                detailsContainer.appendChild(headbuttAccordion);
+            }
+
+            // Nota explicativa de mecánica: Zona Safari de Baoba (Requisitos específicos por Pokémon)
+            if (isGen4HGSS) {
+                const natNum = parseInt(data.number, 10);
+                const safariReqs = getSafariHgssRequirements(natNum, obt.locations);
+                if (safariReqs) {
+                    const safariAccordion = document.createElement('div');
+                    safariAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-teal-50';
+                    safariAccordion.innerHTML = `
+                        <button 
+                            type="button" 
+                            class="w-full px-3 py-2 bg-teal-100/90 hover:bg-teal-100 text-teal-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            onclick="toggleComicCaveAccordion(this)"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <img src="/media/items/safari-ball.png" alt="Zona Safari Baoba" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                                <span class="font-black uppercase text-[10px] sm:text-xs text-teal-900 tracking-wide truncate">
+                                    Mecánica • Zona Safari de Baoba
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="text-[10px] font-black uppercase text-teal-900/80 label-text">Ver nota</span>
+                                <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-teal-50/70">
+                            ${safariReqs.isMixed ? `
+                            <p class="mb-2">
+                                Esta especie dispone de <strong>dos posibilidades de obtención</strong> en la Zona Safari:
+                            </p>
+                            <div class="space-y-1.5 text-[10px] text-teal-950">
+                                <div class="p-2 border border-teal-900/20 rounded-lg bg-teal-100/50">
+                                    🌿 <strong>Opción 1 (Aparición natural sin bloques):</strong> En <strong>${safariReqs.naturalArea}</strong> (${safariReqs.naturalMethod}). No requiere colocar bloques ni esperar días de Baoba.
+                                </div>
+                                <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/80 space-y-0.5">
+                                    <div>🧱 <strong>Opción 2 (Mediante bloques de Baoba):</strong> En <strong>${safariReqs.blockArea}</strong></div>
+                                    <div>📦 <strong>Bloques necesarios:</strong> ${safariReqs.blocksSummary}</div>
+                                    <div>⏳ <strong>Tiempo de espera:</strong> ${safariReqs.days > 0 ? `<strong>${safariReqs.days} días reales</strong>` : '<strong>Inmediato</strong> (tras colocar los bloques)'}</div>
+                                </div>
+                            </div>
+                            <p class="mt-1.5 text-[9.5px] text-slate-600 italic">
+                                * La opción con bloques permite capturarlo a mayor nivel (ej. Nv. 40) o en un área distinta.
+                            </p>
+                            ` : (safariReqs.requiresBlocks ? `
+                            <p class="mb-1.5">
+                                Para que este Pokémon aparezca en la Zona Safari, debes personalizar el área mediante la mecánica de <strong>Bloques y Objetos de Baoba</strong> (desbloqueada tras superar sus dos pruebas).
+                            </p>
+                            <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/60 text-[10px] text-teal-950 space-y-1">
+                                <div>📍 <strong>Área de la Zona Safari:</strong> ${safariReqs.area}</div>
+                                <div>🧱 <strong>Bloques requeridos:</strong> ${safariReqs.blocksSummary}</div>
+                                <div>⏳ <strong>Tiempo de espera de Baoba:</strong> ${safariReqs.days > 0 ? `<strong>${safariReqs.days} días reales</strong> tras colocar los bloques (Baoba te llamará al Pokégear cuando los bloques se mejoren).` : '<strong>Inmediato</strong> (aparece en cuanto colocas los bloques necesarios).'}</div>
+                            </div>
+                            <p class="mt-1.5 text-[9.5px] text-slate-600 italic">
+                                * El tiempo de espera cuenta en días de calendario reales de tu partida. Baoba debe haberte otorgado el personalizador de áreas.
+                            </p>
+                            ` : `
+                            <p class="mb-1.5">
+                                Este Pokémon cuenta con <strong>aparición natural estándar</strong> en la Zona Safari (no requiere colocar bloques ni esperar días de Baoba).
+                            </p>
+                            <p class="text-[10px] text-slate-700 leading-normal">
+                                Aparece caminando por la hierba alta, haciendo surf o pescando en las áreas de la Zona Safari indicadas en la lista superior (${safariReqs.area}) sin necesidad de configurar objetos.
+                            </p>
+                            `)}
+                        </div>
+                    `;
+                    detailsContainer.appendChild(safariAccordion);
+                }
             }
         }
 

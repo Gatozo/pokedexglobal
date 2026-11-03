@@ -616,7 +616,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -670,57 +670,25 @@
     "flavor_text": "Su visión es extraordinaria. Aunque vuele muy alto, detectará todo movimiento de su presa.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Evolución",
       "badge_color": "emerald",
-      "summary": "Salvaje en 12 zonas (ej: Ruta 37, Ruta 43, Ruta 2 (Sur hacia Ciudad Verde)).",
+      "summary": "Salvaje en Ruta 37, Ruta 43, Rutas 2, 8, 13, 14, 15, 25 y Bosque Verde. También evolucionando de Pidgey al Nivel 18.",
       "locations": [
         {
-          "area": "Ruta 37",
-          "method": "Hierba alta (Día)"
+          "area": "Ruta 37 / Ruta 43",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Ruta 43",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 8",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 13",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 14",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 15",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 25",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Ruta 2 / Ruta 8 / Ruta 13 / Ruta 14 / Ruta 15 / Ruta 25",
+          "method": "Hierba alta"
         },
         {
           "area": "Bosque Verde",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -933,7 +901,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Pico)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta"
         },
         {
@@ -941,7 +909,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -1591,11 +1559,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta"
         },
         {
@@ -1658,7 +1626,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 29, Ruta 1, Zona Safari (Pantano)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 29, Ruta 1, Zona Safari (Laguna)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 29",
@@ -1669,11 +1637,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -1729,18 +1697,18 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 1, Zona Safari (Pantano), Zona Safari (Humedal).",
+      "summary": "Salvaje en: Ruta 1, Zona Safari (Laguna), Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Ruta 1",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta"
         }
       ],
@@ -2989,16 +2957,11 @@
     "cry_url": "/media/pokemon/cries/legacy/76.ogg",
     "flavor_text": "Muda su piel una vez al año. La concha desechada se endurece de inmediato y se desmorona.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Pico).",
-      "locations": [
-        {
-          "area": "Zona Safari (Pico)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "indigo",
+      "summary": "Evoluciona de Graveler (por intercambio)",
+      "locations": [],
       "evolution_info": {
         "from": "Graveler",
         "text": "Evoluciona de Graveler (por intercambio)",
@@ -3205,7 +3168,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -3571,7 +3534,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Moon (P1), Monte Moon (P2), Zona Safari (Prado).",
+      "summary": "Salvaje en: Monte Moon (P1), Monte Moon (P2), Zona Safari (Parterre).",
       "locations": [
         {
           "area": "Monte Moon (P1)",
@@ -3582,7 +3545,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -3795,7 +3758,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 3, Ruta 4, Zona Safari (Prado)).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 3, Ruta 4, Zona Safari (Parterre)).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -3806,11 +3769,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -4237,10 +4200,10 @@
       "type": "wild",
       "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en la Zona Safari (Marisma) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
+      "summary": "Salvaje en la Zona Safari (Pantano) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Mañana y Día)"
         },
         {
@@ -4300,10 +4263,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Marisma).",
+      "summary": "Salvaje en Zona Safari (Pantano).",
       "locations": [
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -4749,11 +4712,11 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche), Surf"
         }
       ],
@@ -4859,7 +4822,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -4915,14 +4878,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 8, Zona Safari (Bosque).",
+      "summary": "Salvaje en: Ruta 8, Zona Safari (Arboleda).",
       "locations": [
         {
           "area": "Ruta 8",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -5295,11 +5258,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
         },
         {
@@ -5370,7 +5333,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         }
       ],
@@ -5547,7 +5510,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -5603,14 +5566,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 14, Zona Safari (Prado).",
+      "summary": "Salvaje en: Ruta 14, Zona Safari (Parterre).",
       "locations": [
         {
           "area": "Ruta 14",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Surf"
         }
       ],
@@ -5669,10 +5632,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Marisma).",
+      "summary": "Salvaje en Zona Safari (Pantano).",
       "locations": [
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta, Surf"
         }
       ],
@@ -5750,11 +5713,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pico)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -5825,7 +5788,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         }
       ],
@@ -5975,19 +5938,19 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
@@ -6094,19 +6057,19 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         }
       ],
@@ -6630,23 +6593,23 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Zona Safari (Marisma)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Pesca (Caña Vieja)"
         },
         {
@@ -6871,11 +6834,11 @@
           "method": "Pesca (Caña Buena)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
@@ -7022,11 +6985,11 @@
           "method": "Pesca (Supercaña), Surf"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -7100,7 +7063,7 @@
           "method": "Hierba alta, Surf"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -7156,7 +7119,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Pozo Slowpoke (Sótano B1), Islas Espuma (Sótano B4 - Articuno), Zona Safari (Pico)).",
+      "summary": "Salvaje en 4 zonas (ej: Pozo Slowpoke (Sótano B1), Islas Espuma (Sótano B4 - Articuno), Zona Safari (Peña)).",
       "locations": [
         {
           "area": "Pozo Slowpoke (Sótano B1)",
@@ -7167,11 +7130,11 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Pico)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -7336,7 +7299,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7407,7 +7370,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta, Hierba alta (Noche)"
         }
       ],
@@ -7655,7 +7618,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7711,14 +7674,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 11, Zona Safari (Pantano).",
+      "summary": "Salvaje en: Ruta 11, Zona Safari (Laguna).",
       "locations": [
         {
           "area": "Ruta 11",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -7994,7 +7957,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -8902,7 +8865,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Parque Nacional, Ruta 24, Zona Safari (Prado) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Parque Nacional, Ruta 24, Zona Safari (Parterre) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Parque Nacional",
@@ -8913,7 +8876,7 @@
           "method": "Hierba alta (Día)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Día)"
         },
         {
@@ -9350,29 +9313,25 @@
     "flavor_text": "Odia la luz y las sacudidas. Si le atacan, infla su cuerpo para aumentar su contraataque.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en 5 zonas (ej: Cueva Oscura (Entrada Ciudad Endrino), Cueva Celeste (P1), Cueva Celeste (P2)) (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Safari",
+      "badge_color": "blue",
+      "summary": "Salvaje en Cueva Oscura y Cueva Celeste. En la Zona Safari aparece de forma natural en la Peña o mediante 5 Bloques de Peña.",
       "locations": [
         {
           "area": "Cueva Oscura (Entrada Ciudad Endrino)",
           "method": "Hierba alta"
         },
         {
-          "area": "Cueva Celeste (P1)",
+          "area": "Cueva Celeste",
           "method": "Hierba alta"
         },
         {
-          "area": "Cueva Celeste (P2)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta"
         },
         {
-          "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Pico)",
-          "method": "Hierba alta (Noche)"
+          "area": "Zona Safari (Peña)",
+          "method": "5 Bloques Peña (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9955,14 +9914,18 @@
     "cry_url": "/media/pokemon/cries/legacy/110.ogg",
     "flavor_text": "Si uno de los gemelos Koffing se infla, el otro se desinfla. Mezclan constantemente sus venenosos gases.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Marisma).",
+      "type": "safari",
+      "badge_label": "Safari Baoba / Evolución",
+      "badge_color": "purple",
+      "summary": "Zona Safari (Área Pantano con 8 Bloques de Planicie, aparición inmediata). También mediante evolución de Koffing (Nv. 35).",
       "locations": [
         {
-          "area": "Zona Safari (Marisma)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Pantano)",
+          "method": "8 Bloques Planicie (Inmediato)"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -10039,7 +10002,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Surf"
         },
         {
@@ -10114,7 +10077,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta, Surf"
         }
       ],
@@ -10192,11 +10155,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Pico)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -10263,7 +10226,11 @@
           "method": "Intercambio por un Dugtrio"
         },
         {
-          "area": "Zona Safari (Pico / Montaña)",
+          "area": "Zona Safari (Peña)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Montaña)",
           "method": "Hierba alta"
         }
       ],
@@ -10322,10 +10289,14 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 10 y Zona Safari. Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.",
+      "summary": "Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.",
       "locations": [
         {
-          "area": "Ruta 10 / Zona Safari (Pantano)",
+          "area": "Ruta 10",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         },
         {
@@ -11030,9 +11001,9 @@
     "flavor_text": "Su cornamenta cambia el flujo del aire para crear un espacio de realidad distorsionada.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Safari",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 36, Ruta 37, Zona Safari (Llanura) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 36 y Ruta 37. En la Zona Safari (Prado) aparece de forma natural (Noche, Nv. 17) o colocando 3 Bloques de Planicie (Noche, Nv. 40).",
       "locations": [
         {
           "area": "Ruta 36",
@@ -11043,8 +11014,12 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Zona Safari (Prado)",
+          "method": "3 Bloques Planicie (Noche)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11099,14 +11074,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Monte Mortero (P1), Zona Safari (Prado) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Monte Mortero (P1), Zona Safari (Parterre) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Monte Mortero (P1)",
           "method": "Hierba alta, Manada Pokémon (Aviso del Pokégear)"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
@@ -11241,7 +11216,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Marisma)",
+          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         },
         {
@@ -11656,7 +11631,7 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche), Surf"
         },
         {
@@ -11783,11 +11758,11 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta, Hierba alta (Noche), Surf"
         }
       ],
@@ -11936,7 +11911,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
@@ -12282,7 +12257,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 43, Ruta 48, Zona Safari (Llanura) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 43, Ruta 48, Zona Safari (Prado) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 43",
@@ -12293,7 +12268,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
@@ -12542,14 +12517,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Torre Quemada (Sótano B1), Zona Safari (Pico).",
+      "summary": "Salvaje en: Torre Quemada (Sótano B1), Zona Safari (Peña).",
       "locations": [
         {
           "area": "Torre Quemada (Sótano B1)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pico)",
+          "area": "Zona Safari (Peña)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
@@ -12796,14 +12771,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 10, Zona Safari (Bosque).",
+      "summary": "Salvaje en: Ruta 10, Zona Safari (Arboleda).",
       "locations": [
         {
           "area": "Ruta 10",
           "method": "Hierba alta, Hierba alta (Día)"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta"
         }
       ],
@@ -12862,10 +12837,14 @@
       "type": "wild",
       "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 21 y Zona Safari (Bosque). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 21 y Zona Safari (Arboleda). También canjeable por 3.333 fichas en el Rincón de Premios de Ciudad Azulona (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruta 21 (Ruta Marítima) / Zona Safari",
+          "area": "Ruta 21 (Ruta Marítima)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta"
         },
         {
@@ -12932,14 +12911,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruinas Alfa (Exterior), Zona Safari (Llanura) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruinas Alfa (Exterior), Zona Safari (Prado) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruinas Alfa (Exterior)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -13014,7 +12993,7 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
@@ -13542,7 +13521,7 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche), Pesca (Caña Buena), Pesca (Caña Vieja)"
         },
         {
@@ -13645,11 +13624,11 @@
           "method": "Golpe Roca, Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta, Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
+          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
         }
       ],
@@ -14692,14 +14671,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 44, Zona Safari (Bosque), Zona Safari (Montaña) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Ruta 44, Zona Safari (Arboleda), Zona Safari (Montaña) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 44",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Bosque)",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta"
         },
         {
@@ -16379,11 +16358,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Humedal)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta"
         },
         {
@@ -16450,7 +16429,7 @@
           "method": "Intercambio por Dragonair hembra (Dodrio Doris)"
         },
         {
-          "area": "Zona Safari (Playa Rocosa)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta"
         }
       ],
@@ -16532,7 +16511,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Llanura)",
+          "area": "Zona Safari (Prado)",
           "method": "Hierba alta"
         },
         {
@@ -16785,17 +16764,17 @@
     "flavor_text": "Si no hay peligro, el joven sale de la bolsa y juega. El adulto vigila atentamente al joven.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Túnel Roca (Sótano B1), Zona Safari (Terreno Baldío) (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Safari",
+      "badge_color": "amber",
+      "summary": "Salvaje en Túnel Roca. En la Zona Safari aparece de forma natural en el Páramo (Mañana y Día).",
       "locations": [
         {
           "area": "Túnel Roca (Sótano B1)",
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Terreno Baldío)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16910,14 +16889,18 @@
     "cry_url": "/media/pokemon/cries/legacy/112.ogg",
     "flavor_text": "Su dura coraza le protege hasta del calor de la lava. Sin embargo, la coraza le hace insensible.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Sabana).",
+      "type": "safari",
+      "badge_label": "Safari Baoba / Evolución",
+      "badge_color": "amber",
+      "summary": "Zona Safari (Área Sabana con 10 Bloques de Planicie, aparición inmediata). También mediante evolución de Rhyhorn (Nv. 42).",
       "locations": [
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "10 Bloques Planicie (Inmediato)"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -16973,9 +16956,9 @@
     "flavor_text": "Temido y odiado por muchos, dicen que trae la desgracia a todos aquellos que lo ven por la noche.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 7, Ruta 16, Zona Safari (Pantano) (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Safari",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Ruta 7 y 16 (Noche). En la Zona Safari aparece de forma natural en la Laguna (Noche, Surf) o mediante 10 Bloques de Agua.",
       "locations": [
         {
           "area": "Ruta 7",
@@ -16986,8 +16969,12 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche), Surf"
+          "area": "Zona Safari (Laguna)",
+          "method": "Hierba alta (Noche), Surf"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
+          "method": "10 Bloques Agua (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17040,9 +17027,9 @@
     "flavor_text": "Usa diferentes tipos de gritos para comunicarse con los de su especie o para seguir a su presa.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 7, Zona Safari (Sabana) (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Safari",
+      "badge_color": "amber",
+      "summary": "Salvaje en Ruta 7 (Noche). En la Zona Safari aparece colocando 4 Bloques de Bosque en la Sabana.",
       "locations": [
         {
           "area": "Ruta 7",
@@ -17050,7 +17037,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "4 Bloques Bosque (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17102,14 +17089,18 @@
     "cry_url": "/media/pokemon/cries/legacy/229.ogg",
     "flavor_text": "Si te quemas con las llamas que lanza por su boca, el dolor no desaparecerá nunca.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Llanura).",
+      "type": "safari",
+      "badge_label": "Safari Baoba / Evolución",
+      "badge_color": "amber",
+      "summary": "Zona Safari (Área Prado con 10 Bloques de Peña, aparición inmediata). También mediante evolución de Houndour (Nv. 24).",
       "locations": [
         {
-          "area": "Zona Safari (Llanura)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Prado)",
+          "method": "10 Bloques Peña (Inmediato)"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ],
       "evolution_info": {
@@ -17360,37 +17351,25 @@
     "flavor_text": "Le gusta hacer travesuras como gritar y aullar por la noche, para asustar a la gente.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en 7 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)) (también obtenible mediante crianza).",
+      "badge_label": "Salvaje / Safari",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Monte Plateado y Ruta 47 (Noche). En la Zona Safari aparece de forma natural en la Arboleda (Noche) o mediante 4 Bloques de Bosque.",
       "locations": [
-        {
-          "area": "Monte Plateado (P2)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Monte Plateado (P1 Superior)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Monte Plateado (P4)",
-          "method": "Hierba alta (Noche)"
-        },
         {
           "area": "Ruta 47 (Interior de la Cueva)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Monte Plateado (P3)",
+          "area": "Monte Plateado",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Cima del Monte Plateado",
+          "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Bosque)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Arboleda)",
+          "method": "4 Bloques Bosque (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17594,7 +17573,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Prado)",
+          "area": "Zona Safari (Parterre)",
           "method": "Hierba alta"
         },
         {
@@ -19089,14 +19068,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Guarida Dragón, Zona Safari (Pantano).",
+      "summary": "Salvaje en: Guarida Dragón, Zona Safari (Laguna).",
       "locations": [
         {
           "area": "Guarida Dragón",
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Laguna)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -19210,41 +19189,21 @@
     "flavor_text": "Se alimenta de tierra. Después de comer una gran montaña, se duerme y empieza a crecer.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Salvaje / Safari",
       "badge_color": "emerald",
-      "summary": "Salvaje en 8 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Monte Plateado. En la Zona Safari aparece de forma natural en la Montaña (Mañana y Día) o mediante 5 Bloques de Peña.",
       "locations": [
         {
-          "area": "Monte Plateado (P2)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (P1 Superior)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (P4)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (P1)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (Laderas)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Monte Plateado (P3)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Cima del Monte Plateado",
+          "area": "Monte Plateado",
           "method": "Hierba alta"
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Zona Safari (Montaña)",
+          "method": "5 Bloques Peña (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

@@ -2636,6 +2636,44 @@ class PokemonHeartGoldGen4Tests(TestCase):
             self.assertNotIn("Ruta de Hielo", obt_str)
             self.assertNotIn("'Npc trade'", obt_str)
             self.assertNotIn("'Gift egg'", obt_str)
+            self.assertNotIn("Zona Safari (Llanura)", obt_str)
+            self.assertNotIn("Zona Safari (Terreno Baldío)", obt_str)
+            self.assertNotIn("Zona Safari (Marisma)", obt_str)
+
+        # Validación específica de Stantler (#234) en la Zona Safari (ambas modalidades en Prado)
+        stantler = [e for e in reg_cat if e.pokemon.national_number == 234][0]
+        stantler_locs = str(stantler.obtaining_info.get("locations", []))
+        self.assertIn("Zona Safari (Prado)", stantler_locs)
+        self.assertNotIn("Zona Safari (Arboleda)", stantler_locs)
+        self.assertIn("3 Bloques Planicie (Noche)", stantler_locs)
+
+        # Validación de exclusión de Golem (#76) y Pidgeotto (#17) de la Zona Safari
+        golem = [e for e in reg_cat if e.pokemon.national_number == 76][0]
+        self.assertEqual(golem.obtaining_info.get("badge_label"), "Evolución")
+        self.assertEqual(golem.obtaining_info.get("type"), "evolution")
+        self.assertEqual(golem.obtaining_info.get("locations"), [])
+        self.assertNotIn("safari", str(golem.obtaining_info).lower())
+
+        pidgeotto = [e for e in reg_cat if e.pokemon.national_number == 17][0]
+        self.assertNotIn("safari", str(pidgeotto.obtaining_info).lower())
+
+        # Validación de que ninguna especie fuera de las 153 oficiales de Johto Safari Zone contenga 'Zona Safari'
+        serebii_safari_numbers = {
+            16, 19, 20, 21, 22, 23, 24, 27, 28, 29, 30, 32, 33, 35, 39, 41, 42, 43, 44, 46, 47, 50, 
+            54, 55, 60, 61, 63, 66, 67, 69, 70, 74, 75, 77, 79, 80, 81, 82, 83, 84, 85, 88, 89, 92, 
+            93, 95, 96, 97, 98, 99, 100, 104, 105, 108, 109, 110, 111, 112, 113, 115, 118, 119, 122, 
+            125, 126, 128, 129, 130, 131, 132, 147, 148, 161, 162, 179, 183, 187, 188, 189, 191, 194, 
+            195, 198, 200, 202, 203, 213, 228, 229, 234, 235, 246, 263, 264, 270, 271, 273, 274, 283, 
+            284, 285, 286, 288, 298, 299, 304, 305, 307, 308, 309, 310, 313, 314, 315, 324, 327, 328, 
+            329, 331, 332, 335, 336, 337, 338, 339, 341, 353, 354, 355, 356, 358, 363, 364, 371, 372, 
+            374, 375, 399, 403, 404, 406, 417, 418, 419, 433, 436, 437, 443, 447, 449, 451, 453, 455
+        }
+        for entry in reg_cat:
+            nid = entry.pokemon.national_number
+            for loc in entry.obtaining_info.get("locations", []):
+                area = loc.get("area", "")
+                if "safari" in area.lower() and "bahía blanca" not in area.lower():
+                    self.assertIn(nid, serebii_safari_numbers, f"#{nid} {entry.pokemon.name} no debe aparecer en Zona Safari")
 
     def test_heartgold_pichu_forms_and_spiky_eared(self):
         from tracker.pokemon_forms import get_pokemon_forms
