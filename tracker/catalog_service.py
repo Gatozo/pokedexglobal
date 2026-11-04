@@ -488,8 +488,37 @@ class CatalogEntry:
             if obt.get("type") == "gift" or ("regalo" in full_obt_text and "huevo" in full_obt_text) or "regalo" in loc_text:
                 tags.add("gift")
 
-        # Zona Safari
-        if "safari" in loc_text and not is_transfer:
+        # Zona Safari y Biomas de Johto (HG/SS)
+        has_safari_encounter = False
+        JOHTO_SAFARI_BIOME_TAGS = {
+            "albufera": "safari_albufera",
+            "arboleda": "safari_arboleda",
+            "desierto": "safari_desierto",
+            "lagos": "safari_lagos",
+            "laguna": "safari_laguna",
+            "montaña": "safari_montana",
+            "montana": "safari_montana",
+            "pantano": "safari_pantano",
+            "parterre": "safari_parterre",
+            "peña": "safari_pena",
+            "pena": "safari_pena",
+            "prado": "safari_prado",
+            "páramo": "safari_paramo",
+            "paramo": "safari_paramo",
+            "sabana": "safari_sabana",
+        }
+        for loc in obt.get("locations", []):
+            area = loc.get("area", "")
+            area_lower = area.lower()
+            if "zona safari" in area_lower or ("safari" in area_lower and "acceso al safari" not in area_lower):
+                has_safari_encounter = True
+                m = re.search(r"Zona Safari \((.*?)\)", area, re.IGNORECASE)
+                if m:
+                    biome_name = m.group(1).strip().lower()
+                    if biome_name in JOHTO_SAFARI_BIOME_TAGS:
+                        tags.add(JOHTO_SAFARI_BIOME_TAGS[biome_name])
+
+        if (has_safari_encounter or ("safari" in loc_text and "acceso al safari" not in loc_text and not is_transfer)) and not is_transfer:
             tags.add("safari")
 
         # Gran Pantano (Sinnoh)

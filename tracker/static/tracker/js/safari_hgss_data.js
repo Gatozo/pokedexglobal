@@ -134,8 +134,23 @@ export const SAFARI_HGSS_BLOCK_DATA = {
 };
 
 /**
+ * Restricciones canónicas de horario para bloques específicos en HGSS.
+ * En el juego original, los bloques reemplazan slots de encuentros que en ciertas especies
+ * están confinados a un horario del reloj DS (ej: Noche o Mañana y Día).
+ */
+export const SAFARI_BLOCK_TIME_RESTRICTIONS = {
+    22: [{ area: /desierto/i, block: /roca/i, time: 'Noche' }],
+    35: [{ area: /parterre/i, block: /roca/i, time: 'Noche' }],
+    97: [{ area: /lagos/i, block: /bosque/i, time: 'Noche' }],
+    105: [{ area: /desierto/i, block: /roca/i, time: 'Mañana y Día' }],
+    126: [{ area: /peña/i, block: /roca/i, time: 'Mañana y Día' }],
+    202: [{ area: /peña/i, block: /roca/i, time: 'Noche' }],
+    234: [{ area: /prado/i, block: /planicie|bosque/i, time: 'Noche' }]
+};
+
+/**
  * Obtiene los requisitos específicos de la Zona Safari para un Pokémon en HGSS.
- * Detecta si el Pokémon dispone de modalidades mixtas (natural sin bloques vs. bloques).
+ * Separa de forma individual cada alternativa de bloques y cada aparición natural.
  * @param {number} natNum Número nacional del Pokémon
  * @param {Array} locations Lista de localizaciones de obtención del Pokémon
  */
@@ -143,83 +158,159 @@ export function getSafariHgssRequirements(natNum, locations) {
     const safariLocs = (locations || []).filter(loc => {
         const a = (loc.area || '').toLowerCase();
         const m = (loc.method || '').toLowerCase();
-        return a.includes('safari') || m.includes('safari');
+        return (a.includes('safari') || m.includes('safari')) && !a.includes('acceso al safari');
     });
 
     if (safariLocs.length === 0) return null;
 
-    // Separar localizaciones con bloques vs. naturales
-    const blockLocs = safariLocs.filter(loc => {
-        const m = (loc.method || '').toLowerCase();
-        return m.includes('bloque');
-    });
+    const naturalZones = [];
+    const blockZones = [];
 
-    const naturalLocs = safariLocs.filter(loc => {
-        const m = (loc.method || '').toLowerCase();
-        return !m.includes('bloque');
+    safariLocs.forEach(loc => {
+        const area = loc.area || '';
+        const fullMethod = loc.method || '';
+        
+        // Separar partes naturales de partes con requisitos de bloques
+        const parts = fullMethod.split('/').map(p => p.trim()).filter(Boolean);
+        const naturalParts = [];
+        const blockParts = [];
+
+        parts.forEach(part => {
+            if (/bloque/i.test(part)) {
+                blockParts.push(part);
+            } else {
+                naturalParts.push(part);
+            }
+        });
+
+        if (naturalParts.length > 0) {
+            naturalZones.push({
+                area: area,
+                method: naturalParts.join(' / ')
+            });
+        }
+
+        if (blockParts.length > 0) {
+            blockParts.forEach(part => {
+                const hasDays = /espera|días|dias/i.test(part);
+                const daysMatch = part.match(/(\d+)\s*d[ií]as/i);
+                const days = daysMatch ? parseInt(daysMatch[1], 10) : 0;
+                
+                // 1. Detectar si el texto contiene una franja horaria explícita
+                const timeMatch = part.match(/\(([^)]*?\b(?:noche|mañana y d[ií]a|d[ií]a y mañana|d[ií]a|mañana)\b(?![s\w])[^)]*?)\)/i);
+                let timeLabel = timeMatch ? timeMatch[1].trim() : null;
+
+                // 2. Si no la tiene en texto, verificar en las restricciones canónicas conocidas
+                if (!timeLabel && SAFARI_BLOCK_TIME_RESTRICTIONS[natNum]) {
+                    const rule = SAFARI_BLOCK_TIME_RESTRICTIONS[natNum].find(r => 
+                        r.area.test(area) && r.block.test(part)
+                    );
+                    if (rule) {
+                        timeLabel = rule.time;
+                    }
+                }
+
+                const hasTime = !!timeLabel;
+
+                // Limpiar el texto del bloque quitando días u horarios redundantes para la etiqueta de bloques
+                let cleanBlocks = part
+                    .replace(/\([^)]*d[ií]as[^)]*\)/gi, '')
+                    .replace(/\([^)]*(?:noche|día|dia|mañana)[^)]*\)/gi, '')
+                    .replace(/\+\s*\d+\s*d[ií]as.*$/gi, '')
+                    .trim()
+                    .replace(/\s*\+\s*$/, '')
+                    .trim();
+
+                // Formatear texto descriptivo de disponibilidad exacta
+                let availabilityText = '';
+                if (days > 0) {
+                    if (hasTime) {
+                        availabilityText = `Requiere esperar <strong>${days} días reales</strong> de Baoba (disponible en horario: <strong>${timeLabel}</strong>)`;
+                    } else {
+                        availabilityText = `Requiere esperar <strong>${days} días reales</strong> de Baoba (aparece a cualquier hora tras la espera)`;
+                    }
+                } else {
+                    if (hasTime) {
+                        availabilityText = `Sin días de espera de Baoba (aparece tras colocar los bloques en horario: <strong>${timeLabel}</strong>)`;
+                    } else {
+                        availabilityText = `<strong>Inmediato</strong> (aparece a cualquier hora del día tras colocar los bloques)`;
+                    }
+                }
+
+                blockZones.push({
+                    area: area,
+                    rawPart: part,
+                    blocks: cleanBlocks || part,
+                    days: days,
+                    hasTimeRestriction: hasTime,
+                    timeLabel: timeLabel,
+                    availabilityText: availabilityText,
+                    isImmediate: days === 0 && !hasTime
+                });
+            });
+        }
     });
 
     const customData = SAFARI_HGSS_BLOCK_DATA[natNum];
 
-    // Caso 1: Especie con modalidad mixta (Aparición natural + Bloques)
-    if (naturalLocs.length > 0 && (blockLocs.length > 0 || customData)) {
-        const blockSummary = blockLocs.length > 0 ? blockLocs[0].method : customData.blocks;
-        const blockArea = blockLocs.length > 0 ? blockLocs[0].area : `Zona Safari (${customData.area})`;
-        const hasDays = blockSummary.toLowerCase().includes('espera');
-        const days = hasDays 
-            ? (parseInt(blockSummary.match(/(\d+)\s*días/i)?.[1], 10) || (customData ? customData.days : 0))
-            : (customData ? customData.days : 0);
+    // Fallback con customData solo si no se detectaron bloques en locations ni zonas naturales
+    if (blockZones.length === 0 && naturalZones.length === 0 && customData) {
+        const fallbackParts = (customData.blocks || '').split('/').map(p => p.trim()).filter(Boolean);
+        fallbackParts.forEach(part => {
+            const days = customData.days || 0;
+            const timeMatch = part.match(/\(([^)]*?\b(?:noche|mañana y d[ií]a|d[ií]a y mañana|d[ií]a|mañana)\b(?![s\w])[^)]*?)\)/i);
+            const timeLabel = timeMatch ? timeMatch[1].trim() : null;
+            const hasTime = !!timeLabel;
+            
+            let availabilityText = '';
+            if (days > 0) {
+                if (hasTime) {
+                    availabilityText = `Requiere esperar <strong>${days} días reales</strong> de Baoba (disponible en horario: <strong>${timeLabel}</strong>)`;
+                } else {
+                    availabilityText = `Requiere esperar <strong>${days} días reales</strong> de Baoba (aparece a cualquier hora tras la espera)`;
+                }
+            } else {
+                if (hasTime) {
+                    availabilityText = `Sin días de espera de Baoba (aparece tras colocar los bloques en horario: <strong>${timeLabel}</strong>)`;
+                } else {
+                    availabilityText = `<strong>Inmediato</strong> (aparece a cualquier hora del día tras colocar los bloques)`;
+                }
+            }
 
-        const naturalAreas = [...new Set(naturalLocs.map(l => l.area))].join(', ');
-        const naturalMethods = [...new Set(naturalLocs.map(l => l.method || 'Hierba alta / Surf'))].join(', ');
-
-        return {
-            isMixed: true,
-            requiresBlocks: true,
-            naturalArea: naturalAreas,
-            naturalMethod: naturalMethods,
-            blockArea: blockArea,
-            blocksSummary: blockSummary,
-            days: days,
-            isImmediate: days === 0
-        };
+            blockZones.push({
+                area: `Zona Safari (${customData.area})`,
+                rawPart: part,
+                blocks: part,
+                days: days,
+                hasTimeRestriction: hasTime,
+                timeLabel: timeLabel,
+                availabilityText: availabilityText,
+                isImmediate: days === 0 && !hasTime
+            });
+        });
     }
 
-    // Caso 2: Especie exclusivamente por bloques
-    if (blockLocs.length > 0) {
-        const loc = blockLocs[0];
-        const m = loc.method || '';
-        const hasDays = m.toLowerCase().includes('espera');
-        const days = hasDays ? (parseInt(m.match(/(\d+)\s*días/i)?.[1], 10) || 0) : 0;
-        return {
-            isMixed: false,
-            requiresBlocks: true,
-            area: loc.area,
-            blocksSummary: m,
-            days: days,
-            isImmediate: !hasDays || m.toLowerCase().includes('inmediato')
-        };
+    const hasNatural = naturalZones.length > 0;
+    const hasBlocks = blockZones.length > 0;
+    const isMixed = hasNatural && hasBlocks;
+
+    if (!hasNatural && !hasBlocks) {
+        return null;
     }
 
-    if (customData) {
-        return {
-            isMixed: false,
-            requiresBlocks: true,
-            area: `Zona Safari (${customData.area})`,
-            blocksSummary: customData.blocks,
-            days: customData.days,
-            isImmediate: customData.days === 0
-        };
-    }
-
-    // Caso 3: Especie exclusivamente natural (sin bloques)
-    const areas = [...new Set(naturalLocs.map(l => l.area))].join(', ');
     return {
-        isMixed: false,
-        requiresBlocks: false,
-        area: areas,
-        blocksSummary: 'Ninguno (Aparición natural)',
-        days: 0,
-        isImmediate: true
+        isMixed: isMixed,
+        requiresBlocks: hasBlocks,
+        hasNatural: hasNatural,
+        naturalZones: naturalZones,
+        blockZones: blockZones,
+        // Compatibilidad hacia atrás:
+        naturalArea: naturalZones.map(z => z.area).join(', '),
+        naturalMethod: naturalZones.map(z => `${z.area}: ${z.method}`).join(' | '),
+        blockArea: blockZones.map(z => z.area).join(', '),
+        blocksSummary: blockZones.map(z => `${z.area}: ${z.blocks}`).join(' | '),
+        area: (hasBlocks ? blockZones : naturalZones).map(z => z.area).join(', '),
+        days: blockZones.length > 0 ? Math.max(...blockZones.map(z => z.days)) : 0,
+        isImmediate: blockZones.every(z => z.isImmediate)
     };
 }

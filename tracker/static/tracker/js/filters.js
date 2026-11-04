@@ -118,6 +118,38 @@ export function updateFilterUI() {
     });
 }
 
+export function toggleSafariTag(tag, el) {
+    const safariBiomes = [
+        'safari_albufera', 'safari_arboleda', 'safari_desierto', 'safari_lagos',
+        'safari_laguna', 'safari_montana', 'safari_pantano', 'safari_parterre',
+        'safari_pena', 'safari_prado', 'safari_paramo', 'safari_sabana'
+    ];
+
+    if (tag === 'safari') {
+        safariBiomes.forEach(bTag => {
+            if (state.selectedFilterTags.has(bTag)) {
+                state.selectedFilterTags.delete(bTag);
+                const bEl = document.querySelector(`.filter-safari-pill[data-tag="${bTag}"]`);
+                if (bEl) {
+                    bEl.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
+                    bEl.classList.add('bg-white', 'text-slate-800');
+                }
+            }
+        });
+        toggleFilterTag('safari', el);
+    } else {
+        if (state.selectedFilterTags.has('safari')) {
+            state.selectedFilterTags.delete('safari');
+            const allEl = document.querySelector('.filter-safari-pill[data-tag="safari"]');
+            if (allEl) {
+                allEl.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
+                allEl.classList.add('bg-white', 'text-slate-800');
+            }
+        }
+        toggleFilterTag(tag, el);
+    }
+}
+
 export function toggleFilterTag(tag, el) {
     if (state.selectedFilterTags.has(tag)) {
         state.selectedFilterTags.delete(tag);

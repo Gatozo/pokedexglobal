@@ -1104,6 +1104,38 @@ export function renderModalObtaining(data, activeForm = null) {
                 const natNum = parseInt(data.number, 10);
                 const safariReqs = getSafariHgssRequirements(natNum, obt.locations);
                 if (safariReqs) {
+                    // Agrupar bloques por área para presentar claramente zonas y alternativas
+                    const blocksByArea = new Map();
+                    (safariReqs.blockZones || []).forEach(z => {
+                        if (!blocksByArea.has(z.area)) {
+                            blocksByArea.set(z.area, []);
+                        }
+                        blocksByArea.get(z.area).push(z);
+                    });
+
+                    const renderBlocksHtml = () => Array.from(blocksByArea.entries()).map(([areaName, opts]) => `
+                        <div class="border-l-2 border-teal-600/50 pl-2.5 py-1 space-y-1">
+                            <div class="font-bold text-teal-950 text-[10.5px]">📍 ${areaName}</div>
+                            ${opts.length === 1 ? `
+                                <div class="text-slate-800 text-[10px]">📦 <strong>Bloques necesarios:</strong> ${opts[0].blocks}</div>
+                                <div class="text-slate-800 text-[10px]">⏳ <strong>Disponibilidad:</strong> ${opts[0].availabilityText}</div>
+                            ` : `
+                                <div class="space-y-1.5 pt-0.5">
+                                    ${opts.map((opt, idx) => `
+                                        <div class="pl-2 border-l border-teal-500/40 space-y-0.5 bg-teal-50/50 rounded-r py-1 pr-1.5">
+                                            <div class="text-teal-900 font-bold text-[10px]">
+                                                🔹 <strong>Alternativa ${idx + 1}:</strong> ${opt.blocks}
+                                            </div>
+                                            <div class="text-slate-700 text-[9.5px]">
+                                                ⏳ <strong>Disponibilidad:</strong> ${opt.availabilityText}
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `}
+                        </div>
+                    `).join('');
+
                     const safariAccordion = document.createElement('div');
                     safariAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-teal-50';
                     safariAccordion.innerHTML = `
@@ -1131,38 +1163,52 @@ export function renderModalObtaining(data, activeForm = null) {
                             <p class="mb-2">
                                 Esta especie dispone de <strong>dos posibilidades de obtención</strong> en la Zona Safari:
                             </p>
-                            <div class="space-y-1.5 text-[10px] text-teal-950">
-                                <div class="p-2 border border-teal-900/20 rounded-lg bg-teal-100/50">
-                                    🌿 <strong>Opción 1 (Aparición natural sin bloques):</strong> En <strong>${safariReqs.naturalArea}</strong> (${safariReqs.naturalMethod}). No requiere colocar bloques ni esperar días de Baoba.
+                            <div class="space-y-2 text-[10px] text-teal-950">
+                                <div class="p-2 border border-teal-900/20 rounded-lg bg-teal-100/50 space-y-1">
+                                    <div class="font-bold flex items-center gap-1 text-emerald-950">
+                                        <span>🌿</span> <strong>Opción 1 (Aparición natural sin bloques):</strong>
+                                    </div>
+                                    <div class="space-y-0.5 pl-3">
+                                        ${(safariReqs.naturalZones || []).map(z => `
+                                            <div>• <strong>${z.area}:</strong> ${z.method}</div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="text-[9px] text-slate-600 pl-3 italic">
+                                        * Disponible según el horario indicado sin necesidad de colocar bloques.
+                                    </div>
                                 </div>
-                                <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/80 space-y-0.5">
-                                    <div>🧱 <strong>Opción 2 (Mediante bloques de Baoba):</strong> En <strong>${safariReqs.blockArea}</strong></div>
-                                    <div>📦 <strong>Bloques necesarios:</strong> ${safariReqs.blocksSummary}</div>
-                                    <div>⏳ <strong>Tiempo de espera:</strong> ${safariReqs.days > 0 ? `<strong>${safariReqs.days} días reales</strong>` : '<strong>Inmediato</strong> (tras colocar los bloques)'}</div>
+
+                                <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/80 space-y-1.5">
+                                    <div class="font-bold flex items-center gap-1 text-teal-950">
+                                        <span>🧱</span> <strong>Opción 2 (Mediante bloques de Baoba):</strong>
+                                    </div>
+                                    <div class="space-y-1.5 pl-1">
+                                        ${renderBlocksHtml()}
+                                    </div>
                                 </div>
                             </div>
                             <p class="mt-1.5 text-[9.5px] text-slate-600 italic">
-                                * La opción con bloques permite capturarlo a mayor nivel (ej. Nv. 40) o en un área distinta.
+                                * En la Zona Safari, las apariciones en hierba alta dependen del momento del día. La mayoría de opciones con bloques permiten capturas a cualquier hora, salvo en aquellas alternativas donde el bloque activa un encuentro asignado a una franja horaria concreta (como Noche o Mañana y Día).
                             </p>
                             ` : (safariReqs.requiresBlocks ? `
                             <p class="mb-1.5">
                                 Para que este Pokémon aparezca en la Zona Safari, debes personalizar el área mediante la mecánica de <strong>Bloques y Objetos de Baoba</strong> (desbloqueada tras superar sus dos pruebas).
                             </p>
-                            <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/60 text-[10px] text-teal-950 space-y-1">
-                                <div>📍 <strong>Área de la Zona Safari:</strong> ${safariReqs.area}</div>
-                                <div>🧱 <strong>Bloques requeridos:</strong> ${safariReqs.blocksSummary}</div>
-                                <div>⏳ <strong>Tiempo de espera de Baoba:</strong> ${safariReqs.days > 0 ? `<strong>${safariReqs.days} días reales</strong> tras colocar los bloques (Baoba te llamará al Pokégear cuando los bloques se mejoren).` : '<strong>Inmediato</strong> (aparece en cuanto colocas los bloques necesarios).'}</div>
+                            <div class="p-2 border border-teal-900/30 rounded-lg bg-teal-100/60 text-[10px] text-teal-950 space-y-2">
+                                ${renderBlocksHtml()}
                             </div>
                             <p class="mt-1.5 text-[9.5px] text-slate-600 italic">
-                                * El tiempo de espera cuenta en días de calendario reales de tu partida. Baoba debe haberte otorgado el personalizador de áreas.
+                                * La mayoría de opciones con bloques permiten capturas a cualquier hora del día una vez cumplidos los requisitos. Los casos con horario restringido lo indican explícitamente.
                             </p>
                             ` : `
                             <p class="mb-1.5">
                                 Este Pokémon cuenta con <strong>aparición natural estándar</strong> en la Zona Safari (no requiere colocar bloques ni esperar días de Baoba).
                             </p>
-                            <p class="text-[10px] text-slate-700 leading-normal">
-                                Aparece caminando por la hierba alta, haciendo surf o pescando en las áreas de la Zona Safari indicadas en la lista superior (${safariReqs.area}) sin necesidad de configurar objetos.
-                            </p>
+                            <div class="p-2 border border-teal-900/20 rounded-lg bg-teal-100/50 text-[10px] text-teal-950 space-y-1">
+                                ${(safariReqs.naturalZones || []).map(z => `
+                                    <div>📍 <strong>${z.area}:</strong> ${z.method}</div>
+                                `).join('')}
+                            </div>
                             `)}
                         </div>
                     `;

@@ -117,6 +117,11 @@ class Game(models.Model):
         ]
 
     @property
+    def has_johto_safari(self):
+        """Determina si el juego cuenta con la Zona Safari modular de Johto (HG/SS)."""
+        return self.slug in ["heartgold", "soulsilver"]
+
+    @property
     def has_great_marsh(self):
         """Determina si este juego cuenta con Gran Pantano (Sinnoh)."""
         return self.slug in [

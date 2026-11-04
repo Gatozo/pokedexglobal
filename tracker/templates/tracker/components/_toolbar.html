@@ -221,7 +221,7 @@
                         <img src="/media/items/parcel.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Regalo / NPC</span>
                     </button>
-                    {% if game.has_safari_zone %}
+                    {% if game.has_safari_zone and not game.has_johto_safari %}
                     <button type="button" onclick="toggleFilterTag('safari', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari">
                         <img src="/media/items/safari-ball.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Zona Safari</span>
@@ -284,26 +284,78 @@
                 </div>
             </div>
 
-            <!-- Sección 3: Pesca con Caña -->
-            <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
-                <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Pesca con Caña</span>
-                <div class="flex flex-wrap gap-1.5">
-                    <button type="button" onclick="toggleFilterTag('rod_any', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_any">
-                        <span>Cualquier Caña</span>
-                    </button>
-                    <button type="button" onclick="toggleFilterTag('rod_old', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_old">
-                        <img src="/media/items/old-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
-                        <span>Caña Vieja</span>
-                    </button>
-                    <button type="button" onclick="toggleFilterTag('rod_good', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_good">
-                        <img src="/media/items/good-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
-                        <span>Caña Buena</span>
-                    </button>
-                    <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
-                        <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
-                        <span>Supercaña</span>
-                    </button>
+            <!-- Sección 3: Pesca con Caña & Safari Johto -->
+            <div class="flex flex-col gap-3">
+                <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Pesca con Caña</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button type="button" onclick="toggleFilterTag('rod_any', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_any">
+                            <span>Cualquier Caña</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('rod_old', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_old">
+                            <img src="/media/items/old-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Caña Vieja</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('rod_good', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_good">
+                            <img src="/media/items/good-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Caña Buena</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
+                            <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Supercaña</span>
+                        </button>
+                    </div>
                 </div>
+
+                {% if game.has_johto_safari %}
+                <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2 flex items-center gap-1.5">
+                        <img src="/media/items/safari-ball.png" alt="" class="w-4 h-4 object-contain inline-block pixel-art shrink-0">
+                        <span>Safari</span>
+                    </span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button type="button" onclick="toggleSafariTag('safari', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari">
+                            <span>Todos</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_albufera', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_albufera">
+                            <span>Albufera</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_arboleda', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_arboleda">
+                            <span>Arboleda</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_desierto', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_desierto">
+                            <span>Desierto</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_lagos', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_lagos">
+                            <span>Lagos</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_laguna', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_laguna">
+                            <span>Laguna</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_montana', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_montana">
+                            <span>Montaña</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_pantano', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_pantano">
+                            <span>Pantano</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_parterre', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_parterre">
+                            <span>Parterre</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_pena', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_pena">
+                            <span>Peña</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_prado', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_prado">
+                            <span>Prado</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_paramo', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_paramo">
+                            <span>Páramo</span>
+                        </button>
+                        <button type="button" onclick="toggleSafariTag('safari_sabana', this)" class="filter-tag-pill filter-safari-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="safari_sabana">
+                            <span>Sabana</span>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

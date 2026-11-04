@@ -617,7 +617,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -814,6 +814,10 @@
           "method": "Regalo de Randy con Carta (Kenya)"
         },
         {
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -901,15 +905,11 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta (Noche)"
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta, Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -1147,7 +1147,7 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
-          "area": "Zona Safari (Bahía Blanca)",
+          "area": "Acceso al Safari",
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
@@ -1452,6 +1452,14 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Zona Safari (Montaña)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Prado)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1559,16 +1567,12 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Zona Safari (Montaña)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
         }
       ],
       "evolution_info": {
@@ -1637,12 +1641,12 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1702,14 +1706,6 @@
         {
           "area": "Ruta 1",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -2673,7 +2669,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Zona Safari (Bahía Blanca)",
+          "area": "Acceso al Safari",
           "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
@@ -2810,6 +2806,10 @@
           "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
+          "area": "Zona Safari (Peña)",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -2903,6 +2903,10 @@
         {
           "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
           "method": "Golpe Roca"
+        },
+        {
+          "area": "Zona Safari (Peña)",
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -3168,7 +3172,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Lagos)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -3769,12 +3773,12 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Parterre)",
+          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -4067,7 +4071,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4142,7 +4146,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -4203,12 +4207,12 @@
       "summary": "Salvaje en la Zona Safari (Pantano) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Mañana y Día)"
-        },
-        {
           "area": "Casino de Ciudad Trigal",
           "method": "Premio del Casino (700 fichas)"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4266,8 +4270,8 @@
       "summary": "Salvaje en Zona Safari (Pantano).",
       "locations": [
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -4581,6 +4585,18 @@
           "method": "Huevo de regalo de Primo (Contraseña basada en tu ID)"
         },
         {
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Noche) / Surf"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -4713,11 +4729,7 @@
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Surf"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Noche), Surf"
+          "method": "Hierba alta (Noche) / Surf"
         }
       ],
       "evolution_info": {
@@ -5079,6 +5091,10 @@
           "method": "Intercambio por un Bellsprout (Onix Rocoso)"
         },
         {
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -5259,10 +5275,6 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
         },
         {
@@ -5331,10 +5343,6 @@
         {
           "area": "Ruta 25",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -5511,7 +5519,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5574,7 +5582,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Surf"
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -5633,12 +5641,7 @@
       "badge_label": "Salvaje",
       "badge_color": "emerald",
       "summary": "Salvaje en Zona Safari (Pantano).",
-      "locations": [
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Surf"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Skiploom",
         "text": "Evoluciona de Skiploom (Nivel 27)",
@@ -5713,12 +5716,8 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5785,10 +5784,6 @@
         },
         {
           "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         }
       ],
@@ -5938,20 +5933,20 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
-        },
-        {
           "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Vieja), Surf"
+          "method": "Surf / Pesca (Caña Vieja, Caña Buena, Supercaña)"
         },
         {
-          "area": "Zona Safari (Lagos)",
+          "area": "Zona Safari (Laguna)",
           "method": "Surf"
         },
         {
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Vieja, Caña Buena, Supercaña)"
+        },
+        {
           "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
+          "method": "Surf / Pesca (Caña Vieja)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6057,20 +6052,20 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
-        },
-        {
           "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Buena), Pesca (Supercaña)"
+          "method": "Pesca (Caña Buena, Supercaña)"
         },
         {
-          "area": "Zona Safari (Lagos)",
+          "area": "Zona Safari (Laguna)",
           "method": "Surf"
         },
         {
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Buena, Supercaña)"
+        },
+        {
           "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
+          "method": "Pesca (Caña Buena, Supercaña)"
         }
       ],
       "evolution_info": {
@@ -6593,24 +6588,24 @@
           "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
+          "area": "Zona Safari (Pantano)",
+          "method": "Pesca (Caña Vieja)"
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja)"
+          "method": "Surf / Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Surf"
+          "method": "Surf / Pesca (Caña Vieja, Caña Buena)"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "Surf / Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Vieja)"
+          "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6670,6 +6665,10 @@
         {
           "area": "Lago de la Furia",
           "method": "Encuentro fijo de historia al Nivel 30 (Shiny garantizado)"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Pesca (Supercaña)"
         }
       ],
       "evolution_info": {
@@ -6835,11 +6834,11 @@
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
+          "method": "Pesca (Caña Vieja, Caña Buena, Supercaña)"
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
+          "method": "Surf / Pesca (Caña Buena, Supercaña)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6986,11 +6985,11 @@
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña), Surf"
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Supercaña)"
+          "method": "Pesca (Caña Buena, Supercaña)"
         }
       ],
       "evolution_info": {
@@ -7063,8 +7062,8 @@
           "method": "Hierba alta, Surf"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Laguna)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7130,12 +7129,8 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Peña)",
+          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         }
       ],
       "evolution_info": {
@@ -7299,7 +7294,7 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
+          "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7370,8 +7365,8 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Hierba alta (Noche)"
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Noche)"
         }
       ],
       "evolution_info": {
@@ -7618,7 +7613,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Laguna)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Noche)"
         },
         {
@@ -7681,7 +7676,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Laguna)",
+          "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Noche)"
         }
       ],
@@ -7749,6 +7744,10 @@
         {
           "area": "Casino de Ciudad Trigal",
           "method": "Premio del Casino (200 fichas)"
+        },
+        {
+          "area": "Zona Safari (Prado)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7957,8 +7956,8 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8160,7 +8159,7 @@
           "method": "Golpe Cabeza en árboles"
         },
         {
-          "area": "Zona Safari (Bahía Blanca)",
+          "area": "Acceso al Safari",
           "method": "Golpe Cabeza en árboles"
         },
         {
@@ -8285,7 +8284,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8522,6 +8521,10 @@
         {
           "area": "Ruta 36",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Sabana)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8877,7 +8880,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9102,7 +9105,7 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
-          "area": "Zona Safari (Bahía Blanca)",
+          "area": "Acceso al Safari",
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
@@ -9327,11 +9330,7 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Peña)",
-          "method": "5 Bloques Peña (Inmediato)"
+          "method": "Hierba alta (Noche)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9865,6 +9864,10 @@
           "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9920,8 +9923,8 @@
       "summary": "Zona Safari (Área Pantano con 8 Bloques de Planicie, aparición inmediata). También mediante evolución de Koffing (Nv. 35).",
       "locations": [
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "8 Bloques Planicie (Inmediato)"
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10002,8 +10005,8 @@
           "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Surf"
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10075,10 +10078,6 @@
         {
           "area": "Ruta 18",
           "method": "Hierba alta, Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Surf"
         }
       ],
       "evolution_info": {
@@ -10156,11 +10155,11 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10293,10 +10292,6 @@
       "locations": [
         {
           "area": "Ruta 10",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
         },
         {
@@ -11082,7 +11077,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Noche), Surf"
+          "method": "Hierba alta (Noche) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11213,10 +11208,6 @@
         },
         {
           "area": "Cueva Diglett",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
           "method": "Hierba alta"
         },
         {
@@ -11631,8 +11622,8 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Noche), Surf"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Noche) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11758,12 +11749,8 @@
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta, Hierba alta (Noche), Surf"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Noche)"
         }
       ],
       "evolution_info": {
@@ -11830,6 +11817,10 @@
         {
           "area": "Centro Comercial de Ciudad Trigal (P5)",
           "method": "Intercambio por un Drowzee (Machop Machito)"
+        },
+        {
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11912,7 +11903,7 @@
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -12269,7 +12260,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12340,7 +12331,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12525,7 +12516,7 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -12776,10 +12767,6 @@
         {
           "area": "Ruta 10",
           "method": "Hierba alta, Hierba alta (Día)"
-        },
-        {
-          "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -12844,12 +12831,12 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Ciudad Azulona (Rincón de Premios)",
           "method": "Premio del Casino (3.333 fichas)"
+        },
+        {
+          "area": "Zona Safari (Arboleda)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12919,7 +12906,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12993,8 +12980,8 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13517,12 +13504,8 @@
           "method": "Golpe Roca, Pesca (Caña Buena), Pesca (Caña Vieja), Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta, Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche), Pesca (Caña Buena), Pesca (Caña Vieja)"
+          "area": "Zona Safari (Laguna)",
+          "method": "Hierba alta / Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13624,12 +13607,8 @@
           "method": "Golpe Roca, Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta, Pesca (Caña Buena), Pesca (Supercaña)"
-        },
-        {
-          "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Laguna)",
+          "method": "Pesca (Supercaña)"
         }
       ],
       "evolution_info": {
@@ -14678,12 +14657,8 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16358,12 +16333,8 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Laguna)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16427,10 +16398,6 @@
         {
           "area": "Ciudad Endrino",
           "method": "Intercambio por Dragonair hembra (Dodrio Doris)"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -16508,10 +16475,6 @@
         },
         {
           "area": "Ruta 22",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Prado)",
           "method": "Hierba alta"
         },
         {
@@ -16645,7 +16608,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16708,7 +16671,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -16840,6 +16803,10 @@
           "method": "Intercambio con Brock por Bonsly (con Colmillo Rayo)"
         },
         {
+          "area": "Zona Safari (Sabana)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -16894,10 +16861,6 @@
       "badge_color": "amber",
       "summary": "Zona Safari (Área Sabana con 10 Bloques de Planicie, aparición inmediata). También mediante evolución de Rhyhorn (Nv. 42).",
       "locations": [
-        {
-          "area": "Zona Safari (Sabana)",
-          "method": "10 Bloques Planicie (Inmediato)"
-        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -16969,12 +16932,8 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Noche), Surf"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "10 Bloques Agua (Inmediato)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17036,10 +16995,6 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Sabana)",
-          "method": "4 Bloques Bosque (Inmediato)"
-        },
-        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17094,10 +17049,6 @@
       "badge_color": "amber",
       "summary": "Zona Safari (Área Prado con 10 Bloques de Peña, aparición inmediata). También mediante evolución de Houndour (Nv. 24).",
       "locations": [
-        {
-          "area": "Zona Safari (Prado)",
-          "method": "10 Bloques Peña (Inmediato)"
-        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -17365,11 +17316,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Arboleda)",
-          "method": "4 Bloques Bosque (Inmediato)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17573,10 +17520,6 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17724,6 +17667,10 @@
         {
           "area": "Cueva Unión (Sótano B2)",
           "method": "Encuentro fijo de Surf los viernes"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
+          "method": "Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -19016,6 +18963,10 @@
           "method": "Premio del Casino (2.100 fichas)"
         },
         {
+          "area": "Zona Safari (Lagos)",
+          "method": "Pesca (Supercaña)"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -19072,10 +19023,6 @@
       "locations": [
         {
           "area": "Guarida Dragón",
-          "method": "Pesca (Supercaña)"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
           "method": "Pesca (Supercaña)"
         }
       ],
@@ -19200,10 +19147,6 @@
         {
           "area": "Zona Safari (Montaña)",
           "method": "Hierba alta (Mañana y Día)"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "5 Bloques Peña (Inmediato)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

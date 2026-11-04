@@ -2672,7 +2672,7 @@ class PokemonHeartGoldGen4Tests(TestCase):
             nid = entry.pokemon.national_number
             for loc in entry.obtaining_info.get("locations", []):
                 area = loc.get("area", "")
-                if "safari" in area.lower() and "bahía blanca" not in area.lower():
+                if "zona safari" in area.lower():
                     self.assertIn(nid, serebii_safari_numbers, f"#{nid} {entry.pokemon.name} no debe aparecer en Zona Safari")
 
     def test_heartgold_pichu_forms_and_spiky_eared(self):
@@ -3290,3 +3290,61 @@ class GenderDifferencesAndModalDataTests(TestCase):
                 if url and url.startswith("/media/"):
                     disk_path = media_root / url.replace("/media/", "")
                     self.assertTrue(disk_path.exists(), f"Falta el archivo para Castform {f['form_key']} ({key}): {url}")
+
+
+class JohtoSafariZoneTests(TestCase):
+    def test_has_johto_safari_property(self):
+        from tracker.models import Game
+        hg = Game(name="HeartGold", slug="heartgold", generation=4)
+        ss = Game(name="SoulSilver", slug="soulsilver", generation=4)
+        fr = Game(name="FireRed", slug="firered", generation=3)
+        em = Game(name="Emerald", slug="emerald", generation=3)
+        dia = Game(name="Diamond", slug="diamond", generation=4)
+
+        self.assertTrue(hg.has_johto_safari)
+        self.assertTrue(ss.has_johto_safari)
+        self.assertFalse(fr.has_johto_safari)
+        self.assertFalse(em.has_johto_safari)
+        self.assertFalse(dia.has_johto_safari)
+
+    def test_heartgold_safari_biome_tags(self):
+        from tracker.catalog_service import get_compiled_catalog
+        catalog = get_compiled_catalog("heartgold", force_reload=True)
+
+        expected_biomes = [
+            "safari_albufera", "safari_arboleda", "safari_desierto", "safari_lagos",
+            "safari_laguna", "safari_montana", "safari_pantano", "safari_parterre",
+            "safari_pena", "safari_prado", "safari_paramo", "safari_sabana"
+        ]
+
+        # Verificar que todos los 12 biomas oficiales tienen al menos un pokémon etiquetado
+        for biome_tag in expected_biomes:
+            matches = [e for e in catalog if biome_tag in e.filter_tags.split()]
+            self.assertGreater(len(matches), 0, f"El bioma {biome_tag} no tiene Pokémon asociados")
+
+        # Verificar que 'Bahía Blanca' no existe como tag de bioma
+        bahia_matches = [e for e in catalog if "bahia" in e.filter_tags.lower()]
+        self.assertEqual(len(bahia_matches), 0, "No debe existir ningún tag con bahia en el catálogo")
+
+        # Verificar que los Pokémon de Acceso al Safari no tienen tag 'safari' por error
+        hoothoot = [e for e in catalog if e.pokemon.national_number == 163][0]
+        self.assertNotIn("safari", hoothoot.filter_tags.split())
+
+        # Verificar que en modo Regional, Peña tiene exactamente sus 6 especies canónicas y NO tiene especies con bloques
+        pena_entries = [e for e in catalog if "safari_pena" in e.filter_tags.split()]
+        pena_names = {e.pokemon.display_name for e in pena_entries}
+        expected_regional_pena = {"Geodude", "Graveler", "Magnemite", "Magneton", "Magmar", "Wobbuffet"}
+        self.assertEqual(pena_names, expected_regional_pena)
+
+        # Verificar que en el catálogo Nacional, Peña contiene 15 especies canónicas (incluyendo las de bloques)
+        nat_catalog = get_compiled_catalog("heartgold", force_reload=True, is_national=True)
+        nat_pena_entries = [e for e in nat_catalog if "safari_pena" in e.filter_tags.split()]
+        nat_pena_names = {e.pokemon.display_name for e in nat_pena_entries}
+        self.assertEqual(len(nat_pena_names), 15)
+        self.assertTrue({"Fearow", "Paras", "Slowbro", "Beldum", "Lairon"}.issubset(nat_pena_names) or {"Fearow", "Paras", "Slowbro"}.issubset(nat_pena_names))
+
+        # Validar recuentos globales exactos: 75 únicas en Regional y 153 únicas en Nacional
+        reg_safari_total = len([e for e in catalog if "safari" in e.filter_tags.split()])
+        nat_safari_total = len([e for e in nat_catalog if "safari" in e.filter_tags.split()])
+        self.assertEqual(reg_safari_total, 75)
+        self.assertEqual(nat_safari_total, 153)

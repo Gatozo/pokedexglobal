@@ -27,6 +27,7 @@ import {
     toggleFilterPanel, 
     updateFilterUI, 
     toggleFilterTag, 
+    toggleSafariTag,
     toggleFilterType, 
     clearAllFilters, 
     filterCards 
@@ -141,6 +142,7 @@ window.matchesLocationQuery = matchesLocationQuery;
 window.toggleFilterPanel = toggleFilterPanel;
 window.updateFilterUI = updateFilterUI;
 window.toggleFilterTag = toggleFilterTag;
+window.toggleSafariTag = toggleSafariTag;
 window.toggleFilterType = toggleFilterType;
 window.clearAllFilters = clearAllFilters;
 window.filterCards = filterCards;
