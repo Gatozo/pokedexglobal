@@ -688,7 +688,11 @@ export function renderModalObtaining(data, activeForm = null) {
             displayLocations.forEach(loc => {
                 const item = document.createElement('div');
                 const isBreedingOrEgg = loc.method && (loc.method.includes('Crianza') || loc.method.includes('Huevo'));
-                const isTransfer = (obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia'));
+                const isPokewalker = (loc.area && loc.area.toLowerCase().includes('pokéwalker')) ||
+                                     (loc.method && loc.method.toLowerCase().includes('pokéwalker')) ||
+                                     (loc.area && loc.area.toLowerCase().includes('pokewalker')) ||
+                                     (loc.method && loc.method.toLowerCase().includes('pokewalker'));
+                const isTransfer = !isPokewalker && ((obt.type === 'transfer') || (loc.area && loc.area.includes('Transferencia')));
                 const isDualSlot = loc.method && (loc.method.includes('Inserción Dual') || loc.method.includes('slot2-'));
                 const isSwarm = loc.method && (loc.method.toLowerCase().includes('manada') || loc.method.toLowerCase().includes('swarm'));
                 const isAlteringCave = loc.area && (loc.area.includes('Cueva Cambiante') || loc.area.toLowerCase().includes('altering-cave'));
@@ -699,7 +703,9 @@ export function renderModalObtaining(data, activeForm = null) {
                     ? '/media/items/honey.png'
                     : (isBreedingOrEgg 
                         ? '/media/items/mystery-egg.png' 
-                        : (isDualSlot ? '/media/items/up-grade.png' : (isTransfer ? '/media/items/linking-cord.png' : '/media/items/town-map.png')));
+                        : (isPokewalker
+                            ? '/media/items/poke-radar.png'
+                            : (isDualSlot ? '/media/items/up-grade.png' : (isTransfer ? '/media/items/linking-cord.png' : '/media/items/town-map.png'))));
 
                 const cardBg = isConfiguredHoneyTree
                     ? 'bg-gradient-to-r from-amber-100 to-amber-50 border-amber-400 text-amber-950 shadow-[1.5px_1.5px_0px_0px_#d97706]'
@@ -707,11 +713,13 @@ export function renderModalObtaining(data, activeForm = null) {
                         ? 'bg-amber-50/90 border-amber-300 text-amber-950' 
                         : (isBreedingOrEgg 
                             ? 'bg-pink-50/70 border-pink-200 text-pink-950' 
-                            : (isDualSlot 
-                                ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
-                                : (isSwarm
-                                    ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950'
-                                    : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800')))));
+                            : (isPokewalker
+                                ? 'bg-rose-50/90 border-rose-300 text-rose-950'
+                                : (isDualSlot 
+                                    ? 'bg-violet-50/90 border-violet-300 text-violet-950' 
+                                    : (isSwarm
+                                        ? 'bg-emerald-50/80 border-emerald-300 text-emerald-950'
+                                        : (isTransfer ? 'bg-indigo-50/80 border-indigo-200 text-indigo-950' : 'bg-slate-50 border-slate-300 text-slate-800'))))));
                 
                 let methodLabel = isConfiguredHoneyTree ? 'Árbol de Miel de tu partida' : (isAlteringCaveInactive ? 'e-Reader inactivo' : loc.method);
                 if (isDualSlot && !isAlteringCaveInactive) {
@@ -740,11 +748,13 @@ export function renderModalObtaining(data, activeForm = null) {
                         ? 'text-[10px] text-violet-700 font-bold' 
                         : (isSwarm
                             ? 'text-[10px] text-emerald-700 font-bold'
-                            : (isBreedingOrEgg
-                                ? 'text-[10px] text-pink-800/90 font-semibold'
-                                : (isTransfer
-                                    ? 'text-[10px] text-indigo-800/90 font-semibold'
-                                    : 'text-[10px] text-slate-500 font-semibold'))));
+                            : (isPokewalker
+                                ? 'text-[10px] text-rose-700 font-semibold'
+                                : (isBreedingOrEgg
+                                    ? 'text-[10px] text-pink-800/90 font-semibold'
+                                    : (isTransfer
+                                        ? 'text-[10px] text-indigo-800/90 font-semibold'
+                                        : 'text-[10px] text-slate-500 font-semibold')))));
 
                 item.className = `flex items-center gap-3 px-3 py-2.5 border rounded-xl overflow-hidden min-h-[52px] shadow-[1px_1px_0px_0px_#0f172a] ${cardBg}`;
                 item.title = isAlteringCaveInactive 

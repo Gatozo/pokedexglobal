@@ -1482,7 +1482,7 @@ SPECIAL_OBTAINING = {
     300: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Campo Amistad).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1493,7 +1493,7 @@ SPECIAL_OBTAINING = {
     318: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Playa Cálida).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1504,7 +1504,7 @@ SPECIAL_OBTAINING = {
     320: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Playa Cálida).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1515,7 +1515,7 @@ SPECIAL_OBTAINING = {
     349: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Calma).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1526,7 +1526,7 @@ SPECIAL_OBTAINING = {
     351: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Casa del Árbol).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1537,7 +1537,7 @@ SPECIAL_OBTAINING = {
     352: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Casa del Árbol).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1548,7 +1548,7 @@ SPECIAL_OBTAINING = {
     357: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Gran Bosque).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1559,7 +1559,7 @@ SPECIAL_OBTAINING = {
     361: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Senda Glacial).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
@@ -1570,7 +1570,7 @@ SPECIAL_OBTAINING = {
     422: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
@@ -1581,7 +1581,7 @@ SPECIAL_OBTAINING = {
     442: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Calma).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
@@ -1592,7 +1592,7 @@ SPECIAL_OBTAINING = {
     456: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
@@ -1603,7 +1603,7 @@ SPECIAL_OBTAINING = {
     459: {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
-        'badge_color': 'violet',
+        'badge_color': 'rose',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Senda Glacial).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},

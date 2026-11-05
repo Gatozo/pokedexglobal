@@ -144,11 +144,66 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
 
 def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna las 4 formas de Deoxys (#386) en Sinnoh:
+    Retorna las 4 formas de Deoxys (#386):
     Normal, Ataque, Defensa, Velocidad.
-    En Diamante y Perla, Deoxys cambia entre sus 4 formas al interactuar con los meteoritos de Ciudad Rocavelo.
+    En Sinnoh: Meteoritos de Ciudad Rocavelo.
+    En HeartGold/SoulSilver: Meteoritos de la Ruta 3 (Kanto).
     """
+    clean_slug = (game_slug or "diamond").replace("_national", "")
+    is_hgss = clean_slug in ["heartgold", "soulsilver"]
     slug = game_slug
+
+    if is_hgss:
+        note_normal = {
+            "title": "Meteoritos de la Ruta 3 (Kanto)",
+            "text": "En HeartGold y SoulSilver, Deoxys cambia entre sus 4 formas interactuando con los meteoritos situados en la Ruta 3 (Kanto). El meteorito superior activa la Forma Normal.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_attack = {
+            "title": "Meteorito de Ataque (Ruta 3)",
+            "text": "Interactúa con el meteorito inferior en la Ruta 3 (Kanto) para transformarlo a su Forma Ataque. Aumenta drásticamente su Ataque y Ataque Especial reduciendo sus Defensas.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_defense = {
+            "title": "Meteorito de Defensa (Ruta 3)",
+            "text": "Interactúa con el meteorito central izquierdo en la Ruta 3 (Kanto) para transformarlo a su Forma Defensa. Maximiza sus estadísticas defensivas a costa de velocidad y poder ofensivo.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_speed = {
+            "title": "Meteorito de Velocidad (Ruta 3)",
+            "text": "Interactúa con el meteorito central derecho en la Ruta 3 (Kanto) para transformarlo a su Forma Velocidad. Otorga una de las mayores estadísticas de Velocidad de todo el juego.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+    else:
+        note_normal = {
+            "title": "Meteoritos de Ciudad Rocavelo",
+            "text": "En Diamante y Perla, Deoxys cambia libremente entre sus 4 formas interactuando con los 4 meteoritos extraterrestres al sureste de Ciudad Rocavelo. El meteorito superior izquierdo activa la Forma Normal.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_attack = {
+            "title": "Meteorito de Ataque (Ciudad Rocavelo)",
+            "text": "Interactúa con el meteorito inferior derecho en Ciudad Rocavelo para transformarlo a su Forma Ataque. Aumenta drásticamente su Ataque y Ataque Especial reduciendo sus Defensas.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_defense = {
+            "title": "Meteorito de Defensa (Ciudad Rocavelo)",
+            "text": "Interactúa con el meteorito inferior izquierdo en Ciudad Rocavelo para transformarlo a su Forma Defensa. Maximiza sus estadísticas defensivas a costa de velocidad y poder ofensivo.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+        note_speed = {
+            "title": "Meteorito de Velocidad (Ciudad Rocavelo)",
+            "text": "Interactúa con el meteorito superior derecho en Ciudad Rocavelo para transformarlo a su Forma Velocidad. Otorga una de las mayores estadísticas de Velocidad de todo el juego.",
+            "tag": "Meteorito",
+            "icon": "/media/items/meteorite.png",
+        }
+
     return [
         {
             "form_key": "normal",
@@ -167,14 +222,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/386.png",
             "sprite_modern": "/media/pokemon/home/386.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/386.png",
-            "notes": [
-                {
-                    "title": "Meteoritos de Ciudad Rocavelo",
-                    "text": "En Diamante y Perla, Deoxys cambia libremente entre sus 4 formas interactuando con los 4 meteoritos extraterrestres al sureste de Ciudad Rocavelo. El meteorito superior izquierdo activa la Forma Normal.",
-                    "tag": "Meteorito",
-                    "icon": "/media/items/meteorite.png",
-                }
-            ],
+            "notes": [note_normal],
         },
         {
             "form_key": "attack",
@@ -193,14 +241,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/attack.png",
             "sprite_modern": "/media/pokemon/home/10001.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10001.png",
-            "notes": [
-                {
-                    "title": "Meteorito de Ataque (Ciudad Rocavelo)",
-                    "text": "Interactúa con el meteorito inferior derecho en Ciudad Rocavelo para transformarlo a su Forma Ataque. Aumenta drásticamente su Ataque y Ataque Especial reduciendo sus Defensas.",
-                    "tag": "Meteorito",
-                    "icon": "/media/items/meteorite.png",
-                }
-            ],
+            "notes": [note_attack],
         },
         {
             "form_key": "defense",
@@ -219,14 +260,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/defense.png",
             "sprite_modern": "/media/pokemon/home/10002.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10002.png",
-            "notes": [
-                {
-                    "title": "Meteorito de Defensa (Ciudad Rocavelo)",
-                    "text": "Interactúa con el meteorito inferior izquierdo en Ciudad Rocavelo para transformarlo a su Forma Defensa. Maximiza sus estadísticas defensivas a costa de velocidad y poder ofensivo.",
-                    "tag": "Meteorito",
-                    "icon": "/media/items/meteorite.png",
-                }
-            ],
+            "notes": [note_defense],
         },
         {
             "form_key": "speed",
@@ -245,24 +279,156 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/speed.png",
             "sprite_modern": "/media/pokemon/home/10003.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10003.png",
-            "notes": [
-                {
-                    "title": "Meteorito de Velocidad (Ciudad Rocavelo)",
-                    "text": "Interactúa con el meteorito superior derecho en Ciudad Rocavelo para transformarlo a su Forma Velocidad. Otorga una de las mayores estadísticas de Velocidad de todo el juego.",
-                    "tag": "Meteorito",
-                    "icon": "/media/items/meteorite.png",
-                }
-            ],
+            "notes": [note_speed],
         }
     ]
 
 
 def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna los 3 troncos de Burmy (#412) en Sinnoh:
+    Retorna los 3 troncos de Burmy (#412):
     Tronco Planta, Tronco Arena, Tronco Basura.
+    En Sinnoh: Árboles de miel y combates en exterior/cueva/edificio.
+    En HeartGold/SoulSilver: Salvaje con Golpe Cabeza en Ruta 38 (Tronco Planta); camuflajes combatiendo en Johto/Kanto.
     """
+    clean_slug = (game_slug or "diamond").replace("_national", "")
+    is_hgss = clean_slug in ["heartgold", "soulsilver"]
     slug = game_slug
+
+    if is_hgss:
+        plant_summary = "Salvaje en árboles especiales de la Ruta 38 usando Golpe Cabeza (o combatiendo en hierba y exteriores)."
+        plant_locations = [
+            {"area": "Ruta 38", "method": "Golpe Cabeza (Árboles especiales)"},
+            {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}
+        ]
+        plant_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "En Johto, Burmy salvaje aparece exclusivamente con Tronco Planta en la Ruta 38 al usar Golpe Cabeza en árboles especiales.",
+                "tag": "Entorno",
+                "icon": "/media/items/miracle-seed.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Planta) a Nivel 20 fijando este tronco. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        sandy_summary = "Adopta este camuflaje tras combatir en cuevas o playas de Johto y Kanto (ej: Cueva Unión, Cueva Oscura, Islas Remolino)."
+        sandy_locations = [
+            {"area": "Cuevas y Playas de Johto / Kanto", "method": "Combatir en cueva o playa"}
+        ]
+        sandy_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "Adopta el Tronco Arena tras combatir en cualquier cueva, superficie rocosa o playa arenosa de Johto o Kanto.",
+                "tag": "Entorno",
+                "icon": "/media/items/soft-sand.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Arena) a Nivel 20 fijando este tronco y ganando el tipo Tierra. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        trash_summary = "Adopta este camuflaje tras combatir dentro de edificios e interiores cerrados de Johto y Kanto (ej: Gimnasios, Torres, Silph S.A.)."
+        trash_locations = [
+            {"area": "Edificios e Interiores de Johto / Kanto", "method": "Combatir en cualquier edificio cerrado"}
+        ]
+        trash_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "Adopta el Tronco Basura tras combatir dentro de cualquier edificio, gimnasio o estructura cerrada.",
+                "tag": "Entorno",
+                "icon": "/media/items/metal-coat.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Basura) a Nivel 20 fijando este tronco y ganando el tipo Acero. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+    else:
+        plant_summary = "Salvaje en árboles de miel en exteriores y rutas abiertas."
+        plant_locations = [
+            {"area": "Árboles de Miel (Exteriores)", "method": "Untar Miel (Hierba/Rutas abiertas)"}
+        ]
+        plant_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "Adopta el Tronco Planta tras combatir en exteriores con hierba, flores o rutas abiertas.",
+                "tag": "Entorno",
+                "icon": "/media/items/miracle-seed.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona mientras el jugador se encuentra en una ruta exterior con hierba, el Burmy recién nacido tendrá Tronco Planta.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Planta) a Nivel 20 fijando este tronco. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        sandy_summary = "Adopta este camuflaje tras combatir en cuevas o playas arenosas."
+        sandy_locations = [
+            {"area": "Cuevas y Playas de Sinnoh", "method": "Combatir en cueva/playa o Árboles de Miel de la zona"}
+        ]
+        sandy_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "Adopta el Tronco Arena tras combatir dentro de cuevas, zonas rocosas, playas o montañas (ej: Monte Corona, Cueva Extravío).",
+                "tag": "Entorno",
+                "icon": "/media/items/soft-sand.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona mientras el jugador se encuentra en una cueva o playa, el Burmy recién nacido tendrá Tronco Arena.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Arena) a Nivel 20 fijando este tronco y ganando el tipo Tierra. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        trash_summary = "Adopta este camuflaje tras combatir dentro de edificios o estancias cerradas."
+        trash_locations = [
+            {"area": "Edificios e Interiores", "method": "Combatir en cualquier edificio cerrado"}
+        ]
+        trash_notes = [
+            {
+                "title": "Camuflaje por Terreno",
+                "text": "Adopta el Tronco Basura tras combatir dentro de edificios, gimnasios o estructuras cerradas.",
+                "tag": "Entorno",
+                "icon": "/media/items/metal-coat.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona mientras el jugador se encuentra dentro de un edificio o estancia interior, el Burmy recién nacido tendrá Tronco Basura.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Basura) a Nivel 20 fijando este tronco y ganando el tipo Acero. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
     return [
         {
             "form_key": "plant",
@@ -281,30 +447,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/plant.png",
             "sprite_modern": "/media/pokemon/home/412.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412.png",
-            "summary": "Salvaje en árboles de miel en exteriores y rutas abiertas.",
-            "locations": [
-                {"area": "Árboles de Miel (Exteriores)", "method": "Untar Miel (Hierba/Rutas abiertas)"}
-            ],
-            "notes": [
-                {
-                    "title": "Camuflaje por Terreno",
-                    "text": "Adopta el Tronco Planta tras combatir en exteriores, rutas de hierba alta o bosques.",
-                    "tag": "Entorno",
-                    "icon": "/media/items/miracle-seed.png",
-                },
-                {
-                    "title": "Crianza y Eclosión",
-                    "text": "Al eclosionar de un huevo, Burmy nace con la forma del lugar geográfico donde se abrió el huevo (eclosionar en exteriores da Tronco Planta).",
-                    "tag": "Crianza",
-                    "icon": "/media/items/mystery-egg.png",
-                },
-                {
-                    "title": "Evolución por Género",
-                    "text": "Las hembras evolucionan a Wormadam a Nivel 20 conservando permanentemente este tronco. Los machos siempre evolucionan a Mothim perdiendo el camuflaje.",
-                    "tag": "Evolución",
-                    "icon": "/media/items/rule-book.png",
-                }
-            ],
+            "summary": plant_summary,
+            "locations": plant_locations,
+            "notes": plant_notes,
         },
         {
             "form_key": "sandy",
@@ -323,30 +468,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/sandy.png",
             "sprite_modern": "/media/pokemon/home/412-sandy.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412-sandy.png",
-            "summary": "Adopta este camuflaje tras combatir en cuevas o playas arenosas.",
-            "locations": [
-                {"area": "Cuevas y Playas de Sinnoh", "method": "Combatir en cueva/playa o Árboles de Miel de la zona"}
-            ],
-            "notes": [
-                {
-                    "title": "Camuflaje por Terreno",
-                    "text": "Adopta el Tronco Arena tras combatir en el interior de cuevas o en terrenos arenosos de playas.",
-                    "tag": "Entorno",
-                    "icon": "/media/items/soft-sand.png",
-                },
-                {
-                    "title": "Crianza y Eclosión",
-                    "text": "Si el huevo eclosiona mientras el jugador se encuentra dentro de una cueva o en una playa, el Burmy recién nacido tendrá Tronco Arena.",
-                    "tag": "Crianza",
-                    "icon": "/media/items/mystery-egg.png",
-                },
-                {
-                    "title": "Evolución por Género",
-                    "text": "Las hembras evolucionan a Wormadam (Tronco Arena) a Nivel 20 fijando este tronco y ganando el tipo Tierra. Los machos siempre evolucionan a Mothim.",
-                    "tag": "Evolución",
-                    "icon": "/media/items/rule-book.png",
-                }
-            ],
+            "summary": sandy_summary,
+            "locations": sandy_locations,
+            "notes": sandy_notes,
         },
         {
             "form_key": "trash",
@@ -365,30 +489,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/trash.png",
             "sprite_modern": "/media/pokemon/home/412-trash.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412-trash.png",
-            "summary": "Adopta este camuflaje tras combatir dentro de edificios o estancias cerradas.",
-            "locations": [
-                {"area": "Edificios e Interiores", "method": "Combatir en cualquier edificio cerrado"}
-            ],
-            "notes": [
-                {
-                    "title": "Camuflaje por Terreno",
-                    "text": "Adopta el Tronco Basura tras combatir dentro de edificios, gimnasios o estructuras cerradas.",
-                    "tag": "Entorno",
-                    "icon": "/media/items/metal-coat.png",
-                },
-                {
-                    "title": "Crianza y Eclosión",
-                    "text": "Si el huevo eclosiona mientras el jugador se encuentra dentro de un edificio o estancia interior, el Burmy recién nacido tendrá Tronco Basura.",
-                    "tag": "Crianza",
-                    "icon": "/media/items/mystery-egg.png",
-                },
-                {
-                    "title": "Evolución por Género",
-                    "text": "Las hembras evolucionan a Wormadam (Tronco Basura) a Nivel 20 fijando este tronco y ganando el tipo Acero. Los machos siempre evolucionan a Mothim.",
-                    "tag": "Evolución",
-                    "icon": "/media/items/rule-book.png",
-                }
-            ],
+            "summary": trash_summary,
+            "locations": trash_locations,
+            "notes": trash_notes,
         }
     ]
 
@@ -558,11 +661,78 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
 
 def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna las 2 formas geográficas de Shellos (#422) en Sinnoh:
+    Retorna las 2 formas geográficas de Shellos (#422):
     Mar Oeste (Rosa), Mar Este (Azul).
-    Rutas de obtención exclusivas a ambos lados del Monte Corona.
+    En Sinnoh: Delimitadas a ambos lados del Monte Corona.
+    En HeartGold/SoulSilver: Mar Oeste obtenible en Pokéwalker (Playa Tormenta); Mar Este solo por transferencia desde D/P/Pt.
     """
+    clean_slug = (game_slug or "diamond").replace("_national", "")
+    is_hgss = clean_slug in ["heartgold", "soulsilver"]
     slug = game_slug
+
+    if is_hgss:
+        west_summary = "Obtenible en el Pokéwalker (Playa Tormenta tras 5.000 pasos) o mediante transferencia desde Pokémon Diamante, Perla o Platino."
+        west_locations = [
+            {"area": "Pokéwalker (Playa Tormenta)", "method": "Paseo en el Pokéwalker (5.000+ pasos)"},
+            {"area": "Intercambio con D/P/Pt", "method": "Transferencia desde Sinnoh"},
+            {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo"}
+        ]
+        west_notes = [
+            {
+                "title": "Variación Geográfica en Johto",
+                "text": "Shellos Mar Oeste es la única variante que puede conseguirse directamente en HeartGold y SoulSilver a través de la ruta Playa Tormenta del Pokéwalker.",
+                "tag": "Pokéwalker",
+                "icon": "/media/items/poke-radar.png",
+            }
+        ]
+
+        east_summary = "Inaccesible en estado salvaje y en el Pokéwalker en HGSS. Requiere transferencia desde Pokémon Diamante, Perla o Platino."
+        east_locations = [
+            {"area": "Intercambio con D/P/Pt", "method": "Transferencia desde Sinnoh (Vertiente oriental)"},
+            {"area": "Ruta 34 (Guardería Pokémon)", "method": "Crianza de huevo de Shellos Este transferido"}
+        ]
+        east_notes = [
+            {
+                "title": "Forma Exclusiva de Sinnoh Este",
+                "text": "La variante azul no aparece en ninguna ruta del Pokéwalker ni en Johto o Kanto. La única vía para registrarla es transferirla desde la vertiente oriental de Diamante, Perla o Platino.",
+                "tag": "Transferencia",
+                "icon": "/media/items/linking-cord.png",
+            }
+        ]
+    else:
+        west_summary = "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona)."
+        west_locations = [
+            {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
+            {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
+            {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
+            {"area": "Forja Fuego", "method": "Salvaje (Hierba)"},
+        ]
+        west_notes = [
+            {
+                "title": "Variación Geográfica Sinnoh",
+                "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante rosa habita exclusivamente en la zona occidental de la región.",
+                "tag": "Geografía",
+                "icon": "/media/items/town-map.png",
+            }
+        ]
+
+        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al oeste del Monte Corona)."
+        east_locations = [
+            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 221", "method": "Salvaje (Hierba)"},
+            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Orilla Valor", "method": "Salvaje (Hierba)"},
+        ]
+        east_notes = [
+            {
+                "title": "Variación Geográfica Sinnoh",
+                "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante azul habita exclusivamente en la zona oriental de la región.",
+                "tag": "Geografía",
+                "icon": "/media/items/town-map.png",
+            }
+        ]
+
     return [
         {
             "form_key": "west",
@@ -581,21 +751,9 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/west.png",
             "sprite_modern": "/media/pokemon/home/422.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/422.png",
-            "summary": "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona).",
-            "locations": [
-                {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
-                {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
-                {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
-                {"area": "Forja Fuego", "method": "Salvaje (Hierba)"},
-            ],
-            "notes": [
-                {
-                    "title": "Variación Geográfica Sinnoh",
-                    "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante rosa habita exclusivamente en la zona occidental de la región.",
-                    "tag": "Geografía",
-                    "icon": "/media/items/town-map.png",
-                }
-            ],
+            "summary": west_summary,
+            "locations": west_locations,
+            "notes": west_notes,
         },
         {
             "form_key": "east",
@@ -614,33 +772,86 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/east.png",
             "sprite_modern": "/media/pokemon/home/422-east.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/422-east.png",
-            "summary": "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona).",
-            "locations": [
-                {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Ruta 221", "method": "Salvaje (Hierba)"},
-                {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Orilla Valor", "method": "Salvaje (Hierba)"},
-            ],
-            "notes": [
-                {
-                    "title": "Variación Geográfica Sinnoh",
-                    "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante azul habita exclusivamente en la zona oriental de la región.",
-                    "tag": "Geografía",
-                    "icon": "/media/items/town-map.png",
-                }
-            ],
+            "summary": east_summary,
+            "locations": east_locations,
+            "notes": east_notes,
         }
     ]
 
 
 def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna las 2 formas geográficas de Gastrodon (#423) en Sinnoh:
+    Retorna las 2 formas geográficas de Gastrodon (#423):
     Mar Oeste (Rosa), Mar Este (Azul).
-    Rutas de obtención exclusivas a ambos lados del Monte Corona.
+    En Sinnoh: Salvaje a ambos lados del Monte Corona.
+    En HeartGold/SoulSilver: Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia desde D/P/Pt.
     """
+    clean_slug = (game_slug or "diamond").replace("_national", "")
+    is_hgss = clean_slug in ["heartgold", "soulsilver"]
     slug = game_slug
+
+    if is_hgss:
+        west_summary = "Inaccesible en estado salvaje en Johto y Kanto. Evoluciona de Shellos Mar Oeste al Nivel 30 o transferencia desde D/P/Pt."
+        west_locations = [
+            {"area": "Evolución de Shellos Mar Oeste", "method": "Evolución al Nivel 30"},
+            {"area": "Intercambio con D/P/Pt", "method": "Transferencia desde Sinnoh"}
+        ]
+        west_notes = [
+            {
+                "title": "Evolución en HGSS",
+                "text": "Evoluciona a partir de Shellos Mar Oeste capturado en el Pokéwalker (Playa Tormenta) o transferido desde Sinnoh.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        east_summary = "Inaccesible en estado salvaje en Johto y Kanto. Evoluciona de Shellos Mar Este al Nivel 30 o transferencia desde D/P/Pt."
+        east_locations = [
+            {"area": "Evolución de Shellos Mar Este", "method": "Evolución al Nivel 30 (Shellos Este transferido)"},
+            {"area": "Intercambio con D/P/Pt", "method": "Transferencia desde Sinnoh"}
+        ]
+        east_notes = [
+            {
+                "title": "Evolución en HGSS",
+                "text": "Evoluciona a partir de Shellos Mar Este transferido desde la vertiente oriental de Sinnoh.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+    else:
+        west_summary = "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona)."
+        west_locations = [
+            {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
+            {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
+            {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
+            {"area": "Forja Fuego", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Canal de Pastoria", "method": "Salvaje (Surfing)"},
+        ]
+        west_notes = [
+            {
+                "title": "Variación Geográfica Sinnoh",
+                "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante rosa habita exclusivamente en la zona occidental de la región.",
+                "tag": "Geografía",
+                "icon": "/media/items/town-map.png",
+            }
+        ]
+
+        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al oeste del Monte Corona)."
+        east_locations = [
+            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 230", "method": "Salvaje (Surfing)"},
+        ]
+        east_notes = [
+            {
+                "title": "Variación Geográfica Sinnoh",
+                "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante azul habita exclusivamente en la zona oriental de la región.",
+                "tag": "Geografía",
+                "icon": "/media/items/town-map.png",
+            }
+        ]
+
     return [
         {
             "form_key": "west",
@@ -659,22 +870,9 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/west.png",
             "sprite_modern": "/media/pokemon/home/423.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/423.png",
-            "summary": "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona).",
-            "locations": [
-                {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
-                {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
-                {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
-                {"area": "Forja Fuego", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Canal de Pastoria", "method": "Salvaje (Surfing)"},
-            ],
-            "notes": [
-                {
-                    "title": "Variación Geográfica Sinnoh",
-                    "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante rosa habita exclusivamente en la zona occidental de la región.",
-                    "tag": "Geografía",
-                    "icon": "/media/items/town-map.png",
-                }
-            ],
+            "summary": west_summary,
+            "locations": west_locations,
+            "notes": west_notes,
         },
         {
             "form_key": "east",
@@ -693,22 +891,9 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/east.png",
             "sprite_modern": "/media/pokemon/home/423-east.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/423-east.png",
-            "summary": "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona).",
-            "locations": [
-                {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Ruta 221", "method": "Salvaje (Hierba)"},
-                {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
-                {"area": "Ruta 230", "method": "Salvaje (Surfing)"},
-            ],
-            "notes": [
-                {
-                    "title": "Variación Geográfica Sinnoh",
-                    "text": "La cordillera del Monte Corona divide geográficamente las poblaciones de esta especie. La variante azul habita exclusivamente en la zona oriental de la región.",
-                    "tag": "Geografía",
-                    "icon": "/media/items/town-map.png",
-                }
-            ],
+            "summary": east_summary,
+            "locations": east_locations,
+            "notes": east_notes,
         }
     ]
 
@@ -1058,11 +1243,16 @@ def get_shaymin_forms(game_slug: str = "platinum"):
 
 def get_rotom_forms(game_slug: str = "platinum"):
     """
-    Retorna las 6 formas de Rotom (#479) en Sinnoh:
+    Retorna las 6 formas de Rotom (#479):
     Normal y los 5 electrodomésticos (Calor, Lavado, Frío, Ventilador y Corte).
     Canónico Gen 4: Todas las formas conservan estrictamente el tipo Eléctrico / Fantasma.
+    En Sinnoh: Edificio Galaxia de Ciudad Vetusta con Llave Secreta.
+    En HeartGold/SoulSilver: Edificio Silph S.A. en Ciudad Azafrán llevando a Rotom de acompañante.
     """
+    clean_slug = (game_slug or "platinum").replace("_national", "")
+    is_hgss = clean_slug in ["heartgold", "soulsilver"]
     slug = game_slug
+
     appliances = [
         ("normal", "Forma Normal", "Rotom", "479.png", "479.png", 479, "Forma original de plasma de Rotom.", "Rayo"),
         ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat.png", "rotom/heat.png", 10008, "Posee un microondas. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Sofoco.", "Sofoco"),
@@ -1074,6 +1264,15 @@ def get_rotom_forms(game_slug: str = "platinum"):
 
     forms = []
     for f_key, f_name, d_name, rel_sprite, rel_anim, home_id, desc, special_move in appliances:
+        if is_hgss:
+            title_text = f"Silph S.A. ({special_move})"
+            body_text = f"{desc} Requiere llevar a Rotom en primer lugar del equipo para activar el ascensor a la Sala de Electrodomésticos en el Edificio Silph S.A. de Ciudad Azafrán."
+            icon_path = "/media/items/card-key.png"
+        else:
+            title_text = f"Edificio Galaxia ({special_move})"
+            body_text = f"{desc} Requiere la Llave Secreta en la Sala Secreta del Edificio Galaxia de Ciudad Vetusta."
+            icon_path = "/media/items/secret-key.png"
+
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1093,15 +1292,14 @@ def get_rotom_forms(game_slug: str = "platinum"):
             "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
             "notes": [
                 {
-                    "title": f"Edificio Galaxia ({special_move})",
-                    "text": f"{desc} Requiere la Llave Secreta en la Sala Secreta del Edificio Galaxia de Ciudad Vetusta.",
+                    "title": title_text,
+                    "text": body_text,
                     "tag": special_move,
-                    "icon": "/media/items/secret-key.png",
+                    "icon": icon_path,
                 }
             ],
         })
     return forms
-
 
 
 def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
