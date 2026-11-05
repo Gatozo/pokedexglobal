@@ -563,9 +563,10 @@ class CatalogEntry:
             tags.add("pokewalker")
 
         # Sintonías Radio Pokégear (Hoenn y Sinnoh)
-        if ("sintonía de hoenn" in full_obt_text or ("hoenn" in full_obt_text and "radio" in full_obt_text)) and not is_transfer:
+        is_wild_inaccessible = is_transfer or obt.get("type") == "trade"
+        if ("sintonía de hoenn" in full_obt_text or ("hoenn" in full_obt_text and "radio" in full_obt_text)) and not is_wild_inaccessible:
             tags.add("hoenn_sound")
-        if ("sintonía de sinnoh" in full_obt_text or ("sinnoh" in full_obt_text and "radio" in full_obt_text)) and not is_transfer:
+        if ("sintonía de sinnoh" in full_obt_text or ("sinnoh" in full_obt_text and "radio" in full_obt_text)) and not is_wild_inaccessible:
             tags.add("sinnoh_sound")
 
         # Franjas horarias (Mañana, Día, Noche)

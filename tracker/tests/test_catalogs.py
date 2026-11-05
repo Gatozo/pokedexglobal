@@ -3449,13 +3449,16 @@ class HeartGoldAdvancedFiltersTests(TestCase):
 
         nat_hoenn = get_names_with_tag(nat_catalog, "hoenn_sound")
         nat_sinnoh = get_names_with_tag(nat_catalog, "sinnoh_sound")
-        self.assertGreaterEqual(len(nat_hoenn), 10)
-        self.assertGreaterEqual(len(nat_sinnoh), 8)
+        self.assertEqual(len(nat_hoenn), 10)
+        self.assertEqual(len(nat_sinnoh), 9)
         self.assertIn("Zigzagoon", nat_hoenn)
         self.assertIn("Whismur", nat_hoenn)
         self.assertIn("Absol", nat_hoenn)
+        self.assertNotIn("Mawile", nat_hoenn)
+        self.assertNotIn("Gulpin", nat_hoenn)
         self.assertIn("Bidoof", nat_sinnoh)
         self.assertIn("Shinx", nat_sinnoh)
+        self.assertIn("Carnivine", nat_sinnoh)
 
         # 5. Golpe Roca
         reg_rock = get_names_with_tag(reg_catalog, "rock_smash")

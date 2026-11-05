@@ -709,11 +709,13 @@ SPECIAL_OBTAINING = {
         ]
     },
     455: {
-        'type': 'safari',
-        'badge_label': 'Safari Baoba',
+        'type': 'wild',
+        'badge_label': 'Salvaje / Safari',
         'badge_color': 'emerald',
-        'summary': 'Zona Safari (Área Pantano con 25 Bloques Planicie y 10 días de espera de Baoba).',
+        'summary': 'Salvaje en Encinar y Bosque Verde mediante sintonía de Sinnoh en la Radio. En la Zona Safari aparece en el Pantano con 25 Bloques Planicie (10 días de espera).',
         'locations': [
+            {'area': 'Encinar', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
+            {'area': 'Bosque Verde', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
             {'area': 'Zona Safari (Pantano)', 'method': '25 Bloques Planicie (10 días de espera)'},
             DAYCARE_LOCATION
         ]
@@ -1315,7 +1317,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade',
         'badge_label': 'Exclusivo SoulSilver',
         'badge_color': 'sky',
-        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 9 con Radio Hoenn). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Manada en Ruta 9 tras Dex Nacional). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
             DAYCARE_LOCATION
@@ -1325,7 +1327,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade',
         'badge_label': 'Exclusivo SoulSilver',
         'badge_color': 'sky',
-        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Ruta 3 con Radio Hoenn). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
+        'summary': 'Exclusivo de Pokémon Plata SoulSilver (Manada en Ruta 3 tras Dex Nacional). Requiere intercambio para conseguirlo en HeartGold (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'},
             DAYCARE_LOCATION
