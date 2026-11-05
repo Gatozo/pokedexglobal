@@ -546,9 +546,36 @@ class CatalogEntry:
         if "surf" in full_obt_text:
             tags.add("surf")
 
-        # Golpe Cabeza (Solo en 2ª Gen)
-        if gen == 2 and "golpe cabeza" in full_obt_text:
+        # Golpe Cabeza (2ª Gen y HG/SS)
+        if (gen == 2 or self.game_slug in ["heartgold", "soulsilver"]) and "golpe cabeza" in full_obt_text:
             tags.add("headbutt")
+
+        # Concurso de Captura de Bichos (Parque Nacional)
+        if ("concurso" in full_obt_text or obt.get("type") == "contest") and not is_transfer:
+            tags.add("bug_contest")
+
+        # Golpe Roca
+        if ("golpe roca" in loc_text or "rock smash" in loc_text or "rock-smash" in loc_text) and not is_transfer:
+            tags.add("rock_smash")
+
+        # Pokéwalker
+        if "pokéwalker" in full_obt_text or "pokewalker" in full_obt_text:
+            tags.add("pokewalker")
+
+        # Sintonías Radio Pokégear (Hoenn y Sinnoh)
+        if ("sintonía de hoenn" in full_obt_text or ("hoenn" in full_obt_text and "radio" in full_obt_text)) and not is_transfer:
+            tags.add("hoenn_sound")
+        if ("sintonía de sinnoh" in full_obt_text or ("sinnoh" in full_obt_text and "radio" in full_obt_text)) and not is_transfer:
+            tags.add("sinnoh_sound")
+
+        # Franjas horarias (Mañana, Día, Noche)
+        if not is_transfer:
+            if re.search(r"\b(mañana|morning)\b", methods_lower):
+                tags.add("time_morning")
+            if re.search(r"\b(d[ií]a|day)\b", methods_lower):
+                tags.add("time_day")
+            if re.search(r"\b(noche|night)\b", methods_lower):
+                tags.add("time_night")
 
         # Cañas de pescar (requiere coincidencia explícita con la caña correspondiente para evitar falsos positivos como 'superar', 'superficie' o 'vieja mansión')
         has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", full_obt_text))

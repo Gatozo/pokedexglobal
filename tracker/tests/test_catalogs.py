@@ -3348,3 +3348,137 @@ class JohtoSafariZoneTests(TestCase):
         nat_safari_total = len([e for e in nat_catalog if "safari" in e.filter_tags.split()])
         self.assertEqual(reg_safari_total, 75)
         self.assertEqual(nat_safari_total, 153)
+
+
+class HeartGoldAdvancedFiltersTests(TestCase):
+    """Pruebas exhaustivas para los nuevos filtros mecánicos de Pokémon Oro HeartGold (y SoulSilver)."""
+
+    def setUp(self):
+        self.game = Game.objects.create(name="Pokémon Oro HeartGold", slug="heartgold", generation=4)
+        self.ss = Game.objects.create(name="Pokémon Plata SoulSilver", slug="soulsilver", generation=4)
+        self.crystal = Game.objects.create(name="Pokémon Cristal", slug="crystal", generation=2)
+        self.diamond = Game.objects.create(name="Pokémon Diamante", slug="diamond", generation=4)
+
+    def test_game_filter_properties(self):
+        """Verifica las propiedades booleanas de mecánicas en el modelo Game."""
+        # Golpe Cabeza
+        self.assertTrue(self.game.has_headbutt)
+        self.assertTrue(self.ss.has_headbutt)
+        self.assertTrue(self.crystal.has_headbutt)
+        self.assertFalse(self.diamond.has_headbutt)
+
+        # Concurso de Bichos
+        self.assertTrue(self.game.has_bug_contest)
+        self.assertTrue(self.ss.has_bug_contest)
+        self.assertTrue(self.crystal.has_bug_contest)
+        self.assertFalse(self.diamond.has_bug_contest)
+
+        # Manadas regionales
+        self.assertTrue(self.game.has_regional_swarms)
+        self.assertTrue(self.ss.has_regional_swarms)
+        self.assertTrue(self.crystal.has_regional_swarms)
+        self.assertFalse(self.diamond.has_regional_swarms)
+
+        # Sonidos de Hoenn y Sinnoh
+        self.assertTrue(self.game.has_regional_sounds)
+        self.assertTrue(self.ss.has_regional_sounds)
+        self.assertFalse(self.crystal.has_regional_sounds)
+        self.assertFalse(self.diamond.has_regional_sounds)
+
+        # Golpe Roca
+        self.assertTrue(self.game.has_rock_smash)
+        self.assertTrue(self.ss.has_rock_smash)
+        self.assertTrue(self.diamond.has_rock_smash)
+
+        # Pokéwalker
+        self.assertTrue(self.game.has_pokewalker)
+        self.assertTrue(self.ss.has_pokewalker)
+        self.assertFalse(self.diamond.has_pokewalker)
+
+        # Hora del día
+        self.assertTrue(self.game.has_time_of_day)
+        self.assertTrue(self.crystal.has_time_of_day)
+        self.assertTrue(self.diamond.has_time_of_day)
+
+    def test_heartgold_tags_assignment(self):
+        """Verifica que el servicio de catálogo asigne las etiquetas quirúrgicas en Regional y Nacional."""
+        reg_catalog = get_compiled_catalog("heartgold", force_reload=True, is_national=False)
+        nat_catalog = get_compiled_catalog("heartgold", force_reload=True, is_national=True)
+
+        def get_names_with_tag(cat, tag):
+            return {e.pokemon.display_name for e in cat if tag in e.filter_tags.split()}
+
+        # 1. Golpe Cabeza
+        reg_headbutt = get_names_with_tag(reg_catalog, "headbutt")
+        nat_headbutt = get_names_with_tag(nat_catalog, "headbutt")
+        self.assertEqual(len(reg_headbutt), 15)
+        self.assertEqual(len(nat_headbutt), 24)
+        self.assertIn("Heracross", reg_headbutt)
+        self.assertIn("Aipom", reg_headbutt)
+        self.assertIn("Slakoth", nat_headbutt)
+        self.assertIn("Burmy", nat_headbutt)
+        self.assertIn("Cherubi", nat_headbutt)
+
+        # 2. Concurso de Bichos
+        reg_contest = get_names_with_tag(reg_catalog, "bug_contest")
+        nat_contest = get_names_with_tag(nat_catalog, "bug_contest")
+        self.assertEqual(len(reg_contest), 10)
+        self.assertEqual(len(nat_contest), 21)
+        self.assertIn("Scyther", reg_contest)
+        self.assertIn("Pinsir", reg_contest)
+        self.assertIn("Wurmple", nat_contest)
+        self.assertIn("Nincada", nat_contest)
+        self.assertIn("Combee", nat_contest)
+
+        # 3. Manadas
+        reg_swarms = get_names_with_tag(reg_catalog, "swarm")
+        nat_swarms = get_names_with_tag(nat_catalog, "swarm")
+        self.assertEqual(len(reg_swarms), 8)
+        self.assertEqual(len(nat_swarms), 20)
+        self.assertIn("Dunsparce", reg_swarms)
+        self.assertIn("Yanma", reg_swarms)
+        self.assertIn("Qwilfish", reg_swarms)
+        self.assertIn("Poochyena", nat_swarms)
+        self.assertIn("Ralts", nat_swarms)
+
+        # 4. Sonidos de Hoenn y Sinnoh (exclusivos de Nacional)
+        reg_hoenn = get_names_with_tag(reg_catalog, "hoenn_sound")
+        reg_sinnoh = get_names_with_tag(reg_catalog, "sinnoh_sound")
+        self.assertEqual(len(reg_hoenn), 0)
+        self.assertEqual(len(reg_sinnoh), 0)
+
+        nat_hoenn = get_names_with_tag(nat_catalog, "hoenn_sound")
+        nat_sinnoh = get_names_with_tag(nat_catalog, "sinnoh_sound")
+        self.assertGreaterEqual(len(nat_hoenn), 10)
+        self.assertGreaterEqual(len(nat_sinnoh), 8)
+        self.assertIn("Zigzagoon", nat_hoenn)
+        self.assertIn("Whismur", nat_hoenn)
+        self.assertIn("Absol", nat_hoenn)
+        self.assertIn("Bidoof", nat_sinnoh)
+        self.assertIn("Shinx", nat_sinnoh)
+
+        # 5. Golpe Roca
+        reg_rock = get_names_with_tag(reg_catalog, "rock_smash")
+        nat_rock = get_names_with_tag(nat_catalog, "rock_smash")
+        self.assertIn("Shuckle", reg_rock)
+        self.assertIn("Geodude", reg_rock)
+        self.assertIn("Dunsparce", reg_rock)
+        self.assertIn("Cranidos", nat_rock)
+
+        # 6. Pokéwalker
+        reg_walker = get_names_with_tag(reg_catalog, "pokewalker")
+        nat_walker = get_names_with_tag(nat_catalog, "pokewalker")
+        self.assertIn("Magby", reg_walker)
+        self.assertIn("Elekid", reg_walker)
+        self.assertIn("Feebas", nat_walker)
+        self.assertIn("Spiritomb", nat_walker)
+
+        # 7. Hora del día (Mañana, Día, Noche)
+        reg_morning = get_names_with_tag(reg_catalog, "time_morning")
+        reg_day = get_names_with_tag(reg_catalog, "time_day")
+        reg_night = get_names_with_tag(reg_catalog, "time_night")
+        self.assertIn("Pidgey", reg_morning)
+        self.assertIn("Pidgey", reg_day)
+        self.assertIn("Hoothoot", reg_night)
+        self.assertIn("Spinarak", reg_night)
+

@@ -1995,7 +1995,7 @@
         },
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2082,7 +2082,7 @@
         },
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 47",
@@ -2164,7 +2164,7 @@
         },
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 47",
@@ -2242,7 +2242,7 @@
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2301,7 +2301,7 @@
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         }
       ],
       "evolution_info": {
@@ -2363,7 +2363,7 @@
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         }
       ],
       "evolution_info": {
@@ -5705,7 +5705,7 @@
         },
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Monte Moon (P1)",
@@ -9396,7 +9396,7 @@
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 43",
@@ -9531,13 +9531,13 @@
     "flavor_text": "Avanza por la hierba con sus afiladas guadañas, más rápido de lo que el ojo humano pueda percibir.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Concurso",
       "badge_color": "emerald",
-      "summary": "Salvaje en Parque Nacional (también obtenible mediante crianza).",
+      "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9677,13 +9677,13 @@
     "flavor_text": "Cava guaridas con sus cuernos para pasar la noche. Por la mañana, la tierra húmeda se pega a su cuerpo.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje",
+      "badge_label": "Concurso",
       "badge_color": "emerald",
-      "summary": "Salvaje en Parque Nacional (también obtenible mediante crianza).",
+      "summary": "Capturable en el Concurso de Captura de Bichos del Parque Nacional (Martes, Jueves y Sábado). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Parque Nacional",
-          "method": "Hierba alta"
+          "method": "Concurso de Captura de Bichos"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

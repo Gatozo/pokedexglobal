@@ -251,22 +251,49 @@
                         <span>Inserción Dual</span>
                     </button>
                     {% endif %}
-                    {% if game.has_swarms and pokedex.is_national %}
+                    {% if game.has_swarms and pokedex.is_national or game.has_swarms and game.has_regional_swarms %}
                     <button type="button" onclick="toggleFilterTag('swarm', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="swarm">
                         <img src="/media/items/town-map.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Manada</span>
+                    </button>
+                    {% endif %}
+                    {% if game.has_bug_contest %}
+                    <button type="button" onclick="toggleFilterTag('bug_contest', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="bug_contest">
+                        <img src="/media/items/park-ball.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Concurso</span>
+                    </button>
+                    {% endif %}
+                    {% if game.has_headbutt %}
+                    <button type="button" onclick="toggleFilterTag('headbutt', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="headbutt">
+                        <img src="/media/items/tm-normal.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Golpe Cabeza</span>
+                    </button>
+                    {% endif %}
+                    {% if game.has_rock_smash %}
+                    <button type="button" onclick="toggleFilterTag('rock_smash', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rock_smash">
+                        <img src="/media/items/hm-fighting.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Golpe Roca</span>
+                    </button>
+                    {% endif %}
+                    {% if game.has_pokewalker %}
+                    <button type="button" onclick="toggleFilterTag('pokewalker', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="pokewalker">
+                        <span>Pokéwalker</span>
+                    </button>
+                    {% endif %}
+                    {% if game.has_regional_sounds and pokedex.is_national %}
+                    <button type="button" onclick="toggleFilterTag('hoenn_sound', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="hoenn_sound">
+                        <img src="/media/items/gb-sounds.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Sonido Hoenn</span>
+                    </button>
+                    <button type="button" onclick="toggleFilterTag('sinnoh_sound', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="sinnoh_sound">
+                        <img src="/media/items/gb-sounds.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Sonido Sinnoh</span>
                     </button>
                     {% endif %}
                     <button type="button" onclick="toggleFilterTag('surf', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="surf">
                         <img src="/media/items/hm03.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Surf</span>
                     </button>
-                    {% if game.generation == 2 %}
-                    <button type="button" onclick="toggleFilterTag('headbutt', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="headbutt">
-                        <img src="/media/items/tm-normal.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
-                        <span>Golpe Cabeza</span>
-                    </button>
-                    {% endif %}
                     <button type="button" onclick="toggleFilterTag('stone', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="stone">
                         <img src="/media/items/fire-stone.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Por Piedra</span>
@@ -306,6 +333,26 @@
                         </button>
                     </div>
                 </div>
+
+                {% if game.has_time_of_day %}
+                <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Hora del Día</span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button type="button" onclick="toggleFilterTag('time_morning', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="time_morning">
+                            <img src="/media/items/dawn-stone.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Mañana</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('time_day', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="time_day">
+                            <img src="/media/items/sun-stone.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Día</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('time_night', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="time_night">
+                            <img src="/media/items/moon-ball.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                            <span>Noche</span>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
 
                 {% if game.has_johto_safari %}
                 <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">

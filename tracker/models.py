@@ -163,6 +163,61 @@ class Game(models.Model):
             "brilliant-diamond", "shining-pearl"
         ]
 
+    @property
+    def has_regional_swarms(self):
+        """Determina si las manadas / brotes están disponibles desde la Pokédex Regional."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "heartgold", "soulsilver"
+        ]
+
+    @property
+    def has_headbutt(self):
+        """Determina si este juego cuenta con la mecánica de árboles con Golpe Cabeza."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "heartgold", "soulsilver"
+        ]
+
+    @property
+    def has_bug_contest(self):
+        """Determina si este juego cuenta con el Concurso de Captura de Bichos en el Parque Nacional."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "heartgold", "soulsilver"
+        ]
+
+    @property
+    def has_rock_smash(self):
+        """Determina si este juego cuenta con encuentros o fósiles mediante Golpe Roca."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "ruby", "sapphire", "emerald",
+            "firered", "leafgreen",
+            "diamond", "pearl", "platinum",
+            "heartgold", "soulsilver"
+        ]
+
+    @property
+    def has_pokewalker(self):
+        """Determina si el juego cuenta con soporte para paseos en el Pokéwalker."""
+        return self.slug in ["heartgold", "soulsilver"]
+
+    @property
+    def has_regional_sounds(self):
+        """Determina si el juego cuenta con sintonías de Hoenn y Sinnoh en la radio del Pokégear."""
+        return self.slug in ["heartgold", "soulsilver"]
+
+    @property
+    def has_time_of_day(self):
+        """Determina si el juego cuenta con encuentros diferenciados por franjas horarias (Mañana, Día, Noche)."""
+        return self.slug in [
+            "gold", "silver", "crystal",
+            "diamond", "pearl", "platinum",
+            "heartgold", "soulsilver",
+            "brilliant-diamond", "shining-pearl"
+        ]
+
 
 class Pokedex(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name="pokedexes")

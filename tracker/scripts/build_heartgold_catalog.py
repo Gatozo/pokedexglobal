@@ -1566,6 +1566,8 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         return 'Radio Pokégear (Sintonía de Sinnoh)'
     if 'swarm' in cond_names or 'swarm-yes' in cond_names:
         return 'Manada Pokémon (Aviso del Pokégear)'
+    if 'bug-catching-contest-yes' in cond_names or method_raw == 'bug-catching-contest':
+        return 'Concurso de Captura de Bichos'
 
     if method_raw == 'walk':
         if 'time-morning' in cond_names:
