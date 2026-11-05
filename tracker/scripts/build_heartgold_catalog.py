@@ -1153,7 +1153,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'sky',
         'summary': 'Inaccesible de forma directa en HeartGold (el Fósil Coraza es exclusivo de SoulSilver). Requiere transferir el fósil o intercambiar con SoulSilver.',
         'locations': [
-            {'area': 'Intercambio con SoulSilver / Parque Compi', 'method': 'Transferencia de Fósil Coraza o Pokémon'},
+            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Transferencia de Fósil Coraza o Pokémon'},
             {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Coraza (si se transfiere)'},
             DAYCARE_LOCATION
         ]
@@ -1200,10 +1200,10 @@ SPECIAL_OBTAINING = {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch.',
+        'summary': 'Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla o Platino.',
         'locations': [
             {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza dejando a Manaphy o Phione con Ditto'},
-            {'area': 'Intercambio con D/P/Pt / Wii', 'method': 'Intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch'}
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'}
         ]
     },
     490: {
@@ -1573,7 +1573,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'violet',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
-            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
             {'area': 'Pokéwalker (Playa Tormenta)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
@@ -1584,7 +1584,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'violet',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Calma).',
         'locations': [
-            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
             {'area': 'Pokéwalker (Cueva Calma)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
@@ -1595,7 +1595,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'violet',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
-            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
             {'area': 'Pokéwalker (Playa Tormenta)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
@@ -1606,7 +1606,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'violet',
         'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Senda Glacial).',
         'locations': [
-            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Intercambio desde Pokémon Diamante, Perla o Platino'},
             {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]

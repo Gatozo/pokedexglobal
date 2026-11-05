@@ -235,6 +235,22 @@ DAYCARE_LOCATION = {
 }
 
 SPECIAL_OBTAINING = {
+    # Singular de Kanto (My Pokémon Ranch / Evento)
+    151: {
+        'type': 'transfer',
+        'badge_label': 'Transferir',
+        'badge_color': 'amber',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Perla. Obtenible mediante transferencia desde My Pokémon Ranch (WiiWare) tras depositar 999 Pokémon o transfiriendo desde Evento GBA (Mapa Viejo) mediante el Parque Compi (Ruta 221).',
+        'locations': [
+            {'area': 'My Pokémon Ranch (WiiWare)', 'method': 'Transferencia tras depositar 999 Pokémon (Intercambio con Eulalia)'},
+            {'area': 'Parque Compi (Ruta 221)', 'method': 'Transferencia desde Evento GBA (Mapa Viejo)'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • Mew en My Pokémon Ranch',
+            'icon_url': '/media/items/cherish-ball.png',
+            'text': 'En la 4ª generación, la vía más accesible y canónica para obtener a <strong>Mew</strong> sin depender de un evento presencial de Nintendo fue el título de WiiWare <strong>My Pokémon Ranch</strong> (2008). Al depositar <strong>999 Pokémon</strong> en el rancho desde <em>Pokémon Diamante</em> o <em>Pokémon Perla</em>, el rancho alcanzaba el Nivel 25 y su dueña, <strong>Eulalia</strong> (<em>Hayley</em>), ofrecía cambiar a su Mew (Nivel 50, en Gloria Ball con Cinta Clásica) a cambio de <strong>cualquier huevo Pokémon</strong>, permitiendo luego retirarlo al cartucho de DS.<br><br><strong>Compatibilidad regional:</strong> Esta función fue totalmente operativa a nivel mundial en <em>Diamante</em> y <em>Perla</em>. En <em>Pokémon Platino</em>, solo fue compatible en la edición japonesa gracias a un parche lanzado en noviembre de 2008 que nunca llegó a las versiones occidentales de WiiWare. Por su parte, <em>Pokémon Oro HeartGold</em> y <em>Plata SoulSilver</em> <strong>nunca fueron compatibles</strong> con el juego en ninguna región.'
+        }
+    },
     # Iniciales de Sinnoh
     387: {
         'type': 'starter',

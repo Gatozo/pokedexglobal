@@ -29077,11 +29077,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Inicial de Sinnoh (Intercambio con D/P/Pt). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante, Perla o Platino (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Inicial de Sinnoh (Intercambio con D/P/Pt)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio con Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -29250,11 +29250,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Inicial de Sinnoh (Intercambio con D/P/Pt). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante, Perla o Platino (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Inicial de Sinnoh (Intercambio con D/P/Pt)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio con Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -29423,11 +29423,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Inicial de Sinnoh (Intercambio con D/P/Pt). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante, Perla o Platino (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Inicial de Sinnoh (Intercambio con D/P/Pt)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio con Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -30696,7 +30696,7 @@
       "summary": "Inaccesible de forma directa en HeartGold (el Fósil Coraza es exclusivo de SoulSilver). Requiere transferir el fósil o intercambiar con SoulSilver.",
       "locations": [
         {
-          "area": "Intercambio con SoulSilver / Parque Compi",
+          "area": "Intercambio con Pokémon Plata SoulSilver",
           "method": "Transferencia de Fósil Coraza o Pokémon"
         },
         {
@@ -31562,8 +31562,8 @@
       "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Sinnoh (NDS)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Pokéwalker (Playa Tormenta)",
@@ -31736,11 +31736,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Valle Eólico (Sinnoh: D/P/Pt los viernes). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante, Perla o Platino (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Valle Eólico (Sinnoh: D/P/Pt los viernes)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio con Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -32146,11 +32146,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Salvaje en Sinnoh (Exclusivo de Perla). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Perla (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Salvaje en Sinnoh (Exclusivo de Perla)"
+          "area": "Intercambio con Pokémon Perla",
+          "method": "Exclusivo de versión en Sinnoh"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -32523,11 +32523,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Salvaje en Sinnoh (Exclusivo de Diamante). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Salvaje en Sinnoh (Exclusivo de Diamante)"
+          "area": "Intercambio con Pokémon Diamante",
+          "method": "Exclusivo de versión en Sinnoh"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -33117,8 +33117,8 @@
       "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Calma).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Sinnoh (NDS)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Pokéwalker (Cueva Calma)",
@@ -33969,8 +33969,8 @@
       "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Sinnoh (NDS)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Pokéwalker (Playa Tormenta)",
@@ -34162,8 +34162,8 @@
       "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Senda Glacial).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Sinnoh (NDS)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Pokéwalker (Senda Glacial)",
@@ -35533,11 +35533,11 @@
       "type": "transfer",
       "badge_label": "Transferir",
       "badge_color": "purple",
-      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere Vieja Mansión en Bosque Vetusto (Sinnoh: D/P/Pt). (también obtenible mediante crianza).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold. Requiere intercambio con Pokémon Diamante, Perla o Platino (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Parque Compi / Intercambio",
-          "method": "Transferencia desde Vieja Mansión en Bosque Vetusto (Sinnoh: D/P/Pt)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio con Pokémon Diamante, Perla o Platino"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -36087,15 +36087,15 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch.",
+      "summary": "Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla o Platino.",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza dejando a Manaphy o Phione con Ditto"
         },
         {
-          "area": "Intercambio con D/P/Pt / Wii",
-          "method": "Intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
         }
       ]
     },

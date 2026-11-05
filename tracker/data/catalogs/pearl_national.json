@@ -1570,23 +1570,28 @@
       "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "sprite_url": "/media/items/thunder-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ciudad Marina",
-          "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Ruta 229",
-          "detail": "Objeto oculto entre la maleza."
+          "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -1902,6 +1907,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -1910,11 +1916,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -2105,6 +2115,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -2113,11 +2124,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -2289,6 +2304,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -2297,11 +2313,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -2430,19 +2450,24 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Forja Fuego",
-          "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -2570,6 +2595,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -2578,11 +2604,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -3174,19 +3204,20 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Prado Aromaflor",
-          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -4251,19 +4282,24 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Forja Fuego",
-          "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -4466,23 +4502,24 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 213",
-          "detail": "En el agua al sur de la ruta navegando con Surf."
+          "detail": "En un banco de arena poco profundo navegando con Surf."
         },
         {
           "area": "Ruinas Sosiego",
-          "detail": "Objeto oculto en una de las rocas interiores."
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -5161,19 +5198,20 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Prado Aromaflor",
-          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -6713,23 +6751,24 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 213",
-          "detail": "En el agua al sur de la ruta navegando con Surf."
+          "detail": "En un banco de arena poco profundo navegando con Surf."
         },
         {
           "area": "Ruinas Sosiego",
-          "detail": "Objeto oculto en una de las rocas interiores."
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -7632,19 +7671,20 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Prado Aromaflor",
-          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -8278,6 +8318,7 @@
       "name": "Piedra Oval",
       "name_es": "Piedra Oval",
       "icon_url": "/media/items/oval-stone.png",
+      "sprite_url": "/media/items/oval-stone.png",
       "description": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
       "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
       "is_purchasable": false,
@@ -8286,15 +8327,15 @@
       "locations": [
         {
           "area": "Torre Perdida (Planta 2)",
-          "detail": "En el suelo frente a las lápidas."
+          "detail": "En el suelo como Poké Ball."
         },
         {
-          "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "area": "Ciudad Corazón",
+          "detail": "Equipada en el Happiny que nace del Huevo entregado por el Montañero."
         },
         {
-          "area": "Ruta 209 / Ruta 210",
-          "detail": "Equipada en Chansey salvajes con un 50% de probabilidad."
+          "area": "Pokémon salvajes (Happiny y Chansey)",
+          "detail": "50% de probabilidad de llevarla equipada en estado salvaje (Jardín Trofeo)."
         }
       ],
       "category": "stone"
@@ -8891,23 +8932,24 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 213",
-          "detail": "En el agua al sur de la ruta navegando con Surf."
+          "detail": "En un banco de arena poco profundo navegando con Surf."
         },
         {
           "area": "Ruinas Sosiego",
-          "detail": "Objeto oculto en una de las rocas interiores."
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -10097,23 +10139,24 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 213",
-          "detail": "En el agua al sur de la ruta navegando con Surf."
+          "detail": "En un banco de arena poco profundo navegando con Surf."
         },
         {
           "area": "Ruinas Sosiego",
-          "detail": "Objeto oculto en una de las rocas interiores."
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -10179,23 +10222,28 @@
       "name": "Piedra Trueno",
       "name_es": "Piedra Trueno",
       "icon_url": "/media/items/thunder-stone.png",
+      "sprite_url": "/media/items/thunder-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ciudad Marina",
-          "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+          "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Ruta 229",
-          "detail": "Objeto oculto entre la maleza."
+          "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -10261,19 +10309,24 @@
       "name": "Piedra Fuego",
       "name_es": "Piedra Fuego",
       "icon_url": "/media/items/fire-stone.png",
+      "sprite_url": "/media/items/fire-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Forja Fuego",
-          "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+          "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+        },
+        {
+          "area": "Ruinas Sosiego",
+          "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -11144,15 +11197,24 @@
     "flavor_text": "Varios científicos lo consideran el antecesor de los Pokémon porque usa todo tipo de movimientos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Parque Compi",
+      "badge_label": "Transferir",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Pokémon Perla. Requiere transferir desde Evento GBA (Mapa Viejo) mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Perla. Obtenible mediante transferencia desde My Pokémon Ranch (WiiWare) tras depositar 999 Pokémon o transfiriendo desde Evento GBA (Mapa Viejo) mediante el Parque Compi (Ruta 221).",
       "locations": [
+        {
+          "area": "My Pokémon Ranch (WiiWare)",
+          "method": "Transferencia tras depositar 999 Pokémon (Intercambio con Eulalia)"
+        },
         {
           "area": "Parque Compi (Ruta 221)",
           "method": "Transferencia desde Evento GBA (Mapa Viejo)"
         }
-      ]
+      ],
+      "historical_note": {
+        "title": "Nota Histórica • Mew en My Pokémon Ranch",
+        "icon_url": "/media/items/cherish-ball.png",
+        "text": "En la 4ª generación, la vía más accesible y canónica para obtener a <strong>Mew</strong> sin depender de un evento presencial de Nintendo fue el título de WiiWare <strong>My Pokémon Ranch</strong> (2008). Al depositar <strong>999 Pokémon</strong> en el rancho desde <em>Pokémon Diamante</em> o <em>Pokémon Perla</em>, el rancho alcanzaba el Nivel 25 y su dueña, <strong>Eulalia</strong> (<em>Hayley</em>), ofrecía cambiar a su Mew (Nivel 50, en Gloria Ball con Cinta Clásica) a cambio de <strong>cualquier huevo Pokémon</strong>, permitiendo luego retirarlo al cartucho de DS.<br><br><strong>Compatibilidad regional:</strong> Esta función fue totalmente operativa a nivel mundial en <em>Diamante</em> y <em>Perla</em>. En <em>Pokémon Platino</em>, solo fue compatible en la edición japonesa gracias a un parche lanzado en noviembre de 2008 que nunca llegó a las versiones occidentales de WiiWare. Por su parte, <em>Pokémon Oro HeartGold</em> y <em>Plata SoulSilver</em> <strong>nunca fueron compatibles</strong> con el juego en ninguna región."
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13051,6 +13113,7 @@
       "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "sprite_url": "/media/items/sun-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
@@ -13059,11 +13122,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
+          "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+        },
+        {
+          "area": "Pokémon salvajes (Solrock)",
+          "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
         }
       ],
       "category": "stone"
@@ -13346,6 +13413,7 @@
       "name": "Roca del Rey",
       "name_es": "Roca del Rey",
       "icon_url": "/media/items/kings-rock.png",
+      "sprite_url": "/media/items/kings-rock.png",
       "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -13354,15 +13422,15 @@
       "locations": [
         {
           "area": "Pueblo Caelestis",
-          "detail": "Objeto oculto en el suelo al oeste del altar central."
+          "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
         },
         {
-          "area": "Ruta 225 / Ruta 228",
-          "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+          "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
         }
       ],
       "category": "trade"
@@ -13808,6 +13876,7 @@
       "name": "Piedra Solar",
       "name_es": "Piedra Solar",
       "icon_url": "/media/items/sun-stone.png",
+      "sprite_url": "/media/items/sun-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
@@ -13816,11 +13885,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
+          "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+        },
+        {
+          "area": "Pokémon salvajes (Solrock)",
+          "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
         }
       ],
       "category": "stone"
@@ -14307,6 +14380,7 @@
       "name": "Roca del Rey",
       "name_es": "Roca del Rey",
       "icon_url": "/media/items/kings-rock.png",
+      "sprite_url": "/media/items/kings-rock.png",
       "description": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -14315,15 +14389,15 @@
       "locations": [
         {
           "area": "Pueblo Caelestis",
-          "detail": "Objeto oculto en el suelo al oeste del altar central."
+          "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
         },
         {
-          "area": "Ruta 225 / Ruta 228",
-          "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+          "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
         }
       ],
       "category": "trade"
@@ -15015,6 +15089,7 @@
       "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
       "icon_url": "/media/items/metal-coat.png",
+      "sprite_url": "/media/items/metal-coat.png",
       "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -15023,11 +15098,11 @@
       "locations": [
         {
           "area": "Isla Hierro (Casa de Acerón)",
-          "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+          "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
         },
         {
-          "area": "Forja Fuego / Monte Corona",
-          "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
         }
       ],
       "category": "trade"
@@ -15273,6 +15348,7 @@
       "name": "Revestimiento Metálico",
       "name_es": "Revestimiento Metálico",
       "icon_url": "/media/items/metal-coat.png",
+      "sprite_url": "/media/items/metal-coat.png",
       "description": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
@@ -15281,11 +15357,11 @@
       "locations": [
         {
           "area": "Isla Hierro (Casa de Acerón)",
-          "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+          "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
         },
         {
-          "area": "Forja Fuego / Monte Corona",
-          "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
         }
       ],
       "category": "trade"
@@ -16567,6 +16643,7 @@
       "name": "Escama Dragón",
       "name_es": "Escama Dragón",
       "icon_url": "/media/items/dragon-scale.png",
+      "sprite_url": "/media/items/dragon-scale.png",
       "description": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "is_purchasable": false,
@@ -16574,8 +16651,12 @@
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Ruta 226",
-          "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
+          "area": "Pokémon salvajes (Horsea y Seadra)",
+          "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Ruta 226."
+        },
+        {
+          "area": "Pokémon salvajes (Dratini y Dragonair)",
+          "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Monte Corona (detrás de la cascada)."
         }
       ],
       "category": "trade"
@@ -16757,6 +16838,7 @@
       "name": "Mejora",
       "name_es": "Mejora",
       "icon_url": "/media/items/up-grade.png",
+      "sprite_url": "/media/items/up-grade.png",
       "description": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "is_purchasable": false,
@@ -16764,8 +16846,8 @@
       "availability_note": "Objeto especial de evolución por intercambio.",
       "locations": [
         {
-          "area": "Ciudad Vetusta (Casa del Prof. Oak)",
-          "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
+          "area": "Ciudad Vetusta",
+          "detail": "Entregado por el Profesor Oak en su casa de campo tras registrar la Pokédex Nacional."
         }
       ],
       "category": "trade"
@@ -19258,23 +19340,24 @@
       "name": "Piedra Agua",
       "name_es": "Piedra Agua",
       "icon_url": "/media/items/water-stone.png",
+      "sprite_url": "/media/items/water-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Ruta 213",
-          "detail": "En el agua al sur de la ruta navegando con Surf."
+          "detail": "En un banco de arena poco profundo navegando con Surf."
         },
         {
           "area": "Ruinas Sosiego",
-          "detail": "Objeto oculto en una de las rocas interiores."
+          "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -19481,19 +19564,20 @@
       "name": "Piedra Hoja",
       "name_es": "Piedra Hoja",
       "icon_url": "/media/items/leaf-stone.png",
+      "sprite_url": "/media/items/leaf-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
-      "is_purchasable": true,
-      "price": 2100,
+      "is_purchasable": false,
+      "price": null,
       "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
       "locations": [
         {
           "area": "Prado Aromaflor",
-          "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+          "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo."
         }
       ],
       "category": "stone"
@@ -21021,6 +21105,7 @@
       "name": "Incienso Marino",
       "name_es": "Incienso Marino",
       "icon_url": "/media/items/sea-incense.png",
+      "sprite_url": "/media/items/sea-incense.png",
       "description": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
       "description_es": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
       "is_purchasable": false,
@@ -21029,7 +21114,7 @@
       "locations": [
         {
           "area": "Ruta 204 (Sur)",
-          "detail": "En el suelo en un estanque accesible con Surf en la zona sur de la ruta."
+          "detail": "En un islote en el estanque suroeste navegando con Surf."
         }
       ],
       "category": "incense"
@@ -21213,6 +21298,7 @@
       "name": "Piedra Lunar",
       "name_es": "Piedra Lunar",
       "icon_url": "/media/items/moon-stone.png",
+      "sprite_url": "/media/items/moon-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
@@ -21221,11 +21307,15 @@
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+          "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
         },
         {
           "area": "Monte Corona",
-          "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+          "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+        },
+        {
+          "area": "Pokémon salvajes (Clefairy y Cleffa)",
+          "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
         }
       ],
       "category": "stone"
@@ -25271,6 +25361,7 @@
       "name": "Incienso Suave",
       "name_es": "Incienso Suave",
       "icon_url": "/media/items/lax-incense.png",
+      "sprite_url": "/media/items/lax-incense.png",
       "description": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
       "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
       "is_purchasable": false,
@@ -25279,7 +25370,7 @@
       "locations": [
         {
           "area": "Ruta 225",
-          "detail": "En el suelo en una saliente de la Zona Sobrevivir en el postgame (requiere Treparrocas o Corte)."
+          "detail": "Al oeste de la casa en un claro cortando el arbusto con Corte."
         }
       ],
       "category": "incense"
@@ -25718,6 +25809,7 @@
       "name": "Diente Marino",
       "name_es": "Diente Marino",
       "icon_url": "/media/items/deep-sea-tooth.png",
+      "sprite_url": "/media/items/deep-sea-tooth.png",
       "description": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
       "description_es": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
       "is_purchasable": false,
@@ -25725,8 +25817,8 @@
       "availability_note": "Objeto único a elegir por partida.",
       "locations": [
         {
-          "area": "Ruta 218 / Gran Pantano",
-          "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
+          "area": "Pokémon salvajes (Carvanha y Sharpedo)",
+          "detail": "5% de probabilidad de llevarlo equipado pescando con Supercaña (Ruta 222)."
         }
       ],
       "category": "trade"
@@ -25792,6 +25884,7 @@
       "name": "Escama Marina",
       "name_es": "Escama Marina",
       "icon_url": "/media/items/deep-sea-scale.png",
+      "sprite_url": "/media/items/deep-sea-scale.png",
       "description": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
       "description_es": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
       "is_purchasable": false,
@@ -25799,8 +25892,8 @@
       "availability_note": "Objeto único a elegir por partida.",
       "locations": [
         {
-          "area": "Ruta 220 / Ruta 226",
-          "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
+          "area": "Pokémon salvajes (Chinchou, Lanturn y Relicanth)",
+          "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña (Ruta 220)."
         }
       ],
       "category": "trade"
@@ -28323,6 +28416,7 @@
       "name": "Incienso Floral",
       "name_es": "Incienso Floral",
       "icon_url": "/media/items/rose-incense.png",
+      "sprite_url": "/media/items/rose-incense.png",
       "description": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
       "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
       "is_purchasable": false,
@@ -28330,8 +28424,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Ruta 212 (Sur)",
-          "detail": "En el suelo en la zona pantanosa al sur de la ruta (accesible con Surf o Bicicleta)."
+          "area": "Ruta 212 (Norte)",
+          "detail": "Al oeste de la Mansión Pokémon cruzando el pequeño estanque con Surf."
         }
       ],
       "category": "incense"
@@ -28397,6 +28491,7 @@
       "name": "Piedra Día",
       "name_es": "Piedra Día",
       "icon_url": "/media/items/shiny-stone.png",
+      "sprite_url": "/media/items/shiny-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
@@ -28404,16 +28499,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 228",
-          "detail": "En la ladera de arena cerca de la entrada norte de la tormenta de arena."
+          "area": "Isla Hierro (Sótano B3)",
+          "detail": "En la sala final antes del ascensor de salida de la cueva."
         },
         {
-          "area": "Isla Hierro",
-          "detail": "En una de las cámaras subterráneas profundas cerca de la salida."
+          "area": "Ruta 228",
+          "detail": "En un saliente rocoso cerca de la casa del tutor de movimientos de los iniciales."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 41 o superior."
         }
       ],
       "category": "stone"
@@ -30063,6 +30158,7 @@
       "name": "Piedra Noche",
       "name_es": "Piedra Noche",
       "icon_url": "/media/items/dusk-stone.png",
+      "sprite_url": "/media/items/dusk-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
@@ -30071,15 +30167,19 @@
       "locations": [
         {
           "area": "Almacén Galaxia (Ciudad Rocavelo)",
-          "detail": "En el suelo del almacén tras conseguir la Llave del Almacén."
+          "detail": "En el suelo tras abrir la puerta con la Llave del Almacén."
         },
         {
-          "area": "Cueva Extravío",
-          "detail": "En la zona profunda accesible usando Golpe Roca y Fuerza."
+          "area": "Cueva Extravío (Sótano B1)",
+          "detail": "Zona profunda subterránea bajo el Camino de Bicis (requiere Golpe Roca y Fuerza)."
+        },
+        {
+          "area": "Calle Victoria",
+          "detail": "En la cámara de la salida este hacia la Ruta 224 (accesible con Bulgur tras registrar la Pokédex Nacional)."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 31 o superior."
         }
       ],
       "category": "stone"
@@ -30150,6 +30250,7 @@
       "name": "Piedra Noche",
       "name_es": "Piedra Noche",
       "icon_url": "/media/items/dusk-stone.png",
+      "sprite_url": "/media/items/dusk-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
@@ -30158,15 +30259,19 @@
       "locations": [
         {
           "area": "Almacén Galaxia (Ciudad Rocavelo)",
-          "detail": "En el suelo del almacén tras conseguir la Llave del Almacén."
+          "detail": "En el suelo tras abrir la puerta con la Llave del Almacén."
         },
         {
-          "area": "Cueva Extravío",
-          "detail": "En la zona profunda accesible usando Golpe Roca y Fuerza."
+          "area": "Cueva Extravío (Sótano B1)",
+          "detail": "Zona profunda subterránea bajo el Camino de Bicis (requiere Golpe Roca y Fuerza)."
+        },
+        {
+          "area": "Calle Victoria",
+          "detail": "En la cámara de la salida este hacia la Ruta 224 (accesible con Bulgur tras registrar la Pokédex Nacional)."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 31 o superior."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 31 o superior."
         }
       ],
       "category": "stone"
@@ -30419,6 +30524,7 @@
       "name": "Incienso Puro",
       "name_es": "Incienso Puro",
       "icon_url": "/media/items/pure-incense.png",
+      "sprite_url": "/media/items/pure-incense.png",
       "description": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
       "description_es": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
       "is_purchasable": false,
@@ -30427,7 +30533,7 @@
       "locations": [
         {
           "area": "Ruta 221",
-          "detail": "En el suelo en una arboleda al oeste de la casa previa a la entrada del Parque Compi."
+          "detail": "Entre los árboles al oeste de la casa solitaria de los desafíos."
         }
       ],
       "category": "incense"
@@ -30825,6 +30931,7 @@
       "name": "Incienso Roca",
       "name_es": "Incienso Roca",
       "icon_url": "/media/items/rock-incense.png",
+      "sprite_url": "/media/items/rock-incense.png",
       "description": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
       "description_es": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
       "is_purchasable": false,
@@ -30832,8 +30939,8 @@
       "availability_note": "Objeto especial de crianza. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Forja Fuego (Exterior)",
-          "detail": "En el suelo detrás del edificio de la fábrica (cruzando el río con Surf hacia el norte desde el Prado Aromaflor)."
+          "area": "Forja Fuego",
+          "detail": "En la esquina sureste del interior de la fábrica sorteando las baldosas giratorias."
         }
       ],
       "category": "incense"
@@ -30901,6 +31008,7 @@
       "name": "Incienso Raro",
       "name_es": "Incienso Raro",
       "icon_url": "/media/items/odd-incense.png",
+      "sprite_url": "/media/items/odd-incense.png",
       "description": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
       "description_es": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
       "is_purchasable": false,
@@ -30909,7 +31017,7 @@
       "locations": [
         {
           "area": "Ruinas Sosiego",
-          "detail": "En el suelo en la sala más profunda de las ruinas siguiendo el recorrido de las escaleras secundarias."
+          "detail": "En la cámara interior más profunda de las ruinas."
         }
       ],
       "category": "incense"
@@ -30977,6 +31085,7 @@
       "name": "Incienso Duplo",
       "name_es": "Incienso Duplo",
       "icon_url": "/media/items/luck-incense.png",
+      "sprite_url": "/media/items/luck-incense.png",
       "description": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
       "description_es": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
       "is_purchasable": false,
@@ -30985,7 +31094,7 @@
       "locations": [
         {
           "area": "Senda Desolada",
-          "detail": "En el suelo sobre una plataforma rocosa en la cueva subterránea de la Ruta 204 (requiere Surf y Golpe Roca)."
+          "detail": "En la cámara norte más profunda de la cueva (requiere Golpe Roca y Surf)."
         }
       ],
       "category": "incense"
@@ -31432,6 +31541,7 @@
       "name": "Incienso Lento",
       "name_es": "Incienso Lento",
       "icon_url": "/media/items/full-incense.png",
+      "sprite_url": "/media/items/full-incense.png",
       "description": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
       "description_es": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
       "is_purchasable": false,
@@ -31440,7 +31550,7 @@
       "locations": [
         {
           "area": "Ciudad Rocavelo",
-          "detail": "En el suelo en la colina rocosa al sur del gimnasio (requiere la MO Treparrocas)."
+          "detail": "En la colina situada junto al Gimnasio Pokémon (requiere Treparrocas)."
         }
       ],
       "category": "incense"
@@ -32343,6 +32453,7 @@
       "name": "Incienso Aqua",
       "name_es": "Incienso Aqua",
       "icon_url": "/media/items/wave-incense.png",
+      "sprite_url": "/media/items/wave-incense.png",
       "description": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
       "description_es": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
       "is_purchasable": false,
@@ -32351,7 +32462,7 @@
       "locations": [
         {
           "area": "Ruta 210 (Norte)",
-          "detail": "En el suelo en la sección norte con niebla, bajo uno de los puentes de madera junto a la cascada (accesible con Surf)."
+          "detail": "Detrás de la segunda cascada navegando por el río con Surf y Cascada desde Pueblo Caelestis."
         }
       ],
       "category": "incense"
@@ -32558,23 +32669,24 @@
       "name": "Garra Afilada",
       "name_es": "Garra Afilada",
       "icon_url": "/media/items/razor-claw.png",
+      "sprite_url": "/media/items/razor-claw.png",
       "description": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
       "description_es": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
-      "is_purchasable": true,
-      "price": 48,
-      "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 224 y Calle Victoria.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
       "locations": [
         {
-          "area": "Ruta 224",
-          "detail": "En el suelo del camino rocoso hacia la Piedra Sagrada (postgame)."
-        },
-        {
           "area": "Calle Victoria (Sótano B1)",
-          "detail": "En la sala subterránea navegando con Surf."
+          "detail": "En la zona rocosa con agua (requiere Surf, Fuerza y Golpe Roca)."
         },
         {
-          "area": "Torre Batalla (Frente de Batalla)",
-          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
+          "area": "Ruta 224",
+          "detail": "En un pequeño islote al sur surfeando desde la costa este."
+        },
+        {
+          "area": "Torre Batalla",
+          "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
         }
       ],
       "category": "trade"
@@ -32754,6 +32866,7 @@
       "name": "Protector",
       "name_es": "Protector",
       "icon_url": "/media/items/protector.png",
+      "sprite_url": "/media/items/protector.png",
       "description": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
       "description_es": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
       "is_purchasable": false,
@@ -32762,7 +32875,7 @@
       "locations": [
         {
           "area": "Ruta 228",
-          "detail": "En el suelo cerca del lago en la tormenta de arena (postgame)."
+          "detail": "En un foso de arena al este de Entrenador Guay José (requiere Bici Carrera y Golpe Roca)."
         }
       ],
       "category": "trade"
@@ -32885,6 +32998,7 @@
       "name": "Electirizador",
       "name_es": "Electirizador",
       "icon_url": "/media/items/electirizer.png",
+      "sprite_url": "/media/items/electirizer.png",
       "description": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
       "description_es": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
       "is_purchasable": false,
@@ -32893,7 +33007,7 @@
       "locations": [
         {
           "area": "Inaccesible salvaje en Perla",
-          "detail": "Requiere intercambio con Pokémon Diamante (donde Elekid lo lleva equipado en estado salvaje mediante la Ranura 2 de GBA con Pokémon Rojo Fuego)."
+          "detail": "Requiere intercambio con Pokémon Diamante, Platino o transferencia desde Pokémon Battle Revolution."
         }
       ],
       "category": "trade"
@@ -32959,6 +33073,7 @@
       "name": "Magmatizador",
       "name_es": "Magmatizador",
       "icon_url": "/media/items/magmarizer.png",
+      "sprite_url": "/media/items/magmarizer.png",
       "description": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
       "description_es": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
       "is_purchasable": false,
@@ -32967,7 +33082,7 @@
       "locations": [
         {
           "area": "Ruta 227 / Montaña Dura",
-          "detail": "Equipado en Magby salvajes con un 50% de probabilidad (requiere cartucho de Pokémon Verde Hoja en la Ranura 2 de NDS)."
+          "detail": "Equipado en Magby salvajes con un 50% de probabilidad (con cartucho GBA de Verde Hoja en Ranura 2 de NDS)."
         }
       ],
       "category": "trade"
@@ -33033,6 +33148,7 @@
       "name": "Piedra Día",
       "name_es": "Piedra Día",
       "icon_url": "/media/items/shiny-stone.png",
+      "sprite_url": "/media/items/shiny-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
@@ -33040,16 +33156,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 228",
-          "detail": "En la ladera de arena cerca de la entrada norte de la tormenta de arena."
+          "area": "Isla Hierro (Sótano B3)",
+          "detail": "En la sala final antes del ascensor de salida de la cueva."
         },
         {
-          "area": "Isla Hierro",
-          "detail": "En una de las cámaras subterráneas profundas cerca de la salida."
+          "area": "Ruta 228",
+          "detail": "En un saliente rocoso cerca de la casa del tutor de movimientos de los iniciales."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 41 o superior."
+          "detail": "Probabilidad aleatoria con Pokémon de Lv 41 o superior."
         }
       ],
       "category": "stone"
@@ -33286,19 +33402,20 @@
       "name": "Colmillo Agudo",
       "name_es": "Colmillo Agudo",
       "icon_url": "/media/items/razor-fang.png",
+      "sprite_url": "/media/items/razor-fang.png",
       "description": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
       "description_es": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
-      "is_purchasable": true,
-      "price": 48,
-      "availability_note": "Disponible en Torre Batalla por 48 PB o en Ruta 214.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
       "locations": [
         {
           "area": "Ruta 214",
-          "detail": "Objeto oculto en el camino sur cerca de la cueva del Ruinamaníaco."
+          "detail": "Objeto oculto en la hierba alta en la esquina inferior derecha de la valla (requiere Zahorí)."
         },
         {
-          "area": "Torre Batalla (Frente de Batalla)",
-          "detail": "A la venta en la tienda de intercambio por 48 Puntos de Batalla (PB)."
+          "area": "Torre Batalla",
+          "detail": "Canje por 48 PB en el Servicio de Intercambio del Frente."
         }
       ],
       "category": "trade"
@@ -33421,6 +33538,7 @@
       "name": "Discoxtraño",
       "name_es": "Discoxtraño",
       "icon_url": "/media/items/dubious-disc.png",
+      "sprite_url": "/media/items/dubious-disc.png",
       "description": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
       "description_es": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
       "is_purchasable": false,
@@ -33429,7 +33547,7 @@
       "locations": [
         {
           "area": "Ruta 225",
-          "detail": "En un islote de agua al norte de la ruta navegando con Surf (postgame)."
+          "detail": "En una pequeña isla fluvial navegando con Surf (requiere Corte)."
         }
       ],
       "category": "trade"
@@ -33495,6 +33613,7 @@
       "name": "Piedra Alba",
       "name_es": "Piedra Alba",
       "icon_url": "/media/items/dawn-stone.png",
+      "sprite_url": "/media/items/dawn-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
@@ -33502,16 +33621,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 212",
-          "detail": "En el lodo pantanoso al sur de la ruta navegando con Surf."
+          "area": "Monte Corona (Sótano B1)",
+          "detail": "En el estanque subterráneo de la entrada sur (acceso desde Ruta 207 navegando con Surf)."
         },
         {
-          "area": "Monte Corona (Sótano B1)",
-          "detail": "En una plataforma rocosa del lago subterráneo accesible con Surf y Cascada."
+          "area": "Ruta 225",
+          "detail": "En un saliente rocoso elevado en el sector norte de la ruta (requiere Treparrocas)."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
+          "detail": "Encontrada aleatoriamente por un Pokémon con la habilidad Recogida de nivel 51 o superior."
         }
       ],
       "category": "stone"
@@ -33634,6 +33753,7 @@
       "name": "Tela Terrible",
       "name_es": "Tela Terrible",
       "icon_url": "/media/items/reaper-cloth.png",
+      "sprite_url": "/media/items/reaper-cloth.png",
       "description": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
       "description_es": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
       "is_purchasable": false,
@@ -33642,11 +33762,11 @@
       "locations": [
         {
           "area": "Ruta 229",
-          "detail": "Objeto oculto entre los árboles cortables con Corte."
+          "detail": "Al este de la ruta tras un arbusto que requiere Corte."
         },
         {
           "area": "Cueva Retorno",
-          "detail": "En una de las salas profundas tras superar tres pilares."
+          "detail": "En la sala interior al resolver el laberinto de pilares antes de salir."
         }
       ],
       "category": "trade"
@@ -33712,6 +33832,7 @@
       "name": "Piedra Alba",
       "name_es": "Piedra Alba",
       "icon_url": "/media/items/dawn-stone.png",
+      "sprite_url": "/media/items/dawn-stone.png",
       "description": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
@@ -33719,16 +33840,16 @@
       "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
       "locations": [
         {
-          "area": "Ruta 212",
-          "detail": "En el lodo pantanoso al sur de la ruta navegando con Surf."
+          "area": "Monte Corona (Sótano B1)",
+          "detail": "En el estanque subterráneo de la entrada sur (acceso desde Ruta 207 navegando con Surf)."
         },
         {
-          "area": "Monte Corona (Sótano B1)",
-          "detail": "En una plataforma rocosa del lago subterráneo accesible con Surf y Cascada."
+          "area": "Ruta 225",
+          "detail": "En un saliente rocoso elevado en el sector norte de la ruta (requiere Treparrocas)."
         },
         {
           "area": "Habilidad Recogida",
-          "detail": "Encontrada por un Pokémon con la habilidad Recogida de nivel 51 o superior."
+          "detail": "Encontrada aleatoriamente por un Pokémon con la habilidad Recogida de nivel 51 o superior."
         }
       ],
       "category": "stone"
