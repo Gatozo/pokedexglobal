@@ -3465,13 +3465,39 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         self.assertIn("Dunsparce", reg_rock)
         self.assertIn("Cranidos", nat_rock)
 
-        # 6. Pokéwalker
+        # 6. Pokéwalker (77 en Regional Johto, 118 en Nacional)
         reg_walker = get_names_with_tag(reg_catalog, "pokewalker")
         nat_walker = get_names_with_tag(nat_catalog, "pokewalker")
+        self.assertEqual(len(reg_walker), 77)
+        self.assertEqual(len(nat_walker), 118)
+        self.assertIn("Cleffa", reg_walker)
+        self.assertIn("Igglybuff", reg_walker)
         self.assertIn("Magby", reg_walker)
         self.assertIn("Elekid", reg_walker)
+        self.assertIn("Smoochum", reg_walker)
         self.assertIn("Feebas", nat_walker)
         self.assertIn("Spiritomb", nat_walker)
+        self.assertIn("Munchlax", nat_walker)
+        self.assertIn("Torchic", nat_walker)
+
+        # Verificación específica de descripciones y rutas de bebés (Cleffa #173)
+        cleffa = next(e for e in reg_catalog if e.pokemon.national_number == 173)
+        self.assertNotIn("exclusivamente", cleffa.obtaining_info["summary"].lower())
+        self.assertIn("Campo Amistad", cleffa.obtaining_info["summary"])
+        cleffa_areas = [l["area"] for l in cleffa.obtaining_info["locations"]]
+        self.assertIn("Pokéwalker (Campo Amistad)", cleffa_areas)
+        self.assertIn("Ruta 34 (Guardería Pokémon)", cleffa_areas)
+
+        # Verificación toponimia oficial en transferencias (Feebas #349, Snorunt #361, Shellos #422)
+        feebas = next(e for e in nat_catalog if e.pokemon.national_number == 349)
+        self.assertIn("Cueva Calma", feebas.obtaining_info["summary"])
+        feebas_areas = [l["area"] for l in feebas.obtaining_info["locations"]]
+        self.assertIn("Pokéwalker (Cueva Calma)", feebas_areas)
+
+        snorunt = next(e for e in nat_catalog if e.pokemon.national_number == 361)
+        self.assertIn("Senda Glacial", snorunt.obtaining_info["summary"])
+        snorunt_areas = [l["area"] for l in snorunt.obtaining_info["locations"]]
+        self.assertIn("Pokéwalker (Senda Glacial)", snorunt_areas)
 
         # 7. Hora del día (Mañana, Día, Noche)
         reg_morning = get_names_with_tag(reg_catalog, "time_morning")

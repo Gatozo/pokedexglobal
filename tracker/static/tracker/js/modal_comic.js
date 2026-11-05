@@ -1214,6 +1214,55 @@ export function renderModalObtaining(data, activeForm = null) {
                     `;
                     detailsContainer.appendChild(safariAccordion);
                 }
+
+                // Nota explicativa de mecánica: Podómetro Pokéwalker (HeartGold / SoulSilver)
+                const hasPokewalker = (obt.locations || []).some(loc => {
+                    const a = (loc.area || '').toLowerCase();
+                    const m = (loc.method || '').toLowerCase();
+                    return a.includes('pokéwalker') || a.includes('pokewalker') || m.includes('pokéwalker') || m.includes('pokewalker');
+                }) || (obt.summary || '').toLowerCase().includes('pokéwalker') || (obt.summary || '').toLowerCase().includes('pokewalker');
+
+                if (hasPokewalker) {
+                    const pwAccordion = document.createElement('div');
+                    pwAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-rose-50';
+                    pwAccordion.innerHTML = `
+                        <button 
+                            type="button" 
+                            class="w-full px-3 py-2 bg-rose-100/90 hover:bg-rose-100 text-rose-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            onclick="toggleComicCaveAccordion(this)"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <img src="/media/items/poke-radar.png" alt="Pokéwalker" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                                <span class="font-black uppercase text-[10px] sm:text-xs text-rose-900 tracking-wide truncate">
+                                    Mecánica • Podómetro Pokéwalker
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="text-[10px] font-black uppercase text-rose-900/80 label-text">Ver nota</span>
+                                <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-rose-50/70">
+                            <p class="mb-1.5">
+                                El <strong>Pokéwalker</strong> es un accesorio podómetro que venía originalmente incluido con Pokémon Oro HeartGold y Plata SoulSilver. Permite enviar un Pokémon desde el PC de HeartGold/SoulSilver al periférico mediante la conexión infrarroja (IR) integrada en el cartucho de Nintendo DS.
+                            </p>
+                            <p class="text-rose-950 font-bold mb-1">
+                                Pasos, Vatios y Pokéradar:
+                            </p>
+                            <ul class="text-[10.5px] text-slate-700 list-disc list-inside space-y-1 mb-2">
+                                <li><strong>Pasos a Vatios:</strong> Cada 20 pasos en el mundo real otorgan 1 Vatio (W). Acumular vatios totales desbloquea nuevas rutas y áreas de paseo.</li>
+                                <li><strong>Minijuego del Pokéradar:</strong> Al gastar 10 W, puedes usar el Pokéradar para buscar Pokémon salvajes entre los arbustos (con 1, 2 o 3 signos de admiración '!') y atrapar hasta 3 Pokémon por paseo para transferirlos a tu partida principal.</li>
+                            </ul>
+                            <div class="p-2 border border-rose-900/20 rounded-lg bg-rose-100/60 text-[10px] text-rose-950 leading-relaxed">
+                                <strong>Disponibilidad externa:</strong> Al tratarse de un periférico externo, en caso de no disponer del dispositivo físico original, también es posible recurrir a herramientas externas para emular su funcionamiento.
+                            </div>
+                        </div>
+                    `;
+                    detailsContainer.appendChild(pwAccordion);
+                }
             }
         }
 

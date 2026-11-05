@@ -1346,36 +1346,54 @@ SPECIAL_OBTAINING = {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable (también en el Pokéwalker).',
-        'locations': [DAYCARE_LOCATION]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable, o en el Pokéwalker (Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
     },
     174: {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff (también en el Pokéwalker).',
-        'locations': [DAYCARE_LOCATION]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff, o en el Pokéwalker (Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
     },
     238: {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jynx (también en el Pokéwalker).',
-        'locations': [DAYCARE_LOCATION]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Jynx, o en el Pokéwalker (Cueva Sombría y Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Cueva Sombría)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
     },
     239: {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire (también en el Pokéwalker).',
-        'locations': [DAYCARE_LOCATION]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire, o en el Pokéwalker (Urbanización y Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Urbanización)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
     },
     240: {
         'type': 'baby',
         'badge_label': 'Crianza',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar (también en el Pokéwalker).',
-        'locations': [DAYCARE_LOCATION]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar, o en el Pokéwalker (Camino Pedregoso y Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            DAYCARE_LOCATION
+        ]
     },
 
     # --- POKÉMON BEBÉ CON INCIENSO (CRIANZA EN RUTA 34) ---
@@ -1390,29 +1408,42 @@ SPECIAL_OBTAINING = {
         'type': 'baby',
         'badge_label': 'Crianza Incienso',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Sudowoodo equipado con Incienso Roca.',
-        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Roca'}]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Sudowoodo equipado con Incienso Roca, o en el Pokéwalker (Gran Bosque).',
+        'locations': [
+            {'area': 'Pokéwalker (Gran Bosque)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Roca'}
+        ]
     },
     439: {
         'type': 'baby',
         'badge_label': 'Crianza Incienso',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mr. Mime equipado con Incienso Raro.',
-        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Raro'}]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mr. Mime equipado con Incienso Raro, o en el Pokéwalker (Llano de Sinnoh).',
+        'locations': [
+            {'area': 'Pokéwalker (Llano de Sinnoh)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Raro'}
+        ]
     },
     440: {
         'type': 'baby',
         'badge_label': 'Crianza Incienso',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Chansey o Blissey equipado con Incienso Suave.',
-        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'}]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Chansey o Blissey equipado con Incienso Suave, o en el Pokéwalker (Campo Amistad).',
+        'locations': [
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'}
+        ]
     },
     446: {
         'type': 'baby',
         'badge_label': 'Crianza Incienso',
         'badge_color': 'pink',
-        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Snorlax equipado con Incienso Lento (o transferencia desde D/P/Pt).',
-        'locations': [{'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Lento'}]
+        'summary': 'Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Snorlax equipado con Incienso Lento, o en el Pokéwalker (Cueva Calma y Vía Campeón).',
+        'locations': [
+            {'area': 'Pokéwalker (Cueva Calma)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Vía Campeón)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza con Incienso Lento'}
+        ]
     },
     458: {
         'type': 'baby',
@@ -1427,10 +1458,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Prado Amistad).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Campo Amistad).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Prado Amistad)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Campo Amistad)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1460,10 +1491,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Serena).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Calma).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Cueva Calma)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1504,10 +1535,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Camino Helado).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Senda Glacial).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Hoenn (GBA) o Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Camino Helado)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1515,10 +1546,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Playa Tormenta)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1526,10 +1557,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Calma).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Cueva Serena)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Cueva Calma)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1537,10 +1568,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormentosa).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Playa Tormentosa)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Playa Tormenta)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1548,10 +1579,10 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir / Pokéwalker',
         'badge_color': 'violet',
-        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Camino Helado).',
+        'summary': 'Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Senda Glacial).',
         'locations': [
             {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde Sinnoh (NDS)'},
-            {'area': 'Pokéwalker (Camino Helado)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },

@@ -1062,6 +1062,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1404,6 +1408,14 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1591,6 +1603,10 @@
         {
           "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1881,6 +1897,22 @@
         {
           "area": "Estación del Magnetotrén de Ciudad Azafrán",
           "method": "Intercambio con Teniente Surge (por Pikachu)"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Bosque Amarillo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2197,6 +2229,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -2437,6 +2473,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -2675,6 +2715,14 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche) / 3 bloques roca"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -2999,6 +3047,14 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -3314,6 +3370,14 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -3503,6 +3567,14 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -3587,6 +3659,10 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -3656,6 +3732,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche) / 2 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -3831,6 +3911,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -3978,6 +4062,10 @@
         {
           "area": "Ruta 25",
           "method": "Hierba alta (Mañana), Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4238,6 +4326,10 @@
           "method": "Exclusivo de versión"
         },
         {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -4401,6 +4493,14 @@
         {
           "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4987,6 +5087,14 @@
           "method": "Surf / Pesca (Caña Vieja) / 2 bloques agua"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -5104,6 +5212,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Pesca (Caña Buena, Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -5265,6 +5377,10 @@
         {
           "area": "Zona Safari (Prado)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5459,6 +5575,18 @@
         {
           "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5695,6 +5823,10 @@
           "method": "3 bloques bosque"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -5764,6 +5896,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "8 bloques bosque"
+        },
+        {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -5921,6 +6057,10 @@
         {
           "area": "Ciudad Orquídea (Centro Pokémon)",
           "method": "Regalo NPC si no tienes Pokémon con Surf ni caña"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6142,6 +6282,18 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "3 bloques roca"
+        },
+        {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6382,6 +6534,14 @@
           "method": "5 bloques roca"
         },
         {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -6517,6 +6677,10 @@
         {
           "area": "Zona Safari (Laguna)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6670,6 +6834,10 @@
         {
           "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6904,6 +7072,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7065,6 +7237,10 @@
           "method": "Hierba alta, Surf"
         },
         {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7204,6 +7380,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Mañana y Día) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7381,6 +7561,14 @@
         {
           "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7577,6 +7765,14 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7638,6 +7834,10 @@
         {
           "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -7765,6 +7965,18 @@
         {
           "area": "Zona Safari (Páramo)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8023,6 +8235,10 @@
           "method": "5 bloques bosque"
         },
         {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -8202,6 +8418,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "10 bloques roca"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8411,6 +8631,10 @@
         {
           "area": "Acceso al Safari",
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8632,6 +8856,10 @@
         {
           "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Mañana y Día) / 6 bloques roca"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -8885,6 +9113,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9016,6 +9248,10 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Mañana y Día) / 5 bloques roca"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9283,6 +9519,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9344,6 +9584,10 @@
         {
           "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9411,6 +9655,18 @@
         {
           "area": "Islas Espuma (Sótano B4 - Articuno)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña), Surf"
+        },
+        {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9648,6 +9904,14 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "Surf / Pesca (Caña Buena, Supercaña) / 4 bloques agua"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9889,6 +10153,14 @@
         {
           "area": "Ruta 19 (Ruta Marítima)",
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10455,6 +10727,10 @@
           "method": "Hierba alta (Mañana y Día) / 5 bloques planicie"
         },
         {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -10818,6 +11094,18 @@
           "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -11095,6 +11383,10 @@
         {
           "area": "Ciudad Iris (Casa de Bill)",
           "method": "Regalo NPC"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12031,6 +12323,10 @@
           "method": "Pesca (Supercaña) / 10 bloques agua"
         },
         {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -12854,6 +13150,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -12919,6 +13219,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "5 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -13159,6 +13463,18 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -13252,6 +13568,10 @@
         {
           "area": "Bosque Verde",
           "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -13787,6 +14107,14 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14000,8 +14328,12 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable (también en el Pokéwalker).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Clefairy o Clefable, o en el Pokéwalker (Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -14055,8 +14387,12 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff (también en el Pokéwalker).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Jigglypuff o Wigglytuff, o en el Pokéwalker (Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -14245,6 +14581,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14372,6 +14712,14 @@
         {
           "area": "Zona Safari (Laguna)",
           "method": "5 bloques bosque"
+        },
+        {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -14641,6 +14989,10 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -14939,6 +15291,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -15225,6 +15581,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -15440,6 +15800,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15765,6 +16129,10 @@
           "method": "Hierba alta / 10 bloques agua"
         },
         {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -15915,6 +16283,10 @@
           "method": "Hierba alta / 4 bloques bosque"
         },
         {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -16049,6 +16421,10 @@
           "method": "Hierba alta (Noche) / 10 bloques roca"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -16121,6 +16497,10 @@
         {
           "area": "Zona Safari (Prado)",
           "method": "Hierba alta / 3 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17120,6 +17500,10 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17304,6 +17688,10 @@
           "method": "Huevo de regalo de Primo (Contraseña basada en tu ID)"
         },
         {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17430,6 +17818,10 @@
         {
           "area": "Ruta Helada (Sótano B3)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17572,6 +17964,10 @@
           "method": "Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17631,6 +18027,14 @@
           "method": "Manada Pokémon (Aviso del Pokégear), Pesca (Caña Buena), Pesca (Supercaña)"
         },
         {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17684,7 +18088,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Remoraid (Nivel 25)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        }
+      ],
       "evolution_info": {
         "from": "Remoraid",
         "text": "Evoluciona de Remoraid (Nivel 25)",
@@ -17933,6 +18342,10 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "4 bloques bosque"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18407,6 +18820,10 @@
           "method": "Hierba alta (Noche) / 3 bloques planicie + 3 bloques bosque"
         },
         {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -18638,8 +19055,16 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Jynx (también en el Pokéwalker).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Jynx, o en el Pokéwalker (Cueva Sombría y Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -18693,8 +19118,16 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire (también en el Pokéwalker).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Electabuzz o Electivire, o en el Pokéwalker (Urbanización y Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -18748,8 +19181,16 @@
       "type": "baby",
       "badge_label": "Crianza",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible exclusivamente mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar (también en el Pokéwalker).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Magmar o Magmortar, o en el Pokéwalker (Camino Pedregoso y Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -19619,6 +20060,10 @@
           "method": "Regalo de Máximo Peñas (Inicial de Hoenn)"
         },
         {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -20141,6 +20586,10 @@
           "method": "10 bloques planicie"
         },
         {
+          "area": "Pokéwalker (Llano de Hoenn)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -20294,6 +20743,10 @@
         {
           "area": "Zona Safari (Peña)",
           "method": "5 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Llano de Hoenn)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -20420,6 +20873,10 @@
         {
           "area": "Ciudad Plateada",
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Pokéwalker (Llano de Hoenn)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -21334,7 +21791,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Wingull (Nivel 25)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
+        }
+      ],
       "evolution_info": {
         "from": "Wingull",
         "text": "Evoluciona de Wingull (Nivel 25)",
@@ -22728,6 +23190,10 @@
           "method": "5 bloques agua"
         },
         {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Marino"
         }
@@ -22857,14 +23323,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Prado Amistad).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Hoenn o Sinnoh vía Parque Compi, o en el Pokéwalker (Campo Amistad).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Hoenn (GBA) o Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Prado Amistad)",
+          "area": "Pokéwalker (Llano de Hoenn)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -23024,6 +23490,10 @@
         {
           "area": "Ruta 9",
           "method": "Manada Pokémon (Aviso del Pokégear)"
+        },
+        {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23372,6 +23842,10 @@
         {
           "area": "Zona Safari (Montaña)",
           "method": "20 bloques bosque"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23914,6 +24388,10 @@
           "method": "10 bloques planicie"
         },
         {
+          "area": "Pokéwalker (Llano de Hoenn)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -23975,6 +24453,10 @@
         {
           "area": "Zona Safari (Páramo)",
           "method": "10 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Llano de Hoenn)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26127,14 +26609,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Serena).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Cueva Calma).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Hoenn (GBA) o Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Cueva Serena)",
+          "area": "Pokéwalker (Cueva Calma)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -26499,6 +26981,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "28 bloques roca / 18 bloques agua (40 días)"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27048,14 +27534,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Camino Helado).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde R/S/E o D/P/Pt vía Parque Compi, o en el Pokéwalker (Senda Glacial).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Hoenn (GBA) o Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Camino Helado)",
+          "area": "Pokéwalker (Senda Glacial)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -27864,6 +28350,10 @@
         {
           "area": "Zona Safari (Arboleda)",
           "method": "21 bloques roca (70 días)"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -29386,6 +29876,10 @@
           "method": "3 bloques agua"
         },
         {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -29439,7 +29933,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Bidoof (Nivel 15)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
+        }
+      ],
       "evolution_info": {
         "from": "Bidoof",
         "text": "Evoluciona de Bidoof (Nivel 15)",
@@ -29504,6 +30003,10 @@
         {
           "area": "Bosque Verde",
           "method": "Manada Pokémon (Aviso del Pokégear)"
+        },
+        {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -29715,6 +30218,10 @@
           "method": "10 bloques planicie"
         },
         {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -29903,6 +30410,10 @@
         {
           "area": "Zona Safari (Laguna)",
           "method": "18 bloques bosque"
+        },
+        {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -30527,6 +31038,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -30645,6 +31160,14 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "10 bloques planicie"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -30800,6 +31323,10 @@
         {
           "area": "Zona Safari (Pantano)",
           "method": "18 bloques agua (40 días)"
+        },
+        {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31032,14 +31559,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Cueva Serena)",
+          "area": "Pokéwalker (Playa Tormenta)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -31330,6 +31857,10 @@
         {
           "area": "Ruta 25",
           "method": "Manada Pokémon (Aviso del Pokégear)"
+        },
+        {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31914,6 +32445,14 @@
           "method": "10 bloques bosque"
         },
         {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Puro"
         }
@@ -32111,6 +32650,14 @@
           "method": "7 bloques bosque + 18 bloques roca (30 días)"
         },
         {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -32225,8 +32772,12 @@
       "type": "baby",
       "badge_label": "Crianza Incienso",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Sudowoodo equipado con Incienso Roca.",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Sudowoodo equipado con Incienso Roca, o en el Pokéwalker (Gran Bosque).",
       "locations": [
+        {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Roca"
@@ -32298,8 +32849,12 @@
       "type": "baby",
       "badge_label": "Crianza Incienso",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mr. Mime equipado con Incienso Raro.",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Mr. Mime equipado con Incienso Raro, o en el Pokéwalker (Llano de Sinnoh).",
       "locations": [
+        {
+          "area": "Pokéwalker (Llano de Sinnoh)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Raro"
@@ -32371,8 +32926,12 @@
       "type": "baby",
       "badge_label": "Crianza Incienso",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Chansey o Blissey equipado con Incienso Suave.",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Chansey o Blissey equipado con Incienso Suave, o en el Pokéwalker (Campo Amistad).",
       "locations": [
+        {
+          "area": "Pokéwalker (Campo Amistad)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Duplo"
@@ -32499,6 +33058,10 @@
           "method": "Radio Pokégear (Sintonía de Sinnoh)"
         },
         {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -32551,14 +33114,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Serena).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Cueva Calma).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Cueva Serena)",
+          "area": "Pokéwalker (Cueva Calma)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -32787,8 +33350,16 @@
       "type": "baby",
       "badge_label": "Crianza Incienso",
       "badge_color": "pink",
-      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Snorlax equipado con Incienso Lento (o transferencia desde D/P/Pt).",
+      "summary": "Pokémon bebé obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Snorlax equipado con Incienso Lento, o en el Pokéwalker (Cueva Calma y Vía Campeón).",
       "locations": [
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza con Incienso Lento"
@@ -33215,6 +33786,10 @@
           "method": "21 bloques bosque (20 días)"
         },
         {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -33387,14 +33962,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormentosa).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Playa Tormenta).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Playa Tormentosa)",
+          "area": "Pokéwalker (Playa Tormenta)",
           "method": "Paseo en el Pokéwalker"
         },
         {
@@ -33580,14 +34155,14 @@
       "type": "transfer",
       "badge_label": "Transferir / Pokéwalker",
       "badge_color": "violet",
-      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Camino Helado).",
+      "summary": "Inaccesible en estado salvaje en Johto y Kanto. Obtenible mediante transferencia desde Pokémon Diamante, Perla o Platino, o en el Pokéwalker (Senda Glacial).",
       "locations": [
         {
           "area": "Parque Compi / Intercambio",
           "method": "Transferencia desde Sinnoh (NDS)"
         },
         {
-          "area": "Pokéwalker (Camino Helado)",
+          "area": "Pokéwalker (Senda Glacial)",
           "method": "Paseo en el Pokéwalker"
         },
         {
