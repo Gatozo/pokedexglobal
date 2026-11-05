@@ -258,7 +258,7 @@ NON_BREEDABLE_NAMES = {
     'kyogre', 'groudon', 'rayquaza', 'jirachi', 'deoxys',
     'uxie', 'mesprit', 'azelf', 'dialga', 'palkia', 'heatran',
     'regigigas', 'giratina', 'cresselia', 'darkrai', 'shaymin', 'arceus',
-    'unown'
+    'unown', 'manaphy'
 }
 
 DAYCARE_LOCATION = {
@@ -1196,14 +1196,37 @@ SPECIAL_OBTAINING = {
             {'area': 'Ruinas de Sinjoh', 'method': 'Creación mística de Arceus a Nivel 1 (Griseosfera)'}
         ]
     },
+    489: {
+        'type': 'baby',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch.',
+        'locations': [
+            {'area': 'Ruta 34 (Guardería Pokémon)', 'method': 'Crianza dejando a Manaphy o Phione con Ditto'},
+            {'area': 'Intercambio con D/P/Pt / Wii', 'method': 'Intercambio desde Pokémon Diamante, Perla, Platino o My Pokémon Ranch'}
+        ]
+    },
     490: {
         'type': 'event',
         'badge_label': 'Huevo Ranger',
         'badge_color': 'sky',
-        'summary': 'Transferencia del Huevo de Manaphy desde el juego Pokémon Ranger. Se recibe hablando con el repartidor en cualquier Tienda Pokémon de Johto (también permite criar a Phione).',
+        'summary': 'Transferencia del Huevo de Manaphy desde Pokémon Ranger: Trazos de Luz. Se recibe hablando con el repartidor en cualquier Tienda Pokémon de Johto (también permite criar a Phione).',
         'locations': [
-            {'area': 'Tienda Pokémon de Johto', 'method': 'Repartidor de evento (Transferencia desde Pokémon Ranger)'},
-            DAYCARE_LOCATION
+            {'area': 'Tienda Pokémon de Johto', 'method': 'Repartidor de evento (Transferencia desde Pokémon Ranger: Trazos de Luz)'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • El Huevo de Manaphy y Pokémon Ranger',
+            'icon_url': '/media/items/mystery-egg.png',
+            'text': 'A diferencia de Pokémon Diamante, Perla y Platino (cuyo huevo podía transferirse desde el primer Pokémon Ranger mediante una contraseña offline permanente), en Pokémon Oro HeartGold y Plata SoulSilver la transferencia del Huevo de Manaphy requería la misión especial de Pokémon Ranger: Trazos de Luz. Dicha misión fue distribuida exclusivamente a través de la Conexión Wi-Fi de Nintendo por tiempo limitado entre octubre de 2010 y enero de 2011, por lo que tras el cierre de los servidores oficiales de Nintendo DS ya no es posible descargar la misión legítimamente.<br><br>Asimismo, aunque Manaphy pertenece al grupo de cría de agua y puede reproducirse con Ditto en la Guardería de la Ruta 34, de sus huevos siempre nacerá Phione, siendo imposible obtener un nuevo Manaphy mediante crianza.'
+        }
+    },
+    493: {
+        'type': 'event',
+        'badge_label': 'Evento Especial',
+        'badge_color': 'indigo',
+        'summary': 'Inaccesible en estado salvaje. Requiere distribución oficial de evento de Nintendo (o intercambio con D/P/Pt). Activa el evento místico de las Ruinas de Sinjoh al llevarlo como acompañante.',
+        'locations': [
+            {'area': 'Evento oficial de Nintendo / D/P/Pt', 'method': 'Distribución oficial de evento (activa Ruinas de Sinjoh)'}
         ]
     },
     383: {
@@ -1834,7 +1857,8 @@ def main():
             if is_hatchable:
                 summary += " (también obtenible mediante crianza)."
 
-            locs = [{'area': 'Parque Compi / Intercambio', 'method': f'Transferencia desde {origin}'}]
+            area_label = 'Intercambio con D/P/Pt' if nat_id > 386 else 'Parque Compi / Intercambio'
+            locs = [{'area': area_label, 'method': f'Transferencia desde {origin}'}]
             if is_hatchable:
                 locs.append(DAYCARE_LOCATION)
 

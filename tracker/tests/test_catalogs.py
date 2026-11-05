@@ -3511,3 +3511,22 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         self.assertIn("Hoothoot", reg_night)
         self.assertIn("Spinarak", reg_night)
 
+        # 8. Manaphy (#490) - Nota histórica y exclusión de Guardería directa
+        manaphy = next(e for e in nat_catalog if e.pokemon.national_number == 490)
+        self.assertIn("Trazos de Luz", manaphy.obtaining_info["summary"])
+        manaphy_areas = [l["area"] for l in manaphy.obtaining_info["locations"]]
+        self.assertIn("Tienda Pokémon de Johto", manaphy_areas)
+        self.assertNotIn("Ruta 34 (Guardería Pokémon)", manaphy_areas)
+        self.assertIsNotNone(manaphy.obtaining_info.get("historical_note"))
+        self.assertIn("Trazos de Luz", manaphy.obtaining_info["historical_note"]["text"])
+        self.assertIn("Phione", manaphy.obtaining_info["historical_note"]["text"])
+
+        # 9. Phione (#489) - Crianza de Manaphy y exclusión de Parque Compi
+        phione = next(e for e in nat_catalog if e.pokemon.national_number == 489)
+        self.assertEqual(phione.obtaining_info["type"], "baby")
+        self.assertEqual(phione.obtaining_info["badge_label"], "Crianza")
+        self.assertIn("crianza en la guardería de la ruta 34", phione.obtaining_info["summary"].lower())
+        phione_areas = [l["area"] for l in phione.obtaining_info["locations"]]
+        self.assertIn("Ruta 34 (Guardería Pokémon)", phione_areas)
+        self.assertNotIn("Parque Compi / Intercambio", phione_areas)
+

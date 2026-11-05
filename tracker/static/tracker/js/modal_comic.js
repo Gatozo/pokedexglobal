@@ -758,8 +758,8 @@ export function renderModalObtaining(data, activeForm = null) {
                         <div class="location-marquee-wrapper overflow-hidden whitespace-nowrap min-w-0 w-full relative">
                             <span class="location-marquee-text inline-block whitespace-nowrap font-black text-xs uppercase tracking-tight text-slate-900">${loc.area}</span>
                         </div>
-                        <div class="${methodClass} truncate leading-tight" title="${methodLabel}">
-                            ${methodLabel}
+                        <div class="location-marquee-wrapper overflow-hidden whitespace-nowrap min-w-0 w-full relative">
+                            <span class="location-marquee-text inline-block whitespace-nowrap ${methodClass} leading-tight" title="${methodLabel}">${methodLabel}</span>
                         </div>
                     </div>
                 `;
