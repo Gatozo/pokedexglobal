@@ -675,7 +675,8 @@ def build_catalogs():
 
             # Para premios canjeables del Casino de Azulona (Clefairy, Abra, Pinsir, Dratini)
             if raw_area == 'celadon-city-prize-corner':
-                method_translated = 'Premio del Casino'
+                lg_prices = {63: 'Premio del Casino (120 fichas)', 35: 'Premio del Casino (750 fichas)', 127: 'Premio del Casino (2.500 fichas)', 147: 'Premio del Casino (4.600 fichas)', 137: 'Premio por 6.500 fichas'}
+                method_translated = lg_prices.get(nat_id, 'Premio del Casino')
 
             k = (area_translated, method_translated)
             if k not in seen_areas:

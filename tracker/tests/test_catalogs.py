@@ -3530,3 +3530,69 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         self.assertIn("Ruta 34 (Guardería Pokémon)", phione_areas)
         self.assertNotIn("Parque Compi / Intercambio", phione_areas)
 
+        # 10. Spearow (#21) - Desglose de rutas individuales, regalo del guardia y búsqueda
+        spearow = next(e for e in reg_catalog if e.pokemon.national_number == 21)
+        self.assertNotIn("randy", spearow.obtaining_info["summary"].lower())
+        self.assertNotIn("kenya", spearow.obtaining_info["summary"].lower())
+        self.assertIn("guardia", spearow.obtaining_info["summary"].lower())
+        self.assertLess(len(spearow.obtaining_info["summary"]), 160)
+        spearow_areas = [l["area"] for l in spearow.obtaining_info["locations"]]
+        self.assertNotIn("Rutas de Johto y Kanto", spearow_areas)
+        self.assertIn("Ruta 33", spearow_areas)
+        self.assertIn("Ruta 42", spearow_areas)
+        self.assertIn("Pueblo Azalea", spearow_areas)
+        self.assertIn("Ciudad Trigal (Paso Norte)", spearow_areas)
+        self.assertIn("Zona Safari (Pantano)", spearow_areas)
+        self.assertIn("Pokéwalker (Bosque Murmullos)", spearow_areas)
+        self.assertIn("ruta 33", spearow.filter_locations.lower())
+        self.assertIn("ruta 42", spearow.filter_locations.lower())
+        gift_loc = next(l for l in spearow.obtaining_info["locations"] if l["area"] == "Ciudad Trigal (Paso Norte)")
+        self.assertIn("ESPI", gift_loc["method"])
+        self.assertIn("guardia", gift_loc["method"].lower())
+
+        # 11. Tentacool (#72) - Regalo anti-bloqueo y desglose de rutas marítimas
+        tentacool = next(e for e in reg_catalog if e.pokemon.national_number == 72)
+        tentacool_areas = [l["area"] for l in tentacool.obtaining_info["locations"]]
+        self.assertNotIn("Rutas marítimas de Johto y Kanto", tentacool_areas)
+        self.assertIn("Ruta 40 (Ruta Marítima)", tentacool_areas)
+        self.assertIn("Ruta 41 (Ruta Marítima)", tentacool_areas)
+        cianwood_loc = next(l for l in tentacool.obtaining_info["locations"] if l["area"] == "Ciudad Orquídea (Centro Pokémon)")
+        self.assertIn("anti-bloqueo", cianwood_loc["method"].lower())
+        self.assertIn("pescar", cianwood_loc["method"].lower())
+
+        # 12. Eevee (#133) y Premios de Casino en HeartGold, Crystal, FireRed y LeafGreen
+        eevee_hg = next(e for e in reg_catalog if e.pokemon.national_number == 133)
+        self.assertEqual(eevee_hg.obtaining_info["badge_label"], "Regalo / Casino")
+        self.assertIn("6.666", eevee_hg.obtaining_info["summary"])
+        self.assertIn("trigal", eevee_hg.obtaining_info["summary"].lower())
+        eevee_areas = [l["area"] for l in eevee_hg.obtaining_info["locations"]]
+        self.assertIn("Ciudad Trigal (Casa de Bill)", eevee_areas)
+        self.assertIn("Ciudad Azulona (Rincón de Premios)", eevee_areas)
+        eevee_casino = next(l for l in eevee_hg.obtaining_info["locations"] if l["area"] == "Ciudad Azulona (Rincón de Premios)")
+        self.assertIn("6.666", eevee_casino["method"])
+
+        # Casino en Crystal (Wobbuffet 1.500 fichas y Cubone 800 fichas)
+        crys_cat = get_compiled_catalog("crystal", force_reload=True, is_national=False)
+        wobb = next(e for e in crys_cat if e.pokemon.national_number == 202)
+        wobb_casino = next(l for l in wobb.obtaining_info["locations"] if "casino" in l["area"].lower())
+        self.assertIn("1.500", wobb_casino["method"])
+        cubone = next(e for e in crys_cat if e.pokemon.national_number == 104)
+        cubone_casino = next(l for l in cubone.obtaining_info["locations"] if "casino" in l["area"].lower())
+        self.assertIn("800", cubone_casino["method"])
+
+        # Casino en FireRed y LeafGreen (Precios exactos de fichas)
+        fr_cat = get_compiled_catalog("firered", force_reload=True, is_national=False)
+        clefairy_fr = next(e for e in fr_cat if e.pokemon.national_number == 35)
+        self.assertIn("500", next(l["method"] for l in clefairy_fr.obtaining_info["locations"] if "casino" in l["area"].lower()))
+        dratini_fr = next(e for e in fr_cat if e.pokemon.national_number == 147)
+        self.assertIn("2.800", next(l["method"] for l in dratini_fr.obtaining_info["locations"] if "casino" in l["area"].lower()))
+
+        lg_cat = get_compiled_catalog("leafgreen", force_reload=True, is_national=False)
+        clefairy_lg = next(e for e in lg_cat if e.pokemon.national_number == 35)
+        self.assertIn("750", next(l["method"] for l in clefairy_lg.obtaining_info["locations"] if "casino" in l["area"].lower()))
+        dratini_lg = next(e for e in lg_cat if e.pokemon.national_number == 147)
+        self.assertIn("4.600", next(l["method"] for l in dratini_lg.obtaining_info["locations"] if "casino" in l["area"].lower()))
+
+
+
+

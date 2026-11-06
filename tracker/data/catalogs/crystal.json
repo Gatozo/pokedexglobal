@@ -46547,7 +46547,7 @@
     "flavor_text": "Con el fin de que nadie le vea la negra cola que tiene, vive en una cueva oscura y sólo sale de noche.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Cueva Oscura (Entrada Ciudad Endrino) y canjeable en el Casino de Ciudad Trigal (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Cueva Oscura (Entrada Ciudad Endrino) y canjeable por 1.500 fichas en el Casino de Ciudad Trigal (también obtenible como cría en la Guardería Pokémon)",
       "locations": [
         {
           "area": "Cueva Oscura (Entrada Ciudad Endrino)",
@@ -46555,7 +46555,7 @@
         },
         {
           "area": "Ciudad Trigal (Casino)",
-          "method": "Premio del Casino"
+          "method": "Canje de fichas (1.500)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -88342,7 +88342,7 @@
     "flavor_text": "Nada más nacer perdió a su madre. Lleva puesto su cráneo para no desvelar a nadie su identidad.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Túnel Roca (1P), Túnel Roca (Sótano) y canjeable en el Casino de Ciudad Trigal (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Túnel Roca (1P), Túnel Roca (Sótano) y canjeable por 800 fichas en el Casino de Ciudad Trigal (también obtenible como cría en la Guardería Pokémon)",
       "locations": [
         {
           "area": "Túnel Roca (1P)",
@@ -88354,7 +88354,7 @@
         },
         {
           "area": "Ciudad Trigal (Casino)",
-          "method": "Premio del Casino"
+          "method": "Canje de fichas (800)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

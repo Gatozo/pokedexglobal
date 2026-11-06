@@ -524,11 +524,12 @@ SPECIAL_OBTAINING = {
     # Eevee, Sudowoodo, Togepi, Shuckle, Tyrogue, Lapras, Snorlax, Gyarados
     133: {
         'type': 'gift',
-        'badge_label': 'Regalo',
+        'badge_label': 'Regalo / Casino',
         'badge_color': 'amber',
-        'summary': 'Regalo de Bill en su casa de Ciudad Iris tras conocerlo en el Centro Pokémon de Ciudad Trigal (también por crianza).',
+        'summary': 'Regalo de Bill en Ciudad Trigal o canjeable por 6.666 fichas en el Casino de Azulona.',
         'locations': [
-            {'area': 'Ciudad Iris (Casa de Bill)', 'method': 'Regalo NPC'},
+            {'area': 'Ciudad Trigal (Casa de Bill)', 'method': 'Regalo de Bill al Nivel 5 (tras conocerlo en el Centro Pokémon de Ciudad Iris)'},
+            {'area': 'Ciudad Azulona (Rincón de Premios)', 'method': 'Premio del Casino (6.666 fichas)'},
             DAYCARE_LOCATION
         ]
     },
@@ -607,11 +608,18 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Evolución',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 37, Ruta 43, Rutas 2, 8, 13, 14, 15, 25 y Bosque Verde. También evolucionando de Pidgey al Nivel 18.',
+        'summary': 'Salvaje en múltiples rutas de Johto y Kanto. También evolucionando de Pidgey al Nivel 18.',
         'locations': [
-            {'area': 'Ruta 37 / Ruta 43', 'method': 'Hierba alta (Mañana y Día)'},
-            {'area': 'Ruta 2 / Ruta 8 / Ruta 13 / Ruta 14 / Ruta 15 / Ruta 25', 'method': 'Hierba alta'},
-            {'area': 'Bosque Verde', 'method': 'Hierba alta'},
+            {'area': 'Ruta 37', 'method': 'Hierba alta (Día)'},
+            {'area': 'Ruta 43', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 2 (Norte hacia Ciudad Plateada)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 2 (Sur hacia Ciudad Verde)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 8', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 13', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 14', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 15', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 25', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Bosque Verde', 'method': 'Hierba alta (Mañana y Día)'},
             DAYCARE_LOCATION
         ]
     },
@@ -684,7 +692,10 @@ SPECIAL_OBTAINING = {
         'summary': 'Zona Safari (Área Peña con 18 Bloques Peña y 30 días de espera) o mediante sintonía de Sinnoh en la Radio.',
         'locations': [
             {'area': 'Zona Safari (Peña)', 'method': '18 Bloques Peña (30 días de espera)'},
-            {'area': 'Ruta 33 / Ruta 45', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
+            {'area': 'Ruta 33', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
+            {'area': 'Ruta 45', 'method': 'Radio Pokégear (Sintonía de Sinnoh)'},
+            {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Vía Campeón)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -867,10 +878,28 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en múltiples rutas de Johto y Kanto (hierba alta y árboles con Golpe Cabeza). También regalo de Randy en el Paso Norte de Ciudad Trigal con Carta (Spearow apodado Kenya).',
+        'summary': 'Salvaje en múltiples rutas de Johto y Kanto. También regalo del guardia en el Paso Norte de Ciudad Trigal.',
         'locations': [
-            {'area': 'Rutas de Johto y Kanto', 'method': 'Hierba alta / Golpe Cabeza en árboles'},
-            {'area': 'Ciudad Trigal (Paso Norte)', 'method': 'Regalo de Randy con Carta (Kenya)'},
+            {'area': 'Ruta 33', 'method': 'Hierba alta (Mañana y Día), Golpe Cabeza en árboles'},
+            {'area': 'Ruta 42', 'method': 'Hierba alta (Mañana y Día), Golpe Cabeza en árboles'},
+            {'area': 'Ruta 44', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ruta 45', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ruta 46', 'method': 'Hierba alta (Mañana y Día), Golpe Cabeza en árboles'},
+            {'area': 'Ruta 47', 'method': 'Hierba alta'},
+            {'area': 'Pueblo Azalea', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ruta 3', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 4', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 7', 'method': 'Hierba alta (Mañana y Día), Golpe Cabeza en árboles'},
+            {'area': 'Ruta 9', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 10', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 11', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ruta 16', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ruta 22', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ciudad Azulona', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ciudad Carmín', 'method': 'Golpe Cabeza en árboles'},
+            {'area': 'Ciudad Trigal (Paso Norte)', 'method': 'Regalo del guardia con Carta (Spearow «ESPI» al Nv. 20; equípale la carta a otro Pokémon para quedártelo)'},
+            {'area': 'Zona Safari (Pantano)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Pokéwalker (Bosque Murmullos)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -878,10 +907,16 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Monte Mortero, Ruta 47, Túnel Roca y Zona Safari. También por intercambio en el Centro Comercial de Ciudad Trigal (P5) a cambio de un Drowzee.',
+        'summary': 'Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio en Ciudad Trigal (P5).',
         'locations': [
-            {'area': 'Monte Mortero / Ruta 47 / Túnel Roca', 'method': 'Encuentro en cuevas (Hierba alta)'},
+            {'area': 'Monte Mortero', 'method': 'Hierba alta / Encuentro en cueva'},
+            {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Hierba alta'},
+            {'area': 'Túnel Roca', 'method': 'Hierba alta'},
             {'area': 'Centro Comercial de Ciudad Trigal (P5)', 'method': 'Intercambio por un Drowzee (Machop Machito)'},
+            {'area': 'Zona Safari (Páramo)', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Cueva Sombría)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Cueva del Terror)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -901,9 +936,11 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Monte Plateado, Ruta 26, Ruta 28 y Zona Safari. También por intercambio en Ciudad Endrino a cambio de un Dragonair hembra, o evolucionando de Doduo al Nivel 31.',
+        'summary': 'Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio en Ciudad Endrino.',
         'locations': [
-            {'area': 'Ruta 26 / Ruta 28 / Monte Plateado', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 26', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Ruta 28', 'method': 'Hierba alta (Mañana y Día)'},
+            {'area': 'Monte Plateado (Exterior)', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Ciudad Endrino', 'method': 'Intercambio por Dragonair hembra (Dodrio Doris)'},
             {'area': 'Zona Safari (Lagos)', 'method': 'Hierba alta'}
         ]
@@ -912,10 +949,18 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Cueva Unión, Ruta 47, Monte Plateado, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva a cambio de un Bellsprout.',
+        'summary': 'Salvaje en Cueva Unión, Ruta 47, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva.',
         'locations': [
-            {'area': 'Cueva Unión / Ruta 47 / Túnel Roca', 'method': 'Encuentro en cuevas'},
+            {'area': 'Cueva Unión', 'method': 'Encuentro en cuevas'},
+            {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Encuentro en cuevas'},
+            {'area': 'Túnel Roca', 'method': 'Encuentro en cuevas'},
+            {'area': 'Calle Victoria', 'method': 'Encuentro en cuevas'},
+            {'area': 'Monte Plateado', 'method': 'Encuentro en cuevas'},
             {'area': 'Ciudad Malva', 'method': 'Intercambio por un Bellsprout (Onix Rocoso)'},
+            {'area': 'Zona Safari (Páramo)', 'method': 'Hierba alta'},
+            {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Cueva Sombría)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Confín del Cielo)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -946,10 +991,24 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje',
         'badge_color': 'emerald',
-        'summary': 'Salvaje común en Ruinas Alfa, Cueva Unión, Cueva Oscura y rutas montañosas. También encuentro trampa en la Guarida Rocket de Caoba.',
+        'summary': 'Común en cuevas, rutas montañosas y Ruinas Alfa. También encuentro trampa en Caoba.',
         'locations': [
-            {'area': 'Ruinas Alfa / Cueva Unión / Cueva Oscura', 'method': 'Hierba alta / Golpe Roca'},
+            {'area': 'Cueva Oscura', 'method': 'Golpe Roca, Hierba alta'},
+            {'area': 'Cueva Unión', 'method': 'Hierba alta'},
+            {'area': 'Monte Mortero', 'method': 'Hierba alta'},
+            {'area': 'Ruinas Alfa (Exterior)', 'method': 'Golpe Roca'},
+            {'area': 'Ruta 45', 'method': 'Hierba alta'},
+            {'area': 'Ruta 46', 'method': 'Hierba alta'},
+            {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Hierba alta'},
+            {'area': 'Monte Moon', 'method': 'Hierba alta'},
+            {'area': 'Túnel Roca', 'method': 'Golpe Roca, Hierba alta'},
+            {'area': 'Calle Victoria', 'method': 'Golpe Roca'},
+            {'area': 'Cueva Celeste', 'method': 'Golpe Roca'},
             {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
+            {'area': 'Zona Safari (Peña)', 'method': 'Hierba alta'},
+            {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Sendero Volcán)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Confín del Cielo)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -988,9 +1047,10 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'indigo',
-        'summary': 'Salvaje en Monte Plateado (P2) y Ruta 47. También por intercambio con Yasmina en el Gimnasio de Ciudad Olivo por cualquier Pokémon, o evolucionando de Onix.',
+        'summary': 'Salvaje en Monte Plateado y Ruta 47. También por intercambio con Yasmina o evolucionando de Onix.',
         'locations': [
-            {'area': 'Monte Plateado (P2) / Ruta 47', 'method': 'Encuentro en cuevas'},
+            {'area': 'Monte Plateado (P2)', 'method': 'Encuentro en cuevas'},
+            {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Encuentro en cuevas'},
             {'area': 'Gimnasio de Ciudad Olivo', 'method': 'Intercambio con Yasmina (por cualquier Pokémon)'}
         ]
     },
@@ -1019,10 +1079,18 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Casino',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 34, 35, Kanto y Zona Safari. También canjeable por 200 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).',
+        'summary': 'Salvaje en Rutas 34 y 35, rutas de Kanto y Zona Safari. También canjeable en el Casino de Ciudad Trigal.',
         'locations': [
-            {'area': 'Ruta 34 / Ruta 35 / Rutas de Kanto', 'method': 'Hierba alta'},
+            {'area': 'Ruta 34', 'method': 'Hierba alta'},
+            {'area': 'Ruta 35', 'method': 'Hierba alta'},
+            {'area': 'Ruta 5', 'method': 'Hierba alta'},
+            {'area': 'Ruta 6', 'method': 'Hierba alta'},
+            {'area': 'Ruta 8', 'method': 'Hierba alta'},
+            {'area': 'Ruta 24', 'method': 'Hierba alta'},
+            {'area': 'Ruta 25', 'method': 'Hierba alta'},
             {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (200 fichas)'},
+            {'area': 'Zona Safari (Prado)', 'method': 'Hierba alta'},
+            {'area': 'Pokéwalker (Arrabal)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1054,10 +1122,30 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje',
         'badge_color': 'emerald',
-        'summary': 'Abundante en estado salvaje mediante Surf y Pesca en rutas costeras y marítimas de Johto y Kanto (también regalo antiactasco en Orquídea).',
+        'summary': 'Abundante en estado salvaje mediante Surf y Pesca en rutas de Johto y Kanto.',
         'locations': [
-            {'area': 'Rutas marítimas de Johto y Kanto', 'method': 'Surf y Pesca (Caña Vieja, Buena y Supercaña)'},
-            {'area': 'Ciudad Orquídea (Centro Pokémon)', 'method': 'Regalo NPC si no tienes Pokémon con Surf ni caña'},
+            {'area': 'Ruta 32', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
+            {'area': 'Ruta 34', 'method': 'Surf'},
+            {'area': 'Ruta 40 (Ruta Marítima)', 'method': 'Surf'},
+            {'area': 'Ruta 41 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 47', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ciudad Cerezo', 'method': 'Surf'},
+            {'area': 'Ciudad Olivo', 'method': 'Surf'},
+            {'area': 'Ciudad Orquídea', 'method': 'Surf'},
+            {'area': 'Islas Remolino', 'method': 'Surf'},
+            {'area': 'Cueva Unión', 'method': 'Surf'},
+            {'area': 'Ruta 12', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
+            {'area': 'Ruta 13', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
+            {'area': 'Ruta 19 (Ruta Marítima)', 'method': 'Surf'},
+            {'area': 'Ruta 20 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 21 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 26', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 27', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ciudad Carmín', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Isla Canela', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Pueblo Paleta', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ciudad Orquídea (Centro Pokémon)', 'method': 'Regalo de emergencia anti-bloqueo (Nv. 15) si quedas atrapado en la isla sin Surf, Vuelo ni caña para pescar un Pokémon que aprenda Surf'},
+            {'area': 'Pokéwalker (Mar Azul)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1065,10 +1153,14 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 32, 42, 43 y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'summary': 'Salvaje en Rutas 32, 42 y 43 y Zona Safari. También huevo de regalo de Primo en Ciudad Malva.',
         'locations': [
-            {'area': 'Ruta 32 / Ruta 42 / Ruta 43', 'method': 'Hierba alta'},
+            {'area': 'Ruta 32', 'method': 'Hierba alta'},
+            {'area': 'Ruta 42', 'method': 'Hierba alta'},
+            {'area': 'Ruta 43', 'method': 'Hierba alta'},
             {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
+            {'area': 'Pokéwalker (Gran Bosque)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1076,10 +1168,17 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Zona Safari. También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'summary': 'Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Ruta 47. También huevo de regalo en Ciudad Malva.',
         'locations': [
-            {'area': 'Ruta 32 / Ruinas Alfa / Cueva Unión', 'method': 'Hierba alta / Surf'},
+            {'area': 'Ruta 32', 'method': 'Hierba alta (Noche)'},
+            {'area': 'Ruinas Alfa (Exterior)', 'method': 'Surf'},
+            {'area': 'Cueva Unión', 'method': 'Surf'},
+            {'area': 'Ruta 47', 'method': 'Hierba alta y Surf'},
             {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Zona Safari (Pantano)', 'method': 'Hierba alta (Noche) / Surf'},
+            {'area': 'Zona Safari (Parterre)', 'method': 'Hierba alta (Noche) / Surf'},
+            {'area': 'Zona Safari (Albufera)', 'method': 'Hierba alta (Noche) / Surf'},
+            {'area': 'Pokéwalker (Costa Bella)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
@@ -1087,10 +1186,13 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 16, 17 y 18 (Camino de Bicis). También entregado como huevo de regalo por Primo en el Centro Pokémon de Ciudad Malva mediante contraseña.',
+        'summary': 'Salvaje en Rutas 16, 17 y 18 (Camino de Bicis). También huevo de regalo de Primo en Ciudad Malva.',
         'locations': [
-            {'area': 'Ruta 16 / Ruta 17 / Ruta 18', 'method': 'Hierba alta'},
+            {'area': 'Ruta 16', 'method': 'Hierba alta'},
+            {'area': 'Ruta 17', 'method': 'Hierba alta'},
+            {'area': 'Ruta 18', 'method': 'Hierba alta'},
             {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Pokéwalker (Sendero Volcán)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]
     },
