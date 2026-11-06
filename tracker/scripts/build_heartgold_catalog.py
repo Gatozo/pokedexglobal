@@ -1166,12 +1166,12 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 32, 42 y 43 y Zona Safari. También huevo de regalo de Primo en Ciudad Malva.',
+        'summary': 'Salvaje en Rutas 32, 42 y 43 y Zona Safari. También huevo de regalo de Cástor en Ciudad Malva con frase secreta según tu ID.',
         'locations': [
             {'area': 'Ruta 32', 'method': 'Hierba alta'},
             {'area': 'Ruta 42', 'method': 'Hierba alta'},
             {'area': 'Ruta 43', 'method': 'Hierba alta'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
             {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
             {'area': 'Pokéwalker (Gran Bosque)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
@@ -1181,13 +1181,13 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Ruta 47. También huevo de regalo en Ciudad Malva.',
+        'summary': 'Salvaje en Ruta 32, Ruinas Alfa, Cueva Unión y Ruta 47. También huevo de regalo de Cástor en Ciudad Malva con frase secreta según tu ID.',
         'locations': [
             {'area': 'Ruta 32', 'method': 'Hierba alta (Noche)'},
             {'area': 'Ruinas Alfa (Exterior)', 'method': 'Surf'},
             {'area': 'Cueva Unión', 'method': 'Surf'},
             {'area': 'Ruta 47', 'method': 'Hierba alta y Surf'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
             {'area': 'Zona Safari (Pantano)', 'method': 'Hierba alta (Noche) / Surf'},
             {'area': 'Zona Safari (Parterre)', 'method': 'Hierba alta (Noche) / Surf'},
             {'area': 'Zona Safari (Albufera)', 'method': 'Hierba alta (Noche) / Surf'},
@@ -1199,12 +1199,12 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 16, 17 y 18 (Camino de Bicis). También huevo de regalo de Primo en Ciudad Malva.',
+        'summary': 'Salvaje en Rutas 16, 17 y 18 (Kanto). Huevo de regalo exclusivo de Cástor en Ciudad Malva mediante frase secreta según tu ID.',
         'locations': [
             {'area': 'Ruta 16', 'method': 'Hierba alta'},
             {'area': 'Ruta 17', 'method': 'Hierba alta'},
             {'area': 'Ruta 18', 'method': 'Hierba alta'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Primo (Contraseña basada en tu ID)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
             {'area': 'Pokéwalker (Sendero Volcán)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]

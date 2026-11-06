@@ -3618,6 +3618,14 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         self.assertIn("rod_good", dratini.filter_tags)
         self.assertIn("rod_super", dratini.filter_tags)
 
+        # Huevos de regalo de Cástor en Ciudad Malva (Mareep, Wooper, Slugma)
+        for num in [179, 194, 218]:
+            pkmn = next(e for e in hg_cat if e.pokemon.national_number == num)
+            malva_loc = next(l for l in pkmn.obtaining_info["locations"] if "Malva" in l["area"])
+            self.assertIn("Cástor", malva_loc["method"])
+            self.assertNotIn("Primo", malva_loc["method"])
+            self.assertIn("Cástor", pkmn.obtaining_info["summary"])
+
         # 2. Invariante: Ningún Pokémon en HeartGold ni Crystal combina Surf y Pesca en una sola lnea
         for cat_slug in ["heartgold", "crystal"]:
             cat = get_compiled_catalog(cat_slug, force_reload=True, is_national=False)
