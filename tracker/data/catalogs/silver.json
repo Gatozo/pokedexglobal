@@ -30835,15 +30835,27 @@
       "locations": [
         {
           "area": "Ruta 30",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 30",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 31",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 31",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ciudad Malva",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Malva",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruinas Alfa (Exterior)",
@@ -30859,7 +30871,11 @@
         },
         {
           "area": "Ciudad Iris",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Iris",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 43",
@@ -30867,7 +30883,11 @@
         },
         {
           "area": "Ruta 44",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 44",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ciudad Endrino",
@@ -30875,7 +30895,11 @@
         },
         {
           "area": "Monte Plateado (Exterior)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Plateado (Exterior)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ciudad Verde",
@@ -30883,7 +30907,11 @@
         },
         {
           "area": "Ruta 28",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 28",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 6",
@@ -30891,7 +30919,11 @@
         },
         {
           "area": "Ruta 22",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 22",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -32871,11 +32903,19 @@
         },
         {
           "area": "Ruta 43",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 43",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Lago de la Furia",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Lago de la Furia",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 44",
@@ -32883,23 +32923,43 @@
         },
         {
           "area": "Ciudad Endrino",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Endrino",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Guarida Dragón",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Guarida Dragón",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 45",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 45",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Cueva Oscura (Entrada Ciudad Malva)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Cueva Oscura (Entrada Ciudad Malva)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Cueva Oscura (Entrada Ciudad Endrino)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Cueva Oscura (Entrada Ciudad Endrino)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Monte Plateado (2P)",
@@ -32935,7 +32995,11 @@
         },
         {
           "area": "Ciudad Fucsia",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Fucsia",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Pueblo Paleta",
@@ -33112,7 +33176,11 @@
         },
         {
           "area": "Lago de la Furia",
-          "method": "Caña Buena, Súper Caña, Surf"
+          "method": "Surf"
+        },
+        {
+          "area": "Lago de la Furia",
+          "method": "Caña Buena, Súper Caña"
         },
         {
           "area": "Ciudad Fucsia",
@@ -33598,19 +33666,35 @@
         },
         {
           "area": "Ruta 42",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 42",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Monte Mortero (1P)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (1P)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Monte Mortero (Cueva Alta)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (Cueva Alta)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Monte Mortero (Sótano)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (Sótano)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Cueva Oscura (Entrada Ciudad Malva)",
@@ -33622,11 +33706,19 @@
         },
         {
           "area": "Monte Plateado (2P)",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Plateado (2P)",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ciudad Celeste",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Celeste",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 4",
@@ -33634,23 +33726,43 @@
         },
         {
           "area": "Ruta 9",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 9",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 10",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 10",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 24",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 24",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 25",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 25",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Cataratas Tohjo",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Cataratas Tohjo",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -34038,19 +34150,35 @@
         },
         {
           "area": "Ruta 42",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 42",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Monte Mortero (1P)",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (1P)",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Monte Mortero (Cueva Alta)",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (Cueva Alta)",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Monte Mortero (Sótano)",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Mortero (Sótano)",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Cueva Oscura (Entrada Ciudad Malva)",
@@ -34062,11 +34190,19 @@
         },
         {
           "area": "Monte Plateado (2P)",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Monte Plateado (2P)",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ciudad Celeste",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Celeste",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 4",
@@ -34074,23 +34210,43 @@
         },
         {
           "area": "Ruta 9",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 9",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 10",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 10",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 24",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 24",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 25",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 25",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Cataratas Tohjo",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Cataratas Tohjo",
+          "method": "Pesca (Supercaña)"
         }
       ],
       "badge_color": "emerald",
@@ -70158,7 +70314,11 @@
       "locations": [
         {
           "area": "Pueblo Primavera",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Pueblo Primavera",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ciudad Cerezo",
@@ -70166,7 +70326,11 @@
         },
         {
           "area": "Ruta 32",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 32",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Cueva Unión (Sótano 2)",
@@ -70186,7 +70350,11 @@
         },
         {
           "area": "Ruta 41",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 41",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Islas Remolino (1P)",
@@ -70198,7 +70366,11 @@
         },
         {
           "area": "Ruta 12",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 12",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 19",
@@ -70206,39 +70378,75 @@
         },
         {
           "area": "Ruta 20",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 20",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Isla Canela",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Isla Canela",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ciudad Carmín",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Carmín",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Pueblo Paleta",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Pueblo Paleta",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ruta 26",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 26",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ruta 27",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 27",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ruta 13",
-          "method": "Caña Buena, Caña Vieja, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 13",
+          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 21",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 21",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Muelle del S.S. Anne (Ciudad Carmín)",
-          "method": "Caña Buena, Caña Vieja, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Muelle del S.S. Anne (Ciudad Carmín)",
+          "method": "Pesca (Caña Vieja y Caña Buena)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -70630,7 +70838,11 @@
       "locations": [
         {
           "area": "Pueblo Primavera",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Pueblo Primavera",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ciudad Cerezo",
@@ -70658,7 +70870,11 @@
         },
         {
           "area": "Ruta 41",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 41",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Islas Remolino (1P)",
@@ -70686,27 +70902,51 @@
         },
         {
           "area": "Ruta 20",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 20",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Isla Canela",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Isla Canela",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ciudad Carmín",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ciudad Carmín",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Pueblo Paleta",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Pueblo Paleta",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 26",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 26",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 27",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 27",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 13",
@@ -70714,11 +70954,19 @@
         },
         {
           "area": "Ruta 21",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 21",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Muelle del S.S. Anne (Ciudad Carmín)",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Muelle del S.S. Anne (Ciudad Carmín)",
+          "method": "Pesca (Supercaña)"
         }
       ],
       "badge_color": "emerald",
@@ -80788,15 +81036,27 @@
       "locations": [
         {
           "area": "Islas Remolino (1P)",
-          "method": "Caña Buena, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Islas Remolino (1P)",
+          "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
           "area": "Islas Remolino (Sótano 2)",
-          "method": "Caña Buena, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Islas Remolino (Sótano 2)",
+          "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
           "area": "Islas Remolino (Sótano 3)",
-          "method": "Caña Buena, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Islas Remolino (Sótano 3)",
+          "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -106009,7 +106269,11 @@
       "locations": [
         {
           "area": "Guarida Dragón",
-          "method": "Caña Buena, Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Guarida Dragón",
+          "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
           "area": "Ruta 45",

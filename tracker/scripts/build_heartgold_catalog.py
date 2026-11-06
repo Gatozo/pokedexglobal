@@ -1110,10 +1110,11 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Regalo',
         'badge_color': 'indigo',
-        'summary': 'Salvaje en Guarida Dragón (pesca y surf) y Zona Safari. Regalo del Maestro Dragón en la Guarida Dragón con Velocidad Extrema o canjeable por 2.100 fichas en el Casino de Trigal.',
+        'summary': 'Salvaje en Guarida Dragón (Surf y Pesca) y Zona Safari. Regalo del Maestro Dragón tras derrotar a Débora (con Velocidad Extrema) o canjeable por 2.100 fichas en el Casino de Trigal.',
         'locations': [
-            {'area': 'Guarida Dragón', 'method': 'Surf / Pesca (Caña Buena y Supercaña)'},
-            {'area': 'Guarida Dragón (Templo)', 'method': 'Regalo del Maestro Dragón (con Velocidad Extrema)'},
+            {'area': 'Guarida Dragón', 'method': 'Surf'},
+            {'area': 'Guarida Dragón', 'method': 'Pesca (Caña Buena y Supercaña)'},
+            {'area': 'Guarida Dragón (Templo)', 'method': 'Regalo del Maestro Dragón al Nv. 15 tras derrotar a Débora en el Gimnasio y responder a su prueba en el Santuario (con Velocidad Extrema si respondes con empatía)'},
             {'area': 'Casino de Ciudad Trigal', 'method': 'Premio del Casino (2.100 fichas)'},
             DAYCARE_LOCATION
         ]
@@ -1124,26 +1125,38 @@ SPECIAL_OBTAINING = {
         'badge_color': 'emerald',
         'summary': 'Abundante en estado salvaje mediante Surf y Pesca en rutas de Johto y Kanto.',
         'locations': [
-            {'area': 'Ruta 32', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
+            {'area': 'Ruta 32', 'method': 'Surf'},
+            {'area': 'Ruta 32', 'method': 'Pesca (Caña Vieja, Buena y Supercaña)'},
             {'area': 'Ruta 34', 'method': 'Surf'},
             {'area': 'Ruta 40 (Ruta Marítima)', 'method': 'Surf'},
-            {'area': 'Ruta 41 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Ruta 47', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 41 (Ruta Marítima)', 'method': 'Surf'},
+            {'area': 'Ruta 41 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Ruta 47', 'method': 'Surf'},
+            {'area': 'Ruta 47', 'method': 'Pesca (Caña Buena y Vieja)'},
             {'area': 'Ciudad Cerezo', 'method': 'Surf'},
             {'area': 'Ciudad Olivo', 'method': 'Surf'},
             {'area': 'Ciudad Orquídea', 'method': 'Surf'},
             {'area': 'Islas Remolino', 'method': 'Surf'},
             {'area': 'Cueva Unión', 'method': 'Surf'},
-            {'area': 'Ruta 12', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
-            {'area': 'Ruta 13', 'method': 'Pesca (Caña Vieja, Buena y Supercaña), Surf'},
+            {'area': 'Ruta 12', 'method': 'Surf'},
+            {'area': 'Ruta 12', 'method': 'Pesca (Caña Vieja, Buena y Supercaña)'},
+            {'area': 'Ruta 13', 'method': 'Surf'},
+            {'area': 'Ruta 13', 'method': 'Pesca (Caña Vieja, Buena y Supercaña)'},
             {'area': 'Ruta 19 (Ruta Marítima)', 'method': 'Surf'},
-            {'area': 'Ruta 20 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Ruta 21 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Ruta 26', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Ruta 27', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Ciudad Carmín', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Isla Canela', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
-            {'area': 'Pueblo Paleta', 'method': 'Pesca (Caña Buena y Vieja), Surf'},
+            {'area': 'Ruta 20 (Ruta Marítima)', 'method': 'Surf'},
+            {'area': 'Ruta 20 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Ruta 21 (Ruta Marítima)', 'method': 'Surf'},
+            {'area': 'Ruta 21 (Ruta Marítima)', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Ruta 26', 'method': 'Surf'},
+            {'area': 'Ruta 26', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Ruta 27', 'method': 'Surf'},
+            {'area': 'Ruta 27', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Ciudad Carmín', 'method': 'Surf'},
+            {'area': 'Ciudad Carmín', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Isla Canela', 'method': 'Surf'},
+            {'area': 'Isla Canela', 'method': 'Pesca (Caña Buena y Vieja)'},
+            {'area': 'Pueblo Paleta', 'method': 'Surf'},
+            {'area': 'Pueblo Paleta', 'method': 'Pesca (Caña Buena y Vieja)'},
             {'area': 'Ciudad Orquídea (Centro Pokémon)', 'method': 'Regalo de emergencia anti-bloqueo (Nv. 15) si quedas atrapado en la isla sin Surf, Vuelo ni caña para pescar un Pokémon que aprenda Surf'},
             {'area': 'Pokéwalker (Mar Azul)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
@@ -1888,10 +1901,41 @@ def main():
 
             loc_list = []
             for a_name, m_set in area_methods.items():
-                loc_list.append({
-                    'area': a_name,
-                    'method': ", ".join(sorted(list(m_set)))
-                })
+                surf_methods = [m for m in m_set if m == 'Surf']
+                fish_methods = [m for m in m_set if 'Pesca' in m]
+                other_methods = [m for m in m_set if m != 'Surf' and 'Pesca' not in m]
+
+                if other_methods:
+                    loc_list.append({
+                        'area': a_name,
+                        'method': ", ".join(sorted(other_methods))
+                    })
+                if surf_methods:
+                    loc_list.append({
+                        'area': a_name,
+                        'method': 'Surf'
+                    })
+                if fish_methods:
+                    order = {'caña vieja': 1, 'caña buena': 2, 'supercaña': 3}
+                    clean_rods = []
+                    for fm in fish_methods:
+                        m_rod = re.search(r'\((.*?)\)', fm)
+                        if m_rod:
+                            clean_rods.append(m_rod.group(1).strip())
+                        else:
+                            clean_rods.append(fm)
+                    clean_rods = list(dict.fromkeys(clean_rods))
+                    clean_rods.sort(key=lambda x: order.get(x.lower(), 99))
+                    if len(clean_rods) == 2:
+                        fish_str = f"Pesca ({clean_rods[0]} y {clean_rods[1]})"
+                    elif len(clean_rods) == 3:
+                        fish_str = f"Pesca ({clean_rods[0]}, {clean_rods[1]} y {clean_rods[2]})"
+                    else:
+                        fish_str = f"Pesca ({', '.join(clean_rods)})"
+                    loc_list.append({
+                        'area': a_name,
+                        'method': fish_str
+                    })
 
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)

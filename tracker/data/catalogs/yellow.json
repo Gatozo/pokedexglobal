@@ -25881,11 +25881,19 @@
         },
         {
           "area": "Ruta 19",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 19",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 20",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 20",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Isla Canela",
@@ -25917,7 +25925,11 @@
         },
         {
           "area": "Ruta 21",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Ruta 21",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Muelle del S.S. Anne (Ciudad Carmín)",
@@ -43855,7 +43867,11 @@
       "locations": [
         {
           "area": "Islas Espuma",
-          "method": "Supercaña, Surfeando (Agua)"
+          "method": "Surfeando (Agua)"
+        },
+        {
+          "area": "Islas Espuma",
+          "method": "Pesca (Supercaña)"
         },
         {
           "area": "Ruta 19",

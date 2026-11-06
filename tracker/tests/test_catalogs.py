@@ -3593,6 +3593,46 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         dratini_lg = next(e for e in lg_cat if e.pokemon.national_number == 147)
         self.assertIn("4.600", next(l["method"] for l in dratini_lg.obtaining_info["locations"] if "casino" in l["area"].lower()))
 
+    def test_dratini_and_separated_surf_fishing(self):
+        """Verifica que Surf y Pesca están separados en tarjetas independientes y que Dratini mencione a Dbora."""
+        from tracker.catalog_service import get_compiled_catalog
+
+        # 1. HeartGold: Dratini
+        hg_cat = get_compiled_catalog("heartgold", force_reload=True, is_national=False)
+        dratini = next(e for e in hg_cat if e.pokemon.national_number == 147)
+        locs = dratini.obtaining_info["locations"]
+
+        den_surf = [l for l in locs if l["area"] == "Guarida Dragón" and l["method"] == "Surf"]
+        self.assertEqual(len(den_surf), 1)
+
+        den_fish = [l for l in locs if l["area"] == "Guarida Dragón" and "Pesca" in l["method"]]
+        self.assertEqual(len(den_fish), 1)
+        self.assertIn("Caña Buena y Supercaña", den_fish[0]["method"])
+
+        temple_gift = next(l for l in locs if "Templo" in l["area"])
+        self.assertIn("Débora", temple_gift["method"])
+        self.assertIn("Velocidad Extrema", temple_gift["method"])
+
+        # Filtros intactos
+        self.assertIn("surf", dratini.filter_tags)
+        self.assertIn("rod_good", dratini.filter_tags)
+        self.assertIn("rod_super", dratini.filter_tags)
+
+        # 2. Invariante: Ningún Pokémon en HeartGold ni Crystal combina Surf y Pesca en una sola lnea
+        for cat_slug in ["heartgold", "crystal"]:
+            cat = get_compiled_catalog(cat_slug, force_reload=True, is_national=False)
+            for entry in cat:
+                for l in entry.obtaining_info.get("locations", []):
+                    m_lower = l.get("method", "").lower()
+                    if "regalo" in m_lower:
+                        continue
+                    has_surf = ("surf" in m_lower or "surfeando" in m_lower or "navegando" in m_lower)
+                    has_fish = ("pesca" in m_lower or "pescando" in m_lower)
+                    self.assertFalse(
+                        has_surf and has_fish,
+                        f"Encontrada combinación Surf+Pesca en {cat_slug} Pokmon #{entry.pokemon.national_number} {entry.pokemon.display_name}: {l}"
+                    )
+
 
 
 
