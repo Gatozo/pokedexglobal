@@ -11,6 +11,7 @@ import {
     FEEBAS_HOBBIES_ES 
 } from './feebas_data.js';
 import { calculateFeebasFishingSpots, calculateGen4FeebasSpots, calculateGen4FeebasFromSeed } from './feebas_calculator.js';
+import { getAllPrimoRewards, calculatePrimoWords, PRIMO_WALLPAPERS, PRIMO_EGGS } from './primo_calculator.js';
 import { bringModalToFront, registerModalClose } from './url_sync.js';
 
 // Lista canónica de los 21 árboles de miel de Sinnoh (índices internos 0 a 20 de la ROM de DPPt/BDSP)
@@ -93,7 +94,9 @@ export function getMunchlaxTreeNames(tid, sid = null) {
  * Clave de almacenamiento local por juego.
  */
 function getStorageKey(gameSlug) {
-    return `pokedex_game_config_${gameSlug || (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || 'default'}`;
+    const rawSlug = gameSlug || (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || 'default';
+    const normalizedSlug = rawSlug.startsWith('heartgold') ? 'heartgold' : (rawSlug.startsWith('soulsilver') ? 'soulsilver' : rawSlug);
+    return `pokedex_game_config_${normalizedSlug}`;
 }
 
 /**
@@ -206,6 +209,15 @@ export function openGameConfigModal() {
         seedInput.value = (cfg && cfg.groupSeed) ? cfg.groupSeed : '';
     }
 
+    const hgssTidInput = document.getElementById('cfg-hgss-trainer-id');
+    const hgssLangSelect = document.getElementById('cfg-hgss-lang');
+    if (hgssTidInput) {
+        hgssTidInput.value = (cfg && cfg.tid !== undefined && cfg.tid !== null) ? cfg.tid : '';
+    }
+    if (hgssLangSelect) {
+        hgssLangSelect.value = (cfg && cfg.primoLang) ? cfg.primoLang : 'es';
+    }
+
     renderConfigPreview();
 
     modal.style.display = 'flex';
@@ -274,6 +286,23 @@ export function closeGameConfigModal() {
         if (gen4Icon) gen4Icon.classList.remove('rotate-180');
         if (gen4Label) gen4Label.textContent = 'Ver nota';
         if (gen4Btn) gen4Btn.setAttribute('aria-expanded', 'false');
+
+        // Restablecer acordeón de Cástor para próxima apertura
+        const primoContent = document.getElementById('primo-accordion-content');
+        const primoIcon = document.getElementById('primo-accordion-icon');
+        const primoLabel = document.getElementById('primo-accordion-label');
+        const primoBtn = document.getElementById('primo-accordion-btn');
+        if (primoContent) {
+            if (primoContent._animCleanup) primoContent._animCleanup();
+            primoContent.classList.add('hidden');
+            primoContent.style.maxHeight = '';
+            primoContent.style.overflow = '';
+            primoContent.style.opacity = '';
+            primoContent.style.transition = '';
+        }
+        if (primoIcon) primoIcon.classList.remove('rotate-180');
+        if (primoLabel) primoLabel.textContent = 'Ver nota';
+        if (primoBtn) primoBtn.setAttribute('aria-expanded', 'false');
     }, 150);
 }
 
@@ -292,13 +321,85 @@ export function handleGameConfigBackdropClick(e) {
 export function renderConfigPreview() {
     const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
+    const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
+    const isGen4HGSS = gameSlug.startsWith('heartgold') || gameSlug.startsWith('soulsilver');
+
+    // 0. Previsualización para Gen 4 HeartGold / SoulSilver (Cástor: Huevos y Fondos del PC)
+    if (isGen4HGSS) {
+        const hgssTidInput = document.getElementById('cfg-hgss-trainer-id');
+        const hgssLangSelect = document.getElementById('cfg-hgss-lang');
+        const primoPreview = document.getElementById('cfg-primo-preview');
+        const eggsList = document.getElementById('cfg-primo-eggs-list');
+        const wallpapersList = document.getElementById('cfg-primo-wallpapers-list');
+
+        const tidRaw = hgssTidInput ? hgssTidInput.value.trim() : '';
+        const tidVal = parseInt(tidRaw, 10);
+        const hasValidTid = !isNaN(tidVal) && tidVal >= 0 && tidVal <= 65535;
+        const lang = hgssLangSelect ? hgssLangSelect.value : 'es';
+
+        if (!hasValidTid || !primoPreview) {
+            if (primoPreview) primoPreview.classList.add('hidden');
+            if (eggsList) eggsList.innerHTML = '';
+            if (wallpapersList) wallpapersList.innerHTML = '';
+            return;
+        }
+
+        const rewards = getAllPrimoRewards(tidVal, lang);
+        if (!rewards) {
+            primoPreview.classList.add('hidden');
+            return;
+        }
+
+        primoPreview.classList.remove('hidden');
+
+        if (eggsList) {
+            eggsList.innerHTML = rewards.eggs.map(egg => `
+                <div class="p-2.5 rounded-xl border-2 border-slate-950 bg-pink-50 shadow-[1.5px_1.5px_0px_0px_#0f172a] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="/media/items/mystery-egg.png" alt="" class="w-6 h-6 object-contain pixel-art shrink-0">
+                        <div class="min-w-0">
+                            <span class="font-black text-xs text-slate-950 block truncate">Huevo de ${egg.name}</span>
+                            <span class="text-[9px] font-bold text-pink-900 block">Ciudad Malva • Centro Pokémon</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1 sm:text-right shrink-0">
+                        <div class="text-[10px] font-black uppercase text-pink-950 bg-white border border-pink-300 rounded px-2 py-0.5 tracking-tight shadow-xs flex items-center justify-between sm:justify-end gap-1.5">
+                            <span class="text-[8px] text-slate-400 font-bold uppercase sm:hidden">Frase 1:</span>
+                            <span>${egg.calc.line1[0]} • ${egg.calc.line1[1]}</span>
+                        </div>
+                        <div class="text-[10px] font-black uppercase text-pink-950 bg-white border border-pink-300 rounded px-2 py-0.5 tracking-tight shadow-xs flex items-center justify-between sm:justify-end gap-1.5">
+                            <span class="text-[8px] text-slate-400 font-bold uppercase sm:hidden">Frase 2:</span>
+                            <span>${egg.calc.line2[0]} • ${egg.calc.line2[1]}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        if (wallpapersList) {
+            wallpapersList.innerHTML = rewards.wallpapers.map(wp => `
+                <div class="p-2 rounded-lg border-2 border-slate-950/20 bg-slate-50 flex flex-col justify-between gap-1 shadow-xs hover:border-slate-950 transition-colors">
+                    <div class="font-black text-[11px] text-slate-900 uppercase tracking-tight flex items-center justify-between">
+                        <span>${wp.name}</span>
+                        <span class="text-[9px] font-black px-1 rounded bg-amber-100 text-amber-900 border border-amber-300">Fondo</span>
+                    </div>
+                    <div class="text-[9px] font-black uppercase text-slate-800 bg-white border border-slate-300 rounded px-1.5 py-0.5 text-center leading-snug">
+                        <span>${wp.calc.line1[0]} ${wp.calc.line1[1]}</span>
+                        <span class="text-slate-400 font-bold mx-1">/</span>
+                        <span>${wp.calc.line2[0]} ${wp.calc.line2[1]}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        return;
+    }
 
     const tidInput = document.getElementById('cfg-trainer-id');
     const tidVal = tidInput ? parseInt(tidInput.value, 10) : NaN;
     const hasValidTid = !isNaN(tidVal) && tidVal >= 0 && tidVal <= 65535;
 
     // 1. Previsualización para Gen 4 (Munchlax y Feebas en Sinnoh)
-    if (!isGen3Hoenn) {
+    if (isGen4Sinnoh) {
         const sidInput = document.getElementById('cfg-secret-id');
         const previewContainer = document.getElementById('cfg-calculated-preview');
         const treesList = document.getElementById('cfg-trees-list');
@@ -464,6 +565,40 @@ export function saveGameConfig() {
     const gameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
+    const isGen4HGSS = gameSlug.startsWith('heartgold') || gameSlug.startsWith('soulsilver');
+
+    // Gen 4 HGSS (Cástor: Huevos y Fondos del PC)
+    if (isGen4HGSS) {
+        const hgssTidInput = document.getElementById('cfg-hgss-trainer-id');
+        const hgssLangSelect = document.getElementById('cfg-hgss-lang');
+        const tidRaw = hgssTidInput ? hgssTidInput.value.trim() : '';
+        const lang = hgssLangSelect ? hgssLangSelect.value : 'es';
+
+        if (tidRaw === '') {
+            saveGameConfigData(null);
+            closeGameConfigModal();
+            refreshOpenModals();
+            return;
+        }
+
+        const tidVal = parseInt(tidRaw, 10);
+        if (isNaN(tidVal) || tidVal < 0 || tidVal > 65535) {
+            alert('Por favor introduce un ID de Entrenador (TID) válido entre 0 y 65535.');
+            if (hgssTidInput) hgssTidInput.focus();
+            return;
+        }
+
+        const configData = {
+            tid: tidVal,
+            primoLang: lang,
+            updatedAt: new Date().toISOString()
+        };
+
+        saveGameConfigData(configData);
+        closeGameConfigModal();
+        refreshOpenModals();
+        return;
+    }
 
     if (isGen3Hoenn) {
         const tidInput = document.getElementById('cfg-trainer-id');
@@ -685,6 +820,11 @@ export function resetGameConfig() {
     if (yestInput) yestInput.value = '';
     if (seedInput) seedInput.value = '';
 
+    const hgssTidInput = document.getElementById('cfg-hgss-trainer-id');
+    const hgssLangSelect = document.getElementById('cfg-hgss-lang');
+    if (hgssTidInput) hgssTidInput.value = '';
+    if (hgssLangSelect) hgssLangSelect.value = 'es';
+
     renderConfigPreview();
     closeGameConfigModal();
     refreshOpenModals();
@@ -787,6 +927,30 @@ export function toggleFeebasGen4LottoAccordion() {
     const icon = document.getElementById('feebas-gen4-accordion-icon');
     const label = document.getElementById('feebas-gen4-accordion-label');
     const btn = document.getElementById('feebas-gen4-accordion-btn');
+    if (!content) return;
+
+    const isCollapsed = content.classList.contains('hidden') || content.style.maxHeight === '0px';
+    if (isCollapsed) {
+        animateAccordionToggle(content, true);
+        if (icon) icon.classList.add('rotate-180');
+        if (label) label.textContent = 'Ocultar nota';
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+    } else {
+        animateAccordionToggle(content, false);
+        if (icon) icon.classList.remove('rotate-180');
+        if (label) label.textContent = 'Ver nota';
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+}
+
+/**
+ * Alterna el acordeón de instrucciones de Cástor en Gen 4 (HGSS) con transición fluida.
+ */
+export function togglePrimoAccordion() {
+    const content = document.getElementById('primo-accordion-content');
+    const icon = document.getElementById('primo-accordion-icon');
+    const label = document.getElementById('primo-accordion-label');
+    const btn = document.getElementById('primo-accordion-btn');
     if (!content) return;
 
     const isCollapsed = content.classList.contains('hidden') || content.style.maxHeight === '0px';
@@ -1153,6 +1317,20 @@ export function initGameConfig() {
                 val = val.replace(/[^0-9a-fA-F]/g, '').slice(0, 8);
             }
             seedInput.value = val.toUpperCase();
+            renderConfigPreview();
+        });
+    }
+
+    const hgssTidInput = document.getElementById('cfg-hgss-trainer-id');
+    const hgssLangSelect = document.getElementById('cfg-hgss-lang');
+    if (hgssTidInput) {
+        hgssTidInput.addEventListener('input', () => {
+            sanitizeDigits(hgssTidInput);
+            renderConfigPreview();
+        });
+    }
+    if (hgssLangSelect) {
+        hgssLangSelect.addEventListener('change', () => {
             renderConfigPreview();
         });
     }

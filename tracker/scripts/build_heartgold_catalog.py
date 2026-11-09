@@ -15,6 +15,7 @@ import django
 django.setup()
 
 import json
+import re
 from tracker.utils import get_incense_for_baby
 
 CACHE_DIR = BASE_DIR / "tracker" / "data" / "cache"
@@ -1171,7 +1172,7 @@ SPECIAL_OBTAINING = {
             {'area': 'Ruta 32', 'method': 'Hierba alta'},
             {'area': 'Ruta 42', 'method': 'Hierba alta'},
             {'area': 'Ruta 43', 'method': 'Hierba alta'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculable con tu ID de Entrenador)'},
             {'area': 'Pokéwalker (Senda Glacial)', 'method': 'Paseo en el Pokéwalker'},
             {'area': 'Pokéwalker (Gran Bosque)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
@@ -1187,7 +1188,7 @@ SPECIAL_OBTAINING = {
             {'area': 'Ruinas Alfa (Exterior)', 'method': 'Surf'},
             {'area': 'Cueva Unión', 'method': 'Surf'},
             {'area': 'Ruta 47', 'method': 'Hierba alta y Surf'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculable con tu ID de Entrenador)'},
             {'area': 'Zona Safari (Pantano)', 'method': 'Hierba alta (Noche) / Surf'},
             {'area': 'Zona Safari (Parterre)', 'method': 'Hierba alta (Noche) / Surf'},
             {'area': 'Zona Safari (Albufera)', 'method': 'Hierba alta (Noche) / Surf'},
@@ -1204,7 +1205,7 @@ SPECIAL_OBTAINING = {
             {'area': 'Ruta 16', 'method': 'Hierba alta'},
             {'area': 'Ruta 17', 'method': 'Hierba alta'},
             {'area': 'Ruta 18', 'method': 'Hierba alta'},
-            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculada con tu ID en generador web)'},
+            {'area': 'Ciudad Malva (Centro Pokémon)', 'method': 'Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculable con tu ID de Entrenador)'},
             {'area': 'Pokéwalker (Sendero Volcán)', 'method': 'Paseo en el Pokéwalker'},
             DAYCARE_LOCATION
         ]

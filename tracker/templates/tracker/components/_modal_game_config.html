@@ -403,6 +403,142 @@
                 </div>
             </div>
             {% endif %}
+
+            <!-- Sección: Calculadora de Cástor (Gen 4: Oro HeartGold y Plata SoulSilver) -->
+            {% if game.slug in 'heartgold,soulsilver' %}
+            <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="/media/items/mystery-egg.png" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+                    <h4 class="font-black text-sm uppercase tracking-wide text-slate-950">
+                        Calculadora de Cástor (Huevos y Fondos del PC)
+                    </h4>
+                </div>
+                
+                <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
+                    En el Centro Pokémon de Ciudad Malva, <strong class="text-slate-900">Cástor</strong> te entrega <strong class="text-pink-700">3 huevos especiales</strong> (Mareep, Wooper y Slugma) y desbloquea <strong class="text-amber-800">8 fondos para el PC</strong> al decirle su combinación secreta de 4 palabras. Ingresa tu <strong class="text-slate-900">ID de Entrenador</strong> para calcular tus contraseñas exactas.
+                </p>
+
+                <div class="space-y-3">
+                    <!-- TID Field & Language Toggle -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 items-end">
+                        <div class="sm:col-span-2">
+                            <label for="cfg-hgss-trainer-id" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                                ID de Entrenador (TID) <span class="text-rose-600">*</span>
+                            </label>
+                            <div class="relative">
+                                <input 
+                                    type="text" 
+                                    id="cfg-hgss-trainer-id" 
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    maxlength="5"
+                                    placeholder="Ej. 12345" 
+                                    class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-3 py-1.5 text-sm font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner"
+                                >
+                                <span class="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 uppercase select-none pointer-events-none">
+                                    5 dígitos
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="cfg-hgss-lang" class="block text-[11px] font-black uppercase text-slate-800 mb-1">
+                                Idioma de la ROM
+                            </label>
+                            <select 
+                                id="cfg-hgss-lang" 
+                                class="w-full bg-slate-50 border-2 border-slate-950 rounded-lg px-2.5 py-1.5 text-xs font-black text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-inner cursor-pointer"
+                            >
+                                <option value="es" selected>Español</option>
+                                <option value="en">Inglés</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-slate-500 font-semibold">
+                        Visible en tu Tarjeta de Entrenador (pulsando START y seleccionando tu nombre).
+                    </p>
+
+                    <!-- Preview de Contraseñas Calculadas (Huevos + Fondos de PC) -->
+                    <div id="cfg-primo-preview" class="hidden mt-4 pt-3 border-t-2 border-dashed border-slate-200 space-y-4">
+                        <!-- Bloque 1: Huevos Pokémon -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-black uppercase tracking-wider text-pink-700 flex items-center gap-1">
+                                    <img src="/media/items/mystery-egg.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                                    Huevos de Pokémon (3):
+                                </span>
+                                <span class="text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-pink-200 text-pink-950">
+                                    3 Huevos
+                                </span>
+                            </div>
+                            <div id="cfg-primo-eggs-list" class="space-y-2">
+                                <!-- Generado dinámicamente -->
+                            </div>
+                        </div>
+
+                        <!-- Bloque 2: Fondos de PC (8) - Compacto y no saturado -->
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-black uppercase tracking-wider text-amber-800 flex items-center gap-1">
+                                    <svg class="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                                    </svg>
+                                    Fondos de Caja del PC (8):
+                                </span>
+                                <span class="text-[9px] font-black px-1.5 py-0.5 rounded border border-slate-950 bg-amber-200 text-slate-900">
+                                    8 Fondos
+                                </span>
+                            </div>
+                            <div id="cfg-primo-wallpapers-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                                <!-- Generado dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Acordeón Explicativo: Cómo funciona Cástor -->
+                    <div class="border-2 border-slate-950 rounded-xl overflow-hidden mt-3 shadow-[1.5px_1.5px_0px_0px_#0f172a]">
+                        <button 
+                            type="button" 
+                            id="primo-accordion-btn"
+                            onclick="togglePrimoAccordion()"
+                            class="w-full px-3 py-2 bg-amber-100 hover:bg-amber-200 text-amber-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            aria-expanded="false"
+                            aria-controls="primo-accordion-content"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="text-base select-none shrink-0">ℹ️</span>
+                                <span class="text-xs font-black uppercase tracking-tight text-amber-950">¿Cómo introducir las contraseñas con Cástor?</span>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <span id="primo-accordion-label" class="text-[10px] font-black uppercase text-amber-900/80 hidden sm:inline">Ver nota</span>
+                                <svg id="primo-accordion-icon" class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div id="primo-accordion-content" class="hidden p-3 border-t-2 border-slate-950 text-xs text-amber-950 bg-amber-50/90 space-y-2 leading-relaxed">
+                            <p>
+                                <strong>Ubicación:</strong> Cástor está junto al PC en el Centro Pokémon de Ciudad Malva.
+                            </p>
+                            <p>
+                                <strong>Estructura de la frase:</strong> Cástor te pedirá dos respuestas consecutivas. Cada respuesta contiene 2 palabras (Línea 1 = palabras 1 y 2; Línea 2 = palabras 3 y 4).
+                            </p>
+                            <p>
+                                <strong>Búsqueda fácil:</strong> Al seleccionar palabras en el chat, pulsa el botón <strong>"MODO ABC"</strong> para encontrar cada término ordenado alfabéticamente.
+                            </p>
+                            <p>
+                                <strong>Hueco en el equipo:</strong> Asegúrate de llevar al menos un espacio libre en tu equipo de 6 Pokémon para poder recibir el huevo.
+                            </p>
+                            <p>
+                                <strong>Activar fondos en el PC:</strong> Abre el PC > Mover Pokémon > toca el nombre de la caja (ej. "CAJA 1") para cambiar su fondo por el nuevo diseño desbloqueado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
 
         <!-- Footer con Acciones -->

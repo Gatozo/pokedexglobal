@@ -17,6 +17,7 @@ import { openStoneModal } from './modal_stones.js';
 import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
 import { loadGameConfig, getMunchlaxTreeNames } from './game_config.js';
+import { calculatePrimoWords } from './primo_calculator.js';
 import { getSafariHgssRequirements } from './safari_hgss_data.js';
 
 const _entryDataCache = new Map();
@@ -498,7 +499,7 @@ export function renderModalObtaining(data, activeForm = null) {
     const activeGameSlug = (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || '';
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(activeGameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(activeGameSlug);
-    const isGen4HGSS = ['heartgold', 'soulsilver'].includes(activeGameSlug);
+    const isGen4HGSS = activeGameSlug.startsWith('heartgold') || activeGameSlug.startsWith('soulsilver');
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
@@ -513,6 +514,30 @@ export function renderModalObtaining(data, activeForm = null) {
         } else if (isGen4Sinnoh && gameCfg && ((gameCfg.feebasSpots && gameCfg.feebasSpots.length > 0) || Boolean(gameCfg.groupSeed) || (gameCfg.lottoToday !== undefined && gameCfg.lottoToday !== null))) {
             isFeebasConfigured = true;
             feebasSpotCount = (gameCfg.feebasSpots && gameCfg.feebasSpots.length) ? gameCfg.feebasSpots.length : 4;
+        }
+    }
+
+    // Detección especial de Huevos de Cástor en HeartGold y SoulSilver (Gen 4 HGSS)
+    const natNumber = parseInt(data.number, 10);
+    const pokemonName = (data.name || '').toLowerCase();
+    const isMareep = pokemonName === 'mareep' || [53, 179].includes(natNumber);
+    const isWooper = pokemonName === 'wooper' || [56, 194].includes(natNumber);
+    const isSlugma = pokemonName === 'slugma' || [216, 218].includes(natNumber);
+    const isPrimoEggSpecies = isGen4HGSS && (isMareep || isWooper || isSlugma);
+    let primoRewardId = null;
+    let primoCalc = null;
+    let isPrimoConfigured = false;
+    let hgssCfg = null;
+
+    if (isPrimoEggSpecies) {
+        if (isMareep) primoRewardId = 8;
+        else if (isWooper) primoRewardId = 9;
+        else if (isSlugma) primoRewardId = 10;
+        const baseHgssSlug = activeGameSlug.startsWith('soulsilver') ? 'soulsilver' : 'heartgold';
+        hgssCfg = loadGameConfig(baseHgssSlug);
+        if (hgssCfg && hgssCfg.tid !== undefined && hgssCfg.tid !== null && hgssCfg.tid !== '') {
+            primoCalc = calculatePrimoWords(hgssCfg.tid, primoRewardId, hgssCfg.primoLang || 'es');
+            isPrimoConfigured = Boolean(primoCalc);
         }
     }
 
@@ -682,6 +707,8 @@ export function renderModalObtaining(data, activeForm = null) {
                 `;
                 detailsContainer.appendChild(feebasHeader);
             }
+
+
 
             const locList = document.createElement('div');
             locList.className = (displayLocations.length === 1) ? 'grid grid-cols-1 gap-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2';
@@ -1273,6 +1300,64 @@ export function renderModalObtaining(data, activeForm = null) {
                     `;
                     detailsContainer.appendChild(pwAccordion);
                 }
+
+                // Nota interactiva de mecánica: Contraseña de Cástor (HeartGold / SoulSilver)
+                // Solo se muestra si el usuario ha configurado un TID válido en su partida
+                if (isPrimoEggSpecies && isPrimoConfigured && primoCalc) {
+                    const primoAccordion = document.createElement('div');
+                    primoAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-pink-50';
+                    primoAccordion.innerHTML = `
+                        <button 
+                            type="button" 
+                            class="w-full px-3 py-2 bg-pink-100/90 hover:bg-pink-100 text-pink-950 flex items-center justify-between gap-2 text-left cursor-pointer select-none transition-colors"
+                            onclick="toggleComicCaveAccordion(this)"
+                            aria-expanded="false"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <img src="/media/items/mystery-egg.png" alt="Huevo de Cástor" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
+                                <span class="font-black uppercase text-[10px] sm:text-xs text-pink-950 tracking-wide truncate">
+                                    Mecánica • Contraseña de Cástor (Huevo de ${data.name})
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="text-[10px] font-black uppercase text-pink-900/80 label-text">Ver nota</span>
+                                <svg class="w-4 h-4 text-slate-950 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="hidden p-3 border-t-2 border-slate-950 text-[11px] leading-relaxed font-semibold text-slate-800 bg-pink-50/70 space-y-2.5">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[10px] text-pink-950">
+                                <span>Contraseña calculada para tu <strong>ID de Entrenador (${hgssCfg.tid})</strong>:</span>
+                                <button type="button" onclick="event.stopPropagation(); openGameConfigModal();" class="text-[9.5px] font-black uppercase text-pink-800 underline hover:text-pink-600 cursor-pointer self-start sm:self-auto">
+                                    Editar ID en ajustes
+                                </button>
+                            </div>
+
+                            <!-- Desglose de las 2 Frases del Chat -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <div class="p-2 rounded-lg border border-pink-300 bg-white shadow-xs text-center space-y-0.5">
+                                    <span class="text-[9px] font-black uppercase text-slate-400 block tracking-wider">Frase 1 (Respuesta 1)</span>
+                                    <span class="font-black text-xs text-pink-950 block">${primoCalc.line1[0]} • ${primoCalc.line1[1]}</span>
+                                </div>
+                                <div class="p-2 rounded-lg border border-pink-300 bg-white shadow-xs text-center space-y-0.5">
+                                    <span class="text-[9px] font-black uppercase text-slate-400 block tracking-wider">Frase 2 (Respuesta 2)</span>
+                                    <span class="font-black text-xs text-pink-950 block">${primoCalc.line2[0]} • ${primoCalc.line2[1]}</span>
+                                </div>
+                            </div>
+
+                            <div class="p-2 border border-pink-900/20 rounded-lg bg-pink-100/60 text-[10px] text-pink-950 leading-relaxed space-y-1">
+                                <p>
+                                    <strong>Cómo reclamarlo:</strong> Habla con Cástor junto al PC en el Centro Pokémon de Ciudad Malva y dile estas 4 palabras (2 por frase).
+                                </p>
+                                <p class="text-slate-700">
+                                    💡 <em>Consejo:</em> Pulsa <strong>MODO ABC</strong> en la pantalla táctil para ordenar y encontrar las palabras alfabéticamente. Asegúrate de llevar un hueco libre en tu equipo de 6.
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                    detailsContainer.appendChild(primoAccordion);
+                }
             }
         }
 
@@ -1601,6 +1686,7 @@ export async function openPokemonModalDirect(entryId, options = {}) {
     if (!data) return;
 
     state.activeModalEntryId = entryId;
+    window.__activeModalEntryId = entryId;
     setActiveModalCryUrl(data.cry_url || '');
     isModalBackView = false;
     activeModalGender = 'male';
@@ -1864,6 +1950,7 @@ export function closePokemonModal(syncUrl = true) {
         unownHeaderBtn.classList.remove('flex');
     }
     state.activeModalEntryId = null;
+    window.__activeModalEntryId = null;
     if (syncUrl) syncUrlToCurrentOpenModal();
 }
 
