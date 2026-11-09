@@ -38,11 +38,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "emerald",
-      "summary": "Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball izquierda (también por crianza).",
       "locations": [
         {
           "area": "Pueblo Paleta (Laboratorio de Oak)",
-          "method": "Regalo Post-Game (Inicial de Kanto)"
+          "method": "Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball izquierda; solo uno de los tres)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -211,11 +211,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "amber",
-      "summary": "Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball central (también por crianza).",
       "locations": [
         {
           "area": "Pueblo Paleta (Laboratorio de Oak)",
-          "method": "Regalo Post-Game (Inicial de Kanto)"
+          "method": "Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball central; solo uno de los tres)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -384,11 +384,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "cyan",
-      "summary": "Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball derecha (también por crianza).",
       "locations": [
         {
           "area": "Pueblo Paleta (Laboratorio de Oak)",
-          "method": "Regalo Post-Game (Inicial de Kanto)"
+          "method": "Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball derecha; solo uno de los tres)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5734,15 +5734,15 @@
       "locations": [
         {
           "area": "Monte Mortero",
-          "method": "Hierba alta / Encuentro en cueva"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Túnel Roca",
-          "method": "Hierba alta"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Centro Comercial de Ciudad Trigal (P5)",
@@ -11832,11 +11832,11 @@
       "type": "interactable",
       "badge_label": "Viernes",
       "badge_color": "cyan",
-      "summary": "Aparece nadando en el agua del sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20.",
+      "summary": "Aparece nadando en el sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20 (reaparece semanalmente).",
       "locations": [
         {
           "area": "Cueva Unión (Sótano B2)",
-          "method": "Encuentro fijo de Surf los viernes"
+          "method": "Encuentro fijo de Surf los viernes a Nivel 20 (reaparece semanalmente)"
         },
         {
           "area": "Zona Safari (Laguna)",
@@ -12369,11 +12369,15 @@
       "type": "fossil",
       "badge_label": "Fósil Hélix",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en las Ruinas Alfa) en el Museo de Ciudad Plateada.",
+      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa / Cueva Acantilado",
-          "method": "Fósil Hélix (Golpe Roca)"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
@@ -12677,11 +12681,11 @@
       "type": "interactable",
       "badge_label": "Interactivo",
       "badge_color": "slate",
-      "summary": "Bloquea el acceso este de Ciudad Carmín; sintoniza la Flauta Pokémon en la Radio del Pokégear para despertarlo al Nivel 50.",
+      "summary": "Bloquea el acceso este de Ciudad Carmín; despiértalo al Nivel 50 sintonizando la Pokéflauta en la Radio del Pokégear tras reparar la Central de Energía de Kanto.",
       "locations": [
         {
           "area": "Ciudad Carmín (Acceso Este)",
-          "method": "Despertar con Flauta Pokémon en el Pokégear"
+          "method": "Despertar al Nivel 50 con la Pokéflauta en la Radio del Pokégear (tras reparar la Central de Energía)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17929,13 +17933,21 @@
     "flavor_text": "Las bayas que almacena en su concha se descomponen en un líquido pegajoso.",
     "obtaining_info": {
       "type": "gift",
-      "badge_label": "Regalo NPC",
-      "badge_color": "amber",
-      "summary": "Regalo de un entrenador en Ciudad Orquídea para protegerlo de un ladrón (también por crianza o Golpe Roca en Cianwood).",
+      "badge_label": "Salvaje / Regalo",
+      "badge_color": "emerald",
+      "summary": "Entregado por Mani en Ciudad Orquídea para protegerlo del rival (conservable con alta amistad). También salvaje mediante Golpe Roca en Johto y Kanto, o en la Zona Safari.",
       "locations": [
         {
+          "area": "Ciudad Orquídea (Casa de Mani)",
+          "method": "Regalo de Mani al Nivel 20 (apodado \"Piqui\", sostiene Zumo de Baya) para protegerlo del rival; si alcanzas alta amistad te permite conservarlo para siempre"
+        },
+        {
           "area": "Ciudad Orquídea",
-          "method": "Regalo temporal de entrenador / Golpe Roca"
+          "method": "Golpe Roca en rocas rompibles de la playa (Nivel 15-24)"
+        },
+        {
+          "area": "Ciudad Carmín",
+          "method": "Golpe Roca en rocas rompibles (Nivel 24-28)"
         },
         {
           "area": "Zona Safari (Albufera)",
@@ -19579,11 +19591,11 @@
       "type": "baby",
       "badge_label": "Regalo Kárate",
       "badge_color": "red",
-      "summary": "Regalo del Rey Kárate Kiyo en las profundidades del Monte Mortero tras vencerlo en combate con un espacio libre en el equipo.",
+      "summary": "Regalo a Nivel 10 del Rey Kárate Kiyo en el sótano del Monte Mortero tras vencerlo en combate con un hueco libre en el equipo (evoluciona según sus estadísticas a Nivel 20).",
       "locations": [
         {
           "area": "Monte Mortero (Sótano Central)",
-          "method": "Regalo del Rey Kárate Kiyo"
+          "method": "Regalo del Rey Kárate Kiyo a Nivel 10 tras vencerlo en combate (requiere un hueco libre en el equipo)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -20520,11 +20532,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "emerald",
-      "summary": "Regalo de Máximo Peñas en el vestíbulo de Silph S.A. en Ciudad Azafrán tras vencer a Rojo (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 de Máximo Peñas en Silph S.A. (Ciudad Azafrán) tras vencer a Rojo en el Monte Plateado al elegir la piedra verde (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Azafrán (Silph S.A.)",
-          "method": "Regalo de Máximo Peñas (Inicial de Hoenn)"
+          "method": "Regalo de Máximo Peñas a Nivel 5 tras derrotar a Rojo (elige la \"Piedra verde\"; solo uno de los tres)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -20693,11 +20705,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "amber",
-      "summary": "Regalo de Máximo Peñas en el vestíbulo de Silph S.A. en Ciudad Azafrán tras vencer a Rojo (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 de Máximo Peñas en Silph S.A. (Ciudad Azafrán) tras vencer a Rojo en el Monte Plateado al elegir la piedra roja (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Azafrán (Silph S.A.)",
-          "method": "Regalo de Máximo Peñas (Inicial de Hoenn)"
+          "method": "Regalo de Máximo Peñas a Nivel 5 tras derrotar a Rojo (elige la \"Piedra roja\"; solo uno de los tres)"
         },
         {
           "area": "Pokéwalker (De turismo)",
@@ -20870,11 +20882,11 @@
       "type": "starter",
       "badge_label": "Regalo Post-Game",
       "badge_color": "cyan",
-      "summary": "Regalo de Máximo Peñas en el vestíbulo de Silph S.A. en Ciudad Azafrán tras vencer a Rojo (también obtenible por crianza).",
+      "summary": "Regalo a Nivel 5 de Máximo Peñas en Silph S.A. (Ciudad Azafrán) tras vencer a Rojo en el Monte Plateado al elegir la piedra azul (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Azafrán (Silph S.A.)",
-          "method": "Regalo de Máximo Peñas (Inicial de Hoenn)"
+          "method": "Regalo de Máximo Peñas a Nivel 5 tras derrotar a Rojo (elige la \"Piedra azul\"; solo uno de los tres)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27129,11 +27141,15 @@
       "type": "fossil",
       "badge_label": "Fósil Garra",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Garra (exclusivo de HeartGold rompiendo rocas con Golpe Roca en las Ruinas Alfa) en el Museo de Ciudad Plateada.",
+      "summary": "Revivir el Fósil Garra (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa / Cueva Acantilado",
-          "method": "Fósil Garra (Golpe Roca)"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Garra (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Garra (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
@@ -28982,11 +28998,15 @@
     "cry_url": "/media/pokemon/cries/legacy/374.ogg",
     "flavor_text": "Los pulsos magnéticos de su cuerpo repelen la gravedad, lo que le permite flotar en el aire.",
     "obtaining_info": {
-      "type": "safari",
-      "badge_label": "Safari Baoba",
-      "badge_color": "blue",
-      "summary": "Zona Safari (Área Arboleda con 21 Bloques de Peña y 70 días de espera de Baoba). También regalo de Steven Stone en su casa de Hoenn.",
+      "type": "trade",
+      "badge_label": "Intercambio / Safari",
+      "badge_color": "indigo",
+      "summary": "Intercambio con Máximo Peñas en Silph S.A. por un Forretress tras elegir a tu inicial de Hoenn. También en la Zona Safari (Arboleda con 21 bloques roca y 70 días).",
       "locations": [
+        {
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "method": "Intercambio con Máximo Peñas por un Forretress (Beldum «Hierro» a Nivel 31 con Piedra Alba tras vencer a Rojo y elegir inicial de Hoenn)"
+        },
         {
           "area": "Zona Safari (Arboleda)",
           "method": "21 bloques roca (70 días)"
@@ -29338,7 +29358,12 @@
           "area": "Rutas de Kanto (Errante)",
           "method": "Pokémon errante tras evento de Máximo Peñas en Ciudad Carmín"
         }
-      ]
+      ],
+      "historical_note": {
+        "title": "Mecánica Errante y Evento del Misticristal",
+        "icon_url": "/media/items/soul-dew.png",
+        "text": "En <strong>Pokémon Oro HeartGold</strong>, Latias es el dragón legendario errante nativo de Kanto (Nivel 35) que se activa tras recuperar el Muñeco de Copiona en el Club de Fans de Ciudad Carmín y hablar con <strong>Máximo Peñas</strong> (Steven Stone). A partir de ese momento recorre aleatoriamente la región de Kanto.<br><br>Por el contrario, su contraparte <strong>Latios</strong> no aparece de forma errante en HeartGold: se desbloquea exclusivamente mediante el evento por Wi-Fi del <strong>Misticristal</strong> (<em>Enigma Stone</em>) en el Museo de Ciudad Plateada, o transfiriéndolo desde Pokémon Plata SoulSilver (donde sus roles se invierten: Latios es el errante y Latias la del evento)."
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29385,15 +29410,24 @@
     "flavor_text": "Es muy inteligente y entiende el lenguaje humano. Es un Pokémon muy dócil y no le gusta nada combatir.",
     "obtaining_info": {
       "type": "event",
-      "badge_label": "Evento Especial",
+      "badge_label": "Evento / Misticristal",
       "badge_color": "indigo",
-      "summary": "Encuentro estático al Nivel 40 en Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.",
+      "summary": "Encuentro legendario estático al Nivel 40 en el Museo de Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.",
       "locations": [
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Evento del Misticristal / Intercambio con SoulSilver"
+          "method": "Encuentro estático a Nivel 40 tras examinar el Misticristal con Máximo Peñas"
+        },
+        {
+          "area": "Intercambio con SoulSilver",
+          "method": "Transferencia directa desde Pokémon Plata SoulSilver"
         }
-      ]
+      ],
+      "historical_note": {
+        "title": "Evento Legendario • El Misticristal (Enigma Stone)",
+        "icon_url": "/media/items/enigma-stone.png",
+        "text": "El <strong>Misticristal</strong> (<em>Enigma Stone</em>) fue un objeto de evento clave distribuido por tiempo limitado mediante la Conexión Wi-Fi de Nintendo para Pokémon Oro HeartGold y Plata SoulSilver.<br><br>Al llevar este objeto al <strong>Museo de la Ciencia de Ciudad Plateada</strong>, un investigador lo analiza en presencia del campeón <strong>Máximo Peñas</strong> (Steven Stone) y descubre que en realidad alberga en su interior el legendario <strong>Rocío Bondad</strong> (<em>Soul Dew</em>). Al salir del edificio a la plaza exterior, en <strong>Pokémon Oro HeartGold</strong> desciende <strong>Latios</strong> al Nivel 40 (mientras que en <strong>Plata SoulSilver</strong> desciende <strong>Latias</strong>) entablando un combate estático contra el jugador. Al ser capturado o derrotado, Máximo te entrega el Rocío Bondad.<br><br><em>Diferencia de versiones:</em> En HeartGold, Latias recorre Kanto de forma errante de manera natural, mientras que en SoulSilver es Latios el errante y Latias quien requiere el Misticristal."
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29442,11 +29476,11 @@
       "type": "legendary",
       "badge_label": "Legendario Exclusivo",
       "badge_color": "blue",
-      "summary": "Encuentro exclusivo de HeartGold en la Torre Oculta de la Ruta 47 al Nivel 50 tras recibir la Esfera Azul de Mr. Pokémon.",
+      "summary": "Encuentro legendario en la Torre Oculta de la Ruta 47 a Nivel 50 llevando la Esfera Azul (entregada por Mr. Pokémon tras vencer a Rojo).",
       "locations": [
         {
           "area": "Ruta 47 (Torre Oculta)",
-          "method": "Encuentro legendario a nivel 50 (Esfera Azul)"
+          "method": "Encuentro legendario a Nivel 50 con Esfera Azul (entregada por Mr. Pokémon tras vencer a Rojo)"
         }
       ]
     },
@@ -29552,11 +29586,11 @@
       "type": "legendary",
       "badge_label": "Legendario Especial",
       "badge_color": "emerald",
-      "summary": "Encuentro en la Torre Oculta al Nivel 50 llevando la Esfera Verde (obtenida del Prof. Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).",
+      "summary": "Encuentro en la Torre Oculta a Nivel 50 llevando la Esfera Verde (obtenida de Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).",
       "locations": [
         {
           "area": "Torre Oculta (Ruta 47)",
-          "method": "Encuentro fijo a nivel 50 con Esfera Verde"
+          "method": "Encuentro legendario a Nivel 50 con Esfera Verde (del Prof. Oak al mostrarle a Kyogre de HG y Groudon de SS)"
         }
       ]
     },
@@ -31213,11 +31247,15 @@
       "type": "fossil",
       "badge_label": "Fósil Cráneo",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Dex Nacional) en el Museo de Ciudad Plateada.",
+      "summary": "Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Pokédex Nacional) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa / Cueva Acantilado",
-          "method": "Fósil Cráneo (Golpe Roca tras Dex Nacional)"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
@@ -36401,11 +36439,11 @@
       "type": "event",
       "badge_label": "Ruinas de Sinjoh",
       "badge_color": "indigo",
-      "summary": "Obtenible al Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Diamansfera). Elige el círculo de la izquierda (azul).",
+      "summary": "Obtenible a Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus de evento y Cintia. Elige el círculo místico azul para recibirlo con la Diamansfera.",
       "locations": [
         {
           "area": "Ruinas de Sinjoh",
-          "method": "Creación mística de Arceus a Nivel 1 (Diamansfera)"
+          "method": "Creación mística de Arceus a Nivel 1 con Diamansfera (círculo azul con Cintia)"
         }
       ]
     },
@@ -36456,11 +36494,11 @@
       "type": "event",
       "badge_label": "Ruinas de Sinjoh",
       "badge_color": "indigo",
-      "summary": "Obtenible al Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Lustresfera). Elige el círculo de la derecha (rosa).",
+      "summary": "Obtenible a Nivel 1 en las Ruinas de Sinjoh al acudir con Arceus de evento y Cintia. Elige el círculo místico rosa para recibirlo con la Lustresfera.",
       "locations": [
         {
           "area": "Ruinas de Sinjoh",
-          "method": "Creación mística de Arceus a Nivel 1 (Lustresfera)"
+          "method": "Creación mística de Arceus a Nivel 1 con Lustresfera (círculo rosa con Cintia)"
         }
       ]
     },
@@ -36621,11 +36659,11 @@
       "type": "event",
       "badge_label": "Ruinas de Sinjoh",
       "badge_color": "indigo",
-      "summary": "Obtenible al Nivel 1 en su Forma Origen en las Ruinas de Sinjoh al acudir con Arceus y hablar con Cintia (sosteniendo la Griseosfera). Elige el círculo superior (rojo).",
+      "summary": "Obtenible a Nivel 1 en su Forma Origen en las Ruinas de Sinjoh al acudir con Arceus de evento y Cintia. Elige el círculo místico rojo para recibirlo con la Griseosfera.",
       "locations": [
         {
           "area": "Ruinas de Sinjoh",
-          "method": "Creación mística de Arceus a Nivel 1 (Griseosfera)"
+          "method": "Creación mística de Arceus a Nivel 1 en Forma Origen con Griseosfera (círculo rojo con Cintia)"
         }
       ]
     },

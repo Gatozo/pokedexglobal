@@ -108,13 +108,13 @@ body.overflow-hidden {
 
 /* Marquee Ping-Pong para texto largo en pastillas de ubicación */
 @keyframes marqueePingPong {
-    0%, 25% {
+    0%, 15% {
         transform: translateX(0);
     }
-    60%, 78% {
+    55%, 72% {
         transform: translateX(var(--marquee-dist, -40px));
     }
-    95%, 100% {
+    92%, 100% {
         transform: translateX(0);
     }
 }

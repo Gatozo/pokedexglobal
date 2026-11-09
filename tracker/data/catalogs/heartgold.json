@@ -12508,15 +12508,15 @@
       "locations": [
         {
           "area": "Monte Mortero",
-          "method": "Hierba alta / Encuentro en cueva"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Ruta 47 (Interior de la Cueva)",
-          "method": "Hierba alta"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Túnel Roca",
-          "method": "Hierba alta"
+          "method": "Encuentro en cueva"
         },
         {
           "area": "Centro Comercial de Ciudad Trigal (P5)",
@@ -12734,11 +12734,11 @@
       "type": "baby",
       "badge_label": "Regalo Kárate",
       "badge_color": "red",
-      "summary": "Regalo del Rey Kárate Kiyo en las profundidades del Monte Mortero tras vencerlo en combate con un espacio libre en el equipo.",
+      "summary": "Regalo a Nivel 10 del Rey Kárate Kiyo en el sótano del Monte Mortero tras vencerlo en combate con un hueco libre en el equipo (evoluciona según sus estadísticas a Nivel 20).",
       "locations": [
         {
           "area": "Monte Mortero (Sótano Central)",
-          "method": "Regalo del Rey Kárate Kiyo"
+          "method": "Regalo del Rey Kárate Kiyo a Nivel 10 tras vencerlo en combate (requiere un hueco libre en el equipo)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -14588,13 +14588,21 @@
     "flavor_text": "Las bayas que almacena en su concha se descomponen en un líquido pegajoso.",
     "obtaining_info": {
       "type": "gift",
-      "badge_label": "Regalo NPC",
-      "badge_color": "amber",
-      "summary": "Regalo de un entrenador en Ciudad Orquídea para protegerlo de un ladrón (también por crianza o Golpe Roca en Cianwood).",
+      "badge_label": "Salvaje / Regalo",
+      "badge_color": "emerald",
+      "summary": "Entregado por Mani en Ciudad Orquídea para protegerlo del rival (conservable con alta amistad). También salvaje mediante Golpe Roca en Ciudad Orquídea y Ciudad Carmín.",
       "locations": [
         {
+          "area": "Ciudad Orquídea (Casa de Mani)",
+          "method": "Regalo de Mani al Nivel 20 (apodado \"Piqui\", sostiene Zumo de Baya) para protegerlo del rival; si alcanzas alta amistad te permite conservarlo para siempre"
+        },
+        {
           "area": "Ciudad Orquídea",
-          "method": "Regalo temporal de entrenador / Golpe Roca"
+          "method": "Golpe Roca en rocas rompibles de la playa (Nivel 15-24)"
+        },
+        {
+          "area": "Ciudad Carmín",
+          "method": "Golpe Roca en rocas rompibles (Nivel 24-28)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18735,11 +18743,11 @@
       "type": "interactable",
       "badge_label": "Viernes",
       "badge_color": "cyan",
-      "summary": "Aparece nadando en el agua del sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20.",
+      "summary": "Aparece nadando en el sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20 (reaparece semanalmente).",
       "locations": [
         {
           "area": "Cueva Unión (Sótano B2)",
-          "method": "Encuentro fijo de Surf los viernes"
+          "method": "Encuentro fijo de Surf los viernes a Nivel 20 (reaparece semanalmente)"
         },
         {
           "area": "Zona Safari (Laguna)",
@@ -18798,11 +18806,15 @@
       "type": "fossil",
       "badge_label": "Fósil Hélix",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en las Ruinas Alfa) en el Museo de Ciudad Plateada.",
+      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa / Cueva Acantilado",
-          "method": "Fósil Hélix (Golpe Roca)"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
@@ -19106,11 +19118,11 @@
       "type": "interactable",
       "badge_label": "Interactivo",
       "badge_color": "slate",
-      "summary": "Bloquea el acceso este de Ciudad Carmín; sintoniza la Flauta Pokémon en la Radio del Pokégear para despertarlo al Nivel 50.",
+      "summary": "Bloquea el acceso este de Ciudad Carmín; despiértalo al Nivel 50 sintonizando la Pokéflauta en la Radio del Pokégear tras reparar la Central de Energía de Kanto.",
       "locations": [
         {
           "area": "Ciudad Carmín (Acceso Este)",
-          "method": "Despertar con Flauta Pokémon en el Pokégear"
+          "method": "Despertar al Nivel 50 con la Pokéflauta en la Radio del Pokégear (tras reparar la Central de Energía)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

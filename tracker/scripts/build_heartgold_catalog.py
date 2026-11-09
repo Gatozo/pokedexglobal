@@ -305,9 +305,9 @@ SPECIAL_OBTAINING = {
         'type': 'starter',
         'badge_label': 'Regalo Post-Game',
         'badge_color': 'emerald',
-        'summary': 'Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).',
+        'summary': 'Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball izquierda (también por crianza).',
         'locations': [
-            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo Post-Game (Inicial de Kanto)'},
+            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball izquierda; solo uno de los tres)'},
             DAYCARE_LOCATION
         ]
     },
@@ -315,9 +315,9 @@ SPECIAL_OBTAINING = {
         'type': 'starter',
         'badge_label': 'Regalo Post-Game',
         'badge_color': 'amber',
-        'summary': 'Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).',
+        'summary': 'Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball central (también por crianza).',
         'locations': [
-            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo Post-Game (Inicial de Kanto)'},
+            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball central; solo uno de los tres)'},
             DAYCARE_LOCATION
         ]
     },
@@ -325,9 +325,9 @@ SPECIAL_OBTAINING = {
         'type': 'starter',
         'badge_label': 'Regalo Post-Game',
         'badge_color': 'cyan',
-        'summary': 'Regalo del Profesor Oak en su laboratorio de Pueblo Paleta tras derrotar a Rojo en el Monte Plateado (también obtenible por crianza).',
+        'summary': 'Regalo a Nivel 5 del Profesor Oak en Pueblo Paleta tras derrotar a Rojo en el Monte Plateado al elegir la Poké Ball derecha (también por crianza).',
         'locations': [
-            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo Post-Game (Inicial de Kanto)'},
+            {'area': 'Pueblo Paleta (Laboratorio de Oak)', 'method': 'Regalo del Profesor Oak a Nivel 5 tras derrotar a Rojo (Poké Ball derecha; solo uno de los tres)'},
             DAYCARE_LOCATION
         ]
     },
@@ -369,9 +369,10 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Hélix',
         'badge_color': 'amber',
-        'summary': 'Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en las Ruinas Alfa) en el Museo de Ciudad Plateada.',
+        'summary': 'Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.',
         'locations': [
-            {'area': 'Ruinas Alfa / Cueva Acantilado', 'method': 'Fósil Hélix (Golpe Roca)'},
+            {'area': 'Ruinas Alfa', 'method': 'Fósil Hélix (Golpe Roca en rocas rompibles)'},
+            {'area': 'Cueva Acantilado', 'method': 'Fósil Hélix (Golpe Roca en rocas rompibles)'},
             {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de fósil'},
             DAYCARE_LOCATION
         ]
@@ -380,9 +381,10 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Garra',
         'badge_color': 'amber',
-        'summary': 'Revivir el Fósil Garra (exclusivo de HeartGold rompiendo rocas con Golpe Roca en las Ruinas Alfa) en el Museo de Ciudad Plateada.',
+        'summary': 'Revivir el Fósil Garra (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.',
         'locations': [
-            {'area': 'Ruinas Alfa / Cueva Acantilado', 'method': 'Fósil Garra (Golpe Roca)'},
+            {'area': 'Ruinas Alfa', 'method': 'Fósil Garra (Golpe Roca en rocas rompibles)'},
+            {'area': 'Cueva Acantilado', 'method': 'Fósil Garra (Golpe Roca en rocas rompibles)'},
             {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de fósil'},
             DAYCARE_LOCATION
         ]
@@ -434,24 +436,35 @@ SPECIAL_OBTAINING = {
         'summary': 'Pokémon errante exclusivo de HeartGold por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Carmín (al salir del Club de Fans Pokémon).',
         'locations': [
             {'area': 'Rutas de Kanto (Errante)', 'method': 'Pokémon errante tras evento de Máximo Peñas en Ciudad Carmín'}
-        ]
+        ],
+        'historical_note': {
+            'title': 'Mecánica Errante y Evento del Misticristal',
+            'icon_url': '/media/items/soul-dew.png',
+            'text': 'En <strong>Pokémon Oro HeartGold</strong>, Latias es el dragón legendario errante nativo de Kanto (Nivel 35) que se activa tras recuperar el Muñeco de Copiona en el Club de Fans de Ciudad Carmín y hablar con <strong>Máximo Peñas</strong> (Steven Stone). A partir de ese momento recorre aleatoriamente la región de Kanto.<br><br>Por el contrario, su contraparte <strong>Latios</strong> no aparece de forma errante en HeartGold: se desbloquea exclusivamente mediante el evento por Wi-Fi del <strong>Misticristal</strong> (<em>Enigma Stone</em>) en el Museo de Ciudad Plateada, o transfiriéndolo desde Pokémon Plata SoulSilver (donde sus roles se invierten: Latios es el errante y Latias la del evento).'
+        }
     },
     381: {
         'type': 'event',
-        'badge_label': 'Evento Especial',
+        'badge_label': 'Evento / Misticristal',
         'badge_color': 'indigo',
-        'summary': 'Encuentro estático al Nivel 40 en Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.',
+        'summary': 'Encuentro legendario estático al Nivel 40 en el Museo de Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.',
         'locations': [
-            {'area': 'Ciudad Plateada (Museo)', 'method': 'Evento del Misticristal / Intercambio con SoulSilver'}
-        ]
+            {'area': 'Ciudad Plateada (Museo)', 'method': 'Encuentro estático a Nivel 40 tras examinar el Misticristal con Máximo Peñas'},
+            {'area': 'Intercambio con SoulSilver', 'method': 'Transferencia directa desde Pokémon Plata SoulSilver'}
+        ],
+        'historical_note': {
+            'title': 'Evento Legendario • El Misticristal (Enigma Stone)',
+            'icon_url': '/media/items/enigma-stone.png',
+            'text': 'El <strong>Misticristal</strong> (<em>Enigma Stone</em>) fue un objeto de evento clave distribuido por tiempo limitado mediante la Conexión Wi-Fi de Nintendo para Pokémon Oro HeartGold y Plata SoulSilver.<br><br>Al llevar este objeto al <strong>Museo de la Ciencia de Ciudad Plateada</strong>, un investigador lo analiza en presencia del campeón <strong>Máximo Peñas</strong> (Steven Stone) y descubre que en realidad alberga en su interior el legendario <strong>Rocío Bondad</strong> (<em>Soul Dew</em>). Al salir del edificio a la plaza exterior, en <strong>Pokémon Oro HeartGold</strong> desciende <strong>Latios</strong> al Nivel 40 (mientras que en <strong>Plata SoulSilver</strong> desciende <strong>Latias</strong>) entablando un combate estático contra el jugador. Al ser capturado o derrotado, Máximo te entrega el Rocío Bondad.<br><br><em>Diferencia de versiones:</em> En HeartGold, Latias recorre Kanto de forma errante de manera natural, mientras que en SoulSilver es Latios el errante y Latias quien requiere el Misticristal.'
+        }
     },
     384: {
         'type': 'legendary',
         'badge_label': 'Legendario Especial',
         'badge_color': 'emerald',
-        'summary': 'Encuentro en la Torre Oculta al Nivel 50 llevando la Esfera Verde (obtenida del Prof. Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).',
+        'summary': 'Encuentro en la Torre Oculta a Nivel 50 llevando la Esfera Verde (obtenida de Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).',
         'locations': [
-            {'area': 'Torre Oculta (Ruta 47)', 'method': 'Encuentro fijo a nivel 50 con Esfera Verde'}
+            {'area': 'Torre Oculta (Ruta 47)', 'method': 'Encuentro legendario a Nivel 50 con Esfera Verde (del Prof. Oak al mostrarle a Kyogre de HG y Groudon de SS)'}
         ]
     },
     243: {
@@ -556,11 +569,14 @@ SPECIAL_OBTAINING = {
     },
     213: {
         'type': 'gift',
-        'badge_label': 'Regalo NPC',
-        'badge_color': 'amber',
-        'summary': 'Regalo de un entrenador en Ciudad Orquídea para protegerlo de un ladrón (también por crianza o Golpe Roca en Cianwood).',
+        'badge_label': 'Salvaje / Regalo',
+        'badge_color': 'emerald',
+        'summary': 'Entregado por Mani en Ciudad Orquídea para protegerlo del rival (conservable con alta amistad). También salvaje mediante Golpe Roca en Johto y Kanto, o en la Zona Safari.',
         'locations': [
-            {'area': 'Ciudad Orquídea', 'method': 'Regalo temporal de entrenador / Golpe Roca'},
+            {'area': 'Ciudad Orquídea (Casa de Mani)', 'method': 'Regalo de Mani al Nivel 20 (apodado "Piqui", sostiene Zumo de Baya) para protegerlo del rival; si alcanzas alta amistad te permite conservarlo para siempre'},
+            {'area': 'Ciudad Orquídea', 'method': 'Golpe Roca en rocas rompibles de la playa (Nivel 15-24)'},
+            {'area': 'Ciudad Carmín', 'method': 'Golpe Roca en rocas rompibles (Nivel 24-28)'},
+            {'area': 'Zona Safari (Albufera)', 'method': '8 bloques roca'},
             DAYCARE_LOCATION
         ]
     },
@@ -568,9 +584,9 @@ SPECIAL_OBTAINING = {
         'type': 'baby',
         'badge_label': 'Regalo Kárate',
         'badge_color': 'red',
-        'summary': 'Regalo del Rey Kárate Kiyo en las profundidades del Monte Mortero tras vencerlo en combate con un espacio libre en el equipo.',
+        'summary': 'Regalo a Nivel 10 del Rey Kárate Kiyo en el sótano del Monte Mortero tras vencerlo en combate con un hueco libre en el equipo (evoluciona según sus estadísticas a Nivel 20).',
         'locations': [
-            {'area': 'Monte Mortero (Sótano Central)', 'method': 'Regalo del Rey Kárate Kiyo'},
+            {'area': 'Monte Mortero (Sótano Central)', 'method': 'Regalo del Rey Kárate Kiyo a Nivel 10 tras vencerlo en combate (requiere un hueco libre en el equipo)'},
             DAYCARE_LOCATION
         ]
     },
@@ -578,9 +594,9 @@ SPECIAL_OBTAINING = {
         'type': 'interactable',
         'badge_label': 'Viernes',
         'badge_color': 'cyan',
-        'summary': 'Aparece nadando en el agua del sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20.',
+        'summary': 'Aparece nadando en el sótano B2 de la Cueva Unión exclusivamente los viernes al Nivel 20 (reaparece semanalmente).',
         'locations': [
-            {'area': 'Cueva Unión (Sótano B2)', 'method': 'Encuentro fijo de Surf los viernes'},
+            {'area': 'Cueva Unión (Sótano B2)', 'method': 'Encuentro fijo de Surf los viernes a Nivel 20 (reaparece semanalmente)'},
             DAYCARE_LOCATION
         ]
     },
@@ -588,9 +604,9 @@ SPECIAL_OBTAINING = {
         'type': 'interactable',
         'badge_label': 'Interactivo',
         'badge_color': 'slate',
-        'summary': 'Bloquea el acceso este de Ciudad Carmín; sintoniza la Flauta Pokémon en la Radio del Pokégear para despertarlo al Nivel 50.',
+        'summary': 'Bloquea el acceso este de Ciudad Carmín; despiértalo al Nivel 50 sintonizando la Pokéflauta en la Radio del Pokégear tras reparar la Central de Energía de Kanto.',
         'locations': [
-            {'area': 'Ciudad Carmín (Acceso Este)', 'method': 'Despertar con Flauta Pokémon en el Pokégear'},
+            {'area': 'Ciudad Carmín (Acceso Este)', 'method': 'Despertar al Nivel 50 con la Pokéflauta en la Radio del Pokégear (tras reparar la Central de Energía)'},
             DAYCARE_LOCATION
         ]
     },
@@ -910,7 +926,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'emerald',
         'summary': 'Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio en Ciudad Trigal (P5).',
         'locations': [
-            {'area': 'Monte Mortero', 'method': 'Hierba alta / Encuentro en cueva'},
+            {'area': 'Monte Mortero', 'method': 'Encuentro en cueva'},
             {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Hierba alta'},
             {'area': 'Túnel Roca', 'method': 'Hierba alta'},
             {'area': 'Centro Comercial de Ciudad Trigal (P5)', 'method': 'Intercambio por un Drowzee (Machop Machito)'},
@@ -1218,7 +1234,8 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Dex Nacional) en el Museo de Ciudad Plateada.',
         'locations': [
-            {'area': 'Ruinas Alfa / Cueva Acantilado', 'method': 'Fósil Cráneo (Golpe Roca tras Dex Nacional)'},
+            {'area': 'Ruinas Alfa', 'method': 'Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)'},
+            {'area': 'Cueva Acantilado', 'method': 'Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)'},
             {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Cráneo'},
             DAYCARE_LOCATION
         ]
@@ -1889,6 +1906,9 @@ def main():
 
         if nat_id in SPECIAL_OBTAINING:
             obt_info = json.loads(json.dumps(SPECIAL_OBTAINING[nat_id]))
+            if nat_id == 213 and is_regional:
+                obt_info['summary'] = 'Entregado por Mani en Ciudad Orquídea para protegerlo del rival (conservable con alta amistad). También salvaje mediante Golpe Roca en Ciudad Orquídea y Ciudad Carmín.'
+                obt_info['locations'] = [loc for loc in obt_info['locations'] if 'safari' not in loc.get('area', '').lower()]
         elif raw_encs:
             # Procesar encuentros salvajes agrupados
             area_methods = {}

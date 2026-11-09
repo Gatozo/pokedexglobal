@@ -1404,7 +1404,7 @@ export function initObtainingMarquees() {
                 const overflowDiff = textSpan.scrollWidth - wrapper.clientWidth;
                 if (overflowDiff > 3) {
                     textSpan.style.setProperty('--marquee-dist', `-${overflowDiff + 6}px`);
-                    const duration = Math.max(8.0, (overflowDiff / 10) + 5);
+                    const duration = Math.max(3.5, (overflowDiff / 28) + 2.0);
                     textSpan.style.setProperty('--marquee-dur', `${duration.toFixed(1)}s`);
                     textSpan.classList.add('marquee-pingpong');
                 }
@@ -1844,7 +1844,7 @@ export async function openPokemonModalDirect(entryId, options = {}) {
                 const overflowDiff = textSpan.scrollWidth - wrapper.clientWidth;
                 if (overflowDiff > 3) {
                     textSpan.style.setProperty('--marquee-dist', `-${overflowDiff + 6}px`);
-                    const duration = Math.max(8.0, (overflowDiff / 10) + 5);
+                    const duration = Math.max(3.5, (overflowDiff / 28) + 2.0);
                     textSpan.style.setProperty('--marquee-dur', `${duration.toFixed(1)}s`);
                     textSpan.classList.add('marquee-pingpong');
                 }
