@@ -100,11 +100,10 @@ def build_tasks():
         tasks.append((f"{BASE_URL}/back/shiny/{f_id}.png", PLATINUM_SHINY_DIR / "back" / "rotom" / f"{f_name}.png"))
 
     # 6. Burmy (#412) y Wormadam (#413) (plant, sandy, trash)
-    # PokeAPI invierte sandy y trash en sus nombres de archivo para Burmy (412)
     burmy_map = {
         "plant": "412.png",
-        "sandy": "412-trash.png",
-        "trash": "412-sandy.png",
+        "sandy": "412-sandy.png",
+        "trash": "412-trash.png",
     }
     for form, src_name in burmy_map.items():
         tasks.append((f"{BASE_URL}/{src_name}", PLATINUM_DIR / "burmy" / f"{form}.png"))

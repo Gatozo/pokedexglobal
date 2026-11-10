@@ -22,12 +22,13 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
     """
     Retorna las 4 formas climáticas de Castform (#351):
     Forma Normal (Normal), Forma Sol (Fuego), Forma Lluvia (Agua), Forma Nieve (Hielo).
-    Soporta sprites de Hoenn (Gen 3) y sprites nativos de Sinnoh (Gen 4 Diamante/Perla).
+    Soporta sprites de Hoenn (Gen 3) y sprites nativos animados de Sinnoh/Johto (Gen 4 Diamante/Perla/Platino/HeartGold/SoulSilver).
     """
-    is_gen4 = game_slug in ["diamond", "pearl", "platinum"]
-    slug = game_slug if is_gen4 else (game_slug if game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else "ruby")
+    clean_slug = (game_slug or "ruby").replace("_national", "")
+    is_gen4 = clean_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"]
+    slug = clean_slug if is_gen4 else (clean_slug if clean_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else "ruby")
     is_emerald = (slug == "emerald")
-    is_diamond = is_gen4
+    has_animated = is_gen4
 
     notes_normal = [
         {
@@ -74,8 +75,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/351.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/351.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/351.png" if is_diamond else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/351.png" if is_diamond else None),
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/351.png" if has_animated else None),
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/351.png" if has_animated else None),
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/351.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/351.png",
             "sprite_modern": "/media/pokemon/home/351.png",
@@ -93,8 +94,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/sunny.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/sunny.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/sunny.png" if is_diamond else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/sunny.png" if is_diamond else None),
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/sunny.png" if has_animated else None),
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/sunny.png" if has_animated else None),
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/sunny.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/sunny.png",
             "sprite_modern": "/media/pokemon/home/10013.png",
@@ -112,8 +113,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/rainy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/rainy.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/rainy.png" if is_diamond else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/rainy.png" if is_diamond else None),
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/rainy.png" if has_animated else None),
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/rainy.png" if has_animated else None),
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/rainy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/rainy.png",
             "sprite_modern": "/media/pokemon/home/10014.png",
@@ -131,8 +132,8 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "secondary_type_es": "",
             "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/snowy.png",
             "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/snowy.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/snowy.png" if is_diamond else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/snowy.png" if is_diamond else None),
+            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/snowy.png" if has_animated else None),
+            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/snowy.png" if has_animated else None),
             "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/snowy.png",
             "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/snowy.png",
             "sprite_modern": "/media/pokemon/home/10015.png",
@@ -151,7 +152,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    slug = game_slug
+    slug = clean_slug
 
     if is_hgss:
         note_normal = {
@@ -293,7 +294,7 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    slug = game_slug
+    slug = clean_slug
 
     if is_hgss:
         plant_summary = "Salvaje en árboles especiales de la Ruta 38 usando Golpe Cabeza (o combatiendo en hierba y exteriores)."
@@ -502,7 +503,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Tronco Planta (Bicho/Planta), Tronco Arena (Bicho/Tierra), Tronco Basura (Bicho/Acero).
     Cada forma tiene tipos elementales, estadísticas y evoluciones exclusivas.
     """
-    slug = game_slug
+    slug = (game_slug or "diamond").replace("_national", "")
     return [
         {
             "form_key": "plant",
@@ -668,7 +669,7 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    slug = game_slug
+    slug = clean_slug
 
     if is_hgss:
         west_summary = "Obtenible en el Pokéwalker (Playa Tormenta tras 5.000 pasos) o mediante transferencia desde Pokémon Diamante, Perla o Platino."
@@ -788,7 +789,7 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    slug = game_slug
+    slug = clean_slug
 
     if is_hgss:
         west_summary = "Inaccesible en estado salvaje en Johto y Kanto. Evoluciona de Shellos Mar Oeste al Nivel 30 o transferencia desde D/P/Pt."
@@ -904,7 +905,7 @@ def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Forma Normal + 16 Tablas elementales repartidas por Sinnoh.
     (La Tabla Duende y el Tipo Hada quedan estrictamente excluidos por pertenecer a Gen 6).
     """
-    slug = game_slug
+    slug = (game_slug or "diamond").replace("_national", "")
     plates_def = [
         ("normal", "Forma Normal", "Normal", "normal", "Normal", "", "", "Sin Tabla", "/media/items/rule-book.png", "Permanece en su Forma Normal cuando no lleva ninguna tabla elemental equipada."),
         ("fire", "Tabla Llama", "Fuego", "fire", "Fuego", "", "", "Tabla Llama", "/media/items/flame-plate.png", "Al equipar la Tabla Llama, su habilidad Multitipo cambia su tipo elemental a Fuego puro."),

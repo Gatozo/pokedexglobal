@@ -3291,6 +3291,74 @@ class GenderDifferencesAndModalDataTests(TestCase):
                     disk_path = media_root / url.replace("/media/", "")
                     self.assertTrue(disk_path.exists(), f"Falta el archivo para Castform {f['form_key']} ({key}): {url}")
 
+    def test_heartgold_forms_static_and_animated_assets_exist(self):
+        """
+        Garantiza que todas las formas alternas de Pokémon Oro HeartGold (Arceus 17 formas, Castform 4 formas,
+        Burmy 3 formas, Wormadam 3 formas) cuenten con sprites estáticos, traseros y animados en media/ sin 404.
+        """
+        from tracker.pokemon_forms import get_pokemon_forms
+        from pathlib import Path
+        from django.conf import settings
+        from PIL import Image
+
+        media_root = Path(settings.MEDIA_ROOT)
+
+        # 1. Arceus (#493) en HeartGold: 17 formas elementales
+        arceus_forms = get_pokemon_forms(493, "heartgold")
+        self.assertEqual(len(arceus_forms), 17)
+        for f in arceus_forms:
+            for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back",
+                        "modal_retro_sprite_url", "modal_retro_sprite_shiny_url"]:
+                url = f.get(key)
+                self.assertIsNotNone(url, f"La URL {key} para Arceus {f['form_key']} no debe ser None")
+                if url and url.startswith("/media/"):
+                    disk_path = media_root / url.replace("/media/", "")
+                    self.assertTrue(disk_path.exists(), f"Falta el archivo para Arceus {f['form_key']} ({key}): {url}")
+
+        # 2. Castform (#351) en HeartGold: 4 formas climáticas animadas y estáticas
+        cast_forms = get_pokemon_forms(351, "heartgold")
+        self.assertEqual(len(cast_forms), 4)
+        for f in cast_forms:
+            for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back",
+                        "modal_retro_sprite_url", "modal_retro_sprite_shiny_url"]:
+                url = f.get(key)
+                self.assertIsNotNone(url, f"La URL {key} para Castform {f['form_key']} no debe ser None")
+                if url and url.startswith("/media/"):
+                    disk_path = media_root / url.replace("/media/", "")
+                    self.assertTrue(disk_path.exists(), f"Falta el archivo para Castform {f['form_key']} ({key}): {url}")
+
+        # 3. Burmy (#412) y Wormadam (#413) en HeartGold: existencia y verificación de color
+        for nat_num, name in [(412, "Burmy"), (413, "Wormadam")]:
+            forms = get_pokemon_forms(nat_num, "heartgold")
+            self.assertEqual(len(forms), 3)
+            for f in forms:
+                for key in ["sprite_retro", "sprite_retro_shiny", "sprite_retro_back", "sprite_retro_shiny_back",
+                            "modal_retro_sprite_url", "modal_retro_sprite_shiny_url"]:
+                    url = f.get(key)
+                    if url and url.startswith("/media/"):
+                        disk_path = media_root / url.replace("/media/", "")
+                        self.assertTrue(disk_path.exists(), f"Falta el archivo para {name} {f['form_key']} ({key}): {url}")
+
+            # Validación de no-inversión de colores: Tronco Basura (rosado) vs Tronco Arena (marrón)
+            # En estáticos y en animados
+            for anim_key, subfolder in [("sprite_retro", name.lower()), ("modal_retro_sprite_url", f"heartgold_animated/{name.lower()}")]:
+                f_sandy = next(f for f in forms if f["form_key"] == "sandy")
+                f_trash = next(f for f in forms if f["form_key"] == "trash")
+
+                path_sandy = media_root / f_sandy[anim_key].replace("/media/", "")
+                path_trash = media_root / f_trash[anim_key].replace("/media/", "")
+
+                img_s = Image.open(path_sandy).convert("RGBA")
+                img_t = Image.open(path_trash).convert("RGBA")
+
+                pix_s = [p for p in img_s.getdata() if p[3] > 50]
+                pix_t = [p for p in img_t.getdata() if p[3] > 50]
+
+                diff_s = (sum(p[0] for p in pix_s) // len(pix_s)) - (sum(p[1] for p in pix_s) // len(pix_s))
+                diff_t = (sum(p[0] for p in pix_t) // len(pix_t)) - (sum(p[1] for p in pix_t) // len(pix_t))
+
+                self.assertGreater(diff_t, diff_s, f"Los colores de {name} ({anim_key}) están invertidos: Basura debe tener mayor componente rojo/rosado que Arena.")
+
 
 class JohtoSafariZoneTests(TestCase):
     def test_has_johto_safari_property(self):

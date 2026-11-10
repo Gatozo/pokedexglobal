@@ -104,8 +104,8 @@ def build_tasks():
     # 7. Burmy (#412) y Wormadam (#413)
     burmy_map = {
         "plant": "412.png",
-        "sandy": "412-trash.png",
-        "trash": "412-sandy.png",
+        "sandy": "412-sandy.png",
+        "trash": "412-trash.png",
     }
     for form, src_name in burmy_map.items():
         tasks.append((f"{BASE_URL}/{src_name}", HG_DIR / "burmy" / f"{form}.png"))
@@ -165,30 +165,17 @@ def build_tasks():
         tasks.append((f"{BASE_URL}/back/shiny/{src_name}", HG_SHINY_DIR / "back" / "deoxys" / f"{form}.png"))
 
     # 11. Arceus (#493)
-    arceus_id_map = {
-        "normal": "493.png",
-        "bug": "10013.png",
-        "dark": "10014.png",
-        "dragon": "10015.png",
-        "electric": "10016.png",
-        "fighting": "10017.png",
-        "fire": "10018.png",
-        "flying": "10019.png",
-        "ghost": "10020.png",
-        "grass": "10021.png",
-        "ground": "10022.png",
-        "ice": "10023.png",
-        "poison": "10024.png",
-        "psychic": "10025.png",
-        "rock": "10026.png",
-        "steel": "10027.png",
-        "water": "10028.png",
-    }
-    for form, src_name in arceus_id_map.items():
-        tasks.append((f"{BASE_URL}/{src_name}", HG_DIR / "arceus" / f"{form}.png"))
-        tasks.append((f"{BASE_URL}/shiny/{src_name}", HG_SHINY_DIR / "arceus" / f"{form}.png"))
-        tasks.append((f"{BASE_URL}/back/{src_name}", HG_DIR / "back" / "arceus" / f"{form}.png"))
-        tasks.append((f"{BASE_URL}/back/shiny/{src_name}", HG_SHINY_DIR / "back" / "arceus" / f"{form}.png"))
+    arceus_types = [
+        "normal", "bug", "dark", "dragon", "electric", "fighting", "fire",
+        "flying", "ghost", "grass", "ground", "ice", "poison", "psychic",
+        "rock", "steel", "water"
+    ]
+    for t in arceus_types:
+        src_name = "493.png" if t == "normal" else f"493-{t}.png"
+        tasks.append((f"{BASE_URL}/{src_name}", HG_DIR / "arceus" / f"{t}.png"))
+        tasks.append((f"{BASE_URL}/shiny/{src_name}", HG_SHINY_DIR / "arceus" / f"{t}.png"))
+        tasks.append((f"{BASE_URL}/back/{src_name}", HG_DIR / "back" / "arceus" / f"{t}.png"))
+        tasks.append((f"{BASE_URL}/back/shiny/{src_name}", HG_SHINY_DIR / "back" / "arceus" / f"{t}.png"))
 
     # 12. Castform (#351)
     castform_map = {

@@ -122,8 +122,9 @@ class Command(BaseCommand):
                 tasks.append((f"{BASE_SHINY_URL}/{src_name}", dest_shiny, f"Unown {letter} shiny"))
 
         # 5. Burmy (#412) y Wormadam (#413)
+        # Nota crítica: En PokeAPI animated, sandy y trash están invertidos para ambas especies.
         burmy_map = {"plant": "412.png", "sandy": "412-trash.png", "trash": "412-sandy.png"}
-        wormadam_map = {"plant": "413.png", "sandy": "10004.png", "trash": "10005.png"}
+        wormadam_map = {"plant": "413.png", "sandy": "10005.png", "trash": "10004.png"}
 
         for key, mapping in [("burmy", burmy_map), ("wormadam", wormadam_map)]:
             for form, src_name in mapping.items():
@@ -168,14 +169,8 @@ class Command(BaseCommand):
                 tasks.append((f"{BASE_SHINY_URL}/{src_name}", dest_shiny, f"Deoxys {form} shiny"))
 
         # 9. Arceus (#493)
-        arceus_id_map = {
-            "normal": "493.png", "bug": "10013.png", "dark": "10014.png", "dragon": "10015.png",
-            "electric": "10016.png", "fighting": "10017.png", "fire": "10018.png", "flying": "10019.png",
-            "ghost": "10020.png", "grass": "10021.png", "ground": "10022.png", "ice": "10023.png",
-            "poison": "10024.png", "psychic": "10025.png", "rock": "10026.png", "steel": "10027.png",
-            "water": "10028.png",
-        }
-        for t, src_name in arceus_id_map.items():
+        for t in ARCEUS_TYPES:
+            src_name = "493.png" if t == "normal" else f"493-{t}.png"
             dest_norm = base_normal_dir / "arceus" / f"{t}.png"
             if not dest_norm.exists() or force:
                 tasks.append((f"{BASE_NORMAL_URL}/{src_name}", dest_norm, f"Arceus {t} normal"))
