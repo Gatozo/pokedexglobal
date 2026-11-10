@@ -3751,6 +3751,71 @@ class HeartGoldAdvancedFiltersTests(TestCase):
                         f"Encontrada combinación Surf+Pesca en {cat_slug} Pokmon #{entry.pokemon.national_number} {entry.pokemon.display_name}: {l}"
                     )
 
+class PokemonSoulSilverGen4Tests(TestCase):
+    """Pruebas unitarias para Pokémon Plata SoulSilver (Gen 4), catálogos, exclusividades, formas y mecánicas."""
+
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(
+            slug="soulsilver",
+            defaults={"name": "Pokémon Plata SoulSilver", "generation": 4}
+        )
+        self.pk_johto, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="johto",
+            defaults={"name": "Pokédex de Johto", "is_national": False, "pokeapi_name": "updated-johto"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+
+    def test_soulsilver_catalogs_exist_and_counts(self):
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "soulsilver.json"
+        nat_file = CATALOGS_DIR / "soulsilver_national.json"
+        self.assertTrue(reg_file.exists(), "soulsilver.json debe existir")
+        self.assertTrue(nat_file.exists(), "soulsilver_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("soulsilver", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("soulsilver", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 256, "La Pokédex Regional de Johto en SoulSilver debe tener 256 entradas")
+        self.assertEqual(len(nat_cat), 493, "La Pokédex Nacional en SoulSilver debe tener 493 entradas")
+
+    def test_soulsilver_legendaries_and_symmetry(self):
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("soulsilver", is_national=False)
+
+        # Lugia (#249) es el legendario mascota en Islas Remolino
+        lugia = [e for e in reg_cat if e.pokemon.national_number == 249][0]
+        self.assertEqual(lugia.obtaining_info.get("badge_label"), "Mascota Oficial")
+        self.assertIn("Islas Remolino", str(lugia.obtaining_info.get("locations", [])))
+
+        # Ho-Oh (#250) es el legendario post-game en Torre Campana
+        ho_oh = [e for e in reg_cat if e.pokemon.national_number == 250][0]
+        self.assertEqual(ho_oh.obtaining_info.get("badge_label"), "Legendario Post-Game")
+        self.assertIn("Torre Campana", str(ho_oh.obtaining_info.get("locations", [])))
+
+    def test_soulsilver_version_exclusives_and_fossils(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("soulsilver", is_national=True)
+        
+        # Sandshrew (#027) disponible en SoulSilver (casino)
+        sandshrew = [e for e in nat_cat if e.pokemon.national_number == 27][0]
+        self.assertIn("Casino", str(sandshrew.obtaining_info.get("locations", [])))
+        
+        # Fósil Domo/Raíz (Golpe Roca en Ruinas Alfa)
+        kabuto = [e for e in nat_cat if e.pokemon.national_number == 140][0]
+        self.assertIn("Ruinas Alfa", str(kabuto.obtaining_info.get("locations", [])))
+
+    def test_soulsilver_forms_static_and_animated_assets_exist(self):
+        from tracker.catalog_service import get_compiled_catalog
+        nat_cat = get_compiled_catalog("soulsilver", is_national=True)
+        # Validar activos de Arceus
+        arceus = [e for e in nat_cat if e.pokemon.national_number == 493][0]
+        self.assertTrue(arceus.game_sprite_url.startswith("/media/pokemon/sprites/soulsilver/"))
+
+
 
 
 
