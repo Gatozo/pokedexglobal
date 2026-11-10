@@ -1084,8 +1084,8 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             modal_retro_url = f"/media/pokemon/sprites/{clean_slug}_animated/unown/{letter}.png"
             modal_retro_shiny_url = f"/media/pokemon/sprites/{clean_slug}_animated_shiny/unown/{letter}.png"
         elif is_hgss:
-            modal_retro_url = f"/media/pokemon/sprites/heartgold_animated/unown/{letter}.png"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/heartgold_animated_shiny/unown/{letter}.png"
+            modal_retro_url = f"/media/pokemon/sprites/{clean_slug}_animated/unown/{letter}.png"
+            modal_retro_shiny_url = f"/media/pokemon/sprites/{clean_slug}_animated_shiny/unown/{letter}.png"
 
         forms.append({
             "form_key": letter,

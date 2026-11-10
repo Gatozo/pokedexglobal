@@ -31244,22 +31244,14 @@
     "cry_url": "/media/pokemon/cries/legacy/408.ogg",
     "flavor_text": "Hace chocar su cabeza con otros Cranidos para poder hacerse más fuerte si cabe.",
     "obtaining_info": {
-      "type": "fossil",
-      "badge_label": "Fósil Cráneo",
-      "badge_color": "amber",
-      "summary": "Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Pokédex Nacional) en el Museo de Ciudad Plateada.",
+      "type": "transfer",
+      "badge_label": "Transferir",
+      "badge_color": "purple",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold (el Fósil Cráneo es exclusivo del Subsuelo de Sinnoh en Diamante). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)"
-        },
-        {
-          "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de Fósil Cráneo"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Transferencia desde Fósil Cráneo (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31368,18 +31360,14 @@
     "cry_url": "/media/pokemon/cries/legacy/410.ogg",
     "flavor_text": "Surgió de un fósil de hace 100 millones de años. Su protección facial es tremendamente dura.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible de forma directa en HeartGold (el Fósil Coraza es exclusivo de SoulSilver). Requiere transferir el fósil o intercambiar con SoulSilver.",
+      "type": "transfer",
+      "badge_label": "Transferir",
+      "badge_color": "purple",
+      "summary": "Inaccesible en estado salvaje en Pokémon Oro HeartGold (el Fósil Coraza es exclusivo del Subsuelo de Sinnoh en Perla). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Transferencia de Fósil Coraza o Pokémon"
-        },
-        {
-          "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de Fósil Coraza (si se transfiere)"
+          "area": "Intercambio con D/P/Pt",
+          "method": "Transferencia desde Fósil Coraza (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31431,16 +31419,11 @@
     "cry_url": "/media/pokemon/cries/legacy/411.ogg",
     "flavor_text": "Forma manadas. Cuando les ataca un enemigo se alinean y le embisten con su cara",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Shieldon al Nivel 30.",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "indigo",
+      "summary": "Evoluciona de Shieldon (Nivel 30)",
+      "locations": [],
       "evolution_info": {
         "from": "Shieldon",
         "text": "Evoluciona de Shieldon (Nivel 30)",

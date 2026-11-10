@@ -3572,7 +3572,11 @@ class HeartGoldAdvancedFiltersTests(TestCase):
         self.assertIn("Shuckle", reg_rock)
         self.assertIn("Geodude", reg_rock)
         self.assertIn("Dunsparce", reg_rock)
-        self.assertIn("Cranidos", nat_rock)
+        self.assertIn("Omanyte", nat_rock)
+        self.assertIn("Aerodactyl", nat_rock)
+        self.assertIn("Anorith", nat_rock)
+        self.assertNotIn("Cranidos", nat_rock)
+        self.assertNotIn("Shieldon", nat_rock)
 
         # 6. Pokéwalker (77 en Regional Johto, 118 en Nacional)
         reg_walker = get_names_with_tag(reg_catalog, "pokewalker")

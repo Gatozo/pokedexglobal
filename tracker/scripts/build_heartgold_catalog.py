@@ -1229,14 +1229,12 @@ SPECIAL_OBTAINING = {
 
     # --- FÓSILES RESTANTES ---
     408: {
-        'type': 'fossil',
-        'badge_label': 'Fósil Cráneo',
-        'badge_color': 'amber',
-        'summary': 'Revivir el Fósil Cráneo (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado tras obtener la Dex Nacional) en el Museo de Ciudad Plateada.',
+        'type': 'transfer',
+        'badge_label': 'Transferir',
+        'badge_color': 'purple',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Oro HeartGold (el Fósil Cráneo es exclusivo del Subsuelo de Sinnoh en Diamante). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Ruinas Alfa', 'method': 'Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)'},
-            {'area': 'Cueva Acantilado', 'method': 'Fósil Cráneo (Golpe Roca en rocas rompibles tras Dex Nacional)'},
-            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Cráneo'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde Fósil Cráneo (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado'},
             DAYCARE_LOCATION
         ]
     },
@@ -1281,23 +1279,13 @@ SPECIAL_OBTAINING = {
         ]
     },
     410: {
-        'type': 'trade',
-        'badge_label': 'Exclusivo SoulSilver',
-        'badge_color': 'sky',
-        'summary': 'Inaccesible de forma directa en HeartGold (el Fósil Coraza es exclusivo de SoulSilver). Requiere transferir el fósil o intercambiar con SoulSilver.',
+        'type': 'transfer',
+        'badge_label': 'Transferir',
+        'badge_color': 'purple',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Oro HeartGold (el Fósil Coraza es exclusivo del Subsuelo de Sinnoh en Perla). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Transferencia de Fósil Coraza o Pokémon'},
-            {'area': 'Ciudad Plateada (Museo)', 'method': 'Revitalización de Fósil Coraza (si se transfiere)'},
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde Fósil Coraza (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado'},
             DAYCARE_LOCATION
-        ]
-    },
-    411: {
-        'type': 'trade',
-        'badge_label': 'Exclusivo SoulSilver',
-        'badge_color': 'sky',
-        'summary': 'Inaccesible en estado salvaje en HeartGold. Requiere intercambiar con SoulSilver o evolucionar a Shieldon al Nivel 30.',
-        'locations': [
-            {'area': 'Intercambio con Pokémon Plata SoulSilver', 'method': 'Exclusivo de versión'}
         ]
     },
 
