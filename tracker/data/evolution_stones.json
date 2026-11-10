@@ -278,8 +278,12 @@
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
+          "area": "Cataratas Tohjo",
+          "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+        },
+        {
           "area": "Ruinas Alfa",
-          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
+          "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
         },
         {
           "area": "Domo Pokéathlon",
@@ -295,7 +299,7 @@
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
         }
       ],
       "soulsilver": [
@@ -308,8 +312,12 @@
           "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
         },
         {
+          "area": "Cataratas Tohjo",
+          "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+        },
+        {
           "area": "Ruinas Alfa",
-          "detail": "En la cámara secreta tras la sala del primer rompecabezas (usando Cuerda Huida)."
+          "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
         },
         {
           "area": "Domo Pokéathlon",
@@ -325,7 +333,7 @@
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Jigglypuff salvajes."
+          "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
         }
       ]
     }
@@ -1954,6 +1962,10 @@
       ],
       "heartgold": [
         {
+          "area": "Ruta 20 (Kanto)",
+          "detail": "Objeto oculto en el agua al este de Isla Canela navegando con Surf (localizable con el Zahorí)."
+        },
+        {
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
         },
@@ -1963,6 +1975,10 @@
         }
       ],
       "soulsilver": [
+        {
+          "area": "Ruta 20 (Kanto)",
+          "detail": "Objeto oculto en el agua al este de Isla Canela navegando con Surf (localizable con el Zahorí)."
+        },
         {
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
@@ -2045,6 +2061,10 @@
       ],
       "heartgold": [
         {
+          "area": "Ruta 19 (Kanto)",
+          "detail": "Objeto oculto en el agua al sur de Ciudad Fucsia navegando con Surf (localizable con el Zahorí)."
+        },
+        {
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
         },
@@ -2054,6 +2074,10 @@
         }
       ],
       "soulsilver": [
+        {
+          "area": "Ruta 19 (Kanto)",
+          "detail": "Objeto oculto en el agua al sur de Ciudad Fucsia navegando con Surf (localizable con el Zahorí)."
+        },
         {
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
@@ -2069,7 +2093,7 @@
     "slug": "sea-incense",
     "name_es": "Incienso Marino",
     "icon_url": "/media/items/sea-incense.png",
-    "description_es": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+    "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Agua en un 20%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
     "is_purchasable": false,
     "price": null,
     "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
@@ -2125,14 +2149,14 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Celeste (Planta 1)",
-          "detail": "En el suelo en el laberinto de roca tras conseguir las 16 medallas de gimnasio."
+          "area": "Cueva Celeste (Planta Baja)",
+          "detail": "En el suelo en el estrecho sendero rocoso de la pared norte de la planta de entrada (1F)."
         }
       ],
       "soulsilver": [
         {
-          "area": "Cueva Celeste (Planta 1)",
-          "detail": "En el suelo en el laberinto de roca tras conseguir las 16 medallas de gimnasio."
+          "area": "Cueva Celeste (Planta Baja)",
+          "detail": "En el suelo en el estrecho sendero rocoso de la pared norte de la planta de entrada (1F)."
         }
       ]
     }
@@ -2141,7 +2165,7 @@
     "slug": "lax-incense",
     "name_es": "Incienso Suave",
     "icon_url": "/media/items/lax-incense.png",
-    "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+    "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 10%. Si Wobbuffet lo lleva equipado en la guardería, pondrán un huevo del que nacerá Wynaut.",
     "is_purchasable": false,
     "price": null,
     "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
@@ -2198,13 +2222,13 @@
       "heartgold": [
         {
           "area": "Ruta 38 (Johto)",
-          "detail": "En una repisa de hierba elevada accesible usando Treparrocas."
+          "detail": "En una repisa de hierba elevada al suroeste de la ruta, tras una valla accesible usando Treparrocas."
         }
       ],
       "soulsilver": [
         {
           "area": "Ruta 38 (Johto)",
-          "detail": "En una repisa de hierba elevada accesible usando Treparrocas."
+          "detail": "En una repisa de hierba elevada al suroeste de la ruta, tras una valla accesible usando Treparrocas."
         }
       ]
     }
@@ -2270,8 +2294,8 @@
           "detail": "En una repisa de hierba exterior accesible cruzando la valla con Golpe Roca y Treparrocas."
         },
         {
-          "area": "Ruta 14 (Kanto)",
-          "detail": "Regalo de una chica en el mirador al mostrarle una Chansey capturada."
+          "area": "Ruta 14 (Llamada del Pokégear)",
+          "detail": "Regalo del Ornitólogo Josh tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Domo Pokéathlon",
@@ -2288,8 +2312,8 @@
           "detail": "En una repisa de hierba exterior accesible cruzando la valla con Golpe Roca y Treparrocas."
         },
         {
-          "area": "Ruta 14 (Kanto)",
-          "detail": "Regalo de una chica en el mirador al mostrarle una Chansey capturada."
+          "area": "Ruta 14 (Llamada del Pokégear)",
+          "detail": "Regalo del Ornitólogo Josh tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Domo Pokéathlon",
@@ -2367,8 +2391,12 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Celeste (Kanto)",
-          "detail": "En el suelo en el piso superior de la cueva (requiere Surf)."
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En la plataforma rocosa central del sótano inferior profundo donde habitan Pokémon de alto nivel (requiere Treparrocas)."
+        },
+        {
+          "area": "Ruta 17 (Llamada del Pokégear)",
+          "detail": "Regalo del Motorista Raúl tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Zona Safari de Johto",
@@ -2385,8 +2413,12 @@
       ],
       "soulsilver": [
         {
-          "area": "Cueva Celeste (Kanto)",
-          "detail": "En el suelo en el piso superior de la cueva (requiere Surf)."
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En la plataforma rocosa central del sótano inferior profundo donde habitan Pokémon de alto nivel (requiere Treparrocas)."
+        },
+        {
+          "area": "Ruta 17 (Llamada del Pokégear)",
+          "detail": "Regalo del Motorista Raúl tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Zona Safari de Johto",
@@ -2461,11 +2493,15 @@
       "heartgold": [
         {
           "area": "Monte Plateado (Exterior)",
-          "detail": "Cerca del lago en la base de la cascada accesible con Cascada y Surf."
+          "detail": "En el suelo en la ladera rocosa superior exterior junto a la entrada a la cima de la cueva (requiere Treparrocas)."
         },
         {
-          "area": "Ruta 17 (Camino de Bicis de Kanto)",
-          "detail": "En el arcén derecho del camino descendente."
+          "area": "Ruta 17 (Llamada del Pokégear)",
+          "detail": "Regalo del Motorista Mario tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "detail": "Equipada en el Beldum que regala Máximo Peñas en el vestíbulo de Silph S.A. tras vencer a Rojo."
         },
         {
           "area": "Domo Pokéathlon",
@@ -2479,11 +2515,15 @@
       "soulsilver": [
         {
           "area": "Monte Plateado (Exterior)",
-          "detail": "Cerca del lago en la base de la cascada accesible con Cascada y Surf."
+          "detail": "En el suelo en la ladera rocosa superior exterior junto a la entrada a la cima de la cueva (requiere Treparrocas)."
         },
         {
-          "area": "Ruta 17 (Camino de Bicis de Kanto)",
-          "detail": "En el arcén derecho del camino descendente."
+          "area": "Ruta 17 (Llamada del Pokégear)",
+          "detail": "Regalo del Motorista Mario tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+        },
+        {
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "detail": "Equipada en el Beldum que regala Máximo Peñas en el vestíbulo de Silph S.A. tras vencer a Rojo."
         },
         {
           "area": "Domo Pokéathlon",
@@ -2549,8 +2589,12 @@
       ],
       "heartgold": [
         {
-          "area": "Ruta Helada (Johto)",
-          "detail": "En el suelo en el laberinto de hielo del sótano B1."
+          "area": "Túnel Roca (Sótano B1)",
+          "detail": "En el suelo en la cámara rocosa suroeste del sótano accesible usando Treparrocas (requiere Destello)."
+        },
+        {
+          "area": "Ruta 14 (Llamada del Pokégear)",
+          "detail": "Regalo de las Gemelas Kay y Tia tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2563,8 +2607,12 @@
       ],
       "soulsilver": [
         {
-          "area": "Ruta Helada (Johto)",
-          "detail": "En el suelo en el laberinto de hielo del sótano B1."
+          "area": "Túnel Roca (Sótano B1)",
+          "detail": "En el suelo en la cámara rocosa suroeste del sótano accesible usando Treparrocas (requiere Destello)."
+        },
+        {
+          "area": "Ruta 14 (Llamada del Pokégear)",
+          "detail": "Regalo de las Gemelas Kay y Tia tras registrar su número de teléfono al llamarte avisando de que encontró algo."
         },
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
@@ -2610,14 +2658,14 @@
       ],
       "heartgold": [
         {
-          "area": "Monte Mortero (Zona Este)",
-          "detail": "En una cornisa superior accesible navegando con Surf y remontando la Cascada."
+          "area": "Monte Mortero (Cueva Este)",
+          "detail": "En la zona este de la cueva inferior, escalando una pared rocosa que requiere la MO Treparrocas."
         }
       ],
       "soulsilver": [
         {
-          "area": "Monte Mortero (Zona Este)",
-          "detail": "En una cornisa superior accesible navegando con Surf y remontando la Cascada."
+          "area": "Monte Mortero (Cueva Este)",
+          "detail": "En la zona este de la cueva inferior, escalando una pared rocosa que requiere la MO Treparrocas."
         }
       ]
     }
@@ -2655,8 +2703,8 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Celeste (Kanto)",
-          "detail": "En una orilla rocosa del lago subterráneo accesible con Surf."
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En una plataforma elevada en la esquina noreste del sótano profundo (requiere Surf y Treparrocas)."
         },
         {
           "area": "Pokémon salvajes",
@@ -2665,8 +2713,8 @@
       ],
       "soulsilver": [
         {
-          "area": "Cueva Celeste (Kanto)",
-          "detail": "En una orilla rocosa del lago subterráneo accesible con Surf."
+          "area": "Cueva Celeste (Sótano B1)",
+          "detail": "En una plataforma elevada en la esquina noreste del sótano profundo (requiere Surf y Treparrocas)."
         },
         {
           "area": "Pokémon salvajes",
@@ -2708,8 +2756,8 @@
       ],
       "heartgold": [
         {
-          "area": "Islas Espuma (Sótano B2)",
-          "detail": "En el laberinto helado inferior de las cavernas en Kanto."
+          "area": "Isla Canela (Kanto)",
+          "detail": "En las laderas rocosas del volcán destruido escalando con Treparrocas."
         },
         {
           "area": "Pokémon salvajes",
@@ -2718,8 +2766,8 @@
       ],
       "soulsilver": [
         {
-          "area": "Islas Espuma (Sótano B2)",
-          "detail": "En el laberinto helado inferior de las cavernas en Kanto."
+          "area": "Isla Canela (Kanto)",
+          "detail": "En las laderas rocosas del volcán destruido escalando con Treparrocas."
         },
         {
           "area": "Pokémon salvajes",
@@ -2761,14 +2809,14 @@
       ],
       "heartgold": [
         {
-          "area": "Frente de Batalla (Johto)",
-          "detail": "En el suelo en la esquina superior derecha de la plaza exterior cerca de las vallas."
+          "area": "Ruta 42 (Johto)",
+          "detail": "En una cornisa exterior aislada sobre la Ruta 42; se accede entrando a Monte Mortero por la entrada este, subiendo con Treparrocas y saliendo al exterior."
         }
       ],
       "soulsilver": [
         {
-          "area": "Frente de Batalla (Johto)",
-          "detail": "En el suelo en la esquina superior derecha de la plaza exterior cerca de las vallas."
+          "area": "Ruta 42 (Johto)",
+          "detail": "En una cornisa exterior aislada sobre la Ruta 42; se accede entrando a Monte Mortero por la entrada este, subiendo con Treparrocas y saliendo al exterior."
         }
       ]
     }
@@ -2818,14 +2866,14 @@
       ],
       "heartgold": [
         {
-          "area": "Monte Plateado (Interior de la Cueva)",
-          "detail": "En una cornisa alta que requiere usar Treparrocas."
+          "area": "Monte Plateado (Exterior)",
+          "detail": "En la esquina inferior izquierda de la zona exterior montañosa tras cruzar el lago navegando con Surf."
         }
       ],
       "soulsilver": [
         {
-          "area": "Monte Plateado (Interior de la Cueva)",
-          "detail": "En una cornisa alta que requiere usar Treparrocas."
+          "area": "Monte Plateado (Exterior)",
+          "detail": "En la esquina inferior izquierda de la zona exterior montañosa tras cruzar el lago navegando con Surf."
         }
       ]
     }
@@ -2889,20 +2937,12 @@
         {
           "area": "Frente de Batalla",
           "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
-        },
-        {
-          "area": "Ruta 28 (Camino a Monte Plateado)",
-          "detail": "Objeto oculto en la hierba alta cerca de la entrada (requiere Corte)."
         }
       ],
       "soulsilver": [
         {
           "area": "Frente de Batalla",
           "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
-        },
-        {
-          "area": "Ruta 28 (Camino a Monte Plateado)",
-          "detail": "Objeto oculto en la hierba alta cerca de la entrada (requiere Corte)."
         }
       ]
     }
@@ -3120,14 +3160,14 @@
       ],
       "heartgold": [
         {
-          "area": "Cueva Celeste (Sótano B1)",
-          "detail": "En el suelo cerca de la cámara inferior accesible con Surf."
+          "area": "Cueva Celeste (Planta 1)",
+          "detail": "En el laberinto de la planta superior (2F), en la zona central rompiendo dos rocas agrietadas con Golpe Roca."
         }
       ],
       "soulsilver": [
         {
-          "area": "Cueva Celeste (Sótano B1)",
-          "detail": "En el suelo cerca de la cámara inferior accesible con Surf."
+          "area": "Cueva Celeste (Planta 1)",
+          "detail": "En el laberinto de la planta superior (2F), en la zona central rompiendo dos rocas agrietadas con Golpe Roca."
         }
       ]
     }

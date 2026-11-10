@@ -2784,6 +2784,44 @@ class PokemonHeartGoldGen4Tests(TestCase):
             self.assertEqual(entry.evolution_stone["name"], expected_name)
             self.assertEqual(entry.evolution_stone["icon_url"], f"/media/items/{expected_slug}.png")
 
+        # 4. Validar ubicaciones canónicas corregidas en HGSS
+        odd_incense = stones_data.get("odd-incense", {}).get("games", {}).get("heartgold", [])
+        odd_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in odd_incense)
+        self.assertIn("Cueva Celeste (Planta 1)", odd_text)
+        self.assertIn("Golpe Roca", odd_text)
+        self.assertNotIn("Sótano B1", odd_text)
+
+        magmarizer = stones_data.get("magmarizer", {}).get("games", {}).get("heartgold", [])
+        magma_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in magmarizer)
+        self.assertIn("Isla Canela", magma_text)
+        self.assertIn("Treparrocas", magma_text)
+        self.assertNotIn("Islas Espuma", magma_text)
+
+        dubious = stones_data.get("dubious-disc", {}).get("games", {}).get("heartgold", [])
+        dubious_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in dubious)
+        self.assertIn("Ruta 42", dubious_text)
+        self.assertIn("Monte Mortero", dubious_text)
+
+        tooth = stones_data.get("deep-sea-tooth", {}).get("games", {}).get("heartgold", [])
+        tooth_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in tooth)
+        self.assertIn("Ruta 20", tooth_text)
+        self.assertIn("Zahorí", tooth_text)
+
+        scale = stones_data.get("deep-sea-scale", {}).get("games", {}).get("heartgold", [])
+        scale_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in scale)
+        self.assertIn("Ruta 19", scale_text)
+        self.assertIn("Zahorí", scale_text)
+
+        reaper = stones_data.get("reaper-cloth", {}).get("games", {}).get("heartgold", [])
+        reaper_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in reaper)
+        self.assertIn("Monte Plateado (Exterior)", reaper_text)
+        self.assertIn("Surf", reaper_text)
+
+        claw = stones_data.get("razor-claw", {}).get("games", {}).get("heartgold", [])
+        claw_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in claw)
+        self.assertIn("Frente de Batalla", claw_text)
+        self.assertNotIn("Ruta 28", claw_text)
+
     def test_heartgold_breeding_and_invariants(self):
         from tracker.catalog_service import get_compiled_catalog
         nat_cat = get_compiled_catalog("heartgold", is_national=True)
