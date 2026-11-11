@@ -650,6 +650,20 @@ NON_SINNOH_TRANSFERS_PLATINUM = sorted(list(
 
 
 
+# Gen 4 (HeartGold y SoulSilver comparten exactamente la misma lista de transferencias obligatorias)
+NON_JOHTO_KANTO_TRANSFERS_HGSS: List[int] = sorted(list(
+    # Iniciales de Sinnoh (9)
+    set(range(387, 396)) |
+    # Fósiles inaccesibles de Sinnoh (4)
+    {408, 409, 410, 411} |
+    # Especies salvajes ausentes en HGSS (7)
+    {425, 426, 431, 432, 434, 435, 479} |
+    # Evoluciones dependientes de Sinnoh (4)
+    {462, 476, 470, 471} |
+    # Legendarios y singulares foráneos o de evento (18)
+    {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
+))
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
@@ -756,29 +770,8 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
 
     'platinum': NON_SINNOH_TRANSFERS_PLATINUM,
 
-    'heartgold': sorted(list(
-
-        # Iniciales de Sinnoh (9)
-
-        set(range(387, 396)) |
-
-        # Fósiles inaccesibles de Sinnoh (4)
-
-        {408, 409, 410, 411} |
-
-        # Especies salvajes ausentes en HGSS (7)
-
-        {425, 426, 431, 432, 434, 435, 479} |
-
-        # Evoluciones dependientes de Sinnoh (4)
-
-        {462, 476, 470, 471} |
-
-        # Legendarios y singulares foráneos o de evento (18)
-
-        {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
-
-    )),
+    'heartgold': NON_JOHTO_KANTO_TRANSFERS_HGSS,
+    'soulsilver': NON_JOHTO_KANTO_TRANSFERS_HGSS,
 
 }
 
@@ -2161,11 +2154,52 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             492: 'Shaymin (Evento / D/P/Pt)',
 
             493: 'Arceus (Evento / Ruinas de Sinjoh)',
-
         }
-
     },
-
+    'soulsilver': {
+        'mechanic_title': 'Transferencia, Parque Compi e Intercambio • Gen 4',
+        'mechanic_badge': 'Transferir / GBA / Sinnoh',
+        'description': (
+            'La Pokédex Nacional de Pokémon Plata SoulSilver cuenta con 493 Pokémon. La gran mayoría de criaturas de Kanto, '
+            'Johto e incluso muchas de Hoenn y Sinnoh pueden conseguirse en el cartucho gracias a las dos regiones, '
+            'la Zona Safari personalizable de Baoba y las sintonías de Hoenn y Sinnoh en la Radio del Pokégear. '
+            'Sin embargo, ciertas líneas como los iniciales de Sinnoh, los fósiles Cráneo y Coraza, los guardianes de los lagos '
+            'y las evoluciones ligadas a rocas elementales foráneas (Leafeon, Glaceon, Magnezone, Probopass) '
+            'exigen intercambio directo con Pokémon Diamante, Perla o Platino, o transferencia vía Parque Compi en la Ruta 47.'
+        ),
+        'default_origin': 'Intercambio con D/P/Pt o Parque Compi (GBA)',
+        'origins': {
+            **{n: 'Inicial de Sinnoh (Intercambio con D/P/Pt)' for n in range(387, 396)},
+            408: 'Fósil Cráneo (Intercambio con Diamante / Platino)',
+            409: 'Evolución de Cranidos',
+            410: 'Fósil Coraza (Intercambio con Perla / Platino)',
+            411: 'Evolución de Shieldon',
+            425: 'Valle Eólico (Sinnoh: D/P/Pt los viernes)',
+            426: 'Evolución de Drifloon',
+            431: 'Salvaje en Sinnoh (Exclusivo de Perla)',
+            432: 'Evolución de Glameow',
+            434: 'Salvaje en Sinnoh (Exclusivo de Diamante)',
+            435: 'Evolución de Stunky',
+            462: 'Evolución en Monte Corona (Sinnoh: D/P/Pt)',
+            479: 'Vieja Mansión en Bosque Vetusto (Sinnoh: D/P/Pt)',
+            476: 'Evolución en Monte Corona (Sinnoh: D/P/Pt)',
+            470: 'Evolución en Roca Musgosa (Sinnoh: D/P/Pt)',
+            471: 'Evolución en Roca Hielo (Sinnoh: D/P/Pt)',
+            **{n: 'Legendario de Sinnoh (Intercambio con D/P/Pt)' for n in [480, 481, 482, 485, 486, 488]},
+            151: 'Mew (Evento / Parque Compi)',
+            251: 'Celebi (Evento del Encinar / Distribución)',
+            377: 'Regirock (Parque Compi GBA o Evento Regigigas D/P/Pt)',
+            378: 'Regice (Parque Compi GBA o Evento Regigigas D/P/Pt)',
+            379: 'Registeel (Parque Compi GBA o Evento Regigigas D/P/Pt)',
+            385: 'Jirachi (Evento / Parque Compi)',
+            386: 'Deoxys (Evento / Parque Compi)',
+            489: 'Phione (Crianza de Manaphy)',
+            490: 'Manaphy (Huevo de Pokémon Ranger transferido)',
+            491: 'Darkrai (Evento / D/P/Pt)',
+            492: 'Shaymin (Evento / D/P/Pt)',
+            493: 'Arceus (Evento / Ruinas de Sinjoh)',
+        }
+    },
 }
 
 

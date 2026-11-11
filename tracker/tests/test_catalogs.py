@@ -3958,6 +3958,40 @@ class PokemonSoulSilverGen4Tests(TestCase):
         ursaring = next(e for e in reg_cat if e.pokemon.national_number == 217)
         self.assertEqual(len(ursaring.obtaining_info.get("locations", [])), 12)
 
+    def test_soulsilver_transfers(self):
+        """Valida que Pokémon Plata SoulSilver tenga las 42 transferencias canónicas en su Pokédex Nacional."""
+        from tracker.exclusives import VERSION_TRANSFERS_CATALOG, VERSION_TRANSFERS_META, get_version_transfers_context
+
+        transfers_ss = VERSION_TRANSFERS_CATALOG.get("soulsilver", [])
+        self.assertEqual(len(transfers_ss), 42)
+        self.assertIn(387, transfers_ss)  # Turtwig
+        self.assertIn(408, transfers_ss)  # Cranidos
+        self.assertIn(410, transfers_ss)  # Shieldon
+        self.assertIn(425, transfers_ss)  # Drifloon
+        self.assertIn(431, transfers_ss)  # Glameow
+        self.assertIn(434, transfers_ss)  # Stunky
+        self.assertIn(470, transfers_ss)  # Leafeon
+        self.assertIn(479, transfers_ss)  # Rotom
+        self.assertIn(493, transfers_ss)  # Arceus
+
+        meta = VERSION_TRANSFERS_META.get("soulsilver", {})
+        self.assertIn("Parque Compi", meta.get("mechanic_title", ""))
+        self.assertIn("Pokémon Plata SoulSilver", meta.get("description", ""))
+        self.assertEqual(len(meta.get("origins", {})), 42)
+
+        # 1. En Pokédex Regional de Johto NO debe haber modal de transferencias
+        ctx_reg = get_version_transfers_context(self.game, self.pk_johto, caught_entry_ids=set())
+        self.assertIsNone(ctx_reg, "En la Pokédex Regional de Johto no deben mostrarse transferencias de la Nacional")
+
+        # 2. En Pokédex Nacional SÍ debe existir el modal de transferencias
+        ctx_nat = get_version_transfers_context(self.game, self.pk_nat, caught_entry_ids=set())
+        self.assertIsNotNone(ctx_nat, "El contexto de transferencias debe existir en SoulSilver Nacional")
+        self.assertTrue(ctx_nat["has_transfers"])
+        self.assertEqual(ctx_nat["total"], 42)
+        self.assertEqual(ctx_nat["caught"], 0)
+        self.assertEqual(len(ctx_nat["transfer_list"]), 42)
+
+
 
 
 
