@@ -1059,7 +1059,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1416,6 +1416,14 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Zona Safari (Montaña)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Prado)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1523,16 +1531,16 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Zona Safari (Montaña)",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
           "area": "Zona Safari (Prado)",
           "method": "Hierba alta (Noche)"
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "5 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -1665,12 +1673,12 @@
           "method": "Regalo del guardia con Carta (Spearow «ESPI» al Nv. 20; equípale la carta a otro Pokémon para quedártelo)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Mañana y Día)"
-        },
-        {
           "area": "Pokéwalker (Bosque Murmullos)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1761,15 +1769,15 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta, Hierba alta (Noche)"
+          "method": "5 bloques bosque"
         },
         {
           "area": "Zona Safari (Páramo)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Zona Safari (Desierto)",
+          "method": "Hierba alta (Noche) / 3 bloques planicie / 6 bloques roca (Noche)"
         }
       ],
       "evolution_info": {
@@ -1825,17 +1833,29 @@
     "flavor_text": "Siempre se esconde en la hierba. Como no tiene veneno al nacer, su mordisco es doloroso pero inofensivo.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Salvaje / Casino",
+      "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en la Zona Safari (Pantano) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 32, Ruta 33, Zona Safari (Albufera) y rutas de Kanto (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Mañana y Día)"
+          "area": "Ruta 32",
+          "method": "Hierba alta"
         },
         {
-          "area": "Casino de Ciudad Trigal",
-          "method": "Premio del Casino (700 fichas)"
+          "area": "Ruta 33",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 3",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 4",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -1910,7 +1930,7 @@
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -2128,12 +2148,12 @@
       "summary": "Salvaje en: Zona Safari (Desierto), Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
-        },
-        {
           "area": "Casino de Ciudad Trigal",
           "method": "Premio del Casino (700 fichas)"
+        },
+        {
+          "area": "Zona Safari (Desierto)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2188,11 +2208,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Desierto).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 26, Ruta 27, Monte Moon (P1)).",
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -2262,7 +2282,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2503,6 +2523,10 @@
         {
           "area": "Ruta 36",
           "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+        },
+        {
+          "area": "Zona Safari (Sabana)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2746,7 +2770,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Noche)"
+          "method": "Hierba alta (Noche) / 3 bloques roca"
         }
       ],
       "evolution_info": {
@@ -2904,14 +2928,26 @@
     "cry_url": "/media/pokemon/cries/legacy/37.ogg",
     "flavor_text": "Si le ataca un enemigo más fuerte que él, finge estar herido para confundirle y huir.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 7, 8, 36, 37, 48). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Rutas 36 y 37 en Johto, y Rutas 7 y 8 en Kanto (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 36",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 37",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 7",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 8",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2963,21 +2999,16 @@
     "cry_url": "/media/pokemon/cries/legacy/38.ogg",
     "flavor_text": "Sus nueve bonitas colas están llenas de una maravillosa energía que podría mantenerlo vivo durante mil años.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Vulpix usando Piedra Fuego (requiere intercambio desde SoulSilver).",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Evolución de Vulpix transferido"
-        }
-      ],
+      "type": "stone",
+      "badge_label": "Piedra Fuego",
+      "badge_color": "amber",
+      "summary": "Evoluciona de Vulpix exponiéndolo a una Piedra Fuego.",
+      "locations": [],
       "evolution_info": {
         "from": "Vulpix",
-        "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
+        "text": "Evoluciona con Piedra Fuego",
         "trigger": "use-item",
-        "condition": "usando Piedra Fuego",
+        "condition": "Piedra Fuego",
         "item_slug": "fire-stone"
       }
     },
@@ -3069,12 +3100,12 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Parterre)",
+          "method": "Hierba alta"
         }
       ],
       "evolution_info": {
@@ -3735,7 +3766,7 @@
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta, Hierba alta (Noche)"
+          "method": "Hierba alta (Noche) / 2 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -3904,11 +3935,11 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "method": "3 bloques bosque"
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -3979,7 +4010,7 @@
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "method": "3 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -4194,7 +4225,7 @@
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
+          "method": "5 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4308,14 +4339,34 @@
     "cry_url": "/media/pokemon/cries/legacy/52.ogg",
     "flavor_text": "Le encanta todo lo que brilla. Adora especialmente las monedas que recoge y va amontonando.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 5, 6, 7, 8, 38, 39). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Rutas 38 y 39 en Johto, y Rutas 5, 6, 7 y 8 en Kanto (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 38",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 39",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 5",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 6",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 7",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 8",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4368,18 +4419,13 @@
     "flavor_text": "Sus ágiles músculos le permiten moverse sin hacer ruido. Ataca al instante.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Meowth al Nivel 28 (requiere intercambio desde SoulSilver).",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Evolución de Meowth transferido"
-        }
-      ],
+      "badge_label": "Evolución",
+      "badge_color": "slate",
+      "summary": "Evoluciona de Meowth al Nivel 28.",
+      "locations": [],
       "evolution_info": {
         "from": "Meowth",
-        "text": "Evoluciona de Meowth (Nivel 28)",
+        "text": "Evoluciona al Nivel 28",
         "trigger": "level-up",
         "condition": "Nivel 28",
         "item_slug": null
@@ -4484,11 +4530,7 @@
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Surf"
+          "method": "Hierba alta (Noche) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -4614,16 +4656,12 @@
           "method": "Surf"
         },
         {
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Noche) / 5 bloques roca / 4 bloques agua"
+        },
+        {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Surf"
+          "method": "3 bloques agua"
         }
       ],
       "evolution_info": {
@@ -4678,11 +4716,15 @@
     "cry_url": "/media/pokemon/cries/legacy/56.ogg",
     "flavor_text": "Es peligroso acercarse si se enfada sin razón aparente, ya que no distingue entre amigos y enemigos.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -4733,18 +4775,16 @@
     "cry_url": "/media/pokemon/cries/legacy/57.ogg",
     "flavor_text": "Se pone furioso si nota que alguien le está mirando. Persigue a cualquiera que le vea enfadado.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Mankey (Nivel 28)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Mankey",
-        "text": "Evoluciona de Mankey (Nivel 28)",
-        "trigger": "level-up",
-        "condition": "Nivel 28",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver. Requiere evolucionar de Mankey (Nv. 28) o transferir desde Pokémon Oro HeartGold.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -4790,11 +4830,15 @@
     "cry_url": "/media/pokemon/cries/legacy/58.ogg",
     "flavor_text": "Extremadamente fiel, ladrará sin temor a cualquier enemigo para defender a su entrenador.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -4845,18 +4889,16 @@
     "cry_url": "/media/pokemon/cries/legacy/59.ogg",
     "flavor_text": "Su magnífico ladrido transmite majestuosidad. Todo el que lo escuche no podrá evitar adularlo.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Growlithe (usando Piedra Fuego)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Growlithe",
-        "text": "Evoluciona de Growlithe (usando Piedra Fuego)",
-        "trigger": "use-item",
-        "condition": "usando Piedra Fuego",
-        "item_slug": "fire-stone"
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver. Requiere evolucionar de Growlithe con Piedra Fuego o transferir desde Pokémon Oro HeartGold.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": {
       "slug": "fire-stone",
@@ -5070,28 +5112,28 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
+          "area": "Zona Safari (Pantano)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Vieja)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Pesca (Caña Vieja, Caña Buena, Supercaña)"
         },
         {
           "area": "Zona Safari (Laguna)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Surf"
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Vieja, Caña Buena, Supercaña)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
+          "area": "Zona Safari (Albufera)",
+          "method": "Surf / 2 bloques agua"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Pesca (Caña Vieja) / 2 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5197,20 +5239,20 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Buena y Supercaña)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Pesca (Caña Buena, Supercaña) / 2 bloques agua"
         },
         {
           "area": "Zona Safari (Laguna)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Buena, Supercaña) / 2 bloques agua / 5 bloques agua"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Pesca (Caña Buena, Supercaña)"
         }
       ],
       "evolution_info": {
@@ -5394,12 +5436,12 @@
           "method": "Premio del Casino (200 fichas)"
         },
         {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Pokéwalker (Arrabal)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Prado)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5600,10 +5642,6 @@
           "method": "Intercambio por un Drowzee (Machop Machito)"
         },
         {
-          "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta (Mañana y Día)"
-        },
-        {
           "area": "Pokéwalker (Camino Pedregoso)",
           "method": "Paseo en el Pokéwalker"
         },
@@ -5614,6 +5652,10 @@
         {
           "area": "Pokéwalker (Cueva del Terror)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5696,7 +5738,7 @@
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta / 5 bloques roca"
         }
       ],
       "evolution_info": {
@@ -5843,11 +5885,11 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "3 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5918,7 +5960,7 @@
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "method": "8 bloques bosque"
         }
       ],
       "evolution_info": {
@@ -6499,10 +6541,6 @@
           "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
-          "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Pokéwalker (Camino Pedregoso)",
           "method": "Paseo en el Pokéwalker"
         },
@@ -6513,6 +6551,14 @@
         {
           "area": "Pokéwalker (Confín del Cielo)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Peña)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "3 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6608,6 +6654,10 @@
         {
           "area": "Cueva Celeste (Sótano B1 - Mewtwo)",
           "method": "Golpe Roca"
+        },
+        {
+          "area": "Zona Safari (Peña)",
+          "method": "Hierba alta (Mañana y Día)"
         }
       ],
       "evolution_info": {
@@ -6746,7 +6796,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
+          "method": "5 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6895,7 +6945,7 @@
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6962,11 +7012,11 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "method": "5 bloques agua"
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta / 3 bloques roca / 5 bloques agua"
         }
       ],
       "evolution_info": {
@@ -7044,11 +7094,11 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7119,7 +7169,7 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta"
+          "method": "Hierba alta / 3 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -7197,7 +7247,7 @@
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 3 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7275,12 +7325,12 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Pantano)",
+          "method": "4 bloques roca"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Laguna)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7354,8 +7404,8 @@
           "method": "Intercambio por Dragonair hembra (Dodrio Doris)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Laguna)",
+          "method": "4 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -7594,11 +7644,7 @@
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Surf"
+          "method": "Hierba alta (Mañana y Día) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7673,11 +7719,7 @@
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Surf"
+          "method": "8 bloques agua / 16 bloques agua"
         }
       ],
       "evolution_info": {
@@ -8178,10 +8220,6 @@
           "method": "Intercambio por un Bellsprout (Onix Rocoso)"
         },
         {
-          "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Pokéwalker (Camino Pedregoso)",
           "method": "Paseo en el Pokéwalker"
         },
@@ -8192,6 +8230,10 @@
         {
           "area": "Pokéwalker (Confín del Cielo)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Páramo)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8325,7 +8367,7 @@
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Noche)"
+          "method": "Hierba alta (Noche) / 5 bloques bosque"
         }
       ],
       "evolution_info": {
@@ -8455,15 +8497,15 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta, Hierba alta (Noche)"
+          "method": "3 bloques agua"
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta / Pesca (Caña Vieja, Caña Buena) / 2 bloques agua"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Vieja y Caña Buena)"
+          "area": "Zona Safari (Lagos)",
+          "method": "5 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -8570,15 +8612,11 @@
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Buena y Supercaña)"
+          "method": "Pesca (Supercaña) / 8 bloques roca / 3 bloques agua"
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "10 bloques agua"
         }
       ],
       "evolution_info": {
@@ -8643,16 +8681,16 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Trampa con forma de Poké Ball en el suelo"
         },
         {
           "area": "Ciudad Olivo",
           "method": "Intercambio por un Krabby (Voltorb Billy)"
+        },
+        {
+          "area": "Zona Safari (Lagos)",
+          "method": "10 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9019,7 +9057,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9082,7 +9120,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 6 bloques roca"
         }
       ],
       "evolution_info": {
@@ -9262,11 +9300,11 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
+          "method": "10 bloques agua"
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9321,7 +9359,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Torre Quemada y Zona Safari. También encuentro trampa en la Guarida Rocket de Caoba.",
+      "summary": "Salvaje en Torre Quemada y Zona Safari (Albufera). También trampa en la Guarida Rocket de Caoba (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Torre Quemada (P1 y Sótano B1)",
@@ -9330,6 +9368,10 @@
         {
           "area": "Guarida del Team Rocket (Ciudad Caoba)",
           "method": "Trampa con forma de Poké Ball en el suelo"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9382,13 +9424,13 @@
     "flavor_text": "El mejor perfume se fabrica con sus venenosos gases internos, diluyéndolos lo máximo posible.",
     "obtaining_info": {
       "type": "safari",
-      "badge_label": "Safari Baoba / Evolución",
-      "badge_color": "purple",
-      "summary": "Zona Safari (Área Pantano con 8 Bloques de Planicie, aparición inmediata). También mediante evolución de Koffing (Nv. 35).",
+      "badge_label": "Safari / Evolución",
+      "badge_color": "emerald",
+      "summary": "Salvaje en la Zona Safari (Albufera). También mediante evolución de Koffing al Nivel 35 (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "8 Bloques Planicie (Inmediato)"
+          "area": "Zona Safari (Albufera)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9461,6 +9503,10 @@
           "method": "Intercambio con Brock por Bonsly (con Colmillo Rayo)"
         },
         {
+          "area": "Zona Safari (Sabana)",
+          "method": "Hierba alta (Mañana y Día) / 5 bloques roca"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9517,7 +9563,7 @@
       "locations": [
         {
           "area": "Zona Safari (Sabana)",
-          "method": "10 Bloques Planicie (Inmediato)"
+          "method": "10 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9595,7 +9641,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
+          "method": "12 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10169,16 +10215,16 @@
           "method": "Pesca (Caña Buena)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Surf"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
-        },
-        {
           "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
+          "method": "Pesca (Caña Vieja, Caña Buena, Supercaña)"
+        },
+        {
+          "area": "Zona Safari (Lagos)",
+          "method": "Surf / 4 bloques agua"
+        },
+        {
+          "area": "Zona Safari (Lagos)",
+          "method": "Pesca (Caña Buena, Supercaña) / 4 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10388,16 +10434,12 @@
           "method": "Pesca (Supercaña)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Surf"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
-        },
-        {
           "area": "Zona Safari (Laguna)",
           "method": "Pesca (Supercaña)"
+        },
+        {
+          "area": "Zona Safari (Lagos)",
+          "method": "Pesca (Caña Buena, Supercaña) / 4 bloques agua / 10 bloques agua / 6 bloques agua"
         }
       ],
       "evolution_info": {
@@ -10640,12 +10682,12 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
-        },
-        {
           "area": "Ciudad Azulona (Rincón de Premios)",
           "method": "Premio del Casino (3.333 fichas)"
+        },
+        {
+          "area": "Zona Safari (Arboleda)",
+          "method": "Hierba alta (Mañana y Día) / 3 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10852,7 +10894,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
+          "method": "4 bloques roca"
         }
       ],
       "evolution_info": {
@@ -10918,7 +10960,7 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 10 bloques roca"
         }
       ],
       "evolution_info": {
@@ -11051,7 +11093,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 5 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11433,12 +11475,16 @@
           "method": "Pesca (Caña Vieja, Caña Buena y Supercaña)"
         },
         {
-          "area": "Zona Safari (Parterre)",
+          "area": "Zona Safari (Pantano)",
+          "method": "Pesca (Caña Vieja)"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
           "method": "Surf"
         },
         {
-          "area": "Zona Safari (Parterre)",
-          "method": "Pesca (Caña Vieja y Caña Buena)"
+          "area": "Zona Safari (Laguna)",
+          "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Zona Safari (Lagos)",
@@ -11446,23 +11492,19 @@
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Caña Vieja y Caña Buena)"
+          "method": "Pesca (Caña Vieja, Caña Buena)"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "Surf"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Caña Vieja y Caña Buena)"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Surf"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Caña Vieja y Caña Buena)"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Vieja)"
+          "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11517,11 +11559,23 @@
       "type": "interactable",
       "badge_label": "Gyarados Rojo",
       "badge_color": "red",
-      "summary": "Gyarados variocolor (rojo) estático al Nivel 30 nadando en el centro del Lago de la Furia.",
+      "summary": "Gyarados variocolor (rojo) estático al Nivel 30 en el Lago de la Furia. También salvaje mediante Supercaña en la Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Lago de la Furia",
           "method": "Encuentro fijo de historia al Nivel 30 (Shiny garantizado)"
+        },
+        {
+          "area": "Zona Safari (Pantano)",
+          "method": "6 bloques agua"
+        },
+        {
+          "area": "Zona Safari (Parterre)",
+          "method": "7 bloques agua / 10 bloques agua"
+        },
+        {
+          "area": "Zona Safari (Albufera)",
+          "method": "Pesca (Supercaña) / 3 bloques agua"
         }
       ],
       "evolution_info": {
@@ -11584,6 +11638,10 @@
         {
           "area": "Cueva Unión (Sótano B2)",
           "method": "Encuentro fijo de Surf los viernes a Nivel 20 (reaparece semanalmente)"
+        },
+        {
+          "area": "Zona Safari (Laguna)",
+          "method": "Surf / 10 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11666,7 +11724,7 @@
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 15 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12105,22 +12163,18 @@
     "cry_url": "/media/pokemon/cries/legacy/138.ogg",
     "flavor_text": "Se dice que este antiguo Pokémon surcó el mar moviendo los 10 tentáculos que posee.",
     "obtaining_info": {
-      "type": "fossil",
-      "badge_label": "Fósil Hélix",
-      "badge_color": "amber",
-      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Hélix es exclusivo de HeartGold por Golpe Roca). Requiere transferir el fósil o intercambiar con HeartGold.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
+          "area": "Intercambio con HeartGold / Parque Compi",
+          "method": "Transferencia de Fósil Hélix o Pokémon"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Revitalización de Fósil Hélix (si se transfiere)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12172,18 +12226,16 @@
     "cry_url": "/media/pokemon/cries/legacy/139.ogg",
     "flavor_text": "Cuando agarra a su presa, nunca la deja escapar. Se la come despedazándola con sus colmillos.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Omanyte (Nivel 40)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Omanyte",
-        "text": "Evoluciona de Omanyte (Nivel 40)",
-        "trigger": "level-up",
-        "condition": "Nivel 40",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Oro HeartGold. Evoluciona de Omanyte al Nivel 40.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -12229,18 +12281,22 @@
     "cry_url": "/media/pokemon/cries/legacy/140.ogg",
     "flavor_text": "Este Pokémon vivió en la antigüedad. Rara vez se ha conseguido revivir sus fósiles.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Domo es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.",
+      "type": "fossil",
+      "badge_label": "Fósil Domo",
+      "badge_color": "amber",
+      "summary": "Revivir el Fósil Domo (exclusivo de SoulSilver rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Intercambio con SoulSilver / Parque Compi",
-          "method": "Transferencia de Fósil Domo o Pokémon"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de Fósil Domo (si se transfiere)"
+          "method": "Revitalización de fósil"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12292,19 +12348,14 @@
     "cry_url": "/media/pokemon/cries/legacy/141.ogg",
     "flavor_text": "Con sus garras,este feroz y antiguo Pokémon,despedaza a su presa y absorbe sus fluidos.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en SoulSilver. Requiere intercambiar con SoulSilver o evolucionar a Kabuto al Nivel 40.",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "slate",
+      "summary": "Evoluciona de Kabuto al Nivel 40.",
+      "locations": [],
       "evolution_info": {
         "from": "Kabuto",
-        "text": "Evoluciona de Kabuto (Nivel 40)",
+        "text": "Evoluciona al Nivel 40",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -12670,6 +12721,10 @@
           "method": "Premio del Casino (2.100 fichas)"
         },
         {
+          "area": "Zona Safari (Lagos)",
+          "method": "Pesca (Supercaña) / 10 bloques agua"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -12730,7 +12785,7 @@
         },
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Pesca (Supercaña)"
+          "method": "20 bloques agua"
         }
       ],
       "evolution_info": {
@@ -13480,12 +13535,12 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13547,12 +13602,12 @@
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
         },
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Pantano)",
+          "method": "2 bloques planicie"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Lagos)",
+          "method": "5 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -13940,14 +13995,26 @@
     "cry_url": "/media/pokemon/cries/legacy/165.ogg",
     "flavor_text": "Cuando llega el frío, se reúnen muchos Ledyba de todas partes para darse calor.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Rutas 30, 31, 37 por la mañana). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Rutas 29, 30, 31 y 37 por la mañana (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 29",
+          "method": "Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 30",
+          "method": "Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 31",
+          "method": "Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 37",
+          "method": "Hierba alta (Mañana)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13999,23 +14066,20 @@
     "cry_url": "/media/pokemon/cries/legacy/166.ogg",
     "flavor_text": "Las estrellas de su lomo crecen y decrecen dependiendo de las estrellas del cielo nocturno.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Ledyba al Nivel 18 (requiere intercambio desde SoulSilver).",
+      "type": "wild",
+      "badge_label": "Salvaje / Evolución",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Ruta 2 por la mañana. También evolucionando de Ledyba al Nivel 18.",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Evolución de Ledyba transferido"
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
+          "method": "Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
+          "method": "Hierba alta (Mañana)"
         }
-      ],
-      "evolution_info": {
-        "from": "Ledyba",
-        "text": "Evoluciona de Ledyba (Nivel 18)",
-        "trigger": "level-up",
-        "condition": "Nivel 18",
-        "item_slug": null
-      }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -14061,11 +14125,15 @@
     "cry_url": "/media/pokemon/cries/legacy/167.ogg",
     "flavor_text": "Teje su telaraña con hilo fino pero resistente. Espera pacientemente a que caiga su presa.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -14116,18 +14184,16 @@
     "cry_url": "/media/pokemon/cries/legacy/168.ogg",
     "flavor_text": "Una hebra de hilo especial es tejida sin fin desde su parte trasera. El hilo acaba en su nido.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Spinarak (Nivel 22)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Spinarak",
-        "text": "Evoluciona de Spinarak (Nivel 22)",
-        "trigger": "level-up",
-        "condition": "Nivel 22",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver. Requiere evolucionar de Spinarak (Nv. 22) o transferir desde Pokémon Oro HeartGold.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -14437,12 +14503,12 @@
       "summary": "Forma estándar mediante crianza en Ruta 34. Forma Pichu Picorejita obtenible en el Santuario del Encinar con el Pichu Color Pikachu.",
       "locations": [
         {
-          "area": "Ruta 34 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        },
-        {
           "area": "Santuario del Encinar",
           "method": "Evento In-Game (Pichu Picorejita con Pichu Color Pikachu)"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },
@@ -14887,6 +14953,10 @@
           "method": "Paseo en el Pokéwalker"
         },
         {
+          "area": "Zona Safari (Laguna)",
+          "method": "5 bloques bosque"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -15153,11 +15223,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Parterre)",
-          "method": "Surf"
+          "method": "Hierba alta (Noche) / Surf"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15453,7 +15519,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15516,11 +15582,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
-        },
-        {
-          "area": "Zona Safari (Parterre)",
-          "method": "Surf"
+          "method": "Hierba alta (Mañana y Día) / 8 bloques bosque / 3 bloques agua"
         }
       ],
       "evolution_info": {
@@ -15578,15 +15640,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera).",
+      "summary": "Salvaje en Zona Safari (Pantano).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Albufera)",
-          "method": "Surf"
+          "method": "5 bloques planicie / 10 bloques agua"
         }
       ],
       "evolution_info": {
@@ -15747,7 +15805,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Día)"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15967,20 +16025,20 @@
           "method": "Huevo de regalo de Cástor al introducir su frase secreta de 4 palabras (calculable con tu ID de Entrenador)"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche) / Surf"
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta (Noche) / Surf"
+          "method": "Hierba alta (Noche) / Surf / 3 bloques agua"
         },
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche) / Surf"
-        },
-        {
-          "area": "Pokéwalker (Costa Bella)",
-          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16118,16 +16176,12 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Zona Safari (Pantano)",
+          "method": "Hierba alta (Noche) / Surf / 3 bloques agua"
+        },
+        {
           "area": "Zona Safari (Albufera)",
-          "method": "Surf"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Pantano)",
-          "method": "Surf"
+          "method": "13 bloques agua"
         }
       ],
       "evolution_info": {
@@ -16310,12 +16364,8 @@
           "method": "Hierba alta (Noche)"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta (Noche), Surf"
-        },
-        {
-          "area": "Zona Safari (Laguna)",
-          "method": "10 Bloques Agua (Inmediato)"
+          "area": "Zona Safari (Lagos)",
+          "method": "Hierba alta / 10 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16465,11 +16515,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Arboleda)",
-          "method": "4 Bloques Bosque (Inmediato)"
+          "method": "Hierba alta / 4 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16603,11 +16649,7 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Peña)",
-          "method": "5 Bloques Peña (Inmediato)"
+          "method": "Hierba alta (Noche) / 10 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16681,7 +16723,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "Hierba alta / 3 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17052,11 +17094,15 @@
     "cry_url": "/media/pokemon/cries/legacy/207.ogg",
     "flavor_text": "A veces se sujeta a los precipicios. Cuando divisa una presa, despliega sus alas y planea para atacar.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -17742,14 +17788,18 @@
     "cry_url": "/media/pokemon/cries/legacy/216.ogg",
     "flavor_text": "Antes de que la comida escasee en invierno, tiene por costumbre ocultar comida en lugares secretos.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 45, Cueva Oscura). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Ruta 45 y Monte Plateado (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 45",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Monte Plateado (Exterior)",
+          "method": "Hierba alta (Mañana y Día)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17801,23 +17851,20 @@
     "cry_url": "/media/pokemon/cries/legacy/217.ogg",
     "flavor_text": "Capaz de percibir cualquier tipo de aroma, encuentra sin problemas todo alimento enterrado bajo tierra.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 28, Monte Plateado). Requiere intercambio o evolucionar de Teddiursa al Nivel 30.",
+      "type": "wild",
+      "badge_label": "Salvaje / Evolución",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Ruta 28 y Monte Plateado. También evolucionando de Teddiursa al Nivel 30.",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 28",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (Exterior)",
+          "method": "Hierba alta"
         }
-      ],
-      "evolution_info": {
-        "from": "Teddiursa",
-        "text": "Evoluciona de Teddiursa (Nivel 30)",
-        "trigger": "level-up",
-        "condition": "Nivel 30",
-        "item_slug": null
-      }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -18326,14 +18373,26 @@
     "cry_url": "/media/pokemon/cries/legacy/225.ogg",
     "flavor_text": "Anida en el borde de escarpados acantilados. Se pasa todo el día llevando comida a sus polluelos.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta Helada). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en la Ruta Helada (todos los pisos) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta Helada (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta Helada (Sótano B1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta Helada (Sótano B2)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta Helada (Sótano B3)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18447,14 +18506,14 @@
     "cry_url": "/media/pokemon/cries/legacy/227.ogg",
     "flavor_text": "Después de anidar en zarzas, las alas de sus polluelos crecen fortalecidas por los rasguños.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Ruta 45). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en la Ruta 45 (hierba alta) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 45",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18517,7 +18576,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "4 Bloques Bosque (Inmediato)"
+          "method": "4 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18576,7 +18635,7 @@
       "locations": [
         {
           "area": "Zona Safari (Prado)",
-          "method": "10 Bloques Peña (Inmediato)"
+          "method": "10 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18718,11 +18777,15 @@
     "cry_url": "/media/pokemon/cries/legacy/231.ogg",
     "flavor_text": "Como muestra de afecto, golpea con su trompa. Aunque es tan fuerte que te mandará lejos.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -18773,18 +18836,16 @@
     "cry_url": "/media/pokemon/cries/legacy/232.ogg",
     "flavor_text": "Cuanto más grandes son sus colmillos, mayor su estatus en la manada. Los colmillos tardan mucho en crecer.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Phanpy (Nivel 25)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Phanpy",
-        "text": "Evoluciona de Phanpy (Nivel 25)",
-        "trigger": "level-up",
-        "condition": "Nivel 25",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver. Requiere evolucionar de Phanpy (Nv. 25) o transferir desde Pokémon Oro HeartGold.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -18920,11 +18981,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Noche)"
-        },
-        {
-          "area": "Zona Safari (Prado)",
-          "method": "3 Bloques Planicie (Noche)"
+          "method": "Hierba alta (Noche) / 3 bloques planicie + 3 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18987,7 +19044,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana)"
+          "method": "Hierba alta (Mañana y Día) / 3 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -19644,11 +19701,7 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Mañana y Día)"
-        },
-        {
-          "area": "Zona Safari (Montaña)",
-          "method": "5 Bloques Peña (Inmediato)"
+          "method": "Hierba alta (Mañana y Día) / 5 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -20677,11 +20730,11 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
+          "method": "15 bloques bosque"
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -20836,7 +20889,7 @@
         },
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "method": "5 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -21268,12 +21321,12 @@
       "summary": "Salvaje en: Zona Safari (Desierto), Zona Safari (Prado) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Prado)",
+          "method": "12 bloques agua"
         },
         {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Desierto)",
+          "method": "8 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -21328,11 +21381,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Pantano).",
+      "summary": "Salvaje en Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "method": "14 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -21489,7 +21542,7 @@
         },
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
+          "method": "18 bloques planicie (10 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -21548,7 +21601,7 @@
       "locations": [
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "28 bloques bosque / 18 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -22106,19 +22159,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Zona Safari (Prado), Zona Safari (Arboleda), Zona Safari (Pantano) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Prado), Zona Safari (Arboleda), Zona Safari (Albufera) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Pantano)",
+          "method": "6 bloques planicie"
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
+          "method": "24 bloques agua"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Prado)",
+          "method": "28 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -22177,7 +22230,7 @@
       "locations": [
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Surf"
+          "method": "10 bloques agua"
         }
       ],
       "evolution_info": {
@@ -22243,7 +22296,7 @@
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "6 bloques planicie + 18 bloques bosque (20 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -22302,7 +22355,7 @@
       "locations": [
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "21 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -22423,7 +22476,7 @@
       "locations": [
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "method": "10 bloques planicie + 19 bloques bosque (60 días)"
         }
       ],
       "evolution_info": {
@@ -23268,7 +23321,7 @@
       "locations": [
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "5 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23345,7 +23398,7 @@
       "locations": [
         {
           "area": "Zona Safari (Parterre)",
-          "method": "Hierba alta"
+          "method": "18 bloques roca (30 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23563,11 +23616,15 @@
     "cry_url": "/media/pokemon/cries/legacy/302.ogg",
     "flavor_text": "Hace su guarida en cuevas oscuras. Usa sus afiladas garras para desenterrar las gemas que se come.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -23618,14 +23675,22 @@
     "cry_url": "/media/pokemon/cries/legacy/303.ogg",
     "flavor_text": "Sus cuernos de acero se transforman en grandes fauces con las que muerde a sus enemigos.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Manada en Ruta 9 tras Dex Nacional). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Radio Pokégear",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Cueva Unión sintonizando la Radio de Hoenn los miércoles (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Cueva Unión (P1)",
+          "method": "Radio Pokégear (Sintonía de Hoenn)"
+        },
+        {
+          "area": "Cueva Unión (Sótano B1)",
+          "method": "Radio Pokégear (Sintonía de Hoenn)"
+        },
+        {
+          "area": "Cueva Unión (Sótano B2 - Lapras)",
+          "method": "Radio Pokégear (Sintonía de Hoenn)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23683,8 +23748,8 @@
       "summary": "Zona Safari (Área Lagos con 24 Bloques de Peña, sin espera de días).",
       "locations": [
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "24 Bloques Peña (Inmediato)"
+          "area": "Zona Safari (Laguna)",
+          "method": "24 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23743,7 +23808,7 @@
       "locations": [
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta"
+          "method": "24 bloques roca"
         }
       ],
       "evolution_info": {
@@ -23914,7 +23979,7 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "20 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -23973,7 +24038,7 @@
       "locations": [
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "18 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -24031,11 +24096,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Laguna) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Lagos) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -24090,19 +24155,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Zona Safari (Prado), Zona Safari (Laguna), Zona Safari (Páramo).",
+      "summary": "Salvaje en: Zona Safari (Prado), Zona Safari (Lagos), Zona Safari (Páramo).",
       "locations": [
         {
-          "area": "Zona Safari (Prado)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Laguna)",
+          "method": "10 bloques bosque"
         },
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Prado)",
+          "method": "15 bloques planicie"
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "3 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -24454,7 +24519,7 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta"
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -24517,7 +24582,7 @@
         },
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta"
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -24572,11 +24637,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Pantano) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
+          "method": "25 bloques bosque (20 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -24635,14 +24700,14 @@
     "cry_url": "/media/pokemon/cries/legacy/316.ogg",
     "flavor_text": "Sus sesos y su corazón son diminutos; es casi todo estómago. Sus jugos gástricos disuelven lo que sea.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver (Manada en Ruta 3 tras Dex Nacional). Requiere intercambio para conseguirlo en SoulSilver (también obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Radio Pokégear",
+      "badge_color": "indigo",
+      "summary": "Salvaje en Ruta 3 sintonizando la Radio de Hoenn los miércoles (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
+          "area": "Ruta 3",
+          "method": "Radio Pokégear (Sintonía de Hoenn)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -24695,22 +24760,10 @@
     "flavor_text": "Se traga todo lo que le quepa en su enorme boca. Sus jugos gástricos pueden digerir cualquier cosa.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Gulpin al Nivel 26 (requiere intercambio desde SoulSilver).",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Evolución de Gulpin transferido"
-        }
-      ],
-      "evolution_info": {
-        "from": "Gulpin",
-        "text": "Evoluciona de Gulpin (Nivel 26)",
-        "trigger": "level-up",
-        "condition": "Nivel 26",
-        "item_slug": null
-      }
+      "badge_label": "Evolución",
+      "badge_color": "slate",
+      "summary": "Evoluciona de Gulpin al Nivel 26.",
+      "locations": []
     },
     "evolution_stone": null,
     "game_data": {
@@ -25123,7 +25176,7 @@
       "locations": [
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques roca (30 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25354,7 +25407,7 @@
         },
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta"
+          "method": "14 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25413,7 +25466,7 @@
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "25 Bloques Peña + 30 días de espera"
+          "method": "25 bloques roca (30 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25472,7 +25525,7 @@
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "25 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -25591,7 +25644,7 @@
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta"
+          "method": "18 bloques bosque (20 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25650,11 +25703,11 @@
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "Hierba alta"
+          "method": "21 bloques agua (40 días)"
         },
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta"
+          "method": "18 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -25832,11 +25885,11 @@
       "locations": [
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "12 bloques planicie"
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "15 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25891,11 +25944,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Pantano) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques planicie (10 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -25954,7 +26007,7 @@
       "locations": [
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta"
+          "method": "15 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26013,7 +26066,7 @@
       "locations": [
         {
           "area": "Zona Safari (Páramo)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "21 bloques roca (30 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26068,11 +26121,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Pantano) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Pesca (Supercaña)"
+          "method": "4 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26189,15 +26242,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Zona Safari (Laguna), Zona Safari (Pantano) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Lagos), Zona Safari (Albufera) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "Pesca (Supercaña)"
+          "area": "Zona Safari (Pantano)",
+          "method": "10 bloques agua"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Pesca (Caña Buena)"
+          "area": "Zona Safari (Laguna)",
+          "method": "15 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26306,11 +26359,15 @@
     "cry_url": "/media/pokemon/cries/legacy/343.ogg",
     "flavor_text": "Se mueve girando sobre su eje. También se le puede ver girando cabeza abajo.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (exclusivo de HeartGold). Requiere intercambio desde Pokémon Oro HeartGold.",
       "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -26361,18 +26418,16 @@
     "cry_url": "/media/pokemon/cries/legacy/344.ogg",
     "flavor_text": "Dicen que es una figurilla de barro elaborada por una civilización de hace 20.000 años que cobró vida.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Baltoy (Nivel 36)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Baltoy",
-        "text": "Evoluciona de Baltoy (Nivel 36)",
-        "trigger": "level-up",
-        "condition": "Nivel 36",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Oro HeartGold. Evoluciona de Baltoy al Nivel 36.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -26418,18 +26473,22 @@
     "cry_url": "/media/pokemon/cries/legacy/345.ogg",
     "flavor_text": "Se extinguió hace 100 millones de años. Sus tentáculos parecen pétalos para atraer a sus presas.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Raíz es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.",
+      "type": "fossil",
+      "badge_label": "Fósil Raíz",
+      "badge_color": "amber",
+      "summary": "Revivir el Fósil Raíz (exclusivo de SoulSilver rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Intercambio con SoulSilver / Parque Compi",
-          "method": "Transferencia de Fósil Raíz o Pokémon"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Raíz (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Raíz (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de Fósil Raíz (si se transfiere)"
+          "method": "Revitalización de fósil"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26481,19 +26540,14 @@
     "cry_url": "/media/pokemon/cries/legacy/346.ogg",
     "flavor_text": "Vive en mares templados. Usa su cuerpo como contrapeso para que el mar embravecido lo arrastre.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en SoulSilver. Requiere intercambiar con SoulSilver o evolucionar a Lileep al Nivel 40.",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "slate",
+      "summary": "Evoluciona de Lileep al Nivel 40.",
+      "locations": [],
       "evolution_info": {
         "from": "Lileep",
-        "text": "Evoluciona de Lileep (Nivel 40)",
+        "text": "Evoluciona al Nivel 40",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null
@@ -26543,22 +26597,18 @@
     "cry_url": "/media/pokemon/cries/legacy/347.ogg",
     "flavor_text": "Pokémon de origen prehistórico. Al pasar a vivir en el agua, sus ocho patas se convirtieron en alas.",
     "obtaining_info": {
-      "type": "fossil",
-      "badge_label": "Fósil Garra",
-      "badge_color": "amber",
-      "summary": "Revivir el Fósil Garra (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Garra es exclusivo de HeartGold por Golpe Roca). Requiere transferir el fósil o intercambiar con HeartGold.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Garra (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Garra (Golpe Roca en rocas rompibles)"
+          "area": "Intercambio con HeartGold / Parque Compi",
+          "method": "Transferencia de Fósil Garra o Pokémon"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Revitalización de Fósil Garra (si se transfiere)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26610,18 +26660,16 @@
     "cry_url": "/media/pokemon/cries/legacy/348.ogg",
     "flavor_text": "Ensarta a sus presas con sus gigantescas garras elásticas.Una fuerte coraza cubre su cuerpo.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Anorith (Nivel 40)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Anorith",
-        "text": "Evoluciona de Anorith (Nivel 40)",
-        "trigger": "level-up",
-        "condition": "Nivel 40",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Oro HeartGold. Evoluciona de Anorith al Nivel 40.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -26920,7 +26968,7 @@
       "locations": [
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques bosque (20 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -26975,11 +27023,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera).",
+      "summary": "Salvaje en Zona Safari (Pantano).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "25 bloques roca (30 días)"
         }
       ],
       "evolution_info": {
@@ -27037,15 +27085,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Lagos) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Laguna) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
-        },
-        {
-          "area": "Zona Safari (Lagos)",
-          "method": "Surf"
+          "method": "28 bloques roca / 18 bloques agua (40 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27104,7 +27148,7 @@
       "locations": [
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques bosque (20 días)"
         }
       ],
       "evolution_info": {
@@ -27225,11 +27269,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Lagos) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Laguna) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "15 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27719,7 +27763,7 @@
       "locations": [
         {
           "area": "Zona Safari (Peña)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques de agua (40 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27778,7 +27822,7 @@
       "locations": [
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta, Hierba alta (Noche)"
+          "method": "7 bloques roca + 17 bloques agua (80 días)"
         }
       ],
       "evolution_info": {
@@ -28239,8 +28283,8 @@
       "summary": "Zona Safari (Área Laguna con 9 Bloques Bosque y 19 Bloques Peña tras 110 días de espera de Baoba).",
       "locations": [
         {
-          "area": "Zona Safari (Laguna)",
-          "method": "9 Bloques Bosque + 19 Peña (110 días de espera)"
+          "area": "Zona Safari (Lagos)",
+          "method": "9 bloques bosque + 19 bloques roca (110 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -28295,11 +28339,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Pantano).",
+      "summary": "Salvaje en Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "method": "21 bloques roca (70 días)"
         }
       ],
       "evolution_info": {
@@ -28411,14 +28455,14 @@
     "cry_url": "/media/pokemon/cries/legacy/374.ogg",
     "flavor_text": "Los pulsos magnéticos de su cuerpo repelen la gravedad, lo que le permite flotar en el aire.",
     "obtaining_info": {
-      "type": "safari",
-      "badge_label": "Safari Baoba",
-      "badge_color": "blue",
-      "summary": "Zona Safari (Área Arboleda con 21 Bloques de Peña y 70 días de espera de Baoba). También regalo de Steven Stone en su casa de Hoenn.",
+      "type": "trade",
+      "badge_label": "Intercambio / Safari",
+      "badge_color": "indigo",
+      "summary": "Intercambio con Máximo Peñas en Silph S.A. por un Forretress tras elegir a tu inicial de Hoenn. También en la Zona Safari (Arboleda con 21 bloques roca y 70 días).",
       "locations": [
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "21 Bloques Peña + 70 días de espera"
+          "method": "21 bloques roca (70 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -28477,7 +28521,7 @@
       "locations": [
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta"
+          "method": "28 bloques roca (30 días)"
         }
       ],
       "evolution_info": {
@@ -28739,20 +28783,24 @@
     "cry_url": "/media/pokemon/cries/legacy/380.ogg",
     "flavor_text": "Se comunica por telepatía. Su plumaje refleja la luz, lo que le permite hacerse invisible.",
     "obtaining_info": {
-      "type": "legendary",
-      "badge_label": "Errante Exclusivo",
-      "badge_color": "blue",
-      "summary": "Pokémon errante exclusivo de SoulSilver por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Carmín (al salir del Club de Fans Pokémon).",
+      "type": "event",
+      "badge_label": "Evento / Misticristal",
+      "badge_color": "purple",
+      "summary": "Encuentro legendario estático al Nivel 40 en el Museo de Ciudad Plateada activando el evento del Misticristal (Enigma Stone). También por intercambio con HeartGold.",
       "locations": [
         {
-          "area": "Rutas de Kanto (Errante)",
-          "method": "Pokémon errante tras evento de Máximo Peñas en Ciudad Carmín"
+          "area": "Ciudad Plateada (Museo)",
+          "method": "Encuentro estático a Nivel 40 tras examinar el Misticristal con Máximo Peñas"
+        },
+        {
+          "area": "Intercambio con HeartGold",
+          "method": "Transferencia directa desde Pokémon Oro HeartGold"
         }
       ],
       "historical_note": {
         "title": "Mecánica Errante y Evento del Misticristal",
         "icon_url": "/media/items/soul-dew.png",
-        "text": "En <strong>Pokémon Oro SoulSilver</strong>, Latias es el dragón legendario errante nativo de Kanto (Nivel 35) que se activa tras recuperar el Muñeco de Copiona en el Club de Fans de Ciudad Carmín y hablar con <strong>Máximo Peñas</strong> (Steven Stone). A partir de ese momento recorre aleatoriamente la región de Kanto.<br><br>Por el contrario, su contraparte <strong>Latios</strong> no aparece de forma errante en SoulSilver: se desbloquea exclusivamente mediante el evento por Wi-Fi del <strong>Misticristal</strong> (<em>Enigma Stone</em>) en el Museo de Ciudad Plateada, o transfiriéndolo desde Pokémon Plata SoulSilver (donde sus roles se invierten: Latios es el errante y Latias la del evento)."
+        "text": "En <strong>Pokémon Plata SoulSilver</strong>, Latios es el dragón errante mientras que Latias se reserva para el evento especial del <strong>Misticristal</strong> (<em>Enigma Stone</em>). Al llevar la piedra al Museo de Ciudad Plateada, Máximo Peñas la analiza y Latias aparece de inmediato frente al museo al Nivel 40 llevando consigo el objeto <strong>Rocío Bondad</strong> (<em>Soul Dew</em>)."
       }
     },
     "evolution_stone": null,
@@ -28799,24 +28847,20 @@
     "cry_url": "/media/pokemon/cries/legacy/381.ogg",
     "flavor_text": "Es muy inteligente y entiende el lenguaje humano. Es un Pokémon muy dócil y no le gusta nada combatir.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Evento / Misticristal",
-      "badge_color": "indigo",
-      "summary": "Encuentro legendario estático al Nivel 40 en el Museo de Ciudad Plateada mediante el evento del Misticristal, o por transferencia/intercambio desde SoulSilver.",
+      "type": "legendary",
+      "badge_label": "Errante Exclusivo",
+      "badge_color": "blue",
+      "summary": "Pokémon errante exclusivo de SoulSilver por las rutas de Kanto al Nivel 35 tras hablar con Máximo Peñas en Ciudad Carmín (al salir del Club de Fans Pokémon).",
       "locations": [
         {
-          "area": "Ciudad Plateada (Museo)",
-          "method": "Encuentro estático a Nivel 40 tras examinar el Misticristal con Máximo Peñas"
-        },
-        {
-          "area": "Intercambio con SoulSilver",
-          "method": "Transferencia directa desde Pokémon Plata SoulSilver"
+          "area": "Rutas de Kanto (Errante)",
+          "method": "Pokémon errante tras evento de Máximo Peñas en Ciudad Carmín"
         }
       ],
       "historical_note": {
-        "title": "Evento Legendario • El Misticristal (Enigma Stone)",
-        "icon_url": "/media/items/enigma-stone.png",
-        "text": "El <strong>Misticristal</strong> (<em>Enigma Stone</em>) fue un objeto de evento clave distribuido por tiempo limitado mediante la Conexión Wi-Fi de Nintendo para Pokémon Oro SoulSilver y Plata SoulSilver.<br><br>Al llevar este objeto al <strong>Museo de la Ciencia de Ciudad Plateada</strong>, un investigador lo analiza en presencia del campeón <strong>Máximo Peñas</strong> (Steven Stone) y descubre que en realidad alberga en su interior el legendario <strong>Rocío Bondad</strong> (<em>Soul Dew</em>). Al salir del edificio a la plaza exterior, en <strong>Pokémon Oro SoulSilver</strong> desciende <strong>Latios</strong> al Nivel 40 (mientras que en <strong>Plata SoulSilver</strong> desciende <strong>Latias</strong>) entablando un combate estático contra el jugador. Al ser capturado o derrotado, Máximo te entrega el Rocío Bondad.<br><br><em>Diferencia de versiones:</em> En SoulSilver, Latias recorre Kanto de forma errante de manera natural, mientras que en SoulSilver es Latios el errante y Latias quien requiere el Misticristal."
+        "title": "Mecánica Errante y Evento del Misticristal",
+        "icon_url": "/media/items/soul-dew.png",
+        "text": "En <strong>Pokémon Plata SoulSilver</strong>, Latios es el dragón legendario errante nativo de Kanto (Nivel 35) que se activa tras recuperar el Muñeco de Copiona en el Club de Fans de Ciudad Carmín y hablar con <strong>Máximo Peñas</strong> (Steven Stone). A partir de ese momento recorre aleatoriamente la región de Kanto.<br><br>Por el contrario, su contraparte <strong>Latias</strong> no aparece de forma errante en SoulSilver: se desbloquea exclusivamente mediante el evento por Wi-Fi del <strong>Misticristal</strong> (<em>Enigma Stone</em>) en el Museo de Ciudad Plateada, o transfiriéndola desde Pokémon Oro HeartGold."
       }
     },
     "evolution_stone": null,
@@ -28864,13 +28908,13 @@
     "flavor_text": "Pokémon legendario que aumentó los mares con diluvios y maremotos. Fue un enemigo acérrimo de Groudon.",
     "obtaining_info": {
       "type": "legendary",
-      "badge_label": "Legendario Exclusivo",
+      "badge_label": "Exclusivo HeartGold",
       "badge_color": "blue",
-      "summary": "Encuentro exclusivo de SoulSilver en la Torre Oculta de la Ruta 47 al Nivel 50 tras recibir la Esfera Azul de Mr. Pokémon.",
+      "summary": "Legendario exclusivo de Pokémon Oro HeartGold en la Torre Oculta. Requiere ser transferido a SoulSilver para desbloquear la Esfera Verde de Rayquaza con el Prof. Oak.",
       "locations": [
         {
-          "area": "Ruta 47 (Torre Oculta)",
-          "method": "Encuentro legendario a nivel 50 (Esfera Azul)"
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Legendario exclusivo de versión"
         }
       ]
     },
@@ -28919,13 +28963,13 @@
     "flavor_text": "Dicen que aumentó la superficie terrestre evaporando el agua. Fue un enemigo acérrimo de Kyogre.",
     "obtaining_info": {
       "type": "legendary",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "rose",
-      "summary": "Legendario exclusivo de Pokémon Plata SoulSilver en la Torre Oculta (Ruta 47) con la Esfera Roja. Requiere intercambio para registrarlo en SoulSilver (y desbloquear a Rayquaza).",
+      "badge_label": "Legendario Exclusivo",
+      "badge_color": "red",
+      "summary": "Encuentro exclusivo de SoulSilver en la Torre Oculta de la Ruta 47 al Nivel 50 tras recibir la Esfera Roja de Mr. Pokémon.",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Legendario exclusivo de versión"
+          "area": "Ruta 47 (Torre Oculta)",
+          "method": "Encuentro legendario a Nivel 50 con Esfera Roja (entregada por Mr. Pokémon tras vencer a Rojo)"
         }
       ]
     },
@@ -29915,7 +29959,7 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
+          "method": "3 bloques agua"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -30244,7 +30288,7 @@
         },
         {
           "area": "Zona Safari (Prado)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -30303,7 +30347,7 @@
       "locations": [
         {
           "area": "Zona Safari (Sabana)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "24 bloques planicie"
         }
       ],
       "evolution_info": {
@@ -30430,11 +30474,11 @@
         },
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta"
+          "method": "24 bloques planicie"
         },
         {
           "area": "Zona Safari (Laguna)",
-          "method": "Hierba alta"
+          "method": "18 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31155,15 +31199,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Zona Safari (Lagos), Zona Safari (Pantano) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Laguna), Zona Safari (Albufera) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Pantano)",
+          "method": "8 bloques bosque"
         },
         {
-          "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta"
+          "area": "Zona Safari (Lagos)",
+          "method": "10 bloques planicie"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31318,7 +31362,7 @@
         },
         {
           "area": "Zona Safari (Pantano)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "18 bloques agua (40 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -31373,11 +31417,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Lagos).",
+      "summary": "Salvaje en Zona Safari (Laguna).",
       "locations": [
         {
           "area": "Zona Safari (Lagos)",
-          "method": "Hierba alta"
+          "method": "10 bloques agua"
         }
       ],
       "evolution_info": {
@@ -32430,7 +32474,7 @@
         },
         {
           "area": "Zona Safari (Montaña)",
-          "method": "Hierba alta"
+          "method": "10 bloques bosque"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -32618,10 +32662,6 @@
       "summary": "Zona Safari (Área Peña con 18 Bloques Peña y 30 días de espera) o mediante sintonía de Sinnoh en la Radio.",
       "locations": [
         {
-          "area": "Zona Safari (Peña)",
-          "method": "18 Bloques Peña (30 días de espera)"
-        },
-        {
           "area": "Ruta 33",
           "method": "Radio Pokégear (Sintonía de Sinnoh)"
         },
@@ -32636,6 +32676,10 @@
         {
           "area": "Pokéwalker (Vía Campeón)",
           "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Zona Safari (Peña)",
+          "method": "7 bloques bosque + 18 bloques roca (30 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -32694,7 +32738,7 @@
       "locations": [
         {
           "area": "Zona Safari (Arboleda)",
-          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+          "method": "9 bloques bosque + 19 bloques roca (110 días)"
         }
       ],
       "evolution_info": {
@@ -33156,8 +33200,8 @@
       "summary": "Zona Safari (Área Lagos con 13 Bloques Planicie y 17 Bloques Peña tras 100 días de espera de Baoba).",
       "locations": [
         {
-          "area": "Zona Safari (Lagos)",
-          "method": "13 Bloques Planicie + 17 Peña (100 días de espera)"
+          "area": "Zona Safari (Laguna)",
+          "method": "13 bloques planicie + 17 bloques roca (100 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -33411,7 +33455,7 @@
       "locations": [
         {
           "area": "Zona Safari (Parterre)",
-          "method": "10 Bloques Bosque + 14 Peña (70 días de espera)"
+          "method": "10 bloques bosque + 14 bloques roca (70 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -33527,7 +33571,7 @@
       "locations": [
         {
           "area": "Zona Safari (Desierto)",
-          "method": "28 Bloques Peña (Inmediato)"
+          "method": "28 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -33643,7 +33687,7 @@
       "locations": [
         {
           "area": "Zona Safari (Páramo)",
-          "method": "28 Bloques Peña (Inmediato)"
+          "method": "28 bloques roca"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -33755,11 +33799,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Albufera) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Pantano) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
-          "method": "Hierba alta"
+          "method": "21 bloques bosque (20 días)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -36032,12 +36076,12 @@
       "summary": "Obtenible mediante crianza en la Guardería de la Ruta 34 dejando a Manaphy (o a otro Phione) junto a Ditto. También transferible mediante intercambio desde Pokémon Diamante, Perla o Platino.",
       "locations": [
         {
-          "area": "Ruta 34 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        },
-        {
           "area": "Intercambio con D/P/Pt",
           "method": "Intercambio desde Pokémon Diamante, Perla o Platino"
+        },
+        {
+          "area": "Ruta 34 (Guardería Pokémon)",
+          "method": "Crianza de huevo"
         }
       ]
     },

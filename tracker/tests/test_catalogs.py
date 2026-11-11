@@ -3455,15 +3455,67 @@ class JohtoSafariZoneTests(TestCase):
         self.assertEqual(reg_safari_total, 75)
         self.assertEqual(nat_safari_total, 153)
 
+    def test_soulsilver_safari_biome_tags(self):
+        from tracker.catalog_service import get_compiled_catalog
+        catalog = get_compiled_catalog("soulsilver", force_reload=True)
+
+        expected_biomes = [
+            "safari_albufera", "safari_arboleda", "safari_desierto", "safari_lagos",
+            "safari_laguna", "safari_montana", "safari_pantano", "safari_parterre",
+            "safari_pena", "safari_prado", "safari_paramo", "safari_sabana"
+        ]
+
+        # Verificar que todos los 12 biomas oficiales tienen al menos un pokémon etiquetado
+        for biome_tag in expected_biomes:
+            matches = [e for e in catalog if biome_tag in e.filter_tags.split()]
+            self.assertGreater(len(matches), 0, f"El bioma {biome_tag} no tiene Pokémon asociados en SoulSilver")
+
+        # Verificar que 'Bahía Blanca' no existe como tag de bioma
+        bahia_matches = [e for e in catalog if "bahia" in e.filter_tags.lower()]
+        self.assertEqual(len(bahia_matches), 0, "No debe existir ningún tag con bahia en el catálogo")
+
+        # Verificar que los Pokémon de Acceso al Safari no tienen tag 'safari' por error
+        hoothoot = [e for e in catalog if e.pokemon.national_number == 163][0]
+        self.assertNotIn("safari", hoothoot.filter_tags.split())
+
+        # Verificar que en modo Regional, Peña tiene exactamente sus 6 especies canónicas y NO tiene especies con bloques
+        pena_entries = [e for e in catalog if "safari_pena" in e.filter_tags.split()]
+        pena_names = {e.pokemon.display_name for e in pena_entries}
+        expected_regional_pena = {"Geodude", "Graveler", "Magnemite", "Magneton", "Magmar", "Wobbuffet"}
+        self.assertEqual(pena_names, expected_regional_pena)
+
+        # Verificar que en modo Regional, Albufera tiene exactamente sus 12 especies canónicas sin bloques
+        albufera_entries = [e for e in catalog if "safari_albufera" in e.filter_tags.split()]
+        albufera_names = {e.pokemon.display_name for e in albufera_entries}
+        expected_regional_albufera = {
+            "Arbok", "Ekans", "Gloom", "Grimer", "Gyarados", "Koffing",
+            "Magikarp", "Oddish", "Poliwag", "Poliwhirl", "Weezing", "Wooper"
+        }
+        self.assertEqual(albufera_names, expected_regional_albufera)
+        # Asegurar que NO se filtran pokémon que requieren bloques en Albufera
+        self.assertFalse({"Quagsire", "Jumpluff", "Muk", "Diglett"}.intersection(albufera_names))
+
+        # Verificar que en el catálogo Nacional, Peña contiene 15 especies canónicas (incluyendo las de bloques)
+        nat_catalog = get_compiled_catalog("soulsilver", force_reload=True, is_national=True)
+        nat_pena_entries = [e for e in nat_catalog if "safari_pena" in e.filter_tags.split()]
+        nat_pena_names = {e.pokemon.display_name for e in nat_pena_entries}
+        self.assertEqual(len(nat_pena_names), 15)
+
+        # Validar recuentos globales exactos: 75 únicas en Regional y 153 únicas en Nacional
+        reg_safari_total = len([e for e in catalog if "safari" in e.filter_tags.split()])
+        nat_safari_total = len([e for e in nat_catalog if "safari" in e.filter_tags.split()])
+        self.assertEqual(reg_safari_total, 75)
+        self.assertEqual(nat_safari_total, 153)
+
 
 class HeartGoldAdvancedFiltersTests(TestCase):
     """Pruebas exhaustivas para los nuevos filtros mecánicos de Pokémon Oro HeartGold (y SoulSilver)."""
 
     def setUp(self):
-        self.game = Game.objects.create(name="Pokémon Oro HeartGold", slug="heartgold", generation=4)
-        self.ss = Game.objects.create(name="Pokémon Plata SoulSilver", slug="soulsilver", generation=4)
-        self.crystal = Game.objects.create(name="Pokémon Cristal", slug="crystal", generation=2)
-        self.diamond = Game.objects.create(name="Pokémon Diamante", slug="diamond", generation=4)
+        self.game, _ = Game.objects.get_or_create(slug="heartgold", defaults={"name": "Pokémon Oro HeartGold", "generation": 4})
+        self.ss, _ = Game.objects.get_or_create(slug="soulsilver", defaults={"name": "Pokémon Plata SoulSilver", "generation": 4})
+        self.crystal, _ = Game.objects.get_or_create(slug="crystal", defaults={"name": "Pokémon Cristal", "generation": 2})
+        self.diamond, _ = Game.objects.get_or_create(slug="diamond", defaults={"name": "Pokémon Diamante", "generation": 4})
 
     def test_game_filter_properties(self):
         """Verifica las propiedades booleanas de mecánicas en el modelo Game."""

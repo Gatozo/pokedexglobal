@@ -1855,7 +1855,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Casino",
       "badge_color": "emerald",
-      "summary": "Salvaje en la Zona Safari (Pantano) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
+      "summary": "Salvaje en la Zona Safari (Albufera) y canjeable por 700 fichas en el Casino de Ciudad Trigal (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Casino de Ciudad Trigal",
@@ -8506,7 +8506,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 11, Zona Safari (Laguna).",
+      "summary": "Salvaje en: Ruta 11, Zona Safari (Lagos).",
       "locations": [
         {
           "area": "Ruta 11",
@@ -9573,7 +9573,7 @@
       "type": "safari",
       "badge_label": "Safari Baoba / Evolución",
       "badge_color": "purple",
-      "summary": "Zona Safari (Área Pantano con 8 Bloques de Planicie, aparición inmediata). También mediante evolución de Koffing (Nv. 35).",
+      "summary": "Salvaje en la Zona Safari (Albufera). También mediante evolución de Koffing al Nivel 35 (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
