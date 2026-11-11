@@ -620,6 +620,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1247,6 +1251,18 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1340,6 +1356,10 @@
         {
           "area": "Bosque Verde",
           "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -1548,6 +1568,14 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1737,6 +1765,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -1794,6 +1826,10 @@
         {
           "area": "Ruta 1",
           "method": "Hierba alta (Día), Hierba alta (Mañana)"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -1919,6 +1955,22 @@
         {
           "area": "Estación del Magnetotrén de Ciudad Azafrán",
           "method": "Intercambio con Teniente Surge (por Pikachu)"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Bosque Amarillo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Acontecimiento)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2509,23 +2561,135 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Rutas 29, 30, 31 y 37 por la mañana (también obtenible mediante crianza).",
+      "summary": "Salvaje en 32 zonas (ej: Pueblo Primavera, Ruta 29, Ciudad Cerezo) (también obtenible mediante crianza).",
       "locations": [
         {
+          "area": "Pueblo Primavera",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
           "area": "Ruta 29",
-          "method": "Hierba alta (Mañana)"
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ciudad Cerezo",
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 30",
-          "method": "Hierba alta (Mañana)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana)"
         },
         {
           "area": "Ruta 31",
-          "method": "Hierba alta (Mañana)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 34",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 35",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Parque Nacional",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 36",
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 37",
-          "method": "Hierba alta (Mañana)"
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ciudad Iris",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 38",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 39",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 47",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 12",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ciudad Verde",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ciudad Fucsia",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Pueblo Paleta",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 48",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 26",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 27",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 1",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 2 (Sur hacia Ciudad Verde)",
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Día), Hierba alta (Mañana)"
+        },
+        {
+          "area": "Ruta 13",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 14",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 15",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 18",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 21 (Ruta Marítima)",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 22",
+          "method": "Golpe Cabeza (Árboles especiales)"
+        },
+        {
+          "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
+          "method": "Golpe Cabeza (Árboles especiales), Hierba alta (Día), Hierba alta (Mañana)"
+        },
+        {
+          "area": "Bosque Verde",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Acceso al Safari",
+          "method": "Golpe Cabeza (Árboles especiales)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -2580,7 +2744,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Evolución",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 2 por la mañana. También evolucionando de Ledyba al Nivel 18.",
+      "summary": "Salvaje en: Ruta 2, Bosque Verde. También evolucionando de Ledyba al Nivel 18.",
       "locations": [
         {
           "area": "Ruta 2 (Sur hacia Ciudad Verde)",
@@ -2589,8 +2753,19 @@
         {
           "area": "Ruta 2 (Norte hacia Ciudad Plateada)",
           "method": "Hierba alta (Mañana)"
+        },
+        {
+          "area": "Bosque Verde",
+          "method": "Golpe Cabeza (Árboles especiales)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ledyba",
+        "text": "Evoluciona de Ledyba (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3190,6 +3365,14 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -3379,6 +3562,14 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva Calma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -3565,6 +3756,14 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -3801,6 +4000,14 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Confín del Cielo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -4900,6 +5107,14 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Cueva Sombría)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -4961,6 +5176,10 @@
         {
           "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -5372,6 +5591,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -5437,6 +5660,10 @@
         {
           "area": "Ruta 25",
           "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -5614,6 +5841,10 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -5812,6 +6043,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -6095,6 +6330,14 @@
           "method": "Pesca (Caña Vieja)"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -6212,6 +6455,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Pesca (Caña Buena, Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -6802,6 +7049,18 @@
           "method": "Pesca (Caña Vieja, Caña Buena)"
         },
         {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7101,6 +7360,14 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "Pesca (Caña Buena, Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -7404,6 +7671,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7636,6 +7907,10 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -7705,6 +7980,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -8653,6 +8932,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -8895,6 +9178,10 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -9257,6 +9544,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9483,6 +9774,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9707,6 +10002,10 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -9787,6 +10086,10 @@
         {
           "area": "Ruta 25",
           "method": "Hierba alta (Mañana), Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Bosque Murmullos)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10242,6 +10545,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -10381,6 +10688,10 @@
         {
           "area": "Zona Safari (Albufera)",
           "method": "Hierba alta (Mañana y Día) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -10536,6 +10847,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -10675,6 +10990,10 @@
         {
           "area": "Ciudad Olivo",
           "method": "Intercambio por un Krabby (Voltorb Billy)"
+        },
+        {
+          "area": "Pokéwalker (Arrabal)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11059,23 +11378,27 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Rutas 36 y 37 en Johto, y Rutas 7 y 8 en Kanto (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 36, Ruta 37, Ruta 48) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 36",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Hierba alta (Día)"
         },
         {
           "area": "Ruta 37",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Hierba alta (Día)"
+        },
+        {
+          "area": "Ruta 48",
+          "method": "Hierba alta, Hierba alta (Noche)"
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba alta"
+          "method": "Hierba alta, Hierba alta (Día)"
         },
         {
           "area": "Ruta 8",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Día), Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11380,6 +11703,10 @@
           "method": "3 Bloques Planicie (Noche)"
         },
         {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -11441,6 +11768,10 @@
         {
           "area": "Zona Safari (Parterre)",
           "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Zona Vacacional)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -11829,6 +12160,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -11878,11 +12213,20 @@
     "cry_url": "/media/pokemon/cries/legacy/53.ogg",
     "flavor_text": "Sus ágiles músculos le permiten moverse sin hacer ruido. Ataca al instante.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "slate",
-      "summary": "Evoluciona de Meowth al Nivel 28.",
-      "locations": [],
+      "type": "wild",
+      "badge_label": "Salvaje / Evolución",
+      "badge_color": "emerald",
+      "summary": "Salvaje en: Ruta 7, Cueva Celeste (P1). También evolucionando de Meowth al Nivel 28.",
+      "locations": [
+        {
+          "area": "Ruta 7",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Cueva Celeste (P1)",
+          "method": "Hierba alta, Hierba alta (Día), Hierba alta (Mañana)"
+        }
+      ],
       "evolution_info": {
         "from": "Meowth",
         "text": "Evoluciona al Nivel 28",
@@ -11991,6 +12335,14 @@
         {
           "area": "Zona Safari (Pantano)",
           "method": "Hierba alta (Noche) / Surf"
+        },
+        {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12650,6 +13002,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Casa del Árbol)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -12719,6 +13075,10 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -13466,6 +13826,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Golpe Cabeza en árboles"
         },
         {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14107,6 +14471,10 @@
           "method": "Hierba alta / Pesca (Caña Vieja, Caña Buena)"
         },
         {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14371,6 +14739,14 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
+          "area": "Pokéwalker (Costa Bella)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14561,6 +14937,14 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14735,6 +15119,10 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14798,6 +15186,14 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -14851,7 +15247,12 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Remoraid (Nivel 25)",
-      "locations": [],
+      "locations": [
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        }
+      ],
       "evolution_info": {
         "from": "Remoraid",
         "text": "Evoluciona de Remoraid (Nivel 25)",
@@ -14952,6 +15353,14 @@
         {
           "area": "Muelle del S.S. Aqua (Ciudad Carmín)",
           "method": "Pesca (Caña Buena y Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15149,6 +15558,10 @@
         {
           "area": "Islas Espuma (Sótano B4 - Articuno)",
           "method": "Surf"
+        },
+        {
+          "area": "Pokéwalker (Playa Tormenta)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15432,6 +15845,10 @@
           "method": "Golpe Cabeza (Árboles especiales), Hierba alta, Hierba alta (Mañana), Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Gran Bosque)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -15550,6 +15967,10 @@
         {
           "area": "Ciudad Azulona (Rincón de Premios)",
           "method": "Premio del Casino (6.666 fichas)"
+        },
+        {
+          "area": "Pokéwalker (De turismo)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16010,6 +16431,18 @@
           "method": "Pesca (Caña Buena y Supercaña)"
         },
         {
+          "area": "Pokéwalker (Playa Cálida)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Ultramar)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Vía Campeón)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -16368,6 +16801,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -16534,15 +16971,27 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 45 y Monte Plateado (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 45, Monte Plateado (P1 Superior), Monte Plateado (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 45",
-          "method": "Hierba alta (Mañana y Día)"
+          "method": "Hierba alta"
         },
         {
-          "area": "Monte Plateado (Exterior)",
-          "method": "Hierba alta (Mañana y Día)"
+          "area": "Monte Plateado (P1 Superior)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (Laderas)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P3)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -16597,17 +17046,64 @@
       "type": "wild",
       "badge_label": "Salvaje / Evolución",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 28 y Monte Plateado. También evolucionando de Teddiursa al Nivel 30.",
+      "summary": "Salvaje en 12 zonas (ej: Monte Plateado (P2), Monte Plateado (P1 Superior), Monte Plateado (P4)) También evolucionando de Teddiursa al Nivel 30.",
       "locations": [
         {
-          "area": "Ruta 28",
+          "area": "Monte Plateado (P2)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P1 Superior)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P4)",
           "method": "Hierba alta"
         },
         {
           "area": "Monte Plateado (Exterior)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (Laderas)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (P3)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Cima del Monte Plateado",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 28",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Calle Victoria (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Calle Victoria (P2)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Calle Victoria (P3)",
+          "method": "Hierba alta"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Teddiursa",
+        "text": "Evoluciona de Teddiursa (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16918,6 +17414,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17065,6 +17565,14 @@
         {
           "area": "Ruta 22",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Camino Pedregoso)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17261,6 +17769,10 @@
         {
           "area": "Zona Safari (Desierto)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Cueva del Terror)",
+          "method": "Paseo en el Pokéwalker"
         }
       ],
       "evolution_info": {
@@ -17329,6 +17841,10 @@
           "method": "Hierba alta (Mañana y Día)"
         },
         {
+          "area": "Pokéwalker (Prado Tranquilo)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17394,6 +17910,10 @@
         {
           "area": "Zona Safari (Sabana)",
           "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17525,6 +18045,10 @@
           "method": "Hierba alta"
         },
         {
+          "area": "Pokéwalker (Urbanización)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17582,6 +18106,10 @@
         {
           "area": "Ruta 7",
           "method": "Hierba alta (Noche)"
+        },
+        {
+          "area": "Pokéwalker (Sendero Volcán)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -17853,6 +18381,10 @@
           "method": "Hierba alta (Noche)"
         },
         {
+          "area": "Pokéwalker (Senda Glacial)",
+          "method": "Paseo en el Pokéwalker"
+        },
+        {
           "area": "Ruta 34 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -17918,6 +18450,10 @@
         {
           "area": "Zona Safari (Arboleda)",
           "method": "Hierba alta"
+        },
+        {
+          "area": "Pokéwalker (Lago Bruma)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -19578,6 +20114,10 @@
         {
           "area": "Zona Safari (Lagos)",
           "method": "Pesca (Supercaña)"
+        },
+        {
+          "area": "Pokéwalker (Mar Azul)",
+          "method": "Paseo en el Pokéwalker"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

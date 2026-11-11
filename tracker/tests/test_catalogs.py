@@ -3867,6 +3867,70 @@ class PokemonSoulSilverGen4Tests(TestCase):
         arceus = [e for e in nat_cat if e.pokemon.national_number == 493][0]
         self.assertTrue(arceus.game_sprite_url.startswith("/media/pokemon/sprites/soulsilver/"))
 
+    def test_soulsilver_ledyba_ruta_36_and_mechanics_parity(self):
+        """Valida que Ledyba salga en Ruta 36 con Golpe Cabeza y la paridad de mecánicas de SoulSilver."""
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("soulsilver", force_reload=True, is_national=False)
+        nat_cat = get_compiled_catalog("soulsilver", force_reload=True, is_national=True)
+
+        def get_names_with_tag(cat, tag):
+            return {e.pokemon.display_name for e in cat if tag in e.filter_tags.split()}
+
+        # 1. Ledyba (#165) en Ruta 36 con Golpe Cabeza
+        ledyba = next(e for e in reg_cat if e.pokemon.national_number == 165)
+        self.assertIn("headbutt", ledyba.filter_tags.split())
+        r36_locs = [l for l in ledyba.obtaining_info.get("locations", []) if "Ruta 36" in l.get("area", "")]
+        self.assertEqual(len(r36_locs), 1, "Ledyba debe tener exactamente una entrada en Ruta 36")
+        self.assertIn("Golpe Cabeza", r36_locs[0]["method"])
+
+        # 2. Ledian (#166) en Bosque Verde con Golpe Cabeza
+        ledian = next(e for e in reg_cat if e.pokemon.national_number == 166)
+        self.assertIn("headbutt", ledian.filter_tags.split())
+        bv_locs = [l for l in ledian.obtaining_info.get("locations", []) if "Bosque Verde" in l.get("area", "")]
+        self.assertEqual(len(bv_locs), 1, "Ledian debe tener encuentro en Bosque Verde")
+        self.assertIn("Golpe Cabeza", bv_locs[0]["method"])
+
+        # 3. Paridad exacta de Golpe Cabeza (15 en Regional, 24 en Nacional)
+        reg_hb = get_names_with_tag(reg_cat, "headbutt")
+        nat_hb = get_names_with_tag(nat_cat, "headbutt")
+        self.assertEqual(len(reg_hb), 15)
+        self.assertEqual(len(nat_hb), 24)
+        self.assertIn("Ledyba", reg_hb)
+        self.assertIn("Ledian", reg_hb)
+
+        # 4. Paridad de Manadas (8 en Regional, 20 en Nacional con Mawile y Gulpin)
+        reg_sw = get_names_with_tag(reg_cat, "swarm")
+        nat_sw = get_names_with_tag(nat_cat, "swarm")
+        self.assertEqual(len(reg_sw), 8)
+        self.assertEqual(len(nat_sw), 20)
+        self.assertIn("Mawile", nat_sw)
+        self.assertIn("Gulpin", nat_sw)
+
+        # 5. Paridad de Pokéwalker (77 en Regional, 118 en Nacional)
+        reg_pw = get_names_with_tag(reg_cat, "pokewalker")
+        nat_pw = get_names_with_tag(nat_cat, "pokewalker")
+        self.assertEqual(len(reg_pw), 77)
+        self.assertEqual(len(nat_pw), 118)
+
+        # 6. Verificación de Vulpix (#37) con Ruta 48 y Persian (#53) con encuentros salvajes
+        vulpix = next(e for e in reg_cat if e.pokemon.national_number == 37)
+        vulpix_areas = {l["area"] for l in vulpix.obtaining_info.get("locations", [])}
+        self.assertIn("Ruta 48", vulpix_areas)
+
+        persian = next(e for e in reg_cat if e.pokemon.national_number == 53)
+        persian_areas = {l["area"] for l in persian.obtaining_info.get("locations", [])}
+        self.assertIn("Ruta 7", persian_areas)
+        self.assertIn("Cueva Celeste (P1)", persian_areas)
+        self.assertEqual(persian.obtaining_info.get("badge_label"), "Salvaje / Evolución")
+
+        # 7. Verificación de Teddiursa (#216) y Ursaring (#217)
+        teddiursa = next(e for e in reg_cat if e.pokemon.national_number == 216)
+        teddiursa_areas = {l["area"] for l in teddiursa.obtaining_info.get("locations", [])}
+        self.assertTrue(any("Monte Plateado" in a for a in teddiursa_areas))
+
+        ursaring = next(e for e in reg_cat if e.pokemon.national_number == 217)
+        self.assertEqual(len(ursaring.obtaining_info.get("locations", [])), 12)
+
 
 
 
