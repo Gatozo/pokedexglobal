@@ -2759,6 +2759,33 @@ class PokemonHeartGoldGen4Tests(TestCase):
         self.assertIn("jueves", thunder_text.lower())
         self.assertIn("miércoles y sábados", thunder_text.lower())
 
+        # Validar nombres canónicos en español de NPCs en llamadas del Pokégear
+        oval_stone = stones_data.get("oval-stone", {}).get("games", {}).get("heartgold", [])
+        oval_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in oval_stone)
+        self.assertIn("Gemelas Lil y Lala", oval_text)
+        self.assertNotIn("Kay", oval_text)
+        self.assertIn("Ruta 15", oval_text)
+
+        fire_stone = stones_data.get("fire-stone", {}).get("games", {}).get("heartgold", [])
+        fire_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in fire_stone)
+        self.assertIn("Escolar Arturo", fire_text)
+        self.assertNotIn("Alan", fire_text)
+
+        water_stone = stones_data.get("water-stone", {}).get("games", {}).get("heartgold", [])
+        water_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in water_stone)
+        self.assertIn("Pescador Óscar", water_text)
+        self.assertNotIn("Juan", water_text)
+
+        dusk_stone = stones_data.get("dusk-stone", {}).get("games", {}).get("heartgold", [])
+        dusk_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in dusk_stone)
+        self.assertIn("Motorista Isra", dusk_text)
+        self.assertNotIn("Raúl", dusk_text)
+
+        dawn_stone = stones_data.get("dawn-stone", {}).get("games", {}).get("heartgold", [])
+        dawn_text = " ".join(f"{loc.get('area')} {loc.get('detail')}" for loc in dawn_stone)
+        self.assertIn("Motorista Radomir", dawn_text)
+        self.assertNotIn("Mario", dawn_text)
+
         # 2. Validar que Raichu en el catálogo tiene icon_url y name normalizados
         reg_cat = get_compiled_catalog("heartgold", is_national=False, force_reload=True)
         raichu = [e for e in reg_cat if e.pokemon.national_number == 26][0]
