@@ -1077,6 +1077,18 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_color = "emerald"
             badge_label = "Salvaje"
             obt_type = "wild"
+        elif clean_slug in ["black", "white"]:
+            summary = "No disponible en estado salvaje en Teselia. Se obtiene mediante transferencia externa con el Poké Transfer en el Laboratorio Transfer (Ruta 15), desde juegos de 4.ª generación (Pokémon Diamante, Perla, Platino, Oro HeartGold o Plata SoulSilver)."
+            locations = [
+                {
+                    "area": "Laboratorio Transfer (Ruta 15)",
+                    "method": "Poké Transfer (transferencia desde 4.ª generación)"
+                }
+            ]
+            badge_color = "slate"
+            badge_label = "Poké Transfer"
+            obt_type = "transfer"
+            ch_name = "Teselia (Poké Transfer)"
         elif clean_slug in ["gold", "silver", "crystal"]:
             ch_name = item.get("chamber_name", "Ruinas Alfa")
             ch_title = item.get("chamber_title", ch_name)
@@ -1109,8 +1121,11 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
         is_emerald = (clean_slug == "emerald")
         is_diamond = (clean_slug in ["diamond", "pearl", "platinum"])
         is_hgss = (clean_slug in ["heartgold", "soulsilver"])
+        is_unova = (clean_slug in ["black", "white"])
         modal_retro_url = None
         modal_retro_shiny_url = None
+        modal_retro_back_url = None
+        modal_retro_shiny_back_url = None
         if is_crystal:
             modal_retro_url = f"/media/pokemon/sprites/crystal_animated/unown/{letter}.gif"
             modal_retro_shiny_url = f"/media/pokemon/sprites/crystal_animated_shiny/unown/{letter}.gif"
@@ -1123,6 +1138,11 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
         elif is_hgss:
             modal_retro_url = f"/media/pokemon/sprites/{clean_slug}_animated/unown/{letter}.png"
             modal_retro_shiny_url = f"/media/pokemon/sprites/{clean_slug}_animated_shiny/unown/{letter}.png"
+        elif is_unova:
+            modal_retro_url = f"/media/pokemon/sprites/black_animated/unown/{letter}.gif"
+            modal_retro_shiny_url = f"/media/pokemon/sprites/black_animated_shiny/unown/{letter}.gif"
+            modal_retro_back_url = f"/media/pokemon/sprites/black_animated/back/unown/{letter}.gif"
+            modal_retro_shiny_back_url = f"/media/pokemon/sprites/black_animated_shiny/back/unown/{letter}.gif"
 
         forms.append({
             "form_key": letter,
@@ -1137,6 +1157,8 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             "sprite_retro_shiny": item["sprite_shiny"],
             "modal_retro_sprite_url": modal_retro_url,
             "modal_retro_sprite_shiny_url": modal_retro_shiny_url,
+            "modal_retro_sprite_back_url": modal_retro_back_url,
+            "modal_retro_sprite_shiny_back_url": modal_retro_shiny_back_url,
             "sprite_retro_back": item.get("sprite_normal_back") or item["sprite_normal"].replace(f"/{item['sprite_normal'].split('/')[4]}/", f"/{item['sprite_normal'].split('/')[4]}/back/"),
             "sprite_retro_shiny_back": item.get("sprite_shiny_back") or item["sprite_shiny"].replace(f"/{item['sprite_shiny'].split('/')[4]}/", f"/{item['sprite_shiny'].split('/')[4]}/back/"),
             "sprite_modern": f"/media/pokemon/home/201-{letter}.png",

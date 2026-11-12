@@ -4256,6 +4256,79 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertIn("Cottonee y Petilil", ctx["notice"])
         self.assertIn("Ciudad Esmalte", ctx["notice"])
 
+    def test_black_unown_modal_and_forms(self):
+        """Valida que en Pokémon Negro el Bloc Unown y las formas de Unown reflejen Teselia (Poké Transfer), animaciones GIF y forma canónica F."""
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
+        from tracker.pokemon_forms import get_pokemon_forms
+        from tracker.unown_data import get_unown_catalog
+        import json
+        from pathlib import Path
+
+        # 1. Vista nacional y modal Unown
+        res = self.client.get("/black/national/")
+        self.assertEqual(res.status_code, 200)
+        self.assertTrue(res.context.get("is_unova"))
+        self.assertEqual(res.context["unown_total_forms"], 28)
+
+        content = res.content.decode("utf-8")
+        self.assertIn("Teselia (Poké Transfer)", content)
+        self.assertIn('id="unown-unova-hint"', content)
+        self.assertNotIn('id="unown-hoenn-hint"', content)
+        self.assertNotIn("Hoenn (Transferencia)", content)
+        self.assertIn('id="unown-modal-title"', content)
+        self.assertIn("text-white", content)
+
+        # 2. Sprite físico canónico 201.png y 201.gif corresponde a la forma F
+        f_png = Path("media/pokemon/sprites/black/unown/f.png").read_bytes()
+        main_png = Path("media/pokemon/sprites/black/201.png").read_bytes()
+        self.assertEqual(f_png, main_png)
+
+        f_gif = Path("media/pokemon/sprites/black_animated/unown/f.gif").read_bytes()
+        main_gif = Path("media/pokemon/sprites/black_animated/201.gif").read_bytes()
+        self.assertEqual(f_gif, main_gif)
+
+        # 3. get_unown_catalog retorna 28 formas con sprites estáticos en el bloc y hint de Teselia
+        catalog = get_unown_catalog("black")
+        self.assertEqual(len(catalog), 28)
+        self.assertEqual(catalog[0]["letter"], "a")
+        self.assertEqual(catalog[0]["sprite_normal"], "/media/pokemon/sprites/black/unown/a.png")
+        self.assertEqual(catalog[0]["sprite_shiny"], "/media/pokemon/sprites/black_shiny/unown/a.png")
+        self.assertIn("Laboratorio Transfer", catalog[0]["secret_hint"])
+
+        # 4. get_pokemon_forms retorna 28 formas con sprite_retro estático (para la tarjeta de Pokédex general) y modal animado
+        forms = get_pokemon_forms(201, "black")
+        self.assertEqual(len(forms), 28)
+        self.assertEqual(forms[0]["form_key"], "a")
+        self.assertEqual(forms[5]["form_key"], "f")
+        self.assertEqual(forms[-1]["form_key"], "question")
+
+        for f in forms:
+            self.assertEqual(f["badge_label"], "Poké Transfer")
+            self.assertEqual(f["badge_color"], "slate")
+            self.assertEqual(f["type"], "transfer")
+            self.assertIn("Laboratorio Transfer (Ruta 15)", f["locations"][0]["area"])
+            # El sprite_retro debe ser estático para la tarjeta general
+            self.assertEqual(f["sprite_retro"], f"/media/pokemon/sprites/black/unown/{f['form_key']}.png")
+            # El modal_retro_sprite_url debe ser animado únicamente para la tarjeta individual modal
+            self.assertEqual(f["modal_retro_sprite_url"], f"/media/pokemon/sprites/black_animated/unown/{f['form_key']}.gif")
+            self.assertEqual(f["modal_retro_sprite_shiny_url"], f"/media/pokemon/sprites/black_animated_shiny/unown/{f['form_key']}.gif")
+            self.assertEqual(f["modal_retro_sprite_back_url"], f"/media/pokemon/sprites/black_animated/back/unown/{f['form_key']}.gif")
+
+        # Verificar forma 'v' específicamente (mencionada por el usuario)
+        v_form = next(f for f in forms if f["form_key"] == "v")
+        self.assertEqual(v_form["sprite_retro"], "/media/pokemon/sprites/black/unown/v.png")
+        self.assertEqual(v_form["modal_retro_sprite_url"], "/media/pokemon/sprites/black_animated/unown/v.gif")
+
+        # 5. CatalogEntry serializado en modal_data_json
+        clear_catalog_memory_cache()
+        nat_cat = get_compiled_catalog("black", is_national=True)
+        unown_entry = next(e for e in nat_cat if e.pokemon.national_number == 201)
+        m_data = json.loads(unown_entry.modal_data_json)
+        self.assertEqual(len(m_data["forms"]), 28)
+        self.assertEqual(m_data["forms"][0]["form_key"], "a")
+        self.assertEqual(m_data["forms"][5]["form_key"], "f")
+
+
 
 
 

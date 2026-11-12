@@ -1097,6 +1097,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "is_hgss": (game.slug in ["heartgold", "soulsilver"]),
         "is_tanoby": (game.slug in ["firered", "leafgreen"]),
         "is_sinnoh": (game.slug in ["diamond", "pearl", "platinum"]),
+        "is_unova": (game.slug in ["black", "white"] or game.generation == 5),
         "unown_entry": unown_entry,
         "unown_catalog": unown_catalog,
         "unown_chambers": unown_chambers,
