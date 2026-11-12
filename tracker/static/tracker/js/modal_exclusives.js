@@ -68,7 +68,8 @@ export function switchExclusivesTab(tab) {
 
     const modal = document.getElementById('exclusives-modal');
     const counterpartTheme = modal ? modal.dataset.counterpartTheme : 'red';
-    const counterpartActiveBg = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200' : 'bg-amber-400';
+    const counterpartActiveBg = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200' :
+        ((counterpartTheme === 'white') ? 'bg-slate-200' : 'bg-amber-400');
 
     if (tab === 'counterpart') {
         panelCounterpart.classList.remove('hidden');
@@ -110,14 +111,16 @@ export function updateExclusivesProgressUI() {
         ((counterpartTheme === 'silver') ? 'text-slate-600' :
         ((counterpartTheme === 'gold') ? 'text-[#9e7514]' :
         ((counterpartTheme === 'gold_silver') ? 'text-amber-700' :
-        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600'))))));
+        ((counterpartTheme === 'white') ? 'text-slate-900' :
+        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600')))))));
     const themeBarClass = (counterpartTheme === 'blue' || counterpartTheme === 'diamond') ? 'bg-blue-600' :
         ((counterpartTheme === 'pearl') ? 'bg-pink-500' :
         ((counterpartTheme === 'amber') ? 'bg-amber-500' :
         ((counterpartTheme === 'silver') ? 'bg-slate-500' :
         ((counterpartTheme === 'gold') ? 'bg-[#c59b27]' :
         ((counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-[#c59b27] to-[#94a3b8]' :
-        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600'))))));
+        ((counterpartTheme === 'white') ? 'bg-slate-300' :
+        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600')))))));
 
     const caughtElem = document.getElementById('excl-progress-caught');
     if (caughtElem) {
@@ -140,7 +143,7 @@ export function updateExclusivesProgressUI() {
     if (dotElem) {
         const themeDotClass = (counterpartTheme === 'gold_silver')
             ? 'bg-gradient-to-r from-[#d4af37] to-[#94a3b8]'
-            : themeBarClass;
+            : ((counterpartTheme === 'white') ? 'bg-white' : themeBarClass);
         dotElem.className = 'w-3.5 h-3.5 rounded-full border border-slate-950 shrink-0 ' + (state.isShinydexMode ? 'bg-amber-400' : themeDotClass);
     }
 

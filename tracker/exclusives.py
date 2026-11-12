@@ -390,14 +390,14 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
 
     # Gen 5
     'black': [
-        # Teselia
-        546, 547, 574, 575, 576, 629, 630, 641, 643,
+        # Teselia (Cottonee y Whimsicott se excluyen: Petilil/Lilligant se obtienen por intercambio interno en Ciudad Esmalte)
+        574, 575, 576, 629, 630, 641, 643,
         # Nacional (Manadas / Rutas)
         13, 14, 15, 198, 228, 229, 285, 286, 311, 313, 430
     ],
     'white': [
-        # Teselia
-        548, 549, 577, 578, 579, 627, 628, 642, 644,
+        # Teselia (Petilil y Lilligant se excluyen: Cottonee/Whimsicott se obtienen por intercambio interno en Ciudad Esmalte)
+        577, 578, 579, 627, 628, 642, 644,
         # Nacional (Manadas / Rutas)
         10, 11, 12, 46, 47, 200, 261, 262, 312, 314, 429,
         # Bosque Blanco (exclusivo de Blanco frente a Ciudad Negra de Negro)
@@ -2425,6 +2425,31 @@ THIRD_VERSION_COUNTERPART_EXCLUSIVES: Dict[str, Dict[str, Any]] = {
 
 
 
+# Avisos contextuales personalizados para juegos de versiones emparejadas estándar
+GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
+    'black': (
+        'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Negro</strong>. '
+        'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Blanco</strong>.<br><br>'
+        '<strong>Mecánica del Bosque Blanco:</strong> En <em>Pokémon Blanco</em> se ubica el <strong>Bosque Blanco</strong> '
+        '(el cual sustituye a la <em>Ciudad Negra</em> de Pokémon Negro). En este bosque habitan de forma salvaje hasta 32 familias clásicas '
+        'de generaciones 1 a 4 dependiendo de los residentes presentes, los cuales pueden renovarse o reclutarse visitando a otros jugadores '
+        'mediante la <strong>Zona Nexo (Entralink)</strong>. Por tanto, todas estas especies foráneas pueden obtenerse mediante intercambio '
+        'local entre cartuchos de 5.ª Generación sin necesidad de conectar con juegos de generaciones anteriores (Poké Transfer) ni secuelas.<br><br>'
+        '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Cottonee es exclusivo de Negro y Petilil de Blanco, '
+        'ambos han sido excluidos de este panel debido a que es posible obtener a Petilil legalmente en Pokémon Negro mediante intercambio '
+        'interno con un NPC en <strong>Ciudad Esmalte</strong> a cambio de tu Cottonee (y viceversa en Pokémon Blanco).'
+    ),
+    'white': (
+        'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Blanco</strong>. '
+        'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Negro</strong>.<br><br>'
+        '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Petilil es exclusivo de Blanco y Cottonee de Negro, '
+        'ambos han sido excluidos de este panel debido a que es posible obtener a Cottonee legalmente en Pokémon Blanco mediante intercambio '
+        'interno con un NPC en <strong>Ciudad Esmalte</strong> a cambio de tu Petilil (y viceversa en Pokémon Negro).'
+    ),
+}
+
+
+
 
 
 def _build_exclusive_item(
@@ -2769,7 +2794,7 @@ def get_version_exclusives_context(
 
         origins = {}
 
-        notice = None
+        notice = GAME_VERSION_EXCLUSIVES_NOTICES.get(current_game.slug)
 
         counterpart_theme = _resolve_theme(counterpart_slug)
 

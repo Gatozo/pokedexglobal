@@ -4226,6 +4226,36 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertEqual(s_data["name"], "Snivy")
         self.assertEqual(s_data["id"], 8001)
 
+    def test_black_version_exclusives_and_white_forest_notice(self):
+        """Valida que los exclusivos de Negro y Blanco excluyan a Cottonee/Petilil (por intercambio NPC en Ciudad Esmalte) y tengan la nota del Bosque Blanco."""
+        from tracker.exclusives import VERSION_EXCLUSIVES_CATALOG, get_version_exclusives_context
+        from tracker.models import Game, Pokedex
+
+        black_excl = VERSION_EXCLUSIVES_CATALOG.get("black", [])
+        white_excl = VERSION_EXCLUSIVES_CATALOG.get("white", [])
+
+        # Validar exclusión de la familia Cottonee/Whimsicott y Petilil/Lilligant
+        self.assertNotIn(546, black_excl)  # Cottonee
+        self.assertNotIn(547, black_excl)  # Whimsicott
+        self.assertNotIn(548, white_excl)  # Petilil
+        self.assertNotIn(549, white_excl)  # Lilligant
+
+        # Validar totales
+        self.assertEqual(len(black_excl), 18)
+        self.assertEqual(len(white_excl), 120)
+
+        # Validar contexto y aviso
+        game = Game.objects.get(slug="black")
+        pokedex = game.pokedexes.get(slug="unova")
+        ctx = get_version_exclusives_context(game, pokedex, set())
+        self.assertIsNotNone(ctx)
+        self.assertEqual(ctx["counterpart_theme"], "white")
+        self.assertEqual(ctx["counterpart_total"], 120)
+        self.assertEqual(ctx["own_total"], 18)
+        self.assertIn("Bosque Blanco", ctx["notice"])
+        self.assertIn("Cottonee y Petilil", ctx["notice"])
+        self.assertIn("Ciudad Esmalte", ctx["notice"])
+
 
 
 
