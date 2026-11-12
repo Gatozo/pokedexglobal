@@ -489,9 +489,12 @@ EVOLUTION_ITEMS_ES = {
     'luck-incense': 'Incienso Duplo',
     'odd-incense': 'Incienso Raro',
     'wave-incense': 'Incienso Aqua',
+    'prism-scale': 'Escama Bella',
 }
 
 STONE_NAME_TO_SLUG = {
+    'escama bella': 'prism-scale',
+    'prism scale': 'prism-scale',
     'piedra agua': 'water-stone',
     'piedra trueno': 'thunder-stone',
     'piedra fuego': 'fire-stone',
@@ -712,6 +715,8 @@ NON_HATCHABLE_SPECIES = {
     377, 378, 379, 380, 381, 382, 383, 384, 385, 386,
     # Legendarios y Míticos Gen 4
     480, 481, 482, 483, 484, 485, 486, 487, 488, 490, 491, 492, 493,
+    # Legendarios y Míticos Gen 5
+    494, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649,
 }
 
 # Pokémon bebé reconocidos en la franquicia

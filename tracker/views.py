@@ -45,7 +45,9 @@ EXTERNAL_KEYWORDS = [
     "distribución especial", "distribucion especial", "evento nintendo", "conexión con pokémon ranger", "disco bonus",
     "intercambio externo", "intercambio desde", "transferencia externa",
     "regalo misterioso", "distribución directa", "distribucion directa",
-    "conseguir mediante intercambio"
+    "conseguir mediante intercambio",
+    "poké transfer", "poke transfer", "laboratorio transfer",
+    "orbe reluciente", "edición blanco", "edicion blanco", "bosque blanco"
 ]
 
 
@@ -164,7 +166,7 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
 
         # Exclusivos de versión contraparte: Si está marcado como exclusivo de otra edición
         # y no cuenta con captura salvaje local directa, debe descartarse inequívocamente.
-        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari"]
+        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari", "puente", "polvo", "sombra", "remolino"]
         has_wild = (
             obt_type == "wild"
             or any(kw in methods_str for kw in wild_kw)
@@ -432,7 +434,7 @@ def _classify_obtaining_method(entry):
     areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
     full_str = methods_str + " " + areas_str + " " + summary
 
-    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari"]
+    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari", "puente", "polvo", "sombra", "remolino"]
     has_wild = (
         obt_type == "wild"
         or any(kw in methods_str for kw in wild_kw)
@@ -1267,7 +1269,7 @@ def toggle_unown_catch(request):
 
     normal_unown_count = len(forms_data.get("normal", []))
     shiny_unown_count = len(forms_data.get("shiny", []))
-    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen", "diamond", "pearl", "platinum", "heartgold", "soulsilver"] else 26
+    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen", "diamond", "pearl", "platinum", "heartgold", "soulsilver", "black", "white"] else 26
 
     return JsonResponse({
         "success": True,

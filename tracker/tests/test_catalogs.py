@@ -73,7 +73,7 @@ class CompiledCatalogsAndServiceTests(TestCase):
 
     def test_nonexistent_catalog_returns_none(self):
         from tracker.catalog_service import get_compiled_catalog
-        self.assertIsNone(get_compiled_catalog("black"))
+        self.assertIsNone(get_compiled_catalog("nonexistent_game"))
         self.assertIsNone(get_compiled_catalog("invalid_slug"))
 
     def test_catalog_filter_locations_and_tags(self):
@@ -3990,6 +3990,242 @@ class PokemonSoulSilverGen4Tests(TestCase):
         self.assertEqual(ctx_nat["total"], 42)
         self.assertEqual(ctx_nat["caught"], 0)
         self.assertEqual(len(ctx_nat["transfer_list"]), 42)
+
+
+class PokemonBlackGen5Tests(TestCase):
+    """Pruebas unitarias para Pokémon Negro (Gen 5 — Teselia), catálogos, Victini #000, exclusividades y mecánicas."""
+
+    def setUp(self):
+        self.game, _ = Game.objects.get_or_create(
+            slug="black",
+            defaults={"name": "Pokémon Negro", "generation": 5}
+        )
+        self.pk_unova, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="unova",
+            defaults={"name": "Pokédex Regional de Teselia", "is_national": False, "pokeapi_name": "original-unova"}
+        )
+        self.pk_nat, _ = Pokedex.objects.get_or_create(
+            game=self.game,
+            slug="national",
+            defaults={"name": "Pokédex Nacional", "is_national": True, "pokeapi_name": "national"}
+        )
+        self.client = Client()
+
+    def test_black_catalogs_exist_and_counts(self):
+        """Valida conteos canónicos: 156 en Regional de Teselia y 649 en Nacional."""
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+        reg_file = CATALOGS_DIR / "black.json"
+        nat_file = CATALOGS_DIR / "black_national.json"
+        self.assertTrue(reg_file.exists(), "black.json debe existir")
+        self.assertTrue(nat_file.exists(), "black_national.json debe existir")
+
+        reg_cat = get_compiled_catalog("black", is_national=False, force_reload=True)
+        nat_cat = get_compiled_catalog("black", is_national=True, force_reload=True)
+        self.assertEqual(len(reg_cat), 156, "La Pokédex Regional de Teselia en Negro debe tener 156 entradas")
+        self.assertEqual(len(nat_cat), 649, "La Pokédex Nacional en Negro debe tener 649 entradas")
+
+    def test_victini_alternative_a_integrity_and_catch(self):
+        """Valida que Victini sea #000 visual pero con id/entry_number > 0 en base de datos y toggle_catch."""
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("black", is_national=False, force_reload=True)
+
+        victini = reg_cat[0]
+        self.assertEqual(victini.display_number, "000")
+        self.assertEqual(victini.entry_number, 494)
+        self.assertEqual(victini.id, 8000)
+        self.assertEqual(victini.pokemon.national_number, 494)
+        self.assertEqual(victini.pokemon.display_name, "Victini")
+
+        # Verificar Snivy en posición 1 y Genesect en 155
+        snivy = reg_cat[1]
+        self.assertEqual(snivy.display_number, "001")
+        self.assertEqual(snivy.entry_number, 1)
+        self.assertEqual(snivy.id, 8001)
+
+        genesect = reg_cat[155]
+        self.assertEqual(genesect.display_number, "155")
+        self.assertEqual(genesect.entry_number, 155)
+        self.assertEqual(genesect.id, 8155)
+
+        # Probar captura de Victini vía endpoint toggle_catch
+        toggle_url = reverse("tracker:toggle_catch")
+        payload = {"entry_id": 8000}
+        res = self.client.post(toggle_url, data=payload, content_type="application/json")
+        self.assertEqual(res.status_code, 200)
+        data = res.json()
+        self.assertTrue(data.get("success"))
+        self.assertTrue(data.get("is_caught"))
+        self.assertEqual(data.get("entry_id"), 8000)
+
+        # Verificar liberación
+        res2 = self.client.post(toggle_url, data=payload, content_type="application/json")
+        self.assertEqual(res2.status_code, 200)
+        data2 = res2.json()
+        self.assertTrue(data2.get("success"))
+        self.assertFalse(data2.get("is_caught"))
+
+    def test_pure_spanish_toponymy_and_linguistic_purity(self):
+        """Verifica toponimia 100% en español oficial de España y el método 'Sombra en el agua' (sin remolinos en métodos)."""
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("black", is_national=False)
+        nat_cat = get_compiled_catalog("black", is_national=True)
+
+        forbidden_english = [
+            "pinwheel forest", "chargestone cave", "relic castle", "giant chasm",
+            "rustling grass", "dust cloud", "rippling water", "npc trade",
+            "dragonspiral", "mistralton", "driftveil", "accumula", "nuvema"
+        ]
+
+        for cat in [reg_cat, nat_cat]:
+            for entry in cat:
+                for loc in entry.obtaining_info.get("locations", []):
+                    area = loc.get("area", "").lower()
+                    method = loc.get("method", "").lower()
+                    for term in forbidden_english:
+                        self.assertNotIn(term, area, f"Anglicismo encontrado en área de #{entry.pokemon.national_number}: {area}")
+                        self.assertNotIn(term, method, f"Anglicismo encontrado en método de #{entry.pokemon.national_number}: {method}")
+
+                    # Verificar pureza lingüística: no usar 'remolino' en métodos de encuentro
+                    self.assertNotIn("remolino", method, f"Método con 'remolino' detectado en #{entry.pokemon.national_number}: {method}")
+
+    def test_absence_of_prior_generations_and_b2w2_mechanics(self):
+        """Garantiza la ausencia total de mecánicas previas (Caña Vieja/Buena, Safari, etc.) y de secuelas B2W2."""
+        from tracker.catalog_service import get_compiled_catalog
+        reg_cat = get_compiled_catalog("black", is_national=False)
+        nat_cat = get_compiled_catalog("black", is_national=True)
+
+        forbidden_mechanics = [
+            "safari", "pokewalker", "honey", "pokeradar", "dual_slot", "headbutt", "rock_smash"
+        ]
+
+        for cat in [reg_cat, nat_cat]:
+            for entry in cat:
+                tags = entry.filter_tags.split()
+                for fm in forbidden_mechanics:
+                    self.assertNotIn(fm, tags, f"Mecánica prohibida {fm} encontrada en #{entry.pokemon.national_number}")
+
+                # Tampoco caña vieja o caña buena
+                self.assertNotIn("rod_old", tags, f"Caña vieja encontrada en #{entry.pokemon.national_number}")
+                self.assertNotIn("rod_good", tags, f"Caña buena encontrada en #{entry.pokemon.national_number}")
+
+                # Verificar ausencia de rutas de B2W2 (Ruta 19 a 23)
+                for loc in entry.obtaining_info.get("locations", []):
+                    area = loc.get("area", "")
+                    for r_num in range(19, 24):
+                        self.assertNotIn(f"Ruta {r_num}", area, f"Ruta {r_num} de B2W2 encontrada en #{entry.pokemon.national_number}")
+
+    def test_gen5_forms_and_rotom_types(self):
+        """Verifica que las formas alternas de Gen 5 existan y Rotom adopte sus tipos elementales secundarios."""
+        from tracker.pokemon_forms import get_pokemon_forms
+
+        # Rotom en 5.ª Gen adopta tipo elemental secundario
+        rotom_forms = get_pokemon_forms(479, "black")
+        self.assertEqual(len(rotom_forms), 6)
+        heat = next(f for f in rotom_forms if f["form_key"] == "heat")
+        self.assertEqual(heat["secondary_type"], "fire")
+        wash = next(f for f in rotom_forms if f["form_key"] == "wash")
+        self.assertEqual(wash["secondary_type"], "water")
+        frost = next(f for f in rotom_forms if f["form_key"] == "frost")
+        self.assertEqual(frost["secondary_type"], "ice")
+        fan = next(f for f in rotom_forms if f["form_key"] == "fan")
+        self.assertEqual(fan["secondary_type"], "flying")
+        mow = next(f for f in rotom_forms if f["form_key"] == "mow")
+        self.assertEqual(mow["secondary_type"], "grass")
+
+        # Basculin (Roja y Azul)
+        basculin = get_pokemon_forms(550, "black")
+        self.assertEqual(len(basculin), 2)
+
+        # Darmanitan (Standard y Modo Daruma)
+        darmanitan = get_pokemon_forms(555, "black")
+        self.assertEqual(len(darmanitan), 2)
+        daruma = next(f for f in darmanitan if f["form_key"] == "zen")
+        self.assertEqual(daruma["secondary_type"], "psychic")
+
+        # Deerling & Sawsbuck (4 formas estacionales)
+        self.assertEqual(len(get_pokemon_forms(585, "black")), 4)
+        self.assertEqual(len(get_pokemon_forms(586, "black")), 4)
+
+        # Meloetta (Lírica y Danza Normal/Lucha)
+        meloetta = get_pokemon_forms(648, "black")
+        self.assertEqual(len(meloetta), 2)
+        pirouette = next(f for f in meloetta if f["form_key"] == "pirouette")
+        self.assertEqual(pirouette["secondary_type"], "fighting")
+
+        # Genesect (5 cartuchos)
+        self.assertEqual(len(get_pokemon_forms(649, "black")), 5)
+
+    def test_media_assets_exist_on_disk(self):
+        """Valida que los recursos estáticos, animados, iconos y gritos existan en disco sin archivos de 0 bytes."""
+        from django.conf import settings
+        from pathlib import Path
+        media_root = Path(settings.MEDIA_ROOT)
+
+        # Muestreo representativo de Gen 5: Victini (494), Snivy (495), Reshiram (643), Genesect (649)
+        test_ids = [1, 25, 150, 249, 384, 493, 494, 495, 550, 555, 641, 643, 644, 648, 649]
+        for nid in test_ids:
+            # Sprite estático frente
+            sp_png = media_root / "pokemon" / "sprites" / "black" / f"{nid}.png"
+            self.assertTrue(sp_png.exists() and sp_png.stat().st_size > 0, f"Falta {sp_png}")
+
+            # Sprite animado frente (.gif)
+            sp_gif = media_root / "pokemon" / "sprites" / "black_animated" / f"{nid}.gif"
+            self.assertTrue(sp_gif.exists() and sp_gif.stat().st_size > 0, f"Falta {sp_gif}")
+
+            # Sprite animado espalda (.gif)
+            sp_back_gif = media_root / "pokemon" / "sprites" / "black_animated" / "back" / f"{nid}.gif"
+            self.assertTrue(sp_back_gif.exists() and sp_back_gif.stat().st_size > 0, f"Falta {sp_back_gif}")
+
+            # Icono gen5
+            icon = media_root / "pokemon" / "icons" / "gen5" / f"{nid}.png"
+            self.assertTrue(icon.exists() and icon.stat().st_size > 0, f"Falta {icon}")
+
+            # Grito
+            cry = media_root / "pokemon" / "cries" / "legacy" / f"{nid}.ogg"
+            self.assertTrue(cry.exists() and cry.stat().st_size > 0, f"Falta {cry}")
+
+    def test_views_black_integration(self):
+        """Valida que las vistas web de Pokémon Negro (Regional, Nacional, Game Hub y Modales) respondan 200 OK."""
+        # 1. Pokédex Regional por defecto
+        res_reg = self.client.get("/black/")
+        self.assertEqual(res_reg.status_code, 200)
+        self.assertEqual(res_reg.context["game"].slug, "black")
+        self.assertEqual(len(res_reg.context["entries"]), 156)
+        content_reg = res_reg.content.decode("utf-8")
+        self.assertIn("#000", content_reg)
+        self.assertIn("Victini", content_reg)
+
+        # 2. Pokédex Nacional
+        res_nat = self.client.get("/black/national/")
+        self.assertEqual(res_nat.status_code, 200)
+        self.assertEqual(res_nat.context["total_pokemon"], 649)
+        res_nat_all = self.client.get("/black/national/?gen=all")
+        self.assertEqual(res_nat_all.status_code, 200)
+        self.assertEqual(len(res_nat_all.context["entries"]), 649)
+
+        # 3. Game Selector (Hub)
+        res_hub = self.client.get("/games/")
+        self.assertEqual(res_hub.status_code, 200)
+        content_hub = res_hub.content.decode("utf-8")
+        self.assertIn("Pokémon Negro", content_hub)
+        self.assertIn("Reshiram", content_hub)
+
+        # 4. Modales AJAX
+        res_modal_victini = self.client.get("/api/catalog/entry/8000/modal/")
+        self.assertEqual(res_modal_victini.status_code, 200)
+        v_data = res_modal_victini.json()
+        self.assertEqual(v_data["number"], "000")
+        self.assertEqual(v_data["name"], "Victini")
+        self.assertEqual(v_data["id"], 8000)
+
+        res_modal_snivy = self.client.get("/api/catalog/entry/8001/modal/")
+        self.assertEqual(res_modal_snivy.status_code, 200)
+        s_data = res_modal_snivy.json()
+        self.assertEqual(s_data["number"], "001")
+        self.assertEqual(s_data["name"], "Snivy")
+        self.assertEqual(s_data["id"], 8001)
+
 
 
 

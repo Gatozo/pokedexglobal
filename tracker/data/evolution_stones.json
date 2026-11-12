@@ -335,6 +335,28 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
         }
+      ],
+      "black": [
+        {
+          "area": "Museo de Ciudad Esmalte",
+          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+        },
+        {
+          "area": "Bosque Azulejo",
+          "detail": "En el suelo en el laberinto interior del bosque."
+        },
+        {
+          "area": "Castillo Ancestral",
+          "detail": "En una de las salas subterráneas."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -525,6 +547,24 @@
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "black": [
+        {
+          "area": "Muelle de Ciudad Porcelana",
+          "detail": "Entregada por un científico al elegir fuego como inicial."
+        },
+        {
+          "area": "Zona Desierto",
+          "detail": "En el suelo en la parte central del desierto."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
         }
       ]
     }
@@ -737,6 +777,24 @@
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
+      ],
+      "black": [
+        {
+          "area": "Muelle de Ciudad Porcelana",
+          "detail": "Entregada por un científico al elegir agua como inicial."
+        },
+        {
+          "area": "Ruta 3",
+          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -936,6 +994,24 @@
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
+      ],
+      "black": [
+        {
+          "area": "Cueva Electrorroca",
+          "detail": "En el suelo en el nivel inferior de la cueva."
+        },
+        {
+          "area": "Ruta 9",
+          "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -1131,6 +1207,24 @@
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
+      ],
+      "black": [
+        {
+          "area": "Muelle de Ciudad Porcelana",
+          "detail": "Entregada por un científico al elegir planta como inicial."
+        },
+        {
+          "area": "Ruta 6",
+          "detail": "En el suelo en la zona norte (requiere Surf)."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -1275,6 +1369,24 @@
         {
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+        }
+      ],
+      "black": [
+        {
+          "area": "Ciudad Mayólica",
+          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+        },
+        {
+          "area": "Castillo Ancestral",
+          "detail": "En una de las plantas inferiores."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
         }
       ]
     }
@@ -1453,6 +1565,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1618,6 +1744,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
         }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías interiores durante el invierno."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1779,6 +1919,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 18",
+          "detail": "En el suelo en la orilla sur de la isla."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada en Horsea, Seadra o Dratini salvajes (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -1888,6 +2042,16 @@
           "area": "Ciudad Azafrán (Silph S.A.)",
           "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+        }
       ]
     }
   },
@@ -1986,6 +2150,16 @@
         {
           "area": "Transferencia / Evento",
           "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+        }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipado en Carvanha o Sharpedo salvajes (5% de probabilidad)."
         }
       ]
     }
@@ -2086,6 +2260,16 @@
           "area": "Transferencia / Evento",
           "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada en Chinchou, Lanturn o Relicanth salvajes (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -2158,6 +2342,12 @@
           "area": "Cueva Celeste (Planta Baja)",
           "detail": "En el suelo en el estrecho sendero rocoso de la pared norte de la planta de entrada (P1)."
         }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+        }
       ]
     }
   },
@@ -2229,6 +2419,12 @@
         {
           "area": "Ruta 38 (Johto)",
           "detail": "En una repisa de hierba elevada al suroeste de la ruta, tras una valla accesible usando Treparrocas."
+        }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
         }
       ]
     }
@@ -2322,6 +2518,24 @@
         {
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+        }
+      ],
+      "black": [
+        {
+          "area": "Ruta 6",
+          "detail": "Entregada por una chica dentro de la casa de descanso."
+        },
+        {
+          "area": "Torre Duodraco",
+          "detail": "En el suelo en el exterior de la torre (requiere Surf)."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
         }
       ]
     }
@@ -2432,6 +2646,24 @@
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
+      ],
+      "black": [
+        {
+          "area": "Cueva Loza",
+          "detail": "En el suelo en la planta principal de la cueva."
+        },
+        {
+          "area": "Ruta 10",
+          "detail": "Entregada por un veterano cerca del puente de acceso a la Calle Victoria."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -2533,6 +2765,20 @@
           "area": "Parque Nacional (Concurso de Captura de Bichos)",
           "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 10",
+          "detail": "En el suelo en la meseta previa a las puertas de medallas."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -2622,6 +2868,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 50% de probabilidad en Chansey salvajes."
         }
+      ],
+      "black": [
+        {
+          "area": "Gruta Superación",
+          "detail": "En el suelo en la primera sala de la cueva."
+        },
+        {
+          "area": "Ciudad Negra",
+          "detail": "A la venta en la tienda por 10 500 ₽."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+        }
       ]
     }
   },
@@ -2666,6 +2926,20 @@
         {
           "area": "Monte Mortero (Cueva Este)",
           "detail": "En la zona este de la cueva inferior, escalando una pared rocosa que requiere la MO Treparrocas."
+        }
+      ],
+      "black": [
+        {
+          "area": "Ruta 11",
+          "detail": "En el suelo en el saliente norte tras cruzar el puente de caravanas."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
         }
       ]
     }
@@ -2720,6 +2994,16 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Elekid salvajes (transferidos o Pokéwalker)."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+        }
       ]
     }
   },
@@ -2773,6 +3057,16 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada con un 5% de probabilidad en Magby salvajes (transferidos o Pokéwalker)."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+        }
       ]
     }
   },
@@ -2817,6 +3111,20 @@
         {
           "area": "Ruta 42 (Johto)",
           "detail": "En una cornisa exterior aislada sobre la Ruta 42; se accede entrando a Monte Mortero por la entrada este, subiendo con Treparrocas y saliendo al exterior."
+        }
+      ],
+      "black": [
+        {
+          "area": "Laboratorio P+P (Ruta 18)",
+          "detail": "En el suelo dentro del laboratorio abandonado."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
         }
       ]
     }
@@ -2874,6 +3182,20 @@
         {
           "area": "Monte Plateado (Exterior)",
           "detail": "En la esquina inferior izquierda de la zona exterior montañosa tras cruzar el lago navegando con Surf."
+        }
+      ],
+      "black": [
+        {
+          "area": "Ruta 14",
+          "detail": "En el suelo cerca de las cascadas (requiere Cascada)."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
         }
       ]
     }
@@ -2944,6 +3266,16 @@
           "area": "Frente de Batalla",
           "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
+        }
       ]
     }
   },
@@ -3001,6 +3333,28 @@
           "area": "Frente de Batalla",
           "detail": "Canjeable en el Servicio de Intercambio por 48 Puntos de Batalla (PB)."
         }
+      ],
+      "black": [
+        {
+          "area": "Ruta 11",
+          "detail": "En el suelo junto a la cascada (requiere Cascada)."
+        },
+        {
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+        },
+        {
+          "area": "Boquete Gigante",
+          "detail": "En el suelo en el laberinto nevado interior."
+        },
+        {
+          "area": "Metro Batalla",
+          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipado en Gligar o Gliscor salvajes (5% de probabilidad)."
+        }
       ]
     }
   },
@@ -3042,6 +3396,12 @@
         {
           "area": "Ruta 15 (Kanto)",
           "detail": "En el camino inferior al sur tras saltar el desnivel (requiere Corte)."
+        }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
         }
       ]
     }
@@ -3085,6 +3445,12 @@
           "area": "Monte Plateado (Exterior Nevado)",
           "detail": "En la ladera nevada superior accesible usando Treparrocas."
         }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+        }
       ]
     }
   },
@@ -3126,6 +3492,12 @@
         {
           "area": "Cueva Diglett (Kanto)",
           "detail": "En una cornisa interior elevada accesible usando Treparrocas."
+        }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
         }
       ]
     }
@@ -3169,6 +3541,12 @@
           "area": "Cueva Celeste (Planta 1)",
           "detail": "En el laberinto de la planta superior (P2), en la zona central rompiendo dos rocas agrietadas con Golpe Roca."
         }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+        }
       ]
     }
   },
@@ -3210,6 +3588,12 @@
         {
           "area": "Ciudad Carmín (Kanto)",
           "detail": "En la orilla derecha de la dársena marina navegando con Surf al sur del puerto."
+        }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
         }
       ]
     }
@@ -3253,6 +3637,12 @@
           "area": "Monte Mortero (Profundidades)",
           "detail": "En una cornisa interior en las profundidades que requiere Treparrocas."
         }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+        }
       ]
     }
   },
@@ -3294,6 +3684,33 @@
         {
           "area": "Ruta 47 (Acantilados)",
           "detail": "En un saliente de roca en los acantilados inferiores cerca de la Torre Oculta (requiere Treparrocas y Surf)."
+        }
+      ],
+      "black": [
+        {
+          "area": "Puente Progreso",
+          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+        }
+      ]
+    }
+  },
+  "prism-scale": {
+    "slug": "prism-scale",
+    "name_es": "Escama Bella",
+    "icon_url": "/media/items/prism-scale.png",
+    "description_es": "Misteriosa escama que hace evolucionar a Feebas en Milotic al ser intercambiado mientras la lleva equipada. Brilla con los colores del arcoíris.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto evolutivo introducido en la 5.ª Generación.",
+    "games": {
+      "black": [
+        {
+          "area": "Ruta 13",
+          "detail": "Objeto oculto en la orilla este de la playa y entregada por el buscador de tesoros."
+        },
+        {
+          "area": "Pueblo Arenisca",
+          "detail": "Recogida ocasionalmente por un Pokémon con la habilidad Recogida (niveles 81 a 100)."
         }
       ]
     }

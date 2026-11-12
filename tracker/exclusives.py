@@ -388,6 +388,28 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
 
     ],
 
+    # Gen 5
+    'black': [
+        # Teselia
+        546, 547, 574, 575, 576, 629, 630, 641, 643,
+        # Nacional (Manadas / Rutas)
+        13, 14, 15, 198, 228, 229, 285, 286, 311, 313, 430
+    ],
+    'white': [
+        # Teselia
+        548, 549, 577, 578, 579, 627, 628, 642, 644,
+        # Nacional (Manadas / Rutas)
+        10, 11, 12, 46, 47, 200, 261, 262, 312, 314, 429,
+        # Bosque Blanco (exclusivo de Blanco frente a Ciudad Negra de Negro)
+        16, 17, 18, 29, 30, 31, 32, 33, 34, 43, 44, 45, 63, 64, 65, 66, 67, 68,
+        69, 70, 71, 81, 82, 92, 93, 94, 111, 112, 113, 125, 126, 137, 175, 176,
+        179, 180, 181, 182, 183, 184, 187, 188, 189, 194, 195, 233, 239, 240,
+        242, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 280, 281,
+        282, 283, 284, 287, 288, 289, 293, 294, 295, 298, 304, 305, 306, 315,
+        328, 329, 330, 341, 342, 371, 372, 373, 396, 397, 398, 399, 400, 403,
+        404, 405, 406, 407, 440, 462, 464, 466, 467, 468, 474, 475
+    ],
+
 }
 
 
@@ -664,115 +686,83 @@ NON_JOHTO_KANTO_TRANSFERS_HGSS: List[int] = sorted(list(
     {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
 ))
 
+# 213 especies requeridas mediante el Poké Transfer de la Ruta 15, el Orbe Reluciente o eventos oficiales
+# para completar la Pokédex Nacional en Pokémon Negro:
+NON_UNOVA_TRANSFERS_BLACK = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 24, 25, 26, 50, 51, 52, 53, 56, 57, 58,
+    59, 72, 73, 83, 84, 85, 88, 89, 96, 97, 100, 101, 102, 103, 106, 107,
+    109, 110, 122, 123, 128, 133, 134, 135, 136, 143, 144, 145, 146, 150,
+    151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 172, 177,
+    178, 185, 190, 193, 196, 197, 201, 202, 203, 204, 205, 209, 210, 212,
+    216, 217, 218, 219, 227, 231, 232, 235, 236, 237, 241, 243, 244, 245,
+    249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 263, 264,
+    290, 291, 292, 296, 297, 299, 300, 301, 307, 308, 309, 310, 316, 317,
+    322, 323, 324, 325, 326, 327, 331, 332, 351, 352, 353, 354, 355, 356,
+    360, 361, 362, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387,
+    388, 389, 390, 391, 392, 393, 394, 395, 412, 413, 414, 417, 422, 423,
+    424, 427, 428, 431, 432, 434, 435, 438, 439, 441, 442, 443, 444, 445,
+    446, 449, 450, 451, 452, 453, 454, 455, 459, 460, 469, 470, 471, 476,
+    477, 478, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491,
+    492, 493, 494, 570, 571, 645, 647, 648, 649
+]
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
-
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
-
 VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
-
     # Gen 1 (Amarillo no tiene versión gemela y requiere transferir 13 Pokémon de Rojo/Azul)
-
     'yellow': [
-
         13, 14, 15,  # Weedle, Kakuna, Beedrill (Rojo / Azul)
-
         23, 24,      # Ekans, Arbok (Rojo)
-
         26,          # Raichu (El Pikachu inicial rehúsa evolucionar; requiere intercambio)
-
         52, 53,      # Meowth, Persian (Azul)
-
         109, 110,    # Koffing, Weezing (Rojo / Azul)
-
         124,         # Jynx (Rojo / Azul mediante intercambio NPC en Celeste)
-
         125,         # Electabuzz (Rojo)
-
         126,         # Magmar (Azul)
-
     ],
-
     # Gen 2 (Oro, Plata y Cristal no tienen fósiles ni iniciales ni legendarios de Kanto salvajes;
-
     # requieren transferencia desde Gen 1 mediante la Cápsula del Tiempo de Bill).
-
     'gold': [
-
         1, 2, 3,     # Bulbasaur, Ivysaur, Venusaur
-
         4, 5, 6,     # Charmander, Charmeleon, Charizard
-
         7, 8, 9,     # Squirtle, Wartortle, Blastoise
-
         138, 139,    # Omanyte, Omastar
-
         140, 141,    # Kabuto, Kabutops
-
         144, 145, 146, # Articuno, Zapdos, Moltres
-
         150, 151,    # Mewtwo, Mew
-
     ],
-
     'silver': [
-
         1, 2, 3,     # Bulbasaur, Ivysaur, Venusaur
-
         4, 5, 6,     # Charmander, Charmeleon, Charizard
-
         7, 8, 9,     # Squirtle, Wartortle, Blastoise
-
         138, 139,    # Omanyte, Omastar
-
         140, 141,    # Kabuto, Kabutops
-
         144, 145, 146, # Articuno, Zapdos, Moltres
-
         150, 151,    # Mewtwo, Mew
-
     ],
-
     'crystal': [
-
         1, 2, 3,        # Bulbasaur, Ivysaur, Venusaur
-
         4, 5, 6,        # Charmander, Charmeleon, Charizard
-
         7, 8, 9,        # Squirtle, Wartortle, Blastoise
-
         138, 139,       # Omanyte, Omastar
-
         140, 141,       # Kabuto, Kabutops
-
         144, 145, 146,  # Articuno, Zapdos, Moltres
-
         150, 151,       # Mewtwo, Mew
-
     ],
-
     # Gen 3 (Pokédex Nacional de Rubí, Zafiro, Esmeralda y Rojo Fuego)
-
     'ruby': NON_HOENN_TRANSFERS_RUBY,
-
     'sapphire': NON_HOENN_TRANSFERS_RUBY,
-
     'emerald': NON_HOENN_TRANSFERS_EMERALD,
-
     'firered': NON_KANTO_SEVII_TRANSFERS_FIRERED,
-
     'leafgreen': NON_KANTO_SEVII_TRANSFERS_FIRERED,
-
     # Gen 4 (Pokédex Nacional de Diamante, Perla y Platino)
-
     'diamond': NON_SINNOH_TRANSFERS_DIAMOND,
-
     'pearl': NON_SINNOH_TRANSFERS_DIAMOND,
-
     'platinum': NON_SINNOH_TRANSFERS_PLATINUM,
-
     'heartgold': NON_JOHTO_KANTO_TRANSFERS_HGSS,
     'soulsilver': NON_JOHTO_KANTO_TRANSFERS_HGSS,
-
+    # Gen 5 (Pokédex Nacional de Pokémon Negro)
+    'black': NON_UNOVA_TRANSFERS_BLACK,
 }
 
 
@@ -2200,6 +2190,31 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             493: 'Arceus (Evento / Ruinas de Sinjoh)',
         }
     },
+    'black': {
+        'mechanic_title': 'Laboratorio Transfer y Eventos • 5.ª Gen',
+        'mechanic_badge': 'Poké Transfer y Eventos',
+        'subtitle': 'Especies que requieren el Laboratorio Transfer (Ruta 15), el Orbe Reluciente o eventos oficiales',
+        'description': (
+            'Para completar la Pokédex Nacional en <strong>Pokémon Negro</strong>, diversas especies foráneas '
+            'de Kanto, Johto, Hoenn y Sinnoh deben ser transferidas desde cartuchos de 4.ª Generación '
+            '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio Transfer</strong> '
+            'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).<br><br>'
+            'Asimismo, especies singulares como <strong>Zorua (#570)</strong> y <strong>Zoroark (#571)</strong> requieren '
+            'el uso del <strong>Orbe Reluciente</strong> (<em>Relocator</em> en Ciudad Porcelana) transfiriendo al Celebi de evento '
+            'o a las Bestias Legendarias variocolor. Por último, <strong>Landorus (#645)</strong> requiere llevar en el equipo '
+            'tanto a Tornadus (#641) como a <strong>Thundurus (#642)</strong> (exclusivo de Pokémon Blanco) en el Santuario Abundancia.'
+        ),
+        'default_origin': 'Poké Transfer (Ruta 15)',
+        'origins': {
+            494: 'Evento Ticket Libertad (Isla Libertad)',
+            570: 'Orbe Reluciente (Celebi de evento en Ciudad Porcelana)',
+            571: 'Orbe Reluciente (Bestia Variocolor en Bosque de los Perdidos)',
+            645: 'Santuario Abundancia (Requiere a Thundurus de Pokémon Blanco)',
+            647: 'Evento Oficial (Keldeo)',
+            648: 'Evento Oficial (Meloetta)',
+            649: 'Evento Oficial (Genesect)',
+        }
+    },
 }
 
 
@@ -2566,7 +2581,7 @@ def _build_exclusive_item(
 
         'national_number': national_num,
 
-        'number': f"{number:03d}",
+        'number': getattr(entry, 'display_number', None) or f"{number:03d}",
 
         'name': pokemon.display_name,
 
@@ -2682,9 +2697,13 @@ def get_version_exclusives_context(
 
             return 'pearl'
 
-        elif slug in ['blue', 'white', 'moon', 'shield', 'violet']:
+        elif slug in ['blue', 'moon', 'shield', 'violet']:
 
             return 'blue'
+
+        elif slug in ['white']:
+
+            return 'white'
 
         elif slug in ['crystal']:
 
@@ -2705,6 +2724,10 @@ def get_version_exclusives_context(
         elif slug in ['platinum']:
 
             return 'platinum'
+
+        elif slug in ['black']:
+
+            return 'black'
 
         return 'red'
 

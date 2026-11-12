@@ -7,23 +7,29 @@ y genera las rutas relativas de sprites femeninos descargados.
 
 from typing import Dict, Any, Optional
 
-# Especies de Gen 1-4 que carecen de género (genderless / género desconocido)
+# Especies de Gen 1-5 que carecen de género (genderless / género desconocido)
 GENDERLESS_SPECIES = {
     81, 82, 100, 101, 120, 121, 132, 137, 144, 145, 146, 150, 151,
     201, 233, 243, 244, 245, 249, 250, 251, 292, 337, 338, 343, 344,
     374, 375, 376, 377, 378, 379, 382, 383, 384, 385, 386, 436, 437,
     462, 474, 479, 480, 481, 482, 483, 484, 486, 487, 489, 490, 491,
-    492, 493
+    492, 493,
+    # Gen 5
+    494, 599, 600, 601, 615, 622, 623, 638, 639, 640, 643, 644, 646, 647, 648, 649
 }
 
 # Especies exclusivamente hembra (100% hembra)
 FEMALE_ONLY_SPECIES = {
-    29, 30, 31, 113, 115, 124, 238, 241, 242, 314, 380, 413, 416, 440, 478, 488
+    29, 30, 31, 113, 115, 124, 238, 241, 242, 314, 380, 413, 416, 440, 478, 488,
+    # Gen 5
+    548, 549, 629, 630
 }
 
 # Especies exclusivamente macho (100% macho)
 MALE_ONLY_SPECIES = {
-    32, 33, 34, 106, 107, 128, 236, 237, 313, 381, 414, 475
+    32, 33, 34, 106, 107, 128, 236, 237, 313, 381, 414, 475,
+    # Gen 5
+    538, 539, 627, 628, 641, 642, 645
 }
 
 # Las 94 especies canónicas de 4ª Generación con diferencias visuales físicas entre macho y hembra
@@ -123,6 +129,14 @@ GENDER_DIFFERENCES_GEN4: Dict[int, str] = {
     473: "Los colmillos de hielo de la hembra son más pequeños.",
 }
 
+# Las 97 especies canónicas de 5ª Generación con diferencias visuales físicas entre macho y hembra
+GENDER_DIFFERENCES_GEN5: Dict[int, str] = {
+    **GENDER_DIFFERENCES_GEN4,
+    521: "El macho luce una vistosa máscara y penacho rosa con el vientre verde; la hembra es de tono marrón sin penacho.",
+    592: "El macho es azul con ceño fruncido y cuello ondulado; la hembra es rosa con ceño sereno y cuello de volantes.",
+    593: "El macho es azul con un gran bigote blanco; la hembra es rosa con cuello abullonado y marcas de corazón.",
+}
+
 
 def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Dict[str, Any]]:
     """
@@ -132,7 +146,8 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
     Si tiene diferencias visuales, incluye las URLs de los sprites femeninos oficiales descargados.
     """
     from .catalog_service import get_game_generation
-    if get_game_generation(game_slug) < 4:
+    gen = get_game_generation(game_slug)
+    if gen < 4:
         return None
 
     if national_number in GENDERLESS_SPECIES:
@@ -168,11 +183,13 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
             "female_sprites": None,
         }
 
-    has_diff = national_number in GENDER_DIFFERENCES_GEN4
-    diff_note = GENDER_DIFFERENCES_GEN4.get(national_number)
+    diff_dict = GENDER_DIFFERENCES_GEN5 if gen >= 5 else GENDER_DIFFERENCES_GEN4
+    has_diff = national_number in diff_dict
+    diff_note = diff_dict.get(national_number)
 
     # Determinar si existen sprites descargados
-    base_slug = game_slug if game_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] else "diamond"
+    is_gen5 = game_slug in ["black", "white"]
+    base_slug = game_slug if game_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver", "black", "white"] else "diamond"
     female_sprites = None
     if has_diff:
         female_sprites = {
@@ -185,14 +202,24 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
             "modern_back": f"/media/pokemon/home/back/female/{national_number}.png",
             "modern_shiny_back": f"/media/pokemon/home/shiny/back/female/{national_number}.png",
         }
-        anim_slug = base_slug if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] else "diamond"
-        if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] and national_number not in {277, 278}:
-            female_sprites["retro_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated/female/{national_number}.png"
-            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated_shiny/female/{national_number}.png"
+        if is_gen5:
+            female_sprites["retro_animated"] = f"/media/pokemon/sprites/{base_slug}_animated/female/{national_number}.gif"
+            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{base_slug}_animated_shiny/female/{national_number}.gif"
+            female_sprites["retro_animated_back"] = f"/media/pokemon/sprites/{base_slug}_animated/back/female/{national_number}.gif"
+            female_sprites["retro_shiny_animated_back"] = f"/media/pokemon/sprites/{base_slug}_animated_shiny/back/female/{national_number}.gif"
             female_sprites["retro_static"] = female_sprites["retro"]
             female_sprites["retro_shiny_static"] = female_sprites["retro_shiny"]
             female_sprites["retro"] = female_sprites["retro_animated"]
             female_sprites["retro_shiny"] = female_sprites["retro_shiny_animated"]
+        else:
+            anim_slug = base_slug if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] else "diamond"
+            if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] and national_number not in {277, 278}:
+                female_sprites["retro_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated/female/{national_number}.png"
+                female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated_shiny/female/{national_number}.png"
+                female_sprites["retro_static"] = female_sprites["retro"]
+                female_sprites["retro_shiny_static"] = female_sprites["retro_shiny"]
+                female_sprites["retro"] = female_sprites["retro_animated"]
+                female_sprites["retro_shiny"] = female_sprites["retro_shiny_animated"]
 
     return {
         "gender_type": "both_with_diff" if has_diff else "both_no_diff",

@@ -234,9 +234,12 @@ def get_unown_catalog(game_slug: str = "gold"):
     is_sinnoh = clean_slug in ["diamond", "pearl", "platinum"]
     is_hoenn = clean_slug in ["ruby", "sapphire", "emerald"]
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    is_gen3_plus = is_hoenn or is_tanoby or is_sinnoh or is_hgss
+    is_unova = clean_slug in ["black", "white"]
+    is_gen3_plus = is_hoenn or is_tanoby or is_sinnoh or is_hgss or is_unova
 
-    if is_hgss:
+    if is_unova:
+        sprite_slug = "black"
+    elif is_hgss:
         sprite_slug = clean_slug
     elif is_sinnoh:
         sprite_slug = clean_slug if clean_slug in ["diamond", "pearl"] else "diamond"
@@ -251,7 +254,7 @@ def get_unown_catalog(game_slug: str = "gold"):
         chambers = SINNOH_UNOWN_CHAMBERS
     elif is_hgss:
         chambers = HGSS_UNOWN_CHAMBERS
-    elif is_hoenn:
+    elif is_hoenn or is_unova:
         chambers = {}
     else:
         chambers = JOHTO_UNOWN_CHAMBERS
@@ -284,6 +287,13 @@ def get_unown_catalog(game_slug: str = "gold"):
             chamber_badge = "hidden"
             hint = "No aparece en estado salvaje en Hoenn. Se obtiene mediante transferencia externa."
             rate_val = ""
+        elif is_unova:
+            chamber_key = ""
+            chamber_title = ""
+            chamber_name = "Teselia (Poké Transfer)"
+            chamber_badge = "hidden"
+            hint = "No aparece en estado salvaje en Teselia. Se obtiene mediante el Laboratorio Transfer (Ruta 15) desde juegos de 4.ª Generación."
+            rate_val = ""
         else:
             chamber_key = ch["key"] if ch else ""
             chamber_title = ch.get("chamber_title", ch["name"]) if ch else ""
@@ -292,7 +302,9 @@ def get_unown_catalog(game_slug: str = "gold"):
             hint = ch["secret_requirement"] if ch else ""
             rate_val = ch.get("rates", {}).get(letter, "") if ch else ""
 
-        if is_sinnoh or is_hgss:
+        if is_unova:
+            icon_gen = "gen5"
+        elif is_sinnoh or is_hgss:
             icon_gen = "gen4"
         elif is_gen3_plus:
             icon_gen = "gen3"

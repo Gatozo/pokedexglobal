@@ -316,6 +316,7 @@
                 <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
                     <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Pesca con Caña</span>
                     <div class="flex flex-wrap gap-1.5">
+                        {% if game.generation < 5 %}
                         <button type="button" onclick="toggleFilterTag('rod_any', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_any">
                             <span>Cualquier Caña</span>
                         </button>
@@ -327,6 +328,7 @@
                             <img src="/media/items/good-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                             <span>Caña Buena</span>
                         </button>
+                        {% endif %}
                         <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
                             <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                             <span>Supercaña</span>

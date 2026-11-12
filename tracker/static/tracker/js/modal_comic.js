@@ -500,6 +500,7 @@ export function renderModalObtaining(data, activeForm = null) {
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(activeGameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(activeGameSlug);
     const isGen4HGSS = activeGameSlug.startsWith('heartgold') || activeGameSlug.startsWith('soulsilver');
+    const isGen5Unova = ['black', 'white'].includes(activeGameSlug);
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
@@ -922,16 +923,20 @@ export function renderModalObtaining(data, activeForm = null) {
                 const isExclusiveWild = otherWildLocs.length === 0;
 
                 const introText = isExclusiveWild
-                    ? `Esta especie aparece en estado salvaje exclusivamente durante eventos de <strong>Manada Pokémon diaria</strong>${isGen4Sinnoh ? ' tras obtener la Pokédex Nacional' : ''}.`
-                    : `Esta especie aparece con una alta frecuencia especial durante eventos de <strong>Manada Pokémon diaria</strong>${isGen4Sinnoh ? ' tras obtener la Pokédex Nacional' : ''}.`;
+                    ? `Esta especie aparece en estado salvaje exclusivamente durante eventos de <strong>Manada Pokémon diaria</strong>${(isGen4Sinnoh || isGen5Unova) ? ' tras obtener la Pokédex Nacional' : ''}.`
+                    : `Esta especie aparece con una alta frecuencia especial durante eventos de <strong>Manada Pokémon diaria</strong>${(isGen4Sinnoh || isGen5Unova) ? ' tras obtener la Pokédex Nacional' : ''}.`;
 
-                const howItWorksTitle = isGen4HGSS 
-                    ? '📻 ¿Cómo funciona la mecánica en Johto y Kanto?' 
-                    : '📺 ¿Cómo funciona la mecánica?';
+                const howItWorksTitle = isGen5Unova
+                    ? '📟 ¿Cómo funciona la mecánica en Teselia?'
+                    : (isGen4HGSS 
+                        ? '📻 ¿Cómo funciona la mecánica en Johto y Kanto?' 
+                        : '📺 ¿Cómo funciona la mecánica?');
 
-                const howItWorksText = isGen4HGSS
-                    ? `Sintoniza en la radio del <strong>Pokégear</strong> el programa <em>"La Hora Pokémon del Profesor Oak"</em> (conducido por el Prof. Oak y Rosa en la frecuencia superior izquierda). Cada día a medianoche se anunciará una ruta concreta de Johto o Kanto donde se ha producido un brote masivo de esta especie, elevando su probabilidad de encuentro al <strong>40% – 50%</strong>.<br><br>Adicionalmente, varios entrenadores registrados en la agenda del Pokégear te llamarán por teléfono para avisarte en tiempo real si se desata una manada en su ruta.`
-                    : `Visita diariamente Pueblo Arena y habla con la hermana pequeña de Maya / León en su casa, o sintoniza los boletines informativos de la televisión. Te anunciará qué ruta concreta está siendo visitada hoy por una manada, donde este Pokémon aparecerá con una alta tasa de encuentro (~40%). La especie de la manada cambia cada día a medianoche.`;
+                const howItWorksText = isGen5Unova
+                    ? `Tras obtener la Pokédex Nacional, consulta los <strong>paneles electrónicos informativos</strong> dentro de las <strong>casetas de paso fronterizo</strong> (entre rutas y ciudades). En su marquesina luminosa se anunciará qué ruta de Teselia tiene activa hoy una manada. El brote dura todo el día (de 00:00 a 23:59) y eleva la probabilidad de aparición de este Pokémon al <strong>40%</strong> en la hierba de esa ruta.`
+                    : (isGen4HGSS
+                        ? `Sintoniza en la radio del <strong>Pokégear</strong> el programa <em>"La Hora Pokémon del Profesor Oak"</em> (conducido por el Prof. Oak y Rosa en la frecuencia superior izquierda). Cada día a medianoche se anunciará una ruta concreta de Johto o Kanto donde se ha producido un brote masivo de esta especie, elevando su probabilidad de encuentro al <strong>40% – 50%</strong>.<br><br>Adicionalmente, varios entrenadores registrados en la agenda del Pokégear te llamarán por teléfono para avisarte en tiempo real si se desata una manada en su ruta.`
+                        : `Visita diariamente Pueblo Arena y habla con la hermana pequeña de Maya / León en su casa, o sintoniza los boletines informativos de la televisión. Te anunciará qué ruta concreta está siendo visitada hoy por una manada, donde este Pokémon aparecerá con una alta tasa de encuentro (~40%). La especie de la manada cambia cada día a medianoche.`);
 
                 const swarmAccordion = document.createElement('div');
                 swarmAccordion.className = 'mt-2 border-2 border-slate-950 rounded-xl overflow-hidden shadow-[2px_2px_0px_0px_#0f172a] bg-emerald-50';
@@ -945,7 +950,7 @@ export function renderModalObtaining(data, activeForm = null) {
                         <div class="flex items-center gap-2 min-w-0">
                             <img src="/media/items/town-map.png" alt="Manada Pokémon" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 drop-shadow-sm">
                             <span class="font-black uppercase text-[10px] sm:text-xs text-emerald-900 tracking-wide truncate">
-                                Mecánica • Manada Pokémon Diaria${isGen4HGSS ? ' (Pokégear)' : ''}
+                                Mecánica • Manada Pokémon Diaria${isGen5Unova ? ' (Paneles de Teselia)' : (isGen4HGSS ? ' (Pokégear)' : '')}
                             </span>
                         </div>
                         <div class="flex items-center gap-1.5 shrink-0">

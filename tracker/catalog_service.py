@@ -60,7 +60,7 @@ BABY_NATIONAL_NUMBERS = {
     848                                       # Gen 8: Toxel
 }
 
-# Pokémon legendarios y singulares canónicos (Gen 1 a 4)
+# Pokémon legendarios y singulares canónicos (Gen 1 a 5)
 LEGENDARY_NATIONAL_NUMBERS = {
     # Gen 1: Articuno, Zapdos, Moltres, Mewtwo, Mew
     144, 145, 146, 150, 151,
@@ -69,7 +69,9 @@ LEGENDARY_NATIONAL_NUMBERS = {
     # Gen 3: Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon, Rayquaza, Jirachi, Deoxys
     377, 378, 379, 380, 381, 382, 383, 384, 385, 386,
     # Gen 4: Uxie, Mesprit, Azelf, Dialga, Palkia, Heatran, Regigigas, Giratina, Cresselia, Phione, Manaphy, Darkrai, Shaymin, Arceus
-    480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493
+    480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493,
+    # Gen 5: Victini, Cobalion, Terrakion, Virizion, Tornadus, Thundurus, Reshiram, Zekrom, Landorus, Kyurem, Keldeo, Meloetta, Genesect
+    494, 638, 639, 640, 641, 642, 643, 644, 645, 646, 647, 648, 649
 }
 
 GAME_GENERATION_MAP: Dict[str, int] = {
@@ -337,6 +339,7 @@ class CatalogEntry:
         self.id = data.get("id")
         self.entry_number = data.get("entry_number", 0)
         self.regional_number = self.entry_number
+        self.display_number = data.get("display_number") or f"{self.entry_number:03d}"
         self.game_slug = game_slug or data.get("game_slug", "")
         self.is_hatchable = data.get("is_hatchable")
         if self.is_hatchable is None:
@@ -646,7 +649,7 @@ class CatalogEntry:
 
         return json.dumps({
             "id": self.id,
-            "number": f"{self.entry_number:03d}",
+            "number": self.display_number,
             "name": self.pokemon.display_name,
             "category": self.pokemon.category or "Pokémon",
             "primary_type": (self.primary_type or self.primary_type_display or "").lower(),
@@ -781,7 +784,12 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
 def ensure_all_catalogs_loaded():
     """Precarga todos los catálogos disponibles para indexación O(1)."""
     global _CATALOG_CACHE
-    all_slugs = ["red", "blue", "yellow", "gold", "silver", "crystal", "ruby", "sapphire", "emerald"]
+    all_slugs = [
+        "red", "blue", "yellow", "gold", "silver", "crystal",
+        "ruby", "sapphire", "emerald", "firered", "leafgreen",
+        "diamond", "pearl", "platinum", "heartgold", "soulsilver",
+        "black"
+    ]
     for slug in all_slugs:
         if slug not in _CATALOG_CACHE:
             get_compiled_catalog(slug)

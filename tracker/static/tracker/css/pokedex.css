@@ -190,6 +190,11 @@ body[data-game="soulsilver"] {
     background-image: radial-gradient(rgba(100, 116, 139, 0.20) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+body[data-game="black"] {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(rgba(15, 23, 42, 0.18) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 body,
 body[data-game="red"] {
     background-color: #faebed;
@@ -628,6 +633,27 @@ body[data-game="soulsilver"] .status-caught-active {
     background-color: #64748b !important;
     color: #ffffff !important;
     border-color: #334155 !important;
+}
+
+/* Black */
+body[data-game="black"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #0f172a,
+        #0f172a 12px,
+        #020617 12px,
+        #020617 24px
+    );
+}
+body[data-game="black"] .pokemon-card.caught-card {
+    background-color: #e2e8f0 !important;
+    border-color: #0f172a !important;
+    box-shadow: 3px 3px 0px 0px #020617;
+}
+body[data-game="black"] .status-caught-active {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #020617 !important;
 }
 
 /* Default / Red */

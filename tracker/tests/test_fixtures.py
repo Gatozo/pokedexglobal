@@ -44,14 +44,15 @@ class FixtureExportTests(TestCase):
 
         with tempfile.TemporaryDirectory() as tmp_dir:
             temp_path = Path(tmp_dir) / "test_fixtures.json"
+            expected_count = Game.objects.count() + Pokedex.objects.count()
             info = export_tracker_fixtures(temp_path)
             self.assertTrue(info["exists"])
-            self.assertEqual(info["records_count"], 2)  # Game, Pokedex
+            self.assertEqual(info["records_count"], expected_count)  # Game, Pokedex
             self.assertTrue(temp_path.exists())
 
             # Verificar get_fixture_info
             info_check = get_fixture_info(temp_path)
-            self.assertEqual(info_check["records_count"], 2)
+            self.assertEqual(info_check["records_count"], expected_count)
 
     def test_export_fixtures_admin_view_permissions(self):
         url = reverse("admin:export_fixtures")

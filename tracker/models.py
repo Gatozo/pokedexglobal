@@ -160,6 +160,7 @@ class Game(models.Model):
             "ruby", "sapphire", "emerald",
             "diamond", "pearl", "platinum",
             "heartgold", "soulsilver",
+            "black", "white",
             "brilliant-diamond", "shining-pearl"
         ]
 
@@ -215,6 +216,7 @@ class Game(models.Model):
             "gold", "silver", "crystal",
             "diamond", "pearl", "platinum",
             "heartgold", "soulsilver",
+            "black", "white",
             "brilliant-diamond", "shining-pearl"
         ]
 

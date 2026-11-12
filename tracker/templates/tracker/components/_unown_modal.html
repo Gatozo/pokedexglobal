@@ -17,7 +17,7 @@
                 <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
                     <img 
                         id="unown-modal-header-icon"
-                        src="/media/pokemon/icons/{% if is_sinnoh or is_hgss %}gen4{% elif is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
+                        src="/media/pokemon/icons/{% if is_unova %}gen5{% elif is_sinnoh or is_hgss %}gen4{% elif is_johto %}gen2{% else %}gen3{% endif %}/201-f.png" 
                         alt="Unown" 
                         width="28"
                         height="28"
@@ -27,7 +27,9 @@
                 </div>
                 <div>
                     <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-slate-950 text-amber-300 mb-0.5">
-                        {% if is_johto %}
+                        {% if is_unova %}
+                            <span>Teselia (Poké Transfer)</span> • <span>{{ unown_total_forms }} Formas</span>
+                        {% elif is_johto %}
                             <span>Ruinas Alfa</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% elif is_tanoby %}
                             <span>Ruinas Sete</span> • <span>{{ unown_total_forms }} Formas</span>
