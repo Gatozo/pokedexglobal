@@ -106,7 +106,14 @@
           "method": "Evoluciona de Bulbasaur (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Bulbasaur",
+        "text": "Evoluciona de Bulbasaur (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -163,7 +170,14 @@
           "method": "Evoluciona de Ivysaur (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Ivysaur",
+        "text": "Evoluciona de Ivysaur (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -280,7 +294,14 @@
           "method": "Evoluciona de Charmander (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Charmander",
+        "text": "Evoluciona de Charmander (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -337,7 +358,14 @@
           "method": "Evoluciona de Charmeleon (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Charmeleon",
+        "text": "Evoluciona de Charmeleon (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -454,7 +482,14 @@
           "method": "Evoluciona de Squirtle (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Squirtle",
+        "text": "Evoluciona de Squirtle (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -511,7 +546,14 @@
           "method": "Evoluciona de Wartortle (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Wartortle",
+        "text": "Evoluciona de Wartortle (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -628,7 +670,14 @@
           "method": "Evoluciona de Caterpie (Nivel 7)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Caterpie",
+        "text": "Evoluciona de Caterpie (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -685,7 +734,14 @@
           "method": "Evoluciona de Metapod (Nivel 10)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Metapod",
+        "text": "Evoluciona de Metapod (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -797,7 +853,14 @@
           "area": "Ruta 12",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Weedle",
+        "text": "Evoluciona de Weedle (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -853,7 +916,14 @@
           "area": "Ruta 12",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Kakuna",
+        "text": "Evoluciona de Kakuna (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -970,7 +1040,14 @@
           "method": "Evoluciona de Pidgey (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Pidgey",
+        "text": "Evoluciona de Pidgey (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1027,7 +1104,14 @@
           "method": "Evoluciona de Pidgeotto (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Pidgeotto",
+        "text": "Evoluciona de Pidgeotto (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1143,7 +1227,14 @@
           "area": "Solar de los Sueños (Sótano)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Rattata",
+        "text": "Evoluciona de Rattata (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1255,7 +1346,14 @@
           "area": "Ruta 15",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spearow",
+        "text": "Evoluciona de Spearow (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1372,7 +1470,14 @@
           "method": "Evoluciona de Ekans (Nivel 22)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Ekans",
+        "text": "Evoluciona de Ekans (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1429,7 +1534,14 @@
           "method": "Evoluciona de Pichu (por amistad)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Pichu",
+        "text": "Evoluciona de Pichu (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1486,7 +1598,14 @@
           "method": "Evoluciona de Pikachu (usando Piedra Trueno)."
         }
       ],
-      "item_slug": "thunder-stone"
+      "item_slug": "thunder-stone",
+      "evolution_info": {
+        "from": "Pikachu",
+        "text": "Evoluciona de Pikachu (usando Piedra Trueno)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Trueno",
+        "item_slug": "thunder-stone"
+      }
     },
     "evolution_stone": {
       "slug": "thunder-stone",
@@ -1628,7 +1747,14 @@
           "area": "Castillo Ancestral (Sótano B2-B4)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sandshrew",
+        "text": "Evoluciona de Sandshrew (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1745,7 +1871,14 @@
           "method": "Evoluciona de Nidoran-f (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Nidoran-f",
+        "text": "Evoluciona de Nidoran-f (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -1802,7 +1935,14 @@
           "method": "Evoluciona de Nidorina (usando Piedra Lunar)."
         }
       ],
-      "item_slug": "moon-stone"
+      "item_slug": "moon-stone",
+      "evolution_info": {
+        "from": "Nidorina",
+        "text": "Evoluciona de Nidorina (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -1953,7 +2093,14 @@
           "method": "Evoluciona de Nidoran-m (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Nidoran-m",
+        "text": "Evoluciona de Nidoran-m (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2010,7 +2157,14 @@
           "method": "Evoluciona de Nidorino (usando Piedra Lunar)."
         }
       ],
-      "item_slug": "moon-stone"
+      "item_slug": "moon-stone",
+      "evolution_info": {
+        "from": "Nidorino",
+        "text": "Evoluciona de Nidorino (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -2100,7 +2254,14 @@
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Caminando, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cleffa",
+        "text": "Evoluciona de Cleffa (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2156,7 +2317,14 @@
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Clefairy",
+        "text": "Evoluciona de Clefairy (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -2306,7 +2474,14 @@
           "area": "Santuario Abundancia",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Vulpix",
+        "text": "Evoluciona de Vulpix (usando Piedra Fuego)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Fuego",
+        "item_slug": "fire-stone"
+      }
     },
     "evolution_stone": {
       "slug": "fire-stone",
@@ -2392,7 +2567,14 @@
           "area": "Ruta 14",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Igglybuff",
+        "text": "Evoluciona de Igglybuff (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2448,7 +2630,14 @@
           "area": "Ruta 14",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Jigglypuff",
+        "text": "Evoluciona de Jigglypuff (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -2606,7 +2795,14 @@
           "area": "Ruta 13",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Zubat",
+        "text": "Evoluciona de Zubat (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2723,7 +2919,14 @@
           "method": "Evoluciona de Oddish (Nivel 21)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Oddish",
+        "text": "Evoluciona de Oddish (Nivel 21)",
+        "trigger": "level-up",
+        "condition": "Nivel 21",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -2780,7 +2983,14 @@
           "method": "Evoluciona de Gloom (usando Piedra Hoja)."
         }
       ],
-      "item_slug": "leaf-stone"
+      "item_slug": "leaf-stone",
+      "evolution_info": {
+        "from": "Gloom",
+        "text": "Evoluciona de Gloom (usando Piedra Hoja)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Hoja",
+        "item_slug": "leaf-stone"
+      }
     },
     "evolution_stone": {
       "slug": "leaf-stone",
@@ -2927,7 +3137,14 @@
           "method": "Evoluciona de Paras (Nivel 24)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Paras",
+        "text": "Evoluciona de Paras (Nivel 24)",
+        "trigger": "level-up",
+        "condition": "Nivel 24",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3039,7 +3256,14 @@
           "area": "Solar de los Sueños",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Venonat",
+        "text": "Evoluciona de Venonat (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3156,7 +3380,14 @@
           "method": "Evoluciona de Diglett (Nivel 26)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Diglett",
+        "text": "Evoluciona de Diglett (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3273,7 +3504,14 @@
           "method": "Evoluciona de Meowth (Nivel 28)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Meowth",
+        "text": "Evoluciona de Meowth (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3393,7 +3631,14 @@
           "area": "Ruta 14",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Psyduck",
+        "text": "Evoluciona de Psyduck (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3510,7 +3755,14 @@
           "method": "Evoluciona de Mankey (Nivel 28)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Mankey",
+        "text": "Evoluciona de Mankey (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3627,7 +3879,14 @@
           "method": "Evoluciona de Growlithe (usando Piedra Fuego)."
         }
       ],
-      "item_slug": "fire-stone"
+      "item_slug": "fire-stone",
+      "evolution_info": {
+        "from": "Growlithe",
+        "text": "Evoluciona de Growlithe (usando Piedra Fuego)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Fuego",
+        "item_slug": "fire-stone"
+      }
     },
     "evolution_stone": {
       "slug": "fire-stone",
@@ -3821,7 +4080,14 @@
           "area": "Gruta Superación (Sótano B2)",
           "method": "Supercaña, Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Poliwag",
+        "text": "Evoluciona de Poliwag (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -3897,7 +4163,14 @@
           "area": "Gruta Superación (Sótano B2)",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Poliwhirl",
+        "text": "Evoluciona de Poliwhirl (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -4044,7 +4317,14 @@
           "method": "Evoluciona de Abra (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Abra",
+        "text": "Evoluciona de Abra (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4101,7 +4381,14 @@
           "method": "Evoluciona de Kadabra (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Kadabra",
+        "text": "Evoluciona de Kadabra (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4218,7 +4505,14 @@
           "method": "Evoluciona de Machop (Nivel 28)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Machop",
+        "text": "Evoluciona de Machop (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4275,7 +4569,14 @@
           "method": "Evoluciona de Machoke (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Machoke",
+        "text": "Evoluciona de Machoke (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4392,7 +4693,14 @@
           "method": "Evoluciona de Bellsprout (Nivel 21)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Bellsprout",
+        "text": "Evoluciona de Bellsprout (Nivel 21)",
+        "trigger": "level-up",
+        "condition": "Nivel 21",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4449,7 +4757,14 @@
           "method": "Evoluciona de Weepinbell (usando Piedra Hoja)."
         }
       ],
-      "item_slug": "leaf-stone"
+      "item_slug": "leaf-stone",
+      "evolution_info": {
+        "from": "Weepinbell",
+        "text": "Evoluciona de Weepinbell (usando Piedra Hoja)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Hoja",
+        "item_slug": "leaf-stone"
+      }
     },
     "evolution_stone": {
       "slug": "leaf-stone",
@@ -4596,7 +4911,14 @@
           "method": "Evoluciona de Tentacool (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tentacool",
+        "text": "Evoluciona de Tentacool (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4716,7 +5038,14 @@
           "area": "Gruta Superación (Sótano B2)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Geodude",
+        "text": "Evoluciona de Geodude (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4773,7 +5102,14 @@
           "method": "Evoluciona de Graveler (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Graveler",
+        "text": "Evoluciona de Graveler (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -4885,7 +5221,14 @@
           "area": "Ruta 12",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ponyta",
+        "text": "Evoluciona de Ponyta (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5001,7 +5344,14 @@
           "area": "Santuario Abundancia",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Slowpoke",
+        "text": "Evoluciona de Slowpoke (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5118,7 +5468,14 @@
           "method": "Evoluciona de Magnemite (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Magnemite",
+        "text": "Evoluciona de Magnemite (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5295,7 +5652,14 @@
           "method": "Evoluciona de Doduo (Nivel 31)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Doduo",
+        "text": "Evoluciona de Doduo (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5419,7 +5783,14 @@
           "area": "Boquete Gigante (Cueva Central)",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Seel",
+        "text": "Evoluciona de Seel (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5536,7 +5907,14 @@
           "method": "Evoluciona de Grimer (Nivel 38)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Grimer",
+        "text": "Evoluciona de Grimer (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5668,7 +6046,14 @@
           "area": "Pueblo Arenisca",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Shellder",
+        "text": "Evoluciona de Shellder (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -5815,7 +6200,14 @@
           "method": "Evoluciona de Gastly (Nivel 25)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Gastly",
+        "text": "Evoluciona de Gastly (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -5872,7 +6264,14 @@
           "method": "Evoluciona de Haunter (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Haunter",
+        "text": "Evoluciona de Haunter (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6049,7 +6448,14 @@
           "method": "Evoluciona de Drowzee (Nivel 26)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Drowzee",
+        "text": "Evoluciona de Drowzee (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6181,7 +6587,14 @@
           "area": "Ruta 13",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Krabby",
+        "text": "Evoluciona de Krabby (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6298,7 +6711,14 @@
           "method": "Evoluciona de Voltorb (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Voltorb",
+        "text": "Evoluciona de Voltorb (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6415,7 +6835,14 @@
           "method": "Evoluciona de Exeggcute (usando Piedra Hoja)."
         }
       ],
-      "item_slug": "leaf-stone"
+      "item_slug": "leaf-stone",
+      "evolution_info": {
+        "from": "Exeggcute",
+        "text": "Evoluciona de Exeggcute (usando Piedra Hoja)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Hoja",
+        "item_slug": "leaf-stone"
+      }
     },
     "evolution_stone": {
       "slug": "leaf-stone",
@@ -6557,7 +6984,14 @@
           "area": "Ruta 15",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cubone",
+        "text": "Evoluciona de Cubone (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6614,7 +7048,14 @@
           "method": "Evoluciona de Tyrogue (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tyrogue",
+        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6671,7 +7112,14 @@
           "method": "Evoluciona de Tyrogue (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tyrogue",
+        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6856,7 +7304,14 @@
           "method": "Evoluciona de Koffing (Nivel 35)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Koffing",
+        "text": "Evoluciona de Koffing (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -6973,7 +7428,14 @@
           "method": "Evoluciona de Rhyhorn (Nivel 42)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Rhyhorn",
+        "text": "Evoluciona de Rhyhorn (Nivel 42)",
+        "trigger": "level-up",
+        "condition": "Nivel 42",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7033,7 +7495,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Happiny",
+        "text": "Evoluciona de Happiny (equipado con Piedra Oval al subir de nivel por el día)",
+        "trigger": "level-up",
+        "condition": "equipado con Piedra Oval al subir de nivel por el día",
+        "item_slug": "oval-stone"
+      }
     },
     "evolution_stone": {
       "slug": "oval-stone",
@@ -7315,7 +7784,14 @@
           "area": "Ruta 17",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Horsea",
+        "text": "Evoluciona de Horsea (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7475,7 +7951,14 @@
           "area": "Santuario Abundancia",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Goldeen",
+        "text": "Evoluciona de Goldeen (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7591,7 +8074,14 @@
           "area": "Ruta 13",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Staryu",
+        "text": "Evoluciona de Staryu (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -7681,7 +8171,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mime-jr",
+        "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Mimético",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7801,7 +8298,14 @@
           "area": "Boquete Gigante (Cueva Central)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Smoochum",
+        "text": "Evoluciona de Smoochum (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7858,7 +8362,14 @@
           "method": "Evoluciona de Elekid (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Elekid",
+        "text": "Evoluciona de Elekid (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -7915,7 +8426,14 @@
           "method": "Evoluciona de Magby (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Magby",
+        "text": "Evoluciona de Magby (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8152,7 +8670,14 @@
           "method": "Evoluciona de Magikarp (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Magikarp",
+        "text": "Evoluciona de Magikarp (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8385,7 +8910,14 @@
           "method": "Evoluciona de Eevee (usando Piedra Agua)."
         }
       ],
-      "item_slug": "water-stone"
+      "item_slug": "water-stone",
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -8472,7 +9004,14 @@
           "method": "Evoluciona de Eevee (usando Piedra Trueno)."
         }
       ],
-      "item_slug": "thunder-stone"
+      "item_slug": "thunder-stone",
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (usando Piedra Trueno)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Trueno",
+        "item_slug": "thunder-stone"
+      }
     },
     "evolution_stone": {
       "slug": "thunder-stone",
@@ -8559,7 +9098,14 @@
           "method": "Evoluciona de Eevee (usando Piedra Fuego)."
         }
       ],
-      "item_slug": "fire-stone"
+      "item_slug": "fire-stone",
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (usando Piedra Fuego)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Fuego",
+        "item_slug": "fire-stone"
+      }
     },
     "evolution_stone": {
       "slug": "fire-stone",
@@ -8770,7 +9316,14 @@
           "method": "Evoluciona de Omanyte (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Omanyte",
+        "text": "Evoluciona de Omanyte (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -8891,7 +9444,14 @@
           "method": "Evoluciona de Kabuto (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Kabuto",
+        "text": "Evoluciona de Kabuto (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9015,7 +9575,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Munchlax",
+        "text": "Evoluciona de Munchlax (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9299,7 +9866,14 @@
           "area": "Torre Duodraco (Exterior)",
           "method": "Supercaña, Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Dratini",
+        "text": "Evoluciona de Dratini (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9355,7 +9929,14 @@
           "area": "Torre Duodraco (Exterior)",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Dragonair",
+        "text": "Evoluciona de Dragonair (Nivel 55)",
+        "trigger": "level-up",
+        "condition": "Nivel 55",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9584,7 +10165,14 @@
           "method": "Evoluciona de Chikorita (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Chikorita",
+        "text": "Evoluciona de Chikorita (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9641,7 +10229,14 @@
           "method": "Evoluciona de Bayleef (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Bayleef",
+        "text": "Evoluciona de Bayleef (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9758,7 +10353,14 @@
           "method": "Evoluciona de Cyndaquil (Nivel 14)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Cyndaquil",
+        "text": "Evoluciona de Cyndaquil (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9815,7 +10417,14 @@
           "method": "Evoluciona de Quilava (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Quilava",
+        "text": "Evoluciona de Quilava (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9932,7 +10541,14 @@
           "method": "Evoluciona de Totodile (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Totodile",
+        "text": "Evoluciona de Totodile (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -9989,7 +10605,14 @@
           "method": "Evoluciona de Croconaw (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Croconaw",
+        "text": "Evoluciona de Croconaw (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10106,7 +10729,14 @@
           "method": "Evoluciona de Sentret (Nivel 15)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Sentret",
+        "text": "Evoluciona de Sentret (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10218,7 +10848,14 @@
           "area": "Santuario Abundancia",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Hoothoot",
+        "text": "Evoluciona de Hoothoot (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10334,7 +10971,14 @@
           "area": "Solar de los Sueños (Sótano)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ledyba",
+        "text": "Evoluciona de Ledyba (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10450,7 +11094,14 @@
           "area": "Solar de los Sueños (Sótano)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spinarak",
+        "text": "Evoluciona de Spinarak (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10510,7 +11161,14 @@
           "area": "Ruta 13",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Golbat",
+        "text": "Evoluciona de Golbat (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10630,7 +11288,14 @@
           "area": "Ciudad Fayenza",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Chinchou",
+        "text": "Evoluciona de Chinchou (Nivel 27)",
+        "trigger": "level-up",
+        "condition": "Nivel 27",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -10919,7 +11584,14 @@
           "method": "Evoluciona de Togepi (por amistad)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Togepi",
+        "text": "Evoluciona de Togepi (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11036,7 +11708,14 @@
           "method": "Evoluciona de Natu (Nivel 25)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Natu",
+        "text": "Evoluciona de Natu (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11153,7 +11832,14 @@
           "method": "Evoluciona de Mareep (Nivel 15)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Mareep",
+        "text": "Evoluciona de Mareep (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11210,7 +11896,14 @@
           "method": "Evoluciona de Flaaffy (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Flaaffy",
+        "text": "Evoluciona de Flaaffy (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11267,7 +11960,14 @@
           "method": "Evoluciona de Gloom (usando Piedra Solar)."
         }
       ],
-      "item_slug": "sun-stone"
+      "item_slug": "sun-stone",
+      "evolution_info": {
+        "from": "Gloom",
+        "text": "Evoluciona de Gloom (usando Piedra Solar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Solar",
+        "item_slug": "sun-stone"
+      }
     },
     "evolution_stone": {
       "slug": "sun-stone",
@@ -11357,7 +12057,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Azurill",
+        "text": "Evoluciona de Azurill (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11414,7 +12121,14 @@
           "method": "Evoluciona de Marill (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Marill",
+        "text": "Evoluciona de Marill (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11474,7 +12188,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bonsly",
+        "text": "Evoluciona de Bonsly (al subir de nivel conociendo Mimético)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Mimético",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11530,7 +12251,14 @@
           "area": "Ruta 6",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Poliwhirl",
+        "text": "Evoluciona de Poliwhirl (por intercambio equipado con Roca del Rey)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Roca del Rey",
+        "item_slug": "kings-rock"
+      }
     },
     "evolution_stone": {
       "slug": "kings-rock",
@@ -11673,7 +12401,14 @@
           "method": "Evoluciona de Hoppip (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Hoppip",
+        "text": "Evoluciona de Hoppip (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11730,7 +12465,14 @@
           "method": "Evoluciona de Skiploom (Nivel 27)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Skiploom",
+        "text": "Evoluciona de Skiploom (Nivel 27)",
+        "trigger": "level-up",
+        "condition": "Nivel 27",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -11906,7 +12648,14 @@
           "area": "Ruta 12",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sunkern",
+        "text": "Evoluciona de Sunkern (usando Piedra Solar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Solar",
+        "item_slug": "sun-stone"
+      }
     },
     "evolution_stone": {
       "slug": "sun-stone",
@@ -12113,7 +12862,14 @@
           "method": "Evoluciona de Wooper (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Wooper",
+        "text": "Evoluciona de Wooper (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12170,7 +12926,14 @@
           "method": "Evoluciona de Eevee (por amistad de día)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (por amistad de día)",
+        "trigger": "level-up",
+        "condition": "por amistad de día",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12227,7 +12990,14 @@
           "method": "Evoluciona de Eevee (por amistad de noche)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (por amistad de noche)",
+        "trigger": "level-up",
+        "condition": "por amistad de noche",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12343,7 +13113,14 @@
           "area": "Santuario Abundancia",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Slowpoke",
+        "text": "Evoluciona de Slowpoke (por intercambio equipado con Roca del Rey)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Roca del Rey",
+        "item_slug": "kings-rock"
+      }
     },
     "evolution_stone": {
       "slug": "kings-rock",
@@ -12545,7 +13322,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wynaut",
+        "text": "Evoluciona de Wynaut (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12722,7 +13506,14 @@
           "method": "Evoluciona de Pineco (Nivel 31)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Pineco",
+        "text": "Evoluciona de Pineco (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -12903,7 +13694,14 @@
           "method": "Evoluciona de Onix (por intercambio equipado con Revestimiento Metálico)."
         }
       ],
-      "item_slug": "metal-coat"
+      "item_slug": "metal-coat",
+      "evolution_info": {
+        "from": "Onix",
+        "text": "Evoluciona de Onix (por intercambio equipado con Revestimiento Metálico)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Revestimiento Metálico",
+        "item_slug": "metal-coat"
+      }
     },
     "evolution_stone": {
       "slug": "metal-coat",
@@ -13046,7 +13844,14 @@
           "method": "Evoluciona de Snubbull (Nivel 23)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Snubbull",
+        "text": "Evoluciona de Snubbull (Nivel 23)",
+        "trigger": "level-up",
+        "condition": "Nivel 23",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13171,7 +13976,14 @@
           "method": "Evoluciona de Scyther (por intercambio equipado con Revestimiento Metálico)."
         }
       ],
-      "item_slug": "metal-coat"
+      "item_slug": "metal-coat",
+      "evolution_info": {
+        "from": "Scyther",
+        "text": "Evoluciona de Scyther (por intercambio equipado con Revestimiento Metálico)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Revestimiento Metálico",
+        "item_slug": "metal-coat"
+      }
     },
     "evolution_stone": {
       "slug": "metal-coat",
@@ -13498,7 +14310,14 @@
           "method": "Evoluciona de Teddiursa (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Teddiursa",
+        "text": "Evoluciona de Teddiursa (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13615,7 +14434,14 @@
           "method": "Evoluciona de Slugma (Nivel 38)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Slugma",
+        "text": "Evoluciona de Slugma (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13735,7 +14561,14 @@
           "area": "Boquete Gigante (Cueva Central)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Swinub",
+        "text": "Evoluciona de Swinub (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -13923,7 +14756,14 @@
           "area": "Pueblo Arenisca",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Remoraid",
+        "text": "Evoluciona de Remoraid (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -14051,7 +14891,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mantyke",
+        "text": "Evoluciona de Mantyke (por condición especial)",
+        "trigger": "level-up",
+        "condition": "por condición especial",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -14224,7 +15071,14 @@
           "method": "Evoluciona de Houndour (Nivel 24)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Houndour",
+        "text": "Evoluciona de Houndour (Nivel 24)",
+        "trigger": "level-up",
+        "condition": "Nivel 24",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -14288,7 +15142,14 @@
           "area": "Ruta 17",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Seadra",
+        "text": "Evoluciona de Seadra (por intercambio equipado con Escama Dragón)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Escama Dragón",
+        "item_slug": "dragon-scale"
+      }
     },
     "evolution_stone": {
       "slug": "dragon-scale",
@@ -14431,7 +15292,14 @@
           "method": "Evoluciona de Phanpy (Nivel 25)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Phanpy",
+        "text": "Evoluciona de Phanpy (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -14488,7 +15356,14 @@
           "method": "Evoluciona de Porygon (por intercambio equipado con Mejora)."
         }
       ],
-      "item_slug": "up-grade"
+      "item_slug": "up-grade",
+      "evolution_info": {
+        "from": "Porygon",
+        "text": "Evoluciona de Porygon (por intercambio equipado con Mejora)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Mejora",
+        "item_slug": "up-grade"
+      }
     },
     "evolution_stone": {
       "slug": "up-grade",
@@ -14747,7 +15622,14 @@
           "method": "Evoluciona de Tyrogue (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tyrogue",
+        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15040,7 +15922,14 @@
           "method": "Evoluciona de Chansey (por amistad)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Chansey",
+        "text": "Evoluciona de Chansey (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15320,7 +16209,14 @@
           "area": "Ruta 15",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Larvitar",
+        "text": "Evoluciona de Larvitar (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15376,7 +16272,14 @@
           "area": "Ruta 15",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Pupitar",
+        "text": "Evoluciona de Pupitar (Nivel 55)",
+        "trigger": "level-up",
+        "condition": "Nivel 55",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15661,7 +16564,14 @@
           "method": "Evoluciona de Treecko (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Treecko",
+        "text": "Evoluciona de Treecko (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15718,7 +16628,14 @@
           "method": "Evoluciona de Grovyle (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Grovyle",
+        "text": "Evoluciona de Grovyle (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15835,7 +16752,14 @@
           "method": "Evoluciona de Torchic (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Torchic",
+        "text": "Evoluciona de Torchic (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -15892,7 +16816,14 @@
           "method": "Evoluciona de Combusken (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Combusken",
+        "text": "Evoluciona de Combusken (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16009,7 +16940,14 @@
           "method": "Evoluciona de Mudkip (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Mudkip",
+        "text": "Evoluciona de Mudkip (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16066,7 +17004,14 @@
           "method": "Evoluciona de Marshtomp (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Marshtomp",
+        "text": "Evoluciona de Marshtomp (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16183,7 +17128,14 @@
           "method": "Evoluciona de Poochyena (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Poochyena",
+        "text": "Evoluciona de Poochyena (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16300,7 +17252,14 @@
           "method": "Evoluciona de Zigzagoon (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Zigzagoon",
+        "text": "Evoluciona de Zigzagoon (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16417,7 +17376,14 @@
           "method": "Evoluciona de Wurmple (Nivel 7)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Wurmple",
+        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16474,7 +17440,14 @@
           "method": "Evoluciona de Silcoon (Nivel 10)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Silcoon",
+        "text": "Evoluciona de Silcoon (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16531,7 +17504,14 @@
           "method": "Evoluciona de Wurmple (Nivel 7)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Wurmple",
+        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "trigger": "level-up",
+        "condition": "Nivel 7",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16588,7 +17568,14 @@
           "method": "Evoluciona de Cascoon (Nivel 10)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Cascoon",
+        "text": "Evoluciona de Cascoon (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16705,7 +17692,14 @@
           "method": "Evoluciona de Lotad (Nivel 14)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Lotad",
+        "text": "Evoluciona de Lotad (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16762,7 +17756,14 @@
           "method": "Evoluciona de Lombre (usando Piedra Agua)."
         }
       ],
-      "item_slug": "water-stone"
+      "item_slug": "water-stone",
+      "evolution_info": {
+        "from": "Lombre",
+        "text": "Evoluciona de Lombre (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -16909,7 +17910,14 @@
           "method": "Evoluciona de Seedot (Nivel 14)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Seedot",
+        "text": "Evoluciona de Seedot (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -16966,7 +17974,14 @@
           "method": "Evoluciona de Nuzleaf (usando Piedra Hoja)."
         }
       ],
-      "item_slug": "leaf-stone"
+      "item_slug": "leaf-stone",
+      "evolution_info": {
+        "from": "Nuzleaf",
+        "text": "Evoluciona de Nuzleaf (usando Piedra Hoja)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Hoja",
+        "item_slug": "leaf-stone"
+      }
     },
     "evolution_stone": {
       "slug": "leaf-stone",
@@ -17112,7 +18127,14 @@
           "area": "Ruta 13",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Taillow",
+        "text": "Evoluciona de Taillow (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17244,7 +18266,14 @@
           "area": "Pueblo Arenisca",
           "method": "Surf"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wingull",
+        "text": "Evoluciona de Wingull (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17361,7 +18390,14 @@
           "method": "Evoluciona de Ralts (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Ralts",
+        "text": "Evoluciona de Ralts (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17418,7 +18454,14 @@
           "method": "Evoluciona de Kirlia (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Kirlia",
+        "text": "Evoluciona de Kirlia (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17535,7 +18578,14 @@
           "method": "Evoluciona de Surskit (Nivel 22)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Surskit",
+        "text": "Evoluciona de Surskit (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17648,7 +18698,14 @@
           "method": "Evoluciona de Shroomish (Nivel 23)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shroomish",
+        "text": "Evoluciona de Shroomish (Nivel 23)",
+        "trigger": "level-up",
+        "condition": "Nivel 23",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17765,7 +18822,14 @@
           "method": "Evoluciona de Slakoth (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Slakoth",
+        "text": "Evoluciona de Slakoth (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17822,7 +18886,14 @@
           "method": "Evoluciona de Vigoroth (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Vigoroth",
+        "text": "Evoluciona de Vigoroth (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17939,7 +19010,14 @@
           "method": "Evoluciona de Nincada (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Nincada",
+        "text": "Evoluciona de Nincada (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -17996,7 +19074,14 @@
           "method": "Evoluciona de Nincada (por condición especial)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Nincada",
+        "text": "Evoluciona de Nincada (por condición especial)",
+        "trigger": "shed",
+        "condition": "por condición especial",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18113,7 +19198,14 @@
           "method": "Evoluciona de Whismur (Nivel 20)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Whismur",
+        "text": "Evoluciona de Whismur (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18170,7 +19262,14 @@
           "method": "Evoluciona de Loudred (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Loudred",
+        "text": "Evoluciona de Loudred (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18287,7 +19386,14 @@
           "method": "Evoluciona de Makuhita (Nivel 24)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Makuhita",
+        "text": "Evoluciona de Makuhita (Nivel 24)",
+        "trigger": "level-up",
+        "condition": "Nivel 24",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18524,7 +19630,14 @@
           "method": "Evoluciona de Skitty (usando Piedra Lunar)."
         }
       ],
-      "item_slug": "moon-stone"
+      "item_slug": "moon-stone",
+      "evolution_info": {
+        "from": "Skitty",
+        "text": "Evoluciona de Skitty (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -18811,7 +19924,14 @@
           "method": "Evoluciona de Aron (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Aron",
+        "text": "Evoluciona de Aron (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18868,7 +19988,14 @@
           "method": "Evoluciona de Lairon (Nivel 42)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Lairon",
+        "text": "Evoluciona de Lairon (Nivel 42)",
+        "trigger": "level-up",
+        "condition": "Nivel 42",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -18985,7 +20112,14 @@
           "method": "Evoluciona de Meditite (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Meditite",
+        "text": "Evoluciona de Meditite (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19102,7 +20236,14 @@
           "method": "Evoluciona de Electrike (Nivel 26)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Electrike",
+        "text": "Evoluciona de Electrike (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19394,7 +20535,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Budew",
+        "text": "Evoluciona de Budew (por amistad de día)",
+        "trigger": "level-up",
+        "condition": "por amistad de día",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19511,7 +20659,14 @@
           "method": "Evoluciona de Gulpin (Nivel 26)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Gulpin",
+        "text": "Evoluciona de Gulpin (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19627,7 +20782,14 @@
           "area": "Puente Villa",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Carvanha",
+        "text": "Evoluciona de Carvanha (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19747,7 +20909,14 @@
           "area": "Bahía Arenisca",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Wailmer",
+        "text": "Evoluciona de Wailmer (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -19864,7 +21033,14 @@
           "method": "Evoluciona de Numel (Nivel 33)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Numel",
+        "text": "Evoluciona de Numel (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20041,7 +21217,14 @@
           "method": "Evoluciona de Spoink (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Spoink",
+        "text": "Evoluciona de Spoink (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20218,7 +21401,14 @@
           "method": "Evoluciona de Trapinch (Nivel 35)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Trapinch",
+        "text": "Evoluciona de Trapinch (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20275,7 +21465,14 @@
           "method": "Evoluciona de Vibrava (Nivel 45)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Vibrava",
+        "text": "Evoluciona de Vibrava (Nivel 45)",
+        "trigger": "level-up",
+        "condition": "Nivel 45",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20392,7 +21589,14 @@
           "method": "Evoluciona de Cacnea (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Cacnea",
+        "text": "Evoluciona de Cacnea (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20504,7 +21708,14 @@
           "area": "Ruta 14",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Swablu",
+        "text": "Evoluciona de Swablu (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20916,7 +22127,14 @@
           "area": "Pantano Teja",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Barboach",
+        "text": "Evoluciona de Barboach (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21033,7 +22251,14 @@
           "method": "Evoluciona de Corphish (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Corphish",
+        "text": "Evoluciona de Corphish (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21145,7 +22370,14 @@
           "area": "Castillo Ancestral (Planta más profunda)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Baltoy",
+        "text": "Evoluciona de Baltoy (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21266,7 +22498,14 @@
           "method": "Evoluciona de Lileep (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Lileep",
+        "text": "Evoluciona de Lileep (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21387,7 +22626,14 @@
           "method": "Evoluciona de Anorith (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Anorith",
+        "text": "Evoluciona de Anorith (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21503,7 +22749,14 @@
           "area": "Ruta 1",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Feebas",
+        "text": "Evoluciona de Feebas (por intercambio equipado con Escama Bella o Belleza alta)",
+        "trigger": "level-up",
+        "condition": "por intercambio equipado con Escama Bella o Belleza alta",
+        "item_slug": "prism-scale"
+      }
     },
     "evolution_stone": {
       "slug": "prism-scale",
@@ -21762,7 +23015,14 @@
           "method": "Evoluciona de Shuppet (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shuppet",
+        "text": "Evoluciona de Shuppet (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21879,7 +23139,14 @@
           "method": "Evoluciona de Duskull (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Duskull",
+        "text": "Evoluciona de Duskull (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -21999,7 +23266,14 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Chingling",
+        "text": "Evoluciona de Chingling (por amistad de noche)",
+        "trigger": "level-up",
+        "condition": "por amistad de noche",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22240,7 +23514,14 @@
           "method": "Evoluciona de Snorunt (Nivel 42)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Snorunt",
+        "text": "Evoluciona de Snorunt (Nivel 42)",
+        "trigger": "level-up",
+        "condition": "Nivel 42",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22356,7 +23637,14 @@
           "area": "Bahía Arenisca",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Spheal",
+        "text": "Evoluciona de Spheal (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22412,7 +23700,14 @@
           "area": "Bahía Arenisca",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sealeo",
+        "text": "Evoluciona de Sealeo (Nivel 44)",
+        "trigger": "level-up",
+        "condition": "Nivel 44",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22528,7 +23823,14 @@
           "area": "Ruta 4",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Clamperl",
+        "text": "Evoluciona de Clamperl (por intercambio equipado con Diente Marino)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Diente Marino",
+        "item_slug": "deep-sea-tooth"
+      }
     },
     "evolution_stone": {
       "slug": "deep-sea-tooth",
@@ -22607,7 +23909,14 @@
           "method": "Evoluciona de Clamperl (por intercambio equipado con Escama Marina)."
         }
       ],
-      "item_slug": "deep-sea-scale"
+      "item_slug": "deep-sea-scale",
+      "evolution_info": {
+        "from": "Clamperl",
+        "text": "Evoluciona de Clamperl (por intercambio equipado con Escama Marina)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Escama Marina",
+        "item_slug": "deep-sea-scale"
+      }
     },
     "evolution_stone": {
       "slug": "deep-sea-scale",
@@ -22882,7 +24191,14 @@
           "method": "Evoluciona de Bagon (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Bagon",
+        "text": "Evoluciona de Bagon (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -22939,7 +24255,14 @@
           "method": "Evoluciona de Shelgon (Nivel 50)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shelgon",
+        "text": "Evoluciona de Shelgon (Nivel 50)",
+        "trigger": "level-up",
+        "condition": "Nivel 50",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23051,7 +24374,14 @@
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Caminando, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Beldum",
+        "text": "Evoluciona de Beldum (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23107,7 +24437,14 @@
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Metang",
+        "text": "Evoluciona de Metang (Nivel 45)",
+        "trigger": "level-up",
+        "condition": "Nivel 45",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23784,7 +25121,14 @@
           "method": "Evoluciona de Turtwig (Nivel 18)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Turtwig",
+        "text": "Evoluciona de Turtwig (Nivel 18)",
+        "trigger": "level-up",
+        "condition": "Nivel 18",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23841,7 +25185,14 @@
           "method": "Evoluciona de Grotle (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Grotle",
+        "text": "Evoluciona de Grotle (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -23958,7 +25309,14 @@
           "method": "Evoluciona de Chimchar (Nivel 14)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Chimchar",
+        "text": "Evoluciona de Chimchar (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24015,7 +25373,14 @@
           "method": "Evoluciona de Monferno (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Monferno",
+        "text": "Evoluciona de Monferno (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24132,7 +25497,14 @@
           "method": "Evoluciona de Piplup (Nivel 16)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Piplup",
+        "text": "Evoluciona de Piplup (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24189,7 +25561,14 @@
           "method": "Evoluciona de Prinplup (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Prinplup",
+        "text": "Evoluciona de Prinplup (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24306,7 +25685,14 @@
           "method": "Evoluciona de Starly (Nivel 14)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Starly",
+        "text": "Evoluciona de Starly (Nivel 14)",
+        "trigger": "level-up",
+        "condition": "Nivel 14",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24363,7 +25749,14 @@
           "method": "Evoluciona de Staravia (Nivel 34)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Staravia",
+        "text": "Evoluciona de Staravia (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24479,7 +25872,14 @@
           "area": "Puente Villa",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bidoof",
+        "text": "Evoluciona de Bidoof (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24595,7 +25995,14 @@
           "area": "Solar de los Sueños (Sótano)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Kricketot",
+        "text": "Evoluciona de Kricketot (Nivel 10)",
+        "trigger": "level-up",
+        "condition": "Nivel 10",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24712,7 +26119,14 @@
           "method": "Evoluciona de Shinx (Nivel 15)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shinx",
+        "text": "Evoluciona de Shinx (Nivel 15)",
+        "trigger": "level-up",
+        "condition": "Nivel 15",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24769,7 +26183,14 @@
           "method": "Evoluciona de Luxio (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Luxio",
+        "text": "Evoluciona de Luxio (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -24886,7 +26307,14 @@
           "method": "Evoluciona de Roselia (usando Piedra Día)."
         }
       ],
-      "item_slug": "shiny-stone"
+      "item_slug": "shiny-stone",
+      "evolution_info": {
+        "from": "Roselia",
+        "text": "Evoluciona de Roselia (usando Piedra Día)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Día",
+        "item_slug": "shiny-stone"
+      }
     },
     "evolution_stone": {
       "slug": "shiny-stone",
@@ -25037,7 +26465,14 @@
           "method": "Evoluciona de Cranidos (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Cranidos",
+        "text": "Evoluciona de Cranidos (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25158,7 +26593,14 @@
           "method": "Evoluciona de Shieldon (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shieldon",
+        "text": "Evoluciona de Shieldon (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25275,7 +26717,14 @@
           "method": "Evoluciona de Burmy (Nivel 20, (hembra))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Burmy",
+        "text": "Evoluciona de Burmy (Nivel 20, (hembra))",
+        "trigger": "level-up",
+        "condition": "Nivel 20, (hembra)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25332,7 +26781,14 @@
           "method": "Evoluciona de Burmy (Nivel 20, (macho))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Burmy",
+        "text": "Evoluciona de Burmy (Nivel 20, (macho))",
+        "trigger": "level-up",
+        "condition": "Nivel 20, (macho)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25448,7 +26904,14 @@
           "area": "Ruta 12",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Combee",
+        "text": "Evoluciona de Combee (Nivel 21, (hembra))",
+        "trigger": "level-up",
+        "condition": "Nivel 21, (hembra)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25632,7 +27095,14 @@
           "area": "Ruta 14",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Buizel",
+        "text": "Evoluciona de Buizel (Nivel 26)",
+        "trigger": "level-up",
+        "condition": "Nivel 26",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25744,7 +27214,14 @@
           "area": "Ruta 12",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cherubi",
+        "text": "Evoluciona de Cherubi (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25861,7 +27338,14 @@
           "method": "Evoluciona de Shellos (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shellos",
+        "text": "Evoluciona de Shellos (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -25918,7 +27402,14 @@
           "method": "Evoluciona de Aipom (al subir de nivel conociendo Doble Golpe)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Aipom",
+        "text": "Evoluciona de Aipom (al subir de nivel conociendo Doble Golpe)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Doble Golpe",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26038,7 +27529,14 @@
           "area": "Ruta 14",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Drifloon",
+        "text": "Evoluciona de Drifloon (Nivel 28)",
+        "trigger": "level-up",
+        "condition": "Nivel 28",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26155,7 +27653,14 @@
           "method": "Evoluciona de Buneary (por amistad)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Buneary",
+        "text": "Evoluciona de Buneary (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26212,7 +27717,14 @@
           "method": "Evoluciona de Misdreavus (usando Piedra Noche)."
         }
       ],
-      "item_slug": "dusk-stone"
+      "item_slug": "dusk-stone",
+      "evolution_info": {
+        "from": "Misdreavus",
+        "text": "Evoluciona de Misdreavus (usando Piedra Noche)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Noche",
+        "item_slug": "dusk-stone"
+      }
     },
     "evolution_stone": {
       "slug": "dusk-stone",
@@ -26298,7 +27810,14 @@
           "area": "Santuario Abundancia",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Murkrow",
+        "text": "Evoluciona de Murkrow (usando Piedra Noche)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Noche",
+        "item_slug": "dusk-stone"
+      }
     },
     "evolution_stone": {
       "slug": "dusk-stone",
@@ -26445,7 +27964,14 @@
           "method": "Evoluciona de Glameow (Nivel 38)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Glameow",
+        "text": "Evoluciona de Glameow (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26618,7 +28144,14 @@
           "method": "Evoluciona de Stunky (Nivel 34)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Stunky",
+        "text": "Evoluciona de Stunky (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -26730,7 +28263,14 @@
           "area": "Santuario Abundancia",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Bronzor",
+        "text": "Evoluciona de Bronzor (Nivel 33)",
+        "trigger": "level-up",
+        "condition": "Nivel 33",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27147,7 +28687,14 @@
           "method": "Evoluciona de Gible (Nivel 24)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Gible",
+        "text": "Evoluciona de Gible (Nivel 24)",
+        "trigger": "level-up",
+        "condition": "Nivel 24",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27204,7 +28751,14 @@
           "method": "Evoluciona de Gabite (Nivel 48)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Gabite",
+        "text": "Evoluciona de Gabite (Nivel 48)",
+        "trigger": "level-up",
+        "condition": "Nivel 48",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27385,7 +28939,14 @@
           "method": "Evoluciona de Riolu (por amistad de día)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Riolu",
+        "text": "Evoluciona de Riolu (por amistad de día)",
+        "trigger": "level-up",
+        "condition": "por amistad de día",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27502,7 +29063,14 @@
           "method": "Evoluciona de Hippopotas (Nivel 34)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Hippopotas",
+        "text": "Evoluciona de Hippopotas (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27619,7 +29187,14 @@
           "method": "Evoluciona de Skorupi (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Skorupi",
+        "text": "Evoluciona de Skorupi (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27736,7 +29311,14 @@
           "method": "Evoluciona de Croagunk (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Croagunk",
+        "text": "Evoluciona de Croagunk (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -27928,7 +29510,14 @@
           "area": "Ruta 17",
           "method": "Supercaña en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Finneon",
+        "text": "Evoluciona de Finneon (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28109,7 +29698,14 @@
           "method": "Evoluciona de Snover (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Snover",
+        "text": "Evoluciona de Snover (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28166,7 +29762,14 @@
           "method": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la noche)."
         }
       ],
-      "item_slug": "razor-claw"
+      "item_slug": "razor-claw",
+      "evolution_info": {
+        "from": "Sneasel",
+        "text": "Evoluciona de Sneasel (equipado con Garra Afilada al subir de nivel por la noche)",
+        "trigger": "level-up",
+        "condition": "equipado con Garra Afilada al subir de nivel por la noche",
+        "item_slug": "razor-claw"
+      }
     },
     "evolution_stone": {
       "slug": "razor-claw",
@@ -28245,7 +29848,14 @@
           "method": "Evoluciona de Magneton (al subir de nivel en la Cueva Electrorroca (campo magnético))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Magneton",
+        "text": "Evoluciona de Magneton (al subir de nivel en la Cueva Electrorroca (campo magnético))",
+        "trigger": "level-up",
+        "condition": "al subir de nivel en la Cueva Electrorroca (campo magnético)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28302,7 +29912,14 @@
           "method": "Evoluciona de Lickitung (al subir de nivel conociendo Desenrollar)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Lickitung",
+        "text": "Evoluciona de Lickitung (al subir de nivel conociendo Desenrollar)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Desenrollar",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28359,7 +29976,14 @@
           "method": "Evoluciona de Rhydon (por intercambio equipado con Protector)."
         }
       ],
-      "item_slug": "protector"
+      "item_slug": "protector",
+      "evolution_info": {
+        "from": "Rhydon",
+        "text": "Evoluciona de Rhydon (por intercambio equipado con Protector)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Protector",
+        "item_slug": "protector"
+      }
     },
     "evolution_stone": {
       "slug": "protector",
@@ -28445,7 +30069,14 @@
           "area": "Ruta 13",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Tangela",
+        "text": "Evoluciona de Tangela (al subir de nivel conociendo Poder Pasado)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Poder Pasado",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28502,7 +30133,14 @@
           "method": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)."
         }
       ],
-      "item_slug": "electirizer"
+      "item_slug": "electirizer",
+      "evolution_info": {
+        "from": "Electabuzz",
+        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Electirizador",
+        "item_slug": "electirizer"
+      }
     },
     "evolution_stone": {
       "slug": "electirizer",
@@ -28581,7 +30219,14 @@
           "method": "Evoluciona de Magmar (por intercambio equipado con Magmatizador)."
         }
       ],
-      "item_slug": "magmarizer"
+      "item_slug": "magmarizer",
+      "evolution_info": {
+        "from": "Magmar",
+        "text": "Evoluciona de Magmar (por intercambio equipado con Magmatizador)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Magmatizador",
+        "item_slug": "magmarizer"
+      }
     },
     "evolution_stone": {
       "slug": "magmarizer",
@@ -28660,7 +30305,14 @@
           "method": "Evoluciona de Togetic (usando Piedra Día)."
         }
       ],
-      "item_slug": "shiny-stone"
+      "item_slug": "shiny-stone",
+      "evolution_info": {
+        "from": "Togetic",
+        "text": "Evoluciona de Togetic (usando Piedra Día)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Día",
+        "item_slug": "shiny-stone"
+      }
     },
     "evolution_stone": {
       "slug": "shiny-stone",
@@ -28747,7 +30399,14 @@
           "method": "Evoluciona de Yanma (al subir de nivel conociendo Poder Pasado)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Yanma",
+        "text": "Evoluciona de Yanma (al subir de nivel conociendo Poder Pasado)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Poder Pasado",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28804,7 +30463,14 @@
           "method": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Musgo (Bosque Azulejo))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Musgo (Bosque Azulejo))",
+        "trigger": "level-up",
+        "condition": "al subir de nivel cerca de la Roca Musgo (Bosque Azulejo)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28861,7 +30527,14 @@
           "method": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Hielo (Monte Tuerca))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Eevee",
+        "text": "Evoluciona de Eevee (al subir de nivel cerca de la Roca Hielo (Monte Tuerca))",
+        "trigger": "level-up",
+        "condition": "al subir de nivel cerca de la Roca Hielo (Monte Tuerca)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -28921,7 +30594,14 @@
           "area": "Ruta 15",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Gligar",
+        "text": "Evoluciona de Gligar (equipado con Colmillo Agudo al subir de nivel por la noche)",
+        "trigger": "level-up",
+        "condition": "equipado con Colmillo Agudo al subir de nivel por la noche",
+        "item_slug": "razor-fang"
+      }
     },
     "evolution_stone": {
       "slug": "razor-fang",
@@ -29011,7 +30691,14 @@
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Piloswine",
+        "text": "Evoluciona de Piloswine (al subir de nivel conociendo Poder Pasado)",
+        "trigger": "level-up",
+        "condition": "al subir de nivel conociendo Poder Pasado",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29068,7 +30755,14 @@
           "method": "Evoluciona de Porygon2 (por intercambio equipado con Discoxtraño)."
         }
       ],
-      "item_slug": "dubious-disc"
+      "item_slug": "dubious-disc",
+      "evolution_info": {
+        "from": "Porygon2",
+        "text": "Evoluciona de Porygon2 (por intercambio equipado con Discoxtraño)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Discoxtraño",
+        "item_slug": "dubious-disc"
+      }
     },
     "evolution_stone": {
       "slug": "dubious-disc",
@@ -29151,7 +30845,14 @@
           "method": "Evoluciona de Kirlia (usando Piedra Alba (macho))."
         }
       ],
-      "item_slug": "dawn-stone"
+      "item_slug": "dawn-stone",
+      "evolution_info": {
+        "from": "Kirlia",
+        "text": "Evoluciona de Kirlia (usando Piedra Alba (macho))",
+        "trigger": "use-item",
+        "condition": "usando Piedra Alba (macho)",
+        "item_slug": "dawn-stone"
+      }
     },
     "evolution_stone": {
       "slug": "dawn-stone",
@@ -29234,7 +30935,14 @@
           "method": "Evoluciona de Nosepass (al subir de nivel en la Cueva Electrorroca (campo magnético))."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Nosepass",
+        "text": "Evoluciona de Nosepass (al subir de nivel en la Cueva Electrorroca (campo magnético))",
+        "trigger": "level-up",
+        "condition": "al subir de nivel en la Cueva Electrorroca (campo magnético)",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -29291,7 +30999,14 @@
           "method": "Evoluciona de Dusclops (por intercambio equipado con Tela Terrible)."
         }
       ],
-      "item_slug": "reaper-cloth"
+      "item_slug": "reaper-cloth",
+      "evolution_info": {
+        "from": "Dusclops",
+        "text": "Evoluciona de Dusclops (por intercambio equipado con Tela Terrible)",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Tela Terrible",
+        "item_slug": "reaper-cloth"
+      }
     },
     "evolution_stone": {
       "slug": "reaper-cloth",
@@ -29374,7 +31089,14 @@
           "method": "Evoluciona de Snorunt (usando Piedra Alba (hembra))."
         }
       ],
-      "item_slug": "dawn-stone"
+      "item_slug": "dawn-stone",
+      "evolution_info": {
+        "from": "Snorunt",
+        "text": "Evoluciona de Snorunt (usando Piedra Alba (hembra))",
+        "trigger": "use-item",
+        "condition": "usando Piedra Alba (hembra)",
+        "item_slug": "dawn-stone"
+      }
     },
     "evolution_stone": {
       "slug": "dawn-stone",
@@ -30417,7 +32139,14 @@
           "method": "Evoluciona de Snivy (Nivel 17)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Snivy",
+        "text": "Evoluciona de Snivy (Nivel 17)",
+        "trigger": "level-up",
+        "condition": "Nivel 17",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30474,7 +32203,14 @@
           "method": "Evoluciona de Servine (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Servine",
+        "text": "Evoluciona de Servine (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30591,7 +32327,14 @@
           "method": "Evoluciona de Tepig (Nivel 17)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tepig",
+        "text": "Evoluciona de Tepig (Nivel 17)",
+        "trigger": "level-up",
+        "condition": "Nivel 17",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30648,7 +32391,14 @@
           "method": "Evoluciona de Pignite (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Pignite",
+        "text": "Evoluciona de Pignite (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30765,7 +32515,14 @@
           "method": "Evoluciona de Oshawott (Nivel 17)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Oshawott",
+        "text": "Evoluciona de Oshawott (Nivel 17)",
+        "trigger": "level-up",
+        "condition": "Nivel 17",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30822,7 +32579,14 @@
           "method": "Evoluciona de Dewott (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Dewott",
+        "text": "Evoluciona de Dewott (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -30970,7 +32734,14 @@
           "area": "Ruta 18",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Patrat",
+        "text": "Evoluciona de Patrat (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31110,7 +32881,14 @@
           "area": "Ruta 10 (Puertas de las Medallas)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Lillipup",
+        "text": "Evoluciona de Lillipup (Nivel 16)",
+        "trigger": "level-up",
+        "condition": "Nivel 16",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31178,7 +32956,14 @@
           "area": "Ruta 10 (Puertas de las Medallas)",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Herdier",
+        "text": "Evoluciona de Herdier (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31314,7 +33099,14 @@
           "area": "Ruta 16",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Purrloin",
+        "text": "Evoluciona de Purrloin (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -31439,7 +33231,14 @@
           "method": "Evoluciona de Pansage (usando Piedra Hoja)."
         }
       ],
-      "item_slug": "leaf-stone"
+      "item_slug": "leaf-stone",
+      "evolution_info": {
+        "from": "Pansage",
+        "text": "Evoluciona de Pansage (usando Piedra Hoja)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Hoja",
+        "item_slug": "leaf-stone"
+      }
     },
     "evolution_stone": {
       "slug": "leaf-stone",
@@ -31594,7 +33393,14 @@
           "method": "Evoluciona de Pansear (usando Piedra Fuego)."
         }
       ],
-      "item_slug": "fire-stone"
+      "item_slug": "fire-stone",
+      "evolution_info": {
+        "from": "Pansear",
+        "text": "Evoluciona de Pansear (usando Piedra Fuego)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Fuego",
+        "item_slug": "fire-stone"
+      }
     },
     "evolution_stone": {
       "slug": "fire-stone",
@@ -31749,7 +33555,14 @@
           "method": "Evoluciona de Panpour (usando Piedra Agua)."
         }
       ],
-      "item_slug": "water-stone"
+      "item_slug": "water-stone",
+      "evolution_info": {
+        "from": "Panpour",
+        "text": "Evoluciona de Panpour (usando Piedra Agua)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Agua",
+        "item_slug": "water-stone"
+      }
     },
     "evolution_stone": {
       "slug": "water-stone",
@@ -31903,7 +33716,14 @@
           "area": "Solar de los Sueños",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Munna",
+        "text": "Evoluciona de Munna (usando Piedra Lunar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Lunar",
+        "item_slug": "moon-stone"
+      }
     },
     "evolution_stone": {
       "slug": "moon-stone",
@@ -32085,7 +33905,14 @@
           "area": "Bosque de los Perdidos",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Pidove",
+        "text": "Evoluciona de Pidove (Nivel 21)",
+        "trigger": "level-up",
+        "condition": "Nivel 21",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32161,7 +33988,14 @@
           "area": "Bosque de los Perdidos",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Tranquill",
+        "text": "Evoluciona de Tranquill (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32277,7 +34111,14 @@
           "area": "Ruta 7",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Blitzle",
+        "text": "Evoluciona de Blitzle (Nivel 27)",
+        "trigger": "level-up",
+        "condition": "Nivel 27",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32489,7 +34330,14 @@
           "area": "Gruta Superación (Sótano B2)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Roggenrola",
+        "text": "Evoluciona de Roggenrola (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32546,7 +34394,14 @@
           "method": "Evoluciona de Boldore (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Boldore",
+        "text": "Evoluciona de Boldore (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32743,7 +34598,14 @@
           "method": "Evoluciona de Woobat (por amistad)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Woobat",
+        "text": "Evoluciona de Woobat (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -32955,7 +34817,14 @@
           "area": "Gruta Superación (Sótano B2)",
           "method": "Nube de polvo"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Drilbur",
+        "text": "Evoluciona de Drilbur (Nivel 31)",
+        "trigger": "level-up",
+        "condition": "Nivel 31",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33243,7 +35112,14 @@
           "area": "Monte Tuerca",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Timburr",
+        "text": "Evoluciona de Timburr (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33300,7 +35176,14 @@
           "method": "Evoluciona de Gurdurr (por intercambio)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Gurdurr",
+        "text": "Evoluciona de Gurdurr (por intercambio)",
+        "trigger": "trade",
+        "condition": "por intercambio",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33424,7 +35307,14 @@
           "area": "Pantano Teja",
           "method": "Hierba alta"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Tympole",
+        "text": "Evoluciona de Tympole (Nivel 25)",
+        "trigger": "level-up",
+        "condition": "Nivel 25",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33488,7 +35378,14 @@
           "area": "Pantano Teja",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Palpitoad",
+        "text": "Evoluciona de Palpitoad (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33764,7 +35661,14 @@
           "area": "Bosque de los Perdidos",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sewaddle",
+        "text": "Evoluciona de Sewaddle (Nivel 20)",
+        "trigger": "level-up",
+        "condition": "Nivel 20",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33824,7 +35728,14 @@
           "area": "Bosque de los Perdidos",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Swadloon",
+        "text": "Evoluciona de Swadloon (por amistad)",
+        "trigger": "level-up",
+        "condition": "por amistad",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -33944,7 +35855,14 @@
           "area": "Bosque Azulejo (Interior)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Venipede",
+        "text": "Evoluciona de Venipede (Nivel 22)",
+        "trigger": "level-up",
+        "condition": "Nivel 22",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -34001,7 +35919,14 @@
           "method": "Evoluciona de Whirlipede (Nivel 30)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Whirlipede",
+        "text": "Evoluciona de Whirlipede (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -34133,7 +36058,14 @@
           "area": "Bosque de los Perdidos",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cottonee",
+        "text": "Evoluciona de Cottonee (usando Piedra Solar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Solar",
+        "item_slug": "sun-stone"
+      }
     },
     "evolution_stone": {
       "slug": "sun-stone",
@@ -34280,7 +36212,14 @@
           "method": "Evoluciona de Petilil (usando Piedra Solar)."
         }
       ],
-      "item_slug": "sun-stone"
+      "item_slug": "sun-stone",
+      "evolution_info": {
+        "from": "Petilil",
+        "text": "Evoluciona de Petilil (usando Piedra Solar)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Solar",
+        "item_slug": "sun-stone"
+      }
     },
     "evolution_stone": {
       "slug": "sun-stone",
@@ -34510,7 +36449,14 @@
           "area": "Castillo Ancestral (Sótano B2-B4)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Sandile",
+        "text": "Evoluciona de Sandile (Nivel 29)",
+        "trigger": "level-up",
+        "condition": "Nivel 29",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -34567,7 +36513,14 @@
           "method": "Evoluciona de Krokorok (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Krokorok",
+        "text": "Evoluciona de Krokorok (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -34695,7 +36648,14 @@
           "area": "Ruta 4",
           "method": "Evolución de Darumaka (Nv. 35)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Darumaka",
+        "text": "Evoluciona de Darumaka (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -34883,7 +36843,14 @@
           "area": "Ruta 18",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Dwebble",
+        "text": "Evoluciona de Dwebble (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35016,7 +36983,14 @@
           "method": "Evoluciona de Scraggy (Nivel 39)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Scraggy",
+        "text": "Evoluciona de Scraggy (Nivel 39)",
+        "trigger": "level-up",
+        "condition": "Nivel 39",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35196,7 +37170,14 @@
           "area": "Castillo Ancestral (Sótano B2-B4)",
           "method": "Caminando"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Yamask",
+        "text": "Evoluciona de Yamask (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35317,7 +37298,14 @@
           "method": "Evoluciona de Tirtouga (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tirtouga",
+        "text": "Evoluciona de Tirtouga (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35438,7 +37426,14 @@
           "method": "Evoluciona de Archen (Nivel 37)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Archen",
+        "text": "Evoluciona de Archen (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35558,7 +37553,14 @@
           "area": "Ruta 9",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Trubbish",
+        "text": "Evoluciona de Trubbish (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35678,7 +37680,14 @@
           "area": "Ciudad Porcelana",
           "method": "Evolución de Zorua (Nv. 30)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Zorua",
+        "text": "Evoluciona de Zorua (Nivel 30)",
+        "trigger": "level-up",
+        "condition": "Nivel 30",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -35818,7 +37827,14 @@
           "area": "Ruta 16",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Minccino",
+        "text": "Evoluciona de Minccino (usando Piedra Día)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Día",
+        "item_slug": "shiny-stone"
+      }
     },
     "evolution_stone": {
       "slug": "shiny-stone",
@@ -35968,7 +37984,14 @@
           "area": "Ruta 9",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Gothita",
+        "text": "Evoluciona de Gothita (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36024,7 +38047,14 @@
           "area": "Ruta 9",
           "method": "Hierba movediza"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Gothorita",
+        "text": "Evoluciona de Gothorita (Nivel 41)",
+        "trigger": "level-up",
+        "condition": "Nivel 41",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36141,7 +38171,14 @@
           "method": "Evoluciona de Solosis (Nivel 32)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Solosis",
+        "text": "Evoluciona de Solosis (Nivel 32)",
+        "trigger": "level-up",
+        "condition": "Nivel 32",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36198,7 +38235,14 @@
           "method": "Evoluciona de Duosion (Nivel 41)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Duosion",
+        "text": "Evoluciona de Duosion (Nivel 41)",
+        "trigger": "level-up",
+        "condition": "Nivel 41",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36314,7 +38358,14 @@
           "area": "Puente Progreso",
           "method": "Sombra en el puente"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Ducklett",
+        "text": "Evoluciona de Ducklett (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36446,7 +38497,14 @@
           "area": "Torre Duodraco (Exterior)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Vanillite",
+        "text": "Evoluciona de Vanillite (Nivel 35)",
+        "trigger": "level-up",
+        "condition": "Nivel 35",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36503,7 +38561,14 @@
           "method": "Evoluciona de Vanillish (Nivel 47)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Vanillish",
+        "text": "Evoluciona de Vanillish (Nivel 47)",
+        "trigger": "level-up",
+        "condition": "Nivel 47",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36635,7 +38700,14 @@
           "area": "Torre Duodraco (Exterior)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Deerling",
+        "text": "Evoluciona de Deerling (Nivel 34)",
+        "trigger": "level-up",
+        "condition": "Nivel 34",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -36884,7 +38956,14 @@
           "method": "Evoluciona de Karrablast (por intercambio con Shelmet)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Karrablast",
+        "text": "Evoluciona de Karrablast (por intercambio con Shelmet)",
+        "trigger": "trade",
+        "condition": "por intercambio con Shelmet",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37020,7 +39099,14 @@
           "area": "Ruta 11",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Foongus",
+        "text": "Evoluciona de Foongus (Nivel 39)",
+        "trigger": "level-up",
+        "condition": "Nivel 39",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37168,7 +39254,14 @@
           "area": "Ruta 17",
           "method": "Surf en sombra del agua"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Frillish",
+        "text": "Evoluciona de Frillish (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37369,7 +39462,14 @@
           "method": "Evoluciona de Joltik (Nivel 36)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Joltik",
+        "text": "Evoluciona de Joltik (Nivel 36)",
+        "trigger": "level-up",
+        "condition": "Nivel 36",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37494,7 +39594,14 @@
           "method": "Evoluciona de Ferroseed (Nivel 40)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Ferroseed",
+        "text": "Evoluciona de Ferroseed (Nivel 40)",
+        "trigger": "level-up",
+        "condition": "Nivel 40",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37623,7 +39730,14 @@
           "method": "Evoluciona de Klink (Nivel 38)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Klink",
+        "text": "Evoluciona de Klink (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37680,7 +39794,14 @@
           "method": "Evoluciona de Klang (Nivel 49)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Klang",
+        "text": "Evoluciona de Klang (Nivel 49)",
+        "trigger": "level-up",
+        "condition": "Nivel 49",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37805,7 +39926,14 @@
           "method": "Evoluciona de Tynamo (Nivel 39)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Tynamo",
+        "text": "Evoluciona de Tynamo (Nivel 39)",
+        "trigger": "level-up",
+        "condition": "Nivel 39",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -37862,7 +39990,14 @@
           "method": "Evoluciona de Eelektrik (usando Piedra Trueno)."
         }
       ],
-      "item_slug": "thunder-stone"
+      "item_slug": "thunder-stone",
+      "evolution_info": {
+        "from": "Eelektrik",
+        "text": "Evoluciona de Eelektrik (usando Piedra Trueno)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Trueno",
+        "item_slug": "thunder-stone"
+      }
     },
     "evolution_stone": {
       "slug": "thunder-stone",
@@ -38016,7 +40151,14 @@
           "area": "Ruta 14",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Elgyem",
+        "text": "Evoluciona de Elgyem (Nivel 42)",
+        "trigger": "level-up",
+        "condition": "Nivel 42",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38145,7 +40287,14 @@
           "method": "Evoluciona de Litwick (Nivel 41)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Litwick",
+        "text": "Evoluciona de Litwick (Nivel 41)",
+        "trigger": "level-up",
+        "condition": "Nivel 41",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38202,7 +40351,14 @@
           "method": "Evoluciona de Lampent (usando Piedra Noche)."
         }
       ],
-      "item_slug": "dusk-stone"
+      "item_slug": "dusk-stone",
+      "evolution_info": {
+        "from": "Lampent",
+        "text": "Evoluciona de Lampent (usando Piedra Noche)",
+        "trigger": "use-item",
+        "condition": "usando Piedra Noche",
+        "item_slug": "dusk-stone"
+      }
     },
     "evolution_stone": {
       "slug": "dusk-stone",
@@ -38352,7 +40508,14 @@
           "area": "Calle Victoria (Ladera Exterior)",
           "method": "Hierba alta"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Axew",
+        "text": "Evoluciona de Axew (Nivel 38)",
+        "trigger": "level-up",
+        "condition": "Nivel 38",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38409,7 +40572,14 @@
           "method": "Evoluciona de Fraxure (Nivel 48)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Fraxure",
+        "text": "Evoluciona de Fraxure (Nivel 48)",
+        "trigger": "level-up",
+        "condition": "Nivel 48",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38541,7 +40711,14 @@
           "area": "Torre Duodraco (Exterior)",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Cubchoo",
+        "text": "Evoluciona de Cubchoo (Nivel 37)",
+        "trigger": "level-up",
+        "condition": "Nivel 37",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38726,7 +40903,14 @@
           "method": "Evoluciona de Shelmet (por intercambio con Karrablast)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Shelmet",
+        "text": "Evoluciona de Shelmet (por intercambio con Karrablast)",
+        "trigger": "trade",
+        "condition": "por intercambio con Karrablast",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -38982,7 +41166,14 @@
           "area": "Ruta 14",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Mienfoo",
+        "text": "Evoluciona de Mienfoo (Nivel 50)",
+        "trigger": "level-up",
+        "condition": "Nivel 50",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39171,7 +41362,14 @@
           "method": "Evoluciona de Golett (Nivel 43)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Golett",
+        "text": "Evoluciona de Golett (Nivel 43)",
+        "trigger": "level-up",
+        "condition": "Nivel 43",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39291,7 +41489,14 @@
           "area": "Ruta 11",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Pawniard",
+        "text": "Evoluciona de Pawniard (Nivel 52)",
+        "trigger": "level-up",
+        "condition": "Nivel 52",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39472,7 +41677,14 @@
           "method": "Evoluciona de Rufflet (Nivel 54)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Rufflet",
+        "text": "Evoluciona de Rufflet (Nivel 54)",
+        "trigger": "level-up",
+        "condition": "Nivel 54",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39608,7 +41820,14 @@
           "area": "Ruta 11",
           "method": "Hierba oscura (Combates dobles)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Vullaby",
+        "text": "Evoluciona de Vullaby (Nivel 54)",
+        "trigger": "level-up",
+        "condition": "Nivel 54",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39901,7 +42120,14 @@
           "method": "Evoluciona de Deino (Nivel 50)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Deino",
+        "text": "Evoluciona de Deino (Nivel 50)",
+        "trigger": "level-up",
+        "condition": "Nivel 50",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -39958,7 +42184,14 @@
           "method": "Evoluciona de Zweilous (Nivel 64)."
         }
       ],
-      "item_slug": null
+      "item_slug": null,
+      "evolution_info": {
+        "from": "Zweilous",
+        "text": "Evoluciona de Zweilous (Nivel 64)",
+        "trigger": "level-up",
+        "condition": "Nivel 64",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -40078,7 +42311,14 @@
           "area": "Ruta 18",
           "method": "Evolución de Larvesta (Nv. 59)"
         }
-      ]
+      ],
+      "evolution_info": {
+        "from": "Larvesta",
+        "text": "Evoluciona de Larvesta (Nivel 59)",
+        "trigger": "level-up",
+        "condition": "Nivel 59",
+        "item_slug": null
+      }
     },
     "evolution_stone": null,
     "game_data": {

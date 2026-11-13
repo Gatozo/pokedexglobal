@@ -713,7 +713,14 @@ def main():
                 'badge_color': 'purple',
                 'summary': summary,
                 'locations': loc_list,
-                'item_slug': item_slug
+                'item_slug': item_slug,
+                'evolution_info': {
+                    'from': from_name,
+                    'text': evo_info.get('text', summary),
+                    'trigger': evo_info.get('trigger', 'level-up'),
+                    'condition': cond,
+                    'item_slug': item_slug,
+                }
             }
         elif nat_id in white_exclusives:
             summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco)."
@@ -749,6 +756,16 @@ def main():
                 'badge_color': 'zinc',
                 'summary': summary,
                 'locations': loc_list
+            }
+
+        # Conservar metadatos de evolución universalmente para cualquier especie que evolucione de otra
+        if evo_info and 'evolution_info' not in obt_info:
+            obt_info['evolution_info'] = {
+                'from': evo_info.get('from_name'),
+                'text': evo_info.get('text', ''),
+                'trigger': evo_info.get('trigger', 'level-up'),
+                'condition': evo_info.get('condition', ''),
+                'item_slug': evo_info.get('item_slug'),
             }
 
         # Inciensos de crianza si aplica

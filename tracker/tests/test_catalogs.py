@@ -4620,6 +4620,43 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertIn("se vuelve irritable", yellow_by_nid[26].flavor_text)
         self.assertIn("Engaña a su presa", yellow_by_nid[71].flavor_text)
 
+    def test_black_evolution_filter_tags_include_pre_and_post_evolutions(self):
+        """Verifica que Pokémon Negro (regional y nacional) incluya filtros de intercambio, amistad y piedra en preevolución y evolución."""
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
+
+        clear_catalog_memory_cache()
+        reg_entries = get_compiled_catalog("black", force_reload=True, is_national=False)
+        by_name_reg = {e.pokemon.name: set(e.filter_tags.split()) for e in reg_entries}
+
+        # Por intercambio (4 pares = 8 en Teselia)
+        for name in ("boldore", "gigalith", "gurdurr", "conkeldurr", "karrablast", "escavalier", "shelmet", "accelgor"):
+            self.assertIn("trade", by_name_reg[name], f"{name} debe tener etiqueta 'trade' en black")
+
+        # Por amistad (2 pares = 4 en Teselia, incluyendo Leavanny salvaje)
+        for name in ("woobat", "swoobat", "swadloon", "leavanny"):
+            self.assertIn("friendship", by_name_reg[name], f"{name} debe tener etiqueta 'friendship' en black")
+
+        # Por piedra (9 pares = 18 en Teselia: tanto el que evoluciona como el evolucionado)
+        for name in (
+            "pansage", "simisage", "pansear", "simisear", "panpour", "simipour",
+            "munna", "musharna", "cottonee", "whimsicott", "petilil", "lilligant",
+            "minccino", "cinccino", "eelektrik", "eelektross", "lampent", "chandelure",
+        ):
+            self.assertIn("stone", by_name_reg[name], f"{name} debe tener etiqueta 'stone' en black")
+
+        # Nacional (incluyendo especies Gen 1-4 por Poké Transfer y uso directo de black_national)
+        for nat_entries in (
+            get_compiled_catalog("black", force_reload=True, is_national=True),
+            get_compiled_catalog("black_national", force_reload=True),
+        ):
+            by_name_nat = {e.pokemon.name: set(e.filter_tags.split()) for e in nat_entries}
+            for name in ("haunter", "gengar", "feebas", "milotic"):
+                self.assertIn("trade", by_name_nat[name], f"{name} debe tener 'trade' en black_national")
+            for name in ("pikachu", "raichu", "eevee", "vaporeon", "roselia", "roserade"):
+                self.assertIn("stone", by_name_nat[name], f"{name} debe tener 'stone' en black_national")
+            for name in ("pichu", "pikachu", "budew", "roselia", "riolu", "lucario"):
+                self.assertIn("friendship", by_name_nat[name], f"{name} debe tener 'friendship' en black_national")
+
 
 
 

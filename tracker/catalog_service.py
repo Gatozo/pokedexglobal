@@ -100,13 +100,14 @@ def get_game_generation(game_slug: str) -> int:
     """Retorna la generación canónica a partir del slug de la edición."""
     if not game_slug:
         return 1
-    if game_slug in GAME_GENERATION_MAP:
-        return GAME_GENERATION_MAP[game_slug]
+    clean_slug = game_slug.removesuffix("_national")
+    if clean_slug in GAME_GENERATION_MAP:
+        return GAME_GENERATION_MAP[clean_slug]
     try:
         from .models import Game
-        g = Game.objects.filter(slug=game_slug).first()
+        g = Game.objects.filter(slug=clean_slug).first()
         if g and g.generation:
-            GAME_GENERATION_MAP[game_slug] = g.generation
+            GAME_GENERATION_MAP[clean_slug] = g.generation
             return g.generation
     except Exception:
         pass
@@ -118,14 +119,15 @@ _GAME_EVO_SETS: Dict[str, Dict[str, set]] = {}
 
 def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
     """Extrae dinámicamente los Pokémon involucrados en intercambio, piedra y amistad para una edición."""
-    if game_slug in _GAME_EVO_SETS:
-        return _GAME_EVO_SETS[game_slug]
+    clean_slug = (game_slug or "").removesuffix("_national")
+    if clean_slug in _GAME_EVO_SETS:
+        return _GAME_EVO_SETS[clean_slug]
 
     files_to_check = []
-    base_file = CATALOGS_DIR / f"{game_slug}.json"
+    base_file = CATALOGS_DIR / f"{clean_slug}.json"
     if base_file.exists():
         files_to_check.append(base_file)
-    nat_file = CATALOGS_DIR / f"{game_slug}_national.json"
+    nat_file = CATALOGS_DIR / f"{clean_slug}_national.json"
     if nat_file.exists():
         files_to_check.append(nat_file)
 
@@ -176,16 +178,16 @@ def get_game_evo_sets(game_slug: str) -> Dict[str, set]:
             print(f"Error computing evo sets for {catalog_file}: {e}")
 
     # Roselia y Chimecho no tenían preevoluciones por amistad en Gen 3 (Budew y Chingling se introdujeron en Gen 4)
-    if get_game_generation(game_slug) == 3:
+    if get_game_generation(clean_slug) == 3:
         friendships.discard("roselia")
         friendships.discard("chimecho")
 
-    _GAME_EVO_SETS[game_slug] = {
+    _GAME_EVO_SETS[clean_slug] = {
         "trade": trades,
         "stone": stones,
         "friendship": friendships
     }
-    return _GAME_EVO_SETS[game_slug]
+    return _GAME_EVO_SETS[clean_slug]
 
 
 def get_existing_icons():
