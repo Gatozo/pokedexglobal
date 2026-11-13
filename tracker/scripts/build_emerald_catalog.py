@@ -181,8 +181,11 @@ HOENN_AREAS_ES = {
     'hoenn-safari-zone-expansion-south': 'Zona Safari (Expansión Johto Sur)',
     'hoenn-safari-zone-expansion-north': 'Zona Safari (Expansión Johto Norte)',
     'hoenn-safari-zone-neacro-bike-area': 'Zona Safari (Noreste Bici Acrobática)',
+    'hoenn-safari-zone-se': 'Zona Safari (Sureste)',
     'hoenn-safari-zone-se-area': 'Zona Safari (Sureste)',
+    'hoenn-safari-zone-sw': 'Zona Safari (Suroeste)',
     'hoenn-safari-zone-sw-area': 'Zona Safari (Suroeste)',
+    'hoenn-safari-zone-nwmach-bike-area': 'Zona Safari (Noroeste Bici Carrera)',
     'hoenn-safari-zone-nw-area': 'Zona Safari (Noroeste)',
 
     # Nao Abandonada y Malvalona Nueva
@@ -208,6 +211,7 @@ HOENN_AREAS_ES = {
     'mirage-tower-2f': 'Torre Espejismo (P2)',
     'mirage-tower-3f': 'Torre Espejismo (P3)',
     'mirage-tower-4f': 'Torre Espejismo (Cima Fósil)',
+    'team-magma-hideout-area': 'Guarida Magma (Desfiladero)',
     'magma-hideout-area': 'Guarida Magma (Desfiladero)',
     'magma-hideout-1f': 'Guarida Magma (Desfiladero P1)',
     'magma-hideout-2f': 'Guarida Magma (Desfiladero P2)',

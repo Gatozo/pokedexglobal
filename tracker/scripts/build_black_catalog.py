@@ -71,7 +71,7 @@ UNOVA_AREA_NAMES = {
     'giant-chasm-forest': 'Boquete Gigante (Bosque Interior)',
     'giant-chasm-forest-cave': 'Boquete Gigante (Cueva Central)',
     'giant-chasm-outside': 'Boquete Gigante (Entrada)',
-    'guidance-chamber-area': 'Cueva Loza (Sala del Guía)',
+    'guidance-chamber-area': 'Cueva Loza (Estancia Orientación)',
     'icirrus-city-area': 'Ciudad Teja',
     'liberty-garden-lighthouse-basement': 'Isla Libertad (Sótano del Faro)',
     'lostlorn-forest-area': 'Bosque de los Perdidos',
@@ -104,7 +104,7 @@ UNOVA_AREA_NAMES = {
     'unova-route-8-area': 'Ruta 8',
     'unova-route-9-area': 'Ruta 9',
     'unova-route-10-area': 'Ruta 10',
-    'unova-route-10-victory-road-gate': 'Ruta 10 (Puertas de las Medallas)',
+    'unova-route-10-victory-road-gate': 'Ruta 10 (Control de Medallas)',
     'unova-route-11-area': 'Ruta 11',
     'unova-route-12-area': 'Ruta 12',
     'unova-route-13-area': 'Ruta 13',
@@ -255,9 +255,9 @@ SPECIAL_OBTAINING = {
     },
     129: {
         'type': 'gift',
-        'badge_label': 'Regalo / Pesca',
+        'badge_label': 'Regalo',
         'badge_color': 'sky',
-        'summary': 'Comprado por 500 ₽ al vendedor de Magikarp en el Puente Progreso. También pescando con Supercaña en sombra del agua en la Reserva Natural (y mediante crianza).',
+        'summary': 'Comprado por 500 ₽ al vendedor de Magikarp en el Puente Progreso (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Puente Progreso', 'method': 'Comprado por 500 ₽ al vendedor'},
             DAYCARE_LOCATION
@@ -267,7 +267,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'indigo',
-        'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Cinco durante el verano (también mediante crianza de Snorlax con Incienso Lento).',
+        'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (también mediante crianza de Snorlax con Incienso Lento).',
         'locations': [
             {'area': 'Pueblo Arenisca (Solo en verano)', 'method': 'Intercambio NPC por Cinccino'}
         ]
@@ -307,9 +307,9 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Especial / Salvaje',
         'badge_color': 'amber',
-        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Furiazafrán, poseyendo la habilidad Modo Daruma.',
+        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
         'locations': [
-            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Furiazafrán (Modo Daruma)'},
+            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Caramelo Furia (Modo Daruma)'},
             {'area': 'Ruta 4', 'method': 'Evolución de Darumaka (Nv. 35)'}
         ]
     },
@@ -325,17 +325,17 @@ SPECIAL_OBTAINING = {
     },
     570: {
         'type': 'gift',
-        'badge_label': 'Orbe Reluciente',
+        'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
-        'summary': 'Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Orbe Reluciente (también por crianza).',
+        'summary': 'Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Trasladador PKMN (también por crianza).',
         'locations': [
-            {'area': 'Ciudad Porcelana', 'method': 'Evento con Celebi vía Orbe Reluciente'},
+            {'area': 'Ciudad Porcelana', 'method': 'Evento con Celebi vía Trasladador PKMN'},
             DAYCARE_LOCATION
         ]
     },
     571: {
         'type': 'wild',
-        'badge_label': 'Orbe Reluciente',
+        'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
         'summary': 'Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento.',
         'locations': [
@@ -481,9 +481,9 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Legendario',
         'badge_color': 'teal',
-        'summary': 'Encuentro fijo a Nv. 42 en la Sala del Guía dentro de la Cueva Loza (requiere Surf y Fuerza). Desbloquea a Terrakion y Virizion.',
+        'summary': 'Encuentro fijo a Nv. 42 en la Estancia Orientación dentro de la Cueva Loza (requiere Surf y Fuerza). Desbloquea a Terrakion y Virizion.',
         'locations': [
-            {'area': 'Cueva Loza (Sala del Guía)', 'method': 'Encuentro fijo a Nivel 42'}
+            {'area': 'Cueva Loza (Estancia Orientación)', 'method': 'Encuentro fijo a Nivel 42'}
         ]
     },
     639: {
@@ -563,7 +563,7 @@ SPECIAL_OBTAINING = {
         'type': 'mythical',
         'badge_label': 'Evento Singular',
         'badge_color': 'purple',
-        'summary': 'Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos Piro, Hidro, Fulgor y Crio.',
+        'summary': 'Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos PiroROM, HidroROM, FulgoROM y CrioROM.',
         'locations': [
             {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi'}
         ]

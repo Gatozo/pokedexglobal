@@ -686,7 +686,7 @@ NON_JOHTO_KANTO_TRANSFERS_HGSS: List[int] = sorted(list(
     {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
 ))
 
-# 187 especies requeridas mediante el Poké Transfer de la Ruta 15, el Orbe Reluciente o eventos oficiales
+# 187 especies requeridas mediante el Poké Transfer de la Ruta 15, el Trasladador PKMN o eventos oficiales
 # para completar la Pokédex Nacional en Pokémon Negro (excluye especies de manada diaria y sus evoluciones):
 NON_UNOVA_TRANSFERS_BLACK = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 24, 25, 26, 50, 51, 52, 53, 58,
@@ -2192,22 +2192,22 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
     'black': {
         'mechanic_title': 'Laboratorio Transfer y Eventos • 5.ª Gen',
         'mechanic_badge': 'Poké Transfer y Eventos',
-        'subtitle': 'Especies que requieren el Laboratorio Transfer (Ruta 15), el Orbe Reluciente o eventos oficiales',
+        'subtitle': 'Especies que requieren el Laboratorio Transfer (Ruta 15), el Trasladador PKMN o eventos oficiales',
         'description': (
             'Para completar la Pokédex Nacional en <strong>Pokémon Negro</strong>, diversas especies foráneas '
             'de Kanto, Johto, Hoenn y Sinnoh deben ser transferidas desde cartuchos de 4.ª Generación '
             '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio Transfer</strong> '
             'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).<br><br>'
             'Asimismo, especies singulares como <strong>Zorua (#570)</strong> y <strong>Zoroark (#571)</strong> requieren '
-            'el uso del <strong>Orbe Reluciente</strong> (<em>Relocator</em> en Ciudad Porcelana) transfiriendo al Celebi de evento '
+            'el uso del <strong>Trasladador PKMN</strong> (en Ciudad Porcelana) transfiriendo al Celebi de evento '
             'o a las Bestias Legendarias variocolor. Por último, <strong>Landorus (#645)</strong> requiere llevar en el equipo '
             'tanto a Tornadus (#641) como a <strong>Thundurus (#642)</strong> (exclusivo de Pokémon Blanco) en el Santuario Abundancia.'
         ),
         'default_origin': 'Poké Transfer (Ruta 15)',
         'origins': {
             494: 'Evento Ticket Libertad (Isla Libertad)',
-            570: 'Orbe Reluciente (Celebi de evento en Ciudad Porcelana)',
-            571: 'Orbe Reluciente (Bestia Variocolor en Bosque de los Perdidos)',
+            570: 'Trasladador PKMN (Celebi de evento en Ciudad Porcelana)',
+            571: 'Trasladador PKMN (Bestia Variocolor en Bosque de los Perdidos)',
             645: 'Santuario Abundancia (Requiere a Thundurus de Pokémon Blanco)',
             647: 'Evento Oficial (Keldeo)',
             648: 'Evento Oficial (Meloetta)',

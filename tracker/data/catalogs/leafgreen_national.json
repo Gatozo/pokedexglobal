@@ -1429,7 +1429,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1524,7 +1524,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -1903,15 +1903,109 @@
         "diamond": [
           {
             "area": "Ciudad Marina",
-            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Ruta 229",
-            "detail": "Objeto oculto entre la maleza."
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Cueva Electrorroca",
+            "detail": "En el suelo en el nivel inferior de la cueva."
+          },
+          {
+            "area": "Ruta 9",
+            "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -2049,22 +2143,22 @@
     "flavor_text": "Ante el peligro, se acurruca en un espinoso ovillo. De esta forma puede rodar para atacar o escapar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 23, Kanto Victory Road 2 1F, Kanto Victory Road 2 2F).",
+      "summary": "Salvaje en 4 zonas (ej: Ruta 23, Calle Victoria (P1), Calle Victoria (P2)).",
       "locations": [
         {
           "area": "Ruta 23",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -2496,11 +2590,137 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Museo de Ciudad Esmalte",
+            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Bosque Azulejo",
+            "detail": "En el suelo en el laberinto interior del bosque."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las salas subterráneas."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -2947,11 +3167,137 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Museo de Ciudad Esmalte",
+            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Bosque Azulejo",
+            "detail": "En el suelo en el laberinto interior del bosque."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las salas subterráneas."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -3327,11 +3673,137 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Museo de Ciudad Esmalte",
+            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Bosque Azulejo",
+            "detail": "En el suelo en el laberinto interior del bosque."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las salas subterráneas."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -3607,11 +4079,101 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir fuego como inicial."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte central del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -3963,11 +4525,137 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Museo de Ciudad Esmalte",
+            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Bosque Azulejo",
+            "detail": "En el suelo en el laberinto interior del bosque."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las salas subterráneas."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -4077,31 +4765,31 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave 1F",
+          "area": "Cueva Glaciada (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave B1F",
+          "area": "Cueva Glaciada (S1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4240,31 +4928,31 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave 1F",
+          "area": "Cueva Glaciada (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave B1F",
+          "area": "Cueva Glaciada (S1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -4598,11 +5286,101 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir planta como inicial."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo en la zona norte (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -5458,7 +6236,7 @@
     "flavor_text": "Siempre furioso y tenaz con sus patadas. Perseguirá a su presa hasta que la atrape.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Cueva Celeste (P1), Ruta 23, Kanto Victory Road 2 2F.",
+      "summary": "Salvaje en: Cueva Celeste (P1), Ruta 23, Calle Victoria (P2).",
       "locations": [
         {
           "area": "Cueva Celeste (P1)",
@@ -5469,7 +6247,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -5700,11 +6478,101 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir fuego como inicial."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte central del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -5846,11 +6714,11 @@
           "method": "Caña Buena"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Caña Buena"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Supercaña"
         },
         {
@@ -5961,7 +6829,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Supercaña"
         },
         {
@@ -6159,15 +7027,109 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir agua como inicial."
+          },
+          {
+            "area": "Ruta 3",
+            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -6409,7 +7371,7 @@
     "flavor_text": "Le encanta ser musculoso. Se entrena en todo tipo de arte marcial para ser aún más fuerte.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 9 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Kanto Victory Road 2 1F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 9 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -6420,23 +7382,23 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Cave",
+          "area": "Monte Ascuas (Cueva)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6444,7 +7406,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember 1F Cave Behind Team Rocket",
+          "area": "Monte Ascuas (Cueva Rocket P1)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6515,15 +7477,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -6531,7 +7493,7 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember 1F Cave Behind Team Rocket",
+          "area": "Monte Ascuas (Cueva Rocket P1)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -6956,11 +7918,101 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir planta como inicial."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo en la zona norte (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -7078,7 +8130,7 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7190,10 +8242,10 @@
     "flavor_text": "Cuando caza, extiende los cortos tentáculos que tiene para atrapar e inmovilizar a su presa.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 15 zonas (ej: Icefall Cave Waterfall, Camino Candente (Isla Prima), Playa Tesoro (Isla Prima)).",
+      "summary": "Salvaje en 15 zonas (ej: Cueva Glaciada (Cascada), Camino Candente (Isla Prima), Playa Tesoro (Isla Prima)).",
       "locations": [
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -7336,27 +8388,27 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember Cave",
+          "area": "Monte Ascuas (Cueva)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -7368,27 +8420,27 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember 1F Cave Behind Team Rocket",
+          "area": "Monte Ascuas (Cueva Rocket P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember 1F Cave Behind Team Rocket",
+          "area": "Monte Ascuas (Cueva Rocket P1)",
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember B1F",
+          "area": "Monte Ascuas (Sótano 1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember B1F",
+          "area": "Monte Ascuas (Sótano 1)",
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember B2F",
+          "area": "Monte Ascuas (Sótano 2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember B2F",
+          "area": "Monte Ascuas (Sótano 2)",
           "method": "Golpe Roca"
         },
         {
@@ -7483,7 +8535,7 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Golpe Roca"
         },
         {
@@ -7491,15 +8543,15 @@
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember 1F Cave Behind Team Rocket",
+          "area": "Monte Ascuas (Cueva Rocket P1)",
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember B1F",
+          "area": "Monte Ascuas (Sótano 1)",
           "method": "Golpe Roca"
         },
         {
-          "area": "Mt Ember B2F",
+          "area": "Monte Ascuas (Sótano 2)",
           "method": "Golpe Roca"
         },
         {
@@ -7620,10 +8672,10 @@
     "flavor_text": "Sus cascos son 10 veces más duros que el diamante. Puede pisotear cualquier cosa en poco tiempo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Mt Ember Area, Camino Candente (Isla Prima) (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Monte Ascuas (Exterior), Camino Candente (Isla Prima) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -7683,10 +8735,10 @@
     "flavor_text": "Muy competitivo, este Pokémon perseguirá a todo lo que se mueva rápido e intentará salir airoso.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Mt Ember Area, Camino Candente (Isla Prima).",
+      "summary": "Salvaje en: Monte Ascuas (Exterior), Camino Candente (Isla Prima).",
       "locations": [
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -7949,23 +9001,23 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Supercaña"
         },
         {
@@ -8578,23 +9630,23 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave 1F",
+          "area": "Cueva Glaciada (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave B1F",
+          "area": "Cueva Glaciada (S1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -8667,15 +9719,15 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -9060,15 +10112,109 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir agua como inicial."
+          },
+          {
+            "area": "Ruta 3",
+            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -9418,7 +10564,7 @@
     "flavor_text": "Cuando crece, las partes rocosas de su cuerpo se endurecen. Acaba pareciéndose a un diamante negro.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Kanto Victory Road 2 1F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 6 zonas (ej: Túnel Roca (P1), Túnel Roca (S1), Calle Victoria (P1)) (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Túnel Roca (P1)",
@@ -9429,15 +10575,15 @@
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -9758,11 +10904,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Caña Buena"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Supercaña"
         },
         {
@@ -9949,7 +11095,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Supercaña"
         },
         {
@@ -10392,11 +11538,101 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir planta como inicial."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo en la zona norte (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -10534,18 +11770,18 @@
     "flavor_text": "El hueso que lleva es su gran arma. Lo lanza hábilmente como un bumerán y deja a todos fuera de combate.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zonas (ej: Kanto Victory Road 2 1F, Kanto Victory Road 2 2F, Kanto Victory Road 2 3F).",
+      "summary": "Salvaje en 4 zonas (ej: Calle Victoria (P1), Calle Victoria (P2), Calle Victoria (P3)).",
       "locations": [
         {
-          "area": "Kanto Victory Road 2 1F",
+          "area": "Calle Victoria (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 2F",
+          "area": "Calle Victoria (P2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Kanto Victory Road 2 3F",
+          "area": "Calle Victoria (P3)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -11482,7 +12718,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Caña Buena"
         },
         {
@@ -11644,7 +12880,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Supercaña"
         },
         {
@@ -11842,15 +13078,109 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir agua como inicial."
+          },
+          {
+            "area": "Ruta 3",
+            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -12145,10 +13475,10 @@
     "flavor_text": "Su cuerpo siempre arde con un brillo naranja, con el que se oculta entre las llamas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en Mt Ember Area.",
+      "summary": "Salvaje en Monte Ascuas (Exterior).",
       "locations": [
         {
-          "area": "Mt Ember Area",
+          "area": "Monte Ascuas (Exterior)",
           "method": "Hierba alta / Terreno"
         }
       ],
@@ -12496,11 +13826,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Supercaña"
         },
         {
-          "area": "Icefall Cave Waterfall",
+          "area": "Cueva Glaciada (Cascada)",
           "method": "Supercaña"
         },
         {
@@ -12955,15 +14285,109 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir agua como inicial."
+          },
+          {
+            "area": "Ruta 3",
+            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -13144,15 +14568,109 @@
         "diamond": [
           {
             "area": "Ciudad Marina",
-            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Ruta 229",
-            "detail": "Objeto oculto entre la maleza."
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Cueva Electrorroca",
+            "detail": "En el suelo en el nivel inferior de la cueva."
+          },
+          {
+            "area": "Ruta 9",
+            "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -13333,11 +14851,101 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir fuego como inicial."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte central del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -13402,7 +15010,7 @@
       "locations": [
         {
           "area": "Casino de Ciudad Azulona",
-          "method": "Premio por 6.500 fichas"
+          "method": "Premio por 9.999 fichas"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -16123,11 +17731,93 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Perla)."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
+            "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Orilla Valor",
+            "detail": "Objeto oculto en el saliente elevado del sector este (requiere Surf y Treparrocas)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca dentro de la cueva junto a la cascada hacia la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ciudad Mayólica",
+            "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las plantas inferiores."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -16182,10 +17872,10 @@
     "flavor_text": "La punta de la cola, que contiene aceite, le permite nadar sin miedo a ahogarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zonas (ej: Icefall Cave Entrance, Valle Ruinas (Isla Exta), Valle Ruinas (Isla Exta)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Glaciada (Entrada), Valle Ruinas (Isla Exta), Valle Ruinas (Isla Exta)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Icefall Cave Entrance",
+          "area": "Cueva Glaciada (Entrada)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -16489,15 +18179,85 @@
         "diamond": [
           {
             "area": "Pueblo Caelestis",
-            "detail": "Objeto oculto en el suelo al oeste del altar central."
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
           },
           {
-            "area": "Ruta 225 / Ruta 228",
-            "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
           },
           {
             "area": "Habilidad Recogida",
-            "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Pueblo Caelestis",
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
+          },
+          {
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Pueblo Caelestis",
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
+          },
+          {
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Pozo Slowpoke (Sótano B2)",
+            "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Pozo Slowpoke (Sótano B2)",
+            "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+          },
+          {
+            "area": "Metro Batalla",
+            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -16959,11 +18719,93 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Perla)."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Solrock salvajes con un 5% de probabilidad (con cartucho de Rubí en Ranura 2)."
+            "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca junto a la cueva previa a la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Orilla Valor",
+            "detail": "Objeto oculto en el saliente elevado del sector este (requiere Surf y Treparrocas)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca dentro de la cueva junto a la cascada hacia la cumbre (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Solrock)",
+            "detail": "5% de probabilidad de llevarla equipada con cartucho GBA de Rubí insertado en Ranura 2."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Premio garantizado por obtener el 1.er puesto en el concurso (martes, jueves y sábados)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes, viernes y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Solrock y Sunflora salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ciudad Mayólica",
+            "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las plantas inferiores."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -17484,15 +19326,85 @@
         "diamond": [
           {
             "area": "Pueblo Caelestis",
-            "detail": "Objeto oculto en el suelo al oeste del altar central."
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
           },
           {
-            "area": "Ruta 225 / Ruta 228",
-            "detail": "Equipada en Poliwhirl o Hariyama salvajes con un 5% de probabilidad."
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
           },
           {
             "area": "Habilidad Recogida",
-            "detail": "Encontrada con un 1% de probabilidad por un Pokémon con la habilidad Recogida de nivel 11 a 30."
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Pueblo Caelestis",
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
+          },
+          {
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Pueblo Caelestis",
+            "detail": "Objeto oculto con Zahorí en la cornisa oeste junto a las ruinas."
+          },
+          {
+            "area": "Pokémon salvajes (Poliwhirl y Hariyama)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Probabilidad aleatoria con Pokémon de Lv 11 a 30."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Pozo Slowpoke (Sótano B2)",
+            "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Pozo Slowpoke (Sótano B2)",
+            "detail": "Regalo de un hombre solitario en la caverna profunda tras hacer Surf y Fuerza."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los domingos (antes de la Pokédex Nacional) y los lunes y jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada raramente en Poliwhirl y Slowpoke salvajes (5% prob.)."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+          },
+          {
+            "area": "Metro Batalla",
+            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -18205,11 +20117,85 @@
         "diamond": [
           {
             "area": "Isla Hierro (Casa de Acerón)",
-            "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
           },
           {
-            "area": "Forja Fuego / Monte Corona",
-            "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Isla Hierro (Casa de Acerón)",
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Hierro (Isla Hierro)",
+            "detail": "En el suelo como Poké Ball en el interior de la cámara de Registeel (exclusivo de Platino; disponible si no llevas al Regigigas de evento en el equipo)."
+          },
+          {
+            "area": "Isla Hierro (Casa de Acerón)",
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix, Bronzor y Bronzong."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "S.S. Aqua (Barco Transatlántico)",
+            "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Gimnasio de Ciudad Olivo",
+            "detail": "Equipado en el Steelix que intercambia Yasmina."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "S.S. Aqua (Barco Transatlántico)",
+            "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Gimnasio de Ciudad Olivo",
+            "detail": "Equipado en el Steelix que intercambia Yasmina."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías interiores durante el invierno."
+          },
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -18553,11 +20539,85 @@
         "diamond": [
           {
             "area": "Isla Hierro (Casa de Acerón)",
-            "detail": "Regalo de Acerón en su casa de Isla Hierro tras obtener la Pokédex Nacional."
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
           },
           {
-            "area": "Forja Fuego / Monte Corona",
-            "detail": "Equipada en Magnemite o Bronzor salvajes con un 5% de probabilidad."
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Isla Hierro (Casa de Acerón)",
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix y Bronzor."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Hierro (Isla Hierro)",
+            "detail": "En el suelo como Poké Ball en el interior de la cámara de Registeel (exclusivo de Platino; disponible si no llevas al Regigigas de evento en el equipo)."
+          },
+          {
+            "area": "Isla Hierro (Casa de Acerón)",
+            "detail": "Regalo de Acerón en su cabaña de la isla tras completar la Liga y registrar la Pokédex Nacional."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "5% de probabilidad de llevarlo equipado en Magnemite, Magneton, Steelix, Bronzor y Bronzong."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "S.S. Aqua (Barco Transatlántico)",
+            "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Gimnasio de Ciudad Olivo",
+            "detail": "Equipado en el Steelix que intercambia Yasmina."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "S.S. Aqua (Barco Transatlántico)",
+            "detail": "Regalo del abuelo agradecido en el viaje inaugural tras encontrar a su nieta en el camarote del capitán."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los viernes (antes de la Pokédex Nacional) y los martes y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Gimnasio de Ciudad Olivo",
+            "detail": "Equipado en el Steelix que intercambia Yasmina."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Magnemite, Magneton y Steelix salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías interiores durante el invierno."
+          },
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -18738,14 +20798,14 @@
     "flavor_text": "Tiene ocultas unas garras muy afiladas. Si le atacan, las extiende para asustar al enemigo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Icefall Cave 1F, Icefall Cave B1F (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Cueva Glaciada (P1), Cueva Glaciada (S1) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Icefall Cave 1F",
+          "area": "Cueva Glaciada (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave B1F",
+          "area": "Cueva Glaciada (S1)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -18917,22 +20977,22 @@
     "flavor_text": "No duerme nunca. Tiene que seguir moviéndose porque si se detiene, su cuerpo de lava podría enfriarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 4 zonas (ej: Mt Ember B1F, Mt Ember B2F, Mt Ember B3F) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 4 zonas (ej: Monte Ascuas (Sótano 1), Monte Ascuas (Sótano 2), Monte Ascuas (Sótano 3)) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Mt Ember B1F",
+          "area": "Monte Ascuas (Sótano 1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember B2F",
+          "area": "Monte Ascuas (Sótano 2)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember B3F",
+          "area": "Monte Ascuas (Sótano 3)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Mt Ember B3F",
+          "area": "Monte Ascuas (Sótano 3)",
           "method": "Golpe Roca"
         },
         {
@@ -18988,10 +21048,10 @@
     "flavor_text": "La concha que tiene en el lomo son restos de piel enfriada y endurecida, que se rompe con sólo tocarla.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en Mt Ember B3F.",
+      "summary": "Salvaje en Monte Ascuas (Sótano 3).",
       "locations": [
         {
-          "area": "Mt Ember B3F",
+          "area": "Monte Ascuas (Sótano 3)",
           "method": "Golpe Roca"
         }
       ],
@@ -19043,14 +21103,14 @@
     "flavor_text": "Frota el hocico contra el suelo para desenterrar comida. A veces, descubre aguas termales.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Icefall Cave 1F, Icefall Cave B1F (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Cueva Glaciada (P1), Cueva Glaciada (S1) (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Icefall Cave 1F",
+          "area": "Cueva Glaciada (P1)",
           "method": "Hierba alta / Terreno"
         },
         {
-          "area": "Icefall Cave B1F",
+          "area": "Cueva Glaciada (S1)",
           "method": "Hierba alta / Terreno"
         },
         {
@@ -19782,8 +21842,74 @@
         ],
         "diamond": [
           {
-            "area": "Ruta 226",
-            "detail": "Equipada en Horsea o Seadra salvajes pescando con Supercaña (5% de probabilidad)."
+            "area": "Pokémon salvajes (Horsea y Seadra)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Ruta 226."
+          },
+          {
+            "area": "Pokémon salvajes (Dratini y Dragonair)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Monte Corona (detrás de la cascada)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Pokémon salvajes (Horsea y Seadra)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Ruta 226."
+          },
+          {
+            "area": "Pokémon salvajes (Dratini y Dragonair)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Monte Corona (detrás de la cascada)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Pokémon salvajes (Horsea y Seadra)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Ruta 226."
+          },
+          {
+            "area": "Pokémon salvajes (Dratini y Dragonair)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña en Monte Corona (detrás de la cascada)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Mortero (Sótano Central B1)",
+            "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate Kiyo."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Mortero (Sótano Central B1)",
+            "detail": "En el suelo en la cámara con agua donde se encuentra el Rey Kárate Kiyo."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Horsea, Seadra, Dratini y Dragonair salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 18",
+            "detail": "En el suelo en la orilla sur de la isla."
+          },
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada en Horsea, Seadra o Dratini salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -20049,8 +22175,50 @@
         ],
         "diamond": [
           {
-            "area": "Ciudad Vetusta (Casa del Prof. Oak)",
-            "detail": "Regalo del Profesor Oak en su casa tras obtener la Pokédex Nacional."
+            "area": "Ciudad Vetusta",
+            "detail": "Entregado por el Profesor Oak en su casa de campo tras registrar la Pokédex Nacional."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Entregado por el Profesor Oak en su casa de campo tras registrar la Pokédex Nacional."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Edificio Galaxia de Ciudad Vetusta",
+            "detail": "En la 4.ª planta a la derecha de la Comandante Júpiter tras derrotarla."
+          },
+          {
+            "area": "Ruta 224",
+            "detail": "En el suelo dentro de la gran parcela de hierba al noroeste del Entrenador Guay Rubén (exclusivo de Platino)."
+          },
+          {
+            "area": "Ciudad Vetusta (Casa del Profesor Oak)",
+            "detail": "Entregado por el Profesor Oak tras registrar la Pokédex Nacional y haberlo visitado previamente en el Parque Compi."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ciudad Azafrán (Silph S.A.)",
+            "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ciudad Azafrán (Silph S.A.)",
+            "detail": "Regalo del vigilante de seguridad en el vestíbulo de la planta baja."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Metro Batalla",
+            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
           }
         ]
       },
@@ -22425,15 +24593,109 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir agua como inicial."
+          },
+          {
+            "area": "Ruta 3",
+            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -22734,11 +24996,101 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico al elegir planta como inicial."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo en la zona norte (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -24484,11 +26836,137 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Museo de Ciudad Esmalte",
+            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Bosque Azulejo",
+            "detail": "En el suelo en el laberinto interior del bosque."
+          },
+          {
+            "area": "Castillo Ancestral",
+            "detail": "En una de las salas subterráneas."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta en la tienda por 10 500 ₽."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
           }
         ]
       },
@@ -28415,8 +30893,58 @@
         ],
         "diamond": [
           {
-            "area": "Ruta 218 / Gran Pantano",
-            "detail": "Equipado en Carvanha salvajes con un 5% de probabilidad."
+            "area": "Pokémon salvajes (Carvanha y Sharpedo)",
+            "detail": "5% de probabilidad de llevarlo equipado pescando con Supercaña (Ruta 222)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Pokémon salvajes (Carvanha y Sharpedo)",
+            "detail": "5% de probabilidad de llevarlo equipado pescando con Supercaña (Ruta 222)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Pokémon salvajes (Carvanha y Sharpedo)",
+            "detail": "5% de probabilidad de llevarlo equipado pescando con Supercaña (Ruta 222)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 20 (Kanto)",
+            "detail": "Objeto oculto en el agua al este de Isla Canela navegando con Surf (localizable con el Zahorí)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
+          },
+          {
+            "area": "Transferencia / Evento",
+            "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 20 (Kanto)",
+            "detail": "Objeto oculto en el agua al este de Isla Canela navegando con Surf (localizable con el Zahorí)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Carvanha y Sharpedo salvajes."
+          },
+          {
+            "area": "Transferencia / Evento",
+            "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipado en Carvanha o Sharpedo salvajes (5% de probabilidad)."
           }
         ]
       },
@@ -28536,8 +31064,58 @@
         ],
         "diamond": [
           {
-            "area": "Ruta 220 / Ruta 226",
-            "detail": "Equipada en Chinchou o Relicanth salvajes pescando con Supercaña (5% de probabilidad)."
+            "area": "Pokémon salvajes (Chinchou, Lanturn y Relicanth)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña (Ruta 220)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Pokémon salvajes (Chinchou, Lanturn y Relicanth)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña (Ruta 220)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Pokémon salvajes (Chinchou, Lanturn y Relicanth)",
+            "detail": "5% de probabilidad de llevarla equipada pescando con Supercaña (Ruta 220)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 19 (Kanto)",
+            "detail": "Objeto oculto en el agua al sur de Ciudad Fucsia navegando con Surf (localizable con el Zahorí)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
+          },
+          {
+            "area": "Transferencia / Evento",
+            "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 19 (Kanto)",
+            "detail": "Objeto oculto en el agua al sur de Ciudad Fucsia navegando con Surf (localizable con el Zahorí)."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Chinchou, Lanturn y Relicanth salvajes."
+          },
+          {
+            "area": "Transferencia / Evento",
+            "detail": "Transferible desde juegos de tercera generación o canjeable en Pokémon Battle Revolution."
+          }
+        ],
+        "black": [
+          {
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada en Chinchou, Lanturn o Relicanth salvajes (5% de probabilidad)."
           }
         ]
       },

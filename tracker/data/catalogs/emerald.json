@@ -3497,27 +3497,27 @@
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Caña Buena"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Caña Vieja"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Supercaña"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         },
         {
@@ -3585,14 +3585,14 @@
     "flavor_text": "Perfora agujeros en los cantos rodados de las cuencas de los ríos. Así protege sus huevos de cualquier ataque y evita que los arrastre la corriente.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw.",
+      "summary": "Salvaje en: Zona Safari (Noroeste Bici Carrera), Zona Safari (Suroeste).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Supercaña"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         }
       ],
@@ -4018,19 +4018,19 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Caña Buena"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Caña Vieja"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
@@ -4187,7 +4187,7 @@
       "slug": "sea-incense",
       "name": "Incienso Marino",
       "icon_url": "/media/items/sea-incense.png",
-      "description": "Incienso de exótico aroma que potencia los ataques de tipo Agua en un 5%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "description": "Incienso de exótico aroma que potencia los movimientos de tipo Agua en un 20%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
       "locations": [
         {
           "area": "Monte Pírico",
@@ -6781,7 +6781,7 @@
           "method": "Encuentro estático"
         },
         {
-          "area": "team-magma-hideout-area",
+          "area": "Guarida Magma (Desfiladero)",
           "method": "Encuentro estático"
         }
       ],
@@ -6985,7 +6985,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         },
         {
@@ -6993,11 +6993,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -7053,7 +7053,7 @@
     "flavor_text": "De su boca cae una miel muy nociva que desprende un hedor que puede provocar la pérdida de memoria. Con todo, hay quien afirma deleitarse con su fetidez.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 6 zonas (ej: Ruta 121, Ruta 123, hoenn-safari-zone-nwmach-bike-area).",
+      "summary": "Salvaje en 6 zonas (ej: Ruta 121, Ruta 123, Zona Safari (Noroeste Bici Carrera)).",
       "locations": [
         {
           "area": "Ruta 121",
@@ -7064,7 +7064,7 @@
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         },
         {
@@ -7072,11 +7072,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -7279,18 +7279,18 @@
     "flavor_text": "Incluso mientras come o duerme, una de las cabezas sigue estando en guardia para detectar cualquier peligro. Si lo amenazan, sale huyendo a 100 km por hora.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw, hoenn-safari-zone-se (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Noroeste Bici Carrera), Zona Safari (Suroeste), Zona Safari (Sureste, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -7346,10 +7346,10 @@
     "flavor_text": "Pertenece a una rara especie de Pokémon que tiene tres cabezas. Corre con energía por verdes praderas incluso en estaciones secas en las que llueve muy poco.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en hoenn-safari-zone-nwmach-bike-area.",
+      "summary": "Salvaje en Zona Safari (Noroeste Bici Carrera).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         }
       ],
@@ -11648,14 +11648,14 @@
     "flavor_text": "Tiene unas bolsas en las mejillas en las que almacena electricidad. Cuando la libera de golpe, la potencia de la descarga es igual a la de un rayo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-sw, hoenn-safari-zone-se.",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -11790,14 +11790,14 @@
     "flavor_text": "Cuando le aumenta el dolor de cabeza, comienza a usar extraños poderes. Sin embargo, como nunca los recuerda, siempre se le ve aturdido y desconcertado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-nwmach-bike-area, hoenn-safari-zone-sw (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Noroeste Bici Carrera), Zona Safari (Suroeste, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Surfeando (Agua)"
         },
         {
@@ -11853,10 +11853,10 @@
     "flavor_text": "Es un experto nadador. A veces, se entrena con nadadores profesionales. Cuando le brilla la frente, utiliza poderes psíquicos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en hoenn-safari-zone-nwmach-bike-area.",
+      "summary": "Salvaje en Zona Safari (Noroeste Bici Carrera).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -11938,7 +11938,7 @@
       "slug": "lax-incense",
       "name": "Incienso Suave",
       "icon_url": "/media/items/lax-incense.png",
-      "description": "Incienso de suave aroma que reduce la precisión del rival en un 5%. Si Wobbuffet lo lleva equipado en la guardería, pondrá un huevo del que nacerá Wynaut.",
+      "description": "Incienso de suave aroma que reduce la precisión del rival en un 10%. Si Wobbuffet lo lleva equipado en la guardería, pondrán un huevo del que nacerá Wynaut.",
       "locations": [
         {
           "area": "Monte Pírico",
@@ -11990,14 +11990,14 @@
     "flavor_text": "Generalmente es dócil, pero si recibe un ataque en su cola negra, Wobbuffet se defenderá con ferocidad. Se guarece en cuevas hasta que anochece.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-sw, hoenn-safari-zone-se (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -12060,18 +12060,18 @@
     "flavor_text": "Da saltitos por los árboles bajos de la sabana para picotear los brotes nuevos. Los ojos de un Natu dan la sensación de estar siempre observando algo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Zona Safari (Noreste Bici Acrobática), hoenn-safari-zone-sw, hoenn-safari-zone-se (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Noreste Bici Acrobática), Zona Safari (Suroeste), Zona Safari (Sureste, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Zona Safari (Noreste Bici Acrobática)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -12189,14 +12189,14 @@
     "flavor_text": "Girafarig es herbívoro: come hierba y brotes de los árboles. Mientras se alimenta, mueve la cola como si también masticara y tragara con ella.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: hoenn-safari-zone-sw, hoenn-safari-zone-se (también obtenible mediante crianza).",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "hoenn-safari-zone-se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -12368,10 +12368,10 @@
     "flavor_text": "Sus cuernos tienen fuerza para destrozar grandes troncos. Como tienen aversión al frío, cavan madrigueras bajo tierra donde duermen cuando bajan las temperaturas.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en hoenn-safari-zone-nwmach-bike-area (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Noroeste Bici Carrera, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         },
         {
@@ -12486,10 +12486,10 @@
     "flavor_text": "Una vez que comienza a correr, no para: su minúsculo cerebro lo hace tan bobo que ni siquiera es capaz de acordarse de por qué empezó a hacerlo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en hoenn-safari-zone-nwmach-bike-area (también obtenible mediante crianza).",
+      "summary": "Salvaje en Zona Safari (Noroeste Bici Carrera, también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "hoenn-safari-zone-nwmach-bike-area",
+          "area": "Zona Safari (Noroeste Bici Carrera)",
           "method": "Hierba alta"
         },
         {

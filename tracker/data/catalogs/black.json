@@ -914,7 +914,7 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
@@ -975,7 +975,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Almacenes Frigoríficos, Laboratorio P+P, Ruta 10 y Ruta 10 (Puertas de las Medallas).",
+      "summary": "Salvaje en Almacenes Frigoríficos, Laboratorio P+P, Ruta 10 y Ruta 10 (Control de Medallas).",
       "locations": [
         {
           "area": "Almacenes Frigoríficos",
@@ -990,7 +990,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba movediza"
         }
       ],
@@ -2379,7 +2379,7 @@
           "method": "Caminando"
         },
         {
-          "area": "Cueva Loza (Sala del Guía)",
+          "area": "Cueva Loza (Estancia Orientación)",
           "method": "Caminando"
         },
         {
@@ -2601,7 +2601,7 @@
           "method": "Caminando"
         },
         {
-          "area": "Cueva Loza (Sala del Guía)",
+          "area": "Cueva Loza (Estancia Orientación)",
           "method": "Caminando"
         },
         {
@@ -2776,7 +2776,7 @@
           "method": "Nube de polvo"
         },
         {
-          "area": "Cueva Loza (Sala del Guía)",
+          "area": "Cueva Loza (Estancia Orientación)",
           "method": "Nube de polvo"
         },
         {
@@ -3045,7 +3045,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba movediza"
         },
         {
@@ -3566,7 +3566,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Ruta 10 y Ruta 10 (Puertas de las Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Ruta 10 y Ruta 10 (Control de Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Bosque Azulejo (Exterior)",
@@ -3577,7 +3577,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba movediza"
         },
         {
@@ -3643,7 +3643,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Ruta 10 y Ruta 10 (Puertas de las Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Ruta 10 y Ruta 10 (Control de Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Bosque Azulejo (Exterior)",
@@ -3654,7 +3654,7 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
@@ -4786,11 +4786,11 @@
       "type": "wild",
       "badge_label": "Especial / Salvaje",
       "badge_color": "amber",
-      "summary": "Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Furiazafrán, poseyendo la habilidad Modo Daruma.",
+      "summary": "Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.",
       "locations": [
         {
           "area": "Castillo Ancestral (Entrada)",
-          "method": "Estatuas que despiertan con Furiazafrán (Modo Daruma)"
+          "method": "Estatuas que despiertan con Caramelo Furia (Modo Daruma)"
         },
         {
           "area": "Ruta 4",
@@ -5771,13 +5771,13 @@
     "flavor_text": "Se transforma en otros para crear desconciertos. A menudo, adopta la forma de un niño parco en palabras.",
     "obtaining_info": {
       "type": "gift",
-      "badge_label": "Orbe Reluciente",
+      "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Orbe Reluciente (también por crianza).",
+      "summary": "Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Trasladador PKMN (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Porcelana",
-          "method": "Evento con Celebi vía Orbe Reluciente"
+          "method": "Evento con Celebi vía Trasladador PKMN"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -5832,7 +5832,7 @@
     "flavor_text": "Siempre ha protegido a su manada embaucando a sus enemigos. Dentro de la manada están todos muy unidos.",
     "obtaining_info": {
       "type": "wild",
-      "badge_label": "Orbe Reluciente",
+      "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
       "summary": "Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento.",
       "locations": [
@@ -6994,7 +6994,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba movediza"
         },
         {
@@ -7214,7 +7214,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 6, Ruta 7, Ruta 10 y Ruta 10 (Puertas de las Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Ruta 6, Ruta 7, Ruta 10 y Ruta 10 (Control de Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 6",
@@ -7229,7 +7229,7 @@
           "method": "Hierba alta, Salvaje"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba alta"
         },
         {
@@ -7287,14 +7287,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 10, Ruta 10 (Puertas de las Medallas) y Ruta 11.",
+      "summary": "Salvaje en Ruta 10, Ruta 10 (Control de Medallas) y Ruta 11.",
       "locations": [
         {
           "area": "Ruta 10",
           "method": "Hierba oscura (Combates dobles), Salvaje"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba oscura (Combates dobles)"
         },
         {
@@ -8659,14 +8659,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Cueva Loza y Cueva Loza (Sala del Guía). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Cueva Loza y Cueva Loza (Estancia Orientación). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Cueva Loza",
           "method": "Caminando"
         },
         {
-          "area": "Cueva Loza (Sala del Guía)",
+          "area": "Cueva Loza (Estancia Orientación)",
           "method": "Caminando"
         },
         {
@@ -9830,14 +9830,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 10 y Ruta 10 (Puertas de las Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Ruta 10 y Ruta 10 (Control de Medallas). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 10",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
@@ -10036,7 +10036,7 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Ruta 10 (Puertas de las Medallas)",
+          "area": "Ruta 10 (Control de Medallas)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
@@ -10664,10 +10664,10 @@
       "type": "legendary",
       "badge_label": "Legendario",
       "badge_color": "teal",
-      "summary": "Encuentro fijo a Nv. 42 en la Sala del Guía dentro de la Cueva Loza (requiere Surf y Fuerza). Desbloquea a Terrakion y Virizion.",
+      "summary": "Encuentro fijo a Nv. 42 en la Estancia Orientación dentro de la Cueva Loza (requiere Surf y Fuerza). Desbloquea a Terrakion y Virizion.",
       "locations": [
         {
-          "area": "Cueva Loza (Sala del Guía)",
+          "area": "Cueva Loza (Estancia Orientación)",
           "method": "Encuentro fijo a Nivel 42"
         }
       ]
@@ -11295,7 +11295,7 @@
       "type": "mythical",
       "badge_label": "Evento Singular",
       "badge_color": "purple",
-      "summary": "Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos Piro, Hidro, Fulgor y Crio.",
+      "summary": "Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos PiroROM, HidroROM, FulgoROM y CrioROM.",
       "locations": [
         {
           "area": "Evento Oficial de Distribución",

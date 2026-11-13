@@ -4744,6 +4744,34 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertEqual(wobbuffet.obtaining_info.get("type"), "evolution")
         self.assertNotIn(202, NON_UNOVA_TRANSFERS_BLACK)
 
+    def test_black_leafgreen_emerald_official_spanish_locations(self):
+        from tracker.catalog_service import get_compiled_catalog
+
+        black_nat = get_compiled_catalog("black_national")
+        black_by_num = {e.pokemon.national_number: e for e in black_nat}
+
+        cobalion_areas = [l.get("area", "") for l in black_by_num[638].obtaining_info.get("locations", [])]
+        self.assertIn("Cueva Loza (Estancia Orientación)", cobalion_areas)
+        self.assertNotIn("Sala del Guía", black_by_num[638].obtaining_info.get("summary", ""))
+        self.assertIn("Estancia Orientación", black_by_num[638].obtaining_info.get("summary", ""))
+
+        self.assertNotIn("Reserva Natural", black_by_num[129].obtaining_info.get("summary", ""))
+        self.assertIn("Ander", black_by_num[446].obtaining_info.get("summary", ""))
+        self.assertIn("Caramelo Furia", black_by_num[555].obtaining_info.get("summary", ""))
+        self.assertIn("Trasladador PKMN", black_by_num[570].obtaining_info.get("summary", ""))
+        self.assertIn("PiroROM, HidroROM, FulgoROM y CrioROM", black_by_num[649].obtaining_info.get("summary", ""))
+
+        # Puente Fayenza se mantiene con el nombre habitual del juego
+        ducklett_areas = [l.get("area", "") for l in black_by_num[580].obtaining_info.get("locations", [])]
+        self.assertIn("Puente Fayenza", ducklett_areas)
+
+        for slug in ("leafgreen_national", "emerald_national"):
+            entries = get_compiled_catalog(slug)
+            all_areas = {l.get("area", "") for e in entries for l in e.obtaining_info.get("locations", [])}
+            for raw_token in ("Icefall", "Victory Road", "Mt Ember", "hoenn-safari", "team-magma"):
+                self.assertFalse(any(raw_token in area for area in all_areas), f"{raw_token} detectado en {slug}")
+
+
 
 
 
