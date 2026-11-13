@@ -160,7 +160,7 @@
         </div>
 
         <!-- Fila de Categorías -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 items-start">
+        <div class="grid grid-cols-1 {% if game.has_seasons or game.has_special_spots %}lg:grid-cols-[minmax(0,0.88fr)_minmax(0,0.92fr)_minmax(0,1.3fr)]{% else %}lg:grid-cols-3{% endif %} gap-3 items-start">
             <!-- Sección 1: Tipos Elementales -->
             <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
                 <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Tipos Elementales</span>
@@ -211,7 +211,7 @@
                         <img src="/media/items/helix-fossil.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Fósiles</span>
                     </button>
-                    {% if game.generation >= 2 %}
+                    {% if game.generation >= 2 and game.has_regional_babies or game.generation >= 2 and pokedex.is_national %}
                     <button type="button" onclick="toggleFilterTag('baby', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="baby">
                         <img src="/media/items/mystery-egg.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Bebés</span>
@@ -294,6 +294,12 @@
                         <img src="/media/items/hm03.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Surf</span>
                     </button>
+                    {% if game.generation >= 5 and pokedex.is_national %}
+                    <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
+                        <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Supercaña</span>
+                    </button>
+                    {% endif %}
                     <button type="button" onclick="toggleFilterTag('stone', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="stone">
                         <img src="/media/items/fire-stone.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Por Piedra</span>
@@ -311,12 +317,12 @@
                 </div>
             </div>
 
-            <!-- Sección 3: Pesca con Caña & Safari Johto -->
+            <!-- Sección 3: Pesca con Caña / Estaciones & Encuentros Especiales -->
             <div class="flex flex-col gap-3">
+                {% if game.generation < 5 %}
                 <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
                     <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Pesca con Caña</span>
                     <div class="flex flex-wrap gap-1.5">
-                        {% if game.generation < 5 %}
                         <button type="button" onclick="toggleFilterTag('rod_any', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_any">
                             <span>Cualquier Caña</span>
                         </button>
@@ -328,13 +334,67 @@
                             <img src="/media/items/good-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                             <span>Caña Buena</span>
                         </button>
-                        {% endif %}
                         <button type="button" onclick="toggleFilterTag('rod_super', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="rod_super">
                             <img src="/media/items/super-rod.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                             <span>Supercaña</span>
                         </button>
                     </div>
                 </div>
+                {% endif %}
+
+                {% if game.has_seasons %}
+                <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Estaciones</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 min-[1120px]:grid-cols-4 gap-1.5">
+                        <button type="button" onclick="toggleFilterTag('season_spring', this)" class="filter-tag-pill h-8 px-2 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1 whitespace-nowrap" data-tag="season_spring">
+                            <img src="/media/items/gracidea.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Primavera</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('season_summer', this)" class="filter-tag-pill h-8 px-2 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1 whitespace-nowrap" data-tag="season_summer">
+                            <img src="/media/items/sun-stone.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Verano</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('season_autumn', this)" class="filter-tag-pill h-8 px-2 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1 whitespace-nowrap" data-tag="season_autumn">
+                            <img src="/media/items/leaf-stone.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Otoño</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('season_winter', this)" class="filter-tag-pill h-8 px-2 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1 whitespace-nowrap" data-tag="season_winter">
+                            <img src="/media/items/never-melt-ice.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Invierno</span>
+                        </button>
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if game.has_special_spots %}
+                <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">
+                    <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 block mb-2">Encuentros Especiales</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 min-[1120px]:grid-cols-2 gap-1.5">
+                        <button type="button" onclick="toggleFilterTag('spot_grass', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_grass">
+                            <img src="/media/items/grassy-seed.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Hierba que se mueve</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('spot_dust', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_dust">
+                            <img src="/media/items/stardust.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Nubes de polvo</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('spot_bridge', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_bridge">
+                            <img src="/media/items/pretty-wing.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Sombras en puentes</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('spot_surf', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_surf">
+                            <img src="/media/items/dive-ball.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Surf sobre sombras</span>
+                        </button>
+                        {% if pokedex.is_national %}
+                        <button type="button" onclick="toggleFilterTag('spot_fishing', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_fishing">
+                            <img src="/media/items/lure-ball.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Pesca sobre sombras</span>
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
 
                 {% if game.has_time_of_day %}
                 <div class="bg-white/80 p-2.5 rounded-xl border border-slate-200">

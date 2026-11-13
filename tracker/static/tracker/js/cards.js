@@ -3,7 +3,7 @@
  * Sincronización de tarjetas de Pokémon, progreso global, modo Shinydex y estilos de sprite (Retro/Moderno).
  */
 
-import { state, currentGameSlug, THEME_ACTIVE_BTN, THEME_STATUS_CAUGHT_CLASS, THEME_UNCAUGHT_BTN, THEME_CAUGHT_BTN } from './state.js';
+import { state, currentGameSlug, THEME_ACTIVE_BTN, THEME_STATUS_CAUGHT_CLASS, THEME_UNCAUGHT_BTN, THEME_CAUGHT_BTN, getActiveSeasonFormKey } from './state.js';
 import { getCsrfToken } from './api.js';
 import { filterCards } from './filters.js';
 import { updateModalCatchStatus, updateModalSpriteDisplay, getEntryData } from './modal_comic.js';
@@ -72,6 +72,63 @@ export function updateCardUI(card, isCaught) {
     }
 }
 
+function getCardSeasonSprites(card) {
+    if (!card || !card.dataset || !card.dataset.seasonSprites) return null;
+    if (!card._seasonSpritesCache) {
+        try {
+            card._seasonSpritesCache = JSON.parse(card.dataset.seasonSprites);
+        } catch (e) {
+            card._seasonSpritesCache = null;
+        }
+    }
+    return card._seasonSpritesCache;
+}
+
+export function applyCardSprite(card) {
+    if (!card) return;
+    const entryId = card.dataset.entryId;
+    const img = document.getElementById(`img-${entryId}`);
+    if (!img) return;
+
+    const seasonMap = getCardSeasonSprites(card);
+    const activeSeason = getActiveSeasonFormKey();
+    const seasonEntry = (seasonMap && activeSeason && seasonMap[activeSeason]) ? seasonMap[activeSeason] : null;
+
+    const retro = (seasonEntry && seasonEntry.retro) || card.dataset.spriteRetro;
+    const modern = (seasonEntry && seasonEntry.modern) || card.dataset.spriteModern;
+    const retroShiny = (seasonEntry && seasonEntry.retro_shiny) || card.dataset.spriteRetroShiny;
+    const modernShiny = (seasonEntry && seasonEntry.modern_shiny) || card.dataset.spriteModernShiny;
+
+    let targetSrc = '';
+    if (state.isShinydexMode) {
+        if (state.currentSpriteStyle === 'retro') {
+            targetSrc = retroShiny || modernShiny;
+            img.classList.add('pixel-art');
+        } else {
+            targetSrc = modernShiny || retroShiny;
+            img.classList.remove('pixel-art');
+        }
+    } else {
+        if (state.currentSpriteStyle === 'retro') {
+            targetSrc = retro;
+            img.classList.add('pixel-art');
+        } else {
+            targetSrc = modern;
+            img.classList.remove('pixel-art');
+        }
+    }
+
+    if (targetSrc && img.getAttribute('src') !== targetSrc) {
+        img.src = targetSrc;
+    }
+}
+
+export function applyAllSeasonalCardSprites() {
+    document.querySelectorAll('.pokemon-card[data-season-sprites]').forEach(card => {
+        applyCardSprite(card);
+    });
+}
+
 export function applyShinydexMode(active) {
     const btnToggle = document.getElementById('btn-toggle-shinydex');
     const icon = document.getElementById('shinydex-icon');
@@ -122,32 +179,11 @@ export function applyShinydexMode(active) {
 
     // Actualizar imágenes y estados de todas las tarjetas
     document.querySelectorAll('.pokemon-card').forEach(card => {
-        const entryId = card.dataset.entryId;
-        const img = document.getElementById(`img-${entryId}`);
-        const isCaught = active 
+        const isCaught = active
             ? (card.dataset.shinyCaught === 'true')
             : (card.dataset.caught === 'true');
 
-        if (img) {
-            if (active) {
-                if (state.currentSpriteStyle === 'retro') {
-                    img.src = card.dataset.spriteRetroShiny || card.dataset.spriteModernShiny;
-                    img.classList.add('pixel-art');
-                } else {
-                    img.src = card.dataset.spriteModernShiny || card.dataset.spriteRetroShiny;
-                    img.classList.remove('pixel-art');
-                }
-            } else {
-                if (state.currentSpriteStyle === 'retro') {
-                    img.src = card.dataset.spriteRetro;
-                    img.classList.add('pixel-art');
-                } else {
-                    img.src = card.dataset.spriteModern;
-                    img.classList.remove('pixel-art');
-                }
-            }
-        }
-
+        applyCardSprite(card);
         updateCardUI(card, isCaught);
     });
 
@@ -178,27 +214,7 @@ export function setSpriteStyle(style) {
     }
 
     document.querySelectorAll('.pokemon-card').forEach(card => {
-        const entryId = card.dataset.entryId;
-        const img = document.getElementById(`img-${entryId}`);
-        if (img) {
-            if (state.isShinydexMode) {
-                if (style === 'retro') {
-                    img.src = card.dataset.spriteRetroShiny || card.dataset.spriteModernShiny;
-                    img.classList.add('pixel-art');
-                } else {
-                    img.src = card.dataset.spriteModernShiny || card.dataset.spriteRetroShiny;
-                    img.classList.remove('pixel-art');
-                }
-            } else {
-                if (style === 'retro') {
-                    img.src = card.dataset.spriteRetro;
-                    img.classList.add('pixel-art');
-                } else {
-                    img.src = card.dataset.spriteModern;
-                    img.classList.remove('pixel-art');
-                }
-            }
-        }
+        applyCardSprite(card);
     });
 
     if (state.activeModalEntryId) {

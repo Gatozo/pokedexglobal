@@ -18,6 +18,7 @@
     data-sprite-modern="{{ entry.pokemon.sprite_url }}"
     data-sprite-retro-shiny="{{ entry.game_sprite_shiny_url }}"
     data-sprite-modern-shiny="{{ entry.modern_sprite_shiny_url }}"
+    {% if entry.season_sprites_json %}data-season-sprites="{{ entry.season_sprites_json|escape }}"{% endif %}
     onclick="openPokemonModal({{ entry.id }})"
 >
     <!-- Header with Number, Stone, Sound & Status Badge -->

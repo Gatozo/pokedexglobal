@@ -4657,6 +4657,66 @@ class GlobalFormContractInvariantsTests(TestCase):
             for name in ("pichu", "pikachu", "budew", "roselia", "riolu", "lucario"):
                 self.assertIn("friendship", by_name_nat[name], f"{name} debe tener 'friendship' en black_national")
 
+    def test_black_seasonal_and_special_spot_filter_tags(self):
+        """Verifica filtros estacionales, notas de variación de tasa, sprites de Deerling/Sawsbuck, encuentros especiales y ausencia de falsos positivos horarios."""
+        import json as _json
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
+
+        clear_catalog_memory_cache()
+        reg_cat = get_compiled_catalog("black", force_reload=True, is_national=False)
+        nat_cat = get_compiled_catalog("black", force_reload=True, is_national=True)
+
+        reg_by_num = {e.pokemon.national_number: e for e in reg_cat}
+        nat_by_num = {e.pokemon.national_number: e for e in nat_cat}
+
+        # 1. Estaciones: exclusivos estacionales + formas de Deerling/Sawsbuck + especies con tasa variable
+        for s_tag in ("season_spring", "season_summer", "season_autumn"):
+            self.assertIn(s_tag, reg_by_num[616].filter_tags.split())  # Shelmet
+            self.assertIn(s_tag, reg_by_num[536].filter_tags.split())  # Palpitoad
+            self.assertIn(s_tag, nat_by_num[226].filter_tags.split())  # Mantine
+            self.assertIn(s_tag, nat_by_num[320].filter_tags.split())  # Wailmer
+        self.assertNotIn("season_winter", reg_by_num[616].filter_tags.split())
+
+        for w_num in (582, 583, 613, 614, 619, 531):
+            self.assertIn("season_winter", reg_by_num[w_num].filter_tags.split())
+        for w_nat in (363, 364, 365):
+            self.assertIn("season_winter", nat_by_num[w_nat].filter_tags.split())
+
+        # Wailord tiene tasa fija del 5% las 4 estaciones: no debe aparecer en filtro estacional
+        for s_tag in ("season_spring", "season_summer", "season_autumn", "season_winter"):
+            self.assertNotIn(s_tag, nat_by_num[321].filter_tags.split())
+            self.assertIn(s_tag, reg_by_num[585].filter_tags.split())  # Deerling
+            self.assertIn(s_tag, reg_by_num[586].filter_tags.split())  # Sawsbuck
+
+        # Especies con cambio de tasa de aparición deben incluir notas en modal_data_json
+        for rate_num in (525, 527, 531, 533, 613, 615):
+            self.assertTrue(reg_by_num[rate_num].notes, f"#{rate_num} debe tener nota de tasa estacional")
+            modal_payload = _json.loads(reg_by_num[rate_num].modal_data_json)
+            self.assertTrue(modal_payload.get("notes"))
+        self.assertTrue(_json.loads(nat_by_num[320].modal_data_json).get("notes"))
+
+        # Deerling y Sawsbuck exponen sprites estacionales completos (retro, modern, shiny)
+        for seasonal_num in (585, 586):
+            sprites = _json.loads(reg_by_num[seasonal_num].season_sprites_json)
+            self.assertEqual(set(sprites.keys()), {"spring", "summer", "autumn", "winter"})
+            self.assertIn("/summer.png", sprites["summer"]["retro"])
+            self.assertTrue(sprites["winter"]["modern"])
+            self.assertTrue(sprites["autumn"]["retro_shiny"])
+            self.assertTrue(sprites["autumn"]["modern_shiny"])
+
+        # 2. Encuentros especiales de Teselia
+        self.assertIn("spot_dust", reg_by_num[529].filter_tags.split())    # Drilbur
+        self.assertIn("spot_bridge", reg_by_num[580].filter_tags.split())  # Ducklett
+        self.assertIn("spot_surf", reg_by_num[594].filter_tags.split())    # Alomomola
+        self.assertIn("spot_fishing", reg_by_num[618].filter_tags.split()) # Stunfisk
+        self.assertIn("spot_grass", reg_by_num[531].filter_tags.split())   # Audino
+
+        # 3. Hora del día: sin falsos positivos por Piedra Día / Piedra Noche
+        self.assertNotIn("time_night", reg_by_num[609].filter_tags.split())  # Chandelure
+        self.assertNotIn("time_day", nat_by_num[407].filter_tags.split())    # Roserade
+        self.assertNotIn("time_day", nat_by_num[468].filter_tags.split())    # Togekiss
+        self.assertNotIn("time_night", nat_by_num[429].filter_tags.split())  # Mismagius
+
 
 
 

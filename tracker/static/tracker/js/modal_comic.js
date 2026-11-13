@@ -3,7 +3,7 @@
  * Visualización de biometría, textos de Pokédex, sprites con rotación y formas alternas.
  */
 
-import { state } from './state.js';
+import { state, getActiveSeasonFormKey } from './state.js';
 import { setActiveModalCryUrl } from './audio.js';
 import { 
     setModalUrlHash, 
@@ -22,6 +22,7 @@ import { getSafariHgssRequirements } from './safari_hgss_data.js';
 
 const _entryDataCache = new Map();
 const _cardFormIndex = new Map();
+const _cardSeasonRevision = new Map();
 let activeModalFormIndex = 0;
 let isModalBackView = false;
 let activeModalGender = 'male';
@@ -1749,12 +1750,26 @@ export async function openPokemonModalDirect(entryId, options = {}) {
     if (hasForms) {
         if (prevFormBtn) prevFormBtn.classList.remove('hidden');
         if (nextFormBtn) nextFormBtn.classList.remove('hidden');
+        const activeSeasonKey = getActiveSeasonFormKey();
+        const isSeasonalSpecies = data.forms.some(f => f.form_key === 'spring') && data.forms.some(f => f.form_key === 'winter');
+        const seasonRev = state.seasonFilterRevision || 0;
+
         let initialFormIdx = _cardFormIndex.get(entryId);
-        if (initialFormIdx === undefined || initialFormIdx === null) {
+        if (isSeasonalSpecies && (_cardSeasonRevision.get(entryId) || 0) !== seasonRev) {
+            initialFormIdx = activeSeasonKey
+                ? data.forms.findIndex(f => f.form_key === activeSeasonKey)
+                : 0;
+            if (initialFormIdx < 0) initialFormIdx = 0;
+            _cardSeasonRevision.set(entryId, seasonRev);
+        } else if (initialFormIdx === undefined || initialFormIdx === null) {
             const isUnown = Boolean(data.name && data.name.toLowerCase() === 'unown');
             if (isUnown) {
                 const fIdx = data.forms.findIndex(f => f.form_key === 'f');
                 initialFormIdx = (fIdx !== -1) ? fIdx : 0;
+            } else if (isSeasonalSpecies && activeSeasonKey) {
+                const sIdx = data.forms.findIndex(f => f.form_key === activeSeasonKey);
+                initialFormIdx = (sIdx !== -1) ? sIdx : 0;
+                _cardSeasonRevision.set(entryId, seasonRev);
             } else {
                 initialFormIdx = 0;
             }

@@ -210,13 +210,27 @@ class Game(models.Model):
         return self.slug in ["heartgold", "soulsilver"]
 
     @property
+    def has_regional_babies(self):
+        """Determina si la Pokédex regional de este juego incluye Pokémon Bebés nativos."""
+        return self.generation >= 2 and self.generation < 5
+
+    @property
+    def has_seasons(self):
+        """Determina si el juego cuenta con ciclo de estaciones (Primavera, Verano, Otoño, Invierno)."""
+        return self.slug in ["black", "white", "black-2", "white-2"]
+
+    @property
+    def has_special_spots(self):
+        """Determina si el juego cuenta con fenómenos de encuentros especiales en Teselia."""
+        return self.slug in ["black", "white", "black-2", "white-2"]
+
+    @property
     def has_time_of_day(self):
         """Determina si el juego cuenta con encuentros diferenciados por franjas horarias (Mañana, Día, Noche)."""
         return self.slug in [
             "gold", "silver", "crystal",
             "diamond", "pearl", "platinum",
             "heartgold", "soulsilver",
-            "black", "white",
             "brilliant-diamond", "shining-pearl"
         ]
 

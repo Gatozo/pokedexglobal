@@ -48,6 +48,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -108,6 +109,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -172,6 +174,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -236,6 +239,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -296,6 +300,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -360,6 +365,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -424,6 +430,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -484,6 +491,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -548,6 +556,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -612,6 +621,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -684,6 +694,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -767,6 +778,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -835,6 +847,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -914,6 +927,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -989,6 +1003,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1057,6 +1072,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1132,6 +1148,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1200,6 +1217,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1294,6 +1312,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1362,6 +1381,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1456,6 +1476,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1524,6 +1545,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1618,6 +1640,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1682,6 +1705,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1783,6 +1807,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1851,6 +1876,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1906,19 +1932,19 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Caminando (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 6",
-          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 12",
@@ -1929,6 +1955,11 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
       "evolution_info": {
         "from": "Pidove",
         "text": "Evoluciona de Pidove (Nivel 21)",
@@ -1938,6 +1969,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1989,19 +2021,19 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Hierba movediza"
+          "method": "Hierba movediza (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Hierba movediza"
+          "method": "Hierba movediza (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 6",
-          "method": "Hierba movediza"
+          "method": "Hierba movediza (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba movediza"
+          "method": "Hierba movediza (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 12",
@@ -2012,6 +2044,11 @@
           "method": "Hierba movediza"
         }
       ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
       "evolution_info": {
         "from": "Tranquill",
         "text": "Evoluciona de Tranquill (Nivel 32)",
@@ -2021,6 +2058,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2081,6 +2119,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2144,6 +2183,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2204,6 +2244,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2354,6 +2395,12 @@
           "method": "Caminando"
         }
       ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
       "evolution_info": {
         "from": "Roggenrola",
         "text": "Evoluciona de Roggenrola (Nivel 25)",
@@ -2363,6 +2410,14 @@
       }
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En el Monte Tuerca su tasa de aparición varía según la estación por los atajos de nieve: 49% en Primavera y Otoño, 45% en Verano y 30% en Invierno.",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2427,6 +2482,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2564,9 +2620,23 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En el Monte Tuerca su tasa de encuentro se duplica en Verano (20%) frente a Primavera, Otoño e Invierno (10%).",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2631,6 +2701,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2715,6 +2786,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -2850,6 +2922,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3015,9 +3088,20 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En la hierba movediza de Ruta 6, Ruta 7 y Torre Duodraco su frecuencia aumenta en Invierno (+5% adicional: del 70% al 75% en Ruta 6 y del 85% al 90% en Ruta 7 y Torre Duodraco) al desaparecer Unfezant.",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3082,6 +3166,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3136,6 +3221,12 @@
           "method": "Caminando"
         }
       ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ],
       "evolution_info": {
         "from": "Timburr",
         "text": "Evoluciona de Timburr (Nivel 25)",
@@ -3145,6 +3236,14 @@
       }
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En el Monte Tuerca su tasa de aparición disminuye en Invierno (10%) respecto a Primavera, Verano y Otoño (30%).",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3209,6 +3308,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3269,6 +3369,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3320,16 +3421,21 @@
       "locations": [
         {
           "area": "Ciudad Teja",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 8",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Pantano Teja",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
       ],
       "evolution_info": {
         "from": "Tympole",
@@ -3340,6 +3446,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3411,6 +3518,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3487,6 +3595,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3563,6 +3672,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3623,6 +3733,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3694,6 +3805,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3761,6 +3873,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3825,6 +3938,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3888,6 +4002,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -3952,6 +4067,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4020,6 +4136,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4121,6 +4238,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4181,6 +4299,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4275,6 +4394,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4343,6 +4463,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4415,6 +4536,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4482,6 +4604,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4546,6 +4669,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4614,6 +4738,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4681,6 +4806,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4745,6 +4871,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4813,6 +4940,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4876,6 +5004,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -4952,6 +5081,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5016,6 +5146,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5076,6 +5207,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5136,6 +5268,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5203,6 +5336,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5267,6 +5401,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5331,6 +5466,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5395,6 +5531,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5459,6 +5596,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5523,6 +5661,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5586,6 +5725,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5646,6 +5786,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5713,6 +5854,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5785,6 +5927,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5890,6 +6033,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5954,6 +6098,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6017,6 +6162,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6080,6 +6226,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6140,6 +6287,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6204,6 +6352,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6268,6 +6417,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6328,6 +6478,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6391,6 +6542,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6446,23 +6598,27 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Caminando (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando"
+          "method": "Caminando (Invierno)"
         },
         {
           "area": "Ruta 6",
-          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta (Invierno), Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6514,12 +6670,15 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Hierba oscura (Combates dobles)"
+          "method": "Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Hierba oscura (Combates dobles)"
+          "method": "Hierba oscura (Combates dobles) (Invierno)"
         }
+      ],
+      "seasons": [
+        "winter"
       ],
       "evolution_info": {
         "from": "Vanillite",
@@ -6530,6 +6689,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6594,6 +6754,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6663,9 +6824,16 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6717,12 +6885,18 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Hierba oscura (Combates dobles)"
+          "method": "Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
           "method": "Hierba oscura (Combates dobles)"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
       ],
       "evolution_info": {
         "from": "Deerling",
@@ -6733,6 +6907,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6861,6 +7036,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6925,6 +7101,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6989,6 +7166,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7061,6 +7239,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7132,6 +7311,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7208,6 +7388,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7287,6 +7468,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7363,6 +7545,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7431,6 +7614,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7495,6 +7679,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7563,6 +7748,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7627,6 +7813,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7699,6 +7886,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7763,6 +7951,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7827,6 +8016,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7895,6 +8085,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -7959,6 +8150,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8053,6 +8245,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8121,6 +8314,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8184,6 +8378,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8256,6 +8451,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8320,6 +8516,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8414,6 +8611,7 @@
       ],
       "category": "stone"
     },
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8478,6 +8676,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8541,6 +8740,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8605,6 +8805,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8660,23 +8861,37 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Caminando (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando"
+          "method": "Caminando (Invierno)"
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta (Invierno), Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En Invierno es común en Monte Tuerca (45%) y además aparece en el exterior de Ruta 7 (30%) y Torre Duodraco (10%). En Primavera y Otoño baja al 10% en Monte Tuerca, y en Verano se vuelve muy raro (solo 4% en el interior del Monte Tuerca).",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8728,12 +8943,15 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Hierba oscura (Combates dobles)"
+          "method": "Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Hierba oscura (Combates dobles)"
+          "method": "Hierba oscura (Combates dobles) (Invierno)"
         }
+      ],
+      "seasons": [
+        "winter"
       ],
       "evolution_info": {
         "from": "Cubchoo",
@@ -8744,6 +8962,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8801,9 +9020,23 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [
+      {
+        "title": "Tasa de Aparición Estacional",
+        "text": "En el Monte Tuerca su tasa de encuentro es muy baja en Primavera, Verano y Otoño (1%), aumentando al 5% durante el Invierno.",
+        "tag": "Estaciones",
+        "icon": "/media/items/journal.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8855,23 +9088,29 @@
       "locations": [
         {
           "area": "Ciudad Teja",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 8",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Pantano Teja",
-          "method": "Hierba alta"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8936,6 +9175,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -8987,23 +9227,29 @@
       "locations": [
         {
           "area": "Ciudad Teja",
-          "method": "Hierba alta, Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 8",
-          "method": "Hierba alta, Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Pantano Teja",
-          "method": "Hierba alta, Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9055,7 +9301,7 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Caminando, Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
@@ -9133,9 +9379,13 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "winter"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9199,6 +9449,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9250,11 +9501,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Caminando (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (P1)",
@@ -9264,9 +9515,15 @@
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
+      ],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9331,6 +9588,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9395,6 +9653,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9459,6 +9718,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9522,6 +9782,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9586,6 +9847,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9646,6 +9908,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9710,6 +9973,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9786,6 +10050,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9853,6 +10118,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9913,6 +10179,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10025,6 +10292,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10089,6 +10357,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10153,6 +10422,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10217,6 +10487,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10277,6 +10548,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10344,6 +10616,7 @@
       }
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10400,6 +10673,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10456,6 +10730,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10512,6 +10787,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10568,6 +10844,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10624,6 +10901,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10684,6 +10962,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10740,6 +11019,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10796,6 +11076,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10852,6 +11133,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10908,6 +11190,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10964,6 +11247,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -11020,6 +11304,7 @@
       ]
     },
     "evolution_stone": null,
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "black",

@@ -381,6 +381,7 @@ class CatalogEntry:
         self._cry_url = data.get("cry_url", "")
         self.flavor_text = _clean_wikitext_flavor(data.get("flavor_text", ""))
         self.obtaining_info = data.get("obtaining_info") or {}
+        self.notes = data.get("notes") or self.obtaining_info.get("notes") or []
         self._evolution_stone = data.get("evolution_stone")
         self.game_data = data.get("game_data") or {}
 
@@ -574,14 +575,44 @@ class CatalogEntry:
         if ("sintonía de sinnoh" in full_obt_text or ("sinnoh" in full_obt_text and "radio" in full_obt_text)) and not is_wild_inaccessible:
             tags.add("sinnoh_sound")
 
-        # Franjas horarias (Mañana, Día, Noche)
+        # Franjas horarias (Mañana, Día, Noche) excluyendo nombres de piedras evolutivas ('Piedra Día', 'Piedra Noche')
         if not is_transfer:
-            if re.search(r"\b(mañana|morning)\b", methods_lower):
+            methods_for_time = re.sub(r"\bpiedra\s+(?:d[ií]a|noche)\b", "", methods_lower)
+            if re.search(r"\b(mañana|morning)\b", methods_for_time):
                 tags.add("time_morning")
-            if re.search(r"\b(d[ií]a|day)\b", methods_lower):
+            if re.search(r"\b(d[ií]a|day)\b", methods_for_time):
                 tags.add("time_day")
-            if re.search(r"\b(noche|night)\b", methods_lower):
+            if re.search(r"\b(noche|night)\b", methods_for_time):
                 tags.add("time_night")
+
+        # Estaciones y encuentros especiales (5.ª Generación - Teselia)
+        if gen >= 5 and not is_transfer:
+            valid_seasons = {"spring", "summer", "autumn", "winter"}
+            for s in (obt.get("seasons") or []):
+                if s in valid_seasons:
+                    tags.add(f"season_{s}")
+            if nat_num in (585, 586):
+                for s in valid_seasons:
+                    tags.add(f"season_{s}")
+            if re.search(r"\bprimavera\b", methods_lower):
+                tags.add("season_spring")
+            if re.search(r"\bverano\b", methods_lower):
+                tags.add("season_summer")
+            if re.search(r"\boto[ñn]o\b", methods_lower):
+                tags.add("season_autumn")
+            if re.search(r"\binvierno\b", methods_lower):
+                tags.add("season_winter")
+
+            if "hierba movediza" in methods_lower:
+                tags.add("spot_grass")
+            if "nube de polvo" in methods_lower:
+                tags.add("spot_dust")
+            if "sombra en el puente" in methods_lower:
+                tags.add("spot_bridge")
+            if "surf en sombra del agua" in methods_lower:
+                tags.add("spot_surf")
+            if "supercaña en sombra del agua" in methods_lower or "supercana en sombra del agua" in methods_lower:
+                tags.add("spot_fishing")
 
         # Cañas de pescar (requiere coincidencia explícita con la caña correspondiente para evitar falsos positivos como 'superar', 'superficie' o 'vieja mansión')
         has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", full_obt_text))
@@ -641,6 +672,25 @@ class CatalogEntry:
         return get_pokemon_forms(nat_num, self.game_slug)
 
     @property
+    def season_sprites_json(self) -> str:
+        """Mapa JSON de sprites por estación (primavera, verano, otoño, invierno) para Deerling y Sawsbuck."""
+        nat_num = getattr(self.pokemon, "national_number", 0)
+        if get_game_generation(self.game_slug) < 5 or nat_num not in (585, 586):
+            return ""
+        season_map = {}
+        for idx, form in enumerate(self.forms):
+            fk = form.get("form_key")
+            if fk in ("spring", "summer", "autumn", "winter"):
+                season_map[fk] = {
+                    "index": idx,
+                    "retro": form.get("sprite_retro", ""),
+                    "modern": form.get("sprite_modern", ""),
+                    "retro_shiny": form.get("sprite_retro_shiny", ""),
+                    "modern_shiny": form.get("sprite_modern_shiny", ""),
+                }
+        return json.dumps(season_map, ensure_ascii=False) if season_map else ""
+
+    @property
     def modal_data_json(self) -> str:
         gen = get_game_generation(self.game_slug)
         nat_num = getattr(self.pokemon, "national_number", 0)
@@ -671,6 +721,7 @@ class CatalogEntry:
             "weight": self.pokemon.weight or 0,
             "flavor_text": self.flavor_text or "",
             "obtaining": self.obtaining_info or {},
+            "notes": self.notes,
             "evolution_stone": self.evolution_stone,
             "is_caught": getattr(self, "is_caught", False),
             "is_shiny_caught": getattr(self, "is_shiny_caught", False),

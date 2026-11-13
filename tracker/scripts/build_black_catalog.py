@@ -571,6 +571,55 @@ SPECIAL_OBTAINING = {
 }
 
 
+SEASON_KEYS_ORDER = ("season-spring", "season-summer", "season-autumn", "season-winter")
+SEASON_LABELS_ES = {
+    "season-spring": "Primavera",
+    "season-summer": "Verano",
+    "season-autumn": "Otoño",
+    "season-winter": "Invierno",
+}
+SEASON_SHORT_KEY = {
+    "season-spring": "spring",
+    "season-summer": "summer",
+    "season-autumn": "autumn",
+    "season-winter": "winter",
+}
+SEASONAL_FORM_SPECIES_IDS = {585, 586}
+SEASONAL_RATE_NOTES = {
+    320: (
+        "En Bahía Arenisca (Surf en sombra del agua) aparece todo el año (60% base), pero "
+        "en Primavera, Verano y Otoño añade apariciones extra (+30%, hasta el 90% total); "
+        "en Invierno disminuye su presencia al ser desplazado por Spheal y Sealeo."
+    ),
+    525: (
+        "En el Monte Tuerca su tasa de aparición varía según la estación por los atajos de nieve: "
+        "49% en Primavera y Otoño, 45% en Verano y 30% en Invierno."
+    ),
+    527: (
+        "En el Monte Tuerca su tasa de encuentro se duplica en Verano (20%) frente a "
+        "Primavera, Otoño e Invierno (10%)."
+    ),
+    531: (
+        "En la hierba movediza de Ruta 6, Ruta 7 y Torre Duodraco su frecuencia aumenta "
+        "en Invierno (+5% adicional: del 70% al 75% en Ruta 6 y del 85% al 90% en Ruta 7 y Torre Duodraco) "
+        "al desaparecer Unfezant."
+    ),
+    533: (
+        "En el Monte Tuerca su tasa de aparición disminuye en Invierno (10%) respecto a "
+        "Primavera, Verano y Otoño (30%)."
+    ),
+    613: (
+        "En Invierno es común en Monte Tuerca (45%) y además aparece en el exterior de Ruta 7 (30%) "
+        "y Torre Duodraco (10%). En Primavera y Otoño baja al 10% en Monte Tuerca, y en Verano "
+        "se vuelve muy raro (solo 4% en el interior del Monte Tuerca)."
+    ),
+    615: (
+        "En el Monte Tuerca su tasa de encuentro es muy baja en Primavera, Verano y Otoño (1%), "
+        "aumentando al 5% durante el Invierno."
+    ),
+}
+
+
 def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> str:
     if 'swarm-yes' in conditions:
         return 'Manada diaria'
@@ -648,21 +697,47 @@ def main():
 
         raw_encs = encounters_black.get(str(nat_id), [])
         evo_stone_obj = None
+        entry_seasons = set()
+        if nat_id in SEASONAL_FORM_SPECIES_IDS:
+            entry_seasons.update(("spring", "summer", "autumn", "winter"))
 
         if nat_id in SPECIAL_OBTAINING:
             obt_info = json.loads(json.dumps(SPECIAL_OBTAINING[nat_id]))
         elif raw_encs:
-            # Procesar encuentros salvajes agrupados por área limpia
-            area_methods = {}
+            # Procesar encuentros salvajes agrupados por área limpia y método base, conservando estaciones
+            area_method_meta = {}
             for e in raw_encs:
                 area_key = e.get('area_raw', '')
                 if 'team-flare' in area_key:
                     continue
+                conds = e.get('conditions', []) or []
                 clean_area = UNOVA_AREA_NAMES.get(area_key, area_key.replace('-', ' ').title())
-                meth_desc = format_wild_method(e.get('method_raw', 'walk'), e.get('conditions', []), clean_area)
-                if clean_area not in area_methods:
-                    area_methods[clean_area] = set()
-                area_methods[clean_area].add(meth_desc)
+                meth_desc = format_wild_method(e.get('method_raw', 'walk'), conds, clean_area)
+                bucket = area_method_meta.setdefault(clean_area, {}).setdefault(
+                    meth_desc, {'always': False, 'seasons': set()}
+                )
+                s_conds = [c for c in conds if c in SEASON_LABELS_ES]
+                if s_conds:
+                    bucket['seasons'].update(s_conds)
+                else:
+                    bucket['always'] = True
+
+            area_methods = {}
+            for a_name, methods_dict in area_method_meta.items():
+                area_methods[a_name] = set()
+                for m_desc, meta in methods_dict.items():
+                    s_set = meta['seasons']
+                    if not meta['always'] and 0 < len(s_set) < 4:
+                        ordered = [s for s in SEASON_KEYS_ORDER if s in s_set]
+                        season_text = ", ".join(SEASON_LABELS_ES[s] for s in ordered)
+                        area_methods[a_name].add(f"{m_desc} ({season_text})")
+                        for s in ordered:
+                            entry_seasons.add(SEASON_SHORT_KEY[s])
+                    else:
+                        area_methods[a_name].add(m_desc)
+                        if s_set and nat_id in SEASONAL_RATE_NOTES:
+                            for s in s_set:
+                                entry_seasons.add(SEASON_SHORT_KEY[s])
 
             loc_list = []
             for a_name, m_set in area_methods.items():
@@ -699,6 +774,9 @@ def main():
                 'summary': summary,
                 'locations': loc_list
             }
+            if entry_seasons:
+                season_order = ["spring", "summer", "autumn", "winter"]
+                obt_info['seasons'] = [s for s in season_order if s in entry_seasons]
         elif is_evolution and evo_info:
             from_name = evo_info.get('from_name', '')
             cond = evo_info.get('condition', '')
@@ -816,6 +894,15 @@ def main():
         else:
             disp_num = f"{entry_num:03d}"
 
+        entry_notes = []
+        if nat_id in SEASONAL_RATE_NOTES:
+            entry_notes.append({
+                "title": "Tasa de Aparición Estacional",
+                "text": SEASONAL_RATE_NOTES[nat_id],
+                "tag": "Estaciones",
+                "icon": "/media/items/journal.png",
+            })
+
         entry = {
             "id": unique_id,
             "entry_number": entry_num,
@@ -854,6 +941,7 @@ def main():
             "flavor_text": flavor,
             "obtaining_info": obt_info,
             "evolution_stone": evo_stone_obj,
+            "notes": entry_notes,
             "game_data": {
                 "generation": 5,
                 "game_slug": "black",

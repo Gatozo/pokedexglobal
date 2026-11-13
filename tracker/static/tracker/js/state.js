@@ -47,6 +47,13 @@ export const THEME_STATUS_CAUGHT_CLASS = 'status-caught-active';
 export const THEME_UNCAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-emerald-500 hover:bg-emerald-400 text-white';
 export const THEME_CAUGHT_BTN = 'card-action-btn mt-3 w-full h-9 px-3 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer shrink-0 bg-rose-500 hover:bg-rose-600 text-white';
 
+export const SEASON_TAG_MAP = {
+    season_spring: 'spring',
+    season_summer: 'summer',
+    season_autumn: 'autumn',
+    season_winter: 'winter',
+};
+
 // Estado mutable compartido
 export const state = {
     currentStatusFilter: 'all',
@@ -55,6 +62,8 @@ export const state = {
     isShinydexMode: !!config.isShinydexActive,
     selectedFilterTags: new Set(),
     selectedFilterTypes: new Set(),
+    activeSeasonOrder: [],
+    seasonFilterRevision: 0,
     isFilterPanelOpen: false,
     activeModalCryUrl: '',
     normalStats: {
@@ -70,6 +79,13 @@ export const state = {
         shiny: { caught: 0, percent: 0.0 }
     }
 };
+
+export function getActiveSeasonFormKey() {
+    if (!state.activeSeasonOrder || state.activeSeasonOrder.length === 0) {
+        return null;
+    }
+    return state.activeSeasonOrder[state.activeSeasonOrder.length - 1];
+}
 
 // Pistas oficiales y metadatos de las cámaras de Unown (Ruinas Alfa en Gen 2 y Ruinas Sete en Rojo Fuego / Verde Hoja)
 export const HGSS_UNOWN_CHAMBER_HINTS = {

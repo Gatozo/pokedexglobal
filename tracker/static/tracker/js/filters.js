@@ -3,7 +3,8 @@
  * Manejo de filtros por texto, ruta/localización, tipos elementales, etiquetas y estado de captura.
  */
 
-import { state, THEME_ACTIVE_BTN } from './state.js';
+import { state, THEME_ACTIVE_BTN, SEASON_TAG_MAP } from './state.js';
+import { applyAllSeasonalCardSprites } from './cards.js';
 import {
     isGlobalFilterActive,
     isManualRegionLock,
@@ -151,14 +152,24 @@ export function toggleSafariTag(tag, el) {
 }
 
 export function toggleFilterTag(tag, el) {
+    const seasonKey = SEASON_TAG_MAP[tag];
     if (state.selectedFilterTags.has(tag)) {
         state.selectedFilterTags.delete(tag);
+        if (seasonKey) {
+            state.activeSeasonOrder = state.activeSeasonOrder.filter(k => k !== seasonKey);
+            state.seasonFilterRevision++;
+        }
         if (el) {
             el.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
             el.classList.add('bg-white', 'text-slate-800');
         }
     } else {
         state.selectedFilterTags.add(tag);
+        if (seasonKey) {
+            state.activeSeasonOrder = state.activeSeasonOrder.filter(k => k !== seasonKey);
+            state.activeSeasonOrder.push(seasonKey);
+            state.seasonFilterRevision++;
+        }
         if (el) {
             el.classList.remove('bg-white', 'text-slate-800');
             el.classList.add('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
@@ -181,6 +192,10 @@ export function toggleFilterType(type, el) {
 export function clearAllFilters() {
     state.selectedFilterTags.clear();
     state.selectedFilterTypes.clear();
+    if (state.activeSeasonOrder.length > 0) {
+        state.activeSeasonOrder = [];
+        state.seasonFilterRevision++;
+    }
 
     document.querySelectorAll('.filter-tag-pill').forEach(el => {
         el.classList.remove('bg-amber-300', 'ring-2', 'ring-slate-950', 'text-slate-950');
@@ -216,6 +231,7 @@ export async function filterCards() {
             setManualRegionLock(false);
             if (isGlobalFilterActive()) {
                 exitGlobalFilterMode();
+                applyAllSeasonalCardSprites();
                 const emptyState = document.getElementById('empty-state');
                 if (emptyState) emptyState.classList.add('hidden');
                 return;
@@ -223,6 +239,9 @@ export async function filterCards() {
             restoreDefaultNationalBadges();
         }
     }
+
+    // Sincronizar sprites estacionales (Deerling / Sawsbuck) antes de posibles retornos anticipados
+    applyAllSeasonalCardSprites();
 
     // Optimización de prioridad inmediata: si no hay filtros activos ni tarjetas ocultas previamente, no bloquear el hilo principal
     if (!hasActiveFilters && document.querySelectorAll('.pokemon-card[style*="display: none"]').length === 0) {

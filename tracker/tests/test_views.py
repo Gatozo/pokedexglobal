@@ -1154,6 +1154,61 @@ class GameSelectorClassificationTests(TestCase):
         self.assertIn('id="feebas-map-modal"', content_dia)
         self.assertIn('/media/maps/diamond/mt-coronet-b1f.png', content_dia)
 
+    def test_black_toolbar_filters_regional_vs_national_and_gen4_regression(self):
+        """Verifica distribución de filtros en Gen 5 (Bebés/Supercaña solo Nacional, sin Hora del Día, con Estaciones y Encuentros Especiales) y no regresión en Gen 4."""
+        game_black, _ = Game.objects.get_or_create(slug="black", defaults={"name": "Pokémon Negro", "generation": 5})
+        Pokedex.objects.get_or_create(game=game_black, slug="unova", defaults={"name": "Pokédex de Teselia", "is_national": False})
+        Pokedex.objects.get_or_create(game=game_black, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+        # 1. Pokémon Negro - Regional (Teselia): sin Bebés, sin Supercaña, sin Hora del Día, sin Pesca con Caña; con Estaciones y Encuentros Especiales
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "black"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        html_reg = resp_reg.content.decode("utf-8")
+
+        self.assertNotIn('data-tag="baby"', html_reg)
+        self.assertNotIn('data-tag="rod_super"', html_reg)
+        self.assertNotIn('data-tag="rod_any"', html_reg)
+        self.assertNotIn('>Pesca con Caña<', html_reg)
+        self.assertNotIn('>Hora del Día<', html_reg)
+        self.assertIn('>Estaciones<', html_reg)
+        self.assertIn('data-tag="season_spring"', html_reg)
+        self.assertIn('data-tag="season_summer"', html_reg)
+        self.assertIn('data-tag="season_autumn"', html_reg)
+        self.assertIn('data-tag="season_winter"', html_reg)
+        self.assertIn('>Encuentros Especiales<', html_reg)
+        for spot_tag in ("spot_grass", "spot_dust", "spot_bridge", "spot_surf"):
+            self.assertIn(f'data-tag="{spot_tag}"', html_reg)
+        self.assertNotIn('data-tag="spot_fishing"', html_reg)
+        self.assertIn('data-season-sprites=', html_reg)
+
+        # 2. Pokémon Negro - Nacional: recupera Bebés, Supercaña (en columna central) y Pesca sobre sombras; mantiene Estaciones/Especiales, sin Hora del Día ni Caña Vieja/Buena
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "black", "pokedex_slug": "national"}) + "?gen=unova")
+        self.assertEqual(resp_nat.status_code, 200)
+        html_nat = resp_nat.content.decode("utf-8")
+
+        self.assertIn('data-tag="baby"', html_nat)
+        self.assertIn('data-tag="rod_super"', html_nat)
+        self.assertNotIn('>Pesca con Caña<', html_nat)
+        self.assertNotIn('data-tag="rod_old"', html_nat)
+        self.assertNotIn('>Hora del Día<', html_nat)
+        self.assertIn('>Estaciones<', html_nat)
+        self.assertIn('>Encuentros Especiales<', html_nat)
+        self.assertIn('data-tag="spot_fishing"', html_nat)
+        self.assertIn('data-season-sprites=', html_nat)
+
+        # 3. No regresión Gen 4 (Diamante): conserva Bebés, Pesca con Caña y Hora del Día, sin Estaciones ni Encuentros Especiales
+        game_dia, _ = Game.objects.get_or_create(slug="diamond", defaults={"name": "Pokémon Diamond", "generation": 4})
+        Pokedex.objects.get_or_create(game=game_dia, slug="sinnoh", defaults={"name": "Pokédex de Sinnoh", "is_national": False})
+        resp_dia = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "diamond"}))
+        self.assertEqual(resp_dia.status_code, 200)
+        html_dia = resp_dia.content.decode("utf-8")
+
+        self.assertIn('data-tag="baby"', html_dia)
+        self.assertIn('>Pesca con Caña<', html_dia)
+        self.assertIn('>Hora del Día<', html_dia)
+        self.assertNotIn('data-tag="season_spring"', html_dia)
+        self.assertNotIn('>Encuentros Especiales<', html_dia)
+
 
 
 
