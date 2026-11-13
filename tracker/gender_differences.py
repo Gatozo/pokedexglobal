@@ -146,7 +146,10 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
     Si tiene diferencias visuales, incluye las URLs de los sprites femeninos oficiales descargados.
     """
     from .catalog_service import get_game_generation
-    gen = get_game_generation(game_slug)
+    from .pokemon_forms import GAME_SPRITE_CONFIG, get_game_sprite_config
+
+    clean_slug = (game_slug or "").replace("_national", "")
+    gen = get_game_generation(clean_slug)
     if gen < 4:
         return None
 
@@ -187,39 +190,35 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
     has_diff = national_number in diff_dict
     diff_note = diff_dict.get(national_number)
 
-    # Determinar si existen sprites descargados
-    is_gen5 = game_slug in ["black", "white"]
-    base_slug = game_slug if game_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver", "black", "white"] else "diamond"
+    # Determinar sprites descargados desde la configuración centralizada de ediciones
+    base_slug = clean_slug if clean_slug in GAME_SPRITE_CONFIG and GAME_SPRITE_CONFIG[clean_slug]["gen"] >= 4 else "diamond"
+    cfg = get_game_sprite_config(base_slug)
     female_sprites = None
     if has_diff:
+        static_dir = cfg["static_dir"]
+        anim_dir = cfg["anim_dir"]
+        anim_ext = cfg["anim_ext"]
         female_sprites = {
-            "retro": f"/media/pokemon/sprites/{base_slug}/female/{national_number}.png",
-            "retro_back": f"/media/pokemon/sprites/{base_slug}/back/female/{national_number}.png",
-            "retro_shiny": f"/media/pokemon/sprites/{base_slug}_shiny/female/{national_number}.png",
-            "retro_shiny_back": f"/media/pokemon/sprites/{base_slug}_shiny/back/female/{national_number}.png",
+            "retro": f"/media/pokemon/sprites/{static_dir}/female/{national_number}.png",
+            "retro_back": f"/media/pokemon/sprites/{static_dir}/back/female/{national_number}.png",
+            "retro_shiny": f"/media/pokemon/sprites/{static_dir}_shiny/female/{national_number}.png",
+            "retro_shiny_back": f"/media/pokemon/sprites/{static_dir}_shiny/back/female/{national_number}.png",
             "modern": f"/media/pokemon/home/female/{national_number}.png",
             "modern_shiny": f"/media/pokemon/home/shiny/female/{national_number}.png",
             "modern_back": f"/media/pokemon/home/back/female/{national_number}.png",
             "modern_shiny_back": f"/media/pokemon/home/shiny/back/female/{national_number}.png",
         }
-        if is_gen5:
-            female_sprites["retro_animated"] = f"/media/pokemon/sprites/{base_slug}_animated/female/{national_number}.gif"
-            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{base_slug}_animated_shiny/female/{national_number}.gif"
-            female_sprites["retro_animated_back"] = f"/media/pokemon/sprites/{base_slug}_animated/back/female/{national_number}.gif"
-            female_sprites["retro_shiny_animated_back"] = f"/media/pokemon/sprites/{base_slug}_animated_shiny/back/female/{national_number}.gif"
+        has_anim_assets = bool(anim_dir) and (cfg["gen"] >= 5 or national_number not in {277, 278})
+        if has_anim_assets:
+            female_sprites["retro_animated"] = f"/media/pokemon/sprites/{anim_dir}/female/{national_number}{anim_ext}"
+            female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{anim_dir}_shiny/female/{national_number}{anim_ext}"
+            if cfg["has_animated_back"]:
+                female_sprites["retro_animated_back"] = f"/media/pokemon/sprites/{anim_dir}/back/female/{national_number}{anim_ext}"
+                female_sprites["retro_shiny_animated_back"] = f"/media/pokemon/sprites/{anim_dir}_shiny/back/female/{national_number}{anim_ext}"
             female_sprites["retro_static"] = female_sprites["retro"]
             female_sprites["retro_shiny_static"] = female_sprites["retro_shiny"]
             female_sprites["retro"] = female_sprites["retro_animated"]
             female_sprites["retro_shiny"] = female_sprites["retro_shiny_animated"]
-        else:
-            anim_slug = base_slug if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] else "diamond"
-            if base_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"] and national_number not in {277, 278}:
-                female_sprites["retro_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated/female/{national_number}.png"
-                female_sprites["retro_shiny_animated"] = f"/media/pokemon/sprites/{anim_slug}_animated_shiny/female/{national_number}.png"
-                female_sprites["retro_static"] = female_sprites["retro"]
-                female_sprites["retro_shiny_static"] = female_sprites["retro_shiny"]
-                female_sprites["retro"] = female_sprites["retro_animated"]
-                female_sprites["retro_shiny"] = female_sprites["retro_shiny_animated"]
 
     return {
         "gender_type": "both_with_diff" if has_diff else "both_no_diff",

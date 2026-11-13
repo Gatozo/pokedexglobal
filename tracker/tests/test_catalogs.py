@@ -4380,6 +4380,186 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertEqual(m_data["forms"][5]["form_key"], "f")
 
 
+class GlobalFormContractInvariantsTests(TestCase):
+    """
+    Contrato global multi-juego para prevenir regresiones al añadir futuras ediciones:
+    - Todo catálogo compilado debe estar registrado en GAME_SPRITE_CONFIG (sin fallbacks silenciosos).
+    - Todas las URLs retro y animadas deben aislarse por juego, respetar su extensión por generación
+      y existir físicamente en MEDIA_ROOT con >1 fotograma animado (salvo la única excepción canónica de Cherrim Soleada en Gen 4).
+    - Ninguna forma heredada puede conservar referencias toponímicas de generaciones previas fuera de su transferencia.
+    """
+
+    def test_compiled_catalogs_registered_and_unregistered_fails_loudly(self):
+        from tracker.catalog_service import CATALOGS_DIR
+        from tracker.pokemon_forms import GAME_SPRITE_CONFIG, get_game_sprite_config, get_pokemon_forms
+
+        catalog_slugs = {
+            p.stem.removesuffix("_national")
+            for p in CATALOGS_DIR.glob("*.json")
+        }
+        self.assertTrue(catalog_slugs, "Debe haber al menos un catálogo compilado")
+        for slug in sorted(catalog_slugs):
+            self.assertIn(slug, GAME_SPRITE_CONFIG, f"Catálogo '{slug}' falta en GAME_SPRITE_CONFIG")
+
+        with self.assertRaises(ValueError):
+            get_game_sprite_config("unregistered-future-game")
+        with self.assertRaises(ValueError):
+            get_pokemon_forms(351, "unregistered-future-game")
+
+    def test_all_active_games_forms_assets_isolation_and_locations(self):
+        from pathlib import Path
+        from django.conf import settings
+        from PIL import Image
+        from tracker.catalog_service import CATALOGS_DIR
+        from tracker.pokemon_forms import GAME_SPRITE_CONFIG, get_pokemon_forms
+
+        media_root = Path(settings.MEDIA_ROOT)
+        form_species = [172, 201, 351, 386, 412, 413, 421, 422, 423, 479, 487, 492, 493, 550, 555, 585, 586, 648, 649]
+        forbidden_gen5_terms = ("Sinnoh", "Hoenn", "Johto", "Kanto", "Árboles de Miel", "Monte Corona", "Pokéwalker")
+        checked_images = {}
+
+        for slug, cfg in GAME_SPRITE_CONFIG.items():
+            slug_variants = [slug]
+            if (CATALOGS_DIR / f"{slug}_national.json").exists():
+                slug_variants.append(f"{slug}_national")
+
+            anim_dir = cfg["anim_dir"]
+            anim_ext = cfg["anim_ext"]
+            expected_dirs = {cfg["static_dir"], f"{cfg['static_dir']}_shiny"}
+            if anim_dir:
+                expected_dirs.update({anim_dir, f"{anim_dir}_shiny"})
+
+            for query_slug in slug_variants:
+                for nid in form_species:
+                    forms = get_pokemon_forms(nid, query_slug)
+                    for form in forms:
+                        key = form["form_key"]
+                        # Excepciones compartidas explícitas de sprites estáticos/dorsales Gen 3-4
+                        allowed_dirs = set(expected_dirs)
+                        if nid == 201 and cfg["gen"] == 3 and slug != "ruby":
+                            allowed_dirs.update({"ruby", "ruby_shiny"})
+                        elif nid == 201 and slug == "platinum":
+                            allowed_dirs.update({"diamond", "diamond_shiny"})
+                        elif nid == 351 and slug in ("firered", "leafgreen") and key != "normal":
+                            allowed_dirs.update({"ruby", "ruby_shiny"})
+                        elif nid == 421 and slug in ("heartgold", "soulsilver") and key == "sunshine":
+                            allowed_dirs.update({"platinum", "platinum_shiny"})
+
+                        if anim_dir:
+                            for front_field in ("modal_retro_sprite_url", "modal_retro_sprite_shiny_url"):
+                                front_url = form.get(front_field)
+                                self.assertIsNotNone(front_url, f"{query_slug} #{nid} {key} falta {front_field}")
+                                self.assertTrue(front_url.endswith(anim_ext), f"{query_slug} #{nid} {key} {front_field} debe terminar en {anim_ext}: {front_url}")
+
+                        if cfg["has_animated_back"]:
+                            for back_field in ("modal_retro_sprite_back_url", "modal_retro_sprite_shiny_back_url"):
+                                back_url = form.get(back_field)
+                                self.assertIsNotNone(back_url, f"{query_slug} #{nid} {key} falta {back_field}")
+                                self.assertTrue(back_url.endswith(anim_ext), f"{query_slug} #{nid} {key} {back_field} debe terminar en {anim_ext}: {back_url}")
+
+                        for field in (
+                            "sprite_retro",
+                            "sprite_retro_shiny",
+                            "sprite_retro_back",
+                            "sprite_retro_shiny_back",
+                            "modal_retro_sprite_url",
+                            "modal_retro_sprite_shiny_url",
+                            "modal_retro_sprite_back_url",
+                            "modal_retro_sprite_shiny_back_url",
+                        ):
+                            url = form.get(field)
+                            if not url:
+                                continue
+                            sprite_folder = url.removeprefix("/media/pokemon/sprites/").split("/", 1)[0]
+                            self.assertIn(
+                                sprite_folder,
+                                allowed_dirs,
+                                f"{query_slug} #{nid} {key} ({field}) apunta fuera de {allowed_dirs}: {url}",
+                            )
+
+                            rel_path = url.removeprefix("/media/")
+                            if rel_path not in checked_images:
+                                disk_path = media_root / rel_path
+                                self.assertTrue(
+                                    disk_path.exists() and disk_path.stat().st_size > 0,
+                                    f"Archivo faltante o vacío para {query_slug} #{nid} {key} ({field}): {disk_path}",
+                                )
+                                n_frames = 1
+                                if field.startswith("modal_retro_sprite") and anim_dir and sprite_folder.startswith(anim_dir):
+                                    with Image.open(disk_path) as img:
+                                        n_frames = getattr(img, "n_frames", 1)
+                                checked_images[rel_path] = n_frames
+
+                            if field.startswith("modal_retro_sprite") and anim_dir and sprite_folder.startswith(anim_dir):
+                                is_cherrim_gen4_sunshine = (cfg["gen"] == 4 and nid == 421 and key == "sunshine")
+                                if not is_cherrim_gen4_sunshine:
+                                    self.assertGreater(
+                                        checked_images[rel_path],
+                                        1,
+                                        f"Sprite animado de 1 solo fotograma no permitido en {query_slug} #{nid} {key} ({field}): {url}",
+                                    )
+
+                        if cfg["gen"] == 5 and query_slug == slug:
+                            text_blob = f"{form.get('summary', '')} {form.get('locations', '')} {form.get('note', '')}"
+                            for forbidden in forbidden_gen5_terms:
+                                self.assertNotIn(
+                                    forbidden,
+                                    text_blob,
+                                    f"{query_slug} #{nid} {key} conserva término previo '{forbidden}'",
+                                )
+
+    def test_gender_differences_follow_game_sprite_config(self):
+        from pathlib import Path
+        from django.conf import settings
+        from tracker.gender_differences import GENDER_DIFFERENCES_GEN5, get_pokemon_gender_info
+        from tracker.pokemon_forms import GAME_SPRITE_CONFIG
+
+        media_root = Path(settings.MEDIA_ROOT)
+        checked_paths = set()
+        for slug, cfg in GAME_SPRITE_CONFIG.items():
+            if cfg["gen"] < 4:
+                self.assertIsNone(get_pokemon_gender_info(25, slug))
+                continue
+            for query_slug in (slug, f"{slug}_national"):
+                for nid in (25, 130, 445, 592):
+                    info = get_pokemon_gender_info(nid, query_slug)
+                    if cfg["gen"] < 5 and nid == 592:
+                        continue
+                    self.assertIsNotNone(info)
+                    fs = info["female_sprites"]
+                    self.assertIsNotNone(fs, f"{query_slug} #{nid} debe tener female_sprites")
+                    self.assertTrue(fs["retro_animated"].endswith(cfg["anim_ext"]))
+                    if cfg["has_animated_back"]:
+                        self.assertTrue(fs["retro_animated_back"].endswith(cfg["anim_ext"]))
+                        self.assertTrue(fs["retro_shiny_animated_back"].endswith(cfg["anim_ext"]))
+                    for k, url in fs.items():
+                        if not url or "home/" in url:
+                            continue
+                        rel = url.removeprefix("/media/")
+                        if rel not in checked_paths:
+                            p = media_root / rel
+                            self.assertTrue(p.exists() and p.stat().st_size > 0, f"Falta female sprite {query_slug} #{nid} ({k}): {p}")
+                            checked_paths.add(rel)
+
+        # Ninguna especie con diferencias reales en Gen 4-5 (salvo #277/#278 excluidos) debe faltar en disco
+        for slug in ("diamond", "platinum", "heartgold", "black"):
+            for nid in GENDER_DIFFERENCES_GEN5:
+                if nid in (277, 278):
+                    continue
+                info = get_pokemon_gender_info(nid, slug)
+                fs = (info or {}).get("female_sprites")
+                if not fs:
+                    continue
+                for k, url in fs.items():
+                    if not url or "home/" in url:
+                        continue
+                    rel = url.removeprefix("/media/")
+                    if rel not in checked_paths:
+                        p = media_root / rel
+                        self.assertTrue(p.exists() and p.stat().st_size > 0, f"Falta female sprite {slug} #{nid} ({k}): {p}")
+                        checked_paths.add(rel)
+
+
 
 
 

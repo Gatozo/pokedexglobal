@@ -22,9 +22,68 @@ Soporte completo y escalable para Generaciones 1 a 5.
 
 from typing import List, Dict, Any
 
-GEN3_FORM_GAMES = {"ruby", "sapphire", "emerald", "firered", "leafgreen"}
-GEN4_FORM_GAMES = {"diamond", "pearl", "platinum", "heartgold", "soulsilver"}
-GEN5_FORM_GAMES = {"black", "white", "black-2", "white-2"}
+GAME_SPRITE_CONFIG: Dict[str, Dict[str, Any]] = {
+    # Gen 1
+    "red":        {"gen": 1, "static_dir": "red",        "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "blue":       {"gen": 1, "static_dir": "blue",       "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "yellow":     {"gen": 1, "static_dir": "yellow",     "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    # Gen 2
+    "gold":       {"gen": 2, "static_dir": "gold",       "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "silver":     {"gen": 2, "static_dir": "silver",     "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "crystal":    {"gen": 2, "static_dir": "crystal",    "anim_dir": "crystal_animated",    "anim_ext": ".gif", "has_animated_back": False, "back_modal_mode": None},
+    # Gen 3
+    "ruby":       {"gen": 3, "static_dir": "ruby",       "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "sapphire":   {"gen": 3, "static_dir": "sapphire",   "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None},
+    "emerald":    {"gen": 3, "static_dir": "emerald",    "anim_dir": "emerald_animated",    "anim_ext": ".gif", "has_animated_back": False, "back_modal_mode": None},
+    "firered":    {"gen": 3, "static_dir": "firered",    "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None, "shared_hoenn_form_dir": "ruby"},
+    "leafgreen":  {"gen": 3, "static_dir": "leafgreen",  "anim_dir": None,                  "anim_ext": None,   "has_animated_back": False, "back_modal_mode": None, "shared_hoenn_form_dir": "ruby"},
+    # Gen 4
+    "diamond":    {"gen": 4, "static_dir": "diamond",    "anim_dir": "diamond_animated",    "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
+    "pearl":      {"gen": 4, "static_dir": "pearl",      "anim_dir": "pearl_animated",      "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
+    "platinum":   {"gen": 4, "static_dir": "platinum",   "anim_dir": "platinum_animated",   "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
+    "heartgold":  {"gen": 4, "static_dir": "heartgold",  "anim_dir": "heartgold_animated",  "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
+    "soulsilver": {"gen": 4, "static_dir": "soulsilver", "anim_dir": "soulsilver_animated", "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
+    # Gen 5
+    "black":      {"gen": 5, "static_dir": "black",      "anim_dir": "black_animated",      "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
+}
+
+GEN2_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 2}
+GEN3_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 3}
+GEN4_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 4}
+GEN5_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 5}
+
+TRANSFER_TEMPLATES_BY_GEN: Dict[int, Dict[str, Any]] = {
+    5: {
+        "area": "Laboratorio Transfer (Ruta 15)",
+        "method": "Poké Transfer (transferencia desde 4.ª generación)",
+        "badge_label": "Poké Transfer",
+        "badge_color": "amber",
+        "type": "transfer",
+    },
+}
+
+
+def get_game_sprite_config(game_slug: str) -> Dict[str, Any]:
+    """Retorna la configuración de sprites de una edición registrada; falla explícitamente si falta."""
+    clean = (game_slug or "").replace("_national", "")
+    if clean not in GAME_SPRITE_CONFIG:
+        raise ValueError(
+            f"Edición '{game_slug}' no registrada en GAME_SPRITE_CONFIG. "
+            "Regístrala en tracker/pokemon_forms.py antes de resolver formas o sprites."
+        )
+    return GAME_SPRITE_CONFIG[clean]
+
+
+def _get_transfer_obt_meta(generation: int, badge_color: str = None) -> Dict[str, Any]:
+    """Retorna los metadatos de badge y tipo de obtención por transferencia para una generación."""
+    tpl = TRANSFER_TEMPLATES_BY_GEN.get(generation)
+    if not tpl:
+        return {}
+    return {
+        "type": tpl["type"],
+        "badge_label": tpl["badge_label"],
+        "badge_color": badge_color or tpl["badge_color"],
+    }
 
 
 def _build_retro_form_sprites(
@@ -32,46 +91,50 @@ def _build_retro_form_sprites(
     rel_static: str,
     rel_anim: str = None,
     include_back_modal: bool = True,
+    rel_back_static: str = None,
+    rel_back_anim: str = None,
+    back_slug: str = None,
 ) -> Dict[str, Any]:
     """
     Genera de manera centralizada todas las URLs de sprites retro (estáticos y animados,
-    frente y espalda, normal y variocolor) en función de las capacidades de la edición.
-    Evita inconsistencias de extensión (.png vs .gif) o caídas a juegos de generaciones previas.
+    frente y espalda, normal y variocolor) desde GAME_SPRITE_CONFIG.
+    Falla explícitamente ante juegos no configurados para evitar caídas silenciosas.
     """
-    clean = (slug or "ruby").replace("_national", "")
-    anim_stem = rel_anim or rel_static
-    is_emerald = (clean == "emerald")
-    is_gen4 = clean in GEN4_FORM_GAMES
-    is_gen5 = clean in GEN5_FORM_GAMES
+    cfg = get_game_sprite_config(slug)
+    static_dir = cfg["static_dir"]
+    anim_dir = cfg["anim_dir"]
+    anim_ext = cfg["anim_ext"]
 
-    modal_front = None
-    modal_front_shiny = None
+    back_cfg = get_game_sprite_config(back_slug) if back_slug else cfg
+    back_static_dir = back_cfg["static_dir"]
+    back_anim_dir = back_cfg["anim_dir"]
+    back_anim_ext = back_cfg["anim_ext"]
+    back_modal_mode = back_cfg["back_modal_mode"]
+
+    anim_stem = rel_anim or rel_static
+    static_back_stem = rel_back_static or rel_static
+    anim_back_stem = rel_back_anim or rel_back_static or anim_stem
+
+    modal_front = f"/media/pokemon/sprites/{anim_dir}/{anim_stem}{anim_ext}" if anim_dir else None
+    modal_front_shiny = f"/media/pokemon/sprites/{anim_dir}_shiny/{anim_stem}{anim_ext}" if anim_dir else None
+
     modal_back = None
     modal_back_shiny = None
-
-    if is_emerald:
-        modal_front = f"/media/pokemon/sprites/emerald_animated/{anim_stem}.gif"
-        modal_front_shiny = f"/media/pokemon/sprites/emerald_animated_shiny/{anim_stem}.gif"
-    elif is_gen4:
-        modal_front = f"/media/pokemon/sprites/{clean}_animated/{anim_stem}.png"
-        modal_front_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/{anim_stem}.png"
-        if include_back_modal:
-            modal_back = f"/media/pokemon/sprites/{clean}/back/{rel_static}.png"
-            modal_back_shiny = f"/media/pokemon/sprites/{clean}_shiny/back/{rel_static}.png"
-    elif is_gen5:
-        modal_front = f"/media/pokemon/sprites/{clean}_animated/{anim_stem}.gif"
-        modal_front_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/{anim_stem}.gif"
-        if include_back_modal:
-            modal_back = f"/media/pokemon/sprites/{clean}_animated/back/{anim_stem}.gif"
-            modal_back_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/back/{anim_stem}.gif"
+    if include_back_modal:
+        if back_modal_mode == "animated" and back_anim_dir:
+            modal_back = f"/media/pokemon/sprites/{back_anim_dir}/back/{anim_back_stem}{back_anim_ext}"
+            modal_back_shiny = f"/media/pokemon/sprites/{back_anim_dir}_shiny/back/{anim_back_stem}{back_anim_ext}"
+        elif back_modal_mode == "static":
+            modal_back = f"/media/pokemon/sprites/{back_static_dir}/back/{static_back_stem}.png"
+            modal_back_shiny = f"/media/pokemon/sprites/{back_static_dir}_shiny/back/{static_back_stem}.png"
 
     sprites: Dict[str, Any] = {
-        "sprite_retro": f"/media/pokemon/sprites/{clean}/{rel_static}.png",
-        "sprite_retro_shiny": f"/media/pokemon/sprites/{clean}_shiny/{rel_static}.png",
+        "sprite_retro": f"/media/pokemon/sprites/{static_dir}/{rel_static}.png",
+        "sprite_retro_shiny": f"/media/pokemon/sprites/{static_dir}_shiny/{rel_static}.png",
         "modal_retro_sprite_url": modal_front,
         "modal_retro_sprite_shiny_url": modal_front_shiny,
-        "sprite_retro_back": f"/media/pokemon/sprites/{clean}/back/{rel_static}.png",
-        "sprite_retro_shiny_back": f"/media/pokemon/sprites/{clean}_shiny/back/{rel_static}.png",
+        "sprite_retro_back": f"/media/pokemon/sprites/{back_static_dir}/back/{static_back_stem}.png",
+        "sprite_retro_shiny_back": f"/media/pokemon/sprites/{back_static_dir}_shiny/back/{static_back_stem}.png",
     }
     if modal_back is not None:
         sprites["modal_retro_sprite_back_url"] = modal_back
@@ -86,7 +149,9 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
     Soporta sprites de Hoenn (Gen 3), Sinnoh/Johto (Gen 4) y Teselia (Gen 5 animados .gif).
     """
     clean_slug = (game_slug or "ruby").replace("_national", "")
-    slug = clean_slug if clean_slug in (GEN3_FORM_GAMES | GEN4_FORM_GAMES | GEN5_FORM_GAMES) else "ruby"
+    cfg = get_game_sprite_config(clean_slug)
+    # Kanto (FRLG) solo contiene el sprite base 351.png; sus variantes climáticas provienen de Hoenn (ruby).
+    weather_slug = cfg.get("shared_hoenn_form_dir", clean_slug)
 
     notes_normal = [
         {
@@ -131,7 +196,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "351"),
+            **_build_retro_form_sprites(clean_slug, "351"),
             "sprite_modern": "/media/pokemon/home/351.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/351.png",
             "notes": notes_normal,
@@ -145,7 +210,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Fuego",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "castform/sunny"),
+            **_build_retro_form_sprites(weather_slug, "castform/sunny"),
             "sprite_modern": "/media/pokemon/home/10013.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10013.png",
             "notes": notes_sunny,
@@ -159,7 +224,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "castform/rainy"),
+            **_build_retro_form_sprites(weather_slug, "castform/rainy"),
             "sprite_modern": "/media/pokemon/home/10014.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10014.png",
             "notes": notes_rainy,
@@ -173,7 +238,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Hielo",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "castform/snowy"),
+            **_build_retro_form_sprites(weather_slug, "castform/snowy"),
             "sprite_modern": "/media/pokemon/home/10015.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10015.png",
             "notes": notes_snowy,
@@ -193,7 +258,6 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
     is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
-    anim_ext = ".gif" if is_gen5 else ".png"
 
     if is_gen5:
         note_base = "Al examinar el meteorito expuesto en el Museo de Ciudad Esmalte, Deoxys cambia sucesivamente de forma entre Normal, Ataque, Defensa y Velocidad."
@@ -282,14 +346,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Psíquico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/386.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/386.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/deoxys/normal{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/deoxys/normal{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/386.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/386.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/deoxys/normal{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/386.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/deoxys/normal{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/386.png",
+            **_build_retro_form_sprites(slug, "386", rel_anim="deoxys/normal"),
             "sprite_modern": "/media/pokemon/home/386.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/386.png",
             "notes": [note_normal],
@@ -303,14 +360,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Psíquico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/attack.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/attack.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/deoxys/attack{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/deoxys/attack{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/attack.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/attack.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/deoxys/attack{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/deoxys/attack.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/deoxys/attack{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/attack.png",
+            **_build_retro_form_sprites(slug, "deoxys/attack"),
             "sprite_modern": "/media/pokemon/home/10001.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10001.png",
             "notes": [note_attack],
@@ -324,14 +374,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Psíquico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/defense.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/defense.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/deoxys/defense{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/deoxys/defense{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/defense.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/defense.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/deoxys/defense{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/deoxys/defense.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/deoxys/defense{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/defense.png",
+            **_build_retro_form_sprites(slug, "deoxys/defense"),
             "sprite_modern": "/media/pokemon/home/10002.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10002.png",
             "notes": [note_defense],
@@ -345,14 +388,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Psíquico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/deoxys/speed.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/deoxys/speed.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/deoxys/speed{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/deoxys/speed{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/deoxys/speed.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/speed.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/deoxys/speed{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/deoxys/speed.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/deoxys/speed{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/deoxys/speed.png",
+            **_build_retro_form_sprites(slug, "deoxys/speed"),
             "sprite_modern": "/media/pokemon/home/10003.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10003.png",
             "notes": [note_speed],
@@ -373,11 +409,7 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    gen5_obt_meta = {
-        "type": "transfer",
-        "badge_label": "Poké Transfer",
-        "badge_color": "amber",
-    } if is_gen5 else {}
+    gen5_obt_meta = _get_transfer_obt_meta(5) if is_gen5 else {}
 
     if is_gen5:
         plant_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde 4.ª generación o por crianza; adopta este tronco al combatir o eclosionar en exteriores."
@@ -748,6 +780,10 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Forma Encapuchada (Overcast), Forma Soleada (Sunshine).
     """
     slug = (game_slug or "diamond").replace("_national", "")
+    is_hgss = slug in ["heartgold", "soulsilver"]
+    # HGSS no incluye carpeta back/cherrim/: Overcast usa su dorsal base 421.png y Sunshine comparte el de Platino.
+    overcast_back = {"rel_back_static": "421"} if is_hgss else {}
+    sunshine_back = {"back_slug": "platinum"} if is_hgss else {}
     return [
         {
             "form_key": "overcast",
@@ -758,7 +794,7 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Planta",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "cherrim/overcast"),
+            **_build_retro_form_sprites(slug, "cherrim/overcast", **overcast_back),
             "sprite_modern": "/media/pokemon/home/421.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/421.png",
             "notes": [
@@ -779,7 +815,7 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Planta",
             "secondary_type": "",
             "secondary_type_es": "",
-            **_build_retro_form_sprites(slug, "cherrim/sunshine"),
+            **_build_retro_form_sprites(slug, "cherrim/sunshine", **sunshine_back),
             "sprite_modern": "/media/pokemon/home/421-sunshine.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/421-sunshine.png",
             "notes": [
@@ -807,11 +843,7 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    gen5_obt_meta = {
-        "type": "transfer",
-        "badge_label": "Poké Transfer",
-        "badge_color": "amber",
-    } if is_gen5 else {}
+    gen5_obt_meta = _get_transfer_obt_meta(5) if is_gen5 else {}
 
     if is_gen5:
         west_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
@@ -1154,6 +1186,7 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
     """
     from .unown_data import get_unown_catalog
     clean_slug = (game_slug or "gold").replace("_national", "")
+    cfg = get_game_sprite_config(clean_slug)
     raw_unown = get_unown_catalog(clean_slug)
     is_hoenn = clean_slug in ["ruby", "sapphire", "emerald"]
 
@@ -1172,7 +1205,7 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_label = "Transferencia"
             obt_type = "transfer"
             ch_name = ""
-        elif game_slug in ["diamond", "pearl", "platinum"]:
+        elif clean_slug in ["diamond", "pearl", "platinum"]:
             rate_val = item.get("rate", "")
             rate_str = f" (Tasa: {rate_val})" if rate_val else ""
             if letter in ["exclamation", "question"]:
@@ -1265,32 +1298,15 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_label = "Salvaje"
             obt_type = "wild"
 
-        is_crystal = (clean_slug == "crystal")
-        is_emerald = (clean_slug == "emerald")
-        is_diamond = (clean_slug in ["diamond", "pearl", "platinum"])
-        is_hgss = (clean_slug in ["heartgold", "soulsilver"])
-        is_unova = (clean_slug in GEN5_FORM_GAMES)
-        modal_retro_url = None
-        modal_retro_shiny_url = None
+        anim_dir = cfg["anim_dir"]
+        anim_ext = cfg["anim_ext"]
+        modal_retro_url = f"/media/pokemon/sprites/{anim_dir}/unown/{letter}{anim_ext}" if anim_dir else None
+        modal_retro_shiny_url = f"/media/pokemon/sprites/{anim_dir}_shiny/unown/{letter}{anim_ext}" if anim_dir else None
         modal_retro_back_url = None
         modal_retro_shiny_back_url = None
-        if is_crystal:
-            modal_retro_url = f"/media/pokemon/sprites/crystal_animated/unown/{letter}.gif"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/crystal_animated_shiny/unown/{letter}.gif"
-        elif is_emerald:
-            modal_retro_url = f"/media/pokemon/sprites/emerald_animated/unown/{letter}.gif"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/emerald_animated_shiny/unown/{letter}.gif"
-        elif is_diamond:
-            modal_retro_url = f"/media/pokemon/sprites/{clean_slug}_animated/unown/{letter}.png"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/{clean_slug}_animated_shiny/unown/{letter}.png"
-        elif is_hgss:
-            modal_retro_url = f"/media/pokemon/sprites/{clean_slug}_animated/unown/{letter}.png"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/{clean_slug}_animated_shiny/unown/{letter}.png"
-        elif is_unova:
-            modal_retro_url = f"/media/pokemon/sprites/black_animated/unown/{letter}.gif"
-            modal_retro_shiny_url = f"/media/pokemon/sprites/black_animated_shiny/unown/{letter}.gif"
-            modal_retro_back_url = f"/media/pokemon/sprites/black_animated/back/unown/{letter}.gif"
-            modal_retro_shiny_back_url = f"/media/pokemon/sprites/black_animated_shiny/back/unown/{letter}.gif"
+        if cfg["has_animated_back"] and anim_dir:
+            modal_retro_back_url = f"/media/pokemon/sprites/{anim_dir}/back/unown/{letter}{anim_ext}"
+            modal_retro_shiny_back_url = f"/media/pokemon/sprites/{anim_dir}_shiny/back/unown/{letter}{anim_ext}"
 
         forms.append({
             "form_key": letter,
@@ -1331,9 +1347,7 @@ def get_giratina_forms(game_slug: str = "platinum"):
     Forma Modificada (terrestre) y Forma Origen (serpenteante del Mundo Distorsión / Griseosfera).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
-    is_gen5 = clean_slug in GEN5_FORM_GAMES
-    slug = clean_slug
-    anim_ext = ".gif" if is_gen5 else ".png"
+    is_gen5 = get_game_sprite_config(clean_slug)["gen"] >= 5
 
     origin_note_text = (
         "Forma serpenteante original de Giratina. En Teselia se manifiesta llevando equipada la Griseosfera, entregada por el Trío Sombrío en el Puente Progreso. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
@@ -1351,14 +1365,7 @@ def get_giratina_forms(game_slug: str = "platinum"):
             "primary_type_es": "Fantasma",
             "secondary_type": "dragon",
             "secondary_type_es": "Dragón",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/487.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/487.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/487{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/487{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/487.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/487.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/487{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/487.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/487{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/487.png",
+            **_build_retro_form_sprites(clean_slug, "487"),
             "sprite_modern": "/media/pokemon/home/487.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/487.png",
             "notes": [
@@ -1379,14 +1386,7 @@ def get_giratina_forms(game_slug: str = "platinum"):
             "primary_type_es": "Fantasma",
             "secondary_type": "dragon",
             "secondary_type_es": "Dragón",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/giratina/origin.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/giratina/origin.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/giratina/origin{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/giratina/origin{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/giratina/origin.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/giratina/origin.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/giratina/origin{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/giratina/origin.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/giratina/origin{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/giratina/origin.png",
+            **_build_retro_form_sprites(clean_slug, "giratina/origin"),
             "sprite_modern": "/media/pokemon/home/10007.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10007.png",
             "notes": [
@@ -1407,9 +1407,7 @@ def get_shaymin_forms(game_slug: str = "platinum"):
     Forma Tierra (Erizo) y Forma Cielo (Grácidea de día).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
-    is_gen5 = clean_slug in GEN5_FORM_GAMES
-    slug = clean_slug
-    anim_ext = ".gif" if is_gen5 else ".png"
+    is_gen5 = get_game_sprite_config(clean_slug)["gen"] >= 5
 
     sky_note_text = (
         "Forma alada adoptada al usar la Flor Grácidea entre las 05:00 y las 19:59 (entregada en el Centro Pokémon de Pueblo Ladrillo al llevar a Shaymin). Adquiere el tipo secundario Volador, la habilidad Dicha y altas estadísticas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse."
@@ -1427,14 +1425,7 @@ def get_shaymin_forms(game_slug: str = "platinum"):
             "primary_type_es": "Planta",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/492.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/492.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/492{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/492{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/492.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/492.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/492{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/492.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/492{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/492.png",
+            **_build_retro_form_sprites(clean_slug, "492"),
             "sprite_modern": "/media/pokemon/home/492.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/492.png",
             "notes": [
@@ -1455,14 +1446,7 @@ def get_shaymin_forms(game_slug: str = "platinum"):
             "primary_type_es": "Planta",
             "secondary_type": "flying",
             "secondary_type_es": "Volador",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/shaymin/sky.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shaymin/sky.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/shaymin/sky{anim_ext}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/shaymin/sky{anim_ext}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shaymin/sky.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shaymin/sky.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/shaymin/sky{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/shaymin/sky.png",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/shaymin/sky{anim_ext}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/shaymin/sky.png",
+            **_build_retro_form_sprites(clean_slug, "shaymin/sky"),
             "sprite_modern": "/media/pokemon/home/10006.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10006.png",
             "notes": [
@@ -1489,30 +1473,29 @@ def get_rotom_forms(game_slug: str = "platinum"):
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    is_gen5 = clean_slug in GEN5_FORM_GAMES
-    slug = clean_slug
+    is_gen5 = get_game_sprite_config(clean_slug)["gen"] >= 5
 
     if is_gen5:
         appliances = [
-            ("normal", "Forma Normal", "Rotom", "479.png", "479.gif", 479, "Forma original de plasma de Rotom.", "Rayo", "ghost", "Fantasma"),
-            ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat.png", "rotom/heat.gif", 10008, "Posee un microondas. En 5.ª Generación adquiere el tipo Eléctrico/Fuego y aprende Sofoco.", "Sofoco", "fire", "Fuego"),
-            ("wash", "Rotom Lavado", "Rotom Lavado (Lavadora)", "rotom/wash.png", "rotom/wash.gif", 10009, "Posee una lavadora. En 5.ª Generación adquiere el tipo Eléctrico/Agua y aprende Hidrobomba.", "Hidrobomba", "water", "Agua"),
-            ("frost", "Rotom Frío", "Rotom Frío (Frigorífico)", "rotom/frost.png", "rotom/frost.gif", 10010, "Posee un frigorífico. En 5.ª Generación adquiere el tipo Eléctrico/Hielo y aprende Ventisca.", "Ventisca", "ice", "Hielo"),
-            ("fan", "Rotom Ventilador", "Rotom Ventilador (Ventilador)", "rotom/fan.png", "rotom/fan.gif", 10011, "Posee un ventilador. En 5.ª Generación adquiere el tipo Eléctrico/Volador y aprende Tajo Aéreo.", "Tajo Aéreo", "flying", "Volador"),
-            ("mow", "Rotom Corte", "Rotom Corte (Cortacésped)", "rotom/mow.png", "rotom/mow.gif", 10012, "Posee un cortacésped. En 5.ª Generación adquiere el tipo Eléctrico/Planta y aprende Lluevehojas.", "Lluevehojas", "grass", "Planta"),
+            ("normal", "Forma Normal", "Rotom", "479", 479, "Forma original de plasma de Rotom.", "Rayo", "ghost", "Fantasma"),
+            ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat", 10008, "Posee un microondas. En 5.ª Generación adquiere el tipo Eléctrico/Fuego y aprende Sofoco.", "Sofoco", "fire", "Fuego"),
+            ("wash", "Rotom Lavado", "Rotom Lavado (Lavadora)", "rotom/wash", 10009, "Posee una lavadora. En 5.ª Generación adquiere el tipo Eléctrico/Agua y aprende Hidrobomba.", "Hidrobomba", "water", "Agua"),
+            ("frost", "Rotom Frío", "Rotom Frío (Frigorífico)", "rotom/frost", 10010, "Posee un frigorífico. En 5.ª Generación adquiere el tipo Eléctrico/Hielo y aprende Ventisca.", "Ventisca", "ice", "Hielo"),
+            ("fan", "Rotom Ventilador", "Rotom Ventilador (Ventilador)", "rotom/fan", 10011, "Posee un ventilador. En 5.ª Generación adquiere el tipo Eléctrico/Volador y aprende Tajo Aéreo.", "Tajo Aéreo", "flying", "Volador"),
+            ("mow", "Rotom Corte", "Rotom Corte (Cortacésped)", "rotom/mow", 10012, "Posee un cortacésped. En 5.ª Generación adquiere el tipo Eléctrico/Planta y aprende Lluevehojas.", "Lluevehojas", "grass", "Planta"),
         ]
     else:
         appliances = [
-            ("normal", "Forma Normal", "Rotom", "479.png", "479.png", 479, "Forma original de plasma de Rotom.", "Rayo", "ghost", "Fantasma"),
-            ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat.png", "rotom/heat.png", 10008, "Posee un microondas. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Sofoco.", "Sofoco", "ghost", "Fantasma"),
-            ("wash", "Rotom Lavado", "Rotom Lavado (Lavadora)", "rotom/wash.png", "rotom/wash.png", 10009, "Posee una lavadora. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Hidrobomba.", "Hidrobomba", "ghost", "Fantasma"),
-            ("frost", "Rotom Frío", "Rotom Frío (Frigorífico)", "rotom/frost.png", "rotom/frost.png", 10010, "Posee un frigorífico. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Ventisca.", "Ventisca", "ghost", "Fantasma"),
-            ("fan", "Rotom Ventilador", "Rotom Ventilador (Ventilador)", "rotom/fan.png", "rotom/fan.png", 10011, "Posee un ventilador. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Tajo Aéreo.", "Tajo Aéreo", "ghost", "Fantasma"),
-            ("mow", "Rotom Corte", "Rotom Corte (Cortacésped)", "rotom/mow.png", "rotom/mow.png", 10012, "Posee un cortacésped. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Lluevehojas.", "Lluevehojas", "ghost", "Fantasma"),
+            ("normal", "Forma Normal", "Rotom", "479", 479, "Forma original de plasma de Rotom.", "Rayo", "ghost", "Fantasma"),
+            ("heat", "Rotom Calor", "Rotom Calor (Microondas)", "rotom/heat", 10008, "Posee un microondas. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Sofoco.", "Sofoco", "ghost", "Fantasma"),
+            ("wash", "Rotom Lavado", "Rotom Lavado (Lavadora)", "rotom/wash", 10009, "Posee una lavadora. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Hidrobomba.", "Hidrobomba", "ghost", "Fantasma"),
+            ("frost", "Rotom Frío", "Rotom Frío (Frigorífico)", "rotom/frost", 10010, "Posee un frigorífico. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Ventisca.", "Ventisca", "ghost", "Fantasma"),
+            ("fan", "Rotom Ventilador", "Rotom Ventilador (Ventilador)", "rotom/fan", 10011, "Posee un ventilador. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Tajo Aéreo.", "Tajo Aéreo", "ghost", "Fantasma"),
+            ("mow", "Rotom Corte", "Rotom Corte (Cortacésped)", "rotom/mow", 10012, "Posee un cortacésped. En 4ª Generación mantiene el tipo Eléctrico/Fantasma y aprende Lluevehojas.", "Lluevehojas", "ghost", "Fantasma"),
         ]
 
     forms = []
-    for f_key, f_name, d_name, rel_sprite, rel_anim, home_id, desc, special_move, sec_type, sec_type_es in appliances:
+    for f_key, f_name, d_name, rel_stem, home_id, desc, special_move, sec_type, sec_type_es in appliances:
         if is_gen5:
             title_text = f"Centro Comercial R9 ({special_move})"
             body_text = f"{desc} En el almacén de cajas de la planta baja del Centro Comercial R9 (Ruta 9), Rotom puede poseer los electrodomésticos para cambiar de forma y de tipo secundario."
@@ -1535,14 +1518,7 @@ def get_rotom_forms(game_slug: str = "platinum"):
             "primary_type_es": "Eléctrico",
             "secondary_type": sec_type,
             "secondary_type_es": sec_type_es,
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/{rel_sprite}",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/{rel_sprite}",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/{rel_anim}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_anim}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/{rel_anim}" if is_gen5 else f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/{rel_anim}" if is_gen5 else f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
+            **_build_retro_form_sprites(clean_slug, rel_stem),
             "sprite_modern": f"/media/pokemon/home/{home_id}.png",
             "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
             "notes": [
@@ -1562,7 +1538,7 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
     Retorna las formas canónicas de Pichu (#172):
     Forma Estándar y Pichu Picorejita (exclusiva de HeartGold y SoulSilver).
     """
-    slug = game_slug
+    slug = (game_slug or "heartgold").replace("_national", "")
     forms = [
         {
             "form_key": "standard",
@@ -1573,12 +1549,7 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
             "primary_type_es": "Eléctrico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/172.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/172.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/172.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/172.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/172.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/172.png",
+            **_build_retro_form_sprites(slug, "172"),
             "sprite_modern": "/media/pokemon/home/172.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/172.png",
             "notes": [
@@ -1601,12 +1572,7 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
             "primary_type_es": "Eléctrico",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/172-spiky-eared.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/172-spiky-eared.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/172-spiky-eared.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/172-spiky-eared.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/172-spiky-eared.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/172-spiky-eared.png",
+            **_build_retro_form_sprites(slug, "172-spiky-eared"),
             "sprite_modern": "/media/pokemon/home/172.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/172.png",
             "notes": [
@@ -1629,7 +1595,6 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
 
 def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     return [
         {
             "form_key": "red_striped",
@@ -1640,14 +1605,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/550.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/550.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/550.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/550.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/550.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/550.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/550.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/550.gif",
+            **_build_retro_form_sprites(clean_slug, "550"),
             "sprite_modern": "/media/pokemon/home/550.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/550.png",
             "notes": [
@@ -1668,14 +1626,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/basculin/blue.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/basculin/blue.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/basculin/blue.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/basculin/blue.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/basculin/blue.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/basculin/blue.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/basculin/blue.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/basculin/blue.gif",
+            **_build_retro_form_sprites(clean_slug, "basculin/blue"),
             "sprite_modern": "/media/pokemon/home/10016.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10016.png",
             "notes": [
@@ -1692,7 +1643,6 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     return [
         {
             "form_key": "standard",
@@ -1703,14 +1653,7 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Fuego",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/555.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/555.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/555.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/555.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/555.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/555.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/555.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/555.gif",
+            **_build_retro_form_sprites(clean_slug, "555"),
             "sprite_modern": "/media/pokemon/home/555.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/555.png",
             "notes": [
@@ -1731,14 +1674,7 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Fuego",
             "secondary_type": "psychic",
             "secondary_type_es": "Psíquico",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/darmanitan/zen.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/darmanitan/zen.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/darmanitan/zen.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/darmanitan/zen.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/darmanitan/zen.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/darmanitan/zen.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/darmanitan/zen.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/darmanitan/zen.gif",
+            **_build_retro_form_sprites(clean_slug, "darmanitan/zen"),
             "sprite_modern": "/media/pokemon/home/10017.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10017.png",
             "notes": [
@@ -1755,15 +1691,14 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     seasons = [
-        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "deerling/spring.png", "deerling/spring.gif", "back/585.gif", 585),
-        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "deerling/summer.png", "deerling/summer.gif", "back/deerling/summer.gif", 10026),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn.png", "deerling/autumn.gif", "back/deerling/autumn.gif", 10027),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter.png", "deerling/winter.gif", "back/deerling/winter.gif", 10028),
+        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "deerling/spring", "585", 585),
+        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "deerling/summer", None, 10026),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn", None, 10027),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter", None, 10028),
     ]
     forms = []
-    for f_key, f_name, season_text, rel_sprite, rel_anim, rel_back, home_id in seasons:
+    for f_key, f_name, season_text, rel_stem, rel_back_anim, home_id in seasons:
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1773,14 +1708,7 @@ def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "grass",
             "secondary_type_es": "Planta",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/{rel_sprite}",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/{rel_sprite}",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/{rel_anim}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_anim}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/{rel_back}",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_back}",
+            **_build_retro_form_sprites(clean_slug, rel_stem, rel_back_anim=rel_back_anim),
             "sprite_modern": f"/media/pokemon/home/{home_id}.png",
             "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
             "notes": [
@@ -1797,15 +1725,14 @@ def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     seasons = [
-        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "sawsbuck/spring.png", "sawsbuck/spring.gif", "back/586.gif", 586),
-        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "sawsbuck/summer.png", "sawsbuck/summer.gif", "back/sawsbuck/summer.gif", 10029),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn.png", "sawsbuck/autumn.gif", "back/sawsbuck/autumn.gif", 10030),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter.png", "sawsbuck/winter.gif", "back/sawsbuck/winter.gif", 10031),
+        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "sawsbuck/spring", "586", 586),
+        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "sawsbuck/summer", None, 10029),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn", None, 10030),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter", None, 10031),
     ]
     forms = []
-    for f_key, f_name, season_text, rel_sprite, rel_anim, rel_back, home_id in seasons:
+    for f_key, f_name, season_text, rel_stem, rel_back_anim, home_id in seasons:
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1815,14 +1742,7 @@ def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "grass",
             "secondary_type_es": "Planta",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/{rel_sprite}",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/{rel_sprite}",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/{rel_anim}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_anim}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/{rel_back}",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_back}",
+            **_build_retro_form_sprites(clean_slug, rel_stem, rel_back_anim=rel_back_anim),
             "sprite_modern": f"/media/pokemon/home/{home_id}.png",
             "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
             "notes": [
@@ -1839,7 +1759,6 @@ def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     return [
         {
             "form_key": "aria",
@@ -1850,14 +1769,7 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "psychic",
             "secondary_type_es": "Psíquico",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/648.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/648.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/648.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/648.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/648.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/648.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/648.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/648.gif",
+            **_build_retro_form_sprites(clean_slug, "648"),
             "sprite_modern": "/media/pokemon/home/648.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/648.png",
             "notes": [
@@ -1878,14 +1790,7 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "fighting",
             "secondary_type_es": "Lucha",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/meloetta/pirouette.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/meloetta/pirouette.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/meloetta/pirouette.gif",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/meloetta/pirouette.gif",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/meloetta/pirouette.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/meloetta/pirouette.png",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/back/meloetta/pirouette.gif",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/back/meloetta/pirouette.gif",
+            **_build_retro_form_sprites(clean_slug, "meloetta/pirouette"),
             "sprite_modern": "/media/pokemon/home/10018.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10018.png",
             "notes": [
@@ -1902,16 +1807,15 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
-    slug = clean_slug
     drives = [
-        ("normal", "Forma Normal", "Normal", "649.png", "649.gif", "back/649.gif", "Sin cromo equipado. Su movimiento característico Tecno Shock es de tipo Normal.", None),
-        ("shock", "Cromo Fulgo", "Eléctrico", "genesect/shock.png", "genesect/shock.gif", "back/genesect/shock.gif", "Equipado con el Cromo Fulgo. Su movimiento Tecno Shock pasa a ser de tipo Eléctrico. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
-        ("burn", "Cromo Piro", "Fuego", "genesect/burn.png", "genesect/burn.gif", "back/genesect/burn.gif", "Equipado con el Cromo Piro. Su movimiento Tecno Shock pasa a ser de tipo Fuego. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
-        ("douse", "Cromo Hidro", "Agua", "genesect/douse.png", "genesect/douse.gif", "back/genesect/douse.gif", "Equipado con el Cromo Hidro. Su movimiento Tecno Shock pasa a ser de tipo Agua.", "/media/items/douse-drive.png"),
-        ("chill", "Cromo Crio", "Hielo", "genesect/chill.png", "genesect/chill.gif", "back/genesect/chill.gif", "Equipado con el Cromo Crio. Su movimiento Tecno Shock pasa a ser de tipo Hielo.", "/media/items/chill-drive.png"),
+        ("normal", "Forma Normal", "Normal", "649", "Sin cromo equipado. Su movimiento característico Tecno Shock es de tipo Normal.", None),
+        ("shock", "Cromo Fulgo", "Eléctrico", "genesect/shock", "Equipado con el Cromo Fulgo. Su movimiento Tecno Shock pasa a ser de tipo Eléctrico. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
+        ("burn", "Cromo Piro", "Fuego", "genesect/burn", "Equipado con el Cromo Piro. Su movimiento Tecno Shock pasa a ser de tipo Fuego. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
+        ("douse", "Cromo Hidro", "Agua", "genesect/douse", "Equipado con el Cromo Hidro. Su movimiento Tecno Shock pasa a ser de tipo Agua.", "/media/items/douse-drive.png"),
+        ("chill", "Cromo Crio", "Hielo", "genesect/chill", "Equipado con el Cromo Crio. Su movimiento Tecno Shock pasa a ser de tipo Hielo.", "/media/items/chill-drive.png"),
     ]
     forms = []
-    for f_key, f_name, type_label, rel_sprite, rel_anim, rel_back, desc, icon_path in drives:
+    for f_key, f_name, type_label, rel_stem, desc, icon_path in drives:
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1921,14 +1825,7 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "steel",
             "secondary_type_es": "Acero",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/{rel_sprite}",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/{rel_sprite}",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/{rel_anim}",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_anim}",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/{rel_sprite}",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/{rel_sprite}",
-            "modal_retro_sprite_back_url": f"/media/pokemon/sprites/{slug}_animated/{rel_back}",
-            "modal_retro_sprite_shiny_back_url": f"/media/pokemon/sprites/{slug}_animated_shiny/{rel_back}",
+            **_build_retro_form_sprites(clean_slug, rel_stem),
             "sprite_modern": "/media/pokemon/home/649.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/649.png",
             "notes": [
@@ -1949,19 +1846,21 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
     Retorna una lista vacía para especies sin formas alternativas en la edición activa.
     """
     clean_slug = (game_slug or "ruby").replace("_national", "")
-    is_gen4 = clean_slug in GEN4_FORM_GAMES
-    is_gen5 = clean_slug in GEN5_FORM_GAMES
+    cfg = get_game_sprite_config(clean_slug)
+    gen = cfg["gen"]
+    is_gen4 = (gen == 4)
+    is_gen5 = (gen == 5)
 
     # 1. Pichu Picorejita (#172) disponible en HeartGold y SoulSilver
     if national_number == 172 and clean_slug in ["heartgold", "soulsilver"]:
         return get_pichu_forms(clean_slug)
 
     # 2. Unown (#201) disponible en Gen 2+
-    elif national_number == 201:
+    elif national_number == 201 and gen >= 2:
         return get_unown_forms(clean_slug)
 
     # 3. Castform (#351) disponible en Gen 3+
-    elif national_number == 351:
+    elif national_number == 351 and gen >= 3:
         return get_castform_forms(clean_slug)
 
     # 4. Formas activas en Gen 4 y Gen 5
