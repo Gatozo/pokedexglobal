@@ -4510,9 +4510,14 @@ class GlobalFormContractInvariantsTests(TestCase):
 
     def test_gender_differences_follow_game_sprite_config(self):
         from pathlib import Path
+        from unittest.mock import patch
         from django.conf import settings
         from tracker.gender_differences import GENDER_DIFFERENCES_GEN5, get_pokemon_gender_info
         from tracker.pokemon_forms import GAME_SPRITE_CONFIG
+
+        with patch.dict("tracker.catalog_service.GAME_GENERATION_MAP", {"unregistered-gen5-game": 5}):
+            with self.assertRaises(ValueError):
+                get_pokemon_gender_info(25, "unregistered-gen5-game")
 
         media_root = Path(settings.MEDIA_ROOT)
         checked_paths = set()

@@ -190,9 +190,10 @@ def get_pokemon_gender_info(national_number: int, game_slug: str) -> Optional[Di
     has_diff = national_number in diff_dict
     diff_note = diff_dict.get(national_number)
 
-    # Determinar sprites descargados desde la configuración centralizada de ediciones
-    base_slug = clean_slug if clean_slug in GAME_SPRITE_CONFIG and GAME_SPRITE_CONFIG[clean_slug]["gen"] >= 4 else "diamond"
-    cfg = get_game_sprite_config(base_slug)
+    # Determinar sprites descargados desde la configuración centralizada de ediciones (sin fallbacks silenciosos)
+    cfg = get_game_sprite_config(clean_slug)
+    if cfg["gen"] < 4:
+        return None
     female_sprites = None
     if has_diff:
         static_dir = cfg["static_dir"]
