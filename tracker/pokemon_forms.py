@@ -1,34 +1,92 @@
 """
 Gestión de Pokémon con múltiples formas alternativas canónicas.
-Soporte completo y escalable para Generaciones 1 a 4.
+Soporte completo y escalable para Generaciones 1 a 5.
 
 - Gen 1 a 3: Castform (#351) y Unown (#201).
-- Gen 4 (Diamante y Perla):
+- Gen 4 (Diamante, Perla, Platino, HeartGold, SoulSilver):
+  * Pichu (#172): Estándar y Picorejita (exclusiva HGSS).
   * Unown (#201): 28 formas (manejado de forma dedicada en Bloc Unown).
   * Castform (#351): 4 formas climáticas (sprites Gen 4 nativos).
-  * Deoxys (#386): 4 formas (Normal, Ataque, Defensa, Velocidad vía meteoritos de Rocavelo).
+  * Deoxys (#386): 4 formas (Normal, Ataque, Defensa, Velocidad).
   * Burmy (#412): 3 troncos (Planta, Arena, Basura por entorno de combate y crianza).
   * Wormadam (#413): 3 troncos fijos con tipos elementales distintos (Bicho/Planta, Bicho/Tierra, Bicho/Acero).
   * Cherrim (#421): 2 formas (Encapuchada y Soleada vía clima de sol en combate).
-  * Shellos (#422): 2 formas geográficas (Mar Oeste / Mar Este delimitadas por el Monte Corona).
-  * Gastrodon (#423): 2 formas geográficas (Mar Oeste / Mar Este delimitadas por el Monte Corona).
-  * Arceus (#493): 17 formas (Normal + 16 Tablas elementales canónicas de Sinnoh; excluyendo Tipo Hada inexistente en Gen 4).
+  * Shellos (#422): 2 formas geográficas (Mar Oeste / Mar Este).
+  * Gastrodon (#423): 2 formas geográficas (Mar Oeste / Mar Este).
+  * Rotom (#479), Giratina (#487), Shaymin (#492): formas desde Platino.
+  * Arceus (#493): 17 formas (Normal + 16 Tablas elementales; excluyendo Tipo Hada de Gen 6).
+- Gen 5 (Pokémon Negro):
+  * Todas las formas anteriores con sprites animados .gif (frente y espalda, normal y variocolor),
+    más Basculin (#550), Darmanitan (#555), Deerling (#585), Sawsbuck (#586), Meloetta (#648) y Genesect (#649).
 """
 
 from typing import List, Dict, Any
+
+GEN3_FORM_GAMES = {"ruby", "sapphire", "emerald", "firered", "leafgreen"}
+GEN4_FORM_GAMES = {"diamond", "pearl", "platinum", "heartgold", "soulsilver"}
+GEN5_FORM_GAMES = {"black", "white", "black-2", "white-2"}
+
+
+def _build_retro_form_sprites(
+    slug: str,
+    rel_static: str,
+    rel_anim: str = None,
+    include_back_modal: bool = True,
+) -> Dict[str, Any]:
+    """
+    Genera de manera centralizada todas las URLs de sprites retro (estáticos y animados,
+    frente y espalda, normal y variocolor) en función de las capacidades de la edición.
+    Evita inconsistencias de extensión (.png vs .gif) o caídas a juegos de generaciones previas.
+    """
+    clean = (slug or "ruby").replace("_national", "")
+    anim_stem = rel_anim or rel_static
+    is_emerald = (clean == "emerald")
+    is_gen4 = clean in GEN4_FORM_GAMES
+    is_gen5 = clean in GEN5_FORM_GAMES
+
+    modal_front = None
+    modal_front_shiny = None
+    modal_back = None
+    modal_back_shiny = None
+
+    if is_emerald:
+        modal_front = f"/media/pokemon/sprites/emerald_animated/{anim_stem}.gif"
+        modal_front_shiny = f"/media/pokemon/sprites/emerald_animated_shiny/{anim_stem}.gif"
+    elif is_gen4:
+        modal_front = f"/media/pokemon/sprites/{clean}_animated/{anim_stem}.png"
+        modal_front_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/{anim_stem}.png"
+        if include_back_modal:
+            modal_back = f"/media/pokemon/sprites/{clean}/back/{rel_static}.png"
+            modal_back_shiny = f"/media/pokemon/sprites/{clean}_shiny/back/{rel_static}.png"
+    elif is_gen5:
+        modal_front = f"/media/pokemon/sprites/{clean}_animated/{anim_stem}.gif"
+        modal_front_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/{anim_stem}.gif"
+        if include_back_modal:
+            modal_back = f"/media/pokemon/sprites/{clean}_animated/back/{anim_stem}.gif"
+            modal_back_shiny = f"/media/pokemon/sprites/{clean}_animated_shiny/back/{anim_stem}.gif"
+
+    sprites: Dict[str, Any] = {
+        "sprite_retro": f"/media/pokemon/sprites/{clean}/{rel_static}.png",
+        "sprite_retro_shiny": f"/media/pokemon/sprites/{clean}_shiny/{rel_static}.png",
+        "modal_retro_sprite_url": modal_front,
+        "modal_retro_sprite_shiny_url": modal_front_shiny,
+        "sprite_retro_back": f"/media/pokemon/sprites/{clean}/back/{rel_static}.png",
+        "sprite_retro_shiny_back": f"/media/pokemon/sprites/{clean}_shiny/back/{rel_static}.png",
+    }
+    if modal_back is not None:
+        sprites["modal_retro_sprite_back_url"] = modal_back
+        sprites["modal_retro_sprite_shiny_back_url"] = modal_back_shiny
+    return sprites
 
 
 def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
     """
     Retorna las 4 formas climáticas de Castform (#351):
     Forma Normal (Normal), Forma Sol (Fuego), Forma Lluvia (Agua), Forma Nieve (Hielo).
-    Soporta sprites de Hoenn (Gen 3) y sprites nativos animados de Sinnoh/Johto (Gen 4 Diamante/Perla/Platino/HeartGold/SoulSilver).
+    Soporta sprites de Hoenn (Gen 3), Sinnoh/Johto (Gen 4) y Teselia (Gen 5 animados .gif).
     """
     clean_slug = (game_slug or "ruby").replace("_national", "")
-    is_gen4 = clean_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"]
-    slug = clean_slug if is_gen4 else (clean_slug if clean_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen"] else "ruby")
-    is_emerald = (slug == "emerald")
-    has_animated = is_gen4
+    slug = clean_slug if clean_slug in (GEN3_FORM_GAMES | GEN4_FORM_GAMES | GEN5_FORM_GAMES) else "ruby"
 
     notes_normal = [
         {
@@ -73,12 +131,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Normal",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/351.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/351.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/351.png" if has_animated else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/351.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/351.png" if has_animated else None),
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/351.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/351.png",
+            **_build_retro_form_sprites(slug, "351"),
             "sprite_modern": "/media/pokemon/home/351.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/351.png",
             "notes": notes_normal,
@@ -92,12 +145,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Fuego",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/sunny.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/sunny.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/sunny.png" if has_animated else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/sunny.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/sunny.png" if has_animated else None),
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/sunny.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/sunny.png",
+            **_build_retro_form_sprites(slug, "castform/sunny"),
             "sprite_modern": "/media/pokemon/home/10013.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10013.png",
             "notes": notes_sunny,
@@ -111,12 +159,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/rainy.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/rainy.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/rainy.png" if has_animated else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/rainy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/rainy.png" if has_animated else None),
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/rainy.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/rainy.png",
+            **_build_retro_form_sprites(slug, "castform/rainy"),
             "sprite_modern": "/media/pokemon/home/10014.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10014.png",
             "notes": notes_rainy,
@@ -130,12 +173,7 @@ def get_castform_forms(game_slug: str = "ruby") -> List[Dict[str, Any]]:
             "primary_type_es": "Hielo",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/castform/snowy.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/castform/snowy.png",
-            "modal_retro_sprite_url": "/media/pokemon/sprites/emerald_animated/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated/castform/snowy.png" if has_animated else None),
-            "modal_retro_sprite_shiny_url": "/media/pokemon/sprites/emerald_animated_shiny/castform/snowy.gif" if is_emerald else (f"/media/pokemon/sprites/{slug}_animated_shiny/castform/snowy.png" if has_animated else None),
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/castform/snowy.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/castform/snowy.png",
+            **_build_retro_form_sprites(slug, "castform/snowy"),
             "sprite_modern": "/media/pokemon/home/10015.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10015.png",
             "notes": notes_snowy,
@@ -153,7 +191,7 @@ def get_deoxys_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    is_gen5 = clean_slug in ["black", "white"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
     anim_ext = ".gif" if is_gen5 else ".png"
 
@@ -328,12 +366,98 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Tronco Planta, Tronco Arena, Tronco Basura.
     En Sinnoh: Árboles de miel y combates en exterior/cueva/edificio.
     En HeartGold/SoulSilver: Salvaje con Golpe Cabeza en Ruta 38 (Tronco Planta); camuflajes combatiendo en Johto/Kanto.
+    En Teselia (Gen 5): Obtenible por Poké Transfer (Ruta 15) o crianza en Ruta 3; camuflajes combatiendo o eclosionando en Teselia.
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    if is_hgss:
+    gen5_obt_meta = {
+        "type": "transfer",
+        "badge_label": "Poké Transfer",
+        "badge_color": "amber",
+    } if is_gen5 else {}
+
+    if is_gen5:
+        plant_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde 4.ª generación o por crianza; adopta este tronco al combatir o eclosionar en exteriores."
+        plant_locations = [
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión en exteriores / rutas)"}
+        ]
+        plant_notes = [
+            {
+                "title": "Camuflaje por Terreno (Teselia)",
+                "text": "Adopta el Tronco Planta tras combatir en exteriores con hierba, bosques o rutas abiertas de Teselia (ej: Ruta 3, Bosque Azulejo).",
+                "tag": "Entorno",
+                "icon": "/media/items/miracle-seed.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona mientras el jugador se encuentra en una ruta exterior con hierba, el Burmy recién nacido tendrá Tronco Planta.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Planta) a Nivel 20 fijando este tronco. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        sandy_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Poké Transfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar en cuevas, desiertos o playas."
+        sandy_locations = [
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión en cueva, desierto o playa)"}
+        ]
+        sandy_notes = [
+            {
+                "title": "Camuflaje por Terreno (Teselia)",
+                "text": "Adopta el Tronco Arena tras combatir dentro de cuevas, desiertos o playas de Teselia (ej: Zona Desierto, Cueva Electrorroca, Monte Tuerca, Bahía Arenisca).",
+                "tag": "Entorno",
+                "icon": "/media/items/soft-sand.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona en una cueva, desierto o playa arenosa, el Burmy recién nacido tendrá Tronco Arena.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Arena) a Nivel 20 fijando este tronco y ganando el tipo Tierra. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        trash_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Poké Transfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar dentro de edificios."
+        trash_locations = [
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión dentro de un edificio)"}
+        ]
+        trash_notes = [
+            {
+                "title": "Camuflaje por Terreno (Teselia)",
+                "text": "Adopta el Tronco Basura tras combatir dentro de cualquier edificio, gimnasio o estructura cerrada de Teselia (ej: Ciudad Porcelana, Liga Pokémon).",
+                "tag": "Entorno",
+                "icon": "/media/items/metal-coat.png",
+            },
+            {
+                "title": "Crianza y Eclosión",
+                "text": "Si el huevo eclosiona mientras el jugador se encuentra dentro de un edificio o estancia interior, el Burmy recién nacido tendrá Tronco Basura.",
+                "tag": "Crianza",
+                "icon": "/media/items/mystery-egg.png",
+            },
+            {
+                "title": "Evolución por Género",
+                "text": "Las hembras evolucionan a Wormadam (Tronco Basura) a Nivel 20 fijando este tronco y ganando el tipo Acero. Los machos siempre evolucionan a Mothim.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+    elif is_hgss:
         plant_summary = "Salvaje en árboles especiales de la Ruta 38 usando Golpe Cabeza (o combatiendo en hierba y exteriores)."
         plant_locations = [
             {"area": "Ruta 38", "method": "Golpe Cabeza (Árboles especiales)"},
@@ -477,17 +601,13 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/plant.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/plant.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/burmy/plant.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/burmy/plant.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/plant.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/plant.png",
+            **_build_retro_form_sprites(slug, "burmy/plant"),
             "sprite_modern": "/media/pokemon/home/412.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412.png",
             "summary": plant_summary,
             "locations": plant_locations,
             "notes": plant_notes,
+            **gen5_obt_meta,
         },
         {
             "form_key": "sandy",
@@ -498,17 +618,13 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/sandy.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/sandy.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/burmy/sandy.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/burmy/sandy.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/sandy.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/sandy.png",
+            **_build_retro_form_sprites(slug, "burmy/sandy"),
             "sprite_modern": "/media/pokemon/home/412-sandy.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412-sandy.png",
             "summary": sandy_summary,
             "locations": sandy_locations,
             "notes": sandy_notes,
+            **gen5_obt_meta,
         },
         {
             "form_key": "trash",
@@ -519,28 +635,31 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/burmy/trash.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/burmy/trash.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/burmy/trash.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/burmy/trash.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/burmy/trash.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/burmy/trash.png",
+            **_build_retro_form_sprites(slug, "burmy/trash"),
             "sprite_modern": "/media/pokemon/home/412-trash.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/412-trash.png",
             "summary": trash_summary,
             "locations": trash_locations,
             "notes": trash_notes,
+            **gen5_obt_meta,
         }
     ]
 
 
 def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna los 3 troncos de Wormadam (#413) en Sinnoh:
+    Retorna los 3 troncos de Wormadam (#413):
     Tronco Planta (Bicho/Planta), Tronco Arena (Bicho/Tierra), Tronco Basura (Bicho/Acero).
-    Cada forma tiene tipos elementales, estadísticas y evoluciones exclusivas.
+    Cada forma tiene tipos elementales y estadísticas exclusivas.
     """
     slug = (game_slug or "diamond").replace("_national", "")
+    is_gen5 = slug in GEN5_FORM_GAMES
+    gen5_obt_meta = {
+        "type": "evolution",
+        "badge_label": "Evolución",
+        "badge_color": "purple",
+    } if is_gen5 else {}
+
     return [
         {
             "form_key": "plant",
@@ -551,12 +670,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "grass",
             "secondary_type_es": "Planta",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/plant.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/plant.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/wormadam/plant.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/wormadam/plant.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/plant.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/plant.png",
+            **_build_retro_form_sprites(slug, "wormadam/plant"),
             "sprite_modern": "/media/pokemon/home/413.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/413.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Planta al nivel 20.",
@@ -571,6 +685,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
                     "icon": "/media/items/miracle-seed.png",
                 }
             ],
+            **gen5_obt_meta,
         },
         {
             "form_key": "sandy",
@@ -581,12 +696,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "ground",
             "secondary_type_es": "Tierra",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/sandy.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/sandy.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/wormadam/sandy.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/wormadam/sandy.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/sandy.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/sandy.png",
+            **_build_retro_form_sprites(slug, "wormadam/sandy"),
             "sprite_modern": "/media/pokemon/home/10004.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10004.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Arena al nivel 20.",
@@ -601,6 +711,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
                     "icon": "/media/items/soft-sand.png",
                 }
             ],
+            **gen5_obt_meta,
         },
         {
             "form_key": "trash",
@@ -611,12 +722,7 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Bicho",
             "secondary_type": "steel",
             "secondary_type_es": "Acero",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/wormadam/trash.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/wormadam/trash.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/wormadam/trash.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/wormadam/trash.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/wormadam/trash.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/wormadam/trash.png",
+            **_build_retro_form_sprites(slug, "wormadam/trash"),
             "sprite_modern": "/media/pokemon/home/10005.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10005.png",
             "summary": "Evolución permanente de Burmy hembra con Tronco Basura al nivel 20.",
@@ -631,16 +737,17 @@ def get_wormadam_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
                     "icon": "/media/items/metal-coat.png",
                 }
             ],
+            **gen5_obt_meta,
         }
     ]
 
 
 def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna las 2 formas de Cherrim (#421) en Sinnoh:
+    Retorna las 2 formas de Cherrim (#421):
     Forma Encapuchada (Overcast), Forma Soleada (Sunshine).
     """
-    slug = game_slug
+    slug = (game_slug or "diamond").replace("_national", "")
     return [
         {
             "form_key": "overcast",
@@ -651,12 +758,7 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Planta",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/cherrim/overcast.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/overcast.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/cherrim/overcast.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/cherrim/overcast.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/overcast.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/overcast.png",
+            **_build_retro_form_sprites(slug, "cherrim/overcast"),
             "sprite_modern": "/media/pokemon/home/421.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/421.png",
             "notes": [
@@ -677,12 +779,7 @@ def get_cherrim_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Planta",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/cherrim/sunshine.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/cherrim/sunshine.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/cherrim/sunshine.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/cherrim/sunshine.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/cherrim/sunshine.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/cherrim/sunshine.png",
+            **_build_retro_form_sprites(slug, "cherrim/sunshine"),
             "sprite_modern": "/media/pokemon/home/421-sunshine.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/421-sunshine.png",
             "notes": [
@@ -703,12 +800,48 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Mar Oeste (Rosa), Mar Este (Azul).
     En Sinnoh: Delimitadas a ambos lados del Monte Corona.
     En HeartGold/SoulSilver: Mar Oeste obtenible en Pokéwalker (Playa Tormenta); Mar Este solo por transferencia desde D/P/Pt.
+    En Teselia (Gen 5): Obtenibles mediante Poké Transfer (Ruta 15) desde 4.ª generación o crianza en Ruta 3.
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    if is_hgss:
+    gen5_obt_meta = {
+        "type": "transfer",
+        "badge_label": "Poké Transfer",
+        "badge_color": "amber",
+    } if is_gen5 else {}
+
+    if is_gen5:
+        west_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
+        west_locations = [
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (desde 4.ª generación • Mar Oeste)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Oeste)"}
+        ]
+        west_notes = [
+            {
+                "title": "Variación Geográfica (Poké Transfer)",
+                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Oeste (rosa) desde 4.ª generación en el Laboratorio Transfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
+                "tag": "Poké Transfer",
+                "icon": "/media/items/linking-cord.png",
+            }
+        ]
+
+        east_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
+        east_locations = [
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (desde 4.ª generación • Mar Este)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Este)"}
+        ]
+        east_notes = [
+            {
+                "title": "Variación Geográfica (Poké Transfer)",
+                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Este (azul) desde 4.ª generación en el Laboratorio Transfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
+                "tag": "Poké Transfer",
+                "icon": "/media/items/linking-cord.png",
+            }
+        ]
+    elif is_hgss:
         west_summary = "Obtenible en el Pokéwalker (Playa Tormenta tras 5.000 pasos) o mediante transferencia desde Pokémon Diamante, Perla o Platino."
         west_locations = [
             {"area": "Pokéwalker (Playa Tormenta)", "method": "Paseo en el Pokéwalker (5.000+ pasos)"},
@@ -754,7 +887,7 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             }
         ]
 
-        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al oeste del Monte Corona)."
+        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona)."
         east_locations = [
             {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
             {"area": "Ruta 221", "method": "Salvaje (Hierba)"},
@@ -781,17 +914,13 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/shellos/west.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/west.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/shellos/west.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/shellos/west.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/west.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/west.png",
+            **_build_retro_form_sprites(slug, "shellos/west"),
             "sprite_modern": "/media/pokemon/home/422.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/422.png",
             "summary": west_summary,
             "locations": west_locations,
             "notes": west_notes,
+            **gen5_obt_meta,
         },
         {
             "form_key": "east",
@@ -802,17 +931,13 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "",
             "secondary_type_es": "",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/shellos/east.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/shellos/east.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/shellos/east.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/shellos/east.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/shellos/east.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/shellos/east.png",
+            **_build_retro_form_sprites(slug, "shellos/east"),
             "sprite_modern": "/media/pokemon/home/422-east.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/422-east.png",
             "summary": east_summary,
             "locations": east_locations,
             "notes": east_notes,
+            **gen5_obt_meta,
         }
     ]
 
@@ -823,12 +948,48 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Mar Oeste (Rosa), Mar Este (Azul).
     En Sinnoh: Salvaje a ambos lados del Monte Corona.
     En HeartGold/SoulSilver: Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia desde D/P/Pt.
+    En Teselia (Gen 5): Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia vía Poké Transfer (Ruta 15).
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    if is_hgss:
+    gen5_obt_meta = {
+        "type": "evolution",
+        "badge_label": "Evolución",
+        "badge_color": "purple",
+    } if is_gen5 else {}
+
+    if is_gen5:
+        west_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Oeste al Nivel 30 o mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación."
+        west_locations = [
+            {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Oeste)"},
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"}
+        ]
+        west_notes = [
+            {
+                "title": "Evolución en Teselia",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Oeste transferido vía Poké Transfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración rosa.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        east_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Este al Nivel 30 o mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación."
+        east_locations = [
+            {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Este)"},
+            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"}
+        ]
+        east_notes = [
+            {
+                "title": "Evolución en Teselia",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Este transferido vía Poké Transfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración azul.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+    elif is_hgss:
         west_summary = "Inaccesible en estado salvaje en Johto y Kanto. Evoluciona de Shellos Mar Oeste al Nivel 30 o transferencia desde D/P/Pt."
         west_locations = [
             {"area": "Evolución de Shellos Mar Oeste", "method": "Evolución al Nivel 30"},
@@ -874,7 +1035,7 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             }
         ]
 
-        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al oeste del Monte Corona)."
+        east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona)."
         east_locations = [
             {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
             {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
@@ -900,17 +1061,13 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "ground",
             "secondary_type_es": "Tierra",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/gastrodon/west.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/west.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/gastrodon/west.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/gastrodon/west.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/west.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/west.png",
+            **_build_retro_form_sprites(slug, "gastrodon/west"),
             "sprite_modern": "/media/pokemon/home/423.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/423.png",
             "summary": west_summary,
             "locations": west_locations,
             "notes": west_notes,
+            **gen5_obt_meta,
         },
         {
             "form_key": "east",
@@ -921,25 +1078,21 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": "Agua",
             "secondary_type": "ground",
             "secondary_type_es": "Tierra",
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/gastrodon/east.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/gastrodon/east.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/gastrodon/east.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/gastrodon/east.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/gastrodon/east.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/gastrodon/east.png",
+            **_build_retro_form_sprites(slug, "gastrodon/east"),
             "sprite_modern": "/media/pokemon/home/423-east.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/423-east.png",
             "summary": east_summary,
             "locations": east_locations,
             "notes": east_notes,
+            **gen5_obt_meta,
         }
     ]
 
 
 def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
-    Retorna las 17 formas canónicas de Arceus (#493) en Generación 4:
-    Forma Normal + 16 Tablas elementales repartidas por Sinnoh.
+    Retorna las 17 formas canónicas de Arceus (#493) en Generaciones 4 y 5:
+    Forma Normal + 16 Tablas elementales.
     (La Tabla Duende y el Tipo Hada quedan estrictamente excluidos por pertenecer a Gen 6).
     """
     slug = (game_slug or "diamond").replace("_national", "")
@@ -974,12 +1127,7 @@ def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             "primary_type_es": p_type_es,
             "secondary_type": s_type,
             "secondary_type_es": s_type_es,
-            "sprite_retro": f"/media/pokemon/sprites/{slug}/arceus/{f_key}.png",
-            "sprite_retro_shiny": f"/media/pokemon/sprites/{slug}_shiny/arceus/{f_key}.png",
-            "modal_retro_sprite_url": f"/media/pokemon/sprites/{slug}_animated/arceus/{f_key}.png",
-            "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/{slug}_animated_shiny/arceus/{f_key}.png",
-            "sprite_retro_back": f"/media/pokemon/sprites/{slug}/back/arceus/{f_key}.png",
-            "sprite_retro_shiny_back": f"/media/pokemon/sprites/{slug}_shiny/back/arceus/{f_key}.png",
+            **_build_retro_form_sprites(slug, f"arceus/{f_key}"),
             "sprite_modern": "/media/pokemon/home/493.png" if f_key == "normal" else f"/media/pokemon/home/493-{f_key}.png",
             "sprite_modern_shiny": "/media/pokemon/home/shiny/493.png" if f_key == "normal" else f"/media/pokemon/home/shiny/493-{f_key}.png",
             "notes": [
@@ -1077,7 +1225,7 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_color = "emerald"
             badge_label = "Salvaje"
             obt_type = "wild"
-        elif clean_slug in ["black", "white"]:
+        elif clean_slug in GEN5_FORM_GAMES:
             summary = "No disponible en estado salvaje en Teselia. Se obtiene mediante transferencia externa con el Poké Transfer en el Laboratorio Transfer (Ruta 15), desde juegos de 4.ª generación (Pokémon Diamante, Perla, Platino, Oro HeartGold o Plata SoulSilver)."
             locations = [
                 {
@@ -1121,7 +1269,7 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
         is_emerald = (clean_slug == "emerald")
         is_diamond = (clean_slug in ["diamond", "pearl", "platinum"])
         is_hgss = (clean_slug in ["heartgold", "soulsilver"])
-        is_unova = (clean_slug in ["black", "white"])
+        is_unova = (clean_slug in GEN5_FORM_GAMES)
         modal_retro_url = None
         modal_retro_shiny_url = None
         modal_retro_back_url = None
@@ -1183,7 +1331,7 @@ def get_giratina_forms(game_slug: str = "platinum"):
     Forma Modificada (terrestre) y Forma Origen (serpenteante del Mundo Distorsión / Griseosfera).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
-    is_gen5 = clean_slug in ["black", "white"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
     anim_ext = ".gif" if is_gen5 else ".png"
 
@@ -1259,7 +1407,7 @@ def get_shaymin_forms(game_slug: str = "platinum"):
     Forma Tierra (Erizo) y Forma Cielo (Grácidea de día).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
-    is_gen5 = clean_slug in ["black", "white"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
     anim_ext = ".gif" if is_gen5 else ".png"
 
@@ -1341,7 +1489,7 @@ def get_rotom_forms(game_slug: str = "platinum"):
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    is_gen5 = clean_slug in ["black", "white"]
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
     if is_gen5:
@@ -1611,8 +1759,8 @@ def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     seasons = [
         ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "deerling/spring.png", "deerling/spring.gif", "back/585.gif", 585),
         ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "deerling/summer.png", "deerling/summer.gif", "back/deerling/summer.gif", 10026),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn.png", "deerling/autumn.gif", "back/deerling/autumn.png", 10027),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter.png", "deerling/winter.gif", "back/deerling/winter.png", 10028),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn.png", "deerling/autumn.gif", "back/deerling/autumn.gif", 10027),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter.png", "deerling/winter.gif", "back/deerling/winter.gif", 10028),
     ]
     forms = []
     for f_key, f_name, season_text, rel_sprite, rel_anim, rel_back, home_id in seasons:
@@ -1653,8 +1801,8 @@ def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     seasons = [
         ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "sawsbuck/spring.png", "sawsbuck/spring.gif", "back/586.gif", 586),
         ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "sawsbuck/summer.png", "sawsbuck/summer.gif", "back/sawsbuck/summer.gif", 10029),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn.png", "sawsbuck/autumn.gif", "back/sawsbuck/autumn.png", 10030),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter.png", "sawsbuck/winter.gif", "back/sawsbuck/winter.png", 10031),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn.png", "sawsbuck/autumn.gif", "back/sawsbuck/autumn.gif", 10030),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter.png", "sawsbuck/winter.gif", "back/sawsbuck/winter.gif", 10031),
     ]
     forms = []
     for f_key, f_name, season_text, rel_sprite, rel_anim, rel_back, home_id in seasons:
@@ -1757,10 +1905,10 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     slug = clean_slug
     drives = [
         ("normal", "Forma Normal", "Normal", "649.png", "649.gif", "back/649.gif", "Sin cromo equipado. Su movimiento característico Tecno Shock es de tipo Normal.", None),
-        ("shock", "Cromo Fulgo", "Eléctrico", "genesect/shock.png", "genesect/shock.gif", "back/genesect/shock.png", "Equipado con el Cromo Fulgo. Su movimiento Tecno Shock pasa a ser de tipo Eléctrico. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
-        ("burn", "Cromo Piro", "Fuego", "genesect/burn.png", "genesect/burn.gif", "back/genesect/burn.png", "Equipado con el Cromo Piro. Su movimiento Tecno Shock pasa a ser de tipo Fuego. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
+        ("shock", "Cromo Fulgo", "Eléctrico", "genesect/shock.png", "genesect/shock.gif", "back/genesect/shock.gif", "Equipado con el Cromo Fulgo. Su movimiento Tecno Shock pasa a ser de tipo Eléctrico. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
+        ("burn", "Cromo Piro", "Fuego", "genesect/burn.png", "genesect/burn.gif", "back/genesect/burn.gif", "Equipado con el Cromo Piro. Su movimiento Tecno Shock pasa a ser de tipo Fuego. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
         ("douse", "Cromo Hidro", "Agua", "genesect/douse.png", "genesect/douse.gif", "back/genesect/douse.gif", "Equipado con el Cromo Hidro. Su movimiento Tecno Shock pasa a ser de tipo Agua.", "/media/items/douse-drive.png"),
-        ("chill", "Cromo Crio", "Hielo", "genesect/chill.png", "genesect/chill.gif", "back/genesect/chill.png", "Equipado con el Cromo Crio. Su movimiento Tecno Shock pasa a ser de tipo Hielo.", "/media/items/chill-drive.png"),
+        ("chill", "Cromo Crio", "Hielo", "genesect/chill.png", "genesect/chill.gif", "back/genesect/chill.gif", "Equipado con el Cromo Crio. Su movimiento Tecno Shock pasa a ser de tipo Hielo.", "/media/items/chill-drive.png"),
     ]
     forms = []
     for f_key, f_name, type_label, rel_sprite, rel_anim, rel_back, desc, icon_path in drives:
@@ -1801,8 +1949,8 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
     Retorna una lista vacía para especies sin formas alternativas en la edición activa.
     """
     clean_slug = (game_slug or "ruby").replace("_national", "")
-    is_gen4 = clean_slug in ["diamond", "pearl", "platinum", "heartgold", "soulsilver"]
-    is_gen5 = clean_slug in ["black", "white"]
+    is_gen4 = clean_slug in GEN4_FORM_GAMES
+    is_gen5 = clean_slug in GEN5_FORM_GAMES
 
     # 1. Pichu Picorejita (#172) disponible en HeartGold y SoulSilver
     if national_number == 172 and clean_slug in ["heartgold", "soulsilver"]:
@@ -1830,11 +1978,11 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
             return get_shellos_forms(clean_slug)
         elif national_number == 423:
             return get_gastrodon_forms(clean_slug)
-        elif national_number == 479 and clean_slug in ["platinum", "heartgold", "soulsilver", "black", "white"]:
+        elif national_number == 479 and (clean_slug in ["platinum", "heartgold", "soulsilver"] or is_gen5):
             return get_rotom_forms(clean_slug)
-        elif national_number == 487 and clean_slug in ["platinum", "heartgold", "soulsilver", "black", "white"]:
+        elif national_number == 487 and (clean_slug in ["platinum", "heartgold", "soulsilver"] or is_gen5):
             return get_giratina_forms(clean_slug)
-        elif national_number == 492 and clean_slug in ["platinum", "heartgold", "soulsilver", "black", "white"]:
+        elif national_number == 492 and (clean_slug in ["platinum", "heartgold", "soulsilver"] or is_gen5):
             return get_shaymin_forms(clean_slug)
         elif national_number == 493:
             return get_arceus_forms(clean_slug)

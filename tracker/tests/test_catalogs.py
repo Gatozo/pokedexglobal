@@ -4156,6 +4156,57 @@ class PokemonBlackGen5Tests(TestCase):
         # Genesect (5 cartuchos)
         self.assertEqual(len(get_pokemon_forms(649, "black")), 5)
 
+    def test_black_all_forms_animated_gifs_and_unova_locations(self):
+        """Valida que TODAS las formas en Pokémon Negro usen GIFs animados reales en disco (frente/espalda, normal/shiny) y ubicaciones adaptadas a Teselia."""
+        from django.conf import settings
+        from pathlib import Path
+        from PIL import Image
+        from tracker.pokemon_forms import get_pokemon_forms
+
+        media_root = Path(settings.MEDIA_ROOT)
+        form_species = [201, 351, 386, 412, 413, 421, 422, 423, 479, 487, 492, 493, 550, 555, 585, 586, 648, 649]
+        forbidden_regions = ("Sinnoh", "Hoenn", "Johto", "Kanto", "Árboles de Miel", "Monte Corona", "Pokéwalker")
+
+        checked_gif_paths = set()
+        for game_slug in ("black", "black_national"):
+            for nid in form_species:
+                forms = get_pokemon_forms(nid, game_slug)
+                self.assertGreater(len(forms), 1, f"#{nid} debe tener múltiples formas en {game_slug}")
+                for form in forms:
+                    key = form["form_key"]
+                    for static_field in ("sprite_retro", "sprite_retro_back"):
+                        url = form.get(static_field, "")
+                        self.assertIn("/sprites/black/", url, f"#{nid} {key} ({static_field}) no apunta a black/: {url}")
+                    for shiny_static_field in ("sprite_retro_shiny", "sprite_retro_shiny_back"):
+                        url = form.get(shiny_static_field, "")
+                        self.assertIn("/sprites/black_shiny/", url, f"#{nid} {key} ({shiny_static_field}) no apunta a black_shiny/: {url}")
+
+                    for anim_field in (
+                        "modal_retro_sprite_url",
+                        "modal_retro_sprite_shiny_url",
+                        "modal_retro_sprite_back_url",
+                        "modal_retro_sprite_shiny_back_url",
+                    ):
+                        anim_url = form.get(anim_field, "")
+                        self.assertTrue(
+                            anim_url.endswith(".gif"),
+                            f"#{nid} {key} ({anim_field}) debe ser .gif en {game_slug}: {anim_url}",
+                        )
+                        self.assertIn("/sprites/black_animated", anim_url)
+                        rel_path = anim_url.removeprefix("/media/")
+                        if rel_path not in checked_gif_paths:
+                            disk_path = media_root / rel_path
+                            self.assertTrue(disk_path.exists() and disk_path.stat().st_size > 0, f"Falta GIF en disco: {disk_path}")
+                            with Image.open(disk_path) as img:
+                                self.assertGreater(getattr(img, "n_frames", 1), 1, f"El GIF debe ser animado (>1 frame): {disk_path}")
+                            checked_gif_paths.add(rel_path)
+
+                    if game_slug == "black" and nid in (412, 422, 423):
+                        text_blob = f"{form.get('summary', '')} {form.get('locations', '')} {form.get('note', '')}"
+                        self.assertIn("Poké Transfer", text_blob, f"#{nid} {key} debe referenciar Poké Transfer")
+                        for forbidden in forbidden_regions:
+                            self.assertNotIn(forbidden, text_blob, f"#{nid} {key} contiene referencia desactualizada '{forbidden}'")
+
     def test_media_assets_exist_on_disk(self):
         """Valida que los recursos estáticos, animados, iconos y gritos existan en disco sin archivos de 0 bytes."""
         from django.conf import settings

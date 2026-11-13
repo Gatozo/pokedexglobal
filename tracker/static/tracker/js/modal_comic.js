@@ -103,11 +103,15 @@ export function updateModalSpriteDisplay() {
             if (state.isShinydexMode) {
                 targetSrc = (state.currentSpriteStyle === 'modern' && form.sprite_modern_shiny_back)
                     ? form.sprite_modern_shiny_back
-                    : (form.sprite_retro_shiny_back || form.sprite_retro_shiny);
+                    : (state.currentSpriteStyle === 'retro' && form.modal_retro_sprite_shiny_back_url)
+                        ? form.modal_retro_sprite_shiny_back_url
+                        : (form.sprite_retro_shiny_back || form.modal_retro_sprite_shiny_back_url || form.sprite_retro_shiny);
             } else {
                 targetSrc = (state.currentSpriteStyle === 'modern' && form.sprite_modern_back)
                     ? form.sprite_modern_back
-                    : (form.sprite_retro_back || form.sprite_retro);
+                    : (state.currentSpriteStyle === 'retro' && form.modal_retro_sprite_back_url)
+                        ? form.modal_retro_sprite_back_url
+                        : (form.sprite_retro_back || form.modal_retro_sprite_back_url || form.sprite_retro);
             }
         } else {
             if (state.isShinydexMode) {
@@ -138,9 +142,9 @@ export function updateModalSpriteDisplay() {
                 }
             } else {
                 if (state.isShinydexMode) {
-                    targetSrc = (femaleSprites && femaleSprites.retro_shiny_back) || data.sprite_retro_shiny_back || data.sprite_retro_shiny;
+                    targetSrc = (femaleSprites && (femaleSprites.retro_shiny_animated_back || femaleSprites.retro_shiny_back)) || data.modal_retro_sprite_shiny_back_url || data.sprite_retro_shiny_back || data.sprite_retro_shiny;
                 } else {
-                    targetSrc = (femaleSprites && femaleSprites.retro_back) || data.sprite_retro_back || data.sprite_retro;
+                    targetSrc = (femaleSprites && (femaleSprites.retro_animated_back || femaleSprites.retro_back)) || data.modal_retro_sprite_back_url || data.sprite_retro_back || data.sprite_retro;
                 }
             }
         } else {
@@ -167,9 +171,24 @@ export function updateModalSpriteDisplay() {
             modalImg.onerror = null;
             const isFemale = (activeModalGender === 'female');
             const femaleSprites = (isFemale && data.gender_info && data.gender_info.female_sprites) ? data.gender_info.female_sprites : null;
-            const fallback = (hasForms && form)
-                ? (form.sprite_retro || form.sprite_modern)
-                : ((femaleSprites && (femaleSprites.retro_static || femaleSprites.retro)) || data.sprite_modern || data.sprite_retro);
+            let fallback;
+            if (hasForms && form) {
+                if (isModalBackView) {
+                    fallback = state.isShinydexMode
+                        ? (form.sprite_retro_shiny_back || form.sprite_modern_shiny_back || form.sprite_retro_shiny || form.sprite_retro)
+                        : (form.sprite_retro_back || form.sprite_modern_back || form.sprite_retro || form.sprite_modern);
+                } else {
+                    fallback = state.isShinydexMode
+                        ? (form.sprite_retro_shiny || form.sprite_modern_shiny || form.sprite_retro)
+                        : (form.sprite_retro || form.sprite_modern);
+                }
+            } else if (isModalBackView) {
+                fallback = state.isShinydexMode
+                    ? ((femaleSprites && (femaleSprites.retro_shiny_back || femaleSprites.modern_shiny_back)) || data.sprite_retro_shiny_back || data.sprite_modern_shiny_back || data.sprite_retro_shiny)
+                    : ((femaleSprites && (femaleSprites.retro_back || femaleSprites.modern_back)) || data.sprite_retro_back || data.sprite_modern_back || data.sprite_retro);
+            } else {
+                fallback = (femaleSprites && (femaleSprites.retro_static || femaleSprites.retro)) || data.sprite_modern || data.sprite_retro;
+            }
             if (fallback && modalImg.src !== fallback) {
                 modalImg.src = fallback;
             }
