@@ -3740,14 +3740,14 @@
     "cry_url": "/media/pokemon/cries/legacy/56.ogg",
     "flavor_text": "Vive en colonias en los árboles. Si uno se enfada, el resto de la manada ataca sin motivo.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 15 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 15",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -5604,14 +5604,14 @@
     "cry_url": "/media/pokemon/cries/legacy/83.ogg",
     "flavor_text": "No puede vivir sin el palo que lleva. Por eso lo protege de sus atacantes con todas sus fuerzas.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 1 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 1",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -5665,14 +5665,14 @@
     "cry_url": "/media/pokemon/cries/legacy/84.ogg",
     "flavor_text": "Parece que los cerebros de sus dos cabezas se comunican por telepatía.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 12 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 12",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -6866,14 +6866,14 @@
     "cry_url": "/media/pokemon/cries/legacy/102.ogg",
     "flavor_text": "Estos seis huevos se comunican por telepatía. Si se separan se pueden reunir rápidamente.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 18 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 18",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -10819,14 +10819,14 @@
     "cry_url": "/media/pokemon/cries/legacy/161.ogg",
     "flavor_text": "Es de naturaleza nerviosa. Se alza sobre su cola para otear grandes extensiones.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 7 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 7",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -12924,14 +12924,14 @@
     "cry_url": "/media/pokemon/cries/legacy/193.ogg",
     "flavor_text": "Puede mantenerse en un punto fijo del aire agitando mucho las alas. Vigila su territorio sobrevolándolo.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 14 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 14",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -13510,20 +13510,21 @@
     "cry_url": "/media/pokemon/cries/legacy/202.ogg",
     "flavor_text": "Siempre intenta ocultar su cola, por lo que muchos creen que contiene un secreto.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "purple",
+      "summary": "Evoluciona de Wynaut (Nivel 15).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Evolución",
+          "method": "Evoluciona de Wynaut (Nivel 15)."
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
       ],
+      "item_slug": null,
       "evolution_info": {
         "from": "Wynaut",
         "text": "Evoluciona de Wynaut (Nivel 15)",
@@ -13639,14 +13640,14 @@
     "cry_url": "/media/pokemon/cries/legacy/204.ogg",
     "flavor_text": "Es como una piña piñonera. Su coraza lo protege de los pájaros que lo picotean por error.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 16 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 16",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -15237,11 +15238,15 @@
     "cry_url": "/media/pokemon/cries/legacy/228.ogg",
     "flavor_text": "Tiene suficiente inteligencia para cazar en manada. Se comunica con los demás a través de gritos.",
     "obtaining_info": {
-      "type": "other",
-      "badge_label": "Crianza",
-      "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 9 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro). (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Ruta 9",
+          "method": "Manada diaria"
+        },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -15731,14 +15736,14 @@
     "cry_url": "/media/pokemon/cries/legacy/235.ogg",
     "flavor_text": "Marca su territorio usando su cola a modo de pincel. Ha hecho más de 5.000 marcas diferentes.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 5 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 5",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -15792,14 +15797,14 @@
     "cry_url": "/media/pokemon/cries/legacy/236.ogg",
     "flavor_text": "Famoso por su disposición a la lucha. Siempre tiene heridas por luchar con enemigos más grandes.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 10 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 10",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -18921,11 +18926,15 @@
     "cry_url": "/media/pokemon/cries/legacy/285.ogg",
     "flavor_text": "Lanza esporas venenosas desde la parte superior de la cabeza. Inhalarlas es muy doloroso.",
     "obtaining_info": {
-      "type": "other",
-      "badge_label": "Crianza",
-      "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 11 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro). (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Ruta 11",
+          "method": "Manada diaria"
+        },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -20605,11 +20614,15 @@
     "cry_url": "/media/pokemon/cries/legacy/311.ogg",
     "flavor_text": "Anima a sus compañeros con pompones de chispas. Roba energía de los postes telefónicos.",
     "obtaining_info": {
-      "type": "other",
-      "badge_label": "Crianza",
-      "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 6 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro). (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Ruta 6",
+          "method": "Manada diaria"
+        },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -20723,11 +20736,15 @@
     "cry_url": "/media/pokemon/cries/legacy/313.ogg",
     "flavor_text": "Se comunica con otros iluminando su cola por la noche. Le encanta el suave aroma de Illumise.",
     "obtaining_info": {
-      "type": "other",
-      "badge_label": "Crianza",
-      "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro). (también obtenible mediante crianza).",
       "locations": [
+        {
+          "area": "Ruta 3",
+          "method": "Manada diaria"
+        },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -23314,14 +23331,14 @@
     "cry_url": "/media/pokemon/cries/legacy/353.ogg",
     "flavor_text": "Les atraen los sentimientos de rencor y celos. Suelen vivir cerca de las casas de gente vengativa.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 13 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 13",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -23760,14 +23777,14 @@
     "cry_url": "/media/pokemon/cries/legacy/360.ogg",
     "flavor_text": "Se fortalecen empujándose unos a otros en grupos. Les encantan los dulces.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 2 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 2",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -29467,14 +29484,14 @@
     "cry_url": "/media/pokemon/cries/legacy/449.ogg",
     "flavor_text": "Cierra la nariz y luego atraviesa la arena con toda tranquilidad. Suele formar colonias de diez individuos.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 4 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 4",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -29719,14 +29736,14 @@
     "cry_url": "/media/pokemon/cries/legacy/453.ogg",
     "flavor_text": "Rara vez combate limpio, pero es para asegurar su supervivencia. Es muy popular como mascota.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Manada diaria en la Ruta 8 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Ruta 8",
+          "method": "Manada diaria"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",

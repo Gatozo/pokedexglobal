@@ -4717,6 +4717,34 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertNotIn("time_day", nat_by_num[468].filter_tags.split())    # Togekiss
         self.assertNotIn("time_night", nat_by_num[429].filter_tags.split())  # Mismagius
 
+    def test_black_national_swarm_filter_tags_and_transfers_exclusion(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.exclusives import NON_UNOVA_TRANSFERS_BLACK
+
+        nat_entries = get_compiled_catalog("black_national")
+        nat_by_num = {e.pokemon.national_number: e for e in nat_entries}
+
+        swarm_ids = {56, 83, 84, 102, 161, 193, 204, 228, 235, 236, 285, 311, 313, 353, 360, 449, 453}
+        actual_swarm_ids = {
+            e.pokemon.national_number
+            for e in nat_entries
+            if "swarm" in e.filter_tags.split()
+        }
+        self.assertEqual(actual_swarm_ids, swarm_ids)
+
+        for sid in swarm_ids:
+            entry = nat_by_num[sid]
+            self.assertEqual(entry.obtaining_info.get("type"), "wild")
+            methods = [loc.get("method", "") for loc in entry.obtaining_info.get("locations", [])]
+            self.assertIn("Manada diaria", methods)
+            self.assertNotIn(sid, NON_UNOVA_TRANSFERS_BLACK)
+
+        # Wobbuffet (#202) debe quedar como evolución de Wynaut (#360) y fuera de Poké Transfer
+        wobbuffet = nat_by_num[202]
+        self.assertEqual(wobbuffet.obtaining_info.get("type"), "evolution")
+        self.assertNotIn(202, NON_UNOVA_TRANSFERS_BLACK)
+
+
 
 
 

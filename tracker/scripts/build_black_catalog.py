@@ -703,7 +703,7 @@ def main():
 
         if nat_id in SPECIAL_OBTAINING:
             obt_info = json.loads(json.dumps(SPECIAL_OBTAINING[nat_id]))
-        elif raw_encs:
+        elif raw_encs or nat_id in SWARM_POKEMON_BLACK:
             # Procesar encuentros salvajes agrupados por área limpia y método base, conservando estaciones
             area_method_meta = {}
             for e in raw_encs:
@@ -738,6 +738,11 @@ def main():
                         if s_set and nat_id in SEASONAL_RATE_NOTES:
                             for s in s_set:
                                 entry_seasons.add(SEASON_SHORT_KEY[s])
+
+            # Las manadas diarias de Gen 5 no siempre figuran en PokeAPI; registrar su ruta y método explícitamente
+            if nat_id in SWARM_POKEMON_BLACK:
+                sw_info = SWARM_POKEMON_BLACK[nat_id]
+                area_methods.setdefault(sw_info['area'], set()).add('Manada diaria')
 
             loc_list = []
             for a_name, m_set in area_methods.items():
@@ -777,7 +782,7 @@ def main():
             if entry_seasons:
                 season_order = ["spring", "summer", "autumn", "winter"]
                 obt_info['seasons'] = [s for s in season_order if s in entry_seasons]
-        elif is_evolution and evo_info:
+        elif (is_evolution or (is_incense_parent and nat_id not in white_exclusives and nat_id not in black_transfers)) and evo_info:
             from_name = evo_info.get('from_name', '')
             cond = evo_info.get('condition', '')
             summary = f"Evoluciona de {from_name} ({cond})."
