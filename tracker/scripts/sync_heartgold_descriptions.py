@@ -130,6 +130,19 @@ def clean_wikitext(text: str) -> str:
     return text.strip()
 
 
+FIELD_ALIASES = {
+    "oro": "oro heartgold",
+    "hg": "oro heartgold",
+    "heartgold": "oro heartgold",
+    "plata": "plata soulsilver",
+    "ss": "plata soulsilver",
+    "soulsilver": "plata soulsilver",
+    "d": "diamante",
+    "p": "perla",
+    "pt": "platino",
+}
+
+
 def resolve_field_text(fields: dict, key: str) -> str:
     """Resuelve el texto de un campo de plantilla, siguiendo referencias cruzadas (|d=p)."""
     visited = set()
@@ -139,10 +152,18 @@ def resolve_field_text(fields: dict, key: str) -> str:
         val = fields.get(curr, '')
         clean_val = val.strip()
         ref_match = re.match(r'^([a-zA-Z0-9_\sáéíóúÁÉÍÓÚ-]+)$', clean_val)
-        if ref_match and ref_match.group(1).lower() in fields and len(clean_val) < 25:
-            curr = ref_match.group(1).lower()
-        else:
-            return clean_wikitext(val)
+        if ref_match and len(clean_val) < 25:
+            ref_key = ref_match.group(1).lower()
+            if ref_key in fields:
+                curr = ref_key
+                continue
+            alias_key = FIELD_ALIASES.get(ref_key)
+            if alias_key and alias_key in fields:
+                curr = alias_key
+                continue
+            if ref_key in FIELD_ALIASES or ref_key == "no hay":
+                return ""
+        return clean_wikitext(val)
     return ""
 
 

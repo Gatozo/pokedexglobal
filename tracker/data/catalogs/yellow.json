@@ -29,7 +29,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/1.png",
     "cry_url": "/media/pokemon/cries/legacy/1.ogg",
-    "flavor_text": "Puede sobrevivir largo tiempo sin probar bocado gracias a los nutrientes que guarda en el bulbo del lomo.",
+    "flavor_text": "Puede sobrevivir largo tiempo sin probar bocado. Guarda energía en el bulbo de su espalda.",
     "obtaining_info": {
       "type": "gift",
       "summary": "Regalado por una chica en una casa de Ciudad Celeste si Pikachu tiene un alto nivel de amistad",
@@ -357,7 +357,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/2.png",
     "cry_url": "/media/pokemon/cries/legacy/2.ogg",
-    "flavor_text": "Su bulbo crece a medida que absorbe nutrientes. Desprende un cierto aroma cuando está a punto de florecer.",
+    "flavor_text": "Su bulbo crece cuando absorbe energía. Desprende un fuerte aroma cuando florece.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Bulbasaur (Nivel 16)",
@@ -696,7 +696,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/3.png",
     "cry_url": "/media/pokemon/cries/legacy/3.ogg",
-    "flavor_text": "La flor que tiene en el lomo puede recoger los rayos solares para transformarlos en energía.",
+    "flavor_text": "La flor de su espalda recoge los rayos del sol. Los transforma en energía.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Ivysaur (Nivel 32)",
@@ -1056,7 +1056,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/4.png",
     "cry_url": "/media/pokemon/cries/legacy/4.ogg",
-    "flavor_text": "En lugares silenciosos se puede oír el débil chisporroteo de la llama que le arde en la punta de la cola.",
+    "flavor_text": "La llama en la punta de su cola chisporrotea al arder. Sólo se oye en lugares silenciosos.",
     "obtaining_info": {
       "type": "gift",
       "summary": "Entregado por un entrenador en la Ruta 24 (al norte del Puente Pepita)",
@@ -1463,7 +1463,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/5.png",
     "cry_url": "/media/pokemon/cries/legacy/5.ogg",
-    "flavor_text": "Librar combates intensos lo entusiasma tanto que en ocasiones lanza llamas de tono blanco azulado.",
+    "flavor_text": "Las duras luchas excitan a este Pokémon. Entonces, lanzará llamaradas blanco-azuladas.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Charmander (Nivel 16)",
@@ -1881,7 +1881,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/6.png",
     "cry_url": "/media/pokemon/cries/legacy/6.ogg",
-    "flavor_text": "Cuando exhala fuego abrasador, la llama de la punta de la cola se aviva y adquiere un intenso color rojo.",
+    "flavor_text": "Cuando lanza una descarga de fuego súper caliente, la roja llama de su cola brilla más intensamente.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Charmeleon (Nivel 36)",
@@ -2350,7 +2350,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/7.png",
     "cry_url": "/media/pokemon/cries/legacy/7.ogg",
-    "flavor_text": "Escupe chorros de agua mientras flota para capturar a sus presas. Se esconde en su caparazón cuando se siente en peligro.",
+    "flavor_text": "Lanza agua a su presa desde el agua. Se esconde en su concha cuando se siente en peligro.",
     "obtaining_info": {
       "type": "gift",
       "summary": "Entregado por la Agente Mara en Ciudad Carmín tras derrotar al Líder Lt. Surge",
@@ -2757,7 +2757,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/8.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/8.png",
     "cry_url": "/media/pokemon/cries/legacy/8.ogg",
-    "flavor_text": "Si alguien le golpea la cabeza, se protege escondiéndose en su caparazón, aunque parte de la cola queda al descubierto.",
+    "flavor_text": "Si es golpeado, esconderá su cabeza. Aun así, su cola puede seguir golpeando.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Squirtle (Nivel 16)",
@@ -3175,7 +3175,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/9.png",
     "cry_url": "/media/pokemon/cries/legacy/9.ogg",
-    "flavor_text": "Tras fijar el blanco, ataca disparando un chorro de agua a una presión mayor que la manguera de un bombero.",
+    "flavor_text": "Cuando ataca a un enemigo, su descarga de agua es aún más potente que una manga de bombero.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Wartortle (Nivel 36)",
@@ -3634,7 +3634,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/10.png",
     "cry_url": "/media/pokemon/cries/legacy/10.ogg",
-    "flavor_text": "Cuando le tocan la antena roja que tiene en la frente, se defiende desprendiendo un hedor nauseabundo.",
+    "flavor_text": "Si tocas los receptores de su cabeza, soltará un terrible olor para protegerse.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Bosque Verde",
@@ -3733,7 +3733,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/11.png",
     "cry_url": "/media/pokemon/cries/legacy/11.ogg",
-    "flavor_text": "Pese a su constante empeño por endurecer su coraza para protegerse, puede romperse si recibe un fuerte impacto y quedar expuesto.",
+    "flavor_text": "Endurece su concha para protegerse. De todos modos, un gran impacto puede afectarle.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Bosque Verde",
@@ -3837,7 +3837,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/12.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/12.png",
     "cry_url": "/media/pokemon/cries/legacy/12.ogg",
-    "flavor_text": "Sus alas están recubiertas de escamas venenosas impermeables que le permiten volar bajo la lluvia.",
+    "flavor_text": "Sus alas están cubiertas de polvos venenosos. Como repelen el agua, puede volar bajo la lluvia.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Metapod (Nivel 10)",
@@ -4214,7 +4214,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/13.png",
     "cry_url": "/media/pokemon/cries/legacy/13.ogg",
-    "flavor_text": "El aguijón de la cabeza es muy puntiagudo. Se alimenta de hojas oculto en la espesura de bosques y praderas.",
+    "flavor_text": "Cuidado con el aguijón venenoso de su cabeza. Se esconde en la hierba y arbustos mientras come.",
     "obtaining_info": {
       "type": "trade",
       "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul",
@@ -4312,7 +4312,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/14.png",
     "cry_url": "/media/pokemon/cries/legacy/14.ogg",
-    "flavor_text": "Aunque es casi incapaz de moverse, en caso de sentirse amenazado puede envenenar a los enemigos con su aguijón.",
+    "flavor_text": "Sólo puede moverse un poco. Cuando está en peligro, envenena a su enemigo con su aguijón.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Evoluciona de Weedle (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)",
@@ -4405,7 +4405,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/15.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/15.png",
     "cry_url": "/media/pokemon/cries/legacy/15.ogg",
-    "flavor_text": "Tiene tres aguijones venenosos, dos en las patas anteriores y uno en la parte baja del abdomen, con los que ataca a sus enemigos una y otra vez.",
+    "flavor_text": "Tiene 3 aguijones venenosos en sus patas y cola. Suele pinchar a sus enemigos repetidas veces.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Evoluciona de Kakuna (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)",
@@ -4725,7 +4725,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/16.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/16.png",
     "cry_url": "/media/pokemon/cries/legacy/16.ogg",
-    "flavor_text": "Su docilidad es tal que suelen defenderse levantando arena en lugar de contraatacar.",
+    "flavor_text": "Son muy dóciles. Si son atacados, suelen lanzar arena en lugar de repeler el ataque.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 13 zonas (ej: Ruta 12, Ruta 1, Ruta 2...)",
@@ -5078,7 +5078,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/17.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/17.png",
     "cry_url": "/media/pokemon/cries/legacy/17.ogg",
-    "flavor_text": "Su extraordinaria vitalidad y resistencia le permiten cubrir grandes distancias del territorio que habita en busca de presas.",
+    "flavor_text": "Este Pokémon está repleto de vitalidad. Suele volar por su territorio en busca de presas.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 13 zonas (ej: Ruta 12, Ruta 5, Ruta 6...)",
@@ -5447,7 +5447,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/18.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/18.png",
     "cry_url": "/media/pokemon/cries/legacy/18.ogg",
-    "flavor_text": "Este Pokémon vuela a una velocidad de 2 mach en busca de presas. Sus grandes garras son armas muy peligrosas.",
+    "flavor_text": "Este Pokémon vuela a velocidad Mach 2. Sus grandes garras son armas muy peligrosas.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Pidgeotto (Nivel 36)",
@@ -5784,7 +5784,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/19.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/19.png",
     "cry_url": "/media/pokemon/cries/legacy/19.ogg",
-    "flavor_text": "Es propenso a hincar los incisivos en cualquier cosa que se le ponga por delante. Si se ve alguno, seguramente haya cuarenta cerca.",
+    "flavor_text": "Muerde cualquier cosa con sus colmillos. Si ves uno, seguro que encuentras 40 más en la zona.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 16 zonas (ej: Ruta 1, Ruta 2, Ruta 3...)",
@@ -6168,7 +6168,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/20.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/20.png",
     "cry_url": "/media/pokemon/cries/legacy/20.ogg",
-    "flavor_text": "Gracias a las pequeñas membranas de las patas traseras, puede nadar por los ríos para capturar presas.",
+    "flavor_text": "Sus patas son palmeadas. Sirven de aletas, por lo que puede nadar por ríos en busca de presa.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 7 zonas (ej: Ruta 9, Ruta 10, Ruta 11...)",
@@ -6552,7 +6552,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/21.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/21.png",
     "cry_url": "/media/pokemon/cries/legacy/21.ogg",
-    "flavor_text": "A la hora de proteger su territorio, compensa su incapacidad para volar a gran altura con una increíble velocidad.",
+    "flavor_text": "Es incapaz de volar a gran altura, pero es muy rápido, lo que le permite protegerse.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 6 zonas (ej: Ruta 3, Ruta 4, Ruta 9...)",
@@ -6867,7 +6867,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/22.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/22.png",
     "cry_url": "/media/pokemon/cries/legacy/22.ogg",
-    "flavor_text": "Este Pokémon ha existido desde tiempos remotos. Al menor atisbo de peligro, alza el vuelo y huye.",
+    "flavor_text": "Este Pokémon es conocido desde hace muchos años. Si siente peligro volará lejos inmediatamente.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 9, Ruta 16, Ruta 17...)",
@@ -7204,7 +7204,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/23.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/23.png",
     "cry_url": "/media/pokemon/cries/legacy/23.ogg",
-    "flavor_text": "La longitud de este Pokémon aumenta con el tiempo. Por la noche, se enrosca en las ramas de los árboles para descansar.",
+    "flavor_text": "Cuanto más viejo, más crece este Pokémon. Por la noche, descansa en las ramas de los árboles.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Exclusivo de Pokémon Rojo (no disponible en Amarillo). Conseguir mediante intercambio",
@@ -7529,7 +7529,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/24.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/24.png",
     "cry_url": "/media/pokemon/cries/legacy/24.ogg",
-    "flavor_text": "Se han llegado a identificar hasta seis variaciones distintas de los espeluznantes dibujos de su piel.",
+    "flavor_text": "Los espantosos dibujos de su piel han sido estudiados. Seis variaciones han sido confirmadas.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Evoluciona de Ekans (Exclusivo de Pokémon Rojo. Conseguir mediante intercambio)",
@@ -7881,7 +7881,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/25.png",
     "cry_url": "/media/pokemon/cries/yellow/25.wav",
-    "flavor_text": "Los bosques son su hábitat natural. En las bolsas de las mejillas acumula electricidad, por lo que quien las toque puede recibir una descarga.",
+    "flavor_text": "Mantiene su cola en alto para vigilar. Si das un tirón a su cola, querrá morderte.",
     "obtaining_info": {
       "type": "starter",
       "summary": "Pokémon inicial entregado por el Profesor Oak en Pueblo Paleta.",
@@ -8301,7 +8301,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/26.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/26.png",
     "cry_url": "/media/pokemon/cries/legacy/26.ogg",
-    "flavor_text": "Al acumular cierta cantidad de electricidad en el cuerpo, se vuelve agresivo. También brilla en la oscuridad.",
+    "flavor_text": "Cuando la electricidad del cuerpo crece, se vuelve irritable. También brilla en la oscuridad.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Tu Pikachu inicial se niega a evolucionar con la Piedra Trueno. Debes transferir un Raichu o un Pikachu desde Pokémon Rojo o Azul",
@@ -8665,7 +8665,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/27.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/27.png",
     "cry_url": "/media/pokemon/cries/legacy/27.ogg",
-    "flavor_text": "Tiene la piel muy seca, aunque, si hace frío por la noche, aparece cubierta de un fino rocío.",
+    "flavor_text": "Su cuerpo es muy seco. Cuando hace frío por la noche, su piel aparece cubierta con un fino rocío.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Monte Moon, Ruta 3, Ruta 4",
@@ -9027,7 +9027,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/28.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/28.png",
     "cry_url": "/media/pokemon/cries/legacy/28.ogg",
-    "flavor_text": "Utiliza hábilmente las garras en combate, por lo que suelen rompérsele. Aun así, solo tardan un día en volverle a crecer.",
+    "flavor_text": "Es muy hábil al golpear a sus enemigos con sus garras. Si se rompen, crecerán en un solo día.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste",
@@ -9407,7 +9407,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/29.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/29.png",
     "cry_url": "/media/pokemon/cries/legacy/29.ogg",
-    "flavor_text": "A este dócil Pokémon no le gusta luchar, pero conviene tener cuidado con su pequeño cuerno, ya que segrega veneno.",
+    "flavor_text": "A este Pokémon no le gusta luchar. Pero cuidado, sus pequeños cuernos segregan veneno.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 2, Ruta 9, Ruta 10...)",
@@ -9740,7 +9740,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/30.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/30.png",
     "cry_url": "/media/pokemon/cries/legacy/30.ogg",
-    "flavor_text": "Mientras se cobija en su madriguera, retrae las púas, señal inequívoca de que se siente a salvo.",
+    "flavor_text": "Cuando descansa profundamente, sus cuernos se contraen. Esto prueba que está relajado",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 9, Ruta 23, Zona Safari",
@@ -10120,7 +10120,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/31.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/31.png",
     "cry_url": "/media/pokemon/cries/legacy/31.ogg",
-    "flavor_text": "Su robusto cuerpo está recubierto de escamas durísimas que se renuevan constantemente.",
+    "flavor_text": "Grandes escamas recubren el duro cuerpo de este Pokémon. Éstas crecen cíclicamente.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Nidorina usando Piedra Lunar",
@@ -10628,7 +10628,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/32.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/32.png",
     "cry_url": "/media/pokemon/cries/legacy/32.ogg",
-    "flavor_text": "Mantiene sus grandes orejas levantadas, siempre alerta. Si advierte peligro, ataca con las púas venenosas.",
+    "flavor_text": "Sus largas orejas se mantienen siempre alerta. Si siente peligro, atacará con su venenoso cuerno.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 2, Ruta 9, Ruta 10...)",
@@ -10971,7 +10971,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/33.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/33.png",
     "cry_url": "/media/pokemon/cries/legacy/33.ogg",
-    "flavor_text": "El cuerno de su frente contiene toxinas que se liberan al punzar al rival.",
+    "flavor_text": "Sus cuernos contienen veneno. Si se introducen en el cuerpo del enemigo, soltarán su tóxica carga.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 9, Ruta 23, Zona Safari",
@@ -11352,7 +11352,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/34.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/34.png",
     "cry_url": "/media/pokemon/cries/legacy/34.ogg",
-    "flavor_text": "Su piel dura como el acero refuerza el impacto al cargar contra sus enemigos. Su cuerno puede atravesar hasta diamantes.",
+    "flavor_text": "Duro como el acero, posee una poderosa carga. Sus cuernos son tan duros como el diamante.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Nidorino usando Piedra Lunar",
@@ -11861,7 +11861,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/35.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/35.png",
     "cry_url": "/media/pokemon/cries/legacy/35.ogg",
-    "flavor_text": "Su aspecto jovial y sus ademanes lo hacen adorable y muy popular, aunque no suelen verse a menudo, tal vez porque su número sea escaso.",
+    "flavor_text": "Su aspecto jovial y vivaracho lo hace adorable. Piensan que son raros, ya que no son muy comunes.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Monte Moon",
@@ -12357,7 +12357,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/36.png",
     "cry_url": "/media/pokemon/cries/legacy/36.ogg",
-    "flavor_text": "Un Pokémon de aspecto feérico que protege con celo su entorno y muy rara vez se deja ver por los humanos.",
+    "flavor_text": "Protege bastante bien su propio entorno. Es una especie de hada, raramente vista por los humanos.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Clefairy usando Piedra Lunar",
@@ -12852,7 +12852,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/37.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/37.png",
     "cry_url": "/media/pokemon/cries/legacy/37.ogg",
-    "flavor_text": "Sus colas y pelaje son preciosos. A medida que crece, las colas se dividen y forman otras nuevas.",
+    "flavor_text": "Su piel y colas son preciosas. Cuando crecen las colas, se dividen formando nuevas colas.",
     "obtaining_info": {
       "type": "casino",
       "summary": "Canjeable por 1.000 fichas en el Casino Rocket de Ciudad Azulona",
@@ -13157,7 +13157,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/38.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/38.png",
     "cry_url": "/media/pokemon/cries/legacy/38.ogg",
-    "flavor_text": "De acuerdo con una antigua leyenda, este Pokémon es la reencarnación de nueve deidades que se unieron en un solo ser.",
+    "flavor_text": "De acuerdo con una antigua leyenda, este Pokémon es la reencarnación de 9 nobles santos.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Vulpix usando Piedra Fuego",
@@ -13456,7 +13456,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/39.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/39.png",
     "cry_url": "/media/pokemon/cries/legacy/39.ogg",
-    "flavor_text": "Tras fijar su tierna mirada en el objetivo, entona una dulce y misteriosa melodía para adormecerlo.",
+    "flavor_text": "Utiliza sus misteriosos ojos para engañar a su enemigo. También cantará para dormirlo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 4 zonas (ej: Ruta 5, Ruta 6, Ruta 7...)",
@@ -14444,7 +14444,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/41.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/41.png",
     "cry_url": "/media/pokemon/cries/legacy/41.ogg",
-    "flavor_text": "Emite ultrasonidos que utiliza como sonar para evitar obstáculos cuando vuela.",
+    "flavor_text": "Emite sonidos ultrasónicos mientras vuela. Los utiliza como sónar para evitar obstáculos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 4 zonas (ej: Islas Espuma, Monte Moon, Túnel Roca...)",
@@ -14730,7 +14730,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/42.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/42.png",
     "cry_url": "/media/pokemon/cries/legacy/42.ogg",
-    "flavor_text": "Tras aproximarse sigilosamente a su objetivo, utiliza sus afilados colmillos para chuparle la sangre.",
+    "flavor_text": "Ataca de manera violenta sin avisar. Utiliza sus afilados colmillos para chupar sangre.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma, Cueva Celeste, Calle Victoria",
@@ -15049,7 +15049,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/43.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/43.png",
     "cry_url": "/media/pokemon/cries/legacy/43.ogg",
-    "flavor_text": "En ocasiones lo confunden con una mala hierba y, al tratar de arrancarlo, profiere unos gritos escalofriantes.",
+    "flavor_text": "Suele ser confundido con un puñado de semillas. Si lo extraes del suelo, gritará.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 6 zonas (ej: Ruta 12, Ruta 13, Ruta 14...)",
@@ -15364,7 +15364,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/44.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/44.png",
     "cry_url": "/media/pokemon/cries/legacy/44.ogg",
-    "flavor_text": "Huele bastante mal, pero una de cada mil personas aprecia su fétido olor.",
+    "flavor_text": "¡Huele bastante mal! De todas formas, 1 de cada 1000 personas aprecian su fétido olor.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 12, Ruta 13, Ruta 14...)",
@@ -15702,7 +15702,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/45.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/45.png",
     "cry_url": "/media/pokemon/cries/legacy/45.ogg",
-    "flavor_text": "Sacude sus enormes pétalos para propagar polen venenoso, lo cual provoca un verdadero estruendo.",
+    "flavor_text": "Aletea sus pétalos de flores para propagar su venenoso polen. El sonido que emite es agudo.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Gloom usando Piedra Hoja",
@@ -16038,7 +16038,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/46.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/46.png",
     "cry_url": "/media/pokemon/cries/legacy/46.ogg",
-    "flavor_text": "Escarba en el suelo para extraer nutrientes de las raíces de los árboles, que las setas del lomo absorben después casi por completo.",
+    "flavor_text": "Escarba bajo el suelo para roer las raíces de los árboles. Sus setas absorben sus energías.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Monte Moon, Zona Safari",
@@ -16357,7 +16357,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/47.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/47.png",
     "cry_url": "/media/pokemon/cries/legacy/47.ogg",
-    "flavor_text": "Tras largo tiempo absorbiendo la energía del huésped, la seta parásita del lomo es la que parece controlar la voluntad de este Pokémon.",
+    "flavor_text": "El parásito absorbe la energía con las setas de la espalda, que lo controlan.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste, Zona Safari (también por intercambio NPC)",
@@ -16717,7 +16717,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/48.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/48.png",
     "cry_url": "/media/pokemon/cries/legacy/48.ogg",
-    "flavor_text": "Sus grandes ojos actúan como radares. A plena luz se percibe que son, en realidad, grupos de ojos diminutos.",
+    "flavor_text": "Sus grandes ojos actúan como radares. En lugares claros, verás montones de pequeños ojos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 4 zonas (ej: Ruta 14, Ruta 15, Ruta 24...)",
@@ -17067,7 +17067,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/49.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/49.png",
     "cry_url": "/media/pokemon/cries/legacy/49.ogg",
-    "flavor_text": "Las alas desprenden un polvillo de escamas impregnado de toxinas que se adhiere al contacto y resulta difícil de quitar.",
+    "flavor_text": "Es difícil quitar el polvo de sus alas. También posee un veneno que se desprende al contacto.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 14, Ruta 15, Cueva Celeste",
@@ -17468,7 +17468,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/50.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/50.png",
     "cry_url": "/media/pokemon/cries/legacy/50.ogg",
-    "flavor_text": "Prefiere los lugares oscuros. Pasa la mayor parte del tiempo bajo tierra, pero también se avista con frecuencia en cuevas.",
+    "flavor_text": "Prefiere los lugares oscuros. Pasa el tiempo bajo tierra, aunque aparece en cuevas.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Diglett",
@@ -17762,7 +17762,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/51.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/51.png",
     "cry_url": "/media/pokemon/cries/legacy/51.ogg",
-    "flavor_text": "Estos trillizos combinan su fuerza para excavar hasta una profundidad de 100 km, razón por la que se les atribuyen algunos terremotos.",
+    "flavor_text": "Un grupo de trillizos que cava a 90 KPH. Por ello, creen que se trata de un terremoto.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Diglett (también por intercambio NPC)",
@@ -18097,7 +18097,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/52.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/52.png",
     "cry_url": "/media/pokemon/cries/legacy/52.ogg",
-    "flavor_text": "Al parecer, es más activo por la noche. Adora de tal manera los objetos redondos y brillantes que no puede evitar recogerlos si se los encuentra.",
+    "flavor_text": "Parece que son más activos por la noche. Adoran las cosas redondas y brillantes.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Exclusivo de Pokémon Azul (no disponible en Amarillo). Conseguir mediante intercambio",
@@ -18421,7 +18421,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/53.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/53.png",
     "cry_url": "/media/pokemon/cries/legacy/53.ogg",
-    "flavor_text": "La gema que tiene en la frente brilla por sí misma. Camina con elegancia regia.",
+    "flavor_text": "¡La gema en su frente brilla por sí misma! Camina con la elegancia de una reina.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Evoluciona de Meowth (Exclusivo de Pokémon Azul. Conseguir mediante intercambio)",
@@ -18783,7 +18783,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/54.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/54.png",
     "cry_url": "/media/pokemon/cries/legacy/54.ogg",
-    "flavor_text": "Siempre tiene dolores de cabeza. Posee poderes psíquicos, pero se desconoce si los controla a voluntad.",
+    "flavor_text": "Siempre tiene dolores de cabeza. Posee poderes mentales, pero no sabes cuándo los usará.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 6",
@@ -19178,7 +19178,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/55.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/55.png",
     "cry_url": "/media/pokemon/cries/legacy/55.ogg",
-    "flavor_text": "Sus delgadas y largas extremidades terminan en dedos palmeados muy desarrollados que le permiten nadar en los lagos con gracilidad.",
+    "flavor_text": "Sus delgados y largos miembros acaban en anchas aletas. Las usan para nadar en los lagos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 6",
@@ -19610,7 +19610,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/56.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/56.png",
     "cry_url": "/media/pokemon/cries/legacy/56.ogg",
-    "flavor_text": "Este ágil Pokémon vive en los árboles. Se enfada con facilidad y, cuando lo hace, se abalanza contra todo lo que se encuentre a su alrededor.",
+    "flavor_text": "Este ágil Pokémon vive en los arboles. Se enfada fácilmente y no dudará en atacar a todos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 4 zonas (ej: Ruta 3, Ruta 4, Ruta 22...)",
@@ -20039,7 +20039,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/57.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/57.png",
     "cry_url": "/media/pokemon/cries/legacy/57.ogg",
-    "flavor_text": "Solo se calma cuando no hay nadie cerca, por lo que llegar a ver ese momento resulta verdaderamente difícil.",
+    "flavor_text": "Sólo se calma cuando nadie está cerca. Llegar a ver ese momento es realmente difícil.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 23",
@@ -20504,7 +20504,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/58.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/58.png",
     "cry_url": "/media/pokemon/cries/legacy/58.ogg",
-    "flavor_text": "Este Pokémon es muy amistoso. Aun así, ladra con fiereza a cualquiera que invada su territorio.",
+    "flavor_text": "Este Pokémon es muy amistoso. Aun así, gruñirá a cualquiera que invada su territorio.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Mansión Pokémon",
@@ -20819,7 +20819,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/59.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/59.png",
     "cry_url": "/media/pokemon/cries/legacy/59.ogg",
-    "flavor_text": "Este Pokémon es toda una leyenda en oriente. Muchos han quedado cautivados por la belleza y gracilidad que exhibe al correr.",
+    "flavor_text": "Es un Pokémon legendario en China. Allí, adoran la gracia y belleza que exhibe al correr.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Growlithe usando Piedra Fuego",
@@ -21138,7 +21138,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/60.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/60.png",
     "cry_url": "/media/pokemon/cries/legacy/60.ogg",
-    "flavor_text": "La dirección de la espiral en su vientre varía en función de la región donde nace. Se mueve con más facilidad en el agua que en tierra firme.",
+    "flavor_text": "La dirección de la espiral en el vientre cambia según el área. Prefiere nadar a correr.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 24 zonas (ej: Islas Espuma, Ruta 12, Ruta 19...)",
@@ -21565,7 +21565,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/61.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/61.png",
     "cry_url": "/media/pokemon/cries/legacy/61.ogg",
-    "flavor_text": "Cuando se siente intimidado, usa la espiral del vientre para adormecer al rival y aprovechar para escaparse.",
+    "flavor_text": "Cuando lo atacan, usa la espiral del vientre para dormir al rival. Aprovecha para escapar entonces.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 22, Ruta 23",
@@ -22021,7 +22021,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/62.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/62.png",
     "cry_url": "/media/pokemon/cries/legacy/62.ogg",
-    "flavor_text": "La fuerza que le confiere toda la musculatura del cuerpo le permite nadar con tal impulso que puede rebasar hasta a nadadores profesionales.",
+    "flavor_text": "Es capaz de nadar usando todos los músculos de su cuerpo. Podrá adelantar incluso a un campeón",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Poliwhirl usando Piedra Agua",
@@ -22462,7 +22462,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/63.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/63.png",
     "cry_url": "/media/pokemon/cries/legacy/63.ogg",
-    "flavor_text": "Duerme 18 horas al día. Si siente peligro, se teletransporta a un lugar seguro, aun estando dormido.",
+    "flavor_text": "Duerme 18 horas al día. Si siente peligro, se teletransporta a un lugar seguro, aun durmiendo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 4 zonas (ej: Ruta 5, Ruta 6, Ruta 7...) y canjeable por 230 fichas en el Casino de Ciudad Azulona",
@@ -22807,7 +22807,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/64.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/64.png",
     "cry_url": "/media/pokemon/cries/legacy/64.ogg",
-    "flavor_text": "Hace que sucedan cosas extrañas cuando está cerca, como que los relojes vayan al revés.",
+    "flavor_text": "Muchas cosas raras suceden si está cerca. Por ejemplo, hace que los relojes vayan al revés.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 8",
@@ -23228,7 +23228,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/65.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/65.png",
     "cry_url": "/media/pokemon/cries/legacy/65.ogg",
-    "flavor_text": "Este Pokémon lo recuerda todo y nunca olvida lo que aprende, de ahí que sea tan inteligente.",
+    "flavor_text": "Este Pokémon lo recuerda todo. Nunca olvida lo que aprende. Es un Pokémon muy listo.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Kadabra (Intercambio con otro entrenador)",
@@ -23654,7 +23654,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/66.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/66.png",
     "cry_url": "/media/pokemon/cries/legacy/66.ogg",
-    "flavor_text": "Es muy fuerte, a pesar de su pequeño tamaño. Su dominio de varias artes marciales lo convierte en un rival duro de pelar.",
+    "flavor_text": "Muy poderoso a pesar de su pequeño tamaño. Su maestría en artes marciales lo hace muy duro.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Túnel Roca, Ruta 10",
@@ -24032,7 +24032,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/67.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/67.png",
     "cry_url": "/media/pokemon/cries/legacy/67.ogg",
-    "flavor_text": "El cinto antifuerza que lleva puesto limita sus movimientos. Sin él, resultaría imparable.",
+    "flavor_text": "El cinturón que rodea su cintura retiene toda su energía. Sin él, este Pokémon sería implacable.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Calle Victoria (también por intercambio NPC)",
@@ -24437,7 +24437,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/68.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/68.png",
     "cry_url": "/media/pokemon/cries/legacy/68.ogg",
-    "flavor_text": "Un brazo le basta para mover montañas y, si usa los cuatro, asesta puñetazos de una potencia descomunal.",
+    "flavor_text": "Con sólo un brazo puede mover montañas. Usando los cuatro, este Pokémon puede ser terrible.",
     "obtaining_info": {
       "type": "trade_npc",
       "summary": "Intercambio en la Vía Subterránea de la Ruta 5: entrega un Cubone a cambio de Machoke (con el mote «Ricky»), que evoluciona inmediatamente a Machamp tras el intercambio",
@@ -24848,7 +24848,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/69.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/69.png",
     "cry_url": "/media/pokemon/cries/legacy/69.ogg",
-    "flavor_text": "Prefiere lugares cálidos y húmedos. Atrapa pequeños Pokémon insectos con sus lianas para devorarlos.",
+    "flavor_text": "Prefiere los lugares calientes y húmedos. Atrapa pequeños insectos con sus ramas para devorarlos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 6 zonas (ej: Ruta 12, Ruta 13, Ruta 14...)",
@@ -25185,7 +25185,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/70.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/70.png",
     "cry_url": "/media/pokemon/cries/legacy/70.ogg",
-    "flavor_text": "Cuando tiene hambre, engulle a todo lo que se mueve. La pobre presa acaba disuelta en sus ácidos.",
+    "flavor_text": "Cuando está hambriento, ataca a todo lo que se mueva. Su pobre presa se derrite en fuertes ácidos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 12, Ruta 13, Ruta 14...)",
@@ -25534,7 +25534,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/71.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/71.png",
     "cry_url": "/media/pokemon/cries/legacy/71.ogg",
-    "flavor_text": "Atrae a su presa con un dulce aroma a miel. Una vez atrapada en la boca, la disuelve en tan solo un día, huesos incluidos.",
+    "flavor_text": "Engaña a su presa con un dulce aroma a miel. Una vez atrapada, la presa perderá hasta sus huesos.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Weepinbell usando Piedra Hoja",
@@ -25870,7 +25870,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/72.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/72.png",
     "cry_url": "/media/pokemon/cries/legacy/72.ogg",
-    "flavor_text": "A veces pueden encontrarse deshidratados en las playas, pero reviven al sumergirlos de nuevo en el agua.",
+    "flavor_text": "A veces puede ser encontrado seco y medio enterrado en una playa. Al lanzarlo otra vez al mar revivirá.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 12 zonas (ej: Islas Espuma, Ruta 19, Ruta 20...)",
@@ -26293,7 +26293,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/73.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/73.png",
     "cry_url": "/media/pokemon/cries/legacy/73.ogg",
-    "flavor_text": "Puede estirar y contraer con total libertad sus 80 tentáculos, con los que atrapa a su presa y le inyecta un veneno debilitante.",
+    "flavor_text": "Puede controlar libremente sus 80 tentáculos. Éstos debilitan a la presa con su poderoso veneno.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 19, Ruta 20, Ruta 21",
@@ -26705,7 +26705,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/74.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/74.png",
     "cry_url": "/media/pokemon/cries/legacy/74.ogg",
-    "flavor_text": "Se suele encontrar en senderos de montaña y sitios parecidos. Conviene andar con cuidado para no pisarlo sin querer y provocar su enfado.",
+    "flavor_text": "Se encuentran normalmente en los caminos de montaña. Si te cruzas con uno, se enfadará.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Monte Moon, Túnel Roca, Calle Victoria",
@@ -27098,7 +27098,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/75.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/75.png",
     "cry_url": "/media/pokemon/cries/legacy/75.ogg",
-    "flavor_text": "Se le suele ver rodando montaña abajo. No evita los obstáculos, sino que los arrolla.",
+    "flavor_text": "Se le suele ver rodando por las montañas. Los obstáculos no los evita. ¡Los arrolla!",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste, Calle Victoria",
@@ -27503,7 +27503,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/76.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/76.png",
     "cry_url": "/media/pokemon/cries/legacy/76.ogg",
-    "flavor_text": "Nada más mudar la piel, su cuerpo se vuelve blando y blanquecino, pero se endurece al poco tiempo de entrar en contacto con el aire.",
+    "flavor_text": "Cuando pierde su piel, su cuerpo se vuelve blando y blanquecino. Si esto ocurre, se esconderá.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Graveler (Intercambio con otro entrenador)",
@@ -27919,7 +27919,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/77.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/77.png",
     "cry_url": "/media/pokemon/cries/legacy/77.ogg",
-    "flavor_text": "Es capaz de saltar muy alto. Absorbe el impacto del aterrizaje con sus robustas patas y pezuñas.",
+    "flavor_text": "Es capaz de saltar muy alto. Con sus pezuñas y sus robustas patas, absorbe el impacto.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 17",
@@ -28224,7 +28224,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/78.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/78.png",
     "cry_url": "/media/pokemon/cries/legacy/78.ogg",
-    "flavor_text": "Le encanta galopar. Si ve algo más rápido, intentará alcanzarlo a toda velocidad.",
+    "flavor_text": "Le encanta correr. Si ve algo más rápido que él, intentará alcanzarlo a toda velocidad.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Ponyta (Nivel 40)",
@@ -28572,7 +28572,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/79.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/79.png",
     "cry_url": "/media/pokemon/cries/legacy/79.ogg",
-    "flavor_text": "Es increíblemente lento y perezoso. Se toma las cosas con calma, sin preocuparse por el paso del tiempo.",
+    "flavor_text": "Es increíblemente lento y perezoso. Le encanta dormir sin preocuparse ni del tiempo ni de lo que ocurra.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma, Ruta 12, Ruta 13",
@@ -29036,7 +29036,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/80.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/80.png",
     "cry_url": "/media/pokemon/cries/legacy/80.ogg",
-    "flavor_text": "Lleva una vida tranquila cerca del mar. Si el Shellder de la cola se desprende, se convierte de nuevo en un Slowpoke.",
+    "flavor_text": "Vive tranquilo en el mar. Si el Shellder de su cola se cae, vuelve a ser un Slowpoke otra vez.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma, Ruta 12, Ruta 13",
@@ -29598,7 +29598,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/81.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/81.png",
     "cry_url": "/media/pokemon/cries/legacy/81.ogg",
-    "flavor_text": "Puede desafiar la gravedad desde su nacimiento. Flota en el aire gracias a las ondas electromagnéticas que emite.",
+    "flavor_text": "Puede desafiar a la gravedad desde su nacimiento. Flota en el aire gracias a ondas electromagnéticas.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 10, Central de Energía",
@@ -29917,7 +29917,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/82.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/82.png",
     "cry_url": "/media/pokemon/cries/legacy/82.ogg",
-    "flavor_text": "Es capaz de elevar 2 °C la temperatura en un radio de 1 km emitiendo extrañas ondas electromagnéticas.",
+    "flavor_text": "Genera extrañas señales de radio. Es capaz de elevar la temperatura 3º centígrados.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Central de Energía",
@@ -30269,7 +30269,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/83.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/83.png",
     "cry_url": "/media/pokemon/cries/legacy/83.ogg",
-    "flavor_text": "Vive cerca de cultivos de puerros. Como estos son cada vez más escasos, se cree que el número de Farfetch’d también ha disminuido.",
+    "flavor_text": "Vive cerca de las plantas. Son raramente vistos, así que se piensa que se están extinguiendo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 12, Ruta 13",
@@ -30609,7 +30609,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/84.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/84.png",
     "cry_url": "/media/pokemon/cries/legacy/84.ogg",
-    "flavor_text": "Las diminutas alas apenas le permiten volar, pero puede correr a gran velocidad gracias a sus patas hiperdesarrolladas.",
+    "flavor_text": "Sus cortas alas lo hacen volar con dificultad. De todos modos, puede correr a gran velocidad",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 16, Ruta 17, Ruta 18",
@@ -30932,7 +30932,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/85.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/85.png",
     "cry_url": "/media/pokemon/cries/legacy/85.ogg",
-    "flavor_text": "Este Pokémon surge al dividirse una de las cabezas de Doduo. Es capaz de correr por las praderas a 60 km/h.",
+    "flavor_text": "Una de las dos cabezas de Doduo se divide para formar un nuevo PkMn. Es capaz de correr a 40 KPH.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 17",
@@ -31284,7 +31284,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/86.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/86.png",
     "cry_url": "/media/pokemon/cries/legacy/86.ogg",
-    "flavor_text": "Le encantan los lugares gélidos y disfruta nadando en aguas a temperaturas en torno a los -10 °C.",
+    "flavor_text": "A este Pokémon le encanta el frío. Le encanta nadar en climas polares, sea cual sea la temperatura",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma",
@@ -31619,7 +31619,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/87.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/87.png",
     "cry_url": "/media/pokemon/cries/legacy/87.ogg",
-    "flavor_text": "Su cuerpo es blanco como la nieve. Puede nadar plácidamente en mares gélidos gracias a su resistencia al frío.",
+    "flavor_text": "Su cuerpo es como una bola de nieve. Inmune al frío intenso, nada rápidamente en aguas heladas.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma (también por intercambio NPC)",
@@ -31995,7 +31995,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/88.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/88.png",
     "cry_url": "/media/pokemon/cries/legacy/88.ogg",
-    "flavor_text": "Está hecho de lodo endurecido. Pocos se atreven a tocarlo debido a su pestilencia y composición nociva. Allá por donde pasa no crece la hierba.",
+    "flavor_text": "Está hecho de fango endurecido. Huele a pútrido. ¡Por donde pasa, no crece la hierba!",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Central de Energía, Mansión Pokémon",
@@ -32305,7 +32305,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/89.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/89.png",
     "cry_url": "/media/pokemon/cries/legacy/89.ogg",
-    "flavor_text": "Huele tan mal que puede provocar desmayos. Su nariz se ha atrofiado de tal manera que ha perdido por completo el sentido del olfato.",
+    "flavor_text": "Huele tan mal que puede provocar desmayos. Ha degenerado tanto, que ya ni él mismo se huele.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Central de Energía, Mansión Pokémon (también por intercambio NPC)",
@@ -32645,7 +32645,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/90.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/90.png",
     "cry_url": "/media/pokemon/cries/legacy/90.ogg",
-    "flavor_text": "La dura concha que lo recubre resiste cualquier ataque, por lo que su frágil cuerpo solo queda expuesto cuando esta se abre.",
+    "flavor_text": "Su concha puede evitar cualquier ataque. El débil cuerpo sólo está expuesto cuando está abierta",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 17, Ruta 18, Muelle del S.S. Anne (Ciudad Carmín)",
@@ -33008,7 +33008,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/91.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/91.png",
     "cry_url": "/media/pokemon/cries/legacy/91.ogg",
-    "flavor_text": "Se protege con su concha, que es más dura que un diamante. Su capacidad de lanzar pinchos lo convierte en un rival temible.",
+    "flavor_text": "Utiliza su concha para protegerse. Dicen que es más dura que el diamante. También lanza espinas.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Shellder usando Piedra Agua",
@@ -33368,7 +33368,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/92.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/92.png",
     "cry_url": "/media/pokemon/cries/legacy/92.ogg",
-    "flavor_text": "Según dicen, aparece en edificios antiguos y deshabitados. Su cuerpo, de aspecto gaseoso, carece de una forma definida.",
+    "flavor_text": "Solo aparece en edificios en ruinas. No tiene forma real, ya que parece que está hecho de gas.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Torre Pokémon",
@@ -33651,7 +33651,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/93.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/93.png",
     "cry_url": "/media/pokemon/cries/legacy/93.ogg",
-    "flavor_text": "Sus lengüetazos le arrebatan la energía vital a su víctima y le causan unos temblores que no cesan hasta que fallece.",
+    "flavor_text": "Toma la vida de su adversario a lengüetazos. Esto produce mareos hasta que la víctima fallece",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Torre Pokémon",
@@ -33939,7 +33939,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/94.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/94.png",
     "cry_url": "/media/pokemon/cries/legacy/94.ogg",
-    "flavor_text": "Sentir un escalofrío repentino es señal de que hay un Gengar cerca. Quien lo perciba puede convertirse en víctima de su maldición.",
+    "flavor_text": "Sabrás que un Gengar está cerca cuando sufras de sudores fríos. Intentará echarte un hechizo.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Haunter (Intercambio con otro entrenador)",
@@ -34342,7 +34342,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/95.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/95.png",
     "cry_url": "/media/pokemon/cries/legacy/95.ogg",
-    "flavor_text": "Cava a gran velocidad en busca de comida. Los Diglett convierten en su hogar los túneles que deja a su paso.",
+    "flavor_text": "Cava a gran velocidad en busca de comida. Los túneles que deja son usados por los Diglett.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Túnel Roca, Calle Victoria",
@@ -34681,7 +34681,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/96.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/96.png",
     "cry_url": "/media/pokemon/cries/legacy/96.ogg",
-    "flavor_text": "Si se duerme siempre en compañía de un Pokémon de esta especie, puede mostrar sueños que haya ingerido con anterioridad.",
+    "flavor_text": "Si duermes cerca de uno todo el tiempo, en alguna ocasión podrás ver sueños que se haya comido antes.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 11",
@@ -35097,7 +35097,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/97.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/97.png",
     "cry_url": "/media/pokemon/cries/legacy/97.ogg",
-    "flavor_text": "Conviene evitar el contacto visual en caso de encontrarse con este Pokémon, ya que puede hipnotizar con su péndulo.",
+    "flavor_text": "Intenta evitar cualquier tipo de contacto visual con este Pokémon. Puede hipnotizar con su péndulo.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Drowzee (Nivel 26)",
@@ -35545,7 +35545,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/98.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/98.png",
     "cry_url": "/media/pokemon/cries/legacy/98.ogg",
-    "flavor_text": "Sus pinzas son armas muy potentes y, aunque en ocasiones se le rompen al atacar, le crecen de nuevo con rapidez.",
+    "flavor_text": "Sus pinzas son armas perfectas. En alguna ocasión pueden romperse en combate, pero crecerán rápido.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma, Ruta 10, Ruta 25",
@@ -35888,7 +35888,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/99.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/99.png",
     "cry_url": "/media/pokemon/cries/legacy/99.ogg",
-    "flavor_text": "Una de sus pinzas, enorme y dura como el acero, tiene 10 000 CV. No obstante, resulta demasiado pesada.",
+    "flavor_text": "Una de sus pinzas crece más que la otra, y es dura como el acero. De todos modos, pesa demasiado.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Islas Espuma, Ruta 10, Ruta 25",
@@ -36582,7 +36582,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/101.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/101.png",
     "cry_url": "/media/pokemon/cries/legacy/101.ogg",
-    "flavor_text": "Almacena tal cantidad de energía eléctrica en su cuerpo que el más leve impacto puede provocar una gran explosión.",
+    "flavor_text": "Almacena energía eléctrica en su cuerpo. El más leve shock puede provocar una gran explosión.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Central de Energía",
@@ -36943,7 +36943,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/102.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/102.png",
     "cry_url": "/media/pokemon/cries/legacy/102.ogg",
-    "flavor_text": "Las cabezas se atraen unas a otras y giran entre sí. Debe tener seis para equilibrarse.",
+    "flavor_text": "Sus cabezas se atraen unas a otras, y giran entre sí. Debe tener seis para equilibrarse.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -37269,7 +37269,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/103.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/103.png",
     "cry_url": "/media/pokemon/cries/legacy/103.ogg",
-    "flavor_text": "El estrépito que causa se debe a que cada una de las tres cabezas habla y actúa de forma independiente, sin tener en cuenta a las demás.",
+    "flavor_text": "Este Pokémon es muy ruidoso. Esto es debido a que cada una de sus cabezas hace lo que quiere.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Exeggcute usando Piedra Hoja",
@@ -37601,7 +37601,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/104.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/104.png",
     "cry_url": "/media/pokemon/cries/legacy/104.ogg",
-    "flavor_text": "Siempre lleva puesto el cráneo de su difunta madre. Su llanto resuena dentro como una triste melodía.",
+    "flavor_text": "Siempre lleva el cráneo de su difunta madre. Su grito hace eco y parece una triste melodía.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Torre Pokémon, Zona Safari",
@@ -38032,7 +38032,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/105.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/105.png",
     "cry_url": "/media/pokemon/cries/legacy/105.ogg",
-    "flavor_text": "Este Pokémon ha dejado atrás su debilidad y se ha vuelto más feroz con el paso del tiempo. Blande su hueso con destreza.",
+    "flavor_text": "Pequeño y débil, este Pokémon siempre va acompañado de su palo de hueso de Pokémon.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -38485,7 +38485,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/106.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/106.png",
     "cry_url": "/media/pokemon/cries/legacy/106.ogg",
-    "flavor_text": "La planta de los pies se le vuelve tan dura como el diamante al dar patadas a su oponente, hasta el punto de aniquilarlo.",
+    "flavor_text": "Cuando da patadas al enemigo, la planta de sus pies se vuelve tan dura como el diamante.",
     "obtaining_info": {
       "type": "prize",
       "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán",
@@ -38830,7 +38830,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/107.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/107.png",
     "cry_url": "/media/pokemon/cries/legacy/107.ogg",
-    "flavor_text": "Sus puñetazos, semejantes a una taladradora, pueden perforar un muro de hormigón como si nada.",
+    "flavor_text": "Sus golpes se asemejan a una taladradora. Puede atravesar un muro de hormigón como si nada.",
     "obtaining_info": {
       "type": "prize",
       "summary": "Elegir entre Hitmonlee o Hitmonchan tras vencer al Maestro del Dojo Kárate en Ciudad Azafrán",
@@ -39175,7 +39175,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/108.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/108.png",
     "cry_url": "/media/pokemon/cries/legacy/108.ogg",
-    "flavor_text": "Su lengua puede llegar a medir dos metros y la mueve con más soltura que las patas delanteras. Sus lametazos pueden causar parálisis.",
+    "flavor_text": "Su lengua mide casi dos metros y se mueve libremente. Sus lametazos pueden causar parálisis.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste",
@@ -39904,7 +39904,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/110.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/110.png",
     "cry_url": "/media/pokemon/cries/legacy/110.ogg",
-    "flavor_text": "Este Pokémon se alimenta de los gases venenosos, los gérmenes y el polvo que encuentra en la basura.",
+    "flavor_text": "Este Pokémon vive absorbiendo gases venenosos, gérmenes, y el polvo que existe en la basura.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Evoluciona de Koffing (No disponible en Amarillo. Intercambio desde Pokémon Rojo o Pokémon Azul)",
@@ -40205,7 +40205,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/111.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/111.png",
     "cry_url": "/media/pokemon/cries/legacy/111.ogg",
-    "flavor_text": "Es algo simple y testarudo, y solo tiene una cosa en la cabeza. Si carga contra algo, no se detiene hasta caer rendido.",
+    "flavor_text": "Este Pokémon no tiene muchas luces. Una vez inicia la carga, no para hasta que cae dormido.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste, Zona Safari",
@@ -40565,7 +40565,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/112.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/112.png",
     "cry_url": "/media/pokemon/cries/legacy/112.ogg",
-    "flavor_text": "Pasar a ser bípedo le ha permitido desarrollar su inteligencia. La piel, rígida como una armadura, resiste incluso el magma.",
+    "flavor_text": "Camina sobre sus patas traseras, y muestra signos de inteligencia. Es capaz de aguantar lava hirviendo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste (también por intercambio NPC)",
@@ -41083,7 +41083,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/113.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/113.png",
     "cry_url": "/media/pokemon/cries/legacy/113.ogg",
-    "flavor_text": "Este amable Pokémon comparte sus nutritivos huevos con quien encuentre herido.",
+    "flavor_text": "Este amable Pokémon es capaz de compartir sus nutrientes huevos con un Pokémon herido.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste, Zona Safari",
@@ -41624,7 +41624,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/114.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/114.png",
     "cry_url": "/media/pokemon/cries/legacy/114.ogg",
-    "flavor_text": "Se camufla tras una gran masa de lianas azules. Se dice que nunca dejan de crecer.",
+    "flavor_text": "Se camufla tras una gran masa de enredaderas azules. Se dice que nunca dejan de crecer.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -41961,7 +41961,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/115.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/115.png",
     "cry_url": "/media/pokemon/cries/legacy/115.ogg",
-    "flavor_text": "Cuida de la cría que lleva en la bolsa de su panza y se enfrenta a todo aquel que supone una amenaza para protegerla.",
+    "flavor_text": "Cuida de su cría en la bolsa de su tripa. No evitará ninguna pelea para protegerla.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -42406,7 +42406,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/116.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/116.png",
     "cry_url": "/media/pokemon/cries/legacy/116.ogg",
-    "flavor_text": "Si se siente en peligro, arrojará un potente chorro de agua o de una tinta especial por la boca.",
+    "flavor_text": "Si se siente en peligro, arrojará un potente chorro de agua, o de una tinta especial, por su boca.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 5 zonas (ej: Ruta 12, Ciudad Carmín, Ruta 10...)",
@@ -42727,7 +42727,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/117.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/117.png",
     "cry_url": "/media/pokemon/cries/legacy/117.ogg",
-    "flavor_text": "Tocar sus aletas dorsales causa entumecimiento. Mientras duerme se agarra al coral con la cola para que no se lo lleve la corriente.",
+    "flavor_text": "Tocar su aleta trasera causa parálisis. Se engancha al coral para mantenerse mientras duerme.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ruta 12, Ruta 13",
@@ -43062,7 +43062,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/118.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/118.png",
     "cry_url": "/media/pokemon/cries/legacy/118.ogg",
-    "flavor_text": "Durante la época de desove, se les suele ver nadando a contracorriente en ríos o remontando cascadas en grandes grupos.",
+    "flavor_text": "En su época de puesta de huevos, suelen ser vistos nadando por ríos contracorriente en grandes grupos.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 24 zonas (ej: Islas Espuma, Ruta 12, Ruta 19...)",
@@ -43490,7 +43490,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/119.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/119.png",
     "cry_url": "/media/pokemon/cries/legacy/119.ogg",
-    "flavor_text": "Los machos usan el cuerno de la cabeza para horadar rocas en el lecho del río y construir allí su nido.",
+    "flavor_text": "Este Pokémon hace sus nidos tallando cantos de riachuelo con el cuerno de su cabeza.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ciudad Celeste, Ruta 24, Cueva Celeste",
@@ -43860,7 +43860,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/120.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/120.png",
     "cry_url": "/media/pokemon/cries/legacy/120.ogg",
-    "flavor_text": "Aunque haya perdido partes de su cuerpo, le crecerán de nuevo siempre y cuando su parte central se mantenga intacta.",
+    "flavor_text": "Mientras su parte central se mantenga intacta, crecerá de nuevo aunque haya sido destrozado.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 7 zonas (ej: Islas Espuma, Ruta 19, Ruta 20...)",
@@ -44304,7 +44304,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/121.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/121.png",
     "cry_url": "/media/pokemon/cries/legacy/121.ogg",
-    "flavor_text": "Su parte central se conoce como núcleo. Se cree que, cuando este brilla con siete colores, es señal de que se está comunicando.",
+    "flavor_text": "Su zona central es conocida como el núcleo. Se piensa que se comunica mediante colores.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Staryu usando Piedra Agua",
@@ -44692,7 +44692,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/122.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/122.png",
     "cry_url": "/media/pokemon/cries/legacy/122.ogg",
-    "flavor_text": "Practica constantemente la pantomima. Tal es su maestría que puede convencer a quien lo observe de la existencia de algo que no es real.",
+    "flavor_text": "Siempre practica la misma pantomima. Hace creer al enemigo que existe algo que no es real.",
     "obtaining_info": {
       "type": "trade_npc",
       "summary": "Intercambio en la caseta de la Ruta 2: entrega un Clefairy a cambio de Mr. Mime (con el mote «Miles»)",
@@ -45116,7 +45116,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/123.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/123.png",
     "cry_url": "/media/pokemon/cries/legacy/123.ogg",
-    "flavor_text": "Se agazapa en la hierba alta y salta de repente sobre el enemigo para hacerlo trizas con sus afiladas guadañas. Se mueve como un ninja.",
+    "flavor_text": "Se agazapa en la hierba alta para saltar sobre su enemigo con sus guadañas. Se mueve como un ninja.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari y canjeable por 6.500 fichas en el Casino de Ciudad Azulona",
@@ -45426,7 +45426,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/124.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/124.png",
     "cry_url": "/media/pokemon/cries/legacy/124.ogg",
-    "flavor_text": "Parece moverse como si estuviera bailando un ritmo de su propia invención. Mueve mucho las caderas al andar.",
+    "flavor_text": "Parece moverse como si estuviera bailando un ritmo de su propia creación. Menea mucho sus caderas.",
     "obtaining_info": {
       "type": "trade",
       "summary": "No disponible en Amarillo. Conseguir mediante intercambio desde Pokémon Rojo o Pokémon Azul",
@@ -45851,7 +45851,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/125.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/125.png",
     "cry_url": "/media/pokemon/cries/legacy/125.ogg",
-    "flavor_text": "Cuando hay un apagón, es señal inequívoca de que este Pokémon se ha comido la energía de una central eléctrica.",
+    "flavor_text": "Cuando hay un apagón, es más que posible que este Pokémon se haya comido la energía.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Exclusivo de Pokémon Rojo (no disponible en Amarillo). Conseguir mediante intercambio",
@@ -46285,7 +46285,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/126.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/126.png",
     "cry_url": "/media/pokemon/cries/legacy/126.ogg",
-    "flavor_text": "Nace en cráteres de volcanes. Su cuerpo envuelto en llamas parece una bola de fuego.",
+    "flavor_text": "Nacen en volcanes activos. Su cuerpo parece una gran bola de fuego ya que están en llamas.",
     "obtaining_info": {
       "type": "trade",
       "summary": "Exclusivo de Pokémon Azul (no disponible en Amarillo). Conseguir mediante intercambio",
@@ -46669,7 +46669,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/127.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/127.png",
     "cry_url": "/media/pokemon/cries/legacy/127.ogg",
-    "flavor_text": "Atrapa a su presa con las pinzas y aprieta fuerte. Habita en lugares cálidos, ya que el frío puede llegar a inmovilizarlo.",
+    "flavor_text": "Atrapa a su presa con sus pinzas, y aprieta fuerte. No se puede mover si hace mucho frío.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari y canjeable por 6.500 fichas en el Casino de Ciudad Azulona",
@@ -46999,7 +46999,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/128.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/128.png",
     "cry_url": "/media/pokemon/cries/legacy/128.ogg",
-    "flavor_text": "Un Pokémon violento que rebosa energía. Cuando echa a correr, no se detiene hasta que choca con algo.",
+    "flavor_text": "Un rudo Pokémon repleto de energía vital. Cuando corre, no para hasta que choca con algo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -47353,7 +47353,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/129.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/129.png",
     "cry_url": "/media/pokemon/cries/legacy/129.ogg",
-    "flavor_text": "Famoso por su ineptitud. Nada en todo tipo de aguas, ya sean mares, lagos, ríos o charcas.",
+    "flavor_text": "Famoso por ser poco fiable. Puede encontrarse nadando en mares, lagos, ríos y charcos",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en 25 zonas (ej: Islas Espuma, Ruta 12, Ruta 19...)",
@@ -47549,7 +47549,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/130.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/130.png",
     "cry_url": "/media/pokemon/cries/legacy/130.ogg",
-    "flavor_text": "Este Pokémon tan salvaje como destructivo es conocido por haber reducido a escombros ciudades enteras en el pasado.",
+    "flavor_text": "Este Pokémon es enormemente destructivo. En la antigüedad, era conocido por destruir ciudades.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Ciudad Fucsia",
@@ -47929,7 +47929,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/131.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/131.png",
     "cry_url": "/media/pokemon/cries/legacy/131.ogg",
-    "flavor_text": "Este amable Pokémon es capaz de comprender el lenguaje humano y deja que las personas monten en él para navegar por el mar.",
+    "flavor_text": "Este espíritu gentil es capaz de leer la mente. Puede llevar a la gente a través del mar.",
     "obtaining_info": {
       "type": "gift",
       "summary": "Regalo de un empleado en el piso 7 del edificio Silph S.A. (Ciudad Azafrán)",
@@ -48356,7 +48356,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/132.png",
     "cry_url": "/media/pokemon/cries/legacy/132.ogg",
-    "flavor_text": "Cuando se fija en un enemigo, su cuerpo se transforma en una copia casi perfecta del mismo.",
+    "flavor_text": "Cuando se fija en un enemigo, su cuerpo se transforma en una copia perfecta del mismo.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Cueva Celeste, Mansión Pokémon",
@@ -48448,7 +48448,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/133.png",
     "cry_url": "/media/pokemon/cries/legacy/133.ogg",
-    "flavor_text": "Puede evolucionar a varias especies distintas. Su código genético es la clave para descifrar el misterio de dicha evolución.",
+    "flavor_text": "Su código genético es muy inestable. Puede evolucionar en diversas razas de Pokémon.",
     "obtaining_info": {
       "type": "gift",
       "summary": "Pokéball sobre la mesa del ático en la Mansión Azulona (Ciudad Azulona)",
@@ -48744,7 +48744,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/134.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/134.png",
     "cry_url": "/media/pokemon/cries/legacy/134.ogg",
-    "flavor_text": "Su estructura celular se parece a las moléculas de agua, por eso es invisible cuando está en este elemento.",
+    "flavor_text": "Su estructura celular se parece a las moléculas de agua. Es invisible cuando está en el agua.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Eevee usando Piedra Agua",
@@ -49172,7 +49172,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/135.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/135.png",
     "cry_url": "/media/pokemon/cries/legacy/135.ogg",
-    "flavor_text": "Un Pokémon muy sensible que se entristece o enfada con mucha facilidad. Se carga de electricidad cada vez que cambia de humor.",
+    "flavor_text": "Un Pokémon muy sensible. Se entristece o enfada con mucha facilidad, lo que le da energía.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Eevee usando Piedra Trueno",
@@ -49579,7 +49579,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/136.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/136.png",
     "cry_url": "/media/pokemon/cries/legacy/136.ogg",
-    "flavor_text": "La bolsa en el interior de su cuerpo le permite convertir el aire que aspira en llamas a 1700 °C que luego exhala por la boca.",
+    "flavor_text": "El cuerpo de este Pokémon posee una cámara ígnea. Cuando exhala aire, éste está a 3.000º Celsius.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Eevee usando Piedra Fuego",
@@ -49956,7 +49956,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/137.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/137.png",
     "cry_url": "/media/pokemon/cries/legacy/137.ogg",
-    "flavor_text": "Se creía que sería el único Pokémon capaz de volar por el espacio, pero aún no se ha visto a ninguno que lo haya conseguido.",
+    "flavor_text": "La gente dice que se trata del único Pokémon que puede volar por el espacio. Aún no lo ha logrado.",
     "obtaining_info": {
       "type": "casino",
       "summary": "Canjeable por 9.999 fichas en el Casino Rocket de Ciudad Azulona",
@@ -50341,7 +50341,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/138.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/138.png",
     "cry_url": "/media/pokemon/cries/legacy/138.ogg",
-    "flavor_text": "Este antiguo Pokémon fue regenerado a partir de un fósil. Solía nadar en antiguos mares moviendo con destreza sus 10 tentáculos.",
+    "flavor_text": "Este antiguo Pokémon fue recuperado de un fósil. Nada muy bien gracias al movimiento de sus 10 tentáculos.",
     "obtaining_info": {
       "type": "fossil",
       "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela",
@@ -50646,7 +50646,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/139.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/139.png",
     "cry_url": "/media/pokemon/cries/legacy/139.ogg",
-    "flavor_text": "Poseía unos colmillos afilados, pero el excesivo tamaño de su concha le impedía moverse con libertad, lo que acabó provocando su extinción.",
+    "flavor_text": "Picos afilados rodean su boca. Su concha es demasiado grande como para que se mueva libremente.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Omanyte al nivel 40",
@@ -51011,7 +51011,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/140.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/140.png",
     "cry_url": "/media/pokemon/cries/legacy/140.ogg",
-    "flavor_text": "Este Pokémon se regeneró a partir de un fósil. Usaba los ojos de la espalda para explorar su entorno al ocultarse en el lecho marino.",
+    "flavor_text": "Este Pokémon fue recuperado desde un fósil. Usa los ojos de su espalda al ocultarse en el lecho marino.",
     "obtaining_info": {
       "type": "fossil",
       "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela",
@@ -51316,7 +51316,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/141.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/141.png",
     "cry_url": "/media/pokemon/cries/legacy/141.ogg",
-    "flavor_text": "Este Pokémon es un rápido nadador gracias a su cuerpo esbelto. Con las garras despedaza las presas que atrapa para sorber sus fluidos.",
+    "flavor_text": "Este Pokémon es un hábil y rápido nadador. Atrapa a su presa para drenar sus fluidos vitales.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Kabuto al nivel 40",
@@ -51711,7 +51711,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/142.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/142.png",
     "cry_url": "/media/pokemon/cries/legacy/142.ogg",
-    "flavor_text": "Este Pokémon feroz, extinto hace siglos, fue regenerado a partir de ADN extraído de un ámbar.",
+    "flavor_text": "Este Pokémon salvaje, extinto hace siglos, fue resucitado usando ADN tomado de un ámbar.",
     "obtaining_info": {
       "type": "fossil",
       "summary": "Revivir el Ámbar Viejo en el Laboratorio de Isla Canela",
@@ -52035,7 +52035,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/143.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/143.png",
     "cry_url": "/media/pokemon/cries/legacy/143.ogg",
-    "flavor_text": "Engulle cualquier cosa, incluso comida mohosa, sin que esto le cause dolor de estómago.",
+    "flavor_text": "Come cualquier cosa. Incluso la comida pasada de fecha. Su estómago nunca se llena.",
     "obtaining_info": {
       "type": "special",
       "summary": "Pokémon único que se encuentra durmiendo y bloqueando el camino entre las rutas 12 y 16. Se debe despertar usando la Poké Flauta para poder capturarlo.",
@@ -52550,7 +52550,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/144.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/144.png",
     "cry_url": "/media/pokemon/cries/legacy/144.ogg",
-    "flavor_text": "Un Pokémon pájaro legendario. En invierno, crea nieve congelando la humedad del aire.",
+    "flavor_text": "Un legendario pájaro Pokémon. Congela el agua que encuentra en el aire para generar nieve.",
     "obtaining_info": {
       "type": "legendary",
       "summary": "En lo profundo de las Islas Espuma (Sótano B4F)",
@@ -52883,7 +52883,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/145.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/145.png",
     "cry_url": "/media/pokemon/cries/legacy/145.ogg",
-    "flavor_text": "Este Pokémon pájaro legendario solo aparece cuando el cielo se torna oscuro y caen rayos sin cesar.",
+    "flavor_text": "Este legendario pájaro Pokémon solo aparece cuando el cielo se torna oscuro y caen rayos.",
     "obtaining_info": {
       "type": "legendary",
       "summary": "Al final de la Central de Energía",
@@ -53216,7 +53216,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/146.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/146.png",
     "cry_url": "/media/pokemon/cries/legacy/146.ogg",
-    "flavor_text": "Un Pokémon pájaro legendario. Cuando aletea sus flamígeras alas, la oscura noche se torna roja.",
+    "flavor_text": "Un legendario pájaro Pokémon. Cuando aletea sus flamígeras alas, la oscura noche se torna roja.",
     "obtaining_info": {
       "type": "legendary",
       "summary": "En la Calle Victoria (cerca del Alto Mando)",
@@ -53519,7 +53519,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/147.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/147.png",
     "cry_url": "/media/pokemon/cries/legacy/147.ogg",
-    "flavor_text": "La existencia de este mítico Pokémon fue confirmada no hace mucho por un pescador que capturó uno.",
+    "flavor_text": "La existencia de este Pokémon ha sido confirmada recientemente por un pescador que cogió uno.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -53905,7 +53905,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/148.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/148.png",
     "cry_url": "/media/pokemon/cries/legacy/148.ogg",
-    "flavor_text": "Según un testigo, está rodeado por una extraña aura, que le da un aspecto misterioso y místico.",
+    "flavor_text": "De acuerdo con un testigo, un aura de extraña forma lo rodea, dándole un misterioso y místico aspecto.",
     "obtaining_info": {
       "type": "wild",
       "summary": "Salvaje en: Zona Safari",
@@ -54317,7 +54317,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/149.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/149.png",
     "cry_url": "/media/pokemon/cries/legacy/149.ogg",
-    "flavor_text": "Se dice que este Pokémon vive en algún lugar del mar y que también vuela. De todos modos, solo es un rumor.",
+    "flavor_text": "Se dice que este Pokémon vive en algún lugar del mar, y que vuela. De todos modos, sólo es un rumor.",
     "obtaining_info": {
       "type": "evolution",
       "summary": "Evoluciona de Dragonair (Nivel 55)",
@@ -54765,7 +54765,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/150.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/150.png",
     "cry_url": "/media/pokemon/cries/legacy/150.ogg",
-    "flavor_text": "Su ADN es casi el mismo que el de Mew. Sin embargo, su tamaño y carácter son muy diferentes.",
+    "flavor_text": "Su ADN es casi el mismo que el de Mew. De todos modos, su tamaño y disposición son diferentes.",
     "obtaining_info": {
       "type": "legendary",
       "summary": "En lo profundo de la Cueva Celeste (tras vencer en la Liga Pokémon)",
@@ -55292,7 +55292,7 @@
     "modal_retro_sprite_shiny_url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/151.png",
     "pc_icon_url": "/media/pokemon/icons/gen1/151.png",
     "cry_url": "/media/pokemon/cries/legacy/151.ogg",
-    "flavor_text": "Si se observa a través de un microscopio, puede distinguirse cuán corto, fino y delicado es el pelaje de este Pokémon.",
+    "flavor_text": "Cuando es mirado a través de un microscopio, puede observarse el delicado pelo de este Pokémon.",
     "obtaining_info": {
       "type": "mythical",
       "summary": "Distribución oficial de Nintendo mediante evento especial",

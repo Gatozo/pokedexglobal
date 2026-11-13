@@ -26,7 +26,16 @@ CUSTOM_TITLES = {
     439: "Mime Jr.",
     474: "Porygon-Z",
     487: "Giratina",
-    492: "Shaymin"
+    492: "Shaymin",
+    550: "Basculin",
+    555: "Darmanitan",
+    592: "Frillish",
+    593: "Jellicent",
+    641: "Tornadus",
+    642: "Thundurus",
+    645: "Landorus",
+    647: "Keldeo",
+    648: "Meloetta",
 }
 
 PRIMARY_KEYS = [
@@ -200,7 +209,8 @@ def main():
         if not force_all and str(nat_id) in descriptions and descriptions[str(nat_id)]:
             continue
         name = v["name"]
-        title = CUSTOM_TITLES.get(nat_id, name.capitalize())
+        fallback_title = v.get("display_name") or name.capitalize()
+        title = CUSTOM_TITLES.get(nat_id, fallback_title)
         title_to_nat[title.lower()] = nat_id
         items.append((nat_id, title))
 
@@ -224,12 +234,15 @@ def main():
             with urllib.request.urlopen(req, timeout=20) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
 
-            redirects = {r["to"].lower(): r["from"].lower() for r in data.get("query", {}).get("redirects", [])}
-            pages = data.get("query", {}).get("pages", {})
+            query_data = data.get("query", {})
+            normalized = {n["to"].lower(): n["from"].lower() for n in query_data.get("normalized", [])}
+            redirects = {r["to"].lower(): r["from"].lower() for r in query_data.get("redirects", [])}
+            pages = query_data.get("pages", {})
 
             for page_id, page in pages.items():
                 title = page.get("title", "")
                 orig_title = redirects.get(title.lower(), title.lower())
+                orig_title = normalized.get(orig_title, orig_title)
                 nat_id = title_to_nat.get(title.lower()) or title_to_nat.get(orig_title)
                 if not nat_id:
                     for b_nat, b_title in batch:

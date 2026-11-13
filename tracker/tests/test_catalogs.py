@@ -4564,6 +4564,62 @@ class GlobalFormContractInvariantsTests(TestCase):
                         self.assertTrue(p.exists() and p.stat().st_size > 0, f"Falta female sprite {slug} #{nid} ({k}): {p}")
                         checked_paths.add(rel)
 
+    def test_all_catalogs_have_valid_spanish_flavor_texts(self):
+        """Verifica que todos los catálogos precompilados tengan flavor_text válido, sin vacíos ni alias sin resolver."""
+        from tracker.catalog_service import CATALOGS_DIR, get_compiled_catalog
+
+        catalog_files = sorted(CATALOGS_DIR.glob("*.json"))
+        self.assertGreater(len(catalog_files), 0)
+
+        for catalog_file in catalog_files:
+            slug = catalog_file.stem
+            entries = get_compiled_catalog(slug, force_reload=True)
+            self.assertIsNotNone(entries, f"No se pudo cargar el catálogo {slug}")
+            for entry in entries:
+                ft = (entry.flavor_text or "").strip()
+                nid = entry.pokemon.national_number
+                self.assertTrue(
+                    len(ft) >= 20,
+                    f"flavor_text vacío o inválido en {slug} #{nid} ({entry.pokemon.name}): {ft!r}",
+                )
+                for bad_token in ("{{", "}}", "[[", "]]", "<ref", "NombreHaEs"):
+                    self.assertNotIn(
+                        bad_token,
+                        ft,
+                        f"Wikitexto residual '{bad_token}' en {slug} #{nid}: {ft!r}",
+                    )
+
+        # Verificación puntual de los casos corregidos en Negro, Perla/Platino, SoulSilver y Zafiro
+        for slug in ("black", "black_national"):
+            by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug)}
+            for nid in (550, 555, 592, 593, 641, 642, 645, 647, 648):
+                self.assertIn(nid, by_nid)
+                self.assertGreater(len(by_nid[nid].flavor_text.strip()), 20)
+            self.assertIn("pezuñas", by_nid[647].flavor_text)
+            self.assertIn("melodías", by_nid[648].flavor_text)
+
+        for slug in ("pearl_national", "platinum_national"):
+            by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug)}
+            for nid in (29, 32, 83):
+                self.assertGreater(len(by_nid[nid].flavor_text.strip()), 20)
+
+        ss_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver_national")}
+        self.assertIn("Hace chocar su cabeza", ss_nat[408].flavor_text)
+
+        for slug in ("sapphire", "sapphire_national"):
+            by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug)}
+            self.assertIn("dos Beldum, uniendo", by_nid[375].flavor_text)
+
+        # Verificación puntual de textos canónicos GB en Gen 1 (Rojo, Azul, Amarillo)
+        for slug in ("red", "blue"):
+            by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug)}
+            self.assertIn("En luna llena", by_nid[94].flavor_text)
+            self.assertIn("Almacena energía eléctrica", by_nid[101].flavor_text)
+
+        yellow_by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog("yellow")}
+        self.assertIn("se vuelve irritable", yellow_by_nid[26].flavor_text)
+        self.assertIn("Engaña a su presa", yellow_by_nid[71].flavor_text)
+
 
 
 

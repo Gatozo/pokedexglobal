@@ -200,16 +200,21 @@ def main():
 
         try:
             data = fetch_wikidex_batch(titles)
-            pages = data.get("query", {}).get("pages", {})
+            query_data = data.get("query", {})
+            normalized = {n["to"].lower(): n["from"].lower() for n in query_data.get("normalized", [])}
+            redirects = {r["to"].lower(): r["from"].lower() for r in query_data.get("redirects", [])}
+            pages = query_data.get("pages", {})
 
             for page_id, page in pages.items():
                 if int(page_id) < 0:
                     continue
                 p_title = page.get("title", "")
-                nat_id = title_to_id.get(p_title.lower())
+                orig_title = redirects.get(p_title.lower(), p_title.lower())
+                orig_title = normalized.get(orig_title, orig_title)
+                nat_id = title_to_id.get(p_title.lower()) or title_to_id.get(orig_title)
                 if not nat_id:
-                    for orig_title, nid in title_to_id.items():
-                        if orig_title in p_title.lower():
+                    for t_orig, nid in title_to_id.items():
+                        if t_orig in p_title.lower() or t_orig in orig_title:
                             nat_id = nid
                             break
                 if not nat_id:
