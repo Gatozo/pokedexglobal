@@ -16,6 +16,8 @@ CATALOGS_DIR = Path(__file__).resolve().parent / "data" / "catalogs"
 _CATALOG_CACHE: Dict[str, List["CatalogEntry"]] = {}
 _CATALOG_MTIMES: Dict[str, float] = {}
 _ENTRY_BY_ID_CACHE: Dict[int, "CatalogEntry"] = {}
+_ENTRY_BY_GAME_ID_CACHE: Dict[tuple, "CatalogEntry"] = {}
+_ENTRY_BY_GAME_MODE_ID_CACHE: Dict[tuple, "CatalogEntry"] = {}
 _POKEMON_BY_NATIONAL_CACHE: Dict[int, "CatalogPokemon"] = {}
 _EXISTING_ICONS_SET = None
 _EXISTING_CRIES_SET = None
@@ -737,10 +739,12 @@ class CatalogEntry:
 
 def clear_catalog_memory_cache():
     """Limpia la caché en memoria de los catálogos compilados."""
-    global _CATALOG_CACHE, _CATALOG_MTIMES, _ENTRY_BY_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE, _GAME_EVO_SETS
+    global _CATALOG_CACHE, _CATALOG_MTIMES, _ENTRY_BY_ID_CACHE, _ENTRY_BY_GAME_ID_CACHE, _ENTRY_BY_GAME_MODE_ID_CACHE, _POKEMON_BY_NATIONAL_CACHE, _GAME_EVO_SETS
     _CATALOG_CACHE.clear()
     _CATALOG_MTIMES.clear()
     _ENTRY_BY_ID_CACHE.clear()
+    _ENTRY_BY_GAME_ID_CACHE.clear()
+    _ENTRY_BY_GAME_MODE_ID_CACHE.clear()
     _POKEMON_BY_NATIONAL_CACHE.clear()
     _GAME_EVO_SETS.clear()
 
@@ -790,6 +794,8 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
                 for entry in entries:
                     if entry.id is not None:
                         _ENTRY_BY_ID_CACHE[entry.id] = entry
+                        _ENTRY_BY_GAME_MODE_ID_CACHE[(game_slug, True, entry.id)] = entry
+                        _ENTRY_BY_GAME_ID_CACHE.setdefault((game_slug, entry.id), entry)
                     if entry.pokemon and entry.pokemon.national_number:
                         _POKEMON_BY_NATIONAL_CACHE[entry.pokemon.national_number] = entry.pokemon
                 return entries
@@ -806,6 +812,8 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
             nat_entry.regional_number = entry.entry_number
             nat_entry.entry_number = entry.pokemon.national_number
             national_entries.append(nat_entry)
+            if nat_entry.id is not None:
+                _ENTRY_BY_GAME_MODE_ID_CACHE[(game_slug, True, nat_entry.id)] = nat_entry
 
         national_entries.sort(key=lambda e: e.entry_number)
         _CATALOG_CACHE[cache_key] = national_entries
@@ -826,6 +834,8 @@ def get_compiled_catalog(game_slug: str, force_reload: bool = False, is_national
         for entry in entries:
             if entry.id is not None:
                 _ENTRY_BY_ID_CACHE[entry.id] = entry
+                _ENTRY_BY_GAME_MODE_ID_CACHE[(game_slug, False, entry.id)] = entry
+                _ENTRY_BY_GAME_ID_CACHE[(game_slug, entry.id)] = entry
             if entry.pokemon and entry.pokemon.national_number:
                 _POKEMON_BY_NATIONAL_CACHE[entry.pokemon.national_number] = entry.pokemon
         return entries
@@ -848,9 +858,37 @@ def ensure_all_catalogs_loaded():
             get_compiled_catalog(slug)
 
 
-def get_catalog_entry_by_id(entry_id: int) -> Optional[CatalogEntry]:
-    """Retorna una CatalogEntry por su ID único en O(1) desde memoria."""
-    global _ENTRY_BY_ID_CACHE
+def get_catalog_entry_by_id(
+    entry_id: int,
+    game_slug: Optional[str] = None,
+    is_national: Optional[bool] = None,
+) -> Optional[CatalogEntry]:
+    """
+    Retorna una CatalogEntry por su ID único en O(1) desde memoria.
+    Cuando se provee game_slug (y opcionalmente is_national), resuelve estrictamente dentro del
+    catálogo de ese juego para evitar cualquier colisión de IDs entre ediciones o modos.
+    """
+    global _ENTRY_BY_ID_CACHE, _ENTRY_BY_GAME_ID_CACHE, _ENTRY_BY_GAME_MODE_ID_CACHE
+    if game_slug:
+        g_slug = str(game_slug).lower().strip()
+        if is_national is not None:
+            mode_key = (g_slug, bool(is_national), entry_id)
+            if mode_key in _ENTRY_BY_GAME_MODE_ID_CACHE:
+                return _ENTRY_BY_GAME_MODE_ID_CACHE[mode_key]
+            get_compiled_catalog(g_slug, is_national=bool(is_national))
+            if mode_key in _ENTRY_BY_GAME_MODE_ID_CACHE:
+                return _ENTRY_BY_GAME_MODE_ID_CACHE[mode_key]
+
+        game_key = (g_slug, entry_id)
+        if game_key in _ENTRY_BY_GAME_ID_CACHE:
+            return _ENTRY_BY_GAME_ID_CACHE[game_key]
+
+        get_compiled_catalog(g_slug, is_national=False)
+        if game_key in _ENTRY_BY_GAME_ID_CACHE:
+            return _ENTRY_BY_GAME_ID_CACHE[game_key]
+        get_compiled_catalog(g_slug, is_national=True)
+        return _ENTRY_BY_GAME_ID_CACHE.get(game_key)
+
     if entry_id in _ENTRY_BY_ID_CACHE:
         return _ENTRY_BY_ID_CACHE[entry_id]
 

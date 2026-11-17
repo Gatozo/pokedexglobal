@@ -2134,7 +2134,7 @@ def main():
     hg_regional_catalog = []
     for reg_num in range(1, 257):
         nat_id = int(johto_256[str(reg_num)])
-        unique_id = 6000 + reg_num
+        unique_id = 7000 + reg_num
         hg_regional_catalog.append(build_entry(nat_id, reg_num, is_regional=True, unique_id=unique_id))
 
     regional_file = CATALOGS_DIR / "soulsilver.json"
@@ -2146,7 +2146,7 @@ def main():
     print("Compilando Pokédex Nacional de SoulSilver (493 entradas)...")
     hg_national_catalog = []
     for nat_num in range(1, 494):
-        unique_id = 6300 + nat_num
+        unique_id = 7300 + nat_num
         hg_national_catalog.append(build_entry(nat_num, nat_num, is_regional=False, unique_id=unique_id))
 
     national_file = CATALOGS_DIR / "soulsilver_national.json"

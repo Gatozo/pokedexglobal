@@ -277,7 +277,9 @@ export async function toggleCatch(entryId) {
             },
             body: JSON.stringify({ 
                 entry_id: entryId,
-                is_shiny: state.isShinydexMode
+                is_shiny: state.isShinydexMode,
+                game_slug: currentGameSlug || (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || undefined,
+                is_national: Boolean(window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.isNational)
             })
         });
 

@@ -230,7 +230,9 @@ export async function toggleUnownFormCatch(letter) {
             body: JSON.stringify({
                 entry_id: parseInt(entryId, 10),
                 letter: letter,
-                is_shiny: state.isShinydexMode
+                is_shiny: state.isShinydexMode,
+                game_slug: (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || undefined,
+                is_national: Boolean(window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.isNational)
             })
         });
 

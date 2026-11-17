@@ -3,6 +3,7 @@
 <script id="pokedex-server-config">
     window.POKEDEX_CONFIG = {
         gameSlug: "{{ game.slug }}",
+        isNational: {% if pokedex.is_national %}true{% else %}false{% endif %},
         gameDisplayName: "{{ game.display_name|escapejs }}",
         gameGeneration: {{ game.generation|default:1 }},
         isShinydexActive: {% if is_shinydex_active %}true{% else %}false{% endif %},

@@ -1209,6 +1209,52 @@ class GameSelectorClassificationTests(TestCase):
         self.assertNotIn('data-tag="season_spring"', html_dia)
         self.assertNotIn('>Encuentros Especiales<', html_dia)
 
+    def test_modal_and_catch_isolation_across_games_emerald_gold_crystal_hg_ss(self):
+        """Reproduce Esmeralda -> Oro -> Cristal -> Esmeralda y valida que Seedot no se cruce con Furret ni en modal ni en captura."""
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
+
+        clear_catalog_memory_cache()
+        for slug, name, gen, dex_slug, dex_name in [
+            ("emerald", "Pokémon Esmeralda", 3, "hoenn", "Pokédex de Hoenn"),
+            ("gold", "Pokémon Oro", 2, "johto", "Pokédex de Johto"),
+            ("crystal", "Pokémon Cristal", 2, "johto", "Pokédex de Johto"),
+        ]:
+            g, _ = Game.objects.get_or_create(slug=slug, defaults={"name": name, "generation": gen})
+            Pokedex.objects.get_or_create(game=g, slug=dex_slug, defaults={"name": dex_name, "is_national": False})
+
+        # Simular navegación: Esmeralda -> Oro -> Cristal -> Esmeralda
+        for slug in ("emerald", "gold", "crystal", "emerald"):
+            resp = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": slug}))
+            self.assertEqual(resp.status_code, 200)
+            if slug == "emerald":
+                self.assertIn("isNational: false", resp.content.decode("utf-8"))
+
+        seedot = next(e for e in get_compiled_catalog("emerald", is_national=False) if e.pokemon.national_number == 273)
+
+        # Solicitar el modal de Seedot con el contexto de Esmeralda
+        modal_url = reverse("tracker:catalog_entry_modal", kwargs={"entry_id": seedot.id}) + "?game=emerald&national=0"
+        modal_resp = self.client.get(modal_url)
+        self.assertEqual(modal_resp.status_code, 200)
+        modal_data = modal_resp.json()
+        self.assertEqual(modal_data["name"], "Seedot")
+        self.assertEqual(modal_data["number"], "022")
+        self.assertIn("emerald", modal_data["sprite_retro"])
+
+        # Capturar Seedot pasando game_slug e is_national debe persistir en emerald (#022), no en crystal
+        toggle_resp = self.client.post(
+            reverse("tracker:toggle_catch"),
+            data=json.dumps({
+                "entry_id": seedot.id,
+                "is_shiny": False,
+                "game_slug": "emerald",
+                "is_national": False,
+            }),
+            content_type="application/json",
+        )
+        self.assertEqual(toggle_resp.status_code, 200)
+        self.assertTrue(UserPokemonCatch.objects.filter(game_slug="emerald", entry_number=22, is_caught=True).exists())
+        self.assertFalse(UserPokemonCatch.objects.filter(game_slug="crystal", is_caught=True).exists())
+
 
 
 

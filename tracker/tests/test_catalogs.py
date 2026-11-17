@@ -4862,6 +4862,42 @@ class GlobalFormContractInvariantsTests(TestCase):
         ss_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver_national")}
         self.assertEqual(ss_nat[226].obtaining_info["type"], "trade")
 
+    def test_catalog_entry_ids_are_unique_across_games_and_scoped_lookup(self):
+        """Garantiza 0 colisiones de entry.id entre juegos distintos y aislamiento por (game_slug, is_national)."""
+        from collections import defaultdict
+        from tracker.catalog_service import get_compiled_catalog, get_catalog_entry_by_id, CATALOGS_DIR
+
+        ids_by_game = defaultdict(set)
+        for cat_path in sorted(CATALOGS_DIR.glob("*.json")):
+            with open(cat_path, encoding="utf-8") as fp:
+                for raw in json.load(fp):
+                    ids_by_game[raw["id"]].add(raw["game_slug"])
+
+        cross_game_collisions = {eid: games for eid, games in ids_by_game.items() if len(games) > 1}
+        self.assertEqual(cross_game_collisions, {}, f"Colisiones de ID entre juegos: {list(cross_game_collisions.items())[:5]}")
+
+        # Cargar Esmeralda, luego Cristal, y comprobar resolución aislada por juego y modo
+        emerald_reg = get_compiled_catalog("emerald", is_national=False)
+        seedot_reg = next(e for e in emerald_reg if e.pokemon.national_number == 273)
+        get_compiled_catalog("crystal", is_national=False)
+
+        resolved_reg = get_catalog_entry_by_id(seedot_reg.id, game_slug="emerald", is_national=False)
+        self.assertIsNotNone(resolved_reg)
+        self.assertEqual(resolved_reg.game_slug, "emerald")
+        self.assertEqual(resolved_reg.pokemon.display_name, "Seedot")
+        self.assertEqual(resolved_reg.entry_number, 22)
+
+        resolved_nat = get_catalog_entry_by_id(seedot_reg.id, game_slug="emerald", is_national=True)
+        self.assertIsNotNone(resolved_nat)
+        self.assertEqual(resolved_nat.game_slug, "emerald")
+        self.assertEqual(resolved_nat.pokemon.display_name, "Seedot")
+        self.assertEqual(resolved_nat.entry_number, 273)
+
+        # HeartGold y SoulSilver tienen rangos disjuntos
+        hg_ids = {e.id for e in get_compiled_catalog("heartgold", is_national=False)}
+        ss_ids = {e.id for e in get_compiled_catalog("soulsilver", is_national=False)}
+        self.assertEqual(hg_ids.intersection(ss_ids), set())
+
 
 
 

@@ -22,6 +22,27 @@ from .security import check_username_rate_limit
 
 
 
+def _normalize_legacy_entry_id(game_slug: str, entry_id: int) -> int:
+    """Mapea IDs históricos previos a la deduplicación de crystal y soulsilver."""
+    if not entry_id:
+        return entry_id
+    if game_slug == "crystal" and 2232 <= entry_id <= 2482:
+        return entry_id - 1527
+    if game_slug == "soulsilver" and 6001 <= entry_id <= 6793:
+        return entry_id + 1000
+    return entry_id
+
+
+def _parse_optional_bool(val):
+    if isinstance(val, bool):
+        return val
+    if val in ("1", "true", "True"):
+        return True
+    if val in ("0", "false", "False"):
+        return False
+    return None
+
+
 @functools.lru_cache(maxsize=64)
 def _get_game_catalog_metadata(g_slug: str):
     """Retorna identificadores compilados y totales del juego cacheados en memoria para acelerar el selector."""
@@ -782,7 +803,7 @@ def game_selector_view(request):
         g_slug = c["game_slug"]
         if g_slug not in catches_by_game:
             catches_by_game[g_slug] = set()
-        catches_by_game[g_slug].add(c["entry_id"])
+        catches_by_game[g_slug].add(_normalize_legacy_entry_id(g_slug, c["entry_id"]))
 
     # Juegos instalados y disponibles en la base de datos
     available_games = {g.slug: g for g in _get_cached_all_games()}
@@ -992,9 +1013,9 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
             "entry_id", "entry_number", "is_caught", "is_shiny", "unown_forms_caught"
         )
     )
-    caught_entry_ids = {c["entry_id"] for c in user_catches if c["is_caught"]}
-    shiny_caught_entry_ids = {c["entry_id"] for c in user_catches if c["is_shiny"]}
-    catches_by_id = {c["entry_id"]: c for c in user_catches}
+    caught_entry_ids = {_normalize_legacy_entry_id(game.slug, c["entry_id"]) for c in user_catches if c["is_caught"]}
+    shiny_caught_entry_ids = {_normalize_legacy_entry_id(game.slug, c["entry_id"]) for c in user_catches if c["is_shiny"]}
+    catches_by_id = {_normalize_legacy_entry_id(game.slug, c["entry_id"]): c for c in user_catches}
     catches_by_num = {c["entry_number"]: c for c in user_catches}
 
     # Copias superficiales ultra-rápidas (~1 ms) para anotar estado de captura específico del usuario de forma thread-safe
@@ -1133,10 +1154,12 @@ def toggle_catch(request):
         entry_id = data.get("entry_id")
         is_shiny = bool(data.get("is_shiny", False))
         target_status = data.get("target_status")
+        game_slug = data.get("game_slug") or None
+        is_national = _parse_optional_bool(data.get("is_national"))
     except (ValueError, KeyError):
         return JsonResponse({"error": "Payload JSON inválido"}, status=400)
 
-    entry = get_catalog_entry_by_id(entry_id)
+    entry = get_catalog_entry_by_id(entry_id, game_slug=game_slug, is_national=is_national)
     if not entry:
         return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
 
@@ -1203,6 +1226,8 @@ def toggle_unown_catch(request):
         letter = str(data.get("letter", "")).lower().strip()
         is_shiny = bool(data.get("is_shiny", False))
         target_status = data.get("target_status")
+        game_slug = data.get("game_slug") or None
+        is_national = _parse_optional_bool(data.get("is_national"))
     except (ValueError, KeyError, AttributeError):
         return JsonResponse({"error": "JSON inválido"}, status=400)
 
@@ -1210,7 +1235,7 @@ def toggle_unown_catch(request):
     if not entry_id or not letter or letter not in valid_unown_letters:
         return JsonResponse({"error": "Parámetros incompletos o letra inválida"}, status=400)
 
-    entry = get_catalog_entry_by_id(entry_id)
+    entry = get_catalog_entry_by_id(entry_id, game_slug=game_slug, is_national=is_national)
     if not entry:
         return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
 
@@ -1306,7 +1331,9 @@ def catalog_entry_modal(request, entry_id):
     Retorna los datos del modal en formato JSON para carga bajo demanda (0 ms SQL).
     Soporta anotación dinámica del estado de captura del usuario o sesión actual.
     """
-    entry = get_catalog_entry_by_id(entry_id)
+    game_slug = request.GET.get("game") or None
+    is_national = _parse_optional_bool(request.GET.get("national"))
+    entry = get_catalog_entry_by_id(entry_id, game_slug=game_slug, is_national=is_national)
     if not entry:
         return JsonResponse({"error": "Entrada de catálogo no encontrada"}, status=404)
 

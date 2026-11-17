@@ -293,14 +293,22 @@ export function toggleModalGender() {
 }
 window.toggleModalGender = toggleModalGender;
 
+function getScopedEntryCacheKey(entryId) {
+    const cfg = window.POKEDEX_CONFIG || {};
+    const gSlug = cfg.gameSlug || '';
+    const isNat = cfg.isNational ? '1' : '0';
+    return `${gSlug}:${isNat}:${entryId}`;
+}
+
 export function getEntryData(entryId) {
-    let data = _entryDataCache.get(entryId);
+    const cacheKey = getScopedEntryCacheKey(entryId);
+    let data = _entryDataCache.get(cacheKey);
     if (!data) {
         const dataScript = document.getElementById(`entry-data-${entryId}`);
         if (!dataScript) return null;
         try {
             data = JSON.parse(dataScript.textContent);
-            _entryDataCache.set(entryId, data);
+            _entryDataCache.set(cacheKey, data);
         } catch (e) {
             console.error("Error al parsear datos del Pokémon", e);
             return null;
@@ -310,14 +318,15 @@ export function getEntryData(entryId) {
 }
 
 export async function getEntryDataAsync(entryId) {
-    let data = _entryDataCache.get(entryId);
+    const cacheKey = getScopedEntryCacheKey(entryId);
+    let data = _entryDataCache.get(cacheKey);
     if (data) return data;
 
     const dataScript = document.getElementById(`entry-data-${entryId}`);
     if (dataScript) {
         try {
             data = JSON.parse(dataScript.textContent);
-            _entryDataCache.set(entryId, data);
+            _entryDataCache.set(cacheKey, data);
             return data;
         } catch (e) {
             console.error("Error al parsear datos locales del Pokémon", e);
@@ -325,10 +334,15 @@ export async function getEntryDataAsync(entryId) {
     }
 
     try {
-        const res = await fetch(`/api/catalog/entry/${entryId}/modal/`);
+        const cfg = window.POKEDEX_CONFIG || {};
+        const params = new URLSearchParams();
+        if (cfg.gameSlug) params.set('game', cfg.gameSlug);
+        if (typeof cfg.isNational === 'boolean') params.set('national', cfg.isNational ? '1' : '0');
+        const qs = params.toString();
+        const res = await fetch(`/api/catalog/entry/${entryId}/modal/${qs ? `?${qs}` : ''}`);
         if (res.ok) {
             data = await res.json();
-            _entryDataCache.set(entryId, data);
+            _entryDataCache.set(cacheKey, data);
             return data;
         }
     } catch (e) {
