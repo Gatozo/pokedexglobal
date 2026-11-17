@@ -2068,7 +2068,7 @@ class PokemonPearlGen4Tests(TestCase):
         self.assertIsNotNone(magmortar.evolution_stone)
         self.assertEqual(magmortar.evolution_stone.get("slug"), "magmarizer")
 
-        # Electivire (#466): Electirizador (requiere intercambio desde Diamante)
+        # Electivire (#466): Electrizador (requiere intercambio desde Diamante)
         electivire = cat_by_num[466]
         self.assertIsNotNone(electivire.evolution_stone)
         self.assertEqual(electivire.evolution_stone.get("slug"), "electirizer")
@@ -2683,7 +2683,7 @@ class PokemonHeartGoldGen4Tests(TestCase):
         self.assertEqual(len(forms), 2)
         self.assertEqual(forms[0]["form_key"], "standard")
         self.assertEqual(forms[1]["form_key"], "spiky_eared")
-        self.assertEqual(forms[1]["name"], "Pichu Picorejita")
+        self.assertEqual(forms[1]["name"], "Pichu Picoreja")
         self.assertEqual(forms[1]["sprite_retro"], "/media/pokemon/sprites/heartgold/172-spiky-eared.png")
         self.assertEqual(forms[1]["modal_retro_sprite_url"], "/media/pokemon/sprites/heartgold_animated/172-spiky-eared.png")
 
@@ -5020,8 +5020,46 @@ class GlobalFormContractInvariantsTests(TestCase):
             self.assertIn("únicamente un fósil", reg_by[ufid].notes[0]["text"])
         self.assertTrue(reg_by[570].notes)
         self.assertIn("Celebi", reg_by[570].notes[0]["text"])
+        self.assertNotIn("macho", reg_by[570].notes[0]["text"])
         self.assertTrue(reg_by[571].notes)
-        self.assertIn("hembra", reg_by[571].notes[0]["text"])
+        self.assertIn("Bosque de los Perdidos", reg_by[571].notes[0]["text"])
+        self.assertNotIn("hembra", reg_by[571].notes[0]["text"])
+        self.assertNotIn("hembra", reg_by[571].obtaining_info["summary"])
+
+        # 8. Pureza de traducciones oficiales en español de España en formas y catálogos
+        darmanitan_zen = next(f for f in get_pokemon_forms(555, "black") if f["form_key"] == "zen")
+        self.assertIn("Caramelo Furia", darmanitan_zen["notes"][0]["text"])
+        self.assertNotIn("Furiazafrán", darmanitan_zen["notes"][0]["text"])
+
+        arceus_ground = next(f for f in get_pokemon_forms(493, "black") if f["form_key"] == "ground")
+        self.assertEqual(arceus_ground["name"], "Tabla Terrax")
+        self.assertNotIn("Terraja", arceus_ground["notes"][0]["text"])
+
+        genesect_burn = next(f for f in get_pokemon_forms(649, "black") if f["form_key"] == "burn")
+        self.assertEqual(genesect_burn["name"], "PiroROM")
+        self.assertIn("Tecnochoque", genesect_burn["notes"][0]["text"])
+        self.assertNotIn("Cromo", genesect_burn["name"])
+        self.assertNotIn("Tecno Shock", genesect_burn["notes"][0]["text"])
+
+        meloetta_step = next(f for f in get_pokemon_forms(648, "black") if f["form_key"] == "pirouette")
+        self.assertIn("La melodía del descanso", meloetta_step["notes"][0]["text"])
+        self.assertNotIn("Café Sonata", meloetta_step["notes"][0]["text"])
+
+        shaymin_sky = next(f for f in get_pokemon_forms(492, "black") if f["form_key"] == "sky")
+        self.assertIn("Gracídea", shaymin_sky["notes"][0]["text"])
+        self.assertNotIn("Grácidea", shaymin_sky["notes"][0]["text"])
+
+        shellos_sinnoh = get_pokemon_forms(422, "diamond")
+        for sf in shellos_sinnoh:
+            for loc in sf.get("locations", []):
+                self.assertNotIn("Surfing", loc.get("method", ""))
+
+        self.assertEqual(nat_by[466].evolution_stone.get("name_es"), "Electrizador")
+        emerald_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("emerald_national", force_reload=True)}
+        self.assertIn("Mejora", emerald_nat[233].obtaining_info["summary"])
+        self.assertNotIn("Up Grade", emerald_nat[233].obtaining_info["summary"])
+        self.assertNotIn("Artisan Cave", emerald_nat[235].obtaining_info["summary"])
+        self.assertNotIn("Faraway Island", emerald_nat[151].obtaining_info["summary"])
 
         # 8. Terminología oficial en español (Zona Nexo, Pokétransfer) y clasificación nativa de las 27 especies de crianza
         for cat_dict in (reg_by, nat_by):

@@ -17,7 +17,7 @@ ITEM_NAME_ES = {
     'dawn-stone': 'Piedra Alba',
     'oval-stone': 'Piedra Oval',
     'protector': 'Protector',
-    'electirizer': 'Electirizador',
+    'electirizer': 'Electrizador',
     'magmarizer': 'Magmatizador',
     'dubious-disc': 'Discoxtraño',
     'reaper-cloth': 'Tela Terrible',

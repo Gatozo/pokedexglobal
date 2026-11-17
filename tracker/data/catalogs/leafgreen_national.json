@@ -15063,13 +15063,13 @@
     "flavor_text": "Aunque extinto, en algunas ocasiones puede ser recuperado genéticamente a partir de los fósiles.",
     "obtaining_info": {
       "type": "fossil",
-      "badge_label": "Fósil Helix",
+      "badge_label": "Fósil Hélix",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Helix en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Domo.",
+      "summary": "Revivir el Fósil Hélix en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Domo.",
       "locations": [
         {
           "area": "Isla Canela (Laboratorio)",
-          "method": "Revivir Fósil Helix"
+          "method": "Revivir Fósil Hélix"
         },
         {
           "area": "Monte Moon (S2)",
@@ -15185,7 +15185,7 @@
       "type": "fossil",
       "badge_label": "Fósil Domo",
       "badge_color": "amber",
-      "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Helix.",
+      "summary": "Revivir el Fósil Domo en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Hélix.",
       "locations": [
         {
           "area": "Isla Canela (Laboratorio)",

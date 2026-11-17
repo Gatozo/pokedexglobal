@@ -32730,20 +32730,20 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
       "locations": [],
       "evolution_info": {
         "from": "Electabuzz",
-        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
         "trigger": "trade",
-        "condition": "por intercambio equipado con Electirizador",
+        "condition": "por intercambio equipado con Electrizador",
         "item_slug": "electirizer"
       }
     },
     "evolution_stone": {
       "slug": "electirizer",
-      "name": "Electirizador",
-      "name_es": "Electirizador",
+      "name": "Electrizador",
+      "name_es": "Electrizador",
       "icon_url": "/media/items/electirizer.png",
       "sprite_url": "/media/items/electirizer.png",
       "description": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",

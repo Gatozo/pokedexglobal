@@ -10304,7 +10304,7 @@
       "type": "legendary",
       "badge_label": "Mítico / Evento",
       "badge_color": "purple",
-      "summary": "Isla Suprema (Faraway Island) al Nivel 30 salvaje en la espesura de la selva mediante el evento oficial del Mapa Viejo (exclusivo de Pokémon Esmeralda).",
+      "summary": "Isla Suprema al Nivel 30 salvaje en la espesura de la selva mediante el evento oficial del Mapa Viejo (exclusivo de Pokémon Esmeralda).",
       "locations": [
         {
           "area": "Isla Suprema (Evento Mapa Viejo)",
@@ -15324,13 +15324,13 @@
     "flavor_text": "Porygon2 fue creado por el hombre gracias a los avances científicos. Su inteligencia artificial le permite aprender gestos y emociones totalmente nuevas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Porygon (Intercambio equipado con Up Grade)",
+      "summary": "Evoluciona de Porygon (Intercambio equipado con Mejora)",
       "locations": [],
       "evolution_info": {
         "from": "Porygon",
-        "text": "Evoluciona de Porygon (Intercambio equipado con Up Grade)",
+        "text": "Evoluciona de Porygon (Intercambio equipado con Mejora)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Up Grade",
+        "condition": "Intercambio equipado con Mejora",
         "item_slug": "up-grade"
       },
       "badge_color": "indigo",
@@ -15459,7 +15459,7 @@
     "flavor_text": "Marca su territorio liberando un fluido corporal por el extremo de la cola. Hasta la fecha, se conocen más de 5.000 tipos de marcas dejadas por este Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en la Cueva Taller (Artisan Cave) en el Frente de Batalla (bajo la Cueva del Sudowoodo, también obtenible mediante crianza).",
+      "summary": "Salvaje en la Cueva Taller en el Frente de Batalla (bajo la Cueva del Sudowoodo, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Frente de Batalla (Cueva Taller)",
@@ -16271,7 +16271,7 @@
       "type": "legendary",
       "badge_label": "Legendario / Evento",
       "badge_color": "purple",
-      "summary": "Roca Ombligo (Navel Rock) en el fondo de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico (Mystic Ticket).",
+      "summary": "Roca Ombligo en el fondo de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico.",
       "locations": [
         {
           "area": "Roca Ombligo (Evento Ticket Místico)",
@@ -16326,7 +16326,7 @@
       "type": "legendary",
       "badge_label": "Legendario / Evento",
       "badge_color": "purple",
-      "summary": "Roca Ombligo (Navel Rock) en la cima de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico (Mystic Ticket).",
+      "summary": "Roca Ombligo en la cima de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico.",
       "locations": [
         {
           "area": "Roca Ombligo (Evento Ticket Místico)",

@@ -462,16 +462,16 @@ def build_catalogs():
         # Fósiles de Kanto
         138: {
             'type': 'fossil',
-            'badge_label': 'Fósil Helix',
+            'badge_label': 'Fósil Hélix',
             'badge_color': 'amber',
-            'summary': 'Revivir el Fósil Helix en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Domo.',
-            'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Revivir Fósil Helix'}, {'area': 'Monte Moon (S2)', 'method': 'Elección de fósil'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
+            'summary': 'Revivir el Fósil Hélix en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Domo.',
+            'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Revivir Fósil Hélix'}, {'area': 'Monte Moon (S2)', 'method': 'Elección de fósil'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
         },
         140: {
             'type': 'fossil',
             'badge_label': 'Fósil Domo',
             'badge_color': 'amber',
-            'summary': 'Revivir el Fósil Domo en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Helix.',
+            'summary': 'Revivir el Fósil Domo en el Laboratorio de Isla Canela al Nivel 5 (también obtenible mediante crianza). Se elige en el Monte Moon (S2) frente al Fósil Hélix.',
             'locations': [{'area': 'Isla Canela (Laboratorio)', 'method': 'Revivir Fósil Domo'}, {'area': 'Monte Moon (S2)', 'method': 'Elección de fósil'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
         },
         142: {

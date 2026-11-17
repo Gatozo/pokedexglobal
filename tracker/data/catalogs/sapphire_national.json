@@ -19835,13 +19835,13 @@
     "flavor_text": "Porygon2 fue creado por el hombre, con los avances de la ciencia. Esta obra humana ha sido provista de inteligencia artificial que le permite aprender gestos y sensaciones nuevas por su cuenta.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Porygon (Intercambio equipado con Up Grade)",
+      "summary": "Evoluciona de Porygon (Intercambio equipado con Mejora)",
       "locations": [],
       "evolution_info": {
         "from": "Porygon",
-        "text": "Evoluciona de Porygon (Intercambio equipado con Up Grade)",
+        "text": "Evoluciona de Porygon (Intercambio equipado con Mejora)",
         "trigger": "trade",
-        "condition": "Intercambio equipado con Up Grade",
+        "condition": "Intercambio equipado con Mejora",
         "item_slug": "up-grade"
       },
       "badge_color": "indigo",

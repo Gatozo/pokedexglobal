@@ -261,6 +261,7 @@ EVO_ITEMS_ES = {
     'metal-coat': 'Revestimiento Metálico',
     'kings-rock': 'Roca del Rey',
     'upgrade': 'Mejora',
+    'up-grade': 'Mejora',
     'sun-stone': 'Piedra Solar',
     'moon-stone': 'Piedra Lunar',
     'fire-stone': 'Piedra Fuego',
@@ -625,7 +626,7 @@ def main():
         },
         235: {
             'type': 'wild',
-            'summary': 'Salvaje en la Cueva Taller (Artisan Cave) en el Frente de Batalla (bajo la Cueva del Sudowoodo).',
+            'summary': 'Salvaje en la Cueva Taller en el Frente de Batalla (bajo la Cueva del Sudowoodo).',
             'locations': [
                 {'area': 'Frente de Batalla (Cueva Taller)', 'method': 'Salvaje en Cueva Taller (P1 y S1)'},
                 {'area': 'Cueva Cambiante (Ruta 103)', 'method': 'Evento e-Reader inactivo'}
@@ -725,21 +726,21 @@ def main():
             'type': 'legendary',
             'badge_label': 'Mítico / Evento',
             'badge_color': 'purple',
-            'summary': 'Isla Suprema (Faraway Island) al Nivel 30 salvaje en la espesura de la selva mediante el evento oficial del Mapa Viejo (exclusivo de Pokémon Esmeralda).',
+            'summary': 'Isla Suprema al Nivel 30 salvaje en la espesura de la selva mediante el evento oficial del Mapa Viejo (exclusivo de Pokémon Esmeralda).',
             'locations': [{'area': 'Isla Suprema (Evento Mapa Viejo)', 'method': 'Salvaje estático Nivel 30 en la hierba profunda'}]
         },
         249: {
             'type': 'legendary',
             'badge_label': 'Legendario / Evento',
             'badge_color': 'purple',
-            'summary': 'Roca Ombligo (Navel Rock) en el fondo de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico (Mystic Ticket).',
+            'summary': 'Roca Ombligo en el fondo de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico.',
             'locations': [{'area': 'Roca Ombligo (Evento Ticket Místico)', 'method': 'Salvaje estático al Nivel 70'}]
         },
         250: {
             'type': 'legendary',
             'badge_label': 'Legendario / Evento',
             'badge_color': 'purple',
-            'summary': 'Roca Ombligo (Navel Rock) en la cima de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico (Mystic Ticket).',
+            'summary': 'Roca Ombligo en la cima de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico.',
             'locations': [{'area': 'Roca Ombligo (Evento Ticket Místico)', 'method': 'Salvaje estático al Nivel 70'}]
         },
         251: {

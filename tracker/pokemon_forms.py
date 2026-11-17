@@ -4,7 +4,7 @@ Soporte completo y escalable para Generaciones 1 a 5.
 
 - Gen 1 a 3: Castform (#351) y Unown (#201).
 - Gen 4 (Diamante, Perla, Platino, HeartGold, SoulSilver):
-  * Pichu (#172): Estándar y Picorejita (exclusiva HGSS).
+  * Pichu (#172): Estándar y Picoreja (exclusiva HGSS).
   * Unown (#201): 28 formas (manejado de forma dedicada en Bloc Unown).
   * Castform (#351): 4 formas climáticas (sprites Gen 4 nativos).
   * Deoxys (#386): 4 formas (Normal, Ataque, Defensa, Velocidad).
@@ -906,7 +906,7 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
         west_summary = "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona)."
         west_locations = [
             {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
-            {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
+            {"area": "Ruta 218", "method": "Salvaje (Surf / Pesca)"},
             {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
             {"area": "Forja Fuego", "method": "Salvaje (Hierba)"},
         ]
@@ -921,10 +921,10 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
 
         east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona)."
         east_locations = [
-            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surf)"},
             {"area": "Ruta 221", "method": "Salvaje (Hierba)"},
-            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
-            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
+            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surf)"},
+            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surf)"},
             {"area": "Orilla Valor", "method": "Salvaje (Hierba)"},
         ]
         east_notes = [
@@ -1053,10 +1053,10 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
         west_summary = "Exclusivo de la vertiente occidental de Sinnoh (al oeste del Monte Corona)."
         west_locations = [
             {"area": "Ruta 205", "method": "Salvaje (Hierba)"},
-            {"area": "Ruta 218", "method": "Salvaje (Surfing / Pesca)"},
+            {"area": "Ruta 218", "method": "Salvaje (Surf / Pesca)"},
             {"area": "Parque Eólico", "method": "Salvaje (Hierba)"},
-            {"area": "Forja Fuego", "method": "Salvaje (Hierba / Surfing)"},
-            {"area": "Canal de Pastoria", "method": "Salvaje (Surfing)"},
+            {"area": "Forja Fuego", "method": "Salvaje (Hierba / Surf)"},
+            {"area": "Canal de Pastoria", "method": "Salvaje (Surf)"},
         ]
         west_notes = [
             {
@@ -1069,10 +1069,10 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
 
         east_summary = "Exclusivo de la vertiente oriental de Sinnoh (al este del Monte Corona)."
         east_locations = [
-            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surfing)"},
-            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surfing)"},
-            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surfing)"},
-            {"area": "Ruta 230", "method": "Salvaje (Surfing)"},
+            {"area": "Ruta 213", "method": "Salvaje (Hierba / Surf)"},
+            {"area": "Ruta 222", "method": "Salvaje (Hierba / Surf)"},
+            {"area": "Ruta 224", "method": "Salvaje (Hierba / Surf)"},
+            {"area": "Ruta 230", "method": "Salvaje (Surf)"},
         ]
         east_notes = [
             {
@@ -1137,7 +1137,7 @@ def get_arceus_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
         ("ice", "Tabla Helada", "Hielo", "ice", "Hielo", "", "", "Tabla Helada", "/media/items/icicle-plate.png", "Al equipar la Tabla Helada, su habilidad Multitipo cambia su tipo elemental a Hielo puro."),
         ("fighting", "Tabla Fuerte", "Lucha", "fighting", "Lucha", "", "", "Tabla Fuerte", "/media/items/fist-plate.png", "Al equipar la Tabla Fuerte, su habilidad Multitipo cambia su tipo elemental a Lucha puro."),
         ("poison", "Tabla Tóxica", "Veneno", "poison", "Veneno", "", "", "Tabla Tóxica", "/media/items/toxic-plate.png", "Al equipar la Tabla Tóxica, su habilidad Multitipo cambia su tipo elemental a Veneno puro."),
-        ("ground", "Tabla Terraja", "Tierra", "ground", "Tierra", "", "", "Tabla Terraja", "/media/items/earth-plate.png", "Al equipar la Tabla Terraja, su habilidad Multitipo cambia su tipo elemental a Tierra puro."),
+        ("ground", "Tabla Terrax", "Tierra", "ground", "Tierra", "", "", "Tabla Terrax", "/media/items/earth-plate.png", "Al equipar la Tabla Terrax, su habilidad Multitipo cambia su tipo elemental a Tierra puro."),
         ("flying", "Tabla Cielo", "Volador", "flying", "Volador", "", "", "Tabla Cielo", "/media/items/sky-plate.png", "Al equipar la Tabla Cielo, su habilidad Multitipo cambia su tipo elemental a Volador puro."),
         ("psychic", "Tabla Mental", "Psíquico", "psychic", "Psíquico", "", "", "Tabla Mental", "/media/items/mind-plate.png", "Al equipar la Tabla Mental, su habilidad Multitipo cambia su tipo elemental a Psíquico puro."),
         ("bug", "Tabla Bicho", "Bicho", "bug", "Bicho", "", "", "Tabla Bicho", "/media/items/insect-plate.png", "Al equipar la Tabla Bicho, su habilidad Multitipo cambia su tipo elemental a Bicho puro."),
@@ -1404,15 +1404,15 @@ def get_giratina_forms(game_slug: str = "platinum"):
 def get_shaymin_forms(game_slug: str = "platinum"):
     """
     Retorna las 2 formas de Shaymin (#492):
-    Forma Tierra (Erizo) y Forma Cielo (Grácidea de día).
+    Forma Tierra (Erizo) y Forma Cielo (Gracídea de día).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
     is_gen5 = get_game_sprite_config(clean_slug)["gen"] >= 5
 
     sky_note_text = (
-        "Forma alada adoptada al usar la Flor Grácidea entre las 05:00 y las 19:59 (entregada en el Centro Pokémon de Pueblo Ladrillo al llevar a Shaymin). Adquiere el tipo secundario Volador, la habilidad Dicha y altas estadísticas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse."
+        "Forma alada adoptada al usar la Flor Gracídea entre las 05:00 y las 19:59 (entregada en el Centro Pokémon de Pueblo Ladrillo al llevar a Shaymin). Adquiere el tipo secundario Volador, la habilidad Dicha y altas estadísticas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse."
         if is_gen5 else
-        "Forma alada adoptada al usar la Flor Grácidea entre las 05:00 y las 19:59. Adquiere el tipo secundario Volador, la habilidad Dicha y estadísticas altas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse."
+        "Forma alada adoptada al usar la Flor Gracídea entre las 05:00 y las 19:59. Adquiere el tipo secundario Volador, la habilidad Dicha y estadísticas altas de Velocidad (127) y Ataque Especial (120). Revierte de noche o al congelarse."
     )
 
     return [
@@ -1451,7 +1451,7 @@ def get_shaymin_forms(game_slug: str = "platinum"):
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10006.png",
             "notes": [
                 {
-                    "title": "Flor Grácidea",
+                    "title": "Flor Gracídea",
                     "text": sky_note_text,
                     "tag": "Dicha",
                     "icon": "/media/items/gracidea.png",
@@ -1536,7 +1536,7 @@ def get_rotom_forms(game_slug: str = "platinum"):
 def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
     """
     Retorna las formas canónicas de Pichu (#172):
-    Forma Estándar y Pichu Picorejita (exclusiva de HeartGold y SoulSilver).
+    Forma Estándar y Pichu Picoreja (exclusiva de HeartGold y SoulSilver).
     """
     slug = (game_slug or "heartgold").replace("_national", "")
     forms = [
@@ -1565,8 +1565,8 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
     if slug in ["heartgold", "soulsilver"]:
         forms.append({
             "form_key": "spiky_eared",
-            "name": "Pichu Picorejita",
-            "display_name": "Pichu Picorejita",
+            "name": "Pichu Picoreja",
+            "display_name": "Pichu Picoreja",
             "category": "Pokémon Ratón",
             "primary_type": "electric",
             "primary_type_es": "Eléctrico",
@@ -1680,7 +1680,7 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Modo Daruma (Habilidad Oculta)",
-                    "text": "Adquiere el tipo Fuego/Psíquico y altas defensas y Ataque Especial al caer sus PS por debajo del 50%. En el exterior del Castillo Ancestral hay 5 estatuas de Darmanitan que despiertan con esta habilidad al entregarles un Furiazafrán.",
+                    "text": "Adquiere el tipo Fuego/Psíquico y altas defensas y Ataque Especial al caer sus PS por debajo del 50%. En el exterior del Castillo Ancestral hay 5 estatuas de Darmanitan que despiertan con esta habilidad al entregarles un Caramelo Furia.",
                     "tag": "Modo Daruma",
                     "icon": "/media/items/rage-candy-bar.png",
                 }
@@ -1795,8 +1795,8 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "sprite_modern_shiny": "/media/pokemon/home/shiny/10018.png",
             "notes": [
                 {
-                    "title": "Canto Arcaico (Café Sonata)",
-                    "text": "Meloetta adopta esta forma de tipo Normal/Lucha al usar en combate el movimiento Canto Arcaico, enseñado por un músico en el Café Sonata de Ciudad Porcelana.",
+                    "title": "Canto Arcaico (La melodía del descanso)",
+                    "text": "Meloetta adopta esta forma de tipo Normal/Lucha al usar en combate el movimiento Canto Arcaico, enseñado por un músico en la cafetería La melodía del descanso de Ciudad Porcelana.",
                     "tag": "Lucha",
                     "icon": "/media/items/rule-book.png",
                 }
@@ -1808,11 +1808,11 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
     drives = [
-        ("normal", "Forma Normal", "Normal", "649", "Sin cromo equipado. Su movimiento característico Tecno Shock es de tipo Normal.", None),
-        ("shock", "Cromo Fulgo", "Eléctrico", "genesect/shock", "Equipado con el Cromo Fulgo. Su movimiento Tecno Shock pasa a ser de tipo Eléctrico. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
-        ("burn", "Cromo Piro", "Fuego", "genesect/burn", "Equipado con el Cromo Piro. Su movimiento Tecno Shock pasa a ser de tipo Fuego. Entregado por el científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
-        ("douse", "Cromo Hidro", "Agua", "genesect/douse", "Equipado con el Cromo Hidro. Su movimiento Tecno Shock pasa a ser de tipo Agua.", "/media/items/douse-drive.png"),
-        ("chill", "Cromo Crio", "Hielo", "genesect/chill", "Equipado con el Cromo Crio. Su movimiento Tecno Shock pasa a ser de tipo Hielo.", "/media/items/chill-drive.png"),
+        ("normal", "Forma Normal", "Normal", "649", "Sin cartucho equipado. Su movimiento característico Tecnochoque es de tipo Normal.", None),
+        ("shock", "FulgoROM", "Eléctrico", "genesect/shock", "Equipado con el cartucho FulgoROM. Su movimiento Tecnochoque pasa a ser de tipo Eléctrico. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
+        ("burn", "PiroROM", "Fuego", "genesect/burn", "Equipado con el cartucho PiroROM. Su movimiento Tecnochoque pasa a ser de tipo Fuego. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
+        ("douse", "HidroROM", "Agua", "genesect/douse", "Equipado con el cartucho HidroROM. Su movimiento Tecnochoque pasa a ser de tipo Agua. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/douse-drive.png"),
+        ("chill", "CrioROM", "Hielo", "genesect/chill", "Equipado con el cartucho CrioROM. Su movimiento Tecnochoque pasa a ser de tipo Hielo. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/chill-drive.png"),
     ]
     forms = []
     for f_key, f_name, type_label, rel_stem, desc, icon_path in drives:
@@ -1830,7 +1830,7 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "sprite_modern_shiny": "/media/pokemon/home/shiny/649.png",
             "notes": [
                 {
-                    "title": f"Módulo {type_label}",
+                    "title": f"Cartucho {f_name} ({type_label})" if f_key != "normal" else "Forma Normal (Sin Cartucho)",
                     "text": desc,
                     "tag": type_label,
                     "icon": icon_path or "/media/items/rule-book.png",
@@ -1851,7 +1851,7 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
     is_gen4 = (gen == 4)
     is_gen5 = (gen == 5)
 
-    # 1. Pichu Picorejita (#172) disponible en HeartGold y SoulSilver
+    # 1. Pichu Picoreja (#172) disponible en HeartGold y SoulSilver
     if national_number == 172 and clean_slug in ["heartgold", "soulsilver"]:
         return get_pichu_forms(clean_slug)
 

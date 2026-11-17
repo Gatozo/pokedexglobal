@@ -14916,11 +14916,11 @@
       "type": "baby",
       "badge_label": "Bebé / Forma Especial",
       "badge_color": "amber",
-      "summary": "Forma estándar mediante crianza en Ruta 34. Forma Pichu Picorejita obtenible en el Santuario del Encinar con el Pichu Color Pikachu.",
+      "summary": "Forma estándar mediante crianza en Ruta 34. Forma Pichu Picoreja obtenible en el Santuario del Encinar con el Pichu Color Pikachu.",
       "locations": [
         {
           "area": "Santuario del Encinar",
-          "method": "Evento del juego (Pichu Picorejita con Pichu Color Pikachu)"
+          "method": "Evento del juego (Pichu Picoreja con Pichu Color Pikachu)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -35254,20 +35254,20 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
       "locations": [],
       "evolution_info": {
         "from": "Electabuzz",
-        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
         "trigger": "trade",
-        "condition": "por intercambio equipado con Electirizador",
+        "condition": "por intercambio equipado con Electrizador",
         "item_slug": "electirizer"
       }
     },
     "evolution_stone": {
       "slug": "electirizer",
-      "name": "Electirizador",
-      "name_es": "Electirizador",
+      "name": "Electrizador",
+      "name_es": "Electrizador",
       "icon_url": "/media/items/electirizer.png",
       "sprite_url": "/media/items/electirizer.png",
       "description": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",

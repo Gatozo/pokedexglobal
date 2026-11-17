@@ -523,15 +523,15 @@ SPECIAL_OBTAINING = {
         'locations': [{'area': 'Cueva Celeste (Sótano B1)', 'method': 'Encuentro estático a nivel 70'}]
     },
 
-    # Pichu Picorejita
+    # Pichu Picoreja
     172: {
         'type': 'baby',
         'badge_label': 'Bebé / Forma Especial',
         'badge_color': 'amber',
-        'summary': 'Forma estándar mediante crianza en Ruta 34. Forma Pichu Picorejita obtenible en el Santuario del Encinar con el Pichu Color Pikachu.',
+        'summary': 'Forma estándar mediante crianza en Ruta 34. Forma Pichu Picoreja obtenible en el Santuario del Encinar con el Pichu Color Pikachu.',
         'locations': [
             DAYCARE_LOCATION,
-            {'area': 'Santuario del Encinar', 'method': 'Evento del juego (Pichu Picorejita con Pichu Color Pikachu)'}
+            {'area': 'Santuario del Encinar', 'method': 'Evento del juego (Pichu Picoreja con Pichu Color Pikachu)'}
         ]
     },
 

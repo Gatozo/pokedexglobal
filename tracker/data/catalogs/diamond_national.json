@@ -10461,15 +10461,15 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Helix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Helix"
+          "method": "Excavación de Fósil Hélix"
         },
         {
           "area": "Ciudad Pirita (Museo Minero)",
-          "method": "Restauración de Fósil Helix"
+          "method": "Restauración de Fósil Hélix"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -32979,20 +32979,20 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+      "summary": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
       "locations": [],
       "evolution_info": {
         "from": "Electabuzz",
-        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+        "text": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
         "trigger": "trade",
-        "condition": "por intercambio equipado con Electirizador",
+        "condition": "por intercambio equipado con Electrizador",
         "item_slug": "electirizer"
       }
     },
     "evolution_stone": {
       "slug": "electirizer",
-      "name": "Electirizador",
-      "name_es": "Electirizador",
+      "name": "Electrizador",
+      "name_es": "Electrizador",
       "icon_url": "/media/items/electirizer.png",
       "sprite_url": "/media/items/electirizer.png",
       "description": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",

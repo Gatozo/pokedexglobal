@@ -2415,8 +2415,8 @@
     "to_id": 466,
     "to_name": "Electivire",
     "trigger": "trade",
-    "condition": "por intercambio equipado con Electirizador",
-    "text": "Evoluciona de Electabuzz (por intercambio equipado con Electirizador)",
+    "condition": "por intercambio equipado con Electrizador",
+    "text": "Evoluciona de Electabuzz (por intercambio equipado con Electrizador)",
     "item_slug": "electirizer"
   },
   "134": {

@@ -352,10 +352,10 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Helix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Helix'},
-            {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Helix'},
+            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Hélix'},
+            {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Hélix'},
             DAYCARE_LOCATION
         ]
     },

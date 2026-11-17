@@ -276,7 +276,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'amber',
-        'summary': 'Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (mote: Tecno). Sus formas alternas se activan en las cajas del sótano del Centro Comercial R9.',
+        'summary': 'Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (mote: Tecno). Sus formas alternas se activan en las cajas del almacén de la planta baja del Centro Comercial R9.',
         'locations': [
             {'area': 'Ruta 15 (Caravana)', 'method': 'Intercambio NPC (mote: Tecno) por Ditto'}
         ]
@@ -334,7 +334,7 @@ SPECIAL_OBTAINING = {
         'type': 'event',
         'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
-        'summary': 'Evoluciona de Zorua al Nv. 30. En Pokémon Negro también aparece como encuentro único a Nv. 25 (hembra) en la caravana del Bosque de los Perdidos si llevas en el equipo a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN.',
+        'summary': 'Evoluciona de Zorua al Nv. 30. En Pokémon Negro también aparece como encuentro único a Nv. 25 en la caravana del Bosque de los Perdidos si llevas en el equipo a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN.',
         'locations': [
             {'area': 'Bosque de los Perdidos', 'method': 'Encuentro especial a Nv. 25 con Bestia Variocolor vía Trasladador PKMN'}
         ]
@@ -684,10 +684,10 @@ SPECIAL_NOTES_BLACK = {
         "title": "Evento Exclusivo de 4.ª Generación",
         "text": (
             "En Pokémon Negro y Blanco originales no aparece salvaje ni te lo regalan de forma normal (a diferencia de "
-            "Negro 2 y Blanco 2). Hablar con la chica y el niño en el edificio de Game Freak (Ciudad Porcelana) solo "
-            "lo registra como visto; para obtenerlo (Nv. 10, macho, con Ilusión) es obligatorio transferir un Celebi "
-            "de evento desde 4.ª Generación mediante el Trasladador PKMN (necesitas hueco en el equipo y una Poké Ball). "
-            "Sin ese evento, la única alternativa es el intercambio o la crianza."
+            "Negro 2 y Blanco 2). Hablar con la chica en el edificio de Game Freak (Ciudad Porcelana) solo "
+            "lo registra como visto (pensado para poder buscarlo en la GTS); para obtenerlo (Nv. 10, con Ilusión) es "
+            "obligatorio transferir un Celebi de evento desde 4.ª Generación mediante el Trasladador PKMN (necesitas "
+            "hueco en el equipo y una Poké Ball). Sin ese evento, la única alternativa es el intercambio o la crianza."
         ),
         "tag": "Trasladador PKMN",
         "icon": "/media/items/dusk-ball.png",
@@ -696,9 +696,9 @@ SPECIAL_NOTES_BLACK = {
         "title": "Evento del Bosque de los Perdidos",
         "text": (
             "Zoroark no aparece de forma común en Teselia en Pokémon Negro y Blanco. Además de evolucionar a Zorua "
-            "al Nv. 30, existe un encuentro especial en la caravana del Bosque de los Perdidos (Nv. 25, siempre hembra, "
-            "con Ilusión) que solo se activa llevando a Raikou, Entei o Suicune variocolor de evento transferidos desde "
-            "4.ª Generación vía Trasladador PKMN. Al ser hembra, tras capturarlo permite obtener a Zorua mediante crianza."
+            "al Nv. 30, existe un encuentro especial en la caravana del Bosque de los Perdidos (Nv. 25, con Ilusión) "
+            "que solo se activa llevando a Raikou, Entei o Suicune variocolor de evento transferidos desde "
+            "4.ª Generación vía Trasladador PKMN; tras capturarlo, también permite obtener a Zorua mediante crianza."
         ),
         "tag": "Evento Especial",
         "icon": "/media/items/dusk-ball.png",

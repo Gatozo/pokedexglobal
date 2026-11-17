@@ -235,6 +235,7 @@ EVO_ITEMS_ES = {
     'metal-coat': 'Revestimiento Metálico',
     'kings-rock': 'Roca del Rey',
     'upgrade': 'Mejora',
+    'up-grade': 'Mejora',
     'sun-stone': 'Piedra Solar',
     'moon-stone': 'Piedra Lunar',
     'fire-stone': 'Piedra Fuego',

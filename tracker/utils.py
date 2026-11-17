@@ -474,7 +474,7 @@ EVOLUTION_ITEMS_ES = {
     'deep-sea-tooth': 'Diente Marino',
     'deep-sea-scale': 'Escama Marina',
     'protector': 'Protector',
-    'electirizer': 'Electirizador',
+    'electirizer': 'Electrizador',
     'magmarizer': 'Magmatizador',
     'dubious-disc': 'Discoxtraño',
     'reaper-cloth': 'Tela Terrible',
