@@ -78238,8 +78238,8 @@
     "cry_url": "/media/pokemon/cries/legacy/133.ogg",
     "flavor_text": "Es capaz de alterar la composición de su cuerpo para confundirse con el entorno.",
     "obtaining_info": {
-      "type": "wild",
-      "summary": "Salvaje en: Ciudad Trigal (Casa de Bill) y canjeable por 6.666 fichas en el Casino de Ciudad Azulona (también obtenible como cría en la Guardería Pokémon)",
+      "type": "gift",
+      "summary": "Regalo de Bill en Ciudad Trigal (Casa de Bill) tras hablar con él en Ciudad Iris, o canjeable por 6.666 fichas en el Casino de Ciudad Azulona (también obtenible como cría en la Guardería Pokémon).",
       "locations": [
         {
           "area": "Ciudad Trigal (Casa de Bill)",
@@ -78254,8 +78254,8 @@
           "method": "Crianza de huevo"
         }
       ],
-      "badge_color": "emerald",
-      "badge_label": "Salvaje / Crianza",
+      "badge_color": "amber",
+      "badge_label": "Regalo / Casino",
       "evolution_info": null
     },
     "evolution_stone": null,

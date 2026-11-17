@@ -407,32 +407,40 @@ def main():
     # Intercambios dentro del juego (In-Game Trades) en Esmeralda
     INGAME_TRADES_EMERALD = {
         273: {  # Seedot
-            'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit, también salvaje en Hoenn y obtenible mediante crianza).',
+            'type': 'wild',
+            'badge_label': 'Salvaje',
+            'badge_color': 'emerald',
+            'summary': 'Salvaje en Ruta 102, Ruta 117 y Ruta 120. También obtenible mediante intercambio NPC en Ciudad Férrica (Casa junto al Gimnasio) entregando un Ralts (mote SITOT) y mediante crianza.',
             'locations': [
                 {'area': 'Ciudad Férrica (Casa junto al Gimnasio)', 'method': 'Intercambio NPC por Ralts'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ]
         },
         311: {  # Plusle
-            'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey, también salvaje en Hoenn y obtenible mediante crianza).',
+            'type': 'wild',
+            'badge_label': 'Salvaje',
+            'badge_color': 'emerald',
+            'summary': 'Salvaje en Ruta 110. También obtenible mediante intercambio NPC en Ciudad Arborada (Casa norte) entregando un Volbeat (mote PUSLE) y mediante crianza.',
             'locations': [
                 {'area': 'Ciudad Arborada (Casa norte)', 'method': 'Intercambio NPC por Volbeat'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ]
         },
         116: {  # Horsea
-            'type': 'trade',
-            'summary': 'Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra, también salvaje pescando en Hoenn y obtenible mediante crianza).',
+            'type': 'wild',
+            'badge_label': 'Salvaje',
+            'badge_color': 'emerald',
+            'summary': 'Salvaje pescando con Supercaña en Ruta 132, Ruta 133 y Ruta 134. También obtenible mediante intercambio NPC en Pueblo Oromar (Casa sudoeste) entregando un Bagon (mote HORSI) y mediante crianza.',
             'locations': [
                 {'area': 'Pueblo Oromar (Casa sudoeste)', 'method': 'Intercambio NPC por Bagon'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
             ]
         },
         52: {   # Meowth
-            'type': 'trade',
-            'summary': 'Intercambio dentro del juego en el Frente de Batalla entregando un Skitty (Miauchi / Meowth, también obtenible mediante crianza).',
+            'type': 'trade_npc',
+            'badge_label': 'Intercambio NPC',
+            'badge_color': 'sky',
+            'summary': 'Intercambio dentro del juego en el Frente de Batalla (Cabaña este) entregando un Skitty (mote MEOWOW, también obtenible mediante crianza).',
             'locations': [
                 {'area': 'Frente de Batalla (Cabaña este)', 'method': 'Intercambio NPC por Skitty'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -734,6 +742,13 @@ def main():
             'summary': 'Roca Ombligo (Navel Rock) en la cima de la caverna al Nivel 70 mediante el evento oficial del Ticket Místico (Mystic Ticket).',
             'locations': [{'area': 'Roca Ombligo (Evento Ticket Místico)', 'method': 'Salvaje estático al Nivel 70'}]
         },
+        251: {
+            'type': 'event',
+            'badge_label': 'Mítico / Evento',
+            'badge_color': 'purple',
+            'summary': 'Pokémon singular de evento oficial. Obtenible mediante transferencia desde el disco bonus de Pokémon Colosseum (Japón) o eventos presenciales oficiales de Nintendo.',
+            'locations': [{'area': 'Disco bonus Colosseum (Japón)', 'method': 'Transferencia / Distribución oficial'}]
+        },
 
         # Exclusivos de Rubí y Zafiro (Ausentes en estado salvaje en Esmeralda)
         283: {
@@ -879,8 +894,12 @@ def main():
             obt_info = copy.deepcopy(SPECIAL_OBT_EMERALD[nat_id])
         elif nat_id in INGAME_TRADES_EMERALD:
             obt_info = copy.deepcopy(INGAME_TRADES_EMERALD[nat_id])
-            if unique_locs:
-                obt_info['locations'] = unique_locs + obt_info['locations']
+            wild_only_locs = [
+                l for l in unique_locs
+                if l.get('method', '').lower() != 'intercambio con npc'
+            ]
+            if wild_only_locs:
+                obt_info['locations'] = wild_only_locs + obt_info['locations']
         elif unique_locs:
             true_wild_locs = [l for l in unique_locs if 'colosseum' not in l.get('method', '').lower()]
             if not true_wild_locs:

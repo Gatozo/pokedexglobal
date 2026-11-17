@@ -943,7 +943,7 @@ def main():
             else:
                 new_locations.append({'area': loc.get('area', ''), 'method': loc.get('method', '')})
 
-        if is_hatchable and not has_daycare:
+        if is_hatchable and not has_daycare and obt_info.get('type') != 'evolution':
             if baby_incense_slug:
                 incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
                 new_locations.append({

@@ -1374,8 +1374,10 @@
     "cry_url": "/media/pokemon/cries/legacy/273.ogg",
     "flavor_text": "Se cuelga de las ramas y absorbe sus nutrientes. Cuando acaba de comer, se queda tan lleno que acaba cayéndose al suelo y dándose un tortazo.",
     "obtaining_info": {
-      "type": "trade",
-      "summary": "Intercambio dentro del juego en Ciudad Férrica entregando un Ralts (Kino / Makit, también salvaje en Hoenn y obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Ruta 102, Ruta 117 y Ruta 120. También obtenible mediante intercambio NPC en Ciudad Férrica (Casa junto al Gimnasio) entregando un Ralts (mote SITOT) y mediante crianza.",
       "locations": [
         {
           "area": "Ruta 102",
@@ -1390,10 +1392,6 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Ciudad Férrica",
-          "method": "Intercambio con NPC"
-        },
-        {
           "area": "Ciudad Férrica (Casa junto al Gimnasio)",
           "method": "Intercambio NPC por Ralts"
         },
@@ -1401,9 +1399,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "indigo",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -6447,16 +6443,14 @@
     "cry_url": "/media/pokemon/cries/legacy/311.ogg",
     "flavor_text": "Siempre anima a sus compañeros Pokémon. Crea cortocircuitos con la electricidad que libera por las patas para hacer pompones de chispas y animar al resto.",
     "obtaining_info": {
-      "type": "trade",
-      "summary": "Intercambio dentro del juego en Ciudad Arborada entregando un Volbeat (Paprún / Plusey, también salvaje en Hoenn y obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje en Ruta 110. También obtenible mediante intercambio NPC en Ciudad Arborada (Casa norte) entregando un Volbeat (mote PUSLE) y mediante crianza.",
       "locations": [
         {
           "area": "Ruta 110",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Ciudad Arborada",
-          "method": "Intercambio con NPC"
         },
         {
           "area": "Ciudad Arborada (Casa norte)",
@@ -6466,9 +6460,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "indigo",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -13434,8 +13426,10 @@
     "cry_url": "/media/pokemon/cries/legacy/116.ogg",
     "flavor_text": "Batiendo hábilmente las aletas que tiene en el lomo, se mueve en cualquier dirección al avanzar. Si detecta peligro, escupe tinta para escapar.",
     "obtaining_info": {
-      "type": "trade",
-      "summary": "Intercambio dentro del juego en Pueblo Oromar entregando un Bagon (Tico / Seadra, también salvaje pescando en Hoenn y obtenible mediante crianza).",
+      "type": "wild",
+      "badge_label": "Salvaje",
+      "badge_color": "emerald",
+      "summary": "Salvaje pescando con Supercaña en Ruta 132, Ruta 133 y Ruta 134. También obtenible mediante intercambio NPC en Pueblo Oromar (Casa sudoeste) entregando un Bagon (mote HORSI) y mediante crianza.",
       "locations": [
         {
           "area": "Ruta 132 (Corrientes)",
@@ -13450,10 +13444,6 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca / Surf)",
-          "method": "Intercambio con NPC"
-        },
-        {
           "area": "Pueblo Oromar (Casa sudoeste)",
           "method": "Intercambio NPC por Bagon"
         },
@@ -13461,9 +13451,7 @@
           "area": "Ruta 117 (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
-      ],
-      "badge_color": "indigo",
-      "badge_label": "Intercambio"
+      ]
     },
     "evolution_stone": null,
     "game_data": {

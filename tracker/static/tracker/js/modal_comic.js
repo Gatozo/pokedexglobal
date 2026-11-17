@@ -583,27 +583,37 @@ export function renderModalObtaining(data, activeForm = null) {
                     </button>
                 </div>
             `;
-        } else if (displayLocations && displayLocations.length > 2) {
-            const loc1 = displayLocations[0].area;
-            const loc2 = displayLocations[1].area;
-            const remCount = displayLocations.length - 2;
+        } else if (obt.summary && obt.summary.trim()) {
+            // Respetar siempre el resumen compilado oficial del catálogo para evitar mezclas falsas
+            // (ej. "Salvaje en Ruta X y Guardería" o sobrescribir métodos especiales/evolutivos).
+            summaryEl.textContent = obt.summary.trim();
+        } else if (displayLocations && displayLocations.length > 0) {
+            const primaryLocs = displayLocations.filter(loc => {
+                const area = (loc.area || '').toLowerCase();
+                const method = (loc.method || '').toLowerCase();
+                return !area.includes('guarder') && !method.includes('crianza');
+            });
+            const fallbackLocs = primaryLocs.length > 0 ? primaryLocs : displayLocations;
             const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
-            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>, <span class="text-slate-950 font-black">${loc2}</span> y <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${remCount} ${remCount === 1 ? 'zona más' : 'zonas más'}</span>.`;
-        } else if (displayLocations && displayLocations.length === 2) {
-            const loc1 = displayLocations[0].area;
-            const loc2 = displayLocations[1].area;
-            const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
-            summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span> y <span class="text-slate-950 font-black">${loc2}</span>.`;
-        } else if (displayLocations && displayLocations.length === 1) {
-            const loc1 = displayLocations[0].area;
-            const typeLabel = (obt.type === 'wild') ? 'Salvaje' : ((obt.type === 'fishing') ? 'Pesca' : ((obt.type === 'transfer') ? 'Transferencia' : 'Disponible'));
-            const textBase = obt.summary ? obt.summary : `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>.`;
-            summaryEl.innerHTML = `${textBase}`;
+
+            if (fallbackLocs.length > 2) {
+                const loc1 = fallbackLocs[0].area;
+                const loc2 = fallbackLocs[1].area;
+                const remCount = fallbackLocs.length - 2;
+                summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>, <span class="text-slate-950 font-black">${loc2}</span> y <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${remCount} ${remCount === 1 ? 'zona más' : 'zonas más'}</span>.`;
+            } else if (fallbackLocs.length === 2) {
+                const loc1 = fallbackLocs[0].area;
+                const loc2 = fallbackLocs[1].area;
+                summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span> y <span class="text-slate-950 font-black">${loc2}</span>.`;
+            } else {
+                const loc1 = fallbackLocs[0].area;
+                summaryEl.innerHTML = `${typeLabel} en <span class="text-slate-950 font-black">${loc1}</span>.`;
+            }
         } else if (obt.evolution_info) {
             const evoFrom = obt.evolution_info.from;
             summaryEl.innerHTML = `Evoluciona de <span class="text-slate-950 font-black">${evoFrom}</span>.`;
         } else {
-            summaryEl.innerHTML = `${obt.summary || 'Sin información de obtención registrada.'}`;
+            summaryEl.textContent = 'Sin información de obtención registrada.';
         }
 
         if (ctaContainer) {

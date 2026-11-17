@@ -158,12 +158,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Snivy (Nivel 17).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Snivy (Nivel 17)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Snivy",
@@ -223,12 +218,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Servine (Nivel 36).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Servine (Nivel 36)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Servine",
@@ -349,12 +339,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Tepig (Nivel 17).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Tepig (Nivel 17)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tepig",
@@ -414,12 +399,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Pignite (Nivel 36).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Pignite (Nivel 36)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Pignite",
@@ -540,12 +520,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Oshawott (Nivel 17).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Oshawott (Nivel 17)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Oshawott",
@@ -605,12 +580,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Dewott (Nivel 36).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Dewott (Nivel 36)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Dewott",
@@ -1266,12 +1236,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Pansage (usando Piedra Hoja).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Pansage (usando Piedra Hoja)."
-        }
-      ],
+      "locations": [],
       "item_slug": "leaf-stone",
       "evolution_info": {
         "from": "Pansage",
@@ -1430,12 +1395,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Pansear (usando Piedra Fuego).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Pansear (usando Piedra Fuego)."
-        }
-      ],
+      "locations": [],
       "item_slug": "fire-stone",
       "evolution_info": {
         "from": "Pansear",
@@ -1594,12 +1554,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Panpour (usando Piedra Agua).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Panpour (usando Piedra Agua)."
-        }
-      ],
+      "locations": [],
       "item_slug": "water-stone",
       "evolution_info": {
         "from": "Panpour",
@@ -2466,12 +2421,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Boldore (por intercambio).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Boldore (por intercambio)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Boldore",
@@ -2685,12 +2635,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Woobat (por amistad).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Woobat (por amistad)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Woobat",
@@ -3292,12 +3237,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Gurdurr (por intercambio).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Gurdurr (por intercambio)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Gurdurr",
@@ -4051,12 +3991,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Whirlipede (Nivel 30).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Whirlipede (Nivel 30)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Whirlipede",
@@ -4348,12 +4283,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Petilil (usando Piedra Solar).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Petilil (usando Piedra Solar)."
-        }
-      ],
+      "locations": [],
       "item_slug": "sun-stone",
       "evolution_info": {
         "from": "Petilil",
@@ -4653,12 +4583,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Krokorok (Nivel 40).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Krokorok (Nivel 40)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Krokorok",
@@ -4791,10 +4716,6 @@
         {
           "area": "Castillo Ancestral (Entrada)",
           "method": "Estatuas que despiertan con Caramelo Furia (Modo Daruma)"
-        },
-        {
-          "area": "Ruta 4",
-          "method": "Evolución de Darumaka (Nv. 35)"
         }
       ],
       "evolution_info": {
@@ -5130,12 +5051,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Scraggy (Nivel 39).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Scraggy (Nivel 39)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Scraggy",
@@ -5450,12 +5366,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Tirtouga (Nivel 37).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Tirtouga (Nivel 37)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tirtouga",
@@ -5580,12 +5491,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Archen (Nivel 37).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Archen (Nivel 37)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Archen",
@@ -5831,18 +5737,14 @@
     "cry_url": "/media/pokemon/cries/legacy/571.ogg",
     "flavor_text": "Siempre ha protegido a su manada embaucando a sus enemigos. Dentro de la manada están todos muy unidos.",
     "obtaining_info": {
-      "type": "wild",
+      "type": "event",
       "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento.",
+      "summary": "Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento vía Trasladador PKMN.",
       "locations": [
         {
           "area": "Bosque de los Perdidos",
           "method": "Encuentro especial con Bestia Variocolor de evento"
-        },
-        {
-          "area": "Ciudad Porcelana",
-          "method": "Evolución de Zorua (Nv. 30)"
         }
       ],
       "evolution_info": {
@@ -6336,12 +6238,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Solosis (Nivel 32).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Solosis (Nivel 32)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Solosis",
@@ -6401,12 +6298,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Duosion (Nivel 41).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Duosion (Nivel 41)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Duosion",
@@ -6738,12 +6630,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Vanillish (Nivel 47).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Vanillish (Nivel 47)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Vanillish",
@@ -7150,12 +7037,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Karrablast (por intercambio con Shelmet).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Karrablast (por intercambio con Shelmet)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Karrablast",
@@ -7663,12 +7545,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Joltik (Nivel 36).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Joltik (Nivel 36)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Joltik",
@@ -7797,12 +7674,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Ferroseed (Nivel 40).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Ferroseed (Nivel 40)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Ferroseed",
@@ -7935,12 +7807,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Klink (Nivel 38).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Klink (Nivel 38)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Klink",
@@ -8000,12 +7867,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Klang (Nivel 49).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Klang (Nivel 49)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Klang",
@@ -8134,12 +7996,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Tynamo (Nivel 39).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Tynamo (Nivel 39)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tynamo",
@@ -8199,12 +8056,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Eelektrik (usando Piedra Trueno).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Eelektrik (usando Piedra Trueno)."
-        }
-      ],
+      "locations": [],
       "item_slug": "thunder-stone",
       "evolution_info": {
         "from": "Eelektrik",
@@ -8500,12 +8352,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Litwick (Nivel 41).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Litwick (Nivel 41)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Litwick",
@@ -8565,12 +8412,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Lampent (usando Piedra Noche).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Lampent (usando Piedra Noche)."
-        }
-      ],
+      "locations": [],
       "item_slug": "dusk-stone",
       "evolution_info": {
         "from": "Lampent",
@@ -8789,12 +8631,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Fraxure (Nivel 48).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Fraxure (Nivel 48)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Fraxure",
@@ -9159,12 +8996,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Shelmet (por intercambio con Karrablast).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Shelmet (por intercambio con Karrablast)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Shelmet",
@@ -9637,12 +9469,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Golett (Nivel 43).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Golett (Nivel 43)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Golett",
@@ -9957,12 +9784,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Rufflet (Nivel 54).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Rufflet (Nivel 54)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Rufflet",
@@ -10406,12 +10228,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Deino (Nivel 50).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Deino (Nivel 50)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Deino",
@@ -10471,12 +10288,7 @@
       "badge_label": "Evolución",
       "badge_color": "purple",
       "summary": "Evoluciona de Zweilous (Nivel 64).",
-      "locations": [
-        {
-          "area": "Evolución",
-          "method": "Evoluciona de Zweilous (Nivel 64)."
-        }
-      ],
+      "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Zweilous",
@@ -10601,10 +10413,6 @@
         {
           "area": "Castillo Ancestral (Planta más profunda)",
           "method": "Encuentro fijo a Nivel 70 en el post-game"
-        },
-        {
-          "area": "Ruta 18",
-          "method": "Evolución de Larvesta (Nv. 59)"
         }
       ],
       "evolution_info": {

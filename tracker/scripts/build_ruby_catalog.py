@@ -755,10 +755,9 @@ def build_catalogs():
 
     # Intercambios NPC en Rubí
     INGAME_TRADES_RUBY = {
-        296: {'type': 'trade_npc', 'summary': 'Intercambio en Ciudad Férrica: una chica te da a Makuhita (MAKU) a cambio de un Slakoth.', 'locations': [{'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Slakoth'}]},
-        300: {'type': 'trade_npc', 'summary': 'Intercambio en Pueblo Verdegal: un hombre te da a Skitty (SKITY) a cambio de un Pikachu.', 'locations': [{'area': 'Pueblo Verdegal', 'method': 'Intercambio NPC por Pikachu'}]},
-        311: {'type': 'trade_npc', 'summary': 'Intercambio en Ciudad Arborada: un chico te da a Plusle (PLUS) a cambio de un Volbeat.', 'locations': [{'area': 'Ciudad Arborada', 'method': 'Intercambio NPC por Volbeat'}]},
-        116: {'type': 'trade_npc', 'summary': 'Intercambio en Pueblo Oromar: una chica te da a Horsea (SEA) a cambio de un Bagon.', 'locations': [{'area': 'Pueblo Oromar', 'method': 'Intercambio NPC por Bagon'}]},
+        296: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Cueva Granito y Calle Victoria. También obtenible mediante intercambio NPC en Ciudad Férrica entregando un Slakoth (mote MAKIT).', 'locations': [{'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Slakoth'}]},
+        300: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ruta 116. También obtenible mediante intercambio NPC en Ciudad Arborada entregando un Pikachu (mote SKITIT).', 'locations': [{'area': 'Ciudad Arborada', 'method': 'Intercambio NPC por Pikachu'}]},
+        222: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ciudad Colosalia y Ruta 128. También obtenible mediante intercambio NPC en Pueblo Oromar entregando un Bellossom (mote COROSO).', 'locations': [{'area': 'Pueblo Oromar', 'method': 'Intercambio NPC por Bellossom'}]},
     }
 
     hoenn_catalog_entries = []
@@ -803,8 +802,14 @@ def build_catalogs():
         obt_info = {}
         if nat_id in SPECIAL_OBT_RUBY:
             obt_info = SPECIAL_OBT_RUBY[nat_id]
-        elif nat_id in INGAME_TRADES_RUBY and not unique_locs:
-            obt_info = INGAME_TRADES_RUBY[nat_id]
+        elif nat_id in INGAME_TRADES_RUBY:
+            obt_info = dict(INGAME_TRADES_RUBY[nat_id])
+            wild_only_locs = [
+                l for l in unique_locs
+                if l.get('method', '').lower() != 'intercambio con npc'
+            ]
+            if wild_only_locs:
+                obt_info['locations'] = wild_only_locs + obt_info['locations']
         elif unique_locs:
             true_wild_locs = [l for l in unique_locs if 'colosseum' not in l.get('method', '').lower()]
             if not true_wild_locs:

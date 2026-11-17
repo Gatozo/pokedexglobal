@@ -6934,10 +6934,10 @@
     "cry_url": "/media/pokemon/cries/legacy/94.ogg",
     "flavor_text": "Esa mirada fija que flota en la oscuridad es de algún Gengar que disfruta maldiciendo a la gente.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Salvaje",
-      "badge_color": "emerald",
-      "summary": "Salvaje en Vieja Mansión (Habitación del Cuadro) (requiere cartucho de GBA compatible en Ranura 2 de NDS).",
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "indigo",
+      "summary": "Evoluciona de Haunter por intercambio. También aparece en estado salvaje en la Vieja Mansión (Habitación del Cuadro) insertando cualquier cartucho de GBA en la Ranura 2 de NDS.",
       "locations": [
         {
           "area": "Vieja Mansión (Habitación del Cuadro)",
@@ -10748,12 +10748,7 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Munchlax (por amistad)",
-      "locations": [
-        {
-          "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Munchlax",
         "text": "Evoluciona de Munchlax (por amistad)",
@@ -16301,12 +16296,7 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Mantyke (por condición especial)",
-      "locations": [
-        {
-          "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Mantyke",
         "text": "Evoluciona de Mantyke (por condición especial)",

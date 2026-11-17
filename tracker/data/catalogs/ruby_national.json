@@ -18938,7 +18938,7 @@
     "flavor_text": "Las ramas de Corsola brillan con belleza hasta en siete colores cuando les da el sol. Si se le rompe alguna, el Pokémon la regenera en tan solo una noche.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ciudad Colosalia (Pesca / Surf), Ruta 128, Pueblo Oromar (Pesca / Surf).",
+      "summary": "Salvaje en Ciudad Colosalia y Ruta 128. También obtenible mediante intercambio NPC en Pueblo Oromar entregando un Bellossom (mote COROSO).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -18949,8 +18949,8 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca / Surf)",
-          "method": "Intercambio con NPC"
+          "area": "Pueblo Oromar",
+          "method": "Intercambio NPC por Bellossom"
         }
       ],
       "badge_color": "emerald",
@@ -25196,7 +25196,7 @@
     "flavor_text": "Makuhita es tenaz. Da igual las veces que le venzan; volverá a ponerse en pie y a atacar. De hecho, cada vez que se recupera, acumula más energía para poder evolucionar.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zonas (ej: Cueva Granito (P1), Cueva Granito (Sótano 1), Cueva Granito (P1 Sala Interior)).",
+      "summary": "Salvaje en Cueva Granito y Calle Victoria. También obtenible mediante intercambio NPC en Ciudad Férrica entregando un Slakoth (mote MAKIT).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -25216,7 +25216,7 @@
         },
         {
           "area": "Ciudad Férrica",
-          "method": "Intercambio con NPC"
+          "method": "Intercambio NPC por Slakoth"
         }
       ],
       "badge_color": "emerald",
@@ -25539,7 +25539,7 @@
     "flavor_text": "A Skitty le encanta mover cosas e ir detrás de ellas. Es de todos sabido que se dedica a ir detrás de su propia cola y que, al final, acaba mareándose.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 116, Ciudad Arborada.",
+      "summary": "Salvaje en Ruta 116. También obtenible mediante intercambio NPC en Ciudad Arborada entregando un Pikachu (mote SKITIT).",
       "locations": [
         {
           "area": "Ruta 116",
@@ -25547,7 +25547,7 @@
         },
         {
           "area": "Ciudad Arborada",
-          "method": "Intercambio con NPC"
+          "method": "Intercambio NPC por Pikachu"
         }
       ],
       "badge_color": "emerald",

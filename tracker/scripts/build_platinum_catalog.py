@@ -713,6 +713,23 @@ SPECIAL_OBTAINING = {
         'summary': 'Exclusivo de Pokémon Perla. Evoluciona de Glameow al Nivel 38 (requiere intercambio desde Pokémon Perla).',
         'locations': [{'area': 'Intercambio con Pokémon Perla', 'method': 'Evolución de Glameow transferido'}]
     },
+    # Gengar: Evoluciona de Haunter por intercambio, pero también aparece salvaje mediante Inserción Dual (Cualquier GBA)
+    94: {
+        'type': 'evolution',
+        'badge_label': 'Evolución',
+        'badge_color': 'indigo',
+        'summary': 'Evoluciona de Haunter por intercambio. También aparece en estado salvaje en la Vieja Mansión (Habitación del Cuadro) insertando cualquier cartucho de GBA en la Ranura 2 de NDS.',
+        'locations': [
+            {'area': 'Vieja Mansión (Habitación del Cuadro)', 'method': 'Inserción Dual (Cualquier GBA)'}
+        ],
+        'evolution_info': {
+            'from': 'Haunter',
+            'text': 'Evoluciona de Haunter (por intercambio)',
+            'trigger': 'trade',
+            'condition': 'por intercambio',
+            'item_slug': None
+        }
+    },
 
     # Especies ausentes en estado salvaje en Sinnoh en Platino obtenibles mediante crianza in-game de sus evoluciones salvajes
     86: {
@@ -1063,7 +1080,7 @@ def main():
             else:
                 new_locations.append({'area': loc.get('area', ''), 'method': loc.get('method', '')})
 
-        if is_hatchable and not has_daycare:
+        if is_hatchable and not has_daycare and obt_info.get('type') != 'evolution':
             if baby_incense_slug:
                 incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
                 new_locations.append({

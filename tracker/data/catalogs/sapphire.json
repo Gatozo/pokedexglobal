@@ -4171,8 +4171,8 @@
     "cry_url": "/media/pokemon/cries/legacy/296.ogg",
     "flavor_text": "Makuhita tiene un ánimo inagotable. Nunca pierde la esperanza. Come mucho, duerme bastante y se entrena de forma metódica. Siguiendo estos hábitos de vida, este Pokémon tiene siempre mucha energía.",
     "obtaining_info": {
-      "type": "trade_npc",
-      "summary": "Intercambio en Ciudad Férrica: una chica te da a Makuhita (MAKU) a cambio de un Slakoth.",
+      "type": "wild",
+      "summary": "Salvaje en Cueva Granito y Calle Victoria. También obtenible mediante intercambio NPC en Ciudad Férrica entregando un Slakoth (mote MAKIT).",
       "locations": [
         {
           "area": "Cueva Granito (P1)",
@@ -4192,15 +4192,11 @@
         },
         {
           "area": "Ciudad Férrica",
-          "method": "Intercambio con NPC"
-        },
-        {
-          "area": "Ciudad Férrica",
           "method": "Intercambio NPC por Slakoth"
         }
       ],
-      "badge_color": "sky",
-      "badge_label": "Intercambio NPC"
+      "badge_color": "emerald",
+      "badge_label": "Salvaje"
     },
     "evolution_stone": null,
     "game_data": {
@@ -5781,8 +5777,8 @@
     "cry_url": "/media/pokemon/cries/legacy/300.ogg",
     "flavor_text": "Skitty es conocido por la costumbre que tiene de juguetear y de intentar pillarse la cola. En estado salvaje, habita en las cavidades de los troncos de los árboles del bosque. Es la mascota de muchos por lo dulce que parece.",
     "obtaining_info": {
-      "type": "trade_npc",
-      "summary": "Intercambio en Pueblo Verdegal: un hombre te da a Skitty (SKITY) a cambio de un Pikachu.",
+      "type": "wild",
+      "summary": "Salvaje en Ruta 116. También obtenible mediante intercambio NPC en Ciudad Arborada entregando un Pikachu (mote SKITIT).",
       "locations": [
         {
           "area": "Ruta 116",
@@ -5790,15 +5786,11 @@
         },
         {
           "area": "Ciudad Arborada",
-          "method": "Intercambio con NPC"
-        },
-        {
-          "area": "Pueblo Verdegal",
           "method": "Intercambio NPC por Pikachu"
         }
       ],
-      "badge_color": "sky",
-      "badge_label": "Intercambio NPC"
+      "badge_color": "emerald",
+      "badge_label": "Salvaje"
     },
     "evolution_stone": null,
     "game_data": {
@@ -8004,20 +7996,16 @@
     "cry_url": "/media/pokemon/cries/legacy/312.ogg",
     "flavor_text": "Minun empieza a echar chispas cuando está animando a su compañero en pleno combate. Si su compañero está en peligro, el chisporroteo aumenta su intensidad por momentos.",
     "obtaining_info": {
-      "type": "trade_npc",
-      "summary": "Intercambio en Ciudad Arborada: un chico te da a Minun (MINUN) a cambio de un Volbeat.",
+      "type": "wild",
+      "summary": "Salvaje en Ruta 110.",
       "locations": [
         {
           "area": "Ruta 110",
           "method": "Hierba alta"
-        },
-        {
-          "area": "Ciudad Arborada",
-          "method": "Intercambio NPC por Volbeat"
         }
       ],
-      "badge_color": "sky",
-      "badge_label": "Intercambio NPC"
+      "badge_color": "emerald",
+      "badge_label": "Salvaje"
     },
     "evolution_stone": null,
     "game_data": {
@@ -16491,7 +16479,7 @@
     "flavor_text": "Las aguas templadas son el hábitat de Corsola. Allí se agrupan grandes bancos de estos Pokémon que sirven de escondite a Pokémon más pequeños. Cuando la temperatura del agua baja, suelen migrar a los Mares del Sur.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ciudad Colosalia (Pesca / Surf), Ruta 128, Pueblo Oromar (Pesca / Surf).",
+      "summary": "Salvaje en Ciudad Colosalia y Ruta 128. También obtenible mediante intercambio NPC en Pueblo Oromar entregando un Bellossom (mote COROSO).",
       "locations": [
         {
           "area": "Ciudad Colosalia (Pesca / Surf)",
@@ -16502,8 +16490,8 @@
           "method": "Supercaña"
         },
         {
-          "area": "Pueblo Oromar (Pesca / Surf)",
-          "method": "Intercambio con NPC"
+          "area": "Pueblo Oromar",
+          "method": "Intercambio NPC por Bellossom"
         }
       ],
       "badge_color": "emerald",
@@ -16817,8 +16805,8 @@
     "cry_url": "/media/pokemon/cries/legacy/116.ogg",
     "flavor_text": "Si Horsea siente peligro, echará por la boca una densa tinta negra inconscientemente e intentará huir. Este Pokémon nada muy bien batiendo las aletas que tiene en el lomo.",
     "obtaining_info": {
-      "type": "trade_npc",
-      "summary": "Intercambio en Pueblo Oromar: una chica te da a Horsea (SEA) a cambio de un Bagon.",
+      "type": "wild",
+      "summary": "Salvaje en: Ruta 132 (Corrientes), Ruta 133 (Corrientes), Ruta 134 (Cámara Sellada).",
       "locations": [
         {
           "area": "Ruta 132 (Corrientes)",
@@ -16831,14 +16819,10 @@
         {
           "area": "Ruta 134 (Cámara Sellada)",
           "method": "Supercaña"
-        },
-        {
-          "area": "Pueblo Oromar",
-          "method": "Intercambio NPC por Bagon"
         }
       ],
-      "badge_color": "sky",
-      "badge_label": "Intercambio NPC"
+      "badge_color": "emerald",
+      "badge_label": "Salvaje"
     },
     "evolution_stone": null,
     "game_data": {

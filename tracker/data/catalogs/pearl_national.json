@@ -9005,12 +9005,7 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
-      "locations": [
-        {
-          "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Mime-jr",
         "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
@@ -10744,12 +10739,7 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Munchlax (por amistad)",
-      "locations": [
-        {
-          "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Munchlax",
         "text": "Evoluciona de Munchlax (por amistad)",
@@ -16387,12 +16377,7 @@
       "badge_label": "Evolución",
       "badge_color": "indigo",
       "summary": "Evoluciona de Mantyke (por condición especial)",
-      "locations": [
-        {
-          "area": "Pueblo Sosiego (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "locations": [],
       "evolution_info": {
         "from": "Mantyke",
         "text": "Evoluciona de Mantyke (por condición especial)",

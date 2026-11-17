@@ -16068,7 +16068,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Pantano).",
+      "summary": "Salvaje en Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
@@ -18844,9 +18844,9 @@
     "flavor_text": "Instintivamente se escabulle entre las rocas. Si le entra sueño, robará la guarida de otro Octillery.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Remoraid (Nivel 25)",
+      "summary": "Evoluciona de Remoraid (Nivel 25). También capturable en el Pokéwalker (Ultramar).",
       "locations": [
         {
           "area": "Pokéwalker (Ultramar)",
@@ -18976,14 +18976,14 @@
     "cry_url": "/media/pokemon/cries/legacy/226.ogg",
     "flavor_text": "Nada libremente en mar abierto. Si va lo bastante rápido, volará sobre las olas del mar.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Mantyke (por condición especial)",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "amber",
+      "summary": "Exclusivo de Pokémon Oro HeartGold (salvaje en Ruta 41). En SoulSilver requiere intercambio con HeartGold o evolucionar a Mantyke transferido.",
       "locations": [
         {
-          "area": "Ruta 34 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Exclusivo de versión"
         }
       ],
       "evolution_info": {
@@ -22483,9 +22483,9 @@
     "flavor_text": "Protege a sus crías de los enemigos metiéndolos en su pico. En días de poco oleaje reposa sobre el agua.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Wingull (Nivel 25)",
+      "summary": "Evoluciona de Wingull (Nivel 25). También capturable en el Pokéwalker (De turismo).",
       "locations": [
         {
           "area": "Pokéwalker (De turismo)",
@@ -30597,9 +30597,9 @@
     "flavor_text": "Con sus incisivos roe ramas y raíces y las apila para construir sus madrigueras junto al río.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Bidoof (Nivel 15)",
+      "summary": "Evoluciona de Bidoof (Nivel 15). También capturable en el Pokéwalker (Gran Bosque).",
       "locations": [
         {
           "area": "Pokéwalker (Gran Bosque)",

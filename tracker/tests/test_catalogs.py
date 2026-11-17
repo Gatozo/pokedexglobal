@@ -4771,6 +4771,97 @@ class GlobalFormContractInvariantsTests(TestCase):
             for raw_token in ("Icefall", "Victory Road", "Mt Ember", "hoenn-safari", "team-magma"):
                 self.assertFalse(any(raw_token in area for area in all_areas), f"{raw_token} detectado en {slug}")
 
+    def test_no_mixed_evolution_or_nonsense_obtaining_methods_across_catalogs(self):
+        """Audita los 28 catálogos para asegurar que no haya evoluciones mezcladas en locations ni inconsistencias graves."""
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR, clear_catalog_memory_cache
+        from tracker.views import _classify_catalog_for_game
+
+        clear_catalog_memory_cache()
+        non_wild_kw = (
+            "guarder", "crianza", "intercambio", "huevo", "fósil", "fosil",
+            "regalo", "evento", "casino", "evoluc", "trasladador",
+        )
+
+        for cat_path in sorted(CATALOGS_DIR.glob("*.json")):
+            slug_key = cat_path.stem
+            entries = get_compiled_catalog(slug_key, force_reload=True)
+            for e in entries:
+                obt = e.obtaining_info or {}
+                t = obt.get("type")
+                locs = obt.get("locations") or []
+                name = e.pokemon.display_name
+
+                # 1. Ninguna entrada no evolutiva debe mezclar textos de evolución en locations (salvo exclusivos transferidos)
+                for l in locs:
+                    loc_txt = f"{l.get('area', '')} {l.get('method', '')}".lower()
+                    if "evoluc" in loc_txt and not (t == "trade" and "transferido" in loc_txt):
+                        self.fail(f"{slug_key}: {name} ({t}) contiene evolución en locations: {l}")
+
+                # 2. No debe haber intercambios NPC duplicados ("Intercambio con NPC" junto a "Intercambio NPC por ...")
+                trade_methods = [l.get("method", "").lower() for l in locs if "intercambio" in l.get("method", "").lower()]
+                if any("intercambio npc por" in m for m in trade_methods):
+                    self.assertNotIn("intercambio con npc", trade_methods, f"{slug_key}: {name} tiene intercambio duplicado")
+
+                # 3. Entradas marcadas 'wild' deben tener ubicaciones y al menos una ubicación salvaje real
+                if t == "wild":
+                    self.assertTrue(locs, f"{slug_key}: {name} marcado como wild sin locations")
+                    self.assertFalse(
+                        all(any(k in f"{l.get('area', '')} {l.get('method', '')}".lower() for k in non_wild_kw) for l in locs),
+                        f"{slug_key}: {name} marcado como wild pero sin ubicaciones salvajes: {locs}",
+                    )
+
+        # 4. Casos puntuales auditados
+        black_nat = get_compiled_catalog("black_national")
+        black_by_num = {e.pokemon.national_number: e for e in black_nat}
+        self.assertEqual([l["area"] for l in black_by_num[637].obtaining_info["locations"]], ["Castillo Ancestral (Planta más profunda)"])
+        self.assertEqual([l["area"] for l in black_by_num[555].obtaining_info["locations"]], ["Castillo Ancestral (Entrada)"])
+        self.assertEqual([l["area"] for l in black_by_num[571].obtaining_info["locations"]], ["Bosque de los Perdidos"])
+        self.assertEqual(black_by_num[571].obtaining_info["type"], "event")
+        self.assertEqual(black_by_num[202].obtaining_info["locations"], [])
+
+        res_black = _classify_catalog_for_game(black_nat, "black")
+        for e in black_nat:
+            if e.obtaining_info.get("type") == "evolution":
+                self.assertNotEqual(res_black.get(e.pokemon.national_number), (True, "Salvaje"), f"{e.pokemon.display_name} mal clasificado como Salvaje")
+        self.assertFalse(res_black.get(571, (False, None))[0])
+
+        # Zafiro / Esmeralda / Cristal / Oro / Plata / Gen 4
+        sapphire_by_num = {e.pokemon.national_number: e for e in get_compiled_catalog("sapphire")}
+        self.assertEqual(sapphire_by_num[300].obtaining_info["type"], "wild")
+        self.assertIn("Ciudad Arborada", [l["area"] for l in sapphire_by_num[300].obtaining_info["locations"]])
+        self.assertNotIn("Pueblo Verdegal", [l["area"] for l in sapphire_by_num[300].obtaining_info["locations"]])
+        self.assertEqual(sapphire_by_num[116].obtaining_info["type"], "wild")
+        self.assertEqual(sapphire_by_num[312].obtaining_info["type"], "wild")
+
+        emerald_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("emerald_national")}
+        self.assertEqual(emerald_nat[251].obtaining_info["type"], "event")
+        self.assertEqual(emerald_nat[273].obtaining_info["type"], "wild")
+        self.assertEqual(emerald_nat[311].obtaining_info["type"], "wild")
+        self.assertEqual(emerald_nat[116].obtaining_info["type"], "wild")
+
+        crystal_by_num = {e.pokemon.national_number: e for e in get_compiled_catalog("crystal")}
+        self.assertEqual(crystal_by_num[82].obtaining_info["type"], "evolution")
+        self.assertEqual(crystal_by_num[178].obtaining_info["type"], "evolution")
+
+        gold_by_num = {e.pokemon.national_number: e for e in get_compiled_catalog("gold")}
+        self.assertEqual(gold_by_num[133].obtaining_info["type"], "gift")
+
+        # Gengar Gen 4 mantiene 'evolution', y evoluciones con incienso sin forma salvaje quedan sin Guardería
+        for slug in ("diamond", "pearl", "platinum"):
+            g_by_num = {e.pokemon.national_number: e for e in get_compiled_catalog(slug)}
+            self.assertEqual(g_by_num[94].obtaining_info["type"], "evolution")
+            self.assertEqual(g_by_num[94].obtaining_info["badge_label"], "Evolución")
+            self.assertEqual(g_by_num[143].obtaining_info["locations"], [])
+            self.assertEqual(g_by_num[226].obtaining_info["locations"], [])
+
+        hg_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("heartgold_national")}
+        self.assertIn("Albufera", hg_nat[189].obtaining_info["summary"])
+        hg_reg = {e.pokemon.national_number: e for e in get_compiled_catalog("heartgold")}
+        self.assertEqual(hg_reg[189].obtaining_info["type"], "evolution")
+        self.assertEqual(hg_reg[189].obtaining_info["locations"], [])
+        ss_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver_national")}
+        self.assertEqual(ss_nat[226].obtaining_info["type"], "trade")
+
 
 
 

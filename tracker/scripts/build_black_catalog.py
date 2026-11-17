@@ -309,8 +309,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
         'locations': [
-            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Caramelo Furia (Modo Daruma)'},
-            {'area': 'Ruta 4', 'method': 'Evolución de Darumaka (Nv. 35)'}
+            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Caramelo Furia (Modo Daruma)'}
         ]
     },
     518: {
@@ -334,13 +333,12 @@ SPECIAL_OBTAINING = {
         ]
     },
     571: {
-        'type': 'wild',
+        'type': 'event',
         'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
-        'summary': 'Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento.',
+        'summary': 'Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento vía Trasladador PKMN.',
         'locations': [
-            {'area': 'Bosque de los Perdidos', 'method': 'Encuentro especial con Bestia Variocolor de evento'},
-            {'area': 'Ciudad Porcelana', 'method': 'Evolución de Zorua (Nv. 30)'}
+            {'area': 'Bosque de los Perdidos', 'method': 'Encuentro especial con Bestia Variocolor de evento'}
         ]
     },
     636: {
@@ -359,8 +357,7 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Evoluciona de Larvesta al Nv. 59. Además, aparece como encuentro fijo a Nivel 70 en la cámara más profunda del Castillo Ancestral en el post-game.',
         'locations': [
-            {'area': 'Castillo Ancestral (Planta más profunda)', 'method': 'Encuentro fijo a Nivel 70 en el post-game'},
-            {'area': 'Ruta 18', 'method': 'Evolución de Larvesta (Nv. 59)'}
+            {'area': 'Castillo Ancestral (Planta más profunda)', 'method': 'Encuentro fijo a Nivel 70 en el post-game'}
         ]
     },
 
@@ -787,15 +784,12 @@ def main():
             cond = evo_info.get('condition', '')
             summary = f"Evoluciona de {from_name} ({cond})."
             item_slug = evo_info.get('item_slug')
-            loc_list = [{'area': 'Evolución', 'method': summary}]
-            if is_hatchable:
-                loc_list.append(DAYCARE_LOCATION)
             obt_info = {
                 'type': 'evolution',
                 'badge_label': 'Evolución',
                 'badge_color': 'purple',
                 'summary': summary,
-                'locations': loc_list,
+                'locations': [],
                 'item_slug': item_slug,
                 'evolution_info': {
                     'from': from_name,
@@ -869,7 +863,7 @@ def main():
             else:
                 new_locations.append({'area': loc.get('area', ''), 'method': loc.get('method', '')})
 
-        if is_hatchable and not has_daycare:
+        if is_hatchable and not has_daycare and obt_info.get('type') != 'evolution':
             if baby_incense_slug:
                 incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
                 new_locations.append({

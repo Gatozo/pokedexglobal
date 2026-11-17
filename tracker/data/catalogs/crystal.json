@@ -51567,16 +51567,16 @@
     "cry_url": "/media/pokemon/cries/legacy/82.ogg",
     "flavor_text": "Al unirse varios Magneton, se crea una tormenta magnética que trastorna las ondas de radio.",
     "obtaining_info": {
-      "type": "wild",
-      "summary": "Disponible en: Central de Energía",
+      "type": "evolution",
+      "summary": "Evoluciona de Magnemite al Nivel 30. También obtenible mediante intercambio NPC en la Central de Energía entregando un Dugtrio.",
       "locations": [
         {
           "area": "Central de Energía",
-          "method": "Intercambio NPC"
+          "method": "Intercambio NPC por Dugtrio"
         }
       ],
-      "badge_color": "emerald",
-      "badge_label": "Salvaje / Evolución",
+      "badge_color": "indigo",
+      "badge_label": "Evolución / NPC",
       "evolution_info": {
         "from": "Magnemite",
         "text": "Evoluciona de Magnemite (Nivel 30)",
@@ -69905,16 +69905,16 @@
     "cry_url": "/media/pokemon/cries/legacy/178.ogg",
     "flavor_text": "Cuando se pone a meditar al amanecer, pierde la noción del tiempo. Puede pasarse así todo el día.",
     "obtaining_info": {
-      "type": "wild",
-      "summary": "Disponible en: Ciudad Plateada",
+      "type": "evolution",
+      "summary": "Evoluciona de Natu al Nivel 25. También obtenible mediante intercambio NPC en Ciudad Plateada entregando un Haunter.",
       "locations": [
         {
           "area": "Ciudad Plateada",
-          "method": "Intercambio NPC"
+          "method": "Intercambio NPC por Haunter"
         }
       ],
-      "badge_color": "emerald",
-      "badge_label": "Salvaje / Evolución",
+      "badge_color": "indigo",
+      "badge_label": "Evolución / NPC",
       "evolution_info": {
         "from": "Natu",
         "text": "Evoluciona de Natu (Nivel 25)",

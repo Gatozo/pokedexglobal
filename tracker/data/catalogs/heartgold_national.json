@@ -3027,7 +3027,7 @@
     "cry_url": "/media/pokemon/cries/legacy/38.ogg",
     "flavor_text": "Cuentan algunas leyendas que cada una de sus nueve colas posee su propio y único poder místico.",
     "obtaining_info": {
-      "type": "evolution",
+      "type": "trade",
       "badge_label": "Exclusivo SoulSilver",
       "badge_color": "sky",
       "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Vulpix usando Piedra Fuego (requiere intercambio desde SoulSilver).",
@@ -4471,7 +4471,7 @@
     "cry_url": "/media/pokemon/cries/legacy/53.ogg",
     "flavor_text": "Muy valorado por su aire sofisticado. Sin embargo, ataca y araña por el más mínimo motivo.",
     "obtaining_info": {
-      "type": "evolution",
+      "type": "trade",
       "badge_label": "Exclusivo SoulSilver",
       "badge_color": "sky",
       "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Meowth al Nivel 28 (requiere intercambio desde SoulSilver).",
@@ -14301,7 +14301,7 @@
     "cry_url": "/media/pokemon/cries/legacy/166.ogg",
     "flavor_text": "Cuando parpadean las estrellas en el cielo nocturno, se mece desprendiendo un polvo brillante.",
     "obtaining_info": {
-      "type": "evolution",
+      "type": "trade",
       "badge_label": "Exclusivo SoulSilver",
       "badge_color": "sky",
       "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Ledyba al Nivel 18 (requiere intercambio desde SoulSilver).",
@@ -16037,7 +16037,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Safari (Pantano).",
+      "summary": "Salvaje en Zona Safari (Albufera).",
       "locations": [
         {
           "area": "Zona Safari (Albufera)",
@@ -18741,9 +18741,9 @@
     "flavor_text": "Atrapa a los enemigos con sus tentáculos y después los golpea con su dura cabeza.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Remoraid (Nivel 25)",
+      "summary": "Evoluciona de Remoraid (Nivel 25). También capturable en el Pokéwalker (Ultramar).",
       "locations": [
         {
           "area": "Pokéwalker (Ultramar)",
@@ -22444,9 +22444,9 @@
     "flavor_text": "Protege a sus crías de los enemigos metiéndolos en su pico. En días de poco oleaje reposa sobre el agua.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Wingull (Nivel 25)",
+      "summary": "Evoluciona de Wingull (Nivel 25). También capturable en el Pokéwalker (De turismo).",
       "locations": [
         {
           "area": "Pokéwalker (De turismo)",
@@ -25289,7 +25289,7 @@
     "cry_url": "/media/pokemon/cries/legacy/317.ogg",
     "flavor_text": "Se traga todo lo que le quepa en su enorme boca. Sus jugos gástricos pueden digerir cualquier cosa.",
     "obtaining_info": {
-      "type": "evolution",
+      "type": "trade",
       "badge_label": "Exclusivo SoulSilver",
       "badge_color": "sky",
       "summary": "Exclusivo de Pokémon Plata SoulSilver. Evoluciona de Gulpin al Nivel 26 (requiere intercambio desde SoulSilver).",
@@ -30608,9 +30608,9 @@
     "flavor_text": "Con sus incisivos roe ramas y raíces y las apila para construir sus madrigueras junto al río.",
     "obtaining_info": {
       "type": "evolution",
-      "badge_label": "Evolución",
+      "badge_label": "Evolución / Pokéwalker",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Bidoof (Nivel 15)",
+      "summary": "Evoluciona de Bidoof (Nivel 15). También capturable en el Pokéwalker (Gran Bosque).",
       "locations": [
         {
           "area": "Pokéwalker (Gran Bosque)",

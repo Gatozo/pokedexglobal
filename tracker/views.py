@@ -36,7 +36,8 @@ def _get_game_catalog_metadata(g_slug: str):
 
 
 EXTERNAL_KEYWORDS = [
-    "cable link", "transferencia", "parque compi", "traslador",
+    "cable link", "transferencia", "parque compi", "trasladador",
+    "bestia variocolor",
     "cápsula del tiempo", "capsula del tiempo", "exclusivo de versión",
     "exclusivo de version", "intercambio con pokémon", "intercambio con pokemon",
     "edición pokémon", "edicion pokemon", "edición rojo", "edición azul",
@@ -49,6 +50,24 @@ EXTERNAL_KEYWORDS = [
     "poké transfer", "poke transfer", "laboratorio transfer",
     "orbe reluciente", "edición blanco", "edicion blanco", "bosque blanco"
 ]
+
+
+def _extract_local_locations(locs, g_slug: str):
+    """Filtra ubicaciones locales descartando crianza, evoluciones, huevo extraño y métodos externos."""
+    local_locs = []
+    for l in locs:
+        m = l.get("method", "").lower().strip()
+        a = l.get("area", "").lower().strip()
+        if "crianza" in m:
+            continue
+        if a in ("evolución", "evolucion") or m.startswith("evolución de ") or m.startswith("evoluciona de "):
+            continue
+        if g_slug in ["gold", "silver"] and "huevo extrañ" in m:
+            continue
+        if any(kw in m or kw in a for kw in EXTERNAL_KEYWORDS):
+            continue
+        local_locs.append(l)
+    return local_locs
 
 
 BABY_PARENTS = {
@@ -147,18 +166,8 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
                 method_badges[p_name] = None
             continue
 
-        # Filtrar ubicaciones locales descartando crianza, transferencias y huevo extraño en oro/plata
-        local_locs = []
-        for l in locs:
-            m = l.get("method", "").lower().strip()
-            a = l.get("area", "").lower().strip()
-            if "crianza" in m:
-                continue
-            if g_slug in ["gold", "silver"] and "huevo extrañ" in m:
-                continue
-            if any(kw in m or kw in a for kw in EXTERNAL_KEYWORDS):
-                continue
-            local_locs.append(l)
+        # Filtrar ubicaciones locales descartando crianza, evoluciones, transferencias y huevo extraño en oro/plata
+        local_locs = _extract_local_locations(locs, g_slug)
 
         methods_str = " ".join([l.get("method", "").lower() for l in local_locs])
         areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
@@ -273,6 +282,14 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
             if "fósil" in full_str or "fosil" in full_str or obt_type == "fossil":
                 native_status[p_name] = True
                 method_badges[p_name] = "Fósil Restaurado"
+                continue
+
+            if obt_type == "evolution" and all(
+                "pokéwalker" in l.get("area", "").lower() or "pokewalker" in l.get("area", "").lower()
+                for l in local_locs
+            ):
+                native_status[p_name] = True
+                method_badges[p_name] = "Pokéwalker"
                 continue
 
             # Salvaje prioritario (hierba, pesca, surf, cueva, buceo, pantano, safari, etc.)
@@ -420,15 +437,7 @@ def _classify_obtaining_method(entry):
             return True, "Evento"
         return False, None
 
-    local_locs = []
-    for l in locs:
-        m = l.get("method", "").lower().strip()
-        a = l.get("area", "").lower().strip()
-        if "crianza" in m:
-            continue
-        if any(kw in m or kw in a for kw in EXTERNAL_KEYWORDS):
-            continue
-        local_locs.append(l)
+    local_locs = _extract_local_locations(locs, g_slug)
 
     methods_str = " ".join([l.get("method", "").lower() for l in local_locs])
     areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
