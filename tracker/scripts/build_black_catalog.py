@@ -744,6 +744,11 @@ def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> st
     if method_raw == 'super-rod-spots':
         return 'Supercaña en sombra del agua'
     if method_raw == 'walk':
+        area_lower = area_clean.lower()
+        if area_lower in ('ciudad teja', 'ruta 8', 'pantano teja'):
+            return 'Caminando en charcos'
+        if area_lower in ('ruta 4', 'zona desierto', 'zona desierto (entrada)'):
+            return 'Caminando en la arena'
         if is_indoor_or_cave(area_clean):
             return 'Caminando'
         return 'Hierba alta'

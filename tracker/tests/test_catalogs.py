@@ -4969,6 +4969,20 @@ class GlobalFormContractInvariantsTests(TestCase):
         tangela_locs = {l["area"]: l["method"] for l in nat_by[114].obtaining_info["locations"]}
         self.assertIn("Hierba alta", tangela_locs["Boquete Gigante (Exterior)"])
 
+        # 3b. Charcos en Ciudad Teja / Ruta 8 / Pantano Teja y arena en Ruta 4 / Zona Desierto
+        shelmet_locs = {l["area"]: l["method"] for l in reg_by[616].obtaining_info["locations"]}
+        self.assertEqual(shelmet_locs["Ciudad Teja"], "Caminando en charcos (Primavera, Verano, Otoño)")
+        self.assertEqual(shelmet_locs["Ruta 8"], "Caminando en charcos (Primavera, Verano, Otoño)")
+        self.assertEqual(shelmet_locs["Pantano Teja"], "Caminando en charcos (Primavera, Verano, Otoño)")
+        palpitoad_locs = {l["area"]: l["method"] for l in reg_by[536].obtaining_info["locations"]}
+        self.assertEqual(palpitoad_locs["Ciudad Teja"], "Caminando en charcos (Primavera, Verano, Otoño)")
+        stunfisk_locs = {l["area"]: l["method"] for l in reg_by[618].obtaining_info["locations"]}
+        self.assertIn("Caminando en charcos (Primavera, Verano, Otoño)", stunfisk_locs["Pantano Teja"])
+        sandile_locs = {l["area"]: l["method"] for l in reg_by[551].obtaining_info["locations"]}
+        self.assertEqual(sandile_locs["Ruta 4"], "Caminando en la arena")
+        self.assertEqual(sandile_locs["Zona Desierto"], "Caminando en la arena")
+        self.assertEqual(sandile_locs["Zona Desierto (Entrada)"], "Caminando en la arena")
+
         # 4. Emolga (Ruta 7 NPC Boldore), Foongus y Amoonguss (Poké Ball camuflada) sin 'Salvaje' genérico
         emolga_locs = {l["area"]: l["method"] for l in reg_by[587].obtaining_info["locations"]}
         self.assertIn("Intercambio NPC por Boldore", emolga_locs["Ruta 7"])

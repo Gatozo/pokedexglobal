@@ -197,7 +197,7 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
 
         # Exclusivos de versión contraparte: Si está marcado como exclusivo de otra edición
         # y no cuenta con captura salvaje local directa, debe descartarse inequívocamente.
-        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari", "puente", "polvo", "sombra", "remolino"]
+        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino"]
         has_wild = (
             obt_type == "wild"
             or any(kw in methods_str for kw in wild_kw)
@@ -465,7 +465,7 @@ def _classify_obtaining_method(entry):
     areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
     full_str = methods_str + " " + areas_str + " " + summary
 
-    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "safari", "puente", "polvo", "sombra", "remolino"]
+    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino"]
     has_wild = (
         obt_type == "wild"
         or any(kw in methods_str for kw in wild_kw)
