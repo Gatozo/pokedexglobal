@@ -657,9 +657,9 @@ def build_catalogs():
 
     # Intercambios NPC en Zafiro
     INGAME_TRADES_SAPPHIRE = {
-        296: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Cueva Granito y Calle Victoria. También obtenible mediante intercambio NPC en Ciudad Férrica entregando un Slakoth (mote MAKIT).', 'locations': [{'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Slakoth'}]},
-        300: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ruta 116. También obtenible mediante intercambio NPC en Ciudad Arborada entregando un Pikachu (mote SKITIT).', 'locations': [{'area': 'Ciudad Arborada', 'method': 'Intercambio NPC por Pikachu'}]},
-        222: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ciudad Colosalia y Ruta 128. También obtenible mediante intercambio NPC en Pueblo Oromar entregando un Bellossom (mote COROSO).', 'locations': [{'area': 'Pueblo Oromar', 'method': 'Intercambio NPC por Bellossom'}]},
+        296: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Cueva Granito y Calle Victoria. También obtenible en Ciudad Férrica entregando un Slakoth a cambio de un Makuhita (con el mote «MAKIT»).', 'locations': [{'area': 'Ciudad Férrica', 'method': 'Intercambio NPC por Slakoth'}]},
+        300: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ruta 116. También obtenible en Ciudad Arborada entregando un Pikachu a cambio de un Skitty (con el mote «SKITIT»).', 'locations': [{'area': 'Ciudad Arborada', 'method': 'Intercambio NPC por Pikachu'}]},
+        222: {'type': 'wild', 'badge_label': 'Salvaje', 'badge_color': 'emerald', 'summary': 'Salvaje en Ciudad Colosalia y Ruta 128. También obtenible en Pueblo Oromar entregando un Bellossom a cambio de un Corsola (con el mote «COROSO»).', 'locations': [{'area': 'Pueblo Oromar', 'method': 'Intercambio NPC por Bellossom'}]},
     }
 
     hoenn_catalog_entries = []

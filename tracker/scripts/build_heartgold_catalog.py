@@ -531,7 +531,7 @@ SPECIAL_OBTAINING = {
         'summary': 'Forma estándar mediante crianza en Ruta 34. Forma Pichu Picorejita obtenible en el Santuario del Encinar con el Pichu Color Pikachu.',
         'locations': [
             DAYCARE_LOCATION,
-            {'area': 'Santuario del Encinar', 'method': 'Evento In-Game (Pichu Picorejita con Pichu Color Pikachu)'}
+            {'area': 'Santuario del Encinar', 'method': 'Evento del juego (Pichu Picorejita con Pichu Color Pikachu)'}
         ]
     },
 
@@ -676,7 +676,7 @@ SPECIAL_OBTAINING = {
         'type': 'safari',
         'badge_label': 'Safari Baoba',
         'badge_color': 'blue',
-        'summary': 'Zona Safari (Área Arboleda con 21 Bloques de Peña y 70 días de espera de Baoba). También regalo de Steven Stone en su casa de Hoenn.',
+        'summary': 'Zona Safari (Área Arboleda con 21 Bloques de Peña y 70 días de espera de Baoba). También intercambio con Máximo Peñas en Silph S.A. por Forretress.',
         'locations': [
             {'area': 'Zona Safari (Arboleda)', 'method': '21 Bloques Peña + 70 días de espera'},
             DAYCARE_LOCATION
@@ -924,12 +924,12 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio en Ciudad Trigal (P5).',
+        'summary': 'Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio NPC en el Centro Comercial de Ciudad Trigal (P5): entrega un Drowzee a cambio de un Machop (con el mote «Musculitos»).',
         'locations': [
             {'area': 'Monte Mortero', 'method': 'Encuentro en cueva'},
             {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Hierba alta'},
             {'area': 'Túnel Roca', 'method': 'Hierba alta'},
-            {'area': 'Centro Comercial de Ciudad Trigal (P5)', 'method': 'Intercambio por un Drowzee (Machop Machito)'},
+            {'area': 'Centro Comercial de Ciudad Trigal (P5)', 'method': 'Intercambio NPC por Drowzee'},
             {'area': 'Zona Safari (Páramo)', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
             {'area': 'Pokéwalker (Cueva Sombría)', 'method': 'Paseo en el Pokéwalker'},
@@ -953,12 +953,12 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio en Ciudad Endrino.',
+        'summary': 'Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio NPC en Ciudad Endrino: entrega un Dragonair hembra a cambio de un Dodrio (con el mote «Trespicolo»).',
         'locations': [
             {'area': 'Ruta 26', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Ruta 28', 'method': 'Hierba alta (Mañana y Día)'},
             {'area': 'Monte Plateado (Exterior)', 'method': 'Hierba alta (Mañana y Día)'},
-            {'area': 'Ciudad Endrino', 'method': 'Intercambio por Dragonair hembra (Dodrio Doris)'},
+            {'area': 'Ciudad Endrino', 'method': 'Intercambio NPC por Dragonair hembra'},
             {'area': 'Zona Safari (Lagos)', 'method': 'Hierba alta'}
         ]
     },
@@ -966,14 +966,14 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Cueva Unión, Ruta 47, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva.',
+        'summary': 'Salvaje en Cueva Unión, Ruta 47, Túnel Roca y Calle Victoria. También por intercambio NPC en Ciudad Malva: entrega un Bellsprout a cambio de un Onix (con el mote «Temblores»).',
         'locations': [
             {'area': 'Cueva Unión', 'method': 'Encuentro en cuevas'},
             {'area': 'Ruta 47 (Interior de la Cueva)', 'method': 'Encuentro en cuevas'},
             {'area': 'Túnel Roca', 'method': 'Encuentro en cuevas'},
             {'area': 'Calle Victoria', 'method': 'Encuentro en cuevas'},
             {'area': 'Monte Plateado', 'method': 'Encuentro en cuevas'},
-            {'area': 'Ciudad Malva', 'method': 'Intercambio por un Bellsprout (Onix Rocoso)'},
+            {'area': 'Ciudad Malva', 'method': 'Intercambio NPC por Bellsprout'},
             {'area': 'Zona Safari (Páramo)', 'method': 'Hierba alta'},
             {'area': 'Pokéwalker (Camino Pedregoso)', 'method': 'Paseo en el Pokéwalker'},
             {'area': 'Pokéwalker (Cueva Sombría)', 'method': 'Paseo en el Pokéwalker'},
@@ -985,12 +985,12 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Intercambio',
         'badge_color': 'emerald',
-        'summary': 'Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.',
+        'summary': 'Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio NPC en Ciudad Olivo: entrega un Krabby a cambio de un Voltorb (con el mote «Calamby»).',
         'locations': [
             {'area': 'Ruta 10', 'method': 'Hierba alta'},
             {'area': 'Zona Safari (Laguna)', 'method': 'Hierba alta'},
             {'area': 'Guarida del Team Rocket (Ciudad Caoba)', 'method': 'Trampa con forma de Poké Ball en el suelo'},
-            {'area': 'Ciudad Olivo', 'method': 'Intercambio por un Krabby (Voltorb Billy)'},
+            {'area': 'Ciudad Olivo', 'method': 'Intercambio NPC por Krabby'},
             DAYCARE_LOCATION
         ]
     },
@@ -1055,9 +1055,9 @@ SPECIAL_OBTAINING = {
         'type': 'trade',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'amber',
-        'summary': 'Inaccesible en estado salvaje en HeartGold. Obtenible mediante intercambio por un Haunter en el Centro Pokémon de Ciudad Plateada, o evolucionando de Natu al Nivel 25.',
+        'summary': 'Inaccesible en estado salvaje en HeartGold. Obtenible en el Centro Pokémon de Ciudad Plateada entregando un Haunter a cambio de un Xatu (con el mote «Xaty»), o evolucionando de Natu al Nivel 25.',
         'locations': [
-            {'area': 'Ciudad Plateada (Centro Pokémon)', 'method': 'Intercambio por un Haunter (Xatu Paulie)'}
+            {'area': 'Ciudad Plateada (Centro Pokémon)', 'method': 'Intercambio NPC por Haunter'}
         ]
     },
     208: {
@@ -1774,27 +1774,27 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         if 'trade-pikachu' in cond_names:
             return 'Intercambio con Teniente Surge (por Pikachu)'
         if 'trade-drowzee' in cond_names:
-            return 'Intercambio por un Drowzee (Machop Machito)'
+            return 'Intercambio NPC por Drowzee'
         if 'trade-dugtrio' in cond_names:
-            return 'Intercambio por un Dugtrio'
+            return 'Intercambio NPC por Dugtrio'
         if 'trade-dragonair' in cond_names:
-            return 'Intercambio por Dragonair hembra (Dodrio Doris)'
+            return 'Intercambio NPC por Dragonair hembra'
         if 'trade-bellsprout' in cond_names:
-            return 'Intercambio por un Bellsprout (Onix Rocoso)'
+            return 'Intercambio NPC por Bellsprout'
         if 'trade-krabby' in cond_names:
-            return 'Intercambio por un Krabby (Voltorb Billy)'
+            return 'Intercambio NPC por Krabby'
         if 'trade-bonsly' in cond_names:
             return 'Intercambio con Brock (por Bonsly)'
         if 'trade-haunter' in cond_names:
-            return 'Intercambio por un Haunter (Xatu Paulie)'
+            return 'Intercambio NPC por Haunter'
         if 'trade-forretress' in cond_names:
             return 'Intercambio con Máximo Peñas (por Forretress)'
         if 'trade-any-pokemon' in cond_names:
             return 'Intercambio con Yasmina (por cualquier Pokémon)'
-        return 'Intercambio en el juego (NPC)'
+        return 'Intercambio NPC'
     if method_raw == 'gift-egg':
         if 'other-correct-password' in cond_names:
-            return 'Huevo de regalo de Primo (Contraseña de ID)'
+            return 'Huevo de regalo de Cástor (Contraseña de ID)'
         return 'Huevo de regalo'
     if method_raw == 'gift':
         coin_conds = [c for c in cond_names if 'coins' in c]

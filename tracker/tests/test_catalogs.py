@@ -4898,6 +4898,46 @@ class GlobalFormContractInvariantsTests(TestCase):
         ss_ids = {e.id for e in get_compiled_catalog("soulsilver", is_national=False)}
         self.assertEqual(hg_ids.intersection(ss_ids), set())
 
+    def test_npc_trade_nicknames_spanish_es_and_clear_phrasing(self):
+        """Verifica que los motes de intercambios NPC estén en español de España y asociados al Pokémon recibido."""
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR
+
+        for cat_path in sorted(CATALOGS_DIR.glob("*.json")):
+            entries = get_compiled_catalog(cat_path.stem)
+            for e in entries:
+                for l in (e.obtaining_info or {}).get("locations") or []:
+                    m = (l.get("method") or "").lower()
+                    self.assertNotIn("intercambio in-game", m, f"{cat_path.stem}: {e.pokemon.display_name} aún tiene texto en inglés: {l}")
+                    self.assertNotIn("evento in-game", m, f"{cat_path.stem}: {e.pokemon.display_name} aún tiene texto en inglés: {l}")
+
+        # Gen 3: mote asociado al Pokémon recibido, nunca detrás del Pokémon entregado
+        emerald_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("emerald_national")}
+        self.assertIn("a cambio de un Seedot (con el mote «SITOT»)", emerald_nat[273].obtaining_info["summary"])
+        self.assertIn("a cambio de un Plusle (con el mote «PUSLE»)", emerald_nat[311].obtaining_info["summary"])
+        self.assertIn("a cambio de un Horsea (con el mote «HORSI»)", emerald_nat[116].obtaining_info["summary"])
+        self.assertIn("a cambio de un Meowth (con el mote «MEOWOW»)", emerald_nat[52].obtaining_info["summary"])
+
+        sapphire_reg = {e.pokemon.national_number: e for e in get_compiled_catalog("sapphire")}
+        self.assertIn("a cambio de un Makuhita (con el mote «MAKIT»)", sapphire_reg[296].obtaining_info["summary"])
+        self.assertIn("a cambio de un Skitty (con el mote «SKITIT»)", sapphire_reg[300].obtaining_info["summary"])
+        self.assertIn("a cambio de un Corsola (con el mote «COROSO»)", sapphire_reg[222].obtaining_info["summary"])
+
+        # Gen 4 HGSS: motes oficiales de España y tarjetas limpias
+        hg_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("heartgold_national")}
+        self.assertIn("«Musculitos»", hg_nat[66].obtaining_info["summary"])
+        self.assertIn("«Trespicolo»", hg_nat[85].obtaining_info["summary"])
+        self.assertIn("«Temblores»", hg_nat[95].obtaining_info["summary"])
+        self.assertIn("«Calamby»", hg_nat[100].obtaining_info["summary"])
+        self.assertIn("«Xaty»", hg_nat[178].obtaining_info["summary"])
+
+        # Gen 4 Sinnoh: sin casas de intercambio listadas como "Salvaje en:" y con motes españoles
+        dia_reg = {e.pokemon.national_number: e for e in get_compiled_catalog("diamond")}
+        self.assertNotIn("Casa Noroeste", dia_reg[63].obtaining_info["summary"].split("También")[0])
+        self.assertIn("«Kazza»", dia_reg[63].obtaining_info["summary"])
+        self.assertIn("«Gaspar»", dia_reg[93].obtaining_info["summary"])
+        self.assertIn("«Foppa»", dia_reg[129].obtaining_info["summary"])
+        self.assertIn("«Charap»", dia_reg[441].obtaining_info["summary"])
+
 
 
 

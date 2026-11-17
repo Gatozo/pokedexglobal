@@ -4562,7 +4562,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en: Ruta 203, Ruta 215, Ciudad Pirita (Casa Noroeste) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 203 y Ruta 215. También obtenible en Ciudad Pirita (Casa Noroeste) entregando un Machop a cambio de un Abra (con el mote «Kazza»), y mediante crianza.",
       "locations": [
         {
           "area": "Ruta 203",
@@ -4574,7 +4574,7 @@
         },
         {
           "area": "Ciudad Pirita (Casa Noroeste)",
-          "method": "Intercambio in-game (por Machop)"
+          "method": "Intercambio NPC (por Machop)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -6863,7 +6863,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Cueva Retorno (Pilar 2), Cueva Retorno (Pilar 3), Cueva Retorno (Cámara Giratina)).",
+      "summary": "Salvaje en 4 zonas (ej: Cueva Retorno (Pilar 2), Cueva Retorno (Pilar 3), Cueva Retorno (Cámara Giratina)). También obtenible en Ciudad Puntaneva (Casa Noroeste) entregando un Medicham a cambio de un Haunter con Piedra Eterna (con el mote «Gaspar»).",
       "locations": [
         {
           "area": "Cueva Retorno (Pilar 2)",
@@ -6879,7 +6879,7 @@
         },
         {
           "area": "Ciudad Puntaneva (Casa Noroeste)",
-          "method": "Intercambio in-game (por Medicham con Piedra Eterna)"
+          "method": "Intercambio NPC (por Medicham con Piedra Eterna)"
         }
       ],
       "evolution_info": {
@@ -9406,7 +9406,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 54 zonas (ej: Ciudad Canal, Ciudad Vetusta, Ciudad Pradera) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 54 zonas (ej: Ciudad Canal, Ciudad Vetusta, Ciudad Pradera) (también obtenible mediante crianza). También en Ruta 226 (Casa del Maestro) entregando un Finneon a cambio de un Magikarp alemán (con el mote «Foppa»).",
       "locations": [
         {
           "area": "Ciudad Canal",
@@ -9622,7 +9622,7 @@
         },
         {
           "area": "Ruta 226 (Casa del Maestro)",
-          "method": "Intercambio in-game (por Finneon)"
+          "method": "Intercambio NPC (por Finneon)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -30851,7 +30851,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en 4 zonas (ej: Ruta 213, Ruta 218, Ruta 222) (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 213, Ruta 218 y Ruta 222. También obtenible en Ciudad Vetusta (Condominios Vetusta) entregando un Buizel a cambio de un Chatot (con el mote «Charap»), y mediante crianza.",
       "locations": [
         {
           "area": "Ruta 213",
@@ -30867,7 +30867,7 @@
         },
         {
           "area": "Ciudad Vetusta (Condominios Vetusta)",
-          "method": "Intercambio in-game (por Buizel)"
+          "method": "Intercambio NPC (por Buizel)"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",

@@ -410,7 +410,7 @@ def main():
             'type': 'wild',
             'badge_label': 'Salvaje',
             'badge_color': 'emerald',
-            'summary': 'Salvaje en Ruta 102, Ruta 117 y Ruta 120. También obtenible mediante intercambio NPC en Ciudad Férrica (Casa junto al Gimnasio) entregando un Ralts (mote SITOT) y mediante crianza.',
+            'summary': 'Salvaje en Ruta 102, Ruta 117 y Ruta 120. También obtenible en Ciudad Férrica (Casa junto al Gimnasio) entregando un Ralts a cambio de un Seedot (con el mote «SITOT»), y mediante crianza.',
             'locations': [
                 {'area': 'Ciudad Férrica (Casa junto al Gimnasio)', 'method': 'Intercambio NPC por Ralts'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -420,7 +420,7 @@ def main():
             'type': 'wild',
             'badge_label': 'Salvaje',
             'badge_color': 'emerald',
-            'summary': 'Salvaje en Ruta 110. También obtenible mediante intercambio NPC en Ciudad Arborada (Casa norte) entregando un Volbeat (mote PUSLE) y mediante crianza.',
+            'summary': 'Salvaje en Ruta 110. También obtenible en Ciudad Arborada (Casa norte) entregando un Volbeat a cambio de un Plusle (con el mote «PUSLE»), y mediante crianza.',
             'locations': [
                 {'area': 'Ciudad Arborada (Casa norte)', 'method': 'Intercambio NPC por Volbeat'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -430,7 +430,7 @@ def main():
             'type': 'wild',
             'badge_label': 'Salvaje',
             'badge_color': 'emerald',
-            'summary': 'Salvaje pescando con Supercaña en Ruta 132, Ruta 133 y Ruta 134. También obtenible mediante intercambio NPC en Pueblo Oromar (Casa sudoeste) entregando un Bagon (mote HORSI) y mediante crianza.',
+            'summary': 'Salvaje pescando con Supercaña en Ruta 132, Ruta 133 y Ruta 134. También obtenible en Pueblo Oromar (Casa sudoeste) entregando un Bagon a cambio de un Horsea (con el mote «HORSI»), y mediante crianza.',
             'locations': [
                 {'area': 'Pueblo Oromar (Casa sudoeste)', 'method': 'Intercambio NPC por Bagon'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}
@@ -440,7 +440,7 @@ def main():
             'type': 'trade_npc',
             'badge_label': 'Intercambio NPC',
             'badge_color': 'sky',
-            'summary': 'Intercambio dentro del juego en el Frente de Batalla (Cabaña este) entregando un Skitty (mote MEOWOW, también obtenible mediante crianza).',
+            'summary': 'Intercambio NPC en el Frente de Batalla (Cabaña este): entrega un Skitty a cambio de un Meowth (con el mote «MEOWOW»). También obtenible mediante crianza.',
             'locations': [
                 {'area': 'Frente de Batalla (Cabaña este)', 'method': 'Intercambio NPC por Skitty'},
                 {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}

@@ -843,15 +843,15 @@ def format_wild_method(method_raw: str, conditions: list) -> str:
         return 'Hierba alta / Terreno'
     if method_raw == 'npc-trade':
         trade_desc_map = {
-            'trade-buizel': 'Intercambio in-game (por Buizel)',
-            'trade-machop': 'Intercambio in-game (por Machop)',
-            'trade-medicham': 'Intercambio in-game (por Medicham con Piedra Eterna)',
-            'trade-finneon': 'Intercambio in-game (por Finneon)',
+            'trade-buizel': 'Intercambio NPC (por Buizel)',
+            'trade-machop': 'Intercambio NPC (por Machop)',
+            'trade-medicham': 'Intercambio NPC (por Medicham con Piedra Eterna)',
+            'trade-finneon': 'Intercambio NPC (por Finneon)',
         }
         for cond, desc in trade_desc_map.items():
             if cond in conditions:
                 return desc
-        return 'Intercambio in-game (NPC)'
+        return 'Intercambio NPC'
     return 'Salvaje'
 
 

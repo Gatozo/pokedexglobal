@@ -5744,7 +5744,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio en Ciudad Trigal (P5).",
+      "summary": "Salvaje en Monte Mortero, Ruta 47 y Túnel Roca. También por intercambio NPC en el Centro Comercial de Ciudad Trigal (P5): entrega un Drowzee a cambio de un Machop (con el mote «Musculitos»).",
       "locations": [
         {
           "area": "Monte Mortero",
@@ -5760,7 +5760,7 @@
         },
         {
           "area": "Centro Comercial de Ciudad Trigal (P5)",
-          "method": "Intercambio por un Drowzee (Machop Machito)"
+          "method": "Intercambio NPC por Drowzee"
         },
         {
           "area": "Pokéwalker (Camino Pedregoso)",
@@ -7534,7 +7534,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio en Ciudad Endrino.",
+      "summary": "Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio NPC en Ciudad Endrino: entrega un Dragonair hembra a cambio de un Dodrio (con el mote «Trespicolo»).",
       "locations": [
         {
           "area": "Ruta 26",
@@ -7550,7 +7550,7 @@
         },
         {
           "area": "Ciudad Endrino",
-          "method": "Intercambio por Dragonair hembra (Dodrio Doris)"
+          "method": "Intercambio NPC por Dragonair hembra"
         },
         {
           "area": "Zona Safari (Laguna)",
@@ -8370,7 +8370,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Cueva Unión, Ruta 47, Túnel Roca y Calle Victoria. También por intercambio en Ciudad Malva.",
+      "summary": "Salvaje en Cueva Unión, Ruta 47, Túnel Roca y Calle Victoria. También por intercambio NPC en Ciudad Malva: entrega un Bellsprout a cambio de un Onix (con el mote «Temblores»).",
       "locations": [
         {
           "area": "Cueva Unión",
@@ -8394,7 +8394,7 @@
         },
         {
           "area": "Ciudad Malva",
-          "method": "Intercambio por un Bellsprout (Onix Rocoso)"
+          "method": "Intercambio NPC por Bellsprout"
         },
         {
           "area": "Pokéwalker (Camino Pedregoso)",
@@ -8855,7 +8855,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio en Ciudad Olivo a cambio de un Krabby.",
+      "summary": "Salvaje en Ruta 10 y Zona Safari (Laguna). Trampa interactiva en la Guarida Rocket de Caoba. También por intercambio NPC en Ciudad Olivo: entrega un Krabby a cambio de un Voltorb (con el mote «Calamby»).",
       "locations": [
         {
           "area": "Ruta 10",
@@ -8867,7 +8867,7 @@
         },
         {
           "area": "Ciudad Olivo",
-          "method": "Intercambio por un Krabby (Voltorb Billy)"
+          "method": "Intercambio NPC por Krabby"
         },
         {
           "area": "Zona Safari (Lagos)",
@@ -14920,7 +14920,7 @@
       "locations": [
         {
           "area": "Santuario del Encinar",
-          "method": "Evento In-Game (Pichu Picorejita con Pichu Color Pikachu)"
+          "method": "Evento del juego (Pichu Picorejita con Pichu Color Pikachu)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -15284,11 +15284,11 @@
       "type": "trade",
       "badge_label": "Intercambio NPC",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en SoulSilver. Obtenible mediante intercambio por un Haunter en el Centro Pokémon de Ciudad Plateada, o evolucionando de Natu al Nivel 25.",
+      "summary": "Inaccesible en estado salvaje en SoulSilver. Obtenible en el Centro Pokémon de Ciudad Plateada entregando un Haunter a cambio de un Xatu (con el mote «Xaty»), o evolucionando de Natu al Nivel 25.",
       "locations": [
         {
           "area": "Ciudad Plateada (Centro Pokémon)",
-          "method": "Intercambio por un Haunter (Xatu Paulie)"
+          "method": "Intercambio NPC por Haunter"
         }
       ],
       "evolution_info": {
