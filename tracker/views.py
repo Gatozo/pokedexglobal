@@ -69,6 +69,7 @@ EXTERNAL_KEYWORDS = [
     "regalo misterioso", "distribución directa", "distribucion directa",
     "conseguir mediante intercambio",
     "poké transfer", "poke transfer", "laboratorio transfer",
+    "pokétransfer", "poketransfer", "laboratorio de pokétransfer",
     "orbe reluciente", "edición blanco", "edicion blanco", "bosque blanco"
 ]
 

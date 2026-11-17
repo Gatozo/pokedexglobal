@@ -686,12 +686,12 @@ NON_JOHTO_KANTO_TRANSFERS_HGSS: List[int] = sorted(list(
     {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
 ))
 
-# 187 especies requeridas mediante el Poké Transfer de la Ruta 15, el Trasladador PKMN o eventos oficiales
-# para completar la Pokédex Nacional en Pokémon Negro (excluye especies de manada diaria y sus evoluciones):
+# 185 especies requeridas mediante el Pokétransfer de la Ruta 15, el Trasladador PKMN o eventos oficiales
+# para completar la Pokédex Nacional en Pokémon Negro (excluye especies de manada diaria, el Munchlax de Pueblo Arenisca y Snorlax):
 NON_UNOVA_TRANSFERS_BLACK = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 24, 25, 26, 50, 51, 52, 53, 58,
     59, 72, 73, 88, 89, 96, 97, 100, 101, 109, 110, 122, 123, 128,
-    133, 134, 135, 136, 143, 144, 145, 146, 150, 151, 152, 153, 154,
+    133, 134, 135, 136, 144, 145, 146, 150, 151, 152, 153, 154,
     155, 156, 157, 158, 159, 160, 172, 177, 178, 185, 190, 196, 197,
     201, 203, 209, 210, 212, 216, 217, 218, 219, 227, 231, 232, 241,
     243, 244, 245, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258,
@@ -700,7 +700,7 @@ NON_UNOVA_TRANSFERS_BLACK = [
     351, 352, 355, 356, 361, 362, 377, 378, 379, 380, 381, 382, 383,
     384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 412,
     413, 414, 417, 422, 423, 424, 427, 428, 431, 432, 434, 435, 438,
-    439, 441, 442, 443, 444, 445, 446, 451, 452, 455, 459, 460, 470,
+    439, 441, 442, 443, 444, 445, 451, 452, 455, 459, 460, 470,
     471, 476, 477, 478, 480, 481, 482, 483, 484, 485, 486, 487, 488,
     489, 490, 491, 492, 493, 494, 570, 571, 645, 647, 648, 649
 ]
@@ -2190,20 +2190,20 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         }
     },
     'black': {
-        'mechanic_title': 'Laboratorio Transfer y Eventos • 5.ª Gen',
-        'mechanic_badge': 'Poké Transfer y Eventos',
-        'subtitle': 'Especies que requieren el Laboratorio Transfer (Ruta 15), el Trasladador PKMN o eventos oficiales',
+        'mechanic_title': 'Pokétransfer y Eventos • 5.ª Gen',
+        'mechanic_badge': 'Pokétransfer y Eventos',
+        'subtitle': 'Especies que requieren el Laboratorio de Pokétransfer (Ruta 15), el Trasladador PKMN o eventos oficiales',
         'description': (
             'Para completar la Pokédex Nacional en <strong>Pokémon Negro</strong>, diversas especies foráneas '
             'de Kanto, Johto, Hoenn y Sinnoh deben ser transferidas desde cartuchos de 4.ª Generación '
-            '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio Transfer</strong> '
+            '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio de Pokétransfer</strong> '
             'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).<br><br>'
             'Asimismo, especies singulares como <strong>Zorua (#570)</strong> y <strong>Zoroark (#571)</strong> requieren '
             'el uso del <strong>Trasladador PKMN</strong> (en Ciudad Porcelana) transfiriendo al Celebi de evento '
             'o a las Bestias Legendarias variocolor. Por último, <strong>Landorus (#645)</strong> requiere llevar en el equipo '
             'tanto a Tornadus (#641) como a <strong>Thundurus (#642)</strong> (exclusivo de Pokémon Blanco) en el Santuario Abundancia.'
         ),
-        'default_origin': 'Poké Transfer (Ruta 15)',
+        'default_origin': 'Pokétransfer (Ruta 15)',
         'origins': {
             494: 'Evento Ticket Libertad (Isla Libertad)',
             570: 'Trasladador PKMN (Celebi de evento en Ciudad Porcelana)',
@@ -2432,8 +2432,8 @@ GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
         '<strong>Mecánica del Bosque Blanco:</strong> En <em>Pokémon Blanco</em> se ubica el <strong>Bosque Blanco</strong> '
         '(el cual sustituye a la <em>Ciudad Negra</em> de Pokémon Negro). En este bosque habitan de forma salvaje hasta 32 familias clásicas '
         'de generaciones 1 a 4 dependiendo de los residentes presentes, los cuales pueden renovarse o reclutarse visitando a otros jugadores '
-        'mediante la <strong>Zona Nexo (Entralink)</strong>. Por tanto, todas estas especies foráneas pueden obtenerse mediante intercambio '
-        'local entre cartuchos de 5.ª Generación sin necesidad de conectar con juegos de generaciones anteriores (Poké Transfer) ni secuelas.<br><br>'
+        'mediante la <strong>Zona Nexo</strong>. Por tanto, todas estas especies foráneas pueden obtenerse mediante intercambio '
+        'local entre cartuchos de 5.ª Generación sin necesidad de conectar con juegos de generaciones anteriores (Pokétransfer) ni secuelas.<br><br>'
         '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Cottonee es exclusivo de Negro y Petilil de Blanco, '
         'ambos han sido excluidos de este panel debido a que es posible obtener a Petilil legalmente en Pokémon Negro mediante intercambio '
         'interno con un NPC en <strong>Ciudad Esmalte</strong> a cambio de tu Cottonee (y viceversa en Pokémon Blanco).'

@@ -67,10 +67,10 @@ UNOVA_AREA_NAMES = {
     'dreamyard-b1f': 'Solar de los Sueños (Sótano)',
     'driftveil-city-area': 'Ciudad Fayenza',
     'driftveil-drawbridge-area': 'Puente Fayenza',
-    'giant-chasm-area': 'Boquete Gigante (Exterior)',
+    'giant-chasm-area': 'Boquete Gigante (Cueva de Entrada)',
     'giant-chasm-forest': 'Boquete Gigante (Bosque Interior)',
     'giant-chasm-forest-cave': 'Boquete Gigante (Cueva Central)',
-    'giant-chasm-outside': 'Boquete Gigante (Entrada)',
+    'giant-chasm-outside': 'Boquete Gigante (Exterior)',
     'guidance-chamber-area': 'Cueva Loza (Estancia Orientación)',
     'icirrus-city-area': 'Ciudad Teja',
     'liberty-garden-lighthouse-basement': 'Isla Libertad (Sótano del Faro)',
@@ -116,8 +116,8 @@ UNOVA_AREA_NAMES = {
     'unova-victory-road-outside': 'Calle Victoria (Ladera Exterior)',
     'unova-victory-road-1f-unknown-room': 'Calle Victoria (P1)',
     'unova-victory-road-4f-middle-room': 'Calle Victoria (P4)',
-    'unova-victory-road-unknown-area-53': 'Calle Victoria (P2)',
-    'unova-victory-road-unknown-area-54': 'Calle Victoria (P3)',
+    'unova-victory-road-unknown-area-53': 'Calle Victoria (P3)',
+    'unova-victory-road-unknown-area-54': 'Calle Victoria (P2)',
     'unova-victory-road-unknown-area-55': 'Calle Victoria (P4)',
     'unova-victory-road-unknown-area-57': 'Calle Victoria (P5)',
     'unova-victory-road-unknown-area-59': 'Calle Victoria (P6)',
@@ -267,27 +267,27 @@ SPECIAL_OBTAINING = {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'indigo',
-        'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (también mediante crianza de Snorlax con Incienso Lento).',
+        'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (mote: Tripón); también mediante crianza de Snorlax equipado con Incienso Lento.',
         'locations': [
-            {'area': 'Pueblo Arenisca (Solo en verano)', 'method': 'Intercambio NPC por Cinccino'}
+            {'area': 'Pueblo Arenisca (Solo en verano)', 'method': 'Intercambio NPC (mote: Tripón) por Cinccino'}
         ]
     },
     479: {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'amber',
-        'summary': 'Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (sus formas alternas se activan en las cajas del Centro Comercial R9).',
+        'summary': 'Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (mote: Tecno). Sus formas alternas se activan en las cajas del sótano del Centro Comercial R9.',
         'locations': [
-            {'area': 'Ruta 15 (Caravana)', 'method': 'Intercambio NPC por Ditto'}
+            {'area': 'Ruta 15 (Caravana)', 'method': 'Intercambio NPC (mote: Tecno) por Ditto'}
         ]
     },
     548: {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'emerald',
-        'summary': 'En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).',
+        'summary': 'En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil (mote: Florina) por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).',
         'locations': [
-            {'area': 'Ciudad Esmalte', 'method': 'Intercambio NPC por Cottonee'},
+            {'area': 'Ciudad Esmalte', 'method': 'Intercambio NPC (mote: Florina) por Cottonee'},
             DAYCARE_LOCATION
         ]
     },
@@ -295,11 +295,9 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Salvaje / Forma',
         'badge_color': 'sky',
-        'summary': 'Forma Raya Roja salvaje en lagos y rutas de Teselia surfeando. La Forma Raya Azul se obtiene por intercambio NPC en Ciudad Fayenza entregando un Minccino.',
+        'summary': 'Forma Raya Roja salvaje de forma común surfeando y pescando por toda Teselia (la Forma Raya Azul aparece rara vez en sombras del agua). Además, puedes recibir un Basculin Forma Raya Roja (mote: Mordiscos) por intercambio NPC en Ciudad Fayenza entregando un Minccino (y también por crianza).',
         'locations': [
-            {'area': 'Ruta 1', 'method': 'Surf / Pesca con Supercaña'},
-            {'area': 'Ruta 3', 'method': 'Surf / Pesca con Supercaña'},
-            {'area': 'Ciudad Fayenza', 'method': 'Intercambio NPC (Forma Raya Azul por Minccino)'},
+            {'area': 'Ciudad Fayenza', 'method': 'Intercambio NPC (Forma Raya Roja, mote: Mordiscos) por Minccino'},
             DAYCARE_LOCATION
         ]
     },
@@ -326,9 +324,9 @@ SPECIAL_OBTAINING = {
         'type': 'gift',
         'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
-        'summary': 'Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Trasladador PKMN (también por crianza).',
+        'summary': 'No aparece salvaje en Pokémon Negro. Solo se obtiene a Nv. 10 en la sede de Game Freak en Ciudad Porcelana al llevar en el equipo al Celebi de evento transferido desde 4.ª Generación mediante el Trasladador PKMN (o por intercambio / crianza a partir de otro Zorua o Zoroark).',
         'locations': [
-            {'area': 'Ciudad Porcelana', 'method': 'Evento con Celebi vía Trasladador PKMN'},
+            {'area': 'Ciudad Porcelana (Sede de Game Freak)', 'method': 'Evento con Celebi vía Trasladador PKMN (Nv. 10)'},
             DAYCARE_LOCATION
         ]
     },
@@ -336,9 +334,9 @@ SPECIAL_OBTAINING = {
         'type': 'event',
         'badge_label': 'Trasladador PKMN',
         'badge_color': 'purple',
-        'summary': 'Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento vía Trasladador PKMN.',
+        'summary': 'Evoluciona de Zorua al Nv. 30. En Pokémon Negro también aparece como encuentro único a Nv. 25 (hembra) en la caravana del Bosque de los Perdidos si llevas en el equipo a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN.',
         'locations': [
-            {'area': 'Bosque de los Perdidos', 'method': 'Encuentro especial con Bestia Variocolor de evento'}
+            {'area': 'Bosque de los Perdidos', 'method': 'Encuentro especial a Nv. 25 con Bestia Variocolor vía Trasladador PKMN'}
         ]
     },
     636: {
@@ -361,14 +359,14 @@ SPECIAL_OBTAINING = {
         ]
     },
 
-    # Fósiles de Teselia
+    # Fósiles de Teselia (elección única por partida)
     564: {
         'type': 'fossil',
         'badge_label': 'Fósil Tapa',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Tapa (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).',
+        'summary': 'Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).',
         'locations': [
-            {'area': 'Castillo Ancestral', 'method': 'Elección de Fósil Tapa'},
+            {'area': 'Castillo Ancestral (P1)', 'method': 'Elección única de Fósil Tapa (Mochilera)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Tapa'},
             DAYCARE_LOCATION
         ]
@@ -377,22 +375,22 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Pluma',
         'badge_color': 'amber',
-        'summary': 'Revivir del Fósil Pluma (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).',
+        'summary': 'Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).',
         'locations': [
-            {'area': 'Castillo Ancestral', 'method': 'Elección de Fósil Pluma'},
+            {'area': 'Castillo Ancestral (P1)', 'method': 'Elección única de Fósil Pluma (Mochilera)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Pluma'},
             DAYCARE_LOCATION
         ]
     },
 
-    # Fósiles clásicos en Monte Tuerca
+    # Fósiles clásicos en Monte Tuerca (post-game tras obtener la Pokédex Nacional)
     138: {
         'type': 'fossil',
         'badge_label': 'Fósil Hélix',
         'badge_color': 'blue',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Hélix diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Hélix'},
             DAYCARE_LOCATION
         ]
@@ -401,9 +399,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Domo',
         'badge_color': 'blue',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Domo diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Domo'},
             DAYCARE_LOCATION
         ]
@@ -412,9 +410,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Ámbar Viejo',
         'badge_color': 'amber',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Ámbar Viejo diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Ámbar Viejo'},
             DAYCARE_LOCATION
         ]
@@ -423,9 +421,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Raíz',
         'badge_color': 'emerald',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Raíz diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Raíz'},
             DAYCARE_LOCATION
         ]
@@ -434,9 +432,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Garra',
         'badge_color': 'amber',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Garra diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Garra'},
             DAYCARE_LOCATION
         ]
@@ -445,9 +443,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Cráneo',
         'badge_color': 'blue',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Cráneo diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Cráneo'},
             DAYCARE_LOCATION
         ]
@@ -456,9 +454,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Coraza',
         'badge_color': 'zinc',
-        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza de un obrero en el Monte Tuerca en el post-game (también por crianza).',
+        'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil Coraza diario entregado por obrero'},
+            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Coraza'},
             DAYCARE_LOCATION
         ]
@@ -617,12 +615,121 @@ SEASONAL_RATE_NOTES = {
 }
 
 
+BREEDING_PARENTS_BLACK = {
+    13:  ("Kakuna o Beedrill (salvajes en Ruta 12)", "Kakuna / Beedrill"),
+    19:  ("Raticate (salvaje en Solar de los Sueños)", "Raticate"),
+    21:  ("Fearow (salvaje en Ruta 15)", "Fearow"),
+    27:  ("Sandslash (salvaje en Castillo Ancestral)", "Sandslash"),
+    41:  ("Golbat o Crobat (salvajes en Boquete Gigante y Ruta 13)", "Golbat / Crobat"),
+    48:  ("Venomoth (salvaje en Solar de los Sueños)", "Venomoth"),
+    54:  ("Golduck (salvaje en Puente Villa, Ruta 11 y Ruta 14)", "Golduck"),
+    74:  ("Graveler (salvaje en Gruta Superación)", "Graveler"),
+    77:  ("Rapidash (salvaje en Ruta 12)", "Rapidash"),
+    104: ("Marowak (salvaje en Ruta 15)", "Marowak"),
+    163: ("Noctowl (salvaje en Santuario Abundancia)", "Noctowl"),
+    165: ("Ledian (salvaje en Solar de los Sueños)", "Ledian"),
+    167: ("Ariados (salvaje en Solar de los Sueños)", "Ariados"),
+    173: ("Clefairy o Clefable (salvajes en Boquete Gigante)", "Clefairy / Clefable"),
+    174: ("Jigglypuff o Wigglytuff (salvajes en Ruta 14)", "Jigglypuff / Wigglytuff"),
+    220: ("Piloswine o Mamoswine (salvajes en Boquete Gigante)", "Piloswine / Mamoswine"),
+    238: ("Jynx (salvaje en Boquete Gigante)", "Jynx"),
+    246: ("Pupitar o Tyranitar (salvajes en Ruta 15)", "Pupitar / Tyranitar"),
+    276: ("Swellow (salvaje en Boquete Gigante y Ruta 13)", "Swellow"),
+    333: ("Altaria (salvaje en Ruta 14)", "Altaria"),
+    343: ("Claydol (salvaje en Castillo Ancestral)", "Claydol"),
+    374: ("Metang o Metagross (salvajes en Boquete Gigante)", "Metang / Metagross"),
+    401: ("Kricketune (salvaje en Solar de los Sueños)", "Kricketune"),
+    420: ("Cherrim (salvaje en Ruta 12)", "Cherrim"),
+    425: ("Drifblim (salvaje en Boquete Gigante, Ruta 13 y Ruta 14)", "Drifblim"),
+    433: ("Chimecho equipado con Incienso Puro (salvaje en Santuario Abundancia)", "Chimecho (con Incienso Puro)"),
+    436: ("Bronzong (salvaje en Santuario Abundancia)", "Bronzong"),
+}
+
+_POSTGAME_FOSSIL_WORKER_TEXT = (
+    "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos "
+    "en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil "
+    "al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); "
+    "puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte."
+)
+
+SPECIAL_NOTES_BLACK = {
+    138: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/helix-fossil.png"}],
+    140: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/dome-fossil.png"}],
+    142: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/old-amber.png"}],
+    345: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/root-fossil.png"}],
+    347: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/claw-fossil.png"}],
+    408: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/skull-fossil.png"}],
+    410: [{"title": "Fósil Diario de Post-game", "text": _POSTGAME_FOSSIL_WORKER_TEXT, "tag": "Monte Tuerca", "icon": "/media/items/armor-fossil.png"}],
+    564: [{
+        "title": "Elección Única en Castillo Ancestral",
+        "text": (
+            "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente "
+            "un fósil por partida entre el Fósil Tapa (Tirtouga) y el Fósil Pluma (Archen). No se vuelve a entregar "
+            "el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar."
+        ),
+        "tag": "Fósil Tapa",
+        "icon": "/media/items/cover-fossil.png",
+    }],
+    566: [{
+        "title": "Elección Única en Castillo Ancestral",
+        "text": (
+            "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente "
+            "un fósil por partida entre el Fósil Pluma (Archen) y el Fósil Tapa (Tirtouga). No se vuelve a entregar "
+            "el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar."
+        ),
+        "tag": "Fósil Pluma",
+        "icon": "/media/items/plume-fossil.png",
+    }],
+    570: [{
+        "title": "Evento Exclusivo de 4.ª Generación",
+        "text": (
+            "En Pokémon Negro y Blanco originales no aparece salvaje ni te lo regalan de forma normal (a diferencia de "
+            "Negro 2 y Blanco 2). Hablar con la chica y el niño en el edificio de Game Freak (Ciudad Porcelana) solo "
+            "lo registra como visto; para obtenerlo (Nv. 10, macho, con Ilusión) es obligatorio transferir un Celebi "
+            "de evento desde 4.ª Generación mediante el Trasladador PKMN (necesitas hueco en el equipo y una Poké Ball). "
+            "Sin ese evento, la única alternativa es el intercambio o la crianza."
+        ),
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/dusk-ball.png",
+    }],
+    571: [{
+        "title": "Evento del Bosque de los Perdidos",
+        "text": (
+            "Zoroark no aparece de forma común en Teselia en Pokémon Negro y Blanco. Además de evolucionar a Zorua "
+            "al Nv. 30, existe un encuentro especial en la caravana del Bosque de los Perdidos (Nv. 25, siempre hembra, "
+            "con Ilusión) que solo se activa llevando a Raikou, Entei o Suicune variocolor de evento transferidos desde "
+            "4.ª Generación vía Trasladador PKMN. Al ser hembra, tras capturarlo permite obtener a Zorua mediante crianza."
+        ),
+        "tag": "Evento Especial",
+        "icon": "/media/items/dusk-ball.png",
+    }],
+}
+
+
+def is_indoor_or_cave(area_clean: str) -> bool:
+    area_lower = area_clean.lower()
+    if any(ext in area_lower for ext in ('ladera exterior', 'torre duodraco (entrada)', 'torre duodraco (exterior)', 'boquete gigante (exterior)', 'bosque interior')):
+        return False
+    return any(
+        k in area_lower
+        for k in ('cueva', 'monte tuerca', 'gruta superación', 'castillo ancestral', 'palacio de n', 'torre de los cielos', 'torre duodraco', 'calle victoria', 'estancia orientación', 'cámara')
+    )
+
+
 def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> str:
     if 'swarm-yes' in conditions:
         return 'Manada diaria'
+    if method_raw == 'npc-trade':
+        if 'trade-boldore' in conditions:
+            return 'Intercambio NPC por Boldore'
+        return 'Intercambio NPC'
+    if method_raw == 'static':
+        return 'Encuentro estático (Poké Ball camuflada)'
     if method_raw == 'dark-grass':
         return 'Hierba oscura (Combates dobles)'
     if method_raw == 'grass-spots':
+        if is_indoor_or_cave(area_clean):
+            return 'Nube de polvo'
         return 'Hierba movediza'
     if method_raw == 'cave-spots':
         return 'Nube de polvo'
@@ -637,7 +744,7 @@ def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> st
     if method_raw == 'super-rod-spots':
         return 'Supercaña en sombra del agua'
     if method_raw == 'walk':
-        if any(c in area_clean.lower() for c in ['cueva', 'monte', 'torre', 'sótano', 'gruta', 'boquete', 'castillo', 'palacio', 'cámara', 'sala']):
+        if is_indoor_or_cave(area_clean):
             return 'Caminando'
         return 'Hierba alta'
     return 'Salvaje'
@@ -698,14 +805,13 @@ def main():
         if nat_id in SEASONAL_FORM_SPECIES_IDS:
             entry_seasons.update(("spring", "summer", "autumn", "winter"))
 
-        if nat_id in SPECIAL_OBTAINING:
-            obt_info = json.loads(json.dumps(SPECIAL_OBTAINING[nat_id]))
-        elif raw_encs or nat_id in SWARM_POKEMON_BLACK:
-            # Procesar encuentros salvajes agrupados por área limpia y método base, conservando estaciones
+        def _collect_wild_locations():
             area_method_meta = {}
             for e in raw_encs:
                 area_key = e.get('area_raw', '')
                 if 'team-flare' in area_key:
+                    continue
+                if nat_id == 550 and area_key == 'driftveil-city-area':
                     continue
                 conds = e.get('conditions', []) or []
                 clean_area = UNOVA_AREA_NAMES.get(area_key, area_key.replace('-', ' ').title())
@@ -747,6 +853,15 @@ def main():
                     'area': a_name,
                     'method': ", ".join(sorted(list(m_set)))
                 })
+            return area_methods, loc_list
+
+        if nat_id in SPECIAL_OBTAINING:
+            obt_info = json.loads(json.dumps(SPECIAL_OBTAINING[nat_id]))
+            if nat_id == 550 and raw_encs:
+                _, wild_locs = _collect_wild_locations()
+                obt_info['locations'] = wild_locs + obt_info.get('locations', [])
+        elif raw_encs or nat_id in SWARM_POKEMON_BLACK:
+            area_methods, loc_list = _collect_wild_locations()
 
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
@@ -766,6 +881,8 @@ def main():
             else:
                 summary = f"Salvaje en múltiples zonas de Teselia, incluyendo {zone_names[0]}, {zone_names[1]} y {zone_names[2]}."
 
+            if nat_id == 587:
+                summary += " También es obtenible mediante intercambio NPC en una casa de la Ruta 7 entregando un Boldore."
             if is_hatchable and nat_id not in SWARM_POKEMON_BLACK:
                 summary += " También obtenible mediante crianza en la Guardería de la Ruta 3."
 
@@ -800,7 +917,7 @@ def main():
                 }
             }
         elif nat_id in white_exclusives:
-            summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco)."
+            summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco)."
             loc_list = [{'area': 'Intercambio con Pokémon Blanco', 'method': 'Exclusivo de versión'}]
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
@@ -812,15 +929,26 @@ def main():
                 'locations': loc_list
             }
         elif nat_id in black_transfers:
-            origin_desc = black_origins.get(nat_id, "Poké Transfer (Ruta 15)")
+            origin_desc = black_origins.get(nat_id, "Pokétransfer (Ruta 15)")
             summary = f"Inaccesible en estado salvaje en Teselia. Reclutar mediante {origin_desc} desde cartuchos de 4.ª Generación."
-            loc_list = [{'area': 'Laboratorio Transfer (Ruta 15)', 'method': f"{origin_desc}"}]
+            loc_list = [{'area': 'Laboratorio de Pokétransfer (Ruta 15)', 'method': f"{origin_desc}"}]
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
             obt_info = {
                 'type': 'transfer',
-                'badge_label': 'Poké Transfer',
+                'badge_label': 'Pokétransfer',
                 'badge_color': 'amber',
+                'summary': summary,
+                'locations': loc_list
+            }
+        elif nat_id in BREEDING_PARENTS_BLACK:
+            parent_desc, loc_parents = BREEDING_PARENTS_BLACK[nat_id]
+            summary = f"Inaccesible en estado salvaje; se obtiene mediante crianza de {parent_desc} en la Guardería de la Ruta 3."
+            loc_list = [{'area': 'Ruta 3 (Guardería Pokémon)', 'method': f'Crianza de huevo ({loc_parents})'}]
+            obt_info = {
+                'type': 'other',
+                'badge_label': 'Crianza',
+                'badge_color': 'zinc',
                 'summary': summary,
                 'locations': loc_list
             }
@@ -894,6 +1022,8 @@ def main():
             disp_num = f"{entry_num:03d}"
 
         entry_notes = []
+        if nat_id in SPECIAL_NOTES_BLACK:
+            entry_notes.extend(json.loads(json.dumps(SPECIAL_NOTES_BLACK[nat_id])))
         if nat_id in SEASONAL_RATE_NOTES:
             entry_notes.append({
                 "title": "Tasa de Aparición Estacional",

@@ -1887,11 +1887,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 6",
@@ -2266,32 +2266,32 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -2303,26 +2303,26 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
           "method": "Caminando"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -2480,39 +2480,39 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria (P2) y Calle Victoria (P3). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria (P3) y Calle Victoria (P2). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Monte Tuerca",
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -2524,19 +2524,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -2779,23 +2779,23 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P3) y Calle Victoria (P4).",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P2) y Calle Victoria (P4).",
       "locations": [
+        {
+          "area": "Calle Victoria (P3)",
+          "method": "Nube de polvo"
+        },
         {
           "area": "Calle Victoria (P2)",
           "method": "Nube de polvo"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba movediza"
-        },
-        {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P1)",
@@ -2803,42 +2803,42 @@
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara Este)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Nube de polvo"
         },
         {
@@ -2942,7 +2942,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -4221,11 +4221,11 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "emerald",
-      "summary": "En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).",
+      "summary": "En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil (mote: Florina) por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Esmalte",
-          "method": "Intercambio NPC por Cottonee"
+          "method": "Intercambio NPC (mote: Florina) por Cottonee"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -4372,19 +4372,79 @@
       "type": "wild",
       "badge_label": "Salvaje / Forma",
       "badge_color": "sky",
-      "summary": "Forma Raya Roja salvaje en lagos y rutas de Teselia surfeando. La Forma Raya Azul se obtiene por intercambio NPC en Ciudad Fayenza entregando un Minccino.",
+      "summary": "Forma Raya Roja salvaje de forma común surfeando y pescando por toda Teselia (la Forma Raya Azul aparece rara vez en sombras del agua). Además, puedes recibir un Basculin Forma Raya Roja (mote: Mordiscos) por intercambio NPC en Ciudad Fayenza entregando un Minccino (y también por crianza).",
       "locations": [
         {
+          "area": "Ciudad Gres",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Bosque Azulejo (Interior)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Torre Duodraco (Exterior)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Calle Victoria (P3)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Calle Victoria (P1)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Boquete Gigante (Cueva de Entrada)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Boquete Gigante (Cueva Central)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Puente Villa",
+          "method": "Supercaña, Surf"
+        },
+        {
           "area": "Ruta 1",
-          "method": "Surf / Pesca con Supercaña"
+          "method": "Supercaña, Surf"
         },
         {
           "area": "Ruta 3",
-          "method": "Surf / Pesca con Supercaña"
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Cueva Manantial",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 6",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Gruta Superación (Sótano B2)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 11",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 14",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Santuario Abundancia",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Bosque de los Perdidos",
+          "method": "Supercaña, Surf"
         },
         {
           "area": "Ciudad Fayenza",
-          "method": "Intercambio NPC (Forma Raya Azul por Minccino)"
+          "method": "Intercambio NPC (Forma Raya Roja, mote: Mordiscos) por Minccino"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -5300,11 +5360,11 @@
       "type": "fossil",
       "badge_label": "Fósil Tapa",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Tapa (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).",
+      "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral",
-          "method": "Elección de Fósil Tapa"
+          "area": "Castillo Ancestral (P1)",
+          "method": "Elección única de Fósil Tapa (Mochilera)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -5317,7 +5377,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Elección Única en Castillo Ancestral",
+        "text": "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente un fósil por partida entre el Fósil Tapa (Tirtouga) y el Fósil Pluma (Archen). No se vuelve a entregar el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar.",
+        "tag": "Fósil Tapa",
+        "icon": "/media/items/cover-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5425,11 +5492,11 @@
       "type": "fossil",
       "badge_label": "Fósil Pluma",
       "badge_color": "amber",
-      "summary": "Revivir del Fósil Pluma (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).",
+      "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral",
-          "method": "Elección de Fósil Pluma"
+          "area": "Castillo Ancestral (P1)",
+          "method": "Elección única de Fósil Pluma (Mochilera)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -5442,7 +5509,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Elección Única en Castillo Ancestral",
+        "text": "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente un fósil por partida entre el Fósil Pluma (Archen) y el Fósil Tapa (Tirtouga). No se vuelve a entregar el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar.",
+        "tag": "Fósil Pluma",
+        "icon": "/media/items/plume-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5679,11 +5753,11 @@
       "type": "gift",
       "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Trasladador PKMN (también por crianza).",
+      "summary": "No aparece salvaje en Pokémon Negro. Solo se obtiene a Nv. 10 en la sede de Game Freak en Ciudad Porcelana al llevar en el equipo al Celebi de evento transferido desde 4.ª Generación mediante el Trasladador PKMN (o por intercambio / crianza a partir de otro Zorua o Zoroark).",
       "locations": [
         {
-          "area": "Ciudad Porcelana",
-          "method": "Evento con Celebi vía Trasladador PKMN"
+          "area": "Ciudad Porcelana (Sede de Game Freak)",
+          "method": "Evento con Celebi vía Trasladador PKMN (Nv. 10)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -5692,7 +5766,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento Exclusivo de 4.ª Generación",
+        "text": "En Pokémon Negro y Blanco originales no aparece salvaje ni te lo regalan de forma normal (a diferencia de Negro 2 y Blanco 2). Hablar con la chica y el niño en el edificio de Game Freak (Ciudad Porcelana) solo lo registra como visto; para obtenerlo (Nv. 10, macho, con Ilusión) es obligatorio transferir un Celebi de evento desde 4.ª Generación mediante el Trasladador PKMN (necesitas hueco en el equipo y una Poké Ball). Sin ese evento, la única alternativa es el intercambio o la crianza.",
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/dusk-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -5740,11 +5821,11 @@
       "type": "event",
       "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento vía Trasladador PKMN.",
+      "summary": "Evoluciona de Zorua al Nv. 30. En Pokémon Negro también aparece como encuentro único a Nv. 25 (hembra) en la caravana del Bosque de los Perdidos si llevas en el equipo a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN.",
       "locations": [
         {
           "area": "Bosque de los Perdidos",
-          "method": "Encuentro especial con Bestia Variocolor de evento"
+          "method": "Encuentro especial a Nv. 25 con Bestia Variocolor vía Trasladador PKMN"
         }
       ],
       "evolution_info": {
@@ -5756,7 +5837,14 @@
       }
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento del Bosque de los Perdidos",
+        "text": "Zoroark no aparece de forma común en Teselia en Pokémon Negro y Blanco. Además de evolucionar a Zorua al Nv. 30, existe un encuentro especial en la caravana del Bosque de los Perdidos (Nv. 25, siempre hembra, con Ilusión) que solo se activa llevando a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN. Al ser hembra, tras capturarlo permite obtener a Zorua mediante crianza.",
+        "tag": "Evento Especial",
+        "icon": "/media/items/dusk-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -6176,7 +6264,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -6490,11 +6578,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Ruta 6",
@@ -6693,11 +6781,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Hierba alta"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 6",
@@ -6842,7 +6930,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Torre Duodraco (Entrada), Torre Duodraco (Exterior) y Boquete Gigante (Entrada). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Torre Duodraco (Entrada), Torre Duodraco (Exterior) y Boquete Gigante (Exterior). También es obtenible mediante intercambio NPC en una casa de la Ruta 7 entregando un Boldore. También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
@@ -6853,7 +6941,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -6870,7 +6958,7 @@
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba movediza, Salvaje"
+          "method": "Hierba movediza, Intercambio NPC por Boldore"
         },
         {
           "area": "Ruta 9",
@@ -7100,7 +7188,7 @@
       "locations": [
         {
           "area": "Ruta 6",
-          "method": "Hierba alta, Hierba oscura (Combates dobles), Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 7",
@@ -7108,7 +7196,7 @@
         },
         {
           "area": "Ruta 10",
-          "method": "Hierba alta, Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba alta"
         },
         {
           "area": "Ruta 10 (Control de Medallas)",
@@ -7173,7 +7261,7 @@
       "locations": [
         {
           "area": "Ruta 10",
-          "method": "Hierba oscura (Combates dobles), Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 10 (Control de Medallas)",
@@ -8698,11 +8786,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Ruta 7",
@@ -9133,11 +9221,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles) (Invierno)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Torre Duodraco (P1)",
@@ -9148,32 +9236,32 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -9185,19 +9273,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -9333,11 +9421,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (P1)",
@@ -9722,7 +9810,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -10049,35 +10137,35 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P3) y Calle Victoria (P4). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P2) y Calle Victoria (P4). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -10089,19 +10177,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -10162,15 +10250,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Calle Victoria (P2) y Calle Victoria (P1). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Calle Victoria (P3) y Calle Victoria (P1). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -10700,7 +10788,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -10818,7 +10906,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",

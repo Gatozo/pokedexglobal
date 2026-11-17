@@ -54,9 +54,9 @@ GEN5_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 5
 
 TRANSFER_TEMPLATES_BY_GEN: Dict[int, Dict[str, Any]] = {
     5: {
-        "area": "Laboratorio Transfer (Ruta 15)",
-        "method": "Poké Transfer (transferencia desde 4.ª generación)",
-        "badge_label": "Poké Transfer",
+        "area": "Laboratorio de Pokétransfer (Ruta 15)",
+        "method": "Pokétransfer (transferencia desde 4.ª generación)",
+        "badge_label": "Pokétransfer",
         "badge_color": "amber",
         "type": "transfer",
     },
@@ -402,7 +402,7 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Tronco Planta, Tronco Arena, Tronco Basura.
     En Sinnoh: Árboles de miel y combates en exterior/cueva/edificio.
     En HeartGold/SoulSilver: Salvaje con Golpe Cabeza en Ruta 38 (Tronco Planta); camuflajes combatiendo en Johto/Kanto.
-    En Teselia (Gen 5): Obtenible por Poké Transfer (Ruta 15) o crianza en Ruta 3; camuflajes combatiendo o eclosionando en Teselia.
+    En Teselia (Gen 5): Obtenible por Pokétransfer (Ruta 15) o crianza en Ruta 3; camuflajes combatiendo o eclosionando en Teselia.
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
@@ -412,9 +412,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     gen5_obt_meta = _get_transfer_obt_meta(5) if is_gen5 else {}
 
     if is_gen5:
-        plant_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde 4.ª generación o por crianza; adopta este tronco al combatir o eclosionar en exteriores."
+        plant_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Pokétransfer (Ruta 15) desde 4.ª generación o por crianza; adopta este tronco al combatir o eclosionar en exteriores."
         plant_locations = [
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"},
             {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión en exteriores / rutas)"}
         ]
         plant_notes = [
@@ -438,9 +438,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             }
         ]
 
-        sandy_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Poké Transfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar en cuevas, desiertos o playas."
+        sandy_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Pokétransfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar en cuevas, desiertos o playas."
         sandy_locations = [
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"},
             {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión en cueva, desierto o playa)"}
         ]
         sandy_notes = [
@@ -464,9 +464,9 @@ def get_burmy_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
             }
         ]
 
-        trash_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Poké Transfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar dentro de edificios."
+        trash_summary = "Inaccesible en estado salvaje en Teselia. Obtenido por Pokétransfer (Ruta 15) o crianza, adopta este camuflaje tras combatir o eclosionar dentro de edificios."
         trash_locations = [
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"},
             {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (eclosión dentro de un edificio)"}
         ]
         trash_notes = [
@@ -836,7 +836,7 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Mar Oeste (Rosa), Mar Este (Azul).
     En Sinnoh: Delimitadas a ambos lados del Monte Corona.
     En HeartGold/SoulSilver: Mar Oeste obtenible en Pokéwalker (Playa Tormenta); Mar Este solo por transferencia desde D/P/Pt.
-    En Teselia (Gen 5): Obtenibles mediante Poké Transfer (Ruta 15) desde 4.ª generación o crianza en Ruta 3.
+    En Teselia (Gen 5): Obtenibles mediante Pokétransfer (Ruta 15) desde 4.ª generación o crianza en Ruta 3.
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
@@ -846,30 +846,30 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     gen5_obt_meta = _get_transfer_obt_meta(5) if is_gen5 else {}
 
     if is_gen5:
-        west_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
+        west_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
         west_locations = [
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (desde 4.ª generación • Mar Oeste)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (desde 4.ª generación • Mar Oeste)"},
             {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Oeste)"}
         ]
         west_notes = [
             {
-                "title": "Variación Geográfica (Poké Transfer)",
-                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Oeste (rosa) desde 4.ª generación en el Laboratorio Transfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
-                "tag": "Poké Transfer",
+                "title": "Variación Geográfica (Pokétransfer)",
+                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Oeste (rosa) desde 4.ª generación en el Laboratorio de Pokétransfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
+                "tag": "Pokétransfer",
                 "icon": "/media/items/linking-cord.png",
             }
         ]
 
-        east_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
+        east_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
         east_locations = [
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (desde 4.ª generación • Mar Este)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (desde 4.ª generación • Mar Este)"},
             {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Este)"}
         ]
         east_notes = [
             {
-                "title": "Variación Geográfica (Poké Transfer)",
-                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Este (azul) desde 4.ª generación en el Laboratorio Transfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
-                "tag": "Poké Transfer",
+                "title": "Variación Geográfica (Pokétransfer)",
+                "text": "Shellos no aparece en estado salvaje en Teselia. Debes transferir la variante Mar Este (azul) desde 4.ª generación en el Laboratorio de Pokétransfer (Ruta 15); al criarla con Ditto en la Ruta 3, las crías heredan su forma.",
+                "tag": "Pokétransfer",
                 "icon": "/media/items/linking-cord.png",
             }
         ]
@@ -980,7 +980,7 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     Mar Oeste (Rosa), Mar Este (Azul).
     En Sinnoh: Salvaje a ambos lados del Monte Corona.
     En HeartGold/SoulSilver: Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia desde D/P/Pt.
-    En Teselia (Gen 5): Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia vía Poké Transfer (Ruta 15).
+    En Teselia (Gen 5): Inaccesible en estado salvaje; evoluciona de Shellos al Nivel 30 o transferencia vía Pokétransfer (Ruta 15).
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
@@ -994,29 +994,29 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     } if is_gen5 else {}
 
     if is_gen5:
-        west_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Oeste al Nivel 30 o mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación."
+        west_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Oeste al Nivel 30 o mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación."
         west_locations = [
             {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Oeste)"},
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"}
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"}
         ]
         west_notes = [
             {
                 "title": "Evolución en Teselia",
-                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Oeste transferido vía Poké Transfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración rosa.",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Oeste transferido vía Pokétransfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración rosa.",
                 "tag": "Evolución",
                 "icon": "/media/items/rule-book.png",
             }
         ]
 
-        east_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Este al Nivel 30 o mediante Poké Transfer (Ruta 15) desde juegos de 4.ª generación."
+        east_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Este al Nivel 30 o mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación."
         east_locations = [
             {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Este)"},
-            {"area": "Laboratorio Transfer (Ruta 15)", "method": "Poké Transfer (transferencia desde 4.ª generación)"}
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"}
         ]
         east_notes = [
             {
                 "title": "Evolución en Teselia",
-                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Este transferido vía Poké Transfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración azul.",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Este transferido vía Pokétransfer (Ruta 15) o nacido por crianza en la Ruta 3, conservando su coloración azul.",
                 "tag": "Evolución",
                 "icon": "/media/items/rule-book.png",
             }
@@ -1259,17 +1259,17 @@ def get_unown_forms(game_slug: str = "gold") -> List[Dict[str, Any]]:
             badge_label = "Salvaje"
             obt_type = "wild"
         elif clean_slug in GEN5_FORM_GAMES:
-            summary = "No disponible en estado salvaje en Teselia. Se obtiene mediante transferencia externa con el Poké Transfer en el Laboratorio Transfer (Ruta 15), desde juegos de 4.ª generación (Pokémon Diamante, Perla, Platino, Oro HeartGold o Plata SoulSilver)."
+            summary = "No disponible en estado salvaje en Teselia. Se obtiene mediante transferencia externa con el Pokétransfer en el Laboratorio de Pokétransfer (Ruta 15), desde juegos de 4.ª generación (Pokémon Diamante, Perla, Platino, Oro HeartGold o Plata SoulSilver)."
             locations = [
                 {
-                    "area": "Laboratorio Transfer (Ruta 15)",
-                    "method": "Poké Transfer (transferencia desde 4.ª generación)"
+                    "area": "Laboratorio de Pokétransfer (Ruta 15)",
+                    "method": "Pokétransfer (transferencia desde 4.ª generación)"
                 }
             ]
             badge_color = "slate"
-            badge_label = "Poké Transfer"
+            badge_label = "Pokétransfer"
             obt_type = "transfer"
-            ch_name = "Teselia (Poké Transfer)"
+            ch_name = "Teselia (Pokétransfer)"
         elif clean_slug in ["gold", "silver", "crystal"]:
             ch_name = item.get("chamber_name", "Ruinas Alfa")
             ch_title = item.get("chamber_title", ch_name)
@@ -1611,7 +1611,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Forma Raya Roja",
-                    "text": "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña por toda Teselia.",
+                    "text": "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña por toda Teselia; además, puedes recibir uno (mote: Mordiscos) mediante intercambio NPC en Ciudad Fayenza a cambio de un Minccino.",
                     "tag": "Raya Roja",
                     "icon": "/media/items/rule-book.png",
                 }
@@ -1632,7 +1632,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Forma Raya Azul",
-                    "text": "En Pokémon Negro es muy rara en estado salvaje (solo en sombras del agua al hacer Surf o con Supercaña). Se puede obtener por intercambio interno en Ciudad Fayenza a cambio de un Minccino.",
+                    "text": "En Pokémon Negro es muy rara en estado salvaje y no se obtiene por intercambio interno: solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña.",
                     "tag": "Raya Azul",
                     "icon": "/media/items/rule-book.png",
                 }

@@ -4203,7 +4203,7 @@ class PokemonBlackGen5Tests(TestCase):
 
                     if game_slug == "black" and nid in (412, 422, 423):
                         text_blob = f"{form.get('summary', '')} {form.get('locations', '')} {form.get('note', '')}"
-                        self.assertIn("Poké Transfer", text_blob, f"#{nid} {key} debe referenciar Poké Transfer")
+                        self.assertIn("Pokétransfer", text_blob, f"#{nid} {key} debe referenciar Pokétransfer")
                         for forbidden in forbidden_regions:
                             self.assertNotIn(forbidden, text_blob, f"#{nid} {key} contiene referencia desactualizada '{forbidden}'")
 
@@ -4308,7 +4308,7 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertIn("Ciudad Esmalte", ctx["notice"])
 
     def test_black_unown_modal_and_forms(self):
-        """Valida que en Pokémon Negro el Bloc Unown y las formas de Unown reflejen Teselia (Poké Transfer), animaciones GIF y forma canónica F."""
+        """Valida que en Pokémon Negro el Bloc Unown y las formas de Unown reflejen Teselia (Pokétransfer), animaciones GIF y forma canónica F."""
         from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
         from tracker.pokemon_forms import get_pokemon_forms
         from tracker.unown_data import get_unown_catalog
@@ -4322,7 +4322,7 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertEqual(res.context["unown_total_forms"], 28)
 
         content = res.content.decode("utf-8")
-        self.assertIn("Teselia (Poké Transfer)", content)
+        self.assertIn("Teselia (Pokétransfer)", content)
         self.assertIn('id="unown-unova-hint"', content)
         self.assertNotIn('id="unown-hoenn-hint"', content)
         self.assertNotIn("Hoenn (Transferencia)", content)
@@ -4344,7 +4344,7 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertEqual(catalog[0]["letter"], "a")
         self.assertEqual(catalog[0]["sprite_normal"], "/media/pokemon/sprites/black/unown/a.png")
         self.assertEqual(catalog[0]["sprite_shiny"], "/media/pokemon/sprites/black_shiny/unown/a.png")
-        self.assertIn("Laboratorio Transfer", catalog[0]["secret_hint"])
+        self.assertIn("Laboratorio de Pokétransfer", catalog[0]["secret_hint"])
 
         # 4. get_pokemon_forms retorna 28 formas con sprite_retro estático (para la tarjeta de Pokédex general) y modal animado
         forms = get_pokemon_forms(201, "black")
@@ -4354,10 +4354,10 @@ class PokemonBlackGen5Tests(TestCase):
         self.assertEqual(forms[-1]["form_key"], "question")
 
         for f in forms:
-            self.assertEqual(f["badge_label"], "Poké Transfer")
+            self.assertEqual(f["badge_label"], "Pokétransfer")
             self.assertEqual(f["badge_color"], "slate")
             self.assertEqual(f["type"], "transfer")
-            self.assertIn("Laboratorio Transfer (Ruta 15)", f["locations"][0]["area"])
+            self.assertIn("Laboratorio de Pokétransfer (Ruta 15)", f["locations"][0]["area"])
             # El sprite_retro debe ser estático para la tarjeta general
             self.assertEqual(f["sprite_retro"], f"/media/pokemon/sprites/black/unown/{f['form_key']}.png")
             # El modal_retro_sprite_url debe ser animado únicamente para la tarjeta individual modal
@@ -4937,6 +4937,92 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertIn("«Gaspar»", dia_reg[93].obtaining_info["summary"])
         self.assertIn("«Foppa»", dia_reg[129].obtaining_info["summary"])
         self.assertIn("«Charap»", dia_reg[441].obtaining_info["summary"])
+
+    def test_black_audit_victory_road_methods_trades_notes_and_transfers(self):
+        """Valida las correcciones de la auditoría de Pokémon Negro (Deino P1/P3, métodos, intercambios, crianza, Snorlax y notas)."""
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache
+        from tracker.exclusives import NON_UNOVA_TRANSFERS_BLACK
+        from tracker.pokemon_forms import get_pokemon_forms
+        from tracker.views import _classify_catalog_for_game
+
+        clear_catalog_memory_cache()
+        reg_by = {e.pokemon.national_number: e for e in get_compiled_catalog("black", force_reload=True)}
+        nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("black_national", force_reload=True)}
+
+        # 1. Deino en Calle Victoria (P1 y P3) con método Caminando
+        deino_locs = {l["area"]: l["method"] for l in reg_by[633].obtaining_info["locations"]}
+        self.assertEqual(deino_locs.get("Calle Victoria (P1)"), "Caminando")
+        self.assertEqual(deino_locs.get("Calle Victoria (P3)"), "Caminando")
+        self.assertNotIn("Calle Victoria (P2)", deino_locs)
+
+        # 2. Excadrill en Calle Victoria con Nube de polvo (sin Hierba movediza en cuevas)
+        for l in reg_by[530].obtaining_info["locations"]:
+            if "Calle Victoria" in l["area"] or "Boquete Gigante" in l["area"] or "Gruta" in l["area"]:
+                self.assertEqual(l["method"], "Nube de polvo")
+
+        # 3. Exteriores de Torre Duodraco y Boquete Gigante con Hierba alta (no Caminando)
+        tranquill_locs = {l["area"]: l["method"] for l in reg_by[520].obtaining_info["locations"]}
+        self.assertIn("Hierba alta", tranquill_locs["Torre Duodraco (Entrada)"])
+        self.assertIn("Hierba alta", tranquill_locs["Torre Duodraco (Exterior)"])
+        clefairy_locs = {l["area"]: l["method"] for l in nat_by[35].obtaining_info["locations"]}
+        self.assertIn("Hierba alta", clefairy_locs["Boquete Gigante (Bosque Interior)"])
+        tangela_locs = {l["area"]: l["method"] for l in nat_by[114].obtaining_info["locations"]}
+        self.assertIn("Hierba alta", tangela_locs["Boquete Gigante (Exterior)"])
+
+        # 4. Emolga (Ruta 7 NPC Boldore), Foongus y Amoonguss (Poké Ball camuflada) sin 'Salvaje' genérico
+        emolga_locs = {l["area"]: l["method"] for l in reg_by[587].obtaining_info["locations"]}
+        self.assertIn("Intercambio NPC por Boldore", emolga_locs["Ruta 7"])
+        self.assertNotIn("Salvaje", emolga_locs["Ruta 7"])
+        foongus_locs = {l["area"]: l["method"] for l in reg_by[590].obtaining_info["locations"]}
+        self.assertIn("Encuentro estático (Poké Ball camuflada)", foongus_locs["Ruta 6"])
+        amoonguss_locs = {l["area"]: l["method"] for l in reg_by[591].obtaining_info["locations"]}
+        self.assertIn("Encuentro estático (Poké Ball camuflada)", amoonguss_locs["Ruta 10"])
+
+        # 5. Basculin Raya Roja en Ciudad Fayenza (mote Mordiscos) y múltiples zonas acuáticas + motes españoles
+        self.assertIn("Forma Raya Roja (mote: Mordiscos)", reg_by[550].obtaining_info["summary"])
+        basc_locs = {l["area"]: l["method"] for l in reg_by[550].obtaining_info["locations"]}
+        self.assertIn("Calle Victoria (P3)", basc_locs)
+        self.assertIn("Mordiscos", basc_locs["Ciudad Fayenza"])
+        basc_forms = {f["form_key"]: f for f in get_pokemon_forms(550, "black")}
+        self.assertIn("Mordiscos", basc_forms["red_striped"]["notes"][0]["text"])
+        self.assertIn("no se obtiene por intercambio interno", basc_forms["blue_striped"]["notes"][0]["text"])
+        self.assertIn("Florina", reg_by[548].obtaining_info["summary"])
+        self.assertIn("Tripón", nat_by[446].obtaining_info["summary"])
+        self.assertIn("Tecno", nat_by[479].obtaining_info["summary"])
+
+        # 6. Snorlax (#143) como evolución de Munchlax (#446), fuera de NON_UNOVA_TRANSFERS_BLACK
+        self.assertNotIn(143, NON_UNOVA_TRANSFERS_BLACK)
+        self.assertNotIn(446, NON_UNOVA_TRANSFERS_BLACK)
+        self.assertEqual(nat_by[143].obtaining_info["type"], "evolution")
+        self.assertEqual(nat_by[143].obtaining_info["evolution_info"]["from"], "Munchlax")
+
+        # 7. Notas explicativas en fósiles (post-game + Pokédex Nacional en Monte Tuerca), Zorua y Zoroark
+        for fid in (138, 140, 142, 345, 347, 408, 410):
+            self.assertIn("Pokédex Nacional", nat_by[fid].obtaining_info["summary"])
+            self.assertTrue(nat_by[fid].notes, f"Falta nota explicativa en fósil #{fid}")
+            self.assertIn("Pokédex Nacional", nat_by[fid].notes[0]["text"])
+        for ufid in (564, 566):
+            self.assertTrue(reg_by[ufid].notes, f"Falta nota explicativa en fósil de Teselia #{ufid}")
+            self.assertIn("únicamente un fósil", reg_by[ufid].notes[0]["text"])
+        self.assertTrue(reg_by[570].notes)
+        self.assertIn("Celebi", reg_by[570].notes[0]["text"])
+        self.assertTrue(reg_by[571].notes)
+        self.assertIn("hembra", reg_by[571].notes[0]["text"])
+
+        # 8. Terminología oficial en español (Zona Nexo, Pokétransfer) y clasificación nativa de las 27 especies de crianza
+        for cat_dict in (reg_by, nat_by):
+            for entry in cat_dict.values():
+                blob = f"{entry.obtaining_info['summary']} {entry.obtaining_info['badge_label']} {entry.obtaining_info['locations']}"
+                self.assertNotIn("Entralink", blob)
+                self.assertNotIn("Poké Transfer", blob)
+                self.assertNotIn("Laboratorio Transfer", blob)
+
+        native_map = _classify_catalog_for_game(list(nat_by.values()), "black")
+        self.assertTrue(native_map[143][0])  # Snorlax vía Munchlax
+        for bid in (13, 19, 21, 27, 41, 48, 54, 74, 77, 104, 163, 165, 167, 173, 174, 220, 238, 246, 276, 333, 343, 374, 401, 420, 425, 433, 436):
+            self.assertNotIn("evento especial en Teselia", nat_by[bid].obtaining_info["summary"])
+            self.assertTrue(native_map[bid][0], f"#{bid} {nat_by[bid].pokemon.display_name} debe resolver como nativo por crianza")
+
 
 
 

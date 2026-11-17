@@ -37,13 +37,13 @@
     "flavor_text": "Después de nacer, crece alimentándose de las semillas de su lomo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -218,13 +218,13 @@
     "flavor_text": "La llama de la punta de su cola indica su salud. Si Charmander está sano, arderá con más fuerza.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -399,13 +399,13 @@
     "flavor_text": "Se protege con su caparazón y luego contraataca lanzando agua a presión cuando tiene oportunidad.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -582,7 +582,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -763,11 +763,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Kakuna o Beedrill (salvajes en Ruta 12) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Kakuna / Beedrill)"
         }
       ]
     },
@@ -948,7 +948,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -1129,11 +1129,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Raticate (salvaje en Solar de los Sueños) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Raticate)"
         }
       ]
     },
@@ -1254,11 +1254,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Fearow (salvaje en Ruta 15) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Fearow)"
         }
       ]
     },
@@ -1373,13 +1373,13 @@
     "flavor_text": "Se mueve por la hierba en silencio y sorprende a sus presas atacando por detrás.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -1646,11 +1646,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Sandslash (salvaje en Castillo Ancestral) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Sandslash)"
         }
       ]
     },
@@ -1767,7 +1767,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -1982,7 +1982,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -2201,7 +2201,7 @@
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
       "evolution_info": {
@@ -2676,11 +2676,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Golbat o Crobat (salvajes en Boquete Gigante y Ruta 13) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Golbat / Crobat)"
         }
       ]
     },
@@ -2733,14 +2733,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada), Boquete Gigante (Exterior), Boquete Gigante (Cueva Central) y Ruta 13.",
+      "summary": "Salvaje en Boquete Gigante (Exterior), Boquete Gigante (Cueva de Entrada), Boquete Gigante (Cueva Central) y Ruta 13.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -2809,7 +2809,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -3020,7 +3020,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -3141,11 +3141,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Venomoth (salvaje en Solar de los Sueños) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Venomoth)"
         }
       ]
     },
@@ -3260,13 +3260,13 @@
     "flavor_text": "Este Pokémon vive a oscuras bajo tierra, por lo que la luz solar le espanta.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -3381,13 +3381,13 @@
     "flavor_text": "Es de naturaleza nocturna. Le atraen los objetos brillantes.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -3504,11 +3504,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Golduck (salvaje en Puente Villa, Ruta 11 y Ruta 14) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Golduck)"
         }
       ]
     },
@@ -3752,13 +3752,13 @@
     "flavor_text": "Pokémon de naturaleza leal. Permanece quieto en espera de órdenes de su entrenador.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -3905,10 +3905,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P1) y Boquete Gigante (Exterior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P1) y Boquete Gigante (Cueva de Entrada). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
+          "area": "Calle Victoria (P3)",
           "method": "Supercaña"
         },
         {
@@ -3916,7 +3916,7 @@
           "method": "Supercaña"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Supercaña"
         },
         {
@@ -3990,10 +3990,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P1) y Boquete Gigante (Exterior).",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P1) y Boquete Gigante (Cueva de Entrada).",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
+          "area": "Calle Victoria (P3)",
           "method": "Supercaña, Supercaña en sombra del agua"
         },
         {
@@ -4001,7 +4001,7 @@
           "method": "Supercaña, Supercaña en sombra del agua"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Supercaña, Supercaña en sombra del agua"
         },
         {
@@ -4078,10 +4078,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P1) y Boquete Gigante (Exterior).",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P1) y Boquete Gigante (Cueva de Entrada).",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
+          "area": "Calle Victoria (P3)",
           "method": "Supercaña en sombra del agua"
         },
         {
@@ -4089,7 +4089,7 @@
           "method": "Supercaña en sombra del agua"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Supercaña en sombra del agua"
         },
         {
@@ -4192,7 +4192,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -4373,7 +4373,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -4554,7 +4554,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -4763,13 +4763,13 @@
     "flavor_text": "Como su cuerpo se compone casi en exclusiva de agua, se reseca si sale de ella.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -4886,11 +4886,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Graveler (salvaje en Gruta Superación) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Graveler)"
         }
       ]
     },
@@ -5075,11 +5075,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Rapidash (salvaje en Ruta 12) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Rapidash)"
         }
       ]
     },
@@ -5321,7 +5321,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -5624,10 +5624,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Surf, Surf en sombra del agua"
         },
         {
@@ -5689,10 +5689,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Cueva Central).",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Surf en sombra del agua"
         },
         {
@@ -5755,13 +5755,13 @@
     "flavor_text": "Emergió del lodo que se formó en agua contaminada expuesta a los rayos X lunares. Vive en la basura.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -6049,7 +6049,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -6289,13 +6289,13 @@
     "flavor_text": "Puede oler los sueños de la gente con su gran nariz. Le encantan los sueños divertidos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -6551,13 +6551,13 @@
     "flavor_text": "Parece una Poké Ball. Es muy peligroso, ya que puede lanzar descargas o explotar si se toca.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -6825,11 +6825,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Marowak (salvaje en Ruta 15) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Marowak)"
         }
       ]
     },
@@ -7133,13 +7133,13 @@
     "flavor_text": "Los gases de su cuerpo le permiten flotar. Estos gases, además de oler mal, también son explosivos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -7256,7 +7256,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -7377,7 +7377,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -7471,11 +7471,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada) y Ruta 13. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Boquete Gigante (Exterior) y Ruta 13. También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -8060,13 +8060,13 @@
     "flavor_text": "Crea paredes invisibles deteniendo moléculas con las imperceptibles vibraciones de sus dedos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -8128,13 +8128,13 @@
     "flavor_text": "Las cortantes guadañas de sus antebrazos se vuelven más afiladas cada vez que cortan objetos duros.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -8191,10 +8191,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Cueva Central).",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -8438,13 +8438,13 @@
     "flavor_text": "Cuando elige una presa ataca sin pensárselo. Este Pokémon es famoso por su carácter violento.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -8687,7 +8687,7 @@
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ]
     },
@@ -8738,13 +8738,13 @@
     "flavor_text": "Su composición genética es algo irregular, por eso cambia de forma muy rápido y por diversas causas.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -9071,7 +9071,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -9132,11 +9132,11 @@
       "type": "fossil",
       "badge_label": "Fósil Hélix",
       "badge_color": "blue",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Hélix diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -9149,7 +9149,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/helix-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9257,11 +9264,11 @@
       "type": "fossil",
       "badge_label": "Fósil Domo",
       "badge_color": "blue",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Domo diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -9274,7 +9281,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/dome-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9382,11 +9396,11 @@
       "type": "fossil",
       "badge_label": "Ámbar Viejo",
       "badge_color": "amber",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Ámbar Viejo diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -9399,7 +9413,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/old-amber.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -9444,20 +9465,12 @@
     "cry_url": "/media/pokemon/cries/legacy/143.ogg",
     "flavor_text": "Cuando tiene la tripa llena no puede ni mover un dedo. En ese momento de letargo puedes saltar en su tripa.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Poké Transfer",
-      "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
-      "locations": [
-        {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
-        },
-        {
-          "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "purple",
+      "summary": "Evoluciona de Munchlax (por amistad).",
+      "locations": [],
+      "item_slug": null,
       "evolution_info": {
         "from": "Munchlax",
         "text": "Evoluciona de Munchlax (por amistad)",
@@ -9513,13 +9526,13 @@
     "flavor_text": "Legendario Pokémon pájaro capaz de generar ventiscas congelando la humedad del aire.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -9570,13 +9583,13 @@
     "flavor_text": "Legendario Pokémon pájaro del que se dice que vive en los nubarrones. Controla los rayos eléctricos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -9627,13 +9640,13 @@
     "flavor_text": "Uno de los legendarios Pokémon pájaro. Dicen que su presencia anuncia la llegada de la primavera.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -9873,13 +9886,13 @@
     "flavor_text": "Pokémon creado por recombinación genética de Mew. Se dice que es el más salvaje de los Pokémon.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -9930,13 +9943,13 @@
     "flavor_text": "Varios científicos lo consideran el antecesor de los Pokémon porque usa todo tipo de movimientos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -9987,13 +10000,13 @@
     "flavor_text": "Con la hoja de su cabeza puede medir la temperatura y la humedad. Le encanta tomar el sol.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -10168,13 +10181,13 @@
     "flavor_text": "Es un Pokémon muy tímido. Si se asusta, las llamas de su lomo arden con más fuerza.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -10349,13 +10362,13 @@
     "flavor_text": "Tiene costumbre de morderlo todo con sus poderosas mandíbulas, incluso Entrenadores.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -10653,11 +10666,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Noctowl (salvaje en Santuario Abundancia) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Noctowl)"
         }
       ]
     },
@@ -10774,11 +10787,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Ledian (salvaje en Solar de los Sueños) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Ledian)"
         }
       ]
     },
@@ -10899,11 +10912,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Ariados (salvaje en Solar de los Sueños) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Ariados)"
         }
       ]
     },
@@ -11024,10 +11037,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada) y Ruta 13.",
+      "summary": "Salvaje en Boquete Gigante (Exterior) y Ruta 13.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -11219,13 +11232,13 @@
     "flavor_text": "Las bolsas de electricidad de sus mejillas son muy pequeñas. La mínima fuga le provoca una descarga.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -11282,11 +11295,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Clefairy o Clefable (salvajes en Boquete Gigante) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Clefairy / Clefable)"
         }
       ]
     },
@@ -11339,11 +11352,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Jigglypuff o Wigglytuff (salvajes en Ruta 14) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Jigglypuff / Wigglytuff)"
         }
       ]
     },
@@ -11396,7 +11409,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -11515,13 +11528,13 @@
     "flavor_text": "Recoge alimento de los cactos evitando los pinchos. Se mueve dando saltos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -11638,7 +11651,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -11909,7 +11922,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -12035,13 +12048,13 @@
     "flavor_text": "Para evitar que le ataquen se limita a imitar a un árbol. Odia el agua y huye de la lluvia.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -12195,7 +12208,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -12374,13 +12387,13 @@
     "flavor_text": "Vive en las copas de los árboles. Puede usar su cola como si fuera una mano más.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -12653,7 +12666,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -13045,7 +13058,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -13104,13 +13117,13 @@
     "flavor_text": "Si están en solitario no pasa nada, pero si se juntan dos o más, se dice que surge un extraño poder.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -13221,13 +13234,13 @@
     "flavor_text": "La cabeza de su cola también tiene un pequeño cerebro, así que puede combatir por delante o por detrás.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -13615,13 +13628,13 @@
     "flavor_text": "Los Pokémon pequeños huyen al ver su cara agresiva. No obstante, para muchas féminas es mono.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -14015,10 +14028,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -14078,13 +14091,13 @@
     "flavor_text": "Deja que la miel se le pegue a las garras para lamerla más tarde. Cada una de ellas sabe diferente.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -14199,13 +14212,13 @@
     "flavor_text": "Su cuerpo se compone de magma. Si deja de moverse, se enfría y se endurece.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -14322,11 +14335,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Piloswine o Mamoswine (salvajes en Boquete Gigante) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Piloswine / Mamoswine)"
         }
       ]
     },
@@ -14379,15 +14392,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Cueva Central)",
@@ -14649,10 +14662,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Cueva Central). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -14789,13 +14802,13 @@
     "flavor_text": "Una armadura de hierro cubre por completo su cuerpo. Vuela a más de 300 km/h.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -15069,13 +15082,13 @@
     "flavor_text": "A pesar de su tamaño reducido, es tan fuerte que puede llevar a un humano a su espalda con facilidad.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -15517,11 +15530,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Jynx (salvaje en Boquete Gigante) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Jynx)"
         }
       ]
     },
@@ -15574,7 +15587,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -15635,7 +15648,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -15694,13 +15707,13 @@
     "flavor_text": "Se dice que si un niño bebe leche de Miltank crecerá y se convertirá en un adulto sano y campechano.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -15815,13 +15828,13 @@
     "flavor_text": "Dicen que apareció con un relámpago. Puede lanzar rayos desde las nubes de su lomo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -15872,13 +15885,13 @@
     "flavor_text": "Se dice que, cuando ruge, un volcán entra en erupción en algún punto del globo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -15929,13 +15942,13 @@
     "flavor_text": "Recorre el mundo para purificar agua contaminada. Corre veloz con el viento del norte.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -15988,11 +16001,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Pupitar o Tyranitar (salvajes en Ruta 15) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Pupitar / Tyranitar)"
         }
       ]
     },
@@ -16171,13 +16184,13 @@
     "flavor_text": "Duerme en una dorsal marina. Si bate sus alas puede causar tormentas de cuarenta días.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -16228,13 +16241,13 @@
     "flavor_text": "Su plumaje tiene siete colores. Se dice que verlo proporciona felicidad eterna.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -16285,13 +16298,13 @@
     "flavor_text": "Puede viajar en el tiempo, pero se dice que solo aparece en tiempos de paz.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -16342,13 +16355,13 @@
     "flavor_text": "Las plantas de sus pies tienen púas diminutas que le permiten andar por paredes y techos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -16523,13 +16536,13 @@
     "flavor_text": "En su interior arde una llama que mantiene su cuerpo caliente. Tira bolas de fuego a 1000°.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -16704,13 +16717,13 @@
     "flavor_text": "La aleta de su cabeza detecta las corrientes de agua y los peligros. Tiene fuerza para levantar rocas.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -16887,7 +16900,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -17006,13 +17019,13 @@
     "flavor_text": "Se mueve en zigzag. Se le da bien encontrar objetos ocultos en la hierba e incluso enterrados.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -17129,7 +17142,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -17430,7 +17443,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -17641,7 +17654,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -17852,11 +17865,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Swellow (salvaje en Boquete Gigante y Ruta 13) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Swellow)"
         }
       ]
     },
@@ -17909,11 +17922,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada) y Ruta 13.",
+      "summary": "Salvaje en Boquete Gigante (Exterior) y Ruta 13.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -18118,7 +18131,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -18299,7 +18312,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -18541,7 +18554,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -18720,13 +18733,13 @@
     "flavor_text": "Crece bajo tierra y explora el entorno con sus antenas, que sustituyen a ojos atrofiados.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -18903,7 +18916,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -19082,13 +19095,13 @@
     "flavor_text": "Endurece su cuerpo golpeando grandes árboles. Cerca de su hogar suele haber árboles golpeados.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -19205,7 +19218,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -19264,13 +19277,13 @@
     "flavor_text": "Se protege del peligro aumentando su magnetismo y atrayendo objetos de hierro hacia sí.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -19325,13 +19338,13 @@
     "flavor_text": "No puede evitar ir tras las cosas que se mueven. Hasta corre en círculos persiguiéndose la cola.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -19620,7 +19633,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -19799,13 +19812,13 @@
     "flavor_text": "Se entrena en la profundidad de las montañas. Cuando aumenta su poder espiritual con meditación, levita.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -19920,13 +19933,13 @@
     "flavor_text": "Estimula sus músculos y aumenta sus reflejos con la electricidad que almacena su pelaje.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -20104,7 +20117,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -20226,7 +20239,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -20287,7 +20300,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -20353,13 +20366,13 @@
     "flavor_text": "Casi todo su cuerpo es estómago. Sus potentes jugos gástricos disuelven rápido cualquier cosa.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -20740,13 +20753,13 @@
     "flavor_text": "En su joroba almacena magma ardiente que se enfría cuando llueve y lo ralentiza.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -20861,13 +20874,13 @@
     "flavor_text": "Quema carbón en su caparazón para obtener energía. Si le atacan, echa un denso humo negro.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -20922,13 +20935,13 @@
     "flavor_text": "Bota continuamente usando su cola como muelle. Salta para mantener el latido de su corazón.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -21043,13 +21056,13 @@
     "flavor_text": "No hay dos Spinda que tengan idénticos pelajes. Su tambaleo al bailar confunde a los rivales.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -21106,7 +21119,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -21285,13 +21298,13 @@
     "flavor_text": "Habita en el desierto. Aguanta 30 días sin agua gracias a la que almacena en su cuerpo",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -21408,11 +21421,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Altaria (salvaje en Ruta 14) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Altaria)"
         }
       ]
     },
@@ -21659,19 +21672,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Entrada), Boquete Gigante (Exterior) y Boquete Gigante (Bosque Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Exterior), Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Bosque Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Cueva Central)",
@@ -21736,19 +21749,19 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Entrada), Boquete Gigante (Exterior) y Boquete Gigante (Bosque Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Exterior), Boquete Gigante (Cueva de Entrada) y Boquete Gigante (Bosque Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Cueva Central)",
@@ -21954,7 +21967,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -22075,11 +22088,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Claydol (salvaje en Castillo Ancestral) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Claydol)"
         }
       ]
     },
@@ -22196,11 +22209,11 @@
       "type": "fossil",
       "badge_label": "Fósil Raíz",
       "badge_color": "emerald",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Raíz diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -22213,7 +22226,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/root-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -22321,11 +22341,11 @@
       "type": "fossil",
       "badge_label": "Fósil Garra",
       "badge_color": "amber",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Garra diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -22338,7 +22358,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/claw-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -22591,13 +22618,13 @@
     "flavor_text": "La meteorología determina su aspecto. Hace poco se ha sabido que sus células son como el agua.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -22652,13 +22679,13 @@
     "flavor_text": "Puede mudar el color de su cuerpo a voluntad, pero el dibujo en zigzag de su panza nunca desaparece.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -22834,13 +22861,13 @@
     "flavor_text": "Le encanta atravesar paredes para asustar a los niños malos y hacerles llorar.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -23086,11 +23113,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada) y Ruta 13. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Boquete Gigante (Exterior) y Ruta 13. También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -23210,13 +23237,13 @@
     "flavor_text": "Se dice que se reúnen en grupos bajo hojas gigantescas y viven allí en total armonía.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -23898,7 +23925,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -24079,11 +24106,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Metang o Metagross (salvajes en Boquete Gigante) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Metang / Metagross)"
         }
       ]
     },
@@ -24140,7 +24167,7 @@
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
       "evolution_info": {
@@ -24262,13 +24289,13 @@
     "flavor_text": "Su cuerpo está hecho de roca. Si se astilla durante el combate, emplea piedras para repararlo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24319,13 +24346,13 @@
     "flavor_text": "Su cuerpo está hecho con hielo de la glaciación. Controla aire gélido a 200 °C bajo cero.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24376,13 +24403,13 @@
     "flavor_text": "Su cuerpo ha estado sometido a la presión subterránea durante miles de años y no puede arañarse.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24433,13 +24460,13 @@
     "flavor_text": "Su cuerpo está cubierto de un plumón que refleja la luz de forma que se vuelve invisible.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24490,13 +24517,13 @@
     "flavor_text": "Es un Pokémon muy inteligente. Puede adelantar a aviones a reacción plegando las alas.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24547,13 +24574,13 @@
     "flavor_text": "Se dice que aumentó el nivel del mar a base de aguaceros. Ha estado durmiendo en una fosa marina.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24604,13 +24631,13 @@
     "flavor_text": "Ha estado durmiendo en magma subterráneo desde que luchó contra Kyogre en tiempos remotos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24661,13 +24688,13 @@
     "flavor_text": "Vive en la capa de ozono sobre las nubes y no puede ser visto desde el suelo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24718,13 +24745,13 @@
     "flavor_text": "Se dice que puede otorgar cualquier deseo durante una semana cada mil años.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24775,13 +24802,13 @@
     "flavor_text": "Surgió a raíz de la mutación de ADN de un virus alienígena que cayó a la Tierra en un meteorito.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -24832,13 +24859,13 @@
     "flavor_text": "La concha de su espalda es de tierra. Si está sano, la concha de Turtwig debería estar húmeda.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -25013,13 +25040,13 @@
     "flavor_text": "Es muy ágil. Antes de dormir apaga la llama de su cola para no provocar un incendio.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -25194,13 +25221,13 @@
     "flavor_text": "No se le da bien lo de andar, se cae mucho. Pero su orgullo le hace sacar pecho como si nada.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -25377,7 +25404,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -25558,7 +25585,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -25683,11 +25710,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Kricketune (salvaje en Solar de los Sueños) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Kricketune)"
         }
       ]
     },
@@ -25808,7 +25835,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -25989,7 +26016,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -26140,11 +26167,11 @@
       "type": "fossil",
       "badge_label": "Fósil Cráneo",
       "badge_color": "blue",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Cráneo diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -26157,7 +26184,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/skull-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -26265,11 +26299,11 @@
       "type": "fossil",
       "badge_label": "Fósil Coraza",
       "badge_color": "zinc",
-      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza de un obrero en el Monte Tuerca en el post-game (también por crianza).",
+      "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "method": "Fósil Coraza diario entregado por obrero"
+          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -26282,7 +26316,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Fósil Diario de Post-game",
+        "text": "El obrero del Monte Tuerca (cerca de la salida hacia Ciudad Teja) solo entrega fósiles antiguos en el post-game tras superar la Liga Pokémon y obtener la Pokédex Nacional. Regala un único fósil al azar al día entre los 7 previos a Teselia (Hélix, Domo, Ámbar Viejo, Raíz, Garra, Cráneo y Coraza); puedes guardar antes de hablar con él para buscar el que te interese y luego revivirlo en el Museo de Ciudad Esmalte.",
+        "tag": "Monte Tuerca",
+        "icon": "/media/items/armor-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -26388,13 +26429,13 @@
     "flavor_text": "Aunque nazca en un lugar en el que no haya muchos materiales, siempre consigue crearse un caparazón.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -26694,13 +26735,13 @@
     "flavor_text": "A veces se ve a dos frotándose las bolsas de las mejillas para compartir electricidad almacenada.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -26890,11 +26931,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Cherrim (salvaje en Ruta 12) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Cherrim)"
         }
       ]
     },
@@ -27009,13 +27050,13 @@
     "flavor_text": "No hay que apretarle muy fuerte, ya que si lo haces, segrega un misterioso fluido morado.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -27192,11 +27233,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Drifblim (salvaje en Boquete Gigante, Ruta 13 y Ruta 14) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Drifblim)"
         }
       ]
     },
@@ -27249,11 +27290,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada), Ruta 13 y Ruta 14.",
+      "summary": "Salvaje en Boquete Gigante (Exterior), Ruta 13 y Ruta 14.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -27319,13 +27360,13 @@
     "flavor_text": "Lleva las orejas enrolladas. Cuando las extiende, golpea con tal fuerza que incluso puede romper rocas.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -27624,13 +27665,13 @@
     "flavor_text": "Oculta una tendencia rencorosa que le hace arañar la nariz de su entrenador si no le da de comer.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -27747,11 +27788,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Chimecho equipado con Incienso Puro (salvaje en Santuario Abundancia) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Chimecho (con Incienso Puro))"
         }
       ]
     },
@@ -27802,13 +27843,13 @@
     "flavor_text": "Expulsa un fluido maloliente por sus cuartos traseros. El hedor repele Pokémon en un radio de 2 km.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -27925,11 +27966,11 @@
       "type": "other",
       "badge_label": "Crianza",
       "badge_color": "zinc",
-      "summary": "Obtención mediante crianza o evento especial en Teselia.",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Bronzong (salvaje en Santuario Abundancia) en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Bronzong)"
         }
       ]
     },
@@ -28044,13 +28085,13 @@
     "flavor_text": "Prefiere entornos áridos. Sus ojos expulsan agua para ajustar sus niveles de hidratación corporal.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28105,13 +28146,13 @@
     "flavor_text": "Cuando tiene a alguien delante imita su expresión y movimientos para extender sus sentimientos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28168,7 +28209,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -28227,13 +28268,13 @@
     "flavor_text": "Su lengua es como la de cualquier persona, así que puede imitar muy bien el habla humana.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28288,13 +28329,13 @@
     "flavor_text": "Por sus constantes fechorías se le acabó uniendo a una Piedra Espíritu con un misterioso hechizo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28349,13 +28390,13 @@
     "flavor_text": "Ataca usando su enorme boca y, con lo torpe que es, también se suele dañar con sus potentes ataques.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28532,11 +28573,11 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (también mediante crianza de Snorlax con Incienso Lento).",
+      "summary": "Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (mote: Tripón); también mediante crianza de Snorlax equipado con Incienso Lento.",
       "locations": [
         {
           "area": "Pueblo Arenisca (Solo en verano)",
-          "method": "Intercambio NPC por Cinccino"
+          "method": "Intercambio NPC (mote: Tripón) por Cinccino"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -28837,13 +28878,13 @@
     "flavor_text": "Aferra las presas con las garras de la cola y les inyecta veneno. Sobrevive un año sin comida.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -29079,13 +29120,13 @@
     "flavor_text": "Se cuelga de los árboles en los pantanos. Atrae a sus presas con su dulce olor y las engulle.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -29351,13 +29392,13 @@
     "flavor_text": "Siente mucha curiosidad por los humanos. Si uno encuentra huellas en la nieve, acuden todos a mirar.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -29762,10 +29803,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Entrada) y Ruta 13.",
+      "summary": "Salvaje en Boquete Gigante (Exterior) y Ruta 13.",
       "locations": [
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -30834,11 +30875,11 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "amber",
-      "summary": "Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (sus formas alternas se activan en las cajas del Centro Comercial R9).",
+      "summary": "Obtenible en la caravana de la Ruta 15 intercambiando un Ditto con una entrenadora (mote: Tecno). Sus formas alternas se activan en las cajas del sótano del Centro Comercial R9.",
       "locations": [
         {
           "area": "Ruta 15 (Caravana)",
-          "method": "Intercambio NPC por Ditto"
+          "method": "Intercambio NPC (mote: Tecno) por Ditto"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -30893,13 +30934,13 @@
     "flavor_text": "Voló y las personas adquirieron la capacidad para resolver problemas. Así nació la sabiduría.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -30950,13 +30991,13 @@
     "flavor_text": "Voló, y los humanos aprendieron sobre la felicidad y la tristeza de vivir. Así nacieron las emociones.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31007,13 +31048,13 @@
     "flavor_text": "Voló y los humanos lograron la determinación para hacer cosas. Así nació la voluntad.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31064,13 +31105,13 @@
     "flavor_text": "Un Pokémon legendario de Sinnoh. Se dice que el tiempo avanza con cada latido de su corazón.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31121,13 +31162,13 @@
     "flavor_text": "Un Pokémon legendario de Sinnoh. Se dice que el espacio se vuelve más estable con cada respiración suya.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31178,13 +31219,13 @@
     "flavor_text": "Su cuerpo es de rugoso acero, pero su propio calor corporal lo ha derretido en algunos puntos.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31235,13 +31276,13 @@
     "flavor_text": "Se dice que usó rocas, magma y un hielo especial de montaña para crear Pokémon con su aspecto.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31292,13 +31333,13 @@
     "flavor_text": "Fue desterrado por su violencia. Observa el mundo en silencio desde el Mundo Distorsión.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31349,13 +31390,13 @@
     "flavor_text": "En las noches de media luna, la aurora de su cola se extiende y ondea más hermosa que nunca.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31406,13 +31447,13 @@
     "flavor_text": "Va a la deriva por mares cálidos. Siempre vuelve a donde nació, por mucho que se haya alejado.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31463,13 +31504,13 @@
     "flavor_text": "Nace con un maravilloso poder que le permite establecer vínculos con cualquier tipo de Pokémon.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31520,13 +31561,13 @@
     "flavor_text": "Para protegerse causa pesadillas a los que le rodean. Pero no lo hace con intención de hacer daño.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31577,13 +31618,13 @@
     "flavor_text": "Todas las flores de su cuerpo florecen si se le abraza con amor y percibe gratitud.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -31634,13 +31675,13 @@
     "flavor_text": "Se dice que surgió de un huevo en un lugar en el que no había nada. Y luego dio forma al mundo.",
     "obtaining_info": {
       "type": "transfer",
-      "badge_label": "Poké Transfer",
+      "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Poké Transfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
       "locations": [
         {
-          "area": "Laboratorio Transfer (Ruta 15)",
-          "method": "Poké Transfer (Ruta 15)"
+          "area": "Laboratorio de Pokétransfer (Ruta 15)",
+          "method": "Pokétransfer (Ruta 15)"
         }
       ]
     },
@@ -33541,11 +33582,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Ruta 6",
@@ -33920,32 +33961,32 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -33957,26 +33998,26 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
           "method": "Caminando"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Caminando"
         },
         {
@@ -34134,39 +34175,39 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria (P2) y Calle Victoria (P3). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria (P3) y Calle Victoria (P2). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Monte Tuerca",
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -34178,19 +34219,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -34433,23 +34474,23 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P3) y Calle Victoria (P4).",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P2) y Calle Victoria (P4).",
       "locations": [
+        {
+          "area": "Calle Victoria (P3)",
+          "method": "Nube de polvo"
+        },
         {
           "area": "Calle Victoria (P2)",
           "method": "Nube de polvo"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba movediza"
-        },
-        {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P1)",
@@ -34457,42 +34498,42 @@
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara Este)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
-          "method": "Hierba movediza"
+          "method": "Nube de polvo"
         },
         {
-          "area": "Boquete Gigante (Exterior)",
+          "area": "Boquete Gigante (Cueva de Entrada)",
           "method": "Nube de polvo"
         },
         {
@@ -34596,7 +34637,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -35875,11 +35916,11 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "emerald",
-      "summary": "En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).",
+      "summary": "En Pokémon Negro, una chica en Ciudad Esmalte te cambia su Petilil (mote: Florina) por tu Cottonee salvaje, permitiendo obtener a Petilil y Lilligant en esta edición (también por crianza).",
       "locations": [
         {
           "area": "Ciudad Esmalte",
-          "method": "Intercambio NPC por Cottonee"
+          "method": "Intercambio NPC (mote: Florina) por Cottonee"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -36026,19 +36067,79 @@
       "type": "wild",
       "badge_label": "Salvaje / Forma",
       "badge_color": "sky",
-      "summary": "Forma Raya Roja salvaje en lagos y rutas de Teselia surfeando. La Forma Raya Azul se obtiene por intercambio NPC en Ciudad Fayenza entregando un Minccino.",
+      "summary": "Forma Raya Roja salvaje de forma común surfeando y pescando por toda Teselia (la Forma Raya Azul aparece rara vez en sombras del agua). Además, puedes recibir un Basculin Forma Raya Roja (mote: Mordiscos) por intercambio NPC en Ciudad Fayenza entregando un Minccino (y también por crianza).",
       "locations": [
         {
+          "area": "Ciudad Gres",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Bosque Azulejo (Interior)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Torre Duodraco (Exterior)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Calle Victoria (P3)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Calle Victoria (P1)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Boquete Gigante (Cueva de Entrada)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Boquete Gigante (Cueva Central)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Puente Villa",
+          "method": "Supercaña, Surf"
+        },
+        {
           "area": "Ruta 1",
-          "method": "Surf / Pesca con Supercaña"
+          "method": "Supercaña, Surf"
         },
         {
           "area": "Ruta 3",
-          "method": "Surf / Pesca con Supercaña"
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Cueva Manantial",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 6",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Gruta Superación (Sótano B2)",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 11",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Ruta 14",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Santuario Abundancia",
+          "method": "Supercaña, Surf"
+        },
+        {
+          "area": "Bosque de los Perdidos",
+          "method": "Supercaña, Surf"
         },
         {
           "area": "Ciudad Fayenza",
-          "method": "Intercambio NPC (Forma Raya Azul por Minccino)"
+          "method": "Intercambio NPC (Forma Raya Roja, mote: Mordiscos) por Minccino"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -36954,11 +37055,11 @@
       "type": "fossil",
       "badge_label": "Fósil Tapa",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Tapa (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).",
+      "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral",
-          "method": "Elección de Fósil Tapa"
+          "area": "Castillo Ancestral (P1)",
+          "method": "Elección única de Fósil Tapa (Mochilera)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -36971,7 +37072,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Elección Única en Castillo Ancestral",
+        "text": "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente un fósil por partida entre el Fósil Tapa (Tirtouga) y el Fósil Pluma (Archen). No se vuelve a entregar el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar.",
+        "tag": "Fósil Tapa",
+        "icon": "/media/items/cover-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -37079,11 +37187,11 @@
       "type": "fossil",
       "badge_label": "Fósil Pluma",
       "badge_color": "amber",
-      "summary": "Revivir del Fósil Pluma (elegido de una mochilera en el Castillo Ancestral) en el Museo de Ciudad Esmalte (también por crianza).",
+      "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral",
-          "method": "Elección de Fósil Pluma"
+          "area": "Castillo Ancestral (P1)",
+          "method": "Elección única de Fósil Pluma (Mochilera)"
         },
         {
           "area": "Museo de Ciudad Esmalte",
@@ -37096,7 +37204,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Elección Única en Castillo Ancestral",
+        "text": "Durante la historia, una mochilera en el piso 1 del Castillo Ancestral te permite elegir únicamente un fósil por partida entre el Fósil Pluma (Archen) y el Fósil Tapa (Tirtouga). No se vuelve a entregar el otro fósil en esa partida, por lo que para completar ambos necesitas intercambio o crianza a partir de otro ejemplar.",
+        "tag": "Fósil Pluma",
+        "icon": "/media/items/plume-fossil.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -37333,11 +37448,11 @@
       "type": "gift",
       "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Entregado en un edificio de Ciudad Porcelana al llevar en el equipo al Celebi transferido mediante el Trasladador PKMN (también por crianza).",
+      "summary": "No aparece salvaje en Pokémon Negro. Solo se obtiene a Nv. 10 en la sede de Game Freak en Ciudad Porcelana al llevar en el equipo al Celebi de evento transferido desde 4.ª Generación mediante el Trasladador PKMN (o por intercambio / crianza a partir de otro Zorua o Zoroark).",
       "locations": [
         {
-          "area": "Ciudad Porcelana",
-          "method": "Evento con Celebi vía Trasladador PKMN"
+          "area": "Ciudad Porcelana (Sede de Game Freak)",
+          "method": "Evento con Celebi vía Trasladador PKMN (Nv. 10)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -37346,7 +37461,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento Exclusivo de 4.ª Generación",
+        "text": "En Pokémon Negro y Blanco originales no aparece salvaje ni te lo regalan de forma normal (a diferencia de Negro 2 y Blanco 2). Hablar con la chica y el niño en el edificio de Game Freak (Ciudad Porcelana) solo lo registra como visto; para obtenerlo (Nv. 10, macho, con Ilusión) es obligatorio transferir un Celebi de evento desde 4.ª Generación mediante el Trasladador PKMN (necesitas hueco en el equipo y una Poké Ball). Sin ese evento, la única alternativa es el intercambio o la crianza.",
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/dusk-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -37394,11 +37516,11 @@
       "type": "event",
       "badge_label": "Trasladador PKMN",
       "badge_color": "purple",
-      "summary": "Evoluciona de Zorua al Nv. 30. Además, aparece en el Bosque de los Perdidos como una mujer que te desafía si llevas a Raikou, Entei o Suicune variocolor del evento vía Trasladador PKMN.",
+      "summary": "Evoluciona de Zorua al Nv. 30. En Pokémon Negro también aparece como encuentro único a Nv. 25 (hembra) en la caravana del Bosque de los Perdidos si llevas en el equipo a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN.",
       "locations": [
         {
           "area": "Bosque de los Perdidos",
-          "method": "Encuentro especial con Bestia Variocolor de evento"
+          "method": "Encuentro especial a Nv. 25 con Bestia Variocolor vía Trasladador PKMN"
         }
       ],
       "evolution_info": {
@@ -37410,7 +37532,14 @@
       }
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento del Bosque de los Perdidos",
+        "text": "Zoroark no aparece de forma común en Teselia en Pokémon Negro y Blanco. Además de evolucionar a Zorua al Nv. 30, existe un encuentro especial en la caravana del Bosque de los Perdidos (Nv. 25, siempre hembra, con Ilusión) que solo se activa llevando a Raikou, Entei o Suicune variocolor de evento transferidos desde 4.ª Generación vía Trasladador PKMN. Al ser hembra, tras capturarlo permite obtener a Zorua mediante crianza.",
+        "tag": "Evento Especial",
+        "icon": "/media/items/dusk-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -37830,7 +37959,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -38144,11 +38273,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Ruta 6",
@@ -38347,11 +38476,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando"
+          "method": "Hierba alta"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando"
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 6",
@@ -38496,7 +38625,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Torre Duodraco (Entrada), Torre Duodraco (Exterior) y Boquete Gigante (Entrada). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Torre Duodraco (Entrada), Torre Duodraco (Exterior) y Boquete Gigante (Exterior). También es obtenible mediante intercambio NPC en una casa de la Ruta 7 entregando un Boldore. También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
@@ -38507,7 +38636,7 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Entrada)",
+          "area": "Boquete Gigante (Exterior)",
           "method": "Hierba movediza"
         },
         {
@@ -38524,7 +38653,7 @@
         },
         {
           "area": "Ruta 7",
-          "method": "Hierba movediza, Salvaje"
+          "method": "Hierba movediza, Intercambio NPC por Boldore"
         },
         {
           "area": "Ruta 9",
@@ -38754,7 +38883,7 @@
       "locations": [
         {
           "area": "Ruta 6",
-          "method": "Hierba alta, Hierba oscura (Combates dobles), Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 7",
@@ -38762,7 +38891,7 @@
         },
         {
           "area": "Ruta 10",
-          "method": "Hierba alta, Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba alta"
         },
         {
           "area": "Ruta 10 (Control de Medallas)",
@@ -38827,7 +38956,7 @@
       "locations": [
         {
           "area": "Ruta 10",
-          "method": "Hierba oscura (Combates dobles), Salvaje"
+          "method": "Encuentro estático (Poké Ball camuflada), Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 10 (Control de Medallas)",
@@ -40352,11 +40481,11 @@
         },
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Invierno)"
+          "method": "Hierba alta (Invierno)"
         },
         {
           "area": "Ruta 7",
@@ -40787,11 +40916,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando, Hierba oscura (Combates dobles) (Invierno)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles) (Invierno)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Torre Duodraco (P1)",
@@ -40802,32 +40931,32 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -40839,19 +40968,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -40987,11 +41116,11 @@
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
-          "method": "Caminando (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Caminando (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
+          "method": "Hierba alta (Primavera, Verano, Otoño), Hierba oscura (Combates dobles) (Primavera, Verano, Otoño)"
         },
         {
           "area": "Torre Duodraco (P1)",
@@ -41376,7 +41505,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -41703,35 +41832,35 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P2), Calle Victoria (P3) y Calle Victoria (P4). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Calle Victoria (P3), Calle Victoria (P2) y Calle Victoria (P4). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
-          "area": "Calle Victoria (P3)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P2)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P4)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P5)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P6)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P7)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara Oeste)",
@@ -41743,19 +41872,19 @@
         },
         {
           "area": "Calle Victoria (Túnel Inferior)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cima)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Salida)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Acceso Liga)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (Cámara de Pruebas)",
@@ -41816,15 +41945,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Calle Victoria (P2) y Calle Victoria (P1). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Calle Victoria (P3) y Calle Victoria (P1). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Calle Victoria (P2)",
-          "method": "Hierba alta"
+          "area": "Calle Victoria (P3)",
+          "method": "Caminando"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Hierba alta"
+          "method": "Caminando"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -42354,7 +42483,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -42472,7 +42601,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión Entralink con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",

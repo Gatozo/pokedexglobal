@@ -290,9 +290,9 @@ def get_unown_catalog(game_slug: str = "gold"):
         elif is_unova:
             chamber_key = ""
             chamber_title = ""
-            chamber_name = "Teselia (Poké Transfer)"
+            chamber_name = "Teselia (Pokétransfer)"
             chamber_badge = "hidden"
-            hint = "No aparece en estado salvaje en Teselia. Se obtiene mediante el Laboratorio Transfer (Ruta 15) desde juegos de 4.ª Generación."
+            hint = "No aparece en estado salvaje en Teselia. Se obtiene mediante el Laboratorio de Pokétransfer (Ruta 15) desde juegos de 4.ª Generación."
             rate_val = ""
         else:
             chamber_key = ch["key"] if ch else ""
