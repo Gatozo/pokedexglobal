@@ -979,14 +979,14 @@ def main():
             }
 
         # Inciensos de crianza si aplica
-        baby_incense_slug = get_incense_for_baby(sp_name)
+        baby_incense_slug = get_incense_for_baby(nat_id, generation=5)
         new_locations = []
         has_daycare = False
+        incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso') if baby_incense_slug else None
         for loc in obt_info.get('locations', []):
             if 'Guardería' in loc.get('area', ''):
                 has_daycare = True
                 if baby_incense_slug:
-                    incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
                     new_locations.append({
                         'area': 'Ruta 3 (Guardería Pokémon)',
                         'method': f"Crianza con {incense_name}"
@@ -998,7 +998,6 @@ def main():
 
         if is_hatchable and not has_daycare and obt_info.get('type') != 'evolution':
             if baby_incense_slug:
-                incense_name = evolution_stones.get(baby_incense_slug, {}).get('name_es', 'Incienso')
                 new_locations.append({
                     'area': 'Ruta 3 (Guardería Pokémon)',
                     'method': f"Crianza con {incense_name}"
@@ -1008,6 +1007,13 @@ def main():
                     'area': 'Ruta 3 (Guardería Pokémon)',
                     'method': 'Crianza de huevo'
                 })
+
+        if baby_incense_slug and incense_name and incense_name.lower() not in obt_info.get('summary', '').lower():
+            cur_sum = obt_info.get('summary', '')
+            if 'mediante crianza' in cur_sum:
+                obt_info['summary'] = cur_sum.replace('mediante crianza', f'mediante crianza con {incense_name}', 1)
+            elif has_daycare or is_hatchable:
+                obt_info['summary'] = f"{cur_sum} También obtenible mediante crianza equipada con {incense_name}."
 
         obt_info['locations'] = new_locations
 

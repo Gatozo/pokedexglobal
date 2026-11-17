@@ -71,6 +71,20 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
         if (isPurchasableInCurrentGame) {
             priceBadge.className = 'border border-emerald-950 bg-emerald-200 text-emerald-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
             priceBadge.textContent = price ? `En tienda: ${price.toLocaleString('es-ES')} ₽` : 'Compra en tienda';
+        } else if (['black', 'white', 'black2', 'white2'].includes(cleanGameSlug)) {
+            if (stoneSlug.endsWith('-incense')) {
+                priceBadge.className = 'border border-emerald-950 bg-emerald-200 text-emerald-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = 'Mercado Fayenza: 9 600 ₽';
+            } else if (['razor-claw', 'razor-fang'].includes(stoneSlug)) {
+                priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = 'Metro Batalla (48 PB)';
+            } else if (stoneSlug.endsWith('-stone')) {
+                priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = 'Nubes de polvo / Ciudad Negra';
+            } else {
+                priceBadge.className = 'border border-amber-950 bg-amber-200 text-amber-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+                priceBadge.textContent = 'Objeto Especial';
+            }
         } else if (['razor-claw', 'razor-fang'].includes(stoneSlug) && ['diamond', 'pearl', 'platinum', 'heartgold', 'soulsilver'].includes(cleanGameSlug)) {
             priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
             priceBadge.textContent = 'Frente de Batalla (48 PB)';

@@ -338,24 +338,28 @@
       ],
       "black": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ]
     }
@@ -552,19 +556,19 @@
       "black": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir fuego como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
         },
         {
           "area": "Zona Desierto",
-          "detail": "En el suelo en la parte central del desierto."
+          "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -781,19 +785,19 @@
       "black": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -998,19 +1002,19 @@
       "black": [
         {
           "area": "Cueva Electrorroca",
-          "detail": "En el suelo en el nivel inferior de la cueva."
+          "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
         },
         {
-          "area": "Ruta 9",
-          "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          "area": "Centro Comercial R9 (Ruta 9)",
+          "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -1211,19 +1215,23 @@
       "black": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -1374,19 +1382,27 @@
       "black": [
         {
           "area": "Ciudad Mayólica",
-          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
         },
         {
           "area": "Castillo Ancestral",
-          "detail": "En una de las plantas inferiores."
+          "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
         }
       ]
     }
@@ -1568,16 +1584,16 @@
       ],
       "black": [
         {
-          "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+          "area": "Ciudad Teja",
+          "detail": "Entregada por el presidente del Club de Fans de Pokémon tras mostrarle un Pokémon que haya subido 99 niveles desde que lo capturaste o eclosionó."
         },
         {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -1748,15 +1764,15 @@
       "black": [
         {
           "area": "Monte Tuerca",
-          "detail": "En el suelo en una de las galerías interiores durante el invierno."
+          "detail": "En el suelo en el nivel inferior de la montaña (solo accesible en invierno)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+          "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -1923,15 +1939,15 @@
       "black": [
         {
           "area": "Ruta 18",
-          "detail": "En el suelo en la orilla sur de la isla."
+          "detail": "En el suelo en la zona de arena al sur de la isla (requiere Fuerza y Surf)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Horsea, Seadra o Dratini salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Horsea, Seadra, Kingdra, Dratini, Dragonair y Dragonite salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -2045,12 +2061,12 @@
       ],
       "black": [
         {
-          "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "area": "Ruta 15",
+          "detail": "En el suelo al sureste de la ruta (requiere Fuerza)."
         },
         {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ]
     }
@@ -2154,12 +2170,16 @@
       ],
       "black": [
         {
+          "area": "Ruta 17",
+          "detail": "En el suelo al noroeste de la ruta, siguiendo la corriente central tras pasar a la primera nadadora."
+        },
+        {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregado ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado en Carvanha o Sharpedo salvajes (5% de probabilidad)."
+          "detail": "Equipado ocasionalmente en Basculin (Raya Roja), Carvanha y Sharpedo salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -2264,11 +2284,11 @@
       "black": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Chinchou, Lanturn o Relicanth salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Basculin (Raya Azul, raro en remolinos en Negro), Chinchou, Lanturn y Relicanth salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -2345,8 +2365,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -2423,8 +2443,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -2523,19 +2543,19 @@
       "black": [
         {
           "area": "Ruta 6",
-          "detail": "Entregada por una chica dentro de la casa de descanso."
+          "detail": "Entregada por una niña dentro de la casa situada justo al norte del Centro de Estudios Estacionales (tras cruzar los dos puentes)."
         },
         {
           "area": "Torre Duodraco",
-          "detail": "En el suelo en el exterior de la torre (requiere Surf)."
+          "detail": "En el suelo en el 2.º piso interior (3F en numeración americana), en la esquina noreste."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -2650,19 +2670,19 @@
       "black": [
         {
           "area": "Cueva Loza",
-          "detail": "En el suelo en la planta principal de la cueva."
+          "detail": "En el suelo en el 2.º piso (P2) de la cueva (requiere Fuerza y Destello)."
         },
         {
           "area": "Ruta 10",
-          "detail": "Entregada por un veterano cerca del puente de acceso a la Calle Victoria."
+          "detail": "Entregada por un veterano antes del puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -2769,15 +2789,15 @@
       "black": [
         {
           "area": "Ruta 10",
-          "detail": "En el suelo en la meseta previa a las puertas de medallas."
+          "detail": "En el suelo en la zona previa al puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Marquesa Pitu (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -2872,15 +2892,15 @@
       "black": [
         {
           "area": "Gruta Superación",
-          "detail": "En el suelo en la primera sala de la cueva."
+          "detail": "En el suelo del Sótano 2 (S2), en el centro de la isla del lago subterráneo (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Giuseppe (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ]
     }
@@ -2931,15 +2951,11 @@
       "black": [
         {
           "area": "Ruta 11",
-          "detail": "En el suelo en el saliente norte tras cruzar el puente de caravanas."
+          "detail": "En el suelo en el saliente noreste tras bajar la cascada (requiere Surf y Cascada)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ]
     }
@@ -2998,11 +3014,7 @@
       "black": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
       ]
     }
@@ -3061,11 +3073,7 @@
       "black": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
       ]
     }
@@ -3115,16 +3123,12 @@
       ],
       "black": [
         {
-          "area": "Laboratorio P+P (Ruta 18)",
-          "detail": "En el suelo dentro del laboratorio abandonado."
+          "area": "Laboratorio P+P (Rutas 17 y 18)",
+          "detail": "En el suelo dentro del laboratorio abandonado (requiere Surf)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ]
     }
@@ -3191,11 +3195,7 @@
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ]
     }
@@ -3270,11 +3270,15 @@
       "black": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "En el suelo sobre el acantilado tras cruzar los puentes."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
+          "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
       ]
     }
@@ -3336,24 +3340,16 @@
       ],
       "black": [
         {
-          "area": "Ruta 11",
-          "detail": "En el suelo junto a la cascada (requiere Cascada)."
+          "area": "Santuario Abundancia",
+          "detail": "En el suelo al suroeste de los altares del templo."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Boquete Gigante",
-          "detail": "En el suelo en el laberinto nevado interior."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
-        },
-        {
-          "area": "Pokémon salvajes",
-          "detail": "Equipado en Gligar o Gliscor salvajes (5% de probabilidad)."
+          "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
       ]
     }
@@ -3400,8 +3396,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3448,8 +3444,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3496,8 +3492,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3544,8 +3540,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3592,8 +3588,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3640,8 +3636,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3688,8 +3684,8 @@
       ],
       "black": [
         {
-          "area": "Puente Progreso",
-          "detail": "Vendido por 9 600 ₽ por el mercader ambulante junto al puente."
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
       ]
     }
@@ -3706,11 +3702,15 @@
       "black": [
         {
           "area": "Ruta 13",
-          "detail": "Objeto oculto en la orilla este de la playa y entregada por el buscador de tesoros."
+          "detail": "Objeto oculto en el suelo al norte de la ruta junto a las escaleras (requiere Surf)."
         },
         {
           "area": "Pueblo Arenisca",
-          "detail": "Recogida ocasionalmente por un Pokémon con la habilidad Recogida (niveles 81 a 100)."
+          "detail": "Entregada por un hombre dentro del Centro Pokémon."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 51 a 100)."
         }
       ]
     }

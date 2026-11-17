@@ -1935,18 +1935,113 @@
         "diamond": [
           {
             "area": "Ciudad Marina",
-            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Ruta 229",
-            "detail": "Objeto oculto entre la maleza."
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Cueva Electrorroca",
+            "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
+          },
+          {
+            "area": "Centro Comercial R9 (Ruta 9)",
+            "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Trueno",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -2488,14 +2583,145 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Bosque Azulejo",
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -2947,14 +3173,145 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Bosque Azulejo",
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -3327,14 +3684,145 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Bosque Azulejo",
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -3585,14 +4073,105 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -3941,14 +4520,145 @@
         "diamond": [
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
           },
           {
             "area": "Monte Corona",
-            "detail": "Equipada en Cleffa o Clefairy salvajes con un 5% de probabilidad."
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Diamante)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la cumbre."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Vetusta",
+            "detail": "Objeto oculto en el extremo noreste de la ciudad navegando por el canal (requiere Surf)."
+          },
+          {
+            "area": "Monte Corona",
+            "detail": "Objeto oculto en una roca nevada exterior camino a la Columna Lanza."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          },
+          {
+            "area": "Pokémon salvajes (Clefairy y Cleffa)",
+            "detail": "5% de probabilidad de llevarla equipada en estado salvaje (Monte Corona)."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Monte Moon (Plaza de las Rocas)",
+            "detail": "En el suelo los lunes de 20:00 a 23:59 tras presenciar el baile de los Clefairy, usando Golpe Roca en la roca central."
+          },
+          {
+            "area": "Cueva Unión (Sótano B2)",
+            "detail": "En el suelo en la orilla del lago subterráneo accesible haciendo Surf."
+          },
+          {
+            "area": "Cataratas Tohjo",
+            "detail": "En una cornisa rocosa occidental detrás de las cascadas navegando con Surf y remontando la Cascada."
+          },
+          {
+            "area": "Ruinas Alfa",
+            "detail": "En la cámara secreta tras la sala del rompecabezas de Aerodactyl (usando la MO Destello frente al muro)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 3.000 Puntos Atleta los lunes (antes de la Pokédex Nacional) y los miércoles (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          },
+          {
+            "area": "Pueblo Primavera (Regalo de Mamá)",
+            "detail": "Comprada ocasionalmente por Mamá con los ahorros del jugador."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada con un 5% de probabilidad en Clefairy, Clefable y Lunatone salvajes."
+          }
+        ],
+        "black": [
+          {
+            "area": "Bosque Azulejo",
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
+          },
+          {
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -4654,14 +5364,109 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -6146,14 +6951,105 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -6605,18 +7501,113 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
+          },
+          {
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -7324,14 +8315,109 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -9072,18 +10158,113 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
+          },
+          {
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -10142,14 +11323,109 @@
         "diamond": [
           {
             "area": "Prado Aromaflor",
-            "detail": "Cruzando el río hacia el norte con Surf cerca de Forja Fuego."
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Prado Aromaflor",
+            "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
+          },
+          {
+            "area": "Gran Pantano (Pastoria)",
+            "detail": "Objeto oculto en el lodo del Área 3 (localizable con Zahorí)."
+          },
+          {
+            "area": "Ruta 225",
+            "detail": "Objeto oculto en una franja de hierba al sur de la casa de la ruta."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 34 (Llamada del Pokégear)",
+            "detail": "Regalo de la Dominguera Gina tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Oddish."
+          },
+          {
+            "area": "Bosque Verde (Kanto)",
+            "detail": "Oculta en la maleza en el camino boscoso."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los sábados (antes de la Pokédex Nacional) y los jueves (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
+          },
+          {
+            "area": "Ruta 6",
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -11838,18 +13114,113 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
+          },
+          {
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -12951,18 +14322,113 @@
         "diamond": [
           {
             "area": "Ruta 213",
-            "detail": "En el agua al sur de la ruta navegando con Surf."
+            "detail": "En un banco de arena poco profundo navegando con Surf."
           },
           {
             "area": "Ruinas Sosiego",
-            "detail": "Objeto oculto en una de las rocas interiores."
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega (seguir escaleras: Arriba-Der, Abajo-Izq, Abajo-Izq)."
+          },
+          {
+            "area": "Ruta 213",
+            "detail": "En un banco de arena poco profundo navegando con Surf."
+          },
+          {
+            "area": "Ruta 230",
+            "detail": "En la isla rocosa central al oeste del Caramelo Raro (requiere Surf y Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 42 (Llamada del Pokégear)",
+            "detail": "Regalo del Pescador Óscar tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Marill (o Staryu)."
+          },
+          {
+            "area": "Islas Remolino (Sótano B2)",
+            "detail": "En el suelo en el laberinto subterráneo de cavernas (requiere Surf y Destello)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los miércoles (antes de la Pokédex Nacional) y los lunes, martes y viernes (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
+          },
+          {
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -13140,18 +14606,113 @@
         "diamond": [
           {
             "area": "Ciudad Marina",
-            "detail": "En el suelo detrás del Faro Panorama en la pasarela metálica."
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
           },
           {
             "area": "Ruta 229",
-            "detail": "Objeto oculto entre la maleza."
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ciudad Marina",
+            "detail": "Detrás del Faro Panorama (siguiendo las pasarelas solares elevadas)."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en una cámara sin salida al final del laberinto de escaleras."
+          },
+          {
+            "area": "Ruta 229",
+            "detail": "Objeto oculto en el sector suroeste del estanque (requiere Corte y Surf)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 38 (Llamada del Pokégear)",
+            "detail": "Regalo de la Chica Sara tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Pichu."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los jueves (antes de la Pokédex Nacional) y los miércoles y sábados (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Cueva Electrorroca",
+            "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
+          },
+          {
+            "area": "Centro Comercial R9 (Ruta 9)",
+            "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Trueno",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -13329,14 +14890,105 @@
         "diamond": [
           {
             "area": "Forja Fuego",
-            "detail": "En el suelo tras resolver el puzle de paneles deslizantes."
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
           },
           {
             "area": "Subterráneo de Sinnoh",
-            "detail": "Excavando fósiles y tesoros en las paredes del subsuelo."
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica entre las baldosas aceleradoras giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
+          },
+          {
+            "area": "Subterráneo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Forja Fuego",
+            "detail": "En el interior de la fábrica en la esquina noreste sorteando las baldosas giratorias."
+          },
+          {
+            "area": "Ruinas Sosiego",
+            "detail": "Objeto oculto en una roca en la cámara ciega bajando por la escalera superior izquierda."
+          },
+          {
+            "area": "Montaña Dura",
+            "detail": "Objeto oculto en una gran roca del noroeste de la caverna interior (requiere Golpe Roca)."
+          },
+          {
+            "area": "Subsuelo de Sinnoh",
+            "detail": "Excavación en las paredes del subsuelo."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 36 (Llamada del Pokégear)",
+            "detail": "Regalo del Escolar Arturo tras registrar su número de teléfono al llamarte avisando de que encontró algo."
+          },
+          {
+            "area": "Ruta 25 (Kanto - Casa del Mar)",
+            "detail": "Regalo del abuelo de Bill al mostrarle un Growlithe (en HeartGold) o un Vulpix (en SoulSilver)."
+          },
+          {
+            "area": "Domo Pokéathlon",
+            "detail": "Canjeable en la Tienda de Atletas por 2.500 Puntos Atleta los martes (antes de la Pokédex Nacional) y los jueves y domingos (tras obtener la Pokédex Nacional)."
+          },
+          {
+            "area": "Parque Nacional (Concurso de Captura de Bichos)",
+            "detail": "Posible premio por el 1.er puesto tras desbloquear la Pokédex Nacional."
+          }
+        ],
+        "black": [
+          {
+            "area": "Muelle de Ciudad Porcelana",
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
+          },
+          {
+            "area": "Zona Desierto",
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
+          },
+          {
+            "area": "Ciudad Negra",
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          },
+          {
+            "area": "Nubes de polvo",
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",

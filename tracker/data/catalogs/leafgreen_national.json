@@ -1993,22 +1993,23 @@
         "black": [
           {
             "area": "Cueva Electrorroca",
-            "detail": "En el suelo en el nivel inferior de la cueva."
+            "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
           },
           {
-            "area": "Ruta 9",
-            "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+            "area": "Centro Comercial R9 (Ruta 9)",
+            "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Trueno",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -2703,27 +2704,32 @@
         ],
         "black": [
           {
-            "area": "Museo de Ciudad Esmalte",
-            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-          },
-          {
             "area": "Bosque Azulejo",
-            "detail": "En el suelo en el laberinto interior del bosque."
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
           },
           {
-            "area": "Castillo Ancestral",
-            "detail": "En una de las salas subterráneas."
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -3280,27 +3286,32 @@
         ],
         "black": [
           {
-            "area": "Museo de Ciudad Esmalte",
-            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-          },
-          {
             "area": "Bosque Azulejo",
-            "detail": "En el suelo en el laberinto interior del bosque."
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
           },
           {
-            "area": "Castillo Ancestral",
-            "detail": "En una de las salas subterráneas."
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -3786,27 +3797,32 @@
         ],
         "black": [
           {
-            "area": "Museo de Ciudad Esmalte",
-            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-          },
-          {
             "area": "Bosque Azulejo",
-            "detail": "En el suelo en el laberinto interior del bosque."
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
           },
           {
-            "area": "Castillo Ancestral",
-            "detail": "En una de las salas subterráneas."
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -4161,22 +4177,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir fuego como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
           },
           {
             "area": "Zona Desierto",
-            "detail": "En el suelo en la parte central del desierto."
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -4638,27 +4655,32 @@
         ],
         "black": [
           {
-            "area": "Museo de Ciudad Esmalte",
-            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-          },
-          {
             "area": "Bosque Azulejo",
-            "detail": "En el suelo en el laberinto interior del bosque."
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
           },
           {
-            "area": "Castillo Ancestral",
-            "detail": "En una de las salas subterráneas."
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -5368,22 +5390,27 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir planta como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
           },
           {
             "area": "Ruta 6",
-            "detail": "En el suelo en la zona norte (requiere Surf)."
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -6560,22 +6587,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir fuego como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
           },
           {
             "area": "Zona Desierto",
-            "detail": "En el suelo en la parte central del desierto."
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -7117,22 +7145,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir agua como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
           },
           {
-            "area": "Ruta 3",
-            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -8000,22 +8029,27 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir planta como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
           },
           {
             "area": "Ruta 6",
-            "detail": "En el suelo en la zona norte (requiere Surf)."
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -10202,22 +10236,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir agua como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
           },
           {
-            "area": "Ruta 3",
-            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -11620,22 +11655,27 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir planta como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
           },
           {
             "area": "Ruta 6",
-            "detail": "En el suelo en la zona norte (requiere Surf)."
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -13168,22 +13208,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir agua como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
           },
           {
-            "area": "Ruta 3",
-            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -14375,22 +14416,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir agua como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
           },
           {
-            "area": "Ruta 3",
-            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -14658,22 +14700,23 @@
         "black": [
           {
             "area": "Cueva Electrorroca",
-            "detail": "En el suelo en el nivel inferior de la cueva."
+            "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
           },
           {
-            "area": "Ruta 9",
-            "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+            "area": "Centro Comercial R9 (Ruta 9)",
+            "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Trueno",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -14933,22 +14976,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir fuego como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
           },
           {
             "area": "Zona Desierto",
-            "detail": "En el suelo en la parte central del desierto."
+            "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Fuego",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -17805,22 +17849,31 @@
         "black": [
           {
             "area": "Ciudad Mayólica",
-            "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+            "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
           },
           {
             "area": "Castillo Ancestral",
-            "detail": "En una de las plantas inferiores."
+            "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
           }
         ]
       },
+      "name": "Piedra Solar",
       "locations": [
         {
           "area": "Valle Ruinas (Isla Exta)",
@@ -18248,19 +18301,20 @@
         ],
         "black": [
           {
-            "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+            "area": "Ciudad Teja",
+            "detail": "Entregada por el presidente del Club de Fans de Pokémon tras mostrarle un Pokémon que haya subido 99 niveles desde que lo capturaste o eclosionó."
           },
           {
-            "area": "Metro Batalla",
-            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+            "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Roca del Rey",
       "locations": [
         {
           "area": "Cañón Sétano (Isla Sétima)",
@@ -18793,22 +18847,31 @@
         "black": [
           {
             "area": "Ciudad Mayólica",
-            "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+            "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
           },
           {
             "area": "Castillo Ancestral",
-            "detail": "En una de las plantas inferiores."
+            "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
           }
         ]
       },
+      "name": "Piedra Solar",
       "locations": [
         {
           "area": "Valle Ruinas (Isla Exta)",
@@ -19395,19 +19458,20 @@
         ],
         "black": [
           {
-            "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+            "area": "Ciudad Teja",
+            "detail": "Entregada por el presidente del Club de Fans de Pokémon tras mostrarle un Pokémon que haya subido 99 niveles desde que lo capturaste o eclosionó."
           },
           {
-            "area": "Metro Batalla",
-            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+            "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Roca del Rey",
       "locations": [
         {
           "area": "Cañón Sétano (Isla Sétima)",
@@ -20187,18 +20251,19 @@
         "black": [
           {
             "area": "Monte Tuerca",
-            "detail": "En el suelo en una de las galerías interiores durante el invierno."
+            "detail": "En el suelo en el nivel inferior de la montaña (solo accesible en invierno)."
           },
           {
             "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+            "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Revestimiento Metálico",
       "locations": [
         {
           "area": "Pilar Recuerdo (Isla Inta)",
@@ -20609,18 +20674,19 @@
         "black": [
           {
             "area": "Monte Tuerca",
-            "detail": "En el suelo en una de las galerías interiores durante el invierno."
+            "detail": "En el suelo en el nivel inferior de la montaña (solo accesible en invierno)."
           },
           {
             "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+            "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Revestimiento Metálico",
       "locations": [
         {
           "area": "Pilar Recuerdo (Isla Inta)",
@@ -21901,18 +21967,19 @@
         "black": [
           {
             "area": "Ruta 18",
-            "detail": "En el suelo en la orilla sur de la isla."
+            "detail": "En el suelo en la zona de arena al sur de la isla (requiere Fuerza y Surf)."
           },
           {
             "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipada en Horsea, Seadra o Dratini salvajes (5% de probabilidad)."
+            "detail": "Equipada ocasionalmente en Horsea, Seadra, Kingdra, Dratini, Dragonair y Dragonite salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Escama Dragón",
       "locations": [
         {
           "area": "Cueva Glaciada (Isla Quarta)",
@@ -22213,15 +22280,16 @@
         ],
         "black": [
           {
-            "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "area": "Ruta 15",
+            "detail": "En el suelo al sureste de la ruta (requiere Fuerza)."
           },
           {
-            "area": "Metro Batalla",
-            "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+            "area": "Ruta 13",
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
           }
         ]
       },
+      "name": "Mejora",
       "locations": [
         {
           "area": "Edificio Silph S.A. (Ciudad Azafrán)",
@@ -24683,22 +24751,23 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir agua como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
           },
           {
-            "area": "Ruta 3",
-            "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+            "area": "Ciudad Fayenza",
+            "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Agua",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -25078,22 +25147,27 @@
         "black": [
           {
             "area": "Muelle de Ciudad Porcelana",
-            "detail": "Entregada por un científico al elegir planta como inicial."
+            "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+          },
+          {
+            "area": "Centro de Estudios Estacionales (Ruta 6)",
+            "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
           },
           {
             "area": "Ruta 6",
-            "detail": "En el suelo en la zona norte (requiere Surf)."
+            "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
           }
         ]
       },
+      "name": "Piedra Hoja",
       "locations": [
         {
           "area": "Centro Comercial de Azulona (4F)",
@@ -26429,13 +26503,97 @@
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Marino"
         }
       ],
       "badge_color": "violet",
       "badge_label": "Transferencia"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "sea-incense",
+      "name_es": "Incienso Marino",
+      "icon_url": "/media/items/sea-incense.png",
+      "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Agua en un 20%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "category": "incense",
+      "games": {
+        "ruby": [
+          {
+            "area": "Monte Pírico (Tercera Planta)",
+            "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+          }
+        ],
+        "sapphire": [
+          {
+            "area": "Monte Pírico (Tercera Planta)",
+            "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por el agujero del noroeste situado en la cuarta planta."
+          }
+        ],
+        "emerald": [
+          {
+            "area": "Monte Pírico",
+            "detail": "En el suelo en las plantas superiores interiores del cementerio Pokémon."
+          }
+        ],
+        "firered": [
+          {
+            "area": "Cueva Perdida (Isla Inta)",
+            "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
+          }
+        ],
+        "leafgreen": [
+          {
+            "area": "Cueva Perdida (Isla Inta)",
+            "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
+          }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 204 (Sur)",
+            "detail": "En un islote en el estanque suroeste navegando con Surf."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 204 (Sur)",
+            "detail": "En un islote en el estanque suroeste navegando con Surf."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruta 204 (Sur)",
+            "detail": "En un islote en el estanque suroeste navegando con Surf."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Cueva Celeste (Planta Baja)",
+            "detail": "En el suelo en el estrecho sendero rocoso de la pared norte de la planta de entrada (P1)."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Cueva Celeste (Planta Baja)",
+            "detail": "En el suelo en el estrecho sendero rocoso de la pared norte de la planta de entrada (P1)."
+          }
+        ],
+        "black": [
+          {
+            "area": "Mercado de Ciudad Fayenza",
+            "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+          }
+        ]
+      },
+      "name": "Incienso Marino",
+      "locations": [
+        {
+          "area": "Cueva Perdida (Isla Inta)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha, arriba, abajo y arriba."
+        }
+      ]
+    },
     "game_data": {
       "generation": 3,
       "game_slug": "leafgreen",
@@ -26949,27 +27107,32 @@
         ],
         "black": [
           {
-            "area": "Museo de Ciudad Esmalte",
-            "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-          },
-          {
             "area": "Bosque Azulejo",
-            "detail": "En el suelo en el laberinto interior del bosque."
+            "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
           },
           {
-            "area": "Castillo Ancestral",
-            "detail": "En una de las salas subterráneas."
+            "area": "Monte Tuerca",
+            "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
           },
           {
             "area": "Ciudad Negra",
-            "detail": "A la venta en la tienda por 10 500 ₽."
+            "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
           },
           {
             "area": "Nubes de polvo",
-            "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+            "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+          },
+          {
+            "area": "Pokémon salvajes",
+            "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+          },
+          {
+            "area": "Habilidad Recogida",
+            "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
           }
         ]
       },
+      "name": "Piedra Lunar",
       "locations": [
         {
           "area": "Monte Moon (Planta baja)",
@@ -30429,13 +30592,97 @@
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Suave"
         }
       ],
       "badge_color": "violet",
       "badge_label": "Transferencia"
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "lax-incense",
+      "name_es": "Incienso Suave",
+      "icon_url": "/media/items/lax-incense.png",
+      "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 10%. Si Wobbuffet lo lleva equipado en la guardería, pondrán un huevo del que nacerá Wynaut.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "Objeto especial único en Hoenn. No se encuentra a la venta en tiendas.",
+      "category": "incense",
+      "games": {
+        "ruby": [
+          {
+            "area": "Monte Pírico (Cuarta Planta)",
+            "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+          }
+        ],
+        "sapphire": [
+          {
+            "area": "Monte Pírico (Cuarta Planta)",
+            "detail": "En el suelo del interior del Monte Pírico, accesible al dejarse caer por un agujero situado en la quinta planta."
+          }
+        ],
+        "emerald": [
+          {
+            "area": "Monte Pírico",
+            "detail": "En el suelo en las plantas superiores interiores del cementerio Pokémon."
+          }
+        ],
+        "firered": [
+          {
+            "area": "Cueva Perdida (Isla Inta)",
+            "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+          }
+        ],
+        "leafgreen": [
+          {
+            "area": "Cueva Perdida (Isla Inta)",
+            "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+          }
+        ],
+        "diamond": [
+          {
+            "area": "Ruta 225",
+            "detail": "Al oeste de la casa en un claro cortando el arbusto con Corte."
+          }
+        ],
+        "pearl": [
+          {
+            "area": "Ruta 225",
+            "detail": "Al oeste de la casa en un claro cortando el arbusto con Corte."
+          }
+        ],
+        "platinum": [
+          {
+            "area": "Ruta 225",
+            "detail": "Al oeste de la casa en un claro cortando el arbusto con Corte."
+          }
+        ],
+        "heartgold": [
+          {
+            "area": "Ruta 38 (Johto)",
+            "detail": "En una repisa de hierba elevada al suroeste de la ruta, tras una valla accesible usando Treparrocas."
+          }
+        ],
+        "soulsilver": [
+          {
+            "area": "Ruta 38 (Johto)",
+            "detail": "En una repisa de hierba elevada al suroeste de la ruta, tras una valla accesible usando Treparrocas."
+          }
+        ],
+        "black": [
+          {
+            "area": "Mercado de Ciudad Fayenza",
+            "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+          }
+        ]
+      },
+      "name": "Incienso Suave",
+      "locations": [
+        {
+          "area": "Cueva Perdida (Isla Inta)",
+          "detail": "En el suelo siguiendo el orden de salas: derecha y abajo."
+        }
+      ]
+    },
     "game_data": {
       "generation": 3,
       "game_slug": "leafgreen",
@@ -30939,15 +31186,20 @@
         ],
         "black": [
           {
+            "area": "Ruta 17",
+            "detail": "En el suelo al noroeste de la ruta, siguiendo la corriente central tras pasar a la primera nadadora."
+          },
+          {
             "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "detail": "Entregado ocasionalmente una vez al día por el buscatesoros en la costa."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipado en Carvanha o Sharpedo salvajes (5% de probabilidad)."
+            "detail": "Equipado ocasionalmente en Basculin (Raya Roja), Carvanha y Sharpedo salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Diente Marino",
       "locations": [
         {
           "area": "Transferencia externa",
@@ -31111,14 +31363,15 @@
         "black": [
           {
             "area": "Ruta 13",
-            "detail": "Entregada ocasionalmente por el buscador de tesoros."
+            "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
           },
           {
             "area": "Pokémon salvajes",
-            "detail": "Equipada en Chinchou, Lanturn o Relicanth salvajes (5% de probabilidad)."
+            "detail": "Equipada ocasionalmente en Basculin (Raya Azul, raro en remolinos en Negro), Chinchou, Lanturn y Relicanth salvajes (5 % de probabilidad)."
           }
         ]
       },
+      "name": "Escama Marina",
       "locations": [
         {
           "area": "Transferencia externa",

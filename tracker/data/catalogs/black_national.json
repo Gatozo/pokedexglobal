@@ -1577,23 +1577,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Electrorroca",
-          "detail": "En el suelo en el nivel inferior de la cueva."
+          "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
         },
         {
-          "area": "Ruta 9",
-          "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          "area": "Centro Comercial R9 (Ruta 9)",
+          "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -1909,27 +1909,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -2124,27 +2128,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -2286,27 +2294,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -2445,23 +2457,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir fuego como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
         },
         {
           "area": "Zona Desierto",
-          "detail": "En el suelo en la parte central del desierto."
+          "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -2603,27 +2615,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -2951,23 +2967,27 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -3836,23 +3856,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir fuego como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
         },
         {
           "area": "Zona Desierto",
-          "detail": "En el suelo en la parte central del desierto."
+          "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -4123,23 +4143,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -4696,23 +4716,27 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -5980,23 +6004,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -6756,23 +6780,27 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -7406,19 +7434,19 @@
       "description_es": "Curiosa piedra que hace evolucionar a Happiny al subir de nivel durante el día. Es redonda como un huevo.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Disponible en Sinnoh mediante minería o en Torre Perdida.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Gruta Superación",
-          "detail": "En el suelo en la primera sala de la cueva."
+          "detail": "En el suelo del Sótano 2 (S2), en el centro de la isla del lago subterráneo (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Giuseppe (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -7993,23 +8021,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -8822,23 +8850,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -8912,23 +8940,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Electrorroca",
-          "detail": "En el suelo en el nivel inferior de la cueva."
+          "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
         },
         {
-          "area": "Ruta 9",
-          "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          "area": "Centro Comercial R9 (Ruta 9)",
+          "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -9002,23 +9030,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir fuego como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
         },
         {
           "area": "Zona Desierto",
-          "detail": "En el suelo en la parte central del desierto."
+          "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -11853,23 +11881,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ciudad Mayólica",
-          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
         },
         {
           "area": "Castillo Ancestral",
-          "detail": "En una de las plantas inferiores."
+          "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
         }
       ],
       "category": "stone"
@@ -12143,19 +12179,19 @@
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
-          "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+          "area": "Ciudad Teja",
+          "detail": "Entregada por el presidente del Club de Fans de Pokémon tras mostrarle un Pokémon que haya subido 99 niveles desde que lo capturaste o eclosionó."
         },
         {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -12536,23 +12572,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ciudad Mayólica",
-          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
         },
         {
           "area": "Castillo Ancestral",
-          "detail": "En una de las plantas inferiores."
+          "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
         }
       ],
       "category": "stone"
@@ -12993,19 +13037,19 @@
       "description_es": "Curioso objeto con forma de corona que puede amedrentar al rival al atacar. Hace evolucionar a Slowpoke y Poliwhirl al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
-          "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros en la costa."
+          "area": "Ciudad Teja",
+          "detail": "Entregada por el presidente del Club de Fans de Pokémon tras mostrarle un Pokémon que haya subido 99 niveles desde que lo capturaste o eclosionó."
         },
         {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Poliwhirl, Politoed o Hariyama salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -13565,19 +13609,19 @@
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "detail": "En el suelo en una de las galerías interiores durante el invierno."
+          "detail": "En el suelo en el nivel inferior de la montaña (solo accesible en invierno)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+          "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -13841,19 +13885,19 @@
       "description_es": "Película de acero especial que potencia los ataques de tipo Acero. Hace evolucionar a Onix y Scyther al ser intercambiados equipados con él.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Monte Tuerca",
-          "detail": "En el suelo en una de las galerías interiores durante el invierno."
+          "detail": "En el suelo en el nivel inferior de la montaña (solo accesible en invierno)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado en Magnemite, Metang o Bronzor salvajes (5% de probabilidad)."
+          "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -15019,19 +15063,19 @@
       "description_es": "Extraña y gruesa escama que potencia los movimientos de tipo Dragón. Hace evolucionar a Seadra al ser intercambiado equipado con ella.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 18",
-          "detail": "En el suelo en la orilla sur de la isla."
+          "detail": "En el suelo en la zona de arena al sur de la isla (requiere Fuerza y Surf)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Horsea, Seadra o Dratini salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Horsea, Seadra, Kingdra, Dratini, Dragonair y Dragonite salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -15226,15 +15270,15 @@
       "description_es": "Dispositivo de almacenamiento transparente desarrollado por Silph S.A. Hace evolucionar a Porygon al ser intercambiado equipado con él.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto especial de evolución por intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
-          "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "area": "Ruta 15",
+          "detail": "En el suelo al sureste de la ruta (requiere Fuerza)."
         },
         {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "area": "Ruta 13",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ],
       "category": "trade"
@@ -17585,23 +17629,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -17796,23 +17840,27 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -19218,7 +19266,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco). También obtenible mediante crianza equipada con Incienso Marino.",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -19226,11 +19274,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Marino"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "sea-incense",
+      "name": "Incienso Marino",
+      "name_es": "Incienso Marino",
+      "icon_url": "/media/items/sea-incense.png",
+      "sprite_url": "/media/items/sea-incense.png",
+      "description": "Incienso de exótico aroma que potencia los movimientos de tipo Agua en un 20%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Agua en un 20%. Si Marill o Azumarill lo llevan equipado en la guardería, pondrán un huevo del que nacerá Azurill.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -19422,27 +19488,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -22559,15 +22629,19 @@
       "description_es": "Misteriosa escama que hace evolucionar a Feebas en Milotic al ser intercambiado mientras la lleva equipada. Brilla con los colores del arcoíris.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto evolutivo introducido en la 5.ª Generación.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 13",
-          "detail": "Objeto oculto en la orilla este de la playa y entregada por el buscador de tesoros."
+          "detail": "Objeto oculto en el suelo al norte de la ruta junto a las escaleras (requiere Surf)."
         },
         {
           "area": "Pueblo Arenisca",
-          "detail": "Recogida ocasionalmente por un Pokémon con la habilidad Recogida (niveles 81 a 100)."
+          "detail": "Entregada por un hombre dentro del Centro Pokémon."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 51 a 100)."
         }
       ],
       "category": "trade"
@@ -23178,7 +23252,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Manada diaria en la Ruta 2 tras obtener la Pokédex Nacional. (también obtenible mediante crianza).",
+      "summary": "Manada diaria en la Ruta 2 tras obtener la Pokédex Nacional. (también obtenible mediante crianza con Incienso Suave).",
       "locations": [
         {
           "area": "Ruta 2",
@@ -23186,11 +23260,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Suave"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "lax-incense",
+      "name": "Incienso Suave",
+      "name_es": "Incienso Suave",
+      "icon_url": "/media/items/lax-incense.png",
+      "sprite_url": "/media/items/lax-incense.png",
+      "description": "Incienso de suave aroma que reduce la precisión del rival en un 10%. Si Wobbuffet lo lleva equipado en la guardería, pondrán un huevo del que nacerá Wynaut.",
+      "description_es": "Incienso de suave aroma que reduce la precisión del rival en un 10%. Si Wobbuffet lo lleva equipado en la guardería, pondrán un huevo del que nacerá Wynaut.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -23644,15 +23736,19 @@
       "description_es": "Objeto evolutivo que aumenta el Ataque Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Huntail.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto único a elegir por partida.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
+          "area": "Ruta 17",
+          "detail": "En el suelo al noroeste de la ruta, siguiendo la corriente central tras pasar a la primera nadadora."
+        },
+        {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregado ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado en Carvanha o Sharpedo salvajes (5% de probabilidad)."
+          "detail": "Equipado ocasionalmente en Basculin (Raya Roja), Carvanha y Sharpedo salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -23726,15 +23822,15 @@
       "description_es": "Objeto evolutivo que aumenta la Defensa Especial de Clamperl. Al ser intercambiado equipado con él, evoluciona en Gorebyss.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto único a elegir por partida.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipada en Chinchou, Lanturn o Relicanth salvajes (5% de probabilidad)."
+          "detail": "Equipada ocasionalmente en Basculin (Raya Azul, raro en remolinos en Negro), Chinchou, Lanturn y Relicanth salvajes (5 % de probabilidad)."
         }
       ],
       "category": "trade"
@@ -26016,7 +26112,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco). También obtenible mediante crianza equipada con Incienso Floral.",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -26024,11 +26120,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Floral"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "rose-incense",
+      "name": "Incienso Floral",
+      "name_es": "Incienso Floral",
+      "icon_url": "/media/items/rose-incense.png",
+      "sprite_url": "/media/items/rose-incense.png",
+      "description": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
+      "description_es": "Incienso de exótico aroma que potencia los movimientos de tipo Planta en un 20%. Si Roselia o Roserade lo llevan equipado en la guardería, pondrán un huevo del que nacerá Budew.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -26098,23 +26212,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ruta 6",
-          "detail": "Entregada por una chica dentro de la casa de descanso."
+          "detail": "Entregada por una niña dentro de la casa situada justo al norte del Centro de Estudios Estacionales (tras cruzar los dos puentes)."
         },
         {
           "area": "Torre Duodraco",
-          "detail": "En el suelo en el exterior de la torre (requiere Surf)."
+          "detail": "En el suelo en el 2.º piso interior (3F en numeración americana), en la esquina noreste."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -27504,23 +27618,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Loza",
-          "detail": "En el suelo en la planta principal de la cueva."
+          "detail": "En el suelo en el 2.º piso (P2) de la cueva (requiere Fuerza y Destello)."
         },
         {
           "area": "Ruta 10",
-          "detail": "Entregada por un veterano cerca del puente de acceso a la Calle Victoria."
+          "detail": "Entregada por un veterano antes del puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -27598,23 +27712,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Loza",
-          "detail": "En el suelo en la planta principal de la cueva."
+          "detail": "En el suelo en el 2.º piso (P2) de la cueva (requiere Fuerza y Destello)."
         },
         {
           "area": "Ruta 10",
-          "detail": "Entregada por un veterano cerca del puente de acceso a la Calle Victoria."
+          "detail": "Entregada por un veterano antes del puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -27792,11 +27906,29 @@
       "locations": [
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo (Chimecho (con Incienso Puro))"
+          "method": "Crianza con Incienso Puro"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "pure-incense",
+      "name": "Incienso Puro",
+      "name_es": "Incienso Puro",
+      "icon_url": "/media/items/pure-incense.png",
+      "sprite_url": "/media/items/pure-incense.png",
+      "description": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
+      "description_es": "Incienso de aroma misterioso que reduce la probabilidad de encontrar Pokémon salvajes si el líder del equipo lo lleva equipado. Si Chimecho lo lleva equipado en la guardería, pondrá un huevo del que nacerá Chingling.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -28087,7 +28219,7 @@
       "type": "transfer",
       "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación. También obtenible mediante crianza equipada con Incienso Roca.",
       "locations": [
         {
           "area": "Laboratorio de Pokétransfer (Ruta 15)",
@@ -28095,11 +28227,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Roca"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "rock-incense",
+      "name": "Incienso Roca",
+      "name_es": "Incienso Roca",
+      "icon_url": "/media/items/rock-incense.png",
+      "sprite_url": "/media/items/rock-incense.png",
+      "description": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
+      "description_es": "Incienso de aroma terroso que potencia los movimientos de tipo Roca en un 20%. Si Sudowoodo lo lleva equipado en la guardería, pondrá un huevo del que nacerá Bonsly.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -28148,7 +28298,7 @@
       "type": "transfer",
       "badge_label": "Pokétransfer",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación.",
+      "summary": "Inaccesible en estado salvaje en Teselia. Reclutar mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación. También obtenible mediante crianza equipada con Incienso Raro.",
       "locations": [
         {
           "area": "Laboratorio de Pokétransfer (Ruta 15)",
@@ -28156,11 +28306,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Raro"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "odd-incense",
+      "name": "Incienso Raro",
+      "name_es": "Incienso Raro",
+      "icon_url": "/media/items/odd-incense.png",
+      "sprite_url": "/media/items/odd-incense.png",
+      "description": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
+      "description_es": "Incienso de aroma exótico que potencia los movimientos de tipo Psíquico en un 20%. Si Mr. Mime lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mime Jr.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -28209,7 +28377,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco). También obtenible mediante crianza equipada con Incienso Duplo.",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -28217,11 +28385,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Duplo"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "luck-incense",
+      "name": "Incienso Duplo",
+      "name_es": "Incienso Duplo",
+      "icon_url": "/media/items/luck-incense.png",
+      "sprite_url": "/media/items/luck-incense.png",
+      "description": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
+      "description_es": "Incienso de aroma afortunado que duplica las ganancias económicas tras vencer en un combate si el portador participa. Si Chansey o Blissey lo llevan equipado en la guardería, pondrán un huevo del que nacerá Happiny.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -28581,11 +28767,29 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Lento"
         }
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "full-incense",
+      "name": "Incienso Lento",
+      "name_es": "Incienso Lento",
+      "icon_url": "/media/items/full-incense.png",
+      "sprite_url": "/media/items/full-incense.png",
+      "description": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
+      "description_es": "Incienso pesado que hace que el Pokémon portador ataque en último lugar en su orden de prioridad. Si Snorlax lo lleva equipado en la guardería, pondrá un huevo del que nacerá Munchlax.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -29324,7 +29528,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Bahía Arenisca y Pueblo Arenisca. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Bahía Arenisca y Pueblo Arenisca. También obtenible mediante crianza con Incienso Aqua en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Bahía Arenisca",
@@ -29336,7 +29540,7 @@
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza con Incienso Aqua"
         }
       ],
       "seasons": [
@@ -29345,7 +29549,25 @@
         "autumn"
       ]
     },
-    "evolution_stone": null,
+    "evolution_stone": {
+      "slug": "wave-incense",
+      "name": "Incienso Aqua",
+      "name_es": "Incienso Aqua",
+      "icon_url": "/media/items/wave-incense.png",
+      "sprite_url": "/media/items/wave-incense.png",
+      "description": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
+      "description_es": "Incienso con fragancia a brisa marina que potencia los movimientos de tipo Agua en un 20%. Si Mantine lo lleva equipado en la guardería, pondrá un huevo del que nacerá Mantyke.",
+      "is_purchasable": false,
+      "price": null,
+      "availability_note": "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game).",
+      "locations": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "category": "incense"
+    },
     "notes": [],
     "game_data": {
       "generation": 5,
@@ -29536,15 +29758,19 @@
       "description_es": "Garra puntiaguda y afilada. Hace evolucionar a Sneasel al subir de nivel por la noche y aumenta el índice de golpe crítico.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
+      "availability_note": "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia.",
       "locations": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
+          "detail": "En el suelo sobre el acantilado tras cruzar los puentes."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
           "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
+          "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
       ],
       "category": "trade"
@@ -29738,19 +29964,15 @@
       "description_es": "Objeto protector muy pesado. Hace evolucionar a Rhydon por intercambio.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 11",
-          "detail": "En el suelo en el saliente norte tras cruzar el puente de caravanas."
+          "detail": "En el suelo en el saliente noreste tras bajar la cascada (requiere Surf y Cascada)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ],
       "category": "trade"
@@ -29892,15 +30114,11 @@
       "description_es": "Caja cargada de enorme energía eléctrica. Hace evolucionar a Electabuzz por intercambio.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Exclusivo de Pokémon Diamante mediante inserción dual de Rojo Fuego.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
       ],
       "category": "trade"
@@ -29974,15 +30192,11 @@
       "description_es": "Caja cargada de enorme energía magmática. Hace evolucionar a Magmar por intercambio.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Exclusivo de Pokémon Perla. En Diamante requiere intercambio.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
       ],
       "category": "trade"
@@ -30056,23 +30270,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ruta 6",
-          "detail": "Entregada por una chica dentro de la casa de descanso."
+          "detail": "Entregada por una niña dentro de la casa situada justo al norte del Centro de Estudios Estacionales (tras cruzar los dos puentes)."
         },
         {
           "area": "Torre Duodraco",
-          "detail": "En el suelo en el exterior de la torre (requiere Surf)."
+          "detail": "En el suelo en el 2.º piso interior (3F en numeración americana), en la esquina noreste."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -30334,27 +30548,19 @@
       "description_es": "Colmillo puntiagudo y temible. Hace evolucionar a Gligar al subir de nivel por la noche y puede hacer retroceder al rival.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Canjeable en el Servicio de Intercambio del Frente de Batalla por 48 PB.",
+      "availability_note": "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia.",
       "locations": [
         {
-          "area": "Ruta 11",
-          "detail": "En el suelo junto a la cascada (requiere Cascada)."
+          "area": "Santuario Abundancia",
+          "detail": "En el suelo al suroeste de los altares del templo."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Boquete Gigante",
-          "detail": "En el suelo en el laberinto nevado interior."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         },
         {
           "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 48 PB."
-        },
-        {
-          "area": "Pokémon salvajes",
-          "detail": "Equipado en Gligar o Gliscor salvajes (5% de probabilidad)."
+          "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
       ],
       "category": "trade"
@@ -30492,19 +30698,15 @@
       "description_es": "Dispositivo transparente que encierra datos dudosos. Hace evolucionar a Porygon2 por intercambio.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto único en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
-          "area": "Laboratorio P+P (Ruta 18)",
-          "detail": "En el suelo dentro del laboratorio abandonado."
+          "area": "Laboratorio P+P (Rutas 17 y 18)",
+          "detail": "En el suelo dentro del laboratorio abandonado (requiere Surf)."
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ],
       "category": "trade"
@@ -30578,19 +30780,19 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ruta 10",
-          "detail": "En el suelo en la meseta previa a las puertas de medallas."
+          "detail": "En el suelo en la zona previa al puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Marquesa Pitu (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -30724,7 +30926,7 @@
       "description_es": "Tela impregnada de poderosa energía fantasmal. Hace evolucionar a Dusclops por intercambio.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas).",
       "locations": [
         {
           "area": "Ruta 14",
@@ -30732,11 +30934,7 @@
         },
         {
           "area": "Ruta 13",
-          "detail": "Entregada ocasionalmente por el buscador de tesoros."
-        },
-        {
-          "area": "Metro Batalla",
-          "detail": "Canjeable en el mostrador del Metro Batalla por 32 PB."
+          "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
       ],
       "category": "trade"
@@ -30810,19 +31008,19 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Centellea como los ojos de un lucero.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ruta 10",
-          "detail": "En el suelo en la meseta previa a las puertas de medallas."
+          "detail": "En el suelo en la zona previa al puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Marquesa Pitu (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -32951,23 +33149,27 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabada una hoja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir planta como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansage para recibir la Piedra Hoja."
+        },
+        {
+          "area": "Centro de Estudios Estacionales (Ruta 6)",
+          "detail": "Entregada por un científico dentro del centro si le muestras las cuatro formas estacionales de Deerling (Primavera, Verano, Otoño e Invierno)."
         },
         {
           "area": "Ruta 6",
-          "detail": "En el suelo en la zona norte (requiere Surf)."
+          "detail": "En el suelo tras pasar el Centro de Estudios Estacionales, en la zona de hierba alta y charcos entre la Dama Parasol Tihana (junto a un Foongus) y el Pokémon Ranger Richard."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -33110,23 +33312,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es amarilla con una marca naranja.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir fuego como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Pansear para recibir la Piedra Fuego."
         },
         {
           "area": "Zona Desierto",
-          "detail": "En el suelo en la parte central del desierto."
+          "detail": "En el suelo en la parte suroccidental (suroeste) del desierto."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -33269,23 +33471,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es de color azul.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Muelle de Ciudad Porcelana",
-          "detail": "Entregada por un científico al elegir agua como inicial."
+          "detail": "Entregada por un científico en el primer muelle (Muelle Pulgar): puedes elegir libremente una única piedra (Piedra Fuego, Agua u Hoja según el mono elemental que respondas, sin depender de tu inicial); elige a Panpour para recibir la Piedra Agua."
         },
         {
-          "area": "Ruta 3",
-          "detail": "En una pequeña orilla en el estanque (requiere Surf)."
+          "area": "Ciudad Fayenza",
+          "detail": "En una pequeña isleta junto al faro al sur de la ciudad (requiere Surf)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -33432,27 +33634,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
-          "area": "Museo de Ciudad Esmalte",
-          "detail": "Entregada por Aloe tras recuperar el cráneo de dragón."
-        },
-        {
           "area": "Bosque Azulejo",
-          "detail": "En el suelo en el laberinto interior del bosque."
+          "detail": "Entregada por Aloe tras vencer al Equipo Plasma y recuperar el cráneo de dragón."
         },
         {
-          "area": "Castillo Ancestral",
-          "detail": "En una de las salas subterráneas."
+          "area": "Monte Tuerca",
+          "detail": "En el suelo en una de las galerías orientales de la montaña, detrás del operario Tobías."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Clefairy, Clefable y Lunatone salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
       ],
       "category": "stone"
@@ -35847,23 +36053,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ciudad Mayólica",
-          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
         },
         {
           "area": "Castillo Ancestral",
-          "detail": "En una de las plantas inferiores."
+          "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
         }
       ],
       "category": "stone"
@@ -35998,23 +36212,31 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es roja y brillante como el sol.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ciudad Mayólica",
-          "detail": "Entregada por un personaje dentro de un edificio al este del Centro Pokémon."
+          "detail": "Entregada por un chico en la planta alta (2.º piso) del edificio residencial situado justo detrás del Centro Pokémon."
         },
         {
           "area": "Castillo Ancestral",
-          "detail": "En una de las plantas inferiores."
+          "detail": "En el suelo del Sótano 4 (S4), dejándose caer por los remolinos de arena hacia el sector este (post-game)."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "Equipada ocasionalmente en Solrock salvajes (5 % de probabilidad; Boquete Gigante y Ruta 13)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
         }
       ],
       "category": "stone"
@@ -37697,23 +37919,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Despide una luz deslumbrante.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Ruta 6",
-          "detail": "Entregada por una chica dentro de la casa de descanso."
+          "detail": "Entregada por una niña dentro de la casa situada justo al norte del Centro de Estudios Estacionales (tras cruzar los dos puentes)."
         },
         {
           "area": "Torre Duodraco",
-          "detail": "En el suelo en el exterior de la torre (requiere Surf)."
+          "detail": "En el suelo en el 2.º piso interior (3F en numeración americana), en la esquina noreste."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -39859,23 +40081,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Tiene grabado un rayo.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "A la venta en Kanto (Gen 1) o regalo exclusivo en Johto (Gen 2).",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Electrorroca",
-          "detail": "En el suelo en el nivel inferior de la cueva."
+          "detail": "En el suelo en el sótano 1 (S1) de la cueva, cerca de las escaleras hacia S2."
         },
         {
-          "area": "Ruta 9",
-          "detail": "En el suelo cerca de la entrada al Centro Comercial R9."
+          "area": "Centro Comercial R9 (Ruta 9)",
+          "detail": "Regalada por un empleado de uniforme en la última planta tras responder afirmativamente si sabes qué es."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"
@@ -40215,23 +40437,23 @@
       "description_es": "Curiosa piedra que hace evolucionar a determinadas especies de Pokémon. Es oscura como la noche tenebrosa.",
       "is_purchasable": false,
       "price": null,
-      "availability_note": "Objeto limitado en Sinnoh. No se vende en tiendas.",
+      "availability_note": "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos).",
       "locations": [
         {
           "area": "Cueva Loza",
-          "detail": "En el suelo en la planta principal de la cueva."
+          "detail": "En el suelo en el 2.º piso (P2) de la cueva (requiere Fuerza y Destello)."
         },
         {
           "area": "Ruta 10",
-          "detail": "Entregada por un veterano cerca del puente de acceso a la Calle Victoria."
+          "detail": "Entregada por un veterano antes del puente de acceso a las puertas de la Liga Pokémon."
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta en la tienda por 10 500 ₽."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
-          "detail": "Obtenible aleatoriamente en nubes de polvo en cuevas de Teselia."
+          "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
       ],
       "category": "stone"

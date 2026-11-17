@@ -759,12 +759,13 @@ def build_catalogs():
                 transfer_origin = "Pokémon Channel o Disco Bonus de Pokémon Colosseum"
 
             if is_hatchable:
+                daycare_method = 'Crianza con Incienso Marino' if sp_name == 'azurill' else ('Crianza con Incienso Suave' if sp_name == 'wynaut' else 'Crianza de huevo')
                 obt_info = {
                     'type': 'transfer',
                     'summary': f"No disponible en estado salvaje en Kanto ni en las Islas Sétima. Requiere transferencia desde {transfer_origin} (también obtenible mediante crianza).",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
-                        {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}
+                        {'area': 'Isla Quarta (Guardería Pokémon)', 'method': daycare_method}
                     ]
                 }
             else:
@@ -799,11 +800,13 @@ def build_catalogs():
                 else:
                     obt_info['summary'] = summary_text + clean_clause
 
-        # Piedras u objetos evolutivos asociados
+        # Piedras u objetos evolutivos asociados (incluyendo bebés de incienso en Gen 3)
         evo_stone = None
-        evo_item_slug = (evo_info.get('item_slug') if evo_info else None) or obt_info.get('item_slug')
+        baby_incense_slug = 'sea-incense' if sp_name == 'azurill' else ('lax-incense' if sp_name == 'wynaut' else None)
+        evo_item_slug = baby_incense_slug or (evo_info.get('item_slug') if evo_info else None) or obt_info.get('item_slug')
         if evo_item_slug and evo_item_slug in stones_catalog:
             stone_data = copy.deepcopy(stones_catalog[evo_item_slug])
+            stone_data.setdefault('name', stone_data.get('name_es', ''))
             stone_data['locations'] = stone_data.get('games', {}).get('leafgreen', [])
             evo_stone = stone_data
 

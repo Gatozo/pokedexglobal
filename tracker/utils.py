@@ -615,7 +615,19 @@ def resolve_evolution_stone(
     if effective_game and effective_game not in ['red', 'blue', 'yellow', 'firered', 'leafgreen']:
         is_purchasable = False
         price = None
-        if not availability_note or "2.100" in availability_note:
+        game_notes = stone_data.get("game_availability_notes", {})
+        if effective_game in game_notes:
+            availability_note = game_notes[effective_game]
+        elif effective_game in ['black', 'white', 'black2', 'white2']:
+            if slug.endswith("-incense"):
+                availability_note = "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game)."
+            elif slug in ('razor-claw', 'razor-fang'):
+                availability_note = "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia."
+            elif slug.endswith("-stone"):
+                availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos)."
+            else:
+                availability_note = "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas)."
+        elif not availability_note or "2.100" in availability_note:
             availability_note = "Objeto limitado. No se encuentra a la venta en tiendas."
 
     category = stone_data.get("category")

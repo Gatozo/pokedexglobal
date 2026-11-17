@@ -5075,6 +5075,102 @@ class GlobalFormContractInvariantsTests(TestCase):
             self.assertNotIn("evento especial en Teselia", nat_by[bid].obtaining_info["summary"])
             self.assertTrue(native_map[bid][0], f"#{bid} {nat_by[bid].pokemon.display_name} debe resolver como nativo por crianza")
 
+        # 9. Auditoría completa de piedras evolutivas, objetos e inciensos en Pokémon Negro
+        from tracker.utils import get_evolution_stones_catalog, resolve_evolution_stone
+        stones_catalog = get_evolution_stones_catalog()
+
+        # Ningún objeto de Negro debe conservar el precio erróneo de 10 500 ₽ ni inciensos en Puente Progreso
+        for slug, item in stones_catalog.items():
+            locs = item.get("games", {}).get("black", [])
+            blob = json.dumps(locs, ensure_ascii=False)
+            self.assertNotIn("10 500", blob, f"{slug} sigue mostrando 10 500 ₽ en black")
+            if slug.endswith("-stone"):
+                cn = next((l for l in locs if l["area"] == "Ciudad Negra"), None)
+                self.assertIsNotNone(cn, f"Falta Ciudad Negra en {slug}")
+                self.assertIn("10 000 ₽", cn["detail"])
+                self.assertIn("Zona Nexo", cn["detail"])
+            if slug.endswith("-incense"):
+                self.assertEqual([l["area"] for l in locs], ["Mercado de Ciudad Fayenza"])
+                self.assertIn("9 600 ₽", locs[0]["detail"])
+                self.assertNotIn("Puente Progreso", blob)
+
+        # Piedra Solar (Sun Stone): Sótano 4 Castillo Ancestral, detrás del Centro Pokémon, Malena 10 000 ₽, Solrock 5 % y Recogida 31-100
+        sun = resolve_evolution_stone(item_slug="sun-stone", game_slug="black")
+        sun_blob = json.dumps(sun["locations"], ensure_ascii=False)
+        self.assertIn("Sótano 4 (S4)", sun_blob)
+        self.assertIn("detrás del Centro Pokémon", sun_blob)
+        self.assertIn("Malena", sun_blob)
+        self.assertIn("Solrock", sun_blob)
+        self.assertIn("niveles 31 a 100", sun_blob)
+        self.assertNotIn("Concurso de Bichos", sun["availability_note"])
+        self.assertEqual(reg_by[549].evolution_stone["locations"], sun["locations"])  # Lilligant
+
+        # Piedra Hoja (Leaf Stone): Centro de Estudios Estacionales (4 Deerling), Ruta 6 sin Surf y elección libre en Ciudad Porcelana
+        leaf = resolve_evolution_stone(item_slug="leaf-stone", game_slug="black")
+        leaf_blob = json.dumps(leaf["locations"], ensure_ascii=False)
+        self.assertIn("Centro de Estudios Estacionales", leaf_blob)
+        self.assertIn("Deerling", leaf_blob)
+        self.assertIn("elegir libremente", leaf_blob)
+        self.assertNotIn("requiere Surf", leaf_blob)
+
+        # Piedra Lunar y Piedra Oval: sin mezclas de B2W2 ni ubicaciones erróneas
+        moon = resolve_evolution_stone(item_slug="moon-stone", game_slug="black")
+        moon_blob = json.dumps(moon["locations"], ensure_ascii=False)
+        self.assertIn("Bosque Azulejo", moon_blob)
+        self.assertIn("Lunatone", moon_blob)
+        self.assertIn("niveles 41 a 100", moon_blob)
+        self.assertNotIn("Museo de Ciudad Esmalte", moon_blob)
+        self.assertNotIn("Castillo Ancestral", moon_blob)
+        self.assertNotIn("Boquete Gigante", moon_blob)
+
+        oval_blob = json.dumps(stones_catalog["oval-stone"]["games"]["black"], ensure_ascii=False)
+        self.assertIn("Sótano 2 (S2)", oval_blob)
+        self.assertIn("Surf", oval_blob)
+
+        water = resolve_evolution_stone(item_slug="water-stone", game_slug="black")
+        self.assertIn("Ciudad Fayenza", [l["area"] for l in water["locations"]])
+        self.assertNotIn("Ruta 3", [l["area"] for l in water["locations"]])
+        self.assertNotIn("elegir agua", json.dumps(water["locations"], ensure_ascii=False))
+
+        # Metro Batalla y objetos de evolución en Negro 1 (sin ubicaciones de B2W2)
+        for no_bs_slug in ("kings-rock", "up-grade", "protector", "electirizer", "magmarizer", "dubious-disc", "reaper-cloth"):
+            bs_locs = stones_catalog[no_bs_slug]["games"]["black"]
+            self.assertNotIn("Metro Batalla", json.dumps(bs_locs, ensure_ascii=False), f"{no_bs_slug} no se vende en Metro Batalla de Negro 1")
+        kings_areas = [l["area"] for l in stones_catalog["kings-rock"]["games"]["black"]]
+        self.assertIn("Ciudad Teja", kings_areas)
+        self.assertNotIn("Pueblo Arcilla", kings_areas)
+        self.assertEqual([l["area"] for l in stones_catalog["electirizer"]["games"]["black"]], ["Ruta 13"])
+        self.assertEqual([l["area"] for l in stones_catalog["magmarizer"]["games"]["black"]], ["Ruta 13"])
+        self.assertIn("Ruta 17", [l["area"] for l in stones_catalog["deep-sea-tooth"]["games"]["black"]])
+        self.assertIn("Ruta 15", [l["area"] for l in stones_catalog["up-grade"]["games"]["black"]])
+        self.assertIn("Santuario Abundancia", [l["area"] for l in stones_catalog["razor-fang"]["games"]["black"]])
+        self.assertNotIn("Gligar", json.dumps(stones_catalog["razor-fang"]["games"]["black"], ensure_ascii=False))
+
+        prism_blob = json.dumps(stones_catalog["prism-scale"]["games"]["black"], ensure_ascii=False)
+        self.assertIn("Pueblo Arenisca", prism_blob)
+        self.assertIn("niveles 51 a 100", prism_blob)
+        self.assertNotIn("Puente Villa", prism_blob)
+        self.assertNotIn("buscatesoros", prism_blob)
+
+        # Métodos separados en Garra Afilada y objetos de incienso visibles en bebés de Pokédex Nacional
+        self.assertEqual(
+            [l["area"] for l in stones_catalog["razor-claw"]["games"]["black"]],
+            ["Ruta 13", "Ruta 13 (Buscatesoros)", "Metro Batalla"],
+        )
+        from tracker.utils import INCENSE_BABY_MAP
+        for baby_id, expected_incense in INCENSE_BABY_MAP.items():
+            baby_entry = nat_by[baby_id]
+            self.assertIsNotNone(baby_entry.evolution_stone, f"Falta evolution_stone en bebé #{baby_id}")
+            self.assertEqual(baby_entry.evolution_stone["slug"], expected_incense)
+            self.assertTrue(
+                any("Crianza con Incienso" in l.get("method", "") for l in baby_entry.obtaining_info.get("locations", [])),
+                f"Falta método de crianza con incienso en bebé #{baby_id}"
+            )
+        for gen3_slug in ("firered_national", "leafgreen_national"):
+            gen3_by = {e.pokemon.national_number: e for e in get_compiled_catalog(gen3_slug, force_reload=True)}
+            self.assertEqual(gen3_by[298].evolution_stone["slug"], "sea-incense")
+            self.assertEqual(gen3_by[360].evolution_stone["slug"], "lax-incense")
+
 
 
 
