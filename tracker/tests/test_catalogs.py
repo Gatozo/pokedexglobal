@@ -5156,6 +5156,7 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertNotIn("Bronzor", metal_blob)
         self.assertEqual([l["area"] for l in stones_catalog["magmarizer"]["games"]["black"]], ["Ruta 13"])
         self.assertIn("Ruta 17", [l["area"] for l in stones_catalog["deep-sea-tooth"]["games"]["black"]])
+        self.assertIn("Huntail", json.dumps(stones_catalog["deep-sea-tooth"]["games"]["black"], ensure_ascii=False))
         self.assertIn("Ruta 15", [l["area"] for l in stones_catalog["up-grade"]["games"]["black"]])
         self.assertIn("Santuario Abundancia", [l["area"] for l in stones_catalog["razor-fang"]["games"]["black"]])
         self.assertNotIn("Gligar", json.dumps(stones_catalog["razor-fang"]["games"]["black"], ensure_ascii=False))
