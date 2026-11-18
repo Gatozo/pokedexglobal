@@ -39,16 +39,27 @@
       "type": "mythical",
       "badge_label": "Evento Singular",
       "badge_color": "amber",
-      "summary": "Encuentro a Nv. 15 en el sótano del faro de Isla Libertad, accesible en barco desde Ciudad Porcelana con el Ticket Libertad de evento.",
+      "summary": "Encuentro a Nv. 15 en el sótano del faro de Isla Libertad, accesible en barco desde Ciudad Porcelana con el Ticket Libertad de evento (también repartido posteriormente vía Wi-Fi como Victini de la Película 14).",
       "locations": [
         {
           "area": "Isla Libertad (Sótano del Faro)",
           "method": "Evento con Ticket Libertad (Nv. 15)"
+        },
+        {
+          "area": "Evento Oficial de Distribución",
+          "method": "Tarjeta Misteriosa Wi-Fi (Película 14)"
         }
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento Histórico • Victini Película 14",
+        "text": "Además del Ticket Libertad de lanzamiento para capturarlo al Nv. 15 en Isla Libertad, Victini volvió a repartirse por Wi-Fi durante la promoción de la Película 14 (Nv. 50 con el movimiento exclusivo V de Fuego).",
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -1272,7 +1283,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Luchadora Iraís (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -1431,7 +1442,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Entrenador guay Vito (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -1590,7 +1601,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Pokémon Ranger Melas (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -1753,7 +1764,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Veterana Lila (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -4172,7 +4183,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes invitarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
@@ -4331,7 +4342,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes reclutarla en el Bosque Blanco de otra partida vía Zona Nexo)."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Entrenadora guay Malena (si no aparece, puedes invitarla en el Bosque Blanco de otra partida vía Zona Nexo)."
         },
         {
           "area": "Nubes de polvo",
@@ -6038,7 +6049,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside la Mochilera Sarah (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -6288,7 +6299,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -8200,7 +8211,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Veterano Ken (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -8556,7 +8567,7 @@
         },
         {
           "area": "Ciudad Negra",
-          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (reclutable vía Zona Nexo desde el Bosque Blanco de otra partida)."
+          "detail": "A la venta por 10 000 ₽ solo si reside el Mochilero Don (invitable vía Zona Nexo desde el Bosque Blanco de otra partida)."
         },
         {
           "area": "Nubes de polvo",
@@ -9834,7 +9845,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -10812,7 +10823,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Legendario errante exclusivo de Pokémon Blanco (requiere intercambio para registrarlo y desbloquear a Landorus en el Santuario Abundancia).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -10869,7 +10880,7 @@
       "type": "legendary",
       "badge_label": "Exclusivo Negro",
       "badge_color": "slate",
-      "summary": "Captura obligatoria a Nv. 50 en el Palacio de N durante el clímax de la historia principal (o en la Torre Duodraco si las cajas estaban llenas).",
+      "summary": "Captura obligatoria a Nv. 50 en el Palacio de N durante el clímax de la historia principal (o en la Torre Duodraco si el equipo y cajas estaban llenos). Exclusivo de Pokémon Negro.",
       "locations": [
         {
           "area": "Palacio de N (Sala del Trono)",
@@ -10882,7 +10893,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento Histórico • Primavera 2012",
+        "text": "Durante la promoción Primavera 2012 (PRI2012 / SPR2012) vía Wi-Fi se repartió al dragón contrario a cada edición: Zekrom para Pokémon Negro y Reshiram para Pokémon Blanco (al Nv. 100 con movimientos especiales).",
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -10930,7 +10948,7 @@
       "type": "transfer",
       "badge_label": "Edición Blanco",
       "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco).",
+      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Legendario de portada exclusivo de Pokémon Blanco (requiere intercambio; en su época también fue repartido por evento Wi-Fi Primavera 2012).",
       "locations": [
         {
           "area": "Intercambio con Pokémon Blanco",
@@ -10939,7 +10957,14 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento Histórico • Zekrom Primavera 2012",
+        "text": "Aunque Zekrom es exclusivo de Pokémon Blanco, en su época se distribuyó directamente para Pokémon Negro vía Wi-Fi mediante el evento Primavera 2012 (PRI2012 / SPR2012, al Nv. 100 con Gema Dragón).",
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -11101,16 +11126,27 @@
       "type": "mythical",
       "badge_label": "Evento Singular",
       "badge_color": "sky",
-      "summary": "Pokémon singular de evento de 5.ª Generación. En el Claro Filosofía del Bosque Azulejo aprende Espada Santa junto a los Espadachines Místicos.",
+      "summary": "Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Invierno 2013 por Wi-Fi) o intercambio. En el Pantano Teja aprende Sable Místico junto a Cobalion, Terrakion y Virizion.",
       "locations": [
         {
           "area": "Evento Oficial de Distribución",
-          "method": "Tarjeta Misteriosa Wi-Fi"
+          "method": "Regalo Misterioso (ej. Wi-Fi INV2013 / evento presencial)"
+        },
+        {
+          "area": "Pantano Teja",
+          "method": "Evento de historia para aprender Sable Místico"
         }
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Evento en Pantano Teja • Sable Místico",
+        "text": "Keldeo fue repartido mediante Regalo Misterioso en eventos oficiales (ej. Wi-Fi Invierno 2013 / INV2013). Al llevarlo al Pantano Teja junto a Cobalion, Terrakion y Virizion en el equipo, un anciano narra su historia y Keldeo aprende Sable Místico (en Negro y Blanco originales aún no existe su Forma Brío).",
+        "tag": "Evento Singular",
+        "icon": "/media/items/cherish-ball.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",
@@ -11158,11 +11194,15 @@
       "type": "mythical",
       "badge_label": "Evento Singular",
       "badge_color": "pink",
-      "summary": "Pokémon singular de evento de 5.ª Generación. En el bar de Ciudad Porcelana un guitarrista le enseña Canto Arcaico, permitiéndole cambiar a Forma Danza.",
+      "summary": "Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Primavera 2013) o intercambio. En la cafetería La melodía del descanso de Ciudad Porcelana aprende Canto Arcaico, permitiéndole cambiar a Forma Danza en combate.",
       "locations": [
         {
           "area": "Evento Oficial de Distribución",
-          "method": "Tarjeta Misteriosa Wi-Fi"
+          "method": "Regalo Misterioso (ej. distribución PRI2013)"
+        },
+        {
+          "area": "Ciudad Porcelana (La melodía del descanso)",
+          "method": "Músico enseña Canto Arcaico"
         }
       ]
     },
@@ -11215,16 +11255,27 @@
       "type": "mythical",
       "badge_label": "Evento Singular",
       "badge_color": "purple",
-      "summary": "Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos PiroROM, HidroROM, FulgoROM y CrioROM.",
+      "summary": "Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Genesect Plasma por Wi-Fi en 2012) o intercambio. En el Laboratorio P+P de la Ruta 17 un científico entrega los cartuchos PiroROM y FulgoROM en Pokémon Negro.",
       "locations": [
         {
           "area": "Evento Oficial de Distribución",
-          "method": "Tarjeta Misteriosa Wi-Fi"
+          "method": "Tarjeta Misteriosa Wi-Fi (ej. Genesect Plasma)"
+        },
+        {
+          "area": "Laboratorio P+P (Ruta 17)",
+          "method": "Entrega de PiroROM y FulgoROM tras combate"
         }
       ]
     },
     "evolution_stone": null,
-    "notes": [],
+    "notes": [
+      {
+        "title": "Cartuchos exclusivos por edición",
+        "text": "Genesect fue repartido vía Wi-Fi (Genesect Plasma, otoño de 2012). En el Laboratorio P+P de la Ruta 17, tras derrotar al científico llevando a Genesect en el equipo, en Pokémon Negro entrega únicamente el PiroROM (Fuego) y el FulgoROM (Eléctrico); HidroROM y CrioROM deben intercambiarse desde Pokémon Blanco.",
+        "tag": "Evento y Cartuchos",
+        "icon": "/media/items/burn-drive.png"
+      }
+    ],
     "game_data": {
       "generation": 5,
       "game_slug": "black",

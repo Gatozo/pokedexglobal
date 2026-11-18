@@ -8025,10 +8025,10 @@
     "cry_url": "/media/pokemon/cries/legacy/109.ogg",
     "flavor_text": "Los gases de su cuerpo le permiten flotar. Estos gases, además de oler mal, también son explosivos.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Weezing en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12082,10 +12082,10 @@
     "cry_url": "/media/pokemon/cries/legacy/165.ogg",
     "flavor_text": "Es tan temeroso que no se mueve si no es en grupo. Comunica sus sentimientos con olores.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Ledian en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -12199,10 +12199,10 @@
     "cry_url": "/media/pokemon/cries/legacy/167.ogg",
     "flavor_text": "Pone trampas tejiendo una red de seda fina y resistente y luego espera inmóvil a su presa.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Ariados en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -16493,10 +16493,10 @@
     "cry_url": "/media/pokemon/cries/legacy/228.ogg",
     "flavor_text": "Se comunica mediante gritos y colabora en manada para atacar a sus presas.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Houndoom (salvaje en Rutas 214 y 215 con Poké Radar) en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -19614,10 +19614,10 @@
     "cry_url": "/media/pokemon/cries/legacy/276.ogg",
     "flavor_text": "Es un Pokémon valiente que no teme a los rivales fuertes. Vuela en busca de climas templados.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Swellow en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -20756,10 +20756,10 @@
     "cry_url": "/media/pokemon/cries/legacy/293.ogg",
     "flavor_text": "Suele murmurar a un volumen casi inaudible, pero cuando se asusta grita con el volumen de un reactor.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Loudred o Exploud en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -24888,10 +24888,10 @@
     "cry_url": "/media/pokemon/cries/legacy/353.ogg",
     "flavor_text": "Les atraen los sentimientos de rencor y celos. Suelen vivir cerca de las casas de gente vengativa.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Obtenible mediante crianza de Banette en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -25334,10 +25334,10 @@
     "cry_url": "/media/pokemon/cries/legacy/360.ogg",
     "flavor_text": "Se fortalecen empujándose unos a otros en grupos. Les encantan los dulces.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante distribución oficial o evento de Nintendo.",
+      "type": "breeding",
+      "badge_label": "Crianza",
+      "badge_color": "pink",
+      "summary": "Eclosiona al criar a Wobbuffet equipado con Incienso Suave en la Guardería Pokémon de Pueblo Sosiego.",
       "locations": [
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -26896,11 +26896,11 @@
       "type": "transfer",
       "badge_label": "Parque Compi",
       "badge_color": "amber",
-      "summary": "Inaccesible en estado salvaje en Pokémon Perla. Requiere transferir desde Evento GBA (Orión / Isla Origen) mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
+      "summary": "Inaccesible en estado salvaje en Pokémon Perla. Requiere transferir desde Evento GBA (Ori-Ticket / Isla Origen) mediante el Parque Compi (Ruta 221) o mediante intercambio con otras ediciones.",
       "locations": [
         {
           "area": "Parque Compi (Ruta 221)",
-          "method": "Transferencia desde Evento GBA (Orión / Isla Origen)"
+          "method": "Transferencia desde Evento GBA (Ori-Ticket / Isla Origen)"
         }
       ]
     },

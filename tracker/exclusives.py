@@ -1726,7 +1726,7 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
 
             385: 'Evento GBA (Disco Colosseum / Channel)',
 
-            386: 'Evento GBA (Orión / Isla Origen)',
+            386: 'Evento GBA (Ori-Ticket / Isla Origen)',
 
 
 
@@ -2431,7 +2431,7 @@ GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
         'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Blanco</strong>.<br><br>'
         '<strong>Mecánica del Bosque Blanco:</strong> En <em>Pokémon Blanco</em> se ubica el <strong>Bosque Blanco</strong> '
         '(el cual sustituye a la <em>Ciudad Negra</em> de Pokémon Negro). En este bosque habitan de forma salvaje hasta 32 familias clásicas '
-        'de generaciones 1 a 4 dependiendo de los residentes presentes, los cuales pueden renovarse o reclutarse visitando a otros jugadores '
+        'de generaciones 1 a 4 dependiendo de los residentes presentes, los cuales pueden renovarse o invitarse visitando a otros jugadores '
         'mediante la <strong>Zona Nexo</strong>. Por tanto, todas estas especies foráneas pueden obtenerse mediante intercambio '
         'local entre cartuchos de 5.ª Generación sin necesidad de conectar con juegos de generaciones anteriores (Pokétransfer) ni secuelas.<br><br>'
         '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Cottonee es exclusivo de Negro y Petilil de Blanco, '

@@ -565,22 +565,31 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Ruinas Pico',
         'badge_color': 'amber',
-        'summary': 'Encuentro estático en las Ruinas Pico (Ruta 228) al Nivel 30 al portar el Regigigas de evento en el equipo.',
-        'locations': [{'area': 'Ruinas Pico (Ruta 228)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'}]
+        'summary': 'Encuentro estático en las Ruinas Pico (Ruta 228) al Nivel 30 al portar el Regigigas de evento en el equipo (también transferible desde Rubí, Zafiro o Esmeralda mediante el Parque Compi).',
+        'locations': [
+            {'area': 'Ruinas Pico (Ruta 228)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'},
+            {'area': 'Parque Compi (Ruta 221)', 'method': 'Transferencia desde GBA: Rubí / Zafiro / Esmeralda'}
+        ]
     },
     378: {
         'type': 'legendary',
         'badge_label': 'Ruinas Iceberg',
         'badge_color': 'sky',
-        'summary': 'Encuentro estático en las Ruinas Iceberg (Monte Corona) al Nivel 30 al portar el Regigigas de evento en el equipo.',
-        'locations': [{'area': 'Ruinas Iceberg (Monte Corona)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'}]
+        'summary': 'Encuentro estático en las Ruinas Iceberg (Monte Corona) al Nivel 30 al portar el Regigigas de evento en el equipo (también transferible desde Rubí, Zafiro o Esmeralda mediante el Parque Compi).',
+        'locations': [
+            {'area': 'Ruinas Iceberg (Monte Corona)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'},
+            {'area': 'Parque Compi (Ruta 221)', 'method': 'Transferencia desde GBA: Rubí / Zafiro / Esmeralda'}
+        ]
     },
     379: {
         'type': 'legendary',
         'badge_label': 'Ruinas Hierro',
         'badge_color': 'slate',
-        'summary': 'Encuentro estático en las Ruinas Hierro (Isla Hierro) al Nivel 30 al portar el Regigigas de evento en el equipo.',
-        'locations': [{'area': 'Ruinas Hierro (Isla Hierro)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'}]
+        'summary': 'Encuentro estático en las Ruinas Hierro (Isla Hierro) al Nivel 30 al portar el Regigigas de evento en el equipo (también transferible desde Rubí, Zafiro o Esmeralda mediante el Parque Compi).',
+        'locations': [
+            {'area': 'Ruinas Hierro (Isla Hierro)', 'method': 'Encuentro estático al Nivel 30 (Evento Regigigas)'},
+            {'area': 'Parque Compi (Ruta 221)', 'method': 'Transferencia desde GBA: Rubí / Zafiro / Esmeralda'}
+        ]
     },
 
     # Singulares y Eventos Oficiales de Sinnoh
@@ -614,10 +623,18 @@ SPECIAL_OBTAINING = {
     },
     493: {
         'type': 'event',
-        'badge_label': 'Evento Oficial',
+        'badge_label': 'Evento de Distribución',
         'badge_color': 'amber',
-        'summary': 'Encuentro estático en la Sala del Origen sobre la Columna Lanza al Nivel 80 (requiere Flauta Azur de evento).',
-        'locations': [{'area': 'Sala del Origen (Columna Lanza)', 'method': 'Evento oficial con Flauta Azur al Nivel 80'}]
+        'summary': 'Inaccesible en estado salvaje en Pokémon Platino. La única forma legítima de conseguirlo fue mediante eventos oficiales de distribución de Nintendo (Nivel 100 vía Regalo Misterioso, ej. Arceus de película / Michina / Toys "R" Us) o mediante intercambio. La Flauta Azur de la Sala del Origen jamás fue distribuida oficialmente.',
+        'locations': [
+            {'area': 'Distribución oficial de Nintendo', 'method': 'Evento oficial / Regalo Misterioso (Nv. 100)'},
+            {'area': 'Sala del Origen (Columna Lanza)', 'method': 'Evento programado con Flauta Azur al Nv. 80 (no distribuido)'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • Flauta Azur y Sala del Origen',
+            'icon_url': '/media/items/azure-flute.png',
+            'text': 'En el código interno de Pokémon Platino (así como en Diamante y Perla) existe el evento de la <strong>Flauta Azur</strong> (<em>Azure Flute</em>): al tocarla en la cima de la <strong>Columna Lanza</strong> tras obtener la Pokédex Nacional y vencer al Alto Mando, aparece una escalera mística hacia la <strong>Sala del Origen</strong>, donde espera un Arceus salvaje al <strong>Nivel 80</strong>.<br><br>Sin embargo, este objeto clave <strong>jamás fue distribuido oficialmente en ningún país del mundo</strong> (Junichi Masuda confirmó que se descartó por considerarse confuso para los jugadores). Por tanto, la única vía legítima en 4.ª Generación fue recibir a Arceus directamente en distribuciones oficiales de Nintendo (como los repartos de la Película 12 / Michina / Toys "R" Us al Nivel 100) o mediante intercambio.'
+        }
     },
 
     # Encuentros Estáticos e In-Game Especiales de Sinnoh

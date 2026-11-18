@@ -655,6 +655,64 @@ SPECIAL_OBTAINING = {
         'locations': [{'area': 'Intercambio con Pokémon Diamante', 'method': 'Exclusivo de versión'}, DAYCARE_LOCATION]
     },
 
+    # Especies de crianza a partir de evoluciones salvajes en Perla
+    109: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Weezing en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    165: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Ledian en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    167: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Ariados en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    228: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Houndoom (salvaje en Rutas 214 y 215 con Poké Radar) en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    276: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Swellow en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    293: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Loudred o Exploud en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    353: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Obtenible mediante crianza de Banette en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [DAYCARE_LOCATION]
+    },
+    360: {
+        'type': 'breeding',
+        'badge_label': 'Crianza',
+        'badge_color': 'pink',
+        'summary': 'Eclosiona al criar a Wobbuffet equipado con Incienso Suave en la Guardería Pokémon de Pueblo Sosiego.',
+        'locations': [{'area': 'Pueblo Sosiego (Guardería Pokémon)', 'method': 'Crianza con Incienso Suave'}]
+    },
+
     # Gengar: Evolución por intercambio y salvaje por Inserción Dual (Cualquier GBA)
     94: {
         'type': 'evolution',

@@ -111657,12 +111657,12 @@
     "flavor_text": "Este Pokémon vaga por el tiempo. La hierba y los árboles crecen por los campos por donde pasa.",
     "obtaining_info": {
       "type": "mythical",
-      "summary": "Guardián del bosque obtenible mediante evento especial oficial (GS Ball en el altar del Encinar)",
+      "summary": "Guardián del bosque inaccesible en estado salvaje en Pokémon Oro (el evento de la GS Ball en el Encinar es exclusivo de Pokémon Cristal). Obtenible mediante distribución oficial de Nintendo o intercambio desde Pokémon Cristal.",
       "is_unique": true,
       "locations": [
         {
-          "area": "Encinar (Altar del Bosque)",
-          "method": "Evento GS Ball"
+          "area": "Evento Nintendo / Intercambio",
+          "method": "Distribución oficial o intercambio desde Pokémon Cristal"
         }
       ],
       "badge_color": "violet",

@@ -467,9 +467,10 @@ SPECIAL_OBTAINING = {
         'type': 'mythical',
         'badge_label': 'Evento Singular',
         'badge_color': 'amber',
-        'summary': 'Encuentro a Nv. 15 en el sótano del faro de Isla Libertad, accesible en barco desde Ciudad Porcelana con el Ticket Libertad de evento.',
+        'summary': 'Encuentro a Nv. 15 en el sótano del faro de Isla Libertad, accesible en barco desde Ciudad Porcelana con el Ticket Libertad de evento (también repartido posteriormente vía Wi-Fi como Victini de la Película 14).',
         'locations': [
-            {'area': 'Isla Libertad (Sótano del Faro)', 'method': 'Evento con Ticket Libertad (Nv. 15)'}
+            {'area': 'Isla Libertad (Sótano del Faro)', 'method': 'Evento con Ticket Libertad (Nv. 15)'},
+            {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi (Película 14)'}
         ]
     },
     638: {
@@ -512,7 +513,7 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Exclusivo Negro',
         'badge_color': 'slate',
-        'summary': 'Captura obligatoria a Nv. 50 en el Palacio de N durante el clímax de la historia principal (o en la Torre Duodraco si las cajas estaban llenas).',
+        'summary': 'Captura obligatoria a Nv. 50 en el Palacio de N durante el clímax de la historia principal (o en la Torre Duodraco si el equipo y cajas estaban llenos). Exclusivo de Pokémon Negro.',
         'locations': [
             {'area': 'Palacio de N (Sala del Trono)', 'method': 'Captura en la historia principal (Nv. 50)'},
             {'area': 'Torre Duodraco (Cima)', 'method': 'Reaparición si el equipo y cajas estaban llenos'}
@@ -540,27 +541,30 @@ SPECIAL_OBTAINING = {
         'type': 'mythical',
         'badge_label': 'Evento Singular',
         'badge_color': 'sky',
-        'summary': 'Pokémon singular de evento de 5.ª Generación. En el Claro Filosofía del Bosque Azulejo aprende Espada Santa junto a los Espadachines Místicos.',
+        'summary': 'Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Invierno 2013 por Wi-Fi) o intercambio. En el Pantano Teja aprende Sable Místico junto a Cobalion, Terrakion y Virizion.',
         'locations': [
-            {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi'}
+            {'area': 'Evento Oficial de Distribución', 'method': 'Regalo Misterioso (ej. Wi-Fi INV2013 / evento presencial)'},
+            {'area': 'Pantano Teja', 'method': 'Evento de historia para aprender Sable Místico'}
         ]
     },
     648: {
         'type': 'mythical',
         'badge_label': 'Evento Singular',
         'badge_color': 'pink',
-        'summary': 'Pokémon singular de evento de 5.ª Generación. En el bar de Ciudad Porcelana un guitarrista le enseña Canto Arcaico, permitiéndole cambiar a Forma Danza.',
+        'summary': 'Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Primavera 2013) o intercambio. En la cafetería La melodía del descanso de Ciudad Porcelana aprende Canto Arcaico, permitiéndole cambiar a Forma Danza en combate.',
         'locations': [
-            {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi'}
+            {'area': 'Evento Oficial de Distribución', 'method': 'Regalo Misterioso (ej. distribución PRI2013)'},
+            {'area': 'Ciudad Porcelana (La melodía del descanso)', 'method': 'Músico enseña Canto Arcaico'}
         ]
     },
     649: {
         'type': 'mythical',
         'badge_label': 'Evento Singular',
         'badge_color': 'purple',
-        'summary': 'Pokémon singular de evento de 5.ª Generación. En el Laboratorio P+P de la Ruta 18 un científico entrega los cartuchos PiroROM, HidroROM, FulgoROM y CrioROM.',
+        'summary': 'Inaccesible en estado salvaje; solo obtenible mediante distribución oficial de evento de 5.ª Generación (ej. Genesect Plasma por Wi-Fi en 2012) o intercambio. En el Laboratorio P+P de la Ruta 17 un científico entrega los cartuchos PiroROM y FulgoROM en Pokémon Negro.',
         'locations': [
-            {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi'}
+            {'area': 'Evento Oficial de Distribución', 'method': 'Tarjeta Misteriosa Wi-Fi (ej. Genesect Plasma)'},
+            {'area': 'Laboratorio P+P (Ruta 17)', 'method': 'Entrega de PiroROM y FulgoROM tras combate'}
         ]
     },
 }
@@ -638,6 +642,7 @@ BREEDING_PARENTS_BLACK = {
     333: ("Altaria (salvaje en Ruta 14)", "Altaria"),
     343: ("Claydol (salvaje en Castillo Ancestral)", "Claydol"),
     374: ("Metang o Metagross (salvajes en Boquete Gigante)", "Metang / Metagross"),
+    399: ("Bibarel (salvaje en Puente Villa)", "Bibarel"),
     401: ("Kricketune (salvaje en Solar de los Sueños)", "Kricketune"),
     420: ("Cherrim (salvaje en Ruta 12)", "Cherrim"),
     425: ("Drifblim (salvaje en Boquete Gigante, Ruta 13 y Ruta 14)", "Drifblim"),
@@ -702,6 +707,245 @@ SPECIAL_NOTES_BLACK = {
         ),
         "tag": "Evento Especial",
         "icon": "/media/items/dusk-ball.png",
+    }],
+    # Eventos históricos, mecánicas en Teselia y transferencias de Legendarios y Singulares
+    150: [{
+        "title": "Evento Histórico • Mewtwo Primavera 2012",
+        "text": (
+            "Además de transferirlo desde 4.ª Generación vía Pokétransfer, Mewtwo fue repartido directamente en "
+            "Pokémon Negro y Blanco mediante Regalo Misterioso Wi-Fi (evento Primavera 2012 / FEB2012, al Nv. 70 "
+            "con Bola Voltio, Onda Mental y Roca del Rey; y en Japón vía Pokémon Smash! / Strongest Return)."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    151: [{
+        "title": "Nota de Transferencia • Mew",
+        "text": (
+            "Mew no contó con distribución oficial propia para Pokémon Negro y Blanco. La vía canónica en Teselia "
+            "consiste en transferirlo mediante el Laboratorio de Pokétransfer (Ruta 15) desde un cartucho de 4.ª "
+            "Generación (obtenido originalmente en My Pokémon Ranch, eventos Wi-Fi de 4.ª Gen o Esmeralda)."
+        ),
+        "tag": "Pokétransfer",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    243: [{
+        "title": "Desbloqueo Especial • Trasladador PKMN",
+        "text": (
+            "Si transfieres al Raikou variocolor de evento de 4.ª Generación (INV2011 / GAMESTP) mediante el "
+            "Trasladador PKMN de Ciudad Porcelana (en lugar del Pokétransfer normal), desbloquearás el encuentro "
+            "especial contra Zoroark (#571) al Nv. 25 en el Bosque de los Perdidos."
+        ),
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    244: [{
+        "title": "Desbloqueo Especial • Trasladador PKMN",
+        "text": (
+            "Si transfieres al Entei variocolor de evento de 4.ª Generación (INV2011 / GAMESTP) mediante el "
+            "Trasladador PKMN de Ciudad Porcelana (en lugar del Pokétransfer normal), desbloquearás el encuentro "
+            "especial contra Zoroark (#571) al Nv. 25 en el Bosque de los Perdidos."
+        ),
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    245: [{
+        "title": "Desbloqueo Especial • Trasladador PKMN",
+        "text": (
+            "Si transfieres al Suicune variocolor de evento de 4.ª Generación (INV2011 / GAMESTP) mediante el "
+            "Trasladador PKMN de Ciudad Porcelana (en lugar del Pokétransfer normal), desbloquearás el encuentro "
+            "especial contra Zoroark (#571) al Nv. 25 en el Bosque de los Perdidos."
+        ),
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    251: [{
+        "title": "Desbloqueo Especial • Trasladador PKMN",
+        "text": (
+            "Aunque Celebi no tuvo reparto propio en Negro y Blanco, transferir un Celebi de evento de 4.ª Generación "
+            "(INV2011 / Película 13) mediante el Trasladador PKMN de Ciudad Porcelana activa la entrega exclusiva "
+            "de Zorua (#570) al Nv. 10 en la sede de Game Freak."
+        ),
+        "tag": "Trasladador PKMN",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    382: [{
+        "title": "Evento Histórico • Pokémon Center Fukuoka",
+        "text": (
+            "En Occidente solo puede conseguirse transfiriéndolo desde 4.ª Generación (HeartGold o juegos de GBA "
+            "vía Parque Compi). De forma anecdótica, en Japón fue repartido presencialmente en Pokémon Center "
+            "Fukuoka (2012, al Nv. 100) para ediciones de 5.ª Generación."
+        ),
+        "tag": "Evento Japón",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    383: [{
+        "title": "Evento Histórico • Pokémon Center Fukuoka",
+        "text": (
+            "En Occidente solo puede conseguirse transfiriéndolo desde 4.ª Generación (SoulSilver o juegos de GBA "
+            "vía Parque Compi). De forma anecdótica, en Japón fue repartido presencialmente en Pokémon Center "
+            "Fukuoka (2012, al Nv. 100) para ediciones de 5.ª Generación."
+        ),
+        "tag": "Evento Japón",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    384: [{
+        "title": "Evento Histórico • Rayquaza Variocolor (Japón)",
+        "text": (
+            "Además de transferirlo desde 4.ª Generación, en Japón se distribuyó en 2012 el famoso Rayquaza negro "
+            "variocolor (15.º Aniversario / Pokémon + Nobunaga's Ambition) con el movimiento V de Fuego para "
+            "juegos de 5.ª Generación."
+        ),
+        "tag": "Evento Japón",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    385: [{
+        "title": "Nota de Transferencia • Jirachi",
+        "text": (
+            "Jirachi no tuvo distribución internacional en Pokémon Negro y Blanco (en Japón recibió un reparto local "
+            "en Pokémon Center Tohoku en 2013 al final de la 5.ª Generación). Su vía principal es el Pokétransfer "
+            "desde 4.ª Generación (repartos VER2010 o transferencia previa desde Pokémon Channel / Colosseum)."
+        ),
+        "tag": "Pokétransfer",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    386: [{
+        "title": "Evento Deoxys Plasma y Cambio de Forma",
+        "text": (
+            "Además de transferirlo desde 4.ª Generación, Deoxys fue repartido en Pokémon Negro y Blanco vía Wi-Fi "
+            "(Deoxys Plasma en verano de 2013, Nv. 100 con Vidasfera; y Deoxys Masuda en Japón). En el Museo de "
+            "Ciudad Esmalte puedes examinar el meteorito expuesto para alternar entre sus 4 formas."
+        ),
+        "tag": "Evento y Formas",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    483: [{
+        "title": "Evento Histórico • Trío Creación Variocolor",
+        "text": (
+            "Además de transferirlo desde D/P/Pt o las Ruinas de Sinjoh (HG/SS), Dialga fue distribuido en su "
+            "versión variocolor en tiendas oficiales durante el verano de 2013 (VER2013 / SUM2013) para juegos de "
+            "5.ª Generación. El Trío Sombrío entrega su Diamansfera en el Puente Progreso en el post-game."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/adamant-orb.png",
+    }],
+    484: [{
+        "title": "Evento Histórico • Trío Creación Variocolor",
+        "text": (
+            "Además de transferirlo desde D/P/Pt o las Ruinas de Sinjoh (HG/SS), Palkia fue distribuido en su "
+            "versión variocolor en tiendas oficiales durante el verano de 2013 (VER2013 / SUM2013) para juegos de "
+            "5.ª Generación. El Trío Sombrío entrega su Lustresfera en el Puente Progreso en el post-game."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/lustrous-orb.png",
+    }],
+    487: [{
+        "title": "Evento Variocolor y Griseosfera en Teselia",
+        "text": (
+            "Además de transferirlo desde D/P/Pt o las Ruinas de Sinjoh (HG/SS), Giratina fue distribuido en su "
+            "versión variocolor en tiendas oficiales durante 2013 (VER2013 / SUM2013) para juegos de 5.ª Generación. "
+            "En el post-game, el Trío Sombrío te entrega la Griseosfera en el Puente Progreso para activar su Forma Origen."
+        ),
+        "tag": "Evento y Forma",
+        "icon": "/media/items/griseous-orb.png",
+    }],
+    489: [{
+        "title": "Crianza de Manaphy en Teselia",
+        "text": (
+            "Si ya has transferido un Manaphy desde 4.ª Generación, puedes dejarlo junto a Ditto en la Guardería de "
+            "la Ruta 3 para obtener huevos de Phione directamente en Pokémon Negro (Phione nunca evoluciona a Manaphy)."
+        ),
+        "tag": "Crianza",
+        "icon": "/media/items/mystery-egg.png",
+    }],
+    490: [{
+        "title": "Nota Histórica • Manaphy y Phione",
+        "text": (
+            "Manaphy no se repartió directamente en Pokémon Negro y Blanco; debe transferirse desde 4.ª Generación "
+            "(donde procedía del huevo especial de Pokémon Ranger o eventos Wi-Fi). Al criarlo con Ditto en la "
+            "Guardería de la Ruta 3, sus huevos siempre eclosionan en Phione (#489)."
+        ),
+        "tag": "Pokétransfer",
+        "icon": "/media/items/mystery-egg.png",
+    }],
+    491: [{
+        "title": "Evento Histórico • Darkrai Mayo 2012",
+        "text": (
+            "Además de transferirlo desde 4.ª Generación (Tarjeta Miembro / eventos), Darkrai fue distribuido "
+            "directamente en Pokémon Negro y Blanco vía Regalo Misterioso Wi-Fi (evento Mayo 2012 / 2012MAY, al "
+            "Nv. 50 equipado con Baya Enigma; y en Japón durante el invierno 2010–2011)."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    492: [{
+        "title": "Evento en Japón y Flor Gracídea",
+        "text": (
+            "En Occidente requiere transferirse desde 4.ª Generación (Carta de Oak / eventos), aunque en Japón "
+            "contó con un reparto local en los Pokémon Center (dic. 2011–ene. 2012). En Pokémon Negro, una chica "
+            "en el Centro Pokémon de Pueblo Ladrillo te entrega la Gracídea para cambiarlo a Forma Cielo."
+        ),
+        "tag": "Evento y Forma",
+        "icon": "/media/items/gracidea.png",
+    }],
+    493: [{
+        "title": "Evento Histórico • Arceus de Pokémon Global Link",
+        "text": (
+            "Aunque su vía principal actual es transferirlo desde eventos de 4.ª Generación vía Pokétransfer "
+            "(ya que la Flauta Azur jamás se distribuyó), Arceus también fue repartido oficialmente para Pokémon "
+            "Negro y Blanco a través del Dream World / Pokémon Global Link tras ganar la encuesta mundial de "
+            "popularidad (contraseña internacional «ARCEUSVOTE» en 2012, al Nv. 100 en Dream Ball; Japón 2010–2011). "
+            "En Teselia, sus 16 Tablas se hallan en las Ruinas Submarinas y en la Ruta 13."
+        ),
+        "tag": "Evento PGL",
+        "icon": "/media/items/dream-ball.png",
+    }],
+    494: [{
+        "title": "Evento Histórico • Victini Película 14",
+        "text": (
+            "Además del Ticket Libertad de lanzamiento para capturarlo al Nv. 15 en Isla Libertad, Victini volvió "
+            "a repartirse por Wi-Fi durante la promoción de la Película 14 (Nv. 50 con el movimiento exclusivo V de Fuego)."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    643: [{
+        "title": "Evento Histórico • Primavera 2012",
+        "text": (
+            "Durante la promoción Primavera 2012 (PRI2012 / SPR2012) vía Wi-Fi se repartió al dragón contrario "
+            "a cada edición: Zekrom para Pokémon Negro y Reshiram para Pokémon Blanco (al Nv. 100 con movimientos especiales)."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    644: [{
+        "title": "Evento Histórico • Zekrom Primavera 2012",
+        "text": (
+            "Aunque Zekrom es exclusivo de Pokémon Blanco, en su época se distribuyó directamente para Pokémon Negro "
+            "vía Wi-Fi mediante el evento Primavera 2012 (PRI2012 / SPR2012, al Nv. 100 con Gema Dragón)."
+        ),
+        "tag": "Evento Gen 5",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    647: [{
+        "title": "Evento en Pantano Teja • Sable Místico",
+        "text": (
+            "Keldeo fue repartido mediante Regalo Misterioso en eventos oficiales (ej. Wi-Fi Invierno 2013 / INV2013). "
+            "Al llevarlo al Pantano Teja junto a Cobalion, Terrakion y Virizion en el equipo, un anciano narra su "
+            "historia y Keldeo aprende Sable Místico (en Negro y Blanco originales aún no existe su Forma Brío)."
+        ),
+        "tag": "Evento Singular",
+        "icon": "/media/items/cherish-ball.png",
+    }],
+    649: [{
+        "title": "Cartuchos exclusivos por edición",
+        "text": (
+            "Genesect fue repartido vía Wi-Fi (Genesect Plasma, otoño de 2012). En el Laboratorio P+P de la Ruta 17, "
+            "tras derrotar al científico llevando a Genesect en el equipo, en Pokémon Negro entrega únicamente el "
+            "PiroROM (Fuego) y el FulgoROM (Eléctrico); HidroROM y CrioROM deben intercambiarse desde Pokémon Blanco."
+        ),
+        "tag": "Evento y Cartuchos",
+        "icon": "/media/items/burn-drive.png",
     }],
 }
 
@@ -921,8 +1165,27 @@ def main():
                     'item_slug': item_slug,
                 }
             }
+        elif nat_id in BREEDING_PARENTS_BLACK:
+            parent_desc, loc_parents = BREEDING_PARENTS_BLACK[nat_id]
+            summary = f"Inaccesible en estado salvaje; se obtiene mediante crianza de {parent_desc} en la Guardería de la Ruta 3."
+            loc_list = [{'area': 'Ruta 3 (Guardería Pokémon)', 'method': f'Crianza de huevo ({loc_parents})'}]
+            obt_info = {
+                'type': 'other',
+                'badge_label': 'Crianza',
+                'badge_color': 'zinc',
+                'summary': summary,
+                'locations': loc_list
+            }
         elif nat_id in white_exclusives:
-            summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con el Bosque Blanco)."
+            non_white_forest = {577, 627, 642, 644, 10, 46, 200, 261, 312, 314}
+            if nat_id == 642:
+                summary = "Inaccesible en estado salvaje en Pokémon Negro. Legendario errante exclusivo de Pokémon Blanco (requiere intercambio para registrarlo y desbloquear a Landorus en el Santuario Abundancia)."
+            elif nat_id == 644:
+                summary = "Inaccesible en estado salvaje en Pokémon Negro. Legendario de portada exclusivo de Pokémon Blanco (requiere intercambio; en su época también fue repartido por evento Wi-Fi Primavera 2012)."
+            elif nat_id in non_white_forest:
+                summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio)."
+            else:
+                summary = "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo del Bosque Blanco de Pokémon Blanco (requiere intercambio o conexión mediante Zona Nexo con dicho bosque)."
             loc_list = [{'area': 'Intercambio con Pokémon Blanco', 'method': 'Exclusivo de versión'}]
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
@@ -935,25 +1198,40 @@ def main():
             }
         elif nat_id in black_transfers:
             origin_desc = black_origins.get(nat_id, "Pokétransfer (Ruta 15)")
-            summary = f"Inaccesible en estado salvaje en Teselia. Reclutar mediante {origin_desc} desde cartuchos de 4.ª Generación."
+            transfer_event_summaries = {
+                150: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; en su época también se repartió por evento Wi-Fi (Primavera 2012).",
+                151: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (My Pokémon Ranch o eventos previos).",
+                243: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (el ejemplar variocolor de evento activa a Zoroark en el Trasladador PKMN).",
+                244: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (el ejemplar variocolor de evento activa a Zoroark en el Trasladador PKMN).",
+                245: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (el ejemplar variocolor de evento activa a Zoroark en el Trasladador PKMN).",
+                251: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (un Celebi de evento vía Trasladador PKMN desbloquea a Zorua).",
+                382: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (también tuvo un reparto local en Japón en 2012).",
+                383: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (también tuvo un reparto local en Japón en 2012).",
+                384: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (también tuvo un reparto variocolor en Japón en 2012).",
+                385: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (procedente de eventos o Pokémon Channel / Colosseum).",
+                386: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también se repartió en Negro y Blanco vía Wi-Fi (Deoxys Plasma, 2013).",
+                483: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también fue repartido variocolor en tiendas en 2013 (VER2013).",
+                484: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también fue repartido variocolor en tiendas en 2013 (VER2013).",
+                487: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también fue repartido variocolor en tiendas en 2013 (VER2013).",
+                489: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación, o criarlo con Ditto en la Guardería de la Ruta 3 a partir de un Manaphy transferido.",
+                490: "Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (Huevo de Pokémon Ranger o eventos).",
+                491: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también se repartió vía Wi-Fi en Negro y Blanco (Mayo 2012).",
+                492: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación (tuvo un reparto local en Japón en 2011–2012).",
+                493: "Inaccesible en estado salvaje en Teselia. Su método principal consiste en transferirlo mediante Pokétransfer (Ruta 15) desde cartuchos de 4.ª Generación; también se repartió en su época en Pokémon Negro y Blanco vía Pokémon Global Link (Dream World).",
+            }
+            summary = transfer_event_summaries.get(
+                nat_id,
+                f"Inaccesible en estado salvaje en Teselia. Requiere transferirlo mediante {origin_desc} desde cartuchos de 4.ª Generación."
+            )
             loc_list = [{'area': 'Laboratorio de Pokétransfer (Ruta 15)', 'method': f"{origin_desc}"}]
-            if is_hatchable:
+            if nat_id == 489:
+                loc_list.append(DAYCARE_LOCATION)
+            elif is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
             obt_info = {
                 'type': 'transfer',
                 'badge_label': 'Pokétransfer',
                 'badge_color': 'amber',
-                'summary': summary,
-                'locations': loc_list
-            }
-        elif nat_id in BREEDING_PARENTS_BLACK:
-            parent_desc, loc_parents = BREEDING_PARENTS_BLACK[nat_id]
-            summary = f"Inaccesible en estado salvaje; se obtiene mediante crianza de {parent_desc} en la Guardería de la Ruta 3."
-            loc_list = [{'area': 'Ruta 3 (Guardería Pokémon)', 'method': f'Crianza de huevo ({loc_parents})'}]
-            obt_info = {
-                'type': 'other',
-                'badge_label': 'Crianza',
-                'badge_color': 'zinc',
                 'summary': summary,
                 'locations': loc_list
             }

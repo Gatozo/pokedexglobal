@@ -4759,7 +4759,7 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertIn("Ander", black_by_num[446].obtaining_info.get("summary", ""))
         self.assertIn("Caramelo Furia", black_by_num[555].obtaining_info.get("summary", ""))
         self.assertIn("Trasladador PKMN", black_by_num[570].obtaining_info.get("summary", ""))
-        self.assertIn("PiroROM, HidroROM, FulgoROM y CrioROM", black_by_num[649].obtaining_info.get("summary", ""))
+        self.assertIn("PiroROM y FulgoROM", black_by_num[649].obtaining_info.get("summary", ""))
 
         # Puente Fayenza se mantiene con el nombre habitual del juego
         ducklett_areas = [l.get("area", "") for l in black_by_num[580].obtaining_info.get("locations", [])]
@@ -5170,6 +5170,91 @@ class GlobalFormContractInvariantsTests(TestCase):
             gen3_by = {e.pokemon.national_number: e for e in get_compiled_catalog(gen3_slug, force_reload=True)}
             self.assertEqual(gen3_by[298].evolution_stone["slug"], "sea-incense")
             self.assertEqual(gen3_by[360].evolution_stone["slug"], "lax-incense")
+
+    def test_legendaries_mythicals_events_and_no_reclutar_across_catalogs(self):
+        """Garantiza eliminación total de 'reclutar' (no-NPC), ausencia de fallbacks genéricos y notas claras en legendarios/eventos."""
+        import re
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache, CATALOGS_DIR
+        from tracker.exclusives import GAME_VERSION_EXCLUSIVES_NOTICES
+        from tracker.utils import get_evolution_stones_catalog
+
+        clear_catalog_memory_cache()
+
+        # 1. Cero apariciones de 'reclut*' fuera de nombres oficiales de entrenadores (Equipo Galaxia / Equipo Plasma)
+        reclut_re = re.compile(r"reclut", re.IGNORECASE)
+        for cat_path in sorted(CATALOGS_DIR.glob("*.json")):
+            entries = get_compiled_catalog(cat_path.stem, force_reload=True)
+            for e in entries:
+                blob = json.dumps(
+                    {
+                        "obtaining": e.obtaining_info,
+                        "notes": e.notes,
+                        "stone": e.evolution_stone,
+                    },
+                    ensure_ascii=False,
+                )
+                for m in reclut_re.finditer(blob):
+                    ctx = blob[max(0, m.start() - 30):min(len(blob), m.end() + 40)]
+                    self.assertTrue(
+                        "Equipo Galaxia" in ctx or "Equipo Plasma" in ctx,
+                        f"{cat_path.name} #{e.pokemon.national_number} ({e.pokemon.display_name}) contiene 'reclut' indebido: {ctx}",
+                    )
+
+                obt = e.obtaining_info or {}
+                summary = obt.get("summary", "")
+                badge = obt.get("badge_label", "")
+                self.assertNotEqual(badge, "Especial", f"{cat_path.name} #{e.pokemon.national_number} cayó en badge 'Especial'")
+                self.assertNotIn("Obtención mediante evento especial", summary)
+                self.assertNotIn("Obtención mediante distribución oficial o evento de Nintendo", summary)
+                self.assertNotIn("Orión", json.dumps(obt, ensure_ascii=False))
+                self.assertNotIn("Oro SoulSilver", json.dumps(obt, ensure_ascii=False))
+                self.assertNotIn("Kyogre de SoulSilver", json.dumps(obt, ensure_ascii=False))
+
+        stones_blob = json.dumps(get_evolution_stones_catalog(), ensure_ascii=False)
+        self.assertNotIn("reclutable", stones_blob.lower())
+        self.assertNotIn("reclutar", stones_blob.lower())
+        self.assertNotIn("reclut", GAME_VERSION_EXCLUSIVES_NOTICES["black"].lower())
+
+        # 2. Pokémon Negro: legendarios, singulares, eventos históricos y exclusivos sin Bosque Blanco falso
+        black_reg = {e.pokemon.national_number: e for e in get_compiled_catalog("black", force_reload=True)}
+        black_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("black_national", force_reload=True)}
+
+        self.assertIn("Pokétransfer", black_nat[493].obtaining_info["summary"])
+        self.assertIn("Pokémon Global Link", black_nat[493].obtaining_info["summary"])
+        self.assertIn("ARCEUSVOTE", black_nat[493].notes[0]["text"])
+
+        for nid in (150, 151, 243, 244, 245, 251, 382, 383, 384, 385, 386, 483, 484, 487, 489, 490, 491, 492, 493):
+            self.assertTrue(black_nat[nid].notes, f"Falta nota explicativa en #{nid} en black_national")
+
+        self.assertNotIn("Bosque Blanco", black_reg[642].obtaining_info["summary"])
+        self.assertNotIn("Bosque Blanco", black_reg[644].obtaining_info["summary"])
+        self.assertIn("Primavera 2012", black_reg[644].notes[0]["text"])
+        self.assertIn("Pantano Teja", black_reg[647].obtaining_info["summary"])
+        self.assertIn("Sable Místico", black_reg[647].obtaining_info["summary"])
+        self.assertIn("La melodía del descanso", black_reg[648].obtaining_info["summary"])
+        self.assertIn("PiroROM y FulgoROM", black_reg[649].obtaining_info["summary"])
+        self.assertEqual(black_nat[399].obtaining_info["badge_label"], "Crianza")
+
+        # 3. Platino, Perla, HG/SS y Oro/Plata: notas de eventos y métodos corregidos
+        plat_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("platinum_national", force_reload=True)}
+        self.assertIn("Flauta Azur", plat_nat[493].obtaining_info["historical_note"]["text"])
+        self.assertIn("jamás fue distribuido", plat_nat[493].obtaining_info["historical_note"]["text"])
+        self.assertIn("Parque Compi", plat_nat[377].obtaining_info["summary"])
+
+        pearl_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("pearl_national", force_reload=True)}
+        for pid in (109, 165, 167, 228, 276, 293, 353, 360):
+            self.assertEqual(pearl_nat[pid].obtaining_info["type"], "breeding", f"#{pid} en Perla debe ser breeding")
+
+        ss_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver_national", force_reload=True)}
+        self.assertIn("Kyogre de HeartGold", ss_nat[384].obtaining_info["summary"])
+        self.assertIn("FAL2010", ss_nat[151].obtaining_info["historical_note"]["text"])
+        self.assertIn("Giovanni", ss_nat[251].obtaining_info["historical_note"]["text"])
+        self.assertIn("Ruinas de Sinjoh", ss_nat[493].obtaining_info["historical_note"]["text"])
+
+        for g2_slug in ("gold", "silver"):
+            g2_cat = {e.pokemon.national_number: e for e in get_compiled_catalog(g2_slug, force_reload=True)}
+            self.assertIn("exclusivo de Pokémon Cristal", g2_cat[251].obtaining_info["summary"])
+
 
 
 

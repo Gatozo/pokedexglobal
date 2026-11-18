@@ -13246,11 +13246,11 @@
     "flavor_text": "Dicen que Mew posee el mapa genético de todos los Pokémon. Puede hacerse invisible cuando quiere, así que pasa desapercibido cada vez que se le acerca alguien.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en Hoenn. Requiere Evento oficial Isla Suprema (Mapa Viejo). No es posible transferir desde Gen 1 o Gen 2.",
+      "summary": "No disponible en Hoenn. Requiere intercambio desde Pokémon Esmeralda (Isla Suprema con Mapa Viejo) o evento oficial. No es posible transferir desde Gen 1 o Gen 2.",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
-          "method": "Evento oficial Isla Suprema (Mapa Viejo)"
+          "method": "intercambio desde Pokémon Esmeralda (Isla Suprema con Mapa Viejo) o evento oficial"
         }
       ],
       "badge_color": "rose",

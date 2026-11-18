@@ -716,14 +716,14 @@ def main():
             ]
         },
         386: {
-            'type': 'legendary',
+            'type': 'mythical',
             'badge_label': 'Mítico / Evento',
             'badge_color': 'purple',
             'summary': 'Isla Origen al Nivel 30 salvaje tras resolver el puzle del triángulo negro mediante el evento oficial del Ori-Ticket (Aurora Ticket). En Pokémon Esmeralda adopta su Forma Velocidad.',
             'locations': [{'area': 'Isla Origen (Evento Ori-Ticket)', 'method': 'Salvaje estático Nivel 30 (Forma Velocidad)'}]
         },
         151: {
-            'type': 'legendary',
+            'type': 'mythical',
             'badge_label': 'Mítico / Evento',
             'badge_color': 'purple',
             'summary': 'Isla Suprema al Nivel 30 salvaje en la espesura de la selva mediante el evento oficial del Mapa Viejo (exclusivo de Pokémon Esmeralda).',

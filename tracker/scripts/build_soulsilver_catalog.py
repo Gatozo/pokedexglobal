@@ -1,5 +1,5 @@
 """
-Script para compilar y generar los catálogos oficiales JSON de Pokémon Oro SoulSilver
+Script para compilar y generar los catálogos oficiales JSON de Pokémon Plata SoulSilver
 para PokedexGlobal a 0 ms SQL:
 1. Pokédex Regional de Johto Actualizada: tracker/data/catalogs/soulsilver.json (256 especies canónicas)
 2. Pokédex Nacional: tracker/data/catalogs/soulsilver_national.json (493 especies canónicas)
@@ -462,7 +462,7 @@ SPECIAL_OBTAINING = {
         'type': 'legendary',
         'badge_label': 'Legendario Especial',
         'badge_color': 'emerald',
-        'summary': 'Encuentro en la Torre Oculta a Nivel 50 llevando la Esfera Verde (obtenida de Oak tras mostrarle a Kyogre de SoulSilver y a Groudon de SoulSilver).',
+        'summary': 'Encuentro en la Torre Oculta a Nivel 50 llevando la Esfera Verde (obtenida de Oak tras mostrarle a Kyogre de HeartGold y a Groudon de SoulSilver).',
         'locations': [
             {'area': 'Torre Oculta (Ruta 47)', 'method': 'Encuentro legendario a Nivel 50 con Esfera Verde (del Prof. Oak al mostrarle a Kyogre de HG y Groudon de SS)'}
         ]
@@ -1232,7 +1232,7 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir',
         'badge_color': 'purple',
-        'summary': 'Inaccesible en estado salvaje en Pokémon Oro SoulSilver (el Fósil Cráneo es exclusivo del Subsuelo de Sinnoh en Diamante). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver (el Fósil Cráneo es exclusivo del Subsuelo de Sinnoh en Diamante). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde Fósil Cráneo (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado'},
             DAYCARE_LOCATION
@@ -1282,7 +1282,7 @@ SPECIAL_OBTAINING = {
         'type': 'transfer',
         'badge_label': 'Transferir',
         'badge_color': 'purple',
-        'summary': 'Inaccesible en estado salvaje en Pokémon Oro SoulSilver (el Fósil Coraza es exclusivo del Subsuelo de Sinnoh en Perla). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver (el Fósil Coraza es exclusivo del Subsuelo de Sinnoh en Perla). Requiere transferir desde D/P/Pt (también obtenible mediante crianza).',
         'locations': [
             {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde Fósil Coraza (D/P/Pt) o revitalización en el Museo de Ciudad Plateada si se transfiere equipado'},
             DAYCARE_LOCATION
@@ -1338,8 +1338,57 @@ SPECIAL_OBTAINING = {
         'historical_note': {
             'title': 'Nota Histórica • El Huevo de Manaphy y Pokémon Ranger',
             'icon_url': '/media/items/mystery-egg.png',
-            'text': 'A diferencia de Pokémon Diamante, Perla y Platino (cuyo huevo podía transferirse desde el primer Pokémon Ranger mediante una contraseña offline permanente), en Pokémon Oro SoulSilver y Plata SoulSilver la transferencia del Huevo de Manaphy requería la misión especial de Pokémon Ranger: Trazos de Luz. Dicha misión fue distribuida exclusivamente a través de la Conexión Wi-Fi de Nintendo por tiempo limitado entre octubre de 2010 y enero de 2011, por lo que tras el cierre de los servidores oficiales de Nintendo DS ya no es posible descargar la misión legítimamente.<br><br>Asimismo, aunque Manaphy pertenece al grupo de cría de agua y puede reproducirse con Ditto en la Guardería de la Ruta 34, de sus huevos siempre nacerá Phione, siendo imposible obtener un nuevo Manaphy mediante crianza.'
+            'text': 'A diferencia de Pokémon Diamante, Perla y Platino (cuyo huevo podía transferirse desde el primer Pokémon Ranger mediante una contraseña offline permanente), en Pokémon Oro HeartGold y Plata SoulSilver la transferencia del Huevo de Manaphy requería la misión especial de Pokémon Ranger: Trazos de Luz. Dicha misión fue distribuida exclusivamente a través de la Conexión Wi-Fi de Nintendo por tiempo limitado entre octubre de 2010 y enero de 2011, por lo que tras el cierre de los servidores oficiales de Nintendo DS ya no es posible descargar la misión legítimamente.<br><br>Asimismo, aunque Manaphy pertenece al grupo de cría de agua y puede reproducirse con Ditto en la Guardería de la Ruta 34, de sus huevos siempre nacerá Phione, siendo imposible obtener un nuevo Manaphy mediante crianza.'
         }
+    },
+    151: {
+        'type': 'transfer',
+        'badge_label': 'Transferir / Evento',
+        'badge_color': 'purple',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver. Se obtiene mediante transferencia desde Pokémon Diamante, Perla o Platino (My Pokémon Ranch o eventos), desde Pokémon Esmeralda (Isla Suprema vía Parque Compi) o mediante el evento Wi-Fi del 10.º Aniversario (Otoño 2010 / FAL2010).',
+        'locations': [
+            {'area': 'Parque Compi / Intercambio', 'method': 'Transferencia desde D/P/Pt (My Pokémon Ranch) o Esmeralda (Isla Suprema)'},
+            {'area': 'Evento Oficial de Nintendo', 'method': 'Regalo Misterioso Wi-Fi (10.º Aniversario / FAL2010)'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • Mew en HeartGold y SoulSilver',
+            'icon_url': '/media/items/cherish-ball.png',
+            'text': 'Para conmemorar el 10.º aniversario de Pokémon Oro y Plata, Nintendo distribuyó a <strong>Mew</strong> (Nv. 5, EO: FAL2010) vía Regalo Misterioso Wi-Fi en octubre de 2010 directamente para <em>HeartGold</em> y <em>SoulSilver</em>.<br><br>Además, puede transferirse desde <em>My Pokémon Ranch</em> (vía Diamante o Perla, ya que HGSS no son compatibles directamente con Ranch) o desde <em>Pokémon Esmeralda</em> (Isla Suprema) a través del Parque Compi.'
+        }
+    },
+    251: {
+        'type': 'event',
+        'badge_label': 'Evento / Encinar',
+        'badge_color': 'emerald',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver (el evento de la GS Ball no existe en los remakes). Requiere transferencia desde eventos oficiales de 4.ª Generación (ej. INV2011 / Película 13) o Disco Bonus de Colosseum (Japón). Llevar un Celebi de evento al Altar del Encinar activa un evento especial con Giovanni.',
+        'locations': [
+            {'area': 'Evento Oficial / Intercambio D/P/Pt', 'method': 'Distribución oficial (ej. INV2011) o Disco Bonus Colosseum (Japón)'},
+            {'area': 'Encinar (Altar del Bosque)', 'method': 'Llevar a Celebi de evento activa la historia con Giovanni'}
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • El Altar del Encinar y Giovanni',
+            'icon_url': '/media/items/gs-ball.png',
+            'text': 'A diferencia de <em>Pokémon Cristal</em>, en <em>HeartGold</em> y <em>SoulSilver</em> no se captura a Celebi con la GS Ball. En su lugar, al llevar un <strong>Celebi de evento</strong> (como el repartido en INV2011 / WIN2011) al santuario del <strong>Encinar</strong>, Celebi te transporta atrás en el tiempo junto a Eco/Lira para descubrir el pasado de Silver y combatir contra <strong>Giovanni</strong> en los Lagos de Tohjo.'
+        }
+    },
+    491: {
+        'type': 'event',
+        'badge_label': 'Evento Especial',
+        'badge_color': 'slate',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver. Requiere intercambio desde Pokémon Diamante, Perla o Platino (evento de la Tarjeta Miembro en Isla Lunanueva) o una distribución oficial de Nintendo.',
+        'locations': [
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde evento Isla Lunanueva o distribución oficial'}
+        ]
+    },
+    492: {
+        'type': 'event',
+        'badge_label': 'Evento Especial',
+        'badge_color': 'emerald',
+        'summary': 'Inaccesible en estado salvaje en Pokémon Plata SoulSilver. Requiere intercambio desde Pokémon Diamante, Perla o Platino (evento de la Carta de Oak en Paraíso Floral) o una distribución oficial. En Ciudad Trigal (Floristería) te entregan la Gracídea para su Forma Cielo.',
+        'locations': [
+            {'area': 'Intercambio con D/P/Pt', 'method': 'Transferencia desde evento Paraíso Floral o distribución oficial'},
+            {'area': 'Ciudad Trigal (Floristería)', 'method': 'Entrega de la Gracídea llevando a Shaymin'}
+        ]
     },
     493: {
         'type': 'event',
@@ -1348,7 +1397,12 @@ SPECIAL_OBTAINING = {
         'summary': 'Inaccesible en estado salvaje. Requiere distribución oficial de evento de Nintendo (o intercambio con D/P/Pt). Activa el evento místico de las Ruinas de Sinjoh al llevarlo como acompañante.',
         'locations': [
             {'area': 'Evento oficial de Nintendo / D/P/Pt', 'method': 'Distribución oficial de evento (activa Ruinas de Sinjoh)'}
-        ]
+        ],
+        'historical_note': {
+            'title': 'Nota Histórica • Ruinas de Sinjoh',
+            'icon_url': '/media/items/cherish-ball.png',
+            'text': 'En 4.ª Generación, Arceus solo se obtuvo legítimamente mediante distribuciones oficiales de Nintendo (como los repartos de la Película 12 / Michina / Toys "R" Us), ya que la Flauta Azur jamás se distribuyó en D/P/Pt. Al llevar un Arceus de evento al primer puesto del equipo en las <strong>Ruinas Alfa</strong>, desbloqueas las <strong>Ruinas de Sinjoh</strong> junto a Cintia para crear a Dialga, Palkia o Giratina al Nivel 1.'
+        }
     },
     383: {
         'type': 'legendary',
@@ -2008,7 +2062,7 @@ def main():
 
         elif nat_id in hg_transfers:
             origin = hg_origins.get(nat_id, 'Intercambio con D/P/Pt o Parque Compi (GBA)')
-            summary = f"Inaccesible en estado salvaje en Pokémon Oro SoulSilver. Requiere {origin}."
+            summary = f"Inaccesible en estado salvaje en Pokémon Plata SoulSilver. Requiere {origin}."
             if is_hatchable:
                 summary += " (también obtenible mediante crianza)."
 

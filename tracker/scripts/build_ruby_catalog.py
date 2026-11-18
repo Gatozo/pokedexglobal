@@ -854,7 +854,7 @@ def build_catalogs():
             elif nat_id == 249:
                 transfer_origin = "Transferencia desde Pokémon XD: Gale of Darkness (GameCube)"
             elif nat_id == 151:
-                transfer_origin = "Evento oficial Isla Suprema (Mapa Viejo)"
+                transfer_origin = "intercambio desde Pokémon Esmeralda (Isla Suprema con Mapa Viejo) o evento oficial"
             elif nat_id == 251:
                 transfer_origin = "Disco bonus de Pokémon Colosseum (Japón) o evento"
 

@@ -20635,11 +20635,25 @@
     "cry_url": "/media/pokemon/cries/legacy/151.ogg",
     "flavor_text": "Dicen que su ADN contiene el código genético de todos los Pokémon, por lo que conoce cualquier técnica.",
     "obtaining_info": {
-      "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
-      "locations": []
+      "type": "transfer",
+      "badge_label": "Transferir / Evento",
+      "badge_color": "purple",
+      "summary": "Inaccesible en estado salvaje en Pokémon Plata SoulSilver. Se obtiene mediante transferencia desde Pokémon Diamante, Perla o Platino (My Pokémon Ranch o eventos), desde Pokémon Esmeralda (Isla Suprema vía Parque Compi) o mediante el evento Wi-Fi del 10.º Aniversario (Otoño 2010 / FAL2010).",
+      "locations": [
+        {
+          "area": "Parque Compi / Intercambio",
+          "method": "Transferencia desde D/P/Pt (My Pokémon Ranch) o Esmeralda (Isla Suprema)"
+        },
+        {
+          "area": "Evento Oficial de Nintendo",
+          "method": "Regalo Misterioso Wi-Fi (10.º Aniversario / FAL2010)"
+        }
+      ],
+      "historical_note": {
+        "title": "Nota Histórica • Mew en HeartGold y SoulSilver",
+        "icon_url": "/media/items/cherish-ball.png",
+        "text": "Para conmemorar el 10.º aniversario de Pokémon Oro y Plata, Nintendo distribuyó a <strong>Mew</strong> (Nv. 5, EO: FAL2010) vía Regalo Misterioso Wi-Fi en octubre de 2010 directamente para <em>HeartGold</em> y <em>SoulSilver</em>.<br><br>Además, puede transferirse desde <em>My Pokémon Ranch</em> (vía Diamante o Perla, ya que HGSS no son compatibles directamente con Ranch) o desde <em>Pokémon Esmeralda</em> (Isla Suprema) a través del Parque Compi."
+      }
     },
     "evolution_stone": null,
     "game_data": {
@@ -20686,10 +20700,24 @@
     "flavor_text": "Dicen que cuando Celebi se interna en un bosque, deja tras de sí un huevo traído del futuro.",
     "obtaining_info": {
       "type": "event",
-      "badge_label": "Especial",
-      "badge_color": "slate",
-      "summary": "Obtención mediante evento especial, intercambio o distribución oficial.",
-      "locations": []
+      "badge_label": "Evento / Encinar",
+      "badge_color": "emerald",
+      "summary": "Inaccesible en estado salvaje en Pokémon Plata SoulSilver (el evento de la GS Ball no existe en los remakes). Requiere transferencia desde eventos oficiales de 4.ª Generación (ej. INV2011 / Película 13) o Disco Bonus de Colosseum (Japón). Llevar un Celebi de evento al Altar del Encinar activa un evento especial con Giovanni.",
+      "locations": [
+        {
+          "area": "Evento Oficial / Intercambio D/P/Pt",
+          "method": "Distribución oficial (ej. INV2011) o Disco Bonus Colosseum (Japón)"
+        },
+        {
+          "area": "Encinar (Altar del Bosque)",
+          "method": "Llevar a Celebi de evento activa la historia con Giovanni"
+        }
+      ],
+      "historical_note": {
+        "title": "Nota Histórica • El Altar del Encinar y Giovanni",
+        "icon_url": "/media/items/gs-ball.png",
+        "text": "A diferencia de <em>Pokémon Cristal</em>, en <em>HeartGold</em> y <em>SoulSilver</em> no se captura a Celebi con la GS Ball. En su lugar, al llevar un <strong>Celebi de evento</strong> (como el repartido en INV2011 / WIN2011) al santuario del <strong>Encinar</strong>, Celebi te transporta atrás en el tiempo junto a Eco/Lira para descubrir el pasado de Silver y combatir contra <strong>Giovanni</strong> en los Lagos de Tohjo."
+      }
     },
     "evolution_stone": null,
     "game_data": {
