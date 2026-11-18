@@ -1594,6 +1594,10 @@
         {
           "area": "Pokémon salvajes",
           "detail": "Equipada ocasionalmente en Poliwhirl, Poliwrath, Politoed, Slowbro y Slowking salvajes (5 % de probabilidad)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 11 a 30, 1 % de probabilidad)."
         }
       ]
     }
@@ -1772,7 +1776,7 @@
         },
         {
           "area": "Pokémon salvajes",
-          "detail": "Equipado ocasionalmente en Metang, Bronzor y Bronzong salvajes (5 % de probabilidad)."
+          "detail": "Equipado ocasionalmente en Metang, Metagross y Bronzong salvajes (5 % de probabilidad)."
         }
       ]
     }
@@ -2284,6 +2288,10 @@
       "black": [
         {
           "area": "Ruta 13",
+          "detail": "En el suelo sobre un acantilado en la esquina suroeste de la ruta, al norte de los pescadores (requiere Fuerza)."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
           "detail": "Entregada ocasionalmente una vez al día por el buscatesoros en la costa."
         },
         {
@@ -3014,6 +3022,10 @@
       "black": [
         {
           "area": "Ruta 13",
+          "detail": "En el suelo al suroeste de las Gemelas Emy y Lin (requiere Corte)."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
           "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
       ]

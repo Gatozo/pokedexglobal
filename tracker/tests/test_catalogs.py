@@ -5138,8 +5138,22 @@ class GlobalFormContractInvariantsTests(TestCase):
             self.assertNotIn("Metro Batalla", json.dumps(bs_locs, ensure_ascii=False), f"{no_bs_slug} no se vende en Metro Batalla de Negro 1")
         kings_areas = [l["area"] for l in stones_catalog["kings-rock"]["games"]["black"]]
         self.assertIn("Ciudad Teja", kings_areas)
+        self.assertIn("Habilidad Recogida", kings_areas)
+        self.assertIn("niveles 11 a 30", json.dumps(stones_catalog["kings-rock"]["games"]["black"], ensure_ascii=False))
         self.assertNotIn("Pueblo Arcilla", kings_areas)
-        self.assertEqual([l["area"] for l in stones_catalog["electirizer"]["games"]["black"]], ["Ruta 13"])
+        self.assertEqual(
+            [l["area"] for l in stones_catalog["electirizer"]["games"]["black"]],
+            ["Ruta 13", "Ruta 13 (Buscatesoros)"],
+        )
+        self.assertIn("Corte", stones_catalog["electirizer"]["games"]["black"][0]["detail"])
+        self.assertEqual(
+            [l["area"] for l in stones_catalog["deep-sea-scale"]["games"]["black"]],
+            ["Ruta 13", "Ruta 13 (Buscatesoros)", "Pokémon salvajes"],
+        )
+        self.assertIn("Fuerza", stones_catalog["deep-sea-scale"]["games"]["black"][0]["detail"])
+        metal_blob = json.dumps(stones_catalog["metal-coat"]["games"]["black"], ensure_ascii=False)
+        self.assertIn("Metagross", metal_blob)
+        self.assertNotIn("Bronzor", metal_blob)
         self.assertEqual([l["area"] for l in stones_catalog["magmarizer"]["games"]["black"]], ["Ruta 13"])
         self.assertIn("Ruta 17", [l["area"] for l in stones_catalog["deep-sea-tooth"]["games"]["black"]])
         self.assertIn("Ruta 15", [l["area"] for l in stones_catalog["up-grade"]["games"]["black"]])
