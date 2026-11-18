@@ -126,6 +126,59 @@ class CompiledCatalogsAndServiceTests(TestCase):
         self.assertNotIn("guarderia", manaphy.filter_locations.lower())
         self.assertIn("ranger net", manaphy.filter_locations.lower())
         self.assertIn("guardería", phione.filter_locations.lower())
+
+        # summary narratives and location-based evolutions must NOT leak false zones into filter_locations
+        black_nat = get_compiled_catalog("black", force_reload=True, is_national=True)
+        b_by = {e.pokemon.national_number: e for e in black_nat}
+        psyduck_b = b_by[54]
+        self.assertIn("guardería", psyduck_b.filter_locations.lower())
+        for false_zone in ("ruta 11", "ruta 14", "puente villa"):
+            self.assertNotIn(false_zone, psyduck_b.filter_locations.lower())
+        self.assertIn("Ruta 11", psyduck_b.obtaining_info["summary"])
+        self.assertNotIn("bosque blanco", b_by[16].filter_locations.lower())  # Pidgey
+        self.assertNotIn("cueva loza", b_by[639].filter_locations.lower())    # Terrakion
+        for evo_id, card_hint in ((462, "Cueva Electrorroca"), (470, "Bosque Azulejo"), (471, "Monte Tuerca"), (476, "Cueva Electrorroca")):
+            self.assertEqual(b_by[evo_id].filter_locations, "")
+            self.assertIn(card_hint, b_by[evo_id].obtaining_info["summary"])
+
+        # Data fixes across Gen 2, FR/LG, Sinnoh & HG/SS
+        for g2_slug in ("gold", "silver", "crystal"):
+            g2 = {e.pokemon.national_number: e for e in get_compiled_catalog(g2_slug, force_reload=True)}
+            self.assertIn("ruta 33", g2[21].filter_locations.lower())
+            self.assertIn("monte mortero", g2[66].filter_locations.lower())
+            self.assertIn("ruta 28", g2[78].filter_locations.lower())
+            self.assertIn("cueva unión", g2[95].filter_locations.lower())
+            self.assertIn("ruta 10", g2[100].filter_locations.lower())
+            if g2_slug == "crystal":
+                self.assertIn("calle victoria", g2[112].filter_locations.lower())
+                self.assertIn("ruta 45", g2[147].filter_locations.lower())
+            else:
+                self.assertNotIn("calle victoria", g2[112].filter_locations.lower())
+
+        for g3_kanto in ("firered", "leafgreen"):
+            fr_cat = {e.pokemon.national_number: e for e in get_compiled_catalog(g3_kanto, force_reload=True)}
+            self.assertIn("ruta 6", fr_cat[129].filter_locations.lower())
+            self.assertIn("ruta 12", fr_cat[129].filter_locations.lower())
+            self.assertNotIn("cualquier masa de agua", fr_cat[129].filter_locations.lower())
+            self.assertIn("isla prima", fr_cat[146].filter_locations.lower())
+
+        d_by = {e.pokemon.national_number: e for e in diamond_cat}
+        self.assertIn("ruta 212", d_by[137].filter_locations.lower())
+        self.assertIn("bosque vetusto", d_by[479].filter_locations.lower())
+        self.assertIn("ruta 224", d_by[492].filter_locations.lower())
+        self.assertIn("isla plenilunio", d_by[488].filter_locations.lower())
+
+        ss_reg = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver", force_reload=True)}
+        ss_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("soulsilver", force_reload=True, is_national=True)}
+        self.assertEqual(ss_reg[140].obtaining_info["type"], "fossil")
+        self.assertEqual(ss_reg[138].obtaining_info["type"], "trade")
+        self.assertIn("ruta 26", ss_reg[28].filter_locations.lower())
+        self.assertIn("ruta 27", ss_reg[28].filter_locations.lower())
+        self.assertIn("monte moon", ss_reg[28].filter_locations.lower())
+        self.assertIn("ruta 27", ss_reg[85].filter_locations.lower())
+        self.assertNotIn("zona safari", ss_reg[112].filter_locations.lower())
+        self.assertNotIn("zona safari", ss_reg[229].filter_locations.lower())
+        self.assertIn("silph s.a.", ss_nat[374].filter_locations.lower())
         
         # Test Crystal Catalog (Headbutt, Surf)
         crystal_cat = get_compiled_catalog("crystal")

@@ -13710,7 +13710,199 @@
           "method": "Comprado por 500₽"
         },
         {
-          "area": "Cualquier masa de agua (Kanto e Islas Sétima)",
+          "area": "Pueblo Paleta",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ciudad Verde",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ciudad Celeste",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ciudad Carmín",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "S.S. Anne (Barco)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ciudad Azulona",
+          "method": "Pesca con Caña Vieja, Caña Buena o Supercaña"
+        },
+        {
+          "area": "Ciudad Fucsia",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Isla Canela",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 4",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 6",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 10",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 11",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 12",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 13",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 19 (Ruta Marítima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 20 (Ruta Marítima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 21 (Ruta Marítima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 22",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 23",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 24 (Puente Pepita)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruta 25",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Islas Espuma (S3)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Islas Espuma (S4)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Cueva Celeste (P1)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Cueva Celeste (S1 - Mewtwo)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Zona Safari (Centro)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Zona Safari (Área 1 Este)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Zona Safari (Área 2 Norte)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Zona Safari (Área 3 Oeste)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Isla Prima (Pueblo)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Playa Tesoro (Isla Prima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Camino Candente (Isla Prima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Cabo Extremo (Isla Secunda)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Puente Unión (Isla Tera)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Bosque Baya (Isla Tera)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Isla Quarta (Pueblo)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Cueva Glaciada (Entrada)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Cueva Glaciada (Cascada)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Isla Inta (Pueblo)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Prado Isla Inta (Isla Inta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Laberinto de Agua (Isla Inta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Lugar de Recreo (Isla Inta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Pilar Recuerdo (Isla Inta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Isla Intempesta (Isla Exta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Vía Verde (Isla Exta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Vía Acuática (Isla Exta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Valle Ruinas (Isla Exta)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Torre Desafío (Isla Sétima)",
+          "method": "Pesca con Caña Vieja o Buena"
+        },
+        {
+          "area": "Ruinas Sete (Isla Sétima)",
           "method": "Pesca con Caña Vieja o Buena"
         },
         {
@@ -15588,7 +15780,7 @@
       "summary": "Encuentro estático en la cima del volcán Monte Ascuas en Isla Prima tras apartar las rocas con Fuerza.",
       "locations": [
         {
-          "area": "Monte Ascuas (Cima)",
+          "area": "Monte Ascuas (Cima, Isla Prima)",
           "method": "Encuentro estático al Nivel 50"
         }
       ]

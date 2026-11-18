@@ -17414,7 +17414,7 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio NPC en Ciudad Endrino: entrega un Dragonair hembra a cambio de un Dodrio (con el mote «Trespicolo»).",
+      "summary": "Salvaje en Rutas 26 y 28 y Monte Plateado (y en la Zona Safari tras desbloquear bloques con la Pokédex Nacional). También por intercambio NPC en Ciudad Endrino entregando un Dragonair hembra (con el mote «Trespicolo»).",
       "locations": [
         {
           "area": "Ruta 26",
@@ -17912,7 +17912,7 @@
       "type": "safari",
       "badge_label": "Safari Baoba / Evolución",
       "badge_color": "amber",
-      "summary": "Zona Safari (Área Sabana con 10 Bloques de Planicie, aparición inmediata). También mediante evolución de Rhyhorn (Nv. 42).",
+      "summary": "Evoluciona de Rhyhorn al Nivel 42 (en la Zona Safari requiere colocar bloques tras obtener la Pokédex Nacional). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18108,7 +18108,7 @@
       "type": "safari",
       "badge_label": "Safari Baoba / Evolución",
       "badge_color": "amber",
-      "summary": "Zona Safari (Área Prado con 10 Bloques de Peña, aparición inmediata). También mediante evolución de Houndour (Nv. 24).",
+      "summary": "Evoluciona de Houndour al Nivel 24 (en la Zona Safari requiere colocar bloques tras obtener la Pokédex Nacional). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",

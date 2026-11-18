@@ -2239,6 +2239,22 @@
       "summary": "Salvaje en 5 zonas (ej: Ruta 26, Ruta 27, Monte Moon (P1)).",
       "locations": [
         {
+          "area": "Ruta 26",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 27",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Moon (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Moon (P2)",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Zona Safari (Desierto)",
           "method": "Hierba alta"
         }
@@ -7538,6 +7554,10 @@
       "locations": [
         {
           "area": "Ruta 26",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Ruta 27",
           "method": "Hierba alta (Mañana y Día)"
         },
         {
@@ -29065,6 +29085,10 @@
       "badge_color": "indigo",
       "summary": "Intercambio con Máximo Peñas en Silph S.A. por un Forretress tras elegir a tu inicial de Hoenn. También en la Zona Safari (Arboleda con 21 bloques roca y 70 días).",
       "locations": [
+        {
+          "area": "Ciudad Azafrán (Silph S.A.)",
+          "method": "Intercambio con Máximo Peñas por Forretress"
+        },
         {
           "area": "Zona Safari (Arboleda)",
           "method": "21 bloques roca (70 días)"

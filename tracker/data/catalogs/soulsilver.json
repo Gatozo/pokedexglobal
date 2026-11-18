@@ -4350,6 +4350,22 @@
       "summary": "Salvaje en 5 zonas (ej: Ruta 26, Ruta 27, Monte Moon (P1)).",
       "locations": [
         {
+          "area": "Ruta 26",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 27",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Moon (P1)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Moon (P2)",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Zona Safari (Desierto)",
           "method": "Hierba alta"
         }
@@ -17470,10 +17486,14 @@
       "type": "wild",
       "badge_label": "Salvaje / Intercambio",
       "badge_color": "emerald",
-      "summary": "Salvaje en Rutas 26 y 28, Monte Plateado y Zona Safari. También por intercambio NPC en Ciudad Endrino: entrega un Dragonair hembra a cambio de un Dodrio (con el mote «Trespicolo»).",
+      "summary": "Salvaje en Rutas 26, 27 y 28 y Monte Plateado (y en la Zona Safari tras desbloquear bloques con la Pokédex Nacional). También por intercambio NPC en Ciudad Endrino entregando un Dragonair hembra (con el mote «Trespicolo»).",
       "locations": [
         {
           "area": "Ruta 26",
+          "method": "Hierba alta (Mañana y Día)"
+        },
+        {
+          "area": "Ruta 27",
           "method": "Hierba alta (Mañana y Día)"
         },
         {
@@ -17968,7 +17988,7 @@
       "type": "safari",
       "badge_label": "Safari Baoba / Evolución",
       "badge_color": "amber",
-      "summary": "Zona Safari (Área Sabana con 10 Bloques de Planicie, aparición inmediata). También mediante evolución de Rhyhorn (Nv. 42).",
+      "summary": "Evoluciona de Rhyhorn al Nivel 42 (en la Zona Safari requiere colocar bloques tras obtener la Pokédex Nacional). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18164,7 +18184,7 @@
       "type": "safari",
       "badge_label": "Safari Baoba / Evolución",
       "badge_color": "amber",
-      "summary": "Zona Safari (Área Prado con 10 Bloques de Peña, aparición inmediata). También mediante evolución de Houndour (Nv. 24).",
+      "summary": "Evoluciona de Houndour al Nivel 24 (en la Zona Safari requiere colocar bloques tras obtener la Pokédex Nacional). También obtenible mediante crianza.",
       "locations": [
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18863,22 +18883,18 @@
     "cry_url": "/media/pokemon/cries/legacy/138.ogg",
     "flavor_text": "Se dice que este antiguo Pokémon surcó el mar moviendo los 10 tentáculos que posee.",
     "obtaining_info": {
-      "type": "fossil",
-      "badge_label": "Fósil Hélix",
-      "badge_color": "amber",
-      "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Hélix es exclusivo de HeartGold por Golpe Roca). Requiere transferir el fósil o intercambiar con HeartGold.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
+          "area": "Intercambio con HeartGold / Parque Compi",
+          "method": "Transferencia de Fósil Hélix o Pokémon"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Revitalización de Fósil Hélix (si se transfiere)"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -18930,18 +18946,16 @@
     "cry_url": "/media/pokemon/cries/legacy/139.ogg",
     "flavor_text": "Cuando agarra a su presa, nunca la deja escapar. Se la come despedazándola con sus colmillos.",
     "obtaining_info": {
-      "type": "evolution",
-      "badge_label": "Evolución",
-      "badge_color": "indigo",
-      "summary": "Evoluciona de Omanyte (Nivel 40)",
-      "locations": [],
-      "evolution_info": {
-        "from": "Omanyte",
-        "text": "Evoluciona de Omanyte (Nivel 40)",
-        "trigger": "level-up",
-        "condition": "Nivel 40",
-        "item_slug": null
-      }
+      "type": "trade",
+      "badge_label": "Exclusivo HeartGold",
+      "badge_color": "sky",
+      "summary": "Exclusivo de Pokémon Oro HeartGold. Evoluciona de Omanyte al Nivel 40.",
+      "locations": [
+        {
+          "area": "Intercambio con Pokémon Oro HeartGold",
+          "method": "Transferencia desde Pokémon Oro HeartGold"
+        }
+      ]
     },
     "evolution_stone": null,
     "game_data": {
@@ -18987,18 +19001,22 @@
     "cry_url": "/media/pokemon/cries/legacy/140.ogg",
     "flavor_text": "Este Pokémon vivió en la antigüedad. Rara vez se ha conseguido revivir sus fósiles.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible de forma directa en SoulSilver (el Fósil Domo es exclusivo de SoulSilver por Golpe Roca). Requiere transferir el fósil o intercambiar con SoulSilver.",
+      "type": "fossil",
+      "badge_label": "Fósil Domo",
+      "badge_color": "amber",
+      "summary": "Revivir el Fósil Domo (exclusivo de SoulSilver rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Intercambio con SoulSilver / Parque Compi",
-          "method": "Transferencia de Fósil Domo o Pokémon"
+          "area": "Ruinas Alfa",
+          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
+        },
+        {
+          "area": "Cueva Acantilado",
+          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de Fósil Domo (si se transfiere)"
+          "method": "Revitalización de fósil"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -19050,19 +19068,14 @@
     "cry_url": "/media/pokemon/cries/legacy/141.ogg",
     "flavor_text": "Con sus garras,este feroz y antiguo Pokémon,despedaza a su presa y absorbe sus fluidos.",
     "obtaining_info": {
-      "type": "trade",
-      "badge_label": "Exclusivo SoulSilver",
-      "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en SoulSilver. Requiere intercambiar con SoulSilver o evolucionar a Kabuto al Nivel 40.",
-      "locations": [
-        {
-          "area": "Intercambio con Pokémon Plata SoulSilver",
-          "method": "Exclusivo de versión"
-        }
-      ],
+      "type": "evolution",
+      "badge_label": "Evolución",
+      "badge_color": "slate",
+      "summary": "Evoluciona de Kabuto al Nivel 40.",
+      "locations": [],
       "evolution_info": {
         "from": "Kabuto",
-        "text": "Evoluciona de Kabuto (Nivel 40)",
+        "text": "Evoluciona al Nivel 40",
         "trigger": "level-up",
         "condition": "Nivel 40",
         "item_slug": null

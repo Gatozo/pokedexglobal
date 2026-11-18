@@ -33896,6 +33896,10 @@
           "method": "Encuentro nocturno al Nivel 15 tras Pokédex Nacional"
         },
         {
+          "area": "Bosque Vetusto (Vieja Mansión)",
+          "method": "Interacción con televisor por la noche dentro de la mansión"
+        },
+        {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -34393,6 +34397,10 @@
         {
           "area": "Rutas de Sinnoh (Errante)",
           "method": "Pokémon errante al Nivel 50 tras visitar Isla Plenilunio"
+        },
+        {
+          "area": "Isla Plenilunio",
+          "method": "Encuentro inicial que activa su recorrido errante por Sinnoh"
         }
       ]
     },

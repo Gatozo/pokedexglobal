@@ -10405,7 +10405,7 @@
       "summary": "Aparece en el Jardín Trofeo de la Mansión Pokémon (Ruta 212) tras obtener la Pokédex Nacional, cuando el Sr. Fortuny lo menciona en su relato diario (también obtenible mediante crianza con Ditto en Pueblo Sosiego).",
       "locations": [
         {
-          "area": "Jardín Trofeo (Mansión Pokémon)",
+          "area": "Jardín Trofeo (Mansión Pokémon, Ruta 212)",
           "method": "Hierba alta (Mención diaria del Sr. Fortuny)"
         },
         {
@@ -33903,6 +33903,10 @@
           "method": "Interacción con televisor por la noche"
         },
         {
+          "area": "Bosque Vetusto (Vieja Mansión)",
+          "method": "Interacción con televisor por la noche dentro de la mansión"
+        },
+        {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
           "method": "Crianza de huevo"
         }
@@ -34400,6 +34404,10 @@
         {
           "area": "Rutas de Sinnoh (Errante)",
           "method": "Legendaria errante por la hierba al Nivel 50"
+        },
+        {
+          "area": "Isla Plenilunio",
+          "method": "Encuentro inicial que activa su recorrido errante por Sinnoh"
         }
       ]
     },
@@ -34618,7 +34626,7 @@
       "summary": "Encuentro estático en el Paraíso Floral al Nivel 30 cruzando la Vía Costera de la Ruta 224 con la Carta de Oak de evento oficial.",
       "locations": [
         {
-          "area": "Paraíso Floral (Carta de Oak)",
+          "area": "Paraíso Floral (Vía Costera / Ruta 224, Carta de Oak)",
           "method": "Encuentro estático al Nivel 30"
         }
       ]

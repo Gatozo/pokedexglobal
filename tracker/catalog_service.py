@@ -435,28 +435,27 @@ class CatalogEntry:
     @property
     def filter_locations(self) -> str:
         """
-        Cadena concatenada de todas las áreas y descripciones para búsqueda de texto libre.
-        Para evitar falsos positivos al buscar por ruta (ej. 'Ruta 117' o 'Ruta 34'),
-        las áreas de crianza en guarderías se normalizan a 'Guardería Pokémon' sin asociar
-        el número de ruta como encuentro salvaje.
+        Cadena concatenada de áreas reales de obtención para búsqueda por zona/ruta.
+        Excluye el texto narrativo de `summary` para evitar falsos positivos (p. ej.
+        crías cuya descripción menciona rutas de la evolución o exclusivos de otra versión),
+        y normaliza las guarderías a 'Guardería Pokémon'.
         """
         obt = self.obtaining_info or {}
         nat_num = getattr(self.pokemon, "national_number", 0)
         clean_areas = []
+        seen_areas = set()
         for loc in obt.get("locations", []):
             area = loc.get("area", "")
             method = loc.get("method", "").lower()
             if not area:
                 continue
             is_daycare = ("guarder" in area.lower() or "guarder" in method or "crianza" in method) and (nat_num != 490)
-            if is_daycare:
-                clean_areas.append("Guardería Pokémon")
-            else:
-                clean_areas.append(area)
+            resolved_area = "Guardería Pokémon" if is_daycare else area
+            if resolved_area not in seen_areas:
+                seen_areas.add(resolved_area)
+                clean_areas.append(resolved_area)
 
-        summary = _clean_daycare_route_text(obt.get("summary") or "")
-        all_text = " | ".join(clean_areas + ([summary] if summary else []))
-        return all_text
+        return " | ".join(clean_areas)
 
     @property
     def filter_tags(self) -> str:

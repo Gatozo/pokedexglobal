@@ -5536,6 +5536,70 @@
       "summary": "Entregado por el guardia de la Caseta Norte de Ciudad Trigal con una carta para la Ruta 31 (con el mote «Kenya»). También obtenible salvaje o mediante crianza",
       "locations": [
         {
+          "area": "Ruta 29",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 30",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 31",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 32",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 43",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 44",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 45",
+          "method": "Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 33",
+          "method": "Hierba alta, Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 42",
+          "method": "Hierba alta, Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 46",
+          "method": "Hierba alta, Golpe Cabeza en árboles"
+        },
+        {
+          "area": "Ruta 3",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 4",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 7",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 9",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 10",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Ruta 22",
+          "method": "Hierba alta"
+        },
+        {
           "area": "Ciudad Trigal (Caseta Norte)",
           "method": "Regalo de guardia"
         },
@@ -5545,7 +5609,7 @@
         }
       ],
       "badge_color": "emerald",
-      "badge_label": "Regalo"
+      "badge_label": "Salvaje / Regalo"
     },
     "evolution_stone": null,
     "game_data": {
@@ -26640,8 +26704,44 @@
     "flavor_text": "Perfora el suelo rápidamente, a 80 km/h, girando y retorciendo su robusto y enorme cuerpo.",
     "obtaining_info": {
       "type": "trade_npc",
-      "summary": "Intercambio en Ciudad Malva: entrega un Bellsprout a cambio de Onix (con el mote «Rocky»). También obtenible mediante crianza",
+      "summary": "Salvaje en Cueva Unión, Túnel Roca, Calle Victoria y Monte Plateado. También por intercambio NPC en Ciudad Malva (Casa Suroeste) entregando un Bellsprout (con el mote «Rocky»), o mediante crianza.",
       "locations": [
+        {
+          "area": "Cueva Unión (1P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Cueva Unión (Sótano 1)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Cueva Unión (Sótano 2)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Túnel Roca (Sótano)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Calle Victoria (1P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Calle Victoria (2P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Calle Victoria (3P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Monte Plateado (1P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Monte Plateado (Cima)",
+          "method": "Cueva"
+        },
         {
           "area": "Ciudad Malva (Casa Suroeste)",
           "method": "Intercambio por Bellsprout"
@@ -26652,7 +26752,7 @@
         }
       ],
       "badge_color": "violet",
-      "badge_label": "Intercambio NPC"
+      "badge_label": "Salvaje / Intercambio NPC"
     },
     "evolution_stone": null,
     "game_data": {
@@ -51600,8 +51700,16 @@
     "flavor_text": "Fue descubierto cuando se crearon las Poké Ball, se dice que tienen algo que ver con ellas.",
     "obtaining_info": {
       "type": "trade_npc",
-      "summary": "Intercambio en Ciudad Olivo: entrega un Krabby a cambio de Voltorb (con el mote «Volty»). También obtenible mediante crianza",
+      "summary": "Salvaje en la Ruta 10 y como trampa estática en la Guarida Rocket (Ciudad Caoba). También por intercambio NPC en Ciudad Olivo entregando un Krabby (con el mote «Volty»), o mediante crianza.",
       "locations": [
+        {
+          "area": "Ruta 10",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Guarida del Team Rocket",
+          "method": "Trampa estática"
+        },
         {
           "area": "Ciudad Olivo",
           "method": "Intercambio por Krabby"
@@ -51612,7 +51720,7 @@
         }
       ],
       "badge_color": "violet",
-      "badge_label": "Intercambio NPC"
+      "badge_label": "Salvaje / Intercambio NPC"
     },
     "evolution_stone": null,
     "game_data": {
@@ -60642,8 +60750,28 @@
     "flavor_text": "Adora ejercitar sus músculos. Nunca está contento, aunque lleve todo el día entrenando.",
     "obtaining_info": {
       "type": "trade_npc",
-      "summary": "Intercambio en el Centro Comercial de Ciudad Trigal (5P): entrega un Drowzee a cambio de Machop (con el mote «Musculín»). También obtenible mediante crianza",
+      "summary": "Salvaje en Monte Mortero y Túnel Roca. También por intercambio NPC en el Centro Comercial de Ciudad Trigal (5P) entregando un Drowzee (con el mote «Musculitos»), o mediante crianza.",
       "locations": [
+        {
+          "area": "Monte Mortero (1P)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Monte Mortero (Cueva Baja)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Monte Mortero (Cueva Alta)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Monte Mortero (Sótano)",
+          "method": "Cueva"
+        },
+        {
+          "area": "Túnel Roca (1P)",
+          "method": "Cueva"
+        },
         {
           "area": "Ciudad Trigal (Centro Comercial 5P)",
           "method": "Intercambio por Drowzee"
@@ -60654,7 +60782,7 @@
         }
       ],
       "badge_color": "violet",
-      "badge_label": "Intercambio NPC"
+      "badge_label": "Salvaje / Intercambio NPC"
     },
     "evolution_stone": null,
     "game_data": {
@@ -87702,15 +87830,23 @@
     "flavor_text": "Con una aceleración increíble, puede alcanzar los 240 km/h en sólo diez trotes.",
     "obtaining_info": {
       "type": "trade_npc",
-      "summary": "Intercambio en el Centro Pokémon de Ciudad Plateada: entrega un Gloom a cambio de Rapidash (con el mote «Galope»)",
+      "summary": "Salvaje en Ruta 28 y exterior del Monte Plateado. También por intercambio NPC en el Centro Pokémon de Ciudad Plateada entregando un Gloom (con el mote «Galope»).",
       "locations": [
+        {
+          "area": "Ruta 28",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Monte Plateado (Exterior)",
+          "method": "Hierba alta"
+        },
         {
           "area": "Ciudad Plateada",
           "method": "Intercambio por Gloom"
         }
       ],
       "badge_color": "violet",
-      "badge_label": "Intercambio NPC",
+      "badge_label": "Salvaje / Intercambio NPC",
       "evolution_info": {
         "from": "Ponyta",
         "text": "Evoluciona de Ponyta (Nivel 40)",
