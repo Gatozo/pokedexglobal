@@ -1913,14 +1913,14 @@
     "flavor_text": "Este Pokémon tiene unas bolsas en las mejillas donde almacena electricidad. Parece ser que se recargan por la noche, mientras Pikachu duerme. A veces, cuando se acaba de despertar y está aún medio dormido, descarga un poco.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Hoenn Safari Zone Sw, Hoenn Safari Zone Se.",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         },
         {
@@ -2031,7 +2031,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla."
         }
       ],
       "category": "stone"
@@ -3040,7 +3040,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja."
         }
       ],
       "category": "stone"
@@ -3651,11 +3651,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -3746,11 +3746,11 @@
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -3856,7 +3856,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde."
         }
       ],
       "category": "stone"
@@ -4551,14 +4551,14 @@
     "flavor_text": "Psyduck no se acuerda nunca de haber usado su misterioso poder. Parece ser que no puede registrar en la memoria haber usado el ataque porque se queda inmerso en un estado parecido a un sueño profundo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Hoenn Safari Zone Sw.",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Surfeando (Agua)"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Surfeando (Agua)"
         }
       ],
@@ -4976,7 +4976,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja."
         }
       ],
       "category": "stone"
@@ -5228,7 +5228,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul."
         },
         {
           "area": "Salvaje equipado",
@@ -5962,7 +5962,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde."
         }
       ],
       "category": "stone"
@@ -7393,18 +7393,18 @@
     "flavor_text": "Doduo es un Pokémon bicéfalo, de cerebros idénticos. Según un estudio científico, podría darse el extraño caso de que hubiera Doduo con cerebros distintos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Hoenn Safari Zone Sw, Hoenn Safari Zone Se.",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -7974,7 +7974,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul."
         },
         {
           "area": "Salvaje equipado",
@@ -8946,7 +8946,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde."
         }
       ],
       "category": "stone"
@@ -10212,15 +10212,15 @@
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         }
       ],
@@ -10292,14 +10292,14 @@
     "flavor_text": "Seaking protege sus huevos con uñas y dientes. Macho y hembra se turnan para vigilar el nido y los huevos. Este periodo de protección dura más de un mes en el caso de estos Pokémon.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Hoenn Safari Zone Sw.",
+      "summary": "Salvaje en: Zona Safari (Noroeste - Bici Carrera), Zona Safari (Suroeste).",
       "locations": [
         {
           "area": "Zona Safari (Noroeste - Bici Carrera)",
           "method": "Supercaña"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Supercaña"
         }
       ],
@@ -10480,7 +10480,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul."
         },
         {
           "area": "Salvaje equipado",
@@ -11471,11 +11471,11 @@
           "method": "Caña Vieja"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Buena"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Caña Vieja"
         },
         {
@@ -11908,7 +11908,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul."
         },
         {
           "area": "Salvaje equipado",
@@ -12008,7 +12008,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla (Yellow Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Amarilla."
         }
       ],
       "category": "stone"
@@ -12104,7 +12104,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja (Red Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Roja."
         }
       ],
       "category": "stone"
@@ -15285,18 +15285,18 @@
     "flavor_text": "Natu ha desarrollado tremendamente la habilidad de saltar. Este Pokémon aletea y da brinquitos por las ramas altas a las que no alcanza nadie para hacerse con los nuevos brotes de los árboles.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Zona Safari (Noreste - Bici Acrobática), Hoenn Safari Zone Sw, Hoenn Safari Zone Se.",
+      "summary": "Salvaje en: Zona Safari (Noreste - Bici Acrobática), Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
           "area": "Zona Safari (Noreste - Bici Acrobática)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -17357,14 +17357,14 @@
     "flavor_text": "Wobbuffet no hace otra cosa que aguantar los golpes que recibe (nunca usa movimientos ofensivos). Pero si le atacan a la cola, intentará llevarse con él al enemigo usando MISMODESTINO.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Hoenn Safari Zone Sw, Hoenn Safari Zone Se.",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -17443,14 +17443,14 @@
     "flavor_text": "La cabeza trasera de Girafarig tiene un cerebro muy pequeño para pensar, pero como no le hace falta dormir, al menos puede hacer de centinela las 24 horas del día.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Hoenn Safari Zone Sw, Hoenn Safari Zone Se.",
+      "summary": "Salvaje en: Zona Safari (Suroeste), Zona Safari (Sureste).",
       "locations": [
         {
-          "area": "Hoenn Safari Zone Sw",
+          "area": "Zona Safari (Suroeste)",
           "method": "Hierba alta"
         },
         {
-          "area": "Hoenn Safari Zone Se",
+          "area": "Zona Safari (Sureste)",
           "method": "Hierba alta"
         }
       ],
@@ -22998,7 +22998,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul (Blue Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Azul."
         },
         {
           "area": "Salvaje equipado",
@@ -23267,7 +23267,7 @@
         },
         {
           "area": "Ruta 124 (Casa del Buscatesoros)",
-          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde (Green Shard)."
+          "detail": "Canjeable con el Buscatesoros a cambio de una Parte Verde."
         }
       ],
       "category": "stone"

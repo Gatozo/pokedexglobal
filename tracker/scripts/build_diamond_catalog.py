@@ -341,9 +341,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil Exclusivo',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subterráneo de Sinnoh (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subsuelo de Sinnoh (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Cráneo'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Fósil Cráneo'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Cráneo'},
             DAYCARE_LOCATION
         ]
@@ -352,9 +352,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Hélix'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Fósil Hélix'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Hélix'},
             DAYCARE_LOCATION
         ]
@@ -363,9 +363,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Domo'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Fósil Domo'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Domo'},
             DAYCARE_LOCATION
         ]
@@ -374,9 +374,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Ámbar Viejo'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Ámbar Viejo'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Ámbar Viejo'},
             DAYCARE_LOCATION
         ]
@@ -385,9 +385,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Raíz'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Fósil Raíz'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Raíz'},
             DAYCARE_LOCATION
         ]
@@ -396,9 +396,9 @@ SPECIAL_OBTAINING = {
         'type': 'fossil',
         'badge_label': 'Fósil',
         'badge_color': 'blue',
-        'summary': 'Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).',
+        'summary': 'Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).',
         'locations': [
-            {'area': 'Subterráneo de Sinnoh', 'method': 'Excavación de Fósil Garra'},
+            {'area': 'Subsuelo de Sinnoh', 'method': 'Excavación de Fósil Garra'},
             {'area': 'Ciudad Pirita (Museo Minero)', 'method': 'Restauración de Fósil Garra'},
             DAYCARE_LOCATION
         ]
@@ -419,7 +419,7 @@ SPECIAL_OBTAINING = {
         'type': 'static',
         'badge_label': 'Torre Sagrada',
         'badge_color': 'indigo',
-        'summary': 'Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subterráneo de Sinnoh (Nivel 25, también obtenible mediante crianza).',
+        'summary': 'Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subsuelo de Sinnoh (Nivel 25, también obtenible mediante crianza).',
         'locations': [
             {'area': 'Ruta 209 (Torre Sagrada)', 'method': 'Encuentro especial con Piedra Espíritu'},
             DAYCARE_LOCATION

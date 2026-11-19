@@ -1590,7 +1590,7 @@
           "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -1915,7 +1915,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -2123,7 +2123,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -2312,7 +2312,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -2466,7 +2466,7 @@
           "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -2603,7 +2603,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -3216,7 +3216,7 @@
           "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -4298,7 +4298,7 @@
           "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -4522,7 +4522,7 @@
           "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -5214,7 +5214,7 @@
           "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -6784,7 +6784,7 @@
           "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -7700,7 +7700,7 @@
           "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -8965,7 +8965,7 @@
           "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -10180,7 +10180,7 @@
           "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -10267,7 +10267,7 @@
           "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -10350,7 +10350,7 @@
           "detail": "Objeto oculto en una roca dentro de una de las cámaras sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -10461,7 +10461,7 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -10577,7 +10577,7 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -10693,7 +10693,7 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -13129,7 +13129,7 @@
       "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Perla)."
         },
         {
@@ -13879,7 +13879,7 @@
       "availability_note": "Objeto limitado. Premio exclusivo del Concurso de Bichos.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo (mayor frecuencia de aparición que en Perla)."
         },
         {
@@ -19335,7 +19335,7 @@
           "detail": "Objeto oculto en una roca en una cámara sin salida de las ruinas."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -19555,7 +19555,7 @@
           "detail": "En el sector norte accesible navegando por el río desde Forja Fuego con Surf."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -21285,7 +21285,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -24401,7 +24401,7 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -24517,7 +24517,7 @@
       "type": "fossil",
       "badge_label": "Fósil",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita tras excavar en el Subsuelo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -28531,7 +28531,7 @@
       "type": "fossil",
       "badge_label": "Fósil Exclusivo",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subterráneo de Sinnoh (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subsuelo de Sinnoh (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -31184,7 +31184,7 @@
       "type": "static",
       "badge_label": "Torre Sagrada",
       "badge_color": "indigo",
-      "summary": "Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subterráneo de Sinnoh (Nivel 25, también obtenible mediante crianza).",
+      "summary": "Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subsuelo de Sinnoh (Nivel 25, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 209 (Torre Sagrada)",

@@ -652,7 +652,7 @@ SPECIAL_OBTAINING = {
         'type': 'static',
         'badge_label': 'Torre Sagrada',
         'badge_color': 'indigo',
-        'summary': 'Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subterráneo de Sinnoh (Nivel 25, también obtenible mediante crianza).',
+        'summary': 'Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subsuelo de Sinnoh (Nivel 25, también obtenible mediante crianza).',
         'locations': [
             {'area': 'Ruta 209 (Torre Sagrada)', 'method': 'Encuentro especial con Piedra Espíritu'},
             DAYCARE_LOCATION

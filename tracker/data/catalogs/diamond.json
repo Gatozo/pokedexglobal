@@ -3571,7 +3571,7 @@
       "type": "fossil",
       "badge_label": "Fósil Exclusivo",
       "badge_color": "blue",
-      "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subterráneo de Sinnoh (también obtenible mediante crianza).",
+      "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subsuelo de Sinnoh (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ciudad Pirita (Museo Minero)",
@@ -9313,7 +9313,7 @@
       "availability_note": "Objeto limitado. No se encuentra a la venta en tiendas.",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         },
         {
@@ -9596,7 +9596,7 @@
           "detail": "Objeto oculto cerca del estanque navegando con Surf (requiere Corte)."
         },
         {
-          "area": "Subterráneo de Sinnoh",
+          "area": "Subsuelo de Sinnoh",
           "detail": "Excavación en las paredes del subsuelo."
         }
       ],
@@ -9841,7 +9841,7 @@
       "type": "static",
       "badge_label": "Torre Sagrada",
       "badge_color": "indigo",
-      "summary": "Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subterráneo de Sinnoh (Nivel 25, también obtenible mediante crianza).",
+      "summary": "Colocar una Piedra Espíritu en la Torre Sagrada (Ruta 209) y hablar con 32 personas en el Subsuelo de Sinnoh (Nivel 25, también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 209 (Torre Sagrada)",

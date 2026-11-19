@@ -604,9 +604,9 @@ SPECIAL_OBTAINING = {
         'type': 'interactable',
         'badge_label': 'Interactivo',
         'badge_color': 'slate',
-        'summary': 'Bloquea el acceso este de Ciudad Carmín; despiértalo al Nivel 50 sintonizando la Pokéflauta en la Radio del Pokégear tras reparar la Central de Energía de Kanto.',
+        'summary': 'Bloquea el acceso este de Ciudad Carmín; despiértalo al Nivel 50 sintonizando la Poké Flauta en la Radio del Pokégear tras reparar la Central de Energía de Kanto.',
         'locations': [
-            {'area': 'Ciudad Carmín (Acceso Este)', 'method': 'Despertar al Nivel 50 con la Pokéflauta en la Radio del Pokégear (tras reparar la Central de Energía)'},
+            {'area': 'Ciudad Carmín (Acceso Este)', 'method': 'Despertar al Nivel 50 con la Poké Flauta en la Radio del Pokégear (tras reparar la Central de Energía)'},
             DAYCARE_LOCATION
         ]
     },

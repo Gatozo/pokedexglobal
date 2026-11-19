@@ -300,7 +300,7 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
 
         352,              # Kecleon (Ruta 210 norte con Poké Radar)
 
-        408, 409,         # Cranidos (Fósil Cráneo en Subterráneo de Sinnoh), Rampardos
+        408, 409,         # Cranidos (Fósil Cráneo en Subsuelo de Sinnoh), Rampardos
 
         434, 435,         # Stunky (Rutas 206, 214, 221), Skuntank
 
