@@ -5094,6 +5094,31 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertNotIn("Cromo", genesect_burn["name"])
         self.assertNotIn("Tecno Shock", genesect_burn["notes"][0]["text"])
 
+        # 9. Modal de Transferir en Pokémon Negro: solo especies Gen 1-4 (sin Gen 5) y descripción HTML sin escapar
+        self.assertEqual(len(NON_UNOVA_TRANSFERS_BLACK), 178)
+        self.assertTrue(all(num < 494 for num in NON_UNOVA_TRANSFERS_BLACK))
+        for gen5_id in (494, 570, 571, 645, 647, 648, 649):
+            self.assertNotIn(gen5_id, NON_UNOVA_TRANSFERS_BLACK)
+
+        from django.template.loader import render_to_string
+        from tracker.exclusives import get_version_transfers_context
+        from tracker.models import Game, Pokedex
+
+        black_game = Game(slug="black", name="Pokémon Negro", generation=5)
+        black_nat_dex = Pokedex(slug="national", name="Pokédex Nacional", is_national=True)
+        transfers_info = get_version_transfers_context(
+            black_game, black_nat_dex, set(), entries_by_num=nat_by
+        )
+        self.assertIsNotNone(transfers_info)
+        self.assertEqual(transfers_info["total"], 178)
+        self.assertEqual(transfers_info["mechanic_badge"], "Pokétransfer")
+        rendered_modal = render_to_string(
+            "tracker/components/_modal_transfers.html",
+            {"transfers_info": transfers_info, "game": black_game},
+        )
+        self.assertIn("<strong>Pokémon Negro</strong>", rendered_modal)
+        self.assertNotIn("&lt;strong&gt;", rendered_modal)
+
         meloetta_step = next(f for f in get_pokemon_forms(648, "black") if f["form_key"] == "pirouette")
         self.assertIn("La melodía del descanso", meloetta_step["notes"][0]["text"])
         self.assertNotIn("Café Sonata", meloetta_step["notes"][0]["text"])

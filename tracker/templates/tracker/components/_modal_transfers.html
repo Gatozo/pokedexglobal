@@ -86,7 +86,7 @@
                     <div class="bg-indigo-50/80 border-2 border-indigo-200 text-indigo-950 rounded-lg p-2.5 text-xs font-semibold flex items-start gap-2.5 shadow-sm">
                         <img src="/media/items/teachy-tv.png" alt="Información" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
                         <div class="leading-relaxed">
-                            {{ transfers_info.description }}
+                            {{ transfers_info.description|safe }}
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                     <div class="bg-rose-50 border-2 border-rose-300 text-rose-950 rounded-lg p-2.5 text-xs font-bold flex items-start gap-2.5 shadow-sm">
                         <img src="/media/items/red-card.png" alt="Incompatibilidad" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
                         <div class="leading-relaxed">
-                            {{ transfers_info.incompatible_warning }}
+                            {{ transfers_info.incompatible_warning|safe }}
                         </div>
                     </div>
                     {% endif %}
@@ -105,7 +105,7 @@
                     <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-lg p-2.5 text-xs font-semibold flex items-start gap-2.5 shadow-sm">
                         <img src="/media/items/card-key.png" alt="Cueva Cambiante" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
                         <div class="leading-relaxed text-slate-900">
-                            {{ transfers_info.altering_cave_note }}
+                            {{ transfers_info.altering_cave_note|safe }}
                         </div>
                     </div>
                     {% endif %}

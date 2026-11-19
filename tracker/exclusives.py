@@ -686,8 +686,8 @@ NON_JOHTO_KANTO_TRANSFERS_HGSS: List[int] = sorted(list(
     {151, 251, 377, 378, 379, 385, 386, 480, 481, 482, 485, 486, 488, 489, 490, 491, 492, 493}
 ))
 
-# 185 especies requeridas mediante el Pokétransfer de la Ruta 15, el Trasladador PKMN o eventos oficiales
-# para completar la Pokédex Nacional en Pokémon Negro (excluye especies de manada diaria, el Munchlax de Pueblo Arenisca y Snorlax):
+# 178 especies de generaciones anteriores (Gen 1–4) requeridas mediante el Pokétransfer de la Ruta 15
+# para completar la Pokédex Nacional en Pokémon Negro (excluye especies de manada diaria, el Munchlax de Pueblo Arenisca, Snorlax y especies nativas/de evento de 5.ª Gen):
 NON_UNOVA_TRANSFERS_BLACK = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 23, 24, 25, 26, 50, 51, 52, 53, 58,
     59, 72, 73, 88, 89, 96, 97, 100, 101, 109, 110, 122, 123, 128,
@@ -702,7 +702,7 @@ NON_UNOVA_TRANSFERS_BLACK = [
     413, 414, 417, 422, 423, 424, 427, 428, 431, 432, 434, 435, 438,
     439, 441, 442, 443, 444, 445, 451, 452, 455, 459, 460, 470,
     471, 476, 477, 478, 480, 481, 482, 483, 484, 485, 486, 487, 488,
-    489, 490, 491, 492, 493, 494, 570, 571, 645, 647, 648, 649
+    489, 490, 491, 492, 493
 ]
 
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
@@ -2190,29 +2190,17 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         }
     },
     'black': {
-        'mechanic_title': 'Pokétransfer y Eventos • 5.ª Gen',
-        'mechanic_badge': 'Pokétransfer y Eventos',
-        'subtitle': 'Especies que requieren el Laboratorio de Pokétransfer (Ruta 15), el Trasladador PKMN o eventos oficiales',
+        'mechanic_title': 'Pokétransfer • 5.ª Gen',
+        'mechanic_badge': 'Pokétransfer',
+        'subtitle': 'Especies de generaciones anteriores que requieren transferencia desde 4.ª Gen vía Laboratorio de Pokétransfer (Ruta 15)',
         'description': (
-            'Para completar la Pokédex Nacional en <strong>Pokémon Negro</strong>, diversas especies foráneas '
-            'de Kanto, Johto, Hoenn y Sinnoh deben ser transferidas desde cartuchos de 4.ª Generación '
+            'Para completar la Pokédex Nacional en <strong>Pokémon Negro</strong>, estas 178 especies foráneas '
+            'de Kanto, Johto, Hoenn y Sinnoh deben transferirse desde cartuchos de 4.ª Generación '
             '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio de Pokétransfer</strong> '
-            'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).<br><br>'
-            'Asimismo, especies singulares como <strong>Zorua (#570)</strong> y <strong>Zoroark (#571)</strong> requieren '
-            'el uso del <strong>Trasladador PKMN</strong> (en Ciudad Porcelana) transfiriendo al Celebi de evento '
-            'o a las Bestias Legendarias variocolor. Por último, <strong>Landorus (#645)</strong> requiere llevar en el equipo '
-            'tanto a Tornadus (#641) como a <strong>Thundurus (#642)</strong> (exclusivo de Pokémon Blanco) en el Santuario Abundancia.'
+            'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).'
         ),
         'default_origin': 'Pokétransfer (Ruta 15)',
-        'origins': {
-            494: 'Evento Ticket Libertad (Isla Libertad)',
-            570: 'Trasladador PKMN (Celebi de evento en Ciudad Porcelana)',
-            571: 'Trasladador PKMN (Bestia Variocolor en Bosque de los Perdidos)',
-            645: 'Santuario Abundancia (Requiere a Thundurus de Pokémon Blanco)',
-            647: 'Evento Oficial (Keldeo)',
-            648: 'Evento Oficial (Meloetta)',
-            649: 'Evento Oficial (Genesect)',
-        }
+        'origins': {}
     },
 }
 
