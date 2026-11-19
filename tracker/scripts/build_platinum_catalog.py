@@ -1135,7 +1135,7 @@ def main():
                 "weight": sp.get('weight', 0),
                 "sprite_url": f"/media/pokemon/artwork/{nat_id}.png",
                 "sprite_shiny_url": None,
-                "artwork_shiny_url": f"/media/pokemon/artwork/shiny/{nat_id}.png",
+                "artwork_shiny_url": f"/media/pokemon/home/shiny/{nat_id}.png",
                 "primary_type": p_type,
                 "secondary_type": s_type
             },
@@ -1149,7 +1149,7 @@ def main():
             "game_sprite_shiny_url": f"/media/pokemon/sprites/platinum_shiny/{nat_id}.png",
             "game_sprite_back_url": f"/media/pokemon/sprites/platinum/back/{nat_id}.png",
             "game_sprite_shiny_back_url": f"/media/pokemon/sprites/platinum_shiny/back/{nat_id}.png",
-            "modern_sprite_shiny_url": f"/media/pokemon/artwork/shiny/{nat_id}.png",
+            "modern_sprite_shiny_url": f"/media/pokemon/home/shiny/{nat_id}.png",
             "modal_retro_sprite_url": f"/media/pokemon/sprites/platinum_animated/{nat_id}.png",
             "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/platinum_animated_shiny/{nat_id}.png",
             "modal_retro_sprite_back_url": f"/media/pokemon/sprites/platinum/back/{nat_id}.png",

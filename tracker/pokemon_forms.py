@@ -1692,13 +1692,13 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
     seasons = [
-        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "deerling/spring", "585", 585),
-        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "deerling/summer", None, 10026),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn", None, 10027),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter", None, 10028),
+        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "deerling/spring", "585"),
+        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "deerling/summer", None),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "deerling/autumn", None),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "deerling/winter", None),
     ]
     forms = []
-    for f_key, f_name, season_text, rel_stem, rel_back_anim, home_id in seasons:
+    for f_key, f_name, season_text, rel_stem, rel_back_anim in seasons:
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1709,8 +1709,8 @@ def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "secondary_type": "grass",
             "secondary_type_es": "Planta",
             **_build_retro_form_sprites(clean_slug, rel_stem, rel_back_anim=rel_back_anim),
-            "sprite_modern": f"/media/pokemon/home/{home_id}.png",
-            "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
+            "sprite_modern": f"/media/pokemon/home/585-{f_key}.png",
+            "sprite_modern_shiny": f"/media/pokemon/home/shiny/585-{f_key}.png",
             "notes": [
                 {
                     "title": season_text,
@@ -1726,13 +1726,13 @@ def get_deerling_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
     seasons = [
-        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "sawsbuck/spring", "586", 586),
-        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "sawsbuck/summer", None, 10029),
-        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn", None, 10030),
-        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter", None, 10031),
+        ("spring", "Forma Primavera", "Primavera (Ene / May / Sep)", "sawsbuck/spring", "586"),
+        ("summer", "Forma Verano", "Verano (Feb / Jun / Oct)", "sawsbuck/summer", None),
+        ("autumn", "Forma Otoño", "Otoño (Mar / Jul / Nov)", "sawsbuck/autumn", None),
+        ("winter", "Forma Invierno", "Invierno (Abr / Ago / Dic)", "sawsbuck/winter", None),
     ]
     forms = []
-    for f_key, f_name, season_text, rel_stem, rel_back_anim, home_id in seasons:
+    for f_key, f_name, season_text, rel_stem, rel_back_anim in seasons:
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1743,8 +1743,8 @@ def get_sawsbuck_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "secondary_type": "grass",
             "secondary_type_es": "Planta",
             **_build_retro_form_sprites(clean_slug, rel_stem, rel_back_anim=rel_back_anim),
-            "sprite_modern": f"/media/pokemon/home/{home_id}.png",
-            "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_id}.png",
+            "sprite_modern": f"/media/pokemon/home/586-{f_key}.png",
+            "sprite_modern_shiny": f"/media/pokemon/home/shiny/586-{f_key}.png",
             "notes": [
                 {
                     "title": season_text,
@@ -1816,6 +1816,7 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     ]
     forms = []
     for f_key, f_name, type_label, rel_stem, desc, icon_path in drives:
+        home_stem = "649" if f_key == "normal" else f"649-{f_key}"
         forms.append({
             "form_key": f_key,
             "name": f_name,
@@ -1826,8 +1827,8 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "secondary_type": "steel",
             "secondary_type_es": "Acero",
             **_build_retro_form_sprites(clean_slug, rel_stem),
-            "sprite_modern": "/media/pokemon/home/649.png",
-            "sprite_modern_shiny": "/media/pokemon/home/shiny/649.png",
+            "sprite_modern": f"/media/pokemon/home/{home_stem}.png",
+            "sprite_modern_shiny": f"/media/pokemon/home/shiny/{home_stem}.png",
             "notes": [
                 {
                     "title": f"Cartucho {f_name} ({type_label})" if f_key != "normal" else "Forma Normal (Sin Cartucho)",

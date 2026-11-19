@@ -5176,6 +5176,51 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertIn("Gracídea", shaymin_sky["notes"][0]["text"])
         self.assertNotIn("Grácidea", shaymin_sky["notes"][0]["text"])
 
+        # 11. Sprites modernos de Pokémon HOME en formas de Deerling, Sawsbuck y Genesect
+        from pathlib import Path
+        from django.conf import settings
+        for num in (585, 586, 649):
+            forms = get_pokemon_forms(num, "black")
+            for form in forms:
+                fkey = form["form_key"]
+                expected_stem = str(num) if (num == 649 and fkey == "normal") else f"{num}-{fkey}"
+                self.assertEqual(form["sprite_modern"], f"/media/pokemon/home/{expected_stem}.png")
+                self.assertEqual(form["sprite_modern_shiny"], f"/media/pokemon/home/shiny/{expected_stem}.png")
+                self.assertTrue((Path(settings.BASE_DIR) / form["sprite_modern"].lstrip("/")).exists())
+                self.assertTrue((Path(settings.BASE_DIR) / form["sprite_modern_shiny"].lstrip("/")).exists())
+
+        # 12. Invariante global: modo moderno shiny usa HOME shiny en todas las gens y formas consistentes
+        for game_slug, sample_num in (("red", 1), ("gold", 201), ("ruby", 252), ("diamond", 387), ("black", 495)):
+            cat = {e.pokemon.national_number: e for e in get_compiled_catalog(game_slug, force_reload=True)}
+            entry = cat[sample_num]
+            suffix = "-f" if sample_num == 201 else ""
+            import json as _json
+            self.assertEqual(entry.modern_sprite_shiny_url, f"/media/pokemon/home/shiny/{sample_num}{suffix}.png")
+            self.assertEqual(_json.loads(entry.modal_data_json)["sprite_modern_shiny"], entry.modern_sprite_shiny_url)
+
+        form_targets = [
+            (172, "heartgold"), (201, "gold"), (351, "ruby"), (386, "platinum"),
+            (412, "platinum"), (413, "platinum"), (421, "platinum"), (422, "platinum"),
+            (423, "platinum"), (479, "platinum"), (487, "platinum"), (492, "platinum"),
+            (493, "platinum"), (550, "black"), (555, "black"), (585, "black"),
+            (586, "black"), (648, "black"), (649, "black"),
+        ]
+        for f_num, f_game in form_targets:
+            forms = get_pokemon_forms(f_num, f_game)
+            self.assertTrue(forms)
+            seen_modern = set()
+            for form in forms:
+                sm = form["sprite_modern"]
+                sms = form["sprite_modern_shiny"]
+                self.assertTrue(sm.startswith("/media/pokemon/home/"), f"{f_num} {form['form_key']}: {sm}")
+                self.assertTrue(sms.startswith("/media/pokemon/home/shiny/"), f"{f_num} {form['form_key']}: {sms}")
+                self.assertEqual(Path(sm).name, Path(sms).name, f"Mismatch normal/shiny para #{f_num} {form['form_key']}")
+                self.assertTrue((Path(settings.BASE_DIR) / sm.lstrip("/")).exists(), f"Falta {sm}")
+                self.assertTrue((Path(settings.BASE_DIR) / sms.lstrip("/")).exists(), f"Falta {sms}")
+                if f_num != 172:
+                    self.assertNotIn(sm, seen_modern, f"Sprite moderno duplicado en #{f_num}: {sm}")
+                seen_modern.add(sm)
+
         shellos_sinnoh = get_pokemon_forms(422, "diamond")
         for sf in shellos_sinnoh:
             for loc in sf.get("locations", []):

@@ -831,7 +831,7 @@ def build_catalogs():
                 "weight": sp['weight'],
                 "sprite_url": f"/media/pokemon/artwork/{nat_id}.png",
                 "sprite_shiny_url": f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/{nat_id}.png" if nat_id != 201 else "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/201-f.png",
-                "artwork_shiny_url": f"/media/pokemon/artwork/shiny/{nat_id}.png" if nat_id != 201 else "/media/pokemon/artwork/shiny/201-f.png",
+                "artwork_shiny_url": f"/media/pokemon/home/shiny/{nat_id}.png" if nat_id != 201 else "/media/pokemon/home/shiny/201-f.png",
                 "primary_type": p_type,
                 "secondary_type": s_type
             },
@@ -845,7 +845,7 @@ def build_catalogs():
             "game_sprite_shiny_url": f"/media/pokemon/sprites/sapphire_shiny/{nat_id}.png",
             "game_sprite_back_url": f"/media/pokemon/sprites/sapphire/back/{nat_id}.png",
             "game_sprite_shiny_back_url": f"/media/pokemon/sprites/sapphire_shiny/back/{nat_id}.png",
-            "modern_sprite_shiny_url": f"/media/pokemon/artwork/shiny/{nat_id}.png" if nat_id != 201 else "/media/pokemon/artwork/shiny/201-f.png",
+            "modern_sprite_shiny_url": f"/media/pokemon/home/shiny/{nat_id}.png" if nat_id != 201 else "/media/pokemon/home/shiny/201-f.png",
             "modal_retro_sprite_url": f"/media/pokemon/sprites/sapphire/{nat_id}.png",
             "modal_retro_sprite_shiny_url": f"/media/pokemon/sprites/sapphire_shiny/{nat_id}.png",
             "modal_retro_sprite_back_url": f"/media/pokemon/sprites/sapphire/back/{nat_id}.png",

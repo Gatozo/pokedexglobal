@@ -362,7 +362,8 @@ class CatalogEntry:
         self.game_sprite_url = data.get("game_sprite_url") or self.pokemon.sprite_url
         self.game_sprite_shiny_url = data.get("game_sprite_shiny_url") or self.pokemon.sprite_shiny_url
         if self.pokemon and self.pokemon.national_number:
-            self.modern_sprite_shiny_url = self.pokemon.artwork_shiny_url
+            unown_suffix = "-f" if self.pokemon.national_number == 201 else ""
+            self.modern_sprite_shiny_url = f"/media/pokemon/home/shiny/{self.pokemon.national_number}{unown_suffix}.png"
         else:
             self.modern_sprite_shiny_url = data.get("modern_sprite_shiny_url") or ""
 
