@@ -3366,10 +3366,6 @@
       "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh si el último dígito del TID del entrenador es impar (o aleatoriamente tras la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Cráneo (TID impar / Post-Nacional)"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Cráneo"
         },
@@ -3485,10 +3481,6 @@
       "badge_color": "pink",
       "summary": "Revivir del Fósil Coraza en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh si el último dígito del TID del entrenador es par (o aleatoriamente tras la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Coraza (TID par / Post-Nacional)"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Coraza"

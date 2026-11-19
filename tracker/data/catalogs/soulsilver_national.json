@@ -12564,16 +12564,8 @@
       "summary": "Revivir el Fósil Domo (exclusivo de SoulSilver rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Domo (Golpe Roca en rocas rompibles)"
-        },
-        {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Restauración de Fósil Domo"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -12688,12 +12680,8 @@
       "summary": "Revivir el Ámbar Viejo (obtenible usando Golpe Roca en las Ruinas Alfa tras surf) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa (Cámaras Posteriores)",
-          "method": "Ámbar Viejo (Golpe Roca)"
-        },
-        {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Restauración de Ámbar Viejo"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -27100,16 +27088,8 @@
       "summary": "Revivir el Fósil Raíz (exclusivo de SoulSilver rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Raíz (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Raíz (Golpe Roca en rocas rompibles)"
-        },
-        {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Restauración de Fósil Raíz"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",

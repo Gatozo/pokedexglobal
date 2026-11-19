@@ -490,9 +490,60 @@ EVOLUTION_ITEMS_ES = {
     'odd-incense': 'Incienso Raro',
     'wave-incense': 'Incienso Aqua',
     'prism-scale': 'Escama Bella',
+    'helix-fossil': 'Fósil Hélix',
+    'dome-fossil': 'Fósil Domo',
+    'old-amber': 'Ámbar Viejo',
+    'root-fossil': 'Fósil Raíz',
+    'claw-fossil': 'Fósil Garra',
+    'skull-fossil': 'Fósil Cráneo',
+    'armor-fossil': 'Fósil Coraza',
+    'cover-fossil': 'Fósil Tapa',
+    'plume-fossil': 'Fósil Pluma',
+}
+
+FOSSIL_SLUGS = {
+    'helix-fossil',
+    'dome-fossil',
+    'old-amber',
+    'root-fossil',
+    'claw-fossil',
+    'skull-fossil',
+    'armor-fossil',
+    'cover-fossil',
+    'plume-fossil',
+}
+
+FOSSIL_POKEMON_MAP: Dict[int, str] = {
+    138: 'helix-fossil',   # Omanyte
+    140: 'dome-fossil',    # Kabuto
+    142: 'old-amber',      # Aerodactyl
+    345: 'root-fossil',    # Lileep
+    347: 'claw-fossil',    # Anorith
+    408: 'skull-fossil',   # Cranidos
+    410: 'armor-fossil',   # Shieldon
+    564: 'cover-fossil',   # Tirtouga
+    566: 'plume-fossil',   # Archen
 }
 
 STONE_NAME_TO_SLUG = {
+    'fósil hélix': 'helix-fossil',
+    'fosil helix': 'helix-fossil',
+    'fósil domo': 'dome-fossil',
+    'fosil domo': 'dome-fossil',
+    'ámbar viejo': 'old-amber',
+    'ambar viejo': 'old-amber',
+    'fósil raíz': 'root-fossil',
+    'fosil raiz': 'root-fossil',
+    'fósil garra': 'claw-fossil',
+    'fosil garra': 'claw-fossil',
+    'fósil cráneo': 'skull-fossil',
+    'fosil craneo': 'skull-fossil',
+    'fósil coraza': 'armor-fossil',
+    'fosil coraza': 'armor-fossil',
+    'fósil tapa': 'cover-fossil',
+    'fosil tapa': 'cover-fossil',
+    'fósil pluma': 'plume-fossil',
+    'fosil pluma': 'plume-fossil',
     'escama bella': 'prism-scale',
     'prism scale': 'prism-scale',
     'piedra agua': 'water-stone',
@@ -619,7 +670,9 @@ def resolve_evolution_stone(
         if effective_game in game_notes:
             availability_note = game_notes[effective_game]
         elif effective_game in ['black', 'white', 'black2', 'white2']:
-            if slug.endswith("-incense"):
+            if slug in FOSSIL_SLUGS:
+                availability_note = "Objeto fósil restaurable en el Museo de Ciudad Esmalte."
+            elif slug.endswith("-incense"):
                 availability_note = "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game)."
             elif slug in ('razor-claw', 'razor-fang'):
                 availability_note = "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia."
@@ -632,7 +685,9 @@ def resolve_evolution_stone(
 
     category = stone_data.get("category")
     if not category:
-        if slug.endswith("-incense"):
+        if slug in FOSSIL_SLUGS:
+            category = "fossil"
+        elif slug.endswith("-incense"):
             category = "incense"
         elif slug.endswith("-stone"):
             category = "stone"

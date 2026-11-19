@@ -427,10 +427,24 @@ class CatalogEntry:
             return self._evolution_stone
         obt = self.obtaining_info or {}
         evo = obt.get("evolution_info") or {}
+        nat_num = getattr(self.pokemon, "national_number", 0)
+        from .utils import FOSSIL_POKEMON_MAP, resolve_evolution_stone
+
+        if not evo and nat_num in FOSSIL_POKEMON_MAP:
+            fossil_res = resolve_evolution_stone(
+                item_slug=FOSSIL_POKEMON_MAP[nat_num],
+                game_slug=self.game_slug,
+            )
+            if fossil_res and fossil_res.get("locations"):
+                return fossil_res
+            return None
+
         item_slug = evo.get("item_slug") or obt.get("item_slug")
         text_hint = evo.get("condition") or evo.get("text") or obt.get("summary") or ""
-        from .utils import resolve_evolution_stone
-        return resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=self.game_slug)
+        res = resolve_evolution_stone(item_slug=item_slug, text_hint=text_hint, game_slug=self.game_slug)
+        if res and res.get("category") == "fossil" and not res.get("locations"):
+            return None
+        return res
 
     @property
     def filter_locations(self) -> str:
@@ -562,7 +576,16 @@ class CatalogEntry:
             tags.add("bug_contest")
 
         # Golpe Roca
-        if ("golpe roca" in loc_text or "rock smash" in loc_text or "rock-smash" in loc_text) and not is_transfer:
+        fossil_stone_text = " ".join(
+            f"{l.get('area', '')} {l.get('detail', '')}".lower()
+            for l in (self.evolution_stone or {}).get("locations", [])
+        ) if obt.get("type") == "fossil" else ""
+        if (
+            "golpe roca" in loc_text
+            or "rock smash" in loc_text
+            or "rock-smash" in loc_text
+            or "golpe roca" in fossil_stone_text
+        ) and not is_transfer:
             tags.add("rock_smash")
 
         # Pokéwalker

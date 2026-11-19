@@ -3726,5 +3726,610 @@
         }
       ]
     }
+  },
+  "helix-fossil": {
+    "slug": "helix-fossil",
+    "name_es": "Fósil Hélix",
+    "icon_url": "/media/items/helix-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en el mar. Parece ser un fragmento de concha marina.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "red": "Objeto clave único por partida (elección frente al Fósil Domo). Restaurar en el Laboratorio de Isla Canela.",
+      "blue": "Objeto clave único por partida (elección frente al Fósil Domo). Restaurar en el Laboratorio de Isla Canela.",
+      "yellow": "Objeto clave único por partida (elección frente al Fósil Domo). Restaurar en el Laboratorio de Isla Canela.",
+      "firered": "Objeto clave único por partida (elección frente al Fósil Domo). Restaurar en el Laboratorio de Isla Canela.",
+      "leafgreen": "Objeto clave único por partida (elección frente al Fósil Domo). Restaurar en el Laboratorio de Isla Canela.",
+      "diamond": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "pearl": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "platinum": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de HeartGold con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "soulsilver": "Exclusivo de HeartGold. Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "red": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Domo). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Omanyte."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Domo). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Omanyte."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Domo). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Omanyte."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Domo). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Omanyte."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Domo). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Omanyte."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruinas Alfa",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de HeartGold frente al Fósil Domo de SoulSilver)."
+        },
+        {
+          "area": "Cueva Acantilado",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de HeartGold frente al Fósil Domo de SoulSilver)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "No disponible in-game (Exclusivo de HeartGold)",
+          "detail": "Exclusivo de Pokémon Oro HeartGold (Golpe Roca en Ruinas Alfa y Cueva Acantilado). Puedes transferirlo equipado en un Pokémon desde HeartGold o D/P/Pt y restaurarlo en el Museo de Ciudad Plateada."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "dome-fossil": {
+    "slug": "dome-fossil",
+    "name_es": "Fósil Domo",
+    "icon_url": "/media/items/dome-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en el mar. Parece ser parte de una concha.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "red": "Objeto clave único por partida (elección frente al Fósil Hélix). Restaurar en el Laboratorio de Isla Canela.",
+      "blue": "Objeto clave único por partida (elección frente al Fósil Hélix). Restaurar en el Laboratorio de Isla Canela.",
+      "yellow": "Objeto clave único por partida (elección frente al Fósil Hélix). Restaurar en el Laboratorio de Isla Canela.",
+      "firered": "Objeto clave único por partida (elección frente al Fósil Hélix). Restaurar en el Laboratorio de Isla Canela.",
+      "leafgreen": "Objeto clave único por partida (elección frente al Fósil Hélix). Restaurar en el Laboratorio de Isla Canela.",
+      "diamond": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "pearl": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "platinum": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de SoulSilver. Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "soulsilver": "Exclusivo de SoulSilver con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "red": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Hélix). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Kabuto."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Hélix). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Kabuto."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Hélix). Al ser Objeto Clave en Gen 1, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Kabuto."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Hélix). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Kabuto."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Monte Moon (Sótano B2)",
+          "detail": "Elección única tras derrotar al Supernecio (frente al Fósil Hélix). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Kabuto."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "No disponible in-game (Exclusivo de SoulSilver)",
+          "detail": "Exclusivo de Pokémon Plata SoulSilver (Golpe Roca en Ruinas Alfa y Cueva Acantilado). Puedes transferirlo equipado en un Pokémon desde SoulSilver o D/P/Pt y restaurarlo en el Museo de Ciudad Plateada."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruinas Alfa",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de SoulSilver frente al Fósil Hélix de HeartGold)."
+        },
+        {
+          "area": "Cueva Acantilado",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de SoulSilver frente al Fósil Hélix de HeartGold)."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "old-amber": {
+    "slug": "old-amber",
+    "name_es": "Ámbar Viejo",
+    "icon_url": "/media/items/old-amber.png",
+    "category": "fossil",
+    "description_es": "Fragmento de ámbar que contiene el ADN de un Pokémon prehistórico. Es transparente y de color amarillo.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "red": "Objeto clave único en Ciudad Plateada. Restaurar en el Laboratorio de Isla Canela.",
+      "blue": "Objeto clave único en Ciudad Plateada. Restaurar en el Laboratorio de Isla Canela.",
+      "yellow": "Objeto clave único en Ciudad Plateada. Restaurar en el Laboratorio de Isla Canela.",
+      "firered": "Objeto clave único en Ciudad Plateada. Restaurar en el Laboratorio de Isla Canela.",
+      "leafgreen": "Objeto clave único en Ciudad Plateada. Restaurar en el Laboratorio de Isla Canela.",
+      "diamond": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "pearl": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "platinum": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "heartgold": "Obtenible en Ruinas Alfa con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "soulsilver": "Obtenible en Ruinas Alfa con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "red": [
+        {
+          "area": "Ciudad Plateada (Museo de la Ciencia)",
+          "detail": "Entregado por un científico en la entrada trasera del ala anexa (requiere MO Corte para cortar el arbusto)."
+        }
+      ],
+      "blue": [
+        {
+          "area": "Ciudad Plateada (Museo de la Ciencia)",
+          "detail": "Entregado por un científico en la entrada trasera del ala anexa (requiere MO Corte para cortar el arbusto)."
+        }
+      ],
+      "yellow": [
+        {
+          "area": "Ciudad Plateada (Museo de la Ciencia)",
+          "detail": "Entregado por un científico en la entrada trasera del ala anexa (requiere MO Corte para cortar el arbusto)."
+        }
+      ],
+      "firered": [
+        {
+          "area": "Ciudad Plateada (Museo de la Ciencia)",
+          "detail": "Entregado por un científico en la entrada trasera del ala anexa (requiere MO Corte para cortar el arbusto)."
+        }
+      ],
+      "leafgreen": [
+        {
+          "area": "Ciudad Plateada (Museo de la Ciencia)",
+          "detail": "Entregado por un científico en la entrada trasera del ala anexa (requiere MO Corte para cortar el arbusto)."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruinas Alfa (Cámaras Posteriores)",
+          "detail": "Rompiendo rocas con Golpe Roca en las zonas posteriores accesibles mediante Surf."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruinas Alfa (Cámaras Posteriores)",
+          "detail": "Rompiendo rocas con Golpe Roca en las zonas posteriores accesibles mediante Surf."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "root-fossil": {
+    "slug": "root-fossil",
+    "name_es": "Fósil Raíz",
+    "icon_url": "/media/items/root-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en el mar. Parece ser un fragmento de raíz.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "ruby": "Objeto clave único por partida (elección frente al Fósil Garra). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "sapphire": "Objeto clave único por partida (elección frente al Fósil Garra). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "emerald": "Obtenible en Torre Espejismo o en Gruta Desértica (post-game). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "diamond": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "pearl": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "platinum": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de SoulSilver. Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "soulsilver": "Exclusivo de SoulSilver con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "ruby": [
+        {
+          "area": "Ruta 111 (Desierto - Noreste)",
+          "detail": "Elección única frente al Fósil Garra (el otro se hunde en la arena). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Lileep."
+        }
+      ],
+      "sapphire": [
+        {
+          "area": "Ruta 111 (Desierto - Noreste)",
+          "detail": "Elección única frente al Fósil Garra (el otro se hunde en la arena). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Lileep."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Torre Espejismo (Cima)",
+          "detail": "Elección frente al Fósil Garra en la cima de la torre del desierto (requiere Bici Carrera)."
+        },
+        {
+          "area": "Gruta Desértica (Ruta 114 - Post-game)",
+          "detail": "Si elegiste el Fósil Garra en la Torre Espejismo, el Fósil Raíz aparece aquí tras superar la Liga Pokémon (túnel excavado por el Fosilmaníaco)."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "No disponible in-game (Exclusivo de SoulSilver)",
+          "detail": "Exclusivo de Pokémon Plata SoulSilver (Golpe Roca en Ruinas Alfa y Cueva Acantilado). Puedes transferirlo equipado en un Pokémon desde SoulSilver o D/P/Pt y restaurarlo en el Museo de Ciudad Plateada."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "Ruinas Alfa",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de SoulSilver frente al Fósil Garra de HeartGold)."
+        },
+        {
+          "area": "Cueva Acantilado",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de SoulSilver frente al Fósil Garra de HeartGold)."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "claw-fossil": {
+    "slug": "claw-fossil",
+    "name_es": "Fósil Garra",
+    "icon_url": "/media/items/claw-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en el mar. Parece ser un fragmento de garra.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "ruby": "Objeto clave único por partida (elección frente al Fósil Raíz). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "sapphire": "Objeto clave único por partida (elección frente al Fósil Raíz). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "emerald": "Obtenible en Torre Espejismo o en Gruta Desértica (post-game). Restaurar en Devon S.A. (Ciudad Férrica).",
+      "diamond": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "pearl": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "platinum": "Excavable en el Subsuelo de Sinnoh en post-game (Pokédex Nacional). Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de HeartGold con Golpe Roca. Restaurar en el Museo de Ciudad Plateada.",
+      "soulsilver": "Exclusivo de HeartGold. Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "ruby": [
+        {
+          "area": "Ruta 111 (Desierto - Noreste)",
+          "detail": "Elección única frente al Fósil Raíz (el otro se hunde en la arena). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Anorith."
+        }
+      ],
+      "sapphire": [
+        {
+          "area": "Ruta 111 (Desierto - Noreste)",
+          "detail": "Elección única frente al Fósil Raíz (el otro se hunde en la arena). Al ser Objeto Clave en Gen 3, no puede equiparse ni transferirse; si elegiste el otro, intercambia directamente a Anorith."
+        }
+      ],
+      "emerald": [
+        {
+          "area": "Torre Espejismo (Cima)",
+          "detail": "Elección frente al Fósil Raíz en la cima de la torre del desierto (requiere Bici Carrera)."
+        },
+        {
+          "area": "Gruta Desértica (Ruta 114 - Post-game)",
+          "detail": "Si elegiste el Fósil Raíz en la Torre Espejismo, el Fósil Garra aparece aquí tras superar la Liga Pokémon (túnel excavado por el Fosilmaníaco)."
+        }
+      ],
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (Post-game)",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador tras obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 4)."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "Ruinas Alfa",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de HeartGold frente al Fósil Raíz de SoulSilver)."
+        },
+        {
+          "area": "Cueva Acantilado",
+          "detail": "Rompiendo rocas con Golpe Roca (exclusivo de HeartGold frente al Fósil Raíz de SoulSilver)."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "No disponible in-game (Exclusivo de HeartGold)",
+          "detail": "Exclusivo de Pokémon Oro HeartGold (Golpe Roca en Ruinas Alfa y Cueva Acantilado). Puedes transferirlo equipado en un Pokémon desde HeartGold o D/P/Pt y restaurarlo en el Museo de Ciudad Plateada."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "skull-fossil": {
+    "slug": "skull-fossil",
+    "name_es": "Fósil Cráneo",
+    "icon_url": "/media/items/skull-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en tierra firme. Parece ser un fragmento de cráneo.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "diamond": "Exclusivo de Diamante (y Platino con ID impar). Restaurar en el Museo Minero de Ciudad Pirita.",
+      "pearl": "Exclusivo de Diamante/Platino. Transferible equipado en un Pokémon y restaurable en Ciudad Pirita.",
+      "platinum": "Disponible en el Subsuelo si el último dígito de tu ID de Entrenador es impar. Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de Sinnoh (D/P/Pt). Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "soulsilver": "Exclusivo de Sinnoh (D/P/Pt). Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "diamond": [
+        {
+          "area": "Subsuelo de Sinnoh",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador (exclusivo de Pokémon Diamante frente al Fósil Coraza de Perla)."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "No disponible in-game (Exclusivo de Diamante / Platino)",
+          "detail": "Exclusivo del Subsuelo de Sinnoh en Pokémon Diamante (y Platino con ID impar). Puedes transferirlo equipado en un Pokémon desde esas ediciones y restaurarlo en el Museo Minero de Ciudad Pirita."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (ID de Entrenador impar)",
+          "detail": "Excavación aleatoria usando el Kit de Explorador únicamente si el último dígito de tu ID de Entrenador es impar (1, 3, 5, 7, 9). Si es par, transfiérelo equipado en un Pokémon desde Diamante o Platino con ID impar."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "No disponible en Johto/Kanto (Exclusivo de Sinnoh)",
+          "detail": "No aparece en HeartGold (exclusivo del Subsuelo de Sinnoh en Diamante/Platino). Puedes transferirlo equipado en un Pokémon desde Sinnoh y restaurarlo en el Museo de la Ciencia de Ciudad Plateada."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "No disponible en Johto/Kanto (Exclusivo de Sinnoh)",
+          "detail": "No aparece en SoulSilver (exclusivo del Subsuelo de Sinnoh en Diamante/Platino). Puedes transferirlo equipado en un Pokémon desde Sinnoh y restaurarlo en el Museo de la Ciencia de Ciudad Plateada."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "armor-fossil": {
+    "slug": "armor-fossil",
+    "name_es": "Fósil Coraza",
+    "icon_url": "/media/items/armor-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en tierra firme. Parece ser un fragmento de collar.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil restaurable. No se encuentra a la venta en tiendas.",
+    "game_availability_notes": {
+      "diamond": "Exclusivo de Perla/Platino. Transferible equipado en un Pokémon y restaurable en Ciudad Pirita.",
+      "pearl": "Exclusivo de Perla (y Platino con ID par). Restaurar en el Museo Minero de Ciudad Pirita.",
+      "platinum": "Disponible en el Subsuelo si el último dígito de tu ID de Entrenador es par. Restaurar en Ciudad Pirita.",
+      "heartgold": "Exclusivo de Sinnoh (D/P/Pt). Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "soulsilver": "Exclusivo de Sinnoh (D/P/Pt). Transferible equipado en un Pokémon y restaurable en Ciudad Plateada.",
+      "black": "Obtenible al azar en Monte Tuerca (post-game) o equipado desde 5.ª Gen. Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "diamond": [
+        {
+          "area": "No disponible in-game (Exclusivo de Perla / Platino)",
+          "detail": "Exclusivo del Subsuelo de Sinnoh en Pokémon Perla (y Platino con ID par). Puedes transferirlo equipado en un Pokémon desde esas ediciones y restaurarlo en el Museo Minero de Ciudad Pirita."
+        }
+      ],
+      "pearl": [
+        {
+          "area": "Subsuelo de Sinnoh",
+          "detail": "Excavación aleatoria en las paredes usando el Kit de Explorador (exclusivo de Pokémon Perla frente al Fósil Cráneo de Diamante)."
+        }
+      ],
+      "platinum": [
+        {
+          "area": "Subsuelo de Sinnoh (ID de Entrenador par)",
+          "detail": "Excavación aleatoria usando el Kit de Explorador únicamente si el último dígito de tu ID de Entrenador es par (0, 2, 4, 6, 8). Si es impar, transfiérelo equipado en un Pokémon desde Perla o Platino con ID par."
+        }
+      ],
+      "heartgold": [
+        {
+          "area": "No disponible en Johto/Kanto (Exclusivo de Sinnoh)",
+          "detail": "No aparece en HeartGold (exclusivo del Subsuelo de Sinnoh en Perla/Platino). Puedes transferirlo equipado en un Pokémon desde Sinnoh y restaurarlo en el Museo de la Ciencia de Ciudad Plateada."
+        }
+      ],
+      "soulsilver": [
+        {
+          "area": "No disponible en Johto/Kanto (Exclusivo de Sinnoh)",
+          "detail": "No aparece en SoulSilver (exclusivo del Subsuelo de Sinnoh en Perla/Platino). Puedes transferirlo equipado en un Pokémon desde Sinnoh y restaurarlo en el Museo de la Ciencia de Ciudad Plateada."
+        }
+      ],
+      "black": [
+        {
+          "area": "Monte Tuerca (Post-game)",
+          "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ]
+    }
+  },
+  "cover-fossil": {
+    "slug": "cover-fossil",
+    "name_es": "Fósil Tapa",
+    "icon_url": "/media/items/cover-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico que vivió en el mar. Parece ser parte de un caparazón.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil único por partida (elección frente al Fósil Pluma). Restaurar en el Museo de Ciudad Esmalte.",
+    "game_availability_notes": {
+      "black": "Elección única por partida en el Castillo Ancestral (frente al Fósil Pluma). Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "black": [
+        {
+          "area": "Castillo Ancestral (P1)",
+          "detail": "Entregado por una mochilera (elección única por partida frente al Fósil Pluma). Si elegiste el Fósil Pluma, puedes transferir el Fósil Tapa equipado en un Pokémon desde otra edición de 5.ª Generación."
+        }
+      ]
+    }
+  },
+  "plume-fossil": {
+    "slug": "plume-fossil",
+    "name_es": "Fósil Pluma",
+    "icon_url": "/media/items/plume-fossil.png",
+    "category": "fossil",
+    "description_es": "Fósil de un Pokémon prehistórico, probablemente antepasado de las aves. Parece ser parte de un ala.",
+    "is_purchasable": false,
+    "price": null,
+    "availability_note": "Objeto fósil único por partida (elección frente al Fósil Tapa). Restaurar en el Museo de Ciudad Esmalte.",
+    "game_availability_notes": {
+      "black": "Elección única por partida en el Castillo Ancestral (frente al Fósil Tapa). Restaurar en Ciudad Esmalte."
+    },
+    "games": {
+      "black": [
+        {
+          "area": "Castillo Ancestral (P1)",
+          "detail": "Entregado por una mochilera (elección única por partida frente al Fósil Tapa). Si elegiste el Fósil Tapa, puedes transferir el Fósil Pluma equipado en un Pokémon desde otra edición de 5.ª Generación."
+        }
+      ]
+    }
   }
 }

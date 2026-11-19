@@ -30,7 +30,9 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     const catBadge = document.getElementById('stone-modal-category-badge');
     if (catBadge) {
         let catLabel = 'Objeto Evolutivo';
-        if (stone.category === 'incense' || stoneSlug.includes('incense')) {
+        if (stone.category === 'fossil' || stoneSlug.includes('fossil') || stoneSlug === 'old-amber') {
+            catLabel = 'Fósil Restaurable';
+        } else if (stone.category === 'incense' || stoneSlug.includes('incense')) {
             catLabel = 'Incienso Especial';
         } else if (stone.category === 'trade' || ['kings-rock', 'metal-coat', 'dragon-scale', 'up-grade', 'deep-sea-tooth', 'deep-sea-scale'].includes(stoneSlug)) {
             catLabel = 'Objeto de Intercambio';
@@ -43,7 +45,9 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
     const footerText = document.getElementById('stone-modal-footer-text');
     if (footerText) {
         let guideType = 'objetos especiales';
-        if (stone.category === 'incense' || stoneSlug.includes('incense')) {
+        if (stone.category === 'fossil' || stoneSlug.includes('fossil') || stoneSlug === 'old-amber') {
+            guideType = 'fósiles y restauración';
+        } else if (stone.category === 'incense' || stoneSlug.includes('incense')) {
             guideType = 'inciensos y crianza especial';
         } else if (stoneSlug.endsWith('-stone')) {
             guideType = 'piedras evolutivas';
@@ -68,7 +72,11 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
 
     const priceBadge = document.getElementById('stone-modal-price-badge');
     if (priceBadge) {
-        if (isPurchasableInCurrentGame) {
+        const isFossil = stone.category === 'fossil' || stoneSlug.includes('fossil') || stoneSlug === 'old-amber';
+        if (isFossil) {
+            priceBadge.className = 'border border-amber-950 bg-amber-200 text-amber-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
+            priceBadge.textContent = 'Fósil Restaurable';
+        } else if (isPurchasableInCurrentGame) {
             priceBadge.className = 'border border-emerald-950 bg-emerald-200 text-emerald-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
             priceBadge.textContent = price ? `En tienda: ${price.toLocaleString('es-ES')} ₽` : 'Compra en tienda';
         } else if (['black', 'white', 'black2', 'white2'].includes(cleanGameSlug)) {

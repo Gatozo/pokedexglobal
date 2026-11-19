@@ -9163,10 +9163,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Hélix"
         },
@@ -9295,10 +9291,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Domo"
         },
@@ -9426,10 +9418,6 @@
       "badge_color": "amber",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Ámbar Viejo"
@@ -22324,10 +22312,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Raíz"
         },
@@ -22455,10 +22439,6 @@
       "badge_color": "amber",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Garra"
@@ -26357,10 +26337,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Cráneo"
         },
@@ -26488,10 +26464,6 @@
       "badge_color": "zinc",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Coraza"
@@ -37424,10 +37396,6 @@
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Tapa (Mochilera)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Tapa"
         },
@@ -37555,10 +37523,6 @@
       "badge_color": "amber",
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).",
       "locations": [
-        {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Pluma (Mochilera)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Pluma"

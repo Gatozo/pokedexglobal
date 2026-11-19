@@ -3574,10 +3574,6 @@
       "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subterráneo de Sinnoh (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Cráneo"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Cráneo"
         },

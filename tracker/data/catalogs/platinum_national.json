@@ -10447,10 +10447,6 @@
       "summary": "Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh tras obtener la Pokédex Nacional (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Hélix"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Hélix"
         },
@@ -10566,10 +10562,6 @@
       "badge_color": "amber",
       "summary": "Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh tras obtener la Pokédex Nacional (también obtenible mediante crianza).",
       "locations": [
-        {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Domo"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Domo"
@@ -10687,12 +10679,8 @@
       "summary": "Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh tras obtener la Pokédex Nacional (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Ámbar Viejo"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
-          "method": "Restauración de Fósil Ámbar Viejo"
+          "method": "Restauración de Ámbar Viejo"
         },
         {
           "area": "Pueblo Sosiego (Guardería Pokémon)",
@@ -24185,10 +24173,6 @@
       "summary": "Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh tras obtener la Pokédex Nacional (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Raíz"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Raíz"
         },
@@ -24304,10 +24288,6 @@
       "badge_color": "orange",
       "summary": "Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh tras obtener la Pokédex Nacional (también obtenible mediante crianza).",
       "locations": [
-        {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Garra"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Garra"
@@ -28292,10 +28272,6 @@
       "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh si el último dígito del TID del entrenador es impar (o aleatoriamente tras la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Cráneo (TID impar / Post-Nacional)"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Cráneo"
         },
@@ -28411,10 +28387,6 @@
       "badge_color": "pink",
       "summary": "Revivir del Fósil Coraza en el Museo Minero de Ciudad Pirita. Excavar en el Subsuelo de Sinnoh si el último dígito del TID del entrenador es par (o aleatoriamente tras la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Coraza (TID par / Post-Nacional)"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Coraza"

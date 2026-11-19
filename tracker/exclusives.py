@@ -2199,6 +2199,16 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
             '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio de Pokétransfer</strong> '
             'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).'
         ),
+        'historical_note': (
+            '<strong>Nota histórica (Pokémon Dream World):</strong> Varias de estas especies de generaciones anteriores '
+            'también podían obtenerse originalmente mediante el <strong>Pokémon Dream World</strong> (conectando el juego '
+            'por internet con <em>Pokémon Global Link</em> mediante el Sincronizador de Juego) para luego capturarlas en el '
+            '<strong>Bosque Nexo</strong> dentro de la Zona Nexo.<br><br>'
+            'Este servicio oficial cerró definitivamente entre finales de 2013 y enero de 2014, por lo que actualmente el '
+            'Bosque Nexo permanece vacío en partidas nuevas y el Pokétransfer o el intercambio local son las vías oficiales disponibles. '
+            'No obstante, existen proyectos externos de preservación comunitaria (como emuladores locales de servidor '
+            '<em>Game Sync</em> / DNS, por ejemplo <em>Entralinked</em>) que permiten emular esta mecánica de forma no oficial.'
+        ),
         'default_origin': 'Pokétransfer (Ruta 15)',
         'origins': {}
     },
@@ -2971,6 +2981,10 @@ def get_version_transfers_context(
 
     altering_cave_note = meta.get("altering_cave_note", "")
 
+    historical_note = meta.get("historical_note", "")
+
+    notes_count = 1 + int(bool(incompatible_warning)) + int(bool(altering_cave_note)) + int(bool(historical_note))
+
     origins_map = meta.get("origins", {})
 
     default_origin = meta.get("default_origin", "Transferencia Externa")
@@ -3032,6 +3046,10 @@ def get_version_transfers_context(
         'incompatible_warning': incompatible_warning,
 
         'altering_cave_note': altering_cave_note,
+
+        'historical_note': historical_note,
+
+        'notes_count': notes_count,
 
         'transfer_list': transfer_list,
 

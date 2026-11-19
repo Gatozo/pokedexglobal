@@ -10464,10 +10464,6 @@
       "summary": "Revivir del Fósil Hélix en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Hélix"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Hélix"
         },
@@ -10584,10 +10580,6 @@
       "summary": "Revivir del Fósil Domo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Domo"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Domo"
         },
@@ -10703,10 +10695,6 @@
       "badge_color": "blue",
       "summary": "Revivir del Ámbar Viejo en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
-        {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Ámbar Viejo"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Ámbar Viejo"
@@ -24416,10 +24404,6 @@
       "summary": "Revivir del Fósil Raíz en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Raíz"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Raíz"
         },
@@ -24535,10 +24519,6 @@
       "badge_color": "blue",
       "summary": "Revivir del Fósil Garra en el Museo Minero de Ciudad Pirita tras excavar en el Subterráneo de Sinnoh en el postgame (también obtenible mediante crianza).",
       "locations": [
-        {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Garra"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Garra"
@@ -28553,10 +28533,6 @@
       "badge_color": "blue",
       "summary": "Revivir del Fósil Cráneo en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Diamante excavando en el Subterráneo de Sinnoh (también obtenible mediante crianza).",
       "locations": [
-        {
-          "area": "Subterráneo de Sinnoh",
-          "method": "Excavación de Fósil Cráneo"
-        },
         {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Cráneo"

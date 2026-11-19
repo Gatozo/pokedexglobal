@@ -679,7 +679,8 @@ export function renderModalObtaining(data, activeForm = null) {
             const stone = data.evolution_stone;
             const itemBox = document.createElement('div');
             const isIncense = stone.slug.includes('incense');
-            const labelText = isIncense ? 'Incienso Requerido:' : 'Objeto Requerido:';
+            const isFossil = stone.category === 'fossil' || stone.slug.includes('fossil') || stone.slug === 'old-amber';
+            const labelText = isIncense ? 'Incienso Requerido:' : (isFossil ? 'Fósil Requerido:' : 'Objeto Requerido:');
             itemBox.className = 'text-xs bg-amber-50/90 border-2 border-amber-300 text-amber-950 rounded-lg p-2.5 font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-2 shadow-sm';
             itemBox.innerHTML = `
                 <div class="flex items-center gap-2">
@@ -711,7 +712,7 @@ export function renderModalObtaining(data, activeForm = null) {
             if (obt.evolution_info || data.evolution_stone) {
                 const wildTitle = document.createElement('div');
                 wildTitle.className = 'text-[11px] font-bold text-slate-700 uppercase tracking-wide mb-1';
-                wildTitle.textContent = (obt.type === 'breeding' || obt.type === 'gift') ? 'Lugares de obtención:' : ((obt.type === 'transfer') ? 'Método de transferencia:' : 'Lugares de captura / encuentro:');
+                wildTitle.textContent = (obt.type === 'fossil') ? 'Lugares de restauración / obtención:' : ((obt.type === 'breeding' || obt.type === 'gift') ? 'Lugares de obtención:' : ((obt.type === 'transfer') ? 'Método de transferencia:' : 'Lugares de captura / encuentro:'));
                 detailsContainer.appendChild(wildTitle);
             }
 

@@ -68,7 +68,7 @@
                             Guía y reglas de transferencia
                         </span>
                         <span class="border border-indigo-950 bg-amber-300 text-slate-950 font-black text-[9px] uppercase px-1.5 py-0.2 rounded shadow-[1px_1px_0px_0px_#0f172a] shrink-0">
-                            {% if transfers_info.altering_cave_note and transfers_info.incompatible_warning %}3 notas{% elif transfers_info.incompatible_warning or transfers_info.altering_cave_note %}2 notas{% else %}1 nota{% endif %}
+                            {{ transfers_info.notes_count|default:1 }} nota{{ transfers_info.notes_count|default:1|pluralize }}
                         </span>
                     </div>
                     
@@ -100,12 +100,21 @@
                     </div>
                     {% endif %}
 
-                    <!-- 3. Nota Técnica e Histórica de Cueva Cambiante -->
+                    <!-- 3. Nota Técnica e Histórica (Cueva Cambiante / Dream World) -->
                     {% if transfers_info.altering_cave_note %}
                     <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-lg p-2.5 text-xs font-semibold flex items-start gap-2.5 shadow-sm">
                         <img src="/media/items/card-key.png" alt="Cueva Cambiante" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
                         <div class="leading-relaxed text-slate-900">
                             {{ transfers_info.altering_cave_note|safe }}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if transfers_info.historical_note %}
+                    <div class="bg-amber-50 border-2 border-amber-300 text-amber-950 rounded-lg p-2.5 text-xs font-semibold flex items-start gap-2.5 shadow-sm">
+                        <img src="/media/items/card-key.png" alt="Nota histórica" class="w-4.5 h-4.5 object-contain pixel-art shrink-0 mt-0.5">
+                        <div class="leading-relaxed text-slate-900">
+                            {{ transfers_info.historical_note|safe }}
                         </div>
                     </div>
                     {% endif %}

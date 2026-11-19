@@ -5398,10 +5398,6 @@
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Tapa (Mochilera)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Tapa"
         },
@@ -5529,10 +5525,6 @@
       "badge_color": "amber",
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).",
       "locations": [
-        {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Pluma (Mochilera)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Pluma"

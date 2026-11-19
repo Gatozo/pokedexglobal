@@ -15305,11 +15305,7 @@
       "locations": [
         {
           "area": "Isla Canela (Laboratorio)",
-          "method": "Revivir Fósil Hélix"
-        },
-        {
-          "area": "Monte Moon (S2)",
-          "method": "Elección de fósil"
+          "method": "Restauración de Fósil Hélix"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -15425,11 +15421,7 @@
       "locations": [
         {
           "area": "Isla Canela (Laboratorio)",
-          "method": "Revivir Fósil Domo"
-        },
-        {
-          "area": "Monte Moon (S2)",
-          "method": "Elección de fósil"
+          "method": "Restauración de Fósil Domo"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
@@ -15545,11 +15537,11 @@
       "locations": [
         {
           "area": "Isla Canela (Laboratorio)",
-          "method": "Revivir Ámbar Viejo"
+          "method": "Restauración de Ámbar Viejo"
         },
         {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Entrega de científico con MO Corte"
+          "method": "Restauración de Ámbar Viejo"
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",

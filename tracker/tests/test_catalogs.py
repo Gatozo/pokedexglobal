@@ -2501,7 +2501,7 @@ class PokemonPlatinumGen4Tests(TestCase):
             data = json.load(f)
 
         platinum_items = [slug for slug, it in data.items() if "platinum" in it.get("games", {})]
-        self.assertEqual(len(platinum_items), 32)
+        self.assertEqual(len(platinum_items), 39)  # 32 objetos evolutivos/inciensos + 7 fósiles
         # Verificar piedras y objetos clave
         self.assertIn("dusk-stone", platinum_items)
         self.assertIn("dawn-stone", platinum_items)
@@ -3936,9 +3936,12 @@ class PokemonSoulSilverGen4Tests(TestCase):
         sandshrew = [e for e in nat_cat if e.pokemon.national_number == 27][0]
         self.assertIn("Casino", str(sandshrew.obtaining_info.get("locations", [])))
         
-        # Fósil Domo/Raíz (Golpe Roca en Ruinas Alfa)
+        # Fósil Domo/Raíz (Golpe Roca en Ruinas Alfa -> modal del objeto; Museo de Ciudad Plateada -> restauración)
         kabuto = [e for e in nat_cat if e.pokemon.national_number == 140][0]
-        self.assertIn("Ruinas Alfa", str(kabuto.obtaining_info.get("locations", [])))
+        self.assertIn("Ciudad Plateada", str(kabuto.obtaining_info.get("locations", [])))
+        self.assertIsNotNone(kabuto.evolution_stone)
+        self.assertEqual(kabuto.evolution_stone["slug"], "dome-fossil")
+        self.assertIn("Ruinas Alfa", str(kabuto.evolution_stone.get("locations", [])))
 
     def test_soulsilver_forms_static_and_animated_assets_exist(self):
         from tracker.catalog_service import get_compiled_catalog
@@ -5112,12 +5115,58 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertIsNotNone(transfers_info)
         self.assertEqual(transfers_info["total"], 178)
         self.assertEqual(transfers_info["mechanic_badge"], "Pokétransfer")
+        self.assertEqual(transfers_info["notes_count"], 2)
+        self.assertIn("Pokémon Dream World", transfers_info["historical_note"])
+        self.assertIn("Entralinked", transfers_info["historical_note"])
         rendered_modal = render_to_string(
             "tracker/components/_modal_transfers.html",
             {"transfers_info": transfers_info, "game": black_game},
         )
         self.assertIn("<strong>Pokémon Negro</strong>", rendered_modal)
+        self.assertIn("<strong>Pokémon Dream World</strong>", rendered_modal)
+        self.assertIn("2 notas", rendered_modal)
         self.assertNotIn("&lt;strong&gt;", rendered_modal)
+
+        # 10. Fósiles como objetos interactivos en todas las generaciones (Gen 1 a Gen 5)
+        from tracker.utils import resolve_evolution_stone
+
+        # Gen 1 (Rojo): Fósil Hélix en Monte Moon, restauración en Isla Canela
+        red_by = {e.pokemon.national_number: e for e in get_compiled_catalog("red", force_reload=True)}
+        self.assertEqual(red_by[138].evolution_stone["slug"], "helix-fossil")
+        self.assertEqual(red_by[138].evolution_stone["category"], "fossil")
+        self.assertIn("Monte Moon", str(red_by[138].evolution_stone["locations"]))
+
+        # Gen 2 (Oro): No hay restauración de fósiles; no debe asignarse objeto fósil
+        gold_by = {e.pokemon.national_number: e for e in get_compiled_catalog("gold", force_reload=True)}
+        self.assertIsNone(gold_by[138].evolution_stone)
+        self.assertIsNone(gold_by[142].evolution_stone)
+
+        # Gen 3 (Esmeralda / Rubí): Fósiles de Hoenn con ícono y sin fósil para Omanyte (transferencia)
+        eme_nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("emerald_national", force_reload=True)}
+        self.assertEqual(eme_nat_by[345].evolution_stone["slug"], "root-fossil")
+        self.assertIn("Torre Espejismo", str(eme_nat_by[345].evolution_stone["locations"]))
+        self.assertNotIn("Torre Espejismo", str(eme_nat_by[345].obtaining_info["locations"]))
+        self.assertIsNone(eme_nat_by[138].evolution_stone)
+
+        # Gen 4 (Diamante / Platino / HeartGold): Fósiles propios, de versión contraria y equipables
+        dia_nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("diamond_national", force_reload=True)}
+        self.assertEqual(dia_nat_by[408].evolution_stone["slug"], "skull-fossil")
+        self.assertEqual(dia_nat_by[410].evolution_stone["slug"], "armor-fossil")
+        self.assertIn("Perla", str(dia_nat_by[410].evolution_stone["locations"]))
+        plat_skull = resolve_evolution_stone(item_slug="skull-fossil", game_slug="platinum")
+        self.assertIn("impar", str(plat_skull["locations"]))
+        hg_nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("heartgold_national", force_reload=True)}
+        self.assertEqual(hg_nat_by[408].evolution_stone["slug"], "skull-fossil")
+        self.assertIn("Sinnoh", str(hg_nat_by[408].evolution_stone["locations"]))
+
+        # Gen 5 (Negro): Fósil Coraza en Monte Tuerca en el modal y solo Ciudad Esmalte + Guardería en la tarjeta
+        self.assertEqual(nat_by[410].evolution_stone["slug"], "armor-fossil")
+        self.assertIn("Monte Tuerca", str(nat_by[410].evolution_stone["locations"]))
+        self.assertNotIn("Monte Tuerca", str(nat_by[410].obtaining_info["locations"]))
+        self.assertIn("Museo de Ciudad Esmalte", str(nat_by[410].obtaining_info["locations"]))
+        self.assertEqual(reg_by[564].evolution_stone["slug"], "cover-fossil")
+        self.assertIn("Castillo Ancestral", str(reg_by[564].evolution_stone["locations"]))
+        self.assertNotIn("Castillo Ancestral", str(reg_by[564].obtaining_info["locations"]))
 
         meloetta_step = next(f for f in get_pokemon_forms(648, "black") if f["form_key"] == "pirouette")
         self.assertIn("La melodía del descanso", meloetta_step["notes"][0]["text"])

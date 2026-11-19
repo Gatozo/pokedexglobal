@@ -3691,10 +3691,6 @@
       "summary": "Revivir del Fósil Coraza en el Museo Minero de Ciudad Pirita. Exclusivo de Pokémon Perla excavando en el Subsuelo de Sinnoh (también obtenible mediante crianza).",
       "locations": [
         {
-          "area": "Subsuelo de Sinnoh",
-          "method": "Excavación de Fósil Coraza"
-        },
-        {
           "area": "Ciudad Pirita (Museo Minero)",
           "method": "Restauración de Fósil Coraza"
         },

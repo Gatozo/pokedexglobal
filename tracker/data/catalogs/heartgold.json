@@ -18813,16 +18813,8 @@
       "summary": "Revivir el Fósil Hélix (exclusivo de HeartGold rompiendo rocas con Golpe Roca en Ruinas Alfa y Cueva Acantilado) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
-        },
-        {
-          "area": "Cueva Acantilado",
-          "method": "Fósil Hélix (Golpe Roca en rocas rompibles)"
-        },
-        {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Restauración de Fósil Hélix"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
@@ -19062,12 +19054,8 @@
       "summary": "Revivir el Ámbar Viejo (obtenible usando Golpe Roca en las Ruinas Alfa tras surf) en el Museo de Ciudad Plateada.",
       "locations": [
         {
-          "area": "Ruinas Alfa (Cámaras Posteriores)",
-          "method": "Ámbar Viejo (Golpe Roca)"
-        },
-        {
           "area": "Ciudad Plateada (Museo)",
-          "method": "Revitalización de fósil"
+          "method": "Restauración de Ámbar Viejo"
         },
         {
           "area": "Ruta 34 (Guardería Pokémon)",
