@@ -21,28 +21,63 @@ export function toggleShinydexMode() {
     applyShinydexMode(state.isShinydexMode);
 }
 
+const PROGRESS_BAR_THEME = {
+    blue: 'bg-blue-600',
+    yellow: 'bg-amber-400',
+    gold: 'bg-[#c59b27]',
+    silver: 'bg-slate-500',
+    crystal: 'bg-sky-500',
+    ruby: 'bg-rose-900',
+    sapphire: 'bg-[#0f3870]',
+    emerald: 'bg-[#059669]',
+    firered: 'bg-[#ea580c]',
+    leafgreen: 'bg-[#16a34a]',
+    diamond: 'bg-[#1e40af]',
+    pearl: 'bg-[#be185d]',
+    platinum: 'bg-[#475569]',
+    heartgold: 'bg-[#b45309]',
+    soulsilver: 'bg-slate-500',
+    black: 'bg-slate-900',
+    white: 'bg-slate-400',
+};
+
+const PROGRESS_DOT_THEME = {
+    blue: 'bg-blue-600',
+    yellow: 'bg-amber-500',
+    gold: 'bg-[#c59b27]',
+    silver: 'bg-slate-400',
+    crystal: 'bg-sky-500',
+    ruby: 'bg-rose-900',
+    sapphire: 'bg-[#0f3870]',
+    emerald: 'bg-[#059669]',
+    firered: 'bg-[#ea580c]',
+    leafgreen: 'bg-[#16a34a]',
+    diamond: 'bg-[#1e40af]',
+    pearl: 'bg-[#be185d]',
+    platinum: 'bg-[#475569]',
+    heartgold: 'bg-[#b45309]',
+    soulsilver: 'bg-slate-400',
+    black: 'bg-slate-900',
+    white: 'bg-slate-300 border border-slate-950',
+};
+
 export function updateProgressBarUI() {
     const statCaught = document.getElementById('stat-caught');
     const statPercent = document.getElementById('stat-percent');
     const progressBar = document.getElementById('progress-bar');
 
     const currentStats = state.isShinydexMode ? state.shinyStats : state.normalStats;
+    const pct = parseFloat(currentStats.percent) || 0;
     if (statCaught) statCaught.textContent = currentStats.caught;
     if (statPercent) statPercent.textContent = currentStats.percent;
     if (progressBar) {
         progressBar.style.width = `${currentStats.percent}%`;
         if (state.isShinydexMode) {
-            progressBar.className = 'bg-gradient-to-r from-amber-400 to-yellow-300 h-full rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(251,191,36,0.6)]';
+            const shinyGlow = pct > 0 ? ' shadow-[0_0_8px_rgba(251,191,36,0.6)]' : '';
+            progressBar.className = `bg-gradient-to-r from-amber-400 to-yellow-300 h-full rounded-full transition-all duration-300${shinyGlow}`;
         } else {
-            progressBar.className = (
-                currentGameSlug === 'yellow' ? 'bg-amber-400' :
-                (currentGameSlug === 'blue' ? 'bg-blue-600' :
-                (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
-                (currentGameSlug === 'silver' ? 'bg-slate-500' :
-                (currentGameSlug === 'crystal' ? 'bg-sky-500' :
-                (currentGameSlug === 'black' ? 'bg-slate-900' :
-                (currentGameSlug === 'white' ? 'bg-slate-300 border border-slate-950' : 'bg-red-600'))))))
-            ) + ' h-full rounded-full transition-all duration-300';
+            const barBg = PROGRESS_BAR_THEME[currentGameSlug] || 'bg-red-600';
+            progressBar.className = `${barBg} h-full rounded-full transition-all duration-300`;
         }
     }
 }
@@ -161,15 +196,7 @@ export function applyShinydexMode(active) {
         }
         if (title) title.textContent = 'Progreso de Captura';
         if (dot) {
-            dot.className = 'w-2 h-2 rounded-full ' + (
-                currentGameSlug === 'blue' ? 'bg-blue-600' :
-                (currentGameSlug === 'yellow' ? 'bg-amber-500' :
-                (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
-                (currentGameSlug === 'silver' ? 'bg-slate-400' :
-                (currentGameSlug === 'crystal' ? 'bg-sky-500' :
-                (currentGameSlug === 'black' ? 'bg-slate-900' :
-                (currentGameSlug === 'white' ? 'bg-slate-300 border border-slate-950' : 'bg-red-600'))))))
-            );
+            dot.className = 'w-2 h-2 rounded-full ' + (PROGRESS_DOT_THEME[currentGameSlug] || 'bg-red-600');
         }
 
         // Restaurar botón de transferencias si existe

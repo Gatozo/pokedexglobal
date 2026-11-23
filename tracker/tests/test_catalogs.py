@@ -5641,6 +5641,13 @@ class PokemonWhiteGen5Tests(TestCase):
         self.assertEqual(res_hub.status_code, 200)
         self.assertIn("Zekrom", res_hub.content.decode("utf-8"))
 
+        # Garantizar que ninguna barra de progreso use borde negro sobre el relleno (evita segmento de 2px al 0%)
+        from pathlib import Path
+        cards_js = Path("tracker/static/tracker/js/cards.js").read_text(encoding="utf-8")
+        self.assertIn("white: 'bg-slate-400'", cards_js)
+        self.assertNotIn("white: 'bg-slate-300 border border-slate-950'", cards_js.split("PROGRESS_DOT_THEME")[0])
+        self.assertIn("white: 'bg-slate-300 border border-slate-950'", cards_js.split("PROGRESS_DOT_THEME")[1])
+
 
 
 

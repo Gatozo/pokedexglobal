@@ -22,23 +22,23 @@
         }
     </script>
     <!-- Estilos Principales y Componentes Cómic (Cacheados en Navegador) -->
-    <link rel="stylesheet" href="{% static 'tracker/css/pokedex.css' %}?v=20261009_types1">
+    <link rel="stylesheet" href="{% static 'tracker/css/pokedex.css' %}?v=20261123_white1">
     <!-- Preload prioritario de módulos JavaScript para interactividad instantánea -->
-    <link rel="modulepreload" href="{% static 'tracker/js/main.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/state.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/api.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/audio.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/cards.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/filters.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_comic.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_stones.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_exclusives.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_transfers.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/modal_unown.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/national_bar.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/url_sync.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/game_config.js' %}?v=20261008_gender2">
-    <link rel="modulepreload" href="{% static 'tracker/js/feebas_calculator.js' %}?v=20261008_gender2">
+    <link rel="modulepreload" href="{% static 'tracker/js/main.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/state.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/api.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/audio.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/cards.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/filters.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_comic.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_stones.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_exclusives.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_transfers.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/modal_unown.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/national_bar.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/url_sync.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/game_config.js' %}?v=20261123_white1">
+    <link rel="modulepreload" href="{% static 'tracker/js/feebas_calculator.js' %}?v=20261123_white1">
 </head>
 <body data-game="{{ game.slug }}" class="min-h-full flex flex-col font-sans {% if game.slug == 'blue' %}selection:bg-blue-500 selection:text-white{% elif game.slug == 'yellow' %}selection:bg-amber-500 selection:text-slate-950{% elif game.slug == 'gold' %}selection:bg-[#c59b27] selection:text-slate-950{% elif game.slug == 'silver' %}selection:bg-slate-400 selection:text-slate-950{% elif game.slug == 'crystal' %}selection:bg-sky-500 selection:text-slate-950{% elif game.slug == 'sapphire' %}selection:bg-[#1d4ed8] selection:text-white{% elif game.slug == 'ruby' %}selection:bg-red-600 selection:text-white{% elif game.slug == 'emerald' %}selection:bg-[#059669] selection:text-white{% elif game.slug == 'black' %}selection:bg-slate-900 selection:text-white{% elif game.slug == 'white' %}selection:bg-slate-300 selection:text-slate-950{% else %}selection:bg-red-500 selection:text-white{% endif %}">
     {% csrf_token %}
