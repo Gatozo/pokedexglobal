@@ -564,8 +564,8 @@ class CatalogEntry:
             tags.add("swarm")
 
 
-        # Surf
-        if "surf" in full_obt_text:
+        # Surf (solo si un método de ubicación real usa Surf, nunca por menciones de acceso en summary)
+        if "surf" in methods_lower and not is_transfer and obt.get("type") not in ("trade", "fossil"):
             tags.add("surf")
 
         # Golpe Cabeza (2ª Gen y HG/SS)
@@ -639,19 +639,20 @@ class CatalogEntry:
             if "supercaña en sombra del agua" in methods_lower or "supercana en sombra del agua" in methods_lower:
                 tags.add("spot_fishing")
 
-        # Cañas de pescar (requiere coincidencia explícita con la caña correspondiente para evitar falsos positivos como 'superar', 'superficie' o 'vieja mansión')
-        has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", full_obt_text))
-        has_good = bool(re.search(r"\b(caña\s*buena|cañabuena|good\s*rod)\b", full_obt_text))
-        has_super = bool(re.search(r"\b(s[uú]per\s*caña|supercaña|súpercaña|super\s*rod)\b", full_obt_text))
+        # Cañas de pescar (evaluado únicamente sobre métodos reales de ubicación para evitar falsos positivos en exclusivos/summary)
+        has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", methods_lower))
+        has_good = bool(re.search(r"\b(caña\s*buena|cañabuena|good\s*rod)\b", methods_lower))
+        has_super = bool(re.search(r"\b(s[uú]per\s*caña|supercaña|súpercaña|super\s*rod)\b", methods_lower))
 
-        if has_old:
-            tags.add("rod_old")
-        if has_good:
-            tags.add("rod_good")
-        if has_super:
-            tags.add("rod_super")
-        if has_old or has_good or has_super or obt.get("type") == "fishing" or "pesca con caña" in full_obt_text:
-            tags.add("rod_any")
+        if not is_transfer and obt.get("type") != "trade":
+            if has_old:
+                tags.add("rod_old")
+            if has_good:
+                tags.add("rod_good")
+            if has_super:
+                tags.add("rod_super")
+            if has_old or has_good or has_super or obt.get("type") == "fishing" or "pesca con caña" in methods_lower:
+                tags.add("rod_any")
 
         # Fósiles y sus evoluciones
         if (

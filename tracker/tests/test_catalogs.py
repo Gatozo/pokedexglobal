@@ -5648,6 +5648,27 @@ class PokemonWhiteGen5Tests(TestCase):
         self.assertNotIn("white: 'bg-slate-300 border border-slate-950'", cards_js.split("PROGRESS_DOT_THEME")[0])
         self.assertIn("white: 'bg-slate-300 border border-slate-950'", cards_js.split("PROGRESS_DOT_THEME")[1])
 
+    def test_surf_and_rod_filter_tags_exclude_access_prose_and_counterpart_trades(self):
+        """Verifica que surf y cañas no den falsos positivos por texto de summary (ej. Cobalion #638, Aerodactyl o exclusivos trade)."""
+        from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR, clear_catalog_memory_cache
+
+        clear_catalog_memory_cache()
+        for slug in ("black", "black_national", "white", "white_national"):
+            by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug, force_reload=True)}
+            self.assertNotIn("surf", by_nid[638].filter_tags.split(), f"Cobalion no debe tener tag 'surf' en {slug}")
+
+        for p in sorted(CATALOGS_DIR.glob("*.json")):
+            slug = p.stem
+            for e in get_compiled_catalog(slug):
+                tags = set(e.filter_tags.split())
+                obt = e.obtaining_info or {}
+                methods_lower = " ".join(l.get("method", "").lower() for l in (obt.get("locations") or []))
+                if "surf" in tags:
+                    self.assertIn("surf", methods_lower, f"{slug} #{e.pokemon.national_number} tiene 'surf' sin método Surf")
+                if tags & {"rod_old", "rod_good", "rod_super", "rod_any"}:
+                    self.assertNotEqual(obt.get("type"), "trade", f"{slug} #{e.pokemon.national_number} trade con tag rod_*")
+                    self.assertNotEqual(obt.get("type"), "transfer", f"{slug} #{e.pokemon.national_number} transfer con tag rod_*")
+
 
 
 
