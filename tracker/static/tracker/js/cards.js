@@ -69,7 +69,7 @@ export function updateProgressBarUI() {
     const currentStats = state.isShinydexMode ? state.shinyStats : state.normalStats;
     const pct = parseFloat(currentStats.percent) || 0;
     if (statCaught) statCaught.textContent = currentStats.caught;
-    if (statPercent) statPercent.textContent = currentStats.percent;
+    if (statPercent) statPercent.textContent = pct.toFixed(1);
     if (progressBar) {
         progressBar.style.width = `${currentStats.percent}%`;
         if (state.isShinydexMode) {
