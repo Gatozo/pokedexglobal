@@ -400,13 +400,13 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         577, 578, 579, 627, 628, 642, 644,
         # Nacional (Manadas / Rutas)
         10, 11, 12, 46, 47, 200, 261, 262, 312, 314, 429,
-        # Bosque Blanco (exclusivo de Blanco frente a Ciudad Negra de Negro)
+        # Bosque Blanco (100 especies de 33 familias exclusivas frente a Ciudad Negra de Negro; #399 Bidoof / #400 Bibarel se excluyen porque Bibarel aparece salvaje en Puente Villa en Negro)
         16, 17, 18, 29, 30, 31, 32, 33, 34, 43, 44, 45, 63, 64, 65, 66, 67, 68,
         69, 70, 71, 81, 82, 92, 93, 94, 111, 112, 113, 125, 126, 137, 175, 176,
         179, 180, 181, 182, 183, 184, 187, 188, 189, 194, 195, 233, 239, 240,
         242, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 280, 281,
         282, 283, 284, 287, 288, 289, 293, 294, 295, 298, 304, 305, 306, 315,
-        328, 329, 330, 341, 342, 371, 372, 373, 396, 397, 398, 399, 400, 403,
+        328, 329, 330, 341, 342, 371, 372, 373, 396, 397, 398, 403,
         404, 405, 406, 407, 440, 462, 464, 466, 467, 468, 474, 475
     ],
 
@@ -760,8 +760,9 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
     'platinum': NON_SINNOH_TRANSFERS_PLATINUM,
     'heartgold': NON_JOHTO_KANTO_TRANSFERS_HGSS,
     'soulsilver': NON_JOHTO_KANTO_TRANSFERS_HGSS,
-    # Gen 5 (Pokédex Nacional de Pokémon Negro)
+    # Gen 5 (Pokédex Nacional de Pokémon Negro y Pokémon Blanco)
     'black': NON_UNOVA_TRANSFERS_BLACK,
+    'white': NON_UNOVA_TRANSFERS_BLACK,
 }
 
 
@@ -2212,6 +2213,29 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'default_origin': 'Pokétransfer (Ruta 15)',
         'origins': {}
     },
+    'white': {
+        'mechanic_title': 'Pokétransfer • 5.ª Gen',
+        'mechanic_badge': 'Pokétransfer',
+        'subtitle': 'Especies de generaciones anteriores que requieren transferencia desde 4.ª Gen vía Laboratorio de Pokétransfer (Ruta 15)',
+        'description': (
+            'Para completar la Pokédex Nacional en <strong>Pokémon Blanco</strong>, estas 178 especies foráneas '
+            'de Kanto, Johto, Hoenn y Sinnoh deben transferirse desde cartuchos de 4.ª Generación '
+            '(Diamante, Perla, Platino, HeartGold o SoulSilver) utilizando el minijuego del <strong>Laboratorio de Pokétransfer</strong> '
+            'en la <strong>Ruta 15</strong> (requiere dos consolas Nintendo DS y haber superado la Liga Pokémon).'
+        ),
+        'historical_note': (
+            '<strong>Nota histórica (Pokémon Dream World):</strong> Varias de estas especies de generaciones anteriores '
+            'también podían obtenerse originalmente mediante el <strong>Pokémon Dream World</strong> (conectando el juego '
+            'por internet con <em>Pokémon Global Link</em> mediante el Sincronizador de Juego) para luego capturarlas en el '
+            '<strong>Bosque Nexo</strong> dentro de la Zona Nexo.<br><br>'
+            'Este servicio oficial cerró definitivamente entre finales de 2013 y enero de 2014, por lo que actualmente el '
+            'Bosque Nexo permanece vacío en partidas nuevas y el Pokétransfer o el intercambio local son las vías oficiales disponibles. '
+            'No obstante, existen proyectos externos de preservación comunitaria (como emuladores locales de servidor '
+            '<em>Game Sync</em> / DNS, por ejemplo <em>Entralinked</em>) que permiten emular esta mecánica de forma no oficial.'
+        ),
+        'default_origin': 'Pokétransfer (Ruta 15)',
+        'origins': {}
+    },
 }
 
 
@@ -2428,8 +2452,8 @@ GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
         'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Negro</strong>. '
         'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Blanco</strong>.<br><br>'
         '<strong>Mecánica del Bosque Blanco:</strong> En <em>Pokémon Blanco</em> se ubica el <strong>Bosque Blanco</strong> '
-        '(el cual sustituye a la <em>Ciudad Negra</em> de Pokémon Negro). En este bosque habitan de forma salvaje hasta 32 familias clásicas '
-        'de generaciones 1 a 4 dependiendo de los residentes presentes, los cuales pueden renovarse o invitarse visitando a otros jugadores '
+        '(el cual sustituye a la <em>Ciudad Negra</em> de Pokémon Negro). En este bosque habitan de forma salvaje hasta 33 familias clásicas exclusivas '
+        '(100 especies de generaciones 1 a 4) dependiendo de los residentes presentes, los cuales pueden renovarse o invitarse visitando a otros jugadores '
         'mediante la <strong>Zona Nexo</strong>. Por tanto, todas estas especies foráneas pueden obtenerse mediante intercambio '
         'local entre cartuchos de 5.ª Generación sin necesidad de conectar con juegos de generaciones anteriores (Pokétransfer) ni secuelas.<br><br>'
         '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Cottonee es exclusivo de Negro y Petilil de Blanco, '
@@ -2439,6 +2463,9 @@ GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
     'white': (
         'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Blanco</strong>. '
         'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Negro</strong>.<br><br>'
+        '<strong>Mecánica del Bosque Blanco:</strong> En tu edición de <strong>Pokémon Blanco</strong> cuentas de forma nativa con el '
+        '<strong>Bosque Blanco</strong> (exclusivo frente a la <em>Ciudad Negra</em> de Pokémon Negro), donde aparecen hasta 33 familias exclusivas '
+        '(100 especies clásicas de Gen 1–4) según los residentes activos o invitados desde otra partida mediante la <strong>Zona Nexo</strong>.<br><br>'
         '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Petilil es exclusivo de Blanco y Cottonee de Negro, '
         'ambos han sido excluidos de este panel debido a que es posible obtener a Cottonee legalmente en Pokémon Blanco mediante intercambio '
         'interno con un NPC en <strong>Ciudad Esmalte</strong> a cambio de tu Petilil (y viceversa en Pokémon Negro).'

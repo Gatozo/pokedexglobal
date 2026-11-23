@@ -4341,15 +4341,17 @@ class PokemonBlackGen5Tests(TestCase):
         black_excl = VERSION_EXCLUSIVES_CATALOG.get("black", [])
         white_excl = VERSION_EXCLUSIVES_CATALOG.get("white", [])
 
-        # Validar exclusión de la familia Cottonee/Whimsicott y Petilil/Lilligant
+        # Validar exclusión de la familia Cottonee/Whimsicott y Petilil/Lilligant, así como #399/#400 (Bidoof/Bibarel)
         self.assertNotIn(546, black_excl)  # Cottonee
         self.assertNotIn(547, black_excl)  # Whimsicott
         self.assertNotIn(548, white_excl)  # Petilil
         self.assertNotIn(549, white_excl)  # Lilligant
+        self.assertNotIn(399, white_excl)  # Bidoof (Bibarel salvaje en Puente Villa en Negro)
+        self.assertNotIn(400, white_excl)  # Bibarel
 
         # Validar totales
         self.assertEqual(len(black_excl), 18)
-        self.assertEqual(len(white_excl), 120)
+        self.assertEqual(len(white_excl), 118)
 
         # Validar contexto y aviso
         game = Game.objects.get(slug="black")
@@ -4357,7 +4359,7 @@ class PokemonBlackGen5Tests(TestCase):
         ctx = get_version_exclusives_context(game, pokedex, set())
         self.assertIsNotNone(ctx)
         self.assertEqual(ctx["counterpart_theme"], "white")
-        self.assertEqual(ctx["counterpart_total"], 120)
+        self.assertEqual(ctx["counterpart_total"], 118)
         self.assertEqual(ctx["own_total"], 18)
         self.assertIn("Bosque Blanco", ctx["notice"])
         self.assertIn("Cottonee y Petilil", ctx["notice"])
@@ -4603,7 +4605,7 @@ class GlobalFormContractInvariantsTests(TestCase):
                             checked_paths.add(rel)
 
         # Ninguna especie con diferencias reales en Gen 4-5 (salvo #277/#278 excluidos) debe faltar en disco
-        for slug in ("diamond", "platinum", "heartgold", "black"):
+        for slug in ("diamond", "platinum", "heartgold", "black", "white"):
             for nid in GENDER_DIFFERENCES_GEN5:
                 if nid in (277, 278):
                     continue
@@ -5441,6 +5443,204 @@ class GlobalFormContractInvariantsTests(TestCase):
         for g2_slug in ("gold", "silver"):
             g2_cat = {e.pokemon.national_number: e for e in get_compiled_catalog(g2_slug, force_reload=True)}
             self.assertIn("exclusivo de Pokémon Cristal", g2_cat[251].obtaining_info["summary"])
+
+
+class PokemonWhiteGen5Tests(TestCase):
+    """Batería integral de validación para Pokémon Blanco (slug 'white', Gen 5)."""
+
+    def test_white_catalog_structure_ids_and_historical_types(self):
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache, ensure_all_catalogs_loaded
+        from tracker.models import Game
+
+        ensure_all_catalogs_loaded()
+        clear_catalog_memory_cache()
+
+        game = Game.objects.get(slug="white")
+        self.assertEqual(game.generation, 5)
+        self.assertTrue(game.has_retro_sprites)
+        self.assertTrue(game.has_swarms)
+        self.assertTrue(game.has_seasons)
+        self.assertTrue(game.has_special_spots)
+        self.assertFalse(game.has_time_of_day)
+
+        reg = get_compiled_catalog("white", force_reload=True, is_national=False)
+        nat = get_compiled_catalog("white", force_reload=True, is_national=True)
+        self.assertEqual(len(reg), 156)
+        self.assertEqual(len(nat), 649)
+
+        # Victini #000 y rangos de ID disjuntos (9000..9155, 9201..9849)
+        victini = reg[0]
+        self.assertEqual(victini.id, 9000)
+        self.assertEqual(victini.entry_number, 494)
+        self.assertEqual(victini.display_number, "000")
+        self.assertEqual(victini.pokemon.national_number, 494)
+        self.assertEqual([e.id for e in reg[1:]], list(range(9001, 9156)))
+        self.assertEqual([e.id for e in nat], list(range(9201, 9850)))
+
+        # Fidelidad histórica estricta Gen 5: cero tipo Hada + is_hatchable explícito + 201-f.png en HOME
+        for e in nat:
+            self.assertNotEqual(e.primary_type, "fairy")
+            self.assertNotEqual(e.secondary_type, "fairy")
+            self.assertIsNotNone(e.is_hatchable)
+        unown = next(e for e in nat if e.pokemon.national_number == 201)
+        self.assertEqual(unown.pokemon.sprite_shiny_url, "/media/pokemon/home/shiny/201-f.png")
+
+    def test_white_exclusives_white_forest_hub_and_breeding(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.exclusives import (
+            VERSION_EXCLUSIVES_CATALOG,
+            GAME_VERSION_EXCLUSIVES_NOTICES,
+            get_version_exclusives_context,
+        )
+        from tracker.models import Game
+        from tracker.views import _classify_catalog_for_game
+
+        white_excl = VERSION_EXCLUSIVES_CATALOG["white"]
+        black_excl = VERSION_EXCLUSIVES_CATALOG["black"]
+        self.assertEqual(len(white_excl), 118)
+        self.assertEqual(len(black_excl), 18)
+        for excluded in (399, 400, 548, 549):
+            self.assertNotIn(excluded, white_excl)
+
+        game = Game.objects.get(slug="white")
+        pokedex = game.pokedexes.get(slug="unova")
+        ctx = get_version_exclusives_context(game, pokedex, set())
+        self.assertEqual(ctx["counterpart_theme"], "black")
+        self.assertEqual(ctx["own_theme"], "white")
+        self.assertEqual(ctx["counterpart_total"], 18)
+        self.assertEqual(ctx["own_total"], 118)
+        self.assertIn("Bosque Blanco", GAME_VERSION_EXCLUSIVES_NOTICES["white"])
+
+        nat = get_compiled_catalog("white", is_national=True)
+        cls = _classify_catalog_for_game(nat, "white")
+        by_nid = {e.pokemon.national_number: e for e in nat}
+
+        # Las 34 especies base salvajes del Bosque Blanco son clasificadas como nativas en el Hub (regresión EXTERNAL_KEYWORDS)
+        wf_base_ids = (
+            16, 29, 32, 43, 63, 66, 69, 81, 92, 111, 137, 175, 179, 187, 194,
+            239, 240, 265, 270, 273, 280, 283, 287, 293, 298, 304, 328, 341,
+            371, 396, 399, 403, 406, 440,
+        )
+        for nid in wf_base_ids:
+            is_native, badge = cls[nid]
+            self.assertTrue(is_native, f"Bosque Blanco #{nid} debe clasificarse como nativo en Pokémon Blanco")
+            self.assertEqual(badge, "Salvaje")
+            self.assertTrue(any("Bosque Blanco" in loc.get("area", "") for loc in by_nid[nid].obtaining_info["locations"]))
+            self.assertTrue(any("Bosque Blanco" in n.get("title", "") for n in by_nid[nid].notes))
+
+        # Surf vs Hierba alta en Bosque Blanco
+        for surf_id in (194, 270, 283, 341):
+            wf_loc = next(l for l in by_nid[surf_id].obtaining_info["locations"] if l["area"] == "Bosque Blanco")
+            self.assertIn("Surfeando", wf_loc["method"])
+
+        # Legendarios propios de Blanco también deben ser nativos en el Hub
+        self.assertEqual(cls[642], (True, "Único"))
+        self.assertEqual(cls[644], (True, "Único"))
+
+        # Inversión de crianza: #010 Caterpie por Metapod/Butterfree, #013 Weedle exclusivo de Negro
+        self.assertEqual(cls[10], (True, "Crianza"))
+        self.assertEqual(by_nid[13].obtaining_info["badge_label"], "Edición Negro")
+        self.assertFalse(cls[13][0])
+
+    def test_white_transfers_swarms_npcs_and_evolution_stones(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.exclusives import VERSION_TRANSFERS_CATALOG, get_version_transfers_context
+        from tracker.models import Game
+        from tracker.pokemon_forms import get_basculin_forms, get_genesect_forms
+        from tracker.utils import get_evolution_stones_catalog, resolve_evolution_stone
+
+        white_transfers = VERSION_TRANSFERS_CATALOG.get("white", [])
+        self.assertEqual(len(white_transfers), 178)
+        self.assertTrue(all(n < 494 for n in white_transfers))
+
+        game = Game.objects.get(slug="white")
+        reg_pd = game.pokedexes.get(slug="unova")
+        nat_pd = game.pokedexes.get(slug="national")
+        self.assertIsNone(get_version_transfers_context(game, reg_pd, set()))
+        nat_tr_ctx = get_version_transfers_context(game, nat_pd, set())
+        self.assertTrue(nat_tr_ctx["has_transfers"])
+        self.assertEqual(nat_tr_ctx["total"], 178)
+        self.assertIn("Dream World", nat_tr_ctx["historical_note"])
+
+        nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("white", is_national=True)}
+        # Manadas invertidas
+        for swarm_id in (46, 261, 312, 314):
+            self.assertIn("swarm", nat_by[swarm_id].filter_tags.split())
+
+        # Basculin Raya Azul común + Cabeza Roca + Mordiscos, Cottonee Cotona, Genesect HidroROM/CrioROM
+        self.assertIn("Cabeza Roca", nat_by[550].obtaining_info["summary"])
+        self.assertIn("Mordiscos", nat_by[550].obtaining_info["summary"])
+        self.assertIn("Cotona", nat_by[546].obtaining_info["summary"])
+        self.assertIn("HidroROM", nat_by[649].obtaining_info["summary"])
+        self.assertIn("CrioROM", nat_by[649].obtaining_info["summary"])
+
+        basc_forms = get_basculin_forms("white")
+        self.assertIn("Mordiscos", basc_forms[1]["notes"][0]["text"])
+        self.assertIn("Cabeza Roca", basc_forms[1]["notes"][0]["text"])
+        gen_forms = get_genesect_forms("white")
+        self.assertIn("Pokémon Blanco", next(f for f in gen_forms if f["form_key"] == "douse")["notes"][0]["text"])
+
+        # Todos los 42 objetos en evolution_stones.json tienen games.white limpio
+        stones = get_evolution_stones_catalog(force_reload=True)
+        self.assertEqual(len(stones), 42)
+        wf_residents = {
+            "fire-stone": "Vito",
+            "water-stone": "Melas",
+            "leaf-stone": "Iraís",
+            "thunder-stone": "Ken",
+            "moon-stone": "Lila",
+            "sun-stone": "Malena",
+            "shiny-stone": "Sarah",
+            "dusk-stone": "Don",
+            "dawn-stone": "Pitu",
+            "oval-stone": "Giuseppe",
+        }
+        for slug, item in stones.items():
+            w_locs = item.get("games", {}).get("white", [])
+            self.assertTrue(w_locs, f"Falta games.white en {slug}")
+            blob = json.dumps(w_locs, ensure_ascii=False)
+            self.assertNotIn("Ciudad Negra", blob)
+            if slug in wf_residents:
+                wf_entry = next((l for l in w_locs if l["area"] == "Bosque Blanco"), None)
+                self.assertIsNotNone(wf_entry, f"Falta Bosque Blanco en {slug}")
+                self.assertIn(wf_residents[slug], wf_entry["detail"])
+
+        self.assertIn("Raya Roja, raro", json.dumps(stones["deep-sea-tooth"]["games"]["white"], ensure_ascii=False))
+        self.assertNotIn("remolino", json.dumps(stones["deep-sea-scale"]["games"]["white"], ensure_ascii=False).lower())
+        moon_resolved = resolve_evolution_stone(item_slug="moon-stone", game_slug="white")
+        self.assertIn("Bosque Blanco", moon_resolved["availability_note"])
+        self.assertNotIn("Ciudad Negra", moon_resolved["availability_note"])
+
+        # Fósiles en White Nacional: locations solo Museo de Ciudad Esmalte + Guardería (no Castillo Ancestral / Monte Tuerca)
+        for fid in (138, 140, 142, 345, 347, 408, 410, 564, 566):
+            areas = [l["area"] for l in nat_by[fid].obtaining_info["locations"]]
+            self.assertEqual(areas, ["Museo de Ciudad Esmalte", "Ruta 3 (Guardería Pokémon)"])
+
+    def test_white_views_ui_palette_and_unown(self):
+        from tracker.unown_data import get_game_unown_chambers, get_unown_catalog
+
+        self.assertEqual(get_game_unown_chambers("white"), {})
+        uc = get_unown_catalog("white")
+        self.assertEqual(len(uc), 28)
+        self.assertEqual(uc[0]["sprite_normal"], "/media/pokemon/sprites/white/unown/a.png")
+
+        res_reg = self.client.get("/white/")
+        self.assertEqual(res_reg.status_code, 200)
+        html_reg = res_reg.content.decode("utf-8")
+        self.assertIn('data-game="white"', html_reg)
+        self.assertIn("/media/pokemon/icons/gen5/644.png", html_reg)
+        self.assertIn("bg-slate-200 text-slate-950", html_reg)
+
+        res_nat = self.client.get("/white/national/")
+        self.assertEqual(res_nat.status_code, 200)
+        html_nat = res_nat.content.decode("utf-8")
+        self.assertIn("Teselia (Pokétransfer)", html_nat)
+        self.assertIn("bg-slate-900/10 text-slate-950 border-slate-400", html_nat)
+
+        res_hub = self.client.get("/games/")
+        self.assertEqual(res_hub.status_code, 200)
+        self.assertIn("Zekrom", res_hub.content.decode("utf-8"))
+
 
 
 

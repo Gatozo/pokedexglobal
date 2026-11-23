@@ -68,13 +68,13 @@ export function switchExclusivesTab(tab) {
 
     const modal = document.getElementById('exclusives-modal');
     const counterpartTheme = modal ? modal.dataset.counterpartTheme : 'red';
-    const counterpartActiveBg = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200' :
-        ((counterpartTheme === 'white') ? 'bg-slate-200' : 'bg-amber-400');
+    const counterpartActiveClasses = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200 text-slate-950' :
+        ((counterpartTheme === 'white') ? 'bg-slate-200 text-slate-950' : 'bg-amber-400 text-slate-950');
 
     if (tab === 'counterpart') {
         panelCounterpart.classList.remove('hidden');
         panelOwn.classList.add('hidden');
-        if (btnCounterpart) btnCounterpart.className = `flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all ${counterpartActiveBg} text-slate-950 flex items-center justify-center gap-2`;
+        if (btnCounterpart) btnCounterpart.className = `flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all ${counterpartActiveClasses} flex items-center justify-center gap-2`;
         if (btnOwn) btnOwn.className = 'flex-1 py-2 px-3 rounded-lg text-xs font-black uppercase tracking-wider border-2 border-slate-950 shadow-[2px_2px_0px_0px_#0f172a] transition-all bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center gap-2';
     } else {
         panelOwn.classList.remove('hidden');
@@ -112,7 +112,8 @@ export function updateExclusivesProgressUI() {
         ((counterpartTheme === 'gold') ? 'text-[#9e7514]' :
         ((counterpartTheme === 'gold_silver') ? 'text-amber-700' :
         ((counterpartTheme === 'white') ? 'text-slate-900' :
-        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600')))))));
+        ((counterpartTheme === 'black') ? 'text-slate-900' :
+        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600'))))))));
     const themeBarClass = (counterpartTheme === 'blue' || counterpartTheme === 'diamond') ? 'bg-blue-600' :
         ((counterpartTheme === 'pearl') ? 'bg-pink-500' :
         ((counterpartTheme === 'amber') ? 'bg-amber-500' :
@@ -120,7 +121,8 @@ export function updateExclusivesProgressUI() {
         ((counterpartTheme === 'gold') ? 'bg-[#c59b27]' :
         ((counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-[#c59b27] to-[#94a3b8]' :
         ((counterpartTheme === 'white') ? 'bg-slate-300' :
-        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600')))))));
+        ((counterpartTheme === 'black') ? 'bg-slate-900' :
+        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600'))))))));
 
     const caughtElem = document.getElementById('excl-progress-caught');
     if (caughtElem) {

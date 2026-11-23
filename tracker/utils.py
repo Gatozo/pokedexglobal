@@ -669,7 +669,7 @@ def resolve_evolution_stone(
         game_notes = stone_data.get("game_availability_notes", {})
         if effective_game in game_notes:
             availability_note = game_notes[effective_game]
-        elif effective_game in ['black', 'white', 'black2', 'white2']:
+        elif effective_game in ['black', 'white', 'black-2', 'white-2', 'black2', 'white2']:
             if slug in FOSSIL_SLUGS:
                 availability_note = "Objeto fósil restaurable en el Museo de Ciudad Esmalte."
             elif slug.endswith("-incense"):
@@ -677,7 +677,12 @@ def resolve_evolution_stone(
             elif slug in ('razor-claw', 'razor-fang'):
                 availability_note = "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia."
             elif slug.endswith("-stone"):
-                availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos)."
+                if effective_game == 'white':
+                    availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Bosque Blanco u otros métodos)."
+                elif effective_game == 'black':
+                    availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Ciudad Negra u otros métodos)."
+                else:
+                    availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Galería Unión u otros métodos)."
             else:
                 availability_note = "Obtenible en Teselia (Buscatesoros de la Ruta 13, Pokémon salvajes o ubicaciones fijas)."
         elif not availability_note or "2.100" in availability_note:

@@ -45,6 +45,7 @@ GAME_SPRITE_CONFIG: Dict[str, Dict[str, Any]] = {
     "soulsilver": {"gen": 4, "static_dir": "soulsilver", "anim_dir": "soulsilver_animated", "anim_ext": ".png", "has_animated_back": False, "back_modal_mode": "static"},
     # Gen 5
     "black":      {"gen": 5, "static_dir": "black",      "anim_dir": "black_animated",      "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
+    "white":      {"gen": 5, "static_dir": "white",      "anim_dir": "white_animated",      "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
 }
 
 GEN2_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 2}
@@ -1595,6 +1596,25 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
 
 def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
+    is_white = (clean_slug == "white")
+    red_text = (
+        "En Pokémon Blanco es muy rara en estado salvaje y no se obtiene por intercambio interno: "
+        "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
+        if is_white
+        else
+        "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña "
+        "por toda Teselia; además, puedes recibir uno (mote: Mordiscos) mediante intercambio NPC en Ciudad Fayenza "
+        "a cambio de un Minccino."
+    )
+    blue_text = (
+        "Es la forma predominante y muy común en Pokémon Blanco. Aparece haciendo Surf y pescando con Supercaña "
+        "por toda Teselia; además, puedes recibir uno (mote: Mordiscos, habilidad Cabeza Roca) mediante intercambio NPC "
+        "en Ciudad Fayenza a cambio de un Minccino."
+        if is_white
+        else
+        "En Pokémon Negro es muy rara en estado salvaje y no se obtiene por intercambio interno: "
+        "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
+    )
     return [
         {
             "form_key": "red_striped",
@@ -1611,7 +1631,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Forma Raya Roja",
-                    "text": "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña por toda Teselia; además, puedes recibir uno (mote: Mordiscos) mediante intercambio NPC en Ciudad Fayenza a cambio de un Minccino.",
+                    "text": red_text,
                     "tag": "Raya Roja",
                     "icon": "/media/items/rule-book.png",
                 }
@@ -1632,7 +1652,7 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Forma Raya Azul",
-                    "text": "En Pokémon Negro es muy rara en estado salvaje y no se obtiene por intercambio interno: solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña.",
+                    "text": blue_text,
                     "tag": "Raya Azul",
                     "icon": "/media/items/rule-book.png",
                 }
@@ -1807,12 +1827,45 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
+    is_white = (clean_slug == "white")
     drives = [
         ("normal", "Forma Normal", "Normal", "649", "Sin cartucho equipado. Su movimiento característico Tecnochoque es de tipo Normal.", None),
-        ("shock", "FulgoROM", "Eléctrico", "genesect/shock", "Equipado con el cartucho FulgoROM. Su movimiento Tecnochoque pasa a ser de tipo Eléctrico. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/shock-drive.png"),
-        ("burn", "PiroROM", "Fuego", "genesect/burn", "Equipado con el cartucho PiroROM. Su movimiento Tecnochoque pasa a ser de tipo Fuego. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/burn-drive.png"),
-        ("douse", "HidroROM", "Agua", "genesect/douse", "Equipado con el cartucho HidroROM. Su movimiento Tecnochoque pasa a ser de tipo Agua. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/douse-drive.png"),
-        ("chill", "CrioROM", "Hielo", "genesect/chill", "Equipado con el cartucho CrioROM. Su movimiento Tecnochoque pasa a ser de tipo Hielo. Entregado por un científico del Laboratorio P+P tras derrotarlo.", "/media/items/chill-drive.png"),
+        (
+            "shock", "FulgoROM", "Eléctrico", "genesect/shock",
+            "Equipado con el cartucho FulgoROM. Su movimiento Tecnochoque pasa a ser de tipo Eléctrico. " + (
+                "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
+                if is_white else
+                "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+            ),
+            "/media/items/shock-drive.png",
+        ),
+        (
+            "burn", "PiroROM", "Fuego", "genesect/burn",
+            "Equipado con el cartucho PiroROM. Su movimiento Tecnochoque pasa a ser de tipo Fuego. " + (
+                "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
+                if is_white else
+                "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+            ),
+            "/media/items/burn-drive.png",
+        ),
+        (
+            "douse", "HidroROM", "Agua", "genesect/douse",
+            "Equipado con el cartucho HidroROM. Su movimiento Tecnochoque pasa a ser de tipo Agua. " + (
+                "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
+                if is_white else
+                "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+            ),
+            "/media/items/douse-drive.png",
+        ),
+        (
+            "chill", "CrioROM", "Hielo", "genesect/chill",
+            "Equipado con el cartucho CrioROM. Su movimiento Tecnochoque pasa a ser de tipo Hielo. " + (
+                "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
+                if is_white else
+                "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+            ),
+            "/media/items/chill-drive.png",
+        ),
     ]
     forms = []
     for f_key, f_name, type_label, rel_stem, desc, icon_path in drives:

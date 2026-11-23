@@ -874,7 +874,7 @@ def ensure_all_catalogs_loaded():
         "red", "blue", "yellow", "gold", "silver", "crystal",
         "ruby", "sapphire", "emerald", "firered", "leafgreen",
         "diamond", "pearl", "platinum", "heartgold", "soulsilver",
-        "black"
+        "black", "white"
     ]
     for slug in all_slugs:
         if slug not in _CATALOG_CACHE:

@@ -70,12 +70,18 @@ EXTERNAL_KEYWORDS = [
     "conseguir mediante intercambio",
     "poké transfer", "poke transfer", "laboratorio transfer",
     "pokétransfer", "poketransfer", "laboratorio de pokétransfer",
-    "orbe reluciente", "edición blanco", "edicion blanco", "bosque blanco"
+    "orbe reluciente"
 ]
 
 
 def _extract_local_locations(locs, g_slug: str):
     """Filtra ubicaciones locales descartando crianza, evoluciones, huevo extraño y métodos externos."""
+    game_external_keywords = list(EXTERNAL_KEYWORDS)
+    if g_slug == "black":
+        game_external_keywords.extend(["edición blanco", "edicion blanco", "bosque blanco"])
+    elif g_slug == "white":
+        game_external_keywords.extend(["edición negro", "edicion negro", "ciudad negra"])
+
     local_locs = []
     for l in locs:
         m = l.get("method", "").lower().strip()
@@ -86,7 +92,7 @@ def _extract_local_locations(locs, g_slug: str):
             continue
         if g_slug in ["gold", "silver"] and "huevo extrañ" in m:
             continue
-        if any(kw in m or kw in a for kw in EXTERNAL_KEYWORDS):
+        if any(kw in m or kw in a for kw in game_external_keywords):
             continue
         local_locs.append(l)
     return local_locs
@@ -203,11 +209,19 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
             or any(kw in methods_str for kw in wild_kw)
             or any(kw in full_str for kw in wild_kw if kw not in ["interior"])
         )
+        from .exclusives import GAME_SHORT_NAMES
+        own_short = GAME_SHORT_NAMES.get(g_slug, "").lower()
+        is_own_exclusive_label = bool(own_short and f"exclusivo {own_short}" in badge_label_lower)
         is_version_exclusive = (
             any("exclusivo de versi" in l.get("method", "").lower() for l in locs)
             or any("intercambio con pokémon" in l.get("area", "").lower() for l in locs)
             or any("intercambio con pokemon" in l.get("area", "").lower() for l in locs)
-            or ("exclusivo " in badge_label_lower and "fósil" not in badge_label_lower and "fosil" not in badge_label_lower)
+            or (
+                "exclusivo " in badge_label_lower
+                and not is_own_exclusive_label
+                and "fósil" not in badge_label_lower
+                and "fosil" not in badge_label_lower
+            )
         )
         if is_version_exclusive and not has_wild:
             native_status[p_name] = False

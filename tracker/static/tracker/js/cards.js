@@ -39,7 +39,9 @@ export function updateProgressBarUI() {
                 (currentGameSlug === 'blue' ? 'bg-blue-600' :
                 (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
                 (currentGameSlug === 'silver' ? 'bg-slate-500' :
-                (currentGameSlug === 'crystal' ? 'bg-sky-500' : 'bg-red-600'))))
+                (currentGameSlug === 'crystal' ? 'bg-sky-500' :
+                (currentGameSlug === 'black' ? 'bg-slate-900' :
+                (currentGameSlug === 'white' ? 'bg-slate-300 border border-slate-950' : 'bg-red-600'))))))
             ) + ' h-full rounded-full transition-all duration-300';
         }
     }
@@ -164,7 +166,9 @@ export function applyShinydexMode(active) {
                 (currentGameSlug === 'yellow' ? 'bg-amber-500' :
                 (currentGameSlug === 'gold' ? 'bg-[#c59b27]' :
                 (currentGameSlug === 'silver' ? 'bg-slate-400' :
-                (currentGameSlug === 'crystal' ? 'bg-sky-500' : 'bg-red-600'))))
+                (currentGameSlug === 'crystal' ? 'bg-sky-500' :
+                (currentGameSlug === 'black' ? 'bg-slate-900' :
+                (currentGameSlug === 'white' ? 'bg-slate-300 border border-slate-950' : 'bg-red-600'))))))
             );
         }
 
