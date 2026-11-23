@@ -135,7 +135,7 @@ export function filterUnownChamber(chamberKey) {
 
 export function initUnownMarquees() {
     requestAnimationFrame(() => {
-        document.querySelectorAll('#unown-cards-grid .location-marquee-wrapper').forEach(wrapper => {
+        document.querySelectorAll('#unown-modal .location-marquee-wrapper').forEach(wrapper => {
             const textSpan = wrapper.querySelector('.location-marquee-text');
             if (textSpan) {
                 const overflowDiff = textSpan.scrollWidth - wrapper.clientWidth;

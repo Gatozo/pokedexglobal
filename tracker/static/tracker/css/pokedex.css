@@ -689,15 +689,6 @@ body[data-game="white"] #transfers-modal .comic-header-pattern {
         #4338ca 24px
     );
 }
-body[data-game="white"] #unown-modal .comic-header-pattern {
-    background: repeating-linear-gradient(
-        -45deg,
-        #c59b27,
-        #c59b27 12px,
-        #9e7514 12px,
-        #9e7514 24px
-    );
-}
 body[data-game="white"] .pokemon-card.caught-card {
     background-color: #f1f5f9 !important;
     border-color: #475569 !important;

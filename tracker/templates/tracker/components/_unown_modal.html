@@ -12,7 +12,7 @@
         class="bg-white border-4 border-slate-950 rounded-3xl w-full max-w-4xl h-[80vh] max-h-[80vh] flex flex-col shadow-[8px_8px_0px_#0f172a] transform scale-95 transition-transform duration-200 overflow-hidden"
     >
         <!-- Modal Header -->
-        <div class="px-5 py-3.5 sm:px-6 sm:py-4 bg-[#c59b27] text-slate-950 border-b-4 border-slate-950 flex items-center justify-between gap-3 shrink-0 comic-header-pattern relative">
+        <div class="px-5 py-3.5 sm:px-6 sm:py-4 {% if game.slug == 'blue' %}bg-blue-600 text-white{% elif game.slug == 'yellow' %}bg-amber-400 text-slate-950{% elif game.slug == 'gold' %}bg-[#c59b27] text-slate-950{% elif game.slug == 'silver' %}bg-slate-600 text-white{% elif game.slug == 'crystal' %}bg-sky-600 text-white{% elif game.slug == 'ruby' %}bg-rose-900 text-rose-100{% elif game.slug == 'sapphire' %}bg-[#0f3870] text-sky-100{% elif game.slug == 'emerald' %}bg-[#059669] text-emerald-100{% elif game.slug == 'firered' %}bg-[#ea580c] text-white{% elif game.slug == 'leafgreen' %}bg-[#16a34a] text-white{% elif game.slug == 'diamond' %}bg-[#1e40af] text-blue-100{% elif game.slug == 'pearl' %}bg-[#be185d] text-pink-100{% elif game.slug == 'platinum' %}bg-[#475569] text-slate-100{% elif game.slug == 'heartgold' %}bg-[#b45309] text-white{% elif game.slug == 'soulsilver' %}bg-[#475569] text-slate-100{% elif game.slug == 'black' %}bg-slate-900 text-white{% elif game.slug == 'white' %}bg-slate-200 text-slate-950{% else %}bg-[#c59b27] text-slate-950{% endif %} border-b-4 border-slate-950 flex items-center justify-between gap-3 shrink-0 comic-header-pattern relative">
             <div class="flex items-center gap-3 z-10">
                 <div class="w-10 h-10 rounded-2xl bg-amber-300 border-2 border-slate-950 flex items-center justify-center shadow-[2px_2px_0px_#0f172a] shrink-0">
                     <img 
@@ -39,7 +39,7 @@
                             <span>Hoenn (Transferencia)</span> • <span>{{ unown_total_forms }} Formas</span>
                         {% endif %}
                     </div>
-                    <h2 id="unown-modal-title" class="text-xl sm:text-2xl font-black uppercase tracking-wide text-white [text-shadow:2px_2px_0px_#0f172a] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                    <h2 id="unown-modal-title" class="text-xl sm:text-2xl font-black uppercase tracking-wide {% if game.slug == 'yellow' or game.slug == 'gold' or game.slug == 'white' %}text-slate-950{% else %}text-white [text-shadow:2px_2px_0px_#0f172a] drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]{% endif %}">
                         Bloc Unown • Unowndex
                     </h2>
                 </div>
@@ -407,19 +407,19 @@
         </div>
         {% elif is_unova %}
         <!-- Chamber Hint Box for Teselia (Sin ruinas salvajes / Pokétransfer) -->
-        <div id="unown-unova-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
-            <p class="truncate m-0">
-                <span class="font-black text-slate-900">Teselia</span>: 
-                <span>Unown no aparece en estado salvaje en esta región. Sus 28 formas se obtienen mediante transferencia con el Pokétransfer (Laboratorio de Pokétransfer, Ruta 15) desde juegos de 4.ª generación.</span>
-            </p>
+        <div id="unown-unova-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center gap-1.5 overflow-hidden">
+            <span class="font-black text-slate-900 shrink-0">Teselia:</span>
+            <span class="overflow-hidden whitespace-nowrap location-marquee-wrapper flex-1 min-w-0">
+                <span class="location-marquee-text inline-block whitespace-nowrap">Unown no aparece en estado salvaje en esta región. Sus 28 formas se obtienen mediante transferencia con el Pokétransfer (Laboratorio de Pokétransfer, Ruta 15) desde juegos de 4.ª generación.</span>
+            </span>
         </div>
         {% else %}
         <!-- Chamber Secret Hint Box for Hoenn (Sin ruinas/cámaras salvajes) -->
-        <div id="unown-hoenn-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center">
-            <p class="truncate m-0">
-                <span class="font-black text-slate-900">Hoenn</span>: 
-                <span>Unown no aparece en estado salvaje en esta región. Sus 28 formas se obtienen mediante transferencia externa (GBA / Colosseum).</span>
-            </p>
+        <div id="unown-hoenn-hint" class="px-5 py-2.5 bg-slate-100 border-b border-slate-200 text-xs text-slate-700 shrink-0 min-h-[36px] flex items-center gap-1.5 overflow-hidden">
+            <span class="font-black text-slate-900 shrink-0">Hoenn:</span>
+            <span class="overflow-hidden whitespace-nowrap location-marquee-wrapper flex-1 min-w-0">
+                <span class="location-marquee-text inline-block whitespace-nowrap">Unown no aparece en estado salvaje en esta región. Sus 28 formas se obtienen mediante transferencia externa (GBA / Colosseum).</span>
+            </span>
         </div>
         {% endif %}
 
@@ -456,7 +456,7 @@
                     </div>
 
                     <!-- Sprite Frame -->
-                    <div class="my-2 relative flex items-center justify-center h-20 shrink-0">
+                    <div class="my-2 relative flex items-center justify-center h-20 shrink-0 overflow-hidden">
                         <div class="absolute inset-1 rounded-full bg-slate-100/80 border border-slate-200 pointer-events-none"></div>
                         <img 
                             id="unown-img-{{ form.letter }}"
@@ -466,9 +466,9 @@
                             alt="{{ form.display }}"
                             loading="lazy"
                             decoding="async"
-                            width="64"
-                            height="64"
-                            class="w-16 h-16 object-contain pixel-art relative z-10 transition-transform duration-150 hover:scale-110"
+                            width="96"
+                            height="96"
+                            class="{% if is_unova %}w-28 h-28{% elif is_sinnoh or is_hgss %}w-24 h-24{% elif is_tanoby or is_hoenn %}w-20 h-20{% else %}w-16 h-16{% endif %} shrink-0 object-contain pixel-art relative z-10 transition-transform duration-150 hover:scale-110"
                         >
                     </div>
 
