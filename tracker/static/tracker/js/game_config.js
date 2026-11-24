@@ -1407,13 +1407,15 @@ function renderWhiteForestGrid() {
                         ✓
                     </span>
                 </div>
-                <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-200/80 text-[10px] font-bold text-slate-700">
-                    <span class="inline-flex items-center gap-1 min-w-0 truncate" title="Hierba Alta: ${r.grass.name}">
-                        <img src="/media/pokemon/sprites/white/${r.grass.id}.png" alt="" class="w-5 h-5 object-contain pixel-art shrink-0" loading="lazy">
+                <div class="flex items-center justify-between gap-1.5 pt-1.5 border-t border-slate-200/80 text-[11px] font-bold text-slate-700">
+                    <span class="inline-flex items-center gap-1.5 min-w-0 truncate" title="Hierba Alta: ${r.grass.name}">
+                        <span class="w-10 h-10 overflow-hidden flex items-center justify-center shrink-0">
+                            <img src="/media/pokemon/sprites/white/${r.grass.id}.png" alt="" class="w-full h-full object-contain pixel-art scale-[1.4]" loading="lazy">
+                        </span>
                         <span class="truncate">${r.grass.name}</span>
                     </span>
-                    <span class="inline-flex items-center gap-0.5 shrink-0 text-slate-600" title="Objeto diario: ${r.item.name} (${r.item.chance}%)">
-                        <img src="/media/items/${r.item.slug}.png" alt="" class="w-4 h-4 object-contain pixel-art shrink-0" loading="lazy">
+                    <span class="inline-flex items-center justify-center shrink-0 pr-0.5 text-slate-600" title="Objeto diario: ${r.item.name} (${r.item.chance}%)">
+                        <img src="/media/items/${r.item.slug}.png" alt="" class="w-8 h-8 p-0.5 object-contain pixel-art shrink-0" loading="lazy">
                     </span>
                 </div>
             </button>
@@ -1456,9 +1458,11 @@ function renderWhiteForestResults() {
 
     if (grassList) {
         grassList.innerHTML = results.grassEncounters.map(enc => `
-            <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-emerald-50/70 border border-emerald-200">
+            <div class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-emerald-50/70 border border-emerald-200">
                 <div class="flex items-center gap-2 min-w-0">
-                    <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-7 h-7 object-contain pixel-art shrink-0">
+                    <span class="w-14 h-14 overflow-hidden flex items-center justify-center shrink-0">
+                        <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-full h-full object-contain pixel-art scale-[1.4]">
+                    </span>
                     <div class="min-w-0">
                         <div class="text-xs font-black text-slate-900 truncate leading-tight">
                             <span class="font-mono text-[10px] text-slate-500">#${String(enc.id).padStart(3, '0')}</span> ${enc.name}
@@ -1479,9 +1483,11 @@ function renderWhiteForestResults() {
         surfList.innerHTML = results.surfEncounters.map(enc => {
             const names = enc.contributors.map(r => r.name).join(', ');
             return `
-                <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-sky-50/70 border border-sky-200">
+                <div class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-sky-50/70 border border-sky-200">
                     <div class="flex items-center gap-2 min-w-0">
-                        <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-7 h-7 object-contain pixel-art shrink-0">
+                        <span class="w-14 h-14 overflow-hidden flex items-center justify-center shrink-0">
+                            <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-full h-full object-contain pixel-art scale-[1.4]">
+                        </span>
                         <div class="min-w-0">
                             <div class="text-xs font-black text-slate-900 truncate leading-tight">
                                 <span class="font-mono text-[10px] text-slate-500">#${String(enc.id).padStart(3, '0')}</span> ${enc.name}
@@ -1505,9 +1511,9 @@ function renderWhiteForestResults() {
                 .map(c => item.contributors.length > 1 ? `${c.resident.name} (${c.chance}%)` : `${c.resident.trainerClass} ${c.resident.name}`)
                 .join(' + ');
             return `
-                <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-amber-50/70 border border-amber-200">
-                    <div class="flex items-center gap-2 min-w-0">
-                        <img src="${item.icon}" alt="${item.name}" class="w-6 h-6 object-contain pixel-art shrink-0">
+                <div class="flex items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-amber-50/70 border border-amber-200">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <img src="${item.icon}" alt="${item.name}" class="w-10 h-10 p-0.5 object-contain pixel-art shrink-0">
                         <div class="min-w-0">
                             <div class="text-xs font-black text-slate-900 truncate leading-tight">${item.name}</div>
                             <div class="text-[10px] font-bold text-slate-500 truncate leading-tight" title="${contribText}">
