@@ -170,11 +170,11 @@
                     <!-- Fila 1: Filtro por Generación (Centrado en una sola línea) -->
                     <div class="mb-4">
                         <div class="flex items-center justify-center mb-2">
-                            <label class="text-[11px] font-black uppercase tracking-wider text-slate-300">
+                            <span id="filter-generation-label" class="text-[11px] font-black uppercase tracking-wider text-slate-300">
                                 Generación
-                            </label>
+                            </span>
                         </div>
-                        <div class="flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
+                        <div role="group" aria-labelledby="filter-generation-label" class="flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
                             <button 
                                 type="button" 
                                 onclick="filterByGeneration('all')" 
@@ -199,11 +199,11 @@
                     <!-- Fila 2: Filtro por Consola / Plataforma (Centrado en una sola línea con siglas compactas) -->
                     <div>
                         <div class="flex items-center justify-center mb-2">
-                            <label class="text-[11px] font-black uppercase tracking-wider text-slate-300">
+                            <span id="filter-console-label" class="text-[11px] font-black uppercase tracking-wider text-slate-300">
                                 Consola / Plataforma
-                            </label>
+                            </span>
                         </div>
-                        <div class="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+                        <div role="group" aria-labelledby="filter-console-label" class="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
                             <button 
                                 type="button" 
                                 onclick="filterByConsole('all')" 
