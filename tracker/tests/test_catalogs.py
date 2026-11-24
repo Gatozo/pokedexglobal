@@ -4775,6 +4775,25 @@ class GlobalFormContractInvariantsTests(TestCase):
         self.assertNotIn("time_day", nat_by_num[468].filter_tags.split())    # Togekiss
         self.assertNotIn("time_night", nat_by_num[429].filter_tags.split())  # Mismagius
 
+    def test_white_forest_and_dark_grass_filter_tags(self):
+        from tracker.catalog_service import get_compiled_catalog
+
+        white_nat = get_compiled_catalog("white_national", force_reload=True)
+        black_nat = get_compiled_catalog("black_national", force_reload=True)
+        white_reg = get_compiled_catalog("white", force_reload=True)
+
+        wf_white = [e for e in white_nat if "white_forest" in e.filter_tags.split()]
+        wf_black = [e for e in black_nat if "white_forest" in e.filter_tags.split()]
+        self.assertEqual(len(wf_white), 33)
+        self.assertEqual(len(wf_black), 0)
+        self.assertNotIn("white_forest", next(e for e in white_nat if e.pokemon.national_number == 399).filter_tags.split())
+
+        dg_reg = [e for e in white_reg if "dark_grass" in e.filter_tags.split()]
+        dg_nat = [e for e in white_nat if "dark_grass" in e.filter_tags.split()]
+        self.assertGreaterEqual(len(dg_reg), 40)
+        self.assertGreaterEqual(len(dg_nat), 80)
+        self.assertFalse(any(e.obtaining_info.get("type") == "transfer" for e in dg_nat))
+
     def test_black_national_swarm_filter_tags_and_transfers_exclusion(self):
         from tracker.catalog_service import get_compiled_catalog
         from tracker.exclusives import NON_UNOVA_TRANSFERS_BLACK
@@ -5515,11 +5534,11 @@ class PokemonWhiteGen5Tests(TestCase):
         cls = _classify_catalog_for_game(nat, "white")
         by_nid = {e.pokemon.national_number: e for e in nat}
 
-        # Las 34 especies base salvajes del Bosque Blanco son clasificadas como nativas en el Hub (regresión EXTERNAL_KEYWORDS)
+        # Las 33 especies base salvajes del Bosque Blanco son clasificadas como nativas en el Hub (regresión EXTERNAL_KEYWORDS)
         wf_base_ids = (
             16, 29, 32, 43, 63, 66, 69, 81, 92, 111, 137, 175, 179, 187, 194,
             239, 240, 265, 270, 273, 280, 283, 287, 293, 298, 304, 328, 341,
-            371, 396, 399, 403, 406, 440,
+            371, 396, 403, 406, 440,
         )
         for nid in wf_base_ids:
             is_native, badge = cls[nid]
@@ -5527,6 +5546,10 @@ class PokemonWhiteGen5Tests(TestCase):
             self.assertEqual(badge, "Salvaje")
             self.assertTrue(any("Bosque Blanco" in loc.get("area", "") for loc in by_nid[nid].obtaining_info["locations"]))
             self.assertTrue(any("Bosque Blanco" in n.get("title", "") for n in by_nid[nid].notes))
+
+        # #399 Bidoof no sale salvaje en Bosque Blanco; se obtiene por crianza de Bibarel
+        self.assertEqual(by_nid[399].obtaining_info["badge_label"], "Crianza")
+        self.assertFalse(any("Bosque Blanco" in loc.get("area", "") for loc in by_nid[399].obtaining_info["locations"]))
 
         # Surf vs Hierba alta en Bosque Blanco
         for surf_id in (194, 270, 283, 341):

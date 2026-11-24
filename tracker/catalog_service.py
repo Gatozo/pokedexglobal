@@ -630,6 +630,8 @@ class CatalogEntry:
 
             if "hierba movediza" in methods_lower:
                 tags.add("spot_grass")
+            if "hierba oscura" in methods_lower:
+                tags.add("dark_grass")
             if "nube de polvo" in methods_lower:
                 tags.add("spot_dust")
             if "sombra en el puente" in methods_lower:
@@ -638,6 +640,8 @@ class CatalogEntry:
                 tags.add("spot_surf")
             if "supercaña en sombra del agua" in methods_lower or "supercana en sombra del agua" in methods_lower:
                 tags.add("spot_fishing")
+            if (self.game_slug or "").removesuffix("_national") == "white" and "bosque blanco" in loc_text:
+                tags.add("white_forest")
 
         # Cañas de pescar (evaluado únicamente sobre métodos reales de ubicación para evitar falsos positivos en exclusivos/summary)
         has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", methods_lower))

@@ -26336,15 +26336,11 @@
     "cry_url": "/media/pokemon/cries/legacy/399.ogg",
     "flavor_text": "Un estudio comparativo reveló que los incisivos de Bidoof crecen a la misma velocidad que los de Rattata.",
     "obtaining_info": {
-      "type": "wild",
-      "badge_label": "Bosque Blanco",
-      "badge_color": "emerald",
-      "summary": "Salvaje en el Bosque Blanco (al Nv. 5 en la hierba alta según los residentes presentes); también obtenible mediante crianza en la Guardería de la Ruta 3 (por ejemplo de Bibarel salvaje en Puente Villa).",
+      "type": "other",
+      "badge_label": "Crianza",
+      "badge_color": "zinc",
+      "summary": "Obtención mediante crianza o evento especial en Teselia.",
       "locations": [
-        {
-          "area": "Bosque Blanco",
-          "method": "Hierba alta (según residentes)"
-        },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
           "method": "Crianza de huevo"
@@ -26352,14 +26348,7 @@
       ]
     },
     "evolution_stone": null,
-    "notes": [
-      {
-        "title": "Dinámica del Bosque Blanco",
-        "text": "En Pokémon Blanco, las especies del Bosque Blanco aparecen salvajes al Nv. 5 únicamente mientras resida en el bosque un entrenador vinculado a esa especie. Si un residente no está presente en tu partida, puedes invitar nuevos personajes visitando la Ciudad Negra de otro jugador mediante la Zona Nexo.",
-        "tag": "Bosque Blanco",
-        "icon": "/media/items/rule-book.png"
-      }
-    ],
+    "notes": [],
     "game_data": {
       "generation": 5,
       "game_slug": "white",

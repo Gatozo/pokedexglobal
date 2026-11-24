@@ -174,12 +174,12 @@ DAYCARE_LOCATION = {
     'method': 'Crianza de huevo'
 }
 
-# Las 34 especies base salvajes del Bosque Blanco en Pokémon Blanco (33 familias exclusivas + #399 Bidoof)
+# Las 33 especies base salvajes del Bosque Blanco en Pokémon Blanco
 WHITE_FOREST_SURF_IDS = {194, 270, 283, 341}
 WHITE_FOREST_BASE_IDS = {
     16, 29, 32, 43, 63, 66, 69, 81, 92, 111, 137, 175, 179, 187, 194,
     239, 240, 265, 270, 273, 280, 283, 287, 293, 298, 304, 328, 341,
-    371, 396, 399, 403, 406, 440,
+    371, 396, 403, 406, 440,
 }
 
 _WHITE_FOREST_NOTE_TEXT = (

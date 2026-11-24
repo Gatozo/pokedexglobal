@@ -300,6 +300,12 @@
                         <span>Supercaña</span>
                     </button>
                     {% endif %}
+                    {% if game.slug == 'white' and pokedex.is_national %}
+                    <button type="button" onclick="toggleFilterTag('white_forest', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="white_forest">
+                        <img src="/media/items/nest-ball.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>Bosque Blanco</span>
+                    </button>
+                    {% endif %}
                     <button type="button" onclick="toggleFilterTag('stone', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="stone">
                         <img src="/media/items/fire-stone.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
                         <span>Por Piedra</span>
@@ -373,6 +379,10 @@
                         <button type="button" onclick="toggleFilterTag('spot_grass', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_grass">
                             <img src="/media/items/grassy-seed.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
                             <span>Hierba que se mueve</span>
+                        </button>
+                        <button type="button" onclick="toggleFilterTag('dark_grass', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="dark_grass">
+                            <img src="/media/items/miracle-seed.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
+                            <span>Hierba Oscura</span>
                         </button>
                         <button type="button" onclick="toggleFilterTag('spot_dust', this)" class="filter-tag-pill h-8 px-2.5 rounded-lg text-[11px] xl:text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5 whitespace-nowrap" data-tag="spot_dust">
                             <img src="/media/items/stardust.png" alt="" class="w-5 h-5 object-contain inline-block pixel-art shrink-0">
