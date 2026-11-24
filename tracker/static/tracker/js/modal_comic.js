@@ -18,6 +18,7 @@ import { openUnownModal } from './modal_unown.js';
 import { toggleCatch } from './cards.js';
 import { loadGameConfig, getMunchlaxTreeNames } from './game_config.js';
 import { calculatePrimoWords } from './primo_calculator.js';
+import { getWhiteForestPokemonStatus } from './white_forest_data.js';
 import { getSafariHgssRequirements } from './safari_hgss_data.js';
 
 const _entryDataCache = new Map();
@@ -576,6 +577,34 @@ export function renderModalObtaining(data, activeForm = null) {
         }
     }
 
+    // Detección especial de Bosque Blanco en Pokémon Blanco (Gen 5)
+    const isWhiteGame = activeGameSlug.startsWith('white');
+    const hasWhiteForestLocation = isWhiteGame && displayLocations.some(loc => (loc.area || '').toLowerCase().includes('bosque blanco'));
+    let whiteForestStatus = null;
+    if (hasWhiteForestLocation) {
+        const wfCfg = loadGameConfig('white');
+        const wfIds = (wfCfg && Array.isArray(wfCfg.whiteForestResidents)) ? wfCfg.whiteForestResidents : [];
+        whiteForestStatus = getWhiteForestPokemonStatus(natNumber, wfIds);
+    }
+
+    const formatWfMissingResidentMessage = (status) => {
+        if (!status) return '';
+        const gRes = status.requiredGrassResident;
+        const sList = status.requiredSurfResidents || [];
+        if (gRes && sList.length > 0) {
+            const surfNames = sList.map(r => `${r.trainerClass} ${r.name}`).join(', ');
+            return `Para que aparezca en tu Bosque Blanco debe venir <strong>${gRes.trainerClass} ${gRes.name}</strong> (Hierba alta) o alguno de estos residentes para Surf: <strong>${surfNames}</strong>.`;
+        }
+        if (gRes) {
+            return `Para que aparezca en tu Bosque Blanco debe venir <strong>${gRes.trainerClass} ${gRes.name}</strong>.`;
+        }
+        if (sList.length > 0) {
+            const surfNames = sList.map(r => `${r.trainerClass} ${r.name}`).join(', ');
+            return `Para que aparezca surfeando en tu Bosque Blanco debe venir al menos uno de estos residentes: <strong>${surfNames}</strong>.`;
+        }
+        return '';
+    };
+
     if (summaryEl) {
         const hasDetails = (displayLocations && displayLocations.length > 0) || Boolean(obt.evolution_info) || Boolean(data.evolution_stone) || Boolean(obt.historical_note);
 
@@ -595,6 +624,55 @@ export function renderModalObtaining(data, activeForm = null) {
                     >
                         <span>🗺️ Ver Mapa</span>
                     </button>
+                </div>
+            `;
+        } else if (whiteForestStatus && whiteForestStatus.isConfigured && whiteForestStatus.isActive) {
+            const parts = [];
+            if (whiteForestStatus.grassMatch) {
+                const gm = whiteForestStatus.grassMatch;
+                parts.push(`Hierba alta: <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${gm.percentLabel}</span> (${gm.resident.trainerClass} ${gm.resident.name})`);
+            }
+            if (whiteForestStatus.surfMatch) {
+                const sm = whiteForestStatus.surfMatch;
+                const surfNames = sm.contributors.map(r => r.name).join(', ');
+                parts.push(`Surfeando: <span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${sm.percentLabel}</span> (${surfNames})`);
+            }
+            summaryEl.innerHTML = `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-emerald-800 font-black">Bosque Blanco (Tu partida):</span> Disponible al Nv. 5 — ${parts.join(' · ')}.
+                    </div>
+                    <button
+                        type="button"
+                        onclick="event.stopPropagation(); openWhiteForestModal();"
+                        class="px-2.5 py-1 rounded-lg text-[11px] font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-300 hover:bg-emerald-200 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
+                    >
+                        <img src="/media/items/nest-ball.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                        <span>Editar Bosque</span>
+                    </button>
+                </div>
+            `;
+        } else if (whiteForestStatus && whiteForestStatus.isConfigured && !whiteForestStatus.isActive) {
+            const genericSummary = (obt.summary && obt.summary.trim()) ? obt.summary.trim() : 'Salvaje en el Bosque Blanco (Nv. 5 según los residentes presentes).';
+            const missingHtml = formatWfMissingResidentMessage(whiteForestStatus);
+            const gRes = whiteForestStatus.requiredGrassResident;
+            const spriteHtml = gRes ? `<img src="${gRes.sprite}" alt="${gRes.name}" class="w-6 h-6 object-contain pixel-art shrink-0">` : `<img src="/media/items/nest-ball.png" alt="" class="w-5 h-5 object-contain pixel-art shrink-0">`;
+            summaryEl.innerHTML = `
+                <div class="space-y-2">
+                    <p>${genericSummary}</p>
+                    <div class="p-2 rounded-lg bg-amber-50 border border-amber-300 text-amber-950 text-xs font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div class="flex items-center gap-2 min-w-0">
+                            ${spriteHtml}
+                            <span class="leading-snug">${missingHtml}</span>
+                        </div>
+                        <button
+                            type="button"
+                            onclick="event.stopPropagation(); openWhiteForestModal();"
+                            class="text-[10px] font-black uppercase text-amber-900 underline hover:text-amber-700 cursor-pointer shrink-0 self-start sm:self-auto"
+                        >
+                            Editar Bosque
+                        </button>
+                    </div>
                 </div>
             `;
         } else if (obt.summary && obt.summary.trim()) {
@@ -755,6 +833,49 @@ export function renderModalObtaining(data, activeForm = null) {
             }
 
 
+
+            if (whiteForestStatus && whiteForestStatus.isConfigured && whiteForestStatus.isActive) {
+                const wfHeader = document.createElement('div');
+                wfHeader.className = 'mb-2 p-2.5 rounded-xl bg-emerald-50 border-2 border-emerald-500 text-emerald-950 text-xs font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-[2px_2px_0px_0px_#059669]';
+                const detailParts = [];
+                if (whiteForestStatus.grassMatch) {
+                    const gm = whiteForestStatus.grassMatch;
+                    detailParts.push(`Hierba alta: <strong>${gm.percentLabel}</strong> (${gm.resident.trainerClass} ${gm.resident.name})`);
+                }
+                if (whiteForestStatus.surfMatch) {
+                    const sm = whiteForestStatus.surfMatch;
+                    detailParts.push(`Surfeando: <strong>${sm.percentLabel}</strong> (${sm.contributors.map(r => r.name).join(', ')})`);
+                }
+                const leadSprite = whiteForestStatus.grassMatch
+                    ? whiteForestStatus.grassMatch.resident.sprite
+                    : whiteForestStatus.surfMatch.contributors[0].sprite;
+                wfHeader.innerHTML = `
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="${leadSprite}" alt="" class="w-7 h-7 object-contain pixel-art shrink-0">
+                        <div class="min-w-0">
+                            <span class="font-black uppercase text-emerald-950 block">Activo en tu Bosque Blanco (${whiteForestStatus.selectedCount}/10 residentes)</span>
+                            <span class="text-[11px] text-emerald-900 font-bold block leading-snug">${detailParts.join(' · ')}</span>
+                        </div>
+                    </div>
+                    <button type="button" onclick="event.stopPropagation(); openWhiteForestModal();" class="text-[10px] font-black uppercase text-emerald-900 underline hover:text-emerald-700 cursor-pointer shrink-0 self-start sm:self-auto">
+                        Editar Bosque
+                    </button>
+                `;
+                detailsContainer.appendChild(wfHeader);
+            } else if (whiteForestStatus && !whiteForestStatus.isConfigured) {
+                const wfPrompt = document.createElement('div');
+                wfPrompt.className = 'mb-2 p-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-700 text-xs font-bold flex items-center justify-between gap-2';
+                wfPrompt.innerHTML = `
+                    <div class="flex items-center gap-1.5">
+                        <img src="/media/items/nest-ball.png" alt="" class="w-4 h-4 object-contain pixel-art shrink-0">
+                        <span>Configura tus residentes del Bosque Blanco para ver su porcentaje exacto.</span>
+                    </div>
+                    <button type="button" onclick="event.stopPropagation(); openWhiteForestModal();" class="text-[10px] font-black uppercase text-emerald-800 underline hover:text-emerald-600 cursor-pointer shrink-0">
+                        Configurar
+                    </button>
+                `;
+                detailsContainer.appendChild(wfPrompt);
+            }
 
             const locList = document.createElement('div');
             locList.className = (displayLocations.length === 1) ? 'grid grid-cols-1 gap-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-2';

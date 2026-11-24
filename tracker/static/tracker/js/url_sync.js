@@ -92,6 +92,7 @@ export function releaseScrollIfNoModalOpen() {
     const unownModal = document.getElementById('unown-modal');
     const cfgModal = document.getElementById('game-config-modal');
     const feebasModal = document.getElementById('feebas-map-modal');
+    const wfModal = document.getElementById('white-forest-modal');
     const isComicOpen = comicModal && !comicModal.classList.contains('opacity-0');
     const isExclOpen = exclModal && !exclModal.classList.contains('opacity-0');
     const isStoneOpen = stoneModal && !stoneModal.classList.contains('opacity-0');
@@ -99,7 +100,8 @@ export function releaseScrollIfNoModalOpen() {
     const isUnownOpen = unownModal && !unownModal.classList.contains('opacity-0');
     const isCfgOpen = cfgModal && !cfgModal.classList.contains('opacity-0');
     const isFeebasOpen = feebasModal && !feebasModal.classList.contains('opacity-0');
-    if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen && !isCfgOpen && !isFeebasOpen) {
+    const isWfOpen = wfModal && !wfModal.classList.contains('opacity-0');
+    if (!isComicOpen && !isExclOpen && !isStoneOpen && !isTransOpen && !isUnownOpen && !isCfgOpen && !isFeebasOpen && !isWfOpen) {
         document.documentElement.classList.remove('overflow-hidden');
         document.body.classList.remove('overflow-hidden');
     }

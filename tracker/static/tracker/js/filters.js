@@ -5,6 +5,8 @@
 
 import { state, THEME_ACTIVE_BTN, SEASON_TAG_MAP } from './state.js';
 import { applyAllSeasonalCardSprites } from './cards.js';
+import { loadGameConfig } from './game_config.js';
+import { calculateWhiteForestResults } from './white_forest_data.js';
 import {
     isGlobalFilterActive,
     isManualRegionLock,
@@ -251,6 +253,17 @@ export async function filterCards() {
         return;
     }
 
+    // Si el filtro de Bosque Blanco está activo y el usuario configuró residentes en Pokémon Blanco,
+    // restringir el filtro únicamente a las especies que pueden aparecer con esos residentes.
+    let whiteForestActiveSpeciesIds = null;
+    if (state.selectedFilterTags.has('white_forest')) {
+        const wfCfg = loadGameConfig('white');
+        const wfIds = (wfCfg && Array.isArray(wfCfg.whiteForestResidents)) ? wfCfg.whiteForestResidents : [];
+        if (wfIds.length > 0) {
+            whiteForestActiveSpeciesIds = calculateWhiteForestResults(wfIds).activeSpeciesIds;
+        }
+    }
+
     const cards = document.querySelectorAll('.pokemon-card');
     let visibleCount = 0;
 
@@ -297,7 +310,14 @@ export async function filterCards() {
         // 3. Filtro de etiquetas avanzadas (Iniciales, Legendarios, Regalos, Surf, Cañas, etc.)
         let matchesTags = true;
         if (state.selectedFilterTags.size > 0) {
-            matchesTags = tags.some(tag => state.selectedFilterTags.has(tag));
+            const natNum = parseInt(card.dataset.nationalNumber || card.dataset.number || '0', 10);
+            matchesTags = tags.some(tag => {
+                if (!state.selectedFilterTags.has(tag)) return false;
+                if (tag === 'white_forest' && whiteForestActiveSpeciesIds) {
+                    return whiteForestActiveSpeciesIds.has(natNum);
+                }
+                return true;
+            });
         }
 
         // 4. Filtro de tipos elementales

@@ -12,7 +12,17 @@ import {
 } from './feebas_data.js';
 import { calculateFeebasFishingSpots, calculateGen4FeebasSpots, calculateGen4FeebasFromSeed } from './feebas_calculator.js';
 import { getAllPrimoRewards, calculatePrimoWords, PRIMO_WALLPAPERS, PRIMO_EGGS } from './primo_calculator.js';
-import { bringModalToFront, registerModalClose } from './url_sync.js';
+import {
+    WHITE_FOREST_RESIDENTS,
+    WHITE_FOREST_RESIDENTS_BY_ID,
+    WHITE_FOREST_MAX_RESIDENTS,
+    calculateWhiteForestResults
+} from './white_forest_data.js';
+import { bringModalToFront, registerModalClose, lockModalScroll, releaseScrollIfNoModalOpen } from './url_sync.js';
+
+// Estado temporal del modal del Bosque Blanco (Pokémon Blanco)
+let wfDraftSelection = [];
+let wfSearchQuery = '';
 
 // Lista canónica de los 21 árboles de miel de Sinnoh (índices internos 0 a 20 de la ROM de DPPt/BDSP)
 export const SINNOH_HONEY_TREES = {
@@ -95,7 +105,11 @@ export function getMunchlaxTreeNames(tid, sid = null) {
  */
 function getStorageKey(gameSlug) {
     const rawSlug = gameSlug || (window.POKEDEX_CONFIG && window.POKEDEX_CONFIG.gameSlug) || 'default';
-    const normalizedSlug = rawSlug.startsWith('heartgold') ? 'heartgold' : (rawSlug.startsWith('soulsilver') ? 'soulsilver' : rawSlug);
+    const normalizedSlug = rawSlug.startsWith('heartgold')
+        ? 'heartgold'
+        : (rawSlug.startsWith('soulsilver')
+            ? 'soulsilver'
+            : (rawSlug.startsWith('white') ? 'white' : rawSlug));
     return `pokedex_game_config_${normalizedSlug}`;
 }
 
@@ -141,7 +155,8 @@ export function updateConfigDotIndicator() {
     const hasTid = cfg && (cfg.tid !== null && cfg.tid !== undefined);
     const hasGen3Feebas = cfg && (Boolean(cfg.phrase1) && Boolean(cfg.phrase2));
     const hasGen4Feebas = cfg && (Boolean(cfg.groupSeed) || (cfg.lottoToday !== null && cfg.lottoToday !== undefined) || (cfg.feebasSpots && cfg.feebasSpots.length > 0));
-    if (hasTid || hasGen3Feebas || hasGen4Feebas) {
+    const hasWhiteForest = cfg && Array.isArray(cfg.whiteForestResidents) && cfg.whiteForestResidents.length > 0;
+    if (hasTid || hasGen3Feebas || hasGen4Feebas || hasWhiteForest) {
         dot.classList.remove('hidden');
     } else {
         dot.classList.add('hidden');
@@ -323,6 +338,12 @@ export function renderConfigPreview() {
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
     const isGen4HGSS = gameSlug.startsWith('heartgold') || gameSlug.startsWith('soulsilver');
+    const isWhite = gameSlug.startsWith('white');
+
+    if (isWhite) {
+        renderWhiteForestConfigSummary();
+        return;
+    }
 
     // 0. Previsualización para Gen 4 HeartGold / SoulSilver (Cástor: Huevos y Fondos del PC)
     if (isGen4HGSS) {
@@ -778,6 +799,16 @@ export function saveGameConfig() {
         return;
     }
 
+    // Caso Pokémon Blanco (Bosque Blanco: la configuración se gestiona desde su modal dedicado)
+    if (gameSlug.startsWith('white')) {
+        closeGameConfigModal();
+        refreshOpenModals();
+        if (typeof window.filterCards === 'function') {
+            window.filterCards();
+        }
+        return;
+    }
+
     // Otros juegos / Fallback
     const tidInput = document.getElementById('cfg-trainer-id');
     const tidRaw = tidInput ? tidInput.value.trim() : '';
@@ -825,9 +856,13 @@ export function resetGameConfig() {
     if (hgssTidInput) hgssTidInput.value = '';
     if (hgssLangSelect) hgssLangSelect.value = 'es';
 
+    wfDraftSelection = [];
     renderConfigPreview();
     closeGameConfigModal();
     refreshOpenModals();
+    if (typeof window.filterCards === 'function') {
+        window.filterCards();
+    }
 }
 
 /**
@@ -1241,6 +1276,397 @@ export function highlightFeebasSpot(index, smooth = true) {
         setTimeout(() => {
             marker.classList.remove('scale-150');
         }, 600);
+    }
+}
+
+/**
+ * Normaliza texto para búsqueda insensible a tildes/mayúsculas en el modal del Bosque Blanco.
+ */
+function normalizeWfText(str) {
+    return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+}
+
+/**
+ * Renderiza el resumen de la configuración actual del Bosque Blanco dentro del modal de Configuración.
+ */
+export function renderWhiteForestConfigSummary() {
+    const summaryBox = document.getElementById('cfg-white-forest-summary');
+    if (!summaryBox) return;
+
+    const cfg = loadGameConfig('white');
+    const savedIds = (cfg && Array.isArray(cfg.whiteForestResidents)) ? cfg.whiteForestResidents : [];
+    const results = calculateWhiteForestResults(savedIds);
+
+    if (results.selectedResidents.length === 0) {
+        summaryBox.className = 'mb-3 p-3 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 text-xs text-slate-600 font-bold';
+        summaryBox.innerHTML = 'Sin residentes configurados todavía. El filtro <strong>Bosque Blanco</strong> mostrará las 33 especies posibles.';
+        return;
+    }
+
+    const chipsHtml = results.selectedResidents.map(r => `
+        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg border border-slate-950 bg-white text-[11px] font-black text-slate-900 shadow-[1px_1px_0px_#0f172a]">
+            <img src="${r.sprite}" alt="" class="w-4 h-4 object-contain pixel-art shrink-0">
+            <span>${r.name}</span>
+        </span>
+    `).join('');
+
+    summaryBox.className = 'mb-3 p-3 rounded-xl border-2 border-slate-950 bg-emerald-50/80 text-xs text-slate-900 space-y-2 shadow-[1.5px_1.5px_0px_#0f172a]';
+    summaryBox.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-1.5">
+            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-900">
+                ${results.selectedResidents.length} / ${WHITE_FOREST_MAX_RESIDENTS} Residentes Activos
+            </span>
+            <span class="text-[10px] font-black text-emerald-800">
+                ${results.grassEncounters.length} hierba · ${results.surfEncounters.length} surf · ${results.dailyItems.length} objetos
+            </span>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+            ${chipsHtml}
+        </div>
+    `;
+}
+
+/**
+ * Renderiza la cuadrícula de los 30 entrenadores del Bosque Blanco.
+ */
+function renderWhiteForestGrid() {
+    const grid = document.getElementById('wf-residents-grid');
+    const counter = document.getElementById('wf-selected-counter');
+    const limitHint = document.getElementById('wf-limit-hint');
+    if (!grid) return;
+
+    const selectedSet = new Set(wfDraftSelection);
+    const isFull = selectedSet.size >= WHITE_FOREST_MAX_RESIDENTS;
+    const normQ = normalizeWfText(wfSearchQuery);
+
+    if (counter) {
+        counter.textContent = `${selectedSet.size} / ${WHITE_FOREST_MAX_RESIDENTS}`;
+        if (isFull) {
+            counter.classList.remove('bg-white', 'text-slate-950');
+            counter.classList.add('bg-amber-300', 'text-slate-950');
+        } else {
+            counter.classList.remove('bg-amber-300');
+            counter.classList.add('bg-white', 'text-slate-950');
+        }
+    }
+
+    const filtered = WHITE_FOREST_RESIDENTS.filter(r => {
+        if (!normQ) return true;
+        const haystack = normalizeWfText(`${r.name} ${r.trainerClass} ${r.grass.name} ${r.surf.name} ${r.item.name}`);
+        return haystack.includes(normQ);
+    });
+
+    if (limitHint) {
+        if (isFull) {
+            limitHint.textContent = 'Límite máximo (10/10) alcanzado';
+            limitHint.className = 'text-[10px] font-black uppercase tracking-wide text-amber-800 shrink-0 text-right';
+        } else if (normQ) {
+            limitHint.textContent = `${filtered.length} de 30 residentes`;
+            limitHint.className = 'text-[10px] font-black uppercase tracking-wide text-slate-600 shrink-0 text-right';
+        } else {
+            limitHint.textContent = '30 residentes disponibles';
+            limitHint.className = 'text-[10px] font-black uppercase tracking-wide text-slate-600 shrink-0 text-right';
+        }
+    }
+
+    if (filtered.length === 0) {
+        grid.innerHTML = `
+            <div class="col-span-full py-8 text-center text-xs font-bold text-slate-500">
+                No se encontraron residentes para "${wfSearchQuery.replace(/</g, '&lt;')}".
+            </div>
+        `;
+        return;
+    }
+
+    grid.innerHTML = filtered.map(r => {
+        const isSelected = selectedSet.has(r.id);
+        const isLocked = !isSelected && isFull;
+        const cardClass = isSelected
+            ? 'border-emerald-700 bg-emerald-50 ring-2 ring-emerald-500 shadow-[2px_2px_0px_0px_#065f46]'
+            : (isLocked
+                ? 'border-slate-300 bg-slate-100/70 opacity-55 cursor-not-allowed'
+                : 'border-slate-950 bg-white hover:bg-amber-50/70 shadow-[2px_2px_0px_0px_#0f172a] cursor-pointer');
+
+        return `
+            <button
+                type="button"
+                onclick="toggleWhiteForestResident('${r.id}')"
+                data-resident-id="${r.id}"
+                aria-pressed="${isSelected ? 'true' : 'false'}"
+                class="relative text-left p-2 rounded-xl border-2 transition-all flex flex-col justify-between gap-1.5 ${cardClass}"
+            >
+                <div class="flex items-center gap-2 min-w-0">
+                    <div class="w-10 h-10 rounded-lg border-2 ${isSelected ? 'border-emerald-700 bg-white' : 'border-slate-900 bg-slate-50'} flex items-center justify-center shrink-0 overflow-hidden">
+                        <img src="${r.sprite}" alt="${r.trainerClass} ${r.name}" class="w-8 h-8 object-contain pixel-art" loading="lazy">
+                    </div>
+                    <div class="min-w-0 flex-1 pr-4">
+                        <div class="text-xs font-black text-slate-950 truncate leading-tight">${r.name}</div>
+                        <div class="text-[10px] font-bold text-slate-500 truncate leading-tight">${r.trainerClass}</div>
+                    </div>
+                    <span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full border border-slate-950 flex items-center justify-center text-[10px] font-black ${isSelected ? 'bg-emerald-500 text-white' : 'bg-white text-transparent'}">
+                        ✓
+                    </span>
+                </div>
+                <div class="flex items-center justify-between gap-1 pt-1 border-t border-slate-200/80 text-[10px] font-bold text-slate-700">
+                    <span class="inline-flex items-center gap-1 min-w-0 truncate" title="Hierba Alta: ${r.grass.name}">
+                        <img src="/media/pokemon/sprites/white/${r.grass.id}.png" alt="" class="w-5 h-5 object-contain pixel-art shrink-0" loading="lazy">
+                        <span class="truncate">${r.grass.name}</span>
+                    </span>
+                    <span class="inline-flex items-center gap-0.5 shrink-0 text-slate-600" title="Objeto diario: ${r.item.name} (${r.item.chance}%)">
+                        <img src="/media/items/${r.item.slug}.png" alt="" class="w-4 h-4 object-contain pixel-art shrink-0" loading="lazy">
+                    </span>
+                </div>
+            </button>
+        `;
+    }).join('');
+}
+
+/**
+ * Renderiza los resultados calculados (Hierba Alta, Surf y Objetos Diarios) en tiempo real.
+ */
+function renderWhiteForestResults() {
+    const emptyEl = document.getElementById('wf-results-empty');
+    const contentEl = document.getElementById('wf-results-content');
+    const grassList = document.getElementById('wf-grass-list');
+    const surfList = document.getElementById('wf-surf-list');
+    const itemsList = document.getElementById('wf-items-list');
+    const grassCount = document.getElementById('wf-grass-count');
+    const surfCount = document.getElementById('wf-surf-count');
+    const itemsCount = document.getElementById('wf-items-count');
+
+    const results = calculateWhiteForestResults(wfDraftSelection);
+    if (results.selectedResidents.length === 0) {
+        if (emptyEl) emptyEl.classList.remove('hidden');
+        if (contentEl) contentEl.classList.add('hidden');
+        return;
+    }
+
+    if (emptyEl) emptyEl.classList.add('hidden');
+    if (contentEl) contentEl.classList.remove('hidden');
+
+    if (grassCount) {
+        grassCount.textContent = `${results.grassEncounters.length} ${results.grassEncounters.length === 1 ? 'especie' : 'especies'}`;
+    }
+    if (surfCount) {
+        surfCount.textContent = `${results.surfEncounters.length} ${results.surfEncounters.length === 1 ? 'especie' : 'especies'}`;
+    }
+    if (itemsCount) {
+        itemsCount.textContent = `${results.dailyItems.length} ${results.dailyItems.length === 1 ? 'objeto' : 'objetos'}`;
+    }
+
+    if (grassList) {
+        grassList.innerHTML = results.grassEncounters.map(enc => `
+            <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-emerald-50/70 border border-emerald-200">
+                <div class="flex items-center gap-2 min-w-0">
+                    <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-7 h-7 object-contain pixel-art shrink-0">
+                    <div class="min-w-0">
+                        <div class="text-xs font-black text-slate-900 truncate leading-tight">
+                            <span class="font-mono text-[10px] text-slate-500">#${String(enc.id).padStart(3, '0')}</span> ${enc.name}
+                        </div>
+                        <div class="text-[10px] font-bold text-slate-500 truncate leading-tight">
+                            ${enc.resident.trainerClass} ${enc.resident.name}
+                        </div>
+                    </div>
+                </div>
+                <span class="px-2 py-0.5 rounded-md border border-slate-950 bg-emerald-300 text-slate-950 font-mono font-black text-[11px] shrink-0 tabular-nums">
+                    ${enc.percentLabel}
+                </span>
+            </div>
+        `).join('');
+    }
+
+    if (surfList) {
+        surfList.innerHTML = results.surfEncounters.map(enc => {
+            const names = enc.contributors.map(r => r.name).join(', ');
+            return `
+                <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-sky-50/70 border border-sky-200">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="/media/pokemon/sprites/white/${enc.id}.png" alt="${enc.name}" class="w-7 h-7 object-contain pixel-art shrink-0">
+                        <div class="min-w-0">
+                            <div class="text-xs font-black text-slate-900 truncate leading-tight">
+                                <span class="font-mono text-[10px] text-slate-500">#${String(enc.id).padStart(3, '0')}</span> ${enc.name}
+                            </div>
+                            <div class="text-[10px] font-bold text-slate-500 truncate leading-tight" title="${names}">
+                                Por: ${names}
+                            </div>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md border border-slate-950 bg-sky-300 text-slate-950 font-mono font-black text-[11px] shrink-0 tabular-nums">
+                        ${enc.percentLabel}
+                    </span>
+                </div>
+            `;
+        }).join('');
+    }
+
+    if (itemsList) {
+        itemsList.innerHTML = results.dailyItems.map(item => {
+            const contribText = item.contributors
+                .map(c => item.contributors.length > 1 ? `${c.resident.name} (${c.chance}%)` : `${c.resident.trainerClass} ${c.resident.name}`)
+                .join(' + ');
+            return `
+                <div class="flex items-center justify-between gap-2 px-2 py-1 rounded-lg bg-amber-50/70 border border-amber-200">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <img src="${item.icon}" alt="${item.name}" class="w-6 h-6 object-contain pixel-art shrink-0">
+                        <div class="min-w-0">
+                            <div class="text-xs font-black text-slate-900 truncate leading-tight">${item.name}</div>
+                            <div class="text-[10px] font-bold text-slate-500 truncate leading-tight" title="${contribText}">
+                                ${contribText}
+                            </div>
+                        </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md border border-slate-950 bg-amber-300 text-slate-950 font-mono font-black text-[11px] shrink-0 tabular-nums" title="Probabilidad diaria">
+                        ${item.chanceLabel}/día
+                    </span>
+                </div>
+            `;
+        }).join('');
+    }
+}
+
+/**
+ * Abre el modal secundario de Entrenadores del Bosque Blanco.
+ */
+export function openWhiteForestModal() {
+    const modal = document.getElementById('white-forest-modal');
+    const cardPanel = document.getElementById('white-forest-modal-card');
+    if (!modal) return;
+
+    const cfg = loadGameConfig('white');
+    const saved = (cfg && Array.isArray(cfg.whiteForestResidents)) ? cfg.whiteForestResidents : [];
+    wfDraftSelection = saved.filter(id => Boolean(WHITE_FOREST_RESIDENTS_BY_ID[id])).slice(0, WHITE_FOREST_MAX_RESIDENTS);
+    wfSearchQuery = '';
+
+    const searchInput = document.getElementById('wf-search-input');
+    const searchClear = document.getElementById('wf-search-clear');
+    if (searchInput) searchInput.value = '';
+    if (searchClear) searchClear.classList.add('hidden');
+
+    renderWhiteForestGrid();
+    renderWhiteForestResults();
+
+    modal.style.display = 'flex';
+    modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+    modal.classList.add('opacity-100', 'pointer-events-auto');
+
+    if (cardPanel) {
+        cardPanel.classList.remove('scale-95');
+        cardPanel.classList.add('scale-100');
+    }
+
+    bringModalToFront(modal);
+    lockModalScroll();
+}
+
+/**
+ * Cierra el modal de Entrenadores del Bosque Blanco.
+ */
+export function closeWhiteForestModal() {
+    const modal = document.getElementById('white-forest-modal');
+    const cardPanel = document.getElementById('white-forest-modal-card');
+    if (!modal) return;
+
+    modal.classList.remove('opacity-100', 'pointer-events-auto');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+
+    if (cardPanel) {
+        cardPanel.classList.remove('scale-100');
+        cardPanel.classList.add('scale-95');
+    }
+
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+        registerModalClose(modal);
+        releaseScrollIfNoModalOpen();
+    }, 150);
+}
+
+/**
+ * Maneja clic en el fondo oscuro del modal del Bosque Blanco.
+ */
+export function handleWhiteForestBackdropClick(e) {
+    if (e && e.target && e.target.id === 'white-forest-modal') {
+        closeWhiteForestModal();
+    }
+}
+
+/**
+ * Alterna la selección de un residente del Bosque Blanco (máximo 10).
+ */
+export function toggleWhiteForestResident(residentId) {
+    if (!WHITE_FOREST_RESIDENTS_BY_ID[residentId]) return;
+
+    const idx = wfDraftSelection.indexOf(residentId);
+    if (idx !== -1) {
+        wfDraftSelection.splice(idx, 1);
+    } else if (wfDraftSelection.length < WHITE_FOREST_MAX_RESIDENTS) {
+        wfDraftSelection.push(residentId);
+    } else {
+        const counter = document.getElementById('wf-selected-counter');
+        if (counter) {
+            counter.classList.add('scale-110', 'bg-rose-300');
+            setTimeout(() => counter.classList.remove('scale-110', 'bg-rose-300'), 280);
+        }
+        return;
+    }
+
+    renderWhiteForestGrid();
+    renderWhiteForestResults();
+}
+
+/**
+ * Filtra visualmente los 30 residentes por nombre, clase, Pokémon u objeto.
+ */
+export function filterWhiteForestResidents(query) {
+    wfSearchQuery = query || '';
+    const clearBtn = document.getElementById('wf-search-clear');
+    if (clearBtn) {
+        clearBtn.classList.toggle('hidden', wfSearchQuery.trim() === '');
+    }
+    renderWhiteForestGrid();
+}
+
+/**
+ * Limpia el buscador del modal del Bosque Blanco.
+ */
+export function clearWhiteForestSearch() {
+    const input = document.getElementById('wf-search-input');
+    if (input) {
+        input.value = '';
+        input.focus();
+    }
+    filterWhiteForestResidents('');
+}
+
+/**
+ * Vacía la selección temporal de residentes del Bosque Blanco.
+ */
+export function clearWhiteForestSelection() {
+    wfDraftSelection = [];
+    renderWhiteForestGrid();
+    renderWhiteForestResults();
+}
+
+/**
+ * Guarda la selección del Bosque Blanco en localStorage y actualiza UI, filtros y modal cómic.
+ */
+export function saveWhiteForestConfig() {
+    const cleanIds = wfDraftSelection.filter(id => Boolean(WHITE_FOREST_RESIDENTS_BY_ID[id])).slice(0, WHITE_FOREST_MAX_RESIDENTS);
+    if (cleanIds.length === 0) {
+        saveGameConfigData(null, 'white');
+    } else {
+        saveGameConfigData({
+            whiteForestResidents: cleanIds,
+            updatedAt: new Date().toISOString()
+        }, 'white');
+    }
+
+    renderWhiteForestConfigSummary();
+    closeWhiteForestModal();
+    refreshOpenModals();
+    if (typeof window.filterCards === 'function') {
+        window.filterCards();
     }
 }
 

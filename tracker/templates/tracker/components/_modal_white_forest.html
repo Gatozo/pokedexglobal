@@ -1,0 +1,191 @@
+<!-- Modal Secundario: Configurador de Entrenadores del Bosque Blanco (Exclusivo Pokémon Blanco) -->
+<div
+    id="white-forest-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/85 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-200 select-none hidden"
+    onclick="handleWhiteForestBackdropClick(event)"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="wf-modal-title"
+>
+    <div
+        id="white-forest-modal-card"
+        class="bg-[#fffef5] border-4 border-slate-950 rounded-2xl w-full max-w-6xl shadow-[8px_8px_0px_0px_#0f172a] transform scale-95 transition-all duration-200 overflow-hidden flex flex-col max-h-[92vh]"
+        onclick="event.stopPropagation()"
+    >
+        <!-- Header del Modal -->
+        <div class="bg-emerald-400 border-b-4 border-slate-950 px-4 py-3 sm:px-5 sm:py-3.5 flex items-center justify-between gap-3 comic-header-pattern relative shrink-0">
+            <div class="flex items-center gap-2.5 min-w-0">
+                <div class="w-9 h-9 rounded-xl border-2 border-slate-950 bg-white flex items-center justify-center shadow-[2px_2px_0px_0px_#0f172a] shrink-0">
+                    <img src="/media/items/nest-ball.png" alt="" class="w-6 h-6 object-contain pixel-art">
+                </div>
+                <div class="min-w-0">
+                    <h3 id="wf-modal-title" class="text-sm sm:text-lg font-black text-slate-950 uppercase tracking-tight truncate leading-tight">
+                        Entrenadores del Bosque Blanco
+                    </h3>
+                    <p class="text-[11px] font-bold text-slate-900/90 leading-tight mt-0.5 truncate">
+                        Pokémon Blanco • Selecciona entre 1 y 10 residentes activos
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2 shrink-0">
+                <span
+                    id="wf-selected-counter"
+                    class="px-2.5 py-1 rounded-xl border-2 border-slate-950 bg-white text-slate-950 font-mono font-black text-xs shadow-[2px_2px_0px_0px_#0f172a] tabular-nums"
+                >
+                    0 / 10
+                </span>
+                <button
+                    type="button"
+                    onclick="closeWhiteForestModal()"
+                    class="w-8 h-8 rounded-xl border-2 border-slate-950 bg-white text-slate-900 hover:bg-rose-500 hover:text-white transition-colors flex items-center justify-center font-black text-sm shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 cursor-pointer shrink-0"
+                    aria-label="Cerrar ventana del Bosque Blanco"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <!-- Cuerpo de 2 Columnas -->
+        <div class="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-12 overflow-y-auto lg:overflow-hidden">
+            <!-- Columna Izquierda: Selector de los 30 Entrenadores -->
+            <div class="lg:col-span-7 p-3.5 sm:p-4 flex flex-col min-h-0 lg:border-r-2 lg:border-slate-950 bg-[#fffef5]">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 shrink-0">
+                    <div class="relative flex-1">
+                        <svg class="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <input
+                            type="text"
+                            id="wf-search-input"
+                            placeholder="Buscar entrenador, Pokémon u objeto (ej. Pitu, Bagon, Piedra alba)..."
+                            oninput="filterWhiteForestResidents(this.value)"
+                            class="w-full pl-9 pr-8 py-1.5 rounded-xl border-2 border-slate-950 bg-white text-xs font-bold text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-[1.5px_1.5px_0px_0px_#0f172a]"
+                        >
+                        <button
+                            type="button"
+                            id="wf-search-clear"
+                            onclick="clearWhiteForestSearch()"
+                            class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-900 font-black text-xs px-1 cursor-pointer"
+                            aria-label="Limpiar búsqueda"
+                        >
+                            ✕
+                        </button>
+                    </div>
+                    <span id="wf-limit-hint" class="text-[10px] font-black uppercase tracking-wide text-slate-600 shrink-0 text-right">
+                        30 residentes disponibles
+                    </span>
+                </div>
+
+                <!-- Cuadrícula de los 30 Entrenadores (Generada por JS) -->
+                <div
+                    id="wf-residents-grid"
+                    class="grid grid-cols-2 sm:grid-cols-3 gap-2 overflow-y-auto pr-1 [scrollbar-gutter:stable] flex-1 max-h-[44vh] lg:max-h-none"
+                >
+                    <!-- Generado dinámicamente por game_config.js -->
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Resultados Calculados en Tiempo Real -->
+            <div class="lg:col-span-5 p-3.5 sm:p-4 bg-slate-50/90 border-t-2 lg:border-t-0 border-slate-950 overflow-y-auto [scrollbar-gutter:stable] flex flex-col gap-3">
+                <!-- Estado vacío (0 seleccionados) -->
+                <div id="wf-results-empty" class="my-auto py-8 px-4 text-center rounded-2xl border-2 border-dashed border-slate-300 bg-white">
+                    <img src="/media/items/nest-ball.png" alt="" class="w-10 h-10 object-contain pixel-art mx-auto mb-2 opacity-80">
+                    <p class="text-sm font-black uppercase text-slate-800 mb-1">
+                        Selecciona tus residentes
+                    </p>
+                    <p class="text-xs font-semibold text-slate-500 leading-relaxed max-w-xs mx-auto">
+                        Elige entre <strong>1 y 10 entrenadores</strong> de la izquierda para calcular al instante los Pokémon salvajes (Hierba Alta y Surf) con su probabilidad exacta y los objetos diarios en el suelo.
+                    </p>
+                </div>
+
+                <!-- Resultados Activos (1 a 10 seleccionados) -->
+                <div id="wf-results-content" class="hidden space-y-3.5">
+                    <!-- Bloque 1: Hierba Alta (Nv. 5) -->
+                    <div class="rounded-xl border-2 border-slate-950 bg-white p-3 shadow-[2px_2px_0px_0px_#0f172a]">
+                        <div class="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-slate-200">
+                            <span class="text-[11px] font-black uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
+                                <img src="/media/items/miracle-seed.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                                <span>Hierba Alta (Nv. 5)</span>
+                            </span>
+                            <span id="wf-grass-count" class="text-[10px] font-black px-2 py-0.5 rounded-md border border-slate-950 bg-emerald-200 text-emerald-950">
+                                0 especies
+                            </span>
+                        </div>
+                        <div id="wf-grass-list" class="space-y-1.5">
+                            <!-- Generado dinámicamente -->
+                        </div>
+                    </div>
+
+                    <!-- Bloque 2: Surfeando (Nv. 5) -->
+                    <div class="rounded-xl border-2 border-slate-950 bg-white p-3 shadow-[2px_2px_0px_0px_#0f172a]">
+                        <div class="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-slate-200">
+                            <span class="text-[11px] font-black uppercase tracking-wider text-sky-800 flex items-center gap-1.5">
+                                <img src="/media/items/hm03.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                                <span>Surfeando (Nv. 5)</span>
+                            </span>
+                            <span id="wf-surf-count" class="text-[10px] font-black px-2 py-0.5 rounded-md border border-slate-950 bg-sky-200 text-sky-950">
+                                0 especies
+                            </span>
+                        </div>
+                        <div id="wf-surf-list" class="space-y-1.5">
+                            <!-- Generado dinámicamente -->
+                        </div>
+                        <p id="wf-surf-pond-note" class="mt-2 pt-2 border-t border-dashed border-slate-200 text-[10px] font-bold text-slate-500 leading-snug">
+                            Recuerda: para poder usar Surf en el Bosque Blanco es necesario mantener suficientes residentes/puntos para que aparezcan charcos de agua en el mapa.
+                        </p>
+                    </div>
+
+                    <!-- Bloque 3: Objetos Diarios en el Suelo -->
+                    <div class="rounded-xl border-2 border-slate-950 bg-white p-3 shadow-[2px_2px_0px_0px_#0f172a]">
+                        <div class="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-slate-200">
+                            <span class="text-[11px] font-black uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
+                                <img src="/media/items/poke-ball.png" alt="" class="w-4 h-4 object-contain pixel-art">
+                                <span>Objetos Diarios en el Suelo</span>
+                            </span>
+                            <span id="wf-items-count" class="text-[10px] font-black px-2 py-0.5 rounded-md border border-slate-950 bg-amber-200 text-amber-950">
+                                0 objetos
+                            </span>
+                        </div>
+                        <div id="wf-items-list" class="space-y-1.5">
+                            <!-- Generado dinámicamente -->
+                        </div>
+                        <p class="mt-2 pt-2 border-t border-dashed border-slate-200 text-[10px] font-bold text-slate-500 leading-snug">
+                            Cada día el juego evalúa por separado la probabilidad de cada residente para generar hasta 10 objetos en el suelo (desaparecen al cambiar de día).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer del Modal -->
+        <div class="bg-slate-100 border-t-2 border-slate-950 px-4 py-3 flex flex-wrap items-center justify-between gap-2 shrink-0">
+            <button
+                type="button"
+                id="wf-btn-clear"
+                onclick="clearWhiteForestSelection()"
+                class="px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-white hover:bg-rose-100 text-slate-800 hover:text-rose-700 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+            >
+                Limpiar selección
+            </button>
+            <div class="flex items-center gap-2">
+                <button
+                    type="button"
+                    onclick="closeWhiteForestModal()"
+                    class="px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-white hover:bg-slate-200 text-slate-800 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer"
+                >
+                    Cancelar
+                </button>
+                <button
+                    type="button"
+                    id="wf-btn-save"
+                    onclick="saveWhiteForestConfig()"
+                    class="px-4 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-[2px_2px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer flex items-center gap-1.5"
+                >
+                    <span>Guardar Configuración</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

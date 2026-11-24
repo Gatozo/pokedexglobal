@@ -418,6 +418,40 @@
             earlyReleaseScroll();
         });
     };
+    window.openWhiteForestModal = function() {
+        queueOrRun('openWhiteForestModal', [], function() {
+            const m = document.getElementById('white-forest-modal');
+            const cardPanel = document.getElementById('white-forest-modal-card');
+            if (m) {
+                m.style.display = 'flex';
+                m.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+                m.classList.add('opacity-100', 'pointer-events-auto');
+                if (typeof window.bringModalToFront === 'function') window.bringModalToFront(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-95');
+                cardPanel.classList.add('scale-100');
+            }
+            earlyLockScroll();
+        });
+    };
+    window.closeWhiteForestModal = function() {
+        queueOrRun('closeWhiteForestModal', [], function() {
+            const m = document.getElementById('white-forest-modal');
+            const cardPanel = document.getElementById('white-forest-modal-card');
+            if (m) {
+                m.classList.remove('backdrop-blur-sm', 'opacity-100', 'pointer-events-auto');
+                m.classList.add('hidden', 'opacity-0', 'pointer-events-none');
+                m.style.display = 'none';
+                if (typeof window.registerModalClose === 'function') window.registerModalClose(m);
+            }
+            if (cardPanel) {
+                cardPanel.classList.remove('scale-100');
+                cardPanel.classList.add('scale-95');
+            }
+            earlyReleaseScroll();
+        });
+    };
     window.handleGameConfigBackdropClick = function(e) {
         if (e && e.target && e.target.id === 'game-config-modal') window.closeGameConfigModal();
     };
@@ -704,4 +738,4 @@
 </script>
 
 <!-- Controlador Modular de Interacciones y Modales (ES Modules con carga asíncrona prioritaria) -->
-<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261123_white3"></script>
+<script type="module" async src="{% static 'tracker/js/main.js' %}?v=20261124_wf1"></script>

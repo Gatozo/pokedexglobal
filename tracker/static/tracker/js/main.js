@@ -123,7 +123,15 @@ import {
     handleFeebasMapBackdropClick,
     scrollFeebasMapTo,
     highlightFeebasSpot,
-    toggleFeebasMapGrid
+    toggleFeebasMapGrid,
+    openWhiteForestModal,
+    closeWhiteForestModal,
+    handleWhiteForestBackdropClick,
+    toggleWhiteForestResident,
+    filterWhiteForestResidents,
+    clearWhiteForestSearch,
+    clearWhiteForestSelection,
+    saveWhiteForestConfig
 } from './game_config.js';
 
 // Exposición al objeto window para compatibilidad total con eventos inline onclick="..." de los templates
@@ -232,6 +240,14 @@ window.handleFeebasMapBackdropClick = handleFeebasMapBackdropClick;
 window.scrollFeebasMapTo = scrollFeebasMapTo;
 window.highlightFeebasSpot = highlightFeebasSpot;
 window.toggleFeebasMapGrid = toggleFeebasMapGrid;
+window.openWhiteForestModal = openWhiteForestModal;
+window.closeWhiteForestModal = closeWhiteForestModal;
+window.handleWhiteForestBackdropClick = handleWhiteForestBackdropClick;
+window.toggleWhiteForestResident = toggleWhiteForestResident;
+window.filterWhiteForestResidents = filterWhiteForestResidents;
+window.clearWhiteForestSearch = clearWhiteForestSearch;
+window.clearWhiteForestSelection = clearWhiteForestSelection;
+window.saveWhiteForestConfig = saveWhiteForestConfig;
 
 // Marcar el framework interactivo modular como 100% cargado y listo
 window.__pokedexReady = true;

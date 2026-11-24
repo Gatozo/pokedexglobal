@@ -1154,6 +1154,43 @@ class GameSelectorClassificationTests(TestCase):
         self.assertIn('id="feebas-map-modal"', content_dia)
         self.assertIn('/media/maps/diamond/mt-coronet-b1f.png', content_dia)
 
+    def test_white_forest_game_config_and_modal_elements(self):
+        """Verifica que el configurador y modal de Entrenadores del Bosque Blanco sea exclusivo de Pokémon Blanco."""
+        game_white, _ = Game.objects.get_or_create(slug="white", defaults={"name": "Pokémon Blanco", "generation": 5})
+        Pokedex.objects.get_or_create(game=game_white, slug="unova", defaults={"name": "Pokédex de Teselia", "is_national": False})
+        Pokedex.objects.get_or_create(game=game_white, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+        game_black, _ = Game.objects.get_or_create(slug="black", defaults={"name": "Pokémon Negro", "generation": 5})
+        Pokedex.objects.get_or_create(game=game_black, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+        # En Pokémon Blanco (Nacional), debe renderizarse el botón de configuración, sección Bosque Blanco y modal dedicado
+        url_white_nat = reverse("tracker:pokedex_detail", kwargs={"game_slug": "white", "pokedex_slug": "national"})
+        resp_white = self.client.get(url_white_nat)
+        self.assertEqual(resp_white.status_code, 200)
+        html_white = resp_white.content.decode("utf-8")
+
+        self.assertIn('id="btn-game-config"', html_white)
+        self.assertIn('id="game-config-modal"', html_white)
+        self.assertIn('id="cfg-white-forest-summary"', html_white)
+        self.assertIn('id="btn-open-white-forest-config"', html_white)
+        self.assertIn('id="white-forest-modal"', html_white)
+        self.assertIn('id="wf-residents-grid"', html_white)
+        self.assertIn('id="wf-selected-counter"', html_white)
+        self.assertIn('data-tag="white_forest"', html_white)
+        self.assertIn('data-tag="dark_grass"', html_white)
+
+        # En Pokémon Negro (Nacional), NO debe renderizarse el botón de configuración ni el modal de Bosque Blanco
+        url_black_nat = reverse("tracker:pokedex_detail", kwargs={"game_slug": "black", "pokedex_slug": "national"})
+        resp_black = self.client.get(url_black_nat)
+        self.assertEqual(resp_black.status_code, 200)
+        html_black = resp_black.content.decode("utf-8")
+
+        self.assertNotIn('id="btn-game-config"', html_black)
+        self.assertNotIn('id="white-forest-modal"', html_black)
+        self.assertNotIn('id="cfg-white-forest-summary"', html_black)
+        self.assertNotIn('data-tag="white_forest"', html_black)
+        self.assertIn('data-tag="dark_grass"', html_black)
+
     def test_black_toolbar_filters_regional_vs_national_and_gen4_regression(self):
         """Verifica distribución de filtros en Gen 5 (Bebés/Supercaña solo Nacional, sin Hora del Día, con Estaciones y Encuentros Especiales) y no regresión en Gen 4."""
         game_black, _ = Game.objects.get_or_create(slug="black", defaults={"name": "Pokémon Negro", "generation": 5})

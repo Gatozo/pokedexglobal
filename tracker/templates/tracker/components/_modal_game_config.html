@@ -539,6 +539,37 @@
                 </div>
             </div>
             {% endif %}
+
+            <!-- Sección: Configuración de Entrenadores del Bosque Blanco (Gen 5: Pokémon Blanco) -->
+            {% if game.slug == 'white' %}
+            <div class="border-2 border-slate-950 rounded-xl p-3.5 sm:p-4 bg-white shadow-[2px_2px_0px_0px_#0f172a]">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="/media/items/nest-ball.png" alt="" class="w-6 h-6 object-contain pixel-art drop-shadow-sm">
+                    <h4 class="font-black text-sm uppercase tracking-wide text-slate-950">
+                        Entrenadores del Bosque Blanco
+                    </h4>
+                </div>
+
+                <p class="text-xs text-slate-600 font-bold mb-3 leading-relaxed">
+                    En <strong class="text-slate-900">Pokémon Blanco</strong> (Post-game / Pokédex Nacional), los Pokémon salvajes y objetos diarios del <strong class="text-emerald-800">Bosque Blanco</strong> dependen exactamente de los <strong class="text-slate-900">1 a 10 residentes</strong> que vivan en tu partida. Selecciona tus entrenadores activos para calcular probabilidades reales y filtrar automáticamente tu Pokédex.
+                </p>
+
+                <!-- Resumen dinámico de configuración actual -->
+                <div id="cfg-white-forest-summary" class="mb-3 p-3 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 text-xs text-slate-600 font-bold">
+                    Sin residentes configurados todavía.
+                </div>
+
+                <button
+                    type="button"
+                    id="btn-open-white-forest-config"
+                    onclick="openWhiteForestModal()"
+                    class="w-full py-2.5 px-4 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-[2.5px_2.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                    <img src="/media/items/nest-ball.png" alt="" class="w-5 h-5 object-contain pixel-art">
+                    <span>Configurar Entrenadores del Bosque Blanco</span>
+                </button>
+            </div>
+            {% endif %}
         </div>
 
         <!-- Footer con Acciones -->
