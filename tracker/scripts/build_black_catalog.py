@@ -909,15 +909,6 @@ SPECIAL_NOTES_BLACK = {
         "tag": "Evento Gen 5",
         "icon": "/media/items/cherish-ball.png",
     }],
-    643: [{
-        "title": "Evento Histórico • Primavera 2012",
-        "text": (
-            "Durante la promoción Primavera 2012 (PRI2012 / SPR2012) vía Wi-Fi se repartió al dragón contrario "
-            "a cada edición: Zekrom para Pokémon Negro y Reshiram para Pokémon Blanco (al Nv. 100 con movimientos especiales)."
-        ),
-        "tag": "Evento Gen 5",
-        "icon": "/media/items/cherish-ball.png",
-    }],
     644: [{
         "title": "Evento Histórico • Zekrom Primavera 2012",
         "text": (
