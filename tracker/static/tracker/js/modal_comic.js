@@ -88,6 +88,37 @@ export function updateRotateButtonUI() {
     }
 }
 
+/**
+ * Ajusta el tamaño del sprite en el modal para los GIFs animados de Gen 5
+ * (black_animated / white_animated), que vienen recortados al bounding box
+ * en lugar de usar un lienzo fijo de 96x96.
+ */
+function syncModalSpriteScale(modalImg) {
+    if (!modalImg) return;
+    const src = modalImg.currentSrc || modalImg.src || '';
+    const isCroppedGen5Anim = /\/(black|white)_animated\//.test(src);
+
+    if (!isCroppedGen5Anim || !modalImg.naturalWidth || !modalImg.naturalHeight) {
+        modalImg.style.width = '';
+        modalImg.style.height = '';
+        return;
+    }
+
+    const maxBox = window.innerWidth >= 640 ? 128 : 112;
+    const scale = maxBox / 96;
+    let targetW = Math.round(modalImg.naturalWidth * scale);
+    let targetH = Math.round(modalImg.naturalHeight * scale);
+
+    if (targetW > maxBox || targetH > maxBox) {
+        const clamp = Math.min(maxBox / targetW, maxBox / targetH);
+        targetW = Math.round(targetW * clamp);
+        targetH = Math.round(targetH * clamp);
+    }
+
+    modalImg.style.width = `${targetW}px`;
+    modalImg.style.height = `${targetH}px`;
+}
+
 export function updateModalSpriteDisplay() {
     if (!state.activeModalEntryId) return;
     const data = getEntryData(state.activeModalEntryId);
@@ -195,7 +226,13 @@ export function updateModalSpriteDisplay() {
                 modalImg.src = fallback;
             }
         };
+        modalImg.style.width = '';
+        modalImg.style.height = '';
+        modalImg.onload = () => syncModalSpriteScale(modalImg);
         modalImg.src = targetSrc;
+        if (modalImg.complete && modalImg.naturalWidth > 0) {
+            syncModalSpriteScale(modalImg);
+        }
     }
 
     const isCurrentModernBack = (state.currentSpriteStyle === 'modern' && isModalBackView && targetSrc && targetSrc.includes('/home/'));
