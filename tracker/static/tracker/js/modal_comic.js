@@ -630,17 +630,16 @@ export function renderModalObtaining(data, activeForm = null) {
             const parts = [];
             if (whiteForestStatus.grassMatch) {
                 const gm = whiteForestStatus.grassMatch;
-                parts.push(`Hierba alta: <span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${gm.percentLabel}</span> (${gm.resident.trainerClass} ${gm.resident.name})`);
+                parts.push(`Hierba alta (<span class="text-emerald-700 font-black underline decoration-emerald-400 underline-offset-2">${gm.percentLabel}</span>)`);
             }
             if (whiteForestStatus.surfMatch) {
                 const sm = whiteForestStatus.surfMatch;
-                const surfNames = sm.contributors.map(r => r.name).join(', ');
-                parts.push(`Surfeando: <span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${sm.percentLabel}</span> (${surfNames})`);
+                parts.push(`Surfeando (<span class="text-sky-700 font-black underline decoration-sky-400 underline-offset-2">${sm.percentLabel}</span>)`);
             }
             summaryEl.innerHTML = `
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
-                        <span class="text-emerald-800 font-black">Bosque Blanco (Tu partida):</span> Disponible al Nv. 5 — ${parts.join(' · ')}.
+                        <span class="text-emerald-800 font-black">Bosque Blanco:</span> Disponible en ${parts.join(' y ')} · Nv. 5.
                     </div>
                     <button
                         type="button"
@@ -648,7 +647,7 @@ export function renderModalObtaining(data, activeForm = null) {
                         class="px-2.5 py-1 rounded-lg text-[11px] font-black uppercase tracking-wider border-2 border-slate-950 bg-emerald-300 hover:bg-emerald-200 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#0f172a] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer inline-flex items-center gap-1 shrink-0 self-start sm:self-auto"
                     >
                         <img src="/media/items/nest-ball.png" alt="" class="w-4 h-4 object-contain pixel-art">
-                        <span>Editar Bosque</span>
+                        <span class="leading-none">Editar Bosque</span>
                     </button>
                 </div>
             `;
