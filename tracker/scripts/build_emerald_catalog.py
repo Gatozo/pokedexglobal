@@ -391,9 +391,10 @@ def main():
                 else:
                     cond = "Condición especial"
 
+                from_display = "Nidoran♀" if from_name.lower() == 'nidoran-f' else ("Nidoran♂" if from_name.lower() == 'nidoran-m' else from_name.capitalize())
                 evo_map[curr_name] = {
-                    'from': from_name.capitalize(),
-                    'text': f"Evoluciona de {from_name.capitalize()} ({cond})",
+                    'from': from_display,
+                    'text': f"Evoluciona de {from_display} ({cond})",
                     'trigger': trigger,
                     'condition': cond,
                     'item_slug': item or held_item
@@ -1002,6 +1003,15 @@ def main():
                     obt_info['summary'] = summ[:-1] + f" ({c_phrase})."
                 else:
                     obt_info['summary'] = summ + f" ({c_phrase})."
+
+            if nat_id == 29:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían)."
+            elif nat_id == 32:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (también puede nacer de huevos de Nidoran♀ al 50 %; en 3.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂)."
+            elif nat_id == 313:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (en 3.ª Gen, Volbeat con Ditto solo da Volbeat; los huevos de Illumise dan ambos al 50 %)."
+            elif nat_id == 314:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (al criar a Illumise da huevos de Illumise o Volbeat al 50 %)."
 
         # Especies con evento e-Reader programado internamente en Cueva Cambiante (evento inactivo)
         if nat_id in [179, 190, 204, 213, 216, 228, 234, 235]:

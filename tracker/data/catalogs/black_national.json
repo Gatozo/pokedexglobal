@@ -1828,12 +1828,12 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Nidoran-f (Nivel 16).",
+      "summary": "Evoluciona de Nidoran♀ (Nivel 16).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
-        "from": "Nidoran-f",
-        "text": "Evoluciona de Nidoran-f (Nivel 16)",
+        "from": "Nidoran♀",
+        "text": "Evoluciona de Nidoran♀ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -2047,12 +2047,12 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Nidoran-m (Nivel 16).",
+      "summary": "Evoluciona de Nidoran♂ (Nivel 16).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
-        "from": "Nidoran-m",
-        "text": "Evoluciona de Nidoran-m (Nivel 16)",
+        "from": "Nidoran♂",
+        "text": "Evoluciona de Nidoran♂ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -6974,14 +6974,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Tyrogue (Nivel 20).",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Ataque > Defensa).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque > Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Ataque > Defensa",
         "item_slug": null
       }
     },
@@ -7034,14 +7034,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Tyrogue (Nivel 20).",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Defensa > Ataque).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Defensa > Ataque)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Defensa > Ataque",
         "item_slug": null
       }
     },
@@ -8102,8 +8102,8 @@
         }
       ],
       "evolution_info": {
-        "from": "Mime-jr",
-        "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+        "from": "Mime Jr.",
+        "text": "Evoluciona de Mime Jr. (al subir de nivel conociendo Mimético)",
         "trigger": "level-up",
         "condition": "al subir de nivel conociendo Mimético",
         "item_slug": null
@@ -9163,10 +9163,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Hélix"
         },
@@ -9295,10 +9291,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Domo"
         },
@@ -9426,10 +9418,6 @@
       "badge_color": "amber",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Ámbar Viejo"
@@ -14815,9 +14803,9 @@
       ],
       "evolution_info": {
         "from": "Mantyke",
-        "text": "Evoluciona de Mantyke (por condición especial)",
+        "text": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
         "trigger": "level-up",
-        "condition": "por condición especial",
+        "condition": "al subir de nivel con Remoraid en el equipo",
         "item_slug": null
       }
     },
@@ -15536,14 +15524,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Tyrogue (Nivel 20).",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Ataque = Defensa).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque = Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Ataque = Defensa",
         "item_slug": null
       }
     },
@@ -17297,14 +17285,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Wurmple (Nivel 7).",
+      "summary": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -17417,14 +17405,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Wurmple (Nivel 7).",
+      "summary": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -18954,14 +18942,14 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "purple",
-      "summary": "Evoluciona de Nincada (por condición especial).",
+      "summary": "Evoluciona de Nincada (al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa).",
       "locations": [],
       "item_slug": null,
       "evolution_info": {
         "from": "Nincada",
-        "text": "Evoluciona de Nincada (por condición especial)",
+        "text": "Evoluciona de Nincada (al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa)",
         "trigger": "shed",
-        "condition": "por condición especial",
+        "condition": "al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa",
         "item_slug": null
       }
     },
@@ -20298,7 +20286,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro). (también obtenible mediante crianza).",
+      "summary": "Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro; al criarlo con Ditto en 5.ª Gen también puede dar huevos de Illumise). (también obtenible mediante crianza).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -20356,18 +20344,14 @@
     "cry_url": "/media/pokemon/cries/legacy/314.ogg",
     "flavor_text": "Su aroma guía a Volbeat para que haga señales luminosas en el cielo oscuro.",
     "obtaining_info": {
-      "type": "transfer",
-      "badge_label": "Edición Blanco",
-      "badge_color": "sky",
-      "summary": "Inaccesible en estado salvaje en Pokémon Negro. Exclusivo de Pokémon Blanco (requiere intercambio).",
+      "type": "other",
+      "badge_label": "Crianza",
+      "badge_color": "zinc",
+      "summary": "Inaccesible en estado salvaje; se obtiene mediante crianza de Volbeat con Ditto (manada diaria en Ruta 3; en 5.ª Gen sus huevos dan Illumise o Volbeat al 50 %) en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Intercambio con Pokémon Blanco",
-          "method": "Exclusivo de versión"
-        },
-        {
           "area": "Ruta 3 (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Volbeat + Ditto (50 % por huevo))"
         }
       ]
     },
@@ -22332,10 +22316,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Raíz"
         },
@@ -22463,10 +22443,6 @@
       "badge_color": "amber",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Garra"
@@ -22663,9 +22639,9 @@
       ],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (por intercambio equipado con Escama Bella o Belleza alta)",
-        "trigger": "level-up",
-        "condition": "por intercambio equipado con Escama Bella o Belleza alta",
+        "text": "Evoluciona de Feebas (por intercambio equipado con Escama Bella (o Belleza alta de 4.ª Gen))",
+        "trigger": "trade",
+        "condition": "por intercambio equipado con Escama Bella (o Belleza alta de 4.ª Gen)",
         "item_slug": "prism-scale"
       }
     },
@@ -26369,10 +26345,6 @@
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
         {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Cráneo"
         },
@@ -26500,10 +26472,6 @@
       "badge_color": "zinc",
       "summary": "Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).",
       "locations": [
-        {
-          "area": "Monte Tuerca",
-          "method": "Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Coraza"
@@ -28844,6 +28812,9 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
+      "seasons": [
+        "summer"
+      ],
       "summary": "Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (mote: Tripón); también mediante crianza de Snorlax equipado con Incienso Lento.",
       "locations": [
         {
@@ -33765,11 +33736,11 @@
       "type": "wild",
       "badge_label": "Encuentro Fijo / Piedra",
       "badge_color": "purple",
-      "summary": "Evoluciona de Munna usando Piedra Lunar. Además, aparece un Musharna fijo todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.",
+      "summary": "Evoluciona de Munna usando Piedra Lunar. Además, en el post-game (tras vencer a Ghetsis) aparece un Musharna fijo al Nv. 50 todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.",
       "locations": [
         {
           "area": "Solar de los Sueños (Sótano)",
-          "method": "Encuentro fijo los viernes (con Telepatía)"
+          "method": "Encuentro fijo los viernes al Nv. 50 en el post-game (con Telepatía)"
         },
         {
           "area": "Solar de los Sueños",
@@ -36453,71 +36424,71 @@
       "locations": [
         {
           "area": "Ciudad Gres",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Bosque Azulejo (Interior)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Torre Duodraco (Exterior)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Calle Victoria (P3)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Calle Victoria (P1)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Boquete Gigante (Cueva de Entrada)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Boquete Gigante (Cueva Central)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Puente Villa",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 1",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 3",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Cueva Manantial",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 6",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Gruta Superación (Sótano B2)",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 11",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ruta 14",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Santuario Abundancia",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Bosque de los Perdidos",
-          "method": "Supercaña, Surf"
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
           "area": "Ciudad Fayenza",
@@ -36848,11 +36819,11 @@
       "type": "wild",
       "badge_label": "Especial / Salvaje",
       "badge_color": "amber",
-      "summary": "Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.",
+      "summary": "Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan (Nv. 35) en el exterior de la entrada del Castillo Ancestral (Zona Desierto) despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.",
       "locations": [
         {
           "area": "Castillo Ancestral (Entrada)",
-          "method": "Estatuas que despiertan con Caramelo Furia (Modo Daruma)"
+          "method": "Estatuas (Nv. 35) que despiertan con Caramelo Furia (Modo Daruma)"
         }
       ],
       "evolution_info": {
@@ -37440,10 +37411,6 @@
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).",
       "locations": [
         {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Tapa (Mochilera)"
-        },
-        {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Tapa"
         },
@@ -37571,10 +37538,6 @@
       "badge_color": "amber",
       "summary": "Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).",
       "locations": [
-        {
-          "area": "Castillo Ancestral (P1)",
-          "method": "Elección única de Fósil Pluma (Mochilera)"
-        },
         {
           "area": "Museo de Ciudad Esmalte",
           "method": "Restauración de Fósil Pluma"

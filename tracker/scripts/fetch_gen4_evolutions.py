@@ -128,6 +128,29 @@ def parse_evolution_node(node, parent_id=None, parent_name=None, evo_dict=None):
             else:
                 condition_parts.append("por intercambio")
 
+        # Ajustes canónicos de 4.ª Generación
+        if current_id == 106:
+            condition_parts = ["Nivel 20 con Ataque > Defensa"]
+        elif current_id == 107:
+            condition_parts = ["Nivel 20 con Defensa > Ataque"]
+        elif current_id == 237:
+            condition_parts = ["Nivel 20 con Ataque = Defensa"]
+        elif current_id == 226:
+            condition_parts = ["al subir de nivel con Remoraid en el equipo"]
+        elif current_id in (266, 268):
+            condition_parts = ["Nivel 7 según valor de personalidad"]
+        elif current_id == 292:
+            condition_parts = ["al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa"]
+        elif current_id == 350:
+            condition_parts = ["al subir de nivel con 170+ de Belleza (mediante Pokochos secos)"]
+
+        if parent_id == 29:
+            parent_name = "Nidoran♀"
+        elif parent_id == 32:
+            parent_name = "Nidoran♂"
+        elif parent_id == 439:
+            parent_name = "Mime Jr."
+
         cond_text = ", ".join(condition_parts) if condition_parts else "por condición especial"
         evo_dict[str(current_id)] = {
             'from_id': parent_id,

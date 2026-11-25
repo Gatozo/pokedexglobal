@@ -392,14 +392,14 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
     'black': [
         # Teselia (Cottonee y Whimsicott se excluyen: Petilil/Lilligant se obtienen por intercambio interno en Ciudad Esmalte)
         574, 575, 576, 629, 630, 641, 643,
-        # Nacional (Manadas / Rutas)
-        13, 14, 15, 198, 228, 229, 285, 286, 311, 313, 430
+        # Nacional (Manadas / Rutas; #313 Volbeat se excluye porque en Gen 5 se obtiene criando a Illumise)
+        13, 14, 15, 198, 228, 229, 285, 286, 311, 430
     ],
     'white': [
         # Teselia (Petilil y Lilligant se excluyen: Cottonee/Whimsicott se obtienen por intercambio interno en Ciudad Esmalte)
         577, 578, 579, 627, 628, 642, 644,
-        # Nacional (Manadas / Rutas)
-        10, 11, 12, 46, 47, 200, 261, 262, 312, 314, 429,
+        # Nacional (Manadas / Rutas; #314 Illumise se excluye porque en Gen 5 se obtiene criando a Volbeat con Ditto)
+        10, 11, 12, 46, 47, 200, 261, 262, 312, 429,
         # Bosque Blanco (100 especies de 33 familias exclusivas frente a Ciudad Negra de Negro; #399 Bidoof / #400 Bibarel se excluyen porque Bibarel aparece salvaje en Puente Villa en Negro)
         16, 17, 18, 29, 30, 31, 32, 33, 34, 43, 44, 45, 63, 64, 65, 66, 67, 68,
         69, 70, 71, 81, 82, 92, 93, 94, 111, 112, 113, 125, 126, 137, 175, 176,

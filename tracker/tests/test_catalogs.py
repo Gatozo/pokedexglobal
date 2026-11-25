@@ -4341,17 +4341,19 @@ class PokemonBlackGen5Tests(TestCase):
         black_excl = VERSION_EXCLUSIVES_CATALOG.get("black", [])
         white_excl = VERSION_EXCLUSIVES_CATALOG.get("white", [])
 
-        # Validar exclusión de la familia Cottonee/Whimsicott y Petilil/Lilligant, así como #399/#400 (Bidoof/Bibarel)
+        # Validar exclusión de la familia Cottonee/Whimsicott y Petilil/Lilligant, #399/#400 (Bidoof/Bibarel) y #313/#314 (Volbeat/Illumise en Gen 5)
         self.assertNotIn(546, black_excl)  # Cottonee
         self.assertNotIn(547, black_excl)  # Whimsicott
         self.assertNotIn(548, white_excl)  # Petilil
         self.assertNotIn(549, white_excl)  # Lilligant
         self.assertNotIn(399, white_excl)  # Bidoof (Bibarel salvaje en Puente Villa en Negro)
         self.assertNotIn(400, white_excl)  # Bibarel
+        self.assertNotIn(313, black_excl)  # Volbeat (Illumise cría Volbeat en Blanco)
+        self.assertNotIn(314, white_excl)  # Illumise (Volbeat + Ditto cría Illumise en Negro)
 
         # Validar totales
-        self.assertEqual(len(black_excl), 18)
-        self.assertEqual(len(white_excl), 118)
+        self.assertEqual(len(black_excl), 17)
+        self.assertEqual(len(white_excl), 117)
 
         # Validar contexto y aviso
         game = Game.objects.get(slug="black")
@@ -4359,8 +4361,8 @@ class PokemonBlackGen5Tests(TestCase):
         ctx = get_version_exclusives_context(game, pokedex, set())
         self.assertIsNotNone(ctx)
         self.assertEqual(ctx["counterpart_theme"], "white")
-        self.assertEqual(ctx["counterpart_total"], 118)
-        self.assertEqual(ctx["own_total"], 18)
+        self.assertEqual(ctx["counterpart_total"], 117)
+        self.assertEqual(ctx["own_total"], 17)
         self.assertIn("Bosque Blanco", ctx["notice"])
         self.assertIn("Cottonee y Petilil", ctx["notice"])
         self.assertIn("Ciudad Esmalte", ctx["notice"])
@@ -5516,18 +5518,19 @@ class PokemonWhiteGen5Tests(TestCase):
 
         white_excl = VERSION_EXCLUSIVES_CATALOG["white"]
         black_excl = VERSION_EXCLUSIVES_CATALOG["black"]
-        self.assertEqual(len(white_excl), 118)
-        self.assertEqual(len(black_excl), 18)
-        for excluded in (399, 400, 548, 549):
+        self.assertEqual(len(white_excl), 117)
+        self.assertEqual(len(black_excl), 17)
+        for excluded in (314, 399, 400, 548, 549):
             self.assertNotIn(excluded, white_excl)
+        self.assertNotIn(313, black_excl)
 
         game = Game.objects.get(slug="white")
         pokedex = game.pokedexes.get(slug="unova")
         ctx = get_version_exclusives_context(game, pokedex, set())
         self.assertEqual(ctx["counterpart_theme"], "black")
         self.assertEqual(ctx["own_theme"], "white")
-        self.assertEqual(ctx["counterpart_total"], 18)
-        self.assertEqual(ctx["own_total"], 118)
+        self.assertEqual(ctx["counterpart_total"], 17)
+        self.assertEqual(ctx["own_total"], 117)
         self.assertIn("Bosque Blanco", GAME_VERSION_EXCLUSIVES_NOTICES["white"])
 
         nat = get_compiled_catalog("white", is_national=True)
@@ -5549,12 +5552,36 @@ class PokemonWhiteGen5Tests(TestCase):
 
         # #399 Bidoof no sale salvaje en Bosque Blanco; se obtiene por crianza de Bibarel
         self.assertEqual(by_nid[399].obtaining_info["badge_label"], "Crianza")
+        self.assertIn("Bibarel", by_nid[399].obtaining_info["summary"])
         self.assertFalse(any("Bosque Blanco" in loc.get("area", "") for loc in by_nid[399].obtaining_info["locations"]))
 
-        # Surf vs Hierba alta en Bosque Blanco
+        # #313 Volbeat en Blanco por crianza de Illumise; #314 Illumise en Negro por crianza de Volbeat + Ditto
+        self.assertEqual(by_nid[313].obtaining_info["badge_label"], "Crianza")
+        self.assertIn("Illumise", by_nid[313].obtaining_info["summary"])
+        black_nat = {e.pokemon.national_number: e for e in get_compiled_catalog("black", is_national=True)}
+        self.assertEqual(black_nat[314].obtaining_info["badge_label"], "Crianza")
+        self.assertIn("Volbeat", black_nat[314].obtaining_info["summary"])
+
+        # Surf vs Hierba alta en Bosque Blanco (Lotad #270 aparece en ambos)
         for surf_id in (194, 270, 283, 341):
             wf_loc = next(l for l in by_nid[surf_id].obtaining_info["locations"] if l["area"] == "Bosque Blanco")
             self.assertIn("Surfeando", wf_loc["method"])
+        lotad_wf = next(l for l in by_nid[270].obtaining_info["locations"] if l["area"] == "Bosque Blanco")
+        self.assertIn("Hierba alta", lotad_wf["method"])
+
+        # Basculin (#550) en Blanco y Negro cubre agua normal y sombra del agua + Munchlax (#446) en verano + evoluciones precisas
+        for b_nat in (by_nid, black_nat):
+            basc_r1 = next(l for l in b_nat[550].obtaining_info["locations"] if l["area"] == "Ruta 1")
+            for m in ("Surf", "Surf en sombra del agua", "Supercaña", "Supercaña en sombra del agua"):
+                self.assertIn(m, basc_r1["method"])
+            self.assertIn("season_summer", b_nat[446].filter_tags.split())
+            self.assertIn("Ataque > Defensa", b_nat[106].obtaining_info["summary"])
+            self.assertIn("Remoraid", b_nat[226].obtaining_info["evolution_info"]["condition"])
+            self.assertIn("Poké Ball", b_nat[292].obtaining_info["summary"])
+            self.assertEqual(b_nat[350].obtaining_info["evolution_info"]["trigger"], "trade")
+            self.assertEqual(b_nat[30].obtaining_info["evolution_info"]["from"], "Nidoran♀")
+            self.assertEqual(b_nat[33].obtaining_info["evolution_info"]["from"], "Nidoran♂")
+        self.assertTrue(by_nid[489].is_hatchable)
 
         # Legendarios propios de Blanco también deben ser nativos en el Hub
         self.assertEqual(cls[642], (True, "Único"))

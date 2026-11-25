@@ -2213,7 +2213,7 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♂ a cambio de Nidoran♀ (con el mote «Nidochan») (también obtenible mediante crianza).",
+      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♂ a cambio de Nidoran♀ (con el mote «Nidochan»). En 3.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂, por lo que requiere este intercambio primero (luego Nidoran♀ puede criar ambos al 50 %).",
       "locations": [
         {
           "area": "Ruta 5 (Caseta)",
@@ -2793,7 +2793,7 @@
     "flavor_text": "Cambia la orientación de las grandes orejas que tiene para oír mejor. Si se enfada, sus venenosos cuernos crecen.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza) (en 3.ª Gen Nidoran♂ con Ditto solo da Nidoran♂, mientras que Nidoran♀ da ambos al 50 %).",
       "locations": [
         {
           "area": "Ruta 3",

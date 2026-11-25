@@ -151,7 +151,7 @@ NON_BREEDABLE_NAMES = {
     'regirock', 'regice', 'registeel', 'latias', 'latios',
     'kyogre', 'groudon', 'rayquaza', 'jirachi', 'deoxys',
     'uxie', 'mesprit', 'azelf', 'dialga', 'palkia', 'heatran',
-    'regigigas', 'giratina', 'cresselia', 'phione', 'manaphy', 'darkrai',
+    'regigigas', 'giratina', 'cresselia', 'manaphy', 'darkrai',
     'shaymin', 'arceus',
     'victini', 'cobalion', 'terrakion', 'virizion', 'tornadus',
     'thundurus', 'reshiram', 'zekrom', 'landorus', 'kyurem',
@@ -166,7 +166,7 @@ DAYCARE_LOCATION = {
 SWARM_POKEMON_BLACK = {
     83: {'area': 'Ruta 1', 'desc': 'Manada diaria en la Ruta 1 tras obtener la Pokédex Nacional.'},
     360: {'area': 'Ruta 2', 'desc': 'Manada diaria en la Ruta 2 tras obtener la Pokédex Nacional.'},
-    313: {'area': 'Ruta 3', 'desc': 'Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro).'},
+    313: {'area': 'Ruta 3', 'desc': 'Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro; al criarlo con Ditto en 5.ª Gen también puede dar huevos de Illumise).'},
     449: {'area': 'Ruta 4', 'desc': 'Manada diaria en la Ruta 4 tras obtener la Pokédex Nacional.'},
     235: {'area': 'Ruta 5', 'desc': 'Manada diaria en la Ruta 5 tras obtener la Pokédex Nacional.'},
     311: {'area': 'Ruta 6', 'desc': 'Manada diaria en la Ruta 6 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Negro).'},
@@ -267,6 +267,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'indigo',
+        'seasons': ['summer'],
         'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (mote: Tripón); también mediante crianza de Snorlax equipado con Incienso Lento.',
         'locations': [
             {'area': 'Pueblo Arenisca (Solo en verano)', 'method': 'Intercambio NPC (mote: Tripón) por Cinccino'}
@@ -305,18 +306,18 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Especial / Salvaje',
         'badge_color': 'amber',
-        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
+        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan (Nv. 35) en el exterior de la entrada del Castillo Ancestral (Zona Desierto) despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
         'locations': [
-            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Caramelo Furia (Modo Daruma)'}
+            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas (Nv. 35) que despiertan con Caramelo Furia (Modo Daruma)'}
         ]
     },
     518: {
         'type': 'wild',
         'badge_label': 'Encuentro Fijo / Piedra',
         'badge_color': 'purple',
-        'summary': 'Evoluciona de Munna usando Piedra Lunar. Además, aparece un Musharna fijo todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.',
+        'summary': 'Evoluciona de Munna usando Piedra Lunar. Además, en el post-game (tras vencer a Ghetsis) aparece un Musharna fijo al Nv. 50 todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.',
         'locations': [
-            {'area': 'Solar de los Sueños (Sótano)', 'method': 'Encuentro fijo los viernes (con Telepatía)'},
+            {'area': 'Solar de los Sueños (Sótano)', 'method': 'Encuentro fijo los viernes al Nv. 50 en el post-game (con Telepatía)'},
             {'area': 'Solar de los Sueños', 'method': 'Hierba movediza'}
         ]
     },
@@ -359,14 +360,13 @@ SPECIAL_OBTAINING = {
         ]
     },
 
-    # Fósiles de Teselia (elección única por partida)
+    # Fósiles de Teselia (elección única por partida; origen en modal fósil)
     564: {
         'type': 'fossil',
         'badge_label': 'Fósil Tapa',
         'badge_color': 'blue',
         'summary': 'Revivir en el Museo de Ciudad Esmalte el Fósil Tapa elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Pluma por partida; también obtenible por crianza).',
         'locations': [
-            {'area': 'Castillo Ancestral (P1)', 'method': 'Elección única de Fósil Tapa (Mochilera)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Tapa'},
             DAYCARE_LOCATION
         ]
@@ -377,20 +377,18 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Revivir en el Museo de Ciudad Esmalte el Fósil Pluma elegido de una mochilera en el Castillo Ancestral (elección única frente al Fósil Tapa por partida; también obtenible por crianza).',
         'locations': [
-            {'area': 'Castillo Ancestral (P1)', 'method': 'Elección única de Fósil Pluma (Mochilera)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Pluma'},
             DAYCARE_LOCATION
         ]
     },
 
-    # Fósiles clásicos en Monte Tuerca (post-game tras obtener la Pokédex Nacional)
+    # Fósiles clásicos en Monte Tuerca (post-game tras obtener la Pokédex Nacional; origen en modal fósil)
     138: {
         'type': 'fossil',
         'badge_label': 'Fósil Hélix',
         'badge_color': 'blue',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Hélix al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Hélix'},
             DAYCARE_LOCATION
         ]
@@ -401,7 +399,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'blue',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Domo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Domo'},
             DAYCARE_LOCATION
         ]
@@ -412,7 +409,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Ámbar Viejo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Ámbar Viejo'},
             DAYCARE_LOCATION
         ]
@@ -423,7 +419,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'emerald',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Raíz al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Raíz'},
             DAYCARE_LOCATION
         ]
@@ -434,7 +429,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'amber',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Garra al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Garra'},
             DAYCARE_LOCATION
         ]
@@ -445,7 +439,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'blue',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Cráneo al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Cráneo'},
             DAYCARE_LOCATION
         ]
@@ -456,7 +449,6 @@ SPECIAL_OBTAINING = {
         'badge_color': 'zinc',
         'summary': 'Restaurar en el Museo de Ciudad Esmalte tras recibir el Fósil Coraza al azar de un obrero en el Monte Tuerca (solo tras superar la Liga Pokémon y obtener la Pokédex Nacional; también por crianza).',
         'locations': [
-            {'area': 'Monte Tuerca', 'method': 'Fósil aleatorio diario entregado por obrero (Post-game / Pokédex Nacional)'},
             {'area': 'Museo de Ciudad Esmalte', 'method': 'Restauración de Fósil Coraza'},
             DAYCARE_LOCATION
         ]
@@ -639,6 +631,7 @@ BREEDING_PARENTS_BLACK = {
     238: ("Jynx (salvaje en Boquete Gigante)", "Jynx"),
     246: ("Pupitar o Tyranitar (salvajes en Ruta 15)", "Pupitar / Tyranitar"),
     276: ("Swellow (salvaje en Boquete Gigante y Ruta 13)", "Swellow"),
+    314: ("Volbeat con Ditto (manada diaria en Ruta 3; en 5.ª Gen sus huevos dan Illumise o Volbeat al 50 %)", "Volbeat + Ditto (50 % por huevo)"),
     333: ("Altaria (salvaje en Ruta 14)", "Altaria"),
     343: ("Claydol (salvaje en Castillo Ancestral)", "Claydol"),
     374: ("Metang o Metagross (salvajes en Boquete Gigante)", "Metang / Metagross"),
@@ -1087,6 +1080,11 @@ def main():
                 sw_info = SWARM_POKEMON_BLACK[nat_id]
                 area_methods.setdefault(sw_info['area'], set()).add('Manada diaria')
 
+            # Basculin (#550): Raya Roja aparece común en agua normal y ambas formas en sombras del agua
+            if nat_id == 550:
+                for a_name in list(area_methods.keys()):
+                    area_methods[a_name].update({'Surf', 'Surf en sombra del agua', 'Supercaña', 'Supercaña en sombra del agua'})
+
             loc_list = []
             for a_name, m_set in area_methods.items():
                 loc_list.append({
@@ -1168,7 +1166,7 @@ def main():
                 'locations': loc_list
             }
         elif nat_id in white_exclusives:
-            non_white_forest = {577, 627, 642, 644, 10, 46, 200, 261, 312, 314}
+            non_white_forest = {577, 627, 642, 644, 10, 46, 200, 261, 312}
             if nat_id == 642:
                 summary = "Inaccesible en estado salvaje en Pokémon Negro. Legendario errante exclusivo de Pokémon Blanco (requiere intercambio para registrarlo y desbloquear a Landorus en el Santuario Abundancia)."
             elif nat_id == 644:

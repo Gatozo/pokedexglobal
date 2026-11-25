@@ -2211,7 +2211,7 @@
     "flavor_text": "Aunque pequeñas, sus venenosas púas son muy peligrosas. La hembra tiene pequeños cuernos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza) (al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -2803,7 +2803,7 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♀ a cambio de Nidoran♂ (con el mote «Nidrán») (también obtenible mediante crianza).",
+      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♀ a cambio de Nidoran♂ (con el mote «Nidrán»). También obtenible sin intercambio criando una Nidoran♀ salvaje en Isla Quarta (50 % por huevo; en 3.ª Gen Nidoran♂ con Ditto solo da Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 5 (Caseta)",
@@ -2823,7 +2823,7 @@
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Nidoran♀)"
         }
       ]
     },

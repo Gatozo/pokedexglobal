@@ -162,7 +162,7 @@ NON_BREEDABLE_NAMES = {
     'regirock', 'regice', 'registeel', 'latias', 'latios',
     'kyogre', 'groudon', 'rayquaza', 'jirachi', 'deoxys',
     'uxie', 'mesprit', 'azelf', 'dialga', 'palkia', 'heatran',
-    'regigigas', 'giratina', 'cresselia', 'phione', 'manaphy', 'darkrai',
+    'regigigas', 'giratina', 'cresselia', 'manaphy', 'darkrai',
     'shaymin', 'arceus',
     'victini', 'cobalion', 'terrakion', 'virizion', 'tornadus',
     'thundurus', 'reshiram', 'zekrom', 'landorus', 'kyurem',
@@ -176,6 +176,7 @@ DAYCARE_LOCATION = {
 
 # Las 33 especies base salvajes del Bosque Blanco en Pokémon Blanco
 WHITE_FOREST_SURF_IDS = {194, 270, 283, 341}
+WHITE_FOREST_BOTH_IDS = {270}  # Lotad aparece en Hierba alta (Melas) y Surfeando (9 residentes)
 WHITE_FOREST_BASE_IDS = {
     16, 29, 32, 43, 63, 66, 69, 81, 92, 111, 137, 175, 179, 187, 194,
     239, 240, 265, 270, 273, 280, 283, 287, 293, 298, 304, 328, 341,
@@ -191,7 +192,7 @@ _WHITE_FOREST_NOTE_TEXT = (
 SWARM_POKEMON_WHITE = {
     83:  {'area': 'Ruta 1',  'desc': 'Manada diaria en la Ruta 1 tras obtener la Pokédex Nacional.'},
     360: {'area': 'Ruta 2',  'desc': 'Manada diaria en la Ruta 2 tras obtener la Pokédex Nacional.'},
-    314: {'area': 'Ruta 3',  'desc': 'Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Blanco).'},
+    314: {'area': 'Ruta 3',  'desc': 'Manada diaria en la Ruta 3 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Blanco; al criarlo en la Guardería de la Ruta 3 también puede dar huevos de Volbeat).'},
     449: {'area': 'Ruta 4',  'desc': 'Manada diaria en la Ruta 4 tras obtener la Pokédex Nacional.'},
     235: {'area': 'Ruta 5',  'desc': 'Manada diaria en la Ruta 5 tras obtener la Pokédex Nacional.'},
     312: {'area': 'Ruta 6',  'desc': 'Manada diaria en la Ruta 6 tras obtener la Pokédex Nacional (Exclusivo de Pokémon Blanco).'},
@@ -292,6 +293,7 @@ SPECIAL_OBTAINING = {
         'type': 'trade_npc',
         'badge_label': 'Intercambio NPC',
         'badge_color': 'indigo',
+        'seasons': ['summer'],
         'summary': 'Obtenible en Pueblo Arenisca intercambiando un Cinccino con Ander durante el verano (mote: Tripón); también mediante crianza de Snorlax equipado con Incienso Lento.',
         'locations': [
             {'area': 'Pueblo Arenisca (Solo en verano)', 'method': 'Intercambio NPC (mote: Tripón) por Cinccino'}
@@ -330,18 +332,18 @@ SPECIAL_OBTAINING = {
         'type': 'wild',
         'badge_label': 'Especial / Salvaje',
         'badge_color': 'amber',
-        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan en la entrada del Castillo Ancestral despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
+        'summary': 'Evoluciona de Darumaka al Nv. 35. Además, 5 estatuas de Darmanitan (Nv. 35) en el exterior de la entrada del Castillo Ancestral (Zona Desierto) despiertan entregando un Caramelo Furia, poseyendo la habilidad Modo Daruma.',
         'locations': [
-            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas que despiertan con Caramelo Furia (Modo Daruma)'}
+            {'area': 'Castillo Ancestral (Entrada)', 'method': 'Estatuas (Nv. 35) que despiertan con Caramelo Furia (Modo Daruma)'}
         ]
     },
     518: {
         'type': 'wild',
         'badge_label': 'Encuentro Fijo / Piedra',
         'badge_color': 'purple',
-        'summary': 'Evoluciona de Munna usando Piedra Lunar. Además, aparece un Musharna fijo todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.',
+        'summary': 'Evoluciona de Munna usando Piedra Lunar. Además, en el post-game (tras vencer a Ghetsis) aparece un Musharna fijo al Nv. 50 todos los viernes en el sótano del Solar de los Sueños con su habilidad oculta Telepatía.',
         'locations': [
-            {'area': 'Solar de los Sueños (Sótano)', 'method': 'Encuentro fijo los viernes (con Telepatía)'},
+            {'area': 'Solar de los Sueños (Sótano)', 'method': 'Encuentro fijo los viernes al Nv. 50 en el post-game (con Telepatía)'},
             {'area': 'Solar de los Sueños', 'method': 'Hierba movediza'}
         ]
     },
@@ -655,9 +657,11 @@ BREEDING_PARENTS_WHITE = {
     238: ("Jynx (salvaje en Boquete Gigante)", "Jynx"),
     246: ("Pupitar o Tyranitar (salvajes en Ruta 15)", "Pupitar / Tyranitar"),
     276: ("Swellow (salvaje en Boquete Gigante y Ruta 13)", "Swellow"),
+    313: ("Illumise (manada diaria en Ruta 3; sus huevos dan Volbeat o Illumise al 50 %)", "Illumise (50 % por huevo)"),
     333: ("Altaria (salvaje en Ruta 14)", "Altaria"),
     343: ("Claydol (salvaje en Castillo Ancestral)", "Claydol"),
     374: ("Metang o Metagross (salvajes en Boquete Gigante)", "Metang / Metagross"),
+    399: ("Bibarel (salvaje en Puente Villa)", "Bibarel"),
     401: ("Kricketune (salvaje en Solar de los Sueños)", "Kricketune"),
     420: ("Cherrim (salvaje en Ruta 12)", "Cherrim"),
     425: ("Drifblim (salvaje en Boquete Gigante, Ruta 13 y Ruta 14)", "Drifblim"),
@@ -1102,8 +1106,18 @@ def main():
 
             # Bosque Blanco (exclusivo de Pokémon Blanco en Pokédex Nacional)
             if nat_id in WHITE_FOREST_BASE_IDS:
-                wf_method = 'Surfeando (según residentes)' if nat_id in WHITE_FOREST_SURF_IDS else 'Hierba alta (según residentes)'
+                if nat_id in WHITE_FOREST_BOTH_IDS:
+                    wf_method = 'Hierba alta y Surfeando (según residentes)'
+                elif nat_id in WHITE_FOREST_SURF_IDS:
+                    wf_method = 'Surfeando (según residentes)'
+                else:
+                    wf_method = 'Hierba alta (según residentes)'
                 area_methods.setdefault(UNOVA_AREA_NAMES['white-forest-area'], set()).add(wf_method)
+
+            # Basculin (#550): Raya Azul aparece común en agua normal y ambas formas en sombras del agua
+            if nat_id == 550:
+                for a_name in list(area_methods.keys()):
+                    area_methods[a_name].update({'Surf', 'Surf en sombra del agua', 'Supercaña', 'Supercaña en sombra del agua'})
 
             loc_list = []
             for a_name, m_set in area_methods.items():
@@ -1122,15 +1136,17 @@ def main():
             area_methods, loc_list = _collect_wild_locations()
             if is_hatchable:
                 loc_list.append(DAYCARE_LOCATION)
-            wf_action = "surfeando" if nat_id in WHITE_FOREST_SURF_IDS else "en la hierba alta"
-            if nat_id == 399:
-                summary = (
-                    "Salvaje en el Bosque Blanco (al Nv. 5 en la hierba alta según los residentes presentes); "
-                    "también obtenible mediante crianza en la Guardería de la Ruta 3 (por ejemplo de Bibarel salvaje en Puente Villa)."
-                )
+            if nat_id in WHITE_FOREST_BOTH_IDS:
+                wf_action = "en la hierba alta o surfeando"
+            elif nat_id in WHITE_FOREST_SURF_IDS:
+                wf_action = "surfeando"
             else:
-                summary = f"Salvaje en el Bosque Blanco (al Nv. 5 {wf_action} según los residentes presentes)."
-                if is_hatchable:
+                wf_action = "en la hierba alta"
+            summary = f"Salvaje en el Bosque Blanco (al Nv. 5 {wf_action} según los residentes presentes)."
+            if is_hatchable:
+                if nat_id in (29, 32):
+                    summary += " También obtenible mediante crianza en la Guardería de la Ruta 3 (en 5.ª Gen, tanto Nidoran♀ como Nidoran♂ con Ditto pueden dar huevos de ambos)."
+                else:
                     summary += " También obtenible mediante crianza en la Guardería de la Ruta 3."
             obt_info = {
                 'type': 'wild',

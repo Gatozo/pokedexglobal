@@ -2257,7 +2257,7 @@
     "flavor_text": "Nidoran tiene púas que segregan un veneno muy potente. Se piensa que las desarrolló como protección del cuerpo tan pequeño que tiene. Cuando se enfada, libera una horrible sustancia tóxica por el cuerno.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza) (al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -2337,11 +2337,11 @@
     "flavor_text": "Cuando los Nidorina están en familia o con sus amigos, esconden las púas para evitar herirse unos a otros. Según parece, si se les separa de su grupo, se ponen muy nerviosos.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nidoran-f (Nivel 16)",
+      "summary": "Evoluciona de Nidoran♀ (Nivel 16)",
       "locations": [],
       "evolution_info": {
-        "from": "Nidoran-f",
-        "text": "Evoluciona de Nidoran-f (Nivel 16)",
+        "from": "Nidoran♀",
+        "text": "Evoluciona de Nidoran♀ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -2506,7 +2506,7 @@
     "flavor_text": "El Nidoran macho ha desarrollado músculos para mover las orejas y orientarlas en cualquier dirección. De este modo, es capaz de captar hasta el sonido más leve.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza).",
+      "summary": "No disponible en estado salvaje en Hoenn. Requiere Pokémon Rojo Fuego / Verde Hoja o Pokémon Colosseum (también obtenible mediante crianza) (también puede nacer de huevos de Nidoran♀ al 50 %; en 3.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -2586,11 +2586,11 @@
     "flavor_text": "Nidorino tiene un cuerno de dureza superior a la del diamante. Si siente una presencia hostil, se le erizan las púas del lomo enseguida y desafía al enemigo con todas sus fuerzas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Nidoran-m (Nivel 16)",
+      "summary": "Evoluciona de Nidoran♂ (Nivel 16)",
       "locations": [],
       "evolution_info": {
-        "from": "Nidoran-m",
-        "text": "Evoluciona de Nidoran-m (Nivel 16)",
+        "from": "Nidoran♂",
+        "text": "Evoluciona de Nidoran♂ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -26633,7 +26633,7 @@
     "flavor_text": "Cuando llega la noche, Volbeat emite luz por la cola y regula la intensidad y el destello para comunicarse con el resto. A este Pokémon le atrae el dulce aroma de Illumise.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en Ruta 117.",
+      "summary": "Salvaje en Ruta 117 (en 3.ª Gen, Volbeat con Ditto solo da Volbeat; los huevos de Illumise dan ambos al 50 %).",
       "locations": [
         {
           "area": "Ruta 117",
@@ -26709,7 +26709,7 @@
     "flavor_text": "Illumise atrae con su dulce aroma a enjambres de Volbeat. Una vez los ha agrupado, les guía en el vuelo para que dibujen formas geométricas en el lienzo del oscuro cielo.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en Ruta 117.",
+      "summary": "Salvaje en Ruta 117 (al criar a Illumise da huevos de Illumise o Volbeat al 50 %).",
       "locations": [
         {
           "area": "Ruta 117",

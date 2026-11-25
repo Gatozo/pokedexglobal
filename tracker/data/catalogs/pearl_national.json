@@ -1767,7 +1767,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 201 (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 201 (también obtenible mediante crianza) (al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %; Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 201",
@@ -1838,8 +1838,8 @@
         }
       ],
       "evolution_info": {
-        "from": "Nidoran-f",
-        "text": "Evoluciona de Nidoran-f (Nivel 16)",
+        "from": "Nidoran♀",
+        "text": "Evoluciona de Nidoran♀ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -1975,7 +1975,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 201 (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 201 (también obtenible mediante crianza) (también puede nacer de huevos de Nidoran♀ al 50 %; en 4.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 201",
@@ -2046,8 +2046,8 @@
         }
       ],
       "evolution_info": {
-        "from": "Nidoran-m",
-        "text": "Evoluciona de Nidoran-m (Nivel 16)",
+        "from": "Nidoran♂",
+        "text": "Evoluciona de Nidoran♂ (Nivel 16)",
         "trigger": "level-up",
         "condition": "Nivel 16",
         "item_slug": null
@@ -7855,13 +7855,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Ataque > Defensa)",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque > Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Ataque > Defensa",
         "item_slug": null
       }
     },
@@ -7912,13 +7912,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Defensa > Ataque)",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Defensa > Ataque)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Defensa > Ataque",
         "item_slug": null
       }
     },
@@ -9004,11 +9004,11 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+      "summary": "Evoluciona de Mime Jr. (al subir de nivel conociendo Mimético)",
       "locations": [],
       "evolution_info": {
-        "from": "Mime-jr",
-        "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+        "from": "Mime Jr.",
+        "text": "Evoluciona de Mime Jr. (al subir de nivel conociendo Mimético)",
         "trigger": "level-up",
         "condition": "al subir de nivel conociendo Mimético",
         "item_slug": null
@@ -16364,13 +16364,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Mantyke (por condición especial)",
+      "summary": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
       "locations": [],
       "evolution_info": {
         "from": "Mantyke",
-        "text": "Evoluciona de Mantyke (por condición especial)",
+        "text": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
         "trigger": "level-up",
-        "condition": "por condición especial",
+        "condition": "al subir de nivel con Remoraid en el equipo",
         "item_slug": null
       }
     },
@@ -17056,13 +17056,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Tyrogue (Nivel 20)",
+      "summary": "Evoluciona de Tyrogue (Nivel 20 con Ataque = Defensa)",
       "locations": [],
       "evolution_info": {
         "from": "Tyrogue",
-        "text": "Evoluciona de Tyrogue (Nivel 20)",
+        "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque = Defensa)",
         "trigger": "level-up",
-        "condition": "Nivel 20",
+        "condition": "Nivel 20 con Ataque = Defensa",
         "item_slug": null
       }
     },
@@ -18834,13 +18834,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Wurmple (Nivel 7)",
+      "summary": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
       "locations": [],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -19042,9 +19042,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -20690,13 +20690,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Nincada (por condición especial)",
+      "summary": "Evoluciona de Nincada (al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa)",
       "locations": [],
       "evolution_info": {
         "from": "Nincada",
-        "text": "Evoluciona de Nincada (por condición especial)",
+        "text": "Evoluciona de Nincada (al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa)",
         "trigger": "shed",
-        "condition": "por condición especial",
+        "condition": "al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa",
         "item_slug": null
       }
     },
@@ -22119,7 +22119,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 229 (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 229 (también obtenible mediante crianza) (también puede nacer de huevos de Illumise al 50 %; en 4.ª Gen, Volbeat con Ditto solo da Volbeat).",
       "locations": [
         {
           "area": "Ruta 229",
@@ -22178,7 +22178,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 229 (también obtenible mediante crianza).",
+      "summary": "Salvaje en Ruta 229 (también obtenible mediante crianza) (al criar a Illumise da huevos de Illumise o Volbeat al 50 %).",
       "locations": [
         {
           "area": "Ruta 229",
@@ -24696,13 +24696,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Feebas (por condición especial)",
+      "summary": "Evoluciona de Feebas (al subir de nivel con 170+ de Belleza (mediante Pokochos secos))",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (por condición especial)",
+        "text": "Evoluciona de Feebas (al subir de nivel con 170+ de Belleza (mediante Pokochos secos))",
         "trigger": "level-up",
-        "condition": "por condición especial",
+        "condition": "al subir de nivel con 170+ de Belleza (mediante Pokochos secos)",
         "item_slug": null
       }
     },

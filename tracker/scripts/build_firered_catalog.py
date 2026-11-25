@@ -283,7 +283,10 @@ def build_catalogs():
                     cond = "Subir de nivel con 170+ de Belleza (requiere transferencia a Rubí, Zafiro o Esmeralda para darle Pokécubos)"
                 elif min_happiness:
                     tod = " (Día)" if time_of_day == "day" else " (Noche)" if time_of_day == "night" else (f" ({time_of_day})" if time_of_day else "")
-                    cond = f"Felicidad alta{tod}"
+                    if curr_name in ('espeon', 'umbreon'):
+                        cond = f"Felicidad alta{tod} (requiere transferencia a Rubí, Zafiro o Esmeralda al no existir reloj en Rojo Fuego)"
+                    else:
+                        cond = f"Felicidad alta{tod}"
                 elif min_level:
                     if curr_name == 'hitmonlee':
                         cond = f"Nivel {min_level} (Ataque > Defensa)"
@@ -298,9 +301,10 @@ def build_catalogs():
                 else:
                     cond = "Condición especial"
 
+                from_display = "Nidoran♀" if from_name == 'nidoran-f' else ("Nidoran♂" if from_name == 'nidoran-m' else from_name.capitalize())
                 evo_map[curr_name] = {
-                    'from': from_name.capitalize(),
-                    'text': f"Evoluciona de {from_name.capitalize()} ({cond})",
+                    'from': from_display,
+                    'text': f"Evoluciona de {from_display} ({cond})",
                     'trigger': trigger,
                     'condition': cond,
                     'item_slug': item or held_item
@@ -318,7 +322,7 @@ def build_catalogs():
             'type': 'trade_npc',
             'badge_label': 'Intercambio NPC',
             'badge_color': 'indigo',
-            'summary': 'Intercambio en la caseta de la Ruta 5: entrega un Nidoran♂ a cambio de Nidoran♀ (con el mote «Nidochan») (también obtenible mediante crianza).',
+            'summary': 'Intercambio en la caseta de la Ruta 5: entrega un Nidoran♂ a cambio de Nidoran♀ (con el mote «Nidochan»). En 3.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂, por lo que requiere este intercambio primero (luego Nidoran♀ puede criar ambos al 50 %).',
             'locations': [{'area': 'Ruta 5 (Caseta)', 'method': 'Intercambio por Nidoran♂'}, {'area': 'Isla Quarta (Guardería Pokémon)', 'method': 'Crianza de huevo'}]
         },
         30: {
@@ -787,11 +791,18 @@ def build_catalogs():
 
             summary_text = obt_info.get('summary', '')
             if 'crianza' not in summary_text.lower():
-                clean_clause = " (también obtenible mediante crianza)"
+                if nat_id == 32:
+                    clean_clause = " (también obtenible mediante crianza; en 3.ª Gen Nidoran♂ con Ditto solo da Nidoran♂, mientras que Nidoran♀ da ambos al 50 %)"
+                else:
+                    clean_clause = " (también obtenible mediante crianza)"
                 if summary_text.endswith('.'):
                     obt_info['summary'] = summary_text[:-1] + clean_clause + "."
                 else:
                     obt_info['summary'] = summary_text + clean_clause
+            elif nat_id == 313:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (en 3.ª Gen, Volbeat con Ditto solo da Volbeat; los huevos de Illumise dan ambos al 50 %)."
+            elif nat_id == 314:
+                obt_info['summary'] = obt_info['summary'].rstrip('.') + " (al criar a Illumise da huevos de Illumise o Volbeat al 50 %)."
 
         # Piedras u objetos evolutivos asociados (incluyendo bebés de incienso en Gen 3)
         evo_stone = None

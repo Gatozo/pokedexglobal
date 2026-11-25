@@ -41238,7 +41238,7 @@
     "flavor_text": "El veneno oculto en su pequeño cuerno es extremadamente potente. El menor roce sería fatal.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon; al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -42624,7 +42624,7 @@
     "flavor_text": "Es pequeño, pero su cuerno está lleno de veneno. Primero embiste, y después lanza su venenosa cornada.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon a partir de Nidoran♀ al 50 %; en 2.ª Gen, Nidoran♂, Nidorino o Nidoking con Ditto solo dan Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -80172,15 +80172,15 @@
     "flavor_text": "Usa el corto pelaje que cubre su cuerpo para sentir el viento y predecir las acciones enemigas.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de mañana o de día",
         "item_icon": null,
         "item_name": null,
         "item_slug": null
@@ -80654,15 +80654,15 @@
     "flavor_text": "Cuando se siente amenazado, este Pokémon se protege lanzando sudor venenoso por todos sus poros.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de noche)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de noche)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de noche",
         "item_icon": null,
         "item_name": null,
         "item_slug": null

@@ -910,7 +910,16 @@ def main():
                 summary = f"Salvaje en {num_zones} zonas (ej: {examples}){dual_note}."
 
             if is_hatchable:
-                summary = summary.rstrip('.') + " (también obtenible mediante crianza)."
+                if nat_id == 29:
+                    summary = summary.rstrip('.') + " (también obtenible mediante crianza; al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían)."
+                elif nat_id == 32:
+                    summary = summary.rstrip('.') + " (también obtenible mediante crianza a partir de Nidoran♀ al 50 %; en 4.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂)."
+                elif nat_id == 313:
+                    summary = summary.rstrip('.') + " (también obtenible mediante crianza a partir de Illumise al 50 %; en 4.ª Gen, Volbeat con Ditto solo da Volbeat)."
+                elif nat_id == 314:
+                    summary = summary.rstrip('.') + " (también obtenible mediante crianza; sus huevos dan Illumise o Volbeat al 50 %)."
+                else:
+                    summary = summary.rstrip('.') + " (también obtenible mediante crianza)."
 
             obt_info = {
                 'type': 'wild',

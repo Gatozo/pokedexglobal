@@ -41535,7 +41535,7 @@
     "flavor_text": "Pequeña y dócil, cuando la atacan, utiliza el cuerno venenoso que tiene encima de la cabeza.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Parque Nacional (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Parque Nacional (también obtenible como cría en la Guardería Pokémon; al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -42925,7 +42925,7 @@
     "flavor_text": "Tiene unas orejas enormes que mueve sin parar para detectar cualquier peligro que pueda presentarse.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Parque Nacional (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Parque Nacional (también obtenible como cría en la Guardería Pokémon a partir de Nidoran♀ al 50 %; en 2.ª Gen, Nidoran♂, Nidorino o Nidoking con Ditto solo dan Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -80655,15 +80655,15 @@
     "flavor_text": "Al predecir el siguiente movimiento de su rival, chasquea el extremo de la cola bífida que tiene.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de mañana o de día",
         "item_icon": null,
         "item_name": null,
         "item_slug": null
@@ -81137,15 +81137,15 @@
     "flavor_text": "Cuando hay luna llena, o cuando se pone nervioso, le empiezan a brillar los anillos de color dorado.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de noche)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de noche)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de noche",
         "item_icon": null,
         "item_name": null,
         "item_slug": null

@@ -41246,7 +41246,7 @@
     "flavor_text": "Aunque no es muy agresivo, castiga a sus enemigos con púas venenosas, si se siente amenazado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon; al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -42632,7 +42632,7 @@
     "flavor_text": "Levanta sus orejas para vigilar los alrededores. Será el primero en atacar si se siente amenazado.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon)",
+      "summary": "Salvaje en: Ruta 35, Ruta 36 (también obtenible como cría en la Guardería Pokémon a partir de Nidoran♀ al 50 %; en 2.ª Gen, Nidoran♂, Nidorino o Nidoking con Ditto solo dan Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 35",
@@ -80196,15 +80196,15 @@
     "flavor_text": "Basándose en las corrientes de aire predice cosas como el clima o el próximo ataque del enemigo.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de mañana o de día)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de mañana o de día",
         "item_icon": null,
         "item_name": null,
         "item_slug": null
@@ -80678,15 +80678,15 @@
     "flavor_text": "Cuando oscurece, los anillos de su cuerpo empiezan a brillar, asustando a cualquiera que se acerque.",
     "obtaining_info": {
       "type": "evolution",
-      "summary": "Evoluciona de Eevee (Felicidad alta)",
+      "summary": "Evoluciona de Eevee (Felicidad alta de noche)",
       "locations": [],
       "badge_color": "indigo",
       "badge_label": "Evolución",
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta)",
+        "text": "Evoluciona de Eevee (Felicidad alta de noche)",
         "trigger": "level-up",
-        "condition": "Felicidad alta",
+        "condition": "Felicidad alta de noche",
         "item_icon": null,
         "item_name": null,
         "item_slug": null

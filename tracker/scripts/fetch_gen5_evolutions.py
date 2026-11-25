@@ -145,8 +145,28 @@ def parse_evolution_node(node, parent_id=None, parent_name=None, evo_dict=None):
         elif current_id == 617:  # Accelgor
             condition_parts = ["por intercambio con Karrablast"]
         elif current_id == 350:  # Milotic
-            condition_parts = ["por intercambio equipado con Escama Bella o Belleza alta"]
+            trigger = "trade"
+            condition_parts = ["por intercambio equipado con Escama Bella (o Belleza alta de 4.ª Gen)"]
             item_slug = 'prism-scale'
+        elif current_id == 106:  # Hitmonlee
+            condition_parts = ["Nivel 20 con Ataque > Defensa"]
+        elif current_id == 107:  # Hitmonchan
+            condition_parts = ["Nivel 20 con Defensa > Ataque"]
+        elif current_id == 237:  # Hitmontop
+            condition_parts = ["Nivel 20 con Ataque = Defensa"]
+        elif current_id == 226:  # Mantine
+            condition_parts = ["al subir de nivel con Remoraid en el equipo"]
+        elif current_id in (266, 268):  # Silcoon / Cascoon
+            condition_parts = ["Nivel 7 según valor de personalidad"]
+        elif current_id == 292:  # Shedinja
+            condition_parts = ["al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa"]
+
+        if parent_id == 29:
+            parent_name = "Nidoran♀"
+        elif parent_id == 32:
+            parent_name = "Nidoran♂"
+        elif parent_id == 439:
+            parent_name = "Mime Jr."
 
         cond_text = ", ".join(condition_parts) if condition_parts else "por condición especial"
         evo_dict[str(current_id)] = {

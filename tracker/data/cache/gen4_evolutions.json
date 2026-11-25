@@ -365,8 +365,8 @@
     "to_id": 226,
     "to_name": "Mantine",
     "trigger": "level-up",
-    "condition": "por condición especial",
-    "text": "Evoluciona de Mantyke (por condición especial)",
+    "condition": "al subir de nivel con Remoraid en el equipo",
+    "text": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
     "item_slug": null
   },
   "262": {
@@ -631,12 +631,12 @@
   },
   "122": {
     "from_id": 439,
-    "from_name": "Mime-jr",
+    "from_name": "Mime Jr.",
     "to_id": 122,
     "to_name": "Mr-mime",
     "trigger": "level-up",
     "condition": "al subir de nivel conociendo Mimético",
-    "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+    "text": "Evoluciona de Mime Jr. (al subir de nivel conociendo Mimético)",
     "item_slug": null
   },
   "866": {
@@ -911,12 +911,12 @@
   },
   "30": {
     "from_id": 29,
-    "from_name": "Nidoran-f",
+    "from_name": "Nidoran♀",
     "to_id": 30,
     "to_name": "Nidorina",
     "trigger": "level-up",
     "condition": "Nivel 16",
-    "text": "Evoluciona de Nidoran-f (Nivel 16)",
+    "text": "Evoluciona de Nidoran♀ (Nivel 16)",
     "item_slug": null
   },
   "31": {
@@ -1005,8 +1005,8 @@
     "to_id": 350,
     "to_name": "Milotic",
     "trigger": "level-up",
-    "condition": "por condición especial",
-    "text": "Evoluciona de Feebas (por condición especial)",
+    "condition": "al subir de nivel con 170+ de Belleza (mediante Pokochos secos)",
+    "text": "Evoluciona de Feebas (al subir de nivel con 170+ de Belleza (mediante Pokochos secos))",
     "item_slug": null
   },
   "233": {
@@ -1185,8 +1185,8 @@
     "to_id": 266,
     "to_name": "Silcoon",
     "trigger": "level-up",
-    "condition": "Nivel 7",
-    "text": "Evoluciona de Wurmple (Nivel 7)",
+    "condition": "Nivel 7 según valor de personalidad",
+    "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
     "item_slug": null
   },
   "267": {
@@ -1205,8 +1205,8 @@
     "to_id": 268,
     "to_name": "Cascoon",
     "trigger": "level-up",
-    "condition": "Nivel 7",
-    "text": "Evoluciona de Wurmple (Nivel 7)",
+    "condition": "Nivel 7 según valor de personalidad",
+    "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
     "item_slug": null
   },
   "269": {
@@ -1345,8 +1345,8 @@
     "to_id": 106,
     "to_name": "Hitmonlee",
     "trigger": "level-up",
-    "condition": "Nivel 20",
-    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "condition": "Nivel 20 con Ataque > Defensa",
+    "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque > Defensa)",
     "item_slug": null
   },
   "107": {
@@ -1355,8 +1355,8 @@
     "to_id": 107,
     "to_name": "Hitmonchan",
     "trigger": "level-up",
-    "condition": "Nivel 20",
-    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "condition": "Nivel 20 con Defensa > Ataque",
+    "text": "Evoluciona de Tyrogue (Nivel 20 con Defensa > Ataque)",
     "item_slug": null
   },
   "237": {
@@ -1365,8 +1365,8 @@
     "to_id": 237,
     "to_name": "Hitmontop",
     "trigger": "level-up",
-    "condition": "Nivel 20",
-    "text": "Evoluciona de Tyrogue (Nivel 20)",
+    "condition": "Nivel 20 con Ataque = Defensa",
+    "text": "Evoluciona de Tyrogue (Nivel 20 con Ataque = Defensa)",
     "item_slug": null
   },
   "101": {
@@ -1931,12 +1931,12 @@
   },
   "33": {
     "from_id": 32,
-    "from_name": "Nidoran-m",
+    "from_name": "Nidoran♂",
     "to_id": 33,
     "to_name": "Nidorino",
     "trigger": "level-up",
     "condition": "Nivel 16",
-    "text": "Evoluciona de Nidoran-m (Nivel 16)",
+    "text": "Evoluciona de Nidoran♂ (Nivel 16)",
     "item_slug": null
   },
   "34": {
@@ -2375,8 +2375,8 @@
     "to_id": 292,
     "to_name": "Shedinja",
     "trigger": "shed",
-    "condition": "por condición especial",
-    "text": "Evoluciona de Nincada (por condición especial)",
+    "condition": "al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa",
+    "text": "Evoluciona de Nincada (al evolucionar Nincada (Nv. 20) con hueco en el equipo y Poké Ball en la bolsa)",
     "item_slug": null
   },
   "47": {

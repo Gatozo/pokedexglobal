@@ -2211,7 +2211,7 @@
     "flavor_text": "Aunque pequeñas, sus venenosas púas son muy peligrosas. La hembra tiene pequeños cuernos.",
     "obtaining_info": {
       "type": "wild",
-      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza).",
+      "summary": "Salvaje en 5 zonas (ej: Ruta 3, Zona Safari (Centro), Zona Safari (Área 1 Este)) (también obtenible mediante crianza) (al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían).",
       "locations": [
         {
           "area": "Ruta 3",
@@ -2803,7 +2803,7 @@
       "type": "trade_npc",
       "badge_label": "Intercambio NPC",
       "badge_color": "indigo",
-      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♀ a cambio de Nidoran♂ (con el mote «Nidrán») (también obtenible mediante crianza).",
+      "summary": "Intercambio en la caseta de la Ruta 5: entrega un Nidoran♀ a cambio de Nidoran♂ (con el mote «Nidrán»). También obtenible sin intercambio criando una Nidoran♀ salvaje en Isla Quarta (50 % por huevo; en 3.ª Gen Nidoran♂ con Ditto solo da Nidoran♂).",
       "locations": [
         {
           "area": "Ruta 5 (Caseta)",
@@ -2823,7 +2823,7 @@
         },
         {
           "area": "Isla Quarta (Guardería Pokémon)",
-          "method": "Crianza de huevo"
+          "method": "Crianza de huevo (Nidoran♀)"
         }
       ]
     },
@@ -19284,9 +19284,9 @@
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta (Día))",
+        "text": "Evoluciona de Eevee (Felicidad alta (Día) (requiere transferencia a Rubí, Zafiro o Esmeralda al no existir reloj en Verde Hoja))",
         "trigger": "level-up",
-        "condition": "Felicidad alta (Día)",
+        "condition": "Felicidad alta (Día) (requiere transferencia a Rubí, Zafiro o Esmeralda al no existir reloj en Verde Hoja)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -19341,9 +19341,9 @@
       "locations": [],
       "evolution_info": {
         "from": "Eevee",
-        "text": "Evoluciona de Eevee (Felicidad alta (Noche))",
+        "text": "Evoluciona de Eevee (Felicidad alta (Noche) (requiere transferencia a Rubí, Zafiro o Esmeralda al no existir reloj en Verde Hoja))",
         "trigger": "level-up",
-        "condition": "Felicidad alta (Noche)",
+        "condition": "Felicidad alta (Noche) (requiere transferencia a Rubí, Zafiro o Esmeralda al no existir reloj en Verde Hoja)",
         "item_slug": null
       },
       "badge_color": "indigo",
@@ -28029,7 +28029,7 @@
     "flavor_text": "Vive cerca de estanques de agua clara. De noche, enciende la luz de la cola para comunicarse con otros de su especie.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Kanto ni en las Islas Sétima. Requiere transferencia desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn) (también obtenible mediante crianza).",
+      "summary": "No disponible en estado salvaje en Kanto ni en las Islas Sétima. Requiere transferencia desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn) (también obtenible mediante crianza) (en 3.ª Gen, Volbeat con Ditto solo da Volbeat; los huevos de Illumise dan ambos al 50 %).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",
@@ -28088,7 +28088,7 @@
     "flavor_text": "De noche, guía a Volbeat para que dibuje formas en el cielo con la luz que emite. Hay quienes estudian los dibujos.",
     "obtaining_info": {
       "type": "transfer",
-      "summary": "No disponible en estado salvaje en Kanto ni en las Islas Sétima. Requiere transferencia desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn) (también obtenible mediante crianza).",
+      "summary": "No disponible en estado salvaje en Kanto ni en las Islas Sétima. Requiere transferencia desde Pokémon Rubí, Zafiro o Esmeralda (Hoenn) (también obtenible mediante crianza) (al criar a Illumise da huevos de Illumise o Volbeat al 50 %).",
       "locations": [
         {
           "area": "Transferencia externa (GBA / GameCube)",

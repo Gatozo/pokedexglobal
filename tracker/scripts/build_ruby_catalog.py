@@ -578,9 +578,10 @@ def build_catalogs():
                 else:
                     cond = "Condición especial"
 
+                from_display = "Nidoran♀" if from_name.lower() == 'nidoran-f' else ("Nidoran♂" if from_name.lower() == 'nidoran-m' else from_name.capitalize())
                 evo_map[curr_name] = {
-                    'from': from_name.capitalize(),
-                    'text': f"Evoluciona de {from_name.capitalize()} ({cond})",
+                    'from': from_display,
+                    'text': f"Evoluciona de {from_display} ({cond})",
                     'trigger': trigger,
                     'condition': cond,
                     'item_slug': item or held_item
@@ -828,7 +829,13 @@ def build_catalogs():
 
             obt_info = {
                 'type': 'wild',
-                'summary': summary,
+                'summary': (
+                    f"{summary.rstrip('.')} (en 3.ª Gen, Volbeat con Ditto solo da Volbeat; los huevos de Illumise dan ambos al 50 %)."
+                    if nat_id == 313 else (
+                        f"{summary.rstrip('.')} (al criar a Illumise da huevos de Illumise o Volbeat al 50 %)."
+                        if nat_id == 314 else summary
+                    )
+                ),
                 'locations': unique_locs
             }
         elif evo_info:
@@ -873,9 +880,15 @@ def build_catalogs():
                     'badge_label': 'Crianza / Transfer'
                 }
             elif can_breed:
+                if nat_id == 29:
+                    breed_note = " (también obtenible mediante crianza; al criar a Nidoran♀ da huevos de Nidoran♀ o Nidoran♂ al 50 %, mientras que Nidorina y Nidoqueen no crían)"
+                elif nat_id == 32:
+                    breed_note = " (también obtenible mediante crianza a partir de Nidoran♀ al 50 %; en 3.ª Gen, Nidoran♂ con Ditto solo da Nidoran♂)"
+                else:
+                    breed_note = " (también obtenible mediante crianza)"
                 obt_info = {
                     'type': 'transfer',
-                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin} (también obtenible mediante crianza).",
+                    'summary': f"No disponible en estado salvaje en Hoenn. Requiere {transfer_origin}{breed_note}.",
                     'locations': [
                         {'area': 'Transferencia externa (GBA / GameCube)', 'method': transfer_origin},
                         {'area': 'Ruta 117 (Guardería Pokémon)', 'method': 'Crianza de huevo'}

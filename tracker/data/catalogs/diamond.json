@@ -4892,9 +4892,9 @@
       ],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -5015,13 +5015,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Wurmple (Nivel 7)",
+      "summary": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
       "locations": [],
       "evolution_info": {
         "from": "Wurmple",
-        "text": "Evoluciona de Wurmple (Nivel 7)",
+        "text": "Evoluciona de Wurmple (Nivel 7 según valor de personalidad)",
         "trigger": "level-up",
-        "condition": "Nivel 7",
+        "condition": "Nivel 7 según valor de personalidad",
         "item_slug": null
       }
     },
@@ -8829,8 +8829,8 @@
         }
       ],
       "evolution_info": {
-        "from": "Mime-jr",
-        "text": "Evoluciona de Mime-jr (al subir de nivel conociendo Mimético)",
+        "from": "Mime Jr.",
+        "text": "Evoluciona de Mime Jr. (al subir de nivel conociendo Mimético)",
         "trigger": "level-up",
         "condition": "al subir de nivel conociendo Mimético",
         "item_slug": null
@@ -12387,13 +12387,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Feebas (por condición especial)",
+      "summary": "Evoluciona de Feebas (al subir de nivel con 170+ de Belleza (mediante Pokochos secos))",
       "locations": [],
       "evolution_info": {
         "from": "Feebas",
-        "text": "Evoluciona de Feebas (por condición especial)",
+        "text": "Evoluciona de Feebas (al subir de nivel con 170+ de Belleza (mediante Pokochos secos))",
         "trigger": "level-up",
-        "condition": "por condición especial",
+        "condition": "al subir de nivel con 170+ de Belleza (mediante Pokochos secos)",
         "item_slug": null
       }
     },
@@ -12525,13 +12525,13 @@
       "type": "evolution",
       "badge_label": "Evolución",
       "badge_color": "indigo",
-      "summary": "Evoluciona de Mantyke (por condición especial)",
+      "summary": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
       "locations": [],
       "evolution_info": {
         "from": "Mantyke",
-        "text": "Evoluciona de Mantyke (por condición especial)",
+        "text": "Evoluciona de Mantyke (al subir de nivel con Remoraid en el equipo)",
         "trigger": "level-up",
-        "condition": "por condición especial",
+        "condition": "al subir de nivel con Remoraid en el equipo",
         "item_slug": null
       }
     },
