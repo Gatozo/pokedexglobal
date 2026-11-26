@@ -5741,6 +5741,7 @@ class PokemonBlack2Gen5Tests(TestCase):
         self.assertTrue(game.has_seasons)
         self.assertTrue(game.has_special_spots)
         self.assertTrue(game.has_hidden_grottos)
+        self.assertTrue(game.has_dream_radar)
         self.assertTrue(game.has_regional_babies)
         self.assertFalse(game.has_time_of_day)
 
@@ -5749,6 +5750,8 @@ class PokemonBlack2Gen5Tests(TestCase):
         white1 = Game.objects.get(slug="white")
         self.assertFalse(black1.has_hidden_grottos)
         self.assertFalse(white1.has_hidden_grottos)
+        self.assertFalse(black1.has_dream_radar)
+        self.assertFalse(white1.has_dream_radar)
         self.assertFalse(black1.has_regional_babies)
         self.assertFalse(white1.has_regional_babies)
 
@@ -5882,6 +5885,30 @@ class PokemonBlack2Gen5Tests(TestCase):
         self.assertIn("Hierba movediza", unfezant_vr["method"])
         self.assertNotIn("Nube de polvo", unfezant_vr["method"])
 
+        # RAdar Pokémon: 13 especies en Regional, 26 en Nacional, sin contaminar 'radar' de Sinnoh y con nota detallada
+        expected_dr_reg = {120, 174, 213, 333, 374, 425, 436, 447, 517, 561, 641, 642, 645}
+        expected_dr_nat = expected_dr_reg | {79, 137, 163, 175, 238, 249, 250, 280, 442, 479, 483, 484, 487}
+        dr_reg_ids = {e.pokemon.national_number for e in reg_by.values() if "dream_radar" in e.filter_tags.split()}
+        dr_nat_ids = {e.pokemon.national_number for e in nat_by.values() if "dream_radar" in e.filter_tags.split()}
+        self.assertEqual(dr_reg_ids, expected_dr_reg)
+        self.assertEqual(dr_nat_ids, expected_dr_nat)
+        for e in nat_by.values():
+            self.assertNotIn("radar", e.filter_tags.split())
+        for dr_id in expected_dr_nat:
+            dr_note = next((n for n in nat_by[dr_id].notes if n.get("tag") == "RAdar Pokémon"), None)
+            self.assertIsNotNone(dr_note, f"Falta nota RAdar en #{dr_id}")
+            self.assertNotIn("Extensión especial", dr_note["text"])
+            self.assertNotIn("gotas de ensueño", dr_note["text"])
+            dr_loc = next(l for l in nat_by[dr_id].obtaining_info["locations"] if "RAdar Pokémon" in l["area"])
+            self.assertIn("Transferencia directa", dr_loc["method"])
+        self.assertIn("gotas oníricas rosas y verdes", nat_by[333].notes[-1]["text"])
+        self.assertIn("Lente Maravilla α", nat_by[641].notes[-1]["text"])
+        self.assertIn("Lente Especial A", nat_by[374].notes[-1]["text"])
+        self.assertIn("Lente Temporal", nat_by[483].notes[-1]["text"])
+        self.assertIn("Lente Renegada", nat_by[487].notes[-1]["text"])
+        self.assertIn("Lente Arcoíris", nat_by[250].notes[-1]["text"])
+        self.assertIn("Lente Buceo", nat_by[249].notes[-1]["text"])
+
         # Manadas solo en Nacional (19 especies)
         swarms_nat = [e for e in nat_by.values() if "swarm" in e.filter_tags.split()]
         self.assertEqual(len(swarms_nat), 19)
@@ -5931,6 +5958,8 @@ class PokemonBlack2Gen5Tests(TestCase):
         self.assertIn("bg-[#0f172a]", html_reg)
         self.assertIn('data-tag="hidden_grotto"', html_reg)
         self.assertIn("Claros Ocultos", html_reg)
+        self.assertIn('data-tag="dream_radar"', html_reg)
+        self.assertIn("RAdar Pokémon", html_reg)
         self.assertIn('data-tag="baby"', html_reg)
         self.assertNotIn('id="btn-game-config"', html_reg)
 
@@ -5940,13 +5969,15 @@ class PokemonBlack2Gen5Tests(TestCase):
         html_nat = res_nat.content.decode("utf-8")
         self.assertIn("Teselia (Pokétransfer)", html_nat)
         self.assertIn('data-tag="hidden_grotto"', html_nat)
+        self.assertIn('data-tag="dream_radar"', html_nat)
         self.assertIn('data-tag="swarm"', html_nat)
         self.assertIn("bg-sky-500/25 text-sky-200 border-sky-400/50", html_nat)
 
-        # Claros Ocultos no aparece en Negro 1 ni Blanco 1
+        # Claros Ocultos y RAdar Pokémon no aparecen en Negro 1 ni Blanco 1
         for bw1_url in ("/black/", "/white/"):
             resp_bw1 = self.client.get(bw1_url)
             self.assertNotIn('data-tag="hidden_grotto"', resp_bw1.content.decode("utf-8"))
+            self.assertNotIn('data-tag="dream_radar"', resp_bw1.content.decode("utf-8"))
 
         # Game Hub muestra Kyurem Negro
         res_hub = self.client.get("/games/")

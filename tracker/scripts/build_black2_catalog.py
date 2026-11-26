@@ -979,6 +979,43 @@ _JULIAN_ONLY_NOTE = {
     "icon": "/media/items/linking-cord.png",
 }
 
+_DREAM_RADAR_ICON = "/media/items/reveal-glass.png"
+DREAM_RADAR_POKEMON_BLACK2 = {
+    # Disponibles desde el inicio (5)
+    333: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Disponible desde el inicio en RAdar Pokémon (Nintendo 3DS) en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Aclimatación."},
+    425: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Disponible desde el inicio en RAdar Pokémon (Nintendo 3DS) en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Ímpetu Ardiente."},
+    447: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Disponible desde el inicio en RAdar Pokémon (Nintendo 3DS) en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Bromista."},
+    517: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Disponible desde el inicio en RAdar Pokémon (Nintendo 3DS) en nubes de gotas oníricas rosas. Incluye habilidad oculta Telepatía."},
+    561: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Disponible desde el inicio en RAdar Pokémon (Nintendo 3DS) en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Cromolente."},
+    # Desbloqueados tras capturar a Tornadus (2)
+    174: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Tornadus (Forma Tótem), apareciendo en nubes de gotas oníricas verdes y azules. Incluye habilidad oculta Compiescolta."},
+    213: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Tornadus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Respondón."},
+    # Desbloqueados tras capturar a Thundurus (4)
+    120: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Thundurus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y naranjas. Incluye habilidad oculta Cálculo Final."},
+    137: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Thundurus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y naranjas. Incluye habilidad oculta Cálculo Final."},
+    280: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Thundurus (Forma Tótem), apareciendo en nubes de gotas oníricas verdes y naranjas. Incluye habilidad oculta Telepatía."},
+    436: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Thundurus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y verdes. Incluye habilidad oculta Metal Pesado."},
+    # Desbloqueados tras capturar a Landorus (4)
+    175: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Landorus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas, verdes y azules. Incluye habilidad oculta Afortunado."},
+    238: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Landorus (Forma Tótem), apareciendo en nubes de gotas oníricas azules. Incluye habilidad oculta Hidratación."},
+    442: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Landorus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y azules. Incluye habilidad oculta Allanamiento."},
+    479: {"method": "Transferencia directa (Levitación)", "note": "Se desbloquea en RAdar Pokémon (Nintendo 3DS) tras capturar a Landorus (Forma Tótem), apareciendo en nubes de gotas oníricas rosas y naranjas en su forma base con Levitación."},
+    # Fuerzas de la Naturaleza (3)
+    641: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Jefe inicial de RAdar Pokémon (Nintendo 3DS) mediante la Lente Maravilla α: se captura en su Forma Tótem con habilidad oculta Regeneración tras reunir 400 gotas oníricas."},
+    642: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Segundo jefe de RAdar Pokémon (Nintendo 3DS) mediante la Lente Maravilla β: se captura en su Forma Tótem con habilidad oculta Absorbe Elec tras reunir 1.500 gotas oníricas."},
+    645: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Tercer jefe de RAdar Pokémon (Nintendo 3DS) mediante la Lente Maravilla γ: se captura en su Forma Tótem con habilidad oculta Intimidación tras reunir 3.000 gotas oníricas. Llevarlo al Santuario Abundancia desbloquea el Espejo Veraz."},
+    # Lentes Especiales por código secreto en pantalla de título (3)
+    374: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Especial A de RAdar Pokémon (Nintendo 3DS): se desbloquea introduciendo el código secreto en la pantalla de título (Arriba, Derecha, Abajo, Izquierda, X, R, L). Incluye habilidad oculta Metal Liviano."},
+    79:  {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Especial B de RAdar Pokémon (Nintendo 3DS): se desbloquea introduciendo el código secreto en la pantalla de título tras capturar a Tornadus (Arriba, Abajo, Derecha, Izquierda, Y, R, L). Incluye habilidad oculta Regeneración."},
+    163: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Especial C de RAdar Pokémon (Nintendo 3DS): se desbloquea introduciendo el código secreto en la pantalla de título tras capturar a Thundurus (Arriba, Izquierda, Abajo, Derecha, L, R, X, Y). Incluye habilidad oculta Cromolente."},
+    # Lentes de 4.ª Generación con cartucho DS insertado en 3DS tras vencer a Landorus (5)
+    483: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Temporal de RAdar Pokémon (Nintendo 3DS): se desbloquea tras vencer a Landorus jugando con el cartucho de Pokémon Diamante insertado en la consola. Incluye habilidad oculta Telepatía."},
+    484: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Espacial de RAdar Pokémon (Nintendo 3DS): se desbloquea tras vencer a Landorus jugando con el cartucho de Pokémon Perla insertado en la consola. Incluye habilidad oculta Telepatía."},
+    487: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Renegada de RAdar Pokémon (Nintendo 3DS): se desbloquea tras vencer a Landorus jugando con el cartucho de Pokémon Platino insertado en la consola. Incluye habilidad oculta Telepatía."},
+    250: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Arcoíris de RAdar Pokémon (Nintendo 3DS): se desbloquea tras vencer a Landorus jugando con el cartucho de Pokémon Oro HeartGold insertado en la consola. Incluye habilidad oculta Regeneración."},
+    249: {"method": "Transferencia directa (Habilidad Oculta)", "note": "Modo especial Lente Buceo de RAdar Pokémon (Nintendo 3DS): se desbloquea tras vencer a Landorus jugando con el cartucho de Pokémon Plata SoulSilver insertado en la consola. Incluye habilidad oculta Compensación."},
+}
+
 SPECIAL_NOTES_BLACK2 = {
     138: [{"title": "Fósil Clásico • Monte Tuerca y Galería Unión", "text": _POSTGAME_FOSSIL_B2_TEXT, "tag": "Fósil", "icon": "/media/items/helix-fossil.png"}],
     140: [{"title": "Fósil Clásico • Monte Tuerca y Galería Unión", "text": _POSTGAME_FOSSIL_B2_TEXT, "tag": "Fósil", "icon": "/media/items/dome-fossil.png"}],
@@ -1417,6 +1454,8 @@ def main():
                 summary = "Inaccesible en estado salvaje en Teselia 2. Requiere Pokétransfer (Ruta 15) desde 4.ª Generación o RAdar Pokémon (3DS con HeartGold/SoulSilver insertado)."
             elif nat_id == 137:
                 summary = "Inaccesible en estado salvaje en Teselia 2. Requiere Pokétransfer (Ruta 15), intercambio desde Pokémon Blanco (Bosque Blanco) o RAdar Pokémon (Nintendo 3DS)."
+            elif nat_id == 238:
+                summary = "Inaccesible en estado salvaje en Teselia 2. Requiere Pokétransfer (Ruta 15) o transferencia directa desde RAdar Pokémon (Nintendo 3DS)."
             else:
                 summary = f"Inaccesible en estado salvaje en Pokémon Negro 2. Requiere {origin_desc}."
             loc_list = [{'area': 'Laboratorio de Pokétransfer (Ruta 15)', 'method': origin_desc}]
@@ -1508,6 +1547,28 @@ def main():
         has_hg_loc = any("claro oculto" in loc.get("method", "").lower() for loc in obt_info.get("locations", []))
         if has_hg_loc and not any(n.get("tag") == "Claro Oculto" for n in entry_notes):
             entry_notes.append(json.loads(json.dumps(HIDDEN_GROTTO_NOTE)))
+        if nat_id in DREAM_RADAR_POKEMON_BLACK2:
+            dr_info = DREAM_RADAR_POKEMON_BLACK2[nat_id]
+            has_dr_loc = any(
+                "radar pokémon" in loc.get("area", "").lower() or "rádar pokémon" in loc.get("area", "").lower()
+                for loc in obt_info.get("locations", [])
+            )
+            if not has_dr_loc:
+                obt_info["locations"].append({
+                    "area": "RAdar Pokémon (Nintendo 3DS)",
+                    "method": dr_info["method"],
+                })
+            else:
+                for loc in obt_info["locations"]:
+                    area_l = loc.get("area", "").lower()
+                    if "radar pokémon" in area_l or "rádar pokémon" in area_l:
+                        loc["method"] = dr_info["method"]
+            entry_notes.append({
+                "title": "RAdar Pokémon (Nintendo 3DS)",
+                "text": dr_info["note"],
+                "tag": "RAdar Pokémon",
+                "icon": _DREAM_RADAR_ICON,
+            })
 
         unown_suffix = "-f" if nat_id == 201 else ""
         home_shiny_url = f"/media/pokemon/home/shiny/{nat_id}{unown_suffix}.png"

@@ -146,6 +146,11 @@ class Game(models.Model):
         ]
 
     @property
+    def has_dream_radar(self):
+        """Determina si este juego es compatible con RAdar Pokémon (Nintendo 3DS)."""
+        return self.slug in ["black-2", "white-2"]
+
+    @property
     def has_dual_slot(self):
         """Determina si este juego cuenta con Inserción Dual de cartuchos GBA (Sinnoh DS)."""
         return self.slug in [

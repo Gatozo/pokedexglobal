@@ -551,8 +551,8 @@ class CatalogEntry:
         if ("miel" in loc_text or "honey" in loc_text) and not is_transfer:
             tags.add("honey_tree")
 
-        # Poké Radar (Sinnoh)
-        if "radar" in loc_text and not is_transfer:
+        # Poké Radar (Sinnoh - Gen 4)
+        if gen == 4 and "radar" in loc_text and not is_transfer:
             tags.add("radar")
 
         # Inserción Dual GBA (Sinnoh)
@@ -644,6 +644,11 @@ class CatalogEntry:
                 tags.add("hidden_grotto")
             if (self.game_slug or "").removesuffix("_national") == "white" and "bosque blanco" in loc_text:
                 tags.add("white_forest")
+
+        # RAdar Pokémon (Nintendo 3DS - Negro 2 / Blanco 2, incluye especies transferibles)
+        clean_slug = (self.game_slug or "").removesuffix("_national")
+        if clean_slug in ("black-2", "white-2") and ("rádar pokémon" in loc_text or "radar pokémon" in loc_text):
+            tags.add("dream_radar")
 
         # Cañas de pescar (evaluado únicamente sobre métodos reales de ubicación para evitar falsos positivos en exclusivos/summary)
         has_old = bool(re.search(r"\b(caña\s*vieja|cañavieja|old\s*rod)\b", methods_lower))

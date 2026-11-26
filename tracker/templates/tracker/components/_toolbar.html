@@ -245,6 +245,12 @@
                         <span>Poké Radar</span>
                     </button>
                     {% endif %}
+                    {% if game.has_dream_radar %}
+                    <button type="button" onclick="toggleFilterTag('dream_radar', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="dream_radar">
+                        <img src="/media/items/reveal-glass.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
+                        <span>RAdar Pokémon</span>
+                    </button>
+                    {% endif %}
                     {% if game.has_dual_slot %}
                     <button type="button" onclick="toggleFilterTag('dual_slot', this)" class="filter-tag-pill h-8 px-3 rounded-lg text-xs font-black uppercase border-2 border-slate-950 bg-white text-slate-800 shadow-[1px_1px_0px_#0f172a] hover:bg-slate-50 active:translate-x-0.5 active:translate-y-0.5 cursor-pointer transition select-none flex items-center justify-center gap-1.5" data-tag="dual_slot">
                         <img src="/media/items/up-grade.png" alt="" class="w-6 h-6 object-contain inline-block pixel-art shrink-0">
