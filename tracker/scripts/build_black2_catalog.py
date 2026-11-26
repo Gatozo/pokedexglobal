@@ -75,7 +75,7 @@ UNOVA2_AREA_NAMES = {
     'floccesy-town-area': 'Pueblo Ocre',
     'giant-chasm-area': 'Boquete Gigante (Cueva de Entrada)',
     'giant-chasm-forest': 'Boquete Gigante (Bosque Interior)',
-    'giant-chasm-forest-cave': 'Boquete Gigante (Cueva Central)',
+    'giant-chasm-forest-cave': 'Boquete Gigante (Cráter)',
     'giant-chasm-hidden-grotto': 'Boquete Gigante (Claro Oculto)',
     'giant-chasm-outside': 'Boquete Gigante (Exterior)',
     'glacier-room-area': 'Ruinas Subterráneas (Cámara Iceberg)',
@@ -103,19 +103,19 @@ UNOVA2_AREA_NAMES = {
     'relic-passage-pwt-entrance': 'Pasadizo Ancestral (Acceso PWT)',
     'relic-passage-relic-castle-entrance': 'Pasadizo Ancestral (Castillo Ancestral)',
     'reversal-mountain-b1f': 'Montaña Reversia (Interior)',
-    'reversal-mountain-unknown-area-48': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-49': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-50': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-51': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-52': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-53': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-54': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-55': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-56': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-57': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-58': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-59': 'Montaña Reversia',
-    'reversal-mountain-unknown-area-60': 'Montaña Reversia',
+    'reversal-mountain-unknown-area-48': 'Montaña Reversia (Exterior)',
+    'reversal-mountain-unknown-area-49': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-50': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-51': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-52': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-53': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-54': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-55': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-56': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-57': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-58': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-59': 'Montaña Reversia (Interior)',
+    'reversal-mountain-unknown-area-60': 'Montaña Reversia (Interior)',
     'rocky-mountain-room-area': 'Ruinas Subterráneas (Cámara Pico Roca)',
     'seaside-cave-1f': 'Gruta Marina (P1)',
     'seaside-cave-b1f': 'Gruta Marina (S1)',
@@ -163,17 +163,17 @@ UNOVA2_AREA_NAMES = {
     'unova-route-22-hidden-grotto': 'Ruta 22 (Claro Oculto)',
     'unova-route-23-area': 'Ruta 23',
     'unova-route-23-hidden-grotto': 'Ruta 23 (Claro Oculto)',
-    'unova-victory-road-2-unknown-area-71': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-72': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-73': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-74': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-75': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-76': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-77': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-78': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-79': 'Calle Victoria',
-    'unova-victory-road-2-unknown-area-80': 'Calle Victoria',
-    'unova-victory-road-7f': 'Calle Victoria',
+    'unova-victory-road-2-unknown-area-71': 'Calle Victoria (Interior)',
+    'unova-victory-road-2-unknown-area-72': 'Calle Victoria (Exterior)',
+    'unova-victory-road-2-unknown-area-73': 'Calle Victoria (Exterior)',
+    'unova-victory-road-2-unknown-area-74': 'Calle Victoria (Interior)',
+    'unova-victory-road-2-unknown-area-75': 'Calle Victoria (Interior)',
+    'unova-victory-road-2-unknown-area-76': 'Calle Victoria (Exterior)',
+    'unova-victory-road-2-unknown-area-77': 'Calle Victoria (Interior)',
+    'unova-victory-road-2-unknown-area-78': 'Calle Victoria (Interior)',
+    'unova-victory-road-2-unknown-area-79': 'Calle Victoria (Exterior)',
+    'unova-victory-road-2-unknown-area-80': 'Calle Victoria (Interior)',
+    'unova-victory-road-7f': 'Calle Victoria (Interior)',
     'village-bridge-area': 'Puente Villa',
     'virbank-city-area': 'Ciudad Hormigón',
     'virbank-complex-inner': 'Polígono Hormigón (Interior)',
@@ -1103,11 +1103,26 @@ HIDDEN_GROTTO_NOTE = {
 }
 
 
-def is_indoor_or_cave(area_clean: str) -> bool:
+OUTDOOR_GRASS_RAW_AREAS = {
+    'giant-chasm-forest',
+    'giant-chasm-forest-cave',
+    'giant-chasm-outside',
+    'reversal-mountain-unknown-area-48',
+    'unova-victory-road-2-unknown-area-72',
+    'unova-victory-road-2-unknown-area-73',
+    'unova-victory-road-2-unknown-area-76',
+    'unova-victory-road-2-unknown-area-79',
+}
+
+
+def is_indoor_or_cave(area_clean: str, area_raw: str = '') -> bool:
+    if area_raw in OUTDOOR_GRASS_RAW_AREAS:
+        return False
     area_lower = area_clean.lower()
     if any(ext in area_lower for ext in (
         'ladera exterior', 'torre duodraco (entrada)', 'torre duodraco (exterior)',
-        'boquete gigante (exterior)', 'bosque interior', 'claro oculto'
+        'boquete gigante (exterior)', 'bosque interior', 'claro oculto',
+        'calle victoria (exterior)', 'montaña reversia (exterior)', 'boquete gigante (cráter)'
     )):
         return False
     return any(
@@ -1121,7 +1136,7 @@ def is_indoor_or_cave(area_clean: str) -> bool:
     )
 
 
-def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> str:
+def format_wild_method(method_raw: str, conditions: list, area_clean: str, area_raw: str = '') -> str:
     if 'swarm-yes' in conditions:
         return 'Manada diaria'
     if method_raw == 'hidden-grotto':
@@ -1138,8 +1153,6 @@ def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> st
     if method_raw == 'dark-grass':
         return 'Hierba oscura (Combates dobles)'
     if method_raw == 'grass-spots':
-        if is_indoor_or_cave(area_clean):
-            return 'Nube de polvo'
         return 'Hierba movediza'
     if method_raw == 'cave-spots':
         return 'Nube de polvo'
@@ -1159,7 +1172,7 @@ def format_wild_method(method_raw: str, conditions: list, area_clean: str) -> st
             return 'Caminando en charcos'
         if area_lower in ('ruta 4', 'zona desierto', 'zona desierto (entrada)'):
             return 'Caminando en la arena'
-        if is_indoor_or_cave(area_clean):
+        if is_indoor_or_cave(area_clean, area_raw):
             return 'Caminando'
         return 'Hierba alta'
     return 'Salvaje'
@@ -1238,7 +1251,7 @@ def main():
                     unmapped_areas.add(area_key)
                 clean_area = UNOVA2_AREA_NAMES.get(area_key, area_key)
                 conds = e.get('conditions', []) or []
-                meth_desc = format_wild_method(m_raw, conds, clean_area)
+                meth_desc = format_wild_method(m_raw, conds, clean_area, area_key)
                 bucket = area_method_meta.setdefault(clean_area, {}).setdefault(
                     meth_desc, {'always': False, 'seasons': set()}
                 )

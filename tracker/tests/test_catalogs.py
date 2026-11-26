@@ -5868,6 +5868,20 @@ class PokemonBlack2Gen5Tests(TestCase):
         self.assertNotIn("surf", nat_by[371].filter_tags.split())
         self.assertNotIn("surf", nat_by[572].filter_tags.split())
 
+        # Nubes de polvo: solo Onix (#95), Steelix (#208), Drilbur (#529) y Excadrill (#530)
+        dust_reg_ids = {e.pokemon.national_number for e in reg_by.values() if "spot_dust" in e.filter_tags.split()}
+        dust_nat_ids = {e.pokemon.national_number for e in nat_by.values() if "spot_dust" in e.filter_tags.split()}
+        self.assertEqual(dust_reg_ids, {95, 208, 529, 530})
+        self.assertEqual(dust_nat_ids, {95, 208, 529, 530})
+        for grass_spot_id in (36, 206, 376, 407, 473, 521, 531, 539, 547):
+            self.assertNotIn("spot_dust", reg_by[grass_spot_id].filter_tags.split())
+            self.assertIn("spot_grass", reg_by[grass_spot_id].filter_tags.split())
+        # Calle Victoria (Exterior) distingue Hierba alta / Hierba movediza frente a Interior
+        unfezant_vr = next(l for l in reg_by[521].obtaining_info["locations"] if "Calle Victoria" in l["area"])
+        self.assertEqual(unfezant_vr["area"], "Calle Victoria (Exterior)")
+        self.assertIn("Hierba movediza", unfezant_vr["method"])
+        self.assertNotIn("Nube de polvo", unfezant_vr["method"])
+
         # Manadas solo en Nacional (19 especies)
         swarms_nat = [e for e in nat_by.values() if "swarm" in e.filter_tags.split()]
         self.assertEqual(len(swarms_nat), 19)

@@ -2320,8 +2320,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Claro Oculto)",
@@ -2393,7 +2393,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Exterior), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Exterior), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cráter).",
       "locations": [
         {
           "area": "Boquete Gigante (Exterior)",
@@ -2404,8 +2404,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Nube de polvo"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba movediza"
         }
       ],
       "evolution_info": {
@@ -4207,7 +4207,11 @@
           "method": "Supercaña"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
+          "method": "Supercaña"
+        },
+        {
+          "area": "Calle Victoria (Exterior)",
           "method": "Supercaña"
         },
         {
@@ -4309,7 +4313,11 @@
           "method": "Supercaña en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
+          "method": "Supercaña en sombra del agua"
+        },
+        {
+          "area": "Calle Victoria (Exterior)",
           "method": "Supercaña en sombra del agua"
         },
         {
@@ -4406,7 +4414,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Cueva de Entrada), Cueva Manantial y Calle Victoria.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Boquete Gigante (Cueva de Entrada), Cueva Manantial y Calle Victoria (Interior).",
       "locations": [
         {
           "area": "Boquete Gigante (Cueva de Entrada)",
@@ -4417,7 +4425,7 @@
           "method": "Supercaña en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Supercaña en sombra del agua"
         },
         {
@@ -6614,14 +6622,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria y Pasadizo Ancestral (Cloacas Porcelana). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Monte Tuerca, Calle Victoria (Interior) y Pasadizo Ancestral (Cloacas Porcelana). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Monte Tuerca",
           "method": "Caminando, Nube de polvo"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando, Nube de polvo"
         },
         {
@@ -9177,15 +9185,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Bosque Interior), Boquete Gigante (Cueva Central) y Boquete Gigante (Claro Oculto).",
+      "summary": "Salvaje en Boquete Gigante (Bosque Interior), Boquete Gigante (Cráter) y Boquete Gigante (Claro Oculto).",
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Claro Oculto)",
@@ -12512,7 +12520,7 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles), Surf, Surf en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Surf, Surf en sombra del agua"
         },
         {
@@ -12628,7 +12636,7 @@
           "method": "Surf en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Surf en sombra del agua"
         },
         {
@@ -12775,7 +12783,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Ruta 6, Bosque de los Perdidos y Calle Victoria.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Ruta 6, Bosque de los Perdidos y Calle Victoria (Exterior).",
       "locations": [
         {
           "area": "Ruta 6",
@@ -12786,7 +12794,7 @@
           "method": "Supercaña en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Exterior)",
           "method": "Supercaña en sombra del agua"
         },
         {
@@ -14169,8 +14177,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         },
         {
           "area": "Rancho Ocre",
@@ -15261,7 +15269,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Cueva de Entrada), Boquete Gigante (Bosque Interior) y Boquete Gigante (Cráter).",
       "locations": [
         {
           "area": "Boquete Gigante (Cueva de Entrada)",
@@ -15272,8 +15280,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
       "evolution_info": {
@@ -15561,8 +15569,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 22",
@@ -15702,11 +15710,11 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Montaña Reversia. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Montaña Reversia (Exterior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Montaña Reversia",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -21430,7 +21438,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 12, Bosque de los Perdidos y Calle Victoria. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Ruta 12, Bosque de los Perdidos y Calle Victoria (Exterior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Ruta 12",
@@ -21441,8 +21449,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -22073,10 +22081,14 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Montaña Reversia. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Montaña Reversia (Exterior) y Montaña Reversia (Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Montaña Reversia",
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta"
+        },
+        {
+          "area": "Montaña Reversia (Interior)",
           "method": "Caminando"
         },
         {
@@ -22135,11 +22147,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Montaña Reversia.",
+      "summary": "Salvaje en Montaña Reversia (Exterior) y Montaña Reversia (Interior).",
       "locations": [
         {
-          "area": "Montaña Reversia",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+        },
+        {
+          "area": "Montaña Reversia (Interior)",
+          "method": "Caminando"
         }
       ],
       "evolution_info": {
@@ -22262,15 +22278,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Zona Desierto y Montaña Reversia. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Zona Desierto y Montaña Reversia (Exterior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Zona Desierto",
           "method": "Caminando en la arena"
         },
         {
-          "area": "Montaña Reversia",
-          "method": "Caminando"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -22328,10 +22344,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Montaña Reversia.",
+      "summary": "Salvaje en Montaña Reversia (Exterior).",
       "locations": [
         {
-          "area": "Montaña Reversia",
+          "area": "Montaña Reversia (Exterior)",
           "method": "Hierba oscura (Combates dobles)"
         }
       ],
@@ -22654,7 +22670,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 14, Santuario Abundancia, Calle Victoria y Reserva Natural.",
+      "summary": "Salvaje en Ruta 14, Santuario Abundancia, Calle Victoria (Exterior) y Reserva Natural.",
       "locations": [
         {
           "area": "Ruta 14",
@@ -22665,8 +22681,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Reserva Natural",
@@ -22916,8 +22932,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -22998,8 +23014,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 13",
@@ -24061,10 +24077,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Calle Victoria, Villa Horroris (P1) y Villa Horroris (S1).",
+      "summary": "Salvaje en Calle Victoria (Interior), Villa Horroris (P1) y Villa Horroris (S1).",
       "locations": [
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando"
         },
         {
@@ -25505,15 +25521,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Bosque Interior), Boquete Gigante (Cueva Central) y Boquete Gigante (Claro Oculto).",
+      "summary": "Salvaje en Boquete Gigante (Bosque Interior), Boquete Gigante (Cráter) y Boquete Gigante (Claro Oculto).",
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Boquete Gigante (Claro Oculto)",
@@ -25585,15 +25601,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Bosque Interior) y Boquete Gigante (Cráter).",
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Nube de polvo"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba movediza"
         }
       ],
       "evolution_info": {
@@ -27490,7 +27506,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 12, Bosque de los Perdidos y Calle Victoria.",
+      "summary": "Salvaje en Ruta 12, Bosque de los Perdidos y Calle Victoria (Exterior).",
       "locations": [
         {
           "area": "Ruta 12",
@@ -27501,8 +27517,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         }
       ],
       "evolution_info": {
@@ -28279,7 +28295,7 @@
           "method": "Surf, Surf en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Exterior)",
           "method": "Surf, Surf en sombra del agua"
         },
         {
@@ -28361,7 +28377,7 @@
           "method": "Surf en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Exterior)",
           "method": "Surf en sombra del agua"
         },
         {
@@ -28811,7 +28827,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Ruta 13, Ruta 14 y Montaña Reversia.",
+      "summary": "Salvaje en Ruta 13, Ruta 14 y Montaña Reversia (Exterior).",
       "locations": [
         {
           "area": "Ruta 13",
@@ -28822,8 +28838,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Montaña Reversia",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
       "evolution_info": {
@@ -30548,11 +30564,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Montaña Reversia y Ruta 13 (Claro Oculto Norte). También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Montaña Reversia (Exterior), Montaña Reversia (Interior) y Ruta 13 (Claro Oculto Norte). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
-          "area": "Montaña Reversia",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
+        },
+        {
+          "area": "Montaña Reversia (Interior)",
+          "method": "Caminando"
         },
         {
           "area": "Ruta 13 (Claro Oculto Norte)",
@@ -32199,15 +32219,15 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Boquete Gigante (Bosque Interior) y Boquete Gigante (Cueva Central).",
+      "summary": "Salvaje en Boquete Gigante (Bosque Interior) y Boquete Gigante (Cráter).",
       "locations": [
         {
           "area": "Boquete Gigante (Bosque Interior)",
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Nube de polvo"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba movediza"
         }
       ],
       "evolution_info": {
@@ -35503,8 +35523,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         }
       ],
       "seasons": [
@@ -35597,8 +35617,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         }
       ],
       "seasons": [
@@ -35895,11 +35915,11 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando"
         },
         {
-          "area": "Montaña Reversia",
+          "area": "Montaña Reversia (Interior)",
           "method": "Caminando"
         },
         {
@@ -36081,7 +36101,7 @@
           "method": "Caminando"
         },
         {
-          "area": "Montaña Reversia",
+          "area": "Montaña Reversia (Interior)",
           "method": "Caminando"
         },
         {
@@ -36361,11 +36381,11 @@
           "method": "Nube de polvo"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Nube de polvo"
         },
         {
-          "area": "Montaña Reversia",
+          "area": "Montaña Reversia (Interior)",
           "method": "Nube de polvo"
         },
         {
@@ -36486,8 +36506,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Boquete Gigante (Cueva Central)",
-          "method": "Nube de polvo"
+          "area": "Boquete Gigante (Cráter)",
+          "method": "Hierba movediza"
         },
         {
           "area": "Laboratorio P+P",
@@ -36566,8 +36586,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         },
         {
           "area": "Rancho Ocre",
@@ -36582,8 +36602,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Montaña Reversia",
-          "method": "Nube de polvo"
+          "area": "Montaña Reversia (Exterior)",
+          "method": "Hierba movediza"
         },
         {
           "area": "Reserva Natural",
@@ -36719,7 +36739,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Monte Tuerca y Calle Victoria.",
+      "summary": "Salvaje en múltiples zonas de Teselia, incluyendo Bosque Azulejo (Exterior), Monte Tuerca y Calle Victoria (Exterior).",
       "locations": [
         {
           "area": "Bosque Azulejo (Exterior)",
@@ -36730,8 +36750,8 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Pasadizo Ancestral (Castillo Ancestral)",
@@ -37093,8 +37113,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 23",
@@ -37171,8 +37191,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         },
         {
           "area": "Ruta 23",
@@ -37676,8 +37696,8 @@
           "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Caminando, Hierba oscura (Combates dobles)"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba alta, Hierba oscura (Combates dobles)"
         },
         {
           "area": "Ruta 3 (Guardería Pokémon)",
@@ -37754,8 +37774,8 @@
           "method": "Hierba movediza"
         },
         {
-          "area": "Calle Victoria",
-          "method": "Nube de polvo"
+          "area": "Calle Victoria (Exterior)",
+          "method": "Hierba movediza"
         }
       ],
       "evolution_info": {
@@ -38086,7 +38106,11 @@
           "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
+          "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
+        },
+        {
+          "area": "Calle Victoria (Exterior)",
           "method": "Supercaña, Supercaña en sombra del agua, Surf, Surf en sombra del agua"
         },
         {
@@ -43284,7 +43308,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Torre Duodraco (Entrada), Torre Duodraco (Exterior), Torre Duodraco (P1) y Calle Victoria. También obtenible mediante crianza en la Guardería de la Ruta 3.",
+      "summary": "Salvaje en Torre Duodraco (Entrada), Torre Duodraco (Exterior), Torre Duodraco (P1) y Calle Victoria (Interior). También obtenible mediante crianza en la Guardería de la Ruta 3.",
       "locations": [
         {
           "area": "Torre Duodraco (Entrada)",
@@ -43299,7 +43323,7 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando"
         },
         {
@@ -43421,7 +43445,7 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Torre Duodraco (P1), Torre Duodraco (P2) y Calle Victoria.",
+      "summary": "Salvaje en Torre Duodraco (P1), Torre Duodraco (P2) y Calle Victoria (Interior).",
       "locations": [
         {
           "area": "Torre Duodraco (P1)",
@@ -43432,7 +43456,7 @@
           "method": "Caminando"
         },
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando"
         }
       ],
@@ -44146,10 +44170,10 @@
       "type": "wild",
       "badge_label": "Salvaje",
       "badge_color": "emerald",
-      "summary": "Salvaje en Calle Victoria.",
+      "summary": "Salvaje en Calle Victoria (Interior).",
       "locations": [
         {
-          "area": "Calle Victoria",
+          "area": "Calle Victoria (Interior)",
           "method": "Caminando"
         }
       ],
