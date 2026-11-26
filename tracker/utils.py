@@ -670,12 +670,19 @@ def resolve_evolution_stone(
         if effective_game in game_notes:
             availability_note = game_notes[effective_game]
         elif effective_game in ['black', 'white', 'black-2', 'white-2', 'black2', 'white2']:
+            is_b2w2 = effective_game in ('black-2', 'white-2', 'black2', 'white2')
             if slug in FOSSIL_SLUGS:
                 availability_note = "Objeto fósil restaurable en el Museo de Ciudad Esmalte."
             elif slug.endswith("-incense"):
-                availability_note = "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game)."
+                if is_b2w2:
+                    availability_note = "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza."
+                else:
+                    availability_note = "A la venta por 9 600 ₽ en el Mercado de Ciudad Fayenza (post-game)."
             elif slug in ('razor-claw', 'razor-fang'):
-                availability_note = "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia."
+                if is_b2w2:
+                    availability_note = "Canjeable por 8 PB en el Metro Batalla / Pokémon World Tournament u obtenible en Teselia."
+                else:
+                    availability_note = "Canjeable por 48 PB en el Metro Batalla u obtenible en Teselia."
             elif slug.endswith("-stone"):
                 if effective_game == 'white':
                     availability_note = "Obtenible de forma repetible en Teselia (nubes de polvo, Bosque Blanco u otros métodos)."

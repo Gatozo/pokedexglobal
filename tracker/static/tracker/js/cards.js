@@ -39,6 +39,7 @@ const PROGRESS_BAR_THEME = {
     soulsilver: 'bg-slate-500',
     black: 'bg-slate-900',
     white: 'bg-slate-400',
+    'black-2': 'bg-sky-600',
 };
 
 const PROGRESS_DOT_THEME = {
@@ -59,6 +60,7 @@ const PROGRESS_DOT_THEME = {
     soulsilver: 'bg-slate-400',
     black: 'bg-slate-900',
     white: 'bg-slate-300 border border-slate-950',
+    'black-2': 'bg-sky-500',
 };
 
 export function updateProgressBarUI() {

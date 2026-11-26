@@ -640,6 +640,8 @@ class CatalogEntry:
                 tags.add("spot_surf")
             if "supercaña en sombra del agua" in methods_lower or "supercana en sombra del agua" in methods_lower:
                 tags.add("spot_fishing")
+            if "claro oculto" in methods_lower or "claros ocultos" in methods_lower:
+                tags.add("hidden_grotto")
             if (self.game_slug or "").removesuffix("_national") == "white" and "bosque blanco" in loc_text:
                 tags.add("white_forest")
 
@@ -879,7 +881,7 @@ def ensure_all_catalogs_loaded():
         "red", "blue", "yellow", "gold", "silver", "crystal",
         "ruby", "sapphire", "emerald", "firered", "leafgreen",
         "diamond", "pearl", "platinum", "heartgold", "soulsilver",
-        "black", "white"
+        "black", "white", "black-2"
     ]
     for slug in all_slugs:
         if slug not in _CATALOG_CACHE:

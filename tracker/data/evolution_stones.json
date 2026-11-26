@@ -387,6 +387,32 @@
           "area": "Habilidad Recogida",
           "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 41 a 100)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Bosque Azulejo",
+          "detail": "Objeto en el suelo en la zona interior del bosque."
+        },
+        {
+          "area": "Monte Tuerca",
+          "detail": "Objeto en el suelo en el interior de la cueva (post-Liga)."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas (Cueva Electrorroca, Túnel Yakón, Montaña Reversia, Monte Tuerca, Calle Victoria, etc.)."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Clefairy, Clefable o Lunatone salvajes (Boquete Gigante) la lleven equipada."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Puede recogerse tras combatir con un Pokémon con Recogida (Nv. 41–100)."
+        }
       ]
     }
   },
@@ -613,6 +639,24 @@
         {
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Zona Desierto",
+          "detail": "Objeto en el suelo en la zona noroeste del desierto."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 3 PB en los puestos de premios."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
         }
       ]
     }
@@ -861,6 +905,24 @@
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 19 / Ciudad Engobe",
+          "detail": "Objeto en el suelo accesible haciendo Surf desde la Ruta 19."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 3 PB en los puestos de premios."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        }
       ]
     }
   },
@@ -1095,6 +1157,24 @@
         {
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Cueva Electrorroca",
+          "detail": "Objeto en el suelo en el interior de la cueva."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 3 PB en los puestos de premios."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
         }
       ]
     }
@@ -1335,6 +1415,24 @@
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 6 / Bosque de los Perdidos",
+          "detail": "Objeto en el suelo en la Ruta 6 (requiere Surf) y en el Bosque de los Perdidos."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 3 PB en los puestos de premios."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        }
       ]
     }
   },
@@ -1531,6 +1629,32 @@
         {
           "area": "Habilidad Recogida",
           "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 31 a 100)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ciudad Mayólica",
+          "detail": "Regalo de un NPC en una casa al noroeste de la ciudad."
+        },
+        {
+          "area": "Castillo Ancestral",
+          "detail": "Objeto en el suelo en la zona arenosa del interior."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Solrock salvaje (Boquete Gigante) la lleve equipada."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Puede recogerse tras combatir con un Pokémon con Recogida (Nv. 41–100)."
         }
       ]
     }
@@ -1745,6 +1869,24 @@
           "area": "Habilidad Recogida",
           "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 11 a 30, 1 % de probabilidad)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros entrega al azar un objeto evolutivo o tesoro al día."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Poliwhirl, Poliwrath o Hariyama salvajes la lleven equipada."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Puede recogerse tras combatir con un Pokémon con Recogida (Nv. 11–30)."
+        }
       ]
     }
   },
@@ -1938,6 +2080,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipado ocasionalmente en Magnemite (Bosque Blanco), Metang, Metagross y Bronzong salvajes (5 % de probabilidad)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Túnel Yakón",
+          "detail": "Objeto en el suelo en los pasadizos subterráneos del túnel."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Magnemite (Polígono Hormigón), Magneton (Laboratorio P+P), Metang (Boquete Gigante), Bronzor o Bronzong (Santuario Abundancia) lo lleven equipado."
+        }
       ]
     }
   },
@@ -2127,6 +2283,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada ocasionalmente en Horsea, Seadra, Kingdra, Dratini, Dragonair y Dragonite salvajes (5 % de probabilidad)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 18",
+          "detail": "Objeto en el suelo en la zona suroeste de la ruta (post-Liga)."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarla al azar una vez al día."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Horsea, Seadra (Rutas 17–18 / Laboratorio P+P), Dratini, Dragonair o Dragonite (Torre Duodraco) la lleven equipada."
+        }
       ]
     }
   },
@@ -2256,6 +2426,20 @@
           "area": "Ruta 13",
           "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Laboratorio P+P",
+          "detail": "Objeto en el suelo junto a la sede del Laboratorio P+P (Ruta 17, post-Liga)."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarla al azar una vez al día."
+        }
       ]
     }
   },
@@ -2382,6 +2566,20 @@
         {
           "area": "Pokémon salvajes",
           "detail": "Equipado ocasionalmente en Basculin (Raya Roja, raro en sombras del agua en Blanco), Carvanha y Sharpedo salvajes (5 % de probabilidad)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 21 / Fragata Plasma",
+          "detail": "Objeto en el suelo en la zona marítima de la Ruta 21 (requiere Surf)."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Carvanha, Sharpedo (Puente Villa) o Clamperl (Ruta 4) lo lleven equipado."
         }
       ]
     }
@@ -2510,6 +2708,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada ocasionalmente en Basculin (Raya Azul), Chinchou, Lanturn, Gorebyss y Relicanth salvajes (5 % de probabilidad)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Bahía Arenisca",
+          "detail": "Objeto en el suelo / oculto en la Bahía Arenisca (requiere Surf)."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarla al azar una vez al día."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Chinchou, Lanturn (Bahía Arenisca), Clamperl o Relicanth (Ruta 4) la lleven equipada."
+        }
       ]
     }
   },
@@ -2594,6 +2806,12 @@
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
+        }
       ]
     }
   },
@@ -2677,6 +2895,12 @@
         {
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
         }
       ]
     }
@@ -2806,6 +3030,24 @@
         {
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 6",
+          "detail": "Objeto en el suelo en una zona elevada cerca de la Cueva Loza."
+        },
+        {
+          "area": "Torre Duodraco",
+          "detail": "Objeto oculto / en el suelo en la zona exterior de la torre (post-Liga)."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
         }
       ]
     }
@@ -2952,6 +3194,24 @@
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Villa Horroris",
+          "detail": "Objeto en el suelo dentro de una de las habitaciones de Villa Horroris."
+        },
+        {
+          "area": "Cueva Loza",
+          "detail": "Objeto en el suelo en el interior de la cueva."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        }
       ]
     }
   },
@@ -3081,6 +3341,20 @@
           "area": "Nubes de polvo",
           "detail": "Obtenible aleatoriamente en nubes de polvo dentro de las cuevas de Teselia."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 2 / Solar de los Sueños",
+          "detail": "Objeto en el suelo en la Ruta 2 (requiere Corte, post-Liga) y en Ciudad Gres."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        }
       ]
     }
   },
@@ -3202,6 +3476,20 @@
           "area": "Pokémon salvajes",
           "detail": "Equipada frecuentemente en Happiny salvajes del Bosque Blanco (50 % de probabilidad)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Túnel Yakón / Monte Tuerca",
+          "detail": "Objeto en el suelo en el Túnel Yakón y en el Monte Tuerca."
+        },
+        {
+          "area": "Nubes de polvo",
+          "detail": "Aparece aleatoriamente al pisar nubes de polvo en cuevas de Teselia."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Obtenible aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades."
+        }
       ]
     }
   },
@@ -3266,6 +3554,20 @@
         {
           "area": "Ruta 13",
           "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 11",
+          "detail": "Objeto en el suelo en la zona sur de la ruta (requiere Surf y Cascada)."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
         }
       ]
     }
@@ -3340,6 +3642,16 @@
           "area": "Ruta 13 (Buscatesoros)",
           "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día (en Negro 2 la Fragata Plasma contiene el Magmatizador en lugar del Electrizador)."
+        }
       ]
     }
   },
@@ -3405,6 +3717,24 @@
           "area": "Ruta 13",
           "detail": "Entregado aleatoriamente una vez al día por el buscatesoros en la costa."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Fragata Plasma",
+          "detail": "Objeto en el suelo dentro de la Fragata Plasma (exclusivo de Pokémon Negro 2 en lugar del Electrizador)."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
+        },
+        {
+          "area": "Pokémon salvajes",
+          "detail": "5% de probabilidad de que Magby salvaje (Polígono Hormigón) lo lleve equipado."
+        }
       ]
     }
   },
@@ -3469,6 +3799,20 @@
         {
           "area": "Ruta 13",
           "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Laboratorio P+P",
+          "detail": "Objeto en el suelo junto al edificio del Laboratorio P+P (post-Liga)."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
         }
       ]
     }
@@ -3546,6 +3890,20 @@
         {
           "area": "Ruta 13",
           "detail": "Entregada ocasionalmente una vez al día por el buscatesoros."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 14 / Villa Horroris",
+          "detail": "Objeto en el suelo en la Ruta 14 (requiere Cascada)."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarla al azar una vez al día."
         }
       ]
     }
@@ -3644,6 +4002,20 @@
           "area": "Metro Batalla",
           "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Boquete Gigante",
+          "detail": "Objeto en el suelo en la zona nevada del Boquete Gigante."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarla al azar una vez al día."
+        }
       ]
     }
   },
@@ -3729,6 +4101,20 @@
           "area": "Metro Batalla",
           "detail": "Canjeable en la Estación Engranaje de Ciudad Mayólica por 48 PB."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 11",
+          "detail": "Objeto en el suelo en la parte oeste de la ruta."
+        },
+        {
+          "area": "Pokémon World Tournament / Metro Batalla",
+          "detail": "Canjeable por 8 PB en los puestos de premios."
+        },
+        {
+          "area": "Ruta 13 (Buscatesoros)",
+          "detail": "El Buscatesoros puede entregarlo al azar una vez al día."
+        }
       ]
     }
   },
@@ -3782,6 +4168,12 @@
         {
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
         }
       ]
     }
@@ -3837,6 +4229,12 @@
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
+        }
       ]
     }
   },
@@ -3890,6 +4288,12 @@
         {
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
         }
       ]
     }
@@ -3945,6 +4349,12 @@
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
+        }
       ]
     }
   },
@@ -3998,6 +4408,12 @@
         {
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
         }
       ]
     }
@@ -4053,6 +4469,12 @@
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
+        }
       ]
     }
   },
@@ -4107,6 +4529,12 @@
           "area": "Mercado de Ciudad Fayenza",
           "detail": "Vendido por 9 600 ₽ por un ex-recluta del Equipo Plasma en un puesto del mercado (tras obtener la Pokédex Nacional)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Mercado de Ciudad Fayenza",
+          "detail": "A la venta por 9 600 ₽ en el puesto de inciensos del Mercado de Ciudad Fayenza."
+        }
       ]
     }
   },
@@ -4145,6 +4573,20 @@
         {
           "area": "Habilidad Recogida",
           "detail": "Recogida aleatoriamente tras combates por Pokémon con la habilidad Recogida (niveles 51 a 100)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Ruta 13",
+          "detail": "Objeto oculto en el suelo cerca de la zona costera (usar Zahorí)."
+        },
+        {
+          "area": "Pueblo Arenisca",
+          "detail": "Objeto oculto en la orilla oriental (usar Zahorí)."
+        },
+        {
+          "area": "Habilidad Recogida",
+          "detail": "Puede recogerse tras combatir con un Pokémon con Recogida (Nv. 51–100)."
         }
       ]
     }
@@ -4247,6 +4689,16 @@
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Hélix). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
+        }
       ]
     }
   },
@@ -4348,6 +4800,16 @@
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Domo). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
+        }
       ]
     }
   },
@@ -4445,6 +4907,16 @@
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Ámbar Viejo). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
+        }
       ]
     }
   },
@@ -4535,6 +5007,16 @@
         {
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Raíz). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
         }
       ]
     }
@@ -4627,6 +5109,16 @@
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Garra). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
+        }
       ]
     }
   },
@@ -4688,6 +5180,16 @@
         {
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Cráneo). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
         }
       ]
     }
@@ -4751,6 +5253,16 @@
           "area": "Monte Tuerca (Post-game)",
           "detail": "Entregado al azar (1 fósil aleatorio por día) por un obrero en la parte baja tras superar la Liga Pokémon y obtener la Pokédex Nacional (también transferible equipado desde otra edición de Gen 5; desde Gen 4 vía Pokétransfer no pasan objetos)."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Monte Tuerca (Post-Liga)",
+          "detail": "Un obrero en el interior del Monte Tuerca entrega aleatoriamente un fósil clásico al día (entre los 7 de Gen 1–4, incluido Fósil Coraza). Restaurable en el Museo de Ciudad Esmalte."
+        },
+        {
+          "area": "Galería Unión (Tienda de Antigüedades)",
+          "detail": "Puede obtenerse aleatoriamente abriendo rocas y cajas en la Tienda de Antigüedades de la Galería Unión. Restaurable en el Museo de Ciudad Esmalte."
+        }
       ]
     }
   },
@@ -4778,6 +5290,12 @@
           "area": "Castillo Ancestral (P1)",
           "detail": "Entregado por una mochilera (elección única por partida frente al Fósil Pluma). Si elegiste el Fósil Pluma, puedes transferir el Fósil Tapa equipado en un Pokémon desde otra edición de 5.ª Generación."
         }
+      ],
+      "black-2": [
+        {
+          "area": "Museo de Ciudad Esmalte (Post-Liga)",
+          "detail": "Aloe te regala a elegir entre el Fósil Tapa (Tirtouga) o el Fósil Pluma (Archen) al visitarla en el Museo tras superar la Liga Pokémon. Restaurable en el mostrador del mismo museo."
+        }
       ]
     }
   },
@@ -4804,6 +5322,12 @@
         {
           "area": "Castillo Ancestral (P1)",
           "detail": "Entregado por una mochilera (elección única por partida frente al Fósil Tapa). Si elegiste el Fósil Tapa, puedes transferir el Fósil Pluma equipado en un Pokémon desde otra edición de 5.ª Generación."
+        }
+      ],
+      "black-2": [
+        {
+          "area": "Museo de Ciudad Esmalte (Post-Liga)",
+          "detail": "Aloe te regala a elegir entre el Fósil Pluma (Archen) o el Fósil Tapa (Tirtouga) al visitarla en el Museo tras superar la Liga Pokémon. Restaurable en el mostrador del mismo museo."
         }
       ]
     }

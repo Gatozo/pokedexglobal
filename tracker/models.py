@@ -160,7 +160,7 @@ class Game(models.Model):
             "ruby", "sapphire", "emerald",
             "diamond", "pearl", "platinum",
             "heartgold", "soulsilver",
-            "black", "white",
+            "black", "white", "black-2", "white-2",
             "brilliant-diamond", "shining-pearl"
         ]
 
@@ -212,7 +212,7 @@ class Game(models.Model):
     @property
     def has_regional_babies(self):
         """Determina si la Pokédex regional de este juego incluye Pokémon Bebés nativos."""
-        return self.generation >= 2 and self.generation < 5
+        return (2 <= self.generation < 5) or self.slug in ["black-2", "white-2"]
 
     @property
     def has_seasons(self):
@@ -223,6 +223,11 @@ class Game(models.Model):
     def has_special_spots(self):
         """Determina si el juego cuenta con fenómenos de encuentros especiales en Teselia."""
         return self.slug in ["black", "white", "black-2", "white-2"]
+
+    @property
+    def has_hidden_grottos(self):
+        """Determina si el juego cuenta con la mecánica de Claros Ocultos (Teselia 2)."""
+        return self.slug in ["black-2", "white-2"]
 
     @property
     def has_time_of_day(self):

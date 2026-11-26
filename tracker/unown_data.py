@@ -219,7 +219,7 @@ def get_game_unown_chambers(game_slug: str = "gold"):
         return SINNOH_UNOWN_CHAMBERS
     if clean_slug in ["heartgold", "soulsilver"]:
         return HGSS_UNOWN_CHAMBERS
-    if clean_slug in ["ruby", "sapphire", "emerald", "black", "white"]:
+    if clean_slug in ["ruby", "sapphire", "emerald", "black", "white", "black-2", "white-2"]:
         return {}
     return JOHTO_UNOWN_CHAMBERS
 
@@ -234,7 +234,7 @@ def get_unown_catalog(game_slug: str = "gold"):
     is_sinnoh = clean_slug in ["diamond", "pearl", "platinum"]
     is_hoenn = clean_slug in ["ruby", "sapphire", "emerald"]
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
-    is_unova = clean_slug in ["black", "white"]
+    is_unova = clean_slug in ["black", "white", "black-2", "white-2"]
     is_gen3_plus = is_hoenn or is_tanoby or is_sinnoh or is_hgss or is_unova
 
     if is_unova:

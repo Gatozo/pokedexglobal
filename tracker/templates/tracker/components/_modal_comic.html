@@ -22,20 +22,20 @@
         <div id="comic-modal-card" class="relative w-full bg-[#fffef5] text-slate-900 rounded-2xl comic-panel overflow-hidden transform scale-95 transition-all duration-200 shadow-2xl flex flex-col max-h-[85vh]">
         
             <!-- Comic Header Stripe / Title Bar -->
-            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% elif game.slug == 'crystal' %}bg-sky-600{% elif game.slug == 'ruby' %}bg-rose-900{% elif game.slug == 'sapphire' %}bg-[#0f3870]{% elif game.slug == 'emerald' %}bg-[#059669]{% elif game.slug == 'diamond' %}bg-[#1e3a8a]{% elif game.slug == 'pearl' %}bg-[#be185d]{% elif game.slug == 'platinum' %}bg-[#475569]{% elif game.slug == 'heartgold' %}bg-[#b45309]{% elif game.slug == 'black' %}bg-slate-900{% elif game.slug == 'white' %}bg-slate-200{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 sm:px-5 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
+            <div class="{% if game.slug == 'blue' %}bg-blue-600{% elif game.slug == 'yellow' %}bg-amber-500{% elif game.slug == 'gold' %}bg-[#c59b27]{% elif game.slug == 'silver' %}bg-slate-600{% elif game.slug == 'crystal' %}bg-sky-600{% elif game.slug == 'ruby' %}bg-rose-900{% elif game.slug == 'sapphire' %}bg-[#0f3870]{% elif game.slug == 'emerald' %}bg-[#059669]{% elif game.slug == 'diamond' %}bg-[#1e3a8a]{% elif game.slug == 'pearl' %}bg-[#be185d]{% elif game.slug == 'platinum' %}bg-[#475569]{% elif game.slug == 'heartgold' %}bg-[#b45309]{% elif game.slug == 'black' %}bg-slate-900{% elif game.slug == 'white' %}bg-slate-200{% elif game.slug == 'black-2' %}bg-[#0f172a]{% else %}bg-red-600{% endif %} border-b-4 border-slate-950 px-4 sm:px-5 py-3 flex items-center justify-between comic-header-pattern relative overflow-hidden">
                 <div class="flex items-center gap-2.5 z-10">
                     <span class="border-2 border-slate-950 bg-amber-300 font-black text-[10px] sm:text-xs uppercase px-2 py-0.5 rounded shadow-[2px_2px_0px_0px_#0f172a] transform -rotate-2">
                         {{ game.display_name|upper }}
                     </span>
-                    <h3 id="modal-pokemon-title" class="{% if game.slug == 'white' %}text-slate-950{% else %}text-white [text-shadow:2px_2px_0px_#0f172a]{% endif %} font-black text-lg sm:text-xl tracking-wide uppercase antialiased flex items-center gap-1.5">
-                        <span id="modal-pokemon-number" class="{% if game.slug == 'white' %}text-slate-700{% else %}text-amber-300{% endif %} font-mono">#001</span>
+                    <h3 id="modal-pokemon-title" class="{% if game.slug == 'white' %}text-slate-950{% elif game.slug == 'black-2' %}text-sky-200 [text-shadow:2px_2px_0px_#020617]{% else %}text-white [text-shadow:2px_2px_0px_#0f172a]{% endif %} font-black text-lg sm:text-xl tracking-wide uppercase antialiased flex items-center gap-1.5">
+                        <span id="modal-pokemon-number" class="{% if game.slug == 'white' %}text-slate-700{% elif game.slug == 'black-2' %}text-sky-300{% else %}text-amber-300{% endif %} font-mono">#001</span>
                         <span id="modal-pokemon-name">BULBASAUR</span>
                         <button 
                             type="button" 
                             id="modal-cry-btn"
                             title="Escuchar sonido retro de Game Boy" 
                             onclick="playModalCry(this)"
-                            class="ml-1 p-1 rounded-md {% if game.slug == 'white' %}text-slate-700 hover:text-slate-950 hover:bg-slate-950/10{% else %}text-amber-300 hover:text-white hover:bg-slate-950/40{% endif %} transition-all active:scale-90 flex items-center justify-center"
+                            class="ml-1 p-1 rounded-md {% if game.slug == 'white' %}text-slate-700 hover:text-slate-950 hover:bg-slate-950/10{% elif game.slug == 'black-2' %}text-sky-300 hover:text-white hover:bg-slate-950/40{% else %}text-amber-300 hover:text-white hover:bg-slate-950/40{% endif %} transition-all active:scale-90 flex items-center justify-center"
                         >
                             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 0L6.5 7H3v10h3.5l5 3.77V3.23zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>

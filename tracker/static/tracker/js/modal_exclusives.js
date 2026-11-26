@@ -69,7 +69,9 @@ export function switchExclusivesTab(tab) {
     const modal = document.getElementById('exclusives-modal');
     const counterpartTheme = modal ? modal.dataset.counterpartTheme : 'red';
     const counterpartActiveClasses = (counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-amber-400 to-slate-200 text-slate-950' :
-        ((counterpartTheme === 'white') ? 'bg-slate-200 text-slate-950' : 'bg-amber-400 text-slate-950');
+        ((counterpartTheme === 'white') ? 'bg-slate-200 text-slate-950' :
+        ((counterpartTheme === 'white2') ? 'bg-rose-200 text-rose-950' :
+        ((counterpartTheme === 'black2') ? 'bg-sky-200 text-slate-950' : 'bg-amber-400 text-slate-950')));
 
     if (tab === 'counterpart') {
         panelCounterpart.classList.remove('hidden');
@@ -113,7 +115,9 @@ export function updateExclusivesProgressUI() {
         ((counterpartTheme === 'gold_silver') ? 'text-amber-700' :
         ((counterpartTheme === 'white') ? 'text-slate-900' :
         ((counterpartTheme === 'black') ? 'text-slate-900' :
-        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600'))))))));
+        ((counterpartTheme === 'white2') ? 'text-rose-700' :
+        ((counterpartTheme === 'black2') ? 'text-sky-700' :
+        ((counterpartTheme === 'crystal') ? 'text-sky-600' : 'text-red-600'))))))))));
     const themeBarClass = (counterpartTheme === 'blue' || counterpartTheme === 'diamond') ? 'bg-blue-600' :
         ((counterpartTheme === 'pearl') ? 'bg-pink-500' :
         ((counterpartTheme === 'amber') ? 'bg-amber-500' :
@@ -122,7 +126,9 @@ export function updateExclusivesProgressUI() {
         ((counterpartTheme === 'gold_silver') ? 'bg-gradient-to-r from-[#c59b27] to-[#94a3b8]' :
         ((counterpartTheme === 'white') ? 'bg-slate-300' :
         ((counterpartTheme === 'black') ? 'bg-slate-900' :
-        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600'))))))));
+        ((counterpartTheme === 'white2') ? 'bg-rose-600' :
+        ((counterpartTheme === 'black2') ? 'bg-sky-600' :
+        ((counterpartTheme === 'crystal') ? 'bg-sky-500' : 'bg-red-600'))))))))));
 
     const caughtElem = document.getElementById('excl-progress-caught');
     if (caughtElem) {

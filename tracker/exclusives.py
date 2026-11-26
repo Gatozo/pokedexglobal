@@ -409,6 +409,63 @@ VERSION_EXCLUSIVES_CATALOG: Dict[str, List[int]] = {
         328, 329, 330, 341, 342, 371, 372, 373, 396, 397, 398, 403,
         404, 405, 406, 407, 440, 462, 464, 466, 467, 468, 474, 475
     ],
+    # Gen 5 Secuelas (Teselia 2):
+    # - #313 Volbeat / #314 Illumise excluidos por crianza multiespecie con Ditto en 5.ª Gen.
+    # - #546 Cottonee / #547 Whimsicott y #548 Petilil / #549 Lilligant excluidos por intercambio NPC en Ruta 4.
+    'black-2': [
+        # Familia Weedle (Claro Oculto Bosque Azulejo + crianza/evolución)
+        13, 14, 15,
+        # Familia Magby (Polígono Hormigón)
+        126, 240, 467,
+        # Familia Spinarak (Manada en Ruta 22)
+        167, 168,
+        # Familia Sudowoodo (Manada en Ruta 20)
+        185, 438,
+        # Heracross (Ruta 12 / Bosque de los Perdidos)
+        214,
+        # Plusle (Manada en Ruta 6)
+        311,
+        # Familia Spoink (Montaña Reversia)
+        325, 326,
+        # Familia Buneary (Ciudad Porcelana)
+        427, 428,
+        # Familia Stunky (Misión Zona Nexo en Claros Ocultos)
+        434, 435,
+        # Familia Gible (Regalo variocolor de Guayo en Pueblo Ocre tras Rascacielos Negro)
+        443, 444, 445,
+        # Familia Gothita
+        574, 575, 576,
+        # Familia Vullaby
+        629, 630,
+        # Legendarios exclusivos de Negro 2 (Registeel, Latios, Zekrom)
+        379, 381, 644,
+    ],
+    'white-2': [
+        # Familia Caterpie
+        10, 11, 12,
+        # Familia Elekid
+        125, 239, 466,
+        # Familia Mr. Mime
+        122, 439,
+        # Pinsir
+        127,
+        # Familia Ledyba
+        165, 166,
+        # Familia Skitty
+        300, 301,
+        # Minun
+        312,
+        # Familia Numel
+        322, 323,
+        # Familia Glameow
+        431, 432,
+        # Familia Solosis
+        577, 578, 579,
+        # Familia Rufflet
+        627, 628,
+        # Legendarios exclusivos de Blanco 2 (Regice vía Clave Iceberg, Latias, Reshiram)
+        378, 380, 643,
+    ],
 
 }
 
@@ -705,6 +762,24 @@ NON_UNOVA_TRANSFERS_BLACK = [
     489, 490, 491, 492, 493
 ]
 
+# 160 especies de generaciones anteriores (Gen 1–4) ausentes en Pokémon Negro 2 y Blanco 2
+# que requieren transferencia desde 4.ª Gen vía Pokétransfer (Ruta 15) o intercambio desde Negro/Blanco
+# (excluye todas las especies obtenibles por encuentros salvajes, 20 Claros Ocultos, 19 manadas,
+# 9 fósiles, regalos, intercambios NPC, intercambios de Belinda/Julián y exclusivos de Blanco 2; cero especies Gen 5):
+NON_UNOVA_TRANSFERS_B2W2 = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 23, 24, 25, 26, 43, 44, 45, 46, 47,
+    50, 51, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 92, 93, 94,
+    100, 101, 102, 103, 104, 105, 106, 107, 115, 123, 124, 128, 137, 144, 145,
+    146, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 172, 182, 200,
+    201, 212, 218, 219, 228, 229, 233, 234, 235, 236, 237, 238, 241, 243, 244,
+    245, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262,
+    263, 264, 265, 266, 267, 268, 269, 290, 291, 292, 293, 294, 295, 324, 355,
+    356, 358, 361, 362, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392,
+    393, 394, 395, 396, 397, 398, 401, 402, 403, 404, 405, 412, 413, 414, 420,
+    421, 429, 433, 459, 460, 474, 477, 478, 483, 484, 487, 489, 490, 491, 492,
+    493
+]
+
 # Catálogo canónico de Pokémon a transferir (Cápsula del Tiempo / Ediciones previas o externas)
 # Especies ausentes en estado salvaje en la versión que requieren transferencia externa obligatoria.
 VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
@@ -760,9 +835,10 @@ VERSION_TRANSFERS_CATALOG: Dict[str, List[int]] = {
     'platinum': NON_SINNOH_TRANSFERS_PLATINUM,
     'heartgold': NON_JOHTO_KANTO_TRANSFERS_HGSS,
     'soulsilver': NON_JOHTO_KANTO_TRANSFERS_HGSS,
-    # Gen 5 (Pokédex Nacional de Pokémon Negro y Pokémon Blanco)
+    # Gen 5 (Pokédex Nacional de Pokémon Negro, Blanco y Negro 2)
     'black': NON_UNOVA_TRANSFERS_BLACK,
     'white': NON_UNOVA_TRANSFERS_BLACK,
+    'black-2': NON_UNOVA_TRANSFERS_B2W2,
 }
 
 
@@ -2236,6 +2312,31 @@ VERSION_TRANSFERS_META: Dict[str, Dict[str, Any]] = {
         'default_origin': 'Pokétransfer (Ruta 15)',
         'origins': {}
     },
+    'black-2': {
+        'mechanic_title': 'Pokétransfer y Gen 5 • Teselia 2',
+        'mechanic_badge': 'Pokétransfer',
+        'subtitle': 'Especies de generaciones anteriores que requieren transferencia vía Pokétransfer (Ruta 15) o intercambio desde Negro/Blanco',
+        'description': (
+            'Para completar la Pokédex Nacional en <strong>Pokémon Negro 2</strong>, estas 160 especies foráneas '
+            'de Kanto, Johto, Hoenn y Sinnoh deben transferirse desde cartuchos de 4.ª Generación '
+            '(Diamante, Perla, Platino, HeartGold o SoulSilver) mediante el <strong>Laboratorio de Pokétransfer</strong> '
+            'de la <strong>Ruta 15</strong>, o bien recibirse mediante intercambio desde <strong>Pokémon Negro</strong> '
+            'o <strong>Pokémon Blanco</strong>.'
+        ),
+        'historical_note': (
+            '<strong>Nota histórica (Pokémon Dream World y RAdar Pokémon):</strong> Varias especies de generaciones '
+            'anteriores podían obtenerse originalmente mediante <strong>Pokémon Dream World / Bosque Nexo</strong> '
+            '(servicio cerrado definitivamente entre finales de 2013 y enero de 2014) o a través de la aplicación '
+            '<strong>RAdar Pokémon</strong> de Nintendo 3DS (inaccesible para nuevas descargas tras el cierre de la '
+            'Nintendo eShop en marzo de 2023; permitía obtener entre otros a Porygon, Dialga, Palkia, Giratina, '
+            'Lugia, Ho-Oh y las Formas Tótem de Tornadus, Thundurus y Landorus).<br><br>'
+            'Actualmente, las vías oficiales disponibles son el Pokétransfer desde 4.ª Generación y el intercambio '
+            'local entre cartuchos de 5.ª Generación; no obstante, existen proyectos externos de preservación '
+            'comunitaria (como <em>Entralinked</em>) que permiten emular el Bosque Nexo de forma no oficial.'
+        ),
+        'default_origin': 'Pokétransfer (Ruta 15) / Gen 5',
+        'origins': {}
+    },
 }
 
 
@@ -2469,6 +2570,19 @@ GAME_VERSION_EXCLUSIVES_NOTICES: Dict[str, str] = {
         '<strong>Nota sobre Cottonee y Petilil:</strong> Aunque en estado salvaje Petilil es exclusivo de Blanco y Cottonee de Negro, '
         'ambos han sido excluidos de este panel debido a que es posible obtener a Cottonee legalmente en Pokémon Blanco mediante intercambio '
         'interno con un NPC en <strong>Ciudad Esmalte</strong> a cambio de tu Petilil (y viceversa en Pokémon Negro).'
+    ),
+    'black-2': (
+        'Estos Pokémon <span class="underline">no aparecen salvajes</span> en tu edición de <strong>Pokémon Negro 2</strong>. '
+        'Para completar la Pokédex requieres conseguirlos mediante intercambio con un jugador de <strong>Pokémon Blanco 2</strong>.<br><br>'
+        '<strong>Sistema Clave (Regice):</strong> Puedes capturar a <strong>Regice</strong> dentro de tu propia partida de Negro 2 '
+        'en las <strong>Ruinas Subterráneas</strong> si recibes la <strong>Clave Iceberg</strong> desde Pokémon Blanco 2 mediante '
+        '<strong>Nexo Teselia</strong>.<br><br>'
+        '<strong>Intercambios de Ciudad Mayólica (Belinda / Julián):</strong> Al completar las 51 llamadas del Videomisor, el personaje '
+        'depende del género de tu protagonista: con <strong>Rizzo</strong> (Presentadora <strong>Belinda</strong>) recibes '
+        '<em>Meowth, Shieldon, Mawile y Teddiursa</em>; con <strong>Nanci</strong> (Presentador <strong>Julián</strong>) recibes '
+        '<em>Mankey, Cranidos, Sableye y Phanpy</em>.<br><br>'
+        '<strong>Especies depuradas:</strong> <em>Petilil/Cottonee</em> quedan fuera porque se consiguen por intercambio NPC en la '
+        '<strong>Ruta 4</strong>, y <em>Volbeat/Illumise</em> quedan fuera porque en 5.ª Generación se obtienen criando con Ditto.'
     ),
 }
 
@@ -2777,6 +2891,14 @@ def get_version_exclusives_context(
         elif slug in ['black']:
 
             return 'black'
+
+        elif slug in ['black-2']:
+
+            return 'black2'
+
+        elif slug in ['white-2']:
+
+            return 'white2'
 
         return 'red'
 

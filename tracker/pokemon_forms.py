@@ -46,12 +46,14 @@ GAME_SPRITE_CONFIG: Dict[str, Dict[str, Any]] = {
     # Gen 5
     "black":      {"gen": 5, "static_dir": "black",      "anim_dir": "black_animated",      "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
     "white":      {"gen": 5, "static_dir": "white",      "anim_dir": "white_animated",      "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
+    "black-2":    {"gen": 5, "static_dir": "black-2",    "anim_dir": "black-2_animated",    "anim_ext": ".gif", "has_animated_back": True,  "back_modal_mode": "animated"},
 }
 
 GEN2_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 2}
 GEN3_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 3}
 GEN4_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 4}
 GEN5_FORM_GAMES = {s for s, cfg in GAME_SPRITE_CONFIG.items() if cfg["gen"] == 5}
+B2W2_FORM_GAMES = {"black-2", "white-2"}
 
 TRANSFER_TEMPLATES_BY_GEN: Dict[int, Dict[str, Any]] = {
     5: {
@@ -841,12 +843,46 @@ def get_shellos_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
+    is_b2w2 = clean_slug in B2W2_FORM_GAMES
     is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
-    gen5_obt_meta = _get_transfer_obt_meta(5) if is_gen5 else {}
+    gen5_obt_meta = (
+        {"type": "trade_npc", "badge_label": "Intercambio NPC", "badge_color": "indigo"}
+        if is_b2w2 else (_get_transfer_obt_meta(5) if is_gen5 else {})
+    )
 
-    if is_gen5:
+    if is_b2w2:
+        west_summary = "Obtenible en Ciudad Mayólica mediante intercambio con la Presentadora Belinda (si el protagonista es Rizzo, tras devolver el Videomisor y completar 51 llamadas), por crianza en la Ruta 3 o vía Pokétransfer (Ruta 15)."
+        west_locations = [
+            {"area": "Ciudad Mayólica (Noria)", "method": "Intercambio NPC con Belinda (protagonista Rizzo • Nv. 50 con habilidad oculta)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Oeste)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (desde 4.ª generación • Mar Oeste)"}
+        ]
+        west_notes = [
+            {
+                "title": "Intercambio con Belinda (Rizzo)",
+                "text": "Si juegas como Rizzo, la Presentadora Belinda ofrece a Shellos Mar Oeste (rosa) al Nv. 50 con habilidad oculta Poder Arena en Ciudad Mayólica tras completar la cadena de llamadas del Videomisor. Al criarlo con Ditto en la Ruta 3, sus crías conservan la variante Mar Oeste.",
+                "tag": "Ciudad Mayólica",
+                "icon": "/media/items/linking-cord.png",
+            }
+        ]
+
+        east_summary = "Obtenible en Ciudad Mayólica mediante intercambio con el Presentador Julián (si la protagonista es Nanci, tras devolver el Videomisor y completar 51 llamadas), por crianza en la Ruta 3 o vía Pokétransfer (Ruta 15)."
+        east_locations = [
+            {"area": "Ciudad Mayólica (Noria)", "method": "Intercambio NPC con Julián (protagonista Nanci • Nv. 50 con habilidad oculta)"},
+            {"area": "Ruta 3 (Guardería Pokémon)", "method": "Crianza de huevo (conserva variante Mar Este)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (desde 4.ª generación • Mar Este)"}
+        ]
+        east_notes = [
+            {
+                "title": "Intercambio con Julián (Nanci)",
+                "text": "Si juegas como Nanci, el Presentador Julián ofrece a Shellos Mar Este (azul) al Nv. 50 con habilidad oculta Poder Arena en Ciudad Mayólica tras completar la cadena de llamadas del Videomisor. Al criarlo con Ditto en la Ruta 3, sus crías conservan la variante Mar Este.",
+                "tag": "Ciudad Mayólica",
+                "icon": "/media/items/linking-cord.png",
+            }
+        ]
+    elif is_gen5:
         west_summary = "Inaccesible en estado salvaje en Teselia. Se obtiene mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación o por crianza en la Guardería Pokémon."
         west_locations = [
             {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (desde 4.ª generación • Mar Oeste)"},
@@ -985,6 +1021,7 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
     """
     clean_slug = (game_slug or "diamond").replace("_national", "")
     is_hgss = clean_slug in ["heartgold", "soulsilver"]
+    is_b2w2 = clean_slug in B2W2_FORM_GAMES
     is_gen5 = clean_slug in GEN5_FORM_GAMES
     slug = clean_slug
 
@@ -994,7 +1031,35 @@ def get_gastrodon_forms(game_slug: str = "diamond") -> List[Dict[str, Any]]:
         "badge_color": "purple",
     } if is_gen5 else {}
 
-    if is_gen5:
+    if is_b2w2:
+        west_summary = "Evoluciona de Shellos Mar Oeste al Nivel 30 (obtenible con Belinda en Ciudad Mayólica si juegas como Rizzo, por crianza o vía Pokétransfer en la Ruta 15)."
+        west_locations = [
+            {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Oeste)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"}
+        ]
+        west_notes = [
+            {
+                "title": "Evolución en Teselia 2",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Oeste obtenido por intercambio con Belinda en Ciudad Mayólica, por crianza en la Ruta 3 o vía Pokétransfer, conservando su coloración rosa.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+
+        east_summary = "Evoluciona de Shellos Mar Este al Nivel 30 (obtenible con Julián en Ciudad Mayólica si juegas como Nanci, por crianza o vía Pokétransfer en la Ruta 15)."
+        east_locations = [
+            {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Este)"},
+            {"area": "Laboratorio de Pokétransfer (Ruta 15)", "method": "Pokétransfer (transferencia desde 4.ª generación)"}
+        ]
+        east_notes = [
+            {
+                "title": "Evolución en Teselia 2",
+                "text": "Evoluciona al Nivel 30 a partir de un Shellos Mar Este obtenido por intercambio con Julián en Ciudad Mayólica, por crianza en la Ruta 3 o vía Pokétransfer, conservando su coloración azul.",
+                "tag": "Evolución",
+                "icon": "/media/items/rule-book.png",
+            }
+        ]
+    elif is_gen5:
         west_summary = "Inaccesible en estado salvaje en Teselia. Evoluciona de Shellos Mar Oeste al Nivel 30 o mediante Pokétransfer (Ruta 15) desde juegos de 4.ª generación."
         west_locations = [
             {"area": "Evolución de Shellos", "method": "Evolución al Nivel 30 (Shellos Mar Oeste)"},
@@ -1348,13 +1413,24 @@ def get_giratina_forms(game_slug: str = "platinum"):
     Forma Modificada (terrestre) y Forma Origen (serpenteante del Mundo Distorsión / Griseosfera).
     """
     clean_slug = (game_slug or "platinum").replace("_national", "")
+    is_b2w2 = clean_slug in B2W2_FORM_GAMES
     is_gen5 = get_game_sprite_config(clean_slug)["gen"] >= 5
 
-    origin_note_text = (
-        "Forma serpenteante original de Giratina. En Teselia se manifiesta llevando equipada la Griseosfera, entregada por el Trío Sombrío en el Puente Progreso. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
-        if is_gen5 else
-        "Forma serpenteante original de Giratina. Se manifiesta dentro del Mundo Distorsión o llevando equipada la Griseosfera en el mundo real. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
-    )
+    if is_b2w2:
+        origin_note_text = (
+            "Forma serpenteante original de Giratina. En Teselia 2 se manifiesta llevando equipada la Griseosfera, "
+            "recogida en la Torre Duodraco. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
+        )
+    elif is_gen5:
+        origin_note_text = (
+            "Forma serpenteante original de Giratina. En Teselia se manifiesta llevando equipada la Griseosfera, "
+            "entregada por el Trío Sombrío en el Puente Progreso. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
+        )
+    else:
+        origin_note_text = (
+            "Forma serpenteante original de Giratina. Se manifiesta dentro del Mundo Distorsión o llevando equipada la "
+            "Griseosfera en el mundo real. Adquiere la habilidad Levitación y orienta sus estadísticas al ataque."
+        )
 
     return [
         {
@@ -1597,24 +1673,45 @@ def get_pichu_forms(game_slug: str = "heartgold") -> List[Dict[str, Any]]:
 def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
     is_white = (clean_slug == "white")
-    red_text = (
-        "En Pokémon Blanco es muy rara en estado salvaje y no se obtiene por intercambio interno: "
-        "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
-        if is_white
-        else
-        "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña "
-        "por toda Teselia; además, puedes recibir uno (mote: Mordiscos) mediante intercambio NPC en Ciudad Fayenza "
-        "a cambio de un Minccino."
-    )
-    blue_text = (
-        "Es la forma predominante y muy común en Pokémon Blanco. Aparece haciendo Surf y pescando con Supercaña "
-        "por toda Teselia; además, puedes recibir uno (mote: Mordiscos, habilidad Cabeza Roca) mediante intercambio NPC "
-        "en Ciudad Fayenza a cambio de un Minccino."
-        if is_white
-        else
-        "En Pokémon Negro es muy rara en estado salvaje y no se obtiene por intercambio interno: "
-        "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
-    )
+    is_black2 = (clean_slug == "black-2")
+    is_white2 = (clean_slug == "white-2")
+    if is_black2:
+        red_text = (
+            "Es la forma predominante y muy común en Pokémon Negro 2. Aparece haciendo Surf y pescando con Supercaña "
+            "por toda Teselia (y también en sombras del agua)."
+        )
+        blue_text = (
+            "En Pokémon Negro 2 es rara en estado salvaje: solo aparece ocasionalmente (5%) en sombras del agua "
+            "al hacer Surf o pescar con Supercaña."
+        )
+    elif is_white2:
+        red_text = (
+            "En Pokémon Blanco 2 es rara en estado salvaje: solo aparece ocasionalmente (5%) en sombras del agua "
+            "al hacer Surf o pescar con Supercaña."
+        )
+        blue_text = (
+            "Es la forma predominante y muy común en Pokémon Blanco 2. Aparece haciendo Surf y pescando con Supercaña "
+            "por toda Teselia (y también en sombras del agua)."
+        )
+    else:
+        red_text = (
+            "En Pokémon Blanco es muy rara en estado salvaje y no se obtiene por intercambio interno: "
+            "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
+            if is_white
+            else
+            "Es la forma predominante y muy común en Pokémon Negro. Aparece haciendo Surf y pescando con Supercaña "
+            "por toda Teselia; además, puedes recibir uno (mote: Mordiscos) mediante intercambio NPC en Ciudad Fayenza "
+            "a cambio de un Minccino."
+        )
+        blue_text = (
+            "Es la forma predominante y muy común en Pokémon Blanco. Aparece haciendo Surf y pescando con Supercaña "
+            "por toda Teselia; además, puedes recibir uno (mote: Mordiscos, habilidad Cabeza Roca) mediante intercambio NPC "
+            "en Ciudad Fayenza a cambio de un Minccino."
+            if is_white
+            else
+            "En Pokémon Negro es muy rara en estado salvaje y no se obtiene por intercambio interno: "
+            "solo aparece ocasionalmente (5%) en sombras del agua al hacer Surf o pescar con Supercaña."
+        )
     return [
         {
             "form_key": "red_striped",
@@ -1663,6 +1760,15 @@ def get_basculin_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 
 def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
+    is_b2w2 = clean_slug in B2W2_FORM_GAMES
+    zen_text = (
+        "Adquiere el tipo Fuego/Psíquico y altas defensas y Ataque Especial al caer sus PS por debajo del 50%. "
+        "En Pokémon Negro 2 y Blanco 2 ya no aparecen las estatuas del Castillo Ancestral de BW1; se obtiene "
+        "intercambiando o criando a partir de un Darmanitan con Modo Daruma de Pokémon Negro/Blanco."
+        if is_b2w2 else
+        "Adquiere el tipo Fuego/Psíquico y altas defensas y Ataque Especial al caer sus PS por debajo del 50%. "
+        "En el exterior del Castillo Ancestral hay 5 estatuas de Darmanitan que despiertan con esta habilidad al entregarles un Caramelo Furia."
+    )
     return [
         {
             "form_key": "standard",
@@ -1700,7 +1806,7 @@ def get_darmanitan_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             "notes": [
                 {
                     "title": "Modo Daruma (Habilidad Oculta)",
-                    "text": "Adquiere el tipo Fuego/Psíquico y altas defensas y Ataque Especial al caer sus PS por debajo del 50%. En el exterior del Castillo Ancestral hay 5 estatuas de Darmanitan que despiertan con esta habilidad al entregarles un Caramelo Furia.",
+                    "text": zen_text,
                     "tag": "Modo Daruma",
                     "icon": "/media/items/rage-candy-bar.png",
                 }
@@ -1828,41 +1934,51 @@ def get_meloetta_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
 def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
     clean_slug = (game_slug or "black").replace("_national", "")
     is_white = (clean_slug == "white")
+    is_b2w2 = clean_slug in B2W2_FORM_GAMES
+    b2w2_note = "Entregado junto a los otros 3 cartuchos por el Montañero del Laboratorio P+P tras combatir llevando a Genesect."
     drives = [
         ("normal", "Forma Normal", "Normal", "649", "Sin cartucho equipado. Su movimiento característico Tecnochoque es de tipo Normal.", None),
         (
             "shock", "FulgoROM", "Eléctrico", "genesect/shock",
             "Equipado con el cartucho FulgoROM. Su movimiento Tecnochoque pasa a ser de tipo Eléctrico. " + (
-                "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
-                if is_white else
-                "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+                b2w2_note if is_b2w2 else (
+                    "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
+                    if is_white else
+                    "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+                )
             ),
             "/media/items/shock-drive.png",
         ),
         (
             "burn", "PiroROM", "Fuego", "genesect/burn",
             "Equipado con el cartucho PiroROM. Su movimiento Tecnochoque pasa a ser de tipo Fuego. " + (
-                "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
-                if is_white else
-                "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+                b2w2_note if is_b2w2 else (
+                    "Exclusivo de Pokémon Negro (requiere intercambio equipado desde Negro)."
+                    if is_white else
+                    "Entregado por el científico del Laboratorio P+P en Pokémon Negro tras derrotarlo."
+                )
             ),
             "/media/items/burn-drive.png",
         ),
         (
             "douse", "HidroROM", "Agua", "genesect/douse",
             "Equipado con el cartucho HidroROM. Su movimiento Tecnochoque pasa a ser de tipo Agua. " + (
-                "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
-                if is_white else
-                "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+                b2w2_note if is_b2w2 else (
+                    "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
+                    if is_white else
+                    "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+                )
             ),
             "/media/items/douse-drive.png",
         ),
         (
             "chill", "CrioROM", "Hielo", "genesect/chill",
             "Equipado con el cartucho CrioROM. Su movimiento Tecnochoque pasa a ser de tipo Hielo. " + (
-                "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
-                if is_white else
-                "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+                b2w2_note if is_b2w2 else (
+                    "Entregado por el científico del Laboratorio P+P en Pokémon Blanco tras derrotarlo."
+                    if is_white else
+                    "Exclusivo de Pokémon Blanco (requiere intercambio equipado desde Blanco)."
+                )
             ),
             "/media/items/chill-drive.png",
         ),
@@ -1892,6 +2008,280 @@ def get_genesect_forms(game_slug: str = "black") -> List[Dict[str, Any]]:
             ],
         })
     return forms
+
+
+def get_tornadus_forms(game_slug: str = "black-2") -> List[Dict[str, Any]]:
+    clean_slug = (game_slug or "black-2").replace("_national", "")
+    return [
+        {
+            "form_key": "incarnate",
+            "name": "Forma Avatar",
+            "display_name": "Tornadus (Forma Avatar)",
+            "category": "Pokémon Torbellino",
+            "primary_type": "flying",
+            "primary_type_es": "Volador",
+            "secondary_type": "",
+            "secondary_type_es": "",
+            **_build_retro_form_sprites(clean_slug, "641"),
+            "sprite_modern": "/media/pokemon/home/641.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/641.png",
+            "notes": [
+                {
+                    "title": "Forma Avatar • Espejo Veraz",
+                    "text": "Forma original de tipo Volador puro con habilidad Bromista. Puedes alternar entre Forma Avatar y Forma Tótem usando el Espejo Veraz, entregado en el Santuario Abundancia tras llevar a Landorus Forma Tótem procedente del RAdar Pokémon.",
+                    "tag": "Espejo Veraz",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+        {
+            "form_key": "therian",
+            "name": "Forma Tótem",
+            "display_name": "Tornadus (Forma Tótem)",
+            "category": "Pokémon Torbellino",
+            "primary_type": "flying",
+            "primary_type_es": "Volador",
+            "secondary_type": "",
+            "secondary_type_es": "",
+            **_build_retro_form_sprites(clean_slug, "tornadus/therian"),
+            "sprite_modern": "/media/pokemon/home/10019.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10019.png",
+            "notes": [
+                {
+                    "title": "Forma Tótem (Teselia 2)",
+                    "text": "Introducida en Pokémon Negro 2 y Blanco 2. Obtenible mediante RAdar Pokémon o transformando a Tornadus con el Espejo Veraz (Santuario Abundancia). Adquiere la habilidad Regeneración y aumenta notablemente su Velocidad y defensas.",
+                    "tag": "Regeneración",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_thundurus_forms(game_slug: str = "black-2") -> List[Dict[str, Any]]:
+    clean_slug = (game_slug or "black-2").replace("_national", "")
+    return [
+        {
+            "form_key": "incarnate",
+            "name": "Forma Avatar",
+            "display_name": "Thundurus (Forma Avatar)",
+            "category": "Pokémon Centella",
+            "primary_type": "electric",
+            "primary_type_es": "Eléctrico",
+            "secondary_type": "flying",
+            "secondary_type_es": "Volador",
+            **_build_retro_form_sprites(clean_slug, "642"),
+            "sprite_modern": "/media/pokemon/home/642.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/642.png",
+            "notes": [
+                {
+                    "title": "Forma Avatar • Espejo Veraz",
+                    "text": "Forma original Eléctrico/Volador con habilidad Bromista. Alterna a Forma Tótem usando el Espejo Veraz, entregado en el Santuario Abundancia al llevar a Landorus Forma Tótem del RAdar Pokémon.",
+                    "tag": "Espejo Veraz",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+        {
+            "form_key": "therian",
+            "name": "Forma Tótem",
+            "display_name": "Thundurus (Forma Tótem)",
+            "category": "Pokémon Centella",
+            "primary_type": "electric",
+            "primary_type_es": "Eléctrico",
+            "secondary_type": "flying",
+            "secondary_type_es": "Volador",
+            **_build_retro_form_sprites(clean_slug, "thundurus/therian"),
+            "sprite_modern": "/media/pokemon/home/10020.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10020.png",
+            "notes": [
+                {
+                    "title": "Forma Tótem (Teselia 2)",
+                    "text": "Introducida en Pokémon Negro 2 y Blanco 2. Obtenible mediante RAdar Pokémon o transformando a Thundurus con el Espejo Veraz (Santuario Abundancia). Posee la habilidad Absorbe Electricidad y un Ataque Especial extraordinario (145).",
+                    "tag": "Absorbe Elec.",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_landorus_forms(game_slug: str = "black-2") -> List[Dict[str, Any]]:
+    clean_slug = (game_slug or "black-2").replace("_national", "")
+    return [
+        {
+            "form_key": "incarnate",
+            "name": "Forma Avatar",
+            "display_name": "Landorus (Forma Avatar)",
+            "category": "Pokémon Fertilidad",
+            "primary_type": "ground",
+            "primary_type_es": "Tierra",
+            "secondary_type": "flying",
+            "secondary_type_es": "Volador",
+            **_build_retro_form_sprites(clean_slug, "645"),
+            "sprite_modern": "/media/pokemon/home/645.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/645.png",
+            "notes": [
+                {
+                    "title": "Forma Avatar • Espejo Veraz",
+                    "text": "Forma original Tierra/Volador con habilidad Poder Arena. Alterna libremente con su Forma Tótem usando el Espejo Veraz obtenido en el Santuario Abundancia.",
+                    "tag": "Espejo Veraz",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+        {
+            "form_key": "therian",
+            "name": "Forma Tótem",
+            "display_name": "Landorus (Forma Tótem)",
+            "category": "Pokémon Fertilidad",
+            "primary_type": "ground",
+            "primary_type_es": "Tierra",
+            "secondary_type": "flying",
+            "secondary_type_es": "Volador",
+            **_build_retro_form_sprites(clean_slug, "landorus/therian"),
+            "sprite_modern": "/media/pokemon/home/10021.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10021.png",
+            "notes": [
+                {
+                    "title": "Forma Tótem (Teselia 2)",
+                    "text": "Introducida en Pokémon Negro 2 y Blanco 2. Llevar a Landorus Forma Tótem del RAdar Pokémon al Santuario Abundancia desbloquea el Espejo Veraz. Cuenta con la habilidad Intimidación y un altísimo Ataque físico (145).",
+                    "tag": "Intimidación",
+                    "icon": "/media/items/reveal-glass.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_kyurem_forms(game_slug: str = "black-2") -> List[Dict[str, Any]]:
+    clean_slug = (game_slug or "black-2").replace("_national", "")
+    is_black2 = (clean_slug == "black-2")
+    return [
+        {
+            "form_key": "normal",
+            "name": "Forma Normal",
+            "display_name": "Kyurem",
+            "category": "Pokémon Frontera",
+            "primary_type": "dragon",
+            "primary_type_es": "Dragón",
+            "secondary_type": "ice",
+            "secondary_type_es": "Hielo",
+            **_build_retro_form_sprites(clean_slug, "646"),
+            "sprite_modern": "/media/pokemon/home/646.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/646.png",
+            "notes": [
+                {
+                    "title": "Boquete Gigante (Post-Liga)",
+                    "text": "Capturable al Nv. 70 en la cueva central del Boquete Gigante tras atrapar a Zekrom en la Torre Duodraco. Al capturarlo o derrotarlo deja caer la Punta ADN.",
+                    "tag": "Punta ADN",
+                    "icon": "/media/items/dna-splicers.png",
+                }
+            ],
+        },
+        {
+            "form_key": "black",
+            "name": "Kyurem Negro",
+            "display_name": "Kyurem Negro",
+            "category": "Pokémon Frontera",
+            "primary_type": "dragon",
+            "primary_type_es": "Dragón",
+            "secondary_type": "ice",
+            "secondary_type_es": "Hielo",
+            **_build_retro_form_sprites(clean_slug, "kyurem/black"),
+            "sprite_modern": "/media/pokemon/home/10022.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10022.png",
+            "notes": [
+                {
+                    "title": "Fusión con Zekrom (Punta ADN)",
+                    "text": (
+                        "Fusión de Kyurem y Zekrom mediante la Punta ADN (nativa en Pokémon Negro 2 tras capturar a Zekrom en la Torre Duodraco). "
+                        "Posee la habilidad Terravoltaje, un colosal Ataque físico (170) y el movimiento Rayo Gélido."
+                        if is_black2 else
+                        "Fusión de Kyurem y Zekrom mediante la Punta ADN (requiere intercambiar un Zekrom desde Pokémon Negro 2 o Pokémon Blanco). "
+                        "Posee la habilidad Terravoltaje, un colosal Ataque físico (170) y el movimiento Rayo Gélido."
+                    ),
+                    "tag": "Punta ADN",
+                    "icon": "/media/items/dna-splicers.png",
+                }
+            ],
+        },
+        {
+            "form_key": "white",
+            "name": "Kyurem Blanco",
+            "display_name": "Kyurem Blanco",
+            "category": "Pokémon Frontera",
+            "primary_type": "dragon",
+            "primary_type_es": "Dragón",
+            "secondary_type": "ice",
+            "secondary_type_es": "Hielo",
+            **_build_retro_form_sprites(clean_slug, "kyurem/white"),
+            "sprite_modern": "/media/pokemon/home/10023.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10023.png",
+            "notes": [
+                {
+                    "title": "Fusión con Reshiram (Punta ADN)",
+                    "text": (
+                        "Fusión de Kyurem y Reshiram mediante la Punta ADN (requiere intercambiar un Reshiram desde Pokémon Blanco 2 o Pokémon Negro). "
+                        "Posee la habilidad Turbollama, un colosal Ataque Especial (170) y el movimiento Llama Gélida."
+                        if is_black2 else
+                        "Fusión de Kyurem y Reshiram mediante la Punta ADN (nativa en Pokémon Blanco 2 tras capturar a Reshiram en la Torre Duodraco). "
+                        "Posee la habilidad Turbollama, un colosal Ataque Especial (170) y el movimiento Llama Gélida."
+                    ),
+                    "tag": "Punta ADN",
+                    "icon": "/media/items/dna-splicers.png",
+                }
+            ],
+        },
+    ]
+
+
+def get_keldeo_forms(game_slug: str = "black-2") -> List[Dict[str, Any]]:
+    clean_slug = (game_slug or "black-2").replace("_national", "")
+    return [
+        {
+            "form_key": "ordinary",
+            "name": "Forma Habitual",
+            "display_name": "Keldeo (Forma Habitual)",
+            "category": "Pokémon Potro",
+            "primary_type": "water",
+            "primary_type_es": "Agua",
+            "secondary_type": "fighting",
+            "secondary_type_es": "Lucha",
+            **_build_retro_form_sprites(clean_slug, "647"),
+            "sprite_modern": "/media/pokemon/home/647.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/647.png",
+            "notes": [
+                {
+                    "title": "Forma Habitual",
+                    "text": "Forma base de Keldeo antes de conocer el movimiento Sable Místico (o si olvida dicho movimiento).",
+                    "tag": "Agua / Lucha",
+                    "icon": "/media/items/rule-book.png",
+                }
+            ],
+        },
+        {
+            "form_key": "resolute",
+            "name": "Forma Brío",
+            "display_name": "Keldeo (Forma Brío)",
+            "category": "Pokémon Potro",
+            "primary_type": "water",
+            "primary_type_es": "Agua",
+            "secondary_type": "fighting",
+            "secondary_type_es": "Lucha",
+            **_build_retro_form_sprites(clean_slug, "keldeo/resolute"),
+            "sprite_modern": "/media/pokemon/home/10024.png",
+            "sprite_modern_shiny": "/media/pokemon/home/shiny/10024.png",
+            "notes": [
+                {
+                    "title": "Arboleda Promesa • Sable Místico",
+                    "text": "Introducida en Pokémon Negro 2 y Blanco 2. Al llevar a Keldeo a la Arboleda Promesa (al norte de Pueblo Ocre) junto a Cobalion, Terrakion y Virizion en el equipo, examinar la roca marcada le enseña Sable Místico y adopta la Forma Brío.",
+                    "tag": "Arboleda Promesa",
+                    "icon": "/media/items/rule-book.png",
+                }
+            ],
+        },
+    ]
 
 
 def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dict[str, Any]]:
@@ -1954,5 +2344,18 @@ def get_pokemon_forms(national_number: int, game_slug: str = "ruby") -> List[Dic
             return get_meloetta_forms(clean_slug)
         elif national_number == 649:
             return get_genesect_forms(clean_slug)
+
+    # 6. Formas introducidas exclusivamente en Pokémon Negro 2 y Blanco 2 (Teselia 2)
+    if clean_slug in B2W2_FORM_GAMES:
+        if national_number == 641:
+            return get_tornadus_forms(clean_slug)
+        elif national_number == 642:
+            return get_thundurus_forms(clean_slug)
+        elif national_number == 645:
+            return get_landorus_forms(clean_slug)
+        elif national_number == 646:
+            return get_kyurem_forms(clean_slug)
+        elif national_number == 647:
+            return get_keldeo_forms(clean_slug)
 
     return []

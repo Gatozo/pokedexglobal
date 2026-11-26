@@ -200,6 +200,11 @@ body[data-game="white"] {
     background-image: radial-gradient(rgba(15, 23, 42, 0.14) 1.5px, transparent 1.5px);
     background-size: 16px 16px;
 }
+body[data-game="black-2"] {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(rgba(2, 132, 199, 0.16) 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+}
 body,
 body[data-game="red"] {
     background-color: #faebed;
@@ -698,6 +703,45 @@ body[data-game="white"] .status-caught-active {
     background-color: #e2e8f0 !important;
     color: #0f172a !important;
     border-color: #0f172a !important;
+}
+
+/* Black 2 (Kyurem Negro) */
+body[data-game="black-2"] .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #0f172a,
+        #0f172a 12px,
+        #0c2442 12px,
+        #0c2442 24px
+    );
+}
+body[data-game="black-2"] #exclusives-modal .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #be123c,
+        #be123c 12px,
+        #9f1239 12px,
+        #9f1239 24px
+    );
+}
+body[data-game="black-2"] #transfers-modal .comic-header-pattern {
+    background: repeating-linear-gradient(
+        -45deg,
+        #4f46e5,
+        #4f46e5 12px,
+        #4338ca 12px,
+        #4338ca 24px
+    );
+}
+body[data-game="black-2"] .pokemon-card.caught-card {
+    background-color: #f0f9ff !important;
+    border-color: #0369a1 !important;
+    box-shadow: 3px 3px 0px 0px #0f172a;
+}
+body[data-game="black-2"] .status-caught-active {
+    background-color: #0f172a !important;
+    color: #7dd3fc !important;
+    border-color: #0284c7 !important;
 }
 
 /* Default / Red */

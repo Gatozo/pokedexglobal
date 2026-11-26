@@ -81,6 +81,10 @@ def _extract_local_locations(locs, g_slug: str):
         game_external_keywords.extend(["edición blanco", "edicion blanco", "bosque blanco"])
     elif g_slug == "white":
         game_external_keywords.extend(["edición negro", "edicion negro", "ciudad negra"])
+    elif g_slug == "black-2":
+        game_external_keywords.extend(["edición blanco 2", "edicion blanco 2", "cavernogal blanco", "bosque blanco", "clave iceberg"])
+    elif g_slug == "white-2":
+        game_external_keywords.extend(["edición negro 2", "edicion negro 2", "rascacielos negro", "ciudad negra", "clave hierro"])
 
     local_locs = []
     for l in locs:
@@ -203,7 +207,7 @@ def _classify_catalog_for_game(nat_cat, game_slug=None):
 
         # Exclusivos de versión contraparte: Si está marcado como exclusivo de otra edición
         # y no cuenta con captura salvaje local directa, debe descartarse inequívocamente.
-        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino"]
+        wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino", "claro oculto"]
         has_wild = (
             obt_type == "wild"
             or any(kw in methods_str for kw in wild_kw)
@@ -479,7 +483,7 @@ def _classify_obtaining_method(entry):
     areas_str = " ".join([l.get("area", "").lower() for l in local_locs])
     full_str = methods_str + " " + areas_str + " " + summary
 
-    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino"]
+    wild_kw = ["hierba", "pesca", "caña", "surf", "cueva", "buceo", "roca", "pantano", "charco", "arena", "safari", "puente", "polvo", "sombra", "remolino", "claro oculto"]
     has_wild = (
         obt_type == "wild"
         or any(kw in methods_str for kw in wild_kw)
@@ -1142,7 +1146,7 @@ def pokedex_view(request, game_slug="red", pokedex_slug=None):
         "is_hgss": (game.slug in ["heartgold", "soulsilver"]),
         "is_tanoby": (game.slug in ["firered", "leafgreen"]),
         "is_sinnoh": (game.slug in ["diamond", "pearl", "platinum"]),
-        "is_unova": (game.slug in ["black", "white"] or game.generation == 5),
+        "is_unova": (game.slug in ["black", "white", "black-2", "white-2"] or game.generation == 5),
         "unown_entry": unown_entry,
         "unown_catalog": unown_catalog,
         "unown_chambers": unown_chambers,
@@ -1319,7 +1323,7 @@ def toggle_unown_catch(request):
 
     normal_unown_count = len(forms_data.get("normal", []))
     shiny_unown_count = len(forms_data.get("shiny", []))
-    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen", "diamond", "pearl", "platinum", "heartgold", "soulsilver", "black", "white"] else 26
+    total_unown_forms = 28 if entry.game_slug in ["ruby", "sapphire", "emerald", "firered", "leafgreen", "diamond", "pearl", "platinum", "heartgold", "soulsilver", "black", "white", "black-2", "white-2"] else 26
 
     return JsonResponse({
         "success": True,

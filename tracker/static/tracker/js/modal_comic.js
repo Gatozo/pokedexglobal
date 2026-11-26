@@ -96,7 +96,7 @@ export function updateRotateButtonUI() {
 function syncModalSpriteScale(modalImg) {
     if (!modalImg) return;
     const src = modalImg.currentSrc || modalImg.src || '';
-    const isCroppedGen5Anim = /\/(black|white)_animated\//.test(src);
+    const isCroppedGen5Anim = /\/(black|white|black-2|white-2)_animated\//.test(src);
 
     if (!isCroppedGen5Anim || !modalImg.naturalWidth || !modalImg.naturalHeight) {
         modalImg.style.width = '';
@@ -572,7 +572,7 @@ export function renderModalObtaining(data, activeForm = null) {
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(activeGameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(activeGameSlug);
     const isGen4HGSS = activeGameSlug.startsWith('heartgold') || activeGameSlug.startsWith('soulsilver');
-    const isGen5Unova = ['black', 'white'].includes(activeGameSlug);
+    const isGen5Unova = ['black', 'white', 'black-2', 'white-2'].includes(activeGameSlug);
     const isFeebasSpecies = (data.name && data.name.toLowerCase() === 'feebas') || (parseInt(data.number, 10) === 349);
     let isFeebasConfigured = false;
     let feebasSpotCount = 0;
@@ -615,7 +615,7 @@ export function renderModalObtaining(data, activeForm = null) {
     }
 
     // Detección especial de Bosque Blanco en Pokémon Blanco (Gen 5)
-    const isWhiteGame = activeGameSlug.startsWith('white');
+    const isWhiteGame = activeGameSlug === 'white';
     const hasWhiteForestLocation = isWhiteGame && displayLocations.some(loc => (loc.area || '').toLowerCase().includes('bosque blanco'));
     let whiteForestStatus = null;
     if (hasWhiteForestLocation) {

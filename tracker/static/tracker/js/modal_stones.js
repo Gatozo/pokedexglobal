@@ -85,7 +85,11 @@ export function openStoneModal(stoneSlug, stoneName, updateHistory = true) {
                 priceBadge.textContent = 'Mercado Fayenza: 9 600 ₽';
             } else if (['razor-claw', 'razor-fang'].includes(stoneSlug)) {
                 priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
-                priceBadge.textContent = 'Metro Batalla (48 PB)';
+                if (['black-2', 'white-2', 'black2', 'white2'].includes(cleanGameSlug)) {
+                    priceBadge.textContent = 'Metro Batalla / PWT (8 PB)';
+                } else {
+                    priceBadge.textContent = 'Metro Batalla (48 PB)';
+                }
             } else if (stoneSlug.endsWith('-stone')) {
                 priceBadge.className = 'border border-sky-950 bg-sky-200 text-sky-950 text-[10px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow-sm';
                 if (cleanGameSlug === 'white') {

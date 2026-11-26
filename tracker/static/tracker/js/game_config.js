@@ -109,7 +109,7 @@ function getStorageKey(gameSlug) {
         ? 'heartgold'
         : (rawSlug.startsWith('soulsilver')
             ? 'soulsilver'
-            : (rawSlug.startsWith('white') ? 'white' : rawSlug));
+            : (rawSlug === 'white' ? 'white' : rawSlug));
     return `pokedex_game_config_${normalizedSlug}`;
 }
 
@@ -338,7 +338,7 @@ export function renderConfigPreview() {
     const isGen3Hoenn = ['ruby', 'sapphire', 'emerald'].includes(gameSlug);
     const isGen4Sinnoh = ['diamond', 'pearl', 'platinum'].includes(gameSlug);
     const isGen4HGSS = gameSlug.startsWith('heartgold') || gameSlug.startsWith('soulsilver');
-    const isWhite = gameSlug.startsWith('white');
+    const isWhite = gameSlug === 'white';
 
     if (isWhite) {
         renderWhiteForestConfigSummary();
@@ -800,7 +800,7 @@ export function saveGameConfig() {
     }
 
     // Caso Pokémon Blanco (Bosque Blanco: la configuración se gestiona desde su modal dedicado)
-    if (gameSlug.startsWith('white')) {
+    if (gameSlug === 'white') {
         closeGameConfigModal();
         refreshOpenModals();
         if (typeof window.filterCards === 'function') {

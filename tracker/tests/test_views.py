@@ -1292,6 +1292,37 @@ class GameSelectorClassificationTests(TestCase):
         self.assertTrue(UserPokemonCatch.objects.filter(game_slug="emerald", entry_number=22, is_caught=True).exists())
         self.assertFalse(UserPokemonCatch.objects.filter(game_slug="crystal", is_caught=True).exists())
 
+    def test_black2_toolbar_hidden_grottos_and_unown_toggle(self):
+        """Verifica barra de filtros de Negro 2 (Claros Ocultos, Bebés regional, sin btn-game-config) y toggle Unown (28 formas)."""
+        game_b2, _ = Game.objects.get_or_create(slug="black-2", defaults={"name": "Pokémon Negro 2", "generation": 5})
+        Pokedex.objects.get_or_create(game=game_b2, slug="unova", defaults={"name": "Pokédex de Teselia", "is_national": False})
+        Pokedex.objects.get_or_create(game=game_b2, slug="national", defaults={"name": "Pokédex Nacional", "is_national": True})
+
+        resp_reg = self.client.get(reverse("tracker:pokedex_default", kwargs={"game_slug": "black-2"}))
+        self.assertEqual(resp_reg.status_code, 200)
+        html_reg = resp_reg.content.decode("utf-8")
+        self.assertIn('data-tag="hidden_grotto"', html_reg)
+        self.assertIn('data-tag="baby"', html_reg)
+        self.assertNotIn('id="btn-game-config"', html_reg)
+        self.assertNotIn('id="white-forest-modal"', html_reg)
+
+        resp_nat = self.client.get(reverse("tracker:pokedex_detail", kwargs={"game_slug": "black-2", "pokedex_slug": "national"}))
+        self.assertEqual(resp_nat.status_code, 200)
+        unown_entry = resp_nat.context["unown_entry"]
+        self.assertIsNotNone(unown_entry)
+        self.assertEqual(resp_nat.context["unown_total_forms"], 28)
+
+        resp_toggle = self.client.post(
+            reverse("tracker:toggle_unown_catch"),
+            data=json.dumps({"entry_id": unown_entry.id, "letter": "question", "is_shiny": False}),
+            content_type="application/json",
+        )
+        self.assertEqual(resp_toggle.status_code, 200)
+        payload = resp_toggle.json()
+        self.assertTrue(payload["success"])
+        self.assertEqual(payload["unown_total_forms"], 28)
+        self.assertEqual(payload["unown_normal_count"], 1)
+
 
 
 

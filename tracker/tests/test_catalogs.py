@@ -4474,7 +4474,7 @@ class GlobalFormContractInvariantsTests(TestCase):
         from tracker.pokemon_forms import GAME_SPRITE_CONFIG, get_pokemon_forms
 
         media_root = Path(settings.MEDIA_ROOT)
-        form_species = [172, 201, 351, 386, 412, 413, 421, 422, 423, 479, 487, 492, 493, 550, 555, 585, 586, 648, 649]
+        form_species = [172, 201, 351, 386, 412, 413, 421, 422, 423, 479, 487, 492, 493, 550, 555, 585, 586, 641, 642, 645, 646, 647, 648, 649]
         forbidden_gen5_terms = ("Sinnoh", "Hoenn", "Johto", "Kanto", "Árboles de Miel", "Monte Corona", "Pokéwalker")
         checked_images = {}
 
@@ -4607,7 +4607,7 @@ class GlobalFormContractInvariantsTests(TestCase):
                             checked_paths.add(rel)
 
         # Ninguna especie con diferencias reales en Gen 4-5 (salvo #277/#278 excluidos) debe faltar en disco
-        for slug in ("diamond", "platinum", "heartgold", "black", "white"):
+        for slug in ("diamond", "platinum", "heartgold", "black", "white", "black-2"):
             for nid in GENDER_DIFFERENCES_GEN5:
                 if nid in (277, 278):
                     continue
@@ -5707,7 +5707,7 @@ class PokemonWhiteGen5Tests(TestCase):
         from tracker.catalog_service import get_compiled_catalog, CATALOGS_DIR, clear_catalog_memory_cache
 
         clear_catalog_memory_cache()
-        for slug in ("black", "black_national", "white", "white_national"):
+        for slug in ("black", "black_national", "white", "white_national", "black-2", "black-2_national"):
             by_nid = {e.pokemon.national_number: e for e in get_compiled_catalog(slug, force_reload=True)}
             self.assertNotIn("surf", by_nid[638].filter_tags.split(), f"Cobalion no debe tener tag 'surf' en {slug}")
 
@@ -5722,6 +5722,222 @@ class PokemonWhiteGen5Tests(TestCase):
                 if tags & {"rod_old", "rod_good", "rod_super", "rod_any"}:
                     self.assertNotEqual(obt.get("type"), "trade", f"{slug} #{e.pokemon.national_number} trade con tag rod_*")
                     self.assertNotEqual(obt.get("type"), "transfer", f"{slug} #{e.pokemon.national_number} transfer con tag rod_*")
+
+
+class PokemonBlack2Gen5Tests(TestCase):
+    """Batería integral de validación para Pokémon Negro 2 (slug 'black-2', Gen 5)."""
+
+    def test_black2_catalog_structure_ids_and_historical_types(self):
+        from tracker.catalog_service import get_compiled_catalog, clear_catalog_memory_cache, ensure_all_catalogs_loaded
+        from tracker.models import Game
+
+        ensure_all_catalogs_loaded()
+        clear_catalog_memory_cache()
+
+        game = Game.objects.get(slug="black-2")
+        self.assertEqual(game.generation, 5)
+        self.assertTrue(game.has_retro_sprites)
+        self.assertTrue(game.has_swarms)
+        self.assertTrue(game.has_seasons)
+        self.assertTrue(game.has_special_spots)
+        self.assertTrue(game.has_hidden_grottos)
+        self.assertTrue(game.has_regional_babies)
+        self.assertFalse(game.has_time_of_day)
+
+        # No regresión en Negro/Blanco 1
+        black1 = Game.objects.get(slug="black")
+        white1 = Game.objects.get(slug="white")
+        self.assertFalse(black1.has_hidden_grottos)
+        self.assertFalse(white1.has_hidden_grottos)
+        self.assertFalse(black1.has_regional_babies)
+        self.assertFalse(white1.has_regional_babies)
+
+        reg = get_compiled_catalog("black-2", force_reload=True, is_national=False)
+        nat = get_compiled_catalog("black-2", force_reload=True, is_national=True)
+        self.assertEqual(len(reg), 301)
+        self.assertEqual(len(nat), 649)
+
+        # Victini #000 y rangos de ID disjuntos (10000..10300 y 10401..11049)
+        victini = reg[0]
+        self.assertEqual(victini.id, 10000)
+        self.assertEqual(victini.entry_number, 494)
+        self.assertEqual(victini.display_number, "000")
+        self.assertEqual(victini.pokemon.national_number, 494)
+        self.assertEqual([e.id for e in reg[1:]], list(range(10001, 10301)))
+        self.assertEqual([e.id for e in nat], list(range(10401, 11050)))
+
+        # Fidelidad histórica estricta Gen 5: cero tipo Hada + is_hatchable explícito + 201-f.png en HOME
+        for e in nat:
+            self.assertNotEqual(e.primary_type, "fairy")
+            self.assertNotEqual(e.secondary_type, "fairy")
+            self.assertIsNotNone(e.is_hatchable)
+
+        nat_by = {e.pokemon.national_number: e for e in nat}
+        self.assertTrue(nat_by[489].is_hatchable)  # Phione
+        self.assertEqual(nat_by[201].pokemon.sprite_shiny_url, "/media/pokemon/home/shiny/201-f.png")
+        self.assertEqual(nat_by[201].modern_sprite_shiny_url, "/media/pokemon/home/shiny/201-f.png")
+
+    def test_black2_exclusives_transfers_and_hub_classification(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.exclusives import (
+            VERSION_EXCLUSIVES_CATALOG,
+            VERSION_TRANSFERS_CATALOG,
+            GAME_VERSION_EXCLUSIVES_NOTICES,
+            get_version_exclusives_context,
+            get_version_transfers_context,
+        )
+        from tracker.models import Game
+        from tracker.views import _classify_catalog_for_game
+
+        b2_excl = VERSION_EXCLUSIVES_CATALOG["black-2"]
+        w2_excl = VERSION_EXCLUSIVES_CATALOG["white-2"]
+        self.assertEqual(len(b2_excl), 29)
+        self.assertEqual(len(w2_excl), 26)
+        self.assertEqual(set(b2_excl) & set(w2_excl), set())
+
+        # Volbeat, Illumise, Cottonee y Petilil NO son exclusivos en B2W2
+        for non_excl in (313, 314, 546, 547, 548, 549):
+            self.assertNotIn(non_excl, b2_excl)
+            self.assertNotIn(non_excl, w2_excl)
+
+        game = Game.objects.get(slug="black-2")
+        reg_pd = game.pokedexes.get(slug="unova")
+        nat_pd = game.pokedexes.get(slug="national")
+
+        excl_ctx = get_version_exclusives_context(game, reg_pd, set())
+        self.assertTrue(excl_ctx["has_exclusives"])
+        self.assertEqual(excl_ctx["counterpart_theme"], "white2")
+        self.assertEqual(excl_ctx["own_theme"], "black2")
+        self.assertEqual(excl_ctx["counterpart_total"], 26)
+        self.assertEqual(excl_ctx["own_total"], 29)
+        self.assertIn("Sistema Clave", GAME_VERSION_EXCLUSIVES_NOTICES["black-2"])
+
+        # Transferencias estrictamente Gen 1-4 (0 especies de Gen 5, incluidos Tornadus/Thundurus/Landorus)
+        b2_transfers = VERSION_TRANSFERS_CATALOG["black-2"]
+        self.assertTrue(all(n < 494 for n in b2_transfers))
+        for gen5_id in (494, 641, 642, 645, 646, 647):
+            self.assertNotIn(gen5_id, b2_transfers)
+        self.assertIsNone(get_version_transfers_context(game, reg_pd, set()))
+        nat_tr_ctx = get_version_transfers_context(game, nat_pd, set())
+        self.assertTrue(nat_tr_ctx["has_transfers"])
+        self.assertEqual(nat_tr_ctx["total"], len(b2_transfers))
+        self.assertIn("Dream World", nat_tr_ctx["historical_note"])
+        self.assertIn("RAdar Pokémon", nat_tr_ctx["historical_note"])
+
+        # Clasificación nativa en el Game Hub
+        nat = get_compiled_catalog("black-2", is_national=True)
+        cls = _classify_catalog_for_game(nat, "black-2")
+        for grotto_native in (29, 32, 149, 371):  # Nidoran♀/♂, Dragonite, Bagon en Claros Ocultos
+            self.assertTrue(cls[grotto_native][0], f"#{grotto_native} de Claro Oculto debe ser nativo en Negro 2")
+        for w2_only in (577, 627, 643):  # Solosis, Rufflet, Reshiram exclusivos de Blanco 2
+            self.assertFalse(cls[w2_only][0], f"#{w2_only} exclusivo de Blanco 2 no debe ser nativo en Negro 2")
+
+    def test_black2_new_forms_and_isolation_from_bw1(self):
+        from pathlib import Path
+        from django.conf import settings
+        from tracker.pokemon_forms import get_pokemon_forms
+
+        expected_counts = {641: 2, 642: 2, 645: 2, 646: 3, 647: 2}
+        for nid, count in expected_counts.items():
+            self.assertEqual(get_pokemon_forms(nid, "black"), [], f"#{nid} no debe exponer formas B2W2 en Negro 1")
+            self.assertEqual(get_pokemon_forms(nid, "white"), [], f"#{nid} no debe exponer formas B2W2 en Blanco 1")
+            forms = get_pokemon_forms(nid, "black-2")
+            self.assertEqual(len(forms), count, f"#{nid} debe tener {count} formas en Negro 2")
+            for form in forms:
+                for key in ("sprite_retro", "sprite_retro_shiny", "modal_retro_sprite_url", "modal_retro_sprite_shiny_url", "sprite_modern", "sprite_modern_shiny"):
+                    url = form[key]
+                    self.assertTrue((Path(settings.BASE_DIR) / url.lstrip("/")).exists(), f"Falta {url}")
+
+        # Giratina en Torre Duodraco y Genesect con los 4 ROMs en Negro 2
+        giratina_forms = get_pokemon_forms(487, "black-2")
+        self.assertIn("Torre Duodraco", str(giratina_forms))
+        genesect_forms = get_pokemon_forms(649, "black-2")
+        self.assertEqual(len(genesect_forms), 5)
+        self.assertIn("Laboratorio P+P", str(genesect_forms))
+
+    def test_black2_hidden_grottos_swarms_gifts_statics_npcs_and_stones(self):
+        from tracker.catalog_service import get_compiled_catalog
+        from tracker.utils import get_evolution_stones_catalog, resolve_evolution_stone, INCENSE_BABY_MAP
+
+        reg_by = {e.pokemon.national_number: e for e in get_compiled_catalog("black-2", is_national=False)}
+        nat_by = {e.pokemon.national_number: e for e in get_compiled_catalog("black-2", is_national=True)}
+
+        # Claros Ocultos: etiqueta hidden_grotto sin contaminar 'surf'
+        for hg_id in (371, 572, 149):  # Bagon, Minccino, Dragonite
+            self.assertIn("hidden_grotto", nat_by[hg_id].filter_tags.split())
+        self.assertNotIn("surf", nat_by[371].filter_tags.split())
+        self.assertNotIn("surf", nat_by[572].filter_tags.split())
+
+        # Manadas solo en Nacional (19 especies)
+        swarms_nat = [e for e in nat_by.values() if "swarm" in e.filter_tags.split()]
+        self.assertEqual(len(swarms_nat), 19)
+        self.assertEqual([e for e in reg_by.values() if "swarm" in e.filter_tags.split()], [])
+
+        # Regalos, estáticos e intercambios NPC canónicos de Negro 2
+        self.assertIn("Ruga", reg_by[570].obtaining_info["summary"])  # Zorua de N
+        self.assertIn("Trufa", reg_by[133].obtaining_info["summary"])  # Eevee en Ciudad Porcelana
+        self.assertIn("Guayo", nat_by[443].obtaining_info["summary"])  # Gible variocolor
+        self.assertIn("Reserva Natural", reg_by[612].obtaining_info["summary"])  # Haxorus variocolor
+        self.assertIn("jueves", reg_by[630].obtaining_info["summary"].lower())  # Mandibuzz Ruta 4
+        self.assertIn("Pettulip", reg_by[548].obtaining_info["summary"])  # Petilil intercambio Ruta 4
+
+        # Inciensos resueltos en Regional (#298 Azurill, #458 Mantyke) y los 9 bebés en Nacional
+        self.assertEqual(reg_by[298].evolution_stone["slug"], "sea-incense")
+        self.assertEqual(reg_by[458].evolution_stone["slug"], "wave-incense")
+        for baby_id, expected_incense in INCENSE_BABY_MAP.items():
+            self.assertEqual(nat_by[baby_id].evolution_stone["slug"], expected_incense)
+
+        # Todos los 42 objetos evolutivos tienen games["black-2"] y precios/notas exactos de B2W2
+        stones = get_evolution_stones_catalog(force_reload=True)
+        self.assertEqual(len(stones), 42)
+        for slug, item in stones.items():
+            b2_locs = item.get("games", {}).get("black-2", [])
+            self.assertTrue(b2_locs, f"Falta games['black-2'] en {slug}")
+
+        sea_inc = resolve_evolution_stone(item_slug="sea-incense", game_slug="black-2")
+        self.assertNotIn("post-game", sea_inc["availability_note"].lower())
+        claw = resolve_evolution_stone(item_slug="razor-claw", game_slug="black-2")
+        self.assertIn("8 PB", claw["availability_note"])
+        self.assertIn("Pokémon World Tournament", claw["availability_note"])
+
+    def test_black2_views_ui_palette_toolbar_and_unown(self):
+        from tracker.unown_data import get_game_unown_chambers, get_unown_catalog
+
+        self.assertEqual(get_game_unown_chambers("black-2"), {})
+        uc = get_unown_catalog("black-2")
+        self.assertEqual(len(uc), 28)
+        self.assertEqual(uc[0]["sprite_normal"], "/media/pokemon/sprites/black-2/unown/a.png")
+
+        res_reg = self.client.get("/black-2/")
+        self.assertEqual(res_reg.status_code, 200)
+        self.assertEqual(len(res_reg.context["entries"]), 301)
+        html_reg = res_reg.content.decode("utf-8")
+        self.assertIn('data-game="black-2"', html_reg)
+        self.assertIn("/media/pokemon/icons/gen5/10022.png", html_reg)
+        self.assertIn("bg-[#0f172a]", html_reg)
+        self.assertIn('data-tag="hidden_grotto"', html_reg)
+        self.assertIn("Claros Ocultos", html_reg)
+        self.assertIn('data-tag="baby"', html_reg)
+        self.assertNotIn('id="btn-game-config"', html_reg)
+
+        res_nat = self.client.get("/black-2/national/")
+        self.assertEqual(res_nat.status_code, 200)
+        self.assertEqual(res_nat.context["total_pokemon"], 649)
+        html_nat = res_nat.content.decode("utf-8")
+        self.assertIn("Teselia (Pokétransfer)", html_nat)
+        self.assertIn('data-tag="hidden_grotto"', html_nat)
+        self.assertIn('data-tag="swarm"', html_nat)
+        self.assertIn("bg-sky-500/25 text-sky-200 border-sky-400/50", html_nat)
+
+        # Claros Ocultos no aparece en Negro 1 ni Blanco 1
+        for bw1_url in ("/black/", "/white/"):
+            resp_bw1 = self.client.get(bw1_url)
+            self.assertNotIn('data-tag="hidden_grotto"', resp_bw1.content.decode("utf-8"))
+
+        # Game Hub muestra Kyurem Negro
+        res_hub = self.client.get("/games/")
+        self.assertEqual(res_hub.status_code, 200)
+        self.assertIn("Kyurem Negro", res_hub.content.decode("utf-8"))
 
 
 
